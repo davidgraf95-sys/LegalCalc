@@ -29,7 +29,10 @@ export function KuendigungTimeline({ e }: { e: SperrfristenErgebnis }) {
 
   const endIso = nichtig ? e.fruehesteNeueKuendigungISO : e.beendigungISO;
   const endLabel = nichtig ? 'frühestens neu kündbar' : 'Beendigung';
-  const endFarbe = nichtig ? 'var(--brass-500)' : 'var(--sage-500)';
+  // A3-6 (R3-α, 31.8.2026): `--sage-500` → `--ok-solid` (wertidentisch).
+// Das Ende der Frist ist eine ZUSTANDS-Aussage; `sage` ist die
+// Materialien-Kennfarbe (§4b-B-i, Befunde 7+37).
+const endFarbe = nichtig ? 'var(--brass-500)' : 'var(--ok-solid)';
 
   return (
     // data-ansicht: abgeleitete Ansicht (R4 Ziff. 3) — steht immer NACH dem
@@ -68,7 +71,7 @@ export function KuendigungTimeline({ e }: { e: SperrfristenErgebnis }) {
         {(e.sperrIntervalle ?? []).length > 0 && <Leg band label="Sperrfrist" />}
         {nichtig
           ? <Leg swatch="bg-brass-500" label="frühestens neu kündbar" />
-          : <Leg swatch="bg-sage-500" label="Beendigung" />}
+          : <Leg swatch="bg-ok-solid" label="Beendigung" />}
         {e.gehemmtTage ? <span className="num text-ink-500">· Hemmung: {e.gehemmtTage} Tage</span> : null}
       </div>
     </div>

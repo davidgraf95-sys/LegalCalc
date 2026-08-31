@@ -109,6 +109,34 @@ const OVERLINE_DIM_RE = /\blc-overline\b[^"'`]*\btext-ink-(?:500|400|300)\b|\bte
 // dieses Komponenten-Scopes. Heute 0 Treffer = billige Versicherung (F6/F7).
 const WHITE_UTIL_RE = new RegExp(`\\b(?:${PRAEFIX})-white\\b`, 'g');
 const INLINE_WHITE_RE = /(?:background|backgroundColor|color)\s*:\s*['"]#(?:fff|ffffff)['"]/i;
+// ── Verbot: Ad-hoc-Scrim (F2-1, Design-Konsistenz Runde 2, 31.8.2026) ───────
+// Die abdunkelnde Fläche hinter einem Overlay hat DREI Rollen mit je EINER
+// Deckung (`--scrim` 30 % Blatt/Menü · `--scrim-dialog` 40 % zentrierter Dialog ·
+// `--scrim-voll` 50 % Vollflächen-Schublade, src/index.css) und trägt sie über
+// `.lc-scrim*`. Gefunden wurden SIEBEN Fundstellen als Utility-Kette, davon DREI
+// mit `bg-ink-900/<alpha>` — und das ist kein Geschmack, sondern ein Fehler:
+// `--ink-900` flippt mit dem Thema (hell #201E16, dunkel #E9E7E2), ein
+// `bg-ink-900/30` HELLT im Dunkelmodus also auf, statt abzudunkeln (gemessene
+// Leuchtdichte im Lesefeld, `v3/LeserScrim.tsx`: hell 237.5 → 166.1, dunkel
+// 32.7 → 23.0 nur mit der schwarzen Fassung). Die bestehenden Schranken griffen
+// knapp daneben: `ink-900` steht in der Config (FARB_RE grün), ist keine
+// Default-Palette-Farbe (DEFAULT_FARB_RE grün) und erzeugt eine wirksame
+// Deckkraft-Regel (Prüfung 3 grün).
+// GELTUNG eng: nur wo die Klassen-Kette WIRKLICH ein Scrim aufspannt, also
+// zusammen mit `inset-0`. Ein gedimmtes Element im Fluss ist nicht gemeint.
+// `bg-black/<alpha>` fällt mit darunter, obwohl die FARBE dort richtig ist: die
+// Deckung stünde sonst wieder als freie Zahl im JSX — und ein Wächter, der die
+// letzte verbliebene Fundstelle ausnimmt, ist keiner (§6.7). Darum ist mit F2-1
+// auch `layout/Shell.tsx` (50 %) mitgezogen worden.
+// KOMMENTARZEILEN BLEIBEN FREI: die Herleitungen im Haus nennen den Vorzustand
+// beim Namen («Gebaut war ein Vollflächen-Scrim (`fixed inset-0 bg-ink-900/30`)
+// …», LeserPanelZone:48) — ein datierter Beleg altert nicht und wird nicht
+// nachgeführt (§2b). Dieselbe Trennung fährt `src/tests/design-r2c-bausteine.test.ts`.
+// Die übrigen Prüfungen oben messen bewusst die ganze Zeile: dort geht es um
+// Klassen, die im Bestand nicht als Beleg zitiert werden.
+const SCRIM_RE = /\bbg-(?:black|ink-\d{3})\/[0-9.]+\b/;
+const SCRIM_TRAEGER_RE = /\binset-0\b/;
+const KOMMENTAR_ZEILE_RE = /^\s*(?:\/\/|\*|\/\*|\{\/\*)/;
 // ── Deckkraft-Suffix (Prüfung 3, D0): <praefix>-<farbe>/<alpha>. Bewusst OHNE
 // Familien-Filter — auch die Tailwind-Keyword-Farben (bg-black/50) laufen mit,
 // die Kompilation entscheidet. Nur Farb-Präfixe, damit w-1/2 & Co. nicht greifen.
@@ -165,6 +193,10 @@ for (const datei of dateien(WURZEL)) {
       fehler.push(`${datei}:${i + 1} — Reinweiss-Utility «${wm[0]}» (§13-Nachtrag d / Reinweiss-Invariante). Warme Fläche/Tinte nutzen: bg-paper*/bg-surface* bzw. text-paper (nie #FFFFFF als Lesefläche).`);
     if (INLINE_WHITE_RE.test(zeile))
       fehler.push(`${datei}:${i + 1} — Reinweiss #fff im Inline-Style (§13-Nachtrag d / Reinweiss-Invariante). Token nutzen: var(--paper*)/var(--surface*) bzw. var(--paper) für Tinte auf Dunkel.`);
+    if (!KOMMENTAR_ZEILE_RE.test(zeile) && SCRIM_RE.test(zeile) && SCRIM_TRAEGER_RE.test(zeile)) {
+      const sm = SCRIM_RE.exec(zeile);
+      fehler.push(`${datei}:${i + 1} — Ad-hoc-Scrim «${sm?.[0]}» auf einer inset-0-Fläche (F2-1). Der Scrim hat drei Rollen mit je EINER Deckung: .lc-scrim (Blatt/Menü, 30 %), .lc-scrim-dialog (zentrierter Dialog, 40 %), .lc-scrim-voll (Vollflächen-Schublade, 50 %) — src/index.css. bg-ink-900/… ist zusätzlich falsch: --ink-900 flippt mit dem Thema und hellt im Dunkelmodus auf, statt abzudunkeln.`);
+    }
     let alm: RegExpExecArray | null;
     ALPHA_UTIL_RE.lastIndex = 0;
     while ((alm = ALPHA_UTIL_RE.exec(zeile)) !== null) {
@@ -206,6 +238,47 @@ if (alphaFunde.size > 0) {
     }
     if (mit === rumpf.get(opak(klasse)))
       fehler.push(`${wo} — Deckkraft-Klasse «${klasse}» erzeugt zwar eine Regel, aber denselben Wert wie «${opak(klasse)}» — der /-Modifier bleibt wirkungslos (D0/F7).`);
+  }
+}
+
+// ── Prüfung 3b: `sage` ist die Materialien-Kennfarbe, nicht die ok-Rolle ─────
+//
+// GEMESSEN (Design-Konsistenz R3-α/A3-6, 31.8.2026): neun Flächen färbten einen
+// ZUSTAND («Frist endet» · «Gültig» · «nicht verjährt» · «zustimmen» · «Summe
+// stimmt») mit `sage-*` ein — der WERKSTOFF-Kennfarbe der Materialien. Die
+// Zustands-Rolle `--ok-*` existiert seit F1 (§4b-B-i) und ist wertidentisch;
+// genau deshalb fiel die Vermischung nie auf, und genau deshalb ist sie
+// gefährlich: verschiebt sich eines der beiden Konzepte, verschieben sich
+// stillschweigend beide (Befunde 7+37). `FristenKalender` mischte sogar BEIDE
+// Familien in EINER Zelle (Füllung sage, Ring `--ok-solid`).
+//
+// REGEL: `sage-*`-Utilities und `var(--sage-*)` sind ausserhalb von
+// `src/index.css` (wo die Rolle definiert wird) nur mit einer Begründung AM
+// FUNDORT zulässig. Der Wächter zitiert sie wörtlich — verschwindet sie, fällt
+// die Ausnahme mit ihr.
+{
+  /** Fundort-Ausnahmen: Datei → Satz, der dort stehen MUSS. */
+  const SAGE_AUSNAHMEN: Record<string, string> = {
+    // Bandfarben eines Diagramms, keine Status-Aussage: die sechs Werte sind
+    // eine KATEGORIALE Reihe (Zinssatz-Abschnitte), in der sage neben brass,
+    // slate und warn nur eine unterscheidbare Fläche ist.
+    'src/components/VerzugszinsTimeline.tsx': 'A3-6-AUSNAHME (R3-α, 31.8.2026): kategoriale Bandfarbe, kein Zustand',
+  };
+  const SAGE_RE = /(?:^|[\s"'`:])(?:bg|text|border|ring|fill|stroke|from|via|to|divide|outline|decoration|shadow|accent|caret)-sage-[a-z0-9]+|var\(--sage-[a-z0-9-]+\)/;
+  for (const datei of dateien(WURZEL)) {
+    const roh = readFileSync(datei, 'utf8');
+    const begruendung = SAGE_AUSNAHMEN[datei];
+    if (begruendung !== undefined) {
+      if (!roh.includes(begruendung))
+        fehler.push(`${datei} — A3-6-Ausnahme ohne Begründung am Fundort: der Satz «${begruendung}» steht dort nicht (mehr). Entweder die Begründung zurückschreiben oder die Fläche auf die ok-Rolle ziehen.`);
+      continue;
+    }
+    roh.split('\n').forEach((zeile, i) => {
+      if (KOMMENTAR_ZEILE_RE.test(zeile)) return;   // Belege dürfen sage nennen (§2b)
+      const sm = SAGE_RE.exec(zeile);
+      if (sm)
+        fehler.push(`${datei}:${i + 1} — «${sm[0].trim()}» färbt einen Zustand mit der Materialien-Kennfarbe «sage» (A3-6, §4b-B-i). Die Zustands-Rolle nutzen: bg-ok-solid / bg-ok-bg / text-ok-text / border-ok-line bzw. var(--ok-solid) — wertidentisch, aber semantisch getrennt.`);
+    });
   }
 }
 

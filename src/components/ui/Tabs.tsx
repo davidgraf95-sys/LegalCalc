@@ -8,7 +8,23 @@
 // (`mode`: ARIA-Tabs `role=tab/aria-selected` vs. Toggle-Buttons
 // `aria-pressed`). Keine Logik, kein Zustand — reiner gesteuerter View.
 
-export type TabItem<T extends string> = { code: T; label: React.ReactNode };
+export type TabItem<T extends string> = {
+  code: T;
+  label: React.ReactNode;
+  /**
+   * `id`/`aria-controls` des Reiters (E-2-Nachzug, R3-α 31.8.2026 — additiv).
+   *
+   * Die `Gesetze`-Ebenenwahl war die dritte Kopie dieser Segmented-Control und
+   * blieb es bis hierher NUR wegen dieser beiden Attribute: sie verknüpft
+   * Reiter und Panel ausdrücklich (`ebene-tab-…` ↔ `ebene-panel-…`). Das ist
+   * eine Zusage, die der Baustein können muss — nicht ein Grund für eine
+   * eigene Leiste (§5/§10). Ohne Angabe verhält er sich exakt wie bisher.
+   */
+  id?: string;
+  ariaControls?: string;
+  /** Zusatzauskunft am Reiter (`title`) — nie einzige Trägerin einer Tatsache. */
+  titel?: string;
+};
 
 /**
  * Grösse: `m` = h-9/text-body-s/px-3 (Tabs); `s` = h-8/text-xs/px-2.5
@@ -67,7 +83,20 @@ export function Tabs<T extends string>({
       // verlieren (§5/§10). Rein semantisch, keine Optik-Änderung.
       role={mode === 'tab' ? 'tablist' : 'group'}
       aria-label={ariaLabel}
-      className={`print:hidden flex ${HOEHE[groesse]} items-stretch gap-1 p-0.5 bg-surface border border-line rounded-lg w-fit max-w-full overflow-x-auto`}
+      // ── LM-063 (B8, 31.8.2026) · DIE LEISTE SAGT JETZT, DASS SIE WEITERGEHT ──
+      // GEMESSEN am gebauten Stand, `/rechner/schkg-fristen` @720: diese Gruppe
+      // war 604 px breit bei 1'193 px Inhalt — **589 px verborgen**, ohne
+      // Verlauf, ohne Maske, ohne sichtbaren Balken. Der achte Reiter
+      // («Schiedsverfahren») endete mitten im Wort, und nichts sagte, dass dort
+      // noch etwas liegt. `/rechner/zpo-fristen` @720: 604/756.
+      // `lc-scrollrand-x` ist die GETEILTE Affordanz (Anatomie und Herleitung im
+      // Regel-Block `lc-scrollrand` in index.css): zwei Deckel in `local` über
+      // zwei Schatten in `scroll` — der Schatten steht genau dann, wenn an
+      // dieser Kante wirklich noch Inhalt liegt, und verschwindet am Ende der
+      // Strecke. Kein JavaScript, kein Listener, kein Re-Render (§2/§15).
+      // `lc-scrollrand-grund-surface`, weil die Leiste auf `bg-surface` sitzt:
+      // der Deckel muss die Farbe der Fläche haben, die er abdeckt.
+      className={`print:hidden flex ${HOEHE[groesse]} items-stretch gap-1 p-0.5 bg-surface border border-line rounded-lg w-fit max-w-full overflow-x-auto lc-scrollrand-x lc-scrollrand-grund-surface`}
     >
       {items.map((it, i) => {
         const aktiv = value === it.code;
@@ -90,6 +119,9 @@ export function Tabs<T extends string>({
           <button
             key={it.code}
             type="button"
+            id={it.id}
+            aria-controls={it.ariaControls}
+            title={it.titel}
             role={mode === 'tab' ? 'tab' : undefined}
             aria-selected={mode === 'tab' ? aktiv : undefined}
             aria-pressed={mode === 'pressed' ? aktiv : undefined}

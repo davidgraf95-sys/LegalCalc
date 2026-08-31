@@ -21,9 +21,17 @@
 // Datei landet mit Grund in `uebersprungen` (im Artefakt UND in der CLI-Ausgabe),
 // und das Tor src/tests/suchIndex.test.ts hält jeden Erlass fest, der Volltext
 // führt, aber nicht im Index steht.
+//
+// FELD-EXTRAKTION LIEGT NICHT MEHR HIER (QS-BASIS (d) K1, 31.8.2026). Die
+// Extraktoren (Artikeltext · Tabellen-Tier · Fussnoten · Marginalien-/Gliederungs-
+// Labels) sind nach scripts/suche-felder.ts gewandert, weil der DB-/Edge-Index
+// (scripts/datenhaltung/fts.ts) DIESELBEN Felder braucht. Sie hier zu belassen und
+// dort nachzubauen hätte zwei Wahrheiten für denselben Fachinhalt erzeugt (§5) —
+// und genau daran hing die gemessene Recall-Lücke des Edge-Weges.
 import { readFileSync, writeFileSync, mkdirSync, readdirSync } from 'node:fs';
 import { resolve, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { artikelText, baueRecallFelder, type Block, type StrukturArtikel } from './suche-felder';
 
 const wurzel = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const NORMTEXT = resolve(wurzel, 'public/normtext');
@@ -33,81 +41,70 @@ const ZIEL = resolve(wurzel, 'public/such-index/artikel.json');
 export const EBENEN = ['bund', 'kanton'] as const;
 export type Ebene = (typeof EBENEN)[number];
 
-// Bild/Kachel: `alt` ist der einzige durchsuchbare Text (SSV-Signalnamen wie
-// «Rechtskurve», «Engpass»). Der generische Fallback «Amtliche Abbildung» (271×
-// im Bund) trägt keinen Inhalt und wird verworfen (§8: kein Suchrauschen).
-interface Bild { alt?: string; formel?: boolean }
-interface Kachel { bild?: Bild; nummer?: string; name?: string }
-interface Mehrspaltig { spalten?: { titel?: string }[]; zeilen?: (string | number)[][] }
-interface Block {
-  absatz?: string; text?: string; items?: { marke?: string; text?: string }[];
-  mehrspaltig?: Mehrspaltig; tabelle?: Record<string, unknown>[];
-  bild?: Bild; bildKacheln?: Kachel[];
+/**
+ * EBENEN-WAHL über `SUCHE_INDEX_EBENEN` — VORBEREITET, NICHT SCHARF
+ * (QS-BASIS (d) K3, 31.8.2026).
+ *
+ * Default ist UNVERÄNDERT «alle Ebenen»: ohne gesetzte Variable ist dieser Schalter
+ * wirkungslos und `artikel.json` byte-gleich wie zuvor. Bewiesen — nicht behauptet —
+ * in `src/tests/suche/ebenenWahl.test.ts`, Abschnitt «F3 Byte-Beweis»: der sha256 des
+ * Default-Laufs wird gegen die Montage aus `baueEbenenIndex` je Ebene gehalten, also
+ * gegen genau den Code-Weg, den es VOR dem Schalter gab; ein zweiter Test zeigt, dass
+ * der Schalter bei AN nur FILTERT (die Bund-Einträge des gefilterten Laufs sind byte-
+ * und reihenfolgegleich mit denen des vollen); ein dritter hält §2 fest.
+ * Gesetzt (z. B. `SUCHE_INDEX_EBENEN=bund`) schreibt der Generator einen Index OHNE
+ * die weggelassenen Ebenen.
+ *
+ * (Bis zum 31.8.2026 verwies dieser Absatz auf einen Byte-Beweis in
+ * `src/tests/suchIndex.test.ts` — den es dort nie gab; auch die K3-Tests standen
+ * woanders. Gegenprüfungs-Befund F3. Ein behaupteter Beweis ist schlimmer als keiner:
+ * er beendet das Nachfragen.)
+ *
+ * WOZU. Der Kanton-Anteil am ausgelieferten Suchindex sind 4.26 MiB gzip = 45.2 %
+ * (Messung K0, bibliothek/register/suche-edge-nullprobe-2026-08-31.md). Seit K1/K2
+ * findet und rangiert der Edge-Weg kantonale Artikel in denselben topischen Stufen wie
+ * der statische — der statische Kanton-Anteil wäre also WEITGEHEND entbehrlich.
+ *
+ * «Weitgehend», nicht «gleichwertig» (Korrektur nach Gegenprüfungs-Befund F2,
+ * 31.8.2026). Der Satz stand hier vorher als Vollparität, und die besteht nicht: der
+ * DB-Weg kennt KEINE Präfix-Treffer («Verjähr» → Client findet, DB 0) und KEINE
+ * Synonym-Expansion. Beides ist benannt, gemessen und begründet in
+ * scripts/datenhaltung/suche-kern.ts, Abschnitt «WO DIE PARITÄT GILT — UND WO NICHT».
+ * Für die Scharfschaltung ist das nicht nebensächlich: käme der Kanton nur noch vom
+ * Edge, verlöre eine kantonale Präfix-Query ihre Treffer GANZ, statt sie bloss aus
+ * einem Fallback zu holen. Der Entscheid selbst bleibt unverändert bei David — aber er
+ * darf nicht auf einer überzeichneten Grundlage getroffen werden (§8).
+ *
+ * WARUM TROTZDEM AUS. Ihn abzuschalten heisst, dass kantonale Treffer NUR noch
+ * online kommen. Fällt die Edge-Suche aus (Timeout, 5-min-Sperre in
+ * onlineVolltext.ts, fehlende Turso-Env), sucht die Seite dann in einem Korpus
+ * ohne Kantone. Ob das Produkt das anbieten darf und wie es die Lücke ausweist,
+ * ist ein §8-Entscheid über die eigene Vollständigkeit — kein technischer. Er
+ * gehört zusammen mit der Heiss/Kalt-Grenze (Fahrplan §12.2) zu David.
+ * Restliste für die Scharfschaltung: Bericht dieses Schritts, «K3-Scharfschaltung».
+ */
+export function gewaehlteEbenen(roh = process.env.SUCHE_INDEX_EBENEN): readonly Ebene[] {
+  const wunsch = (roh ?? '').trim();
+  if (!wunsch) return EBENEN;
+  const genannt = new Set(wunsch.split(/[,\s]+/).filter(Boolean));
+  const unbekannt = [...genannt].filter((e) => !(EBENEN as readonly string[]).includes(e));
+  if (unbekannt.length > 0) {
+    // Ein Tippfehler darf NICHT still einen halben Index erzeugen — genau der
+    // Fehlmodus aus PR #313 (halber Index, nie rot geworden).
+    throw new Error(
+      `SUCHE_INDEX_EBENEN: unbekannte Ebene(n) «${unbekannt.join(', ')}» — erlaubt: ${EBENEN.join(', ')}.`,
+    );
+  }
+  // Reihenfolge bleibt die von EBENEN (§2 stabile Eintrags-Reihenfolge), nicht die
+  // Nenn-Reihenfolge der Variable.
+  const gewaehlt = EBENEN.filter((e) => genannt.has(e));
+  if (gewaehlt.length === 0) throw new Error('SUCHE_INDEX_EBENEN: keine gültige Ebene genannt.');
+  return gewaehlt;
 }
+
 // `quelle` trägt bei kantonalen Snapshots das Kantonskürzel («AG», «BS»); Bund
 // führt das Feld nicht. Es ist die Grundlage der ehrlichen Herkunfts-Anzeige.
 interface Eintrag { id: string; erlass: string; artikel: string; artikelLabel: string; grundlage?: string; quelle?: string; bloecke?: Block[] }
-
-/** Durchsuchbarer Plaintext eines Artikels (Absätze + Aufzählungen, Whitespace normalisiert). */
-function artikelText(bloecke: Block[]): string {
-  const teile: string[] = [];
-  for (const b of bloecke) {
-    if (b.text) teile.push(b.text);
-    for (const it of b.items ?? []) if (it.text) teile.push(it.text);
-  }
-  return teile.join(' ').replace(/\s+/g, ' ').trim();
-}
-
-const GENERISCHES_ALT = /^amtliche abbildung$/i;
-
-/** Nicht-generischer Alt-Text eines Bildes (SSV-Signalname o. Ä.), sonst ''. */
-function bildAlt(b?: Bild): string {
-  const alt = (b?.alt ?? '').trim();
-  return alt && !GENERISCHES_ALT.test(alt) ? alt : '';
-}
-
-/** Tabellen-/Struktur-Tier eines Artikels: Tabellenzellen (mehrspaltig-Spalten-
- *  titel + Zeilen, Füllpunkt-`tabelle`), Bild-Alt-Texte (SSV-Signalnamen; ohne
- *  den generischen «Amtliche Abbildung»-Platzhalter) und Kachel-Beschriftungen.
- *  Ein Rang UNTER Marginalie/Gliederung, ÜBER Fussnote (Feld-Gewichtung S4). */
-function tabellenText(bloecke: Block[]): string {
-  const teile: string[] = [];
-  for (const b of bloecke) {
-    if (b.mehrspaltig) {
-      for (const s of b.mehrspaltig.spalten ?? []) if (s.titel) teile.push(s.titel);
-      for (const z of b.mehrspaltig.zeilen ?? []) for (const c of z) if (c != null && c !== '') teile.push(String(c));
-    }
-    // Füllpunkt-Tabelle (`tabelle`): Array von Zeilen-Objekten mit freien String-
-    // Feldern (Kanton-Gebührentarife: {beschreibung, betrag}). Bund führt aktuell
-    // keine — verhaltensneutral hier, aber der Extraktor bleibt vollständig.
-    for (const zeile of b.tabelle ?? []) {
-      for (const v of Object.values(zeile)) if (typeof v === 'string' && v.trim()) teile.push(v);
-    }
-    const alt = bildAlt(b.bild);
-    if (alt) teile.push(alt);
-    for (const k of b.bildKacheln ?? []) {
-      if (k.name) teile.push(k.name);
-      const ka = bildAlt(k.bild);
-      if (ka) teile.push(ka);
-    }
-  }
-  return teile.join(' ').replace(/\s+/g, ' ').trim();
-}
-
-/** Fussnoten-Body eines Artikels als durchsuchbarer Plaintext (Änderungs-/
- *  Quellenhinweise, AS-/BBl-Referenzen). Fedlex-Hervorhebungen <b>/<i> und alle
- *  übrigen Tags fallen; niedrigster Recall-Tier (Feld-Gewichtung S4). */
-function fussnotenText(fussnoten: { text?: string }[]): string {
-  const teile: string[] = [];
-  for (const fn of fussnoten) {
-    // Tags raus, Fedlex-Entities dekodieren; die \s+-Normalisierung unten
-    // fasst nbsp (von \s erfasst) mit ein.
-    const t = (fn.text ?? '').replace(/<[^>]+>/g, ' ')
-      .replace(/&nbsp;/g, ' ').replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>');
-    if (t.trim()) teile.push(t);
-  }
-  return teile.join(' ').replace(/\s+/g, ' ').trim();
-}
 
 // ── Sachüberschrift (Marginalie + Gliederung) je Artikel (UI-NAV S4) ─────────
 //
@@ -119,28 +116,7 @@ function fussnotenText(fussnoten: { text?: string }[]): string {
 // Alltags-Query «Miete» über die Gliederung «Achter Titel: Die Miete» direkt die
 // mietrechtlichen Artikel (OR 253 ff.), die im Artikeltext das Wort «Miete» selbst
 // nie führen (FlexSearch-forward: «miete» ist kein Präfix von «mietvertrag»).
-interface StrukturArtikel { marginalie?: string[]; gliederung?: { ebene?: number; label?: string }[]; fussnoten?: { text?: string }[] }
 interface StrukturDatei { artikel?: Record<string, StrukturArtikel> }
-
-/** Enumerator-Präfix eines Randtitels entfernen («G. Verjährung» → «Verjährung»,
- *  «1. Zehn Jahre» → «Zehn Jahre», «a. Grundsatz» → «Grundsatz»). Deterministisch;
- *  reine Text-Säuberung, damit die Buchstaben-/Ziffern-Zähler nicht als Suchrauschen
- *  in den Index geraten. */
-function ohneEnumerator(s: string): string {
-  return s.replace(/^\s*(?:[0-9]+|[IVXLCDMivxlcdm]+|[A-Za-z])[.)]\s+/, '').trim();
-}
-
-/** Labels entdoppeln + säubern (Enumerator weg, Whitespace normalisiert), in
- *  stabiler Reihenfolge zu einem Text joinen. */
-function labelText(rohe: (string | undefined)[]): string {
-  const teile: string[] = [];
-  const sehen = new Set<string>();
-  for (const roh of rohe) {
-    const s = ohneEnumerator((roh ?? '').replace(/\s+/g, ' ').trim());
-    if (s && !sehen.has(s.toLowerCase())) { sehen.add(s.toLowerCase()); teile.push(s); }
-  }
-  return teile.join(' · ');
-}
 
 // Kompaktes Schema (kurze Keys → kleinere Datei): k=ROUTEN-Key (Dateiname-Stamm
 // = ERLASS_REGISTER.key, für /gesetze/<eb>/<k>), ku=Anzeige-Kürzel (z. B. «StGB»;
@@ -215,17 +191,9 @@ export function baueEbenenIndex(ebene: Ebene): EbenenIndex {
       if (!e.bloecke || e.bloecke.length === 0) { ohneText++; continue; }
       const t = artikelText(e.bloecke);
       if (!t) { ohneText++; continue; }
-      const sa = struktur.artikel?.[e.artikel];
-      const marg = sa?.marginalie ?? [];
-      const m = labelText(marg.slice(0, 1)); // primäre (oberste) Marginalie = Hauptthema
-      const n = labelText(marg.slice(1)); // nachrangige Randtitel-Stufen
-      const g = labelText((sa?.gliederung ?? []).map((x) => x.label));
-      // Tabellen-Tier: Zellen/Bild-Alt aus den Blöcken + `grundlage` (Delegations-
-      // norm-Template, «(Art. 1 ArG)»). Fussnoten-Tier: aus dem Struktur-Sidecar.
-      const tbTeile = tabellenText(e.bloecke);
-      const grundlage = (e.grundlage ?? '').replace(/\s+/g, ' ').trim();
-      const tb = [tbTeile, grundlage].filter(Boolean).join(' ');
-      const f = fussnotenText(sa?.fussnoten ?? []);
+      // Die fünf Recall-Felder kommen aus der GETEILTEN Extraktion (§5) — dieselbe
+      // Funktion speist den DB-/Edge-Index in scripts/datenhaltung/fts.ts.
+      const { m, n, g, tb, f } = baueRecallFelder(e.bloecke, struktur.artikel?.[e.artikel], e.grundlage);
       // kt aus dem Snapshot-Feld `quelle` (Kanton) — bei Bund leer. Ein kantonaler
       // Eintrag OHNE Kanton wäre eine stille Herkunfts-Lüge; das Tor
       // src/tests/suchIndex.test.ts lässt genau das rot auflaufen.
@@ -249,16 +217,20 @@ export interface Suchindex {
   uebersprungen: Uebersprungen[];
 }
 
-/** Gesamt-Index über alle Ebenen, in EBENEN-Reihenfolge (Bund vor Kanton). */
-export function baueIndex(): Suchindex {
+/** Gesamt-Index über die gewählten Ebenen, in EBENEN-Reihenfolge (Bund vor Kanton).
+ *  Ohne gesetztes `SUCHE_INDEX_EBENEN` sind das ALLE Ebenen — unverändertes Verhalten. */
+export function baueIndex(ebenen: readonly Ebene[] = gewaehlteEbenen()): Suchindex {
   const eintraege: IndexEintrag[] = [];
   const uebersprungen: Uebersprungen[] = [];
-  for (const ebene of EBENEN) {
+  for (const ebene of ebenen) {
     const teil = baueEbenenIndex(ebene);
     eintraege.push(...teil.eintraege);
     uebersprungen.push(...teil.uebersprungen);
   }
-  return { erzeugt: 'generiert', ebenen: EBENEN, eintraege, uebersprungen };
+  // `ebenen` im Artefakt sind die TATSÄCHLICH indexierten — der Client liest daraus,
+  // welche Ebenen er erwarten darf. Eine weggelassene Ebene ist damit im Artefakt
+  // sichtbar und nicht bloss durch Abwesenheit von Einträgen zu erraten (§8).
+  return { erzeugt: 'generiert', ebenen, eintraege, uebersprungen };
 }
 
 // CLI-Logik NICHT unter vitest ausführen — der Test importiert baueIndex
@@ -271,7 +243,19 @@ if (!process.env.VITEST) {
   // Je-Ebene-Zählung für die Ausgabe: der Bericht muss zeigen, dass BEIDE Ebenen
   // im Index sind — eine blosse Gesamtzahl verstiege sich zur Aussage «viel» und
   // verschwiege eine leer gelaufene Ebene (§8).
-  const jeEbene = EBENEN.map((eb) => `${eb} ${index.eintraege.filter((e) => e.eb === eb).length}`).join(' · ');
+  // Bewusst über ALLE EBENEN, nicht nur über die gewählten: eine weggelassene Ebene
+  // erscheint so als «kanton 0 (WEGGELASSEN)» statt gar nicht — Abwesenheit muss
+  // sichtbar sein, nicht erschliessbar (§8).
+  const jeEbene = EBENEN.map((eb) => {
+    const n = index.eintraege.filter((e) => e.eb === eb).length;
+    return index.ebenen.includes(eb) ? `${eb} ${n}` : `${eb} 0 (WEGGELASSEN)`;
+  }).join(' · ');
+  if (index.ebenen.length < EBENEN.length) {
+    console.log(
+      `gen:suchindex: SUCHE_INDEX_EBENEN ist gesetzt — Index trägt NUR ${index.ebenen.join(', ')}. ` +
+        'Die weggelassenen Ebenen müssen am Edge abgedeckt und in der Oberfläche als fehlend ausgewiesen sein (§8).',
+    );
+  }
   if (istCheck) {
     let alt = '';
     try { alt = readFileSync(ZIEL, 'utf8'); } catch {

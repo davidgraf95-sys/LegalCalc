@@ -1,5 +1,6 @@
 import { Fragment } from 'react';
 import { START_MODULE } from '../lib/startseiteModule';
+import { GruppenKopf } from '../components/ui/GruppenKopf';
 
 // ─── Startseite V3 — reiner Registry-Mapper (FAHRPLAN §4/§5) ────────────────
 //
@@ -13,13 +14,17 @@ import { START_MODULE } from '../lib/startseiteModule';
 // <section aria-labelledby>, Kacheltitel als <h3> — keine Heading-Sprünge.
 // Titellose Module (Hero/Zuletzt/News/Vertrauen) verwalten Titel/Höhe selbst.
 
+// C-2/C-6/C-7-NACHZUG (R2-A, 31.8.2026): das Sektionslabel zeichnete das
+// Gruppenkopf-Rezept (Overline-Überschrift + Haarlinie in einer Flex-Zeile)
+// selbst nach — die letzte Kopie ausserhalb des geteilten Bausteins. Sie wird
+// GELÖSCHT, nicht angeglichen (§5/§10).
+// SICHTBARE FOLGE, bewusst: die Sektionslabels der Startseite laufen damit auf
+// die Baustein-Farbe `text-brass-700` (vorher die `.lc-overline`-Grundfarbe
+// ink-600). Das ist die Vereinheitlichung selbst — alle ~20 anderen
+// Gruppenköpfe der App tragen sie bereits; eine Ausnahme «nur auf der
+// Startseite» wäre genau die Streuung, die dieses Paket abbaut.
 function Seclabel({ id, children }: { id: string; children: React.ReactNode }) {
-  return (
-    <div className="flex items-center gap-3 mb-3">
-      <h2 id={id} className="lc-overline">{children}</h2>
-      <span aria-hidden className="flex-1 h-px bg-line" />
-    </div>
-  );
+  return <GruppenKopf stufe={2} id={id} titel={children} className="mb-3" />;
 }
 
 export function Startseite() {

@@ -33,6 +33,14 @@ import { createPortal } from 'react-dom';
 // (Minimalismus-Vorgabe David 28.7.2026, «Optik des Gesetzes nicht überladen»).
 // EINE Zahl für die Rolle (§5) — wer sie ändert, ändert sie an beiden Orten.
 //
+// F2-1 (31.8.2026): Farbe und Deckung stehen seither NICHT mehr hier, sondern
+// als `.lc-scrim` bei den Tokens in `src/index.css` — die Regel «black, nicht
+// ink-900» und «30 % ist die Zahl DER ROLLE» galt für sechs Fundstellen und war
+// an dreien noch falsch gebaut. Die Herleitung oben bleibt, wo sie entstanden
+// ist (§2b); der WERT wohnt jetzt an einer Stelle. Position, z-Ebene und der
+// Klick-Handler bleiben hier: sie sind die Anatomie DIESES Scrims, nicht die
+// der Rolle.
+//
 // ── WARUM PORTAL UND WARUM `z-[16]` ─────────────────────────────────────────
 // Am `<body>`, nicht im Kopf-Teilbaum, und UNTER dem klebenden Kopf (dessen
 // `z-[17]`, Herleitung der rohen Zahl in `LeserKopf.tsx`): so tritt der
@@ -54,7 +62,7 @@ export function LeserScrim({ onSchliessen }: { onSchliessen: () => void }) {
   return createPortal(
     <div
       data-v3-ansicht-scrim
-      className="fixed inset-0 z-[16] bg-black/30"
+      className="lc-scrim fixed inset-0 z-[16]"
       onClick={onSchliessen}
       aria-hidden
     />,

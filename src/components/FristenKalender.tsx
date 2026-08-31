@@ -192,7 +192,13 @@ export function FristenKalender({ ereignisISO, aQuoISO, adQuemISO, kanton, still
                     // anzutasten.
                     let marker = frei ? (band === 'frist' ? 'text-ink-600' : 'text-ink-500') : 'text-ink-700';
                     let title = frei ? 'arbeitsfrei (Sa/So/Feiertag)' : '';
-                    if (isAdQuem) { marker = 'bg-sage-500 text-paper font-semibold rounded-full lc-termin-ring'; title = L.adquem; }
+                    // A3-6 (R3-α, 31.8.2026): DOPPEL-FAMILIE aufgelöst. Die Zelle mischte
+                      // zwei Farbfamilien für EINE Aussage: die Füllung kam aus der
+                      // Materialien-Kennfarbe `sage-500`, der Ring darüber aus der
+                      // Zustands-Rolle (`.lc-termin-ring` → `--ok-solid`). Beide sind
+                      // wertidentisch, aber nur eine ist hier gemeint: der ad-quem-Tag
+                      // ist ein ZUSTAND («Frist endet»), kein Werkstoff.
+                    if (isAdQuem) { marker = 'bg-ok-solid text-paper font-semibold rounded-full lc-termin-ring'; title = L.adquem; }
                     else if (isAQuo) { marker = 'bg-brass-500 text-ink-900 font-semibold rounded-full'; title = L.aquo; }
                     else if (isEreignis) { marker = 'border-2 border-ink-900 text-ink-900 font-semibold rounded-full bg-paper-raised'; title = L.ereignis; }
                     else if (band === 'still') { marker = 'text-warn-700'; title = 'Gerichtsstillstand'; }
@@ -234,7 +240,7 @@ export function FristenKalender({ ereignisISO, aQuoISO, adQuemISO, kanton, still
         <span className="lc-overline">Legende</span>
         {ereignisISO !== aQuoISO && <Legende kreis="border-2 border-ink-900 bg-paper-raised" label={L.ereignis} />}
         {aQuoISO && <Legende kreis="bg-brass-500" label={L.aquo} />}
-        <Legende kreis="bg-sage-500 lc-termin-ring" label={L.adquem} />
+        <Legende kreis="bg-ok-solid lc-termin-ring" label={L.adquem} />
         <span aria-hidden className="hidden sm:inline-block h-4 w-px bg-line" />
         <Legende band="bg-brass-100" label={L.band ?? 'laufende Frist'} />
         {stillstandSichtbar && <Legende band="lc-hatch-warn" label="Gerichtsstillstand" />}

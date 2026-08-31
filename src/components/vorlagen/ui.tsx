@@ -2,14 +2,20 @@ import { cloneElement, createContext, isValidElement, useContext, useEffect, use
 import { fedlexLinkFuerArtikel } from '../../lib/fedlex';
 import { NormText } from '../NormText';
 import { usePaneKontext } from '../layout/PaneKontext';
+import { useKopieren } from '../useKopieren';
 import { NormChip } from './NormChip';
+import { GruppenKopf } from '../ui/GruppenKopf';
 
 // Geteilte UI-Bausteine der Vorlagen-Wizards (Testament, Patientenverfügung, …).
 
 export const inputCls = 'lc-input';
 
 export function Field({ label, children, hint, optional }: {
-  label: string; children: React.ReactNode; hint?: string; optional?: boolean;
+  /** Beschriftung. `ReactNode` (R2-E/F1-2), weil einzelne Felder dem Namen eine
+   *  leise Präzisierung nachstellen («Zugang Kündigung (Stichtag B/C)») — die
+   *  gehörte bis dahin zu den Gründen, warum ein Formular am Baustein
+   *  vorbeibaute. Der Normalfall bleibt ein String. */
+  label: React.ReactNode; children: React.ReactNode; hint?: string; optional?: boolean;
 }) {
   // Label↔Control-Verknüpfung (FAHRPLAN-DESIGN 3.6): native Einzel-Controls
   // (input/select/textarea) bekommen automatisch id + htmlFor; zusammengesetzte
@@ -65,17 +71,109 @@ export function Checkbox({ checked, onChange, label, hint, disabled, name, class
   );
 }
 
+/** Listen-Editor («Repeater») — EIN Baustein für jede wiederholbare Zeile
+ *  (Begehren, Kinder, Beilagen, Sperrereignisse, Gründer:innen …).
+ *
+ *  ANLASS (Design-Konsistenz R2-F/F1-9, 31.8.2026): gemessen waren 43
+ *  Hinzufügen-Knöpfe in 20 Dateien — in DREI Optiken (`lc-btn-outline
+ *  lc-btn-sm`, nacktes `lc-btn-outline`, ein handgebautes `px-3 py-1.5
+ *  bg-surface hover:bg-brass-100 rounded-lg` in SperrereignisseEditor), in
+ *  ZWEI Beschriftungsgrammatiken («+ Begehren» 19× vs. «+ Begehren
+ *  hinzufügen» 24×) und mit vier Entfernen-Formen («Entfernen» gross,
+ *  «entfernen» klein, `lc-btn-ghost lc-btn-sm` mit aria-label,
+ *  `text-ink-500 hover:text-danger-700`). Die Einträge sassen mal in
+ *  `lc-panel`, mal in einem handgebauten `border border-line rounded-md`,
+ *  mal in gar keinem Behälter.
+ *
+ *  KANON (Mehrheitsform, §5/§10):
+ *  - Behälter je Eintrag: `lc-panel p-3` — dieselbe Fläche wie in
+ *    VerzugszinsForm/SperrereignisseEditor, die sie schon trugen.
+ *  - Kopfzeile je Eintrag: Overline «<Element> N», rechts der Entfernen-Link.
+ *  - Entfernen: roter Text-Link, klein, Wortlaut «entfernen» (20:9 gegen
+ *    «Entfernen»); dazu ein sprechendes `aria-label`, weil zwanzig gleich
+ *    beschriftete Links sonst in der Vorlesereihenfolge nicht unterscheidbar
+ *    sind.
+ *  - Hinzufügen: `lc-btn-outline lc-btn-sm`, Beschriftung «+ <Element>» ohne
+ *    «hinzufügen» — das Pluszeichen sagt die Handlung bereits, das Wort
+ *    verdoppelt sie nur (und bricht auf schmalen Panes in die zweite Zeile).
+ *
+ *  Reine Darstellung (§3): der Zustand — und damit jede fachliche Regel über
+ *  Mindest-/Höchstzahl von Einträgen — bleibt beim aufrufenden Formular; der
+ *  Baustein bekommt sie nur als Zahl (`mindestens`/`hoechstens`) gereicht. */
+export function ListenEditor<T>({
+  element, eintraege, onHinzufuegen, onEntfernen, kinder,
+  kopf, leer, mindestens = 0, hoechstens, weitere, schluessel, className = 'space-y-3',
+}: {
+  /** Singular-Name eines Eintrags («Begehren», «Kind», «Ereignis»). Trägt die
+   *  Knopf-Beschriftung, die Vorgabe-Kopfzeile und das Entfernen-aria-label. */
+  element: string;
+  eintraege: readonly T[];
+  onHinzufuegen: () => void;
+  onEntfernen: (index: number) => void;
+  /** Inhalt eines Eintrags (Felder). Der Behälter kommt vom Baustein. */
+  kinder: (eintrag: T, index: number) => React.ReactNode;
+  /** Ersetzt die Vorgabe-Kopfzeile «<Element> N»; `null` lässt sie weg. */
+  kopf?: ((eintrag: T, index: number) => React.ReactNode) | null;
+  /** Satz für die leere Liste (sonst steht dort nichts). */
+  leer?: React.ReactNode;
+  /** Bis zu dieser Anzahl wird kein «entfernen» angeboten (z. B. ein
+   *  Rechtsbegehren muss stehen bleiben). */
+  mindestens?: number;
+  /** Ab dieser Anzahl verschwindet der Hinzufügen-Knopf. */
+  hoechstens?: number;
+  /** Weitere Hinzufügen-Knöpfe DERSELBEN Liste (VerzugszinsForm:
+   *  «+ Teilzahlung» und «+ Satzänderung» füllen eine Ereignis-Liste). */
+  weitere?: readonly { element: string; onHinzufuegen: () => void }[];
+  /** React-Schlüssel je Eintrag; Vorgabe ist der Index. */
+  schluessel?: (eintrag: T, index: number) => React.Key;
+  className?: string;
+}) {
+  const zeigeEntfernen = eintraege.length > mindestens;
+  const entfernenKnopf = (i: number, extra = '') => (
+    <button type="button" onClick={() => onEntfernen(i)}
+      aria-label={`${element} ${i + 1} entfernen`}
+      className={`text-body-s text-danger-700 hover:underline${extra}`}>entfernen</button>
+  );
+  return (
+    <div className={className}>
+      {eintraege.length === 0 && leer && <p className="text-body-s text-ink-500">{leer}</p>}
+      {eintraege.map((e, i) => (
+        <div key={schluessel ? schluessel(e, i) : i} className="lc-panel p-3 space-y-2">
+          {kopf !== null && (
+            <div className="flex items-baseline justify-between gap-3">
+              <p className="lc-overline text-brass-700 min-w-0">{kopf ? kopf(e, i) : `${element} ${i + 1}`}</p>
+              {zeigeEntfernen && entfernenKnopf(i, ' shrink-0')}
+            </div>
+          )}
+          {kinder(e, i)}
+          {kopf === null && zeigeEntfernen && entfernenKnopf(i)}
+        </div>
+      ))}
+      {(hoechstens === undefined || eintraege.length < hoechstens) && (
+        <div className="flex flex-wrap gap-2">
+          <button type="button" onClick={onHinzufuegen} className="lc-btn-outline lc-btn-sm">{`+ ${element}`}</button>
+          {weitere?.map((w) => (
+            <button key={w.element} type="button" onClick={w.onHinzufuegen} className="lc-btn-outline lc-btn-sm">{`+ ${w.element}`}</button>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
+
 /** Sektions-Kopf innerhalb eines Wizard-Schritts (Redesign, Entscheid David):
  *  Overline (Messing) + Haarlinie — gleiche Anatomie wie die Abschnitts-Köpfe
  *  der Rechner/des Katalogs, damit lange Schritte in lesbare Sektionen
- *  zerfallen. Ersetzt das zuvor leise <p className="lc-overline">-Muster. */
+ *  zerfallen. Ersetzt das zuvor leise <p className="lc-overline">-Muster.
+ *
+ *  B3-1 (R3-β, 31.8.2026): «gleiche Anatomie wie …» war bis hierher eine
+ *  zeichengleiche KOPIE der Anatomie von `ui/GruppenKopf` — ohne dessen
+ *  Zähler-Kanon und ohne die Wächter, die dort hängen. Jetzt ein dünner Aufruf
+ *  (§5/§10). Das `<p>` statt einer Überschrift bleibt: der Wizard-Schritt
+ *  trägt seine Überschrift schon, diese Sektionen sollen im Dokument-Outline
+ *  nichts eröffnen — genau dafür trägt der Baustein `als="p"`. */
 export function GruppenTitel({ children }: { children: React.ReactNode }) {
-  return (
-    <div className="flex items-center gap-3">
-      <p className="lc-overline text-brass-700">{children}</p>
-      <span aria-hidden className="flex-1 h-px bg-line" />
-    </div>
-  );
+  return <GruppenKopf als="p" titel={children} />;
 }
 
 /** Dünner Wrapper auf NormChip — bewahrt das heutige NormLink-Markup
@@ -193,6 +291,45 @@ export function FehlerBox({ fehler }: { fehler: string[] }) {
       <p className="text-xs font-semibold text-danger-700 uppercase tracking-wide mb-1">Eingabefehler</p>
       {fehler.map((f, i) => <p key={i} className="text-body-s text-danger-700">• <NormText text={f} /></p>)}
     </div>
+  );
+}
+
+/** Kopier-Knopf — EIN Baustein für alle «… in die Zwischenablage»-Knöpfe
+ *  (R2-E/F1-10). Vorher standen drei Bauformen nebeneinander: `lc-btn-outline
+ *  lc-btn-sm` mit «Absatz kopieren» (BegruendungAbsatz), `lc-btn-outline` mit
+ *  «Text kopieren» (ExportLeiste) und `lc-btn-ghost lc-btn-sm` mit dem nackten
+ *  «Kopieren» (ErgebnisAnzeige) — gleiche Handlung, drei Optiken und zwei
+ *  Beschriftungsgrammatiken.
+ *
+ *  Kanon: `lc-btn-outline lc-btn-sm`, Label «<Gegenstand> kopieren», Erfolg
+ *  «Kopiert ✓». `gegenstand` benennt, WAS kopiert wird (Absatz · Text ·
+ *  Ergebnis) — ein Knopf ohne Gegenstand lässt offen, was in der Zwischenablage
+ *  landet.
+ *
+ *  Die Mechanik ist `useKopieren`: «Kopiert ✓» erscheint erst NACH erfolgreichem
+ *  Schreiben (eine verweigerte Clipboard-Berechtigung darf keinen Erfolg
+ *  vortäuschen, §8). Wo der Zustand schon beim Aufrufer liegt (ExportLeiste
+ *  bekommt ihn aus `useVorlage`), werden `kopiert`/`onKopieren` durchgereicht —
+ *  dann steuert der Aufrufer, die Optik bleibt trotzdem die eine. */
+export function KopierButton({
+  text, gegenstand, className = 'lc-btn-outline lc-btn-sm', disabled, kopiert: kopiertExtern, onKopieren,
+}: {
+  text: string;
+  gegenstand: string;
+  className?: string;
+  disabled?: boolean;
+  /** Gesteuerter Modus (nur zusammen mit `onKopieren`). */
+  kopiert?: boolean;
+  onKopieren?: (text: string) => void;
+}) {
+  const eigen = useKopieren(text);
+  const gesteuert = kopiertExtern !== undefined && onKopieren !== undefined;
+  const kopiert = gesteuert ? kopiertExtern : eigen.kopiert;
+  return (
+    <button type="button" disabled={disabled} className={className}
+      onClick={() => (gesteuert ? onKopieren(text) : eigen.kopieren())}>
+      {kopiert ? 'Kopiert ✓' : `${gegenstand} kopieren`}
+    </button>
   );
 }
 

@@ -5,6 +5,7 @@ import type { Abdeckung } from './useUniversalSuche';
 import { suchOptionId } from './suchOptionId';
 import { MEHR_TREFFER_ID } from './trefferAuswahl';
 import { StatusBadge } from '../verzahnung/StatusBadge';
+import { TrefferZeile, TREFFER_ZEILE_RAHMEN } from '../ui/TrefferZeile';
 
 // ─── Trefferpanel der Universal-Suche (geteilt: Header-Dropdown + Hero, §5) ──
 //
@@ -32,7 +33,11 @@ function Marke({ text, ton, redundant }: NonNullable<SuchTreffer['marke']>) {
   return <span className={`${mobil}lc-badge ${cls} shrink-0`}>{text}</span>;
 }
 
-const ZEILE_CLS = 'group/z flex items-center gap-3 px-4 py-2 no-underline transition-colors hover:bg-brass-100/40';
+// C-4 (31.8.2026): die Zeilen-ANATOMIE liegt in `ui/TrefferZeile` — dieselbe wie
+// in den Katalog-Registern. Hier bleibt nur der BEHÄLTER: der Streifen des
+// Panels (dichtere Polsterung, Hover-Fläche). Der Gruppen-Name kommt aus
+// `TREFFER_ZEILE_RAHMEN` (vorher `group/z`), damit der Titel-Hover greift.
+const ZEILE_CLS = `${TREFFER_ZEILE_RAHMEN} px-4 py-2 no-underline transition-colors hover:bg-brass-100/40`;
 
 // Query-Wörter im Snippet/Untertitel deterministisch hervorheben (S3/#56). Rein:
 // Wörter ab 2 Zeichen, regex-escaped, case-insensitiv als <mark> umschlossen.
@@ -56,24 +61,21 @@ function markiere(text: string, q: string): ReactNode {
 
 function ZeileInhalt({ t, sprung, q }: { t: SuchTreffer; sprung?: boolean; q: string }) {
   return (
-    <>
-      <span className="min-w-0 flex-1">
-        {/* S6: mobil zweizeilig statt einzeilig abgeschnitten. Die Labels tragen
-            das unterscheidende Merkmal vorn (Kürzel «OR ·», Zitierung «BGE 148
-            III 57», Behörde+Nummer «ESTV 12 ·»), der Titel folgt — auf 390 px
-            fiel dieser Titel bisher ganz weg, zwei Zeilen bringen ihn zurück.
-            Ab sm bleibt die einzeilige Kappung (Streifen-Höhe, §15.2). */}
-        <span className="block max-sm:line-clamp-2 sm:truncate text-body-s font-medium text-ink-900 transition-colors group-hover/z:text-brass-800">{t.label}</span>
-        {/* Zweizeiliges Snippet mit Highlight (S3/#56) statt einzeiligem Abschnitt. */}
-        {t.untertitel && <span className="line-clamp-2 text-body-s text-ink-500">{markiere(t.untertitel, q)}</span>}
-      </span>
-      {t.marke && <Marke {...t.marke} />}
-      {/* Norm-Sprung (A5): ↵ signalisiert die Primäraktion «Enter springt».
-          Alle anderen Treffer öffnen mit «→». */}
-      <span aria-hidden className={sprung
-        ? 'text-brass-500'
-        : 'text-ink-300 transition-all group-hover/z:translate-x-0.5 group-hover/z:text-brass-500'}>{sprung ? '↵' : '→'}</span>
-    </>
+    // `streifen`: S6 — mobil zweizeilig statt einzeilig abgeschnitten (die Labels
+    // tragen das unterscheidende Merkmal vorn: Kürzel «OR ·», Zitierung «BGE 148
+    // III 57», Behörde+Nummer «ESTV 12 ·»; auf 390 px fiel der Titel sonst ganz
+    // weg). Ab sm bleibt die einzeilige Kappung — die Streifen-Höhe des Panels
+    // ist ein CLS-Versprechen (§15.2); darum trägt der Baustein diesen Fall als
+    // deklarierte Ausnahme, nicht der Katalog seine Kappung.
+    // Norm-Sprung (A5): ↵ signalisiert die Primäraktion «Enter springt».
+    <TrefferZeile
+      streifen
+      titel={t.label}
+      /* Zweizeiliges Snippet mit Highlight (S3/#56) statt einzeiligem Abschnitt. */
+      untertitel={t.untertitel ? markiere(t.untertitel, q) : undefined}
+      marke={t.marke && <Marke {...t.marke} />}
+      pfeil={sprung ? '↵' : '→'}
+    />
   );
 }
 
@@ -167,8 +169,10 @@ function Gruppe({ g, index, onAuswahl, onNavigate, listboxId, aktivId, q, sektio
                 <li role="option" id={oid} aria-selected={oid === aktivId}
                   onClick={() => { onAuswahl?.(); onNavigate?.(g.mehrHref!); }}
                   className={`${ZEILE_CLS} cursor-pointer${oid === aktivId ? ' bg-brass-100/40' : ''}`}>
+                  {/* C-4: derselbe Pfeil wie an jeder Treffer-Zeile (statisch
+                      brass-700) — der Hover läuft über die Streifen-Fläche. */}
                   <span className="min-w-0 flex-1 text-body-s font-medium text-brass-700">alle {g.gesamt} Treffer anzeigen</span>
-                  <span aria-hidden className="text-ink-300 transition-all group-hover/z:translate-x-0.5 group-hover/z:text-brass-500">→</span>
+                  <span aria-hidden className="shrink-0 leading-none text-brass-700">→</span>
                 </li>
               );
             })()}

@@ -89,7 +89,7 @@ export function VorlageKuendigungArbeitgeber() {
 
   const statusKachel = engine && ISO.test(a.zugangKuendigung) && (
     nichtig ? (
-      <div className="lc-tile border-t-[3px] border-t-danger-line">
+      <div className="lc-tile lc-akzent-danger">
         <GruppenTitel>Status</GruppenTitel>
         <p className="text-h2 font-semibold text-danger-700 leading-none">NICHTIG</p>
         <p className="text-body-s text-ink-700 mt-1.5">

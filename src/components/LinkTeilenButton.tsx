@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { planeLiveSync } from '../lib/liveUrlSync';
+import { KOPIER_DAUER_MS } from './useKopieren';
 
 // ─── «Link teilen»-Button — geteilter Baustein (FAHRPLAN-PRAXIS 1.3) ────────
 // Schreibt den kodierten Fall in die URL (replace, keine History-Flut) und
@@ -44,7 +45,7 @@ export function LinkTeilenButton({ query }: {
     navigate({ search: q, hash }, { replace: true });
     try {
       void navigator.clipboard.writeText(`${location.origin}${pathname}${q}${hash}`);
-      setKopiert(true); setTimeout(() => setKopiert(false), 1600);
+      setKopiert(true); setTimeout(() => setKopiert(false), KOPIER_DAUER_MS);
     } catch { /* Clipboard nicht verfügbar */ }
   };
   return (

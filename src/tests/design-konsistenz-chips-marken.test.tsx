@@ -23,6 +23,7 @@ import { describe, it, expect } from 'vitest';
 import { readFileSync } from 'node:fs';
 import { renderToStaticMarkup } from 'react-dom/server';
 import { PanelSachgebiet } from '../pages/gesetz-leser/v3/PanelSachgebiet';
+import { alleTsx, liesOhneKommentare, ohneKommentare, rel } from './appDateien';
 
 const rohLies = (p: string) => readFileSync(new URL(p, import.meta.url), 'utf8');
 const CSS = rohLies('../index.css');
@@ -51,11 +52,37 @@ describe('D-1 — /suche-Facetten tragen die Chip-Familie, die Kopie ist gelösc
     expect(quelle).not.toContain('rounded-full border');
   });
 
+  // RUNDE 2 (31.8.2026, deklarierte Test-Nachführung): B1/D-1 hatte die OPTIK
+  // der Achse vereinheitlicht, die ANATOMIE stand danach immer noch zweimal —
+  // in `Suche.tsx` und als lokale `FacettenGruppe` in `EntscheidFilter.tsx`.
+  // Beide sind jetzt auf `components/ui/FacettenGruppe` gezogen. Der Chip-Kanon
+  // wird darum AM BAUSTEIN geprüft (dort steht er) und an beiden Flächen, dass
+  // sie ihn konsumieren statt ihn nachzubauen. Die Zusicherung wird damit
+  // stärker, nicht schwächer: sie deckt jetzt BEIDE Achsen.
+  const baustein = lies('../components/ui/FacettenGruppe.tsx');
+  const entscheidFilter = lies('../components/rechtsprechung/EntscheidFilter.tsx');
+
   it('die Facetten-Reihe ist eine lc-chip-zeile mit lc-chip/lc-chip-selected', () => {
-    expect(quelle).toContain('lc-chip-zeile');
-    expect(quelle).toContain('lc-chip-selected');
+    expect(baustein).toContain('lc-chip-zeile');
+    expect(baustein).toContain('lc-chip-selected');
     // aria bleibt der Auswahl-Träger (das ✓ lebt im ::before, s. index.css).
-    expect(quelle).toContain('aria-pressed');
+    expect(baustein).toContain('aria-pressed');
+  });
+
+  it('beide Flächen konsumieren den EINEN Baustein und zeichnen keine Chips mehr selbst', () => {
+    for (const [name, q] of [['Suche', quelle], ['EntscheidFilter', entscheidFilter]] as const) {
+      expect(q, `${name}: konsumiert FacettenGruppe`).toContain('<FacettenGruppe');
+      expect(q, `${name}: importiert den Baustein`).toMatch(/import \{ FacettenGruppe \} from '[^']*ui\/FacettenGruppe'/);
+      // `lies()` hat die Kommentare entfernt — was hier noch das AUSWAHL-Signal
+      // der Achse setzt, ist eine echte Klassenkette und damit eine neue Kopie.
+      expect(q, `${name}: kein eigenes Auswahl-Signal`).not.toContain('lc-chip-selected');
+    }
+    // /suche baut überhaupt keinen Chip mehr von Hand; EntscheidFilter trägt
+    // weiterhin `.lc-chip` an den ENTFERNBAREN Aktiv-Filtern — eine andere Sache
+    // als die Facetten-Achse (LM-044/N1, dieselbe Grammatik, anderer Zweck).
+    expect(quelle).not.toContain('lc-chip');
+    // Die lokale Definition ist gelöscht, nicht bloss ungenutzt.
+    expect(entscheidFilter).not.toMatch(/^function FacettenGruppe\(/m);
   });
 
   it('das ✓-Präfix, das die Kopie nicht hatte, kommt jetzt aus dem Kanon', () => {
@@ -127,5 +154,63 @@ describe('D-8 — der Filterzähler ist eine Zählung, kein Status', () => {
 
   it('Kanon der Zählung: nackte Zahl in der num-Stimme', () => {
     expect(quelle).toContain('<span className="num tabular-nums text-ink-600">{anzahl}</span>');
+  });
+});
+
+describe('D-5 — «geplant» trägt EINE Marke (Entscheid David 31.8.2026: Umriss slate)', () => {
+  // R3-α-WURZEL (31.8.2026, §17/§6.7): hier stand eine Liste von fünf Dateien.
+  // Sie hat die fünf bewacht und die App nicht — genau die Bauart, die B3-8
+  // durchgelassen hat (`RechnerStub` trug «In Vorbereitung» ohne die Marke).
+  // Der Sweep geht über alle `.tsx`; die Liste ist gestrichen, nicht ergänzt.
+  it('kein Vorbereitungs-/Bearbeitungs-Status mehr in soft- oder warn-Ton (App-weit)', () => {
+    const suender: string[] = [];
+    for (const d of alleTsx()) {
+      // Kommentare zählen nicht: sie benennen den Alt-Ton legitim als Beleg (§2b).
+      for (const zeile of liesOhneKommentare(d).split('\n')) {
+        if (/(Vorbereitung|Bearbeitung)/.test(zeile) && /lc-badge-(soft|warn)/.test(zeile)) suender.push(rel(d));
+      }
+    }
+    expect(suender, 'Status «geplant» in Alt-Ton statt lc-badge-geplant').toEqual([]);
+  });
+
+  it('die Marke ist genau einmal definiert (index.css) und App-weit kanonisch beschriftet', () => {
+    const css = readFileSync('src/index.css', 'utf8');
+    expect(css.match(/\.lc-badge-geplant\s*\{/g)?.length).toBe(1);
+    const falschBeschriftet = alleTsx()
+      .filter((d) => { const q = liesOhneKommentare(d); return q.includes('lc-badge-geplant') && !q.includes('In Vorbereitung'); })
+      .map(rel);
+    expect(falschBeschriftet, 'lc-badge-geplant ohne den Kanon-Wortlaut «In Vorbereitung»').toEqual([]);
+  });
+
+  it('NEGATIV-KONTROLLE: der Sweep sieht die Marke überhaupt', () => {
+    expect(alleTsx().filter((d) => liesOhneKommentare(d).includes('lc-badge-geplant')).length)
+      .toBeGreaterThanOrEqual(3);
+  });
+});
+
+// ─── R3-α · D-1/D-2 App-weit: die Chip-Anatomie liegt genau einmal ──────────
+//
+// Die D-1/D-2-Sonden oben prüfen VIER namentlich genannte Dateien. Das war der
+// Stand nach dem Bau; als Wächter deckt es die App nicht. Diese Sonde stellt
+// die Regel App-weit: das AUSWAHL-SIGNAL der Chip-Familie (`lc-chip-selected`)
+// darf nur dort stehen, wo die Familie zu Hause ist.
+describe('D-1/D-2 (App-weit) — `lc-chip-selected` steht nur an den Chip-Bausteinen', () => {
+  /** Die Flächen, die die Chip-Familie definieren bzw. sie als GANZE tragen. */
+  const HEIMAT = [
+    'components/ui/FacettenGruppe.tsx',
+    'components/verzahnung/BezugFacettenWahl.tsx',
+    'pages/gesetz-leser/v3/PanelSachgebiet.tsx',
+  ];
+
+  it('keine weitere Fläche setzt das Auswahl-Signal selbst', () => {
+    const funde = alleTsx()
+      .filter((d) => !HEIMAT.includes(rel(d)))
+      .filter((d) => liesOhneKommentare(d).includes('lc-chip-selected'))
+      .map(rel);
+    expect(funde, 'eigene Chip-Auswahl statt FacettenGruppe/lc-chip-Familie').toEqual([]);
+  });
+
+  it('NEGATIV-KONTROLLE: der Ausdruck findet die gelöschte Kopie', () => {
+    expect(ohneKommentare(`const AKTIV = 'lc-chip lc-chip-selected';`)).toContain('lc-chip-selected');
   });
 });

@@ -292,16 +292,61 @@
        sondern der normative Wert aus WCAG 2.2, Erfolgskriterium 2.5.8 «Target
        Size (Minimum)», Konformitätsstufe AA (w3.org/TR/WCAG22/#target-size-minimum,
        W3C Recommendation, Stand 5.10.2023). Der Wert steht EINMAL hier; jede
-       Komponente greift ihn als `var(--tap-ziel)`, nie die Zahl (§5/D2). Das
-       Komfort-Ziel für allein stehende Chrome-Griffe bleibt das bestehende
-       `min-h-11`-Muster (44 px, WCAG 2.5.5 AAA) — dort ist die 44 die ANATOMIE
-       des Knopfes (`.lc-btn` height), nicht eine Untergrenze, darum bewusst
-       kein zweites Token (§13/D2: eine Zahl, eine Bedeutung).
+       Komponente greift ihn als `var(--tap-ziel)`, nie die Zahl (§5/D2).
        WCAG-Ausnahmen von 2.5.8, die die Regel NICHT verletzen und die das Tor
        darum nicht misst: Inline-Links im Fliesstext («inline»), Ziele, deren
        Grösse der Browser/UA bestimmt, und Bedienelemente, für die dieselbe
        Funktion daneben gross genug erreichbar ist («equivalent»). */
     --tap-ziel:24px;
+    /* ── KOMFORT-Trefferfläche (W2·19-DESIGN-KONSISTENZ R2/F2-6) ────────────
+       44 px = WCAG 2.2 SC 2.5.5 «Target Size (Enhanced)», Konformitätsstufe AAA
+       (w3.org/TR/WCAG22/#target-size-enhanced, W3C Recommendation 5.10.2023).
+
+       WARUM JETZT DOCH EIN ZWEITES TOKEN (§0.2: Entscheid begründet geändert,
+       nicht still gekippt): bis hierher stand an dieser Stelle «das Komfort-Ziel
+       für allein stehende Chrome-Griffe bleibt das `min-h-11`-Muster … dort ist
+       die 44 die ANATOMIE des Knopfes (`.lc-btn` height), nicht eine
+       Untergrenze, darum bewusst kein zweites Token». Die BEGRÜNDUNG steht
+       unverändert — sie trägt nur den Fall nicht, den F2-6 gefunden hat: die
+       Kopf-Griffe des Lesers V3 (`v3/kopfStufen.kopfGriffKlassen`) setzten auf
+       dem Handy-Zuschnitt `min-h-8 min-w-8`, also eine UNTERGRENZE von 32 px —
+       weder die Anatomie eines `.lc-btn` noch der 24-px-Token, sondern eine
+       dritte, nirgends hergeleitete Zahl. Genau dafür ist ein Token da. Die
+       Anatomie-Fälle (`.lc-btn`-Höhe, `min-h-11` an fertigen Knöpfen) bleiben
+       ausdrücklich, was sie sind — dort ist die 44 kein Mindestmass.
+
+       KONSUMENT: `.lc-leiste-griff-komfort` (unten). Der Wert steht EINMAL
+       hier. */
+    --tap-ziel-komfort:44px;
+    /* ── ABDUNKELNDE FLÄCHE HINTER EINEM OVERLAY (Scrim) · F2-1 ─────────────
+       DREI ROLLEN, DREI DECKUNGEN, EINE FARBE. Die Farbe ist `black` und NICHT
+       `--ink-900`: das Tinten-Token flippt mit dem Thema (hell #201E16, dunkel
+       #E9E7E2), ein `bg-ink-900/30` HELLT im Dunkelmodus also auf, statt
+       abzudunkeln (Herleitung und Messung: `v3/LeserScrim.tsx`, B7-N1;
+       gemessene Leuchtdichte im Lesefeld hell 237.5 → 166.1, dunkel
+       32.7 → 23.0). Vor F2-1 stand dieselbe Zusage in SECHS Fundstellen als
+       Utility-Kette, davon drei mit dem falschen, aufhellenden Token.
+
+       Die Stufung ist ROLLENGEBUNDEN, nicht Geschmack — je grösser die Fläche,
+       die das Overlay einnimmt, desto weiter tritt der Rest zurück:
+         30 %  angeschlagenes Blatt / Menü (Bottom-Sheet, Panel-Blatt,
+               Ansicht-Menü) — 4 Fundstellen
+         40 %  zentrierter modaler Dialog (Tastatur-Hilfe, Norm-Popover im
+               Alt-Pfad) — 2 Fundstellen
+         50 %  Vollflächen-Schublade (`layout/Shell`) — 1 Fundstelle
+       Wer eine Zahl ändert, ändert sie für die ganze ROLLE (§5). Wächter gegen
+       neue Ad-hoc-Scrims: `scripts/check-design-tokens.ts` (Prüfung 5). */
+    --scrim:rgb(0 0 0 / .30);
+    --scrim-dialog:rgb(0 0 0 / .40);
+    --scrim-voll:rgb(0 0 0 / .50);
+    /* Anschlagshöhe der von unten angeschlagenen Blätter (F2-2): die Oberkante
+       liegt knapp unter der klebenden Kopf-Zone — Topbar 4rem + Inhalts-Kopfband
+       2.25rem. Vorher zweimal als `calc(4rem + 2.25rem)` im JSX. Der
+       Gesetz-Leser reicht `SheetRahmen` stattdessen seine GEMESSENE Kopfhöhe
+       `--leser-kopf-h` durch (gesetzt an genau einer Stelle, `.lc-leser` in
+       `gesetz-leser/inhalt.tsx`); rechnerisch ist das derselbe Wert, aber dort
+       eine Messung statt einer Annahme. */
+    --sheet-anschlag:calc(4rem + 2.25rem);
     /* Typografie */
     --tracking-overline:.12em;
     /* Off-Skala-Schriftgrössen, die bewusst nicht aus der Typo-Skala stammen,
@@ -1065,6 +1110,14 @@
   /* Akzent-Oberkante (massgeblich) — EINE Quelle statt 6×
      inline border-t-[3px]; die Bedeutung trägt die Farbe, nicht die Stelle. */
   .lc-akzent-brass { border-top: 3px solid var(--brass-line); }
+  /* Danger-Variante derselben Oberkante (Design-Konsistenz R2-F/F1-5,
+     31.8.2026). Sie markiert nicht «massgeblich», sondern «Sperre/kein
+     statthaftes Rechtsmittel» — gemessen waren dafür drei handgebaute
+     `border-t-[3px] border-t-danger-line` (KuendigungSperrForm,
+     StrafZustaendigkeitTeil, VorlageKuendigungArbeitgeber). Die Farbe trägt
+     die Bedeutung, die Anatomie ist dieselbe wie bei Messing; `--danger-line`
+     hält den Kontrast im Dunkelmodus (index.css:461). */
+  .lc-akzent-danger { border-top: 3px solid var(--danger-line); }
 
   /* FristenKalender (Überarbeitung 7.6.2026, Auftrag David) — zwei Rezepte:
 
@@ -1385,6 +1438,48 @@
     background: var(--surface);
   }
 
+  /* ─── Aussen-Anzeige des Inline-Verweises (V-4, W2·20-VERWEIS-SCHAERFE) ────
+     «wenn es ausserhalb ist, dass es das anzeigt» (Auftrag David 31.8.2026). Im
+     Lesetext trugen der Sprung IM gelesenen Erlass und der Verweis in einen
+     ANDEREN Erlass bis hierher dieselbe Ruhe-Optik; der Unterschied zeigte sich
+     erst nach dem Klick (Messbericht 31.8.2026, Kernbefund 4). Der Fremd-Verweis
+     behält die gepunktete Linie (`VERWEIS_INLINE_CLASS`) und bekommt das ↗
+     nachgestellt — dasselbe Zeichen, das «amtliche Quelle ↗» und der
+     NormPopover-Fuss schon führen (kein neues Farbwort, kein zweites Icon).
+
+     WARUM PSEUDO-ELEMENT statt Textknoten — Vorbild `.lc-chip-selected::before`:
+      · §1 Wortlaut: eine kopierte Bestimmung darf kein ↗ in die Rechtsschrift
+        tragen; Pseudo-Inhalt landet nicht in der Zwischenablage.
+      · F2: das Signal ist eine FORM, keine Farbe (die Farb-Rechnung an
+        VERWEIS_INLINE_CLASS zeigt, dass ein Verweis-Farbton die Doppelschranke
+        G183 + SC 1.4.3 gar nicht halten kann).
+     Farbe = currentColor (erbt Hover/Fokus/Theme, hell wie dunkel, F7); em-Masse
+     statt Pixel, weil der Verweis in jeder Lese-Textgrösse steht (A−/A+). Die
+     gepunktete Linie läuft unter dem Zeichen weiter — Verweis und Zeichen sind
+     EINE Marke, nicht zwei. */
+  .lc-verweis-aussen::after {
+    content: '↗';
+    /* KEIN inline-block — gemessen 31.8.2026 im GEBAUTEN Stand (chromium,
+       vite preview 4186, BS-111.100 § 143): als `inline-block` bekam das
+       Pseudo-Element im Lesetext die Breite 0
+       (`getComputedStyle(a,'::after').width === '0px'`, unabhängig von Schrift
+       und Inhalt — auch ein 'X' blieb 0), und Chrome malte den Glyph rund 32 px
+       LINKS vom eigenen Kasten: der Pfeil stand VOR dem Verweis
+       («gemäss↗§ 6 IRG»). Mit `inline` misst derselbe Kasten `auto` und das
+       Zeichen steht, wo es hingehört. Der Fund kam aus dem Screenshot-Beweis,
+       nicht aus dem Unit-Test — ein DOM-Wächter hätte ihn nicht gesehen.
+       Die SCHRIFT ist gesetzt, nicht geerbt: die Lese-Serife «Source Serif 4»
+       führt U+2197 nicht, der Ersatz käme je nach System aus einer beliebigen
+       Fallback-Schrift (bis zum Tofu-Kasten). Vorbild `.lc-amp` — ein Zeichen
+       aus der Sans mitten im Serifentext ist das Hausmittel, kein Sonderweg. */
+    font-family: var(--font-sans), system-ui, sans-serif;
+    display: inline;
+    margin-left: .12em;
+    font-size: .78em;
+    line-height: 1;
+    vertical-align: .28em;
+  }
+
   /* ─── Die scrollbare Instanz-Linie (W2·7-BEZUG/B7, David 28.7.2026) ────────
      «je eine linie für jede instanz und alle sichtbar» — eine Klasse, eine
      Linie, waagrecht durchscrollbar.
@@ -1433,6 +1528,85 @@
   .lc-bezug-linie::-webkit-scrollbar-track { background: transparent; }
   .lc-bezug-linie::-webkit-scrollbar-thumb { background: var(--line); border-radius: 2px; }
 
+  /* ─── `lc-scrollrand-x|y` · Scroll-Affordanz für JEDEN Scroller (B8, 31.8.2026) ─
+     LM-063 (Tab-/Phasen-Leisten schneiden das letzte Fach ab, kein Hinweis) und
+     LM-064 (der Gliederungs-Scroller schneidet die letzte Zeile durch, ohne
+     Rahmen, ohne Zeichen) sind DERSELBE Defekt in zwei Achsen. Gemessen am
+     gebauten Stand 31.8.2026: `/rechner/schkg-fristen` @720 → 604 px sichtbar
+     bei 1'193 px Inhalt (589 px verborgen); `/gesetze/bund/OR` @1440 → der
+     `[data-toc]`-Scroller 728 px sichtbar bei 1'061 px Inhalt, genau eine Zeile
+     vom Rand durchgeschnitten, `border-bottom: 0`, `mask-image: none`.
+
+     WARUM DIESE TECHNIK und nicht der statische Verlauf aus D10: der statische
+     Verlauf behauptet «hier geht es weiter» AUCH am Ende der Strecke (§8) — die
+     Notiz zu LM-061 (30.8.2026) nennt genau das als Grund, ihn nicht ein
+     viertes Mal zu kopieren. Hier deckt das `local`-Paar den Schatten ab,
+     solange man an der jeweiligen Kante steht, und gibt ihn frei, sobald dort
+     wirklich noch Inhalt liegt: die Affordanz KENNT den Scrollstand — ohne
+     JavaScript, ohne Listener, ohne Re-Render (§2/§15).
+
+     WARUM ALS GETEILTE KLASSE und nicht je Bauteil: dieselbe Sorge an vier
+     Scrollern (`ui/Tabs.tsx`, `SachgebietKacheln`, Panel-Reiterleiste,
+     Gliederungs-Scroller) wären vier Kopien, die beim ersten Nachjustieren
+     auseinanderlaufen (§5/§10). Die Anatomie ist wortgleich die der
+     `.lc-bezug-linie` darüber — deren Fassung bleibt unangetastet, weil sie
+     zusätzlich einen sichtbaren dünnen Balken führt (Entscheid David 28.7.2026).
+
+     `--lc-scrollrand-grund` ist der DECKEL-Ton: er muss der Fläche entsprechen,
+     auf der der Scroller sitzt, sonst deckt er mit der falschen Farbe ab.
+     Vorgabe `--paper`; Scroller auf Karten-/Panel-Grund setzen die Variable um
+     (`lc-scrollrand-grund-surface` / `-raised`). Nur `background-image`/-size/
+     -position, nie die `background`-Kurzform: sonst löschte die Klasse die
+     Tailwind-Fläche (`bg-surface`) mit. */
+  .lc-scrollrand-x,
+  .lc-scrollrand-y { --lc-scrollrand-grund: var(--paper); }
+  .lc-scrollrand-grund-surface { --lc-scrollrand-grund: var(--surface); }
+  .lc-scrollrand-grund-raised { --lc-scrollrand-grund: var(--paper-raised); }
+
+  .lc-scrollrand-x {
+    background-image:
+      linear-gradient(to right, var(--lc-scrollrand-grund) 40%, transparent),
+      linear-gradient(to left, var(--lc-scrollrand-grund) 40%, transparent),
+      radial-gradient(farthest-side at 0 50%, rgb(0 0 0 / .22), transparent),
+      radial-gradient(farthest-side at 100% 50%, rgb(0 0 0 / .22), transparent);
+    background-position: left center, right center, left center, right center;
+    background-size: 26px 100%, 26px 100%, 18px 100%, 18px 100%;
+    background-repeat: no-repeat;
+    background-attachment: local, local, scroll, scroll;
+  }
+  .lc-scrollrand-y {
+    background-image:
+      linear-gradient(to bottom, var(--lc-scrollrand-grund) 40%, transparent),
+      linear-gradient(to top, var(--lc-scrollrand-grund) 40%, transparent),
+      radial-gradient(farthest-side at 50% 0, rgb(0 0 0 / .22), transparent),
+      radial-gradient(farthest-side at 50% 100%, rgb(0 0 0 / .22), transparent);
+    background-position: center top, center bottom, center top, center bottom;
+    background-size: 100% 22px, 100% 22px, 100% 14px, 100% 14px;
+    background-repeat: no-repeat;
+    background-attachment: local, local, scroll, scroll;
+  }
+  /* Dunkel: derselbe Ort, umgekehrte Tinte — ein schwarzer Schatten ist auf
+     dunklem Papier unsichtbar, und genau dort wirkte der Schnitt laut Befund
+     wie ein Darstellungsfehler. */
+  html.dark .lc-scrollrand-x {
+    background-image:
+      linear-gradient(to right, var(--lc-scrollrand-grund) 40%, transparent),
+      linear-gradient(to left, var(--lc-scrollrand-grund) 40%, transparent),
+      radial-gradient(farthest-side at 0 50%, rgb(255 255 255 / .20), transparent),
+      radial-gradient(farthest-side at 100% 50%, rgb(255 255 255 / .20), transparent);
+  }
+  html.dark .lc-scrollrand-y {
+    background-image:
+      linear-gradient(to bottom, var(--lc-scrollrand-grund) 40%, transparent),
+      linear-gradient(to top, var(--lc-scrollrand-grund) 40%, transparent),
+      radial-gradient(farthest-side at 50% 0, rgb(255 255 255 / .20), transparent),
+      radial-gradient(farthest-side at 50% 100%, rgb(255 255 255 / .20), transparent);
+  }
+  /* Im Ausdruck gibt es kein Scrollen — ein Schatten wäre dort ein Fleck. */
+  @media print {
+    .lc-scrollrand-x, .lc-scrollrand-y { background-image: none; }
+  }
+
   /* ─── Griffe der Leser-Werkzeugleiste (W2·7-BEZUG/B6, Auftrag David 28.7.2026) ──
      EINE Anatomie für ALLE Bedien-Elemente der Leiste «Gesetze › Bund › ZGB ·
      Art. 212 · Im Gesetz suchen … · Rechtsprechung ▾ · Ansicht ▾ · Stand · ✕».
@@ -1463,10 +1637,61 @@
   .lc-leiste-griff:hover { background: var(--well); color: var(--brass-700); }
   .lc-leiste-griff-fest { background: var(--well); color: var(--ink-700); padding: 0 6px; }
   .lc-leiste-griff-fest:hover { background: var(--surface); color: var(--brass-700); }
+  /* KOMFORT-Stufe des Griffs (F2-6): auf dem Handy-Zuschnitt, wo der Finger das
+     einzige Werkzeug ist, hebt sie die Untergrenze vom WCAG-2.5.8-Minimum
+     (`--tap-ziel`, 24 px) auf das AAA-Komfortmass `--tap-ziel-komfort` (44 px).
+     Vorher standen dafür `min-h-8 min-w-8` im Klassen-String von
+     `v3/kopfStufen.kopfGriffKlassen` — 32 px, eine dritte Zahl neben Token und
+     Knopf-Anatomie. Als eigene KLASSE und nicht als
+     `min-h-[var(--tap-ziel-komfort)]`-Utility, damit (a) der Wert bei seinem
+     Token bleibt und (b) das a11y-Tor die Komfort-Griffe an einem stabilen
+     Selektor findet. Passt in die 48 px hohe Kopfzeile des Zuschnitts. */
+  .lc-leiste-griff-komfort {
+    min-height: var(--tap-ziel-komfort);
+    min-width: var(--tap-ziel-komfort);
+  }
   /* Senkrechte Rand-SCHIENE des Lesers V3 (H3-Nachzug C5b): der schmale,
      senkrecht beschriftete Öffner, wenn die Gliederung eingeklappt ist. Bis zum
      Nachzug stand die Wertekette als 13 Utilities im JSX — Design-Werte gehören
      zu den anderen `lc-leiste-*`-Klassen (§13), nicht in eine Layout-Datei. */
+  /* ─── Schliess-✕ (A3-1, R3-β 31.8.2026) ──────────────────────────────────
+     Anatomie des EINEN Schliess-Knopfes (`components/ui/SchliessKnopf.tsx`,
+     dort die Messreihe der sieben Fundstellen und die Kanon-Wahl). Hier steht
+     nur, was CSS besser kann als ein Klassen-String: die TREFFERFLÄCHE.
+
+     Gemessen waren sichtbare Boxen von 24 px (Leisten-Griff im Inhaltskopf)
+     bis 44 px; drei der sieben lagen unter dem AAA-Komfortmass (WCAG 2.5.5).
+     Die Boxen anzugleichen ginge nicht ohne Schaden — 44 px sprengen die
+     Reiter-Zeile. Also wächst die FLÄCHE, nicht die Optik: ein zentriertes,
+     unsichtbares `::after` hebt die Untergrenze auf `--tap-ziel-komfort`,
+     ohne einen Pixel am Bild zu ändern (`width/height: 100%` hält es an
+     grösseren Knöpfen deckungsgleich mit der sichtbaren Box).
+
+     Der Wert kommt aus dem Token, nie als Zahl (F9, tap-ziel-token.test.ts) —
+     und als KLASSE statt als `after:min-w-[…]`-Utility, aus demselben Grund
+     wie bei `.lc-leiste-griff-komfort`: der Wert bleibt bei seinem Token, und
+     die Wächter finden die Flächen an einem stabilen Selektor.
+
+     WARUM ZWEI KLASSEN (und nicht eine): die vergrösserte Fläche liegt als
+     positioniertes Pseudo-Element ÜBER allem, was sie überlappt — sie nimmt
+     dem Nachbarn also dessen Klicks. Wo das ✕ frei steht (Schubladen-Kopf,
+     Popover-Kopf, Panel-Kopf: links davon nur Text), ist das folgenlos und
+     der Zugewinn echt. In einer DICHTEN Griff-Zeile (Reiter-Liste ⧉ ✕,
+     Inhaltskopf-Leiste) läge sie über den unmittelbaren Nachbarknöpfen bzw.
+     über den Zeilen darüber und darunter — dort wäre die Komfort-Fläche ein
+     Bedienfehler, kein Gewinn. Darum trägt sie der Aufrufer bewusst (Prop
+     `komfort`, Default an; die zwei Ausnahmen sind am Fundort begründet und
+     im Wächter aufgeführt). WCAG 2.5.8 (AA, 24 px) hält die Grundklasse in
+     jedem Fall. */
+  .lc-schliessknopf {
+    @apply relative inline-flex shrink-0 items-center justify-center rounded-md transition-colors;
+    min-height: var(--tap-ziel); min-width: var(--tap-ziel);
+  }
+  .lc-schliessknopf-komfort::after {
+    content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+    width: 100%; height: 100%;
+    min-width: var(--tap-ziel-komfort); min-height: var(--tap-ziel-komfort);
+  }
   .lc-leiste-schiene {
     @apply flex min-h-11 w-9 flex-col items-center gap-2 rounded-md border border-line py-3 text-micro text-ink-600 transition-colors;
   }
@@ -1487,6 +1712,17 @@
   .lc-glass {
     background: var(--paper);
   }
+  /* ── Scrim: die abdunkelnde Fläche hinter einem Overlay (F2-1) ─────────────
+     Nur die FARBE/DECKUNG, bewusst NICHT Position, z-Index und
+     `pointer-events`: wo der Scrim liegt und in welcher Ebene, entscheidet die
+     Overlay-Anatomie des Aufrufers (`fixed` in der Einzelansicht, `absolute` in
+     der Overlay-Schicht eines Panes; z-[16] unter dem klebenden Leser-Kopf,
+     z-40 unter einem Blatt). Eine Klasse, die das mitbrächte, wäre an genau
+     einer der sieben Fundstellen richtig. Rollen und Herleitung der drei
+     Deckungen: bei den Tokens oben. */
+  .lc-scrim { background-color: var(--scrim); }
+  .lc-scrim-dialog { background-color: var(--scrim-dialog); }
+  .lc-scrim-voll { background-color: var(--scrim-voll); }
   .lc-badge {
     @apply inline-flex items-center rounded-full;
     font-size: .75rem; font-weight: 500; padding: 2px 10px;
@@ -1502,6 +1738,18 @@
   .lc-badge-entwurf {
     @apply lc-badge bg-transparent text-warn-700;
     border: 1px solid color-mix(in oklab, var(--warn-500) var(--status-outline), transparent);
+  }
+  /* «geplant» (Status-Modell §8) — Entscheid David 31.8.2026 (W2·19/D-5,
+     wörtlich «bau deinen vorschlag (umriss grau)»): Umriss-Form wie
+     lc-badge-entwurf, aber in der neutralen slate-Rolle. Beide Alt-Töne
+     (soft-Füllung, warn-Umriss) waren vom Farb-Wörterbuch ausgeschlossen
+     (DESIGN-REGLEMENT-NORMTEXT §Farb-Wörterbuch: slate ≠ «in Vorbereitung»,
+     warn = echter Sach-/Fassungsvorbehalt). Kanonischer Wortlaut:
+     «In Vorbereitung» — Wächter: design-konsistenz-chips-marken. */
+  .lc-badge-geplant {
+    @apply lc-badge bg-transparent;
+    color: var(--slate-700);
+    border: 1px solid color-mix(in oklab, var(--slate-500) var(--status-outline), transparent);
   }
   .lc-badge-danger { @apply bg-danger-bg text-danger-700; }
   .lc-badge-soft { background: var(--slate-bg); color: var(--slate-700); border: 1px solid color-mix(in oklab, var(--slate-500) var(--status-border-soft), transparent); }
@@ -1520,6 +1768,33 @@
      Schatten — dritte Stufe neben lc-card/lc-tile (FAHRPLAN-DESIGN 2.3).
      Padding bewusst beim Verwender (p-3 dichte Zeilen, p-4 Gruppen). */
   .lc-panel { @apply bg-surface border border-line rounded-lg; }
+
+  /* ─── Schwebefläche (A3-2, R3-β 31.8.2026) ────────────────────────────────
+     Die EINE Anatomie für alles, was ÜBER dem Inhalt steht und dorthin
+     zurückverschwindet: Menüs, Auswahl-Blätter, Übersichten, Vorschau-Karten.
+     GEMESSEN waren acht Fundstellen mit derselben Wertekette und drei
+     Abweichungen:
+       bg-paper-raised · border-line · rounded-lg · shadow-lg   5×
+         SprachUmschalter · DatumsFeld · VerlaufUebersicht ·
+         ReiterUebersicht · LeserAnsichtV3 («Ansicht ▾»)
+       dieselbe Kette auf `--paper` statt `--paper-raised`      2×  ← Fehler
+         LeserTrefferBlatt · ArtikelBody-Popover (dieses zudem `rounded-md`)
+       dieselbe Kette in `rounded-xl`                           1×
+         LeserPanel — begründete Abweichung, s. dort (die Zone gibt dem Blatt
+         eine Polsterung; der Radius gehört zur Gestalt der ZONE)
+     `bg-surface-raised` und `bg-paper-raised` sind dabei WERTIDENTISCH
+     (`--surface-raised: var(--paper-raised)`, oben) — die Kette war also
+     dieselbe, nur unter zwei Namen.
+
+     Der Grund für die beiden `--paper`-Fundstellen ist der Fehler selbst:
+     eine schwebende Fläche in der Grundfarbe der Seite hat keine eigene
+     Höhe — der Schatten behauptet eine Ebene, die Fläche dementiert sie.
+     `--paper-raised` ist die eine Stufe darüber (Token-Herleitung oben).
+
+     Position, z-Index und Breite bleiben beim Aufrufer: WO die Fläche liegt,
+     entscheidet ihr Anker, nicht ihre Anatomie (dieselbe Trennung wie beim
+     `.lc-scrim`). */
+  .lc-schwebeflaeche { @apply bg-paper-raised border border-line rounded-lg shadow-lg; }
 
   /* Referenzwerk-Liste: Messing-Gedankenstrich als Marker (FAHRPLAN-DESIGN
      5.5) — für Hinweis-Listen der Vorlagen (Preflight nimmt Browser-Bullets

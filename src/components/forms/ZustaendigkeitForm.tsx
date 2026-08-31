@@ -66,24 +66,24 @@ export function ZustaendigkeitForm({ onRechtswegChange, rechtswegVorwahl, minima
         {/* Rechtsweg */}
         <div className="space-y-2">
           <GruppenTitel>Rechtsweg</GruppenTitel>
-          <div className={pk('grid grid-cols-1 sm:grid-cols-4 gap-2', 'grid grid-cols-1 @3xl/pane:grid-cols-4 gap-2')}>
-            {RECHTSWEGE.map((w) => (
-              <button key={w.code} type="button" disabled={!w.aktiv}
-                aria-pressed={rechtsweg === w.code}
-                onClick={() => w.aktiv && setRechtsweg(w.code)}
-                title={w.aktiv ? undefined : 'In Vorbereitung — eigene Engine folgt'}
-                className={`text-left p-3 rounded-lg border transition-colors ${
-                  rechtsweg === w.code ? 'border-brass-500 bg-brass-100/60'
-                  : w.aktiv ? 'border-line bg-surface hover:border-brass-400'
-                  : 'border-line bg-surface opacity-55 cursor-not-allowed'
-                }`}>
-                <span className="block text-body-s font-medium text-ink-900">
-                  {w.label}{!w.aktiv && <span className="lc-badge lc-badge-soft ml-2">in Vorbereitung</span>}
-                </span>
-                <span className="block text-xs text-ink-500 mt-0.5">{w.sub}</span>
-              </button>
-            ))}
-          </div>
+          {/* B3-4 (R3-α, 31.8.2026): diese Reihe war die 13. Kachel-Kopie —
+              und die einzige mit einem echten Grund: sie kennt einen DRITTEN
+              Zustand (Rechtsweg sichtbar, aber ohne Engine → nicht wählbar,
+              §8). Der Grund ist jetzt ein Feld des Bausteins (`disabled` +
+              `titel`); die Kopie ist gelöscht (§5/§10). Die «In
+              Vorbereitung»-Marke bleibt im Label — sie ist die
+              Ehrlichkeits-Aussage, nicht Zierde. */}
+          <SelectionGrid
+            className={pk('grid grid-cols-1 sm:grid-cols-4 gap-2', 'grid grid-cols-1 @3xl/pane:grid-cols-4 gap-2')}
+            gruppenLabel="Rechtsweg"
+            items={RECHTSWEGE.map((w) => ({
+              code: w.code,
+              label: <>{w.label}{!w.aktiv && <span className="lc-badge-geplant ml-2">In Vorbereitung</span>}</>,
+              sub: w.sub,
+              disabled: !w.aktiv,
+              titel: w.aktiv ? undefined : 'In Vorbereitung — eigene Engine folgt',
+            }))}
+            value={rechtsweg} onSelect={setRechtsweg} />
         </div>
         {rechtsweg === 'schkg' ? <SchkgZustaendigkeitTeil /> : rechtsweg === 'straf' ? <StrafZustaendigkeitTeil /> : null}
         </div>

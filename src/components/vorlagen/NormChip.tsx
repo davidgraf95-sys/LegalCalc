@@ -6,6 +6,7 @@ import { bundSnapshotRef } from '../../lib/normtext/bundRef';
 import { ladeSnapshot } from '../../lib/normtext/laden';
 import { ladeStruktur } from '../../lib/normtext/browse';
 import { artikelSachtitel } from '../../lib/normtext/darstellung';
+import { SchliessKnopf } from '../ui/SchliessKnopf';
 import { naechsterFokus } from '../../lib/normtext/fokus';
 import type { NormSnapshot } from '../../lib/normtext/typen';
 import { NormPopover } from '../NormPopover';
@@ -436,7 +437,13 @@ export function NormPopoverOverlay({ children, onClose, triggerRef, modal = true
     <div
       // Verankert: transparenter Klick-Fänger (kein Dim, Popover-Charakter).
       // Zentriert (Altpfad): gedimmter, mittig gestellter Modal-Backdrop.
-      className={verankert ? 'fixed inset-0 z-50' : 'fixed inset-0 z-50 flex items-center justify-center bg-ink-900/40 p-4'}
+      //
+      // F2-1 (31.8.2026): das Dim war `bg-ink-900/40`. `--ink-900` flippt mit dem
+      // Thema (dunkel `#E9E7E2`) — im Dunkelmodus hellte dieser «Scrim» auf,
+      // statt abzudunkeln (Messung/Herleitung: `pages/gesetz-leser/v3/LeserScrim.tsx`,
+      // B7-N1). `.lc-scrim-dialog` ist die Rolle «zentrierter modaler Dialog»
+      // (src/index.css): schwarz statt Tinte, Deckung unverändert 40 %.
+      className={verankert ? 'fixed inset-0 z-50' : 'lc-scrim-dialog fixed inset-0 z-50 flex items-center justify-center p-4'}
       onClick={onClose}
     >
       {/* Klicks im Dialog dürfen nicht zum Backdrop durchschlagen. */}
@@ -472,8 +479,11 @@ export function NormPopoverHuelle({ zustand, url, artikel, alsDialog = true, onC
           <p className="lc-overline text-brass-700">Norm-Vorschau</p>
           <h2 className="text-body-l font-semibold text-ink-900 truncate">{artikel}</h2>
         </div>
-        <button ref={schliessRef} type="button" onClick={onClose} aria-label="Schliessen"
-          className="lc-btn-ghost lc-btn-sm shrink-0 px-2">✕</button>
+        {/* A3-1 (R3-β): EIN Schliess-✕ der App. Diese Fundstelle war die
+            zeichengleiche Kopie der `NormPopover`-Fassung (dieselbe Kopfzeile,
+            derselbe Knopf) — sie mitzuziehen war Pflicht, nicht Kür (§5). */}
+        <SchliessKnopf ref={schliessRef} name="Norm-Vorschau schliessen"
+          onClick={onClose} klasse="-mr-1" />
       </div>
       <div className="px-5 py-4">
         <p className="text-body-s text-ink-700">

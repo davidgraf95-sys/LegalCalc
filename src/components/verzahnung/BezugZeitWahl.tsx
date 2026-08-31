@@ -189,9 +189,29 @@ export function BezugZeitWahl({ bereich, histogramm, onBereich }: {
               );
             })}
           </div>
-          <div className="num tabular-nums flex justify-between pt-0.5 text-micro text-ink-500">
-            <span>{balken[0].jahr}</span>
-            <span>{balken[balken.length - 1].jahr}</span>
+          {/* ── LM-024 (B8, 31.8.2026) · DIE BEDIENBARKEIT STEHT JETZT DA ──────
+              Befund: «sechs Balken ohne Werte, ohne Achsenbeschriftung, ohne
+              Einheit; ob es anklickbar ist, ist nicht erkennbar.» Am gebauten
+              Stand nachgeprüft (OR @1440): Werte je Balken gibt es (`title`
+              «Jahr: N Verknüpfungen»), Einheit und Grundgesamtheit stehen
+              sichtbar im Fusssatz («889 Verknüpfungen in diesem Erlass») — der
+              einzige Teil, der wirklich fehlte, war die BEDIENBARKEIT: sie
+              lebte nur im `aria-label` und im `cursor-ew-resize`, für Sehende
+              also erst NACH dem Hinfahren mit der Maus, auf Touch gar nicht.
+              Der Hinweis kostet keine Zeile: er teilt sich die Achsenzeile mit
+              den beiden Jahreszahlen und wiederholt WORTGLEICH die Formulierung
+              des `aria-label` darüber (§5 — eine Handlung, ein Wortlaut).
+              `num tabular-nums` wandert dabei von der Zeile auf die
+              Jahreszahlen: die Mono-Stimme gehört den Ziffern, nicht dem Satz.
+              NICHT GEBAUT und bewusst nicht: Achsenbeschriftung, Werte am
+              Balken, Legende — das ist Davids Minimalismus-Vorgabe vom
+              28.7.2026 («keine zweite Achse, keine Legende, kein Dashboard»),
+              und sie zu kippen wäre eine Entscheid-Änderung, kein Bugfix
+              (§0.2 des Fahrplans). */}
+          <div className="flex items-baseline justify-between gap-2 pt-0.5 text-micro text-ink-500">
+            <span className="num tabular-nums">{balken[0].jahr}</span>
+            <span className="min-w-0 truncate">Ziehen wählt einen Bereich</span>
+            <span className="num tabular-nums">{balken[balken.length - 1].jahr}</span>
           </div>
         </>
       )}
@@ -234,9 +254,16 @@ export function BezugZeitWahl({ bereich, histogramm, onBereich }: {
   );
 }
 
-/** Ein Datumsfeld mit vorangestelltem Label. Nativ `type="date"` — es bringt
- *  Tastatur-Eingabe, Landes-Format und Kalender mit; ein nachgebautes Feld
- *  brächte dieselbe Funktion mit eigenen Fehlern. */
+/** Ein Datumsfeld mit vorangestelltem Label. Nativ `type="date"`.
+ *
+ *  R2-E/F1-1-AUSNAHME (R3-α, 31.8.2026): Filter, kein fristauslösendes Feld.
+ *  Der frühere Satz hier («es bringt Tastatur-Eingabe, LANDES-FORMAT und
+ *  Kalender mit») ist von F1-1 widerlegt und bleibt als Beleg stehen (§2b):
+ *  gemessen rendert `type="date"` in der Locale des BROWSERS, auf einem
+ *  us-englischen Profil also MM/DD/YYYY. Tragend ist er hier trotzdem nicht:
+ *  die beiden Felder grenzen eine BEZUGS-Liste zeitlich ein — kein Wert läuft
+ *  in eine Frist- oder Verjährungsrechnung, und die Zeile ist mit `text-xs`
+ *  und `py-0.5` zu schmal für das Kalender-Popover des Haus-Felds. */
 function DatumsFeld({ label, wert, titel, onWert }: {
   label: string;
   wert: string;

@@ -40,7 +40,7 @@ export function SprachUmschalter() {
       </button>
 
       {offen && (
-        <div role="group" aria-label="Sprache wählen" className="absolute right-0 top-full mt-1.5 w-56 bg-surface-raised border border-line rounded-lg shadow-lg p-1 z-30">
+        <div role="group" aria-label="Sprache wählen" className="lc-schwebeflaeche absolute right-0 top-full mt-1.5 w-56 p-1 z-30">
           {LOCALES.map((l) => {
             const aktiv = l.code === locale;
             return (
@@ -53,7 +53,7 @@ export function SprachUmschalter() {
                   <span className="num uppercase text-xs mr-2">{l.code}</span>{l.label}
                 </span>
                 {l.inBearbeitung
-                  ? <span className="lc-badge lc-badge-soft shrink-0">in Bearbeitung</span>
+                  ? <span className="lc-badge-geplant shrink-0">In Vorbereitung</span>
                   : aktiv && <span aria-hidden className="text-brass-700">✓</span>}
               </button>
             );

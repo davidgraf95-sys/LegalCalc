@@ -14,6 +14,12 @@ import { formatCHF } from '../lib/verzugszins';
 //     Offenem Verzugszins; Werte identisch mit den Kennzahlen-Karten.
 
 // Farbpalette pro Satz (in Reihenfolge des Auftretens).
+// A3-6-AUSNAHME (R3-α, 31.8.2026): kategoriale Bandfarbe, kein Zustand.
+// Die sechs Werte sind eine KATEGORIALE Reihe (ein Farbfeld je Zinssatz-
+// Abschnitt), in der `--sage-bg` neben brass, slate und warn nur eine
+// unterscheidbare Fläche ist — es wird hier nichts als «ok» ausgesagt. Die
+// Zustands-Rolle `--ok-bg` zeigt auf denselben Wert und wäre darum optisch
+// gleich, semantisch aber eine Behauptung, die das Diagramm nicht macht.
 const SATZ_FARBEN = ['var(--brass-100)', 'var(--brass-300)', 'var(--sage-bg)', 'var(--slate-bg)', 'var(--warn-bg)', 'var(--brass-200)'];
 const GETILGT_FARBE = 'var(--paper-sunken)';
 

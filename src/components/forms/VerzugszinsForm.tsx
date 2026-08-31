@@ -1,4 +1,4 @@
-import { BeispielChips, EckdatenKachel, Field } from '../vorlagen/ui';
+import { BeispielChips, EckdatenKachel, Field, ListenEditor } from '../vorlagen/ui';
 import { ErgebnisBlock } from '../ErgebnisBlock';
 import { useState } from 'react';
 import { BetragsFeld } from '../BetragsFeld';
@@ -18,6 +18,7 @@ import { usePermalinkFelder } from '../../hooks/usePermalinkFelder';
 import { PflichtDisclaimer } from '../PflichtDisclaimer';
 import { VerzugszinsTimeline } from '../VerzugszinsTimeline';
 import { usePaneKlasse } from '../layout/PaneKontext';
+import { datumOderStrich } from '../ui/datumText';
 
 const VERZUGSZINS_DISCLAIMER =
   'Automatisierte Orientierungsberechnung des Verzugszinses nach Art. 104 OR – keine Rechtsberatung. ' +
@@ -127,7 +128,6 @@ export function VerzugszinsForm() {
   };
   const inputNum = 'lc-input num';
 
-  const fmtISO = (s: string) => (s ? s.split('-').reverse().join('.') : '–');
   // FAHRPLAN-PRAXIS 1.2: Mandats-Referenz für den PDF-Kopf (optional).
   const [aktenzeichen, setAktenzeichen] = useState('');
   const pdfConfig: PdfDocConfig = {
@@ -146,7 +146,7 @@ export function VerzugszinsForm() {
       hauptlabel: 'Verzugszins (gesamt)',
       hauptwert: `CHF ${ergebnis.zinsTotalCHF}`,
       nebenwerte: [{ label: 'Total inkl. Kapital', wert: `CHF ${ergebnis.totalOffenCHF}` }],
-      kontext: `${form.zinssatzProzent ?? 5} % auf CHF ${form.kapital} für ${ergebnis.tageTotal} Tage (${fmtISO(ergebnis.ersterZinstag)} – ${fmtISO(ergebnis.stichtag)})`,
+      kontext: `${form.zinssatzProzent ?? 5} % auf CHF ${form.kapital} für ${ergebnis.tageTotal} Tage (${datumOderStrich(ergebnis.ersterZinstag)} – ${datumOderStrich(ergebnis.stichtag)})`,
     } : undefined,
     sections: ergebnis ? [{ titel: 'Verzugszins (Art. 104 OR)', ergebnis }] : [],
     disclaimer: VERZUGSZINS_DISCLAIMER,
@@ -205,39 +205,42 @@ export function VerzugszinsForm() {
 
       {/* Teilzahlungen & Satzänderungen */}
       <div className="space-y-3">
-        <div className="flex flex-wrap items-center justify-between gap-2">
-          <h4 className="text-body-s font-semibold text-ink-700">Teilzahlungen &amp; Satzänderungen (Art. 85 OR)</h4>
-          <div className="flex gap-2">
-            <button type="button" onClick={() => addRow('teilzahlung')} className="lc-btn-outline lc-btn-sm">+ Teilzahlung</button>
-            <button type="button" onClick={() => addRow('satzaenderung')} className="lc-btn-outline lc-btn-sm">+ Satzänderung</button>
-          </div>
-        </div>
-        {rows.length === 0 && <p className="text-body-s text-ink-500 italic">Keine Ereignisse – einfache Berechnung über den ganzen Zeitraum.</p>}
-        {rows.map((row, i) => (
-          <div key={row.id} className={pk('lc-panel p-3 grid grid-cols-1 sm:grid-cols-4 gap-3 items-end', 'lc-panel p-3 grid grid-cols-1 @3xl/pane:grid-cols-4 gap-3 items-end')}>
-            <div className="space-y-1">
-              <label className="text-body-s font-medium text-ink-600">Typ</label>
-              <select value={row.typ} onChange={(e) => updateRow(i, { typ: e.target.value as EreignisRow['typ'] })} className="lc-input">
-                <option value="teilzahlung">Teilzahlung (CHF)</option>
-                <option value="satzaenderung">Satzänderung (%)</option>
-              </select>
+        <h4 className="text-body-s font-semibold text-ink-700">Teilzahlungen &amp; Satzänderungen (Art. 85 OR)</h4>
+        {/* R2-F/F1-9: EINE Liste, zwei Hinzufügen-Knöpfe — dafür trägt der
+            ListenEditor `weitere`. Die Knöpfe standen bisher ÜBER der Liste
+            (Kanon: darunter), das «Entfernen» war eine vierte Grid-Spalte.
+            Die drei rohen `<label>` sind `Field` gewichen (Label↔Control). */}
+        <ListenEditor
+          element="Teilzahlung"
+          weitere={[{ element: 'Satzänderung', onHinzufuegen: () => addRow('satzaenderung') }]}
+          eintraege={rows}
+          schluessel={(row) => row.id}
+          leer="Keine Ereignisse – einfache Berechnung über den ganzen Zeitraum."
+          kopf={(row, i) => `${row.typ === 'teilzahlung' ? 'Teilzahlung' : 'Satzänderung'} ${i + 1}`}
+          onHinzufuegen={() => addRow('teilzahlung')}
+          onEntfernen={removeRow}
+          kinder={(row, i) => (
+            <div className={pk('grid grid-cols-1 sm:grid-cols-3 gap-3 items-end', 'grid grid-cols-1 @3xl/pane:grid-cols-3 gap-3 items-end')}>
+              <Field label="Typ">
+                <select value={row.typ} onChange={(e) => updateRow(i, { typ: e.target.value as EreignisRow['typ'] })} className="lc-input">
+                  <option value="teilzahlung">Teilzahlung (CHF)</option>
+                  <option value="satzaenderung">Satzänderung (%)</option>
+                </select>
+              </Field>
+              <Field label="Datum">
+                <DatumsFeld value={row.datum} onChange={(v) => updateRow(i, { datum: v })} className="lc-input" />
+              </Field>
+              <Field label={row.typ === 'teilzahlung' ? 'Betrag (CHF)' : 'neuer Satz (%)'}>
+                {row.typ === 'teilzahlung' ? (
+                  <BetragsFeld value={row.wert ? String(row.wert) : ''} onChange={(v) => updateRow(i, { wert: Number(v) || 0 })} className={inputNum} />
+                ) : (
+                  <input type="number" inputMode="decimal" min={0} step={0.25} value={row.wert}
+                    onChange={(e) => updateRow(i, { wert: Number(e.target.value) })} className={inputNum} />
+                )}
+              </Field>
             </div>
-            <div className="space-y-1">
-              <label className="text-body-s font-medium text-ink-600">Datum</label>
-              <DatumsFeld value={row.datum} onChange={(v) => updateRow(i, { datum: v })} className="lc-input" />
-            </div>
-            <div className="space-y-1">
-              <label className="text-body-s font-medium text-ink-600">{row.typ === 'teilzahlung' ? 'Betrag (CHF)' : 'neuer Satz (%)'}</label>
-              {row.typ === 'teilzahlung' ? (
-                <BetragsFeld value={row.wert ? String(row.wert) : ''} onChange={(v) => updateRow(i, { wert: Number(v) || 0 })} className={inputNum} />
-              ) : (
-                <input type="number" inputMode="decimal" min={0} step={0.25} value={row.wert}
-                  onChange={(e) => updateRow(i, { wert: Number(e.target.value) })} className={inputNum} />
-              )}
-            </div>
-            <button type="button" onClick={() => removeRow(i)} className="text-body-s text-danger-700 hover:underline self-end pb-2 text-left">Entfernen</button>
-          </div>
-        ))}
+          )}
+        />
       </div>
 
       {ergebnis && (

@@ -26,6 +26,8 @@ import { erfassungsgrad, STUFE_WORT } from '../lib/normtext/erfassungsgrad';
 import { usePaneKlasse } from '../components/layout/PaneKontext';
 import { Leerzustand } from '../components/ui/Leerzustand';
 import { GruppenKopf } from '../components/ui/GruppenKopf';
+import { RubrikKachel } from '../components/ui/RubrikKachel';
+import { AMTLICHE_FASSUNG_NOMEN } from '../lib/benennung';
 // H-10 (§6.6 billig, B27): BundSystematik/KantonSystematik/KantonAuswahl
 // (+Kachel) als reiner Move nach gesetze-teile/ — Props/Verhalten unverändert.
 import { Gitter } from './gesetze-teile/geteilt';
@@ -49,6 +51,7 @@ import { loeseFilterScope, scopeLabel, scopeBasis } from './gesetze-teile/filter
 // (A15-Mechanik) — parse-seitig sofort wirksam, die URL wird per Effect auf die
 // kanonische Form gebracht (kein Router-Redirect, Leitplanke E.4).
 import { istRechtsgebietAlias, normalisiereAnsicht } from './gesetze-teile/ansicht-alias';
+import { Tabs } from '../components/ui/Tabs';
 
 type Ebene = 'bund' | 'kanton' | 'international';
 
@@ -58,41 +61,21 @@ function Segment({ aktiv, onWahl }: { aktiv: Ebene; onWahl: (e: Ebene) => void }
     { id: 'kanton', label: 'Kantone' },
     { id: 'international', label: 'International' },
   ];
-  // APG-Tabs-Muster (analog src/components/ui/Tabs.tsx, §10): roving tabindex
-  // (genau ein tabbarer Tab) + Pfeiltasten/Home/End — sonst trägt role=tab das
-  // ARIA-Versprechen ohne das erwartete Tastaturverhalten.
-  const aufTaste = (e: React.KeyboardEvent<HTMLButtonElement>, i: number) => {
-    let ziel: number;
-    if (e.key === 'ArrowRight' || e.key === 'ArrowDown') ziel = (i + 1) % opt.length;
-    else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') ziel = (i - 1 + opt.length) % opt.length;
-    else if (e.key === 'Home') ziel = 0;
-    else if (e.key === 'End') ziel = opt.length - 1;
-    else return;
-    e.preventDefault();
-    onWahl(opt[ziel].id);
-    (e.currentTarget.parentElement?.children[ziel] as HTMLElement | undefined)?.focus();
-  };
+  // E-2-NACHZUG (R3-α, 31.8.2026): hier stand die dritte Kopie der
+  // Segmented-Control — inklusive einer WORTGLEICHEN zweiten Umsetzung des
+  // APG-Tastaturmusters (roving tabindex + Pfeiltasten/Home/End), die der
+  // Kommentar sogar als «analog src/components/ui/Tabs.tsx» auswies. Genau
+  // dieses «analog» ist der Befund: dieselbe Zusage, zweimal gepflegt. Der
+  // einzige echte Unterschied — `id`/`aria-controls` je Reiter, mit denen
+  // diese Leiste ihre Panels benennt — ist jetzt ein Feld des Bausteins
+  // (§5/§10: erst den Rahmen, dann die Fläche darauf).
   return (
-    <div role="tablist" aria-label="Ebene" className="inline-flex rounded-md border border-line bg-paper-sunken/50 p-0.5">
-      {opt.map((o, i) => (
-        <button
-          key={o.id}
-          type="button"
-          role="tab"
-          id={`ebene-tab-${o.id}`}
-          aria-controls={`ebene-panel-${o.id}`}
-          aria-selected={aktiv === o.id}
-          tabIndex={aktiv === o.id ? 0 : -1}
-          onKeyDown={(e) => aufTaste(e, i)}
-          onClick={() => onWahl(o.id)}
-          className={`rounded px-4 py-1.5 text-body-s font-medium transition-colors ${
-            aktiv === o.id ? 'bg-paper text-ink-900 shadow-sm' : 'text-ink-500 hover:text-ink-800'
-          }`}
-        >
-          {o.label}
-        </button>
-      ))}
-    </div>
+    <Tabs
+      items={opt.map((o) => ({
+        code: o.id, label: o.label,
+        id: `ebene-tab-${o.id}`, ariaControls: `ebene-panel-${o.id}`,
+      }))}
+      value={aktiv} onChange={onWahl} ariaLabel="Ebene" />
   );
 }
 
@@ -131,23 +114,15 @@ function Einstieg({ bund, bundArtikel, kantone, kantonErlasse, international, on
       </button>
 
       <div className={pk('grid grid-cols-1 sm:grid-cols-3 gap-3', 'grid grid-cols-1 @2xl/pane:grid-cols-3 gap-3')}>
+        {/* C-5 (31.8.2026): diese Kachel-Anatomie IST der Kanon — sie liegt seit
+            Runde 2 in `ui/RubrikKachel` und trägt dort auch die Startseiten-
+            Landkarte. Das eigene `hover:border-brass-400` ist entfallen: die
+            zentrale `.lc-card`-Regel (C-3) deckt es bereits. */}
         {kacheln.map((k) => (
-          <button
-            type="button"
-            key={k.id}
-            onClick={() => onWahl(k.id)}
-            className="lc-card group flex flex-col gap-1.5 p-5 text-left transition-colors hover:border-brass-400"
-          >
-            <span className="flex items-baseline gap-2">
-              <span className="num font-display text-h1 leading-none text-brass-700">{k.zahl}</span>
-              <span className="lc-overline">{k.einheit}</span>
-            </span>
-            <span className="font-sans font-semibold text-ink-900 text-h3 tracking-tight group-hover:text-brass-700 transition-colors">{k.titel}</span>
-            <span className="text-body-s text-ink-500">{k.sub}</span>
-            {/* IA-2 (§11.1): Erfassungsgrad-Kurzlegende auf der Kantone-Kachel. */}
-            {k.legende && <ErfassungsgradLegende className="mt-0.5" />}
-            <span aria-hidden className="mt-1 text-body-s font-medium text-brass-700">Öffnen →</span>
-          </button>
+          <RubrikKachel key={k.id} onWahl={() => onWahl(k.id)}
+            zahl={k.zahl} einheit={k.einheit} titel={k.titel} nutzen={k.sub}
+            /* IA-2 (§11.1): Erfassungsgrad-Kurzlegende auf der Kantone-Kachel. */
+            extra={k.legende ? <ErfassungsgradLegende className="mt-0.5" /> : undefined} />
         ))}
       </div>
     </div>
@@ -297,7 +272,9 @@ export function Gesetze() {
       <SeitenKopf
         overline="Rechtssammlung Schweiz"
         titel="Schweizer Gesetzessammlung"
-        intro="Volltext der in LexMetrik verwendeten Bundesgesetze und kantonalen Erlasse — geltende Fassung, mit Stand und amtlichem Live-Link — sowie die für die Schweiz massgeblichen Staatsverträge und EU-Verordnungen (International). Massgeblich bleibt stets die amtliche Quelle."
+        // B-6-Nachzug (R2-A, 31.8.2026): «geltende Fassung» und «amtliche
+        // Quelle» standen in EINEM Satz — das Nomen kommt aus der Wortquelle.
+        intro={`Volltext der in LexMetrik verwendeten Bundesgesetze und kantonalen Erlasse — geltende Fassung, mit Stand und amtlichem Live-Link — sowie die für die Schweiz massgeblichen Staatsverträge und EU-Verordnungen (International). Massgeblich bleibt stets ${AMTLICHE_FASSUNG_NOMEN}.`}
       />
 
       {/* B2 (Bug-Check #565): auch der Fehlerpfad reserviert die Inhaltshöhe —
@@ -530,7 +507,9 @@ export function Gesetze() {
           {!suche.trim() && ebene === 'international' && (
             <div className="space-y-4">
               <p className="text-body-s text-ink-500 max-w-reading">
-                Für die Schweiz massgebliche Staatsverträge und internationales Recht — je mit Live-Link zur amtlichen Fassung (Fedlex SR 0.* bzw. EUR-Lex). Einzelne Erlasse (z. B. EMRK) werden als amtliches PDF in-app angezeigt; massgeblich bleibt stets die amtliche Quelle.
+                {/* B-6-Nachzug (R2-A): «amtliche Fassung» im Link-Satz, «amtliche
+                    Quelle» im Vorbehalt desselben Absatzes — ein Nomen genügt. */}
+                Für die Schweiz massgebliche Staatsverträge und internationales Recht — je mit Live-Link zur amtlichen Fassung (Fedlex SR 0.* bzw. EUR-Lex). Einzelne Erlasse (z. B. EMRK) werden als amtliches PDF in-app angezeigt; massgeblich bleibt stets {AMTLICHE_FASSUNG_NOMEN}.
               </p>
               {/* A15 — Gliederungs-Umschalter (dieselbe Bedienung auf allen Säulen). */}
               <div className="flex justify-end">

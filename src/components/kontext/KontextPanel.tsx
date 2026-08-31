@@ -9,6 +9,12 @@ import { artikelWerkzeugGruppen } from '../../lib/normtext/werkzeuge';
 import { botschaftenFuer, type BotschaftBezug } from '../../lib/materialien/botschaften';
 import { revisionenFuerNorm, revisionTitel, type RevisionAnsicht, type RevisionBezug } from '../../lib/normtext/revisionen';
 import { vernehmlassungenFuer, VERNEHMLASSUNG_STATUS_LABEL, type VernehmlassungBezug } from '../../lib/materialien/vernehmlassungen';
+import { AMTLICHE_FASSUNG_NOMEN } from '../../lib/benennung';
+import { datumCh } from '../../lib/normtext/erlassKopfText';
+import { AbrufFehler } from '../ui/AbrufFehler';
+import { Datum } from '../ui/Datum';
+import { GruppenKopf } from '../ui/GruppenKopf';
+import { Leerzustand } from '../ui/Leerzustand';
 import { useLocale, fedlexLokalisiert } from '../locale';
 import { usePaneSteuerung } from '../layout/usePaneLayout';
 import { KantenChip } from '../verzahnung/KantenChip';
@@ -77,11 +83,14 @@ function anzeigeArtikel(token: string): string {
   return token.replace(/_/g, '');
 }
 
-/** ISO → DD.MM.YYYY (rein, kein new Date). */
-function kurzDatum(iso: string): string {
-  const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(iso);
-  return m ? `${m[3]}.${m[2]}.${m[1]}` : iso;
-}
+// B-3-NACHZUG (R2-A, 31.8.2026): hier stand `kurzDatum` — die SECHSTE
+// byte-gleiche Kopie von `datumCh` (dieselbe Regex, dieselbe Rückgabe). Sie war
+// der Runde-1-Zählung entgangen, weil sie unter eigenem Namen lief. Die vier
+// JSX-Stellen laufen jetzt über den geteilten `<Datum>`-Baustein (Format UND
+// Stimme in einer Hand); die eine Stelle, die einen STRING braucht (der
+// Vernehmlassungs-Status im Chip), zieht `datumCh` direkt. Das `.num` fällt
+// dabei weg: die Mono-Stimme bleibt SR-Nummer und Aktenzeichen vorbehalten
+// (Design-Grundlage Kap. 2.1, Herleitung in `components/ui/Datum.tsx`).
 
 // Geteilter «⧉ daneben öffnen»-Knopf (Split-View B-2) — EINE Anatomie für alle
 // Panel-Zeilen; Sichtbarkeit steuert der Aufrufer über das bestehende Gating
@@ -320,10 +329,12 @@ export function KontextPanel({ typ, normKeys, zusatzGruppen, ohneNormen = false,
   return (
     <section aria-labelledby="kontext-titel"
       className={seitenleiste ? 'space-y-4' : 'mt-12 border-t border-line pt-6 space-y-5 max-w-reading'}>
-      <div className="flex items-baseline gap-3">
-        <h2 id="kontext-titel" className="lc-overline text-brass-700">Kontext</h2>
-        <span aria-hidden className="h-px flex-1 bg-line" />
-      </div>
+      {/* C-2/C-6/C-7-NACHZUG (R2-A, 31.8.2026): der Panel-Kopf zeichnete das
+          Gruppenkopf-Rezept (Overline + Haarlinie) selbst nach. Jetzt der
+          geteilte Baustein — Kopien werden gelöscht, nicht angeglichen (§5/§10).
+          Einziger sichtbarer Unterschied: `items-baseline` → `items-center`,
+          die Mehrheitsform, die der Baustein trägt (Herleitung dort). */}
+      <GruppenKopf stufe={2} id="kontext-titel" titel="Kontext" />
 
       {/* W2·19-GLIEDERUNG/S7 — «Zu Art. X»: der Wegweiser zur Leseposition
           (Bau-Spec §5.2). Er beantwortet vier Fragen und springt für das Detail
@@ -363,9 +374,8 @@ export function KontextPanel({ typ, normKeys, zusatzGruppen, ohneNormen = false,
       {gruppenVerdeckt ? (
         <p className="text-body-s text-ink-500">Kontext wird geladen …</p>
       ) : istLeer ? (
-        <p className="text-body-s text-ink-500">
-          Noch keine Querverweise zu Entscheiden, Materialien oder Werkzeugen erfasst.
-        </p>
+        <Leerzustand art="bestand"
+          text="Noch keine Querverweise zu Entscheiden, Materialien oder Werkzeugen erfasst." />
       ) : (
         <div className="space-y-5">
           {/* Reader-eigene Gruppen zuerst (V1.3: Entscheid-Richtungen am Fuss). */}
@@ -374,18 +384,21 @@ export function KontextPanel({ typ, normKeys, zusatzGruppen, ohneNormen = false,
           {/* Entstehungsgeschichte — Botschaften des Bundesrates (Paket 2, W2·6,
               Moat-Hebel 1). Genese der Norm: semantisch VOR Anwendung (Entscheide) und
               Auslegung (Materialien). Nur Gesetz-Reader. §8: maschinell aus dem amtlichen
-              Fedlex-Projekt-Graphen zugeordnet, massgeblich bleibt die amtliche Quelle. */}
+              Fedlex-Projekt-Graphen zugeordnet, massgeblich bleibt die amtliche Fassung
+              (B-6-Nachzug R2-A, 31.8.2026 — Nomen aus `lib/benennung`). */}
           {(botschaftenFehler || botschaften.length > 0) && (
             <KontextGruppe titel="Entstehungsgeschichte" richtung="Botschaft des Bundesrates" punkt="material"
               anzahl={botschaften.length}
               hinweis={botschaftenFehler
                 ? undefined
-                : <><span className="num">{botschaften.length}</span> Botschaft{botschaften.length === 1 ? '' : 'en'} des Bundesrates — maschinell über den amtlichen Fedlex-Projekt-Graphen zugeordnet (ab ~2000), fachlich nicht geprüft; massgeblich bleibt die amtliche Quelle.</>}>
+                : <><span className="num">{botschaften.length}</span> Botschaft{botschaften.length === 1 ? '' : 'en'} des Bundesrates — maschinell über den amtlichen Fedlex-Projekt-Graphen zugeordnet (ab ~2000), fachlich nicht geprüft; massgeblich bleibt {AMTLICHE_FASSUNG_NOMEN}.</>}>
+              {/* F2-4: eine von vier Abruf-Fehler-Zeilen des Hauses, jetzt aus
+                  `ui/AbrufFehler`. Der Link hiess «Fedlex» — der Name des
+                  ANBIETERS statt des Ziels; Kanon ist «Amtliche Fassung ↗»
+                  (Ä110/B-1, `ui/QuellLink`), der Schlusspunkt entfällt mit dem
+                  Pfeil. Ton und Satzbau unverändert. */}
               {botschaftenFehler ? (
-                <p className="text-body-s text-warn-700">
-                  Entstehungsgeschichte konnte nicht geladen werden. Amtliche Quelle:{' '}
-                  <a href="https://www.fedlex.admin.ch" target="_blank" rel="noopener noreferrer" className="text-brass-700 hover:underline">Fedlex</a>.
-                </p>
+                <AbrufFehler gegenstand="Entstehungsgeschichte" href="https://www.fedlex.admin.ch" />
               ) : (
                 <>
                   <ul className="flex flex-col gap-1.5">
@@ -395,7 +408,7 @@ export function KontextPanel({ typ, normKeys, zusatzGruppen, ohneNormen = false,
                         <li key={b.key} className="text-body-s">
                           <a href={fedlexLokalisiert(b.quelleUrl, locale)} target="_blank" rel="noopener noreferrer"
                             className="no-underline hover:text-brass-700">
-                            <span className="num text-ink-500">{kurzDatum(b.stand)}</span>
+                            <Datum iso={b.stand} className="text-ink-500" />
                             {' — '}<span className="font-medium">{titel}</span>
                           </a>
                           {b.nummer && b.parlamentUrl && (
@@ -432,11 +445,9 @@ export function KontextPanel({ typ, normKeys, zusatzGruppen, ohneNormen = false,
               hinweis={revFehler
                 ? undefined
                 : <><span className="num">{revAenderungen.length}</span> Änderungs­erlass{revAenderungen.length === 1 ? '' : 'e'} (AS/RO) — maschinell über den amtlichen Fedlex-Graphen zusammengestellt (verlässlich ab ~2000); massgeblich bleibt die amtliche Sammlung.</>}>
+              {/* F2-4, zweite Fundstelle (Begründung bei der ersten). */}
               {revFehler ? (
-                <p className="text-body-s text-warn-700">
-                  Änderungsverlauf konnte nicht geladen werden. Amtliche Quelle:{' '}
-                  <a href="https://www.fedlex.admin.ch" target="_blank" rel="noopener noreferrer" className="text-brass-700 hover:underline">Fedlex</a>.
-                </p>
+                <AbrufFehler gegenstand="Änderungsverlauf" href="https://www.fedlex.admin.ch" />
               ) : (
                 <>
                   <ul className="flex flex-col gap-1.5">
@@ -447,7 +458,7 @@ export function KontextPanel({ typ, normKeys, zusatzGruppen, ohneNormen = false,
                         <li key={r.ocUri} className="text-body-s">
                           <a href={fedlexLokalisiert(r.quelleUrl, locale)} target="_blank" rel="noopener noreferrer"
                             className="no-underline hover:text-brass-700">
-                            <span className="num text-ink-500">{kurzDatum(r.dateEntryInForce)}</span>
+                            <Datum iso={r.dateEntryInForce} className="text-ink-500" />
                             {titel && <>{' — '}<span className="font-medium">{titel}</span></>}
                           </a>
                           {r.roFundstelle && <span className="num text-micro text-ink-500"> · {r.roFundstelle}</span>}
@@ -482,7 +493,7 @@ export function KontextPanel({ typ, normKeys, zusatzGruppen, ohneNormen = false,
                       <ul className="mt-1.5 flex flex-col gap-1.5 border-l border-line pl-3">
                         {revMarker.map((r) => (
                           <li key={`${r.art}:${r.dateEntryInForce}`} className="text-body-s text-ink-500">
-                            <span className="num">{kurzDatum(r.dateEntryInForce)}</span>
+                            <Datum iso={r.dateEntryInForce} />
                             {' — '}Änderung über einen Sammelerlass ·{' '}
                             <a href={r.quelleUrl} target="_blank" rel="noopener noreferrer" className="hover:text-brass-700">amtliche Sammlung ↗</a>
                             {r.nichtKonsolidiert && <span className="text-warn-700"> · noch nicht konsolidiert</span>}
@@ -500,18 +511,16 @@ export function KontextPanel({ typ, normKeys, zusatzGruppen, ohneNormen = false,
               Der proaktive Teil der Zeitachse: was in diesem Rechtsgebiet gerade angehört
               wird / abgeschlossen ist. Nur Gesetz-Reader. §8: maschinell aus dem amtlichen
               Fedlex-Graphen zugeordnet (grob bei Mantelvorlagen), massgeblich bleibt die
-              amtliche Quelle. Reichweite ~ab 2006. */}
+              amtliche Fassung (B-6-Nachzug R2-A). Reichweite ~ab 2006. */}
           {(vernehmlassungenFehler || vernehmlassungen.length > 0) && (
             <KontextGruppe titel="Gesetzgebung in Arbeit" richtung="Vernehmlassung" punkt="material"
               anzahl={vernehmlassungen.length}
               hinweis={vernehmlassungenFehler
                 ? undefined
-                : <><span className="num">{vernehmlassungen.length}</span> Vernehmlassungsverfahren — maschinell über den amtlichen Fedlex-Gesetzgebungs-Graphen zugeordnet (Reichweite ab ~2006), fachlich nicht geprüft; die Zuordnung kann bei Mantelvorlagen grob sein, massgeblich bleibt die amtliche Quelle.</>}>
+                : <><span className="num">{vernehmlassungen.length}</span> Vernehmlassungsverfahren — maschinell über den amtlichen Fedlex-Gesetzgebungs-Graphen zugeordnet (Reichweite ab ~2006), fachlich nicht geprüft; die Zuordnung kann bei Mantelvorlagen grob sein, massgeblich bleibt {AMTLICHE_FASSUNG_NOMEN}.</>}>
+              {/* F2-4, dritte Fundstelle (Begründung bei der ersten). */}
               {vernehmlassungenFehler ? (
-                <p className="text-body-s text-warn-700">
-                  Gesetzgebung in Arbeit konnte nicht geladen werden. Amtliche Quelle:{' '}
-                  <a href="https://www.fedlex.admin.ch" target="_blank" rel="noopener noreferrer" className="text-brass-700 hover:underline">Fedlex</a>.
-                </p>
+                <AbrufFehler gegenstand="Gesetzgebung in Arbeit" href="https://www.fedlex.admin.ch" />
               ) : (
                 <>
                   <ul className="flex flex-col gap-1.5">
@@ -523,7 +532,7 @@ export function KontextPanel({ typ, normKeys, zusatzGruppen, ohneNormen = false,
                           <a href={fedlexLokalisiert(v.quelleUrl, locale)} target="_blank" rel="noopener noreferrer"
                             className="no-underline hover:text-brass-700">
                             <span className={`lc-overline ${laeuft ? 'text-brass-700' : ''}`}>
-                              {laeuft && v.fristEnde ? `läuft bis ${kurzDatum(v.fristEnde)}` : VERNEHMLASSUNG_STATUS_LABEL[v.status]}
+                              {laeuft && v.fristEnde ? `läuft bis ${datumCh(v.fristEnde)}` : VERNEHMLASSUNG_STATUS_LABEL[v.status]}
                             </span>
                             {' — '}<span className="font-medium">{titel}</span>
                           </a>
@@ -642,7 +651,7 @@ export function KontextPanel({ typ, normKeys, zusatzGruppen, ohneNormen = false,
                     <span className="text-ink-500">{m.behoerdeKuerzel} · {m.doktypLabel}{m.nummer ? ` ${m.nummer}` : ''}</span>
                     {' — '}<span className="font-medium">{m.titel}</span>
                     {m.sublabel && <span className="num text-micro font-normal text-ink-500"> · {m.sublabel}</span>}
-                    <span className="num text-micro text-ink-500"> · Stand {kurzDatum(m.stand)}</span>
+                    <span className="text-micro text-ink-500"> · Stand <Datum iso={m.stand} /></span>
                     {m.herkunft === 'maschinell' && (
                       <StatusBadge praedikat="maschinell" className="ml-1.5 align-middle" />
                     )}

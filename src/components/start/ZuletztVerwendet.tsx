@@ -35,7 +35,8 @@ export function ZuletztVerwendet() {
            · flex-nowrap      → eine Zeile, kein Umbruch
            · Chips: whitespace-nowrap (kein Zeilenbruch) + shrink-0 (kein Zusammen-
              stauchen unter die Chipbreite) → Überlauf landet im Scroll, nicht im Umbruch */}
-      <div className="overflow-x-auto min-w-0">
+      {/* LM-061: dieselbe Scrollstand-Affordanz wie an der News-Reihe. */}
+      <div className="lc-scrollrand-x overflow-x-auto min-w-0">
         <div className="flex w-max max-w-full flex-nowrap gap-1.5">
           {eintraege.map((e) => (
             <Link key={e.route} to={e.route}

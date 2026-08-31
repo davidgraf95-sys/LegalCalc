@@ -1,11 +1,12 @@
-// scripts/check-schlankheit.test.ts
+// src/tests/check-schlankheit.test.ts (bis 31.8.2026 scripts/check-schlankheit.test.ts —
+// verschoben, weil eine Testdatei nicht in die Tor-Fläche scripts/check-*.ts gehört)
 // QS-TOK — Unit-Tests der Kernlogik von check:schlankheit (§6.6 mechanisiert).
 // Beweist die drei im Auftrag verlangten Fälle: (1) eine neue Datei über der
 // Schwelle ist rot, (2) eine Bestands-Datei +>10% über ihrer Baseline-Zahl ist
 // rot, (3) eine stabile Bestands-Datei bleibt grün. Zusätzlich die Rand- und
 // Hinweis-Fälle (Toleranz-Grenze, Unterschreitung, gelöschte Baseline-Datei).
 import { describe, it, expect } from 'vitest';
-import { pruefeSchlankheit, globZuRegex, generiertMusterAusGitattributes } from './check-schlankheit';
+import { pruefeSchlankheit, globZuRegex, generiertMusterAusGitattributes } from '../../scripts/check-schlankheit';
 
 describe('pruefeSchlankheit — Kernlogik (§6.6 mechanisiert)', () => {
   it('neue Datei über der Schwelle, nicht in der Baseline → rot', () => {

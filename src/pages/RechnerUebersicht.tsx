@@ -8,6 +8,7 @@ import { KatalogHinweis } from '../components/KatalogHinweis';
 import { MassgebendeGesetze } from '../components/normtext/MassgebendeGesetze';
 import { SeitenKopf } from '../components/layout/SeitenKopf';
 import { EntwurfLegende } from '../components/EntwurfLegende';
+import { Leerzustand } from '../components/ui/Leerzustand';
 import { ZweiachsigerEinstieg } from '../components/ZweiachsigerEinstieg';
 import { Zeiterfassung } from '../components/start/Zeiterfassung';
 
@@ -64,11 +65,12 @@ export function RechnerUebersicht() {
       ))}
 
       {gefiltert && kategorien.length === 0 && (
-        <p className="text-body-s text-ink-500 py-6">
-          Kein Rechner für «{q}» gefunden.{' '}
-          <button type="button" onClick={() => setFilter('')}
-            className="font-medium text-brass-700 hover:text-brass-600">Filter zurücksetzen</button>
-        </p>
+        <div className="py-6">
+          {/* D-7 (R3-α, 31.8.2026): handgezeichneter Absatz + eigener Knopf →
+              der EINE Baustein; Wortlaut und Wirkung unverändert. */}
+          <Leerzustand art="filter" text={`Kein Rechner für «${q}» gefunden.`}
+            weiterweg={{ text: 'Filter zurücksetzen', onKlick: () => setFilter('') }} />
+        </div>
       )}
 
       {/* Werkzeuge/Kontext nur in der ungefilterten Vollansicht — im Filter-Modus
