@@ -53,6 +53,11 @@ import {
   extrahiereZhStreitwertStaffel,
   extrahiereZhNotariatsTarif,
 } from './zh-tarif-geometrie.ts';
+import {
+  SAMMEL_MARKER,
+  SAMMEL_ZEILE,
+  expandiereSammelbereich,
+} from './zh-sammelkopf.ts';
 
 // Bestehende Aufrufer (Tests, Werkzeuge) importieren die Tarif-Geometrie
 // weiterhin über diesen Adapter — der Umzug bleibt für sie unsichtbar.
@@ -60,6 +65,7 @@ export {
   extrahiereZhStreitwertStaffel,
   extrahiereZhNotariatsTarif,
 } from './zh-tarif-geometrie.ts';
+export { SAMMEL_MARKER, expandiereSammelbereich } from './zh-sammelkopf.ts';
 export { fuegeZeilen } from './zh-text.ts';
 // (segmentiereAnhangZiffern wird für ZH NICHT mehr genutzt — der Anhang wird
 //  spaltenbewusst über extrahiereZhAnhangSpalten gelesen; generischer
@@ -156,12 +162,35 @@ const APPARAT_ZIFFER_MAX_H = 5.2;
  *  der Zeilenabstand beträgt ≈10.2 pt, eine Verwechslung ist ausgeschlossen. */
 const HOCH_TRAEGER_ABSTAND = 5;
 
+/**
+ * Einzug (pt) der KOPF-Spalte gegenüber der Body-Spalte (Fix-Runde 2,
+ * 31.8.2026). Die Zürcher Loseblattsammlung setzt jeden Bestimmungs-Kopf mit
+ * hängendem Einzug: die Kopfzeile beginnt 14.2 pt rechts vom linken Body-Rand,
+ * jede Fliesstext-Zeile bündig bei 0.
+ *
+ * Gemessen an allen 24 ZH-PDF: 2376 Kopfzeilen, p05 = med = p95 = 14.2. Die
+ * §§-Zeilen, die KEINE Köpfe sind (Querverweise am Zeilenanfang, umbrochene
+ * Sätze), liegen bei 0 / 19.3 / 19.9 / 34 — die beiden Klassen berühren sich
+ * nicht, ±2 pt Toleranz trennt sie mit Sicherheitsabstand.
+ */
+const KOPF_EINZUG_PT = 14.2;
+const KOPF_EINZUG_TOLERANZ_PT = 2;
+
+/** Eine hochgestellte Absatznummer: Ziffer, optional mit unmittelbar
+ *  angehängtem lateinischem Suffix («2bis», «1ter»). Ein alleinstehender
+ *  Suffix ist KEINE Absatznummer (er gehört zum §-Kopf, s. Zuordnung unten). */
+const ABSATZ_HOCHZAHL = /^\d+(?:bis|ter|quater|quinquies)?$/;
+
+
 /** Eine zusammengefügte Textzeile (eine y-Position einer Seite). */
 export interface ZhTextZeile {
   /** Führende Absatznummer (hochgestellte Ziffer am Zeilenanfang) oder null. */
   absatz: string | null;
   /** Der bereinigte Zeilentext (Fussnoten-Hochzahlen entfernt). */
   text: string;
+  /** Sammel-Aufhebungskopf («§§ 66–69.») — Kopf-Einzug + reine §-Nennungsliste
+   *  (Bug B-2, Gegenprüfung Runde 2). Nur hier gesetzt, nie geraten. */
+  sammelkopf?: true;
 }
 
 /** Ergebnis der PDF-Layout-Extraktion: Body-Zeilen + der verworfene Kopf-/
@@ -374,11 +403,21 @@ export function montiereZhSeite(stuecke: PdfStueck[]): ZhTextZeile[] {
     if (!hatBody(traeger)) continue;
     const grenze = textBeginnX(traeger);
     for (let i = gruppe.length - 1; i >= 0; i--) {
-      // Nur eine reine ZIFFER kann eine Absatznummer sein. Ein hochgestellter
-      // lat. Suffix («bis»/«ter»/«quater») gehört IMMER in die Trägerzeile —
-      // sonst zerfällt «§ 183ᵇⁱˢ.» in einen falschen Kopf «§ 183» und eine
-      // Geisterzeile «bis» (ZH-230: §§ 174bis/183bis/183ter/183quater).
-      const istZiffer = /^\s*\d+\s*$/.test(gruppe[i].s);
+      // Nur eine ZIFFER — allein oder mit unmittelbar angehängtem lat. Suffix —
+      // kann eine Absatznummer sein. Ein ALLEINSTEHENDER Suffix («bis»/«ter»/
+      // «quater») gehört IMMER in die Trägerzeile: sonst zerfällt «§ 183ᵇⁱˢ.»
+      // in einen falschen Kopf «§ 183» und eine Geisterzeile «bis» (ZH-230:
+      // §§ 174bis/183bis/183ter/183quater).
+      //
+      // SUFFIX-ABSÄTZE (Bug B-1, Gegenprüfung Runde 2, 31.8.2026): «2bis» kommt
+      // aus pdfjs als EIN Fragment (gemessen: ZH-101 Art. 104, ZH-631.1 § 7
+      // «1bis»+«1ter», §§ 30/35/47 «2bis» — durchweg x = 68.0, h = 5.70, eigene
+      // y-Gruppe). Das alte Muster /^\d+$/ verwarf es als Nicht-Ziffer und
+      // schob es in die Trägerzeile; die Absatznummer landete als nackter Text
+      // im Vorgänger-Absatz («… Staatsstrassen aus. 2bis Der Kanton sorgt …»)
+      // und der Absatz 2bis existierte im Korpus nicht (0 Blöcke mit lat.
+      // Suffix im ganzen ZH-Bestand).
+      const istZiffer = ABSATZ_HOCHZAHL.test(gruppe[i].s.trim());
       if (istZiffer && gruppe[i].x < grenze) continue; // führend = Absatznummer
       traeger.push(gruppe[i]);
       gruppe.splice(i, 1);
@@ -400,8 +439,9 @@ export function montiereZhSeite(stuecke: PdfStueck[]): ZhTextZeile[] {
       const st = stueckeDerZeile[k];
       const istHoch = st.h < HOCH_MAX_H;
       if (istHoch) {
-        // Führende Hochzahl am Zeilenanfang = Absatznummer.
-        if (k === 0 && /^\s*\d+\s*$/.test(st.s)) {
+        // Führende Hochzahl am Zeilenanfang = Absatznummer (mit lat. Suffix,
+        // s. ABSATZ_HOCHZAHL / Bug B-1).
+        if (k === 0 && ABSATZ_HOCHZAHL.test(st.s.trim())) {
           absatz = st.s.trim();
           vorEndeX = st.x + st.w;
           continue;
@@ -466,6 +506,18 @@ export function montiereZhSeite(stuecke: PdfStueck[]): ZhTextZeile[] {
     // Reine Leer-/Absatz-Marker-Zeile: trotzdem behalten, falls Absatz gesetzt
     // (die Absatznummer steht oft auf eigener y-Zeile vor dem Text).
     if (bereinigt === '' && absatz === null) continue;
+    // SAMMEL-AUFHEBUNGSKOPF (Bug B-2): «§§ 66–69.» im Kopf-Einzug. Die
+    // geometrische Aussage wird hier festgehalten, weil sie im serialisierten
+    // Text verloren ginge — und ohne sie ist der Kopf nicht vom Satzende
+    // «Vorbehalten bleiben §§ 23–23 b und 35 b.» (ZH-331) zu unterscheiden.
+    const erstesBody = stueckeDerZeile.find((st) => st.h >= HOCH_MAX_H);
+    const imKopfEinzug =
+      erstesBody !== undefined &&
+      Math.abs(erstesBody.x - bodyMinX - KOPF_EINZUG_PT) <= KOPF_EINZUG_TOLERANZ_PT;
+    if (imKopfEinzug && SAMMEL_ZEILE.test(bereinigt)) {
+      zeilen.push({ absatz, text: bereinigt, sammelkopf: true });
+      continue;
+    }
     zeilen.push({ absatz, text: bereinigt });
   }
   return zeilen;
@@ -476,10 +528,16 @@ export function montiereZhSeite(stuecke: PdfStueck[]): ZhTextZeile[] {
  * eingebetteten Absatz-Markern «¶N» am Zeilenanfang. Diese Form ist die
  * testbare «extrahierte PDF-Textbasis», die extrahiereZhParagraphen() parst —
  * so kann der Parser ohne pdfjs/Netz gegen eine Fixture getestet werden.
+ *
+ * Sammel-Aufhebungsköpfe tragen zusätzlich den SAMMEL_MARKER (die geometrische
+ * Kopf-Einzug-Aussage, die im reinen Text nicht mehr ablesbar wäre).
  */
 export function serialisiereZhZeilen(zeilen: ZhTextZeile[]): string {
   return zeilen
-    .map((z) => (z.absatz !== null ? `¶${z.absatz} ${z.text}` : z.text))
+    .map((z) => {
+      const kern = z.absatz !== null ? `¶${z.absatz} ${z.text}` : z.text;
+      return z.sammelkopf ? `${SAMMEL_MARKER}${kern}` : kern;
+    })
     .join('\n');
 }
 
@@ -539,6 +597,27 @@ const GLIEDERUNG =
   /^(?:[A-Z](?:bis|ter|quater|quinquies)?|[IVXL]+)\.\s+[A-ZÄÖÜ]/;
 
 /**
+ * Gliederungs-Überschrift der ZÄHLENDEN Form (Bug B-3, Gegenprüfung Runde 2,
+ * 31.8.2026): «2. Kapitel: Grundrechte», «1. Abschnitt: Stimmberechtigte»,
+ * «Erster Abschnitt: …», «Dritter Teil: Steuerstrafrecht». Sie steht auf einer
+ * eigenen Zeile im Body-Satz (h = 9.18, kein Kopf-Einzug) und war darum vom
+ * Schriftbild NICHT von Fliesstext zu trennen — sie klebte am Vorgänger-Block
+ * (gemessen: 103 Blöcke in 10 Erlassen).
+ *
+ * Massgeblich ist die am Bestand erhobene Form (alle 24 PDF ausgezählt):
+ * Zeilenanfang + Zähler (Ziffer / römisch / ausgeschriebenes Ordinale) +
+ * Gliederungswort + DOPPELPUNKT. Der Doppelpunkt trennt die Überschriften
+ * sauber von den Fliesstext-Treffern, die dieselben Wörter tragen — «(2. Teil,
+ * 5. Titel ZPO, …)», «1. und 2. Abschnitt) finden ergänzend Anwendung.» —
+ * keiner davon setzt ihn (empirisch: 0 Fehltreffer im Gesamtbestand).
+ *
+ * Die BUCHSTABEN-Form («A. Allgemein», «III. Bezirksrat») fängt weiterhin
+ * GLIEDERUNG; sie war nie undicht.
+ */
+const GLIEDERUNG_ZAEHLEND =
+  /^(?:\d+|[IVXLC]+|(?:Ers|Zwei|Drit|Vier|Fünf|Sechs|Sieb|Sieben|Ach|Neun|Zehn|Elf|Zwölf)ter)\.?\s+(?:Kapitel|Abschnitt|Unterabschnitt|Teil|Titel|Abteilung):/;
+
+/**
  * Grenze zum Erlass-Schluss­apparat (Bug B-6, zweiter Teil, 31.8.2026).
  *
  * Nach dem letzten § folgen in den ZH-PDF die Übergangs-/Schlussbestimmungen
@@ -555,8 +634,11 @@ const GLIEDERUNG =
 const SCHLUSSAPPARAT = /^(?:Übergangs|Schluss)bestimmung(?:en)?\b/;
 
 /** Absatz-Marker «¶N» am Zeilenanfang (von serialisiereZhZeilen gesetzt; der
- *  Resttext ist optional — die Absatznummer steht oft auf der eigenen Zeile). */
-const ABSATZ_MARKER = /^¶(\d+(?:bis|ter)?)\s*(.*)$/;
+ *  Resttext ist optional — die Absatznummer steht oft auf der eigenen Zeile).
+ *  Lat. Suffixe vollständig (Bug B-1): «¶2bis», «¶1ter» — das alte Muster kannte
+ *  nur bis/ter, die Hochstellungs-Zuordnung liefert aber alle vier Stufen. */
+const ABSATZ_MARKER = /^¶(\d+(?:bis|ter|quater|quinquies)?)\s*(.*)$/;
+
 
 /** Token aus den drei Kopf-Gruppen (Zahl · Buchstabe · lat. Suffix):
  *  «§ 4 a.»→'4_a', «§ 183bis.»→'183_bis', «Art. 12»→'12'
@@ -782,10 +864,16 @@ export function erkenneZhMarker(text: string): ZhMarker {
 }
 
 /** Wie extrahiereZhParagraphen, aber ALLE Artikel (token → Artikel). Kern für
- *  holeZhPdf (Vollabdeckung §7) und den quelleHash. */
+ *  holeZhPdf (Vollabdeckung §7) und den quelleHash.
+ *
+ *  `protokoll` (optional) nimmt die §8-Sichtbarkeitsmeldungen auf: bewusst nicht
+ *  erfasste Erlassteile (Schlussapparat/Anhang) und nicht lückenlos
+ *  expandierbare Sammel-Aufhebungsbereiche. Ohne den Parameter verhält sich die
+ *  Funktion unverändert. */
 export function extrahiereAlleZhParagraphen(
   text: string,
   marker: ZhMarker = erkenneZhMarker(text),
+  protokoll?: string[],
 ): Record<string, ZhArtikel> {
   const zeilen = text.split('\n');
   const artikel: Record<string, ZhArtikel> = {};
@@ -796,6 +884,17 @@ export function extrahiereAlleZhParagraphen(
   // Ab dem Schluss­apparat (Übergangs-/Schlussbestimmungen, Anhang) wird nichts
   // mehr aufgenommen — dort beginnt eine zweite, kollidierende §-Zählung.
   let imSchlussapparat = false;
+  // Tokens, die NUR aus einem Sammel-Aufhebungskopf stammen. Ein späterer echter
+  // Kopf desselben Tokens darf den Platzhalter ersetzen — sonst würde die
+  // Wiedereröffnungs-Sperre echten Normtext verschlucken (§1).
+  const ausSammelkopf = new Set<string>();
+  // Wo die Erfassung endet (§8-Auslassung, Bug B-6) und wie viele Textzeilen
+  // dahinter liegen — EINE Protokoll-Zeile je Erlass statt einer je Überschrift.
+  let schnitt: { grund: string; ab: string } | null = null;
+  let uebersprungen = 0;
+  const melde = (zeile: string): void => {
+    if (protokoll && !protokoll.includes(zeile)) protokoll.push(zeile);
+  };
 
   const speichere = (): void => {
     if (aktivToken === null) return;
@@ -824,10 +923,14 @@ export function extrahiereAlleZhParagraphen(
       speichere();
       aktivToken = null;
       aktivZeilen = [];
+      if (schnitt === null) schnitt = { grund: 'Übergangs-/Schlussbestimmungen', ab: zeile.trim().slice(0, 70) };
       imSchlussapparat = true;
       continue;
     }
-    if (imSchlussapparat) continue;
+    if (imSchlussapparat) {
+      uebersprungen++;
+      continue;
+    }
     // ANHANG-GRENZE (Bug 22.6.2026): der «Anhang: Gebührentarif» (ZH-243) ist
     // eine eigene Tarif-TABELLE und wird SPALTENBEWUSST über
     // extrahiereZhAnhangSpalten erfasst — NICHT vom generischen §-Parser. Da auf
@@ -845,7 +948,47 @@ export function extrahiereAlleZhParagraphen(
       speichere();
       aktivToken = null;
       aktivZeilen = [];
+      if (schnitt === null) schnitt = { grund: 'Anhang', ab: zeile.trim().slice(0, 70) };
       imSchlussapparat = true;
+      continue;
+    }
+    // SAMMEL-AUFHEBUNGSKOPF «§§ 66–69.» (Bug B-2, Gegenprüfung Runde 2).
+    //
+    // Vorher fiel die Zeile durch jedes Muster: PARAGRAF_KOPF schliesst «§§»
+    // ausdrücklich aus, also war sie gewöhnlicher Text und klebte am
+    // Vorgänger-§ (26 kontaminierte Blöcke im Bestand, 6 davon NUR aus
+    // Fremdmaterial). Die genannten §§ fehlten ersatzlos — allein in ZH-230
+    // u. a. 58–63, 66–69, 73–116, 117 a–117 m, 137bis–167, 253–255.
+    //
+    // Jetzt: laufenden § schliessen, Bereich expandieren, je genannten § einen
+    // «Aufgehoben»-Platzhalter mit eigenem Token emittieren — dieselbe
+    // Schreibweise wie beim nackten Einzel-Kopf (dort am Druckbild gegen die
+    // Fussnote «Aufgehoben durch …» verifiziert).
+    const sammel = zeile.trim().startsWith(SAMMEL_MARKER)
+      ? zeile.trim().slice(SAMMEL_MARKER.length).trim()
+      : null;
+    if (sammel !== null) {
+      speichere();
+      aktivToken = null;
+      aktivZeilen = [];
+      const liste = sammel.replace(/^§§\s*/, '').replace(/\s*\.$/, '');
+      const { tokens, exakt } = expandiereSammelbereich(liste);
+      if (tokens.length === 0) {
+        melde(`Sammel-Aufhebungskopf «${sammel}» nicht lesbar — §§ NICHT im Snapshot.`);
+        continue;
+      }
+      if (!exakt) {
+        melde(
+          `Sammel-Aufhebungskopf «${sammel}»: Bereich nicht lückenlos ableitbar — ` +
+            `erfasst sind ${tokens.join(', ')}; dazwischen liegende §§ mit ` +
+            `Buchstaben-/lat. Suffix können fehlen (nicht geraten, §8).`,
+        );
+      }
+      for (const t of tokens) {
+        if (t in artikel) continue;
+        artikel[t] = { bloecke: [{ absatz: null, text: 'Aufgehoben' }] };
+        ausSammelkopf.add(t);
+      }
       continue;
     }
     // Kopf am Zeilenanfang? (Marker-Muster je Erlass, s. erkenneZhMarker.)
@@ -869,6 +1012,18 @@ export function extrahiereAlleZhParagraphen(
       // wurde. Jetzt gilt die Zeile in diesem Fall als gewöhnlicher Text und
       // fliesst in den laufenden § — kein Zeichen geht verloren.
       const kandidat = normalisiereZhKopf(kopf);
+      // Ein Token, das bisher NUR als Sammelkopf-Platzhalter existiert, wird von
+      // einem echten Kopf überschrieben: sonst schluckte die Wiedereröffnungs-
+      // Sperre den Normtext dieses § (§1). Umgekehrt bleibt ein echter Artikel
+      // gegen jede Wiedereröffnung geschützt.
+      if (kandidat in artikel && ausSammelkopf.has(kandidat)) {
+        delete artikel[kandidat];
+        ausSammelkopf.delete(kandidat);
+        melde(
+          `§ ${kandidat.replace(/_/g, '')} stand in einem Sammel-Aufhebungskopf UND trägt ` +
+            `eigenen Text — der Platzhalter wurde durch den Wortlaut ersetzt.`,
+        );
+      }
       if (kandidat in artikel) {
         if (aktivToken !== null) aktivZeilen.push(zeile.trim());
         continue;
@@ -907,11 +1062,21 @@ export function extrahiereAlleZhParagraphen(
       continue;
     }
     if (aktivToken === null) continue; // vor dem ersten §: Präambel → ignorieren
-    // Gliederungs-Überschriften («B. Schlichtungsverfahren») sind kein Normtext.
+    // Gliederungs-Überschriften («B. Schlichtungsverfahren», «2. Kapitel:
+    // Grundrechte») sind kein Normtext (Bug B-3 für die zählende Form).
     if (GLIEDERUNG.test(zeile.trim())) continue;
+    if (GLIEDERUNG_ZAEHLEND.test(zeile.trim())) continue;
     aktivZeilen.push(zeile.trim());
   }
   speichere();
+
+  if (schnitt !== null) {
+    melde(
+      `${schnitt.grund} ab «${schnitt.ab}» NICHT im Snapshot erfasst — ` +
+        `${uebersprungen} von ${zeilen.length} Textzeilen (${Math.round((uebersprungen / Math.max(zeilen.length, 1)) * 100)} %). ` +
+        `Grund: eigene, mit dem Haupttext kollidierende §-Zählung. Massgeblich ist die amtliche Fassung.`,
+    );
+  }
 
   return artikel;
 }
