@@ -1,0 +1,449 @@
+{
+  "erzeugt": "2026-08-31",
+  "eintraege": [
+    {
+      "id": "kanton/ZH/323.1/art_1",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Verordnung über die Gebühren, Auslagen und Entschädigungen der Strafverfolgungsbehörden (GebV StrV) (LS 323.1)",
+      "artikel": "1",
+      "artikelLabel": "§ 1",
+      "bloecke": [
+        {
+          "absatz": null,
+          "text": "Diese Verordnung gilt für folgende Strafverfolgungsbehörden:",
+          "items": [
+            {
+              "marke": "a",
+              "text": "Staatsanwaltschaften und Oberstaatsanwaltschaft,"
+            },
+            {
+              "marke": "b",
+              "text": "Jugendanwaltschaften und Oberjugendanwaltschaft,"
+            },
+            {
+              "marke": "c",
+              "text": "Statthalterämter."
+            },
+            {
+              "marke": "d",
+              "text": ". . ."
+            }
+          ]
+        }
+      ],
+      "stand": "2011-01-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-323_1-2010_11_24-2011_01_01-103.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "1f9a4562648ec813e813fff35790a1692dbdf933d31dacdda7f419e90c9aaab7",
+      "sha": "1d387c875dc7ee7f27333f34625aab7fc891f3f562aa1204f733d4fb5f6d317a"
+    },
+    {
+      "id": "kanton/ZH/323.1/art_2",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Verordnung über die Gebühren, Auslagen und Entschädigungen der Strafverfolgungsbehörden (GebV StrV) (LS 323.1)",
+      "artikel": "2",
+      "artikelLabel": "§ 2",
+      "bloecke": [
+        {
+          "absatz": "1",
+          "text": "Grundlagen für die Festsetzung der Gebühren sind",
+          "items": [
+            {
+              "marke": "a",
+              "text": "der Zeitaufwand der Strafverfolgungsbehörde, einschliesslich der Polizei,"
+            },
+            {
+              "marke": "b",
+              "text": "die Bedeutung und Schwierigkeit des Falls."
+            }
+          ]
+        },
+        {
+          "absatz": "2",
+          "text": "In besonders aufwendigen Verfahren können die Höchstansätze der Gebühren gemäss §§ 3–8 bis zum Doppelten, in Ausnahmefällen bis zum Vierfachen überschritten werden."
+        },
+        {
+          "absatz": "3",
+          "text": "Bei Verfahren mit geringem Aufwand, namentlich bei formellen Erledigungen, können die Mindestansätze der Gebühren gemäss §§3–8 unterschritten werden oder es kann von der Erhebung einer Gebühr abgesehen werden."
+        }
+      ],
+      "stand": "2011-01-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-323_1-2010_11_24-2011_01_01-103.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "1f9a4562648ec813e813fff35790a1692dbdf933d31dacdda7f419e90c9aaab7",
+      "sha": "086b90f0200bec3f24322af821c76fdbd863eb9e8ea0d81801b7293d156f3af5"
+    },
+    {
+      "id": "kanton/ZH/323.1/art_3",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Verordnung über die Gebühren, Auslagen und Entschädigungen der Strafverfolgungsbehörden (GebV StrV) (LS 323.1)",
+      "artikel": "3",
+      "artikelLabel": "§ 3",
+      "bloecke": [
+        {
+          "absatz": null,
+          "text": "Sieht diese Verordnung nichts Abweichendes vor, beträgt die Gebühr für Entscheide",
+          "items": [
+            {
+              "marke": "a",
+              "text": "der Jugendanwaltschaften Fr. 50 bis1000"
+            },
+            {
+              "marke": "b",
+              "text": "der übrigen Strafverfolgungsbehörden Fr. 100 bis4000"
+            }
+          ]
+        }
+      ],
+      "stand": "2011-01-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-323_1-2010_11_24-2011_01_01-103.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "1f9a4562648ec813e813fff35790a1692dbdf933d31dacdda7f419e90c9aaab7",
+      "sha": "a36adab8f52226e78d6599c56160a76e91d35e8a4fd0c0bd354f7d12d852adbd"
+    },
+    {
+      "id": "kanton/ZH/323.1/art_4",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Verordnung über die Gebühren, Auslagen und Entschädigungen der Strafverfolgungsbehörden (GebV StrV) (LS 323.1)",
+      "artikel": "4",
+      "artikelLabel": "§ 4",
+      "bloecke": [
+        {
+          "absatz": "1",
+          "text": "Die Gebühren der Staatsanwaltschaften betragen für:",
+          "items": [
+            {
+              "marke": "a",
+              "text": "mit einem Strafbefehl abgeschlossene Untersuchungen Fr. 150 bis15000"
+            },
+            {
+              "marke": "b",
+              "text": "mit einer Einstellungsverfügung abgeschlossene Untersuchungen betreffend 1.Übertretungen Fr. 80 bis1500 2.Verbrechen und Vergehen Fr. 150 bis20000"
+            },
+            {
+              "marke": "c",
+              "text": "die Nichtanhandnahme einer Untersuchung Fr. 50 bis5000"
+            },
+            {
+              "marke": "d",
+              "text": "mit einer Anklageerhebung oder einem Antrag gemäss Art. 374 StPO abgeschlossene Untersuchungen Fr. 300 bis30000"
+            },
+            {
+              "marke": "e",
+              "text": "selbstständige Einziehungsverfahren nach Art. 376–378 StPO Fr. 50 bis15000"
+            }
+          ]
+        },
+        {
+          "absatz": "2",
+          "text": "Die Staatsanwaltschaften setzen die Gebühr nach Abs. 1 lit. d zuhanden des Gerichts fest."
+        }
+      ],
+      "stand": "2011-01-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-323_1-2010_11_24-2011_01_01-103.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "1f9a4562648ec813e813fff35790a1692dbdf933d31dacdda7f419e90c9aaab7",
+      "sha": "c3c0cd30f197cbd41f939f76db0f8e7e8a4628dd3e9f2a13f7b80b1e5dc0aa41"
+    },
+    {
+      "id": "kanton/ZH/323.1/art_5",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Verordnung über die Gebühren, Auslagen und Entschädigungen der Strafverfolgungsbehörden (GebV StrV) (LS 323.1)",
+      "artikel": "5",
+      "artikelLabel": "§ 5",
+      "bloecke": [
+        {
+          "absatz": "1",
+          "text": "Die Gebühren der Jugendanwaltschaften betragen für:",
+          "items": [
+            {
+              "marke": "a",
+              "text": "mit einem Strafbefehl abgeschlossene Untersuchungen gegen Jugendliche wegen Straftaten, die sie 1.vor dem vollendeten 15. Altersjahr begangen haben Fr. 50 bis800 2.nach dem vollendeten 15. Altersjahr begangen haben Fr. 100 bis1500"
+            },
+            {
+              "marke": "b",
+              "text": "mit einer Einstellungsverfügung abgeschlossene Untersuchungen gegen Jugendliche wegen Straftaten, die sie 1.vor dem vollendeten 15. Altersjahr begangen haben Fr. 40 bis600 2.nach dem vollendeten 15. Altersjahr begangen haben Fr. 80 bis1200"
+            },
+            {
+              "marke": "c",
+              "text": "die Nichtanhandnahme einer Untersuchung Fr. 30 bis300"
+            },
+            {
+              "marke": "d",
+              "text": "mit einer Anklageerhebung abgeschlossene Untersuchungen gegen Jugendliche wegen Straftaten, die sie 1.vor dem vollendeten 15. Altersjahr begangen haben Fr. 50 bis1600 2.nach dem vollendeten 15. Altersjahr begangen haben Fr. 100 bis3000"
+            }
+          ]
+        },
+        {
+          "absatz": "2",
+          "text": "Wird die beschuldigte Person auch wegen Straftaten verfolgt, die sie nach Vollendung des 18.Altersjahrs verübt haben soll, richtet sich"
+        }
+      ],
+      "stand": "2011-01-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-323_1-2010_11_24-2011_01_01-103.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "1f9a4562648ec813e813fff35790a1692dbdf933d31dacdda7f419e90c9aaab7",
+      "sha": "78bc2b06bb6fb474199727f304fe341ce9512cc40a0333dc2b2da158b20ab9cf"
+    },
+    {
+      "id": "kanton/ZH/323.1/art_6",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Verordnung über die Gebühren, Auslagen und Entschädigungen der Strafverfolgungsbehörden (GebV StrV) (LS 323.1)",
+      "artikel": "6",
+      "artikelLabel": "§ 6",
+      "bloecke": [
+        {
+          "absatz": "1",
+          "text": "Die Gebühren der Übertretungsstrafbehörden gemäss §1 lit. c und d betragen für:",
+          "items": [
+            {
+              "marke": "a",
+              "text": "mit einem Strafbefehl abgeschlossene Untersuchungen Fr. 80 bis2000"
+            },
+            {
+              "marke": "b",
+              "text": "mit einer Einstellungsverfügung abgeschlossene Untersuchungen Fr. 80 bis1500"
+            },
+            {
+              "marke": "c",
+              "text": "die Nichtanhandnahme einer Untersuchung Fr. 50 bis1000"
+            },
+            {
+              "marke": "d",
+              "text": "die Führung der Strafuntersuchung nach einer Einsprache gegen einen Strafbefehl Fr. 100 bis5000"
+            }
+          ]
+        },
+        {
+          "absatz": "2",
+          "text": "Die Übertretungsstrafbehörden setzen die Gebühr nach Abs.1 lit. d zuhanden des Gerichts fest."
+        }
+      ],
+      "stand": "2011-01-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-323_1-2010_11_24-2011_01_01-103.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "1f9a4562648ec813e813fff35790a1692dbdf933d31dacdda7f419e90c9aaab7",
+      "sha": "291d59328375c9bc81cdbb2ce8f3f6048b081c8ac96e3312060d47842ef4768f"
+    },
+    {
+      "id": "kanton/ZH/323.1/art_7",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Verordnung über die Gebühren, Auslagen und Entschädigungen der Strafverfolgungsbehörden (GebV StrV) (LS 323.1)",
+      "artikel": "7",
+      "artikelLabel": "§ 7",
+      "bloecke": [
+        {
+          "absatz": "1",
+          "text": "In einfachen Fällen können Pauschalgebühren festgesetzt werden, die auch die Auslagen abgelten."
+        },
+        {
+          "absatz": "2",
+          "text": "Bei der Festsetzung der Pauschalgebühren werden die nach §§2–6 bestimmten Gebühren um mindestens 10% und höchstens 25% erhöht."
+        },
+        {
+          "absatz": "3",
+          "text": "Deckt eine erhöhte Gebühr die Auslagen offensichtlich nicht, ist eine Pauschalgebühr unzulässig."
+        }
+      ],
+      "stand": "2011-01-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-323_1-2010_11_24-2011_01_01-103.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "1f9a4562648ec813e813fff35790a1692dbdf933d31dacdda7f419e90c9aaab7",
+      "sha": "08b16e1295c2a5ca494eb2e3e8f161378d0920aeb31a107e4aedb98cea61063c"
+    },
+    {
+      "id": "kanton/ZH/323.1/art_8",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Verordnung über die Gebühren, Auslagen und Entschädigungen der Strafverfolgungsbehörden (GebV StrV) (LS 323.1)",
+      "artikel": "8",
+      "artikelLabel": "§ 8",
+      "bloecke": [
+        {
+          "absatz": "1",
+          "text": "Für folgende Amtshandlungen können Gebühren erhoben werden:",
+          "items": [
+            {
+              "marke": "a",
+              "text": "Rechtskraftbescheinigungen Fr. 20"
+            },
+            {
+              "marke": "b",
+              "text": "andere Bescheinigungen und Beurkundungen Fr. 20 bis50"
+            },
+            {
+              "marke": "c",
+              "text": "Mahnschreiben Fr. 20 bis50"
+            }
+          ]
+        },
+        {
+          "absatz": "2",
+          "text": "Für die Erstellung von Kopien oder die Zustellung von Akten an Verfahrensbeteiligte oder Dritte gelten die Tarife gemäss §35 der Verordnung über die Information und den Datenschutz vom 28. Mai 2008 sinngemäss. Abweichend von Abs. 3 Satz 2 dieser Bestimmung, werden auch Kosten unter Fr. 50 in Rechnung gestellt."
+        },
+        {
+          "absatz": "3",
+          "text": "Für die übrigen Verrichtungen der Kanzlei kann eine Gebühr von Fr. 10 bis 500 erhoben werden."
+        },
+        {
+          "absatz": "4",
+          "text": "Von kantonalen Amtsstellen werden keine Gebühren erhoben."
+        }
+      ],
+      "stand": "2011-01-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-323_1-2010_11_24-2011_01_01-103.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "1f9a4562648ec813e813fff35790a1692dbdf933d31dacdda7f419e90c9aaab7",
+      "sha": "10a25203f62283136bb9d5ff39b00ffdd47a14451617252e33813f58bdf8eb32"
+    },
+    {
+      "id": "kanton/ZH/323.1/art_9",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Verordnung über die Gebühren, Auslagen und Entschädigungen der Strafverfolgungsbehörden (GebV StrV) (LS 323.1)",
+      "artikel": "9",
+      "artikelLabel": "§ 9",
+      "bloecke": [
+        {
+          "absatz": "1",
+          "text": "Die Auslagen für Vorladungen, die Telekommunikation sowie die Ausfertigung und Zustellung von Entscheiden sind in den Gebühren enthalten."
+        },
+        {
+          "absatz": "2",
+          "text": "Andere Auslagen gemäss Art. 422 Abs. 2 StPO, auch diejenigen der Polizei, werden unter Vorbehalt von §7 gesondert verrechnet. Die Strafverfolgungsbehörden reichen dem Gericht mit der Anklageerhebung eine Aufstellung ihrer Auslagen ein."
+        }
+      ],
+      "stand": "2011-01-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-323_1-2010_11_24-2011_01_01-103.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "1f9a4562648ec813e813fff35790a1692dbdf933d31dacdda7f419e90c9aaab7",
+      "sha": "26c7624f04989be42d1d89883f5c6e1b1ede557b8178b962b815a87bb3d1f4ba"
+    },
+    {
+      "id": "kanton/ZH/323.1/art_10",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Verordnung über die Gebühren, Auslagen und Entschädigungen der Strafverfolgungsbehörden (GebV StrV) (LS 323.1)",
+      "artikel": "10",
+      "artikelLabel": "§ 10",
+      "bloecke": [
+        {
+          "absatz": "1",
+          "text": "Die Entschädigung von Zeuginnen und Zeugen sowie Auskunftspersonen richtet sich nach der Entschädigungsverordnung der obersten Gerichte vom 11. Juni 2002."
+        },
+        {
+          "absatz": "2",
+          "text": "Geschädigte Personen, die Straftaten bei einer Strafverfolgungsbehörde anzeigen oder als Privatklägerschaft gelten, haben in der Regel bei ihrer ersten Einvernahme durch die Strafverfolgungsbehörden nur Anspruch auf Ersatz der Spesen."
+        }
+      ],
+      "stand": "2011-01-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-323_1-2010_11_24-2011_01_01-103.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "1f9a4562648ec813e813fff35790a1692dbdf933d31dacdda7f419e90c9aaab7",
+      "sha": "2941f074e6aa13eba570963100b57b43d8d0434893bbd52b6dabcf1dbd3b5f6b"
+    },
+    {
+      "id": "kanton/ZH/323.1/art_11",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Verordnung über die Gebühren, Auslagen und Entschädigungen der Strafverfolgungsbehörden (GebV StrV) (LS 323.1)",
+      "artikel": "11",
+      "artikelLabel": "§ 11",
+      "bloecke": [
+        {
+          "absatz": "1",
+          "text": "Sachverständige werden in der Regel nach Aufwand entschädigt. Der Ansatz richtet sich nach den erforderlichen Fachkenntnissen und der Schwierigkeit der Leistung, bei freiberuflich tätigen Sachverständigen in der Regel nach den Ansätzen des jeweiligen Berufsverbandes."
+        },
+        {
+          "absatz": "2",
+          "text": "Für Barauslagen der Sachverständigen gelten die Ansätze gemäss §4 der Entschädigungsverordnung der obersten Gerichte vom 11. Juni 2002."
+        },
+        {
+          "absatz": "3",
+          "text": "Können die Kosten für ein Gutachten nicht abgeschätzt werden, ist ein Kostenvoranschlag einzuholen und ein Kostendach zu vereinbaren."
+        },
+        {
+          "absatz": "4",
+          "text": "Ist für ein Gutachten mit Kosten von mehr als Fr. 30 000 zu rechnen, ist die schriftliche Genehmigung der Aufsichtsbehörde einzuholen."
+        }
+      ],
+      "stand": "2011-01-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-323_1-2010_11_24-2011_01_01-103.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "1f9a4562648ec813e813fff35790a1692dbdf933d31dacdda7f419e90c9aaab7",
+      "sha": "282d83784f0bbf492d68a144fb59de7cb2145673b3a92fbf68b195729c599899"
+    },
+    {
+      "id": "kanton/ZH/323.1/art_12",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Verordnung über die Gebühren, Auslagen und Entschädigungen der Strafverfolgungsbehörden (GebV StrV) (LS 323.1)",
+      "artikel": "12",
+      "artikelLabel": "§ 12",
+      "bloecke": [
+        {
+          "absatz": "1",
+          "text": "Die von den Strafverfolgungsbehörden gemäss §1 lit.a und b auferlegten Gebühren und Auslagen sowie die von ihnen verfügten Ordnungsbussen nach der Strafprozessordnungund der Jugendstrafprozessordnungvom 20. März 2009 werden von der zentralen Inkassostelle am Obergericht bezogen."
+        },
+        {
+          "absatz": "2",
+          "text": "Die Verordnung des Obergerichts über das Rechnungswesen der Bezirksgerichte und des Obergerichts sowie über das zentrale Inkasso vom 9. April 2003gilt analog. Die gemäss §5 der Verordnung zuständige Stelle entscheidet auch über Gesuche um nachträglichen Erlass der durch die Strafverfolgungsbehörden auferlegten Kosten."
+        }
+      ],
+      "stand": "2011-01-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-323_1-2010_11_24-2011_01_01-103.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "1f9a4562648ec813e813fff35790a1692dbdf933d31dacdda7f419e90c9aaab7",
+      "sha": "738235a6c10397d8879ca1612d2556bac64ac457ee66a4711ce6fcddf817bed4"
+    },
+    {
+      "id": "kanton/ZH/323.1/art_13",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Verordnung über die Gebühren, Auslagen und Entschädigungen der Strafverfolgungsbehörden (GebV StrV) (LS 323.1)",
+      "artikel": "13",
+      "artikelLabel": "§ 13",
+      "bloecke": [
+        {
+          "absatz": null,
+          "text": "Zur einheitlichen Bemessung der Gebühren erlässt die Direktion der Justiz und des Innern Richtlinien."
+        }
+      ],
+      "stand": "2011-01-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-323_1-2010_11_24-2011_01_01-103.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "1f9a4562648ec813e813fff35790a1692dbdf933d31dacdda7f419e90c9aaab7",
+      "sha": "bbfacf027f29b69046686a90144f67022755a7177c209c5d8e5446ae22c29341"
+    },
+    {
+      "id": "kanton/ZH/323.1/art_14",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Verordnung über die Gebühren, Auslagen und Entschädigungen der Strafverfolgungsbehörden (GebV StrV) (LS 323.1)",
+      "artikel": "14",
+      "artikelLabel": "§ 14",
+      "bloecke": [
+        {
+          "absatz": "1",
+          "text": "Die Verordnung findet auf die im Zeitpunkt ihres Inkrafttretens hängigen Verfahren Anwendung. Gebühren nach §§ 4 Abs.1 lit. d, 5 Abs. 1 lit. d und 6 Abs. 1 lit. d werden nur erhoben, wenn nach Inkrafttreten dieser Verordnung Anklage erhoben wird."
+        },
+        {
+          "absatz": "2",
+          "text": "Finden auf ein Verfahren weiterhin die Bestimmungen des kantonalen Strafprozessrechts Anwendung, gelten die bisherigen Bestimmungen der jeweiligen Strafverfolgungsbehörden."
+        }
+      ],
+      "stand": "2011-01-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-323_1-2010_11_24-2011_01_01-103.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "1f9a4562648ec813e813fff35790a1692dbdf933d31dacdda7f419e90c9aaab7",
+      "sha": "b030b5faceac30099ad6b55ee214c6b2f61675a47c0fcf91e06e1e840978946c"
+    }
+  ]
+}

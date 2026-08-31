@@ -318,6 +318,12 @@ async function main(): Promise<void> {
     // ZH-PDF-Quellen haben kein version_uid → quelleHash des extrahierten
     // Volltexts als Drift-Token (§7 d). Re-fetch + Vergleich.
     console.log('\ncheck:normtext-netz: ZH-Drift (zhlex PDF) prüfen …');
+    // ZH-4a (31.8.2026): sammleZhPdfInventar() liefert seit der deklarativen
+    // Quellenliste die VEREINIGUNG aus Tarif-Ableitung und `ZH_QUELLEN`
+    // (zh-quellen.ts), dedupliziert über die Registry-URL. Damit ist auch ein
+    // ZH-Erlass OHNE Tarif-Zitat driftüberwacht — vorher war er hier
+    // unsichtbar (§7-d-Lücke, Dossier §7). Kein Eingriff nötig: die Prüfung
+    // liest dieselbe Inventar-Funktion wie der Generator (§5, eine Quelle).
     const zhGruppen = sammleZhPdfInventar();
     let zhGeprüft = 0;
     let zhDrift = 0;

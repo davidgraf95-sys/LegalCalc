@@ -1,0 +1,3268 @@
+{
+  "erzeugt": "2026-08-31",
+  "eintraege": [
+    {
+      "id": "kanton/ZH/175.2/art_1",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Verwaltungsrechtspflegegesetz (VRG) (LS 175.2)",
+      "artikel": "1",
+      "artikelLabel": "§ 1",
+      "bloecke": [
+        {
+          "absatz": null,
+          "text": "Öffentlichrechtliche Angelegenheiten werden von den Verwaltungsbehörden und vom Verwaltungsgericht entschieden. Privatrechtliche Ansprüche sind vor den Zivilgerichten geltend zu machen."
+        }
+      ],
+      "stand": "1960-05-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-175_2-1959_05_24-1960_05_01-133.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "7d55abdc75343be4d35e9dd77c8a74f6ea9ceaf0d021d4d82b06b1b865479b5d",
+      "sha": "a23afdd70a992a3852a47a5ebecdacfe43b45bfc1f392da4fab9bae7c18f43df"
+    },
+    {
+      "id": "kanton/ZH/175.2/art_2",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Verwaltungsrechtspflegegesetz (VRG) (LS 175.2)",
+      "artikel": "2",
+      "artikelLabel": "§ 2",
+      "bloecke": [
+        {
+          "absatz": "1",
+          "text": "Über Schadenersatzansprüche von Privaten gegen Staat und Gemeinde sowie gegen deren Beamte und Angestellte entscheiden die Zivilgerichte."
+        },
+        {
+          "absatz": "2",
+          "text": "Sie entscheiden auch über die Schadenersatzansprüche Privater gegen die Inhaber behördlicher Konzessionen, Bewilligungen oder Patente."
+        }
+      ],
+      "stand": "1960-05-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-175_2-1959_05_24-1960_05_01-133.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "7d55abdc75343be4d35e9dd77c8a74f6ea9ceaf0d021d4d82b06b1b865479b5d",
+      "sha": "f134ad2a5d36e37b72895647495c787ca9f4b077e801d3de383adf1503a8854a"
+    },
+    {
+      "id": "kanton/ZH/175.2/art_3",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Verwaltungsrechtspflegegesetz (VRG) (LS 175.2)",
+      "artikel": "3",
+      "artikelLabel": "§ 3",
+      "bloecke": [
+        {
+          "absatz": null,
+          "text": "Besondere gesetzliche Bestimmungen, welche die Zuständigkeit anders ordnen, bleiben vorbehalten. Zweiter Abschnitt: Das Verwaltungsverfahren"
+        }
+      ],
+      "stand": "1960-05-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-175_2-1959_05_24-1960_05_01-133.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "7d55abdc75343be4d35e9dd77c8a74f6ea9ceaf0d021d4d82b06b1b865479b5d",
+      "sha": "dd7cfe5049f9dff50d9a54abdda121e8feae0435984e83d129a80b17e998dec7"
+    },
+    {
+      "id": "kanton/ZH/175.2/art_4",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Verwaltungsrechtspflegegesetz (VRG) (LS 175.2)",
+      "artikel": "4",
+      "artikelLabel": "§ 4",
+      "bloecke": [
+        {
+          "absatz": null,
+          "text": "Die Bestimmungen dieses Abschnittes gelten für das Verfahren vor den Verwaltungsbehörden der Gemeinden, der Bezirke und des Kantons, soweit nicht abweichende Vorschriften bestehen."
+        }
+      ],
+      "stand": "1960-05-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-175_2-1959_05_24-1960_05_01-133.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "7d55abdc75343be4d35e9dd77c8a74f6ea9ceaf0d021d4d82b06b1b865479b5d",
+      "sha": "6cb8ed3143fe581cd586e034d64dc271244373a689511fc1620c09e5dfc40257"
+    },
+    {
+      "id": "kanton/ZH/175.2/art_4_a",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Verwaltungsrechtspflegegesetz (VRG) (LS 175.2)",
+      "artikel": "4_a",
+      "artikelLabel": "§ 4a",
+      "bloecke": [
+        {
+          "absatz": null,
+          "text": "Die Verwaltungsbehörden behandeln die bei ihnen eingeleiteten Verfahren beförderlich und sorgen ohne Verzug für deren Erledigung."
+        }
+      ],
+      "stand": "1960-05-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-175_2-1959_05_24-1960_05_01-133.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "7d55abdc75343be4d35e9dd77c8a74f6ea9ceaf0d021d4d82b06b1b865479b5d",
+      "sha": "84aec3947a002b20bbfacfe3672ba8917afa4ad807f0bd4211b502974c7019e7"
+    },
+    {
+      "id": "kanton/ZH/175.2/art_5",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Verwaltungsrechtspflegegesetz (VRG) (LS 175.2)",
+      "artikel": "5",
+      "artikelLabel": "§ 5",
+      "bloecke": [
+        {
+          "absatz": "1",
+          "text": "Bevor eine Verwaltungsbehörde auf die Behandlung einer Sache eintritt, hat sie von Amtes wegen ihre Zuständigkeit zu prüfen."
+        },
+        {
+          "absatz": "2",
+          "text": "Eingaben an eine unzuständige Verwaltungsbehörde sind von Amtes wegen und in der Regel unter Benachrichtigung des Absenders an die zuständige Verwaltungsbehörde weiterzuleiten. Für die Einhaltung der Fristen ist der Zeitpunkt der Einreichung bei der unzuständigen Behörde massgebend."
+        },
+        {
+          "absatz": "3",
+          "text": "Unleserliche, ungebührliche und übermässig weitschweifige Eingaben werden zur Verbesserung zurückgewiesen."
+        }
+      ],
+      "stand": "1960-05-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-175_2-1959_05_24-1960_05_01-133.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "7d55abdc75343be4d35e9dd77c8a74f6ea9ceaf0d021d4d82b06b1b865479b5d",
+      "sha": "8d5315cc17f0d83f261c8af8b5665a34771aced3c046d2978ee81b121bfe78cd"
+    },
+    {
+      "id": "kanton/ZH/175.2/art_5_a",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Verwaltungsrechtspflegegesetz (VRG) (LS 175.2)",
+      "artikel": "5_a",
+      "artikelLabel": "§ 5a",
+      "bloecke": [
+        {
+          "absatz": "1",
+          "text": "Personen, die eine Anordnung zu treffen, dabei mitzuwirken oder sie vorzubereiten haben, treten in den Ausstand, wenn sie in der Sache persönlich befangen erscheinen, insbesondere:",
+          "items": [
+            {
+              "marke": "a",
+              "text": "in der Sache ein persönliches Interesse haben,"
+            },
+            {
+              "marke": "b",
+              "text": "mit einer Partei in gerader Linie oder in der Seitenlinie bis zum dritten Grade verwandt oder verschwägert oder durch Ehe, Verlobung, eingetragene Partnerschaft, faktische Lebensgemeinschaft oder Kindesannahme verbunden sind,"
+            },
+            {
+              "marke": "c",
+              "text": "Vertreter einer Partei sind oder für eine Partei in der gleichen Sache tätig waren."
+            }
+          ]
+        },
+        {
+          "absatz": "2",
+          "text": "Ist der Ausstand streitig, so entscheidet darüber die Aufsichtsbehörde oder, wenn es sich um den Ausstand eines Mitgliedes einer Kollegialbehörde handelt, diese Behörde unter Ausschluss des betreffenden Mitgliedes."
+        }
+      ],
+      "stand": "1960-05-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-175_2-1959_05_24-1960_05_01-133.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "7d55abdc75343be4d35e9dd77c8a74f6ea9ceaf0d021d4d82b06b1b865479b5d",
+      "sha": "394be087c6ca203bd3b4b0a3f927d1b648ce04c85fbcf755e99145f5fa232e03"
+    },
+    {
+      "id": "kanton/ZH/175.2/art_6",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Verwaltungsrechtspflegegesetz (VRG) (LS 175.2)",
+      "artikel": "6",
+      "artikelLabel": "§ 6",
+      "bloecke": [
+        {
+          "absatz": null,
+          "text": "Die Verwaltungsbehörde trifft die nötigen vorsorglichen Massnahmen. Bei Kollegialbehörden ist in dringlichen Fällen der Vorsitzende hiezu ermächtigt."
+        }
+      ],
+      "stand": "1960-05-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-175_2-1959_05_24-1960_05_01-133.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "7d55abdc75343be4d35e9dd77c8a74f6ea9ceaf0d021d4d82b06b1b865479b5d",
+      "sha": "1f55d924ceb332787ba85139eff6d679f86b388500ad0e8e6c4393e616ccc17f"
+    },
+    {
+      "id": "kanton/ZH/175.2/art_6_a",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Verwaltungsrechtspflegegesetz (VRG) (LS 175.2)",
+      "artikel": "6_a",
+      "artikelLabel": "§ 6a",
+      "bloecke": [
+        {
+          "absatz": "1",
+          "text": "Sind an einem Verfahren mehrere Personen beteiligt, die eine gemeinsame Eingabe oder inhaltlich gleiche Eingaben eingereicht haben, kann die Verwaltungsbehörde sie verpflichten, ein gemeinsames Zustellungsdomizil oder einen gemeinsamen Vertreter zu bezeichnen."
+        },
+        {
+          "absatz": "2",
+          "text": "Kommen die Beteiligten dieser Aufforderung innert angemessener Frist nicht nach, so kann die Verwaltungsbehörde entweder ein Zustellungsdomizil bezeichnen oder einen Vertreter bestimmen."
+        }
+      ],
+      "stand": "1960-05-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-175_2-1959_05_24-1960_05_01-133.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "7d55abdc75343be4d35e9dd77c8a74f6ea9ceaf0d021d4d82b06b1b865479b5d",
+      "sha": "2e5c0a376e04289f930022d0b4cc2a0f8cc86d8ff0e096688f921941ec5fb6e3"
+    },
+    {
+      "id": "kanton/ZH/175.2/art_6_b",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Verwaltungsrechtspflegegesetz (VRG) (LS 175.2)",
+      "artikel": "6_b",
+      "artikelLabel": "§ 6b",
+      "bloecke": [
+        {
+          "absatz": "1",
+          "text": "Verfahrensbeteiligte mit Sitz oder Wohnsitz im Ausland haben ein Zustellungsdomizil oder einen Vertreter in der Schweiz anzugeben."
+        },
+        {
+          "absatz": "2",
+          "text": "Kommen die Beteiligten dieser Aufforderung innert angemessener Frist nicht nach, so kann die Verwaltungsbehörde entweder Zustellungen durch amtliche Veröffentlichungen ersetzen oder auf die Eingabe nicht eintreten."
+        }
+      ],
+      "stand": "1960-05-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-175_2-1959_05_24-1960_05_01-133.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "7d55abdc75343be4d35e9dd77c8a74f6ea9ceaf0d021d4d82b06b1b865479b5d",
+      "sha": "e274d34f9b990734044495aeeaa2a25310749dbffe2102713d46b152adfd5659"
+    },
+    {
+      "id": "kanton/ZH/175.2/art_7",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Verwaltungsrechtspflegegesetz (VRG) (LS 175.2)",
+      "artikel": "7",
+      "artikelLabel": "§ 7",
+      "bloecke": [
+        {
+          "absatz": "1",
+          "text": "Die Verwaltungsbehörde untersucht den Sachverhalt von Amtes wegen durch Befragen der Beteiligten und von Auskunftspersonen, durch Beizug von Amtsberichten, Urkunden und Sachverständigen, durch Augenschein oder auf andere Weise."
+        },
+        {
+          "absatz": "2",
+          "text": "Die am Verfahren Beteiligten haben dabei mitzuwirken:",
+          "items": [
+            {
+              "marke": "a",
+              "text": "soweit sie ein Begehren gestellt haben,"
+            },
+            {
+              "marke": "b",
+              "text": "wenn ihnen nach gesetzlicher Vorschrift eine Auskunfts- oder Mitteilungspflicht obliegt."
+            }
+          ]
+        },
+        {
+          "absatz": "3",
+          "text": "Für die Feststellung des Sachverhaltes sind Verwaltungsbehörden und Gerichte verpflichtet, notwendige Akten herauszugeben, Amtsberichte zu erstatten und Auskünfte zu erteilen. Vorbehalten bleiben besondere Vorschriften über die Geheimhaltung und den Datenschutz."
+        },
+        {
+          "absatz": "4",
+          "text": "Die Verwaltungsbehörde würdigt das Ergebnis der Untersuchung frei. Sie wendet das Recht von Amtes wegen an. An die gestellten Begehren ist sie nicht gebunden."
+        }
+      ],
+      "stand": "1960-05-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-175_2-1959_05_24-1960_05_01-133.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "7d55abdc75343be4d35e9dd77c8a74f6ea9ceaf0d021d4d82b06b1b865479b5d",
+      "sha": "f6118a5ef2f7df8bbde98a091ffb726a9277dff229ad6605dcbaa9ee1a55592b"
+    },
+    {
+      "id": "kanton/ZH/175.2/art_8",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Verwaltungsrechtspflegegesetz (VRG) (LS 175.2)",
+      "artikel": "8",
+      "artikelLabel": "§ 8",
+      "bloecke": [
+        {
+          "absatz": "1",
+          "text": "Personen, die durch eine Anordnung berührt sind und ein schutzwürdiges Interesse an deren Aufhebung oder Änderung haben, sind berechtigt, in die Akten Einsicht zu nehmen. Ausserhalb eines förmlichen Verfahrens oder nach Vorliegen einer rechtskräftigen Verfügung richtet sich das Akteneinsichtsrecht nach dem Gesetz über die Information und den Datenschutz."
+        },
+        {
+          "absatz": "2",
+          "text": "Der Regierungsrat regelt die Herausgabe und Zustellung von Akten zur Einsichtnahme."
+        },
+        {
+          "absatz": "3",
+          "text": "Die Information über Gerichtsverfahren und die Akteneinsicht Dritter richten sich vor Verwaltungsgericht und den ihm unterstellten Gerichten nach der Verordnung des Plenarausschusses der Gerichte gemäss §73 Abs. 1 lit. d des Gesetzes über die Gerichts- und Behördenorganisation im Zivil- und Strafprozess vom 10. Mai 2010 (GOG)."
+        }
+      ],
+      "stand": "1960-05-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-175_2-1959_05_24-1960_05_01-133.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "7d55abdc75343be4d35e9dd77c8a74f6ea9ceaf0d021d4d82b06b1b865479b5d",
+      "sha": "d1d93d868d7a2eb1315074ca391ae5386ce42bfabd3249deb7045b1deb3ad862"
+    },
+    {
+      "id": "kanton/ZH/175.2/art_9",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Verwaltungsrechtspflegegesetz (VRG) (LS 175.2)",
+      "artikel": "9",
+      "artikelLabel": "§ 9",
+      "bloecke": [
+        {
+          "absatz": "1",
+          "text": "Die Einsicht in ein Aktenstück, insbesondere in ein Einvernahmeprotokoll, kann zur Wahrung wichtiger öffentlicher oder schutzwürdiger privater Interessen oder im Interesse einer noch nicht abgeschlossenen Untersuchung verweigert werden. Die Verweigerung ist in den Akten zu vermerken und zu begründen."
+        },
+        {
+          "absatz": "2",
+          "text": "Der wesentliche Inhalt eines Aktenstückes, in welches die Einsicht verweigert wurde, soll jedoch insoweit mitgeteilt werden, als dies ohne Verletzung der zu schützenden Interessen möglich ist. Bei mündlicher Bekanntgabe ist ein Protokoll zu erstellen, das derjenige zu unterzeichnen hat, der die Einsicht verlangt."
+        }
+      ],
+      "stand": "1960-05-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-175_2-1959_05_24-1960_05_01-133.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "7d55abdc75343be4d35e9dd77c8a74f6ea9ceaf0d021d4d82b06b1b865479b5d",
+      "sha": "b3daf6679c98e92b78d4bb66c57be813472699bd73a8203c73503b24b7b167e9"
+    },
+    {
+      "id": "kanton/ZH/175.2/art_10",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Verwaltungsrechtspflegegesetz (VRG) (LS 175.2)",
+      "artikel": "10",
+      "artikelLabel": "§ 10",
+      "bloecke": [
+        {
+          "absatz": "1",
+          "text": "Schriftliche Anordnungen sind zu begründen und mit einer Rechtsmittelbelehrung zu versehen, die das zulässige ordentliche Rechtsmittel, die Rechtsmittelinstanz und die Rechtsmittelfrist bezeichnet."
+        },
+        {
+          "absatz": "2",
+          "text": "Erlasse, ausgenommen die Kantonsverfassungund kantonale Gesetze, werden mit einer Rechtsmittelbelehrung veröffentlicht."
+        },
+        {
+          "absatz": "3",
+          "text": "Schriftliche Anordnungen werden mitgeteilt:",
+          "items": [
+            {
+              "marke": "a",
+              "text": "den Verfahrensbeteiligten,"
+            },
+            {
+              "marke": "b",
+              "text": "auf ihr Gesuch hin anderen Personen, wenn sie durch die Anordnung berührt sind und ein schutzwürdiges Interesse an deren Aufhebung oder Änderung haben,"
+            },
+            {
+              "marke": "c",
+              "text": "der Schlichtungsstelle im Sinne des Gleichstellungsgesetzes vom 24. März 1995, wenn eine Schlichtungsverhandlung durchgeführt wurde."
+            }
+          ]
+        },
+        {
+          "absatz": "4",
+          "text": "Eine Anordnung kann amtlich veröffentlicht werden, wenn sie",
+          "items": [
+            {
+              "marke": "a",
+              "text": "nicht zugestellt werden kann,"
+            },
+            {
+              "marke": "b",
+              "text": "zahlreichen Personen mitgeteilt werden müsste,"
+            },
+            {
+              "marke": "c",
+              "text": "Personen unbekannten Aufenthalts mitgeteilt werden müsste,"
+            },
+            {
+              "marke": "d",
+              "text": "Personen mitgeteilt werden müsste, die sich nur mit unverhältnismässigem Aufwand vollzählig bestimmen lassen."
+            }
+          ]
+        },
+        {
+          "absatz": "5",
+          "text": "Anstelle der vollständigen amtlichen Veröffentlichung der Anordnung kann auch bekannt gemacht werden, bei welcher Amtsstelle die Anordnung innert welcher Frist bezogen werden kann."
+        }
+      ],
+      "stand": "1960-05-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-175_2-1959_05_24-1960_05_01-133.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "7d55abdc75343be4d35e9dd77c8a74f6ea9ceaf0d021d4d82b06b1b865479b5d",
+      "sha": "f9c45f0de4775e184ff39743f2297b72e2d2e5d0ec293560797b46a3093b9ae2"
+    },
+    {
+      "id": "kanton/ZH/175.2/art_10_a",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Verwaltungsrechtspflegegesetz (VRG) (LS 175.2)",
+      "artikel": "10_a",
+      "artikelLabel": "§ 10a",
+      "bloecke": [
+        {
+          "absatz": null,
+          "text": "Auf die Begründung einer Anordnung kann verzichtet werden, wenn",
+          "items": [
+            {
+              "marke": "a",
+              "text": "den Begehren der Verfahrensbeteiligten vollständig entsprochen wird,"
+            },
+            {
+              "marke": "b",
+              "text": "den Verfahrensbeteiligten angezeigt wird, dass sie innert zehn Tagen seit der Mitteilung schriftlich eine Begründung verlangen können; die Rechtsmittelfrist beginnt mit der Zustellung des begründeten Entscheides zu laufen,"
+            },
+            {
+              "marke": "c",
+              "text": "den Verfahrensbeteiligten angezeigt wird, dass sie innert 30 Tagen seit der Mitteilung bei der anordnenden Behörde Einsprache erheben können."
+            }
+          ]
+        }
+      ],
+      "stand": "1960-05-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-175_2-1959_05_24-1960_05_01-133.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "7d55abdc75343be4d35e9dd77c8a74f6ea9ceaf0d021d4d82b06b1b865479b5d",
+      "sha": "c40caf616354fdaa360ca184f9c36b86e8944ae923c6489406e305db248dfcc2"
+    },
+    {
+      "id": "kanton/ZH/175.2/art_10_b",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Verwaltungsrechtspflegegesetz (VRG) (LS 175.2)",
+      "artikel": "10_b",
+      "artikelLabel": "§ 10b",
+      "bloecke": [
+        {
+          "absatz": "1",
+          "text": "Die Einsprache ist schriftlich zu erheben. Sie muss einen Antrag enthalten."
+        },
+        {
+          "absatz": "2",
+          "text": "Dem Lauf der Einsprachefrist und der Einreichung der Einsprache kommt aufschiebende Wirkung zu."
+        },
+        {
+          "absatz": "3",
+          "text": "Die Behörde überprüft ihre Anordnung uneingeschränkt und entscheidet nochmals über die Sache. Der Einspracheentscheid wird begründet."
+        }
+      ],
+      "stand": "1960-05-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-175_2-1959_05_24-1960_05_01-133.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "7d55abdc75343be4d35e9dd77c8a74f6ea9ceaf0d021d4d82b06b1b865479b5d",
+      "sha": "391cd8129c958bf17ad380ae47d00779dc087a4b4026b4497f68d2c70476f7cc"
+    },
+    {
+      "id": "kanton/ZH/175.2/art_10_c",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Verwaltungsrechtspflegegesetz (VRG) (LS 175.2)",
+      "artikel": "10_c",
+      "artikelLabel": "§ 10c",
+      "bloecke": [
+        {
+          "absatz": "1",
+          "text": "Wer ein schutzwürdiges Interesse hat, kann von der Behörde, die für Handlungen zuständig ist, welche sich auf öffentliches Recht stützen und Rechte oder Pflichten berühren, verlangen, dass sie:",
+          "items": [
+            {
+              "marke": "a",
+              "text": "widerrechtliche Handlungen unterlässt, einstellt oder widerruft,"
+            },
+            {
+              "marke": "b",
+              "text": "die Folgen widerrechtlicher Handlungen beseitigt,"
+            },
+            {
+              "marke": "c",
+              "text": "die Widerrechtlichkeit von Handlungen feststellt."
+            }
+          ]
+        },
+        {
+          "absatz": "2",
+          "text": "Die Behörde erlässt eine Anordnung."
+        }
+      ],
+      "stand": "1960-05-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-175_2-1959_05_24-1960_05_01-133.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "7d55abdc75343be4d35e9dd77c8a74f6ea9ceaf0d021d4d82b06b1b865479b5d",
+      "sha": "6adfdd5d28df3aa39f360f62d8a98d227f893befce15385fce2b383aa2b7eab2"
+    },
+    {
+      "id": "kanton/ZH/175.2/art_10_d",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Verwaltungsrechtspflegegesetz (VRG) (LS 175.2)",
+      "artikel": "10_d",
+      "artikelLabel": "§ 10d",
+      "bloecke": [
+        {
+          "absatz": "1",
+          "text": "Gegen erstinstanzliche Handlungen des Regierungsrates, welche die politische Stimmberechtigung der Bürgerinnen und Bürger oder Volkswahlen oder Volksabstimmungen betreffen, kann bei ihm innert fünf Tagen Einsprache erhoben werden. §21a gilt sinngemäss."
+        },
+        {
+          "absatz": "2",
+          "text": "Bei Handlungen im Zusammenhang mit der Erneuerungswahl der Ständeratsmitglieder ist die Einsprache innert dreier Tage einzureichen. Wird die Einsprache der Schweizerischen Post übergeben, ist eine Versandform zu wählen, die eine Zustellung am Tag nach Fristablauf gewährleistet."
+        },
+        {
+          "absatz": "3",
+          "text": "Bei entsprechenden Handlungen anderer staatlicher Organe gilt §19 Abs. 1 lit. c."
+        }
+      ],
+      "stand": "1960-05-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-175_2-1959_05_24-1960_05_01-133.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "7d55abdc75343be4d35e9dd77c8a74f6ea9ceaf0d021d4d82b06b1b865479b5d",
+      "sha": "07d96097fab6f81b067907594ebde2a198ed17821068b3f41fe067aa7712f34a"
+    },
+    {
+      "id": "kanton/ZH/175.2/art_11",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Verwaltungsrechtspflegegesetz (VRG) (LS 175.2)",
+      "artikel": "11",
+      "artikelLabel": "§ 11",
+      "bloecke": [
+        {
+          "absatz": "1",
+          "text": "Der Tag der Eröffnung einer Frist oder der Tag der Mitteilung eines Entscheides wird bei der Fristberechnung nicht mitgezählt. Ist der letzte Tag einer Frist ein Samstag oder ein öffentlicher Ruhetag, so endigt sie am nächsten Werktag. Samstage und öffentliche Ruhetage im Laufe der Frist werden mitgezählt."
+        },
+        {
+          "absatz": "2",
+          "text": "Schriftliche Eingaben müssen spätestens am letzten Tage der Frist bei der Behörde eintreffen oder zu deren Handen der schweizerischen Post übergeben sein. Hat eine Person im Ausland eine Frist zu wahren, genügt es, wenn die Eingabe am letzten Tag der Frist bei einer schweizerischen diplomatischen oder konsularischen Vertretung eintrifft."
+        }
+      ],
+      "stand": "1960-05-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-175_2-1959_05_24-1960_05_01-133.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "7d55abdc75343be4d35e9dd77c8a74f6ea9ceaf0d021d4d82b06b1b865479b5d",
+      "sha": "0a3f58bdf4c50d30b2354e79ac2f4d1c5d34cba6ded740a0a797168ea10749d0"
+    },
+    {
+      "id": "kanton/ZH/175.2/art_12",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Verwaltungsrechtspflegegesetz (VRG) (LS 175.2)",
+      "artikel": "12",
+      "artikelLabel": "§ 12",
+      "bloecke": [
+        {
+          "absatz": "1",
+          "text": "Gesetzlich vorgeschriebene Fristen können nur erstreckt werden, wenn die davon betroffene Person im Laufe der Frist stirbt oder handlungsunfähig wird. Andere Fristen dürfen auf ein vor Fristablauf gestelltes Gesuch hin erstreckt werden, wenn ausreichende Gründe hiefür dargetan und soweit möglich belegt werden."
+        },
+        {
+          "absatz": "2",
+          "text": "Eine versäumte Frist kann wiederhergestellt werden, wenn dem Säumigen keine grobe Nachlässigkeit zur Last fällt und er innert zehn Tagen nach Wegfall des Grundes, der die Einhaltung der Frist verhindert hat, ein Gesuch um Wiederherstellung einreicht. Wird die Wiederherstellung gewährt, so beträgt die Frist zur Nachholung der versäumten Rechtshandlung zehn Tage."
+        }
+      ],
+      "stand": "1960-05-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-175_2-1959_05_24-1960_05_01-133.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "7d55abdc75343be4d35e9dd77c8a74f6ea9ceaf0d021d4d82b06b1b865479b5d",
+      "sha": "c4edd4610bac28a5457bb31c461f4b341b29ae72382a2c48bd46a200e19726de"
+    },
+    {
+      "id": "kanton/ZH/175.2/art_13",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Verwaltungsrechtspflegegesetz (VRG) (LS 175.2)",
+      "artikel": "13",
+      "artikelLabel": "§ 13",
+      "bloecke": [
+        {
+          "absatz": "1",
+          "text": "Die Verwaltungsbehörden können für ihre Amtshandlungen Gebühren und Kosten auferlegen. Der Regierungsrat bezeichnet die kostenpflichtigen Amtshandlungen und die hiefür zu erhebenden Gebühren in einer Verordnung."
+        },
+        {
+          "absatz": "2",
+          "text": "Mehrere am Verfahren Beteiligte tragen die Kosten in der Regel entsprechend ihrem Unterliegen. Kosten, die ein Beteiligter durch Verletzung von Verfahrensvorschriften oder durch nachträgliches Vorbringen solcher Tatsachen oder Beweismittel verursacht, die er schon früher hätte geltend machen können, sind ihm ohne Rücksicht auf den Ausgang des Verfahrens zu überbinden."
+        },
+        {
+          "absatz": "3",
+          "text": "In Verfahren betreffend personalrechtliche Streitigkeiten werden keine Kosten erhoben; vorbehalten bleibt die Kostenauflage an die unterliegende Partei, die durch ihre Prozessführung einen unangemessenen Aufwand verursacht hat."
+        },
+        {
+          "absatz": "4",
+          "text": "In Stimmrechtssachen werden Verfahrenskosten erhoben, wenn das Rechtsmittel offensichtlich aussichtslos ist."
+        }
+      ],
+      "stand": "1960-05-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-175_2-1959_05_24-1960_05_01-133.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "7d55abdc75343be4d35e9dd77c8a74f6ea9ceaf0d021d4d82b06b1b865479b5d",
+      "sha": "4c4d0a14461390ae8ae1562f5ec8f84edbed45f2afadb96f6698da10aa6e315b"
+    },
+    {
+      "id": "kanton/ZH/175.2/art_14",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Verwaltungsrechtspflegegesetz (VRG) (LS 175.2)",
+      "artikel": "14",
+      "artikelLabel": "§ 14",
+      "bloecke": [
+        {
+          "absatz": null,
+          "text": "Haben mehrere Beteiligte dasselbe Begehren gestellt oder richtet sich das Verfahren gegen mehrere Beteiligte, so tragen sie die ihnen auferlegten Kosten in der Regel zu gleichen Teilen unter subsidiärer Haftung für das Ganze, soweit nicht durch das zwischen ihnen bestehende Rechtsverhältnis Solidarhaftung begründet ist."
+        }
+      ],
+      "stand": "1960-05-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-175_2-1959_05_24-1960_05_01-133.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "7d55abdc75343be4d35e9dd77c8a74f6ea9ceaf0d021d4d82b06b1b865479b5d",
+      "sha": "af2ac575d2e16d98a5222935c304a61729a3784e94457c1aa3e1fc5978dd678c"
+    },
+    {
+      "id": "kanton/ZH/175.2/art_15",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Verwaltungsrechtspflegegesetz (VRG) (LS 175.2)",
+      "artikel": "15",
+      "artikelLabel": "§ 15",
+      "bloecke": [
+        {
+          "absatz": "1",
+          "text": "Entstehen aus der im Interesse eines Privaten veranlassten Untersuchung erhebliche Barauslagen, so kann die Durchführung der Untersuchung von der Leistung eines angemessenen Barvorschusses abhängig gemacht werden."
+        },
+        {
+          "absatz": "2",
+          "text": "Ein Privater kann überdies unter der Androhung, dass auf sein Begehren sonst nicht eingetreten werde, zur Sicherstellung der Verfahrenskosten angehalten werden:",
+          "items": [
+            {
+              "marke": "a",
+              "text": "wenn er in der Schweiz keinen Wohnsitz hat,"
+            },
+            {
+              "marke": "b",
+              "text": "wenn er aus einem erledigten und nicht mehr weiterziehbaren Verfahren vor einer zürcherischen Verwaltungs- oder Gerichtsbehörde Kosten schuldet,"
+            },
+            {
+              "marke": "c",
+              "text": "wenn er als zahlungsunfähig erscheint."
+            }
+          ]
+        }
+      ],
+      "stand": "1960-05-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-175_2-1959_05_24-1960_05_01-133.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "7d55abdc75343be4d35e9dd77c8a74f6ea9ceaf0d021d4d82b06b1b865479b5d",
+      "sha": "6c1593f0976ed071880eb9d8386f60da8feb0f634efce16a73cc2dbb0c05e4fb"
+    },
+    {
+      "id": "kanton/ZH/175.2/art_16",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Verwaltungsrechtspflegegesetz (VRG) (LS 175.2)",
+      "artikel": "16",
+      "artikelLabel": "§ 16",
+      "bloecke": [
+        {
+          "absatz": "1",
+          "text": "Privaten, welchen die nötigen Mittel fehlen und deren Begehren nicht offensichtlich aussichtslos erscheint, ist auf entsprechendes Ersuchen die Bezahlung von Verfahrenskosten und Kostenvorschüssen zu erlassen."
+        },
+        {
+          "absatz": "2",
+          "text": "Sie haben überdies Anspruch auf die Bestellung eines unentgeltlichen Rechtsbeistandes, wenn sie nicht in der Lage sind, ihre Rechte im Verfahren selbst zu wahren."
+        },
+        {
+          "absatz": "3",
+          "text": "Juristischen Personen wird die unentgeltliche Rechtspflege nicht gewährt."
+        },
+        {
+          "absatz": "4",
+          "text": "Eine Partei, der die unentgeltliche Rechtspflege gewährt wurde, ist zur Nachzahlung verpflichtet, sobald sie dazu in der Lage ist. Der Anspruch des Kantons verjährt zehn Jahre nach Abschluss des Verfahrens."
+        }
+      ],
+      "stand": "1960-05-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-175_2-1959_05_24-1960_05_01-133.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "7d55abdc75343be4d35e9dd77c8a74f6ea9ceaf0d021d4d82b06b1b865479b5d",
+      "sha": "74ed05adc8133b5cbe27b491a91f9f50b3b5d34cbbe80fe8d01cacf61626d845"
+    },
+    {
+      "id": "kanton/ZH/175.2/art_17",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Verwaltungsrechtspflegegesetz (VRG) (LS 175.2)",
+      "artikel": "17",
+      "artikelLabel": "§ 17",
+      "bloecke": [
+        {
+          "absatz": "1",
+          "text": "Im Verfahren vor den Verwaltungsbehörden werden keine Parteientschädigungen zugesprochen."
+        },
+        {
+          "absatz": "2",
+          "text": "Im Rekursverfahren und im Verfahren vor Verwaltungsgericht kann indessen die unterliegende Partei oder Amtsstelle zu einer angemessenen Entschädigung für die Umtriebe ihres Gegners verpflichtet werden, namentlich wenn",
+          "items": [
+            {
+              "marke": "a",
+              "text": "die rechtsgenügende Darlegung komplizierter Sachverhalte und schwieriger Rechtsfragen besonderen Aufwand erforderte oder den Beizug eines Rechtsbeistandes rechtfertigte, oder"
+            },
+            {
+              "marke": "b",
+              "text": "ihre Rechtsbegehren oder die angefochtene Anordnung offensichtlich unbegründet waren."
+            }
+          ]
+        },
+        {
+          "absatz": "3",
+          "text": "Stehen sich im Verfahren private Parteien mit gegensätzlichen Begehren gegenüber, wird die Entschädigung in der Regel der unterliegenden Partei auferlegt."
+        }
+      ],
+      "stand": "1960-05-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-175_2-1959_05_24-1960_05_01-133.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "7d55abdc75343be4d35e9dd77c8a74f6ea9ceaf0d021d4d82b06b1b865479b5d",
+      "sha": "3589aaf55db6471d30a9e0df7d369decd740fe7573a4d6e59f696e3cdafa8393"
+    },
+    {
+      "id": "kanton/ZH/175.2/art_19",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Verwaltungsrechtspflegegesetz (VRG) (LS 175.2)",
+      "artikel": "19",
+      "artikelLabel": "§ 19",
+      "bloecke": [
+        {
+          "absatz": "1",
+          "text": "Mit Rekurs können angefochten werden:",
+          "items": [
+            {
+              "marke": "a",
+              "text": "Anordnungen, einschliesslich raumplanungsrechtlicher Festlegungen,"
+            },
+            {
+              "marke": "b",
+              "text": "unrechtmässiges Verweigern oder Verzögern einer anfechtbaren Anordnung,"
+            },
+            {
+              "marke": "c",
+              "text": "Handlungen staatlicher Organe, welche die politische Stimmberechtigung der Bürgerinnen und Bürger oder Volkswahlen oder Volksabstimmungen betreffen (Stimmrechtssachen),"
+            },
+            {
+              "marke": "d",
+              "text": "Erlasse, ausgenommen die Kantonsverfassung und kantonale Gesetze."
+            }
+          ]
+        },
+        {
+          "absatz": "2",
+          "text": "Keinem Rekurs unterstehen Akte",
+          "items": [
+            {
+              "marke": "a",
+              "text": "des Regierungsrates,"
+            },
+            {
+              "marke": "b",
+              "text": "des Kantonsrates, seiner Geschäftsleitung und der Verwaltungsdelegationder Geschäftsleitung."
+            }
+          ]
+        },
+        {
+          "absatz": "3",
+          "text": "Gegen Rekursentscheide ist der Rekurs nur zulässig, wenn der Weiterzug an das Verwaltungsgericht und an Rechtsmittelinstanzen des Bundes ausgeschlossen ist. Der Entscheid der zweiten Rekursinstanz ist kantonal letztinstanzlich."
+        },
+        {
+          "absatz": "4",
+          "text": "Die für Anordnungen geltenden Bestimmungen sind sinngemäss auf die anderen Akte nach Abs. 1 anwendbar, soweit keine besondern Regelungen bestehen."
+        }
+      ],
+      "stand": "1960-05-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-175_2-1959_05_24-1960_05_01-133.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "7d55abdc75343be4d35e9dd77c8a74f6ea9ceaf0d021d4d82b06b1b865479b5d",
+      "sha": "16bffdae525d732ec65d427801ca8ae513d0cb7cadd79ce06f9af482bb2093c9"
+    },
+    {
+      "id": "kanton/ZH/175.2/art_19_a",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Verwaltungsrechtspflegegesetz (VRG) (LS 175.2)",
+      "artikel": "19_a",
+      "artikelLabel": "§ 19a",
+      "bloecke": [
+        {
+          "absatz": "1",
+          "text": "Anfechtbar sind Anordnungen, die das Verfahren abschliessen."
+        },
+        {
+          "absatz": "2",
+          "text": "Die Anfechtbarkeit von Teil-, Vor- und Zwischenentscheiden richtet sich sinngemäss nach Art. 91–93 des Bundesgerichtsgesetzes vom 17. Juni 2005."
+        }
+      ],
+      "stand": "1960-05-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-175_2-1959_05_24-1960_05_01-133.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "7d55abdc75343be4d35e9dd77c8a74f6ea9ceaf0d021d4d82b06b1b865479b5d",
+      "sha": "0ad1c186b20a68a6e6678ee071db6e325f28fa93cc0f75c787f2243f3f4880e3"
+    },
+    {
+      "id": "kanton/ZH/175.2/art_19_b",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Verwaltungsrechtspflegegesetz (VRG) (LS 175.2)",
+      "artikel": "19_b",
+      "artikelLabel": "§ 19b",
+      "bloecke": [
+        {
+          "absatz": "1",
+          "text": "Anordnungen einer unteren Behörde können an die obere Behörde weitergezogen werden."
+        },
+        {
+          "absatz": "2",
+          "text": "Rekursinstanz ist",
+          "items": [
+            {
+              "marke": "a",
+              "text": "der Regierungsrat bei Anordnungen 1.einer Direktion, 2.einer von einem Mitglied des Regierungsrates geleiteten Kommission, 3.der Bezirksräte und Statthalter,"
+            },
+            {
+              "marke": "b",
+              "text": "die Direktion bei Anordnungen 1.einer Verwaltungseinheit der Direktion, 2.einer Gemeinde in Stimmrechtssachen des Kantons,"
+            },
+            {
+              "marke": "c",
+              "text": "der Bezirksrat bei Anordnungen 1.einer politischen Gemeinde, 2.einer Schulgemeinde, 3.einer Anstalt, 4.eines Zweckverbandes, 5.eines Privaten, der öffentliche Aufgaben wahrnimmt,"
+            },
+            {
+              "marke": "d",
+              "text": "das Statthalteramt bei Anordnungen der politischen Gemeinden im Bereich der Ortspolizei und des Feuerwehrwesens,"
+            },
+            {
+              "marke": "e",
+              "text": ". . ."
+            },
+            {
+              "marke": "f",
+              "text": "die Geschäftsleitung des Kantonsrates bei Anordnungen seiner Kommissionen,"
+            },
+            {
+              "marke": "g",
+              "text": "die Verwaltungsdelegationder Geschäftsleitung des Kantonsrates bei Anordnungen in personalrechtlichen und administrativen Belangen 1.des Beauftragten für den Datenschutz, 2.des Leiters der Finanzkontrolle, 3.der Ombudsperson, 4.des Chefs der Parlamentsdienste."
+            }
+          ]
+        },
+        {
+          "absatz": "3",
+          "text": "Abweichende gesetzliche Regelungen bleiben vorbehalten."
+        },
+        {
+          "absatz": "4",
+          "text": "Hat eine Rekursinstanz im Einzelfall Rat oder Weisung erteilt, dass oder wie eine Vorinstanz entscheiden soll, ist die der Rekursinstanz übergeordnete Verwaltungsbehörde für die Behandlung des Rekurses zuständig. In der Rechtsmittelbelehrung ist diese Behörde als Rekursinstanz anzugeben."
+        }
+      ],
+      "stand": "1960-05-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-175_2-1959_05_24-1960_05_01-133.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "7d55abdc75343be4d35e9dd77c8a74f6ea9ceaf0d021d4d82b06b1b865479b5d",
+      "sha": "226dd15e89d3c59db4b3e8d5899de5062221669134bd8b4600425bb2c69a47c9"
+    },
+    {
+      "id": "kanton/ZH/175.2/art_20",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Verwaltungsrechtspflegegesetz (VRG) (LS 175.2)",
+      "artikel": "20",
+      "artikelLabel": "§ 20",
+      "bloecke": [
+        {
+          "absatz": "1",
+          "text": "Mit Rekurs können gerügt werden:",
+          "items": [
+            {
+              "marke": "a",
+              "text": "Rechtsverletzungen einschliesslich Ermessensmissbrauch, Ermessensüberschreitung oder Ermessensunterschreitung,"
+            },
+            {
+              "marke": "b",
+              "text": "unrichtige oder ungenügende Feststellung des Sachverhaltes,"
+            },
+            {
+              "marke": "c",
+              "text": "Unangemessenheit der angefochtenen Anordnung."
+            }
+          ]
+        },
+        {
+          "absatz": "2",
+          "text": "Wird ein Erlass angefochten, kann die Verletzung übergeordneten Rechts gerügt werden."
+        }
+      ],
+      "stand": "1960-05-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-175_2-1959_05_24-1960_05_01-133.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "7d55abdc75343be4d35e9dd77c8a74f6ea9ceaf0d021d4d82b06b1b865479b5d",
+      "sha": "87c5e81bd88ef55b01806fe7add5a710c2bfe6085c15ced1ba83bd9890dfa468"
+    },
+    {
+      "id": "kanton/ZH/175.2/art_20_a",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Verwaltungsrechtspflegegesetz (VRG) (LS 175.2)",
+      "artikel": "20_a",
+      "artikelLabel": "§ 20a",
+      "bloecke": [
+        {
+          "absatz": "1",
+          "text": "Im Rekursverfahren können keine neuen Sachbegehren gestellt werden."
+        },
+        {
+          "absatz": "2",
+          "text": "Neue Tatsachenbehauptungen und neue Beweismittel sind zulässig."
+        }
+      ],
+      "stand": "1960-05-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-175_2-1959_05_24-1960_05_01-133.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "7d55abdc75343be4d35e9dd77c8a74f6ea9ceaf0d021d4d82b06b1b865479b5d",
+      "sha": "b483bebbb49309d018b36357494e2f6484ea662512e4663a36bb1b80e03c60c2"
+    },
+    {
+      "id": "kanton/ZH/175.2/art_21",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Verwaltungsrechtspflegegesetz (VRG) (LS 175.2)",
+      "artikel": "21",
+      "artikelLabel": "§ 21",
+      "bloecke": [
+        {
+          "absatz": "1",
+          "text": "Zum Rekurs ist berechtigt, wer durch die Anordnung berührt ist und ein schutzwürdiges Interesse an deren Aufhebung oder Änderung hat."
+        },
+        {
+          "absatz": "2",
+          "text": "Gemeinden und andere Träger öffentlicher Aufgaben mit Rechtspersönlichkeit sind rekursberechtigt, wenn sie",
+          "items": [
+            {
+              "marke": "a",
+              "text": "durch die Anordnung wie eine Privatperson berührt sind und ein schutzwürdiges Interesse an deren Aufhebung oder Änderung haben,"
+            },
+            {
+              "marke": "b",
+              "text": "die Verletzung von Garantien rügen, die ihnen die Kantons- oder Bundesverfassung gewährt,"
+            },
+            {
+              "marke": "c",
+              "text": "bei der Erfüllung von gesetzlichen Aufgaben in ihren schutzwürdigen Interessen anderweitig verletzt sind, insbesondere bei einem wesentlichen Eingriff in ihr Finanz- oder Verwaltungsvermögen."
+            }
+          ]
+        }
+      ],
+      "stand": "1960-05-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-175_2-1959_05_24-1960_05_01-133.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "7d55abdc75343be4d35e9dd77c8a74f6ea9ceaf0d021d4d82b06b1b865479b5d",
+      "sha": "ce075dc2a5c92db141f1b625e71b7a51b81858510a062191c6e160032572eacd"
+    },
+    {
+      "id": "kanton/ZH/175.2/art_21_a",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Verwaltungsrechtspflegegesetz (VRG) (LS 175.2)",
+      "artikel": "21_a",
+      "artikelLabel": "§ 21a",
+      "bloecke": [
+        {
+          "absatz": "1",
+          "text": "In Stimmrechtssachen sind rekursberechtigt:",
+          "items": [
+            {
+              "marke": "a",
+              "text": "die Stimmberechtigten des betreffenden Wahl- oder Abstimmungskreises und die Kandidierenden,"
+            },
+            {
+              "marke": "b",
+              "text": "politische Parteien und Gruppierungen, die im betreffenden Wahloder Abstimmungskreis tätig sind,"
+            },
+            {
+              "marke": "c",
+              "text": "betroffene Gemeindebehörden."
+            }
+          ]
+        },
+        {
+          "absatz": "2",
+          "text": "Der Rekurs gegen die Verletzung von Verfahrensvorschriften in der Gemeindeversammlung setzt voraus, dass sie in der Versammlung gerügt worden ist."
+        }
+      ],
+      "stand": "1960-05-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-175_2-1959_05_24-1960_05_01-133.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "7d55abdc75343be4d35e9dd77c8a74f6ea9ceaf0d021d4d82b06b1b865479b5d",
+      "sha": "5ec3fa8a8cf1960045375e7317a0234e4992c905600b8fc2febb777b7932b767"
+    },
+    {
+      "id": "kanton/ZH/175.2/art_21_b",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Verwaltungsrechtspflegegesetz (VRG) (LS 175.2)",
+      "artikel": "21_b",
+      "artikelLabel": "§ 21b",
+      "bloecke": [
+        {
+          "absatz": "1",
+          "text": "Zur Anfechtung eines Erlasses ist berechtigt, wer durch eine Norm in schutzwürdigen Interessen berührt werden könnte."
+        },
+        {
+          "absatz": "2",
+          "text": "§21Abs. 2 gilt sinngemäss."
+        }
+      ],
+      "stand": "1960-05-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-175_2-1959_05_24-1960_05_01-133.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "7d55abdc75343be4d35e9dd77c8a74f6ea9ceaf0d021d4d82b06b1b865479b5d",
+      "sha": "a02ea6b9af812b28dc24afd022986e28140a1691bb49ede1f9bbd3abb00b84bc"
+    },
+    {
+      "id": "kanton/ZH/175.2/art_22",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Verwaltungsrechtspflegegesetz (VRG) (LS 175.2)",
+      "artikel": "22",
+      "artikelLabel": "§ 22",
+      "bloecke": [
+        {
+          "absatz": "1",
+          "text": "Der Rekurs ist innert 30 Tagen bei der Rekursinstanz schriftlich einzureichen. In Stimmrechtssachen beträgt die Frist fünf Tage."
+        },
+        {
+          "absatz": "2",
+          "text": "Der Fristenlauf beginnt am Tag nach der Mitteilung des angefochtenen Aktes, ohne solche am Tag nach seiner amtlichen Veröffentlichung und ohne solche am Tag nach seiner Kenntnisnahme."
+        },
+        {
+          "absatz": "3",
+          "text": "Bei besonderer Dringlichkeit kann die anordnende Behörde die Rekursfrist bis auf fünf Tage abkürzen."
+        }
+      ],
+      "stand": "1960-05-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-175_2-1959_05_24-1960_05_01-133.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "7d55abdc75343be4d35e9dd77c8a74f6ea9ceaf0d021d4d82b06b1b865479b5d",
+      "sha": "8a3651a2e4c2d67e44e962a063b93952325e18fdac75f20089c676e236afdedd"
+    },
+    {
+      "id": "kanton/ZH/175.2/art_23",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Verwaltungsrechtspflegegesetz (VRG) (LS 175.2)",
+      "artikel": "23",
+      "artikelLabel": "§ 23",
+      "bloecke": [
+        {
+          "absatz": "1",
+          "text": "Die Rekursschrift muss einen Antrag und dessen Begründung enthalten. Der angefochtene Entscheid ist beizulegen oder genau zu bezeichnen."
+        },
+        {
+          "absatz": "2",
+          "text": "Genügt die Rekursschrift diesen Erfordernissen nicht, so wird dem Rekurrenten eine kurze Frist zur Behebung des Mangels angesetzt unter der Androhung, dass sonst auf den Rekurs nicht eingetreten würde."
+        },
+        {
+          "absatz": "3",
+          "text": "Die Beweismittel sollen genau bezeichnet und soweit möglich beigelegt werden."
+        }
+      ],
+      "stand": "1960-05-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-175_2-1959_05_24-1960_05_01-133.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "7d55abdc75343be4d35e9dd77c8a74f6ea9ceaf0d021d4d82b06b1b865479b5d",
+      "sha": "bf887737cab9e220c23ee6f9a5509bdf58ffa31f05cf8be90f26c97c37fa0547"
+    },
+    {
+      "id": "kanton/ZH/175.2/art_25",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Verwaltungsrechtspflegegesetz (VRG) (LS 175.2)",
+      "artikel": "25",
+      "artikelLabel": "§ 25",
+      "bloecke": [
+        {
+          "absatz": "1",
+          "text": "Dem Lauf der Rekursfrist und der Einreichung des Rekurses kommt aufschiebende Wirkung zu."
+        },
+        {
+          "absatz": "2",
+          "text": "Keine aufschiebende Wirkung besteht",
+          "items": [
+            {
+              "marke": "a",
+              "text": "in personalrechtlichen Angelegenheiten bei einer Kündigung, einer Einstellung im Amt, einer vorzeitigen Entlassung oder einer Freistellung,"
+            },
+            {
+              "marke": "b",
+              "text": "in Stimmrechtssachen, wenn sich der Rekurs auf eine Wahl oder Abstimmung bezieht und die Rekursschrift vor dem Wahl- oder Abstimmungstag eingereicht worden ist."
+            }
+          ]
+        },
+        {
+          "absatz": "3",
+          "text": "Die anordnende Instanz, die Rekursinstanz und der Vorsitzende der Rekursinstanz können aus besonderen Gründen gegenteilige Anordnungen treffen."
+        },
+        {
+          "absatz": "4",
+          "text": "Abs. 2 lit. a gilt nicht, wenn für die dort genannten Fälle das kommunale Personalrecht die Möglichkeit einer Weiterbeschäftigung vorsieht."
+        }
+      ],
+      "stand": "1960-05-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-175_2-1959_05_24-1960_05_01-133.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "7d55abdc75343be4d35e9dd77c8a74f6ea9ceaf0d021d4d82b06b1b865479b5d",
+      "sha": "f1c6260c6457b20320630df2f02b6bf10fe3b20855a1366d4543b5183ce61b3b"
+    },
+    {
+      "id": "kanton/ZH/175.2/art_26",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Verwaltungsrechtspflegegesetz (VRG) (LS 175.2)",
+      "artikel": "26",
+      "artikelLabel": "§ 26",
+      "bloecke": [
+        {
+          "absatz": "1",
+          "text": "Die Rekursinstanz leitet das Rekursverfahren und bereitet den Rekursentscheid unabhängig von der anordnenden Behörde vor."
+        },
+        {
+          "absatz": "2",
+          "text": "Richtet sich der Rekurs gegen die Anordnung einer Direktion oder einer Kommission, die von einem Mitglied des Regierungsrates geleitet wird, ist hierfür ein zentraler Rechtsdienst zuständig."
+        }
+      ],
+      "stand": "1960-05-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-175_2-1959_05_24-1960_05_01-133.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "7d55abdc75343be4d35e9dd77c8a74f6ea9ceaf0d021d4d82b06b1b865479b5d",
+      "sha": "1b5a39895b50f1feea793bbadd4803d241ef940111a5fa2b50d7cf4d0d3f4720"
+    },
+    {
+      "id": "kanton/ZH/175.2/art_26_a",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Verwaltungsrechtspflegegesetz (VRG) (LS 175.2)",
+      "artikel": "26_a",
+      "artikelLabel": "§ 26a",
+      "bloecke": [
+        {
+          "absatz": "1",
+          "text": "Die Rekursinstanz zieht die Akten der Vorinstanz bei. Bei offensichtlich unzulässigen oder offensichtlich unbegründeten Rechtsmitteln kann sie darauf verzichten."
+        },
+        {
+          "absatz": "2",
+          "text": "Die Akten stehen den Verfahrensbeteiligten zur Einsicht offen."
+        }
+      ],
+      "stand": "1960-05-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-175_2-1959_05_24-1960_05_01-133.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "7d55abdc75343be4d35e9dd77c8a74f6ea9ceaf0d021d4d82b06b1b865479b5d",
+      "sha": "0611ab52c6597d88323e6e28c2858c10ad5b43dd2adffd2ae52d3ff80f05115e"
+    },
+    {
+      "id": "kanton/ZH/175.2/art_26_b",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Verwaltungsrechtspflegegesetz (VRG) (LS 175.2)",
+      "artikel": "26_b",
+      "artikelLabel": "§ 26b",
+      "bloecke": [
+        {
+          "absatz": "1",
+          "text": "Die Vorinstanz und die am vorinstanzlichen Verfahren Beteiligten erhalten Gelegenheit zur schriftlichen Vernehmlassung. Die Vorinstanz kann hierzu verpflichtet werden."
+        },
+        {
+          "absatz": "2",
+          "text": "Die Vernehmlassungsfrist beträgt 30 Tage. In Stimmrechtssachen beträgt die Frist fünf Tage. Wurde die Rekursfrist abgekürzt, ist die Vernehmlassungsfrist entsprechend abzukürzen."
+        },
+        {
+          "absatz": "3",
+          "text": "Die Rekursinstanz kann einen weiteren Schriftenwechsel anordnen oder die Beteiligten zu einer mündlichen Verhandlung vorladen."
+        },
+        {
+          "absatz": "4",
+          "text": "Die Rekursinstanz stellt die Vernehmlassungen den andern Verfahrensbeteiligten zu."
+        }
+      ],
+      "stand": "1960-05-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-175_2-1959_05_24-1960_05_01-133.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "7d55abdc75343be4d35e9dd77c8a74f6ea9ceaf0d021d4d82b06b1b865479b5d",
+      "sha": "3847343b8b1c323a8712db9705f916978f022ada110202b993e5952c77589680"
+    },
+    {
+      "id": "kanton/ZH/175.2/art_26_c",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Verwaltungsrechtspflegegesetz (VRG) (LS 175.2)",
+      "artikel": "26_c",
+      "artikelLabel": "§ 26c",
+      "bloecke": [
+        {
+          "absatz": null,
+          "text": "Verfügt die Rekursinstanz über gerichtliche Unabhängigkeit, kann sie Zeugen einvernehmen."
+        }
+      ],
+      "stand": "1960-05-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-175_2-1959_05_24-1960_05_01-133.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "7d55abdc75343be4d35e9dd77c8a74f6ea9ceaf0d021d4d82b06b1b865479b5d",
+      "sha": "884565073cc911cef2aa568ea90b3c399ed43405439e11aa21aa72116cc142ec"
+    },
+    {
+      "id": "kanton/ZH/175.2/art_26_d",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Verwaltungsrechtspflegegesetz (VRG) (LS 175.2)",
+      "artikel": "26_d",
+      "artikelLabel": "§ 26d",
+      "bloecke": [
+        {
+          "absatz": null,
+          "text": "Betrifft der Rekurs eine Volkswahl oder eine Volksabstimmung, kann die Rekursinstanz Nachzählungen vornehmen oder vornehmen lassen."
+        }
+      ],
+      "stand": "1960-05-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-175_2-1959_05_24-1960_05_01-133.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "7d55abdc75343be4d35e9dd77c8a74f6ea9ceaf0d021d4d82b06b1b865479b5d",
+      "sha": "4dcab30733c4051afb0c4594dc32142a1de5c66dc4778c9f8668b81cd4426403"
+    },
+    {
+      "id": "kanton/ZH/175.2/art_27",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Verwaltungsrechtspflegegesetz (VRG) (LS 175.2)",
+      "artikel": "27",
+      "artikelLabel": "§ 27",
+      "bloecke": [
+        {
+          "absatz": null,
+          "text": "Die Rekursinstanz kann zugunsten des Rekurrenten über die Rekursbegehren hinausgehen oder die angefochtene Anordnung zu seinem Nachteil abändern."
+        }
+      ],
+      "stand": "1960-05-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-175_2-1959_05_24-1960_05_01-133.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "7d55abdc75343be4d35e9dd77c8a74f6ea9ceaf0d021d4d82b06b1b865479b5d",
+      "sha": "b5b29d94ba9673093ad9f8e90582c05d42d7071bd4cd09b13ceb427dd85b543f"
+    },
+    {
+      "id": "kanton/ZH/175.2/art_27_a",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Verwaltungsrechtspflegegesetz (VRG) (LS 175.2)",
+      "artikel": "27_a",
+      "artikelLabel": "§ 27a",
+      "bloecke": [
+        {
+          "absatz": "1",
+          "text": "Hält die Rekursinstanz eine Kündigung, eine Einstellung im Amt oder eine vorzeitige Entlassung für nicht gerechtfertigt, stellt sie dies fest und bestimmt von Amtes wegen die Entschädigung, die das Gemeinwesen zu entrichten hat."
+        },
+        {
+          "absatz": "2",
+          "text": "Der Entscheid über weiter gehende Ansprüche aufgrund des kommunalen Personalrechts, insbesondere auf Weiterbeschäftigung, bleibt vorbehalten."
+        }
+      ],
+      "stand": "1960-05-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-175_2-1959_05_24-1960_05_01-133.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "7d55abdc75343be4d35e9dd77c8a74f6ea9ceaf0d021d4d82b06b1b865479b5d",
+      "sha": "6c0417bb82b9e4c3d9e89b32d99a1738434cee6499c55b523185a03b9931427e"
+    },
+    {
+      "id": "kanton/ZH/175.2/art_27_b",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Verwaltungsrechtspflegegesetz (VRG) (LS 175.2)",
+      "artikel": "27_b",
+      "artikelLabel": "§ 27b",
+      "bloecke": [
+        {
+          "absatz": null,
+          "text": "Die Wiederholung einer Volkswahl oder Volksabstimmung wird nur dann angeordnet, wenn Gründe für die Annahme bestehen, dass die Unregelmässigkeit den Ausgang der Wahl oder Abstimmung mit einer gewissen Wahrscheinlichkeit beeinflusst hat."
+        }
+      ],
+      "stand": "1960-05-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-175_2-1959_05_24-1960_05_01-133.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "7d55abdc75343be4d35e9dd77c8a74f6ea9ceaf0d021d4d82b06b1b865479b5d",
+      "sha": "7e61206835e424fffcd3d77eac9ea9d26c3629a876b419225d7cce9471834665"
+    },
+    {
+      "id": "kanton/ZH/175.2/art_27_c",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Verwaltungsrechtspflegegesetz (VRG) (LS 175.2)",
+      "artikel": "27_c",
+      "artikelLabel": "§ 27c",
+      "bloecke": [
+        {
+          "absatz": "1",
+          "text": "Verwaltungsinterne Rekursinstanzen sowie Rekurskommissionen entscheiden innert 60 Tagen seit Abschluss der Sachverhaltsermittlungen. Der Abschluss der Sachverhaltsermittlung wird den Parteien angezeigt."
+        },
+        {
+          "absatz": "2",
+          "text": "Kann eine Rekursinstanz diese Frist nicht einhalten, teilt sie den Parteien unter Angabe der Gründe mit, wann der Entscheid vorliegt."
+        }
+      ],
+      "stand": "1960-05-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-175_2-1959_05_24-1960_05_01-133.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "7d55abdc75343be4d35e9dd77c8a74f6ea9ceaf0d021d4d82b06b1b865479b5d",
+      "sha": "2e9332a3b8124fdd46cbb7eb0d0e6e948c6652ade41d8d53db6ef2c34fbe2af9"
+    },
+    {
+      "id": "kanton/ZH/175.2/art_28",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Verwaltungsrechtspflegegesetz (VRG) (LS 175.2)",
+      "artikel": "28",
+      "artikelLabel": "§ 28",
+      "bloecke": [
+        {
+          "absatz": "1",
+          "text": "Der Rekursentscheid umschreibt kurz den Tatbestand und fasst die Erwägungen zusammen. Soweit der Darstellung des Tatbestandes und den Erwägungen der Vorinstanz zugestimmt wird, kann auf sie verwiesen werden."
+        },
+        {
+          "absatz": "2",
+          "text": "Der Rekursentscheid wird dem Rekurrenten, der Vorinstanz sowie allfälligen weiteren am Rekursverfahren Beteiligten schriftlich zugestellt. Ändert die Rekursinstanz die Anordnung der unteren Instanz, so sollen überdies all jene Personen den Rekursentscheid erhalten, welche durch diese Erledigung in ihren schutzwürdigen Interessen berührt werden."
+        }
+      ],
+      "stand": "1960-05-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-175_2-1959_05_24-1960_05_01-133.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "7d55abdc75343be4d35e9dd77c8a74f6ea9ceaf0d021d4d82b06b1b865479b5d",
+      "sha": "75760411030df4d6838cc593371b22b61b1b3fc32d7c9cf00e2855ef0236b86e"
+    },
+    {
+      "id": "kanton/ZH/175.2/art_28_a",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Verwaltungsrechtspflegegesetz (VRG) (LS 175.2)",
+      "artikel": "28_a",
+      "artikelLabel": "§ 28a",
+      "bloecke": [
+        {
+          "absatz": "1",
+          "text": "Bei offensichtlich unzulässigen, gegenstandslos gewordenen, offensichtlich unbegründeten oder offensichtlich begründeten Rechtsmitteln kann die Rekursbehörde",
+          "items": [
+            {
+              "marke": "a",
+              "text": "bei Einstimmigkeit auf dem Zirkulationsweg entscheiden,"
+            },
+            {
+              "marke": "b",
+              "text": "den Entscheid summarisch begründen."
+            }
+          ]
+        },
+        {
+          "absatz": "2",
+          "text": "Bei gegenstandslos gewordenen Rekursen kann auf die Begründung des Entscheids verzichtet werden. §10a lit. b gilt sinngemäss."
+        }
+      ],
+      "stand": "1960-05-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-175_2-1959_05_24-1960_05_01-133.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "7d55abdc75343be4d35e9dd77c8a74f6ea9ceaf0d021d4d82b06b1b865479b5d",
+      "sha": "63c69f229a1017550c7bd04887ef1e1e5628c7fc13521e518fe807141036e22c"
+    },
+    {
+      "id": "kanton/ZH/175.2/art_29",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Verwaltungsrechtspflegegesetz (VRG) (LS 175.2)",
+      "artikel": "29",
+      "artikelLabel": "§ 29",
+      "bloecke": [
+        {
+          "absatz": "1",
+          "text": "Jede Verwaltungsbehörde vollstreckt die von ihr getroffene Anordnung selbst. Sie ist befugt, die Vollstreckung einer ihr unterstellten Behörde zu übertragen."
+        },
+        {
+          "absatz": "2",
+          "text": "Rekursentscheide werden, soweit die Rekursinstanz nichts anderes bestimmt, von der ersten Instanz vollstreckt. Die Kosten des Rekursverfahrens bezieht die Rekursinstanz."
+        }
+      ],
+      "stand": "1960-05-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-175_2-1959_05_24-1960_05_01-133.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "7d55abdc75343be4d35e9dd77c8a74f6ea9ceaf0d021d4d82b06b1b865479b5d",
+      "sha": "a688298207561b58b8b8b887d7c2650ac454abd7173616d5a8cb278f8de62b91"
+    },
+    {
+      "id": "kanton/ZH/175.2/art_29_a",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Verwaltungsrechtspflegegesetz (VRG) (LS 175.2)",
+      "artikel": "29_a",
+      "artikelLabel": "§ 29a",
+      "bloecke": [
+        {
+          "absatz": "1",
+          "text": "Öffentlichrechtliche Forderungen der Verwaltungsbehörden und von Privatpersonen werden 30 Tage seit Zustellung der Rechnung fällig. Vorbehalten bleiben der Barbezug oder die Vorauszahlung, wo dies zur Vereinfachung des Verfahrens angezeigt ist, sowie die Stundung und Ratenzahlung in begründeten Fällen."
+        },
+        {
+          "absatz": "2",
+          "text": "Nach Ablauf der Zahlungsfrist wird der Schuldner gemahnt. Ab Datum der Mahnung schuldet er Verzugszins von 5%."
+        },
+        {
+          "absatz": "3",
+          "text": "Abweichende Bestimmungen der Steuergesetzgebung bleiben vorbehalten."
+        }
+      ],
+      "stand": "1960-05-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-175_2-1959_05_24-1960_05_01-133.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "7d55abdc75343be4d35e9dd77c8a74f6ea9ceaf0d021d4d82b06b1b865479b5d",
+      "sha": "ded10e9a6d11d0c7fe930992ae925ae09a1dcd2f5578b8db1da9ab5416416662"
+    },
+    {
+      "id": "kanton/ZH/175.2/art_30",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Verwaltungsrechtspflegegesetz (VRG) (LS 175.2)",
+      "artikel": "30",
+      "artikelLabel": "§ 30",
+      "bloecke": [
+        {
+          "absatz": "1",
+          "text": "Kann die Anordnung einer Verwaltungsbehörde nicht mehr weitergezogen werden oder kommt dem Weiterzug keine aufschiebende Wirkung zu, so kann sie zwangsweise vollstreckt werden durch:",
+          "items": [
+            {
+              "marke": "a",
+              "text": "Schuldbetreibung nach den Vorschriften des Bundesrechtes, wenn die Anordnung auf Geldzahlung oder Sicherheitsleistung gerichtet ist,"
+            },
+            {
+              "marke": "b",
+              "text": "Ersatzvornahme auf Kosten des Pflichtigen. Der Entscheid über die Kostenauflage kann weitergezogen werden,"
+            },
+            {
+              "marke": "c",
+              "text": "unmittelbaren Zwang gegen den Pflichtigen oder an Sachen, die er besitzt. Hiefür kann polizeiliche Hilfe beansprucht werden."
+            }
+          ]
+        },
+        {
+          "absatz": "2",
+          "text": "Wo Bestrafung gesetzlich zulässig ist, bleibt sie vorbehalten."
+        }
+      ],
+      "stand": "1960-05-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-175_2-1959_05_24-1960_05_01-133.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "7d55abdc75343be4d35e9dd77c8a74f6ea9ceaf0d021d4d82b06b1b865479b5d",
+      "sha": "f74ba35fa3c2ad0c813e469df7669838a1bea9e0c2184d74c64f1e5b815d4e27"
+    },
+    {
+      "id": "kanton/ZH/175.2/art_31",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Verwaltungsrechtspflegegesetz (VRG) (LS 175.2)",
+      "artikel": "31",
+      "artikelLabel": "§ 31",
+      "bloecke": [
+        {
+          "absatz": "1",
+          "text": "Der Ersatzvornahme und der Anwendung unmittelbaren Zwanges muss eine entsprechende Androhung vorangehen. Dem Pflichtigen ist gleichzeitig eine angemessene Frist zur Erfüllung anzusetzen."
+        },
+        {
+          "absatz": "2",
+          "text": "Die Zwangsandrohung kann mit der zu vollstreckenden Anordnung verbunden oder selbstständig erlassen werden. Sie ist nicht durch Rekurs anfechtbar."
+        },
+        {
+          "absatz": "3",
+          "text": "In dringlichen Fällen kann von einer Zwangsandrohung abgesehen werden. Dritter Abschnitt: Die Verwaltungsgerichtsbarkeit"
+        }
+      ],
+      "stand": "1960-05-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-175_2-1959_05_24-1960_05_01-133.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "7d55abdc75343be4d35e9dd77c8a74f6ea9ceaf0d021d4d82b06b1b865479b5d",
+      "sha": "75d3700fbc6208e62c57ec3db4e95f6f6606e0dec20d48808da5de8347fc5d04"
+    },
+    {
+      "id": "kanton/ZH/175.2/art_32",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Verwaltungsrechtspflegegesetz (VRG) (LS 175.2)",
+      "artikel": "32",
+      "artikelLabel": "§ 32",
+      "bloecke": [
+        {
+          "absatz": "1",
+          "text": "Dem Verwaltungsgerichtgehörenvollamtlichesowie teilamtliche Mitglieder und Ersatzmitglieder an. Der Kantonsrat legt die Zahl der Mitglieder und der Ersatzmitglieder fest."
+        },
+        {
+          "absatz": "2",
+          "text": "Der Kantonsrat bestimmt den Sitz."
+        }
+      ],
+      "stand": "1960-05-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-175_2-1959_05_24-1960_05_01-133.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "7d55abdc75343be4d35e9dd77c8a74f6ea9ceaf0d021d4d82b06b1b865479b5d",
+      "sha": "4cd394e1786b3fd6dbc108ef266c953bc51f1729bc29fe7e0084be68b665f5c2"
+    },
+    {
+      "id": "kanton/ZH/175.2/art_33",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Verwaltungsrechtspflegegesetz (VRG) (LS 175.2)",
+      "artikel": "33",
+      "artikelLabel": "§ 33",
+      "bloecke": [
+        {
+          "absatz": "1",
+          "text": "Der Kantonsrat wählt die Mitglieder und die Ersatzmitglieder. Mit der Wahl der teilamtlichen Mitglieder legt er deren Beschäftigungsgrad fest. Für die Wahl der Hälfte der Ersatzmitglieder steht dem Gericht ein Vorschlagsrecht zu."
+        },
+        {
+          "absatz": "2",
+          "text": "Wählbar als Mitglied ist, wer ein juristisches Studium gemäss Art. 7 Abs. 1 Bst. a des Bundesgesetzes vom 23. Juni 2000 über die Freizügigkeit der Anwältinnen und Anwälteabgeschlossen hat."
+        },
+        {
+          "absatz": "3",
+          "text": "Das Gesamtgericht gemäss §39 Abs. 1 kann den Beschäftigungsgrad einzelner Mitglieder mit deren Einverständnis im Rahmen der gesamten Stellenprozente verändern. Bei der Ersatzwahl eines betroffenen Mitglieds oder mit dem Ablauf der Amtsdauer erlischt die Veränderung."
+        }
+      ],
+      "stand": "1960-05-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-175_2-1959_05_24-1960_05_01-133.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "7d55abdc75343be4d35e9dd77c8a74f6ea9ceaf0d021d4d82b06b1b865479b5d",
+      "sha": "87c765501f56599ab4e3dae9527af2173b8c56629731c953d79bd9031819de49"
+    },
+    {
+      "id": "kanton/ZH/175.2/art_34",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Verwaltungsrechtspflegegesetz (VRG) (LS 175.2)",
+      "artikel": "34",
+      "artikelLabel": "§ 34",
+      "bloecke": [
+        {
+          "absatz": "1",
+          "text": "Das Amt eines vollamtlichen Mitglieds des Verwaltungsgerichts ist mit einer anderen hauptberuflichen Tätigkeit sowie mit der berufsmässigen Vertretung dritter Personen vor den Gerichten oder den Verwaltungsbehörden unvereinbar."
+        },
+        {
+          "absatz": "2",
+          "text": "Das Amt eines teilamtlichen Mitglieds des Verwaltungsgerichts ist mit der berufsmässigen Vertretung dritter Personen vor dem Verwaltungsgericht unvereinbar."
+        },
+        {
+          "absatz": "3",
+          "text": "Für die Zugehörigkeit zur Verwaltung oder Geschäftsführung einer Handelsgesellschaft oder einer Genossenschaft zu wirtschaftlichen Zwecken ist für die vollamtlichen und die teilamtlichen Mitglieder die Bewilligung des Kantonsrates erforderlich."
+        },
+        {
+          "absatz": "4",
+          "text": "Im Übrigen gelten die Unvereinbarkeitsbestimmungen des Gesetzes über die politischen Rechte."
+        }
+      ],
+      "stand": "1960-05-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-175_2-1959_05_24-1960_05_01-133.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "7d55abdc75343be4d35e9dd77c8a74f6ea9ceaf0d021d4d82b06b1b865479b5d",
+      "sha": "47a1755aa9f0bfce73d549c4e06799c1045ca30a0bb1c9e77219793eeac2295e"
+    },
+    {
+      "id": "kanton/ZH/175.2/art_34_a",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Verwaltungsrechtspflegegesetz (VRG) (LS 175.2)",
+      "artikel": "34_a",
+      "artikelLabel": "§ 34a",
+      "bloecke": [
+        {
+          "absatz": null,
+          "text": "Für die Offenlegung von Interessenbindungen gilt §7 GOG."
+        }
+      ],
+      "stand": "1960-05-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-175_2-1959_05_24-1960_05_01-133.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "7d55abdc75343be4d35e9dd77c8a74f6ea9ceaf0d021d4d82b06b1b865479b5d",
+      "sha": "e2bc8643385468d95af190025142133e73dbfbff3c08293a1a4e90db7e38488f"
+    },
+    {
+      "id": "kanton/ZH/175.2/art_35",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Verwaltungsrechtspflegegesetz (VRG) (LS 175.2)",
+      "artikel": "35",
+      "artikelLabel": "§ 35",
+      "bloecke": [
+        {
+          "absatz": "1",
+          "text": "In seiner richterlichen Tätigkeit ist das Verwaltungsgericht unabhängig und nur dem Gesetz unterworfen."
+        },
+        {
+          "absatz": "2",
+          "text": "Das Verwaltungsgericht erstattet dem Kantonsrat jährlich Bericht über seine Tätigkeit. Dazu gehören statistische Angaben über den Personalbestand, die Geschäftslast und die Bearbeitungszeiten der Geschäfte, einschliesslich der einzelnen Verfahrensschritte."
+        }
+      ],
+      "stand": "1960-05-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-175_2-1959_05_24-1960_05_01-133.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "7d55abdc75343be4d35e9dd77c8a74f6ea9ceaf0d021d4d82b06b1b865479b5d",
+      "sha": "39d1a661fc2e15d5f6e159b2953c0568e2944f8df4ab67074a58f6d5224b2769"
+    },
+    {
+      "id": "kanton/ZH/175.2/art_36",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Verwaltungsrechtspflegegesetz (VRG) (LS 175.2)",
+      "artikel": "36",
+      "artikelLabel": "§ 36",
+      "bloecke": [
+        {
+          "absatz": "1",
+          "text": "Das Verwaltungsgericht bezeichnet den Präsidenten und die erforderlichen Vizepräsidenten jeweils bei Beginn und auf Mitte einer Amtsperiode. Präsident und Vizepräsidenten sind in erster Linie aus der Zahl der vollamtlichen Richter zu wählen."
+        },
+        {
+          "absatz": "2",
+          "text": "Das Verwaltungsgericht stellt den Generalsekretär, dessen Stellvertreter sowie das juristische und administrative Personal an."
+        }
+      ],
+      "stand": "1960-05-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-175_2-1959_05_24-1960_05_01-133.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "7d55abdc75343be4d35e9dd77c8a74f6ea9ceaf0d021d4d82b06b1b865479b5d",
+      "sha": "9d1d327a6e7eb29db3322100e03220e61908a21972f790350b736ee6d37d5674"
+    },
+    {
+      "id": "kanton/ZH/175.2/art_37",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Verwaltungsrechtspflegegesetz (VRG) (LS 175.2)",
+      "artikel": "37",
+      "artikelLabel": "§ 37",
+      "bloecke": [
+        {
+          "absatz": "1",
+          "text": "Der Kantonsrat ordnet die Besoldung der Mitglieder und die Entschädigung der Ersatzrichter."
+        },
+        {
+          "absatz": "2",
+          "text": ". . ."
+        }
+      ],
+      "stand": "1960-05-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-175_2-1959_05_24-1960_05_01-133.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "7d55abdc75343be4d35e9dd77c8a74f6ea9ceaf0d021d4d82b06b1b865479b5d",
+      "sha": "768d5965d7ec39b24a212d5f9d82becf1e3f8c01a51b3a8e73675a6687d03889"
+    },
+    {
+      "id": "kanton/ZH/175.2/art_38",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Verwaltungsrechtspflegegesetz (VRG) (LS 175.2)",
+      "artikel": "38",
+      "artikelLabel": "§ 38",
+      "bloecke": [
+        {
+          "absatz": "1",
+          "text": "Das Verwaltungsgericht erledigt Streitigkeiten in Dreierbesetzung."
+        },
+        {
+          "absatz": "2",
+          "text": "Über offensichtlich unbegründete oder offensichtlich begründete Rechtsmittel kann es bei Einstimmigkeit auf dem Zirkulationsweg entscheiden."
+        }
+      ],
+      "stand": "1960-05-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-175_2-1959_05_24-1960_05_01-133.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "7d55abdc75343be4d35e9dd77c8a74f6ea9ceaf0d021d4d82b06b1b865479b5d",
+      "sha": "3a08152a3bb7aaf055cd48a7db7cf7079e6ade30d03eeb5861cce8af07989202"
+    },
+    {
+      "id": "kanton/ZH/175.2/art_38_a",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Verwaltungsrechtspflegegesetz (VRG) (LS 175.2)",
+      "artikel": "38_a",
+      "artikelLabel": "§ 38a",
+      "bloecke": [
+        {
+          "absatz": "1",
+          "text": "Das Verwaltungsgericht entscheidet in Fünferbesetzung über Rechtsmittel gegen Erlasse."
+        },
+        {
+          "absatz": "2",
+          "text": "Der Spruchkörper besteht aus drei Mitgliedern des Verwaltungsgerichts sowie zwei Mitgliedern",
+          "items": [
+            {
+              "marke": "a",
+              "text": "des Obergerichts bei Beschwerden gegen Erlasse aus den Bereichen des Privat- oder Strafrechts,"
+            },
+            {
+              "marke": "b",
+              "text": "des Sozialversicherungsgerichts bei Beschwerden gegen Erlasse aus dem Bereich des Sozialversicherungsrechts."
+            }
+          ]
+        },
+        {
+          "absatz": "3",
+          "text": "§38 Abs. 2 gilt sinngemäss."
+        }
+      ],
+      "stand": "1960-05-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-175_2-1959_05_24-1960_05_01-133.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "7d55abdc75343be4d35e9dd77c8a74f6ea9ceaf0d021d4d82b06b1b865479b5d",
+      "sha": "3886be0c891fa361276cca2be184444bffbf23a4e34b01d92aa441b5bdef1a3b"
+    },
+    {
+      "id": "kanton/ZH/175.2/art_38_b",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Verwaltungsrechtspflegegesetz (VRG) (LS 175.2)",
+      "artikel": "38_b",
+      "artikelLabel": "§ 38b",
+      "bloecke": [
+        {
+          "absatz": "1",
+          "text": "Ein voll- oder teilamtliches Mitglied entscheidet als Einzelrichter über Rechtsmittel,",
+          "items": [
+            {
+              "marke": "a",
+              "text": "die offensichtlich unzulässig sind,"
+            },
+            {
+              "marke": "b",
+              "text": "die zurückgezogen oder sonst wie gegenstandslos geworden sind,"
+            },
+            {
+              "marke": "c",
+              "text": "deren Streitwert Fr. 20 000 nicht übersteigt,"
+            },
+            {
+              "marke": "d",
+              "text": "bei Streitigkeiten betreffend 1.administrative Massnahmen im Strassenverkehr, 2.den Justizvollzug nach dem Straf- und Justizvollzugsgesetz vom 19. Juni 2006, 3.die Entbindung vom Berufsgeheimnis, 4.Massnahmen erstinstanzlicher Gerichte nach §43 Abs. 1 lit. a–c."
+            }
+          ]
+        },
+        {
+          "absatz": "2",
+          "text": "In Fällen von grundsätzlicher Bedeutung kann die Entscheidung einer Kammer übertragen werden."
+        },
+        {
+          "absatz": "3",
+          "text": "Sind Entscheide des Regierungsrates angefochten, ist die einzelrichterliche Beurteilung in den Fällen von Abs. 1 lit. c und d ausgeschlossen."
+        }
+      ],
+      "stand": "1960-05-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-175_2-1959_05_24-1960_05_01-133.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "7d55abdc75343be4d35e9dd77c8a74f6ea9ceaf0d021d4d82b06b1b865479b5d",
+      "sha": "5c3ef85b27cdd30830227356e92781382e3bd5e4e4999148830970b1522b7f5a"
+    },
+    {
+      "id": "kanton/ZH/175.2/art_39",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Verwaltungsrechtspflegegesetz (VRG) (LS 175.2)",
+      "artikel": "39",
+      "artikelLabel": "§ 39",
+      "bloecke": [
+        {
+          "absatz": "1",
+          "text": "Das Gesamtgericht besteht aus den vollamtlichen und den teilamtlichen Mitgliedern. Dieses regelt organisatorische und personelle Angelegenheiten sowie Fragen der eigenen Verwaltung."
+        },
+        {
+          "absatz": "2",
+          "text": "Jedes Mitglied ist verpflichtet, seine Stimme abzugeben. Bei Stimmengleichheit zählt die Stimme des Vorsitzenden doppelt."
+        }
+      ],
+      "stand": "1960-05-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-175_2-1959_05_24-1960_05_01-133.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "7d55abdc75343be4d35e9dd77c8a74f6ea9ceaf0d021d4d82b06b1b865479b5d",
+      "sha": "d30b9d03cb9e389b57c68b7e7327a5de1357be2be3d97f6491657a2d1be3c0ce"
+    },
+    {
+      "id": "kanton/ZH/175.2/art_40",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Verwaltungsrechtspflegegesetz (VRG) (LS 175.2)",
+      "artikel": "40",
+      "artikelLabel": "§ 40",
+      "bloecke": [
+        {
+          "absatz": "1",
+          "text": "Das Gesamtgericht regelt durch Verordnung",
+          "items": [
+            {
+              "marke": "a",
+              "text": "die Organisation und den Geschäftsgang,"
+            },
+            {
+              "marke": "b",
+              "text": "die Gebühren, Kosten und Entschädigungen,"
+            },
+            {
+              "marke": "c",
+              "text": "die Organisation und die Aufgaben des Sekretariats und der Kanzlei."
+            }
+          ]
+        },
+        {
+          "absatz": "2",
+          "text": "Verordnungen gemäss lit. a und b bedürfen der Genehmigung des Kantonsrates."
+        }
+      ],
+      "stand": "1960-05-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-175_2-1959_05_24-1960_05_01-133.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "7d55abdc75343be4d35e9dd77c8a74f6ea9ceaf0d021d4d82b06b1b865479b5d",
+      "sha": "a918a6b942c2f800f451168594a7335f69afa8997ae46bca9a589ac2659eda46"
+    },
+    {
+      "id": "kanton/ZH/175.2/art_40_a",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Verwaltungsrechtspflegegesetz (VRG) (LS 175.2)",
+      "artikel": "40_a",
+      "artikelLabel": "§ 40a",
+      "bloecke": [
+        {
+          "absatz": null,
+          "text": "Soweit gesetzlich nichts anderes vorgesehen ist, richtet sich das Verfahren für Wahlen und Abstimmungen bei Geschäften der Justizverwaltung nach den entsprechenden Bestimmungen für die Gemeindebehörden."
+        }
+      ],
+      "stand": "1960-05-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-175_2-1959_05_24-1960_05_01-133.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "7d55abdc75343be4d35e9dd77c8a74f6ea9ceaf0d021d4d82b06b1b865479b5d",
+      "sha": "51779bc08f19c717c3346cc093ea9c443b121f2abe0947425e82fab82c1efa1d"
+    },
+    {
+      "id": "kanton/ZH/175.2/art_41",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Verwaltungsrechtspflegegesetz (VRG) (LS 175.2)",
+      "artikel": "41",
+      "artikelLabel": "§ 41",
+      "bloecke": [
+        {
+          "absatz": "1",
+          "text": "Das Verwaltungsgericht beurteilt als letzte kantonale Instanz Beschwerden gegen Akte im Sinne von §19 Abs. 1."
+        },
+        {
+          "absatz": "2",
+          "text": "Abweichende gesetzliche Regelungen bleiben vorbehalten."
+        },
+        {
+          "absatz": "3",
+          "text": "§19a betreffend die Art der anfechtbaren Anordnung gilt sinngemäss."
+        }
+      ],
+      "stand": "1960-05-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-175_2-1959_05_24-1960_05_01-133.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "7d55abdc75343be4d35e9dd77c8a74f6ea9ceaf0d021d4d82b06b1b865479b5d",
+      "sha": "c892cb0fb9e62edc3c1fa1bbf03e232bd7b42f7f49c4e6ae63243ca7b808812a"
+    },
+    {
+      "id": "kanton/ZH/175.2/art_42",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Verwaltungsrechtspflegegesetz (VRG) (LS 175.2)",
+      "artikel": "42",
+      "artikelLabel": "§ 42",
+      "bloecke": [
+        {
+          "absatz": null,
+          "text": "Die Beschwerde ist unzulässig gegen",
+          "items": [
+            {
+              "marke": "a",
+              "text": "Anordnungen, die unmittelbar bei einer Rechtsmittelinstanz des Bundes angefochten werden können,"
+            },
+            {
+              "marke": "b",
+              "text": "Anordnungen des Kantonsrates und seiner Organe, ausgenommen 1.Anordnungen in personalrechtlichen und administrativen Belangen, 2.Anordnungen über die Genehmigung der Erteilung des Enteignungsrechts an private Unternehmungen, 3.Erlasse unterhalb der Stufe des formellen Gesetzes,"
+            },
+            {
+              "marke": "c",
+              "text": "Anordnungen anderer oberster kantonaler Gerichte, ausgenommen 1.Justizverwaltungsakte, die diese Gerichte als einzige Instanz getroffen haben, 2.Erlasse dieser Gerichte."
+            }
+          ]
+        }
+      ],
+      "stand": "1960-05-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-175_2-1959_05_24-1960_05_01-133.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "7d55abdc75343be4d35e9dd77c8a74f6ea9ceaf0d021d4d82b06b1b865479b5d",
+      "sha": "7023c3ba72c431092f5181a61098dee24195092bcaeb78454836932a3526a2bb"
+    },
+    {
+      "id": "kanton/ZH/175.2/art_43",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Verwaltungsrechtspflegegesetz (VRG) (LS 175.2)",
+      "artikel": "43",
+      "artikelLabel": "§ 43",
+      "bloecke": [
+        {
+          "absatz": "1",
+          "text": "Die Beschwerde ist unzulässig gegen Entscheide der erstinstanzlichen Zivil- und Strafgerichte, ausgenommen Beschwerden betreffend Massnahmen nach",
+          "items": [
+            {
+              "marke": "a",
+              "text": "§§3–14 des Gewaltschutzgesetzes vom 19. Juni 2006,"
+            },
+            {
+              "marke": "b",
+              "text": "Art. 73–78 des Bundesgesetzes über die Ausländerinnen und Ausländer vom 16. Dezember 2005,"
+            },
+            {
+              "marke": "c",
+              "text": "Art. 4–9 des Konkordates über Massnahmen gegen Gewalt anlässlich von Sportveranstaltungen vom 15. November 2007."
+            }
+          ]
+        },
+        {
+          "absatz": "2",
+          "text": "Mit Beschwerde nach den Bestimmungen dieses Gesetzes können beim Obergericht angefochten werden:",
+          "items": [
+            {
+              "marke": "a",
+              "text": "Justizverwaltungsakte des Verwaltungsgerichts, die es als einzige Instanz getroffen hat,"
+            },
+            {
+              "marke": "b",
+              "text": "Erlasse des Verwaltungsgerichts."
+            }
+          ]
+        }
+      ],
+      "stand": "1960-05-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-175_2-1959_05_24-1960_05_01-133.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "7d55abdc75343be4d35e9dd77c8a74f6ea9ceaf0d021d4d82b06b1b865479b5d",
+      "sha": "8a95f7413051d823cbe971a46b7ca22aba7adc6cc473f992836899d9dba262d3"
+    },
+    {
+      "id": "kanton/ZH/175.2/art_44",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Verwaltungsrechtspflegegesetz (VRG) (LS 175.2)",
+      "artikel": "44",
+      "artikelLabel": "§ 44",
+      "bloecke": [
+        {
+          "absatz": "1",
+          "text": "Die Beschwerde ist unzulässig",
+          "items": [
+            {
+              "marke": "a",
+              "text": "in Stimmrechtssachen gegen erstinstanzliche Anordnungen und Einspracheentscheide des Regierungsrates,"
+            },
+            {
+              "marke": "b",
+              "text": "bei Begnadigungen,"
+            },
+            {
+              "marke": "c",
+              "text": "gegen Zulassungsbeschränkungen an Hochschulen,"
+            },
+            {
+              "marke": "d",
+              "text": "in Gemeindeangelegenheiten hinsichtlich Anordnungen des Regierungsrates 1.bei der Bewilligung von Versuchen über die Weiterentwicklung der Zusammenarbeit nach §83 Abs.1 des Gemeindegesetzes vom 20. April 2015 (GG), 2.beim Zusammenschluss von Gemeinden nach §153 Abs.1 Satz 2 GG, 3.über Beiträge an Zusammenschlüsse von Gemeinden nach §§156–159 GG, 4.beim Zusammenschluss von Friedensrichterkreisen nach §53 Abs. 2 GOG, 5.bei der Festlegung der Zivilstands-, der Betreibungs- sowie der Kindes- und Erwachsenenschutzkreise."
+            },
+            {
+              "marke": "e",
+              "text": "…"
+            },
+            {
+              "marke": "f",
+              "text": "im Gesundheitsbereich gegen 1.Leistungsaufträge des Regierungsrates für das Universitätsspital Zürich und das Kantonsspital Winterthur, 2.Entscheide des Regierungsrates über Leistungsvereinbarungen seiner Direktion mit diesen Spitälern, 3.Entscheide des Regierungsrates über Zusammenarbeitsverträge zwischen dem Universitätsspital und der Universität Zürich."
+            }
+          ]
+        },
+        {
+          "absatz": "2",
+          "text": "Weitere gesetzliche Regelungen, welche die Beschwerde an das Verwaltungsgericht für unzulässig erklären, bleiben vorbehalten."
+        },
+        {
+          "absatz": "3",
+          "text": "Ist die Beschwerde in der Hauptsache unzulässig, so ist sie es auch gegen Teil-, Vor- und Zwischenentscheide sowie gegen Anordnungen über Verfahrenskosten und über Entschädigungen. §§45–47."
+        }
+      ],
+      "stand": "1960-05-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-175_2-1959_05_24-1960_05_01-133.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "7d55abdc75343be4d35e9dd77c8a74f6ea9ceaf0d021d4d82b06b1b865479b5d",
+      "sha": "f87ef604b09be2ff667022a0dc591a95c4cd839a5e9c7175a418a6c98315a5e7"
+    },
+    {
+      "id": "kanton/ZH/175.2/art_49",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Verwaltungsrechtspflegegesetz (VRG) (LS 175.2)",
+      "artikel": "49",
+      "artikelLabel": "§ 49",
+      "bloecke": [
+        {
+          "absatz": null,
+          "text": "Die Beschwerdeberechtigung richtet sich nach den §§21– 21b."
+        }
+      ],
+      "stand": "1960-05-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-175_2-1959_05_24-1960_05_01-133.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "7d55abdc75343be4d35e9dd77c8a74f6ea9ceaf0d021d4d82b06b1b865479b5d",
+      "sha": "c9dd8c814db3eedbb6a2de1a337545395c9cfbfa0698a378651bc845937fd6d1"
+    },
+    {
+      "id": "kanton/ZH/175.2/art_50",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Verwaltungsrechtspflegegesetz (VRG) (LS 175.2)",
+      "artikel": "50",
+      "artikelLabel": "§ 50",
+      "bloecke": [
+        {
+          "absatz": "1",
+          "text": "Mit der Beschwerde können die Rügen gemäss §20 Abs. 1 lit. a und b sowie Abs. 2 erhoben werden."
+        },
+        {
+          "absatz": "2",
+          "text": "Die Rüge der Unangemessenheit ist nur zulässig, wenn ein Gesetz dies vorsieht."
+        }
+      ],
+      "stand": "1960-05-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-175_2-1959_05_24-1960_05_01-133.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "7d55abdc75343be4d35e9dd77c8a74f6ea9ceaf0d021d4d82b06b1b865479b5d",
+      "sha": "5ef790be337459910d16c86a8084246e33398b5f8a12c8b989e4bbe1976f98fe"
+    },
+    {
+      "id": "kanton/ZH/175.2/art_52",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Verwaltungsrechtspflegegesetz (VRG) (LS 175.2)",
+      "artikel": "52",
+      "artikelLabel": "§ 52",
+      "bloecke": [
+        {
+          "absatz": null,
+          "text": "Die Zulässigkeit neuer Begehren, Tatsachenbehauptun-"
+        }
+      ],
+      "stand": "1960-05-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-175_2-1959_05_24-1960_05_01-133.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "7d55abdc75343be4d35e9dd77c8a74f6ea9ceaf0d021d4d82b06b1b865479b5d",
+      "sha": "6fd3be38dcc519d9c58779f805c98769779440238976f433d7e96a1e94a62d6b"
+    },
+    {
+      "id": "kanton/ZH/175.2/art_53",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Verwaltungsrechtspflegegesetz (VRG) (LS 175.2)",
+      "artikel": "53",
+      "artikelLabel": "§ 53",
+      "bloecke": [
+        {
+          "absatz": null,
+          "text": "Die Beschwerde ist beim Verwaltungsgericht schriftlich einzureichen. Für die Beschwerdefrist gilt §22 sinngemäss."
+        }
+      ],
+      "stand": "1960-05-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-175_2-1959_05_24-1960_05_01-133.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "7d55abdc75343be4d35e9dd77c8a74f6ea9ceaf0d021d4d82b06b1b865479b5d",
+      "sha": "ef2e2e71e48af6fec904766bfdddeec979e7a5f777a04c0ca71fe884d1b6aac7"
+    },
+    {
+      "id": "kanton/ZH/175.2/art_54",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Verwaltungsrechtspflegegesetz (VRG) (LS 175.2)",
+      "artikel": "54",
+      "artikelLabel": "§ 54",
+      "bloecke": [
+        {
+          "absatz": "1",
+          "text": "Die Beschwerdeschrift muss einen Antrag und dessen Begründung enthalten."
+        },
+        {
+          "absatz": "2",
+          "text": "Der angefochtene Entscheid ist beizulegen oder genau zu bezeichnen. Die Beweismittel sollen genau bezeichnet und so weit möglich beigelegt werden."
+        }
+      ],
+      "stand": "1960-05-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-175_2-1959_05_24-1960_05_01-133.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "7d55abdc75343be4d35e9dd77c8a74f6ea9ceaf0d021d4d82b06b1b865479b5d",
+      "sha": "a58a6cdccb2adc82e4beeba242fb03b133d776c95af802a238811566e2a20ed3"
+    },
+    {
+      "id": "kanton/ZH/175.2/art_55",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Verwaltungsrechtspflegegesetz (VRG) (LS 175.2)",
+      "artikel": "55",
+      "artikelLabel": "§ 55",
+      "bloecke": [
+        {
+          "absatz": null,
+          "text": "Für die aufschiebende Wirkung gilt §25 Abs. 1–3 sinngemäss."
+        }
+      ],
+      "stand": "1960-05-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-175_2-1959_05_24-1960_05_01-133.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "7d55abdc75343be4d35e9dd77c8a74f6ea9ceaf0d021d4d82b06b1b865479b5d",
+      "sha": "381caf4e81b902f9b4f2b067bc85042b6a7fcdbc4e372f670ac1f10b6e6163c1"
+    },
+    {
+      "id": "kanton/ZH/175.2/art_56",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Verwaltungsrechtspflegegesetz (VRG) (LS 175.2)",
+      "artikel": "56",
+      "artikelLabel": "§ 56",
+      "bloecke": [
+        {
+          "absatz": "1",
+          "text": "Der Vorsitzende des Verwaltungsgerichtes prüft die eingehenden Beschwerden und ordnet zur Verbesserung allfälliger Mängel das Nötige an."
+        },
+        {
+          "absatz": "2",
+          "text": "..."
+        },
+        {
+          "absatz": "3",
+          "text": "..."
+        }
+      ],
+      "stand": "1960-05-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-175_2-1959_05_24-1960_05_01-133.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "7d55abdc75343be4d35e9dd77c8a74f6ea9ceaf0d021d4d82b06b1b865479b5d",
+      "sha": "fff4a0a71095c2bcee04dcd00e9d1faaa604d5e238c14c8fa55a0cba244616dc"
+    },
+    {
+      "id": "kanton/ZH/175.2/art_57",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Verwaltungsrechtspflegegesetz (VRG) (LS 175.2)",
+      "artikel": "57",
+      "artikelLabel": "§ 57",
+      "bloecke": [
+        {
+          "absatz": "1",
+          "text": "Die für die Beurteilung nötigen Akten werden beigezogen. Bei offensichtlich unzulässigen oder offensichtlich unbegründeten Rechtsmitteln kann darauf verzichtet werden."
+        },
+        {
+          "absatz": "2",
+          "text": "Die Akten stehen den Verfahrensbeteiligten zur Einsicht offen."
+        },
+        {
+          "absatz": "3",
+          "text": "Zur Wahrung wichtiger öffentlicher und schutzwürdiger privater Interessen kann die am Verfahren beteiligte Verwaltungsbehörde einzelne, dem Verwaltungsgericht näher zu bezeichnende Aktenstücke zurückbehalten. Soweit es ohne Verletzung der zu schützenden Interessen möglich ist, soll sie dem Gericht über deren Inhalt schriftlich Bericht erstatten."
+        }
+      ],
+      "stand": "1960-05-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-175_2-1959_05_24-1960_05_01-133.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "7d55abdc75343be4d35e9dd77c8a74f6ea9ceaf0d021d4d82b06b1b865479b5d",
+      "sha": "245b50e183eb4305616fac0e520bbfb256d1ba34c91f8c6ab19231aeaaeb537b"
+    },
+    {
+      "id": "kanton/ZH/175.2/art_58",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Verwaltungsrechtspflegegesetz (VRG) (LS 175.2)",
+      "artikel": "58",
+      "artikelLabel": "§ 58",
+      "bloecke": [
+        {
+          "absatz": null,
+          "text": "Die Vorinstanz und die am Verfahren Beteiligten erhalten Gelegenheit zur schriftlichen Vernehmlassung. Für die Vernehmlassungsfrist gilt §26b Abs.2 sinngemäss. Das Verwaltungsgericht kann einen weiteren Schriftenwechsel anordnen."
+        }
+      ],
+      "stand": "1960-05-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-175_2-1959_05_24-1960_05_01-133.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "7d55abdc75343be4d35e9dd77c8a74f6ea9ceaf0d021d4d82b06b1b865479b5d",
+      "sha": "7068cf179794f4e02931d1da2c44551acf0caee27a773b4b5235dc82e3c146a9"
+    },
+    {
+      "id": "kanton/ZH/175.2/art_59",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Verwaltungsrechtspflegegesetz (VRG) (LS 175.2)",
+      "artikel": "59",
+      "artikelLabel": "§ 59",
+      "bloecke": [
+        {
+          "absatz": "1",
+          "text": "Auf Antrag der Parteien oder von Amtes wegen kann eine mündliche Verhandlung angeordnet werden. Diese kann neben der schriftlichen Vernehmlassung durchgeführt werden oder auch an deren Stelle treten."
+        },
+        {
+          "absatz": "2",
+          "text": "Die Vorladung ist mit der Androhung zu verbinden, dass bei Nichterscheinen Verzicht auf die mündliche Darlegung des eigenen Standpunktes angenommen werde."
+        }
+      ],
+      "stand": "1960-05-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-175_2-1959_05_24-1960_05_01-133.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "7d55abdc75343be4d35e9dd77c8a74f6ea9ceaf0d021d4d82b06b1b865479b5d",
+      "sha": "f9f41ffa3e5ef46dc3a936732a523aa5015fcc102dc9d0f55c43dee08cc10dc7"
+    },
+    {
+      "id": "kanton/ZH/175.2/art_60",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Verwaltungsrechtspflegegesetz (VRG) (LS 175.2)",
+      "artikel": "60",
+      "artikelLabel": "§ 60",
+      "bloecke": [
+        {
+          "absatz": null,
+          "text": "Die zur Abklärung des Sachverhaltes erforderlichen Beweise werden von Amtes wegen erhoben. Die Durchführung des Beweisverfahrens kann ganz oder teilweise einer Abordnung oder einem Mitglied des Gerichtes übertragen werden. Die Bestimmungen der Zivilprozessordnungüber das Beweisverfahren sind sinngemäss anzuwenden."
+        }
+      ],
+      "stand": "1960-05-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-175_2-1959_05_24-1960_05_01-133.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "7d55abdc75343be4d35e9dd77c8a74f6ea9ceaf0d021d4d82b06b1b865479b5d",
+      "sha": "edc26a727e659887fad3c28f1f337326a30dc26d7526a342649b5b59202b18ad"
+    },
+    {
+      "id": "kanton/ZH/175.2/art_61",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Verwaltungsrechtspflegegesetz (VRG) (LS 175.2)",
+      "artikel": "61",
+      "artikelLabel": "§ 61",
+      "bloecke": [
+        {
+          "absatz": null,
+          "text": "Sind Beweise erhoben worden, so erhalten die am Beschwerdeverfahren Beteiligten Gelegenheit, sich hiezu mündlich vor dem Gericht oder schriftlich zu äussern."
+        }
+      ],
+      "stand": "1960-05-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-175_2-1959_05_24-1960_05_01-133.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "7d55abdc75343be4d35e9dd77c8a74f6ea9ceaf0d021d4d82b06b1b865479b5d",
+      "sha": "c1f9baa07314ceb6cb55a64d2264a85729e89cc2a0d28173f984c3ec5a8f8c86"
+    },
+    {
+      "id": "kanton/ZH/175.2/art_62",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Verwaltungsrechtspflegegesetz (VRG) (LS 175.2)",
+      "artikel": "62",
+      "artikelLabel": "§ 62",
+      "bloecke": [
+        {
+          "absatz": "1",
+          "text": "Die Verhandlungen vor Verwaltungsgericht sind öffentlich. Die Beratungen des Gerichtes finden unter Ausschluss der Parteien und der Öffentlichkeit statt."
+        },
+        {
+          "absatz": "2",
+          "text": "Das Verwaltungsgericht kann die Öffentlichkeit aus wichtigen Gründen von den Verhandlungen ausschliessen."
+        }
+      ],
+      "stand": "1960-05-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-175_2-1959_05_24-1960_05_01-133.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "7d55abdc75343be4d35e9dd77c8a74f6ea9ceaf0d021d4d82b06b1b865479b5d",
+      "sha": "335c8e2c547471d10ba2164c2bdc72c0b21f1f31f6f6b1c895c4b11797c5d289"
+    },
+    {
+      "id": "kanton/ZH/175.2/art_63",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Verwaltungsrechtspflegegesetz (VRG) (LS 175.2)",
+      "artikel": "63",
+      "artikelLabel": "§ 63",
+      "bloecke": [
+        {
+          "absatz": "1",
+          "text": "Hebt das Verwaltungsgericht die angefochtene Anordnung auf, so entscheidet es selbst."
+        },
+        {
+          "absatz": "2",
+          "text": "Dabei darf es über die gestellten Rechtsbegehren nicht hinausgehen und die aufgehobene Anordnung nicht zum Nachteil des Beschwerdeführers abändern."
+        },
+        {
+          "absatz": "3",
+          "text": "Bei Beschwerden betreffend ein Arbeitsverhältnis gilt §27a Abs.1 sinngemäss."
+        }
+      ],
+      "stand": "1960-05-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-175_2-1959_05_24-1960_05_01-133.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "7d55abdc75343be4d35e9dd77c8a74f6ea9ceaf0d021d4d82b06b1b865479b5d",
+      "sha": "cf03a14b9b4432dfc6351e722c31925c3cc24a5c655416f3036a1bd664b6621b"
+    },
+    {
+      "id": "kanton/ZH/175.2/art_64",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Verwaltungsrechtspflegegesetz (VRG) (LS 175.2)",
+      "artikel": "64",
+      "artikelLabel": "§ 64",
+      "bloecke": [
+        {
+          "absatz": "1",
+          "text": "Das Verwaltungsgericht kann die Angelegenheit zu neuer Entscheidung an die Vorinstanz zurückweisen, insbesondere wenn mit der angefochtenen Anordnung nicht auf die Sache eingetreten oder der Tatbestand ungenügend festgestellt wurde."
+        },
+        {
+          "absatz": "2",
+          "text": "Im Verwaltungsverfahren sind neue tatsächliche Behauptungen und die Bezeichnung neuer Beweismittel zulässig. Dem neuen Entscheid ist die rechtliche Beurteilung zugrunde zu legen, mit der die Rückweisung begründet wurde."
+        }
+      ],
+      "stand": "1960-05-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-175_2-1959_05_24-1960_05_01-133.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "7d55abdc75343be4d35e9dd77c8a74f6ea9ceaf0d021d4d82b06b1b865479b5d",
+      "sha": "464862c692e8e8e081d3b339f56749c3c4a8ccce28fd04ace631f3c1ca495219"
+    },
+    {
+      "id": "kanton/ZH/175.2/art_65",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Verwaltungsrechtspflegegesetz (VRG) (LS 175.2)",
+      "artikel": "65",
+      "artikelLabel": "§ 65",
+      "bloecke": [
+        {
+          "absatz": "1",
+          "text": "Der Entscheid des Verwaltungsgerichts ergeht begründet. Bei offensichtlich unzulässigen, gegenstandslos gewordenen, offensichtlich unbegründeten oder offensichtlich begründeten Rechtsmitteln kann der Entscheid summarisch begründet werden."
+        },
+        {
+          "absatz": "2",
+          "text": "Der Entscheid wird schriftlich mitgeteilt:",
+          "items": [
+            {
+              "marke": "a",
+              "text": "den Verfahrensbeteiligten,"
+            },
+            {
+              "marke": "b",
+              "text": "der Schlichtungsstelle im Sinne des Gleichstellungsgesetzes, wenn eine Schlichtungsverhandlung durchgeführt worden ist."
+            }
+          ]
+        },
+        {
+          "absatz": "3",
+          "text": "Der Entscheid kann vor der schriftlichen Mitteilung mündlich oder durch Zustellung des Dispositives eröffnet werden."
+        }
+      ],
+      "stand": "1960-05-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-175_2-1959_05_24-1960_05_01-133.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "7d55abdc75343be4d35e9dd77c8a74f6ea9ceaf0d021d4d82b06b1b865479b5d",
+      "sha": "32f10c43feee2c5c22a1a59bc4319ec26eac5139c6718e4263c97b50117a5266"
+    },
+    {
+      "id": "kanton/ZH/175.2/art_65_a",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Verwaltungsrechtspflegegesetz (VRG) (LS 175.2)",
+      "artikel": "65_a",
+      "artikelLabel": "§ 65a",
+      "bloecke": [
+        {
+          "absatz": "1",
+          "text": "Das Verwaltungsgericht legt die Gerichtsgebühr nach seinem Zeitaufwand, nach der Schwierigkeit des Falls und nach dem Streitwert oder dem tatsächlichen Streitinteresse fest. Die Gebühr beträgt in der Regel Fr. 500 bis Fr. 50 000."
+        },
+        {
+          "absatz": "2",
+          "text": "Im Übrigen richtet sich die Gebührenerhebung nach §§13–16 und nach der Verordnung des Verwaltungsgerichts."
+        },
+        {
+          "absatz": "3",
+          "text": "Bei personalrechtlichen Streitigkeiten mit einem Streitwert bis Fr. 30 000 werden keine Gebühren auferlegt. Vorbehalten bleibt die Kostenauflage an die unterliegende Partei, wenn sie durch ihre Prozessführung einen unangemessenen Aufwand verursacht hat."
+        }
+      ],
+      "stand": "1960-05-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-175_2-1959_05_24-1960_05_01-133.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "7d55abdc75343be4d35e9dd77c8a74f6ea9ceaf0d021d4d82b06b1b865479b5d",
+      "sha": "1afe6c2a8e63dbf275da8fb7bcef74006e4830969565bfc026f7953964b586e6"
+    },
+    {
+      "id": "kanton/ZH/175.2/art_66",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Verwaltungsrechtspflegegesetz (VRG) (LS 175.2)",
+      "artikel": "66",
+      "artikelLabel": "§ 66",
+      "bloecke": [
+        {
+          "absatz": null,
+          "text": "Entscheide des Verwaltungsgerichts sind mit Eintritt der Rechtskraft vollstreckbar. §§67–69."
+        }
+      ],
+      "stand": "1960-05-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-175_2-1959_05_24-1960_05_01-133.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "7d55abdc75343be4d35e9dd77c8a74f6ea9ceaf0d021d4d82b06b1b865479b5d",
+      "sha": "5ef90b0102345d577ed3a7f2e14dafee573bda31c1dc21cd0b54d9150c8fb7e2"
+    },
+    {
+      "id": "kanton/ZH/175.2/art_70",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Verwaltungsrechtspflegegesetz (VRG) (LS 175.2)",
+      "artikel": "70",
+      "artikelLabel": "§ 70",
+      "bloecke": [
+        {
+          "absatz": null,
+          "text": "Soweit keine besonderen Bestimmungen für das Verfahren bestehen, sind die Vorschriften über das Verwaltungsverfahren entsprechend anwendbar."
+        }
+      ],
+      "stand": "1960-05-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-175_2-1959_05_24-1960_05_01-133.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "7d55abdc75343be4d35e9dd77c8a74f6ea9ceaf0d021d4d82b06b1b865479b5d",
+      "sha": "eb59d84ace81d2915a264960da287ed02aa6f54cb8556678a610b3045d723767"
+    },
+    {
+      "id": "kanton/ZH/175.2/art_71",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Verwaltungsrechtspflegegesetz (VRG) (LS 175.2)",
+      "artikel": "71",
+      "artikelLabel": "§ 71",
+      "bloecke": [
+        {
+          "absatz": null,
+          "text": "Die Vorschriften der ZPObetreffend die Prozessleitung, das prozessuale Handeln und die Fristen (1. Teil, 9. Titel) sowie die für den Zivilprozess geltenden Verfahrensbestimmungen des GOG(6. Teil, 1. und 2. Abschnitt) finden ergänzend Anwendung."
+        }
+      ],
+      "stand": "1960-05-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-175_2-1959_05_24-1960_05_01-133.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "7d55abdc75343be4d35e9dd77c8a74f6ea9ceaf0d021d4d82b06b1b865479b5d",
+      "sha": "eb0c6c97c97e55a47e9c96c65bb8ceac51cf045b8267b8ae565faf1617fb2ddd"
+    },
+    {
+      "id": "kanton/ZH/175.2/art_72",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Verwaltungsrechtspflegegesetz (VRG) (LS 175.2)",
+      "artikel": "72",
+      "artikelLabel": "§ 72",
+      "bloecke": [
+        {
+          "absatz": null,
+          "text": "Das Verwaltungsgericht ist in Steuersachen letzte Rekursund Beschwerdeinstanz nach den besonderen Bestimmungen der Steuergesetzgebung."
+        }
+      ],
+      "stand": "1960-05-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-175_2-1959_05_24-1960_05_01-133.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "7d55abdc75343be4d35e9dd77c8a74f6ea9ceaf0d021d4d82b06b1b865479b5d",
+      "sha": "4292b9e3609e2491d98c3d5fb6900ee5929d2ea227888811d026767e9c44eb60"
+    },
+    {
+      "id": "kanton/ZH/175.2/art_73",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Verwaltungsrechtspflegegesetz (VRG) (LS 175.2)",
+      "artikel": "73",
+      "artikelLabel": "§ 73",
+      "bloecke": [
+        {
+          "absatz": null,
+          "text": "Für Beschwerde, Rekurs und Revision sowie für deren Wirkung, Verfahren und Entscheid gelten die Bestimmungen des Steuergesetzes. §§74–80d."
+        }
+      ],
+      "stand": "1960-05-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-175_2-1959_05_24-1960_05_01-133.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "7d55abdc75343be4d35e9dd77c8a74f6ea9ceaf0d021d4d82b06b1b865479b5d",
+      "sha": "b775dcf3117439a3e127fb0dfcea849a7fbc3f53602d00701642f146d6754afb"
+    },
+    {
+      "id": "kanton/ZH/175.2/art_81",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Verwaltungsrechtspflegegesetz (VRG) (LS 175.2)",
+      "artikel": "81",
+      "artikelLabel": "§ 81",
+      "bloecke": [
+        {
+          "absatz": null,
+          "text": "Das Verwaltungsgericht beurteilt im Klageverfahren als einzige Instanz:",
+          "items": [
+            {
+              "marke": "a",
+              "text": "Streitigkeiten aus öffentlichem Recht, sofern darüber weder ein Beteiligter noch ein anderes staatliches Organ mittels Verfügung entscheiden kann,"
+            },
+            {
+              "marke": "b",
+              "text": "Streitigkeiten aus verwaltungsrechtlichen Verträgen, ausgenommen Streitigkeiten aus Arbeitsverhältnissen, die mit öffentlichrechtlichem Vertrag begründet worden sind,"
+            },
+            {
+              "marke": "c",
+              "text": "Streitigkeiten aus öffentlichem Recht, wenn ein anderes Gesetz deren erstinstanzliche Beurteilung durch ein Gericht vorschreibt."
+            }
+          ]
+        }
+      ],
+      "stand": "1960-05-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-175_2-1959_05_24-1960_05_01-133.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "7d55abdc75343be4d35e9dd77c8a74f6ea9ceaf0d021d4d82b06b1b865479b5d",
+      "sha": "2a9428636994b69f22db1fdcd903944cfe1e960b78ee637eb1e57438f8a0ae7d"
+    },
+    {
+      "id": "kanton/ZH/175.2/art_82",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Verwaltungsrechtspflegegesetz (VRG) (LS 175.2)",
+      "artikel": "82",
+      "artikelLabel": "§ 82",
+      "bloecke": [
+        {
+          "absatz": null,
+          "text": "Der Kanton und die Gemeinden können für Streitigkeiten aus Verträgen, die Gemeinden verschiedener Kantone abgeschlossen haben, Schiedsgerichte vereinbaren."
+        }
+      ],
+      "stand": "1960-05-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-175_2-1959_05_24-1960_05_01-133.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "7d55abdc75343be4d35e9dd77c8a74f6ea9ceaf0d021d4d82b06b1b865479b5d",
+      "sha": "5b1eb740ad3933b38c77c89ec6e6cbad70b3fc7bd90ac6850ab0987a7dec52bd"
+    },
+    {
+      "id": "kanton/ZH/175.2/art_83",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Verwaltungsrechtspflegegesetz (VRG) (LS 175.2)",
+      "artikel": "83",
+      "artikelLabel": "§ 83",
+      "bloecke": [
+        {
+          "absatz": "1",
+          "text": "Die Klageschrift ist dem Verwaltungsgericht in zweifacher Ausfertigung einzureichen. Sie muss einen Antrag und eine Begründung enthalten."
+        },
+        {
+          "absatz": "2",
+          "text": "Genügt die Klageschrift diesen Erfordernissen nicht, so setzt der Vorsitzende des Verwaltungsgerichtes dem Kläger eine kurze Frist zur Behebung des Mangels an unter der Androhung, dass sonst auf die Klage nicht eingetreten würde."
+        },
+        {
+          "absatz": "3",
+          "text": "Die Beweismittel sollen genau bezeichnet und soweit möglich der Klageschrift beigelegt werden."
+        },
+        {
+          "absatz": "4",
+          "text": "..."
+        }
+      ],
+      "stand": "1960-05-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-175_2-1959_05_24-1960_05_01-133.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "7d55abdc75343be4d35e9dd77c8a74f6ea9ceaf0d021d4d82b06b1b865479b5d",
+      "sha": "c3c8c96c6c49650fc871559e3e08bd3c06768997ffa3de6c1e15e73d6f0f85c5"
+    },
+    {
+      "id": "kanton/ZH/175.2/art_84",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Verwaltungsrechtspflegegesetz (VRG) (LS 175.2)",
+      "artikel": "84",
+      "artikelLabel": "§ 84",
+      "bloecke": [
+        {
+          "absatz": "1",
+          "text": "Der Beklagte erhält Gelegenheit zur schriftlichen Beantwortung der Klage. Die Klageantwort ist in zweifacher Ausfertigung einzureichen. Die Beweismittel sollen bezeichnet und soweit möglich beigelegt werden."
+        },
+        {
+          "absatz": "2",
+          "text": "Es kann ein weiterer Schriftenwechsel angeordnet oder zu einer mündlichen Verhandlung vorgeladen werden."
+        }
+      ],
+      "stand": "1960-05-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-175_2-1959_05_24-1960_05_01-133.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "7d55abdc75343be4d35e9dd77c8a74f6ea9ceaf0d021d4d82b06b1b865479b5d",
+      "sha": "bbbd933fabe5e8c91cbfb39d10b10a41698687fc8df82c0f7fe6c7d6a93201dd"
+    },
+    {
+      "id": "kanton/ZH/175.2/art_85",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Verwaltungsrechtspflegegesetz (VRG) (LS 175.2)",
+      "artikel": "85",
+      "artikelLabel": "§ 85",
+      "bloecke": [
+        {
+          "absatz": null,
+          "text": "Das Verwaltungsgericht beurteilt die ihm vorgelegten Anträge in tatsächlicher und rechtlicher Hinsicht frei."
+        }
+      ],
+      "stand": "1960-05-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-175_2-1959_05_24-1960_05_01-133.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "7d55abdc75343be4d35e9dd77c8a74f6ea9ceaf0d021d4d82b06b1b865479b5d",
+      "sha": "ff44a9f1f91604c1a751123564c4e9d97b0a8dff90e9a09411fa922132cc4943"
+    },
+    {
+      "id": "kanton/ZH/175.2/art_86",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Verwaltungsrechtspflegegesetz (VRG) (LS 175.2)",
+      "artikel": "86",
+      "artikelLabel": "§ 86",
+      "bloecke": [
+        {
+          "absatz": null,
+          "text": "Ergänzend sind die Bestimmungen über das Beschwerdeverfahren vor Verwaltungsgericht sinngemäss anwendbar. Vierter Abschnitt: Die Revision"
+        }
+      ],
+      "stand": "1960-05-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-175_2-1959_05_24-1960_05_01-133.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "7d55abdc75343be4d35e9dd77c8a74f6ea9ceaf0d021d4d82b06b1b865479b5d",
+      "sha": "547c0a9016c4ab6d1b68d1f8086619c2776e5976e566b87d422fd72433141404"
+    },
+    {
+      "id": "kanton/ZH/175.2/art_86_a",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Verwaltungsrechtspflegegesetz (VRG) (LS 175.2)",
+      "artikel": "86_a",
+      "artikelLabel": "§ 86a",
+      "bloecke": [
+        {
+          "absatz": null,
+          "text": "Die Revision rechtskräftiger Anordnungen von Verwaltungsbehörden, Rekurskommissionen und Verwaltungsgericht kann von den am Verfahren Beteiligten verlangt werden, wenn",
+          "items": [
+            {
+              "marke": "a",
+              "text": "im Rahmen eines Strafverfahrens festgestellt wird, dass ein Verbrechen oder ein Vergehen sie beeinflusst hat,"
+            },
+            {
+              "marke": "b",
+              "text": "diese neue erhebliche Tatsachen erfahren oder Beweismittel auffinden, die sie im früheren Verfahren nicht beibringen konnten."
+            }
+          ]
+        }
+      ],
+      "stand": "1960-05-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-175_2-1959_05_24-1960_05_01-133.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "7d55abdc75343be4d35e9dd77c8a74f6ea9ceaf0d021d4d82b06b1b865479b5d",
+      "sha": "30bb0440a6e4217004a446fa7482a054a3e98ee2d552e7a03890371fec447334"
+    },
+    {
+      "id": "kanton/ZH/175.2/art_86_b",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Verwaltungsrechtspflegegesetz (VRG) (LS 175.2)",
+      "artikel": "86_b",
+      "artikelLabel": "§ 86b",
+      "bloecke": [
+        {
+          "absatz": "1",
+          "text": "Revisionsgesuche sind unzulässig, wenn die Revisionsgründe im Verfahren, das der Anordnung vorausging, oder mit Rekurs oder Beschwerde gegen die Anordnung hätten geltend gemacht werden können."
+        },
+        {
+          "absatz": "2",
+          "text": "Das Revisionsgesuch ist bei der Behörde, welche die Anordnung getroffen hat, innert 90 Tagen seit Entdeckung des Revisionsgrundes einzureichen. Nach Ablauf von zehn Jahren seit Mitteilung der Anordnung ist ein Revisionsgesuch nur noch aus dem in §86a lit.a genannten Grunde zulässig."
+        }
+      ],
+      "stand": "1960-05-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-175_2-1959_05_24-1960_05_01-133.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "7d55abdc75343be4d35e9dd77c8a74f6ea9ceaf0d021d4d82b06b1b865479b5d",
+      "sha": "46c9cbd2a5e96cb7fae04d75820239efe94aa07e10198c92028139396d32c018"
+    },
+    {
+      "id": "kanton/ZH/175.2/art_86_c",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Verwaltungsrechtspflegegesetz (VRG) (LS 175.2)",
+      "artikel": "86_c",
+      "artikelLabel": "§ 86c",
+      "bloecke": [
+        {
+          "absatz": "1",
+          "text": "Das Revisionsgesuch muss die Revisionsgründe angeben und die für den Fall einer neuen Anordnung in der Sache gestellten Anträge enthalten. Beweismittel sollen beigelegt oder, soweit dies nicht möglich ist, genau bezeichnet werden."
+        },
+        {
+          "absatz": "2",
+          "text": "Die Einreichung des Revisionsgesuches schiebt die Vollstreckung der angefochtenen Anordnung nur auf, wenn die angerufene Behörde es bestimmt."
+        }
+      ],
+      "stand": "1960-05-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-175_2-1959_05_24-1960_05_01-133.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "7d55abdc75343be4d35e9dd77c8a74f6ea9ceaf0d021d4d82b06b1b865479b5d",
+      "sha": "a9e01b6d8c73d6157a337e517f348ca0b4166fcf8f1aa1a8339c2ce468fb9e2e"
+    },
+    {
+      "id": "kanton/ZH/175.2/art_86_d",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Verwaltungsrechtspflegegesetz (VRG) (LS 175.2)",
+      "artikel": "86_d",
+      "artikelLabel": "§ 86d",
+      "bloecke": [
+        {
+          "absatz": null,
+          "text": "Die Revision erfolgt, indem die Behörde die fragliche Anordnung aufhebt und eine neue erlässt. Fünfter Abschnitt: Die Ombudsperson"
+        }
+      ],
+      "stand": "1960-05-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-175_2-1959_05_24-1960_05_01-133.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "7d55abdc75343be4d35e9dd77c8a74f6ea9ceaf0d021d4d82b06b1b865479b5d",
+      "sha": "40ee4096d14de37a2639d406764fbadbe36df1db5b94129b8ae3456763513ccb"
+    },
+    {
+      "id": "kanton/ZH/175.2/art_87",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Verwaltungsrechtspflegegesetz (VRG) (LS 175.2)",
+      "artikel": "87",
+      "artikelLabel": "§ 87",
+      "bloecke": [
+        {
+          "absatz": "1",
+          "text": "Der Kantonsrat wählt die Ombudsperson und ihre Stellvertretung für eine Amtsdauer von vier Jahren. Die Stellvertretung ist der Ombudsperson in der Funktion gleichgestellt."
+        },
+        {
+          "absatz": "2",
+          "text": "Die Ombudsperson ist unabhängig. Sie ist administrativ der Geschäftsleitung des Kantonsrates zugeordnet."
+        },
+        {
+          "absatz": "3",
+          "text": "Der Kantonsrat kann die Ombudsperson und ihre Stellvertretung bei schwerwiegenden Amtspflichtverletzungen oder bei fachlichem Ungenügen auf Antrag seiner Geschäftsleitung vor Ablauf der Amtsdauer abwählen. Für diesen Beschluss ist eine Mehrheit von zwei Dritteln der Mitglieder des Kantonsrates erforderlich."
+        }
+      ],
+      "stand": "1960-05-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-175_2-1959_05_24-1960_05_01-133.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "7d55abdc75343be4d35e9dd77c8a74f6ea9ceaf0d021d4d82b06b1b865479b5d",
+      "sha": "14c55d6ee9c13e65da38395619be6887ba679bf8ba2975945cc921be5427e0bd"
+    },
+    {
+      "id": "kanton/ZH/175.2/art_87_a",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Verwaltungsrechtspflegegesetz (VRG) (LS 175.2)",
+      "artikel": "87_a",
+      "artikelLabel": "§ 87a",
+      "bloecke": [
+        {
+          "absatz": "1",
+          "text": "Auf die Ombudsperson und ihre Stellvertretung sind die personalrechtlichen Bestimmungen sinngemäss anwendbar, insbesondere über",
+          "items": [
+            {
+              "marke": "a",
+              "text": "die Lohnauszahlung,"
+            },
+            {
+              "marke": "b",
+              "text": "die Ausrichtung von Familienzulagen,"
+            },
+            {
+              "marke": "c",
+              "text": "die Rechte und Pflichten bei Elternschaft, Krankheit und Unfall,"
+            },
+            {
+              "marke": "d",
+              "text": "den Rechtsschutz."
+            }
+          ]
+        },
+        {
+          "absatz": "2",
+          "text": "Der Lohn der Ombudsperson und der Stellvertretung entspricht dem Höchstbetrag der Lohnklasse 27 der kantonalen Angestellten. Der Lohn der Stellvertretung berechnet sich nach ihrer zeitlichen Beanspruchung."
+        }
+      ],
+      "stand": "1960-05-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-175_2-1959_05_24-1960_05_01-133.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "7d55abdc75343be4d35e9dd77c8a74f6ea9ceaf0d021d4d82b06b1b865479b5d",
+      "sha": "9328b5b319d32ab44ddc4cbdbfda9c593424d7359d816917523ff3b46998f817"
+    },
+    {
+      "id": "kanton/ZH/175.2/art_88",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Verwaltungsrechtspflegegesetz (VRG) (LS 175.2)",
+      "artikel": "88",
+      "artikelLabel": "§ 88",
+      "bloecke": [
+        {
+          "absatz": "1",
+          "text": "Die Ombudsstelle hat ihren Sitz in Zürich."
+        },
+        {
+          "absatz": "2",
+          "text": "Die Ombudsperson ist für die Anstellungen und Beförderungen des Personals der Ombudsstelle im Rahmen des vom Kantonsrat genehmigten Budgets zuständig. Auf das Personal der Ombudsstelle findet das Personalrecht des Kantons Anwendung."
+        },
+        {
+          "absatz": "3",
+          "text": "Übernimmt die Ombudsperson Aufgaben gemäss Art. 81 Abs. 4 KVin einer Gemeinde, nimmt sie ihre Tätigkeit spätestens ein Jahr nach Inkrafttreten der entsprechenden Bestimmung der Gemeindeordnung auf."
+        },
+        {
+          "absatz": "4",
+          "text": "Der Kanton wird gegenüber der Ombudsperson durch die Geschäftsleitung des Kantonsrates vertreten."
+        }
+      ],
+      "stand": "1960-05-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-175_2-1959_05_24-1960_05_01-133.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "7d55abdc75343be4d35e9dd77c8a74f6ea9ceaf0d021d4d82b06b1b865479b5d",
+      "sha": "f7b5d05819db532c7523240342fd3400eb80614086b27c8d5b5a9cb59bb72e02"
+    },
+    {
+      "id": "kanton/ZH/175.2/art_88_a",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Verwaltungsrechtspflegegesetz (VRG) (LS 175.2)",
+      "artikel": "88_a",
+      "artikelLabel": "§ 88a",
+      "bloecke": [
+        {
+          "absatz": "1",
+          "text": "Die Ombudsperson ist dem Gesetz über Controlling und Rechnungslegung (CRG)und den Ausführungserlassen des Regierungsrates zu diesem Gesetz unterstellt."
+        },
+        {
+          "absatz": "2",
+          "text": "Sie führt eine eigene Rechnung. Sie unterbreitet dem Kantonsrat jährlich eine Übersicht über die Entwicklung der Leistungen und Finanzen, einen Budgetentwurf sowie einen Bericht über ihre Tätigkeit mit Einschluss einer Rechnung."
+        },
+        {
+          "absatz": "3",
+          "text": "Sie ist bezüglich Ausgabenkompetenzen dem Regierungsrat gleichgestellt. §§19–25 des CRGgelten sinngemäss."
+        }
+      ],
+      "stand": "1960-05-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-175_2-1959_05_24-1960_05_01-133.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "7d55abdc75343be4d35e9dd77c8a74f6ea9ceaf0d021d4d82b06b1b865479b5d",
+      "sha": "38a99bb3ad9fc41dd98d03935bf7056e84195cf60d0204eeba6d2cc1a28f417b"
+    },
+    {
+      "id": "kanton/ZH/175.2/art_89",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Verwaltungsrechtspflegegesetz (VRG) (LS 175.2)",
+      "artikel": "89",
+      "artikelLabel": "§ 89",
+      "bloecke": [
+        {
+          "absatz": "1",
+          "text": "Die Ombudsperson prüft, ob die Behörden und Verwaltungseinheiten des Kantons und der Bezirke nach Recht und Billigkeit verfahren."
+        },
+        {
+          "absatz": "2",
+          "text": "Zusätzlich prüft sie",
+          "items": [
+            {
+              "marke": "a",
+              "text": "die unselbstständigen und die selbstständigen kantonalen Anstalten und Körperschaften, ausgenommen die Zürcher Kantonalbank und die Elektrizitätswerke des Kantons Zürich,"
+            },
+            {
+              "marke": "b",
+              "text": "die Behörden und Verwaltungseinheiten einer Gemeinde, deren Gemeindeordnung das Tätigwerden der Ombudsperson vorsieht."
+            }
+          ]
+        }
+      ],
+      "stand": "1960-05-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-175_2-1959_05_24-1960_05_01-133.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "7d55abdc75343be4d35e9dd77c8a74f6ea9ceaf0d021d4d82b06b1b865479b5d",
+      "sha": "e7b38e272745998b064bb42121ea4f87a86e332a66a4546595aba1bf7ad5f0ee"
+    },
+    {
+      "id": "kanton/ZH/175.2/art_90",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Verwaltungsrechtspflegegesetz (VRG) (LS 175.2)",
+      "artikel": "90",
+      "artikelLabel": "§ 90",
+      "bloecke": [
+        {
+          "absatz": null,
+          "text": "Der Überprüfung durch die Ombudspersonsind entzogen:",
+          "items": [
+            {
+              "marke": "a",
+              "text": "der Kantonsrat und die Kirchensynoden;"
+            },
+            {
+              "marke": "b",
+              "text": "die Behörden mit richterlicher Unabhängigkeit, soweit sie nicht im Bereich der Justizverwaltung tätig sind;"
+            },
+            {
+              "marke": "c",
+              "text": "andere Behörden –hinsichtlich Vorbereitung, Erlass, Änderung, Aufhebung und Genehmigung allgemein verbindlicher Anordnungen, –in Rechtsmittelverfahren, ausser bei Rechtsverweigerung, Rechtsverzögerung und andern Verletzungen von Amtspflichten."
+            }
+          ]
+        }
+      ],
+      "stand": "1960-05-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-175_2-1959_05_24-1960_05_01-133.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "7d55abdc75343be4d35e9dd77c8a74f6ea9ceaf0d021d4d82b06b1b865479b5d",
+      "sha": "b880b78f7ec46ce27aefe22111adb38ddaf645f22b8d8b520d048b0f2e618c81"
+    },
+    {
+      "id": "kanton/ZH/175.2/art_91",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Verwaltungsrechtspflegegesetz (VRG) (LS 175.2)",
+      "artikel": "91",
+      "artikelLabel": "§ 91",
+      "bloecke": [
+        {
+          "absatz": "1",
+          "text": "Die Ombudspersonwird auf Beschwerde eines an der Überprüfung rechtlich oder tatsächlich Interessierten hin tätig. Die Überprüfung kann sich auf eine laufende oder abgeschlossene Angelegenheit beziehen."
+        },
+        {
+          "absatz": "2",
+          "text": "Sie kann auch von sich aus tätig werden."
+        }
+      ],
+      "stand": "1960-05-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-175_2-1959_05_24-1960_05_01-133.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "7d55abdc75343be4d35e9dd77c8a74f6ea9ceaf0d021d4d82b06b1b865479b5d",
+      "sha": "6480e8673a5a0a7b9b8533d55e47f6771fd090f3632ea2ef52e32ba79ef95560"
+    },
+    {
+      "id": "kanton/ZH/175.2/art_92",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Verwaltungsrechtspflegegesetz (VRG) (LS 175.2)",
+      "artikel": "92",
+      "artikelLabel": "§ 92",
+      "bloecke": [
+        {
+          "absatz": "1",
+          "text": "Die Ombudspersonkann den Sachverhalt nach §7 Abs. 1 abklären."
+        },
+        {
+          "absatz": "2",
+          "text": "Die Behörden, mit denen sich die Ombudspersonin einem bestimmten Fall befasst, sind ihr zur Auskunft und zur Vorlage der Akten verpflichtet. Vorbehalten bleiben einschränkende Vorschriften des Bundes."
+        },
+        {
+          "absatz": "3",
+          "text": "Die Behörden haben ihrerseits Anspruch auf Stellungnahme."
+        },
+        {
+          "absatz": "4",
+          "text": "Die Ombudspersonist gegenüber Dritten und gegenüber dem Beschwerdeführer in gleichem Mass zur Geheimhaltung verpflichtet wie die betreffenden Behörden."
+        }
+      ],
+      "stand": "1960-05-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-175_2-1959_05_24-1960_05_01-133.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "7d55abdc75343be4d35e9dd77c8a74f6ea9ceaf0d021d4d82b06b1b865479b5d",
+      "sha": "f5c45e9e1f087814819493eb01d0c4fc7d03fdd1aab9cb6a224fff00de37ce3b"
+    },
+    {
+      "id": "kanton/ZH/175.2/art_93",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Verwaltungsrechtspflegegesetz (VRG) (LS 175.2)",
+      "artikel": "93",
+      "artikelLabel": "§ 93",
+      "bloecke": [
+        {
+          "absatz": null,
+          "text": "Die Ombudspersonist nicht befugt, Anordnungen zu treffen. Aufgrund ihrer Überprüfung kann sie",
+          "items": [
+            {
+              "marke": "a",
+              "text": "dem Beschwerdeführer Rat für sein weiteres Verhalten erteilen,"
+            },
+            {
+              "marke": "b",
+              "text": "die Angelegenheit mit den Behörden besprechen,"
+            },
+            {
+              "marke": "c",
+              "text": "nötigenfalls eine schriftliche Empfehlung zuhanden der überprüften Behörde erlassen. Sie stellt diese Empfehlung auch der vorgesetzten Verwaltungsstelle, dem Beschwerdeführer und nach ihrem Ermessen weiteren Beteiligten und andern daran interessierten kantonalen Behörden zu."
+            }
+          ]
+        }
+      ],
+      "stand": "1960-05-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-175_2-1959_05_24-1960_05_01-133.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "7d55abdc75343be4d35e9dd77c8a74f6ea9ceaf0d021d4d82b06b1b865479b5d",
+      "sha": "9ceae54b37883208193fb4feb2627d530c728ad4e08c1f0e3c49eff497b3c239"
+    },
+    {
+      "id": "kanton/ZH/175.2/art_94",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Verwaltungsrechtspflegegesetz (VRG) (LS 175.2)",
+      "artikel": "94",
+      "artikelLabel": "§ 94",
+      "bloecke": [
+        {
+          "absatz": "1",
+          "text": "Die Inanspruchnahme der Ombudspersonist unentgeltlich."
+        },
+        {
+          "absatz": "2",
+          "text": "Eine Gemeinde, deren Gemeindeordnung das Tätigwerden der Ombudsperson vorsieht, beteiligt sich an den Kosten der Ombudsstelle."
+        },
+        {
+          "absatz": "3",
+          "text": "Die Höhe der jährlichen Beteiligung beträgt höchstens Fr. 1 pro Einwohnerin oder Einwohner und wird auf Antrag der Ombudsperson vom Kantonsrat festgelegt. Dieser berücksichtigt dabei die Einwohnerzahl aller Gemeinden, deren Gemeindeordnung das Tätigwerden der Ombudsperson vorsieht."
+        },
+        {
+          "absatz": "4",
+          "text": "Verzichtet eine Gemeinde wieder auf die Tätigkeit der Ombudsperson, bleibt die finanzielle Verpflichtung gemäss Abs. 3 noch während eines Jahres nach Inkrafttreten der entsprechenden Bestimmung der Gemeindeordnung bestehen."
+        }
+      ],
+      "stand": "1960-05-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-175_2-1959_05_24-1960_05_01-133.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "7d55abdc75343be4d35e9dd77c8a74f6ea9ceaf0d021d4d82b06b1b865479b5d",
+      "sha": "4ccacb80d5617254b08148134ddb5c16a7efb6c0c41bec16e4e7d1fe7f1f579c"
+    },
+    {
+      "id": "kanton/ZH/175.2/art_94_a",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Verwaltungsrechtspflegegesetz (VRG) (LS 175.2)",
+      "artikel": "94_a",
+      "artikelLabel": "§ 94a",
+      "bloecke": [
+        {
+          "absatz": "1",
+          "text": "Die Ombudsperson und ihr Personal haben über ihre Wahrnehmungen gegenüber Behörden und Privaten zu schweigen. Vorbehalten bleibt §167 GOG."
+        },
+        {
+          "absatz": "2",
+          "text": "Die Schweigepflicht entfällt, wenn",
+          "items": [
+            {
+              "marke": "a",
+              "text": "die betroffene Person einverstanden ist oder"
+            },
+            {
+              "marke": "b",
+              "text": "schwerwiegende öffentliche oder private Interessen überwiegen, die eine Weitergabe von Informationen rechtfertigen."
+            }
+          ]
+        }
+      ],
+      "stand": "1960-05-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-175_2-1959_05_24-1960_05_01-133.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "7d55abdc75343be4d35e9dd77c8a74f6ea9ceaf0d021d4d82b06b1b865479b5d",
+      "sha": "b646298fc30a0e0385da6a4a17312fd25270b4ec1912d1382b38a704df02cc43"
+    },
+    {
+      "id": "kanton/ZH/175.2/art_94_b",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Verwaltungsrechtspflegegesetz (VRG) (LS 175.2)",
+      "artikel": "94_b",
+      "artikelLabel": "§ 94b",
+      "bloecke": [
+        {
+          "absatz": null,
+          "text": "Gegen Anordnungen der Ombudsperson in eigenen personalrechtlichen oder administrativen Belangen kann bei der Verwaltungsdelegationder Geschäftsleitung des Kantonsrates Rekurs erhoben werden. Sechster Abschnitt: Schluss- und Übergangsbestimmungen"
+        }
+      ],
+      "stand": "1960-05-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-175_2-1959_05_24-1960_05_01-133.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "7d55abdc75343be4d35e9dd77c8a74f6ea9ceaf0d021d4d82b06b1b865479b5d",
+      "sha": "77d86024df50b976f884df0268f137de9d6977c017ce31fb1a298cf38cbf7ccc"
+    },
+    {
+      "id": "kanton/ZH/175.2/art_95",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Verwaltungsrechtspflegegesetz (VRG) (LS 175.2)",
+      "artikel": "95",
+      "artikelLabel": "§ 95",
+      "bloecke": [
+        {
+          "absatz": null,
+          "text": "Durch dieses Gesetz werden alle ihm widersprechenden Vorschriften früherer Gesetze und Verordnungen aufgehoben."
+        }
+      ],
+      "stand": "1960-05-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-175_2-1959_05_24-1960_05_01-133.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "7d55abdc75343be4d35e9dd77c8a74f6ea9ceaf0d021d4d82b06b1b865479b5d",
+      "sha": "81f27adcd9f625a991793e898f4e4830f6ffcb0d56153f03d74361d218623943"
+    },
+    {
+      "id": "kanton/ZH/175.2/art_96",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Verwaltungsrechtspflegegesetz (VRG) (LS 175.2)",
+      "artikel": "96",
+      "artikelLabel": "§ 96",
+      "bloecke": [
+        {
+          "absatz": null,
+          "text": "Das Gesetz über die Streitigkeiten im Verwaltungsfach vom 23. Juni 1831 sowie die §§8–10 des Gesetzes über die Konflikte vom 23.Juni 1831 werden aufgehoben."
+        }
+      ],
+      "stand": "1960-05-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-175_2-1959_05_24-1960_05_01-133.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "7d55abdc75343be4d35e9dd77c8a74f6ea9ceaf0d021d4d82b06b1b865479b5d",
+      "sha": "339cf88b69325ce4b7c619270746abda266b2da1110bd9d9c2a68b9abfa15821"
+    },
+    {
+      "id": "kanton/ZH/175.2/art_97",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Verwaltungsrechtspflegegesetz (VRG) (LS 175.2)",
+      "artikel": "97",
+      "artikelLabel": "§ 97",
+      "bloecke": [
+        {
+          "absatz": null,
+          "text": "Das Einführungsgesetz zum Schweizerischen Zivilgesetzbuch vom 2. April 1911 wird wie folgt abgeändert: . . ."
+        }
+      ],
+      "stand": "1960-05-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-175_2-1959_05_24-1960_05_01-133.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "7d55abdc75343be4d35e9dd77c8a74f6ea9ceaf0d021d4d82b06b1b865479b5d",
+      "sha": "2119ae1ececea2230df0c7214dfa02dfc26f93d152b52276a45abf44bb2cc0d8"
+    },
+    {
+      "id": "kanton/ZH/175.2/art_98",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Verwaltungsrechtspflegegesetz (VRG) (LS 175.2)",
+      "artikel": "98",
+      "artikelLabel": "§ 98",
+      "bloecke": [
+        {
+          "absatz": null,
+          "text": "Das Gesetz über die Armenfürsorge vom 23. Oktober 1927 wird wie folgt abgeändert und ergänzt: . . ."
+        }
+      ],
+      "stand": "1960-05-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-175_2-1959_05_24-1960_05_01-133.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "7d55abdc75343be4d35e9dd77c8a74f6ea9ceaf0d021d4d82b06b1b865479b5d",
+      "sha": "21b50119e950adac267a7e75133c8f6c5d8087d690795d897893fa58d00dfa14"
+    },
+    {
+      "id": "kanton/ZH/175.2/art_99",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Verwaltungsrechtspflegegesetz (VRG) (LS 175.2)",
+      "artikel": "99",
+      "artikelLabel": "§ 99",
+      "bloecke": [
+        {
+          "absatz": "1",
+          "text": "Das Gesetz über die direkten Steuern vom 8. Juli 1951, das Gesetz über die Erbschafts- und Schenkungssteuer vom 26. April 1936 sowie das Gesetz über die Billettsteuer vom 16. Dezember 1934 werden dahin abgeändert, dass anstelle der Oberrekurskommission das Verwaltungsgericht tritt."
+        },
+        {
+          "absatz": "2",
+          "text": "§67 des Gesetzes über die direkten Steuern vom 8. Juli 1951 wird aufgehoben."
+        }
+      ],
+      "stand": "1960-05-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-175_2-1959_05_24-1960_05_01-133.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "7d55abdc75343be4d35e9dd77c8a74f6ea9ceaf0d021d4d82b06b1b865479b5d",
+      "sha": "424042b3ce7d6510755a85821ce15f327d28f7a3112fc768c337d1cd16e9d4ff"
+    },
+    {
+      "id": "kanton/ZH/175.2/art_100",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Verwaltungsrechtspflegegesetz (VRG) (LS 175.2)",
+      "artikel": "100",
+      "artikelLabel": "§ 100",
+      "bloecke": [
+        {
+          "absatz": null,
+          "text": "Die nachstehenden Gesetze werden wie folgt abgeändert: . . ."
+        }
+      ],
+      "stand": "1960-05-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-175_2-1959_05_24-1960_05_01-133.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "7d55abdc75343be4d35e9dd77c8a74f6ea9ceaf0d021d4d82b06b1b865479b5d",
+      "sha": "0104a663e16da75266ce704f20e229c7f5deeadbab2b66a2b6b56ec1e2261211"
+    },
+    {
+      "id": "kanton/ZH/175.2/art_101",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Verwaltungsrechtspflegegesetz (VRG) (LS 175.2)",
+      "artikel": "101",
+      "artikelLabel": "§ 101",
+      "bloecke": [
+        {
+          "absatz": null,
+          "text": "Die bei Inkrafttreten dieses Gesetzes bei einer Rekursbehörde, beim Versicherungsgericht oder bei einem Zivilgericht anhängigen Streitigkeiten sind ungeachtet der durch dieses Gesetz geänderten Zuständigkeit aufgrund der bisherigen Vorschriften zu beurteilen und weiterzuziehen."
+        }
+      ],
+      "stand": "1960-05-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-175_2-1959_05_24-1960_05_01-133.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "7d55abdc75343be4d35e9dd77c8a74f6ea9ceaf0d021d4d82b06b1b865479b5d",
+      "sha": "4929bfb9cd0d28afa44f625ad51ce824dc9d0ef6b2b3474b8852acfcffff254b"
+    },
+    {
+      "id": "kanton/ZH/175.2/art_102",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Verwaltungsrechtspflegegesetz (VRG) (LS 175.2)",
+      "artikel": "102",
+      "artikelLabel": "§ 102",
+      "bloecke": [
+        {
+          "absatz": null,
+          "text": "Die erste Amtsdauer der Mitglieder und Ersatzmänner des Verwaltungsgerichtes endigt mit der laufenden Amtsdauer des Obergerichtes."
+        }
+      ],
+      "stand": "1960-05-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-175_2-1959_05_24-1960_05_01-133.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "7d55abdc75343be4d35e9dd77c8a74f6ea9ceaf0d021d4d82b06b1b865479b5d",
+      "sha": "99cd49ac36fa10ce25b8043385d96b2777854763001c1a1095a861af82f21d58"
+    },
+    {
+      "id": "kanton/ZH/175.2/art_103",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Verwaltungsrechtspflegegesetz (VRG) (LS 175.2)",
+      "artikel": "103",
+      "artikelLabel": "§ 103",
+      "bloecke": [
+        {
+          "absatz": null,
+          "text": "Dieses Gesetz tritt nach der Annahme durch die Stimmberechtigten und nach der amtlichen Veröffentlichung des kantonsrätlichen Erwahrungsbeschlusses auf einen vom Regierungsrat zu bestimmenden Zeitpunkt in Kraft, spätestens aber ein Jahr nach der Annahme in der Volksabstimmung. Übergangsbestimmungen G vom 8. Juni 1997(OS 54, 268) Art. XV Abs. 3 Die Zuständigkeit für die Beurteilung der im Zeitpunkt des Inkrafttretens hängigen Rechtsmittelverfahren bestimmt sich nach bisherigem Recht. Im Übrigen findet das neue Recht auf hängige Verfahren Anwendung. G vom 30. August 2004(OS 59, 409)"
+        },
+        {
+          "absatz": "1",
+          "text": "Die geänderten Bestimmungen finden auch auf Verfahren Anwendung, die im Zeitpunkt des Inkrafttretens dieser Gesetzesänderung rechtshängig sind."
+        },
+        {
+          "absatz": "2",
+          "text": "Die Zuständigkeit und die Zusammensetzung des Organs, bei dem ein Verfahren im Zeitpunkt des Inkrafttretens rechtshängig ist, richtet sich nach bisherigem Recht. Übergangsbestimmungen zur Änderung vom 28. August 2017 (OS 72, 523) Bei unbenütztem Ablauf der Referendumsfrist vor dem 8. November 2017 tritt die Gesetzesänderung am 1. Januar 2018 in Kraft. In den übrigen Fällen entscheidet der Regierungsrat über den Zeitpunkt des Inkrafttretens. Übergangsbestimmung zur Änderung vom 12. Dezember 2022 (OS 79, 157) Tritt die Änderung während der laufenden Amtsdauer der Ombudsperson in Kraft, bleibt bis zum Ende der laufenden Amtsdauer das bisherige Recht anwendbar."
+        },
+        {
+          "absatz": "30",
+          "text": "Text siehe OS 40, 566 ff."
+        }
+      ],
+      "stand": "1960-05-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-175_2-1959_05_24-1960_05_01-133.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "7d55abdc75343be4d35e9dd77c8a74f6ea9ceaf0d021d4d82b06b1b865479b5d",
+      "sha": "cae038293cf711766a2b9bbf49cc6d5d29449fe12fceb83cfd9afa7d982facef"
+    }
+  ]
+}

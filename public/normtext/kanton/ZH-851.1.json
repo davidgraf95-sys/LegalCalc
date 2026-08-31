@@ -1,0 +1,2003 @@
+{
+  "erzeugt": "2026-08-31",
+  "eintraege": [
+    {
+      "id": "kanton/ZH/851.1/art_1",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Sozialhilfegesetz (SHG) (LS 851.1)",
+      "artikel": "1",
+      "artikelLabel": "§ 1",
+      "bloecke": [
+        {
+          "absatz": "1",
+          "text": "Die politischen Gemeinden sorgen nach Massgabe dieses Gesetzes für die notwendige Hilfe an Personen, die sich in einer Notlage befinden."
+        },
+        {
+          "absatz": "2",
+          "text": "Sie wirken mit vorbeugenden Massnahmen darauf hin, dass weniger Notlagen entstehen und dass Personen, die in eine Notlage geraten sind, diese bewältigen können."
+        },
+        {
+          "absatz": "3",
+          "text": "Der Kantonunterstützt die Gemeinden bei ihrer Aufgabe. Er überwacht Heime für betreuungsbedürftige Erwachsene und fördert die Weiterentwicklung des Sozialwesens."
+        }
+      ],
+      "stand": "1982-01-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-851_1-1981_06_14-1982_01_01-123.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "34b95345007e992e82af934f2f4ba959e359834401582a17251e524157a61783",
+      "sha": "55dae2387005f9cd8fff1d70a7fa391e07fa85fae12cfb726739c37c23c66276"
+    },
+    {
+      "id": "kanton/ZH/851.1/art_2",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Sozialhilfegesetz (SHG) (LS 851.1)",
+      "artikel": "2",
+      "artikelLabel": "§ 2",
+      "bloecke": [
+        {
+          "absatz": "1",
+          "text": "Die Hilfe richtet sich nach den Besonderheiten und Bedürfnissen des Einzelfalls und den örtlichen Verhältnissen."
+        },
+        {
+          "absatz": "2",
+          "text": "Sie berücksichtigt andere gesetzliche Leistungen sowie die Leistungen Dritter und sozialer Institutionen."
+        }
+      ],
+      "stand": "1982-01-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-851_1-1981_06_14-1982_01_01-123.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "34b95345007e992e82af934f2f4ba959e359834401582a17251e524157a61783",
+      "sha": "1b84e86837c9a4d129d5ebc61f41423f24bc5218326c5df96b8c6ea59fd6a1ab"
+    },
+    {
+      "id": "kanton/ZH/851.1/art_3",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Sozialhilfegesetz (SHG) (LS 851.1)",
+      "artikel": "3",
+      "artikelLabel": "§ 3",
+      "bloecke": [
+        {
+          "absatz": "1",
+          "text": "Die Durchführung der Hilfe soll in Zusammenarbeit mit dem Hilfesuchenden erfolgen."
+        },
+        {
+          "absatz": "2",
+          "text": "Die Selbsthilfe ist zu fördern."
+        }
+      ],
+      "stand": "1982-01-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-851_1-1981_06_14-1982_01_01-123.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "34b95345007e992e82af934f2f4ba959e359834401582a17251e524157a61783",
+      "sha": "f0dc75c6a4e6305fcc184a469e7d4990896849ec80b103717d47fe1bbfba5f19"
+    },
+    {
+      "id": "kanton/ZH/851.1/art_3_a",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Sozialhilfegesetz (SHG) (LS 851.1)",
+      "artikel": "3_a",
+      "artikelLabel": "§ 3a",
+      "bloecke": [
+        {
+          "absatz": "1",
+          "text": "Kanton und Gemeinden fördern die Eingliederung der Hilfesuchenden in die Gesellschaft und in die Arbeitswelt."
+        },
+        {
+          "absatz": "2",
+          "text": "Die Gemeinden ermöglichen den Hilfesuchenden die Teilnahme an geeigneten Bildungs- oder Beschäftigungsmassnahmen, sofern es im Einzelfall erforderlich ist und kein Anspruch auf andere gesetzliche Eingliederungsmassnahmen besteht."
+        },
+        {
+          "absatz": "3",
+          "text": "Sie können Arbeitgebenden für eine begrenzte Zeit ausnahmsweise Einarbeitungszuschüsse ausrichten, mit denen Hilfesuchenden der Zugang zum Arbeitsmarkt erleichtert wird."
+        }
+      ],
+      "stand": "1982-01-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-851_1-1981_06_14-1982_01_01-123.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "34b95345007e992e82af934f2f4ba959e359834401582a17251e524157a61783",
+      "sha": "99984fed9cf64d1f28eb78ef09800a4e5b8b654d1999c26e87a6fd208d21186f"
+    },
+    {
+      "id": "kanton/ZH/851.1/art_3_b",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Sozialhilfegesetz (SHG) (LS 851.1)",
+      "artikel": "3_b",
+      "artikelLabel": "§ 3b",
+      "bloecke": [
+        {
+          "absatz": "1",
+          "text": "Die Gemeinden können von Hilfeempfängern Gegenleistungen zur Sozialhilfe verlangen, die nach Möglichkeit der Integration der Hilfeempfänger in die Gesellschaft dienen."
+        },
+        {
+          "absatz": "2",
+          "text": "In der Regel setzen sie die Gegenleistungen zusammen mit den Sozialhilfeleistungen in besonderen Vereinbarungen fest."
+        },
+        {
+          "absatz": "3",
+          "text": "Bei der Bemessung und Ausgestaltung der Sozialhilfe berücksichtigen sie die Arbeits- und weiteren Gegenleistungen angemessen."
+        }
+      ],
+      "stand": "1982-01-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-851_1-1981_06_14-1982_01_01-123.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "34b95345007e992e82af934f2f4ba959e359834401582a17251e524157a61783",
+      "sha": "3e8477e87fa1b8da3c3de2c00c943edd5134316e88b1b4917a62e1e3d119faf8"
+    },
+    {
+      "id": "kanton/ZH/851.1/art_3_c",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Sozialhilfegesetz (SHG) (LS 851.1)",
+      "artikel": "3_c",
+      "artikelLabel": "§ 3c",
+      "bloecke": [
+        {
+          "absatz": "1",
+          "text": "Um die Eingliederung der Hilfesuchenden und ihre finanzielle Unabhängigkeit zu fördern, arbeiten die Sozialhilfeorgane mit anderen Leistungserbringern zusammen. Dazu gehören insbesondere die Organe der Arbeitslosenversicherung, der Invalidenversicherung und der Berufsberatung sowie private Organisationen."
+        },
+        {
+          "absatz": "2",
+          "text": "Nach Möglichkeit harmonisieren die Leistungserbringer ihre Angebote an Eingliederungsmassnahmen und stellen sich diese gegenseitig zur Verfügung."
+        },
+        {
+          "absatz": "3",
+          "text": "Der Kanton fördert die Interinstitutionelle Zusammenarbeit. Er kann Empfehlungen dazu erlassen."
+        }
+      ],
+      "stand": "1982-01-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-851_1-1981_06_14-1982_01_01-123.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "34b95345007e992e82af934f2f4ba959e359834401582a17251e524157a61783",
+      "sha": "5ce634869df630af0e17bfba561f89d187ec395dae054ea21ff8bb14eed71991"
+    },
+    {
+      "id": "kanton/ZH/851.1/art_4",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Sozialhilfegesetz (SHG) (LS 851.1)",
+      "artikel": "4",
+      "artikelLabel": "§ 4",
+      "bloecke": [
+        {
+          "absatz": "1",
+          "text": "Die Hilfe muss rechtzeitig einsetzen."
+        },
+        {
+          "absatz": "2",
+          "text": "Sie wird vorbeugend geleistet, wenn dadurch eine drohende Notlage ganz oder teilweise abgewendet werden kann."
+        }
+      ],
+      "stand": "1982-01-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-851_1-1981_06_14-1982_01_01-123.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "34b95345007e992e82af934f2f4ba959e359834401582a17251e524157a61783",
+      "sha": "9c1c1a0afb8acc93d00c5ab30ad8010bc45e2a4c724024ccb5a18bb20d899136"
+    },
+    {
+      "id": "kanton/ZH/851.1/art_5",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Sozialhilfegesetz (SHG) (LS 851.1)",
+      "artikel": "5",
+      "artikelLabel": "§ 5",
+      "bloecke": [
+        {
+          "absatz": null,
+          "text": "Die Ursachen einer Notlage sind zu ermitteln und nach Möglichkeit zu beseitigen."
+        }
+      ],
+      "stand": "1982-01-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-851_1-1981_06_14-1982_01_01-123.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "34b95345007e992e82af934f2f4ba959e359834401582a17251e524157a61783",
+      "sha": "8884b2d0c905a3cbbbe2adf766e544dad7e1bb67ed027049d9c3b16e94a9f6e3"
+    },
+    {
+      "id": "kanton/ZH/851.1/art_5_a",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Sozialhilfegesetz (SHG) (LS 851.1)",
+      "artikel": "5_a",
+      "artikelLabel": "§ 5a",
+      "bloecke": [
+        {
+          "absatz": "1",
+          "text": "Die Hilfe für Asylsuchende, vorläufig Aufgenommene und Schutzbedürftige ohne Aufenthaltsbewilligung (nachfolgend Asylsuchende) richtet sich nach besonderen Vorschriften."
+        },
+        {
+          "absatz": "2",
+          "text": "Der Regierungsrat erlässt eine Asylfürsorgeverordnung. Darin regelt er für Asylsuchende namentlich die Zuständigkeit und das Verfahren, die Platzierung, die Unterbringung und Betreuung, die Gesundheitsversorgung, die Ausbildung und Beschäftigung, die Festsetzung, Ausrichtung, Abrechnung und Rückerstattung von Leistungen des Kantons und Dritter im Asylbereich, den Zugang zum Arbeitsmarkt sowie die Rückkehr. Insbesondere kann vorgesehen werden, dass neu zugewiesene Asylsuchende vom Kanton zunächst in einem Durchgangszentrum untergebracht und erst danach einer Gemeinde zugeteilt werden."
+        }
+      ],
+      "stand": "1982-01-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-851_1-1981_06_14-1982_01_01-123.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "34b95345007e992e82af934f2f4ba959e359834401582a17251e524157a61783",
+      "sha": "1a3d54059fc91a7e17080ae412dd999aeb0763066dc22f72d4c34b56075a6ad1"
+    },
+    {
+      "id": "kanton/ZH/851.1/art_5_b",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Sozialhilfegesetz (SHG) (LS 851.1)",
+      "artikel": "5_b",
+      "artikelLabel": "§ 5b",
+      "bloecke": [
+        {
+          "absatz": "1",
+          "text": "Höhe und Art der Fürsorgeleistungen für Asylsuchende richten sich nach den kantonalen Bestimmungen. Sie werden vom Status und vom Verhalten einer Person im Asylverfahren bestimmt."
+        },
+        {
+          "absatz": "2",
+          "text": "Die zuständigen Stellen können Fürsorgeleistungen bis auf ein Minimum kürzen, wenn die begünstigte Person ihrer Mitwirkungspflicht gegenüber den für das Asylverfahren und die Fürsorge zuständigen Behörden nicht oder ungenügend nachkommt."
+        },
+        {
+          "absatz": "3",
+          "text": "Art und Dauer der Unterbringung und der Betreuung sowie der Zugang zum Arbeitsmarkt hängen vom Verfahrensstand beziehungsweise asylrechtlichen Status der Person ab."
+        }
+      ],
+      "stand": "1982-01-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-851_1-1981_06_14-1982_01_01-123.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "34b95345007e992e82af934f2f4ba959e359834401582a17251e524157a61783",
+      "sha": "d696b04f79d7e0096175eb35249e09d306c290dbe3cc75b2361699c856ebb12d"
+    },
+    {
+      "id": "kanton/ZH/851.1/art_5_c",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Sozialhilfegesetz (SHG) (LS 851.1)",
+      "artikel": "5_c",
+      "artikelLabel": "§ 5c",
+      "bloecke": [
+        {
+          "absatz": "1",
+          "text": "Wer sich unberechtigt in der Schweiz aufhält und nicht zur Ausreise veranlasst werden kann, hat nur Anspruch auf Unterstützung im Rahmen des Rechts auf Hilfe in Notlagen."
+        },
+        {
+          "absatz": "2",
+          "text": "Der Kanton trägt die Kosten dieser Nothilfe."
+        },
+        {
+          "absatz": "3",
+          "text": "Der Regierungsrat erlässt Bestimmungen über Art und Umfang der Nothilfe sowie über die Zuständigkeit und das Verfahren."
+        }
+      ],
+      "stand": "1982-01-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-851_1-1981_06_14-1982_01_01-123.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "34b95345007e992e82af934f2f4ba959e359834401582a17251e524157a61783",
+      "sha": "63a7704dbf374743e946a7f935c9f98e70b40136d6aeeb3c69f1c7fd198c4441"
+    },
+    {
+      "id": "kanton/ZH/851.1/art_5_e",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Sozialhilfegesetz (SHG) (LS 851.1)",
+      "artikel": "5_e",
+      "artikelLabel": "§ 5e",
+      "bloecke": [
+        {
+          "absatz": null,
+          "text": "Unter Vorbehalt abweichender Bestimmungen des Bundesrechts sind folgende Personen von der ordentlichen Sozialhilfe ausgeschlossen:",
+          "items": [
+            {
+              "marke": "a",
+              "text": "Touristen mit Wohnsitz oder Aufenthalt im Ausland,"
+            },
+            {
+              "marke": "b",
+              "text": "Personen mit Kurzaufenthaltsbewilligung,"
+            },
+            {
+              "marke": "c",
+              "text": "Arbeitssuchende nach Art. 2 Abs. 1 Anhang I zum Abkommen vom 21.Juni 1999 zwischen der Schweizerischen Eidgenossenschaft einerseits und der Europäischen Gemeinschaft und ihren Mitgliedsstaaten andererseits über die Freizügigkeit (FZA)und Art.2 Abs.1"
+            }
+          ]
+        }
+      ],
+      "stand": "1982-01-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-851_1-1981_06_14-1982_01_01-123.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "34b95345007e992e82af934f2f4ba959e359834401582a17251e524157a61783",
+      "sha": "d1e76a17102014407317e4d85e4c7394dc4adbc336f1538cc6b5c36dbe9df154"
+    },
+    {
+      "id": "kanton/ZH/851.1/art_6",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Sozialhilfegesetz (SHG) (LS 851.1)",
+      "artikel": "6",
+      "artikelLabel": "§ 6",
+      "bloecke": [
+        {
+          "absatz": null,
+          "text": "Fürsorgebehörde ist der Gemeindevorstand der politischen Gemeinde. Die Gemeindeordnung kann die Zuständigkeit eines anderen Organs vorsehen."
+        }
+      ],
+      "stand": "1982-01-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-851_1-1981_06_14-1982_01_01-123.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "34b95345007e992e82af934f2f4ba959e359834401582a17251e524157a61783",
+      "sha": "61d4dcf7e4aaee8f05fb5a490c54baf07da4b1a173047e647d62a2220170aad4"
+    },
+    {
+      "id": "kanton/ZH/851.1/art_7",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Sozialhilfegesetz (SHG) (LS 851.1)",
+      "artikel": "7",
+      "artikelLabel": "§ 7",
+      "bloecke": [
+        {
+          "absatz": "1",
+          "text": "Der Fürsorgebehörde obliegen:",
+          "items": [
+            {
+              "marke": "a",
+              "text": "Gewährleistung der persönlichen Hilfe,"
+            },
+            {
+              "marke": "b",
+              "text": "Durchführung der wirtschaftlichen Hilfe,"
+            },
+            {
+              "marke": "c",
+              "text": "Berichterstattung an die Oberbehörden,"
+            },
+            {
+              "marke": "d",
+              "text": "Vertretung der Gemeinde in Strafverfahren wegen unrechtmässiger Erwirkung von Sozialhilfeleistungen."
+            }
+          ]
+        },
+        {
+          "absatz": "2",
+          "text": "Die Fürsorgebehörde arbeitet mit andern öffentlichen und privaten sozialen Institutionen zusammen."
+        }
+      ],
+      "stand": "1982-01-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-851_1-1981_06_14-1982_01_01-123.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "34b95345007e992e82af934f2f4ba959e359834401582a17251e524157a61783",
+      "sha": "b05ffd5e36805651cbcdd3fe00b3913f4e84460c182a8343664d3bbe5ff829cd"
+    },
+    {
+      "id": "kanton/ZH/851.1/art_8",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Sozialhilfegesetz (SHG) (LS 851.1)",
+      "artikel": "8",
+      "artikelLabel": "§ 8",
+      "bloecke": [
+        {
+          "absatz": "1",
+          "text": "Der Bezirksrat übt die Aufsicht über die Fürsorgebehörden aus."
+        },
+        {
+          "absatz": "2",
+          "text": "Es obliegen ihm insbesondere:",
+          "items": [
+            {
+              "marke": "a",
+              "text": "periodische und, soweit erforderlich, ausserordentliche Prüfung der gesamten Hilfs- und Verwaltungstätigkeit der Fürsorgebehörden,"
+            },
+            {
+              "marke": "b",
+              "text": "Berichterstattung an die für das Fürsorgewesen zuständige Direktion."
+            }
+          ]
+        },
+        {
+          "absatz": "3",
+          "text": "Ferner beaufsichtigt er Heime, die unter §9 lit. c fallen oder die Beiträge nach §46 erhalten."
+        }
+      ],
+      "stand": "1982-01-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-851_1-1981_06_14-1982_01_01-123.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "34b95345007e992e82af934f2f4ba959e359834401582a17251e524157a61783",
+      "sha": "9a31959b7ed6bd62a295ba116dda704d08c9a414ab0cf904ff347358133ede9a"
+    },
+    {
+      "id": "kanton/ZH/851.1/art_9",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Sozialhilfegesetz (SHG) (LS 851.1)",
+      "artikel": "9",
+      "artikelLabel": "§ 9",
+      "bloecke": [
+        {
+          "absatz": null,
+          "text": "Der für das Fürsorgewesen zuständigen Direktionobliegen insbesondere:",
+          "items": [
+            {
+              "marke": "a",
+              "text": "Förderung der Information über das Sozialwesen sowie der Zusammenarbeit zwischen den sozialen Institutionen,"
+            },
+            {
+              "marke": "b",
+              "text": "Beratung und Fortbildung der Fürsorgebehörden,"
+            },
+            {
+              "marke": "c",
+              "text": "Erteilung und Entzug von Bewilligungen für den Betrieb privater, nicht unter die Zuständigkeit einer anderen Behörde fallender Heime, die der dauernden Unterbringung, Verpflegung und persönlichen Betreuung von hilfsbedürftigen Personen dienen,"
+            },
+            {
+              "marke": "d",
+              "text": "Vorbereitungen für die Aufnahme hilfebedürftiger Auslandschweizer und ihrer Familienangehörigen in Zusammenarbeit mit den Gemeinden,"
+            },
+            {
+              "marke": "e",
+              "text": "Entscheidung von Streitigkeiten der Gemeinden über Hilfepflicht und Kostentragung."
+            }
+          ]
+        }
+      ],
+      "stand": "1982-01-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-851_1-1981_06_14-1982_01_01-123.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "34b95345007e992e82af934f2f4ba959e359834401582a17251e524157a61783",
+      "sha": "e1780c8caa55038c3258dd97115fb77bf70031d47dfb0a8908d49c188db05dda"
+    },
+    {
+      "id": "kanton/ZH/851.1/art_10",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Sozialhilfegesetz (SHG) (LS 851.1)",
+      "artikel": "10",
+      "artikelLabel": "§ 10",
+      "bloecke": [
+        {
+          "absatz": null,
+          "text": "Der Regierungsrat übt die Oberaufsicht über die öffentliche Sozialhilfe aus."
+        }
+      ],
+      "stand": "1982-01-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-851_1-1981_06_14-1982_01_01-123.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "34b95345007e992e82af934f2f4ba959e359834401582a17251e524157a61783",
+      "sha": "b610d74f681418a7d86c9e07298b7150b1d3a33b65262749ce5b5454c5d24c06"
+    },
+    {
+      "id": "kanton/ZH/851.1/art_11",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Sozialhilfegesetz (SHG) (LS 851.1)",
+      "artikel": "11",
+      "artikelLabel": "§ 11",
+      "bloecke": [
+        {
+          "absatz": null,
+          "text": "Wer in einer persönlichen Notlage der Hilfe bedarf, kann bei einer der in §13 genannten Stellen um Beratung und Betreuung nachsuchen."
+        }
+      ],
+      "stand": "1982-01-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-851_1-1981_06_14-1982_01_01-123.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "34b95345007e992e82af934f2f4ba959e359834401582a17251e524157a61783",
+      "sha": "0f0ecc70842e578b362228308d9827adeda63cfc6513b070497863172edcdeea"
+    },
+    {
+      "id": "kanton/ZH/851.1/art_12",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Sozialhilfegesetz (SHG) (LS 851.1)",
+      "artikel": "12",
+      "artikelLabel": "§ 12",
+      "bloecke": [
+        {
+          "absatz": "1",
+          "text": "Die persönliche Hilfe wird im Einvernehmen mit dem Hilfesuchenden gewährt und ist an kein bestimmtes Verfahren gebunden."
+        },
+        {
+          "absatz": "2",
+          "text": "Die Beratungs- und Betreuungsstellen bestimmen Art und Umfang der Hilfe."
+        },
+        {
+          "absatz": "3",
+          "text": "Soweit sie Beratung und Betreuung nicht selbst vornehmen oder wo spezialisierte Hilfe nötig ist, vermitteln sie die Dienstleistungen anderer Stellen. Benötigt jemand wirtschaftliche Hilfe, verständigen sie die Fürsorgebehörde."
+        }
+      ],
+      "stand": "1982-01-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-851_1-1981_06_14-1982_01_01-123.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "34b95345007e992e82af934f2f4ba959e359834401582a17251e524157a61783",
+      "sha": "9ec30f8ec312801893ff9f88a20e451c4cd39c627ec3f8340a65c88b912a9d5f"
+    },
+    {
+      "id": "kanton/ZH/851.1/art_13",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Sozialhilfegesetz (SHG) (LS 851.1)",
+      "artikel": "13",
+      "artikelLabel": "§ 13",
+      "bloecke": [
+        {
+          "absatz": null,
+          "text": "Persönliche Hilfe kann gewährt werden durch",
+          "items": [
+            {
+              "marke": "a",
+              "text": "gemeindeeigene Beratungs- und Betreuungsstellen,"
+            },
+            {
+              "marke": "b",
+              "text": "gemeinsame Beratungs- und Betreuungsstellen mehrerer Gemeinden,"
+            },
+            {
+              "marke": "c",
+              "text": "andere öffentliche oder private soziale Institutionen, denen die Gemeinde Aufgaben der persönlichen Hilfe ganz oder teilweise übertragen hat."
+            }
+          ]
+        }
+      ],
+      "stand": "1982-01-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-851_1-1981_06_14-1982_01_01-123.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "34b95345007e992e82af934f2f4ba959e359834401582a17251e524157a61783",
+      "sha": "c9ed827ec5978e18448a4e06b82449dda7742aed26db9c8fdd2188ae3d0ca866"
+    },
+    {
+      "id": "kanton/ZH/851.1/art_14",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Sozialhilfegesetz (SHG) (LS 851.1)",
+      "artikel": "14",
+      "artikelLabel": "§ 14",
+      "bloecke": [
+        {
+          "absatz": null,
+          "text": "Wer für seinen Lebensunterhalt und den seiner Familienangehörigen mit gleichem Wohnsitz nicht hinreichend oder nicht rechtzeitig aus eigenen Mitteln aufkommen kann, hat Anspruch auf wirtschaftliche Hilfe."
+        }
+      ],
+      "stand": "1982-01-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-851_1-1981_06_14-1982_01_01-123.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "34b95345007e992e82af934f2f4ba959e359834401582a17251e524157a61783",
+      "sha": "d603904662ece16731298a353efcf88871f3828d47733a84471d83e65c14603f"
+    },
+    {
+      "id": "kanton/ZH/851.1/art_15",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Sozialhilfegesetz (SHG) (LS 851.1)",
+      "artikel": "15",
+      "artikelLabel": "§ 15",
+      "bloecke": [
+        {
+          "absatz": "1",
+          "text": "Die wirtschaftliche Hilfe soll das soziale Existenzminimum gewährleisten, das neben den üblichen Aufwendungen für den Lebensunterhalt auch individuelle Bedürfnisse angemessen berücksichtigt."
+        },
+        {
+          "absatz": "2",
+          "text": "Sie hat die notwendige ärztliche oder therapeutische Behandlung und die notwendige Pflege in einem Spital, in einem Heim oder zu Hause sicherzustellen."
+        },
+        {
+          "absatz": "3",
+          "text": "Kindern und Jugendlichen ist eine ihren Bedürfnissen angepasste Pflege und Erziehung sowie eine ihren Fähigkeiten entsprechende persönliche Förderung und Ausbildung zu ermöglichen."
+        },
+        {
+          "absatz": "4",
+          "text": "Während einer Ausbildung auf Tertiärstufe werden nur in Ausnahmefällen wirtschaftliche Hilfe gewährt und ausbildungsbedingte Kosten übernommen."
+        }
+      ],
+      "stand": "1982-01-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-851_1-1981_06_14-1982_01_01-123.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "34b95345007e992e82af934f2f4ba959e359834401582a17251e524157a61783",
+      "sha": "4447ac9a304339d00fa06ef9f92cfdbad7ede5c30077f1bccf1eec06ef4208aa"
+    },
+    {
+      "id": "kanton/ZH/851.1/art_15_a",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Sozialhilfegesetz (SHG) (LS 851.1)",
+      "artikel": "15_a",
+      "artikelLabel": "§ 15a",
+      "bloecke": [
+        {
+          "absatz": "1",
+          "text": "Bei der Berechnung des sozialen Existenzminimums werden die Prämien für die obligatorische Krankenpflegeversicherung abzüglich der Prämienverbilligung nach Art. 65 Abs. 1 des Bundesgesetzes vom 18. März 1994 über die Krankenversicherung als Auslagen eingesetzt."
+        },
+        {
+          "absatz": "2",
+          "text": "Sobald ein Wechsel zu einer günstigeren Versicherung möglich und zumutbar ist, sind die Sozialhilfeorgane verpflichtet, die Sozialhilfebeziehenden zu einem Wechsel anzuhalten und gegebenenfalls bei einem Wechsel zu unterstützen."
+        },
+        {
+          "absatz": "3",
+          "text": "Ist ein Wechsel nicht möglich oder zumutbar, so wird die Differenz zwischen tatsächlicher Prämie und Prämienverbilligung vom Kanton übernommen (Prämienübernahme)."
+        },
+        {
+          "absatz": "4",
+          "text": "Bei der Beurteilung, was zumutbar und möglich ist, sind insbesondere die Dauer der Sozialhilfeabhängigkeit, die Chance der Ablösung aus der Sozialhilfe und die Möglichkeiten, sich in einem günstigen Versicherungsmodell zurechtzufinden, zu berücksichtigen."
+        }
+      ],
+      "stand": "1982-01-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-851_1-1981_06_14-1982_01_01-123.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "34b95345007e992e82af934f2f4ba959e359834401582a17251e524157a61783",
+      "sha": "3d7ca72115bfe665b0c8fddf596784dd8656c8321b1e400f1597667d1f104c49"
+    },
+    {
+      "id": "kanton/ZH/851.1/art_16",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Sozialhilfegesetz (SHG) (LS 851.1)",
+      "artikel": "16",
+      "artikelLabel": "§ 16",
+      "bloecke": [
+        {
+          "absatz": "1",
+          "text": "Die wirtschaftliche Hilfe wird in Bargeld, in Form eines Checks oder durch Überweisung auf ein Post- oder Bankkonto des Hilfesuchenden ausgerichtet."
+        },
+        {
+          "absatz": "2",
+          "text": "Sie kann auf andere Weise erbracht werden, wenn es die Umstände rechtfertigen."
+        },
+        {
+          "absatz": "3",
+          "text": "Die bei der Bemessung der wirtschaftlichen Hilfe berücksichtigte Miete mit Nebenkosten kann der Gläubigerin oder dem Gläubiger in jedem Fall direkt überwiesen werden."
+        }
+      ],
+      "stand": "1982-01-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-851_1-1981_06_14-1982_01_01-123.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "34b95345007e992e82af934f2f4ba959e359834401582a17251e524157a61783",
+      "sha": "b8ef9e1aeeb19c76848a7edbcb9fbbdaee7a2d2ffb626a35acbd78df3d1ace96"
+    },
+    {
+      "id": "kanton/ZH/851.1/art_16_a",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Sozialhilfegesetz (SHG) (LS 851.1)",
+      "artikel": "16_a",
+      "artikelLabel": "§ 16a",
+      "bloecke": [
+        {
+          "absatz": "1",
+          "text": "Sind Leistungen Dritter sicherzustellen, erteilt die Fürsorgebehörde in der Regel Kostengutsprache. Über den Umfang der Kostengutsprache hinausgehende Leistungen müssen nicht übernommen werden."
+        },
+        {
+          "absatz": "2",
+          "text": "Gesuche um Kostengutsprache sind der Fürsorgebehörde im Voraus einzureichen. Ohne Gutsprache oder bei verspäteter Einreichung des Gesuchs besteht kein Anspruch auf Kostenübernahme. Vorbehalten bleiben notfallbedingte medizinische Behandlungen."
+        },
+        {
+          "absatz": "3",
+          "text": "Gesuche müssen folgende Angaben enthalten:",
+          "items": [
+            {
+              "marke": "a",
+              "text": "vollständige Personalien des Hilfesuchenden,"
+            },
+            {
+              "marke": "b",
+              "text": "Bezeichnung allfälliger leistungspflichtiger Dritter,"
+            },
+            {
+              "marke": "c",
+              "text": "Notwendigkeit, Art, Umfang und Dauer der Leistungen."
+            }
+          ]
+        },
+        {
+          "absatz": "4",
+          "text": "Gesuche um Kostengutsprache für medizinische Behandlungen müssen überdies Auskunft geben über:",
+          "items": [
+            {
+              "marke": "a",
+              "text": "die Behandlungsursache,"
+            },
+            {
+              "marke": "b",
+              "text": "das Vorliegen eines Notfalls,"
+            },
+            {
+              "marke": "c",
+              "text": "den Zeitpunkt und den Ort des Unfalls oder der Erkrankung,"
+            },
+            {
+              "marke": "d",
+              "text": "die voraussichtliche Dauer eines Spitalaufenthaltes, die einweisende Stelle, den Zeitpunkt der Transportfähigkeit des Patienten und die empfohlene Transportart."
+            }
+          ]
+        }
+      ],
+      "stand": "1982-01-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-851_1-1981_06_14-1982_01_01-123.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "34b95345007e992e82af934f2f4ba959e359834401582a17251e524157a61783",
+      "sha": "8dad412404ecb3a85b20c1bb57dc3abf649ccb429baf337007ea0a9b32bca25e"
+    },
+    {
+      "id": "kanton/ZH/851.1/art_17",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Sozialhilfegesetz (SHG) (LS 851.1)",
+      "artikel": "17",
+      "artikelLabel": "§ 17",
+      "bloecke": [
+        {
+          "absatz": null,
+          "text": "Die wirtschaftliche Hilfe kann weder verpfändet noch abgetreten werden. Sie darf nicht mit geschuldeten Steuern verrechnet werden. II. Stellung des Hilfesuchenden"
+        }
+      ],
+      "stand": "1982-01-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-851_1-1981_06_14-1982_01_01-123.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "34b95345007e992e82af934f2f4ba959e359834401582a17251e524157a61783",
+      "sha": "f98f2346535ee6fefc8c23affeafddc962b4ae561c95a179ddd3b5a303c30f32"
+    },
+    {
+      "id": "kanton/ZH/851.1/art_18",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Sozialhilfegesetz (SHG) (LS 851.1)",
+      "artikel": "18",
+      "artikelLabel": "§ 18",
+      "bloecke": [
+        {
+          "absatz": "1",
+          "text": "Der Hilfesuchende gibt vollständig und wahrheitsgetreu Auskunft über:",
+          "items": [
+            {
+              "marke": "a",
+              "text": "seine finanziellen Verhältnisse im In- und Ausland, namentlich auch über Ansprüche gegenüber Dritten,"
+            },
+            {
+              "marke": "b",
+              "text": "die finanziellen Verhältnisse von Angehörigen, die mit ihm zusammenleben oder ihm gegenüber unterhalts- oder unterstützungspflichtig sind,"
+            },
+            {
+              "marke": "c",
+              "text": "die finanziellen Verhältnisse von anderen Personen, die mit ihm zusammenleben, soweit die Auskunft für die Erfüllung der gesetzlichen Aufgaben der Sozialhilfe geeignet und erforderlich ist,"
+            },
+            {
+              "marke": "d",
+              "text": "seine persönlichen Verhältnisse und diejenigen der in lit.b und c genannten Personen, soweit die Auskunft für die Erfüllung der gesetzlichen Aufgaben der Sozialhilfe geeignet und erforderlich ist."
+            }
+          ]
+        },
+        {
+          "absatz": "2",
+          "text": "Der Hilfesuchende gewährt Einsicht in seine Unterlagen, soweit dies für die Erfüllung der gesetzlichen Aufgaben der Sozialhilfe geeignet und erforderlich ist."
+        },
+        {
+          "absatz": "3",
+          "text": "Der Hilfesuchende meldet unaufgefordert Veränderungen der unterstützungsrelevanten Sachverhalte."
+        },
+        {
+          "absatz": "4",
+          "text": "Die Fürsorgebehörde ist berechtigt, auch ohne Zustimmung des Hilfesuchenden und der weiteren in Abs.1 genannten Personen Auskünfte bei Dritten einzuholen, die sie für die Erfüllung ihrer Aufgaben benötigt, wenn Zweifel an der Richtigkeit oder Vollständigkeit der Angaben oder Unterlagen bestehen."
+        },
+        {
+          "absatz": "5",
+          "text": "Die Fürsorgebehörde informiert den Hilfesuchenden und die weiteren in Abs. 1 genannten Personen in der Regel vorgängig über Auskünfte, die über sie eingeholt werden. In Fällen von Abs. 4 kann die Information auch nachträglich erfolgen."
+        }
+      ],
+      "stand": "1982-01-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-851_1-1981_06_14-1982_01_01-123.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "34b95345007e992e82af934f2f4ba959e359834401582a17251e524157a61783",
+      "sha": "0dbce5a434f284d0500985bca8cf45fff9d529518a10532eaeb71c6bd75cd893"
+    },
+    {
+      "id": "kanton/ZH/851.1/art_19",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Sozialhilfegesetz (SHG) (LS 851.1)",
+      "artikel": "19",
+      "artikelLabel": "§ 19",
+      "bloecke": [
+        {
+          "absatz": "1",
+          "text": "Die Leistung wirtschaftlicher Hilfe kann davon abhängig gemacht werden, dass der Hilfesuchende bestehende oder künftige vermögensrechtliche Ansprüche gegenüber Dritten bis zur Höhe der empfangenen Leistungen an die Fürsorgebehörde abtritt, soweit eine Abtretung zulässig ist."
+        },
+        {
+          "absatz": "2",
+          "text": "Die Fürsorgebehörde kann von Sozial- oder Privatversicherungen sowie von haftpflichtigen oder anderen Dritten verlangen, dass rückwirkende Leistungen im rückerstattungspflichtigen Umfang direkt an die Fürsorgebehörde ausbezahlt werden."
+        }
+      ],
+      "stand": "1982-01-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-851_1-1981_06_14-1982_01_01-123.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "34b95345007e992e82af934f2f4ba959e359834401582a17251e524157a61783",
+      "sha": "800371c1e820d3cedc484027d5d2f75c6b0b7e3a6dd247e2b6d4aa2fffe9c7fc"
+    },
+    {
+      "id": "kanton/ZH/851.1/art_20",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Sozialhilfegesetz (SHG) (LS 851.1)",
+      "artikel": "20",
+      "artikelLabel": "§ 20",
+      "bloecke": [
+        {
+          "absatz": "1",
+          "text": "Hat ein Hilfesuchender Grundeigentum oder andere Vermögenswerte in erheblichem Umfang, deren Realisierung ihm nicht möglich oder nicht zumutbar ist, wird in der Regel die Unterzeichnung einer Rückerstattungsverpflichtung verlangt. Darin verpflichtet sich der Hilfesuchende, die Leistungen ganz oder teilweise zurückzuerstatten, wenn diese Vermögenswerte realisierbar werden."
+        },
+        {
+          "absatz": "2",
+          "text": "Die Forderung aus der Unterzeichnung einer Rückerstattungsverpflichtung kann pfandrechtlich sichergestellt werden."
+        }
+      ],
+      "stand": "1982-01-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-851_1-1981_06_14-1982_01_01-123.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "34b95345007e992e82af934f2f4ba959e359834401582a17251e524157a61783",
+      "sha": "8a2f80a63751c1b3f900df58daf9f5affd4a8c57e99f9f8bc48e9ff4da5df538"
+    },
+    {
+      "id": "kanton/ZH/851.1/art_21",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Sozialhilfegesetz (SHG) (LS 851.1)",
+      "artikel": "21",
+      "artikelLabel": "§ 21",
+      "bloecke": [
+        {
+          "absatz": "1",
+          "text": "Die wirtschaftliche Hilfe darf mit Auflagen und Weisungen verbunden werden, die sich auf die richtige Verwendung der Beiträge beziehen oder geeignet sind, die Lage des Hilfeempfängers und seiner Angehörigen zu verbessern."
+        },
+        {
+          "absatz": "2",
+          "text": "Auflagen und Weisungen sind nicht selbstständig anfechtbar."
+        }
+      ],
+      "stand": "1982-01-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-851_1-1981_06_14-1982_01_01-123.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "34b95345007e992e82af934f2f4ba959e359834401582a17251e524157a61783",
+      "sha": "7cfda6f153ec511e2c9566e79134c2538bbf80486a02a8b8b6385760aa41db48"
+    },
+    {
+      "id": "kanton/ZH/851.1/art_22",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Sozialhilfegesetz (SHG) (LS 851.1)",
+      "artikel": "22",
+      "artikelLabel": "§ 22",
+      "bloecke": [
+        {
+          "absatz": null,
+          "text": "Die Fürsorgebehörde benachrichtigt die Kindes- und Erwachsenenschutzbehörde (KESB), wenn aus gesundheitlichen oder andern im Interesse des Hilfeempfängers oder seiner Angehörigen liegenden Gründen weitere Massnahmen notwendig werden."
+        }
+      ],
+      "stand": "1982-01-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-851_1-1981_06_14-1982_01_01-123.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "34b95345007e992e82af934f2f4ba959e359834401582a17251e524157a61783",
+      "sha": "43d68e7fa3d26e3f5787eb58e78eee8f1fd989f6afa380d4c45d13b7bc24e4b8"
+    },
+    {
+      "id": "kanton/ZH/851.1/art_23",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Sozialhilfegesetz (SHG) (LS 851.1)",
+      "artikel": "23",
+      "artikelLabel": "§ 23",
+      "bloecke": [
+        {
+          "absatz": null,
+          "text": "Ehegatten, eingetragenen Partnerinnen und Partnern sowie minderjährigen Kindern kann die wirtschaftliche Hilfe auch gegen den Willen des Unterhaltspflichtigen gewährt werden."
+        }
+      ],
+      "stand": "1982-01-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-851_1-1981_06_14-1982_01_01-123.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "34b95345007e992e82af934f2f4ba959e359834401582a17251e524157a61783",
+      "sha": "b81677a6d3f76acface710b2818083fe0ee9811886323f7ebf30ae8e6384efac"
+    },
+    {
+      "id": "kanton/ZH/851.1/art_24",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Sozialhilfegesetz (SHG) (LS 851.1)",
+      "artikel": "24",
+      "artikelLabel": "§ 24",
+      "bloecke": [
+        {
+          "absatz": "1",
+          "text": "Die Sozialhilfeleistungen sind angemessen zu kürzen, wenn",
+          "items": [
+            {
+              "marke": "a",
+              "text": "der Hilfesuchende 1.gegen Anordnungen, Auflagen oder Weisungen der Fürsorgebehörde verstösst, 2.keine oder falsche Auskunft über seine Verhältnisse gibt, 3.die Einsichtnahme in seine Unterlagen verweigert, 4.eine ihm zugewiesene zumutbare Arbeit nicht annimmt, 5.Leistungen zweckwidrig verwendet, 6.die Teilnahme an einem zumutbaren Bildungs- und Beschäftigungsprogramm verweigert, 7.ein ihm zustehendes Ersatzeinkommen nicht geltend macht, 8.den Wechsel in eine günstige Krankenversicherung verweigert, obwohl er zumutbar und möglich ist,"
+            },
+            {
+              "marke": "b",
+              "text": "er schriftlich auf die Möglichkeit der Leistungskürzung hingewiesen worden ist."
+            }
+          ]
+        },
+        {
+          "absatz": "2",
+          "text": "Die berechtigten Interessen von Minderjährigen sind angemessen zu berücksichtigen."
+        }
+      ],
+      "stand": "1982-01-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-851_1-1981_06_14-1982_01_01-123.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "34b95345007e992e82af934f2f4ba959e359834401582a17251e524157a61783",
+      "sha": "dbb2d06e4a9a1f07889c9da4abedb0f04f3819d46c9d974f8cce8fbc9dc8b7ed"
+    },
+    {
+      "id": "kanton/ZH/851.1/art_24_a",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Sozialhilfegesetz (SHG) (LS 851.1)",
+      "artikel": "24_a",
+      "artikelLabel": "§ 24a",
+      "bloecke": [
+        {
+          "absatz": "1",
+          "text": "Vom grundsätzlichen Rechtsanspruch auf Sozialhilfeleistungen kann ausnahmsweise und unter Berücksichtigung von Art. 12 der Bundesverfassung (BV)abgewichen werden. Die Leistungen sind ausnahmsweise ganz oder teilweise einzustellen, wenn",
+          "items": [
+            {
+              "marke": "a",
+              "text": "der Hilfesuchende eine ihm zumutbare Arbeit oder die Geltendmachung eines Ersatzeinkommens verweigert,"
+            },
+            {
+              "marke": "b",
+              "text": "ihm die Leistungen deswegen gekürzt worden sind, und"
+            },
+            {
+              "marke": "c",
+              "text": "ihm schriftlich und unter Androhung der Leistungseinstellung eine zweite Frist zur Annahme der Arbeit beziehungsweise zur Geltendmachung des Ersatzeinkommens angesetzt worden ist."
+            }
+          ]
+        },
+        {
+          "absatz": "2",
+          "text": "Die berechtigten Interessen von Minderjährigen sind angemessen zu berücksichtigen. III. Verwandtenunterstützung und Rückerstattung"
+        }
+      ],
+      "stand": "1982-01-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-851_1-1981_06_14-1982_01_01-123.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "34b95345007e992e82af934f2f4ba959e359834401582a17251e524157a61783",
+      "sha": "760383e5caa1ed83393493102acd1ef131007544a63bf193d7b8411d50f4626f"
+    },
+    {
+      "id": "kanton/ZH/851.1/art_25",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Sozialhilfegesetz (SHG) (LS 851.1)",
+      "artikel": "25",
+      "artikelLabel": "§ 25",
+      "bloecke": [
+        {
+          "absatz": "1",
+          "text": "Die Fürsorgebehörde prüft, ob gemäss Art.328 und 329 ZGBVerwandte zur Unterstützung des Hilfeempfängers verpflichtet sind."
+        },
+        {
+          "absatz": "2",
+          "text": "Wenn es die Verhältnisse rechtfertigen, kann sie die Pflichtigen zur Hilfe auffordern und zwischen ihnen und dem Hilfeempfänger vermitteln."
+        }
+      ],
+      "stand": "1982-01-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-851_1-1981_06_14-1982_01_01-123.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "34b95345007e992e82af934f2f4ba959e359834401582a17251e524157a61783",
+      "sha": "aed5807c4101eabc75d221de516203dd8d4b8de7009e465a4d164b1e0eaac0a3"
+    },
+    {
+      "id": "kanton/ZH/851.1/art_26",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Sozialhilfegesetz (SHG) (LS 851.1)",
+      "artikel": "26",
+      "artikelLabel": "§ 26",
+      "bloecke": [
+        {
+          "absatz": null,
+          "text": "Zur Rückerstattung von wirtschaftlicher Hilfe ist verpflichtet, wer",
+          "items": [
+            {
+              "marke": "a",
+              "text": "diese unter unwahren oder unvollständigen Angaben erwirkt hat oder"
+            },
+            {
+              "marke": "b",
+              "text": "diese für andere als die von der Fürsorgebehörde festgelegten Zwecke verwendet hat und dadurch bewirkt, dass die Behörde erneut zahlen muss."
+            }
+          ]
+        }
+      ],
+      "stand": "1982-01-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-851_1-1981_06_14-1982_01_01-123.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "34b95345007e992e82af934f2f4ba959e359834401582a17251e524157a61783",
+      "sha": "9f05ed4f077a160446857ebb4ffa9af36ff4d134e4c30c429863c66cfa5f0a2f"
+    },
+    {
+      "id": "kanton/ZH/851.1/art_27",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Sozialhilfegesetz (SHG) (LS 851.1)",
+      "artikel": "27",
+      "artikelLabel": "§ 27",
+      "bloecke": [
+        {
+          "absatz": "1",
+          "text": "Rechtmässig bezogene wirtschaftliche Hilfe kann ganz oder teilweise zurückgefordert werden, wenn",
+          "items": [
+            {
+              "marke": "a",
+              "text": "der Hilfeempfänger rückwirkend Leistungen von Sozial- oder Privatversicherungen oder von haftpflichtigen oder anderen Dritten erhält, entsprechend der Höhe der in der gleichen Zeitspanne ausgerichteten wirtschaftlichen Hilfe,"
+            },
+            {
+              "marke": "b",
+              "text": "der Hilfeempfänger aus Erbschaft, Lotteriegewinn oder anderen nicht auf eigene Arbeitsleistung zurückzuführenden Gründen in finanziell günstige Verhältnisse gelangt; in Fällen eigener Arbeitsleistung nur dann, wenn diese zu derart günstigen Verhältnissen führt, dass ein Verzicht auf Rückerstattung, unter Berücksichtigung der Gründe des Hilfebezugs, als unbillig erscheint,"
+            },
+            {
+              "marke": "c",
+              "text": "die Voraussetzungen zur Rückerstattung nach §20 erfüllt sind."
+            }
+          ]
+        },
+        {
+          "absatz": "2",
+          "text": "Der Rückerstattungsanspruch erstreckt sich auf Leistungen, die der Hilfeempfänger für sich selbst, für seinen Ehegatten während der Ehe, für seine eingetragene Partnerin oder seinen eingetragenen Partner während der Dauer der eingetragenen Partnerschaft und für seine Kinder während ihrer Minderjährigkeit erhalten hat."
+        },
+        {
+          "absatz": "3",
+          "text": "Wirtschaftliche Hilfe, die jemand für sich selbst während seiner Minderjährigkeit oder bis zum Abschluss einer in dieser Zeit begonnenen Ausbildung bezogen hat, ist nicht zurückzuerstatten. Für die Kosten des Aufenthalts in einem Jugendheim gilt dies bis zum 22. Altersjahr."
+        }
+      ],
+      "stand": "1982-01-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-851_1-1981_06_14-1982_01_01-123.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "34b95345007e992e82af934f2f4ba959e359834401582a17251e524157a61783",
+      "sha": "bd79d6d4013ec7fe7734ac095c8a512ac4ae38ed3cf8cbb29548c563318b3e26"
+    },
+    {
+      "id": "kanton/ZH/851.1/art_28",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Sozialhilfegesetz (SHG) (LS 851.1)",
+      "artikel": "28",
+      "artikelLabel": "§ 28",
+      "bloecke": [
+        {
+          "absatz": "1",
+          "text": "Stirbt der Hilfeempfänger, entsteht ein Anspruch auf Rückerstattung der wirtschaftlichen Hilfe gegenüber seinem Nachlass."
+        },
+        {
+          "absatz": "2",
+          "text": "Bei der Geltendmachung des Rückerstattungsanspruchs sind die Verhältnisse der Erben angemessen zu berücksichtigen."
+        }
+      ],
+      "stand": "1982-01-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-851_1-1981_06_14-1982_01_01-123.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "34b95345007e992e82af934f2f4ba959e359834401582a17251e524157a61783",
+      "sha": "210b3a18a2ed88a5a6e574ced6863cb06b208431271ee5b3d3b1b345b2e45d59"
+    },
+    {
+      "id": "kanton/ZH/851.1/art_29",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Sozialhilfegesetz (SHG) (LS 851.1)",
+      "artikel": "29",
+      "artikelLabel": "§ 29",
+      "bloecke": [
+        {
+          "absatz": null,
+          "text": "Rückerstattungsforderungen sind unverzinslich, ausgenommen bei unrechtmässigem Bezug."
+        }
+      ],
+      "stand": "1982-01-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-851_1-1981_06_14-1982_01_01-123.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "34b95345007e992e82af934f2f4ba959e359834401582a17251e524157a61783",
+      "sha": "d956d58546cc15526418affb7620f6643df37cd7aaa05eed10f37b95688050c9"
+    },
+    {
+      "id": "kanton/ZH/851.1/art_30",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Sozialhilfegesetz (SHG) (LS 851.1)",
+      "artikel": "30",
+      "artikelLabel": "§ 30",
+      "bloecke": [
+        {
+          "absatz": "1",
+          "text": "Leistungen, die im Zeitpunkt der Rückerstattungsverfügung mehr als 15 Jahre zurückliegen, können nicht zurückgefordert werden. Ausgenommen sind Leistungen, für die eine Rückerstattungsverpflichtung nach §20 eingegangen worden ist."
+        },
+        {
+          "absatz": "2",
+          "text": "Die Rückerstattungsforderung verjährt fünf Jahre nachdem die Fürsorgebehörde von ihrem Entstehen Kenntnis erhalten hat. Rückerstattungsforderungen, für die ein Grundpfand eingetragen ist, unterliegen keiner Verjährung."
+        }
+      ],
+      "stand": "1982-01-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-851_1-1981_06_14-1982_01_01-123.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "34b95345007e992e82af934f2f4ba959e359834401582a17251e524157a61783",
+      "sha": "5e34078a1235376302abf9739d163da4a493b4486243b93bc2af8df4b1c0020f"
+    },
+    {
+      "id": "kanton/ZH/851.1/art_31",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Sozialhilfegesetz (SHG) (LS 851.1)",
+      "artikel": "31",
+      "artikelLabel": "§ 31",
+      "bloecke": [
+        {
+          "absatz": null,
+          "text": "Verwandtenunterstützung und Rückerstattung werden von den Behörden des kostentragenden Gemeinwesens geltend gemacht."
+        }
+      ],
+      "stand": "1982-01-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-851_1-1981_06_14-1982_01_01-123.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "34b95345007e992e82af934f2f4ba959e359834401582a17251e524157a61783",
+      "sha": "9cde317d6462aedf1bba5df3d44f84ddd960c8fea5143bf77ff57341d36d71de"
+    },
+    {
+      "id": "kanton/ZH/851.1/art_32",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Sozialhilfegesetz (SHG) (LS 851.1)",
+      "artikel": "32",
+      "artikelLabel": "§ 32",
+      "bloecke": [
+        {
+          "absatz": null,
+          "text": "Die Pflicht zur Leistung persönlicher und wirtschaftlicher Hilfe obliegt der Wohngemeinde des Hilfesuchenden."
+        }
+      ],
+      "stand": "1982-01-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-851_1-1981_06_14-1982_01_01-123.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "34b95345007e992e82af934f2f4ba959e359834401582a17251e524157a61783",
+      "sha": "65b08950e94b34aba2c1f1176a90b237de91c33ccc55884c7f0dd6813b4ed6d2"
+    },
+    {
+      "id": "kanton/ZH/851.1/art_33",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Sozialhilfegesetz (SHG) (LS 851.1)",
+      "artikel": "33",
+      "artikelLabel": "§ 33",
+      "bloecke": [
+        {
+          "absatz": null,
+          "text": "Die Aufenthaltsgemeinde ist zur Hilfeleistung verpflichtet, solange die Wohngemeinde des Hilfesuchenden nicht feststeht oder wenn eine Person ausserhalb ihrer Wohngemeinde unaufschiebbarer Hilfe bedarf."
+        }
+      ],
+      "stand": "1982-01-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-851_1-1981_06_14-1982_01_01-123.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "34b95345007e992e82af934f2f4ba959e359834401582a17251e524157a61783",
+      "sha": "baf6930c0f1c78bfea9c5fbfe1782e9539dead805a93c00a284f0b3838b58517"
+    },
+    {
+      "id": "kanton/ZH/851.1/art_34",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Sozialhilfegesetz (SHG) (LS 851.1)",
+      "artikel": "34",
+      "artikelLabel": "§ 34",
+      "bloecke": [
+        {
+          "absatz": "1",
+          "text": "Der Hilfesuchende hat seinen Wohnsitz nach diesem Gesetz in derjenigen Gemeinde, in der er sich mit der Absicht dauernden Verbleibens aufhält."
+        },
+        {
+          "absatz": "2",
+          "text": "Die polizeiliche Anmeldung, für Ausländer die Ausstellung einer Anwesenheitsbewilligung, gilt als Wohnsitzbegründung, wenn nicht nachgewiesen ist, dass der Aufenthalt schon früher oder erst später begonnen hat oder nur vorübergehender Natur ist."
+        }
+      ],
+      "stand": "1982-01-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-851_1-1981_06_14-1982_01_01-123.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "34b95345007e992e82af934f2f4ba959e359834401582a17251e524157a61783",
+      "sha": "c1c2c515860e921524aa1fd89e03d04382b7ad74ce20c89fb654ed49cbf1dfdb"
+    },
+    {
+      "id": "kanton/ZH/851.1/art_35",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Sozialhilfegesetz (SHG) (LS 851.1)",
+      "artikel": "35",
+      "artikelLabel": "§ 35",
+      "bloecke": [
+        {
+          "absatz": null,
+          "text": "Der Aufenthalt in einem Heim, einem Spital oder einer andern Anstalt und die behördliche Unterbringung einer volljährigen Person in Familienpflege begründen keinen Wohnsitz."
+        }
+      ],
+      "stand": "1982-01-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-851_1-1981_06_14-1982_01_01-123.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "34b95345007e992e82af934f2f4ba959e359834401582a17251e524157a61783",
+      "sha": "e77c3d9175a18f6f39fbb06b62b8deacf07bd03923f8a5c86d1805ffe2ac25f9"
+    },
+    {
+      "id": "kanton/ZH/851.1/art_36",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Sozialhilfegesetz (SHG) (LS 851.1)",
+      "artikel": "36",
+      "artikelLabel": "§ 36",
+      "bloecke": [
+        {
+          "absatz": "1",
+          "text": "Jeder Ehegatte, jede eingetragene Partnerin und jeder eingetragene Partner hat einen eigenen Wohnsitz."
+        },
+        {
+          "absatz": "2",
+          "text": "Für die Regelung der Kostenersatzpflicht des Staates ist bei gemeinsamem Wohnsitz der Ehegatten oder der Partnerinnen oder Partner mit unterschiedlicher Wohnsitzdauer die längere massgebend. Lösen sie den gemeinsamen Wohnsitz auf, so wird ihnen die bisherige Wohnsitzdauer angerechnet."
+        }
+      ],
+      "stand": "1982-01-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-851_1-1981_06_14-1982_01_01-123.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "34b95345007e992e82af934f2f4ba959e359834401582a17251e524157a61783",
+      "sha": "4f0a094bd05a8fafead404c3334f94f07b7ae0ac4bcb700bcbb03d3af950a6c0"
+    },
+    {
+      "id": "kanton/ZH/851.1/art_37",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Sozialhilfegesetz (SHG) (LS 851.1)",
+      "artikel": "37",
+      "artikelLabel": "§ 37",
+      "bloecke": [
+        {
+          "absatz": "1",
+          "text": "Das minderjährige Kind teilt, unabhängig von seinem Aufenthaltsort, den Wohnsitz der Eltern oder jenes Elternteils, unter dessen elterlicher Sorge es steht."
+        },
+        {
+          "absatz": "2",
+          "text": "Wenn die Eltern keinen gemeinsamen zivilrechtlichen Wohnsitz haben, teilt es den Wohnsitz jenes Elternteils, bei dem es wohnt."
+        },
+        {
+          "absatz": "3",
+          "text": "Es hat einen eigenen Wohnsitz",
+          "items": [
+            {
+              "marke": "a",
+              "text": "am Sitz der KESB gemäss §41 des Einführungsgesetzes zum Kindes- und Erwachsenenschutzrecht vom 25. Juni 2012,"
+            },
+            {
+              "marke": "b",
+              "text": "am Ort nach §34, wenn es erwerbstätig und in der Lage ist, für seinen Lebensunterhalt selber aufzukommen,"
+            },
+            {
+              "marke": "c",
+              "text": "am letzten Wohnsitz nach den Absätzen 1 und 2, wenn es dauernd nicht bei den Eltern oder einem Elternteil wohnt,"
+            },
+            {
+              "marke": "d",
+              "text": "an seinem Aufenthaltsort in den übrigen Fällen."
+            }
+          ]
+        },
+        {
+          "absatz": "4",
+          "text": "Erhält das minderjährige Kind einen eigenen Wohnsitz, so wird ihm für die Regelung der Kostenersatzpflicht des Kantons die bisherige Wohnsitzdauer angerechnet."
+        }
+      ],
+      "stand": "1982-01-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-851_1-1981_06_14-1982_01_01-123.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "34b95345007e992e82af934f2f4ba959e359834401582a17251e524157a61783",
+      "sha": "a1084d5ca4e917a424425333cd9aae82da5cc5e3199e3994ffb63de83cb9e074"
+    },
+    {
+      "id": "kanton/ZH/851.1/art_38",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Sozialhilfegesetz (SHG) (LS 851.1)",
+      "artikel": "38",
+      "artikelLabel": "§ 38",
+      "bloecke": [
+        {
+          "absatz": "1",
+          "text": "Der Wohnsitz endet mit dem Wegzug aus der Gemeinde."
+        },
+        {
+          "absatz": "2",
+          "text": "Ist der Zeitpunkt des Wegzugs zweifelhaft, gilt derjenige der polizeilichen Abmeldung."
+        },
+        {
+          "absatz": "3",
+          "text": "Der Eintritt in ein Heim, ein Spital oder eine andere Anstalt sowie die behördliche Unterbringung einer volljährigen Person in Familienpflege beendigen einen bestehenden Wohnsitz nicht."
+        }
+      ],
+      "stand": "1982-01-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-851_1-1981_06_14-1982_01_01-123.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "34b95345007e992e82af934f2f4ba959e359834401582a17251e524157a61783",
+      "sha": "b93d54bdaff00439272fbba8b4fbf76111b3fb9a4e283c25a5134485c92e9aad"
+    },
+    {
+      "id": "kanton/ZH/851.1/art_39",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Sozialhilfegesetz (SHG) (LS 851.1)",
+      "artikel": "39",
+      "artikelLabel": "§ 39",
+      "bloecke": [
+        {
+          "absatz": "1",
+          "text": "Als Aufenthalt nach diesem Gesetz gilt die tatsächliche Anwesenheit in einer Gemeinde."
+        },
+        {
+          "absatz": "2",
+          "text": "Ist eine offensichtlich hilfebedürftige, insbesondere eine erkrankte oder verunfallte Person auf ärztliche oder behördliche Anordnung in eine andere Gemeinde verbracht worden, so gilt als Aufenthaltsort weiterhin die Gemeinde, von der aus die Zuweisung erfolgt ist."
+        }
+      ],
+      "stand": "1982-01-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-851_1-1981_06_14-1982_01_01-123.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "34b95345007e992e82af934f2f4ba959e359834401582a17251e524157a61783",
+      "sha": "675c61e501f3fcbc4115946e35774511823172a6f10ab2f532ef3350660dd9fa"
+    },
+    {
+      "id": "kanton/ZH/851.1/art_40",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Sozialhilfegesetz (SHG) (LS 851.1)",
+      "artikel": "40",
+      "artikelLabel": "§ 40",
+      "bloecke": [
+        {
+          "absatz": "1",
+          "text": "Die Behörden dürfen einen Hilfebedürftigen nicht veranlassen, aus der Gemeinde wegzuziehen."
+        },
+        {
+          "absatz": "2",
+          "text": "Für Ausländer sind die Bestimmungen über den Widerruf von Anwesenheitsbewilligungen sowie über die Aus- oder Wegweisung und die Heimschaffung vorbehalten."
+        }
+      ],
+      "stand": "1982-01-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-851_1-1981_06_14-1982_01_01-123.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "34b95345007e992e82af934f2f4ba959e359834401582a17251e524157a61783",
+      "sha": "44f804573f788e4cdd5231d1a4194ce1b26686b5990c6b9a5b49c8c8aee9bf11"
+    },
+    {
+      "id": "kanton/ZH/851.1/art_41",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Sozialhilfegesetz (SHG) (LS 851.1)",
+      "artikel": "41",
+      "artikelLabel": "§ 41",
+      "bloecke": [
+        {
+          "absatz": null,
+          "text": "Die hilfepflichtige Gemeinde trägt die Kosten der persönlichen und wirtschaftlichen Hilfe, sofern das Bundesrecht, interkantonale Vereinbarungen oder die nachfolgenden Bestimmungen nicht etwas anderes vorsehen."
+        }
+      ],
+      "stand": "1982-01-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-851_1-1981_06_14-1982_01_01-123.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "34b95345007e992e82af934f2f4ba959e359834401582a17251e524157a61783",
+      "sha": "43828204f6fdc05f87ab6974ba3596243f5344f4a3fb87209cf748e183d70923"
+    },
+    {
+      "id": "kanton/ZH/851.1/art_42",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Sozialhilfegesetz (SHG) (LS 851.1)",
+      "artikel": "42",
+      "artikelLabel": "§ 42",
+      "bloecke": [
+        {
+          "absatz": null,
+          "text": "Erhält ein Hilfebedürftiger ausserhalb seiner Wohngemeinde wirtschaftliche Hilfe, ist die Wohngemeinde für die Kosten ersatzpflichtig."
+        }
+      ],
+      "stand": "1982-01-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-851_1-1981_06_14-1982_01_01-123.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "34b95345007e992e82af934f2f4ba959e359834401582a17251e524157a61783",
+      "sha": "369c5a4b797077802905ff243e1e64269fc7b5a935d5902d7037c56cf77f7854"
+    },
+    {
+      "id": "kanton/ZH/851.1/art_43",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Sozialhilfegesetz (SHG) (LS 851.1)",
+      "artikel": "43",
+      "artikelLabel": "§ 43",
+      "bloecke": [
+        {
+          "absatz": null,
+          "text": "Bei Widerhandlung gegen das Verbot der Abschiebung bleibt die fehlbare Gemeinde für die Kosten der wirtschaftlichen Hilfe so lange ersatzpflichtig, als der Hilfebedürftige diese Gemeinde ohne den behördlichen Einfluss voraussichtlich nicht verlassen hätte, längstens aber während fünf Jahren."
+        }
+      ],
+      "stand": "1982-01-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-851_1-1981_06_14-1982_01_01-123.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "34b95345007e992e82af934f2f4ba959e359834401582a17251e524157a61783",
+      "sha": "4875cb0024403a62adfd4f809db41c7fce8b88812499c82c72cd00e35a14f7bb"
+    },
+    {
+      "id": "kanton/ZH/851.1/art_44",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Sozialhilfegesetz (SHG) (LS 851.1)",
+      "artikel": "44",
+      "artikelLabel": "§ 44",
+      "bloecke": [
+        {
+          "absatz": "1",
+          "text": "Der Kantonersetzt der Wohngemeinde die Kosten der wirtschaftlichen Hilfe an Ausländer, die noch nicht zehn Jahre ununterbrochen Wohnsitz im Kanton haben, soweit nicht der Heimatstaat ersatzpflichtig ist."
+        },
+        {
+          "absatz": "2",
+          "text": "Er ersetzt der Aufenthaltsgemeinde die Kosten der von ihr geleisteten wirtschaftlichen Hilfe, soweit nicht die Wohngemeinde ersatzpflichtig ist oder eine Ersatzpflicht nach Bundesrecht besteht."
+        },
+        {
+          "absatz": "3",
+          "text": "Er übernimmt die Kosten der ausserhalb des Kantonsgebiets geleisteten wirtschaftlichen Hilfe an Hilfeempfänger ohne zürcherischen Wohnsitz, soweit den Kanton bundesrechtlich eine Ersatzpflicht trifft."
+        }
+      ],
+      "stand": "1982-01-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-851_1-1981_06_14-1982_01_01-123.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "34b95345007e992e82af934f2f4ba959e359834401582a17251e524157a61783",
+      "sha": "844dac0a92d2ca1d33af71af62d5ce9befc1891fefbe11980284b6fe85856389"
+    },
+    {
+      "id": "kanton/ZH/851.1/art_45",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Sozialhilfegesetz (SHG) (LS 851.1)",
+      "artikel": "45",
+      "artikelLabel": "§ 45",
+      "bloecke": [
+        {
+          "absatz": null,
+          "text": "Der Kanton leistet den Gemeinden einen Kostenanteil von 4% an die beitragsberechtigten Ausgaben der wirtschaftlichen Hilfe."
+        }
+      ],
+      "stand": "1982-01-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-851_1-1981_06_14-1982_01_01-123.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "34b95345007e992e82af934f2f4ba959e359834401582a17251e524157a61783",
+      "sha": "8694b50286bba498f2914b2d0ea1ce23363dc7238b5bba1e8f29a13346555087"
+    },
+    {
+      "id": "kanton/ZH/851.1/art_46",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Sozialhilfegesetz (SHG) (LS 851.1)",
+      "artikel": "46",
+      "artikelLabel": "§ 46",
+      "bloecke": [
+        {
+          "absatz": "1",
+          "text": "Der Kantonleistet den Gemeinden sowie öffentlichrechtlichen oder privaten gemeinnützigen Organisationen mit eigener Rechtspersönlichkeit Beiträge an den Bau und Betrieb von Heimen für Obdachlose, Verwahrloste und andere Hilfebedürftige."
+        },
+        {
+          "absatz": "2",
+          "text": "Ausnahmsweise können Beiträge für andere Einrichtungen geleistet werden, die der Betreuung von Hilfebedürftigen dienen."
+        },
+        {
+          "absatz": "3",
+          "text": "Die Art der Beitragsgewährung richtet sich nach den Bestimmungen des Gesetzes über den selbstbestimmten Leistungsbezug durch Menschen mit Behinderung vom 28. Februar 2022 (SLBG)."
+        },
+        {
+          "absatz": "4",
+          "text": "Beiträge nach diesem Gesetz sind ausgeschlossen, wenn eine andere kantonale Rechtsgrundlage für Beitragsleistungen besteht."
+        }
+      ],
+      "stand": "1982-01-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-851_1-1981_06_14-1982_01_01-123.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "34b95345007e992e82af934f2f4ba959e359834401582a17251e524157a61783",
+      "sha": "8ac687dd72a9b33f16284ae0de2347208c081843a50d664af439ba6891b17026"
+    },
+    {
+      "id": "kanton/ZH/851.1/art_47",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Sozialhilfegesetz (SHG) (LS 851.1)",
+      "artikel": "47",
+      "artikelLabel": "§ 47",
+      "bloecke": [
+        {
+          "absatz": null,
+          "text": "Die Fürsorgebehörde und die mit der Durchführung der öffentlichen Sozialhilfe betrauten Organe und Personen (Sozialhilfeorgane) sind unter Vorbehalt der nachfolgenden Bestimmungen zur Verschwiegenheit über ihre Wahrnehmungen verpflichtet."
+        }
+      ],
+      "stand": "1982-01-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-851_1-1981_06_14-1982_01_01-123.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "34b95345007e992e82af934f2f4ba959e359834401582a17251e524157a61783",
+      "sha": "aa9f807a7d3cd6dea6f585cb2b63686679625c38f6ab8396daf6f2f6df60bb5e"
+    },
+    {
+      "id": "kanton/ZH/851.1/art_47_a",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Sozialhilfegesetz (SHG) (LS 851.1)",
+      "artikel": "47_a",
+      "artikelLabel": "§ 47a",
+      "bloecke": [
+        {
+          "absatz": "1",
+          "text": "Die Sozialhilfeorgane erstatten der zuständigen Ausländerbehörde unaufgefordert die nach Bundesrecht vorgesehenen Meldungen. Sie melden insbesondere:",
+          "items": [
+            {
+              "marke": "a",
+              "text": "Beginn, Umfang und Beendigung des Bezugs von Sozialhilfe, Rückerstattungen von bezogenen Sozialhilfeleistungen sowie Umstände, die sich auf die Höhe der Unterstützungsleistung auswirken,"
+            },
+            {
+              "marke": "b",
+              "text": "sonstige Umstände, die für die pflichtgemässe Beurteilung der persönlichen Verhältnisse und den Grad der Integration durch die Ausländerbehörde wesentlich sind."
+            }
+          ]
+        },
+        {
+          "absatz": "2",
+          "text": "Die Sozialhilfeorgane können andere Tatsachen, die für das ausländerrechtliche Bewilligungsverfahren bedeutsam sein können, der zuständigen Ausländerbehörde unaufgefordert melden."
+        }
+      ],
+      "stand": "1982-01-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-851_1-1981_06_14-1982_01_01-123.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "34b95345007e992e82af934f2f4ba959e359834401582a17251e524157a61783",
+      "sha": "e91cc782d5ee46404af37dd40d09b394749de381d000504292dae7a7844b37be"
+    },
+    {
+      "id": "kanton/ZH/851.1/art_47_b",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Sozialhilfegesetz (SHG) (LS 851.1)",
+      "artikel": "47_b",
+      "artikelLabel": "§ 47b",
+      "bloecke": [
+        {
+          "absatz": "1",
+          "text": "Die Verwaltungsbehörden des Kantons und seiner Gemeinden sowie die mit der Erfüllung öffentlicher Aufgaben betrauten Organisationen und Personen sind verpflichtet, den Sozialhilfeorganen von sich aus mitzuteilen, wenn nach Wahrnehmungen in ihrer amtlichen Tätigkeit ein konkreter und für den Fall erheblicher Verdacht auf unrechtmässige Erwirkung von Sozialhilfeleistungen besteht. Die Gerichte und Notariate sowie die Ombudsstellen und Datenschutzbeauftragten von Kanton und Gemeinden sind unter den gleichen Voraussetzungen ermächtigt, den Sozialhilfeorganen von sich aus Mitteilung zu machen."
+        },
+        {
+          "absatz": "2",
+          "text": "Die für das Fürsorgewesen zuständige Direktion leitet bei ihr eingegangene Informationen an die Fürsorgebehörde oder an die nach Art.29 des Bundesgesetzes über die Zuständigkeit für die Unterstützung Bedürftiger vom 24.Juni 1977 zuständige kantonale Amtsstelle weiter."
+        },
+        {
+          "absatz": "3",
+          "text": "Vorbehalten bleiben bundesrechtliche Schweigepflichten."
+        }
+      ],
+      "stand": "1982-01-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-851_1-1981_06_14-1982_01_01-123.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "34b95345007e992e82af934f2f4ba959e359834401582a17251e524157a61783",
+      "sha": "7424fa72409d16bb91e83a2d69689b0ab336b6a53683f67b987610bf3b08cd32"
+    },
+    {
+      "id": "kanton/ZH/851.1/art_47_c",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Sozialhilfegesetz (SHG) (LS 851.1)",
+      "artikel": "47_c",
+      "artikelLabel": "§ 47c",
+      "bloecke": [
+        {
+          "absatz": null,
+          "text": "Die im Einzelfall betroffenen Sozialhilfeorgane informieren sich gegenseitig über",
+          "items": [
+            {
+              "marke": "a",
+              "text": "Beginn, Ausmass, Art, Dauer und Ursachen gewährter wirtschaftlicher Hilfe,"
+            },
+            {
+              "marke": "b",
+              "text": "Auflagen, Weisungen und Sanktionen,"
+            },
+            {
+              "marke": "c",
+              "text": "Abtretungen und Auszahlungen gemäss §19,"
+            }
+          ]
+        }
+      ],
+      "stand": "1982-01-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-851_1-1981_06_14-1982_01_01-123.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "34b95345007e992e82af934f2f4ba959e359834401582a17251e524157a61783",
+      "sha": "38ea7bfb101c9356f434f32a63cacad1ac9bf5b3a9d82100432217b151f2424a"
+    },
+    {
+      "id": "kanton/ZH/851.1/art_47_d",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Sozialhilfegesetz (SHG) (LS 851.1)",
+      "artikel": "47_d",
+      "artikelLabel": "§ 47d",
+      "bloecke": [
+        {
+          "absatz": null,
+          "text": "Im Rahmen der Interinstitutionellen Zusammenarbeit sind die Sozialhilfeorgane ermächtigt, mit den im Einzelfall beteiligten Stellen gemäss §3c Informationen insbesondere über die Personalien sowie die persönlichen, beruflichen und finanziellen Verhältnisse des Hilfesuchenden auszutauschen, sofern dies für die Förderung seiner Eingliederung geeignet und erforderlich ist."
+        }
+      ],
+      "stand": "1982-01-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-851_1-1981_06_14-1982_01_01-123.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "34b95345007e992e82af934f2f4ba959e359834401582a17251e524157a61783",
+      "sha": "fe0b144815692ab7b7f4e60e624631271b8d75352562e9969ee908a490f7adeb"
+    },
+    {
+      "id": "kanton/ZH/851.1/art_48",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Sozialhilfegesetz (SHG) (LS 851.1)",
+      "artikel": "48",
+      "artikelLabel": "§ 48",
+      "bloecke": [
+        {
+          "absatz": "1",
+          "text": "Die Sozialhilfeorgane erteilen folgenden Stellen im Einzelfall und auf Ersuchen mündlich oder schriftlich Auskunft, soweit dies für die Erfüllung der gesetzlichen Aufgaben der anfragenden Stelle geeignet und erforderlich ist:",
+          "items": [
+            {
+              "marke": "a",
+              "text": "Gerichten sowie Verwaltungsbehörden des Kantons und seiner Gemeinden,"
+            },
+            {
+              "marke": "b",
+              "text": "Gerichten und Verwaltungsbehörden des Bundes,"
+            },
+            {
+              "marke": "c",
+              "text": "Gerichten sowie Verwaltungsbehörden anderer Kantone und ihrer Gemeinden,"
+            },
+            {
+              "marke": "d",
+              "text": "Organisationen und Personen, soweit sie mit der Erfüllung öffentlicher Aufgaben betraut sind."
+            }
+          ]
+        },
+        {
+          "absatz": "2",
+          "text": "Den Sozialhilfeorganen erteilen folgende Stellen im Einzelfall und auf Ersuchen mündlich oder schriftlich Auskunft, soweit dies für die Erfüllung der gesetzlichen Aufgaben der Sozialhilfeorgane geeignet und erforderlich ist:",
+          "items": [
+            {
+              "marke": "a",
+              "text": "Verwaltungsbehörden des Kantons und seiner Gemeinden,"
+            },
+            {
+              "marke": "b",
+              "text": "Organisationen und Personen, soweit sie mit der Erfüllung öffentlicher Aufgaben betraut sind,"
+            },
+            {
+              "marke": "c",
+              "text": "Personen, die mit dem Hilfesuchenden in einer Hausgemeinschaft leben oder ihm gegenüber unterhalts- oder unterstützungspflichtig sind,"
+            },
+            {
+              "marke": "d",
+              "text": "Arbeitgeber des Hilfesuchenden und der mit ihm in einer Hausgemeinschaft lebenden Personen."
+            }
+          ]
+        },
+        {
+          "absatz": "3",
+          "text": "Ausgenommen von der Auskunftspflicht gemäss Abs.2 sind die Notariate sowie die Ombudsstellen und Datenschutzbeauftragten von Kanton und Gemeinden. Diese sind berechtigt, Auskünfte zu erteilen."
+        },
+        {
+          "absatz": "4",
+          "text": "Vorbehalten bleiben bundesrechtliche Schweigepflichten."
+        }
+      ],
+      "stand": "1982-01-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-851_1-1981_06_14-1982_01_01-123.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "34b95345007e992e82af934f2f4ba959e359834401582a17251e524157a61783",
+      "sha": "4851a3f2b6c873519d7ea34727adf829121cbd462e6b967b03b63a01d0eb4de2"
+    },
+    {
+      "id": "kanton/ZH/851.1/art_48_a",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Sozialhilfegesetz (SHG) (LS 851.1)",
+      "artikel": "48_a",
+      "artikelLabel": "§ 48a",
+      "bloecke": [
+        {
+          "absatz": "1",
+          "text": "Die Sozialhilfeorgane können die betroffene Person zur Überprüfung und Klärung der Verhältnisse verdeckt observieren und dabei technische Hilfsmittel zur Bildaufzeichnung einsetzen, wenn ein Mitglied des Bezirksrates die Observation genehmigt hat und:",
+          "items": [
+            {
+              "marke": "a",
+              "text": "aufgrund konkreter Anhaltspunkte anzunehmen ist, dass die betroffene Person Leistungen nach diesem Gesetz unrechtmässig erwirkt, und"
+            },
+            {
+              "marke": "b",
+              "text": "die Abklärungen sonst aussichtslos wären oder unverhältnismässig erschwert würden."
+            }
+          ]
+        },
+        {
+          "absatz": "2",
+          "text": "Die betroffene Person darf nur observiert werden, wenn sie sich:",
+          "items": [
+            {
+              "marke": "a",
+              "text": "an einem allgemein zugänglichen Ort befindet oder"
+            },
+            {
+              "marke": "b",
+              "text": "an einem Ort befindet, der von einem allgemein zugänglichen Ort aus frei einsehbar ist."
+            }
+          ]
+        },
+        {
+          "absatz": "3",
+          "text": "Die Sozialhilfeorgane können Spezialistinnen und Spezialisten mit der Observation beauftragen. Diese unterstehen der gleichen Sorgfaltsund Schweigepflicht wie die auftraggebenden Sozialhilfeorgane."
+        },
+        {
+          "absatz": "4",
+          "text": "Eine Observation darf an höchstens 20 Tagen innerhalb von sechs Monaten ab dem ersten Observationstag stattfinden. Sie kann innerhalb dieses Zeitraums einmalig um höchstens zehn Observationstage verlängert werden, wenn hinreichende Gründe dafür bestehen. Eine erneute Observation kann angeordnet werden, wenn sich neue konkrete Anhaltspunkte ergeben."
+        },
+        {
+          "absatz": "5",
+          "text": "Die Sozialhilfeorgane informieren die betroffene Person nachträglich und vor dem Erlass der Anordnung über die Leistung über den Grund, die Art, die Dauer und die Ergebnisse der erfolgten Observation und geben ihr Gelegenheit zur Stellungnahme."
+        },
+        {
+          "absatz": "6",
+          "text": "Können die Anhaltspunkte gemäss Abs. 1 lit. a durch die Observation nicht bestätigt werden, erlassen die Sozialhilfeorgane eine Anordnung über den Grund, die Art, die Dauer und die Ergebnisse der erfolgten Observation."
+        },
+        {
+          "absatz": "7",
+          "text": "Der Regierungsrat regelt das Verfahren zur Einsichtnahme der betroffenen Person in das Observationsmaterial und die Aufbewahrung und Vernichtung des Observationsmaterials."
+        }
+      ],
+      "stand": "1982-01-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-851_1-1981_06_14-1982_01_01-123.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "34b95345007e992e82af934f2f4ba959e359834401582a17251e524157a61783",
+      "sha": "aa34da21c95088d768f55e4ccef4a0f2a31f2f767e270d3a142068d9163f633e"
+    },
+    {
+      "id": "kanton/ZH/851.1/art_48_b",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Sozialhilfegesetz (SHG) (LS 851.1)",
+      "artikel": "48_b",
+      "artikelLabel": "§ 48b",
+      "bloecke": [
+        {
+          "absatz": "1",
+          "text": "Wer für sich oder andere durch unwahre oder unvollständige Angaben, durch Verschweigen von veränderten Verhältnissen oder in anderer Weise Leistungen nach diesem Gesetz unrechtmässig erwirkt, wird mit Busse bestraft."
+        },
+        {
+          "absatz": "2",
+          "text": "Die Untersuchung und Beurteilung von Widerhandlungen obliegt den Statthalterämtern."
+        }
+      ],
+      "stand": "1982-01-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-851_1-1981_06_14-1982_01_01-123.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "34b95345007e992e82af934f2f4ba959e359834401582a17251e524157a61783",
+      "sha": "94d5597f8ae66cb0d9a9a043f6dbb288d3b02c85e92f882cb397fcbddf295edc"
+    },
+    {
+      "id": "kanton/ZH/851.1/art_48_c",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Sozialhilfegesetz (SHG) (LS 851.1)",
+      "artikel": "48_c",
+      "artikelLabel": "§ 48c",
+      "bloecke": [
+        {
+          "absatz": null,
+          "text": "Die Sozialhilfeorgane haben in Strafverfahren wegen Verletzung von §48b, Art. 146 oder 148a St GBvolle Parteirechte im Sinne von Art. 104 Abs. 2 StPO."
+        }
+      ],
+      "stand": "1982-01-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-851_1-1981_06_14-1982_01_01-123.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "34b95345007e992e82af934f2f4ba959e359834401582a17251e524157a61783",
+      "sha": "8881fbb71594a206ffbcf18e5b5db2dbf8b58d03efbe510dfc0d84d8d7035c2b"
+    },
+    {
+      "id": "kanton/ZH/851.1/art_49",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Sozialhilfegesetz (SHG) (LS 851.1)",
+      "artikel": "49",
+      "artikelLabel": "§ 49",
+      "bloecke": [
+        {
+          "absatz": null,
+          "text": "Die nachstehenden Gesetze werden wie folgt geändert: . . ."
+        }
+      ],
+      "stand": "1982-01-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-851_1-1981_06_14-1982_01_01-123.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "34b95345007e992e82af934f2f4ba959e359834401582a17251e524157a61783",
+      "sha": "0f9870230d9d84831dc7f4a5fcd4e1cbefe14b5c3db1cbafcc29b6117902e423"
+    },
+    {
+      "id": "kanton/ZH/851.1/art_50",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Sozialhilfegesetz (SHG) (LS 851.1)",
+      "artikel": "50",
+      "artikelLabel": "§ 50",
+      "bloecke": [
+        {
+          "absatz": "1",
+          "text": "Mit dem Inkrafttreten dieses Gesetzes gehen die Hilfepflicht und die Kostentragung für wirtschaftliche Hilfe an bisher unterstützte Personen auf das nach neuem Recht zuständige Gemeinwesen über."
+        },
+        {
+          "absatz": "2",
+          "text": "Für Heim-, Spital- und Anstaltsinsassen sowie für Familienpfleglinge, die nach neuem Recht keinen Wohnsitz begründen, werden die Kosten jedoch weiterhin von der bisher unterstützungspflichtigen Gemeinde getragen."
+        }
+      ],
+      "stand": "1982-01-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-851_1-1981_06_14-1982_01_01-123.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "34b95345007e992e82af934f2f4ba959e359834401582a17251e524157a61783",
+      "sha": "a3c3a54d4f2f3927bdcb23171099546675e09105dd56c59427475f4a5b8a9134"
+    },
+    {
+      "id": "kanton/ZH/851.1/art_51",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Sozialhilfegesetz (SHG) (LS 851.1)",
+      "artikel": "51",
+      "artikelLabel": "§ 51",
+      "bloecke": [
+        {
+          "absatz": null,
+          "text": "Die Leistung persönlicher Hilfe muss zwei Jahre nach Inkrafttreten dieses Gesetzes sichergestellt sein."
+        }
+      ],
+      "stand": "1982-01-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-851_1-1981_06_14-1982_01_01-123.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "34b95345007e992e82af934f2f4ba959e359834401582a17251e524157a61783",
+      "sha": "00997b9c5e44618055d9ba8028fc42e56c3970c18dbc1ecabf32e179959ec5fa"
+    },
+    {
+      "id": "kanton/ZH/851.1/art_52",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Sozialhilfegesetz (SHG) (LS 851.1)",
+      "artikel": "52",
+      "artikelLabel": "§ 52",
+      "bloecke": [
+        {
+          "absatz": null,
+          "text": "Das Armengut ist innert fünf Jahren in das allgemeine Gemeindegut überzuführen."
+        }
+      ],
+      "stand": "1982-01-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-851_1-1981_06_14-1982_01_01-123.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "34b95345007e992e82af934f2f4ba959e359834401582a17251e524157a61783",
+      "sha": "69c6a8a110ec43cb75a0223910e358b510915564e5461adf4bb8e704f77eecd8"
+    },
+    {
+      "id": "kanton/ZH/851.1/art_53",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Sozialhilfegesetz (SHG) (LS 851.1)",
+      "artikel": "53",
+      "artikelLabel": "§ 53",
+      "bloecke": [
+        {
+          "absatz": null,
+          "text": "Gemeinden, die bisher die Armenfürsorge gemeinsam besorgt haben, regeln ihren Zusammenschluss, sofern sie ihn für die öffentliche Sozialhilfe beibehalten wollen, innert zweier Jahre durch öffentlichrechtlichen Vertrag. Der Vertrag bedarf der Genehmigung durch den Regierungsrat."
+        }
+      ],
+      "stand": "1982-01-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-851_1-1981_06_14-1982_01_01-123.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "34b95345007e992e82af934f2f4ba959e359834401582a17251e524157a61783",
+      "sha": "3302bea906dd134bd45c6a6b77f914dccef18367dbe21f54c32ecd02b20df8f1"
+    },
+    {
+      "id": "kanton/ZH/851.1/art_54",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Sozialhilfegesetz (SHG) (LS 851.1)",
+      "artikel": "54",
+      "artikelLabel": "§ 54",
+      "bloecke": [
+        {
+          "absatz": "1",
+          "text": "Staatsbeiträge an die Kosten wirtschaftlicher Hilfe werden nach neuem Recht erstmals für die Aufwendungen des Rechnungsjahres geleistet, in dem dieses Gesetz in Kraft tritt."
+        },
+        {
+          "absatz": "2",
+          "text": "An den Bau von Heimen und andern Einrichtungen gemäss §46, die vor Inkrafttreten dieses Gesetzes in Betrieb genommen worden sind, sowie für ungedeckte Betriebskosten aus Rechnungsjahren, die vor diesem Zeitpunkt begonnen haben, werden keine Staatsbeiträge geleistet."
+        },
+        {
+          "absatz": "3",
+          "text": "Staatsbeiträge an freiwillige Armenpflegen werden letztmals für die Aufwendungen des dem Inkrafttreten dieses Gesetzes vorangegangenen Rechnungsjahres geleistet."
+        }
+      ],
+      "stand": "1982-01-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-851_1-1981_06_14-1982_01_01-123.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "34b95345007e992e82af934f2f4ba959e359834401582a17251e524157a61783",
+      "sha": "13a315b70336970edc9de198f2cdb95b2ca92a6882e648dea783b4a0927e2baf"
+    },
+    {
+      "id": "kanton/ZH/851.1/art_55",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Sozialhilfegesetz (SHG) (LS 851.1)",
+      "artikel": "55",
+      "artikelLabel": "§ 55",
+      "bloecke": [
+        {
+          "absatz": "1",
+          "text": "Dieses Gesetz untersteht der Volksabstimmung."
+        },
+        {
+          "absatz": "2",
+          "text": "Der Regierungsrat bestimmt den Zeitpunkt des Inkrafttretens."
+        },
+        {
+          "absatz": "3",
+          "text": "Auf den gleichen Zeitpunkt wird das Gesetz über die Armenfürsorge vom 23. Oktober 1927 aufgehoben. Übergangsbestimmung zur Änderung vom 12. Juli 2010(OS 66, 839) Die Informationen nach §§47a–47d sowie die Auskünfte auf Ersuchen nach §48 können sich auch auf Sachverhalte beziehen, die sich vor Inkrafttreten dieser Bestimmungen ereignet haben."
+        },
+        {
+          "absatz": "11",
+          "text": "Text siehe OS 48, 204."
+        },
+        {
+          "absatz": "12",
+          "text": "Vgl. auch Art. 6–9 des Zuständigkeitsgesetzes (SR 851.1)."
+        },
+        {
+          "absatz": "13",
+          "text": "1.Februar 1995 (OS 53, 45)."
+        },
+        {
+          "absatz": "14",
+          "text": "1998 (OS 54, 624)."
+        },
+        {
+          "absatz": "15",
+          "text": "2003 (OS 58, 25)."
+        },
+        {
+          "absatz": "16",
+          "text": "2003 (OS 58, 25)."
+        },
+        {
+          "absatz": "17",
+          "text": "2008."
+        },
+        {
+          "absatz": "18",
+          "text": "2008."
+        },
+        {
+          "absatz": "21",
+          "text": "schaftsgesetz des Bundes vom 9. Juli 2007 (OS 62, 429;ABl 2006, 1703). In"
+        },
+        {
+          "absatz": "22",
+          "text": "nen vom 1. Oktober 2007 (OS 62, 584;ABl 2007, 864). In Kraft seit 1. Januar 2008."
+        },
+        {
+          "absatz": "23",
+          "text": "2009, 172). In Kraft seit 1. Januar 2012."
+        }
+      ],
+      "stand": "1982-01-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-851_1-1981_06_14-1982_01_01-123.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "34b95345007e992e82af934f2f4ba959e359834401582a17251e524157a61783",
+      "sha": "2ac8c3431944e80b3ec4b8e947f717152a24dd089e581e45c162b462d2f37174"
+    }
+  ]
+}
