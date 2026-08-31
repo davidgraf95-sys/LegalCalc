@@ -164,14 +164,17 @@ describe('ZH-211.11 § 4 — 3-Spalten-Tabelle (Streitwert | Grundgebühr | Zusc
     }
   });
 
-  it('erste Zeile: Streitwert enthält «bis» + «1» + «000», Grundgebühr enthält «25%» (Prozentbetrag)', () => {
+  it('erste Zeile: Streitwert und Grundgebühr in getrennten Zellen (B-5)', () => {
+    // FACHLICHE KORREKTUR (Gegenprüfung Runde 2, 31.8.2026 — kein Refactoring,
+    // §6.3): Vorher lieferte die Extraktion
+    // ['bis 1 000 25% des Streitwertes, mind. Fr. 150', '', ''] — die einzige
+    // Zeile der Tabelle ohne Spaltentrennung. Die alte Behauptung
+    // «erste[0] + ' ' + erste[1] enthält 25%» war gegen genau diesen Defekt
+    // blind. Ursache: pdfjs liefert «000 25% des Streitwertes …» als EIN
+    // Fragment über die am Spaltenkopf gemessene Grenze hinweg
+    // (s. teileAmSpaltenrand).
     const r = extrahiereZhStreitwertStaffel(PAR4)!;
-    const erste = r.zeilen[0];
-    expect(erste[0]).toContain('bis');
-    expect(erste[0]).toContain('1');
-    expect(erste[0]).toContain('000');
-    // Erste Zeile (bis 1 000): Prozentgebühr «25% des Streitwertes»
-    expect(erste[0] + ' ' + erste[1]).toContain('25%');
+    expect(r.zeilen[0]).toEqual(['bis 1 000', '25% des Streitwertes, mind. Fr. 150', '']);
   });
 
   it('letzte Zeile: Streitwert enthält «10 Mio.», Zuschlag enthält «0,5%»', () => {

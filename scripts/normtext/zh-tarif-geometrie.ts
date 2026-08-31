@@ -12,6 +12,76 @@
 
 import { fuegeZeilen } from './zh-text.ts';
 
+/** Grösster erlaubter Abstand (pt) zwischen der gewählten Wortgrenze und der
+ *  Spaltengrenze. Gemessen am einzigen Fall im Bestand: 3.5 pt. Liegt keine
+ *  Wortgrenze näher als 12 pt, bleibt das Fragment ungeteilt — dann ist die
+ *  Klebung nicht sicher lokalisierbar (§1: lieber ungeteilt als falsch geteilt). */
+const SPALTENRAND_TOLERANZ_PT = 12;
+
+/**
+ * Trennt ein Fragment, das die GEMESSENE Spaltengrenze überläuft, an der ihr
+ * nächstgelegenen Wortgrenze (Bug B-5, Gegenprüfung Runde 2, 31.8.2026).
+ *
+ * ANLASS: In der ersten Staffelzeile von ZH-211.11 § 4 liefert pdfjs
+ * «000 25% des Streitwertes, mind. Fr. 150» als EIN Fragment ab x = 153.6
+ * (Breite 115.1) — es beginnt in der Streitwert-Spalte und läuft über die
+ * Grundgebühr-Grenze (x = 169.2, gemessen am Spaltenkopf) hinweg. Die
+ * x-Zuordnung steckte die ganze Zeile in Spalte 1; der Snapshot trug
+ * ['bis 1 000 25% des Streitwertes, mind. Fr. 150', '', ''] statt drei Zellen.
+ *
+ * VERFAHREN (§1: kein Zeichen wird geändert, nur die Zellzuordnung):
+ * Aus x, Breite und Zeichenzahl wird für jede Wortgrenze im Fragment ihre
+ * x-Position geschätzt; gewählt wird die der Spaltengrenze nächste. Fehlt die
+ * Breite oder liegt keine Wortgrenze innerhalb der Toleranz, bleibt das
+ * Fragment unangetastet.
+ *
+ * NUR an `threshold1`: diese Grenze ist am Spaltenkopf GEMESSEN
+ * («Grundgebühr»/«Gebühr»-x). `threshold2` ist dagegen ein empirischer Versatz
+ * (threshold1 + 47) — auf einer geschätzten Grenze zu schneiden hiesse, eine
+ * Schätzung auf eine Schätzung zu setzen. Die Grundgebühr|Zuschlag-Klebung
+ * löst weiterhin der «zuzügl.»-Nachlauf.
+ */
+export function teileAmSpaltenrand<T extends { x: number; s: string; w?: number }>(
+  zeile: readonly T[],
+  schwelle: number,
+): Array<{ x: number; s: string; w?: number }> {
+  const raus: Array<{ x: number; s: string; w?: number }> = [];
+  for (const st of zeile) {
+    const w = st.w;
+    if (!w || st.x >= schwelle || st.x + w <= schwelle || !st.s.includes(' ')) {
+      raus.push({ x: st.x, s: st.s, w: st.w });
+      continue;
+    }
+    const len = st.s.length;
+    let besterIdx = -1;
+    let besterAbstand = Infinity;
+    for (let i = 0; i < len; i++) {
+      if (st.s[i] !== ' ') continue;
+      const geschaetztesX = st.x + ((i + 1) / len) * w;
+      const abstand = Math.abs(geschaetztesX - schwelle);
+      if (abstand < besterAbstand) {
+        besterAbstand = abstand;
+        besterIdx = i;
+      }
+    }
+    if (besterIdx < 0 || besterAbstand > SPALTENRAND_TOLERANZ_PT) {
+      raus.push({ x: st.x, s: st.s, w: st.w });
+      continue;
+    }
+    const links = st.s.slice(0, besterIdx).trimEnd();
+    const rechts = st.s.slice(besterIdx + 1).trimStart();
+    const trennX = st.x + ((besterIdx + 1) / len) * w;
+    // Der rechte Teil steht DEFINITIONSGEMÄSS in der Spalte rechts der Grenze —
+    // die aus der Zeichenzahl geschätzte Trenn-x kann sie um wenige Punkte
+    // verfehlen (hier 165.4 gegen 169.2). Darum auf die Grenze anheben, sonst
+    // landete das Fragment wieder in der linken Spalte.
+    const rechtsX = Math.max(trennX, schwelle);
+    if (links) raus.push({ x: st.x, s: links, w: trennX - st.x });
+    if (rechts) raus.push({ x: rechtsX, s: rechts, w: st.x + w - rechtsX });
+  }
+  return raus;
+}
+
 // ─────────────────────────────────────────────────────────────────────────────
 // x-koordinatenbasierte Streitwert-Staffel-Extraktion (ZH-215.3 § 4, ZH-211.11 § 3 + § 4)
 // ─────────────────────────────────────────────────────────────────────────────
@@ -38,11 +108,13 @@ import { fuegeZeilen } from './zh-text.ts';
  *   - Keine Heuristik/Ziffern-Raten — nur Stück-x als Spalten-Zuordnung.
  *
  * Guard: keine Kopfzeile oder < 2 Datenzeilen → null (mehrdeutige Geometrie).
- * §1: Stücke werden nie intern aufgespalten; §2: kein Date.now/Math.random.
- * §3: reine Extraktion, kein UI-Code.
+ * §2: kein Date.now/Math.random. §3: reine Extraktion, kein UI-Code.
+ *
+ * Zur einzigen Ausnahme von «Stücke werden nie intern aufgespalten» (Bug B-5,
+ * Gegenprüfung Runde 2): siehe `teileAmSpaltenrand`.
  */
 export function extrahiereZhStreitwertStaffel(
-  stuecke: Array<{ x: number; y: number; h: number; s: string; p: number }>,
+  stuecke: Array<{ x: number; y: number; h: number; s: string; p: number; w?: number }>,
 ): { kopf: string[]; zeilen: string[][]; einleitung: string } | null {
   if (stuecke.length === 0) return null;
 
@@ -61,7 +133,7 @@ export function extrahiereZhStreitwertStaffel(
   if (tabStuecke.length === 0) return null;
 
   // ── Schritt 2: Zeilen (p, y-absteigend) bilden
-  const byPY = new Map<string, Array<{ x: number; s: string }>>();
+  const byPY = new Map<string, Array<{ x: number; s: string; w?: number }>>();
   for (const s of tabStuecke) {
     const key = `${s.p}_${Math.round(s.y)}`;
     let l = byPY.get(key);
@@ -69,7 +141,7 @@ export function extrahiereZhStreitwertStaffel(
       l = [];
       byPY.set(key, l);
     }
-    l.push({ x: s.x, s: s.s });
+    l.push({ x: s.x, s: s.s, w: s.w });
   }
 
   const zeilen = [...byPY.entries()].sort((a, b) => {
@@ -141,7 +213,7 @@ export function extrahiereZhStreitwertStaffel(
     if (stueckeRow.some((s) => s.s.includes('(in Franken)'))) continue;
     if (stueckeRow.length === 0) continue;
 
-    const sorted = [...stueckeRow].sort((a, b) => a.x - b.x);
+    const sorted = teileAmSpaltenrand(stueckeRow, threshold1).sort((a, b) => a.x - b.x);
 
     if (dreiSpalten) {
       // 3-Spalten-Form: Streitwert | Grundgebühr | Zuschlag

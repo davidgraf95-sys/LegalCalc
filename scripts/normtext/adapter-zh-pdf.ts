@@ -1354,22 +1354,24 @@ async function extrahiereZhParStuecke(
   bytes: Uint8Array,
   startMarker: RegExp,
   endMarker: RegExp,
-): Promise<Array<{ x: number; y: number; h: number; s: string; p: number }>> {
+): Promise<Array<{ x: number; y: number; h: number; s: string; p: number; w?: number }>> {
   const pdfjs = await import('pdfjs-dist/legacy/build/pdf.mjs');
   const doc = await pdfjs.getDocument({ data: bytes, useSystemFonts: true }).promise;
 
-  type S = { x: number; y: number; h: number; s: string; p: number };
+  type S = { x: number; y: number; h: number; s: string; p: number; w?: number };
   const alle: S[] = [];
   for (let p = 1; p <= doc.numPages; p++) {
     const inhalt = await (await doc.getPage(p)).getTextContent();
     for (const it of inhalt.items) {
-      const item = it as { str: string; transform: number[]; height?: number };
+      const item = it as { str: string; transform: number[]; height?: number; width?: number };
       if (!item.str || !item.str.replace(/\s/g, '')) continue;
       const y = item.transform[5];
       if (y < 60 || y > 530) continue; // Kopf-/Fussband
       const h = item.height ?? 9;
       if (h >= 11) continue; // Erlasstitel
-      alle.push({ x: item.transform[4], y, h, s: item.str, p });
+      // `w` (Fragment-Breite) trägt die Spaltenrand-Trennung in
+      // zh-tarif-geometrie.ts (Bug B-5) — ohne sie bleibt jedes Fragment ganz.
+      alle.push({ x: item.transform[4], y, h, s: item.str, p, w: item.width });
     }
   }
 
