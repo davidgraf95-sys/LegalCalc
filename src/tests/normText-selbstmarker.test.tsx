@@ -238,3 +238,18 @@ describe('V-2 Ziel 3 — das eigene FEDLEX-Kürzel führt in den Erlass, nicht n
     expect(out).not.toContain('/gesetze/bund/SSV#art-999');
   });
 });
+
+describe('Gliederungs-Genitive sind KEINE Selbstmarker (V-1-Fund, Härtung 31.8.2026)', () => {
+  // ZGB Schlusstitel Art. 13d zitiert «Artikel 8a dieses Titels» — gemeint ist
+  // der SchlT, nie der Erlass. Heute existiert kein Token «8a» im ZGB-Snapshot
+  // (totes Ziel, degradiert zu Text); die Härtung stellt sicher, dass auch MIT
+  // einem solchen Token nie ein Self-Link entstünde (§1: kein falscher Link).
+  it('ZGB SchlT: «Artikel 8a dieses Titels» bleibt Text, auch mit erzwungenem Token', () => {
+    const text = snapshotText('bund/ZGB', 'disp_u1_art_13_d', 'dieses Titels');
+    const r = refs('bund/ZGB');
+    r.tokenMap.set('8a', '8_a'); // erzwungenes Ziel — die Weiche darf trotzdem nicht greifen
+    const out = ssr(<NormText text={text} intern={r} />);
+    expect(out).not.toContain('#art-8_a"');
+    expect(nurText(out)).toBe(text);
+  });
+});

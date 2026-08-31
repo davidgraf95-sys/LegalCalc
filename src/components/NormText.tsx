@@ -236,7 +236,18 @@ const PARAGRAF_FREMD_NAME = /^\s+(?:des|der|über|vom)\b/;
 // Gesetzes» fiel in den des/der-Guard, AIG Art. 80a «Artikel 66 Absatz 1 des
 // vorliegenden Gesetzes» nicht — dieselbe Wendung, zwei Ergebnisse, allein
 // wegen des Passus dazwischen.
-const SELBST_MARKER = /^\s*(?:(?:des|der)\s+vorliegenden|dies(?:es|er))\s+[A-ZÄÖÜ]/;
+// «dieses TITELS/Abschnitts/Kapitels …» meint eine GLIEDERUNGSEINHEIT, nie den
+// Erlass — ZGB Schlusstitel Art. 13d zitiert «Artikel 8a dieses Titels»
+// (V-1-Fund 31.8.2026, im Inventar als totes Selbstziel sichtbar geworden):
+// heute degradiert das nur zu Text, mit vorhandenem Ziel-Token wäre es ein
+// FALSCHER Link (§1). Darum der Ausschluss der Gliederungs-Genitive.
+const SELBST_MARKER = /^\s*(?:(?:des|der)\s+vorliegenden|dies(?:es|er))\s+(?!Titels|Abschnitts|Kapitels|Anhangs|Teils|Buches|Hauptst)[A-ZÄÖÜ]/;
+// «dieses Titels/Abschnitts/Kapitels …» meint eine GLIEDERUNGSEINHEIT, nie den
+// Erlass (V-1-Fund 31.8.2026: ZGB SchlT Art. 13d «Artikel 8a dieses Titels» —
+// gemeint ist SchlT-Art. 8a, nicht ZGB-Art. 8a). Die tokenMap adressiert
+// Einheiten nicht ⇒ jeder Sprung wäre geraten. Aktiver Unterdrücker in BEIDEN
+// Pfaden, nicht nur Ausschluss im Selbstmarker (§1: kein Link statt falscher).
+const GLIEDERUNGS_GENITIV = /^\s*dies(?:es|er)\s+(?:Titels|Abschnitts|Kapitels|Anhangs|Teils|Buches|Hauptst\w*)\b/;
 /** Nennt der Text direkt hinter dem Zitat exakt das Kürzel DIESES Erlasses? */
 function nenntEigenesKuerzel(rest: string, kuerzel?: string): boolean {
   const k = (kuerzel ?? '').trim();
@@ -344,7 +355,8 @@ function restMitIntern(s: string, key: string, intern?: InternRefs): React.React
       // Gesetzes», «§ 19 Personalgesetz» im Personalgesetz) steht VOR beiden
       // Fremd-Guards — sonst fängt der Grosswort-Guard das eigene Kürzel.
       if (!selbstSignalAmZitat(s.slice(end), intern)
-        && (PARAGRAF_FREMD_GROSS.test(rest) || PARAGRAF_FREMD_NAME.test(rest))) continue;
+        && (PARAGRAF_FREMD_GROSS.test(rest) || PARAGRAF_FREMD_NAME.test(rest)
+          || GLIEDERUNGS_GENITIV.test(rest))) continue;
       const token = intern.tokenMap.get(normRef(m[1]));
       if (!token) continue; // keine solche Bestimmung in diesem Erlass → Text (§8)
       linkSpans.push({
@@ -423,6 +435,8 @@ function restMitIntern(s: string, key: string, intern?: InternRefs): React.React
     // Messung bei `SELBST_MARKER`. Der Fremdgesetz-Chapeau-Pfad (M6-D) bleibt
     // unberührt: `selbstSignalAmZitat` ist dort per Definition falsch.
     const selbst = selbstSignalAmZitat(rest, intern);
+    // Härtung 31.8.: Gliederungs-Genitiv ⇒ Text (Herleitung an GLIEDERUNGS_GENITIV).
+    if (!selbst && GLIEDERUNGS_GENITIV.test(rest.replace(PARAGRAF_ANHANG, ''))) continue;
     if (!selbst && /^\s+(?:des|der|über|vom)\b/.test(rest)) continue;
     // N2 (Form A, ABGEKÜRZTE Kürzel-Form): Nennt der Verweis ein ANDERES
     // Bundesgesetz («Artikel 1a Absatz 1 Buchstabe c AHVG» in der AHVV → AHVG),

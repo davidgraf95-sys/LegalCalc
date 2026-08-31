@@ -104,7 +104,12 @@ export const G = {
   SELBST_MARKER: {
     zweck: 'SELBST_MARKER — Selbst-Wendung am Zitat («des vorliegenden Gesetzes», «dieser Verordnung»)',
     datei: 'NormText.tsx',
-    literal: String.raw`/^\s*(?:(?:des|der)\s+vorliegenden|dies(?:es|er))\s+[A-ZÄÖÜ]/`,
+    literal: String.raw`/^\s*(?:(?:des|der)\s+vorliegenden|dies(?:es|er))\s+(?!Titels|Abschnitts|Kapitels|Anhangs|Teils|Buches|Hauptst)[A-ZÄÖÜ]/`,
+  },
+  GLIEDERUNGS_GENITIV: {
+    zweck: 'GLIEDERUNGS_GENITIV — «dieses Titels/Abschnitts …» meint eine Gliederungseinheit, nie den Erlass (Härtung 31.8.2026)',
+    datei: 'NormText.tsx',
+    literal: String.raw`/^\s*dies(?:es|er)\s+(?:Titels|Abschnitts|Kapitels|Anhangs|Teils|Buches|Hauptst\w*)\b/`,
   },
   SELBST_KUERZEL_TRIM: {
     zweck: 'nenntEigenesKuerzel — führender Trenner vor dem Kürzel',
@@ -196,6 +201,7 @@ export const glaetteInterpunktion = (s: string): string => s.replace(/ +([.,])/g
 // und wurde ERSETZT. Die Spalte `selbstmarker` im Artefakt zählt darum jetzt
 // exakt die Stellen, an denen die V-2-Weiche greift.
 const SELBST_MARKER = re(G.SELBST_MARKER.literal);
+const GLIEDERUNGS_GENITIV = re(G.GLIEDERUNGS_GENITIV.literal);
 
 /** Transkription von `nenntEigenesKuerzel` (NormText.tsx, V-2 Ziel 2). */
 function nenntEigenesKuerzel(rest: string, kuerzel?: string): boolean {
@@ -229,6 +235,7 @@ export const KLASSEN: Record<string, { entscheid: Entscheid; was: string }> = {
   'anker-kette': { entscheid: 'FREMD', was: 'Ketten-Glied, Kürzel aus dem Anker-Ende propagiert (i.V.m.)' },
   'anker-self': { entscheid: 'SELF', was: 'Voll zitierter Anker auf den GELESENEN Erlass → Sprung statt Fedlex-Chip (V-2 Ziel 3)' },
   'art-chapeau-fremd': { entscheid: 'FREMD', was: 'bare «Art. N» unter Fremdgesetz-Chapeau → Zielgesetz (M6-D)' },
+  'gliederungs-genitiv': { entscheid: 'TEXT', was: '«Art./§ N dieses Titels/Abschnitts …» — Gliederungseinheit, nie der Erlass (Härtung 31.8.2026)' },
   'art-desder-guard': { entscheid: 'TEXT', was: '«Art. N des/der/über/vom …» ohne Klammer-Kürzel' },
   'art-f41': { entscheid: 'TEXT', was: 'bare «Art. N» im §-designierten Erlass — Self-Sperre (F41)' },
   'art-kein-token': { entscheid: 'TEXT', was: 'bare «Art. N» — Bestimmung existiert im Erlass nicht' },
@@ -325,6 +332,7 @@ function restStellen(s: string, ctx: Ctx): Stelle[] {
       // V-2: das ausdrückliche Selbst-Signal steht VOR beiden Fremd-Guards.
       // Produktion prüft die beiden Signale danach in EINER Bedingung; hier
       // getrennt gezählt — der Entscheid (TEXT) ist in beiden Zweigen derselbe.
+      if (!sm && GLIEDERUNGS_GENITIV.test(rest)) { textStellen.push(stelle('gliederungs-genitiv', m[1], ctx, sm)); continue; }
       if (!sm && PARAGRAF_FREMD_GROSS.test(rest)) { textStellen.push(stelle('paragraf-fremd-grosswort', m[1], ctx, sm)); continue; }
       if (!sm && PARAGRAF_FREMD_NAME.test(rest)) { textStellen.push(stelle('paragraf-fremd-name', m[1], ctx, sm)); continue; }
       const token = ctx.tokenMap.get(normRef(m[1]));
@@ -362,6 +370,8 @@ function restStellen(s: string, ctx: Ctx): Stelle[] {
     // V-2: ausdrückliches Selbst-Signal → keine der vier Fremd-Vermutungen
     // (des/der, N2, M12, F41) greift. Reihenfolge exakt wie im Original.
     const sm = selbstSignalAmZitat(rest, ctx);
+    // Härtung 31.8.: Gliederungs-Genitiv ⇒ Text (Reihenfolge exakt wie Original).
+    if (!sm && GLIEDERUNGS_GENITIV.test(rest.replace(PARAGRAF_ANHANG, ''))) { out.push(stelle('gliederungs-genitiv', m[1], ctx, sm)); continue; }
     if (!sm && DES_DER_GUARD.test(rest)) { out.push(stelle('art-desder-guard', m[1], ctx, sm)); continue; }
     const fremd = sm ? null : fremdgesetzNachArtikel(rest);
     if (fremd && kuerzelKanon(fremd) !== ctx.eigenesKuerzel) { out.push(stelle('art-n2-fremdkuerzel', m[1], ctx, sm)); continue; }

@@ -2,8 +2,8 @@
   "_zweck": "Verweis-Inventar des Normtext-Korpus (V-1, W2·20-VERWEIS-SCHAERFE). Basislinie: jede Abweichung Artefakt ↔ Neuberechnung ist ROT. Erzeugung und Grenzen: scripts/check-verweis-inventar.ts (Kopf).",
   "_regenerieren": "npm run check:verweis-inventar -- --schreiben",
   "_quellen": {
-    "normTextSha256": "a4216aa35cb40b2ebd75a38d23c9127ab7127bdb4e50df1c609f5093b02e89b2",
-    "guards": 18
+    "normTextSha256": "64a45957f5045fc0aa73db40aa21baa083e0cd79da1e076e63a05145536d1337",
+    "guards": 19
   },
   "korpus": {
     "erlasse": 1458,
@@ -12,10 +12,10 @@
   },
   "gesamt": {
     "stellen": 34058,
-    "self": 20209,
+    "self": 20198,
     "fremd": 4149,
-    "text": 9700,
-    "selbstmarker": 939
+    "text": 9711,
+    "selbstmarker": 927
   },
   "klassen": [
     {
@@ -69,9 +69,9 @@
     {
       "klasse": "art-kein-token",
       "entscheid": "TEXT",
-      "stellen": 1237,
+      "stellen": 1236,
       "erlasse": 251,
-      "selbstmarker": 4,
+      "selbstmarker": 3,
       "was": "bare «Art. N» — Bestimmung existiert im Erlass nicht"
     },
     {
@@ -93,10 +93,18 @@
     {
       "klasse": "art-self",
       "entscheid": "SELF",
-      "stellen": 13444,
+      "stellen": 13433,
       "erlasse": 460,
-      "selbstmarker": 617,
+      "selbstmarker": 606,
       "was": "bare «Art. N» → Sprung im eigenen Erlass"
+    },
+    {
+      "klasse": "gliederungs-genitiv",
+      "entscheid": "TEXT",
+      "stellen": 12,
+      "erlasse": 2,
+      "selbstmarker": 0,
+      "was": "«Art./§ N dieses Titels/Abschnitts …» — Gliederungseinheit, nie der Erlass (Härtung 31.8.2026)"
     },
     {
       "klasse": "m6-chapeau-unterdrueckt",
@@ -208,11 +216,6 @@
       "erlass": "KVG",
       "fundstelle": "bund/KVG/art_99",
       "bestimmung": "11"
-    },
-    {
-      "erlass": "ZGB",
-      "fundstelle": "bund/ZGB/disp_u1_art_13_d",
-      "bestimmung": "8a"
     },
     {
       "erlass": "AI-640.000",
