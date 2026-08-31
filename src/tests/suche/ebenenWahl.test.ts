@@ -14,8 +14,10 @@
 //             Schalter eine stille Auskunftslücke: eine leere kantonale Trefferliste
 //             ist vom «es gibt keine kantonale Bestimmung» nicht zu unterscheiden.
 import { describe, it, expect } from 'vitest';
+import { createHash } from 'node:crypto';
+import { readFileSync } from 'node:fs';
 import * as flex from 'flexsearch';
-import { EBENEN, gewaehlteEbenen } from '../../../scripts/such-index-generieren';
+import { EBENEN, baueIndex, gewaehlteEbenen } from '../../../scripts/such-index-generieren';
 import { baueSucher } from '../../lib/suche/artikelVolltext';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -32,6 +34,50 @@ describe('K3 Ebenen-Wahl: Default AUS ist wirkungslos', () => {
     expect(gewaehlteEbenen('bund,kanton')).toEqual(EBENEN);
     // Nenn-Reihenfolge ändert die Eintrags-Reihenfolge NICHT (§2 stabil).
     expect(gewaehlteEbenen('kanton,bund')).toEqual(EBENEN);
+  });
+});
+
+// ─── F3 (Gegenprüfung 31.8.2026): der BYTE-Beweis, den der Kommentar behauptete ──────
+//
+// Der K3-Kommentar in such-index-generieren.ts berief sich auf einen Byte-Gleichheits-
+// Beweis in `src/tests/suchIndex.test.ts` — zweifach falsch: die Datei enthielt keinen
+// solchen Beweis, und die K3-Tests standen ohnehin hier. Damit stützte sich die
+// Aussage «Default AUS ist wirkungslos» auf gar nichts Ausführbares. Ein behaupteter
+// Beweis ist schlimmer als kein Beweis: er beendet das Nachfragen (§8).
+//
+// Die Tests darüber prüfen nur, welche EBENEN-LISTE herauskommt. Das ist die Absicht,
+// nicht die Wirkung. Hier steht die Wirkung: der VOLLE Index, byte-für-byte.
+describe('F3 Byte-Beweis: Flag AUS lässt artikel.json unverändert', () => {
+  // ~0,5 s für den vollen Index über alle 54 446 Artikel (gemessen 31.8.2026) —
+  // billig genug, um bei jedem Lauf mitzufahren, statt nur behauptet zu werden.
+  const voll = JSON.stringify(baueIndex());
+  const sha = (s: string) => createHash('sha256').update(s).digest('hex');
+
+  it('Default-Lauf ist byte-gleich mit dem ausgelieferten public/such-index/artikel.json', () => {
+    // DAS ist die Referenz, um die es geht: das committete Artefakt, das der Nutzer
+    // wirklich lädt. Ein Vergleich `baueIndex()` gegen `baueIndex(EBENEN)` wäre
+    // zirkulär — beide Seiten gingen durch denselben Schalter.
+    const datei = readFileSync('public/such-index/artikel.json', 'utf8');
+    expect(sha(voll), `sha256 Lauf ${sha(voll).slice(0, 16)}… vs. Datei ${sha(datei).slice(0, 16)}…`).toBe(sha(datei));
+    expect(voll.length).toBe(datei.length);
+  });
+
+  it('der Schalter FILTERT nur — er verändert keinen einzigen Eintrag', () => {
+    // Die zweite Hälfte des Beweises. «Byte-gleich bei AUS» allein schlösse nicht aus,
+    // dass der Schalter bei AN nebenher etwas anderes am Eintrag ändert. Geprüft wird
+    // darum: die Bund-Einträge des gefilterten Laufs sind Zeichen für Zeichen und in
+    // derselben Reihenfolge die Bund-Einträge des vollen Laufs.
+    const nurBund = baueIndex(['bund']);
+    const bundAusVoll = baueIndex().eintraege.filter((e) => e.eb === 'bund');
+    expect(nurBund.eintraege.length).toBe(bundAusVoll.length);
+    expect(sha(JSON.stringify(nurBund.eintraege))).toBe(sha(JSON.stringify(bundAusVoll)));
+    // …und die weggelassene Ebene ist im Artefakt SICHTBAR abwesend, nicht bloss leer.
+    expect(nurBund.ebenen).toEqual(['bund']);
+    expect(nurBund.eintraege.some((e) => e.eb === 'kanton')).toBe(false);
+  });
+
+  it('zwei Läufe sind byte-gleich (§2 Determinismus, kein Date/Netz/Zufall)', () => {
+    expect(sha(JSON.stringify(baueIndex()))).toBe(sha(voll));
   });
 });
 
