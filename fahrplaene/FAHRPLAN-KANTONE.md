@@ -328,6 +328,20 @@ Belegfall-Tests: `scripts/normtext/definitionen-logik.test.ts` (vor Fix
 nötig) · UI-Anbindung (Begriffs-Hervorhebung im Leser, FAHRPLAN-LESER-V3
 nach H5) · Such-Anbindung (R11) · fachliche Abnahme David.
 
+**R6.3 · Fix-Runde nach GP Runde 2 (31.8.2026):** Die GP hat erneut
+WIDERLEGT — 339 Zitate endeten als nackter Doppelpunkt-Kopf ohne Definiens
+(«Als Familienangehörige gelten:» AIG 42; GP zählte 323, Nachmessung 339).
+Fix: Kopf + angekündigte Aufzählung wörtlich als Zitat (U+000A; 333
+repariert, 5 kinderlose Köpfe verworfen), `rest<5`-Zähler gestrichen,
+ZITAT_MAX 2000→4000 (MWSTG 8: 2 605); **neue Tor-Prüfung F «Definiens
+vorhanden»** (rot am Ist-Stand: 339, Mutations-Rot geführt), Prüfung D
+verallgemeinert (byte-genaue Kopf+Fortsetzung-Kette). Guards: G-R
+zweistufig-morphologisch (Periode neu; KVV 96 II≡III; «-ende» nie Suffix —
+60-vs-8-Messung), finite Verben im Begriff (3 raus), G-P1 «gilt
+auch»+Partizip I (StPO 428; der GP-Pauschal-Guard hätte 4/5 echte
+Definitionen gekostet — abweichend umgesetzt, offengelegt §7). Artefakt
+1 964 → **1 949**. Detail + Abweichungen: Bibliothek §R6.3.
+
 ---
 
 ## Archivierte Abschnitte *(Plan-Neuschnitt 29.8.2026)*
