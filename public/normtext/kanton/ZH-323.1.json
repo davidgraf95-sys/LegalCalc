@@ -35,7 +35,7 @@
       "stand": "2018-11-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-323_1-2010_11_24-2011_01_01-103.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "05be5189fd2a6344d332f0425dec94a5505c9caf9db9eb758dd0ade8b152cbf0",
+      "fassungsToken": "8b8c7634650628c57e32ab475782f2911f1e34e18c90d17367dbbfa3bae34641",
       "sha": "1d387c875dc7ee7f27333f34625aab7fc891f3f562aa1204f733d4fb5f6d317a"
     },
     {
@@ -72,7 +72,7 @@
       "stand": "2018-11-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-323_1-2010_11_24-2011_01_01-103.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "05be5189fd2a6344d332f0425dec94a5505c9caf9db9eb758dd0ade8b152cbf0",
+      "fassungsToken": "8b8c7634650628c57e32ab475782f2911f1e34e18c90d17367dbbfa3bae34641",
       "sha": "99ca19b1ac8c1e138cdef3591193839a4a6461c032136bbc6a0310fbeb49725e"
     },
     {
@@ -101,7 +101,7 @@
       "stand": "2018-11-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-323_1-2010_11_24-2011_01_01-103.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "05be5189fd2a6344d332f0425dec94a5505c9caf9db9eb758dd0ade8b152cbf0",
+      "fassungsToken": "8b8c7634650628c57e32ab475782f2911f1e34e18c90d17367dbbfa3bae34641",
       "sha": "67a9396e97ceae9d609c4bb3a2097826e07b992fd7bb904c7a7d85626656c166"
     },
     {
@@ -122,7 +122,15 @@
             },
             {
               "marke": "b",
-              "text": "mit einer Einstellungsverfügung abgeschlossene Untersuchungen betreffend 1. Übertretungen Fr. 80 bis 1 500 2. Verbrechen und Vergehen Fr. 150 bis 20 000"
+              "text": "mit einer Einstellungsverfügung abgeschlossene Untersuchungen betreffend"
+            },
+            {
+              "marke": "1",
+              "text": "Übertretungen Fr. 80 bis 1 500"
+            },
+            {
+              "marke": "2",
+              "text": "Verbrechen und Vergehen Fr. 150 bis 20 000"
             },
             {
               "marke": "c",
@@ -146,8 +154,8 @@
       "stand": "2018-11-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-323_1-2010_11_24-2011_01_01-103.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "05be5189fd2a6344d332f0425dec94a5505c9caf9db9eb758dd0ade8b152cbf0",
-      "sha": "8d2bfd9fc711c241c10ef5f3b1c2a1684948696d8749984c167a8aa22a2841d7"
+      "fassungsToken": "8b8c7634650628c57e32ab475782f2911f1e34e18c90d17367dbbfa3bae34641",
+      "sha": "8b34a12e963d20995890aa3040bb78b7555f3db772df2bfbe214c4c5c35a09b0"
     },
     {
       "id": "kanton/ZH/323.1/art_5",
@@ -163,11 +171,27 @@
           "items": [
             {
               "marke": "a",
-              "text": "mit einem Strafbefehl abgeschlossene Untersuchungen gegen Jugendliche wegen Straftaten, die sie 1. vor dem vollendeten 15. Altersjahr begangen haben Fr. 50 bis 800 2. nach dem vollendeten 15. Altersjahr begangen haben Fr. 100 bis 1 500"
+              "text": "mit einem Strafbefehl abgeschlossene Untersuchungen gegen Jugendliche wegen Straftaten, die sie"
+            },
+            {
+              "marke": "1",
+              "text": "vor dem vollendeten 15. Altersjahr begangen haben Fr. 50 bis 800"
+            },
+            {
+              "marke": "2",
+              "text": "nach dem vollendeten 15. Altersjahr begangen haben Fr. 100 bis 1 500"
             },
             {
               "marke": "b",
-              "text": "mit einer Einstellungsverfügung abgeschlossene Untersuchungen gegen Jugendliche wegen Straftaten, die sie 1. vor dem vollendeten 15. Altersjahr begangen haben Fr. 40 bis 600 2. nach dem vollendeten 15. Altersjahr begangen haben Fr. 80 bis 1 200"
+              "text": "mit einer Einstellungsverfügung abgeschlossene Untersuchungen gegen Jugendliche wegen Straftaten, die sie"
+            },
+            {
+              "marke": "1",
+              "text": "vor dem vollendeten 15. Altersjahr begangen haben Fr. 40 bis 600"
+            },
+            {
+              "marke": "2",
+              "text": "nach dem vollendeten 15. Altersjahr begangen haben Fr. 80 bis 1 200"
             },
             {
               "marke": "c",
@@ -175,7 +199,15 @@
             },
             {
               "marke": "d",
-              "text": "mit einer Anklageerhebung abgeschlossene Untersuchungen gegen Jugendliche wegen Straftaten, die sie 1. vor dem vollendeten 15. Altersjahr begangen haben Fr. 50 bis 1 600 2. nach dem vollendeten 15. Altersjahr begangen haben Fr. 100 bis 3 000"
+              "text": "mit einer Anklageerhebung abgeschlossene Untersuchungen gegen Jugendliche wegen Straftaten, die sie"
+            },
+            {
+              "marke": "1",
+              "text": "vor dem vollendeten 15. Altersjahr begangen haben Fr. 50 bis 1 600"
+            },
+            {
+              "marke": "2",
+              "text": "nach dem vollendeten 15. Altersjahr begangen haben Fr. 100 bis 3 000"
             }
           ]
         },
@@ -191,8 +223,8 @@
       "stand": "2018-11-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-323_1-2010_11_24-2011_01_01-103.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "05be5189fd2a6344d332f0425dec94a5505c9caf9db9eb758dd0ade8b152cbf0",
-      "sha": "cd802f309a92b45bc8bbe75611ce3e9b374f4bcbab92e833c04fa5a0a02bac77"
+      "fassungsToken": "8b8c7634650628c57e32ab475782f2911f1e34e18c90d17367dbbfa3bae34641",
+      "sha": "0d4d99d71137e73bf914bd32bb8de3ea8a0bd129fb29c6ba9faa6f8061827fb2"
     },
     {
       "id": "kanton/ZH/323.1/art_6",
@@ -232,7 +264,7 @@
       "stand": "2018-11-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-323_1-2010_11_24-2011_01_01-103.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "05be5189fd2a6344d332f0425dec94a5505c9caf9db9eb758dd0ade8b152cbf0",
+      "fassungsToken": "8b8c7634650628c57e32ab475782f2911f1e34e18c90d17367dbbfa3bae34641",
       "sha": "f961d42c8761d32e3d96bf79417f16f3bdec3a6427ad6b8e069ccf95564ee0c4"
     },
     {
@@ -259,7 +291,7 @@
       "stand": "2018-11-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-323_1-2010_11_24-2011_01_01-103.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "05be5189fd2a6344d332f0425dec94a5505c9caf9db9eb758dd0ade8b152cbf0",
+      "fassungsToken": "8b8c7634650628c57e32ab475782f2911f1e34e18c90d17367dbbfa3bae34641",
       "sha": "55075fad4b20d635d32e7c187e6fb14dec2f3c9ca1ac1e115721dac507a9ba26"
     },
     {
@@ -304,7 +336,7 @@
       "stand": "2018-11-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-323_1-2010_11_24-2011_01_01-103.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "05be5189fd2a6344d332f0425dec94a5505c9caf9db9eb758dd0ade8b152cbf0",
+      "fassungsToken": "8b8c7634650628c57e32ab475782f2911f1e34e18c90d17367dbbfa3bae34641",
       "sha": "cb3f7d07d08b522cb326739635d558060d6b9732392b2027854ca63c326e9e7e"
     },
     {
@@ -327,7 +359,7 @@
       "stand": "2018-11-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-323_1-2010_11_24-2011_01_01-103.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "05be5189fd2a6344d332f0425dec94a5505c9caf9db9eb758dd0ade8b152cbf0",
+      "fassungsToken": "8b8c7634650628c57e32ab475782f2911f1e34e18c90d17367dbbfa3bae34641",
       "sha": "2e7543fd7726938b0f985de0ffd2fb313bb438cdf3dd95bb174e1829674de13a"
     },
     {
@@ -350,7 +382,7 @@
       "stand": "2018-11-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-323_1-2010_11_24-2011_01_01-103.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "05be5189fd2a6344d332f0425dec94a5505c9caf9db9eb758dd0ade8b152cbf0",
+      "fassungsToken": "8b8c7634650628c57e32ab475782f2911f1e34e18c90d17367dbbfa3bae34641",
       "sha": "2941f074e6aa13eba570963100b57b43d8d0434893bbd52b6dabcf1dbd3b5f6b"
     },
     {
@@ -381,7 +413,7 @@
       "stand": "2018-11-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-323_1-2010_11_24-2011_01_01-103.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "05be5189fd2a6344d332f0425dec94a5505c9caf9db9eb758dd0ade8b152cbf0",
+      "fassungsToken": "8b8c7634650628c57e32ab475782f2911f1e34e18c90d17367dbbfa3bae34641",
       "sha": "cdd4c140f7a13eb03b0d106cf3a117f6389750412c6c8d7a6022ece35e7f89e0"
     },
     {
@@ -404,7 +436,7 @@
       "stand": "2018-11-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-323_1-2010_11_24-2011_01_01-103.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "05be5189fd2a6344d332f0425dec94a5505c9caf9db9eb758dd0ade8b152cbf0",
+      "fassungsToken": "8b8c7634650628c57e32ab475782f2911f1e34e18c90d17367dbbfa3bae34641",
       "sha": "9f291db5c07333a8015c0e1ae6253cc69feb8e8e96f75b577d2b8123ffba6df9"
     },
     {
@@ -423,7 +455,7 @@
       "stand": "2018-11-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-323_1-2010_11_24-2011_01_01-103.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "05be5189fd2a6344d332f0425dec94a5505c9caf9db9eb758dd0ade8b152cbf0",
+      "fassungsToken": "8b8c7634650628c57e32ab475782f2911f1e34e18c90d17367dbbfa3bae34641",
       "sha": "bbfacf027f29b69046686a90144f67022755a7177c209c5d8e5446ae22c29341"
     },
     {
@@ -446,7 +478,7 @@
       "stand": "2018-11-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-323_1-2010_11_24-2011_01_01-103.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "05be5189fd2a6344d332f0425dec94a5505c9caf9db9eb758dd0ade8b152cbf0",
+      "fassungsToken": "8b8c7634650628c57e32ab475782f2911f1e34e18c90d17367dbbfa3bae34641",
       "sha": "77f8aa365139ce6773b5b42e35f05cc107bf46ec1c35528cb908e631ce5a0a21"
     }
   ]

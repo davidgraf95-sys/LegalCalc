@@ -508,6 +508,16 @@ jobs:
       - name: Normtext-Struktur (Tabellen · Grundart · Invarianten)
         if: needs.diff.outputs.art != 'doku'
         run: npm run check:tabellen && npm run check:grundart && npm run check:invarianten
+      # ZH-Vollständigkeit, ARTEFAKT-Teil (ZH-Fix-Runde 3, B7). Das Tor hält den
+      # Snapshot gegen das amtliche PDF; sein PDF-Teil braucht den Roh-PDF-Cache
+      # `daten/pdf-cache-zh/` (gitignored) und läuft darum lokal im `gate` und
+      # im Netz-Teil unter `check:netz`. Was OHNE PDF entscheidbar ist — kein
+      # Block endet auf einem Trennstrich, kein Gliederungstitel steht im
+      # Normtext —, gehört in jeden PR: genau diese zwei Klassen sind in den
+      # Runden 1–3 dreimal aufgetreten.
+      - name: ZH-Vollständigkeit (Artefakt-Teil, ohne PDF)
+        if: needs.diff.outputs.art != 'doku'
+        run: npm run check:zh-vollstaendigkeit -- --artefakt
       # Verdrahtet 15.8.2026 (QS-AUTOMATIK-PARITAET lit. b): diese drei standen
       # bis dahin NUR in fedlex-frische.yml — einem schedule-Workflow. Das ist
       # Wächter-, nicht PR-Deckung: er meldet Korpus-Drift erst NACH dem Merge

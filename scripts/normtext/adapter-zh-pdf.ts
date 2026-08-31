@@ -775,7 +775,7 @@ const MONAT_NACH_ZAHL =
  *  weil der Punkt-Buchstabe und der Text getrennte Fragmente am gleichen y sind).
  *  EIN Kleinbuchstabe + Punkt am Zeilenanfang (lit.-Punkte stehen in der PDF auf
  *  EIGENER Zeile). Der Folgetext beginnt teils klein («a.im Zivilprozess»). */
-const LIT_MARKE = /^([a-z])\.\s*(\S.*)$/;
+const LIT_MARKE = /^([a-z])\.\s*(\S.*)?$/;
 
 /** Gliederungs-/Abschnitts-Überschrift (NICHT Normtext): «A. Allgemein»,
  *  «B. Schlichtungsverfahren», «C. Zivilprozess» — Grossbuchstabe + Punkt +
@@ -1046,7 +1046,14 @@ function baueBloecke(zeilen: string[]): ZhBlock[] {
       flushItem();
       if (!aktiv) neuerBlock(null);
       aktivItem = { marke: litM[1].toLowerCase() };
-      itemPuffer = [litM[2].trim()];
+      // NACKTE lit.-Marke = AUFGEHOBENER Buchstabe (Fund des neuen
+      // lit.-Wächters, Fix-Runde 3): ZH-631.1 § 23 druckt «e.» ohne Text, der
+      // Beleg steht in der amtlichen Fussnote. Vorher verlangte das Muster
+      // zwingend Text; die nackte Zeile fiel als Fortsetzung an lit. d und
+      // erzeugte dort «… Nichtausübung eines Rechtes, e.». Leerer Puffer →
+      // flushItem setzt den Platzhalter (gleiche Konvention wie bei den
+      // Ziffern und beim nackten §-Kopf).
+      itemPuffer = litM[2] ? [litM[2].trim()] : [];
       continue;
     }
 

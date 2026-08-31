@@ -26,6 +26,8 @@ interface Stueck {
   y: number;
   h: number;
   s: string;
+  /** pdfjs-Schriftkennung (dokument-lokal), für die Titel-Schrift-Bedingung. */
+  f?: string;
 }
 
 /** Grobe y-Toleranz (pt): alles innerhalb davon ist EINE Zeile. Hochstellungen
@@ -45,7 +47,11 @@ const KOPF_PARAGRAF =
   /^§\s*(\d+)\s*([a-z])?\s*(bis|ter|quater|quinquies)?\s*\./;
 const KOPF_ARTIKEL =
   /^Art\.\s*(\d+)\s*([a-z])?\s*(bis|ter|quater|quinquies)?(?=\s|$)/;
-const LIT_ZEILE = /^[a-z]\.\s/;
+/** lit.-Zeile — auch die NACKTE, aufgehobene Marke («d.» allein auf der Zeile,
+ *  ZH-230 § 194, ZH-631.1 § 23). Das alte Muster verlangte ein Leerzeichen nach
+ *  dem Punkt und zählte sie darum nicht mit; die exakte lit.-Deckung wäre damit
+ *  systematisch um die aufgehobenen Buchstaben danebengelegen. */
+const LIT_ZEILE = /^[a-z]\.(?:\s|$)/;
 const SCHLUSSAPPARAT = /^(?:Übergangs|Schluss)bestimmung(?:en)?\b/;
 const ANHANG_TITEL = /^Anhang(?:\s*\d*)?(?::|$)/;
 
@@ -72,6 +78,64 @@ const SAMMEL_ZEILE_ZWEIT =
 /** Hochgestellte Absatznummer — inkl. lat. Suffix (Befund B-1: das alte Muster
  *  /^\d+$/ kannte ihn nicht, also konnte das Tor den Verlust nicht sehen). */
 const ABSATZ_HOCHZAHL_ZWEIT = /^\d+(?:bis|ter|quater|quinquies)?$/;
+
+/**
+ * ÜBERSCHRIFTS-VERDACHT für die Regionen-Messung (Härtung 2).
+ *
+ * Eine Gliederungs-Überschrift steht im PDF, aber nicht im Snapshot. Für die
+ * Zeichen- und Zahlen-Messung je Region muss die Zweitlesung sie darum
+ * auslassen — sonst meldete jede Region eine Differenz.
+ *
+ * BEWUSST UNABHÄNGIG vom Adapter (§6.7 lit. d): der Adapter entscheidet an der
+ * SCHRIFT, hier entscheidet allein die TEXTGESTALT — Zähler oder Buchstabe,
+ * Punkt, ein grossgeschriebener Titel, KEIN Satzschlusspunkt, und höchstens
+ * acht Wörter. Die beiden Wege können auseinanderlaufen; genau das ist der
+ * Zweck. Ein Auseinanderlaufen kostet hier nur Toleranz-Spielraum, nie einen
+ * stillen Durchlass: was die Zweitlesung fälschlich als Überschrift auslässt,
+ * FEHLT ihr danach — und lässt die Region ZU KLEIN aussehen, was rot wird,
+ * nicht grün.
+ */
+const UEBERSCHRIFT_GESTALT =
+  /^(?:\d+(?:bis|ter|quater|quinquies)?|[A-Z](?:bis|ter|quater|quinquies)?|[IVXLC]+)\.\s+[A-ZÄÖÜ].{0,70}$/;
+
+/** Ein Titel schliesst NIE mit Satzzeichen ab. Genau das trennt ihn von der
+ *  kurzen, gross beginnenden Aufzählungszeile — «1. Wahrsagen, insbesondere
+ *  Traumdeuten oder Kartenschlagen,» (ZH-331 § 5 lit. a Ziff. 1) ist Normtext
+ *  und muss in der Messung bleiben. */
+/**
+ * Marken-Gestalt einer Gliederungs-Überschrift: Zähler/Buchstabe + Punkt +
+ * Leerzeichen. Zusammen mit der TITEL-SCHRIFT (s. `titelSchriftJeSeite`) ist
+ * das die dritte und letzte Bedingung, unter der die Zweitlesung eine Zeile aus
+ * der Regionen-Messung nimmt.
+ *
+ * DRITTE GETEILTE MODELLENTSCHEIDUNG (offen deklariert, s. Modulkopf): Dass
+ * eine Überschrift an der Schrift erkennbar ist, teilt die Zweitlesung hier mit
+ * dem Adapter. Sie prüft damit NICHT mehr unabhängig, ob die Unterscheidung
+ * Überschrift/Aufzählung richtig getroffen wurde — das leisten Prüfung 6
+ * (Gliederungstitel im Snapshot-Text) und die beidseitigen Unit-Tests am
+ * Adapter. Für den ZWECK der Regionen (einen WERT an seinen § binden) ist die
+ * Teilung folgenlos: eine falsch ausgelassene Überschrift fehlt BEIDEN Seiten
+ * gleich, und keine Wert-Mutation kann sich dahinter verstecken.
+ *
+ * Ohne diese Bedingung wäre die Messung unbrauchbar: die Tarif-Tabellen in
+ * ZH-211.11 § 3/§ 4 und ZH-215.3 § 4 stehen VOLLSTÄNDIG in der Titel-Schrift.
+ * Sie tragen aber keine Marken-Gestalt («bis 1 000 25% des Streitwertes …»)
+ * und bleiben darum in der Messung — wo sie hingehören.
+ */
+const MARKEN_GESTALT =
+  /^(?:\d+(?:bis|ter|quater|quinquies)?|[A-Z](?:bis|ter|quater|quinquies)?|[IVXLC]+)\.\s/;
+
+const DATUM_ZEILE =
+  /^\d+\.\s+(?:Januar|Februar|März|April|Mai|Juni|Juli|August|September|Oktober|November|Dezember)\b/;
+
+export function istUeberschriftsGestalt(text: string): boolean {
+  // Eine umbrochene Fliesstext-Zeile, die mit einem DATUM beginnt, sieht wie
+  // eine Überschrift aus: «23. Juni 1831 sowie die §§ 8–10 des Gesetzes über
+  // die Konflikte vom» (ZH-175.2 § 96), «31. Dezember 1985 bereits bestand und
+  // nach Gesetz, Statuten oder» (ZH-631.1 § 272). Sie ist Normtext.
+  if (DATUM_ZEILE.test(text)) return false;
+  return UEBERSCHRIFT_GESTALT.test(text) && !/[.,;:]$/.test(text);
+}
 
 /** Gliederungs-Überschrift der zählenden Form (Befund B-3). Unabhängig vom
  *  Adapter formuliert: hier reicht das Vorkommen IRGENDWO im Snapshot-Text als
@@ -100,6 +164,28 @@ export interface Zweitlesung {
    *  Bewusst OHNE Schlussapparat-/Fussnoten-Schnitt: das ist die Obermenge,
    *  gegen die der Snapshot ⊆ sein muss. */
   zahlen: Set<string>;
+  /**
+   * Je §-REGION (Härtung 2, Prüfungen 7b/7c): alles zwischen einem Kopf und dem
+   * nächsten. Die grobe Obermenge `zahlen` liess drei Mutationsklassen durch,
+   * weil eine anderswo im Dokument vorkommende Zahl jede Fälschung deckte:
+   * Werte-TAUSCH innerhalb einer Tarif-Tabelle (1 050 ↔ 3 150), Prozentsatz-
+   * ERSATZ (14 % → 8 %) und Staffelgrenzen-ERSATZ. Die Region bindet den Wert
+   * an seinen §; die REIHENFOLGE bindet ihn an seine Stelle.
+   */
+  regionen: Record<string, RegionMass>;
+  /** Punkt-Ziffern des Anhangs («1.2.1»), aus der Ziffern-Spalte gelesen —
+   *  Grundlage der Anhang-Kopfprüfung (M13). */
+  anhangZiffern: string[];
+  /** lit.-Zeilen je §-Token (exakte Deckung statt Erlass-Quote). */
+  litJeKopf: Record<string, number>;
+}
+
+/** Messwerte EINER §-Region der Zweitlesung. */
+export interface RegionMass {
+  /** Ziffernfolgen der Region in LESEREIHENFOLGE (Multimenge + Position). */
+  zahlen: string[];
+  /** Zeichenzahl des Body-Textes der Region (ohne Trennstriche/Leerraum). */
+  zeichen: number;
 }
 
 function token(m: RegExpMatchArray): string {
@@ -170,8 +256,51 @@ export async function leseZweit(bytes: Uint8Array): Promise<Zweitlesung> {
   const sammelSpannen: Array<{ von: number; bis: number }> = [];
   const suffixAbsaetze: Record<string, string[]> = {};
   const zahlen = new Set<string>();
+  // BEIDE Zählweisen bekommen ihre EIGENE Regionen-/lit.-Buchführung; welche
+  // gilt, entscheidet erst der Schluss (s. unten). Vorher hing die Region am
+  // zuletzt gesehenen Kopf GLEICH WELCHER Art — und in einem «§»-Erlass reisst
+  // jede umbrochene Zeile, die mit «Art. 260 a Abs. 1 …» beginnt, eine
+  // Schein-Region auf, in der der Rest der Bestimmung verschwindet
+  // (ZH-230 § 34: die Hälfte der Aufzählung fehlte der Messung).
+  const regionenPar: Record<string, RegionMass> = {};
+  const regionenArt: Record<string, RegionMass> = {};
+  const litParJeKopf: Record<string, number> = {};
+  const litArtJeKopf: Record<string, number> = {};
+  const anhangZiffern: string[] = [];
   // Laufender Kopf, um Suffix-Absaetze ihrem § zuzuordnen.
   let laufenderKopf: string | null = null;
+  let laufenderPar: string | null = null;
+  let laufenderArt: string | null = null;
+
+  /** Text beiden Regionen-Büchern zuschlagen (aufgelöst wird am Ende). */
+  const zurRegion = (text: string): void => {
+    zuBuch(regionenPar, laufenderPar, text);
+    zuBuch(regionenArt, laufenderArt, text);
+  };
+  const zuBuch = (
+    buch: Record<string, RegionMass>,
+    kopf: string | null,
+    text: string,
+  ): void => {
+    if (kopf === null) return;
+    const r = (buch[kopf] ??= { zahlen: [], zeichen: 0 });
+    // Ein aufgehobener Ziffern-BEREICH «12.–14.» steht im PDF als Spanne, im
+    // Snapshot als drei Platzhalter-items 12/13/14. Damit die Zahlenfolgen
+    // vergleichbar bleiben, wird die Spanne hier ausgezählt — dieselbe
+    // Deklaration wie beim Sammel-Aufhebungskopf, nur eine Ebene tiefer.
+    const spanne = text.trim().match(/^(\d+)\.\s*[–—−-]\s*(\d+)\.$/);
+    if (spanne && Number(spanne[2]) > Number(spanne[1]) && Number(spanne[2]) - Number(spanne[1]) <= 50) {
+      for (let n = Number(spanne[1]); n <= Number(spanne[2]); n++) r.zahlen.push(String(n));
+      r.zeichen += text.replace(/[\s\u00AD\u2010\u2011-]/g, '').length;
+      return;
+    }
+    for (const z of text.match(/\d+/g) ?? []) r.zahlen.push(z);
+    // Zeichen OHNE Leerraum und OHNE Trennstriche: der Adapter fügt die
+    // Silbentrennung zusammen und normalisiert den Leerraum, die Zweitlesung
+    // nicht. Beides herauszurechnen ist billiger und ehrlicher, als eine
+    // Toleranz dafür zu erfinden.
+    r.zeichen += text.replace(/[\s\u00AD\u2010\u2011-]/g, '').length;
+  };
 
   // Werte-Waechter (Pruefung 7): ALLE Ziffernfolgen des Dokuments, ohne jeden
   // Schnitt — die Obermenge, gegen die der Snapshot Teilmenge sein muss.
@@ -188,12 +317,12 @@ export async function leseZweit(bytes: Uint8Array): Promise<Zweitlesung> {
     const inhalt = await (await doc.getPage(p)).getTextContent();
     const roh: Stueck[] = [];
     for (const it of inhalt.items) {
-      const item = it as { str: string; transform: number[]; height?: number };
+      const item = it as { str: string; transform: number[]; height?: number; fontName?: string };
       if (!item.str || !item.str.replace(/\s/g, '')) continue;
       const y = item.transform[5];
       const h = item.height ?? 9;
       if (y < 60 || y > 530 || h >= 11) continue;
-      roh.push({ x: item.transform[4], y, h, s: item.str });
+      roh.push({ x: item.transform[4], y, h, s: item.str, f: item.fontName });
     }
     const bodyX = roh.filter((s) => s.h >= 8.7).map((s) => s.x);
     if (bodyX.length === 0) continue;
@@ -201,7 +330,16 @@ export async function leseZweit(bytes: Uint8Array): Promise<Zweitlesung> {
     // Body-Spalte: die Randnoten liegen im Aussenrand, links davon oder weit
     // rechts. Ohne diesen Schnitt zählte das Tor Randnoten wie «b. Ausserhalb
     // hängiger Verfahren» als lit.-Positionen mit.
-    const spalte = roh.filter((s) => s.x >= links - 6 && s.x <= links + 260);
+    // BREITE (Korrektur Härtung 2): der Body-Satzspiegel ist ~278 pt breit —
+    // gemessen an allen 24 PDF. Die alte Grenze `links + 260` schnitt damit die
+    // letzten ~18 pt JEDER Zeile ab; für die blossen ZÄHLUNGEN (Köpfe, lit.)
+    // fiel das nie auf, für die Zahlenfolge je Region schon («… mehr als 400
+    // 000 Franken» verlor das «000»). Die Randnote bleibt weiterhin draussen:
+    // sie steht im Kleinsatz (h ≤ 7.7) und im Aussenrand (rechts x ≈ 337,
+    // links x ≈ 28), also ausserhalb beider Grenzen.
+    const spalte = roh.filter(
+      (s) => s.x >= links - 6 && s.x <= links + (s.h <= 7.7 ? 250 : 300),
+    );
     // Zeilen bilden: y-Cluster mit Toleranz, absteigend. Die Hochstellung fällt
     // dabei in ihre Trägerzeile, ohne dass dieses Modul etwas über
     // Hochstellungen wissen müsste.
@@ -230,11 +368,49 @@ export async function leseZweit(bytes: Uint8Array): Promise<Zweitlesung> {
     }
     const zeilen = alleZeilen.slice(0, apparatAb);
 
+    // Dominante Body-Schrift DIESER Seite, nach FRAGMENTZAHL (der Adapter
+    // rechnet dokumentweit nach Zeichenzahl — bewusst eine andere Rechnung).
+    const schriftZaehler = new Map<string, number>();
+    for (const zeile of zeilen) {
+      for (const st of zeile) {
+        if (st.h < 8.7 || st.f === undefined) continue;
+        schriftZaehler.set(st.f, (schriftZaehler.get(st.f) ?? 0) + 1);
+      }
+    }
+    const seitenSchrift = [...schriftZaehler.entries()].sort((a, b) => b[1] - a[1])[0]?.[0];
+    let titelKette = 0;
+
     for (const zeile of zeilen) {
       zeile.sort((a, b) => a.x - b.x);
       const body = zeile.filter((s) => s.h >= 8.7);
-      if (body.length === 0) continue; // Tabellen-/Kleinsatz-Zeile
+      if (body.length === 0) {
+        // Tarif-/Tabellenzeile (h ≈ 7.98): für Kopf- und lit.-Erkennung
+        // uninteressant, für die WERTE aber die wichtigste Zeile überhaupt —
+        // ZH-211.11 § 3/§ 4 und ZH-215.3 § 4 bestehen fast nur daraus. Die
+        // Fussnoten-Definitionen desselben Kleinsatzes sind vorher am
+        // Apparat-Schnitt weggefallen; die Randnoten am Spalten-Schnitt.
+        zurRegion(
+          zeile
+            .filter((st) => st.h >= 7)
+            .map((st) => st.s)
+            .join(' ')
+            .replace(/\s+/g, ' ')
+            .trim(),
+        );
+        continue;
+      }
       const text = zeile.map((s) => s.s).join(' ').replace(/\s+/g, ' ').trim();
+      // BODY-Text der Zeile: ohne die Hochstellungen (Absatznummern und
+      // Fussnoten-Verweise, h ≈ 5.7 bzw. ≤ 5.0). Der Snapshot trägt beide nicht
+      // im Blocktext — die Absatznummer steht im Feld `absatz`, der
+      // Fussnoten-Verweis wird verworfen. Ohne diesen Schnitt bestünde die
+      // Zahlenfolge JEDER Region grösstenteils aus Absatznummern.
+      const textBody = zeile
+        .filter((st) => st.h >= 7)
+        .map((st) => st.s)
+        .join(' ')
+        .replace(/\s+/g, ' ')
+        .trim();
       if (SCHLUSSAPPARAT.test(text) || ANHANG_TITEL.test(text)) {
         imSchluss = true;
         break;
@@ -257,18 +433,65 @@ export async function leseZweit(bytes: Uint8Array): Promise<Zweitlesung> {
       // ein «§»-Erlass enthält umbrochene Zeilen, die mit «Art. 957 Abs. 2
       // ZGB» beginnen, und ein «Art.»-Erlass umgekehrt.
       const par = text.match(KOPF_PARAGRAF);
-      if (par) {
+      if (par && !parKoepfe.includes(token(par))) {
+        // KEINE WIEDERERÖFFNUNG (wie im Adapter): «… als Einzelgericht gemäss |
+        // § 31.» bricht so um, dass der Quer­verweis am Zeilenanfang steht und
+        // wie ein Kopf aussieht (ZH-211.1 § 150). Ein zweites Mal denselben
+        // Kopf zu öffnen hängte den Rest von § 150 an die Region von § 31 —
+        // beide Messungen wurden dadurch falsch.
         parKoepfe.push(token(par));
         laufenderKopf = token(par);
+        laufenderPar = token(par);
+        // Der Resttext HINTER dem Kopf ist bereits Normtext des neuen § und
+        // gehört in seine Region («§ 4. Die Gebühren betragen:»). Die
+        // Kopf-Nummer selbst NICHT — sie steht im Snapshot im Feld `artikel`,
+        // nicht im Blocktext. Abgestreift wird NUR im Buch der zugehörigen
+        // Zählweise: für ein «Art.»-Buch ist «§ 4.» gewöhnlicher Text.
+        zuBuch(regionenPar, laufenderPar, textBody.replace(KOPF_PARAGRAF, ''));
+        zuBuch(regionenArt, laufenderArt, textBody);
         continue;
       }
       const art = text.match(KOPF_ARTIKEL);
-      if (art) {
+      if (art && !artKoepfe.includes(token(art))) {
         artKoepfe.push(token(art));
         laufenderKopf = token(art);
+        laufenderArt = token(art);
+        // Umgekehrt: in einem «§»-Erlass ist eine Zeile, die mit «Art. 260 a
+        // Abs. 1 …» beginnt, schlicht der Umbruch eines Satzes. Ihre Zahlen
+        // gehören ungekürzt in die §-Region — vorher fehlten sie dort
+        // (ZH-851.1 § 47b «Art. 29», ZH-230 § 34 «Art. 260 a», § 44 «Art. 885»).
+        zuBuch(regionenArt, laufenderArt, textBody.replace(KOPF_ARTIKEL, ''));
+        zuBuch(regionenPar, laufenderPar, textBody);
         continue;
       }
-      if (LIT_ZEILE.test(text)) litZeilen++;
+      // Gliederungs-Überschrift: steht im PDF, nie im Snapshot → nicht messen.
+      const nurTitelSchrift =
+        seitenSchrift !== undefined &&
+        zeile.filter((st) => st.h >= 7).every((st) => st.f !== undefined && st.f !== seitenSchrift);
+      const istTitel =
+        istUeberschriftsGestalt(text) ||
+        GLIEDERUNG_IM_TEXT.test(text) ||
+        (nurTitelSchrift && MARKEN_GESTALT.test(text));
+      if (istTitel) {
+        titelKette = 1;
+        continue;
+      }
+      // Fortsetzungszeile eines Titels (höchstens zwei, s. Adapter-Deckel).
+      if (nurTitelSchrift && titelKette > 0 && titelKette <= 2) {
+        titelKette++;
+        continue;
+      }
+      titelKette = 0;
+      if (LIT_ZEILE.test(text)) {
+        litZeilen++;
+        if (laufenderPar !== null) {
+          litParJeKopf[laufenderPar] = (litParJeKopf[laufenderPar] ?? 0) + 1;
+        }
+        if (laufenderArt !== null) {
+          litArtJeKopf[laufenderArt] = (litArtJeKopf[laufenderArt] ?? 0) + 1;
+        }
+      }
+      zurRegion(textBody);
       const ersteBodyX = body[0].x;
       const hochzahlen = zeile.filter(
         (s) =>
@@ -290,9 +513,80 @@ export async function leseZweit(bytes: Uint8Array): Promise<Zweitlesung> {
       }
     }
   }
+  // ── ANHANG-ZIFFERN (Härtung 2, Prüfung 8) ──────────────────────────────────
+  // Der Anhang-Tarif (ZH-243) trägt 132 Einträge mit Punkt-Ziffern «1.2.1». Für
+  // die Kopf-Prüfungen 1 und 4 waren sie unsichtbar (`paragrafTokens` filterte
+  // jeden Token mit Punkt heraus) — 88 % des grössten ZH-Anhangs standen damit
+  // unbewacht. Eine Mutation, die 40 Tarif-Ziffern löscht, blieb grün.
+  //
+  // Unabhängige Lesart (§6.7 lit. d): eine Anhang-Ziffer ist das ERSTE Fragment
+  // ihrer Zeile und besteht ausschliesslich aus Zahl-Punkt-Zahl. Die Verweise
+  // in der rechten Spalte haben dieselbe Gestalt, stehen aber nie an erster
+  // Stelle einer Zeile — kein Geometrie-Modell nötig, nur die Fragment-Ordnung.
+  const ZIFFER_TOKEN = /^\d+(?:\.\d+)+$/;
+  let imAnhang = false;
+  for (let p = 1; p <= doc.numPages; p++) {
+    const inhalt = await (await doc.getPage(p)).getTextContent();
+    const roh: Stueck[] = [];
+    for (const it of inhalt.items) {
+      const item = it as { str: string; transform: number[]; height?: number };
+      if (!item.str || !item.str.replace(/\s/g, '')) continue;
+      const y = item.transform[5];
+      const h = item.height ?? 9;
+      if (y < 60 || y > 530 || h >= 11) continue;
+      roh.push({ x: item.transform[4], y, h, s: item.str });
+    }
+    const sortiert = [...roh].sort((a, b) => b.y - a.y);
+    const alleZeilen: Stueck[][] = [];
+    for (const st of sortiert) {
+      const letzte = alleZeilen[alleZeilen.length - 1];
+      if (letzte && letzte[0].y - st.y <= ZEILE_TOLERANZ) letzte.push(st);
+      else alleZeilen.push([st]);
+    }
+    for (const zeile of alleZeilen) {
+      zeile.sort((a, b) => a.x - b.x);
+      const text = zeile.map((st) => st.s).join(' ').replace(/\s+/g, ' ').trim();
+      if (!imAnhang) {
+        if (ANHANG_TITEL.test(text)) imAnhang = true;
+        continue;
+      }
+      // Die Ziffer kommt aus pdfjs teils in MEHREREN Fragmenten («1.1.2» +
+      // «.1»). Darum die führenden rein-numerischen Fragmente aneinanderhängen,
+      // bis das erste Text-Fragment kommt.
+      // pdfjs liefert die Ziffer in DREI Gestalten (an ZH-243 gemessen):
+      //   «1.1.2»                                    eigenes Fragment
+      //   «1.1.2» + «.1»                             über zwei Fragmente
+      //   «1.1.2.1 Unentgeltliche Abtretung von …»   mit der Beschreibung in EINEM
+      // Darum: führenden Zahl-Punkt-Lauf des ersten Fragments nehmen und nur
+      // dann weiterjoinen, wenn das Fragment ohne Trenner endete.
+      let tok = '';
+      let offen = false;
+      for (const st of zeile) {
+        const t = st.s.trim();
+        if (tok === '') {
+          const m = t.match(/^(\d+(?:\.\d+)*)(\s|$)/);
+          if (!m) break;
+          tok = m[1];
+          offen = m[2] === '';
+          if (!offen) break;
+          continue;
+        }
+        // Nur ein Fragment, das die Ziffernkette FORTSETZT, wird angehängt: es
+        // beginnt mit einem Punkt oder das Bisherige endet auf einem. Sonst
+        // frässe die Kette den nachfolgenden Betrag mit auf («1.1.3» + «11»).
+        if (!/^[\d.]+$/.test(t) || (!t.startsWith('.') && !tok.endsWith('.'))) break;
+        tok += t;
+      }
+      if (ZIFFER_TOKEN.test(tok) && !anhangZiffern.includes(tok)) anhangZiffern.push(tok);
+    }
+  }
+
   // Zählweise je Erlass: die Marke mit den mehr Treffern gewinnt. Bei
   // Gleichstand (auch 0:0) der Regelfall «§».
-  const roh = artKoepfe.length > parKoepfe.length ? artKoepfe : parKoepfe;
+  const istArtikelErlass = artKoepfe.length > parKoepfe.length;
+  const regionen = istArtikelErlass ? regionenArt : regionenPar;
+  const litJeKopf = istArtikelErlass ? litArtJeKopf : litParJeKopf;
+  const roh = istArtikelErlass ? artKoepfe : parKoepfe;
   const gesehen = new Set<string>();
   const koepfe: string[] = [];
   for (const t of roh) {
@@ -300,6 +594,17 @@ export async function leseZweit(bytes: Uint8Array): Promise<Zweitlesung> {
     gesehen.add(t);
     koepfe.push(t);
   }
-  return { koepfe, litZeilen, absatzKandidaten, sammelTokens, sammelSpannen, suffixAbsaetze, zahlen };
+  return {
+    koepfe,
+    litZeilen,
+    absatzKandidaten,
+    sammelTokens,
+    sammelSpannen,
+    suffixAbsaetze,
+    zahlen,
+    regionen,
+    anhangZiffern,
+    litJeKopf,
+  };
 }
 

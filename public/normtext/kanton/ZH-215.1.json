@@ -17,7 +17,7 @@
       "stand": "2011-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-215_1-2003_11_17-2005_01_01-071.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "e8a933643b24352c7ca5388eb6c3fc962b8cac2eb794d11bcc75722493edf765",
+      "fassungsToken": "37db6b4c1b9503bb851f3a1e04097a4c54bf910e241368db7e9ed16f296d760f",
       "sha": "6941cdd42681b031fc27ab33bc3abe1e65bcefec28efb27dbaa7238483dbe489"
     },
     {
@@ -46,7 +46,7 @@
       "stand": "2011-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-215_1-2003_11_17-2005_01_01-071.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "e8a933643b24352c7ca5388eb6c3fc962b8cac2eb794d11bcc75722493edf765",
+      "fassungsToken": "37db6b4c1b9503bb851f3a1e04097a4c54bf910e241368db7e9ed16f296d760f",
       "sha": "1a3e0d1e191bad27e3cf597671818d7355bb2a3a99271fbedc56e1f92d525d70"
     },
     {
@@ -79,7 +79,7 @@
       "stand": "2011-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-215_1-2003_11_17-2005_01_01-071.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "e8a933643b24352c7ca5388eb6c3fc962b8cac2eb794d11bcc75722493edf765",
+      "fassungsToken": "37db6b4c1b9503bb851f3a1e04097a4c54bf910e241368db7e9ed16f296d760f",
       "sha": "edd5ba8845d5f30634a4fc539c86b42ad7cb018a389fd79782f729ab474bff77"
     },
     {
@@ -116,7 +116,7 @@
       "stand": "2011-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-215_1-2003_11_17-2005_01_01-071.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "e8a933643b24352c7ca5388eb6c3fc962b8cac2eb794d11bcc75722493edf765",
+      "fassungsToken": "37db6b4c1b9503bb851f3a1e04097a4c54bf910e241368db7e9ed16f296d760f",
       "sha": "8de5cca0174515e8caa66e4fcb37c490c9b4dd6c98d7f3b02bb3e105e5c8b4f9"
     },
     {
@@ -141,7 +141,15 @@
             },
             {
               "marke": "b",
-              "text": "die zuzulassende Person die Voraussetzungen für die Zulassung zur Anwaltsprüfung erfüllt, wobei in fachlicher Hinsicht folgende Voraussetzungen genügen: 1. der Abschluss eines juristischen Studiums im Sinne von Art. 7 Abs. 1 lit. a BGFA und ein halbjähriges Praktikum oder 2. der Abschluss eines juristischen Studiums mit dem Bachelor und ein einjähriges Praktikum."
+              "text": "die zuzulassende Person die Voraussetzungen für die Zulassung zur Anwaltsprüfung erfüllt, wobei in fachlicher Hinsicht folgende Voraussetzungen genügen:"
+            },
+            {
+              "marke": "1",
+              "text": "der Abschluss eines juristischen Studiums im Sinne von Art. 7 Abs. 1 lit. a BGFA und ein halbjähriges Praktikum oder"
+            },
+            {
+              "marke": "2",
+              "text": "der Abschluss eines juristischen Studiums mit dem Bachelor und ein einjähriges Praktikum."
             }
           ]
         },
@@ -157,8 +165,8 @@
       "stand": "2011-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-215_1-2003_11_17-2005_01_01-071.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "e8a933643b24352c7ca5388eb6c3fc962b8cac2eb794d11bcc75722493edf765",
-      "sha": "2c711e766692128f6edc1443dbe00b7035d5edd19d46088b575628cec3833de1"
+      "fassungsToken": "37db6b4c1b9503bb851f3a1e04097a4c54bf910e241368db7e9ed16f296d760f",
+      "sha": "4474fdad0af939f999a6ac5482d0187c5e53f364909b181ec9409a8553e1b797"
     },
     {
       "id": "kanton/ZH/215.1/art_6",
@@ -184,7 +192,7 @@
       "stand": "2011-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-215_1-2003_11_17-2005_01_01-071.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "e8a933643b24352c7ca5388eb6c3fc962b8cac2eb794d11bcc75722493edf765",
+      "fassungsToken": "37db6b4c1b9503bb851f3a1e04097a4c54bf910e241368db7e9ed16f296d760f",
       "sha": "bf02a2ad2f87d87981ffce20bb7ab33fef322aeb86354fd040afa57d25c2317b"
     },
     {
@@ -207,7 +215,7 @@
       "stand": "2011-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-215_1-2003_11_17-2005_01_01-071.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "e8a933643b24352c7ca5388eb6c3fc962b8cac2eb794d11bcc75722493edf765",
+      "fassungsToken": "37db6b4c1b9503bb851f3a1e04097a4c54bf910e241368db7e9ed16f296d760f",
       "sha": "6b72c119f8232532dccdaa45eb8b83575b37f1478bcf8beefcf2cdb74fe6c9be"
     },
     {
@@ -234,7 +242,7 @@
       "stand": "2011-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-215_1-2003_11_17-2005_01_01-071.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "e8a933643b24352c7ca5388eb6c3fc962b8cac2eb794d11bcc75722493edf765",
+      "fassungsToken": "37db6b4c1b9503bb851f3a1e04097a4c54bf910e241368db7e9ed16f296d760f",
       "sha": "4fffd00a4cb3eabdc43430cf6dacdc710eebdfc02f778919d0a8bd11222159df"
     },
     {
@@ -253,7 +261,7 @@
       "stand": "2011-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-215_1-2003_11_17-2005_01_01-071.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "e8a933643b24352c7ca5388eb6c3fc962b8cac2eb794d11bcc75722493edf765",
+      "fassungsToken": "37db6b4c1b9503bb851f3a1e04097a4c54bf910e241368db7e9ed16f296d760f",
       "sha": "4b79c4ad22bad4c636972efb75483dcc68b164862d1bc791577a096a53f02d17"
     },
     {
@@ -272,7 +280,7 @@
       "stand": "2011-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-215_1-2003_11_17-2005_01_01-071.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "e8a933643b24352c7ca5388eb6c3fc962b8cac2eb794d11bcc75722493edf765",
+      "fassungsToken": "37db6b4c1b9503bb851f3a1e04097a4c54bf910e241368db7e9ed16f296d760f",
       "sha": "3d718a392e99b8c35dcad6524c063092312cc8abad5291077567c823cd449518"
     },
     {
@@ -319,7 +327,7 @@
       "stand": "2011-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-215_1-2003_11_17-2005_01_01-071.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "e8a933643b24352c7ca5388eb6c3fc962b8cac2eb794d11bcc75722493edf765",
+      "fassungsToken": "37db6b4c1b9503bb851f3a1e04097a4c54bf910e241368db7e9ed16f296d760f",
       "sha": "f4986ff1808ef711770f8cb217dc46faa2cef4f3c210bb96a886a039e215b649"
     },
     {
@@ -338,7 +346,7 @@
       "stand": "2011-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-215_1-2003_11_17-2005_01_01-071.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "e8a933643b24352c7ca5388eb6c3fc962b8cac2eb794d11bcc75722493edf765",
+      "fassungsToken": "37db6b4c1b9503bb851f3a1e04097a4c54bf910e241368db7e9ed16f296d760f",
       "sha": "fffd896179b5a05de5123ab834ecf45024e7a99fc81a9e6dc269c8d0b54294f4"
     },
     {
@@ -357,7 +365,7 @@
       "stand": "2011-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-215_1-2003_11_17-2005_01_01-071.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "e8a933643b24352c7ca5388eb6c3fc962b8cac2eb794d11bcc75722493edf765",
+      "fassungsToken": "37db6b4c1b9503bb851f3a1e04097a4c54bf910e241368db7e9ed16f296d760f",
       "sha": "f74148ab6c96841f219ad42f91fdc03de5406a3ce1b7221bdded5ce960b35846"
     },
     {
@@ -380,7 +388,7 @@
       "stand": "2011-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-215_1-2003_11_17-2005_01_01-071.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "e8a933643b24352c7ca5388eb6c3fc962b8cac2eb794d11bcc75722493edf765",
+      "fassungsToken": "37db6b4c1b9503bb851f3a1e04097a4c54bf910e241368db7e9ed16f296d760f",
       "sha": "295027ea68ae49bf4126d5b29de3222adac384a5836029207fb78d7a16c46328"
     },
     {
@@ -409,7 +417,7 @@
       "stand": "2011-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-215_1-2003_11_17-2005_01_01-071.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "e8a933643b24352c7ca5388eb6c3fc962b8cac2eb794d11bcc75722493edf765",
+      "fassungsToken": "37db6b4c1b9503bb851f3a1e04097a4c54bf910e241368db7e9ed16f296d760f",
       "sha": "d6d4b6eb52f47c83f277922746875015e552d5764f0d4e6566ff3374c59781cb"
     },
     {
@@ -432,7 +440,7 @@
       "stand": "2011-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-215_1-2003_11_17-2005_01_01-071.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "e8a933643b24352c7ca5388eb6c3fc962b8cac2eb794d11bcc75722493edf765",
+      "fassungsToken": "37db6b4c1b9503bb851f3a1e04097a4c54bf910e241368db7e9ed16f296d760f",
       "sha": "7e42efba3f38c3a952059db4bdbe32ae6b35c58e90c40cb40548ec1625389c06"
     },
     {
@@ -449,14 +457,14 @@
         },
         {
           "absatz": "2",
-          "text": "Bei amtlichen Verteidigungen und unentgeltlichen Rechtsvertretungen setzen die Behörden die Entschädigung der Anwältin oder des Anwaltes fest. 1. Organisation"
+          "text": "Bei amtlichen Verteidigungen und unentgeltlichen Rechtsvertretungen setzen die Behörden die Entschädigung der Anwältin oder des Anwaltes fest."
         }
       ],
       "stand": "2011-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-215_1-2003_11_17-2005_01_01-071.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "e8a933643b24352c7ca5388eb6c3fc962b8cac2eb794d11bcc75722493edf765",
-      "sha": "ee2948da8bbc5f5e18baeae64ca09b6786e6484a431b79e95514c62e2e0e4c2b"
+      "fassungsToken": "37db6b4c1b9503bb851f3a1e04097a4c54bf910e241368db7e9ed16f296d760f",
+      "sha": "c7a4dcbb0b09fc05ca595e70baa23f8d16db1550a01363c03acd5b32ab61bb54"
     },
     {
       "id": "kanton/ZH/215.1/art_18",
@@ -478,7 +486,7 @@
       "stand": "2011-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-215_1-2003_11_17-2005_01_01-071.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "e8a933643b24352c7ca5388eb6c3fc962b8cac2eb794d11bcc75722493edf765",
+      "fassungsToken": "37db6b4c1b9503bb851f3a1e04097a4c54bf910e241368db7e9ed16f296d760f",
       "sha": "8f2dbf7c9d4fc62adcc522072c835f68c2b17ef411cb09a2fc4c60479dad5f91"
     },
     {
@@ -515,7 +523,7 @@
       "stand": "2011-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-215_1-2003_11_17-2005_01_01-071.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "e8a933643b24352c7ca5388eb6c3fc962b8cac2eb794d11bcc75722493edf765",
+      "fassungsToken": "37db6b4c1b9503bb851f3a1e04097a4c54bf910e241368db7e9ed16f296d760f",
       "sha": "d732b5462ec3e5793c96934de0953d22cbd45d31833d9846e83ae7b9076f0309"
     },
     {
@@ -528,14 +536,14 @@
       "bloecke": [
         {
           "absatz": null,
-          "text": "An den Entscheiden der Aufsichtskommission wirken, unter Vorbehalt abweichender Vorschriften, drei vom Obergericht und zwei von der Anwaltschaft gewählte Mitglieder mit. 2. Aufgaben"
+          "text": "An den Entscheiden der Aufsichtskommission wirken, unter Vorbehalt abweichender Vorschriften, drei vom Obergericht und zwei von der Anwaltschaft gewählte Mitglieder mit."
         }
       ],
       "stand": "2011-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-215_1-2003_11_17-2005_01_01-071.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "e8a933643b24352c7ca5388eb6c3fc962b8cac2eb794d11bcc75722493edf765",
-      "sha": "0809f349d52c49c1b5b7295a65e862be5491b161faec7464666d5898c29e0900"
+      "fassungsToken": "37db6b4c1b9503bb851f3a1e04097a4c54bf910e241368db7e9ed16f296d760f",
+      "sha": "9b7022e2d31295de8a06488c2c88dea1f4013afe0a91dea1229da66676b1bf9c"
     },
     {
       "id": "kanton/ZH/215.1/art_21",
@@ -571,7 +579,7 @@
             },
             {
               "marke": "e",
-              "text": "die Begutachtung von Gesuchen um Wiedererteilung des Anwaltspatentes. 3. Allgemeine Verfahrensbestimmungen"
+              "text": "die Begutachtung von Gesuchen um Wiedererteilung des Anwaltspatentes."
             }
           ]
         }
@@ -579,8 +587,8 @@
       "stand": "2011-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-215_1-2003_11_17-2005_01_01-071.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "e8a933643b24352c7ca5388eb6c3fc962b8cac2eb794d11bcc75722493edf765",
-      "sha": "5baf1debd3ac929d531db90b353c0a68468646722c6b8993cd86eccb949088a5"
+      "fassungsToken": "37db6b4c1b9503bb851f3a1e04097a4c54bf910e241368db7e9ed16f296d760f",
+      "sha": "9aba1c39bb0a5e4e4f546cf3a0fc15d75cec6e3a1d1e3c712fb318ecc88a39f4"
     },
     {
       "id": "kanton/ZH/215.1/art_22",
@@ -602,7 +610,7 @@
       "stand": "2011-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-215_1-2003_11_17-2005_01_01-071.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "e8a933643b24352c7ca5388eb6c3fc962b8cac2eb794d11bcc75722493edf765",
+      "fassungsToken": "37db6b4c1b9503bb851f3a1e04097a4c54bf910e241368db7e9ed16f296d760f",
       "sha": "18762b5edf3d7674eae389d5a133a5c2f82b4634c324b3830bf8891af766bd5b"
     },
     {
@@ -625,7 +633,7 @@
       "stand": "2011-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-215_1-2003_11_17-2005_01_01-071.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "e8a933643b24352c7ca5388eb6c3fc962b8cac2eb794d11bcc75722493edf765",
+      "fassungsToken": "37db6b4c1b9503bb851f3a1e04097a4c54bf910e241368db7e9ed16f296d760f",
       "sha": "5c8407996e6ad1b9d650f5c7d729f4a5e8963ef6626c25dba1a2dce5af282919"
     },
     {
@@ -652,7 +660,7 @@
       "stand": "2011-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-215_1-2003_11_17-2005_01_01-071.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "e8a933643b24352c7ca5388eb6c3fc962b8cac2eb794d11bcc75722493edf765",
+      "fassungsToken": "37db6b4c1b9503bb851f3a1e04097a4c54bf910e241368db7e9ed16f296d760f",
       "sha": "176196ac77623c8951731b45e299475bc7966b11ee5c0afb666c0156e191e8f5"
     },
     {
@@ -675,7 +683,7 @@
       "stand": "2011-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-215_1-2003_11_17-2005_01_01-071.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "e8a933643b24352c7ca5388eb6c3fc962b8cac2eb794d11bcc75722493edf765",
+      "fassungsToken": "37db6b4c1b9503bb851f3a1e04097a4c54bf910e241368db7e9ed16f296d760f",
       "sha": "56a00de0573e0e5ef0959b7bd42a2a49c1e28435958aefa7f48f43546798e10b"
     },
     {
@@ -688,14 +696,14 @@
       "bloecke": [
         {
           "absatz": null,
-          "text": "Ergänzend gelten die Vorschriften des Verwaltungsrechtspflegegesetzes über das Verwaltungsverfahren. 4. Führung des Anwaltsregisters und der Liste gemäss Art. 28 BGFA"
+          "text": "Ergänzend gelten die Vorschriften des Verwaltungsrechtspflegegesetzes über das Verwaltungsverfahren."
         }
       ],
       "stand": "2011-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-215_1-2003_11_17-2005_01_01-071.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "e8a933643b24352c7ca5388eb6c3fc962b8cac2eb794d11bcc75722493edf765",
-      "sha": "1c851d775502a9c221856ed678014d053e7e58fd58bd5c3986a8ae1bf9c62cd0"
+      "fassungsToken": "37db6b4c1b9503bb851f3a1e04097a4c54bf910e241368db7e9ed16f296d760f",
+      "sha": "14f5bd75bb981687d3a7277bd52032933879f52cb92456d31579409dc08dfc47"
     },
     {
       "id": "kanton/ZH/215.1/art_27",
@@ -721,7 +729,7 @@
       "stand": "2011-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-215_1-2003_11_17-2005_01_01-071.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "e8a933643b24352c7ca5388eb6c3fc962b8cac2eb794d11bcc75722493edf765",
+      "fassungsToken": "37db6b4c1b9503bb851f3a1e04097a4c54bf910e241368db7e9ed16f296d760f",
       "sha": "96749b05d68d492c6b6371b2e7011b7a68918c40de8e90ff6ff081520f7878be"
     },
     {
@@ -744,7 +752,7 @@
       "stand": "2011-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-215_1-2003_11_17-2005_01_01-071.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "e8a933643b24352c7ca5388eb6c3fc962b8cac2eb794d11bcc75722493edf765",
+      "fassungsToken": "37db6b4c1b9503bb851f3a1e04097a4c54bf910e241368db7e9ed16f296d760f",
       "sha": "bbf76e52b1685a9462f3ddf645b359056c84ec1ac9b08757633b7d36ad12f71f"
     },
     {
@@ -761,14 +769,14 @@
         },
         {
           "absatz": "2",
-          "text": "Für die Löschung in der Liste gelten die Vorschriften über die Löschung im Anwaltsregister. 5. Disziplinarverfahren"
+          "text": "Für die Löschung in der Liste gelten die Vorschriften über die Löschung im Anwaltsregister."
         }
       ],
       "stand": "2011-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-215_1-2003_11_17-2005_01_01-071.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "e8a933643b24352c7ca5388eb6c3fc962b8cac2eb794d11bcc75722493edf765",
-      "sha": "6f27dea0ce90368e7e1e4d728c95775dc5a82f72131bbcf8a55512d478c07bff"
+      "fassungsToken": "37db6b4c1b9503bb851f3a1e04097a4c54bf910e241368db7e9ed16f296d760f",
+      "sha": "031c70d9794540a4292b624ce1467e6ed0608c4e546df0f95af27a8665ebb957"
     },
     {
       "id": "kanton/ZH/215.1/art_30",
@@ -808,7 +816,7 @@
       "stand": "2011-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-215_1-2003_11_17-2005_01_01-071.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "e8a933643b24352c7ca5388eb6c3fc962b8cac2eb794d11bcc75722493edf765",
+      "fassungsToken": "37db6b4c1b9503bb851f3a1e04097a4c54bf910e241368db7e9ed16f296d760f",
       "sha": "b32b33d22b63a5708aec0afeb6fe9fd6f21570a2030905169f0055839bf7a5ff"
     },
     {
@@ -831,7 +839,7 @@
       "stand": "2011-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-215_1-2003_11_17-2005_01_01-071.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "e8a933643b24352c7ca5388eb6c3fc962b8cac2eb794d11bcc75722493edf765",
+      "fassungsToken": "37db6b4c1b9503bb851f3a1e04097a4c54bf910e241368db7e9ed16f296d760f",
       "sha": "feca899ba5b21fefe45a6afeddf1e1a3dd1994ba57cde3f243c0bd333b12d2a9"
     },
     {
@@ -844,14 +852,14 @@
       "bloecke": [
         {
           "absatz": null,
-          "text": "Sind die Beweise erhoben und die gemäss dem BGFA erforderlichen Stellungnahmen eingeholt worden, erhält die beschuldigte Person Gelegenheit, für den Endentscheid schriftlich Anträge zu stellen und diese zu begründen. 6. Entbindung vom Berufsgeheimnis"
+          "text": "Sind die Beweise erhoben und die gemäss dem BGFA erforderlichen Stellungnahmen eingeholt worden, erhält die beschuldigte Person Gelegenheit, für den Endentscheid schriftlich Anträge zu stellen und diese zu begründen."
         }
       ],
       "stand": "2011-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-215_1-2003_11_17-2005_01_01-071.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "e8a933643b24352c7ca5388eb6c3fc962b8cac2eb794d11bcc75722493edf765",
-      "sha": "ba6e6f674f71344a09f15fbc968184e6df7656876656c138b9f44560ce4eff3f"
+      "fassungsToken": "37db6b4c1b9503bb851f3a1e04097a4c54bf910e241368db7e9ed16f296d760f",
+      "sha": "e09274dcef16d1b3bef4e17df91b19e80368846b1e5e2cab5e64ec2942609a02"
     },
     {
       "id": "kanton/ZH/215.1/art_33",
@@ -869,7 +877,7 @@
       "stand": "2011-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-215_1-2003_11_17-2005_01_01-071.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "e8a933643b24352c7ca5388eb6c3fc962b8cac2eb794d11bcc75722493edf765",
+      "fassungsToken": "37db6b4c1b9503bb851f3a1e04097a4c54bf910e241368db7e9ed16f296d760f",
       "sha": "06a8132c8bc39208aa643c519f7cc19fe5a4916b764e2f828ae69a14ab60afca"
     },
     {
@@ -896,7 +904,7 @@
       "stand": "2011-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-215_1-2003_11_17-2005_01_01-071.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "e8a933643b24352c7ca5388eb6c3fc962b8cac2eb794d11bcc75722493edf765",
+      "fassungsToken": "37db6b4c1b9503bb851f3a1e04097a4c54bf910e241368db7e9ed16f296d760f",
       "sha": "bb37ab6ad91f5459e6a8a114c8d3d6e04d16b1f5ebc849f3187ca249cf276898"
     },
     {
@@ -929,7 +937,7 @@
       "stand": "2011-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-215_1-2003_11_17-2005_01_01-071.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "e8a933643b24352c7ca5388eb6c3fc962b8cac2eb794d11bcc75722493edf765",
+      "fassungsToken": "37db6b4c1b9503bb851f3a1e04097a4c54bf910e241368db7e9ed16f296d760f",
       "sha": "5b17264ee2e3ca2c3da25a054ead05c8bede7dff7a7dc1f455976e879e40a443"
     },
     {
@@ -948,7 +956,7 @@
       "stand": "2011-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-215_1-2003_11_17-2005_01_01-071.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "e8a933643b24352c7ca5388eb6c3fc962b8cac2eb794d11bcc75722493edf765",
+      "fassungsToken": "37db6b4c1b9503bb851f3a1e04097a4c54bf910e241368db7e9ed16f296d760f",
       "sha": "efcda5fe230d672857dd844145c286c9fc2e6bace7e260be02219d5ce27ff1f4"
     },
     {
@@ -975,7 +983,7 @@
       "stand": "2011-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-215_1-2003_11_17-2005_01_01-071.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "e8a933643b24352c7ca5388eb6c3fc962b8cac2eb794d11bcc75722493edf765",
+      "fassungsToken": "37db6b4c1b9503bb851f3a1e04097a4c54bf910e241368db7e9ed16f296d760f",
       "sha": "f1135b8b9706417a63bff7acd9ef8fa4705f0dd6e70f62c182f1ca955e98e33b"
     },
     {
@@ -994,7 +1002,7 @@
       "stand": "2011-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-215_1-2003_11_17-2005_01_01-071.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "e8a933643b24352c7ca5388eb6c3fc962b8cac2eb794d11bcc75722493edf765",
+      "fassungsToken": "37db6b4c1b9503bb851f3a1e04097a4c54bf910e241368db7e9ed16f296d760f",
       "sha": "c07417db623527928fb170fefe651dcd4f22dc123ed68128915aca9ddbaeaa0e"
     },
     {
@@ -1027,7 +1035,7 @@
       "stand": "2011-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-215_1-2003_11_17-2005_01_01-071.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "e8a933643b24352c7ca5388eb6c3fc962b8cac2eb794d11bcc75722493edf765",
+      "fassungsToken": "37db6b4c1b9503bb851f3a1e04097a4c54bf910e241368db7e9ed16f296d760f",
       "sha": "5d4f9fcef6fbb282a07b5a9f80a009be3a637e452f5502afc8e8f6c64bbd7547"
     },
     {
@@ -1050,7 +1058,7 @@
       "stand": "2011-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-215_1-2003_11_17-2005_01_01-071.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "e8a933643b24352c7ca5388eb6c3fc962b8cac2eb794d11bcc75722493edf765",
+      "fassungsToken": "37db6b4c1b9503bb851f3a1e04097a4c54bf910e241368db7e9ed16f296d760f",
       "sha": "41e973de6b074ae07a9b5898211f3914034bd3ebbe484e4f139f1f16215a9520"
     },
     {
@@ -1069,7 +1077,7 @@
       "stand": "2011-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-215_1-2003_11_17-2005_01_01-071.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "e8a933643b24352c7ca5388eb6c3fc962b8cac2eb794d11bcc75722493edf765",
+      "fassungsToken": "37db6b4c1b9503bb851f3a1e04097a4c54bf910e241368db7e9ed16f296d760f",
       "sha": "99cf5b102f422722a1a85b2b28a8cea74bf939926091c724e934561666e6d7f4"
     },
     {
@@ -1092,7 +1100,7 @@
       "stand": "2011-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-215_1-2003_11_17-2005_01_01-071.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "e8a933643b24352c7ca5388eb6c3fc962b8cac2eb794d11bcc75722493edf765",
+      "fassungsToken": "37db6b4c1b9503bb851f3a1e04097a4c54bf910e241368db7e9ed16f296d760f",
       "sha": "6233c0ace74fa3939ba3086794450d56c0d7847949bbbd6226eb933af6a1e910"
     },
     {
@@ -1121,7 +1129,7 @@
       "stand": "2011-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-215_1-2003_11_17-2005_01_01-071.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "e8a933643b24352c7ca5388eb6c3fc962b8cac2eb794d11bcc75722493edf765",
+      "fassungsToken": "37db6b4c1b9503bb851f3a1e04097a4c54bf910e241368db7e9ed16f296d760f",
       "sha": "25bacbfa6ca3e582a3e363ae8781a458d03955e94c16de00b5d63fc8f14d7b26"
     },
     {
@@ -1140,7 +1148,7 @@
       "stand": "2011-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-215_1-2003_11_17-2005_01_01-071.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "e8a933643b24352c7ca5388eb6c3fc962b8cac2eb794d11bcc75722493edf765",
+      "fassungsToken": "37db6b4c1b9503bb851f3a1e04097a4c54bf910e241368db7e9ed16f296d760f",
       "sha": "f90375e719a5c0fee6cdfe292eee512e54c7094e820edead7ead3ef4d87bf87a"
     },
     {
@@ -1167,7 +1175,7 @@
       "stand": "2011-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-215_1-2003_11_17-2005_01_01-071.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "e8a933643b24352c7ca5388eb6c3fc962b8cac2eb794d11bcc75722493edf765",
+      "fassungsToken": "37db6b4c1b9503bb851f3a1e04097a4c54bf910e241368db7e9ed16f296d760f",
       "sha": "d829fb03bc0c0daaef5fbb76a7995b8b7954782b454bd83673a3d9613413f662"
     },
     {
@@ -1186,7 +1194,7 @@
       "stand": "2011-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-215_1-2003_11_17-2005_01_01-071.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "e8a933643b24352c7ca5388eb6c3fc962b8cac2eb794d11bcc75722493edf765",
+      "fassungsToken": "37db6b4c1b9503bb851f3a1e04097a4c54bf910e241368db7e9ed16f296d760f",
       "sha": "9b1e14ddee931243a6291a50bcab7dbbfab88a2e314a3719834c14383f00ff84"
     },
     {
@@ -1209,7 +1217,7 @@
       "stand": "2011-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-215_1-2003_11_17-2005_01_01-071.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "e8a933643b24352c7ca5388eb6c3fc962b8cac2eb794d11bcc75722493edf765",
+      "fassungsToken": "37db6b4c1b9503bb851f3a1e04097a4c54bf910e241368db7e9ed16f296d760f",
       "sha": "d3ba6bdd5ac0ac839971be43f0d5547944449530b2181e3bc0f6f8a8ed0612b1"
     },
     {
@@ -1270,7 +1278,7 @@
       "stand": "2011-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-215_1-2003_11_17-2005_01_01-071.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "e8a933643b24352c7ca5388eb6c3fc962b8cac2eb794d11bcc75722493edf765",
+      "fassungsToken": "37db6b4c1b9503bb851f3a1e04097a4c54bf910e241368db7e9ed16f296d760f",
       "sha": "c35992339c01d909ae3ecfded234c853a073737619e1f096d65e307dd8eedba0"
     },
     {
@@ -1289,7 +1297,7 @@
       "stand": "2011-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-215_1-2003_11_17-2005_01_01-071.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "e8a933643b24352c7ca5388eb6c3fc962b8cac2eb794d11bcc75722493edf765",
+      "fassungsToken": "37db6b4c1b9503bb851f3a1e04097a4c54bf910e241368db7e9ed16f296d760f",
       "sha": "69963a882c96468c937558de5e367d86ce7ff7f6cbcc7f963a479c7ca2c314ae"
     }
   ]
