@@ -366,6 +366,62 @@ camelCase-Regel zerschnitt dagegen 60+ amtliche Abkürzungen («StGB» → «St 
 13 → 0, Klebe-Abkürzungen 83 → 0, fehlende Leerzeichen 826 → 0,
 Apparat-Blöcke 43 → 0, leere Tabellen-Einleitungen 3 → 0.
 
+**Stufe 2b — Fix-Runde 2 nach der ZWEITEN adversarialen Gegenprüfung,
+31.8.2026.** Die Gegenprüfung hat den Stand der Fix-Runde 1 erneut **widerlegt**.
+Die Befundnummern B-1…B-6 dieser zweiten Runde sind **eine eigene Zählung** und
+decken sich nicht mit der Tabelle oben (Runde 1) — die Runde-1-Zeilen bleiben
+unverändert stehen, sie waren zu ihrem Datum richtig.
+
+| Befund (Runde 2) | Wurzel (an der Roh-Geometrie aller 24 PDF gemessen) | Behoben |
+|---|---|---|
+| **B-1** Absätze mit lat. Suffix fehlten als eigene Absätze (0 im ganzen Korpus) | pdfjs liefert «2bis» als EIN Fragment (x 68.0, h 5.70, eigene y-Gruppe); das Muster `/^\d+$/` verwarf es als Nicht-Ziffer und schob es in die Trägerzeile — die Absatznummer landete als nackter Text im Vorgänger-Absatz | ja — `ABSATZ_HOCHZAHL` (Ziffer + optionaler Suffix) an beiden Entscheidstellen; **6 Blöcke**: ZH-101 Art. 104 Abs. 2bis, ZH-631.1 § 7 Abs. 1bis + 1ter, §§ 30/35/47 Abs. 2bis |
+| **B-2** Sammel-Aufhebungsköpfe «§§ A–B.» nicht erkannt | `PARAGRAF_KOPF` schliesst «§§» ausdrücklich aus → die Zeile war gewöhnlicher Text und klebte am Vorgänger-§; die genannten §§ fehlten ersatzlos | ja — GEOMETRISCH über den hängenden Kopf-Einzug von **14.2 pt** (gemessen an 2376 Kopfzeilen: p05 = med = p95 = 14.2; die textgleiche Nicht-Kopf-Zeile ZH-331 § 17 liegt bei 0). 38 Köpfe, **215 Platzhalter**; ZH-230 172 → 313 Einträge |
+| **B-3** Gliederungstitel im Normtext (103 Blöcke, 10 Erlasse) | «2. Kapitel: Grundrechte» steht in Body-Schrift ohne Einzug — vom Schriftbild nicht von Fliesstext trennbar | ja — `GLIEDERUNG_ZAEHLEND` (Zähler + Gliederungswort + **Doppelpunkt**); am Gesamtbestand erhoben, 0 Fehltreffer gegen die Fliesstext-Vorkommen derselben Wörter |
+| **B-4** Tor teilte die blinden Flecken (COMMON MODE) | die Zweitlesung kannte weder «§§» noch den lat. Suffix, prüfte keine Gliederungstitel und keine Werte → Prüfungen 1/2 trügerisch grün | ja — vier neue Prüfungen, jede einmal rot gezeigt (s. u.) |
+| **B-5** erste Staffelzeile ohne Spaltentrennung | pdfjs liefert «000 25% des Streitwertes …» als EIN Fragment über die am Spaltenkopf **gemessene** Grenze hinweg | ja — `teileAmSpaltenrand` trennt an der Wortgrenze, die der Spaltengrenze am nächsten liegt (gemessener Abstand 3.5 pt, Toleranz 12 pt). Wirkt auch auf ZH-215.3 § 4 |
+| **B-6** Auslassung unsichtbar | Übergangs-/Schlussapparat und PBG-Anhang werden bewusst weggelassen — das stand nur im Code-Kommentar | ja — `public/normtext/kanton-luecken.json`, 15 Erlasse mit Klartext-Hinweis inkl. Zeilenanteil (ZH-700.1: 486 von 4327 = 11 %) |
+
+**Tor-Härtung (B-4) — vier Prüfungen, jede einmal ROT gezeigt:**
+4. §§-Sammelköpfe · Rot: Mutation «§ 58 aus ZH-230 entfernt» → «1 § aus einem
+   «§§ …»-Sammelkopf fehlt im Snapshot: 58».
+5. Suffix-Absätze je § · Rot: Mutation «ZH-101 Art. 104 absatz 2bis → 3» →
+   «1 Absatz mit lat. Suffix im PDF, aber nicht im Snapshot: 104/2bis».
+6. Gliederungstitel im Normtext (läuft offline) · Rot am ungeheilten Korpus:
+   **14 von 24 Erlassen, 132 Blöcke**.
+7. Werte-Wächter (jede Ziffernfolge im Snapshot muss im PDF stehen, **inkl.
+   `mehrspaltig`-Zellen**) · Rot: Mutation «ZH-211.11 § 4 Grundgebühr
+   1 050 → 1 060» → «§ 4 (Tabelle): «060»». Genau die Klasse, die die
+   Mutationsprobe der Gegenprüfung noch durchliess.
+
+Die Zweitlesung bleibt unabhängig (§6.7 lit. d): sie erkennt die Sammelköpfe
+**nur an der Textgestalt**, nicht am Kopf-Einzug, und rechnet Bereiche
+konservativer aus als der Adapter (nur reine Zahlenspannen). Die Tor-Doku ist
+entsprechend ehrlich gestellt — sie versprach «verschwundene aufgehobene §§»,
+gefangen wurden aber nur die Einzel-Köpfe.
+
+**Rückbau/Schlankheit:** `adapter-zh-pdf.ts` stand an der §6.6-Baseline
+(1421 Z.); die Sammelkopf-Erkennung und -Expansion ist darum als eigenes Modul
+`scripts/normtext/zh-sammelkopf.ts` entstanden, statt die Baseline mitwachsen zu
+lassen.
+
+**Bilanz Fix-Runde 2:** 24 Erlasse, 2573 → **2788 Einträge** (215 neu, 0
+entfallen, 163 inhaltlich geändert); Suffix-Absätze 0 → 6, Gliederungs-Lecks
+103 → 0, Sammelkopf-Kontaminationen 26 → 0, Tarif-Staffelzeilen ohne
+Spaltentrennung 2 → 0. `golden/lexmetrik-golden.json` unverändert,
+`src/data/tarif/**` unberührt. `check:zh-vollstaendigkeit` 24/24 grün,
+`check:normtext-netz` ZH-Drift 0.
+
+**Offen nach Runde 2 (bewusst nicht gebaut):**
+- Drei Sammel-Bereiche sind nicht lückenlos ableitbar («§§ 74–80 d.»,
+  «§§ 39–40 a.», «§§ 137bis–144.»). Erfasst ist das sicher Enthaltene; ob
+  dazwischen §§ mit Buchstaben-Suffix stehen, sagt der Kopf nicht und wird
+  NICHT geraten (§8). Die Auslassung steht im Lücken-Index.
+- Der §8-Lücken-Index liegt als eigene Datei neben den Snapshots, weil die
+  Snapshot-JSON byte-genaue Projektionen aus `daten/lexmetrik.db` sind und ein
+  Erlass-Feld eine Schema-Änderung in `scripts/datenhaltung/**` verlangte (dort
+  wird parallel gebaut). Überführung in die DB-Projektion = Nachzug.
+- Die UI weist die Lücken noch nicht aus — der Index macht es nur MÖGLICH.
+
 **Nach ZH-4d verschoben (bewusst NICHT in dieser Runde gebaut):**
 - **B-8 / Gliederungs-Zuordnung:** Überschriften zwischen zwei §§ hängen am
   letzten Block des VORANGEHENDEN § (129 Blöcke). Teilentlastung in dieser
@@ -380,6 +436,15 @@ Apparat-Blöcke 43 → 0, leere Tabellen-Einleitungen 3 → 0.
   Kontenrahmen in Pseudo-Paragraphen. Der B-6-Fix hat das nicht nebenbei gelöst.
 - **Gebührentabellen in 323.1 / 212.812** bleiben Fliesstext (der
   `mehrspaltig`-Zweig ist auf ZH-211.11/215.3 §3/§4 verdrahtet).
+
+*Ergänzung 31.8.2026, Fix-Runde 2 (die vier Punkte oben bleiben im Wortlaut —
+sie beschreiben den Stand nach Runde 1):* Von **B-8** ist seit Runde 2 auch die
+ZÄHLENDE Gliederungsform erledigt («2. Kapitel:», «1. Abschnitt:», «Erster
+Teil:» — 103 Blöcke); offen bleibt die Marginalien-/Randnoten-Ebene, die
+weiterhin den Tag-Leser-Schritt braucht. Die Auslassung der **Übergangs- und
+Schlussbestimmungen** und des **PBG-Anhangs** ist seit Runde 2 im Artefakt
+ausgewiesen (`public/normtext/kanton-luecken.json`) — die Aufnahme als eigener
+Eintragstyp bleibt ZH-4d.
 
 **Stufe 3 — Ausbau in Tranchen** (Richtung 944, Katalog-Generator über den
 JSON-Endpunkt): erst nach gelandeter Stufe 2 und sauberer Stichproben-Abnahme;
