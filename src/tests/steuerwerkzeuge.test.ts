@@ -1,4 +1,4 @@
-// src/tests/steuerwerkzeuge.test.ts — die vier Nicht-Plan-Steuerwerkzeuge. scripts/fahrplan-slice · scripts/dispatch(-agents) · scripts/check-testtreue-kern · scripts/ci/diff-klassieren.
+// src/tests/steuerwerkzeuge.test.ts — die vier Nicht-Plan-Steuerwerkzeuge. scripts/fahrplan-slice · scripts/dispatch(-agents) · scripts/testtreue-kern · scripts/ci/diff-klassieren.
 // Zusammengelegt 31.8.2026 (QS-EFFIZIENZ, Ent-Regulierung Runde 2 Batch B; Beleg:
 // bibliothek/betrieb/testapparat-fang-historie-2026-08-31.md §3 Kandidat 1). Die
 // Fälle stehen WÖRTLICH unter dem Banner ihrer Herkunftsdatei; gestrichen wurde
@@ -10,7 +10,7 @@ import {
   findeVerstoesse,
   istRefactorCommit,
   istTestDatei,
-} from '../../scripts/check-testtreue-kern';
+} from '../../scripts/testtreue-kern';
 import { klassifiziereDateien, klassifiziereDiff } from '../../scripts/ci/diff-klassieren';
 import {
   dispatchText,

@@ -499,6 +499,15 @@ jobs:
       - name: UI-Normzitate (Korpus-Abgleich)
         if: needs.diff.outputs.art != 'doku'
         run: npm run check:ui-normzitate
+      # Verweis-Inventar (V-1, W2·20-VERWEIS-SCHAERFE, 31.8.2026): wie viele
+      # Verweis-Stellen der Normtext-Korpus trägt und wie der Leser sie auflöst
+      # (SELF/FREMD/TEXT je Formklasse), gegen eine committete Basislinie.
+      # Offline, ~1 s über alle 1458 Snapshots. Muss VOR den Merge: die Guards
+      # der Auflösung sind im Tor TRANSKRIBIERT, und nur hier fällt auf, wenn
+      # jemand `NormText.tsx` ändert, ohne die Messung nachzuziehen (SHA-Anker).
+      - name: Verweis-Inventar (Basislinie)
+        if: needs.diff.outputs.art != 'doku'
+        run: npm run check:verweis-inventar
       - name: Import-Zyklen
         if: needs.diff.outputs.art != 'doku'
         run: npm run check:zyklen
