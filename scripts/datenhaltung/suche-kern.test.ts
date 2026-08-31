@@ -10,7 +10,9 @@
 import { describe, expect, it } from 'vitest';
 import {
   baueFtsSpaltenMatch,
+  BM25_GEWICHTE,
   formeArtikelTreffer,
+  FTS_ARTIKEL_SPALTEN,
   FTS_SPALTEN_HAUPT,
   FTS_SPALTEN_NEBEN,
   SQL_ARTIKEL_TREFFER,
@@ -94,6 +96,38 @@ describe('SQL_ARTIKEL_TREFFER liefert die Spalten, aus denen die Fundstelle geba
     // sehr wohl — der Alias muss exakt so heissen.
     expect(SQL_ARTIKEL_TREFFER).toMatch(/\be\.ebene\s+AS\s+ebene\b/);
     expect(SQL_ARTIKEL_TREFFER).toMatch(/\be\.kanton\s+AS\s+kanton\b/);
+  });
+});
+
+// ─── F5 (Gegenprüfung 31.8.2026): Spalten und Gewichte gehören zusammen ─────────────
+describe('FTS_ARTIKEL_SPALTEN und BM25_GEWICHTE: eine Zahl je Spalte', () => {
+  it('gleich viele Gewichte wie Spalten', () => {
+    // Die Doku nennt die Reihenfolge «tragend» — bewacht war das nirgends. bm25()
+    // ordnet die Gewichte POSITIONELL zu: eine Spalte mehr als Gewichte, und SQLite
+    // rechnet stillschweigend mit 0 für das letzte Feld; ein Gewicht zu viel wirft
+    // erst zur Laufzeit. Beides fiele sonst frühestens in der Trefferqualität auf.
+    expect(BM25_GEWICHTE.length).toBe(FTS_ARTIKEL_SPALTEN.length);
+  });
+
+  it('die Stufen-Spalten sind echte Index-Spalten (sonst: no such column)', () => {
+    // Ein Tippfehler in FTS_SPALTEN_HAUPT/-NEBEN erzeugt keinen Compile-Fehler,
+    // sondern zur Laufzeit «no such column» — am Edge also 502 auf jede Query.
+    for (const s of [...FTS_SPALTEN_HAUPT, ...FTS_SPALTEN_NEBEN]) {
+      expect(FTS_ARTIKEL_SPALTEN as readonly string[], `«${s}» ist keine FTS-Spalte`).toContain(s);
+    }
+  });
+
+  it('die Gewichte fallen in der dokumentierten Rangfolge t > m > n > g > tb > f', () => {
+    // Nicht die konkreten Zahlen sind die Aussage, sondern die ORDNUNG: Volltext vor
+    // primärer Marginalie, diese vor der nachrangigen, Tabelle und Fussnote zuletzt
+    // (recall-only). Wer die Zahlen justiert, darf das — wer die Ordnung dreht, muss
+    // hier vorbei und die fachliche Begründung in suche-kern.ts mitziehen.
+    const [t, m, n, g, tb, f] = BM25_GEWICHTE;
+    expect(t).toBeGreaterThan(m);
+    expect(m).toBeGreaterThan(g);
+    expect(g).toBeGreaterThan(n);
+    expect(n).toBeGreaterThan(tb);
+    expect(tb).toBeGreaterThan(f);
   });
 });
 

@@ -5,13 +5,20 @@
 //
 // Der Test läuft VOLLSTÄNDIG LOKAL (node:sqlite, in-memory). Er braucht kein Turso, kein
 // Netz und kein Token — genau darum kann er im normalen Test-Lauf mitfahren.
+//
+// ── F5 (Gegenprüfung 31.8.2026): keine Zweitkopien mehr in diesem Test ──────────────
+// Tokenizer, DDLs, Spaltenliste und bm25-Gewichte standen hier als eigene Literale.
+// Das machte den Test ZAHNLOS für genau die Drift, die er bewachen soll: wer
+// FTS_ARTIKEL_SPALTEN umsortiert oder BM25_GEWICHTE verschiebt, prüfte danach
+// weiterhin die ALTE Form — grün, während der Produktionspfad die neue fährt. Alles
+// kommt jetzt aus der Produktionsquelle (fts.ts / suche-kern.ts, §5).
 import { describe, it, expect } from 'vitest';
 import { DatabaseSync } from 'node:sqlite';
 import { leseFtsSchatten } from './turso-fts-index';
+import { TOKENIZER, ddlFtsArtikel, ddlFtsEntscheide } from './fts';
+import { BM25_GEWICHTE, FTS_ARTIKEL_SPALTEN } from './suche-kern';
 
-const TOKENIZER = 'unicode61 remove_diacritics 2';
-const STANDALONE = (t: string) =>
-  `CREATE VIRTUAL TABLE ${t} USING fts5(id UNINDEXED, titel, regeste, text, quelle_url UNINDEXED, tokenize='${TOKENIZER}')`;
+const STANDALONE = (t: string) => ddlFtsEntscheide(t);
 
 /** Genug Zeilen, dass FTS5 mehrere Segmente anlegt und mergt — mit einem einzigen Segment
  *  wäre der Test blind für genau den Fall, der den Index kompliziert macht. */
@@ -160,12 +167,16 @@ describe('FTS5-Shadow-Transport (turso-sync überträgt den fertigen Index statt
     // Geprüft wird nicht nur «findet etwas», sondern die bm25-RANGFOLGE UNTER
     // FELDGEWICHTEN: genau daran hängt seit K1 die Trefferqualität, und genau das
     // würde eine verschobene Spaltenzuordnung still verfälschen.
-    const spalten = ['text', 'marginalie', 'marginalie_n', 'gliederung', 'tabelle', 'fussnote'];
-    const ddl = `CREATE VIRTUAL TABLE f USING fts5(${spalten.join(', ')}, content='', tokenize='${TOKENIZER}')`;
+    // Spalten und DDL kommen aus der PRODUKTIONSQUELLE (F5): stünden sie hier als
+    // eigenes Literal, prüfte der Test nach einer Umsortierung von
+    // FTS_ARTIKEL_SPALTEN weiterhin die alte Reihenfolge — und bliebe grün, während
+    // der Sync die neue überträgt. Die Reihenfolge ist tragend (bm25-Gewichte).
+    const spalten = [...FTS_ARTIKEL_SPALTEN];
+    const ddl = ddlFtsArtikel('f');
     const original = new DatabaseSync(':memory:');
     original.exec(ddl);
     const ins = original.prepare(
-      `INSERT INTO f(rowid, ${spalten.join(', ')}) VALUES (?, ?, ?, ?, ?, ?, ?)`,
+      `INSERT INTO f(rowid, ${spalten.join(', ')}) VALUES (${['?', ...spalten.map(() => '?')].join(', ')})`,
     );
     for (let i = 1; i <= 400; i++) {
       ins.run(
@@ -184,8 +195,10 @@ describe('FTS5-Shadow-Transport (turso-sync überträgt den fertigen Index statt
       JSON.stringify(
         db
           .prepare(
+            // Gewichte ebenfalls aus der Produktionsquelle (F5) — eine Zweitkopie
+            // hätte die Rangfolge gegen eine Gewichtung geprüft, die nirgends mehr gilt.
             `SELECT rowid FROM f WHERE f MATCH '"${wort}"'
-             ORDER BY bm25(f, 10, 8, 4, 5, 1, 0.5), rowid LIMIT 15`,
+             ORDER BY bm25(f, ${BM25_GEWICHTE.join(', ')}), rowid LIMIT 15`,
           )
           .all(),
       );
