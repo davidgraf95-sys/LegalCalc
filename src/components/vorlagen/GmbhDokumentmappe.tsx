@@ -1,5 +1,7 @@
 import { useMemo, useRef, useState } from 'react';
 import { NormText } from '../NormText';
+import { BetragsFeld } from '../BetragsFeld';
+import { DatumsFeld } from '../DatumsFeld';
 import { Field, inputCls } from './ui';
 import { MappenAnsicht, MappenGates, NotariatsHinweis } from './Dokumentmappe';
 import type { PdfBanner } from '../../lib/vorlagen/banner';
@@ -129,13 +131,18 @@ export function GmbhDokumentmappe({ weichen, docxErlaubt }: {
       </label>
       <div className={pk('grid grid-cols-1 sm:grid-cols-3 gap-4', 'grid grid-cols-1 @xl/pane:grid-cols-3 gap-4')}>
         <Field label="Stammkapital (CHF, mind. 20'000)">
-          <input className={inputCls} inputMode="numeric" placeholder="Tausender mit Apostroph, z. B. 20'000" value={stammkapital} onChange={(e) => setStammkapital(e.target.value)} />
+          {/* R2-E/F1-7: CHF-Beträge tragen das Haus-BetragsFeld (Tausender-
+              Apostroph beim Tippen). Nach aussen fliesst der bereinigte Rohwert
+              — `zahl()`/`fmtCHF()` normalisieren ohnehin, der Vertrag zum
+              Schema bleibt also unverändert. Der Apostroph-Hinweis im
+              Platzhalter entfällt, weil das Feld ihn selbst setzt. */}
+          <BetragsFeld className={inputCls} placeholder="z. B. 20'000" value={stammkapital} onChange={setStammkapital} />
         </Field>
         <Field label="Anzahl Stammanteile">
           <input className={inputCls} inputMode="numeric" value={anzahl} onChange={(e) => setAnzahl(e.target.value)} />
         </Field>
         <Field label="Nennwert je Anteil (CHF, über null)">
-          <input className={inputCls} inputMode="numeric" placeholder="z. B. 1'000" value={nennwert} onChange={(e) => setNennwert(e.target.value)} />
+          <BetragsFeld className={inputCls} placeholder="z. B. 1'000" value={nennwert} onChange={setNennwert} />
         </Field>
       </div>
 
@@ -279,7 +286,9 @@ export function GmbhDokumentmappe({ weichen, docxErlaubt }: {
           <input className={inputCls} value={ort} onChange={(e) => setOrt(e.target.value)} />
         </Field>
         <Field label="Datum">
-          <input type="date" className={inputCls} value={datum} onChange={(e) => setDatum(e.target.value)} />
+          {/* R2-E/F1-1: DatumsFeld statt nativem type="date" (TT.MM.JJJJ statt
+              Browser-Locale); Wert bleibt ISO, das Schema sieht dasselbe. */}
+          <DatumsFeld value={datum} onChange={setDatum} className={inputCls} />
         </Field>
       </div>
 
@@ -288,7 +297,7 @@ export function GmbhDokumentmappe({ weichen, docxErlaubt }: {
         <div className={pk('grid grid-cols-1 sm:grid-cols-2 gap-4', 'grid grid-cols-1 @lg/pane:grid-cols-2 gap-4')}>
           {k.includes('nachschuss') && (
             <Field label="Nachschuss je Stammanteil (CHF, max. 2 × Nennwert)">
-              <input className={inputCls} inputMode="numeric" value={nachschussBetrag} onChange={(e) => setNachschussBetrag(e.target.value)} />
+              <BetragsFeld className={inputCls} value={nachschussBetrag} onChange={setNachschussBetrag} />
             </Field>
           )}
           {k.includes('konkurrenzverbot') && (

@@ -1,4 +1,4 @@
-import { inputCls } from '../vorlagen/ui';
+import { Field, inputCls } from '../vorlagen/ui';
 import { NormText } from '../NormText';
 import { ErgebnisBlock } from '../ErgebnisBlock';
 import { PflichtDisclaimer } from '../PflichtDisclaimer';
@@ -127,7 +127,12 @@ export function KombinierteAnsicht() {
     <div className="space-y-6">
       <PflichtDisclaimer
         kurz="Drei Teilberechnungen (Lohnfortzahlung · Kündigungsfrist · Sperrfristen) mit gemeinsamen Eingaben; Stichtage je Modul verschieden." />
-      <div className="lc-panel p-4">
+      {/* R2-E/F1-8: neutrale Hinweisbox = `lc-notice` (R11), nicht `lc-panel`.
+          `lc-panel` ist der Behälter für Gruppen von Bedienelementen (unten der
+          Sperrereignis-Repeater), `lc-notice` die Hinweis-Tonalität — und
+          weiter unten trägt genau diese Datei schon zwei `lc-notice`-Boxen.
+          Wortlaut unverändert. */}
+      <div className="lc-notice">
         <p className="text-body-s text-ink-600">
           Kombinierte Ansicht: Alle drei Teilberechnungen (A/B/C) mit gemeinsamen Eingaben.
           Stichtage sind je Modul unterschiedlich – details im Rechenweg.
@@ -136,44 +141,42 @@ export function KombinierteAnsicht() {
 
       <div className={pk('grid grid-cols-1 sm:grid-cols-3 gap-4', 'grid grid-cols-1 @xl/pane:grid-cols-3 gap-4')}>
         <div className={pk('sm:col-span-3 grid grid-cols-1 sm:grid-cols-3 gap-4', '@xl/pane:col-span-3 grid grid-cols-1 @xl/pane:grid-cols-3 gap-4')}>
-          <div className="space-y-1">
-            <label className="block text-body-s font-medium text-ink-700">Vertragsbeginn</label>
+          {/* R2-E/F1-2: dieselbe `Field`-Anatomie wie in den Schwester-Formularen
+              statt handgesetzter, unverknüpfter <label>-Elemente. Die Optik ist
+              identisch (Field rendert genau diese Klassen); NEU ist die
+              programmatische Verknüpfung — beim zusammengesetzten DatumsFeld
+              per aria-labelledby, bei den nativen Controls per htmlFor. */}
+          <Field label="Vertragsbeginn">
             <DatumsFeld value={form.vertragsbeginn} onChange={(v) => set('vertragsbeginn', v)} className={inputCls} />
-          </div>
-          <div className="space-y-1">
-            <label className="block text-body-s font-medium text-ink-700">Zugang Kündigung <span className="text-ink-500 font-normal">(Stichtag B/C)</span></label>
+          </Field>
+          <Field label={<>Zugang Kündigung <span className="text-ink-500 font-normal">(Stichtag B/C)</span></>}>
             <DatumsFeld value={form.zugangKuendigung} onChange={(v) => set('zugangKuendigung', v)} className={inputCls} />
-          </div>
-          <div className="space-y-1">
-            <label className="block text-body-s font-medium text-ink-700">Beginn Verhinderung <span className="text-ink-500 font-normal">(Stichtag A)</span></label>
+          </Field>
+          <Field label={<>Beginn Verhinderung <span className="text-ink-500 font-normal">(Stichtag A)</span></>}>
             <DatumsFeld value={form.verhinderungBeginn ?? ''} onChange={(v) => set('verhinderungBeginn', v)} className={inputCls} />
-          </div>
+          </Field>
         </div>
 
-        <div className="space-y-1">
-          <label className="block text-body-s font-medium text-ink-700">Kündigende Partei</label>
+        <Field label="Kündigende Partei">
           <select value={form.kuendigendePartei} onChange={(e) => set('kuendigendePartei', e.target.value as 'arbeitgeber' | 'arbeitnehmer')} className={inputCls}>
             <option value="arbeitgeber">Arbeitgeber</option>
             <option value="arbeitnehmer">Arbeitnehmer</option>
           </select>
-        </div>
+        </Field>
 
-        <div className="space-y-1">
-          <label className="block text-body-s font-medium text-ink-700">Kanton</label>
+        <Field label="Kanton">
           <select value={form.kanton ?? getStandardKanton()} onChange={(e) => set('kanton', e.target.value as Kanton)} className={inputCls}>
             {KANTONE.map((k) => <option key={k} value={k}>{k}</option>)}
           </select>
-        </div>
+        </Field>
 
-        <div className="space-y-1">
-          <label className="block text-body-s font-medium text-ink-700">AUF % (Lohnfortzahlung)</label>
+        <Field label="AUF % (Lohnfortzahlung)">
           <input type="number" inputMode="decimal" min={1} max={100} value={form.arbeitsunfaehigkeitProzent ?? 100} onChange={(e) => set('arbeitsunfaehigkeitProzent', Number(e.target.value))} className={inputCls} />
-        </div>
+        </Field>
 
-        <div className="space-y-1">
-          <label className="block text-body-s font-medium text-ink-700">Probezeit (Monate)</label>
+        <Field label="Probezeit (Monate)">
           <input type="number" inputMode="decimal" min={0} max={3} value={form.probezeitMonate} onChange={(e) => set('probezeitMonate', Number(e.target.value))} className={inputCls} />
-        </div>
+        </Field>
       </div>
 
       {/* Sperrereignisse */}

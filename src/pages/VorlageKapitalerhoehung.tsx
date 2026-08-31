@@ -2,6 +2,8 @@ import { useMemo, useRef, useState } from 'react';
 import { NormText } from '../components/NormText';
 import { Link } from 'react-router-dom';
 import { ErgebnisSprung, Field, GruppenTitel, inputCls } from '../components/vorlagen/ui';
+import { BetragsFeld } from '../components/BetragsFeld';
+import { DatumsFeld } from '../components/DatumsFeld';
 import { NormChip } from '../components/vorlagen/NormChip';
 import { MappenAnsicht, MappenGates, NotariatsHinweis, HrAmtHinweis } from '../components/vorlagen/Dokumentmappe';
 import type { PdfBanner } from '../lib/vorlagen/banner';
@@ -162,19 +164,23 @@ export function VorlageKapitalerhoehung() {
         </div>
         <div className={pk('grid grid-cols-1 sm:grid-cols-3 gap-4', 'grid grid-cols-1 @xl/pane:grid-cols-3 gap-4')}>
           <Field label={`Bisheriges ${ag ? 'Aktienkapital' : 'Stammkapital'} (CHF)`}>
-            <input className={inputCls} inputMode="numeric" placeholder="Tausender mit Apostroph, z. B. 100'000" value={bisher} onChange={(e) => setBisher(e.target.value)} />
+            {/* R2-E/F1-7: CHF-Beträge auf dem Haus-BetragsFeld; der Rohwert-
+                Vertrag zum Schema bleibt unverändert (fmtCHF/zahl normalisieren
+                Apostrophe ohnehin). Der Apostroph-Hinweis entfällt, weil das
+                Feld die Gruppierung selbst setzt. */}
+            <BetragsFeld className={inputCls} placeholder="z. B. 100'000" value={bisher} onChange={setBisher} />
           </Field>
           <Field label={`Bisherige Anzahl ${ag ? 'Aktien' : 'Stammanteile'}`}>
             <input className={inputCls} inputMode="numeric" value={bisherAnzahl} onChange={(e) => setBisherAnzahl(e.target.value)} />
           </Field>
           <Field label="Nennwert (CHF)">
-            <input className={inputCls} inputMode="numeric" value={nennwert} onChange={(e) => setNennwert(e.target.value)} />
+            <BetragsFeld className={inputCls} value={nennwert} onChange={setNennwert} />
           </Field>
           <Field label={`Anzahl NEUE ${ag ? 'Namenaktien' : 'Stammanteile'}`}>
             <input className={inputCls} inputMode="numeric" value={anzahlNeue} onChange={(e) => setAnzahlNeue(e.target.value)} />
           </Field>
           <Field label="Ausgabebetrag je Stück (CHF, ≥ Nennwert; Agio zulässig)">
-            <input className={inputCls} inputMode="numeric" value={ausgabebetrag} onChange={(e) => setAusgabebetrag(e.target.value)} />
+            <BetragsFeld className={inputCls} value={ausgabebetrag} onChange={setAusgabebetrag} />
           </Field>
           <Field label="Statuten-Artikel der Kapitalbestimmung">
             <input className={inputCls} value={statutenArtikel} onChange={(e) => setStatutenArtikel(e.target.value)} placeholder="z. B. 3" />
@@ -185,7 +191,10 @@ export function VorlageKapitalerhoehung() {
             hint={(() => { const v = keVerfallDatum(gvDatum); return v
               ? `Anmeldung spätestens am ${v.split('-').reverse().join('.')} — sonst fällt der Beschluss dahin (früher anmelden; eine Wochenend-/Feiertagsverlängerung ist nicht gesichert).`
               : undefined; })()}>
-            <input type="date" className={inputCls} value={gvDatum} onChange={(e) => setGvDatum(e.target.value)} />
+            {/* R2-E/F1-1: DatumsFeld statt nativem type="date" — der Browser
+                rendert Letzteres in SEINER Locale (US: MM/DD/YYYY), und an
+                diesem Datum hängt die 6-Monats-Verfallfrist. Wert bleibt ISO. */}
+            <DatumsFeld value={gvDatum} onChange={setGvDatum} className={inputCls} />
           </Field>
           <Field label="Kapitalerhöhungsbericht: unterzeichnet durch">
             <input className={inputCls} value={berichtUnterzeichner} onChange={(e) => setBerichtUnterzeichner(e.target.value)} placeholder={ag ? 'VR-Mitglied' : 'Geschäftsführer:in'} />
@@ -274,7 +283,7 @@ export function VorlageKapitalerhoehung() {
             <input className={inputCls} value={ort} onChange={(e) => setOrt(e.target.value)} />
           </Field>
           <Field label="Datum (Unterschriften)">
-            <input type="date" className={inputCls} value={datum} onChange={(e) => setDatum(e.target.value)} />
+            <DatumsFeld value={datum} onChange={setDatum} className={inputCls} />
           </Field>
         </div>
 

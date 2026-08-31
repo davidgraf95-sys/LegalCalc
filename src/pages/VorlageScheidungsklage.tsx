@@ -9,6 +9,7 @@ import { ParteiEditor } from './VorlageKlageVereinfacht';
 import type { PdfBanner } from '../lib/vorlagen/banner';
 import { DatumsFeld } from '../components/DatumsFeld';
 import { Checkbox, Field, inputCls } from '../components/vorlagen/ui';
+import { BetragsFeld } from '../components/BetragsFeld';
 import { SelectionGrid } from '../components/ui/SelectionGrid';
 import { GerichtsWahlBlock } from '../components/vorlagen/GerichtsWahlBlock';
 import { useWizardState } from '../components/vorlagen/useWizardState';
@@ -158,8 +159,8 @@ export function VorlageScheidungsklage() {
           </Field>
           {a.unterhaltEhegatte === 'beziffert' && (
             <Field label="Monatlicher Unterhalt (CHF)" hint="die Höhe ist Ihre eigene Würdigung — LexMetrik rechnet keinen Unterhalt (Ermessensfrage)">
-              <input className={inputCls + ' sm:max-w-[12rem]'} inputMode="decimal" value={a.unterhaltBetrag}
-                onChange={(e) => set('unterhaltBetrag', e.target.value)} placeholder="z. B. 2500" />
+              <BetragsFeld className={inputCls + ' sm:max-w-[12rem]'} value={a.unterhaltBetrag}
+                onChange={(v) => set('unterhaltBetrag', v)} placeholder="z. B. 2'500" />
             </Field>
           )}
           <Checkbox

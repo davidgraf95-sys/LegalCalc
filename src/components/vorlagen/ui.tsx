@@ -2,6 +2,7 @@ import { cloneElement, createContext, isValidElement, useContext, useEffect, use
 import { fedlexLinkFuerArtikel } from '../../lib/fedlex';
 import { NormText } from '../NormText';
 import { usePaneKontext } from '../layout/PaneKontext';
+import { useKopieren } from '../useKopieren';
 import { NormChip } from './NormChip';
 
 // Geteilte UI-Bausteine der Vorlagen-Wizards (Testament, Patientenverfügung, …).
@@ -9,7 +10,11 @@ import { NormChip } from './NormChip';
 export const inputCls = 'lc-input';
 
 export function Field({ label, children, hint, optional }: {
-  label: string; children: React.ReactNode; hint?: string; optional?: boolean;
+  /** Beschriftung. `ReactNode` (R2-E/F1-2), weil einzelne Felder dem Namen eine
+   *  leise Präzisierung nachstellen («Zugang Kündigung (Stichtag B/C)») — die
+   *  gehörte bis dahin zu den Gründen, warum ein Formular am Baustein
+   *  vorbeibaute. Der Normalfall bleibt ein String. */
+  label: React.ReactNode; children: React.ReactNode; hint?: string; optional?: boolean;
 }) {
   // Label↔Control-Verknüpfung (FAHRPLAN-DESIGN 3.6): native Einzel-Controls
   // (input/select/textarea) bekommen automatisch id + htmlFor; zusammengesetzte
@@ -193,6 +198,45 @@ export function FehlerBox({ fehler }: { fehler: string[] }) {
       <p className="text-xs font-semibold text-danger-700 uppercase tracking-wide mb-1">Eingabefehler</p>
       {fehler.map((f, i) => <p key={i} className="text-body-s text-danger-700">• <NormText text={f} /></p>)}
     </div>
+  );
+}
+
+/** Kopier-Knopf — EIN Baustein für alle «… in die Zwischenablage»-Knöpfe
+ *  (R2-E/F1-10). Vorher standen drei Bauformen nebeneinander: `lc-btn-outline
+ *  lc-btn-sm` mit «Absatz kopieren» (BegruendungAbsatz), `lc-btn-outline` mit
+ *  «Text kopieren» (ExportLeiste) und `lc-btn-ghost lc-btn-sm` mit dem nackten
+ *  «Kopieren» (ErgebnisAnzeige) — gleiche Handlung, drei Optiken und zwei
+ *  Beschriftungsgrammatiken.
+ *
+ *  Kanon: `lc-btn-outline lc-btn-sm`, Label «<Gegenstand> kopieren», Erfolg
+ *  «Kopiert ✓». `gegenstand` benennt, WAS kopiert wird (Absatz · Text ·
+ *  Ergebnis) — ein Knopf ohne Gegenstand lässt offen, was in der Zwischenablage
+ *  landet.
+ *
+ *  Die Mechanik ist `useKopieren`: «Kopiert ✓» erscheint erst NACH erfolgreichem
+ *  Schreiben (eine verweigerte Clipboard-Berechtigung darf keinen Erfolg
+ *  vortäuschen, §8). Wo der Zustand schon beim Aufrufer liegt (ExportLeiste
+ *  bekommt ihn aus `useVorlage`), werden `kopiert`/`onKopieren` durchgereicht —
+ *  dann steuert der Aufrufer, die Optik bleibt trotzdem die eine. */
+export function KopierButton({
+  text, gegenstand, className = 'lc-btn-outline lc-btn-sm', disabled, kopiert: kopiertExtern, onKopieren,
+}: {
+  text: string;
+  gegenstand: string;
+  className?: string;
+  disabled?: boolean;
+  /** Gesteuerter Modus (nur zusammen mit `onKopieren`). */
+  kopiert?: boolean;
+  onKopieren?: (text: string) => void;
+}) {
+  const eigen = useKopieren(text);
+  const gesteuert = kopiertExtern !== undefined && onKopieren !== undefined;
+  const kopiert = gesteuert ? kopiertExtern : eigen.kopiert;
+  return (
+    <button type="button" disabled={disabled} className={className}
+      onClick={() => (gesteuert ? onKopieren(text) : eigen.kopieren())}>
+      {kopiert ? 'Kopiert ✓' : `${gegenstand} kopieren`}
+    </button>
   );
 }
 

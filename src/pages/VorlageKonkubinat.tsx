@@ -5,6 +5,7 @@ import {
 import { zahl } from '../lib/vorlagen/datum';
 import type { PdfBanner } from '../lib/vorlagen/banner';
 import { Checkbox, Field, inputCls } from '../components/vorlagen/ui';
+import { BetragsFeld } from '../components/BetragsFeld';
 import { VariantenKopf } from '../components/vorlagen/VariantenKopf';
 import { VorlagenSeite, type SeiteCtx, type VorlagenSeitenConfig } from '../components/vorlagen/VorlagenSeite';
 
@@ -82,10 +83,10 @@ function eingabeInhalt({ a, set }: SeiteCtx<KkAntworten>, schritt: number) {
         {a.kostenschluessel === 'fix' && (
           <div className="grid grid-cols-2 gap-3">
             <Field label="Beitrag Partner 1 (CHF/Monat)">
-              <input className={inputCls} inputMode="decimal" value={a.fix1CHF} onChange={(e) => set('fix1CHF', e.target.value)} placeholder="z. B. 1500.00" />
+              <BetragsFeld className={inputCls} value={a.fix1CHF} onChange={(v) => set('fix1CHF', v)} placeholder="z. B. 1'500.00" />
             </Field>
             <Field label="Beitrag Partner 2 (CHF/Monat)">
-              <input className={inputCls} inputMode="decimal" value={a.fix2CHF} onChange={(e) => set('fix2CHF', e.target.value)} placeholder="z. B. 1200.00" />
+              <BetragsFeld className={inputCls} value={a.fix2CHF} onChange={(v) => set('fix2CHF', v)} placeholder="z. B. 1'200.00" />
             </Field>
           </div>
         )}

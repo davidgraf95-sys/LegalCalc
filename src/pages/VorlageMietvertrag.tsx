@@ -143,7 +143,7 @@ export function VorlageMietvertrag() {
                   <DatumsFeld value={a.hmDatum ?? ''} onChange={(v) => set('hmDatum', v || undefined)} className={inputCls} />
                 </Field>
                 <Field label="Hauptmietzins netto (CHF/Monat)" hint="Vergleichsgrösse für den Missbrauchs-Check (Art. 262 Abs. 2 lit. b)">
-                  <input className={inputCls + ' num'} inputMode="decimal" value={a.hmMietzinsCHF ?? ''} onChange={(e) => set('hmMietzinsCHF', e.target.value || undefined)} placeholder="z. B. 1500" />
+                  <BetragsFeld className={inputCls + ' num'} value={a.hmMietzinsCHF ?? ''} onChange={(v) => set('hmMietzinsCHF', v || undefined)} placeholder="z. B. 1'500" />
                 </Field>
                 <Field label="Zustimmung des Hauptvermieters" hint="formfrei gültig — beweishalber schriftlich festhalten">
                   <select className={inputCls} value={a.zustimmungStatus ?? 'nicht_angefragt'} onChange={(e) => set('zustimmungStatus', e.target.value as MvAntworten['zustimmungStatus'])}>

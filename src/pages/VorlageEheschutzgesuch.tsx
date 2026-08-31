@@ -8,6 +8,7 @@ import { ParteiEditor } from './VorlageKlageVereinfacht';
 import type { PdfBanner } from '../lib/vorlagen/banner';
 import { DatumsFeld } from '../components/DatumsFeld';
 import { Checkbox, Field, inputCls } from '../components/vorlagen/ui';
+import { BetragsFeld } from '../components/BetragsFeld';
 import { SelectionGrid } from '../components/ui/SelectionGrid';
 import { GerichtsWahlBlock } from '../components/vorlagen/GerichtsWahlBlock';
 import { useWizardState } from '../components/vorlagen/useWizardState';
@@ -164,12 +165,12 @@ export function VorlageEheschutzgesuch() {
               {a.kindesunterhalt === 'beziffert' && (
                 <div className={pk('grid grid-cols-1 sm:grid-cols-2 gap-3', 'grid grid-cols-1 @lg/pane:grid-cols-2 gap-3')}>
                   <Field label="Barunterhalt je Kind (CHF/Monat)">
-                    <input className={inputCls} inputMode="decimal" value={a.barunterhaltBetrag}
-                      onChange={(e) => set('barunterhaltBetrag', e.target.value)} placeholder="z. B. 1200" />
+                    <BetragsFeld className={inputCls} value={a.barunterhaltBetrag}
+                      onChange={(v) => set('barunterhaltBetrag', v)} placeholder="z. B. 1'200" />
                   </Field>
                   <Field label="Betreuungsunterhalt (CHF/Monat)" optional>
-                    <input className={inputCls} inputMode="decimal" value={a.betreuungsunterhaltBetrag}
-                      onChange={(e) => set('betreuungsunterhaltBetrag', e.target.value)} placeholder="z. B. 800" />
+                    <BetragsFeld className={inputCls} value={a.betreuungsunterhaltBetrag}
+                      onChange={(v) => set('betreuungsunterhaltBetrag', v)} placeholder="z. B. 800" />
                   </Field>
                 </div>
               )}
@@ -189,8 +190,8 @@ export function VorlageEheschutzgesuch() {
           </Field>
           {a.ehegattenunterhalt === 'beziffert' && (
             <Field label="Ehegattenunterhalt (CHF/Monat)" hint="die Höhe ist Ihre Würdigung — LexMetrik rechnet keinen Unterhalt">
-              <input className={inputCls + ' sm:max-w-[12rem]'} inputMode="decimal" value={a.ehegattenBetrag}
-                onChange={(e) => set('ehegattenBetrag', e.target.value)} placeholder="z. B. 2500" />
+              <BetragsFeld className={inputCls + ' sm:max-w-[12rem]'} value={a.ehegattenBetrag}
+                onChange={(v) => set('ehegattenBetrag', v)} placeholder="z. B. 2'500" />
             </Field>
           )}
           {a.ehegattenunterhalt !== 'keiner' && (

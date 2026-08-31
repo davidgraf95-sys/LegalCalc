@@ -158,7 +158,7 @@ export function KuendigungSperrForm({ onBeendigung }: {
           />
         </Field>
 
-        <Field label="Abweichende Frist (Monate, optional)" hint="§3.2 schriftlich/GAV; ≥ 1 Monat gilt (auch kürzer)">
+        <Field label="Abweichende Frist (Monate)" optional hint="§3.2 schriftlich/GAV; ≥ 1 Monat gilt (auch kürzer)">
           <input
             type="number" inputMode="decimal" min={0} step={0.5}
             value={form.abweichendeFristMonate ?? ''}
@@ -186,7 +186,7 @@ export function KuendigungSperrForm({ onBeendigung }: {
         )}
 
         {form.kuendigendePartei === 'arbeitgeber' && (
-          <Field label="Urlaub des andern Elternteils (Art. 329g) – nicht bezogene Tage (optional)" hint="Art. 335c Abs. 3 OR (vormals Vaterschaftsurlaub), verlängert die Frist taggenau">
+          <Field label="Urlaub des andern Elternteils (Art. 329g) – nicht bezogene Tage" optional hint="Art. 335c Abs. 3 OR (vormals Vaterschaftsurlaub), verlängert die Frist taggenau">
             <input
               type="number" inputMode="decimal" min={0} step={1}
               value={form.vaterschaftsurlaubResttage ?? ''}

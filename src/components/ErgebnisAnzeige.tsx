@@ -1,11 +1,11 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import type { Berechnungsergebnis, BerechnungsStatus } from '../types/legal';
 import { sansAmp } from './typografie';
 import { RechtsprechungAnker } from './RechtsprechungLink';
 import { NormText } from './NormText';
 // FAHRPLAN-DESIGN 2.6: lokaler NormChip entfernt — NormLink (vorlagen/ui)
 // ist die EINE Fedlex-Chip-Komponente (deckt «bemerkung» jetzt mit ab).
-import { NormLink } from './vorlagen/ui';
+import { KopierButton, NormLink } from './vorlagen/ui';
 
 // Status-Badges (Design-Doc 5.8): gesichert→sage · umstritten/kein Anspruch→warn · nichtig/unzulässig→danger.
 // «verdikt» färbt den Hauptsatz (Design-Review 6.6.2026): ok bleibt neutrale
@@ -79,16 +79,11 @@ export function ErgebnisAnzeige({ titel, ergebnis }: Props) {
   // standardmässig offen (Lazy-Init; Live-Neuberechnungen lassen die manuelle
   // Wahl des Nutzers unangetastet).
   const [warnungenOffen, setWarnungenOffen] = useState(() => ergebnis.status !== 'ok');
-  const [kopiert, setKopiert] = useState(false);
   const druckErzwingtOffen = useDruckErzwingtOffen();
   const cfg = STATUS_CONFIG[ergebnis.status];
-
-  const kopieren = () => {
-    navigator.clipboard?.writeText(ergebnisAlsText(titel, ergebnis)).then(
-      () => { setKopiert(true); setTimeout(() => setKopiert(false), 2000); },
-      () => {},
-    );
-  };
+  // Der Kopier-Text hing zuvor am Klick; als Prop des KopierButton liefe er
+  // sonst bei JEDER Live-Neuberechnung mit (§15) — darum memoisiert.
+  const kopierText = useMemo(() => ergebnisAlsText(titel, ergebnis), [titel, ergebnis]);
 
   return (
     // Einblendung + aria-live trägt der umgebende ErgebnisBlock (R4) — eine
@@ -104,10 +99,13 @@ export function ErgebnisAnzeige({ titel, ergebnis }: Props) {
           <p className="lc-overline">Ergebnis</p>
           <h3 className="text-h3 font-display font-semibold text-ink-900 mt-0.5">{sansAmp(titel)}</h3>
         </div>
-        <button type="button" onClick={kopieren} className="lc-btn-ghost lc-btn-sm shrink-0"
-          aria-label="Ergebnis in die Zwischenablage kopieren">
-          {kopiert ? 'Kopiert ✓' : 'Kopieren'}
-        </button>
+        {/* R2-E/F1-10: der geteilte KopierButton — vorher eine dritte Optik
+            (`lc-btn-ghost`) mit dem nackten «Kopieren», das offenliess, WAS in
+            der Zwischenablage landet. Die eigene Clipboard-Mechanik ist damit
+            entfallen; sie zeigte «Kopiert ✓» zudem ohne aria-Ankündigung an
+            derselben Stelle. */}
+        <KopierButton text={kopierText} gegenstand="Ergebnis"
+          className="lc-btn-outline lc-btn-sm shrink-0" />
       </div>
 
       <div className="p-6 space-y-5">

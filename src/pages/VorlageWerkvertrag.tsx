@@ -6,6 +6,7 @@ import { zahl } from '../lib/vorlagen/datum';
 import type { PdfBanner } from '../lib/vorlagen/banner';
 import { DatumsFeld } from '../components/DatumsFeld';
 import { Checkbox, Field, inputCls } from '../components/vorlagen/ui';
+import { BetragsFeld } from '../components/BetragsFeld';
 import { ThemenEinstieg } from '../components/ThemenEinstieg';
 import { VariantenKopf } from '../components/vorlagen/VariantenKopf';
 import { istIsoDatum } from '../components/vorlagen/seiteHelfer';
@@ -100,13 +101,13 @@ function eingabeInhalt({ a, set }: SeiteCtx<WvAntworten>, schritt: number) {
         </Field>
         {a.preis === 'pauschal' && (
           <Field label="Festpreis (CHF)" hint="bindet den Unternehmer (Art. 373 OR)">
-            <input className={inputCls + ' sm:max-w-[12rem]'} inputMode="decimal" value={a.pauschalCHF} onChange={(e) => set('pauschalCHF', e.target.value)} placeholder="z. B. 12000.00" />
+            <BetragsFeld className={inputCls + ' sm:max-w-[12rem]'} value={a.pauschalCHF} onChange={(v) => set('pauschalCHF', v)} placeholder="z. B. 12'000.00" />
           </Field>
         )}
         {a.preis === 'aufwand' && (
           <div className="grid grid-cols-[1fr_1fr] gap-3">
             <Field label="Ansatz (CHF)">
-              <input className={inputCls} inputMode="decimal" value={a.ansatzCHF} onChange={(e) => set('ansatzCHF', e.target.value)} placeholder="z. B. 120.00" />
+              <BetragsFeld className={inputCls} value={a.ansatzCHF} onChange={(v) => set('ansatzCHF', v)} placeholder="z. B. 120.00" />
             </Field>
             <Field label="je Einheit">
               <input className={inputCls} value={a.ansatzEinheit} onChange={(e) => set('ansatzEinheit', e.target.value)} placeholder="pro Stunde" />
@@ -119,7 +120,7 @@ function eingabeInhalt({ a, set }: SeiteCtx<WvAntworten>, schritt: number) {
           label={<><span><strong>Akontozahlung</strong> bei Vertragsschluss vereinbaren</span></>} />
         {a.anzahlung && (
           <Field label="Akontobetrag (CHF)">
-            <input className={inputCls + ' sm:max-w-[12rem]'} inputMode="decimal" value={a.anzahlungCHF} onChange={(e) => set('anzahlungCHF', e.target.value)} placeholder="z. B. 4000.00" />
+            <BetragsFeld className={inputCls + ' sm:max-w-[12rem]'} value={a.anzahlungCHF} onChange={(v) => set('anzahlungCHF', v)} placeholder="z. B. 4'000.00" />
           </Field>
         )}
         <Checkbox

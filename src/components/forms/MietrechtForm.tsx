@@ -239,7 +239,7 @@ export function MietrechtForm() {
           </Field>
         )}
         {art === 'ordentlich' && istRaum && (
-          <Field label="Vereinbarte Kündigungsfrist in Monaten (optional)" hint="Länger als das Gesetz zulässig; kürzer wäre nichtig (Art. 266a Abs. 1 OR)">
+          <Field label="Vereinbarte Kündigungsfrist in Monaten" optional hint="Länger als das Gesetz zulässig; kürzer wäre nichtig (Art. 266a Abs. 1 OR)">
             <input type="number" inputMode="decimal" min={1} value={fristMonate} onChange={(e) => setFristMonate(e.target.value)} className={inputCls + ' w-28'} />
           </Field>
         )}

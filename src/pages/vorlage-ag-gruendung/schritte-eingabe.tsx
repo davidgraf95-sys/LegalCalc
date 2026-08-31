@@ -1,4 +1,6 @@
 import { Field, inputCls } from '../../components/vorlagen/ui';
+import { BetragsFeld } from '../../components/BetragsFeld';
+import { DatumsFeld } from '../../components/DatumsFeld';
 import { usePaneKlasse } from '../../components/layout/PaneKontext';
 import { NormText } from '../../components/NormText';
 import { NotariatsHinweis, HrAmtHinweis } from '../../components/vorlagen/Dokumentmappe';
@@ -52,8 +54,8 @@ export function SchrittKonstellation({ ctx }: { ctx: AgSchrittCtx }) {
             <option value="rs">Revisionsstelle bestellt</option>
           </select>
         </Field>
-        <Field label="Leistungen der Aktionäre (CHF, optional — für die Emissionsabgabe)">
-          <input className={inputCls} inputMode="numeric" placeholder="z. B. 100000" value={leistungen} onChange={(e) => setLeistungen(e.target.value)} />
+        <Field label="Leistungen der Aktionäre (CHF — für die Emissionsabgabe)" optional>
+          <BetragsFeld className={inputCls} placeholder="z. B. 100'000" value={leistungen} onChange={setLeistungen} />
         </Field>
       </div>
       <div className="grid grid-cols-1 gap-y-2 text-body-s text-ink-700">
@@ -192,13 +194,16 @@ export function SchrittGesellschaft({ ctx }: { ctx: AgSchrittCtx }) {
               </select>
             </Field>
             <Field label="Ende der Ermächtigung (max. 5 Jahre)">
-              <input type="date" className={inputCls} value={kbEndeDatum} onChange={(e) => setKbEndeDatum(e.target.value)} />
+              {/* R2-E/F1-1: DatumsFeld statt nativem type="date" — Letzteres
+                  rendert in der BROWSER-Locale (US: MM/DD/YYYY) und trägt hier
+                  eine Frist. Wert bleibt ISO, das Schema sieht dasselbe. */}
+              <DatumsFeld value={kbEndeDatum} onChange={setKbEndeDatum} className={inputCls} />
             </Field>
             <Field label={`Untere Grenze (${wc}${kbRichtung === 'erhoehen' ? ' — bei «nur Erhöhung» = Aktienkapital' : ''})`}>
-              <input className={inputCls} inputMode="numeric" value={kbUntergrenze} onChange={(e) => setKbUntergrenze(e.target.value)} />
+              <BetragsFeld className={inputCls} value={kbUntergrenze} onChange={setKbUntergrenze} />
             </Field>
             <Field label={`Obere Grenze (${wc}, höchstens das Anderthalbfache des Kapitals)`}>
-              <input className={inputCls} inputMode="numeric" value={kbObergrenze} onChange={(e) => setKbObergrenze(e.target.value)} />
+              <BetragsFeld className={inputCls} value={kbObergrenze} onChange={setKbObergrenze} />
             </Field>
           </div>
         )}
@@ -209,7 +214,7 @@ export function SchrittGesellschaft({ ctx }: { ctx: AgSchrittCtx }) {
         {bedingtesKapital && (
           <div className={pk('grid grid-cols-1 sm:grid-cols-2 gap-2', 'grid grid-cols-1 @lg/pane:grid-cols-2 gap-2')}>
             <Field label={`Nennbetrag des bedingten Kapitals (${wc})`}>
-              <input className={inputCls} inputMode="numeric" value={bkBetrag} onChange={(e) => setBkBetrag(e.target.value)} placeholder="z. B. 50'000" />
+              <BetragsFeld className={inputCls} value={bkBetrag} onChange={setBkBetrag} placeholder="z. B. 50'000" />
             </Field>
             <Field label="Kreis der Berechtigten (Art. 653b Abs. 1 Ziff. 3 OR)">
               <input className={inputCls} value={bkKreis} onChange={(e) => setBkKreis(e.target.value)}
@@ -232,7 +237,7 @@ export function SchrittGesellschaft({ ctx }: { ctx: AgSchrittCtx }) {
         <Field label="Geschäftsjahr-Ende (Statuten)">
           <input className={inputCls} value={gjEnde} onChange={(e) => setGjEnde(e.target.value)} placeholder="z. B. 31. Dezember" />
         </Field>
-        <Field label="Erstes Geschäftsjahr endet am (optional — bei unterjähriger Gründung)">
+        <Field label="Erstes Geschäftsjahr endet am (bei unterjähriger Gründung)" optional>
           <input className={inputCls} value={gjErstesEnde} onChange={(e) => setGjErstesEnde(e.target.value)} placeholder="z. B. 31. Dezember 2026" />
         </Field>
       </div>
@@ -254,19 +259,19 @@ export function SchrittKapital({ ctx }: { ctx: AgSchrittCtx }) {
     <div className="space-y-4">
       <div className={pk('grid grid-cols-1 sm:grid-cols-3 gap-4', 'grid grid-cols-1 @xl/pane:grid-cols-3 gap-4')}>
         <Field label={fremdwaehrung ? `Aktienkapital (${waehrung}; Gegenwert mind. CHF 100'000)` : "Aktienkapital (CHF, mind. 100'000)"}>
-          <input className={inputCls} inputMode="numeric" placeholder="Tausender mit Apostroph, z. B. 100'000" value={ak} onChange={(e) => setAk(e.target.value)} />
+          <BetragsFeld className={inputCls} placeholder="z. B. 100'000" value={ak} onChange={setAk} />
         </Field>
         <Field label="Anzahl Namenaktien">
           <input className={inputCls} inputMode="numeric" value={anzahl} onChange={(e) => setAnzahl(e.target.value)} />
         </Field>
         <Field label="Nennwert je Aktie">
-          <input className={inputCls} inputMode="numeric" value={nennwert} onChange={(e) => setNennwert(e.target.value)} />
+          <BetragsFeld className={inputCls} value={nennwert} onChange={setNennwert} />
         </Field>
         <Field label="Liberierung (%, 20–100; einbezahlt mind. CHF 50'000)">
           <input className={inputCls} inputMode="numeric" value={liberierung} onChange={(e) => setLiberierung(e.target.value)} />
         </Field>
         <Field label="Ausgabebetrag je Aktie (leer = Nennwert; ein Agio ist stets voll zu leisten)">
-          <input className={inputCls} inputMode="numeric" value={ausgabebetrag} onChange={(e) => setAusgabebetrag(e.target.value)} placeholder="z. B. 1'200" />
+          <BetragsFeld className={inputCls} value={ausgabebetrag} onChange={setAusgabebetrag} placeholder="z. B. 1'200" />
         </Field>
       </div>
 
@@ -329,20 +334,20 @@ export function SchrittKapital({ ctx }: { ctx: AgSchrittCtx }) {
               </div>
               <div className={pk('grid grid-cols-1 sm:grid-cols-4 gap-2 items-end', 'grid grid-cols-1 @3xl/pane:grid-cols-4 gap-2 items-end')}>
                 <Field label={`Bewertung (${wc})`}>
-                  <input className={inputCls} inputMode="numeric" value={s.wertChf}
-                    onChange={(e) => setSacheinlagen((alt) => alt.map((x) => x.key === s.key ? { ...x, wertChf: e.target.value } : x))} />
+                  <BetragsFeld className={inputCls} value={s.wertChf}
+                    onChange={(v) => setSacheinlagen((alt) => alt.map((x) => x.key === s.key ? { ...x, wertChf: v } : x))} />
                 </Field>
                 <Field label="Dafür ausgegebene Aktien">
                   <input className={inputCls} inputMode="numeric" value={s.aktienAnzahl}
                     onChange={(e) => setSacheinlagen((alt) => alt.map((x) => x.key === s.key ? { ...x, aktienAnzahl: e.target.value } : x))} />
                 </Field>
-                <Field label={`Gutschrift (${wc}, optional)`}>
-                  <input className={inputCls} inputMode="numeric" value={s.gutschriftChf}
-                    onChange={(e) => setSacheinlagen((alt) => alt.map((x) => x.key === s.key ? { ...x, gutschriftChf: e.target.value } : x))} />
+                <Field label={`Gutschrift (${wc})`} optional>
+                  <BetragsFeld className={inputCls} value={s.gutschriftChf}
+                    onChange={(v) => setSacheinlagen((alt) => alt.map((x) => x.key === s.key ? { ...x, gutschriftChf: v } : x))} />
                 </Field>
                 <Field label={s.typ === 'geschaeft' ? 'Übernahmebilanz per' : 'Inventarliste vom'}>
-                  <input type="date" className={inputCls} value={s.belegDatum}
-                    onChange={(e) => setSacheinlagen((alt) => alt.map((x) => x.key === s.key ? { ...x, belegDatum: e.target.value } : x))} />
+                  <DatumsFeld value={s.belegDatum} className={inputCls}
+                    onChange={(v) => setSacheinlagen((alt) => alt.map((x) => x.key === s.key ? { ...x, belegDatum: v } : x))} />
                 </Field>
               </div>
               {s.typ === 'geschaeft' && (
@@ -352,21 +357,21 @@ export function SchrittKapital({ ctx }: { ctx: AgSchrittCtx }) {
                       onChange={(e) => setSacheinlagen((alt) => alt.map((x) => x.key === s.key ? { ...x, imHrEingetragen: e.target.checked } : x))} />
                     im HR eingetragen
                   </label>
-                  <Field label="UID (CHE-…, optional)">
+                  <Field label="UID (CHE-…)" optional>
                     <input className={inputCls} value={s.cheNr}
                       onChange={(e) => setSacheinlagen((alt) => alt.map((x) => x.key === s.key ? { ...x, cheNr: e.target.value } : x))} />
                   </Field>
                   <Field label={`Aktiven (${wc})`}>
-                    <input className={inputCls} inputMode="numeric" value={s.aktivenChf}
-                      onChange={(e) => setSacheinlagen((alt) => alt.map((x) => x.key === s.key ? { ...x, aktivenChf: e.target.value } : x))} />
+                    <BetragsFeld className={inputCls} value={s.aktivenChf}
+                      onChange={(v) => setSacheinlagen((alt) => alt.map((x) => x.key === s.key ? { ...x, aktivenChf: v } : x))} />
                   </Field>
                   <Field label={`Passiven (${wc})`}>
-                    <input className={inputCls} inputMode="numeric" value={s.passivenChf}
-                      onChange={(e) => setSacheinlagen((alt) => alt.map((x) => x.key === s.key ? { ...x, passivenChf: e.target.value } : x))} />
+                    <BetragsFeld className={inputCls} value={s.passivenChf}
+                      onChange={(v) => setSacheinlagen((alt) => alt.map((x) => x.key === s.key ? { ...x, passivenChf: v } : x))} />
                   </Field>
                   <Field label="Rechtsgeschäfte gelten ab (Rückwirkung)">
-                    <input type="date" className={inputCls} value={s.rueckwirkungDatum}
-                      onChange={(e) => setSacheinlagen((alt) => alt.map((x) => x.key === s.key ? { ...x, rueckwirkungDatum: e.target.value } : x))} />
+                    <DatumsFeld value={s.rueckwirkungDatum} className={inputCls}
+                      onChange={(v) => setSacheinlagen((alt) => alt.map((x) => x.key === s.key ? { ...x, rueckwirkungDatum: v } : x))} />
                   </Field>
                 </div>
               )}
@@ -406,8 +411,8 @@ export function SchrittKapital({ ctx }: { ctx: AgSchrittCtx }) {
                     onChange={(e) => setVerrechnungen((alt) => alt.map((x) => x.key === v.key ? { ...x, glaeubigerName: e.target.value } : x))} />
                 </Field>
                 <Field label={`Forderung (${wc})`}>
-                  <input className={inputCls} inputMode="numeric" value={v.forderungChf}
-                    onChange={(e) => setVerrechnungen((alt) => alt.map((x) => x.key === v.key ? { ...x, forderungChf: e.target.value } : x))} />
+                  <BetragsFeld className={inputCls} value={v.forderungChf}
+                    onChange={(w) => setVerrechnungen((alt) => alt.map((x) => x.key === v.key ? { ...x, forderungChf: w } : x))} />
                 </Field>
                 <Field label="Aktien">
                   <input className={inputCls} inputMode="numeric" value={v.aktienAnzahl}
@@ -441,8 +446,8 @@ export function SchrittKapital({ ctx }: { ctx: AgSchrittCtx }) {
                     onChange={(e) => setVorteile((alt) => alt.map((x) => x.key === v.key ? { ...x, beguenstigter: e.target.value } : x))} />
                 </Field>
                 <Field label={`Wert (${wc})`}>
-                  <input className={inputCls} inputMode="numeric" value={v.wertChf}
-                    onChange={(e) => setVorteile((alt) => alt.map((x) => x.key === v.key ? { ...x, wertChf: e.target.value } : x))} />
+                  <BetragsFeld className={inputCls} value={v.wertChf}
+                    onChange={(w) => setVorteile((alt) => alt.map((x) => x.key === v.key ? { ...x, wertChf: w } : x))} />
                 </Field>
                 <button type="button" className="lc-btn-ghost lc-btn-sm" aria-label="Zeile entfernen"
                   onClick={() => setVorteile((alt) => alt.filter((x) => x.key !== v.key))}>✕</button>
@@ -665,9 +670,9 @@ export function SchrittWeiteres({ ctx }: { ctx: AgSchrittCtx }) {
           <input className={inputCls} value={ort} onChange={(e) => setOrt(e.target.value)} />
         </Field>
         <Field label="Datum">
-          <input type="date" className={inputCls} value={datum} onChange={(e) => setDatum(e.target.value)} />
+          <DatumsFeld value={datum} onChange={setDatum} className={inputCls} />
         </Field>
-        <Field label="Nachtrags-Bevollmächtigte:r (optional; volle Personalien)">
+        <Field label="Nachtrags-Bevollmächtigte:r (volle Personalien)" optional>
           <input className={inputCls} value={nachtragsbevollmaechtigter} onChange={(e) => setNachtragsbevollmaechtigter(e.target.value)}
             placeholder="Vorname Name, Geburtsdatum, Bürgerort, Wohnadresse" />
         </Field>
@@ -717,7 +722,7 @@ export function SchrittWeiteres({ ctx }: { ctx: AgSchrittCtx }) {
           <div className="rounded-md border border-line p-3 space-y-2">
             <div className={pk('grid grid-cols-1 sm:grid-cols-2 gap-2', 'grid grid-cols-1 @lg/pane:grid-cols-2 gap-2')}>
               <Field label="Datum der Gründungsurkunde">
-                <input type="date" className={inputCls} value={ntGruendungsdatum} onChange={(e) => setNtGruendungsdatum(e.target.value)} />
+                <DatumsFeld value={ntGruendungsdatum} onChange={setNtGruendungsdatum} className={inputCls} />
               </Field>
               <Field label="Geänderte Urkunden-Ziffer (z. B. III)">
                 <input className={inputCls} value={ntUrkundeZiffer} onChange={(e) => setNtUrkundeZiffer(e.target.value)} />
@@ -730,7 +735,7 @@ export function SchrittWeiteres({ ctx }: { ctx: AgSchrittCtx }) {
               <Field label="Geänderter Statuten-Artikel (Nr.)">
                 <input className={inputCls} inputMode="numeric" value={ntStatutenArtikel} onChange={(e) => setNtStatutenArtikel(e.target.value)} />
               </Field>
-              <Field label="Absatz (optional)">
+              <Field label="Absatz" optional>
                 <input className={inputCls} inputMode="numeric" value={ntStatutenAbsatz} onChange={(e) => setNtStatutenAbsatz(e.target.value)} />
               </Field>
             </div>
