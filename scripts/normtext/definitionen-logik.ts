@@ -65,6 +65,13 @@
 //       `legende-marginalie`); der unmarkierte Rest bleibt draussen.
 //   «Unter X ist/sind …» ohne «zu verstehen»            39    5/20  25 %
 //       «Unter Vorbehalt von Artikel 26 ist …» dominiert.
+//   «Als X wird/werden … bezeichnet» (Passiv, R6.2/B6)   17   13/17  76 %
+//       Vollerhebung 31.8.2026: unter der Schwelle wegen der Organ-
+//       ERNENNUNGS-Klasse («Als kantonale Meldestelle wird das Aktuariat …
+//       bezeichnet» AR 816.11, Beratungsstelle BS 730.110, «zuständiges
+//       Departement» BS 812.210). Dokumentierter Recall-Verzicht — auch die
+//       echten Fälle (BS 497.120 «archäologischer Befund», ZStV 9
+//       «Totgeborenes») bleiben draussen; Detail: Bibliothek §GP-Korrektur B6.
 //
 //   FREMDSPRACHEN — nur gezählt, NICHT aufgenommen (Auftrag: Aufnahme erst
 //   mit eigener Stichprobe). Gemessen 31.8.2026:
@@ -109,7 +116,8 @@ const SATZANFANG = /[A-ZÄÖÜÉÈÀ«"„(§–]/;
  * Obergrenze der Zitatlänge. Kein Qualitäts-Score, sondern eine Reissleine
  * gegen Extraktions-Unfälle: ein Block, dessen Satzgrenzen die Quelle nicht
  * hergibt, soll keine Bildschirmseite ins Artefakt schreiben. Sie ist HEUTE
- * inert — längstes Zitat im Bestand 689 Zeichen (Lauf 31.8.2026) — und darum
+ * inert — längstes Zitat im Bestand 689 Zeichen (Lauf 31.8.2026); seit den
+ * R6.2-Kopf+Unterlisten-Zitaten 1003 Zeichen (FIDLEG 3) — und darum
  * meldet der Generator bei jedem Lauf die maximale Zitatlänge: die Schranke
  * darf nicht still zu greifen beginnen (§6.7).
  */
