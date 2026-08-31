@@ -569,6 +569,11 @@ identisch.
   §8-Auflage (GP5): sichtbar falsch zitierter Normtext («Bauund
   Niveaulinien») — R1 wird darum VORGEZOGEN und läuft parallel zur
   Tranche A, nicht erst in Phase II (Orchestrator-Entscheid 1.9.2026).
+  R1-Zettel (GP5-Nachverifikation): + 101 Art. 88 («Quartieroder») ·
+  131.1 § 64 («rechtund») als Prüfpunkte des Erhebungs-Skripts; und die
+  Exponent-Wache ruht allein auf der Einheiten-Regex (Klebe-Bedingung
+  <0.8 pt trennt nichts: 638/638 kleben; Zweitlesung nutzt DIESELBE
+  Regex = Common-Mode) — R1/Tag-Leser entkoppelt die Kriterien.
 - GP4-Restrisiko-Notiz (7c): der Zeichen-Deckungsgrad ist eine **90 %-
   UNTERGRENZE** je §-Region — ein Textverlust unter einem Zehntel der
   Bestimmung bleibt 7c unsichtbar und wird nur gefangen, wenn er eine Zahl
