@@ -329,6 +329,58 @@ eigener ROADMAP-Punkt).
   RiE#731 neu). Der Commit hält den Diff bewusst ZH-only; die Drift gehört in
   einen eigenen Schritt.
 
+**Stufe 2 — Fix-Runde nach adversarialer Gegenprüfung, 31.8.2026.** Die
+Gegenprüfung hat die Kern-Tranche **widerlegt** (stiller Textverlust in fünf
+Klassen). Alle Wurzeln an der Roh-Geometrie der 24 amtlichen PDF diagnostiziert,
+nicht am Symptom geraten. Stand nach der Runde:
+
+| Befund | Wurzel | Behoben |
+|---|---|---|
+| **B-1** lit.-Verlust «flächendeckend» | — | **FALSIFIZIERT.** Der Bestand trug schon vorher 1771 lit.-Positionen in `items` (527 von 4917 Blöcken); die genannten Belege ZH-215.1 § 11, ZH-212.812 § 3, ZH-175.2 § 10 Abs. 3/4 hatten ihre Aufzählung vollständig. Der Befund zählte lit.-Muster offenbar im `text`-Feld statt im `items`-Array. Messung nach dem Fix: lit.-Deckung gegen die unabhängige Zweitlesung 23× 100 %, schlechtester Wert 99.7 %. |
+| **B-2** Fussnoten-Ziffer als Absatznummer | pdfjs gibt jeder Hochstellung eine eigene Grundlinie (2.76 pt) → eigene y-Gruppe → Position 0 → als Absatznummer gelesen | ja — Hochstellung wird ihrer Trägerzeile zugeordnet |
+| **B-3** «§» im Fliesstext beendet den Artikel | `PARAGRAF_KOPF` unverankert; `speichere()` verwarf den gesehenen Token still | ja — Zeilenanker + Wiedereröffnung verboten (26 Stellen) |
+| **B-4** Wortverschmelzung | Leerzeichen erst ab 18 pt Fragmentlücke | ja — Schwelle 0.8 pt aus der gemessenen Lückenverteilung |
+| **B-5** aufgehobene §§ verschwanden | nackter Kopf ohne Blöcke fiel weg | ja — Platzhalter «Aufgehoben», 60 eIds gerettet |
+| **B-6** Änderungsapparat im letzten § | Erkennung über Eröffnungs-Wendungen, Fortsetzungszeilen liefen durch | ja — geometrisch (Fussnoten-Grundschrift) + Grenze «Übergangs-/Schlussbestimmung»/«Anhang» |
+| **B-9** erfundenes Kürzel «AnwG» | `kuerzel` wurde vom Auflöse-Werkzeug gar nicht geprüft | ja — Feld geleert, Prüfung ergänzt |
+| **E1** leerer Einleitungssatz vor Tarif-Tabellen | `text` wurde hart auf `''` gesetzt | ja — Einleitung wird gelesen, Einheit «(in Franken)» im Spaltentitel |
+| **E2-H1** «Art. N»-Erlasse | Adapter kannte nur «§ N.» | ja — Zählweise je Erlass erhoben; **LS 101 KV aufgenommen** (147 Artikel) |
+| **E2-H4** falscher `stand` | Ur-Inkrafttreten aus dem URL-Slug | ja — Publikationsdatum der geltenden Nachtragsfassung aus der Registry |
+| **NEU (nicht im Befund)** lat. Suffix ging verloren | «§ 183^bis» stand als Geisterzeile «bis»; der Kopf las «§ 183» und kollidierte | ja — ZH-230 §§ 174bis/183bis/183ter/183quater sind wieder eigenständig |
+
+**Neues Tor `check:zh-vollstaendigkeit`** (§17-Verankerung): hält den Snapshot
+gegen eine **unabhängige zweite Lesung** derselben PDF (eigenes Modul
+`scripts/normtext/zh-zweitlesung.ts`, teilt keine Zeile Code mit dem Adapter) —
+§-/Art.-Menge exakt, lit.-Deckung ≥ 95 %, kein Block endet auf einem
+Trennstrich. Rot-Beweis am unfixierten Korpus: 14 von 23 Erlassen rot; nach der
+Regeneration 24 von 24 grün. Das Tor hat dabei einen Fehler der Fix-Runde selbst
+gefangen (Apparat-Kante nach Ziffernhöhe verschluckte ZH-211.1 § 105 Abs. 2 und
+§ 106).
+
+**Rückbau (§17-Gegengewicht):** `entglueZhTarif()` ersatzlos gestrichen — nach
+dem Geometrie-Fix trat keine ihrer sechs Klebe-Formen mehr auf, ihre
+camelCase-Regel zerschnitt dagegen 60+ amtliche Abkürzungen («StGB» → «St GB»,
+«SchKG» → «Sch KG»).
+
+**Bilanz Fix-Runde:** 24 Erlasse, 2371 → 2573 Einträge; abgeschnittene Blöcke
+13 → 0, Klebe-Abkürzungen 83 → 0, fehlende Leerzeichen 826 → 0,
+Apparat-Blöcke 43 → 0, leere Tabellen-Einleitungen 3 → 0.
+
+**Nach ZH-4d verschoben (bewusst NICHT in dieser Runde gebaut):**
+- **B-8 / Gliederungs-Zuordnung:** Überschriften zwischen zwei §§ hängen am
+  letzten Block des VORANGEHENDEN § (129 Blöcke). Teilentlastung in dieser
+  Runde: römische Gliederungsziffern («VII. Enteignungsähnliche
+  Beschränkungen») werden jetzt wie die Buchstaben-Gliederung verworfen; die
+  Marginalien-/Randnoten-Ebene bleibt offen. Braucht den Tag-Leser-Schritt.
+- **Übergangs- und Schlussbestimmungen** sind seit dieser Runde NICHT mehr im
+  Snapshot enthalten (§8: ausgewiesene Lücke statt falscher Zuordnung an den
+  letzten §). Ihre Aufnahme als eigener Eintragstyp gehört zu ZH-4d — dort
+  gehört auch der PBG-Anhang, der ältere Fassungen einzelner §§ nachdruckt.
+- **LS 131.11 VGG** bleibt zurückgestellt: der Anhang-Spalten-Zweig zerlegt den
+  Kontenrahmen in Pseudo-Paragraphen. Der B-6-Fix hat das nicht nebenbei gelöst.
+- **Gebührentabellen in 323.1 / 212.812** bleiben Fliesstext (der
+  `mehrspaltig`-Zweig ist auf ZH-211.11/215.3 §3/§4 verdrahtet).
+
 **Stufe 3 — Ausbau in Tranchen** (Richtung 944, Katalog-Generator über den
 JSON-Endpunkt): erst nach gelandeter Stufe 2 und sauberer Stichproben-Abnahme;
 G2-Slot-Regel beachten (kein faktischer Vollkorpuslauf als Tranchen-Schlupfloch —
