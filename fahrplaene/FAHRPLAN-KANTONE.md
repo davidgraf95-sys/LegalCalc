@@ -553,9 +553,22 @@ identisch.
 - Silbentrennungs-Fehler bei ECHTEN Bindestrich-Ellipsen: «Grenz- und
   Gebäudeabstände» wird zu «Grenzund». Der Zeilen-Joiner kann die Ellipse
   nicht von der Silbentrennung unterscheiden — braucht die Wortliste oder den
-  Tag-Leser (R1). **Vollinventar (GP4, B2 — die Abhak-Liste für R1, 12
-  Stellen):** 131.1 § 141 · 211.1 § 87 · 631.1 §§ 27, 31, 72a, 88, 162a, 235,
-  237 · 700.1 §§ 50, 260 (×2).
+  Tag-Leser (R1). **Erhebungs-KORREKTUR GP5 1.9.2026: kein Vollinventar —
+  unabhängige Korpus-Erhebung zählt ≥48 §-Stellen (UNTERGRENZE; nur
+  Anschlusswörter und/oder/bzw./sowie/rechtlich* — geklebte Formen, die
+  zufällig ein gültiges Wort ergeben, sind unzählbar).** Die R1-Abhak-Liste
+  ist darum MASCHINELL zu erzeugen (Erhebungs-Skript), nie von Hand.
+  GP4-Teilliste (12, davon 1 Fehl-Zuordnung: «×2 in § 260» falsch — § 260
+  einmal, zweite Stelle ist **§ 268**; § 223 fehlte): 131.1 § 141 · 211.1
+  § 87 · 631.1 §§ 27, 31, 72a, 88, 162a, 235, 237 · 700.1 §§ 50, 260, 268.
+  GP5-Zusatzfunde (Auszug): 700.1 §§ 64, 111, 113, 138, 195, 217, 223
+  («öffentlichrechtliche»), 239, 276, 328, 334 · 211.1 §§ 16, 80 · 101
+  Art. 144 · 131.1 § 127 · 171.1 § 132 · 175.2 §§ 21a, 72 · 177.10 §§ 35,
+  43 · 211.15 § 27 · 230 §§ 180, 194 · 232.3 § 78 · 242 § 33 · 243 § 8 ·
+  331 § 26 · 550.1 §§ 32b, 54, 60 · 631.1 §§ 109c, 162 · 851.1 §§ 47c, 48a.
+  §8-Auflage (GP5): sichtbar falsch zitierter Normtext («Bauund
+  Niveaulinien») — R1 wird darum VORGEZOGEN und läuft parallel zur
+  Tranche A, nicht erst in Phase II (Orchestrator-Entscheid 1.9.2026).
 - GP4-Restrisiko-Notiz (7c): der Zeichen-Deckungsgrad ist eine **90 %-
   UNTERGRENZE** je §-Region — ein Textverlust unter einem Zehntel der
   Bestimmung bleibt 7c unsichtbar und wird nur gefangen, wenn er eine Zahl
