@@ -560,15 +560,15 @@ export async function leseZweit(bytes: Uint8Array): Promise<Zweitlesung> {
       // Darum: führenden Zahl-Punkt-Lauf des ersten Fragments nehmen und nur
       // dann weiterjoinen, wenn das Fragment ohne Trenner endete.
       let tok = '';
-      let offen = false;
       for (const st of zeile) {
         const t = st.s.trim();
         if (tok === '') {
           const m = t.match(/^(\d+(?:\.\d+)*)(\s|$)/);
           if (!m) break;
           tok = m[1];
-          offen = m[2] === '';
-          if (!offen) break;
+          // Endete das Fragment mit Leerraum/Zeilenende, ist die Ziffer
+          // vollstaendig — sonst laeuft sie im naechsten Fragment weiter.
+          if (m[2] !== '') break;
           continue;
         }
         // Nur ein Fragment, das die Ziffernkette FORTSETZT, wird angehängt: es
