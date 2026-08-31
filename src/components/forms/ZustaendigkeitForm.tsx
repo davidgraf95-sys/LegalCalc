@@ -78,7 +78,7 @@ export function ZustaendigkeitForm({ onRechtswegChange, rechtswegVorwahl, minima
                   : 'border-line bg-surface opacity-55 cursor-not-allowed'
                 }`}>
                 <span className="block text-body-s font-medium text-ink-900">
-                  {w.label}{!w.aktiv && <span className="lc-badge lc-badge-soft ml-2">in Vorbereitung</span>}
+                  {w.label}{!w.aktiv && <span className="lc-badge-geplant ml-2">In Vorbereitung</span>}
                 </span>
                 <span className="block text-xs text-ink-500 mt-0.5">{w.sub}</span>
               </button>

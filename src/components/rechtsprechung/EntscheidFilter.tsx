@@ -3,6 +3,7 @@ import type { EntscheidFilterWerte, SortModus } from '../../lib/rechtsprechung/b
 import { normLabel, filterEntscheide, richterHaeufigkeit, INSTANZ_ORDNUNG } from '../../lib/rechtsprechung/browse';
 import type { BrowseEntscheid, RichterRegister } from '../../lib/rechtsprechung/register';
 import { RichterFilter } from './RichterFilter';
+import { FacettenGruppe } from '../ui/FacettenGruppe';
 import { SORT_LABEL } from './zustand';
 
 // Schlanke Steuerleiste der Übersicht /rechtsprechung (ersetzt den schweren
@@ -19,42 +20,11 @@ function einzigartig<T>(werte: T[]): T[] {
   return [...new Set(werte)];
 }
 
-/** Eine Facetten-Achse (Auftrag 4/8) als Toggle-Chips mit Trefferzahl (Reglement
- *  R15: «Trefferzahl je Facette» gegen Null-Treffer-Klicks). Die primären Achsen
- *  sichtbar in der Ergebnis-Spalte statt im zugeklappten <details>. Reine Anzeige (§3). */
-function FacettenGruppe({ label, optionen }: {
-  label: string;
-  /** `voll` = ausgeschriebene a11y-/Tooltip-Bezeichnung, falls `text` eine Abkürzung ist. */
-  optionen: { id: string; text: string; voll?: string; n: number; aktiv: boolean; waehle: () => void }[];
-}) {
-  // lc-chip-zeile (LM-044/N1): Chip-Grammatik-Container — die Facetten sind
-  // <button>, tragen hier also den geschlossenen Hairline-Rahmen (drückbare Form)
-  // statt nur eine Farbnuance. Der Selected-Zustand (lc-chip-selected) bleibt
-  // unangetastet: die Grammatik setzt die Fläche ausdrücklich nur im Ruhezustand
-  // (:not(.lc-chip-selected) in index.css).
-  return (
-    <div role="group" aria-label={label} className="lc-chip-zeile flex flex-wrap items-center gap-x-2 gap-y-1.5">
-      <span aria-hidden className="lc-overline shrink-0">{label}</span>
-      {optionen.map((o) => (
-        <button key={o.id} type="button" aria-pressed={o.aktiv} onClick={o.waehle}
-          aria-label={`${label}: ${o.voll ?? o.text} (${o.n})`} title={o.voll}
-          className={`lc-chip ${o.aktiv ? 'lc-chip-selected' : ''}`}>
-          {/* ink-600 (nicht ink-500): 12px-Ziffer auf --well ≥4.5:1 (R4/WCAG 1.4.3,
-              Werte nicht runden — ink-500 lag bei 4.47:1). Aktiv erbt brass-700. */}
-          {/* LM-051: Beschriftung und Zahl brauchen einen Trenner im TEXTKNOTEN,
-              nicht nur den optischen Abstand (ml-1.5) — sonst liest/kopiert man
-              «BS3765». Das explizite Leerzeichen steht als eigener Textknoten
-              zwischen den beiden Flex-Items: es fällt mit dem vorangehenden
-              Label zu EINEM anonymen Flex-Item zusammen und wird dort als
-              Zeilenend-Leerraum entfernt — textContent «BS 3765», Darstellung
-              unverändert. Die aria-labels («Gemeinwesen: BS (3765)») bleiben
-              wie sie sind; sie waren nie das Problem. */}
-          {o.text}{' '}<span className={`num ml-1.5 ${o.aktiv ? '' : 'text-ink-600'}`}>{o.n}</span>
-        </button>
-      ))}
-    </div>
-  );
-}
+// Die Facetten-Achse (Auftrag 4/8: Toggle-Chips mit Trefferzahl, R15) lag hier
+// als lokale Komponente und war die zweite Kopie derselben Anatomie. Sie liegt
+// seit Runde 2 in `components/ui/FacettenGruppe` — dort steht auch ihre
+// vollständige Herleitung (LM-040/044/051). Die primären Achsen bleiben sichtbar
+// in der Ergebnis-Spalte statt im zugeklappten <details>.
 
 export function EntscheidFilter({
   werte, onChange, bestand, richterRegister, sort, onSort, dichte, onDichte, klappeOffen, onKlappe,

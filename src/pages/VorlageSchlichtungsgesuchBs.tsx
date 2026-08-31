@@ -10,7 +10,7 @@ import { BetragsFeld } from '../components/BetragsFeld';
 import { behoerdeFuer, behoerdeAlsBlock } from '../lib/vorlagen/behoerden';
 import { KANTONE } from '../lib/kantone';
 import { DatumsFeld } from '../components/DatumsFeld';
-import { Checkbox, Field, GruppenTitel, inputCls, NormLink } from '../components/vorlagen/ui';
+import { Checkbox, Field, GruppenTitel, inputCls, ListenEditor, NormLink } from '../components/vorlagen/ui';
 import { SelectionGrid } from '../components/ui/SelectionGrid';
 import { SgAdressatKachel, SgBehoerdenWahl } from '../components/vorlagen/SgBehoerdenWahl';
 import { useWizardState } from '../components/vorlagen/useWizardState';
@@ -79,28 +79,31 @@ export function VorlageSchlichtungsgesuchBs() {
 
   // ── Partei-Editor (klagend/beklagt identisch) ──
   const parteiEditor = (liste: SgPartei[], setListe: (p: SgPartei[]) => void, rolle: string) => (
-    <div className="space-y-3">
-      {liste.map((p, i) => (
-        <div key={i} className="lc-card p-4 space-y-3">
-          <div className="flex items-center justify-between gap-2">
-            <GruppenTitel>{rolle} {liste.length > 1 ? i + 1 : ''}</GruppenTitel>
-            <div className="flex items-center gap-2">
-              <select className={inputCls + ' !w-auto text-body-s'} value={p.typ}
-                onChange={(e) => {
-                  const typ = e.target.value as SgPartei['typ'];
-                  setListe(liste.map((x, j) => j === i ? (typ === 'natuerlich'
-                    ? { ...SG_PERSON_NATUERLICH }
-                    : { typ: 'juristisch', firma: '', sitzStrasse: '', sitzPlz: '', sitzOrt: '' }) : x));
-                }}>
-                <option value="natuerlich">natürliche Person</option>
-                <option value="juristisch">juristische Person</option>
-              </select>
-              {liste.length > 1 && (
-                <button type="button" onClick={() => setListe(liste.filter((_, j) => j !== i))}
-                  className="text-body-s text-danger-700 hover:underline">entfernen</button>
-              )}
-            </div>
-          </div>
+    /* R2-F/F1-9: Repeater auf den geteilten ListenEditor. Die Typ-Wahl
+       (natürliche/juristische Person) rutscht dabei aus der Kopfzeile in den
+       Eintrag — die Kopfzeile trägt im Kanon nur Titel und Entfernen-Link.
+       `mindestens={1}`: eine klagende bzw. beklagte Partei muss stehen
+       bleiben (bisher als `liste.length > 1`-Bedingung am Knopf). */
+    <ListenEditor
+      element={rolle}
+      eintraege={liste}
+      mindestens={1}
+      onHinzufuegen={() => setListe([...liste, { ...SG_PERSON_NATUERLICH }])}
+      onEntfernen={(i) => setListe(liste.filter((_, j) => j !== i))}
+      kopf={(_p, i) => `${rolle} ${liste.length > 1 ? i + 1 : ''}`.trim()}
+      kinder={(p, i) => (
+        <div className="space-y-3">
+          <select className={inputCls + ' !w-auto text-body-s'} value={p.typ}
+            aria-label={`Art der Partei (${rolle} ${i + 1})`}
+            onChange={(e) => {
+              const typ = e.target.value as SgPartei['typ'];
+              setListe(liste.map((x, j) => j === i ? (typ === 'natuerlich'
+                ? { ...SG_PERSON_NATUERLICH }
+                : { typ: 'juristisch', firma: '', sitzStrasse: '', sitzPlz: '', sitzOrt: '' }) : x));
+            }}>
+            <option value="natuerlich">natürliche Person</option>
+            <option value="juristisch">juristische Person</option>
+          </select>
           {p.typ === 'natuerlich' ? (
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               <Field label="Vorname"><input className={inputCls} value={p.vorname} onChange={(e) => setListe(liste.map((x, j) => j === i ? { ...p, vorname: e.target.value } : x))} /></Field>
@@ -144,11 +147,8 @@ export function VorlageSchlichtungsgesuchBs() {
             </div>
           )}
         </div>
-      ))}
-      <button type="button" onClick={() => setListe([...liste, { ...SG_PERSON_NATUERLICH }])} className="lc-btn-outline">
-        + Weitere Partei (Streitgenossenschaft)
-      </button>
-    </div>
+      )}
+    />
   );
 
   // ── Stopp-Karte (hilfreich statt sackgassig) ──
@@ -284,6 +284,11 @@ export function VorlageSchlichtungsgesuchBs() {
       case 'klaeger': return (
         <div className="space-y-5">
           {parteiEditor(a.klaeger, (p) => set('klaeger', p), 'Klagende Partei')}
+          {/* R2-F-Nachzug: der frühere Knopf hiess «+ Weitere Partei
+              (Streitgenossenschaft)» — der Fachbegriff darf mit der
+              Vereinheitlichung nicht verschwinden (§8, Wiederherstellung). */}
+          <p className="text-body-s text-ink-600">Mehrere klagende oder beklagte
+            Parteien bilden eine Streitgenossenschaft.</p>
           <div className="space-y-3">
             <Checkbox
               checked={!!a.vertretung}
@@ -345,20 +350,24 @@ export function VorlageSchlichtungsgesuchBs() {
         <div className="space-y-5">
           {verm ? (
             <>
-              <div className="flex flex-wrap gap-1.5" role="group" aria-label="Pfad">
-                {([['beziffert', 'Bezifferte Forderung'], ['unbeziffert', 'Unbeziffert (Art. 85 ZPO)']] as const).map(([code, label]) => (
-                  <button key={code} type="button" aria-pressed={(code === 'unbeziffert') === !!a.unbeziffert}
-                    onClick={() => {
-                      if (code === 'unbeziffert') { set('unbeziffert', a.unbeziffert ?? { mindestbetrag: '', grund: '' }); set('geld', undefined); }
-                      else { set('unbeziffert', undefined); set('geld', a.geld ?? { betrag: '' }); }
-                    }}
-                    className={`px-3 py-1.5 rounded-full text-body-s font-medium border transition-colors ${
-                      ((code === 'unbeziffert') === !!a.unbeziffert) ? 'bg-ink-900 border-ink-900 text-paper' : 'bg-surface border-line text-ink-600 hover:border-brass-400'
-                    }`}>
-                    {label}
-                  </button>
-                ))}
-              </div>
+              {/* D-3 (31.8.2026): Pillen-Reihe über den geteilten Baustein
+                  (`ui/SelectionGrid`, variant «pille»). Der aktive Pfad ist eine
+                  ABLEITUNG aus `a.unbeziffert` — der Baustein vergleicht `value`
+                  mit dem Code; die Umschalt-Logik bleibt unverändert hier. */}
+              <SelectionGrid
+                variant="pille"
+                gruppenLabel="Pfad"
+                className="flex flex-wrap gap-1.5"
+                items={[
+                  { code: 'beziffert', label: 'Bezifferte Forderung' },
+                  { code: 'unbeziffert', label: 'Unbeziffert (Art. 85 ZPO)' },
+                ] as const}
+                value={a.unbeziffert ? 'unbeziffert' : 'beziffert'}
+                onSelect={(code) => {
+                  if (code === 'unbeziffert') { set('unbeziffert', a.unbeziffert ?? { mindestbetrag: '', grund: '' }); set('geld', undefined); }
+                  else { set('unbeziffert', undefined); set('geld', a.geld ?? { betrag: '' }); }
+                }}
+              />
               {!a.unbeziffert ? (
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   <Field label="Forderungsbetrag (CHF)" hint="zu beziffern (Art. 84 Abs. 2 ZPO) – z. B. 3000">
@@ -399,31 +408,34 @@ export function VorlageSchlichtungsgesuchBs() {
                 Rechtsbegehren präzise und vollstreckbar formulieren (bestimmtes Tun, Unterlassen
                 oder Dulden; Geld beziffern). Die Einträge werden 1:1 übernommen.
               </p>
-              {a.freieRechtsbegehren.map((r, i) => (
-                <div key={i} className="flex items-start gap-2">
-                  <span className="num text-body-s text-ink-500 pt-3">{i + 1}.</span>
-                  <textarea className={inputCls} rows={2} value={r}
+              {/* Die Nummer stand als eigene `<span>1.</span>`-Spalte davor;
+                  im ListenEditor trägt sie die Kopfzeile des Eintrags. */}
+              <ListenEditor
+                element="Rechtsbegehren"
+                eintraege={a.freieRechtsbegehren}
+                className="space-y-2"
+                onHinzufuegen={() => set('freieRechtsbegehren', [...a.freieRechtsbegehren, ''])}
+                onEntfernen={(i) => set('freieRechtsbegehren', a.freieRechtsbegehren.filter((_, j) => j !== i))}
+                kinder={(r, i) => (
+                  <textarea className={inputCls} rows={2} value={r} aria-label={`Rechtsbegehren ${i + 1}`}
                     onChange={(e) => set('freieRechtsbegehren', a.freieRechtsbegehren.map((x, j) => j === i ? e.target.value : x))} />
-                  <button type="button" onClick={() => set('freieRechtsbegehren', a.freieRechtsbegehren.filter((_, j) => j !== i))}
-                    className="text-body-s text-danger-700 hover:underline pt-3">entfernen</button>
-                </div>
-              ))}
-              <button type="button" onClick={() => set('freieRechtsbegehren', [...a.freieRechtsbegehren, ''])} className="lc-btn-outline">
-                + Rechtsbegehren
-              </button>
+                )}
+              />
             </div>
           )}
           <div className="space-y-2">
             <GruppenTitel>Weitere Rechtsbegehren <span className="normal-case text-ink-500">· optional</span></GruppenTitel>
-            {a.weitereRechtsbegehren.map((r, i) => (
-              <div key={i} className="flex items-start gap-2">
-                <textarea className={inputCls} rows={2} value={r}
+            <ListenEditor
+              element="Zusatzbegehren"
+              eintraege={a.weitereRechtsbegehren}
+              className="space-y-2"
+              onHinzufuegen={() => set('weitereRechtsbegehren', [...a.weitereRechtsbegehren, ''])}
+              onEntfernen={(i) => set('weitereRechtsbegehren', a.weitereRechtsbegehren.filter((_, j) => j !== i))}
+              kinder={(r, i) => (
+                <textarea className={inputCls} rows={2} value={r} aria-label={`Zusatzbegehren ${i + 1}`}
                   onChange={(e) => set('weitereRechtsbegehren', a.weitereRechtsbegehren.map((x, j) => j === i ? e.target.value : x))} />
-                <button type="button" onClick={() => set('weitereRechtsbegehren', a.weitereRechtsbegehren.filter((_, j) => j !== i))}
-                  className="text-body-s text-danger-700 hover:underline pt-3">entfernen</button>
-              </div>
-            ))}
-            <button type="button" onClick={() => set('weitereRechtsbegehren', [...a.weitereRechtsbegehren, ''])} className="lc-btn-outline">+ Zusatzbegehren</button>
+              )}
+            />
             <p className="text-xs text-ink-500">Die Kostenfolge wird automatisch als letztes Begehren ergänzt.</p>
           </div>
         </div>
@@ -473,15 +485,18 @@ export function VorlageSchlichtungsgesuchBs() {
           <div className="space-y-2">
             <GruppenTitel>Beilagen</GruppenTitel>
             {a.vertretung?.bezeichnung && <p className="text-xs text-ink-500">«Vollmacht» wird automatisch aufgenommen.</p>}
-            {a.beilagen.map((b, i) => (
-              <div key={i} className="flex items-center gap-2">
+            <ListenEditor
+              element="Beilage"
+              eintraege={a.beilagen}
+              className="space-y-2"
+              onHinzufuegen={() => set('beilagen', [...a.beilagen, { bezeichnung: '' }])}
+              onEntfernen={(i) => set('beilagen', a.beilagen.filter((_, j) => j !== i))}
+              kinder={(b, i) => (
                 <input className={inputCls} value={b.bezeichnung} placeholder="z. B. Vertrag vom 01.02.2025"
+                  aria-label={`Beilage ${i + 1}`}
                   onChange={(e) => set('beilagen', a.beilagen.map((x, j) => j === i ? { bezeichnung: e.target.value } : x))} />
-                <button type="button" onClick={() => set('beilagen', a.beilagen.filter((_, j) => j !== i))}
-                  className="text-body-s text-danger-700 hover:underline">entfernen</button>
-              </div>
-            ))}
-            <button type="button" onClick={() => set('beilagen', [...a.beilagen, { bezeichnung: '' }])} className="lc-btn-outline">+ Beilage</button>
+              )}
+            />
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <Field label="Ort"><input className={inputCls} value={a.ort} onChange={(e) => set('ort', e.target.value)} /></Field>

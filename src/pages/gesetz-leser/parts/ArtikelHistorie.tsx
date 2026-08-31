@@ -1,6 +1,7 @@
 import { memo, useState } from 'react';
 import type { ArtikelHistorie, HistorieEreignis, HistorieTyp } from '../../../lib/normtext/historie-laden';
 import { formatiereDatum } from '../helpers';
+import { AMTLICHE_FASSUNG_NOMEN } from '../../../lib/benennung';
 
 // G-HIST-UI — Per-Artikel-«Gilt seit»-Badge + aufklappbare Fassungs-Timeline.
 //
@@ -103,7 +104,9 @@ export const ArtikelHistorieZeile = memo(function ArtikelHistorieZeile({ histori
     // Höhe exakt zusammenfallen (§15.2, sonst schiebt der Resolve doch wieder).
     <div data-historie-zeile>
       <div className="flex flex-wrap items-center gap-2">
-        <span className="lc-overline mr-1" title="Fassungshistorie dieses Artikels aus den amtlichen Änderungs-Fussnoten (Fedlex). Massgeblich bleibt die amtliche Quelle.">
+        {/* B-6-Nachzug (R2-A, 31.8.2026): der Vorbehalt hiess «Quelle», direkt
+            unter dem Label «Fassung» — das Nomen kommt jetzt aus der Wortquelle. */}
+        <span className="lc-overline mr-1" title={`Fassungshistorie dieses Artikels aus den amtlichen Änderungs-Fussnoten (Fedlex). Massgeblich bleibt ${AMTLICHE_FASSUNG_NOMEN}.`}>
           <span className="lc-punkt" aria-hidden />Fassung
         </span>
         {hatTimeline ? (

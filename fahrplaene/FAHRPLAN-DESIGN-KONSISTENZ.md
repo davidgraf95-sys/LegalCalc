@@ -73,6 +73,20 @@ LesemodusOverlay-Fokus-Falle von Hand statt `useDialogFokus` (§5) · Fassung/Qu
 C-4/C-5, D-3 (geplant aus Runde 1) · SperrtageZaehler-Haarlinie ohne aria-hidden ·
 zwei inhalt-ansichten-Quell-Link-Formen (an e2e gesetze-ux-g3a gekoppelt).
 
+**Runde 2 — GEBAUT (31.8.2026, Pakete R2-A…F + 2 Einzel-Fixes + D-5):** die komplette
+Runde-1-Restliste und die 16 Runde-2-Finder-Befunde (F1-1…10, F2-MOBIL-1…6) sind umgesetzt;
+dazu Davids zwei Entscheide (LM-061-Affordanz im B8-Strang; «geplant»-Marke = neue
+Farb-Wörterbuch-Zeile). Neue Bausteine: GruppenKopf · Leerzustand · FehlSeite · StandChip ·
+TrefferZeile · RubrikKachel · FacettenGruppe · SelectionGrid-Pille · ListenEditor ·
+SheetRahmen · AbrufFehler · SchwebeMeldung · SeitenTitel · OrtsAngabe · RouteHuelle ·
+LeserKopfGeruest · KopierButton; Token: --scrim×3, --tap-ziel-komfort, lc-akzent-danger,
+lc-badge-geplant. Reglement: R14 neu, R4 ergänzt, Wörterbuch-Zeile «geplant».
+**Für Runde 3 (Finder-Welle 3, dry-Kriterium: 2 Runden ohne Neufund):** die
+«geprüft und konsistent»-Listen beider R2-Finder gelten als abgedeckt; offen aus deren
+Mitdenken: Shell-Schubladen-Kopf ohne lc-glass-Rolle · Startseiten-Dichte der fünf
+h1-Zahlen (Squint) · SelectionGrid-Pillen ohne min-h-Token (B10-Liste) · sage→ok-Rolle
+der zustimmen-Töne · Safe-Area als eigener Bauschritt (kein Konsistenz-Befund).
+
 **Verworfen/kein Befund:** Leerzustand-Wortlaut «gefunden» vs «erfasst» (bedeutungstragend) ·
 H1-Schriftstimmen (Zwei-Stimmen-Regel) · `rounded`=`rounded-sm` (latent, via tailwind-Default
 mitgefixt) · SachgebietKacheln lg: (ohne Sichtschaden, Runde 2 prüfen).

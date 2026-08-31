@@ -1,6 +1,6 @@
-import { useState, type Dispatch, type ReactNode, type SetStateAction } from 'react';
+import { useMemo, useState, type Dispatch, type ReactNode, type SetStateAction } from 'react';
 import { Link } from 'react-router-dom';
-import { FehlerBox, NormLink, Stepper } from './ui';
+import { FehlerBox, KopierButton, NormLink, Stepper } from './ui';
 import { NormChip } from './NormChip';
 import { PassendeRechner } from './PassendeRechner';
 import { NormText } from '../NormText';
@@ -520,6 +520,9 @@ export function ExportLeiste({ ergebnis, deaktiviert, kopiert, onKopieren, pdf, 
   // Word-Exports bei eigenhändigkeitspflichtigen Geschäften (vorlagenDocx.ts)
   // –, erscheint die Meldung sichtbar statt als stille Unhandled Rejection.
   const { fehler, laeuft, exportieren } = useExportAktion();
+  // Der Kopier-Text hing zuvor am Klick; als Prop liefe die Serialisierung des
+  // ganzen Dokuments sonst bei jedem Render mit (§15) — darum memoisiert.
+  const kopierText = useMemo(() => dokumentAlsText(ergebnis), [ergebnis]);
   return (
     <div className="space-y-3">
       <div className="flex flex-wrap gap-3">
@@ -535,10 +538,14 @@ export function ExportLeiste({ ergebnis, deaktiviert, kopiert, onKopieren, pdf, 
             {docx.label}
           </button>
         )}
-        <button type="button" disabled={deaktiviert} onClick={() => onKopieren(dokumentAlsText(ergebnis))}
-          className="lc-btn-outline">
-          {kopiert ? 'Kopiert ✓' : 'Text kopieren'}
-        </button>
+        {/* R2-E/F1-10: der geteilte KopierButton. Zustand und Auslöser bleiben
+            beim Aufrufer (`useVorlage` hält `kopiert` für die ganze Seite) —
+            darum der gesteuerte Modus. Die Grösse bleibt bewusst `lc-btn-outline`
+            ohne `lc-btn-sm`: dieser Knopf steht in EINER Reihe mit dem
+            PDF-/DOCX-Export und muss deren Höhe halten. */}
+        <KopierButton text={kopierText} gegenstand="Text"
+          className="lc-btn-outline" disabled={deaktiviert}
+          kopiert={kopiert} onKopieren={onKopieren} />
       </div>
       {fehler && <FehlerBox fehler={[fehler]} />}
     </div>

@@ -1,3 +1,4 @@
+import { AbrufFehler } from '../../../components/ui/AbrufFehler';
 import { datumAnzeige } from '../../../components/rechtsprechung/format';
 import { VERNEHMLASSUNG_STATUS_LABEL } from '../../../lib/materialien/vernehmlassungen';
 import type { Geladen, MaterialStand } from './panelKontextLaden';
@@ -47,12 +48,17 @@ export function PanelMaterialien({ stand, quelleUrl, ebene }: {
   }
   const { botschaften, vernehmlassungen } = stand.wert ?? { botschaften: null, vernehmlassungen: null };
   // BEIDE null = Manifest unerreichbar (Fetch-Fehler), nicht «nichts erfasst» (§8).
+  // F2-4 (31.8.2026): die Zeile läuft über den EINEN Abruf-Fehler-Baustein
+  // (`ui/AbrufFehler`) — dieselbe Auskunft stand im Haus viermal in zwei
+  // Optiken. Der Ton wechselt dabei von `ink-500` auf `warn-700`: `ink-500` ist
+  // der Ton des ruhigen Leerzustands (die nächste Verzweigung unten), und genau
+  // diesen Unterschied betont der Kommentar über dieser Zeile selbst (§8).
+  // Das `rel="nofollow"` entfällt mit dem Baustein — es stand an genau dieser
+  // einen von vier Fundstellen und an keinem anderen Quell-Link des Hauses.
   if (botschaften === null && vernehmlassungen === null) {
     return (
-      <p data-v3-panel-reiter-inhalt="materialien" className="px-2.5 py-3 text-body-s text-ink-500">
-        Materialien konnten nicht geladen werden. Amtliche Quelle:{' '}
-        <a href={quelleUrl} rel="nofollow noopener noreferrer" target="_blank" className="text-brass-700">Amtliche Fassung ↗</a>
-      </p>
+      <AbrufFehler gegenstand="Materialien" mehrzahl href={quelleUrl}
+        className="px-2.5 py-3" daten={{ 'data-v3-panel-reiter-inhalt': 'materialien' }} />
     );
   }
   const hatBotschaften = (botschaften?.length ?? 0) > 0;

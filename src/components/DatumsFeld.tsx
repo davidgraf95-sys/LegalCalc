@@ -200,7 +200,13 @@ export function DatumsFeld({ value, onChange, className = 'lc-input', wrapperCla
                       aria-label={format(d, 'dd.MM.yyyy')} aria-selected={istGewaehlt}
                       className={`num h-8 flex items-center justify-center rounded-md text-body-s transition-colors ${
                         istGewaehlt
-                          ? 'bg-brass-500 text-ink-900 font-semibold'
+                          // Haus-Auswahl-Anatomie (lc-chip-selected/SelectionGrid):
+                          // brass-100-Fläche + brass-700-Tinte + brass-500-Ring.
+                          // Vorher bg-brass-500 text-ink-900 — ink-900 flippt mit
+                          // dem Thema und stand dunkel bei 2.25:1 auf dem Messington
+                          // (a11y-Fang 31.8.2026, gefangen von e2e/a11y «Dunkel —
+                          // Tagerechner mit offenem Kalender-Popover»).
+                          ? 'bg-brass-100 text-brass-700 font-semibold ring-1 ring-inset ring-brass-500'
                           : 'text-ink-700 hover:bg-brass-100'
                       }`}
                       style={!istGewaehlt && istHeute ? { boxShadow: 'inset 0 0 0 1px var(--brass-500)' } : undefined}

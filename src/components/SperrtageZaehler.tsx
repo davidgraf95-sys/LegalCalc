@@ -27,7 +27,11 @@ export function SperrtageZaehler({ sperrtage }: { sperrtage: NonNullable<Sperrfr
     <section data-ansicht="sperrtage-zaehler" aria-label="Sperrtage-Zähler" className="lc-card p-5 space-y-3">
       <div className="flex items-center gap-4">
         <h3 className="lc-overline text-ink-700">Sperrtage-Zähler</h3>
-        <div className="flex-1 h-px bg-line" />
+        {/* R2-A (31.8.2026): die Haarlinie ist reine Zierde und war als
+            einzige der App nicht `aria-hidden` — ein Screenreader las an dieser
+            Stelle einen leeren Container mit. Dieselbe Auszeichnung wie im
+            geteilten `ui/GruppenKopf`. */}
+        <div aria-hidden className="flex-1 h-px bg-line" />
         {/* LM-101-Muster: Buchstabenzusatz (336c) darf die uppercase-Overline nicht durchlaufen. */}
         <span className="lc-overline normal-case"><NormText text={`Art. 336c OR`} /></span>
       </div>
