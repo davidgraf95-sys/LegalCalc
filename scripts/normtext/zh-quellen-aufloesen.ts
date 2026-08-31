@@ -67,10 +67,16 @@ async function loese(id: string, nr: string): Promise<ZhQuelle | null> {
   const exakt = (json.data ?? []).filter((s) => s.referenceNumber === nr && !s.withdrawalDate);
   if (exakt.length !== 1) return null;
   const s = exakt[0];
-  const klammer = s.enactmentTitle.match(/\(([^()]+)\)\s*$/);
+  // Der Endpunkt hängt bei einigen Erlassen ein bis zwei Leerzeichen an
+  // («Gemeindegesetz (GG) »). Das ist Transport-Artefakt, nicht Titelbestandteil
+  // — hier EINMAL getrimmt, damit Liste und Prüfung dieselbe Normalisierung
+  // sehen. (Ohne das meldete die Prüfung 4 von 20 Erlassen dauerhaft als
+  // Abweichung, obwohl nur das Leerzeichen differierte — Befund 31.8.2026.)
+  const titel = s.enactmentTitle.trim();
+  const klammer = titel.match(/\(([^()]+)\)\s*$/);
   return {
     nr,
-    titel: s.enactmentTitle,
+    titel,
     kuerzel: klammer ? klammer[1] : '',
     registryUrl: new URL(s.link, 'https://www.zh.ch').toString(),
   };
