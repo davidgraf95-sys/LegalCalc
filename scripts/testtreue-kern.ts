@@ -1,4 +1,7 @@
-// scripts/check-testtreue-kern.ts — §6.3-Diff-Tor, reiner Kern (QS-AUDIT-VERWEISE, 8.8.2026).
+// scripts/testtreue-kern.ts — §6.3-Diff-Tor, reiner Kern (QS-AUDIT-VERWEISE, 8.8.2026).
+// Bis 31.8.2026 `scripts/check-testtreue-kern.ts`; umbenannt, weil das Modul kein
+// Tor-Einstieg ist (kein `check:*`-Skript ruft es direkt) und darum nicht in die
+// Tor-Fläche `scripts/check-*.ts` gehört. Einstieg bleibt check-testtreue.ts.
 //
 // §6.3: «Tests werden bei Refactorings nicht angepasst.» Muss ein Test geändert
 // werden, ist es eine fachliche Änderung und gehört in einen eigenen,
