@@ -26,9 +26,21 @@ import type { Geladen, MaterialStand } from './panelKontextLaden';
 // Reiter «Anwendung» (`PanelAnwendung.tsx`, vierter Eintrag in `PANEL_REITER`).
 // Wer erwägt, hier eine dritte Sektion aufzumachen, liest zuerst den Kopf dort.
 
-export function PanelMaterialien({ stand, quelleUrl }: {
+// ── K-2b/F37 (W2·13-KANTONE, 31.8.2026) · WARUM DER KANTON HIER LEER IST ─────
+// GEMESSEN am 31.8.2026: `public/materialien/register.json` führt 1559 Einträge
+// von neun Behörden — ESTV, EDÖB, SECO, BSV, EHRA, FINMA, IGE, BR, Bund —, also
+// ausnahmslos eidgenössische; `public/materialien/kanten/` hat 10 Dateien,
+// davon 0 zu einem kantonalen Erlass-Key. «Zu diesem Erlass ist kein amtliches
+// Material erfasst» war damit am Kantonserlass eine Aussage über den Erlass, wo
+// eine über den KORPUS hingehört (§8) — der Zusatz sagt sie.
+const KANTON_ABDECKUNG = 'Die Materialien-Sammlung erfasst bisher nur Bundeserlasse.';
+
+export function PanelMaterialien({ stand, quelleUrl, ebene }: {
   stand: Geladen<MaterialStand>;
   quelleUrl: string;
+  /** Ebene des Erlasses — durchgereicht aus dem Modell (§5, s. `PanelEntscheide`).
+   *  Steuert allein den Leerzustands-Zusatz; `undefined` = keine Aussage. */
+  ebene?: 'bund' | 'kanton';
 }) {
   if (!stand.fertig) {
     return <p data-v3-panel-reiter-inhalt="materialien" className="px-2.5 py-3 text-body-s text-ink-500">Materialien werden geladen …</p>;
@@ -49,6 +61,9 @@ export function PanelMaterialien({ stand, quelleUrl }: {
     return (
       <p data-v3-panel-reiter-inhalt="materialien" className="px-2.5 py-3 text-body-s text-ink-500">
         Zu diesem Erlass ist kein amtliches Material erfasst.
+        {ebene === 'kanton' && (
+          <span data-v3-panel-abdeckung="kanton" className="block text-ink-400">{KANTON_ABDECKUNG}</span>
+        )}
       </p>
     );
   }

@@ -74,13 +74,14 @@ zgb-a36-anhang: Die ZGB-Gliederung zeigt 74 Artikel des Anhangs «Wortlaut der f
      Das Lagebild liest diesen Block mechanisch (davidFragen, scripts/plan/bildDaten.ts) —
      beantwortete Fragen HIER löschen, dann verschwinden sie von der Seite (§5). -->
 
-<!-- @queue: W2·13-KANTONE, W2·6b-MAT-FINMA, W2·11-DESIGN -->
+<!-- @queue: W2·6b-MAT-FINMA, W2·11-DESIGN -->
 <!-- ^ SSoT der Bau-Reihenfolge: plan:next wertet die @queue VOR der Dokumentreihenfolge aus;
      Integrität erzwingt check:plan Regel 8. Priorität ändern = NUR diese Zeile ändern.
      Ohne Queue-Eintrag entscheidet die Dokumentreihenfolge — Produkt-Felder stehen darum
      vor `Betrieb & Prüfstrasse`. -->
 
-> **⬆ OBERSTER OFFENER SCHRITT: `W2·13-KANTONE`** — W2·10-UI-NAV komplett gelandet 29.8.2026 (Chronik)
+> **⬆ OBERSTER OFFENER SCHRITT: `W2·6b-MAT-FINMA`** — `W2·13-KANTONE` seit 31.8.2026 im Bau
+> (wip, Worktree lexmetrik-kantone); W2·10-UI-NAV komplett gelandet 29.8.2026 (Chronik)
 > (Risikopfad, eigene Session). Fokus-Dekret 24.7.2026 (David): die Gesetzesdarstellung steht im
 > Vordergrund — Gesetzes-Schritte prioritär, daneben `W2·6b-MAT-FINMA` (Bewerbungs-Kontext FINMA).
 > Wortlaute der Dekrete → `ROADMAP-CHRONIK.md`.
@@ -99,17 +100,20 @@ zgb-a36-anhang: Die ZGB-Gliederung zeigt 74 Artikel des Anhangs «Wortlaut der f
   - [ ] **S1 · Historie-Modell** — «Änderungsvermerke: an/aus», bei «aus» keine Spur im Lesetext (Sichtbarkeits-Wächter §8) — **wartet auf F1/F2**. Kap. 7.
   - [ ] **S2 · Typografie + Artikel-Raster** — Variante nach Bildvergleich (**F3**), gleichmässige Abstände, CLS 0. Kap. 7/8.
   - [ ] **S4 · Kantons-Probe** — Kantonserlasse rendern unverändert (Fokus Bund, nichts bricht); der H2-Kontaktbogen deckt nur Bund ab. Kap. 7.
+  - [ ] **Tor-Konflikt `erlassAnsicht.ts`-Deckel** *(§17-Wurzel-Fix, Befund 31.8.2026)* — `leser-v3-fundament` verlangt jede `.ebene`-Ableitung in `erlassAnsicht.ts` UND deckelt die Datei (421/420er-Grenze, muss unter `leserV3Modell.ts` bleiben); die nächste erzwungene Ableitung hat keinen Platz. Deckel neu kalibrieren oder Datei schneiden — Wurzel-Fix, kein Einzelfall-Umschiffen.
 
-- [ ] **Kantonale Gesetze — Darstellung & Suche** *(`W2·13-KANTONE`, Auftrag David 12.7.2026, `[OF]`)*
-  <!-- @meta id: W2·13-KANTONE · status: ready · blocker: null · dep: [] · feld: leser · fahrplan: fahrplaene/FAHRPLAN-KANTONE.md -->
+- [x] **Kantonale Gesetze — Darstellung & Suche** *(`W2·13-KANTONE`, Auftrag David 12.7.2026, `[OF]`)*
+  <!-- @meta id: W2·13-KANTONE · status: done · blocker: null · dep: [] · feld: leser · fahrplan: fahrplaene/FAHRPLAN-KANTONE.md -->
   Hier die NICHT-Risiko-Einheiten (reine Darstellung/Suche/Anzeige); Extraktion & Daten liegen in
   `W2·13-KANTONE-DATEN`. **Fertig, wenn** K-1 bis K-11 abgehakt sind.
   **Detail:** [FAHRPLAN-KANTONE.md](fahrplaene/FAHRPLAN-KANTONE.md) §2.
-  - [ ] **K-1 · Reader-Treue P0** *(F24/F25/F28/F33/F29-Display/F5)* — reine Display-Schicht. §1-A.
-  - [ ] **K-2 · §8-Ehrlichkeit UI** *(F26-UI/F37/F44/F27-Rest)* — Currency-Chip, Kanton-Hinweis, «Stand unbekannt». §1-A.
-  - [ ] **K-3 · Suche: Kanton-Treffer auf die richtige Ebene** *(F35/F36)* — Edge-DTO um `ebene`/`kanton`. §1-A.
-  - [ ] **K-5 · NormText-Verweise Kanton** *(F41 → F40 → F42)* — EINE Einheit, golden-neutral, harte Binnenfolge F41 vor F40. §1-A.
-  - [ ] **K-11 · Kanton-Reader-Performance profilieren** *(F32)* — **erst messen**, nichts «fixen» vor dem Profil. §1-A.
+  - [x] **K-1 · Reader-Treue P0** *(F24/F25/F28/F33/F29-Display/F5)* — ✅ 31.8.2026: F24 dokumentlinear (4 Erlasse inkl. Bund/KKV), F25 pathname-Decode (3 GL-Schlüssel geheilt), F5 fr/it (+38 Erlasse); F28/F33 waren seit 18.8. gebaut, F29 gegenstandslos (0 `*`-Vorkommen). §1-A + Ist-Stand-Block Fahrplan §2.
+  - [x] **K-2 · §8-Ehrlichkeit UI** *(F26-UI/F37/F44/F27-Rest)* — ✅ 31.8.2026: «Geltung ungeprüft» (interaktiv + prerendert, lebt-Gate), «Stand unbekannt», Kanton-Leerzustände der Panels, Systematik-Hinweis; F44 war seit K-2c gebaut. §1-A.
+  - [x] **K-3 · Suche: Kanton-Treffer auf die richtige Ebene** *(F35/F36)* — ✅ 31.8.2026: Edge-DTO additiv um ebene/kanton, Href + Kanton-Marke, Ebenen-Routing via Kantonskürzel-Regel (heilt auch chipZiel & Co.); Betriebs-Vorbehalt: Live-Turso braucht Spalten aus PR #313 (nach Merge geprüft). §1-A.
+  - [x] **K-5 · NormText-Verweise Kanton** *(F41 → F40 → F42)* — ✅ 31.8.2026: F41 (199 falsche Self-Links gesperrt, 0 nachher), F40 (3267 §-Links in 464 Erlassen), Bund byte-unverändert; F42 entfällt nach Messung (<1 % Ertrag, Falschlink-Risiko). §1-A.
+  - [x] **K-11 · Kanton-Reader-Performance profilieren** *(F32)* — ✅ 31.8.2026 NUR gemessen: 50-s-Symptom nicht reproduzierbar, Blocker beziffert (753-KB-Register je Leserseite u. a.), Wächter-Route im Lighthouse-Tor, Dossier `bibliothek/seo/kanton-reader-profil-2026-08-31.md`; Fixes = eigener Schritt mit §15-Bewertung. §1-A.
+  - [ ] **des/der-Guard Bund passus-tolerant** *(K-5-Ausläufer, Messung 31.8.2026)* — hätte 371 Self-Links in 226 **Bundes**-Erlassen entfernt ⇒ fachliche Änderung mit eigenem Schritt (§6.3), nicht golden-neutral; Caveat: die «über»-Alternative erzeugt echte Self-Verweise (VTS art_222j), 7 von 8 Stichproben der Kandidaten waren falsch.
+  - [ ] **«§ N» in Fremdgesetz-Chapeau-Items verlinken** *(K-5-Lücke, 31.8.2026)* — `ArtikelBody` baut `fremdIntern` ohne `paragrafDesigniert`; dort bleibt «§ N» unverlinkt (konservativ, §1-konform — Nachzug klein).
 
 - [~] **Verzahnung sichtbar machen** *(`W2·7-VZUI`, David-Auftrag 3.7.2026; reine UI auf vorhandenen Daten)*
   <!-- @meta id: W2·7-VZUI · status: wip · blocker: null · dep: [] · feld: leser · fahrplan: fahrplaene/FAHRPLAN-VERZAHNUNG-UI.md -->
@@ -163,6 +167,8 @@ zgb-a36-anhang: Die ZGB-Gliederung zeigt 74 Artikel des Anhangs «Wortlaut der f
   - [ ] **K-14 · Kantonales Zitat-Vokabular — POC** *(F39)* — nur exakte Sammlungsnummer-Matches; Prämisse «Entscheid-`normKeys` sind Bund-only» vor dem Bau nachmessen. §1-A.
   - [ ] **PDF-Pfad liest Ziffern-Tarife falsch** *(19B-Nachtrag 13.8.)* — SG-3849-Wurzel: generisches «Art. N»-Muster greift auch in Querverweisen; Regel «Nr. XX.YY am Zeilenanfang» nötig. §1-A.
   - [ ] **Fassungs-Drift PDF-erfasster Snapshots unbemerkt** *(§17-Wurzel-Fix)* — `fassungsToken` ändert sich nicht bei neuer Portal-Fassung (SG-2808 hängt an 2808/2012, amtlich gilt 3863). Nötig: Tor `current_version.id` ↔ Snapshot. §1-A.
+  - [ ] **Kern-Kategorie als Registerfeld statt Titel-Muster** *(§17-Wurzel-Fix, Gegenprüfung 31.8.2026 Befunde 1+2)* — heute entscheidet die zufällige Wortzusammensetzung («Handänderungs**steuergesetz**» trifft, «Gesetz über die Handänderungssteuer» nicht; 15 Erlasse tragen die Sache nur im Kürzel, Bestandsmuster lesen nur den Titel). Deklariertes Feld in der Pipeline-Quelle, Muster-Raten zurückbauen; dabei die David-Frage «Handänderungs-/Grundbuchabgaben = Kernklasse?» mitentscheiden lassen.
+  - [ ] **Manifest-Sprache ehrlich + Dubletten** *(Befund Bau W2·13-KANTONE 31.8.2026)* — 37 fr/it-Erlasse als `sprache:'de'` deklariert (nur 2 korrekt ≠ de, §8); mehrere Erlasse doppelt im Manifest (FR-261.16-Notariatstarif, JU-Décret émoluments, TI-Legge tariffa giudiziaria, VS-Notariats-Règlement). Pipeline-Quelle fixen, nie die Projektion (§5).
 
 - [ ] **Kantonale Snapshots gegen die Quellen nachführen** *(`W2·13-KANTONE-DRIFT`, Befund 2.8.2026)*
   <!-- @meta id: W2·13-KANTONE-DRIFT · status: ready · blocker: null · dep: [] · feld: korpus · fahrplan: fahrplaene/FAHRPLAN-KANTONE.md -->
