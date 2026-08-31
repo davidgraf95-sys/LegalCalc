@@ -28,6 +28,9 @@ const ARTEFAKT = 'messwerte/verweis-inventar.json';
 const QUELLEN: Record<string, string> = {
   'NormText.tsx': 'src/components/NormText.tsx',
   'ArtikelBody.tsx': 'src/components/normtext/ArtikelBody.tsx',
+  // V-3 (W2·20): die Kürzel-KANDIDATEN-Regel entscheidet mit über Link/kein
+  // Link, steht aber in der Datenzuleitung des Lesers, nicht in NormText.
+  'inhalt-sprung.tsx': 'src/pages/gesetz-leser/inhalt-sprung.tsx',
 };
 
 /** Guard-Tabelle der Transkription: (Name, Quelldatei, transkribiertes Literal).
@@ -76,6 +79,8 @@ describe('V-1 · Verweis-Inventar-Tor: Guard-Transkription', () => {
       'ART_INTERN', 'PARAGRAF_INTERN', 'PARAGRAF_FREMD_GROSS', 'PARAGRAF_FREMD_NAME',
       'M12', 'NORM_REF', 'KUERZEL_KANON',
       'CHAPEAU_DOPPELPUNKT', 'CHAPEAU_BESTIMMUNGEN', 'CHAPEAU_KUERZEL',
+      'KANTON_KUERZEL_TOKEN', 'KANTON_KUERZEL_INTERPUNKTION',
+      'KANTON_KUERZEL_KANDIDAT', 'KANTON_KUERZEL_KANDIDAT_FILTER',
     ]) {
       expect(namen, `Guard ${pflicht} nicht mehr transkribiert`).toContain(pflicht);
     }

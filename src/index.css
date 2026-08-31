@@ -1365,6 +1365,48 @@
     background: var(--surface);
   }
 
+  /* ─── Aussen-Anzeige des Inline-Verweises (V-4, W2·20-VERWEIS-SCHAERFE) ────
+     «wenn es ausserhalb ist, dass es das anzeigt» (Auftrag David 31.8.2026). Im
+     Lesetext trugen der Sprung IM gelesenen Erlass und der Verweis in einen
+     ANDEREN Erlass bis hierher dieselbe Ruhe-Optik; der Unterschied zeigte sich
+     erst nach dem Klick (Messbericht 31.8.2026, Kernbefund 4). Der Fremd-Verweis
+     behält die gepunktete Linie (`VERWEIS_INLINE_CLASS`) und bekommt das ↗
+     nachgestellt — dasselbe Zeichen, das «amtliche Quelle ↗» und der
+     NormPopover-Fuss schon führen (kein neues Farbwort, kein zweites Icon).
+
+     WARUM PSEUDO-ELEMENT statt Textknoten — Vorbild `.lc-chip-selected::before`:
+      · §1 Wortlaut: eine kopierte Bestimmung darf kein ↗ in die Rechtsschrift
+        tragen; Pseudo-Inhalt landet nicht in der Zwischenablage.
+      · F2: das Signal ist eine FORM, keine Farbe (die Farb-Rechnung an
+        VERWEIS_INLINE_CLASS zeigt, dass ein Verweis-Farbton die Doppelschranke
+        G183 + SC 1.4.3 gar nicht halten kann).
+     Farbe = currentColor (erbt Hover/Fokus/Theme, hell wie dunkel, F7); em-Masse
+     statt Pixel, weil der Verweis in jeder Lese-Textgrösse steht (A−/A+). Die
+     gepunktete Linie läuft unter dem Zeichen weiter — Verweis und Zeichen sind
+     EINE Marke, nicht zwei. */
+  .lc-verweis-aussen::after {
+    content: '↗';
+    /* KEIN inline-block — gemessen 31.8.2026 im GEBAUTEN Stand (chromium,
+       vite preview 4186, BS-111.100 § 143): als `inline-block` bekam das
+       Pseudo-Element im Lesetext die Breite 0
+       (`getComputedStyle(a,'::after').width === '0px'`, unabhängig von Schrift
+       und Inhalt — auch ein 'X' blieb 0), und Chrome malte den Glyph rund 32 px
+       LINKS vom eigenen Kasten: der Pfeil stand VOR dem Verweis
+       («gemäss↗§ 6 IRG»). Mit `inline` misst derselbe Kasten `auto` und das
+       Zeichen steht, wo es hingehört. Der Fund kam aus dem Screenshot-Beweis,
+       nicht aus dem Unit-Test — ein DOM-Wächter hätte ihn nicht gesehen.
+       Die SCHRIFT ist gesetzt, nicht geerbt: die Lese-Serife «Source Serif 4»
+       führt U+2197 nicht, der Ersatz käme je nach System aus einer beliebigen
+       Fallback-Schrift (bis zum Tofu-Kasten). Vorbild `.lc-amp` — ein Zeichen
+       aus der Sans mitten im Serifentext ist das Hausmittel, kein Sonderweg. */
+    font-family: var(--font-sans), system-ui, sans-serif;
+    display: inline;
+    margin-left: .12em;
+    font-size: .78em;
+    line-height: 1;
+    vertical-align: .28em;
+  }
+
   /* ─── Die scrollbare Instanz-Linie (W2·7-BEZUG/B7, David 28.7.2026) ────────
      «je eine linie für jede instanz und alle sichtbar» — eine Klasse, eine
      Linie, waagrecht durchscrollbar.

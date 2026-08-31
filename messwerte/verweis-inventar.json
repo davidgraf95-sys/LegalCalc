@@ -2,8 +2,8 @@
   "_zweck": "Verweis-Inventar des Normtext-Korpus (V-1, W2·20-VERWEIS-SCHAERFE). Basislinie: jede Abweichung Artefakt ↔ Neuberechnung ist ROT. Erzeugung und Grenzen: scripts/check-verweis-inventar.ts (Kopf).",
   "_regenerieren": "npm run check:verweis-inventar -- --schreiben",
   "_quellen": {
-    "normTextSha256": "64a45957f5045fc0aa73db40aa21baa083e0cd79da1e076e63a05145536d1337",
-    "guards": 19
+    "normTextSha256": "efcf1ed2577d5d9c47c45e9b0d8d7a3e7e09e3df1c3451a5add68cae0695ad84",
+    "guards": 23
   },
   "korpus": {
     "erlasse": 1458,
@@ -13,8 +13,8 @@
   "gesamt": {
     "stellen": 34058,
     "self": 20198,
-    "fremd": 4149,
-    "text": 9711,
+    "fremd": 4709,
+    "text": 9151,
     "selbstmarker": 927
   },
   "klassen": [
@@ -133,8 +133,8 @@
     {
       "klasse": "paragraf-fremd-grosswort",
       "entscheid": "TEXT",
-      "stellen": 724,
-      "erlasse": 174,
+      "stellen": 164,
+      "erlasse": 79,
       "selbstmarker": 0,
       "was": "«§ N <Grosswort>» — Fremd-Indiz, kein Link"
     },
@@ -145,6 +145,14 @@
       "erlasse": 302,
       "selbstmarker": 0,
       "was": "«§ N des/der/über/vom …» — Fremd-Indiz, kein Link"
+    },
+    {
+      "klasse": "paragraf-kanton-kuerzel",
+      "entscheid": "FREMD",
+      "stellen": 560,
+      "erlasse": 116,
+      "selbstmarker": 0,
+      "was": "«§ N KÜRZEL» — im Kanton EINDEUTIGES Kürzel eines anderen Erlasses → Link auf dessen Lesesicht (V-3)"
     },
     {
       "klasse": "paragraf-kein-token",

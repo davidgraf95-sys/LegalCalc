@@ -21,10 +21,20 @@ import {
   normVerweiseImText, fremdgesetzNachArtikel, fremdRoutingFormB,
   artikelnPluralVerweise, erkenneFedlexGesetz,
 } from '../src/lib/fedlex';
+// V-3: dieselbe Token-Ableitung wie die Produktion (§5) — der Link entsteht
+// nur, wenn `parsePassus` einen Anker liefert.
+import { parsePassus } from '../src/lib/normtext/passus';
 
 const WURZEL = process.cwd();
 export const NORMTEXT_PFAD = join(WURZEL, 'src', 'components', 'NormText.tsx');
 export const ARTIKELBODY_PFAD = join(WURZEL, 'src', 'components', 'normtext', 'ArtikelBody.tsx');
+// V-3: die Kürzel-KANDIDATEN-Regel steht in der Datenzuleitung des Lesers
+// (`baueKantonKuerzelKarte`), nicht in NormText — der Wächter liest sie dort.
+// Bewusst KEIN zweiter SHA-256 auf diese Datei: sie trägt auch Sprung-, Such-
+// und Spy-Hooks, die mit der Verweis-Auflösung nichts zu tun haben; ein Tor,
+// das bei jedem Hook-Umbau rot wird, wird abgeschaltet (§6.7). Der
+// Literal-Wächter ist hier das präzise Instrument.
+export const INHALT_SPRUNG_PFAD = join(WURZEL, 'src', 'pages', 'gesetz-leser', 'inhalt-sprung.tsx');
 
 // ─── 1 · Transkribierte Guards (Wächter-Massstab UND Compile-Quelle) ────────
 //
@@ -35,7 +45,7 @@ export const ARTIKELBODY_PFAD = join(WURZEL, 'src', 'components', 'normtext', 'A
 
 export interface GuardQuelle {
   zweck: string;
-  datei: 'NormText.tsx' | 'ArtikelBody.tsx';
+  datei: 'NormText.tsx' | 'ArtikelBody.tsx' | 'inhalt-sprung.tsx';
   literal: string;
   stringLiteral?: true;
 }
@@ -120,6 +130,27 @@ export const G = {
     zweck: 'nenntEigenesKuerzel — Wortgrenze INKL. Bindestrich (KKV vs. KKV-FINMA)',
     datei: 'NormText.tsx',
     literal: String.raw`nach === '' || !/[\p{L}\p{N}-]/u.test(nach[0])`,
+  },
+  // ── V-3: Kanton-Kürzel-Resolver (§-Pfad) ──────────────────────────────────
+  KANTON_KUERZEL_TOKEN: {
+    zweck: 'kantonZielAmZitat — erstes Wort am Zitat (nach Passus)',
+    datei: 'NormText.tsx',
+    literal: String.raw`/^\s+(\S+)/`,
+  },
+  KANTON_KUERZEL_INTERPUNKTION: {
+    zweck: 'kantonZielAmZitat — Satzzeichen am Zitat-Ende («§ 34 BPV).»); OHNE Bindestrich (SoHaG-Anhang ≠ SoHaG)',
+    datei: 'NormText.tsx',
+    literal: String.raw`/[.,;:)\]]+$/`,
+  },
+  KANTON_KUERZEL_KANDIDAT: {
+    zweck: 'kuerzelKandidaten — welche Register-Kürzel überhaupt Ziel sein können (Datenzuleitung)',
+    datei: 'inhalt-sprung.tsx',
+    literal: String.raw`kuerzel.split(';').map((s) => s.trim())`,
+  },
+  KANTON_KUERZEL_KANDIDAT_FILTER: {
+    zweck: 'kuerzelKandidaten — EIN Wort, ≥2 Zeichen, gross beginnend',
+    datei: 'inhalt-sprung.tsx',
+    literal: String.raw`.filter((s) => s.length >= 2 && !/\s/.test(s) && /^[A-ZÄÖÜ]/.test(s))`,
   },
   CHAPEAU_DOPPELPUNKT: {
     zweck: 'etabliertFremdgesetz — Doppelpunkt am Chapeau-Ende (M6)',
@@ -221,6 +252,19 @@ function selbstSignalAmZitat(rest: string, ctx: Ctx): boolean {
   return SELBST_MARKER.test(nachPassus) || nenntEigenesKuerzel(nachPassus, ctx.registerKuerzel);
 }
 
+// ─── 2b · V-3-Kanton-Kürzel-Resolver (Transkription) ────────────────────────
+const KANTON_KUERZEL_TOKEN = re(G.KANTON_KUERZEL_TOKEN.literal);
+const KANTON_KUERZEL_INTERPUNKTION = re(G.KANTON_KUERZEL_INTERPUNKTION.literal);
+
+/** Transkription von `kantonZielAmZitat` (NormText.tsx, V-3). */
+function kantonZielAmZitat(rest: string, ctx: Ctx): string | null {
+  const karte = ctx.kantonKuerzel;
+  if (!karte) return null;
+  const m = KANTON_KUERZEL_TOKEN.exec(rest.replace(PARAGRAF_ANHANG, ''));
+  if (!m) return null;
+  return karte.get(m[1].replace(KANTON_KUERZEL_INTERPUNKTION, '')) ?? null;
+}
+
 // Zeit-Kante (V-5, nur Zählung): Randtitel-Indiz bzw. Altrecht-Wendung im Block.
 export const ZEIT_TITEL = /Übergangs/i;
 export const ZEIT_ALTRECHT = /\b(?:bisherige[nmrs]?\s+Recht|frühere[nmrs]?\s+Recht|altrechtlich)/i;
@@ -246,6 +290,7 @@ export const KLASSEN: Record<string, { entscheid: Entscheid; was: string }> = {
   'n2b-glied': { entscheid: 'FREMD', was: 'Glied der Form B «Artikel N … des <Name> (KÜRZEL)»' },
   'n2b-glied-text': { entscheid: 'TEXT', was: 'Form-B-Glied ohne Ziel-Token (heute strukturell 0 — NormText übergibt kein Prädikat)' },
   'paragraf-fremd-grosswort': { entscheid: 'TEXT', was: '«§ N <Grosswort>» — Fremd-Indiz, kein Link' },
+  'paragraf-kanton-kuerzel': { entscheid: 'FREMD', was: '«§ N KÜRZEL» — im Kanton EINDEUTIGES Kürzel eines anderen Erlasses → Link auf dessen Lesesicht (V-3)' },
   'paragraf-fremd-name': { entscheid: 'TEXT', was: '«§ N des/der/über/vom …» — Fremd-Indiz, kein Link' },
   'paragraf-kein-token': { entscheid: 'TEXT', was: '«§ N» — Bestimmung existiert im Erlass nicht' },
   'paragraf-self': { entscheid: 'SELF', was: '«§ N» → Sprung im eigenen Erlass (F40)' },
@@ -268,6 +313,9 @@ export interface Ctx {
   registerKuerzel?: string;
   paragrafDesigniert: boolean;
   fremdKuerzel?: string;
+  /** V-3: Kürzel → Lese-Adresse der ANDEREN Erlasse desselben Kantons, wie
+   *  `baueKantonKuerzelKarte` sie dem Leser gibt (Aufbau im Tor, Abschnitt 4). */
+  kantonKuerzel?: ReadonlyMap<string, string>;
 }
 
 export interface Stelle {
@@ -328,6 +376,14 @@ function restStellen(s: string, ctx: Ctx): Stelle[] {
       if (inPluralRegion(start)) continue;
       const nach = s.slice(end);
       const sm = selbstSignalAmZitat(nach, ctx);
+      // V-3: benanntes Kürzel eines ANDEREN Erlasses desselben Kantons → Link.
+      // Steht wie in der Produktion VOR den Fremd-Guards und NACH dem
+      // Selbst-Signal; ohne Anker-Token fällt es in die Guards zurück.
+      const kantonZiel = sm ? null : kantonZielAmZitat(nach, ctx);
+      if (kantonZiel && parsePassus(m[0])?.artikelToken) {
+        linkSpans.push({ start, end, s: stelle('paragraf-kanton-kuerzel', m[1], ctx, sm) });
+        continue;
+      }
       const rest = nach.replace(PARAGRAF_ANHANG, '');
       // V-2: das ausdrückliche Selbst-Signal steht VOR beiden Fremd-Guards.
       // Produktion prüft die beiden Signale danach in EINER Bedingung; hier
@@ -470,6 +526,7 @@ export function waechterGuards(): string[] {
   const quelle: Record<string, string> = {
     'NormText.tsx': readFileSync(NORMTEXT_PFAD, 'utf8'),
     'ArtikelBody.tsx': readFileSync(ARTIKELBODY_PFAD, 'utf8'),
+    'inhalt-sprung.tsx': readFileSync(INHALT_SPRUNG_PFAD, 'utf8'),
   };
   const fehler: string[] = [];
   for (const [name, g] of Object.entries(G) as [string, GuardQuelle][]) {

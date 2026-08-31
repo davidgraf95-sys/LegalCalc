@@ -6,6 +6,11 @@ import {
 } from '../lib/fedlex';
 import { NormChip } from './vorlagen/NormChip';
 import { RechtsprechungText } from './RechtsprechungLink';
+// V-3: Nummer → Anker-Token («6a» → «6_a»). EINE Wahrheit über die Token-Form
+// (§5) — dieselbe Funktion, die Popover-Trigger und Suche benutzen; ein zweites
+// Format hier liefe beim nächsten Snapshot-Nachzug still daneben. Reines
+// Adress-Modul ohne eigene Importe (kein Zyklus, kein Bundle-Zuwachs).
+import { parsePassus } from '../lib/normtext/passus';
 
 // ─── Inline-Norm-Auto-Linker (Auftrag David 17.6.2026) ─────────────────────
 //
@@ -84,6 +89,39 @@ export const VERWEIS_RUHE = 'underline decoration-dotted underline-offset-2';
 export const VERWEIS_INLINE_CLASS = `${VERWEIS_RUHE} hover:text-brass-700`;
 const INLINE_CLASS = VERWEIS_INLINE_CLASS;
 
+// ─── V-4 · AUSSEN-ANZEIGE (W2·20-VERWEIS-SCHAERFE, Auftrag David 31.8.2026) ──
+//
+// «… und wenn es ausserhalb ist, dass es das anzeigt.» Bis hierher trugen der
+// Sprung IM gelesenen Erlass und der Verweis in einen ANDEREN Erlass dieselbe
+// Klasse — der Unterschied lag allein im Verhalten (Popover/Fedlex vs.
+// Scroll-Sprung), also erst NACH dem Klick (Messbericht 31.8.2026, Kernbefund
+// 4). Die Ruhe-Optik unterscheidet sie jetzt.
+//
+// ANATOMIE — bewusst additiv, drei Selbstbeschränkungen:
+//  1. KEIN neues Farbwort (das wäre ein David-Entscheid, DESIGN-REGLEMENT §
+//     Farb-Wörterbuch) und kein zweites Icon: «↗» ist das ETABLIERTE
+//     Aussen-Zeichen des Hauses («amtliche Quelle ↗», «Amtliche Fassung ↗»,
+//     NormPopover-Fuss). Der Fremd-Verweis behält die gepunktete Linie und
+//     bekommt sie nachgestellt.
+//  2. Der SELF-Sprung bleibt unverändert — er ist mit Abstand der häufigste
+//     Fall (20 198 der 34 058 Stellen); ihn lauter zu machen hiesse, den
+//     Lesetext zu vergröbern.
+//  3. Das Zeichen steht als ::after-PSEUDOELEMENT (`lc-verweis-aussen`,
+//     index.css), nicht als Textknoten. Zwei Gründe, beide inhaltlich:
+//     · §1 — der amtliche Wortlaut bleibt zeichengleich. Ein Textknoten «↗»
+//       wanderte beim Kopieren einer Bestimmung in die Zwischenablage und
+//       damit in Rechtsschriften; Pseudo-Inhalt tut das nicht.
+//     · F2/WCAG — das Signal ist eine FORM, nicht bloss eine Farbe (die
+//       Kontrast-Rechnung an VERWEIS_INLINE_CLASS zeigt, dass ein Farb-Token
+//       die Doppelschranke gar nicht halten KANN).
+//
+// REICHWEITE: nur die Lesesicht (`intern` gesetzt). Ausserhalb des Lesers
+// (Tarif-Hinweise, Gates-/Ergebnis-Warnungen, Vorlagen-Texte) gibt es kein
+// «innen», gegen das sich ein «aussen» abheben könnte — und die Warnung an
+// VERWEIS_INLINE_CLASS Ziff. 1 gilt: eine Leser-Etappe zieht die Verweis-
+// Auszeichnung der GANZEN Site nicht mit.
+export const VERWEIS_AUSSEN_CLASS = `${VERWEIS_INLINE_CLASS} lc-verweis-aussen`;
+
 // ─── Interne Querverweise (Lesesicht, Deep-Research-Befund 7) ───────────────
 // In der Gesetzes-Lesesicht sind BARE Artikelverweise («nach Artikel 6a»,
 // «gemäss Art. 12») gemeint = Artikel DESSELBEN Erlasses (Drafting-Konvention;
@@ -131,6 +169,18 @@ export interface InternRefs {
    *  dieselbe Bauart wie `paragrafDesigniert`). Ungesetzt ⇒ Ziel 2 der
    *  Selbstmarker-Weiche ruht, Rendering byte-identisch zum Stand davor. */
   eigenesKuerzel?: string;
+  /** V-3 (W2·20-VERWEIS-SCHAERFE): Kürzel → Lese-Adresse der ANDEREN Erlasse
+   *  DESSELBEN Kantons. Abgeleitet aus dem Register-Manifest, das der Leser
+   *  ohnehin geladen hat (`baueKantonKuerzelKarte`, inhalt-sprung.tsx) — kein
+   *  zweiter Client-Index, kein Eager-Fetch. Die Komponente bekommt die fertige
+   *  Karte als WERT, nicht die Nachschlage-Fähigkeit (§3, Bauart wie
+   *  `eigenesKuerzel`).
+   *
+   *  Was NICHT drin steht, ist der Kern der Regel (§1): mehrdeutige Kürzel
+   *  desselben Kantons, der GELESENE Erlass selbst und alles ohne
+   *  Register-Treffer fehlen — dort bleibt es Text. Ungesetzt (Bund, Kanton
+   *  ohne Karte) ⇒ die Weiche ruht, Rendering byte-identisch. */
+  kantonKuerzel?: ReadonlyMap<string, string>;
 }
 const normRef = (s: string): string => s.toLowerCase().replace(/[^a-z0-9]/g, '');
 // Kürzel-Kanon für IDENTITÄTS-Vergleiche (nur A–Z0–9): der Register-Schlüssel
@@ -275,6 +325,58 @@ function selbstSignalAmZitat(rest: string, intern: InternRefs): boolean {
   return SELBST_MARKER.test(nachPassus) || nenntEigenesKuerzel(nachPassus, intern.eigenesKuerzel);
 }
 
+// ─── V-3 · KANTON-KÜRZEL-RESOLVER (W2·20-VERWEIS-SCHAERFE) ──────────────────
+//
+// Der Grosswort-Guard des §-Pfads (PARAGRAF_FREMD_GROSS) sperrt jedes gross
+// beginnende Wort am Zitat, weil «ein StG in BS ist nicht das StG in ZH».
+// Diese Begründung nennt zugleich ihre Auflösung: INNERHALB eines Kantons ist
+// das Kürzel eindeutig — und der Kanton des gelesenen Erlasses steht fest.
+// Gemessen 31.8.2026 über alle 775 §-designierten Erlasse: 566 heute
+// unterdrückte Stellen nennen ein Kürzel, das im SELBEN Kanton genau EINEN
+// anderen Erlass bezeichnet (61 verschiedene Kürzel; Beleg-Fall des Auftrags:
+// BS-111.100 § 143 «§ 6 IRG» → BS-131.100). Die Sichtprobe über alle 61 zeigt
+// durchgehend das erwartete Muster «Verordnung zitiert ihr Gesetz».
+//
+// NUR IM §-PFAD, und das ist eine gemessene Grenze, keine Bequemlichkeit. Im
+// Art.-Pfad (M12) wären 94 weitere Stellen «auflösbar», aber die Bundeserlasse
+// zitieren sich mit «Art.», und ihre Kürzel kollidieren mit kantonalen:
+// «Art. 17 EnG (ZEV …)» in BS-772.400 meint das BUNDES-Energiegesetz, nicht
+// BS-772.100; ebenso «Art. 43 VPG» (Postverordnung ≠ Verordnung zum
+// Personalgesetz), «Art. 22 BZG» (Bevölkerungsschutz ≠ Bildungszentrum
+// Gesundheit), «Art. 5 NAV Hauswirtschaft». Rund ein Viertel der 94 wäre
+// falsch — «§ N» dagegen ist eine kantonale Zitierform, in der ein
+// Bundeserlass praktisch nie steht (§1: kein Link ist besser als ein
+// falscher). Der Art.-Pfad bleibt darum unangetastet.
+//
+// ZIEL-EXISTENZ: dass der Ziel-Erlass die zitierte Bestimmung führt, ist
+// clientseitig ohne Fetch nicht prüfbar (die tokenMap kennt nur den gelesenen
+// Erlass) — ein Eager-Fetch fremder Snapshots wäre §15-widrig. Der Link zeigt
+// darum auf `<Ziel-Erlass>#art-<N>`; der Register-Eintrag garantiert die SEITE,
+// und ein unbekannter Anker lässt den Leser den Erlass am Anfang zeigen. Das
+// ist kein toter Link, aber auch keine Trefferzusage — ausgewiesen im
+// V-1-Artefakt (Klasse `paragraf-kanton-kuerzel`).
+//
+// NAVIGATIONS-FORM: ein blosser `<a href>` ohne onClick — wie der interne Pfad
+// des NormChip (`readerHrefFuerRef`). Der Sprung führt in einen ANDEREN Erlass,
+// also nicht in die tokenMap-/`springeZu`-Welt dieses Lesers; und NormText
+// rendert auch ausserhalb eines Routers (SSR, Prerender, Unit-Tests), wo ein
+// Router-Hook werfen würde. Preis: der Klick lädt die Zielseite neu statt
+// SPA-weich zu navigieren — ein Router-Callback durch `InternRefs` wäre die
+// nächste Ausbaustufe (offener Rest, gemeldet).
+const KANTON_KUERZEL_TOKEN = /^\s+(\S+)/;
+// Satzzeichen am Zitat-Ende gehören nicht zum Kürzel («§ 34 BPV).», «§ 12 TV;»).
+// Der BINDESTRICH steht bewusst NICHT hier: «§ 6 SoHaG-Anhang» ist ein anderer
+// Erlass als SoHaG — dieselbe Wortgrenzen-Lehre wie KKV vs. KKV-FINMA (V-2).
+const KANTON_KUERZEL_INTERPUNKTION = /[.,;:)\]]+$/;
+/** Lese-Adresse des Erlasses, dessen Kürzel direkt am Zitat steht — sonst null. */
+function kantonZielAmZitat(rest: string, intern: InternRefs): string | null {
+  const karte = intern.kantonKuerzel;
+  if (!karte) return null;
+  const m = KANTON_KUERZEL_TOKEN.exec(rest.replace(PARAGRAF_ANHANG, ''));
+  if (!m) return null;
+  return karte.get(m[1].replace(KANTON_KUERZEL_INTERPUNKTION, '')) ?? null;
+}
+
 function restMitIntern(s: string, key: string, intern?: InternRefs): React.ReactNode {
   if (!intern || !s) return s ? <RechtsprechungText key={key} text={s} /> : null;
   // N2 (Bündel N): Kürzel DIESES Erlasses (aus dem Lese-Basispfad, «…/bund/AHVV»
@@ -316,13 +418,13 @@ function restMitIntern(s: string, key: string, intern?: InternRefs): React.React
       if (fremdEffektiv) {
         linkSpans.push({
           start: g.start, end: g.end,
-          node: <NormChip key={gk} artikel={`Art. ${g.roh} ${fremdEffektiv}`} anzeige={g.roh} linkClass={INLINE_CLASS} zielIntern={false} />,
+          node: <NormChip key={gk} artikel={`Art. ${g.roh} ${fremdEffektiv}`} anzeige={g.roh} linkClass={VERWEIS_AUSSEN_CLASS} zielIntern={false} />,
         });
       } else if (intern.fremdKuerzel) {
         // M6-D: bare Plural-Glied im Fremdgesetz-Chapeau → aufs Zielgesetz (NormChip).
         linkSpans.push({
           start: g.start, end: g.end,
-          node: <NormChip key={gk} artikel={`Art. ${g.roh} ${intern.fremdKuerzel}`} anzeige={g.roh} linkClass={INLINE_CLASS} zielIntern={false} />,
+          node: <NormChip key={gk} artikel={`Art. ${g.roh} ${intern.fremdKuerzel}`} anzeige={g.roh} linkClass={VERWEIS_AUSSEN_CLASS} zielIntern={false} />,
         });
       } else {
         if (paragrafErlass) continue; // F41
@@ -354,7 +456,26 @@ function restMitIntern(s: string, key: string, intern?: InternRefs): React.React
       // V-2: ein AUSDRÜCKLICHES Selbst-Signal («§ 59 Abs. 2 des vorliegenden
       // Gesetzes», «§ 19 Personalgesetz» im Personalgesetz) steht VOR beiden
       // Fremd-Guards — sonst fängt der Grosswort-Guard das eigene Kürzel.
-      if (!selbstSignalAmZitat(s.slice(end), intern)
+      const selbst = selbstSignalAmZitat(s.slice(end), intern);
+      // V-3: … und ist es NICHT der eigene Erlass, kann das Grosswort trotzdem
+      // ein benannter Erlass DESSELBEN Kantons sein (Herleitung an
+      // `kantonZielAmZitat`). Steht VOR den Fremd-Guards, weil es genau die
+      // Stellen sind, die sie unterdrücken; der Selbst-Fall gewinnt weiterhin.
+      const kantonZiel = selbst ? null : kantonZielAmZitat(s.slice(end), intern);
+      if (kantonZiel) {
+        const zielToken = parsePassus(m[0])?.artikelToken;
+        if (zielToken) {
+          linkSpans.push({
+            start, end,
+            node: (
+              <a key={`${key}-k${start}`} href={`${kantonZiel}#art-${zielToken}`}
+                className={VERWEIS_AUSSEN_CLASS}>{m[0]}</a>
+            ),
+          });
+          continue;
+        }
+      }
+      if (!selbst
         && (PARAGRAF_FREMD_GROSS.test(rest) || PARAGRAF_FREMD_NAME.test(rest)
           || GLIEDERUNGS_GENITIV.test(rest))) continue;
       const token = intern.tokenMap.get(normRef(m[1]));
@@ -415,7 +536,7 @@ function restMitIntern(s: string, key: string, intern?: InternRefs): React.React
         const gk = g.erst ? `${key}-f${start}` : `${key}-f${start}-${g.start}`;
         if (!g.erst && g.start > cur) out.push(<RechtsprechungText key={`${key}-rg${start}-${cur}`} text={rest.slice(cur, g.start)} />);
         out.push(g.linkbar
-          ? <NormChip key={gk} artikel={g.artikel} anzeige={anzeige} linkClass={INLINE_CLASS} zielIntern={false} />
+          ? <NormChip key={gk} artikel={g.artikel} anzeige={anzeige} linkClass={VERWEIS_AUSSEN_CLASS} zielIntern={false} />
           : <RechtsprechungText key={`${gk}-t`} text={anzeige} />);
         if (!g.erst) cur = g.end;
       }
@@ -463,7 +584,7 @@ function restMitIntern(s: string, key: string, intern?: InternRefs): React.React
     // unbekanntem Ziel) — dieselbe Kette wie ein voll zitierter Fremdverweis (§5).
     if (intern.fremdKuerzel) {
       if (start > last) out.push(<RechtsprechungText key={`${key}-r${last}`} text={s.slice(last, start)} />);
-      out.push(<NormChip key={`${key}-x${start}`} artikel={`Art. ${m[1]} ${intern.fremdKuerzel}`} anzeige={m[0]} linkClass={INLINE_CLASS} zielIntern={false} />);
+      out.push(<NormChip key={`${key}-x${start}`} artikel={`Art. ${m[1]} ${intern.fremdKuerzel}`} anzeige={m[0]} linkClass={VERWEIS_AUSSEN_CLASS} zielIntern={false} />);
       last = start + m[0].length;
       continue;
     }
@@ -543,6 +664,10 @@ export function NormText({ text, intern }: { text: string; intern?: InternRefs }
   // bare Glieder. Für Nicht-Ketten-Text ist die Anker-Menge identisch zum
   // früheren matchAll(NORM_IM_TEXT)-Lauf (additiv, §6).
   const spans = normVerweiseImText(text);
+  // V-4: der voll zitierte Fremd-Anker trägt das Aussen-Zeichen NUR in der
+  // Lesesicht — ausserhalb (Rechner-/Vorlagen-Texte) ist jeder Norm-Verweis
+  // fremd, dort unterschiede das Zeichen nichts (Reichweite, s. oben).
+  const ankerClass = intern ? VERWEIS_AUSSEN_CLASS : INLINE_CLASS;
   // Kein Norm-Treffer → ganzer Text durch die Rest-Pipeline (ohne intern reiner
   // Pass-Through durch RechtsprechungText, zeichenidentisch wie bisher).
   if (spans.length === 0) return intern ? <>{restMitIntern(text, 'r0', intern)}</> : <RechtsprechungText text={text} />;
@@ -558,7 +683,7 @@ export function NormText({ text, intern }: { text: string; intern?: InternRefs }
     teile.push(
       selbstSpanSprung(s, `${s.start}-${s.artikel}`, intern)
       ?? <NormChip key={`${s.start}-${s.artikel}`} artikel={s.artikel}
-        anzeige={s.propagiert ? s.anzeige : undefined} linkClass={INLINE_CLASS} zielIntern={false} />,
+        anzeige={s.propagiert ? s.anzeige : undefined} linkClass={ankerClass} zielIntern={false} />,
     );
     zuletzt = s.end;
   }
