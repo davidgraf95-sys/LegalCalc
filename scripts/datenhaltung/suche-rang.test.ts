@@ -159,8 +159,10 @@ describe('F2 Präfix-Queries: DOKUMENTIERTE Abweichung vom Client, kein Versehen
     // `tokenize: 'forward'` und findet «Verjähr»; der DB-Weg sucht mit gequoteten
     // Volltokens und findet nichts. Der Grund gegen eine sofortige Angleichung steht am
     // Kopf von suche-kern.ts («WO DIE PARITÄT GILT — UND WO NICHT»): Präfix ist eine
-    // Recall- UND Latenz-Änderung auf JEDER Query (lokal gemessen «Eigentum»
-    // 15,6 → 107,1 ms bei 658 → 1502 Treffern) und gehört in einen eigenen Schritt.
+    // Recall-, RANG- und Latenz-Änderung auf JEDER Query (lokal gemessen «Eigentum»
+    // 15,6 → 107,1 ms bei 658 → 1502 Treffern; und via Marginalien-startsWith hebt der
+    // Client z. B. OR 261/ZGB 200 auf Stufe 0/Seite 1, der Edge-Weg nicht — GP-Messung
+    // 31.8.2026) und gehört in einen eigenen Schritt MIT Rang-/Golden-Prüfung.
     //
     // Wird dieser Test eines Tages rot, ist das kein Defekt, sondern das Signal, dass
     // jemand die Präfix-Semantik eingeführt hat — dann gehört hier die neue Erwartung hin

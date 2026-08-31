@@ -269,7 +269,8 @@ const BM25 = `bm25(fts_artikel, ${BM25_GEWICHTE.join(', ')})`;
 // sich, als sei der Edge-Weg dem Client-Weg rundum gleichwertig. Das war überzeichnet.
 // Die Bilanz nach dem Fix, gemessen gegen daten/normtext.db:
 //
-//   GILT · Stufenmodell (Hauptthema / Nebenerwähnung / Texttreffer) — identisch.
+//   GILT · Stufenmodell (Hauptthema / Nebenerwähnung / Texttreffer) — identisch
+//          BEI EXAKT-TOKEN; bei Präfix-Treffern weicht die Stufe ab (s. GILT NICHT).
 //   GILT · Stufen-Auslösung bei mehreren Termen: EIN Term im Feld genügt beidseits.
 //          Bis zum 31.8. verlangte der SQL-Spaltenfilter ALLE Terme in derselben
 //          Spaltengruppe («Verjährung Fristen» → OR 127 auf Rang 8 statt 1); behoben
@@ -281,8 +282,9 @@ const BM25 = `bm25(fts_artikel, ${BM25_GEWICHTE.join(', ')})`;
 //          prüft entsprechend mit `startsWith`. Der DB-Weg sucht mit gequoteten,
 //          VOLLSTÄNDIGEN Tokens. Folge, gemessen: «Verjähr» → Client findet, DB 0 Treffer.
 //          Das ist eine BEWUSSTE Abweichung, kein Versehen. FTS5 könnte es (`"Verjähr"*`),
-//          aber es ist keine Rang-, sondern eine RECALL-Änderung auf jeder Query, und sie
-//          ist teuer: lokal, warm, n=3 Median über daten/normtext.db
+//          aber Angleichen ist eine RECALL-, RANG- UND LATENZ-Änderung auf jeder Query.
+//          Und der Präfix verschiebt nicht nur die Treffermenge, sondern auch STUFEN und RÄNGE derselben Treffer (GP-Messung 31.8.2026, echter Client-rangiere() gegen identische DB-Treffermenge, ohne Recall-Confound): «Eigentum» n=658 — OR 261 («Wechsel des Eigentümers») und ZGB 200 («Eigentumsverhältnisse») stehen beim Client via startsWith auf Stufe 0/Seite 1, am Edge auf Stufe 2; «Eigentum Grundstück» n=87 — 15 Stufen-Divergenzen, 33 Positionswechsel >5 Plätze; «Miete Kündigung» n=20 — Top-20 nicht identisch.
+//          Und sie ist teuer: lokal, warm, n=3 Median über daten/normtext.db
 //            «Verjährung»  4,5 ms /  259 Treffer  →  präfix  8,2 ms /  299
 //            «Miete»       3,1 ms /  165          →  präfix  9,6 ms /  309
 //            «Eigentum»   15,6 ms /  658          →  präfix 107,1 ms / 1502   (6,9x)

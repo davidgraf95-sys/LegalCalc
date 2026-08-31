@@ -206,8 +206,8 @@ ALLE Terme in derselben Spaltengruppe, `artikelRanking` nur EINEN. Gemessen:
 Grundartikel. Behoben durch OR-Verknüpfung; **recall-neutral**, weil die
 Stufen-Ausdrücke nur LEFT-JOIN-Mengen speisen (über die volle Pagination gegengeprüft:
 23/23 und 20/20 Treffer, Mengen elementweise identisch). **Präfix bleibt eine bewusste
-Abweichung:** der Client findet «Verjähr», der DB-Weg nicht. Angleichen ist keine
-Rang-, sondern eine Recall- und Latenz-Änderung auf jeder Query — lokal, warm, n=3
+Abweichung:** der Client findet «Verjähr», der DB-Weg nicht. Angleichen ist eine
+Recall-, Rang- UND Latenz-Änderung auf jeder Query (Und der Präfix verschiebt nicht nur die Treffermenge, sondern auch STUFEN und RÄNGE derselben Treffer (GP-Messung 31.8.2026, echter Client-rangiere() gegen identische DB-Treffermenge, ohne Recall-Confound): «Eigentum» n=658 — OR 261 («Wechsel des Eigentümers») und ZGB 200 («Eigentumsverhältnisse») stehen beim Client via startsWith auf Stufe 0/Seite 1, am Edge auf Stufe 2; «Eigentum Grundstück» n=87 — 15 Stufen-Divergenzen, 33 Positionswechsel >5 Plätze; «Miete Kündigung» n=20 — Top-20 nicht identisch.) — lokal, warm, n=3
 Median: «Eigentum» 15,6 → 107,1 ms bei 658 → 1502 Treffern (6,9x). Eigener
 Roadmap-Punkt; bis dahin als Test mit ehrlicher Erwartung festgehalten. Die
 «gleichwertig»-Sätze an drei Stellen sind entsprechend zurückgenommen — Davids
