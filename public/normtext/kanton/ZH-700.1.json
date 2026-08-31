@@ -6607,14 +6607,14 @@
         },
         {
           "absatz": "3",
-          "text": "Gebäude mit mehr als 50 Arbeitsplätzen oder mit mehr als 1000 m Geschossfläche, die einer arbeitsplatzintensiven Nutzung dient, müssen für Menschen mit Behinderungen zugänglich und im Innern an deren Bedürfnisse anpassbar sein."
+          "text": "Gebäude mit mehr als 50 Arbeitsplätzen oder mit mehr als 1000 m² Geschossfläche, die einer arbeitsplatzintensiven Nutzung dient, müssen für Menschen mit Behinderungen zugänglich und im Innern an deren Bedürfnisse anpassbar sein."
         }
       ],
       "stand": "2026-08-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-700_1-1975_09_07-1976_04_01-134.html",
       "abgerufen": "2026-08-31",
       "fassungsToken": "95eb54853290b153bcd7a8b5af9d6e8c607c0959d7c383516f2ae8bf1934e561",
-      "sha": "593bf3792815e368007b6a5e0b075c23a3e9e3d68d19f305dbc4f405172bf6a5"
+      "sha": "60cb5d55daf8a7874408717a18d95ac9c2b996bdaee3180db0c559bafb0ec307"
     },
     {
       "id": "kanton/ZH/700.1/art_239_b",
@@ -7288,14 +7288,14 @@
         },
         {
           "absatz": "4",
-          "text": "Gebäude, deren Gesamthöhe nicht mehr als 1,5 m beträgt und die eine Bodenfläche von höchstens 2 m überlagern, müssen keine Grenzund Gebäudeabstände einhalten."
+          "text": "Gebäude, deren Gesamthöhe nicht mehr als 1,5 m beträgt und die eine Bodenfläche von höchstens 2 m² überlagern, müssen keine Grenzund Gebäudeabstände einhalten."
         }
       ],
       "stand": "2026-08-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-700_1-1975_09_07-1976_04_01-134.html",
       "abgerufen": "2026-08-31",
       "fassungsToken": "95eb54853290b153bcd7a8b5af9d6e8c607c0959d7c383516f2ae8bf1934e561",
-      "sha": "1994ffa71d82c108ce7799a91bb1de3c5fdd30e459a01fd365281a21b218059c"
+      "sha": "5fc0c4f46e4869efc11b5883e1989cb68a6b7bd353bb8e6e9c5a01ecdc447f5c"
     },
     {
       "id": "kanton/ZH/700.1/art_261",
@@ -8281,7 +8281,7 @@
       "bloecke": [
         {
           "absatz": "1",
-          "text": "Die Mindestfläche von Räumen, ausser solchen in Einfamilienhäusern und bei vergleichbaren Wohnungsarten, beträgt 10 m."
+          "text": "Die Mindestfläche von Räumen, ausser solchen in Einfamilienhäusern und bei vergleichbaren Wohnungsarten, beträgt 10 m²."
         },
         {
           "absatz": "2",
@@ -8292,7 +8292,7 @@
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-700_1-1975_09_07-1976_04_01-134.html",
       "abgerufen": "2026-08-31",
       "fassungsToken": "95eb54853290b153bcd7a8b5af9d6e8c607c0959d7c383516f2ae8bf1934e561",
-      "sha": "a07764a44ba42404c96aa6e143e70c7935b580a0d866823c068f05395b99be13"
+      "sha": "2ad677762d0ca3f38ccdabad161961e2dcb2ebd4d0c51aa80c8daa3ec3abf49c"
     },
     {
       "id": "kanton/ZH/700.1/art_304",

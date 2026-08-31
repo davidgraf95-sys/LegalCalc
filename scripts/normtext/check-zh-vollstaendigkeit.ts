@@ -34,7 +34,7 @@
  *     ERLASS ist durch EXAKTE Deckung je § ersetzt — am geheilten Bestand
  *     0 Abweichungen in 2656 §§, also ohne eine einzige Ausnahme.
  *
- * DIE ZEHN PRÜFUNGEN
+ * DIE ELF PRÜFUNGEN
  *   1. §-/Art.-MENGE EXAKT, beidseitig.
  *   2. lit.-DECKUNG EXAKT je §.
  *   3. KEIN BLOCK ENDET AUF EINEM TRENNSTRICH (vier Codepoints).      [artefakt]
@@ -45,6 +45,7 @@
  *   7b. ZAHLENFOLGE JE §-REGION, beidseitig und positionsgebunden.
  *   7c. ZEICHEN-DECKUNGSGRAD JE §-REGION (untere Schranke).
  *   8. ANHANG-PUNKT-ZIFFERN beidseitig exakt.
+ *   9. EINHEITEN-EXPONENTEN («m²») je § beidseitig exakt (Runde 4, B1).
  *
  * UNABHÄNGIGKEIT (§6.7 lit. d): Die Zweitlesung teilt mit dem Produktions-
  * Adapter keine Zeile Code. Drei Modellentscheide teilt sie bewusst und
@@ -76,6 +77,7 @@ import { holeZhQuelle, type CacheModus } from './zh-pdf-cache.ts';
 import { leseZweit, GLIEDERUNG_IM_TEXT } from './zh-zweitlesung.ts';
 import {
   eintragMass,
+  exponentTokens,
   istPlatzhalterEintrag,
   istTeilfolge,
   pruefeZahlen,
@@ -362,12 +364,40 @@ for (const datei of dateien) {
         }
       }
 
+      // 9. Einheiten-Exponenten je § beidseitig exakt (Befund B1, Runde 4):
+      //    ein fehlendes «²» ist eine Wertveränderung (Fläche → Länge), ein
+      //    zusätzliches eine Erfindung. Verglichen wird die MULTIMENGE je § —
+      //    die Zweitlesung erhebt die Exponenten unabhängig (Fragment-Ordnung
+      //    statt Wort-Lücken-Geometrie, s. zh-zweitlesung.ts).
+      const expSnap = new Map<string, string[]>();
+      for (const e of eintraege) {
+        const t = String(e.artikel ?? '');
+        const liste = exponentTokens(e.bloecke ?? []);
+        if (liste.length > 0) expSnap.set(t, [...(expSnap.get(t) ?? []), ...liste]);
+      }
+      const expAbweichung: string[] = [];
+      for (const t of new Set([...expSnap.keys(), ...Object.keys(zweit.einheitenExponenten)])) {
+        const ist = [...(expSnap.get(t) ?? [])].sort().join('+');
+        const soll = [...(zweit.einheitenExponenten[t] ?? [])].sort().join('+');
+        if (ist !== soll) {
+          expAbweichung.push(`§${t.replace(/_/g, ' ')} Snapshot [${ist || '—'}] / PDF [${soll || '—'}]`);
+        }
+      }
+      if (expAbweichung.length > 0) {
+        probleme.push(
+          `${expAbweichung.length} § mit abweichenden Einheiten-Exponenten (m²/m³): ` +
+            `${expAbweichung.slice(0, 8).join(' · ')}`,
+        );
+      }
+
       const suffixGesamt = Object.values(zweit.suffixAbsaetze).reduce((n, l) => n + l.length, 0);
+      const expGesamt = Object.values(zweit.einheitenExponenten).reduce((n, l) => n + l.length, 0);
       zusatz =
         ` · ${imPdf.size} Köpfe · lit. exakt` +
         ` · ${zweit.absatzKandidaten} Absatz-Hochzahlen (${suffixGesamt} mit lat. Suffix)` +
         ` · ${zweit.sammelTokens.length} §§ aus Sammelköpfen · ${geprüfteRegionen} Regionen` +
-        ` · ${zweit.anhangZiffern.length} Anhang-Ziffern${quelle.ausCache ? ' · Cache' : ' · Netz'}`;
+        ` · ${zweit.anhangZiffern.length} Anhang-Ziffern · ${expGesamt} Einheiten-Exponenten` +
+        `${quelle.ausCache ? ' · Cache' : ' · Netz'}`;
     } catch (e) {
       probleme.push(`Quelle nicht lesbar: ${e instanceof Error ? e.message : String(e)}`);
     }

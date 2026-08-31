@@ -80,6 +80,52 @@ const SAMMEL_ZEILE_ZWEIT =
 const ABSATZ_HOCHZAHL_ZWEIT = /^\d+(?:bis|ter|quater|quinquies)?$/;
 
 /**
+ * EINHEITEN-EXPONENT der Zweitlesung (Befund B1, Fix-Runde 4, 31.8.2026).
+ *
+ * Der Adapter warf mit den Fussnoten-Hochzahlen auch die Einheiten-Exponenten
+ * weg («1000 m²» → «1000 m») — und KEINE Prüfung sah es: die Hochzahl ist
+ * keine \d-Ziffernfolge im Snapshot (Prüfung 7/7b blind), und der Zeichen-
+ * verlust von 1 Zeichen liegt weit über der 7c-Untergrenze. Die Zweitlesung
+ * erhebt den Exponenten darum UNABHÄNGIG und Prüfung 9 hält ihn gegen den
+ * Snapshot-Text.
+ *
+ * UNABHÄNGIGE MECHANIK (§6.7 lit. d): der Adapter entscheidet an der
+ * GEOMETRISCHEN Wort-Lücke (x-Abstand gegen die Fragment-Breite), die
+ * Zweitlesung an der FRAGMENT-ORDNUNG der x-sortierten Zeile — sie kennt
+ * keine Breiten. GETEILTE MODELLENTSCHEIDUNG (offen deklariert, wie die drei
+ * im Modulkopf): «eine hochgestellte 2/3 unmittelbar nach einem
+ * Einheiten-Token mit vorangehender Zahl ist ein Exponent» — das ist die
+ * fachliche Regel selbst, empirisch total am Bestand (3 Exponenten, 25
+ * Fussnoten-Verweise nach Wörtern/Abkürzungen, 0 Grenzfälle).
+ */
+const EINHEIT_ZWEIT = /(?:^|\d\s?)(mm|cm|dm|km|m)$/;
+
+export function einheitenExponentenInZeile(
+  zeile: Array<{ x: number; h: number; s: string }>,
+): string[] {
+  const raus: string[] = [];
+  for (let i = 1; i < zeile.length; i++) {
+    const st = zeile[i];
+    if (st.h >= 7 || st.h <= APPARAT_H) continue; // keine Body-Hochstellung
+    const ziffer = st.s.trim();
+    if (ziffer !== '2' && ziffer !== '3') continue;
+    const links = zeile[i - 1];
+    if (links.h < 8.7) continue; // linker Nachbar muss Body sein
+    const linksText = links.s.trimEnd();
+    const einheit = linksText.match(EINHEIT_ZWEIT);
+    if (!einheit) continue;
+    // Standalone-Einheit («m» als EIGENES Fragment, ZH-700.1 § 303): die
+    // vorangehende Zahl muss dann im Fragment davor stehen.
+    if (linksText === einheit[1]) {
+      const davor = zeile[i - 2];
+      if (davor === undefined || davor.h < 8.7 || !/\d$/.test(davor.s.trimEnd())) continue;
+    }
+    raus.push(`${einheit[1]}${ziffer}`);
+  }
+  return raus;
+}
+
+/**
  * ÜBERSCHRIFTS-VERDACHT für die Regionen-Messung (Härtung 2).
  *
  * Eine Gliederungs-Überschrift steht im PDF, aber nicht im Snapshot. Für die
@@ -160,6 +206,9 @@ export interface Zweitlesung {
   sammelSpannen: Array<{ von: number; bis: number }>;
   /** Absatz-Hochzahlen MIT lat. Suffix, je §-Token («7» → ['1bis','1ter']). */
   suffixAbsaetze: Record<string, string[]>;
+  /** Einheiten-Exponenten je §-Token («303» → ['m2']) — Grundlage der
+   *  Prüfung 9 (Befund B1: der Adapter verwarf «m²» als Fussnoten-Verweis). */
+  einheitenExponenten: Record<string, string[]>;
   /** Alle Ziffernfolgen des ganzen Dokuments (Werte-Wächter, Prüfung 7).
    *  Bewusst OHNE Schlussapparat-/Fussnoten-Schnitt: das ist die Obermenge,
    *  gegen die der Snapshot ⊆ sein muss. */
@@ -255,6 +304,7 @@ export async function leseZweit(bytes: Uint8Array): Promise<Zweitlesung> {
   const sammelTokens: string[] = [];
   const sammelSpannen: Array<{ von: number; bis: number }> = [];
   const suffixAbsaetze: Record<string, string[]> = {};
+  const einheitenExponenten: Record<string, string[]> = {};
   const zahlen = new Set<string>();
   // BEIDE Zählweisen bekommen ihre EIGENE Regionen-/lit.-Buchführung; welche
   // gilt, entscheidet erst der Schluss (s. unten). Vorher hing die Region am
@@ -271,6 +321,15 @@ export async function leseZweit(bytes: Uint8Array): Promise<Zweitlesung> {
   let laufenderKopf: string | null = null;
   let laufenderPar: string | null = null;
   let laufenderArt: string | null = null;
+
+  /** Einheiten-Exponenten der x-sortierten Zeile dem laufenden Kopf zuschlagen
+   *  (Prüfung 9, Befund B1). */
+  const merkeExponenten = (zeile: Stueck[]): void => {
+    if (laufenderKopf === null) return;
+    for (const t of einheitenExponentenInZeile(zeile)) {
+      (einheitenExponenten[laufenderKopf] ??= []).push(t);
+    }
+  };
 
   /** Text beiden Regionen-Büchern zuschlagen (aufgelöst wird am Ende). */
   const zurRegion = (text: string): void => {
@@ -337,9 +396,23 @@ export async function leseZweit(bytes: Uint8Array): Promise<Zweitlesung> {
     // 000 Franken» verlor das «000»). Die Randnote bleibt weiterhin draussen:
     // sie steht im Kleinsatz (h ≤ 7.7) und im Aussenrand (rechts x ≈ 337,
     // links x ≈ 28), also ausserhalb beider Grenzen.
-    const spalte = roh.filter(
-      (s) => s.x >= links - 6 && s.x <= links + (s.h <= 7.7 ? 250 : 300),
-    );
+    // FENSTER-BREITE je Höhenklasse (präzisiert Runde 4, Befund B1):
+    //   · Body (h ≥ 8.7) und Tarif-Kleinsatz (h ≈ 7.98): voller Satzspiegel
+    //     (300 pt, s. Kommentar oben).
+    //   · Randnoten-Klasse (7 < h ≤ 7.7, h ≈ 7.5): 250 pt — sie stehen im
+    //     Aussenrand (rechts x ≈ 337) und sind kein Normtext.
+    //   · Body-HOCHSTELLUNGEN (APPARAT_H < h < 7, h ≈ 5.70): ebenfalls voller
+    //     Satzspiegel. Das alte Pauschal-Fenster «h ≤ 7.7 → 250» warf die
+    //     Hochstellungen am RECHTEN Zeilenende weg — genau dort steht der
+    //     Einheiten-Exponent («1000 m²» ZH-700.1 § 239a: x = 328.9 bei
+    //     links = 53.8; «10 m².» § 303: x = 354.8 bei links = 87.8). Die
+    //     Randnoten-Fussnoten-Ziffern im Aussenrand bleiben draussen: sie
+    //     stehen in Apparat-Grösse (h ≤ 5.2) und behalten das 250-pt-Fenster.
+    const spalte = roh.filter((s) => {
+      const hochstellung = s.h < 7 && s.h > APPARAT_H;
+      const schmal = s.h <= 7.7 && !hochstellung;
+      return s.x >= links - 6 && s.x <= links + (schmal ? 250 : 300);
+    });
     // Zeilen bilden: y-Cluster mit Toleranz, absteigend. Die Hochstellung fällt
     // dabei in ihre Trägerzeile, ohne dass dieses Modul etwas über
     // Hochstellungen wissen müsste.
@@ -449,6 +522,7 @@ export async function leseZweit(bytes: Uint8Array): Promise<Zweitlesung> {
         // Zählweise: für ein «Art.»-Buch ist «§ 4.» gewöhnlicher Text.
         zuBuch(regionenPar, laufenderPar, textBody.replace(KOPF_PARAGRAF, ''));
         zuBuch(regionenArt, laufenderArt, textBody);
+        merkeExponenten(zeile);
         continue;
       }
       const art = text.match(KOPF_ARTIKEL);
@@ -462,6 +536,7 @@ export async function leseZweit(bytes: Uint8Array): Promise<Zweitlesung> {
         // (ZH-851.1 § 47b «Art. 29», ZH-230 § 34 «Art. 260 a», § 44 «Art. 885»).
         zuBuch(regionenArt, laufenderArt, textBody.replace(KOPF_ARTIKEL, ''));
         zuBuch(regionenPar, laufenderPar, textBody);
+        merkeExponenten(zeile);
         continue;
       }
       // Gliederungs-Überschrift: steht im PDF, nie im Snapshot → nicht messen.
@@ -492,6 +567,7 @@ export async function leseZweit(bytes: Uint8Array): Promise<Zweitlesung> {
         }
       }
       zurRegion(textBody);
+      merkeExponenten(zeile);
       const ersteBodyX = body[0].x;
       const hochzahlen = zeile.filter(
         (s) =>
@@ -601,6 +677,7 @@ export async function leseZweit(bytes: Uint8Array): Promise<Zweitlesung> {
     sammelTokens,
     sammelSpannen,
     suffixAbsaetze,
+    einheitenExponenten,
     zahlen,
     regionen,
     anhangZiffern,

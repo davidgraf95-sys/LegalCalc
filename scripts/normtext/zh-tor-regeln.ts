@@ -98,6 +98,40 @@ export function eintragMass(bloecke: TorBlock[]): RegionMass {
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
+// Prüfung 9 — Einheiten-Exponenten je § (Befund B1, Fix-Runde 4)
+// ─────────────────────────────────────────────────────────────────────────────
+
+/**
+ * Einheiten-Exponent-Token eines Snapshot-Eintrags: jedes «m²»/«m³»/«cm²»/… im
+ * Normtext, als Vergleichs-Token («m2», «cm3») in Lesereihenfolge.
+ *
+ * WOZU: Der Adapter verwarf die hochgestellten Einheiten-Exponenten als
+ * Fussnoten-Verweise («1000 m²» → «1000 m») — und KEINE der Prüfungen 1–8 sah
+ * es: ²/³ ist keine \d-Ziffer (7/7b blind), ein Zeichen liegt weit über der
+ * 7c-Untergrenze. Prüfung 9 hält die Exponenten, die die Zweitlesung
+ * UNABHÄNGIG erhebt (`einheitenExponenten`), je § EXAKT gegen den Snapshot —
+ * beidseitig: ein fehlender Exponent ist Textverlust, ein zusätzlicher eine
+ * Erfindung.
+ */
+export const EINHEIT_EXPONENT_SNAPSHOT = /(mm|cm|dm|km|m)([²³])/g;
+
+export function exponentTokens(bloecke: TorBlock[]): string[] {
+  const raus: string[] = [];
+  const nimm = (t: unknown): void => {
+    if (typeof t !== 'string') return;
+    for (const m of t.matchAll(EINHEIT_EXPONENT_SNAPSHOT)) {
+      raus.push(`${m[1]}${m[2] === '²' ? '2' : '3'}`);
+    }
+  };
+  for (const b of bloecke) {
+    nimm(b.text);
+    for (const i of b.items ?? []) nimm(i.text);
+    for (const zeile of b.mehrspaltig?.zeilen ?? []) for (const z of zeile) nimm(z);
+  }
+  return raus;
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
 // Prüfung 3 — Trennstrich-Enden (M9b/M9c)
 // ─────────────────────────────────────────────────────────────────────────────
 

@@ -91,6 +91,30 @@ const KOPF_EINZUG_TOLERANZ_PT = 2;
  *  Suffix ist KEINE Absatznummer (er gehört zum §-Kopf, s. Zuordnung unten). */
 const ABSATZ_HOCHZAHL = /^\d+(?:bis|ter|quater|quinquies)?$/;
 
+// ── EINHEITEN-EXPONENT (Befund B1, Gegenprüfung 4, Fix-Runde 4, 31.8.2026) ──
+// Die Hochstellungs-Politik verwarf ALLE mittigen Hochzahlen als Fussnoten-
+// Verweise — auch den Exponenten einer Masseinheit. Aus «1000 m²» wurde
+// «1000 m» (ZH-700.1 § 239a Abs. 3), aus «2 m²» «2 m» (§ 260 Abs. 4), aus
+// «10 m².» «10 m.» (§ 303 Abs. 1) — eine WERTVERÄNDERUNG (§1: Fläche ≠ Länge).
+//
+// Deterministische Regel, empirisch am Gesamtbestand erhoben (alle 24 ZH-PDF,
+// 31.8.2026): eine hochgestellte Ziffer ist genau dann ein Einheiten-Exponent,
+// wenn sie (a) OHNE Wort-Lücke am vorigen Fragment klebt (Lücke < 0.8 pt,
+// gemessen −0.10…+0.03) und (b) der bis dahin montierte Zeilentext auf
+// Ziffer + Leerzeichen + Einheiten-Token endet («… 10 m», «… 1000 m»).
+// Die Erhebung fand 28 direkt angeklebte Hochzahlen «2»/«3»; exakt 3 tragen
+// die Signatur (b) und sind ausnahmslos die m²-Stellen — die übrigen 25 enden
+// auf Abkürzungen/Wörter («249 StG²», «139 GOG³», «KV³», «… in Kraft²») und
+// bleiben Fussnoten-Verweise. Im Korpus existiert NUR m²; die Token-Liste ist
+// geschlossen (mm/cm/dm/km/m — die SI-Längeneinheiten, die ein Flächen-/
+// Volumenmass bilden können), der Exponent auf ²/³ beschränkt.
+//
+// GERENDERT wird der Unicode-Superskript («m²») — konsistent zum bestehenden
+// Kanton-Bestand aus den strukturierten Quellen (BS-772.530 «550 cm²»,
+// SO-615.11 «m³»; im Bund-Korpus kommt keine Flächeneinheit vor).
+const EINHEIT_VOR_EXPONENT = /\d ?(?:mm|cm|dm|km|m)$/;
+const EXPONENT_ZEICHEN: Record<string, string> = { '2': '²', '3': '³' };
+
 
 /** Eine zusammengefügte Textzeile (eine y-Position einer Seite). */
 export interface ZhTextZeile {
@@ -261,8 +285,19 @@ export function montiereZhSeite(
   //   rechts (ungerade Seiten): x > bodyMinX + 250
   // Gebühren-Tabellen (gleiche Schrifthöhe wie Marginalie!) liegen IN der
   // Body-Spalte und bleiben darum erhalten.
+  //
+  // AUSGENOMMEN ist die Body-HOCHSTELLUNGS-Klasse (5.2 < h < 7.0, h ≈ 5.70,
+  // Befund B1/Fix-Runde 4): eine Hochstellung am RECHTEN Zeilenende einer
+  // vollen Body-Zeile steht bei x bis ≈ 360 und fiel mit dem Pauschal-Fenster
+  // als «Marginalie» weg, BEVOR die Zuordnungs- und Exponent-Logik sie je sah —
+  // genau dort sitzt der Einheiten-Exponent («1000 m²» ZH-700.1 § 239a:
+  // x = 328.9 bei bodyMinX = 53.8; «10 m².» § 303: x = 354.8 bei 87.8). Die
+  // Marginalien-SCHRIFT (Randnote h ≈ 7.5) und ihre Fussnoten-Ziffern in
+  // Apparat-Grösse (h ≤ 5.2, ZH-175.2 S. 1 «Grundsatz⁵²») bleiben gefiltert.
   const istMarginalie = (st: PdfStueck): boolean =>
-    st.h <= 7.7 && (st.x < bodyMinX - 3 || st.x > bodyMinX + 250);
+    st.h <= 7.7 &&
+    !(st.h < HOCH_MAX_H && st.h > APPARAT_ZIFFER_MAX_H) &&
+    (st.x < bodyMinX - 3 || st.x > bodyMinX + 250);
 
   const inhaltStuecke = stuecke.filter((st) => !istMarginalie(st));
 
@@ -400,6 +435,21 @@ export function montiereZhSeite(
         // s. ABSATZ_HOCHZAHL / Bug B-1).
         if (k === 0 && ABSATZ_HOCHZAHL.test(st.s.trim())) {
           absatz = st.s.trim();
+          vorEndeX = st.x + st.w;
+          continue;
+        }
+        // EINHEITEN-EXPONENT (Befund B1, Fix-Runde 4): klebt die Hochzahl ohne
+        // Wort-Lücke an einem Einheiten-Token mit vorangehender Zahl, ist sie
+        // der Exponent der Masseinheit und gehört in den Text («10 m².») —
+        // Regel und Erhebung bei EINHEIT_VOR_EXPONENT.
+        const exponent = EXPONENT_ZEICHEN[st.s.trim()];
+        if (
+          exponent !== undefined &&
+          vorEndeX !== null &&
+          st.x - vorEndeX < WORT_LUECKE_PT &&
+          EINHEIT_VOR_EXPONENT.test(text)
+        ) {
+          text += exponent;
           vorEndeX = st.x + st.w;
           continue;
         }
