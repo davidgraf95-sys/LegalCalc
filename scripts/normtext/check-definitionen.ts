@@ -103,6 +103,25 @@ function quelltext(
   return { text: it.text, markeSoll: it.marke ?? null };
 }
 
+/**
+ * R6.2/B4 — Legende-Kopf mit Unterliste: Kopf-Item-Text + die direkt folgenden
+ * Unterpunkt-Texte (tiefe > 0, bis zum nächsten tiefe-0-Item), mit U+000A
+ * verbunden. UNABHÄNGIG aus der Quelle rekonstruiert (nicht aus dem
+ * Generator-Ergebnis) — Prüfung D vergleicht byte-genau, das ist STRENGER als
+ * Substring: jede veränderte oder fehlende Zeile macht das Tor rot.
+ * Ohne Unterpunkte null (dann gibt es keinen legitimen Kopf-Eintrag).
+ */
+function kopfMitUnterpunkten(snap: NormSnapshot, block: number, item: number): string | null {
+  const items = snap.bloecke?.[block]?.items ?? [];
+  const kopf = items[item];
+  if (!kopf?.text) return null;
+  const teile = [kopf.text];
+  for (let j = item + 1; j < items.length && (items[j].tiefe ?? 0) > 0; j++) {
+    if (items[j].text) teile.push(items[j].text);
+  }
+  return teile.length > 1 ? teile.join('\n') : null;
+}
+
 // ─── (C) Norm-Existenz · (D) Zitat-Treue · (E) Status ────────────────────────
 if (existsSync(ZIEL)) {
   const datei = JSON.parse(readFileSync(ZIEL, 'utf8')) as DefinitionenDatei;
@@ -155,8 +174,15 @@ if (existsSync(ZIEL)) {
       zeige(dFehler++, `(D) ${wo}: Zitat ${e.zitat.length} > ZITAT_MAX ${ZITAT_MAX}.`); return;
     }
     if (!quelle.includes(e.zitat)) {
-      zeige(dFehler++, `(D) ${wo}: Zitat ist KEIN wörtlicher Substring der Quelle.\n          Zitat : ${JSON.stringify(e.zitat.slice(0, 100))}\n          Quelle: ${JSON.stringify(quelle.slice(0, 100))}`);
-      return;
+      // R6.2/B4: Kopf-Einträge zitieren Kopf + Unterpunkte ('\n'-verbunden) —
+      // byte-genaue Rekonstruktion aus der Quelle statt Substring.
+      const kopfKette = e.norm.stelle === 'item' && e.norm.item !== null && e.norm.item !== undefined
+        ? kopfMitUnterpunkten(snap, e.norm.block, e.norm.item)
+        : null;
+      if (kopfKette === null || kopfKette !== e.zitat) {
+        zeige(dFehler++, `(D) ${wo}: Zitat ist KEIN wörtlicher Substring der Quelle (und keine byte-gleiche Kopf+Unterpunkte-Kette).\n          Zitat : ${JSON.stringify(e.zitat.slice(0, 100))}\n          Quelle: ${JSON.stringify(quelle.slice(0, 100))}`);
+        return;
+      }
     }
     if (!e.begriff || !e.zitat.includes(e.begriff)) {
       zeige(dFehler++, `(D) ${wo}: Begriff kommt im Zitat nicht vor.`); return;

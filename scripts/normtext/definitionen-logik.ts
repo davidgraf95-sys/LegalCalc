@@ -20,6 +20,14 @@
 //   AUFGENOMMEN                       roh    Stichprobe   Präzision
 //   ------------------------------------------------------------------
 //   als-gilt      «Als X gilt/gelten»  1469   2×20 (n=40)   40/40  100 %
+//       KORRIGIERT durch Gegenprüfung 31.8.2026 (R6.2): die 2×20-Stichprobe
+//       hat die invertierten Fiktionen («Als angenommen gilt …» OR 395, «Als
+//       nicht bestanden gilt …» BS 291.900) und die Rollennomen («Als
+//       Grundlage … gilt») VERFEHLT — «100 %» war eine Stichproben-Aussage,
+//       keine Populations-Aussage. Seit R6.2 filtern die Fiktions-Guards
+//       (G-N/G-P/G-A/G-R, unten) diese Klassen; Neu-Messung n≥100 nach dem
+//       Fix in bibliothek/normtext/legaldefinitionen-muster-erhebung-
+//       2026-08-31.md §GP-Korrektur (Zahlen dort, datiert).
 //   legende-einleitung  Lead-in + «X:»  344   20 Blöcke     20/20  100 %
 //   legende-marginalie  Marginalie+«X:»  22   Vollerhebung  22/22  100 %
 //                                                    (nach Erstwort-Filter)
@@ -234,6 +242,133 @@ export function begriffNormalisieren(roh: string, opt: BegriffOptionen = {}): st
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
+// Fiktions-Guards für `als-gilt` (R6.2, GP-Befunde B1/B2 vom 31.8.2026)
+// ─────────────────────────────────────────────────────────────────────────────
+//
+// Die Gegenprüfung hat die als-gilt-Präzision widerlegt: die Inversion fängt
+// auch invertierte FIKTIONEN («Als angenommen gilt ein nicht sofort
+// abgelehnter Auftrag», OR 395) und funktionale ROLLEN («Als Grundlage für die
+// Bemessung … gilt», UVV 22). Die Nachmessung am Gesamtkorpus hat die
+// GP-Signatur zugleich verfeinert: «Erstwort ist Partizip II» allein wäre
+// FALSCH — attributive Partizipien vor Substantiv sind hier überwiegend echte
+// Definitionen («beschuldigte Person» StPO 111, «versicherter Verdienst»
+// AVIG 23, «ernsthafte Nachteile» AsylG 3). Die Fiktions-Signatur ist die
+// PRÄDIKATIVE Stellung: der gefangene «Begriff» ist kein Substantivbegriff,
+// sondern der Zustand aus dem Satzprädikat. Vier Guards, alle endlich (§2),
+// alle nur für `als-gilt` (die anderen Muster sind nicht betroffen gemessen):
+//
+//   G-N  Erstwort «nicht» → raus. Vollerhebung 31.8.2026: 5 Treffer, alle
+//        Negativ-Fiktionen (FIDLEV 2, BS 291.900 §9, BS 153.270 §17,
+//        BS 772.140 §4, BS 861.540 §22).
+//   G-P  Begriff ganz ohne grossgeschriebenes Wort UND mindestens ein Wort
+//        ist Partizip II → raus. Vollerhebung: 24 Treffer — die Fiktions-
+//        klasse «angenommen»/«entschuldigt»/«abgelaufen»/«verkürzt».
+//        DOKUMENTIERTER RECALL-VERZICHT: die formgleichen Grenzfälle
+//        «beteiligt» (BS 730.100 §133), «qualifiziert beteiligt» (KAG 14),
+//        «wirtschaftlich berechtigt» (FinfraV-FINMA 10), «wirtschaftlich
+//        verbunden» (FINIV 3), «mitinteressiert» (RVOV 4), «gebunden»
+//        (AR 612.0) gehen mit raus — prädikatives Partizip ist am Korpus
+//        MEHRDEUTIG (Fiktion und Definition formgleich), im Zweifel raus
+//        (§1: Präzision vor Recall; GP-Vorgabe R6.2).
+//   G-A  Erstwort ist Partizip II (attributiv) UND das Segment enthält
+//        «gilt nur»/«gelten nur» (Restriktions-Fiktion: AVIV 51a «bestandene
+//        Karenztage»), ODER das Segment enthält «in der Fassung vom»
+//        (intertemporale Gleichstellung mit ALTEM Recht, nie Begriffs-
+//        bestimmung der geltenden Fassung: CHEMRRV Anh. 1.7 «erteilte
+//        Bewilligung») → raus. Je 1 Treffer (Vollerhebung). «gilt/gelten
+//        nur» OHNE Partizip-Erstwort bleibt DRIN: 21 echte restringierende
+//        Definitionen, u.a. USG 7 «Boden», AVIV 6 «Wartezeit».
+//   G-R  Erstwort ∈ ROLLENNOMEN → raus (B2, Liste unten).
+
+/**
+ * Endliche morphologische Partizip-II-Erkennung für KLEINGESCHRIEBENE Wörter
+ * (grossgeschriebene Wörter sind Substantive und nie Prädikativ-Fiktionen).
+ * Regeln, in fester Reihenfolge:
+ *   1. optionales Negations-Präfix «un-» abschneiden («unentschuldigt»);
+ *   2. Fremdverb-Partizip «-iert(-e/-em/-en/-er/-es)» → Partizip II
+ *      («qualifiziert», «mitinteressiert»);
+ *   3. Kandidaten: das Wort selbst und das Wort ohne GENAU EINE
+ *      Flexionsendung -e/-em/-en/-er/-es («bestandene» → «bestanden»,
+ *      «erteilte» → «erteilt»);
+ *   4. endet ein Kandidat auf «end», ist es Partizip I / Adjektiv — KEIN
+ *      Partizip II («massgebend(er)», «entsprechend(en)», «lebend»; bewusst
+ *      «end», nicht «nd» — die De-Flexion von «gebunden» erzeugt «gebund»);
+ *   5. Partizip II gdw. ein Kandidat das ge-Muster (optionale trennbare
+ *      Vorsilbe + «ge» + Stamm + t/en: «angenommen», «gebunden»,
+ *      «abgelaufen») oder das Präfixverb-Muster (optionale trennbare
+ *      Vorsilbe + untrennbare Vorsilbe + Stamm + t/en: «entschuldigt»,
+ *      «bestanden», «verkürzt», «anerkannt») erfüllt.
+ * Bewusst NICHT erkannt: Adjektive auf -t ohne Verbpräfix («persistent»,
+ * «fachgerecht», «hilflos») — sie tragen echte Definitionen (Vollerhebung
+ * der 101 grosswortfreien Begriffe, 31.8.2026).
+ */
+const PII_TRENNBAR =
+  '(?:an|ab|auf|aus|bei|dar|durch|ein|fest|fort|frei|heim|her|hin|los|mit|nach|nieder|teil|um|vor|weg|weiter|wieder|zu|zurück|zusammen)?';
+const PII_GE = new RegExp(`^${PII_TRENNBAR}ge[a-zäöüéè]{2,}(?:t|en)$`);
+const PII_PRAEFIXVERB = new RegExp(`^${PII_TRENNBAR}(?:be|emp|ent|er|miss|ver|voll|wider|zer)[a-zäöüéè]{2,}(?:t|en)$`);
+
+export function istPartizip2(wort: string): boolean {
+  if (!/^[a-zäöü]/.test(wort)) return false;
+  let w = wort.toLowerCase();
+  if (w.startsWith('un') && w.length > 6) w = w.slice(2);
+  if (/iert(?:e|em|en|er|es)?$/.test(w)) return true;
+  const kandidaten = [w];
+  const flex = /(?:e|em|en|er|es)$/.exec(w);
+  if (flex && w.length - flex[0].length >= 5) kandidaten.push(w.slice(0, w.length - flex[0].length));
+  if (kandidaten.some((k) => k.endsWith('end'))) return false;
+  return kandidaten.some((k) => PII_GE.test(k) || PII_PRAEFIXVERB.test(k));
+}
+
+/**
+ * B2 — funktionale Rollennomen: «Als Grundlage/Stichtag/… gilt X» weist X eine
+ * ROLLE zu, statt einen Begriff zu bestimmen. Geschlossene Erstwort-Liste,
+ * Vollerhebung 31.8.2026 über alle 1 459 als-gilt-Treffer (Trefferzahl je
+ * Wort in Klammern). Grenzfall-Entscheid dokumentiert: «Beginn/Ende der
+ * Steuerpflicht» (DBG 61a/61b, StHG 24c/24d + Kantone) ist eine
+ * Ereignis-Aufzählung, kein Begriff → raus (GP-Vorgabe: im Zweifel raus).
+ * Lexikalisierte Komposita («Baubeginn», «Verkehrswert», «Steuerperiode»)
+ * bleiben bewusst DRIN — sie sind eigenständige Termini.
+ */
+const ROLLENNOMEN = new Set([
+  'Grundlage',              // 4 — «Als Grundlage für die Bemessung … gilt» (UVV 22)
+  'Richtgrösse',            // 1 — BBG 59
+  'Obergrenze',             // 1 — AVO 93
+  'Nachweis',               // 3 — AHVV 73, VZV 76, AR 525.11
+  'Basis',                  // 2 — NBV 17, AR 142.211
+  'Stichtag',               // 3 — AR 415.211, BS 411.500 ×2
+  'Beginn',                 // 13 — «Beginn der Steuerpflicht»
+  'Ende',                   // 11 — «Ende der Steuerpflicht»
+  'Ausnahme',               // 1 — BS 427.150
+  'Bemessungsgrundlage',    // 1 — OW 641.4
+  'Berechnungsgrundlage',   // 2 — RVOV 8q, BS 953.800
+  'Zeitpunkt',              // 3 — KVV 96, AR 711.1, BS 640.100
+  'Einreichungsdatum',      // 3 — Datums-Rolle wie Stichtag/Zeitpunkt
+]);
+
+/** Erstes Wort des normalisierten Begriffs (für G-N/G-P/G-A/G-R). */
+function erstwort(begriff: string): string {
+  return /^[\p{L}][\p{L}-]*/u.exec(begriff)?.[0] ?? '';
+}
+
+/**
+ * Entscheidet, ob ein normalisierter als-gilt-Treffer eine Fiktion/Rolle ist
+ * (→ kein Eintrag). `segment` ist der Satz-/Semikolon-Ausschnitt, auf dem die
+ * Regel gefeuert hat (verbatim) — G-A liest dort die Restriktions- bzw.
+ * Übergangsrechts-Signatur.
+ */
+export function istAlsGiltFiktion(begriff: string, segment: string): boolean {
+  const erst = erstwort(begriff);
+  if (erst.toLowerCase() === 'nicht') return true;                        // G-N
+  const worte = begriff.split(/[\s-]+/).filter((w) => w.length > 0);
+  const ohneGrosswort = !worte.some((w) => /^[\p{Lu}]/u.test(w));
+  if (ohneGrosswort && worte.some(istPartizip2)) return true;             // G-P
+  if (istPartizip2(erst) && /\b(?:gilt|gelten) nur\b/.test(segment)) return true; // G-A(i)
+  if (segment.includes('in der Fassung vom')) return true;                // G-A(ii)
+  if (ROLLENNOMEN.has(erst)) return true;                                 // G-R
+  return false;
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
 // Die Regeln
 // ─────────────────────────────────────────────────────────────────────────────
 
@@ -307,7 +442,7 @@ export function regelnAufSatz(satz: string): SatzTreffer | null {
     const a = RX_ALS_GILT.exec(seg);
     if (a?.groups?.b) {
       const b = begriffNormalisieren(a.groups.b, { qualifikator: true });
-      if (b) return { muster: 'als-gilt', begriff: b, ab };
+      if (b && !istAlsGiltFiktion(b, seg)) return { muster: 'als-gilt', begriff: b, ab };
     }
     // `unter-versteht` VOR `im-sinne`: «Unter der Beglaubigung im Sinne dieses
     // Übereinkommens ist … zu verstehen» erfüllt beide Formen. Die
@@ -345,15 +480,23 @@ function segmentAnfaenge(satz: string): number[] {
   return out;
 }
 
-/** Legende-Item «Begriff: Definiens» → Begriff, sonst null. */
-export function legendeBegriff(itemText: string): string | null {
+/**
+ * Legende-Item «Begriff: Definiens» → { begriff, kopfOhneDefiniens }, sonst
+ * null. `kopfOhneDefiniens` markiert einen Legende-KOPF, dessen Definiens
+ * nicht im Item selbst steht, sondern in seinen Unterpunkten («besonders
+ * schützenswerte Personendaten:» DSG 5 lit. c — R6.2/B4: die erste Fassung
+ * warf diese Köpfe weg, 8 echte Definitionen fehlten). Der Aufrufer nimmt
+ * den Kopf nur, wenn tatsächlich Unterpunkte folgen (sonst ist es ein
+ * definiensloser Gliederungskopf und entfällt wie bisher).
+ */
+export function legendeBegriff(itemText: string): { begriff: string; kopfOhneDefiniens: boolean } | null {
   const i = itemText.indexOf(':');
   if (i < 2) return null;
   const kopf = itemText.slice(0, i);
   if (kopf.includes('.') || kopf.length > 90) return null;
   const rest = itemText.slice(i + 1).trim();
-  if (rest.length < 5) return null; // reiner Gliederungskopf mit Unterpunkten
-  return begriffNormalisieren(kopf);
+  const begriff = begriffNormalisieren(kopf);
+  return begriff ? { begriff, kopfOhneDefiniens: rest.length < 5 } : null;
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -429,6 +572,19 @@ export interface Fundstelle {
  * Items). Diese Reihenfolge ist zugleich die Ausgabe-Reihenfolge des
  * Generators — daher deterministisch ohne nachträgliche Sortierung.
  */
+/**
+ * Texte der direkt auf ein tiefe-0-Item folgenden Unterpunkte (tiefe > 0),
+ * bis zum nächsten tiefe-0-Item. R6.2/B4: das Definiens eines Legende-Kopfes.
+ */
+export function unterpunktTexte(snap: NormSnapshot, block: number, item: number): string[] {
+  const items = snap.bloecke?.[block]?.items ?? [];
+  const out: string[] = [];
+  for (let j = item + 1; j < items.length && (items[j].tiefe ?? 0) > 0; j++) {
+    if (items[j].text) out.push(items[j].text);
+  }
+  return out;
+}
+
 export function fundstellen(snap: NormSnapshot): Fundstelle[] {
   const out: Fundstelle[] = [];
   (snap.bloecke ?? []).forEach((b, bi) => {
@@ -485,13 +641,31 @@ export function definitionenAusEintrag(snap: NormSnapshot, snapshotKey: string):
   for (const f of fundstellen(snap)) {
     // ── (1) Legende-Item «Begriff: Definiens»
     if (f.stelle === 'item' && f.tiefe === 0 && (f.legendeBlock || margin)) {
-      const begriff = legendeBegriff(f.text);
-      if (begriff) {
-        const s = saetze(f.text)[0];
-        const zitat = f.text.slice(s.start, s.ende).trim();
-        if (zitat.includes(begriff) && zitat.length <= ZITAT_MAX) {
-          out.push(basis(begriff, f, zitat, f.legendeBlock ? 'legende-einleitung' : 'legende-marginalie'));
-          continue;
+      const kopf = legendeBegriff(f.text);
+      if (kopf) {
+        const muster: MusterId = f.legendeBlock ? 'legende-einleitung' : 'legende-marginalie';
+        if (!kopf.kopfOhneDefiniens) {
+          const s = saetze(f.text)[0];
+          const zitat = f.text.slice(s.start, s.ende).trim();
+          if (zitat.includes(kopf.begriff) && zitat.length <= ZITAT_MAX) {
+            out.push(basis(kopf.begriff, f, zitat, muster));
+            continue;
+          }
+        } else if (f.item !== null) {
+          // R6.2/B4: Legende-Kopf, dessen Definiens in den Unterpunkten steht
+          // (DSG 5 lit. c, MWSTG 3 …). Zitat = Kopf-Text + direkt folgende
+          // Unterpunkt-Texte, je WÖRTLICH, mit U+000A verbunden — das Tor
+          // rekonstruiert dieselbe Kette byte-genau aus der Quelle (Prüfung D).
+          // Ohne Unterpunkte bleibt der Kopf draussen (definiensloser
+          // Gliederungskopf, Verhalten wie vor R6.2).
+          const kinder = unterpunktTexte(snap, f.block, f.item);
+          if (kinder.length > 0) {
+            const zitat = [f.text, ...kinder].join('\n');
+            if (zitat.includes(kopf.begriff) && zitat.length <= ZITAT_MAX) {
+              out.push(basis(kopf.begriff, f, zitat, muster));
+              continue;
+            }
+          }
         }
       }
     }

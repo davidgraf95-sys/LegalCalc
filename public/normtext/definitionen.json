@@ -1,18 +1,18 @@
 {
  "erzeugt": "2026-08-31",
  "proMuster": {
-  "als-gilt": 1459,
+  "als-gilt": 1380,
   "bedeutet-begriff": 11,
   "guillemets": 71,
   "im-sinne": 43,
   "kurzform": 76,
-  "legende-einleitung": 342,
+  "legende-einleitung": 350,
   "legende-marginalie": 20,
   "unter-versteht": 13
  },
  "proEbene": {
-  "bund": 1217,
-  "kanton": 818
+  "bund": 1194,
+  "kanton": 770
  },
  "eintraege": [
   {
@@ -244,27 +244,6 @@
    "muster": "kurzform",
    "stand": "2026-01-01",
    "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/63/1185_1183_1185/de#art_69_bis",
-   "status": "entwurf"
-  },
-  {
-   "begriff": "Nachweis der Auszahlung der Rente oder Hilflosenentschädigung",
-   "ebene": "bund",
-   "erlass": "AHVV",
-   "norm": {
-    "snapshot": "bund/AHVV",
-    "id": "bund/AHVV/art_73",
-    "artikel": "73",
-    "artikelLabel": "Art. 73",
-    "block": 0,
-    "absatz": null,
-    "stelle": "text",
-    "item": null,
-    "marke": null
-   },
-   "zitat": "Als Nachweis der Auszahlung der Rente oder Hilflosenentschädigung gelten kasseninterne Auszahlungslisten und Belastungsanzeigen der Schweizerischen Post oder der Bank.",
-   "muster": "als-gilt",
-   "stand": "2026-01-01",
-   "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/63/1185_1183_1185/de#art_73",
    "status": "entwurf"
   },
   {
@@ -958,27 +937,6 @@
    "muster": "als-gilt",
    "stand": "2024-09-01",
    "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2000/243/de#art_36",
-   "status": "entwurf"
-  },
-  {
-   "begriff": "frei gewählt",
-   "ebene": "bund",
-   "erlass": "ArGV 1",
-   "norm": {
-    "snapshot": "bund/ARGV1",
-    "id": "bund/ARGV1/art_67",
-    "artikel": "67",
-    "artikelLabel": "Art. 67",
-    "block": 0,
-    "absatz": "1",
-    "stelle": "text",
-    "item": null,
-    "marke": null
-   },
-   "zitat": "Als frei gewählt gilt die Arbeitnehmervertretung, wenn die Wahl nach den Grundsätzen der Artikel 5–7 des Mitwirkungsgesetzes vom 17. Dezember 1993 erfolgt ist.",
-   "muster": "als-gilt",
-   "stand": "2024-09-01",
-   "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2000/243/de#art_67",
    "status": "entwurf"
   },
   {
@@ -1780,27 +1738,6 @@
    "status": "entwurf"
   },
   {
-   "begriff": "verkürzt",
-   "ebene": "bund",
-   "erlass": "AVIV",
-   "norm": {
-    "snapshot": "bund/AVIV",
-    "id": "bund/AVIV/art_46",
-    "artikel": "46",
-    "artikelLabel": "Art. 46",
-    "block": 1,
-    "absatz": "2",
-    "stelle": "text",
-    "item": null,
-    "marke": null
-   },
-   "zitat": "Als verkürzt gilt die Arbeitszeit nur, wenn sie zusammen mit geleisteten Mehrstunden die normale Arbeitszeit nicht erreicht.",
-   "muster": "als-gilt",
-   "stand": "2026-08-01",
-   "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1983/1205_1205_1205/de#art_46",
-   "status": "entwurf"
-  },
-  {
    "begriff": "Mehrstunden",
    "ebene": "bund",
    "erlass": "AVIV",
@@ -1843,27 +1780,6 @@
    "status": "entwurf"
   },
   {
-   "begriff": "bestandene Karenztage",
-   "ebene": "bund",
-   "erlass": "AVIV",
-   "norm": {
-    "snapshot": "bund/AVIV",
-    "id": "bund/AVIV/art_51_a",
-    "artikel": "51_a",
-    "artikelLabel": "Art. 51a",
-    "block": 4,
-    "absatz": "5",
-    "stelle": "text",
-    "item": null,
-    "marke": null
-   },
-   "zitat": "Als bestandene Karenztage gelten nur Ausfalltage, für die der Arbeitnehmer im Arbeitsverhältnis stand und vom Arbeitgeber eine mindestens der Kurzarbeitsentschädigung entsprechende Vergütung erhalten hat.",
-   "muster": "als-gilt",
-   "stand": "2026-08-01",
-   "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1983/1205_1205_1205/de#art_51_a",
-   "status": "entwurf"
-  },
-  {
    "begriff": "Abrechnungsperiode",
    "ebene": "bund",
    "erlass": "AVIV",
@@ -1900,27 +1816,6 @@
     "marke": null
    },
    "zitat": "Als normale Arbeitszeit gilt die vertragliche Arbeitszeit des Arbeitnehmers, jedoch höchstens die ortsübliche Arbeitszeit im betreffenden Wirtschaftszweig.",
-   "muster": "als-gilt",
-   "stand": "2026-08-01",
-   "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1983/1205_1205_1205/de#art_66_a",
-   "status": "entwurf"
-  },
-  {
-   "begriff": "verkürzt",
-   "ebene": "bund",
-   "erlass": "AVIV",
-   "norm": {
-    "snapshot": "bund/AVIV",
-    "id": "bund/AVIV/art_66_a",
-    "artikel": "66_a",
-    "artikelLabel": "Art. 66a",
-    "block": 1,
-    "absatz": "2",
-    "stelle": "text",
-    "item": null,
-    "marke": null
-   },
-   "zitat": "Als verkürzt gilt die Arbeitszeit nur, wenn sie zusammen mit geleisteten Mehrstunden die normale Arbeitszeit nicht erreicht.",
    "muster": "als-gilt",
    "stand": "2026-08-01",
    "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1983/1205_1205_1205/de#art_66_a",
@@ -2197,27 +2092,6 @@
    "muster": "als-gilt",
    "stand": "2026-02-26",
    "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2005/735/de#art_73",
-   "status": "entwurf"
-  },
-  {
-   "begriff": "Obergrenze für die Bewertung eines gebundenen Vermögens insgesamt",
-   "ebene": "bund",
-   "erlass": "AVO",
-   "norm": {
-    "snapshot": "bund/AVO",
-    "id": "bund/AVO/art_93",
-    "artikel": "93",
-    "artikelLabel": "Art. 93",
-    "block": 4,
-    "absatz": "5",
-    "stelle": "text",
-    "item": null,
-    "marke": null
-   },
-   "zitat": "Als Obergrenze für die Bewertung eines gebundenen Vermögens insgesamt gilt in jedem Fall der zu erwartende Verwertungserlös auf Basis von Marktwerten.",
-   "muster": "als-gilt",
-   "stand": "2026-02-26",
-   "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2005/735/de#art_93",
    "status": "entwurf"
   },
   {
@@ -2806,27 +2680,6 @@
    "muster": "als-gilt",
    "stand": "2025-03-01",
    "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2003/674/de#art_55",
-   "status": "entwurf"
-  },
-  {
-   "begriff": "Richtgrösse für die Kostenbeteiligung des Bundes",
-   "ebene": "bund",
-   "erlass": "BBG",
-   "norm": {
-    "snapshot": "bund/BBG",
-    "id": "bund/BBG/art_59",
-    "artikel": "59",
-    "artikelLabel": "Art. 59",
-    "block": 1,
-    "absatz": "2",
-    "stelle": "text",
-    "item": null,
-    "marke": null
-   },
-   "zitat": "Als Richtgrösse für die Kostenbeteiligung des Bundes gilt ein Viertel der Aufwendungen der öffentlichen Hand für die Berufsbildung nach diesem Gesetz.",
-   "muster": "als-gilt",
-   "stand": "2025-03-01",
-   "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2003/674/de#art_59",
    "status": "entwurf"
   },
   {
@@ -4675,27 +4528,6 @@
    "muster": "als-gilt",
    "stand": "2026-07-16",
    "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2005/478/de#annex_1_6",
-   "status": "entwurf"
-  },
-  {
-   "begriff": "erteilte Bewilligung",
-   "ebene": "bund",
-   "erlass": "ChemRRV",
-   "norm": {
-    "snapshot": "bund/CHEMRRV",
-    "id": "bund/CHEMRRV/annex_1_7",
-    "artikel": "annex_1_7",
-    "artikelLabel": "Anhang 1.7",
-    "block": 70,
-    "absatz": "2",
-    "stelle": "text",
-    "item": null,
-    "marke": null
-   },
-   "zitat": "Als erteilte Bewilligung im Sinne von Absatz 1 gilt eine Bewilligung, die gestützt auf Ziffer 2.2 Absatz 1 dieses Anhangs in der Fassung vom 1. Juli 2015 erteilt wurde.",
-   "muster": "als-gilt",
-   "stand": "2026-07-16",
-   "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2005/478/de#annex_1_7",
    "status": "entwurf"
   },
   {
@@ -6589,48 +6421,6 @@
    "status": "entwurf"
   },
   {
-   "begriff": "Beginn der Steuerpflicht",
-   "ebene": "bund",
-   "erlass": "DBG",
-   "norm": {
-    "snapshot": "bund/DBG",
-    "id": "bund/DBG/art_61_a",
-    "artikel": "61_a",
-    "artikelLabel": "Art. 61a",
-    "block": 1,
-    "absatz": "2",
-    "stelle": "text",
-    "item": null,
-    "marke": null
-   },
-   "zitat": "Als Beginn der Steuerpflicht gelten die Verlegung von Vermögenswerten, Betrieben, Teilbetrieben oder Funktionen aus dem Ausland in einen inländischen Geschäftsbetrieb oder in eine inländische Betriebsstätte, das Ende einer Steuerbefreiung nach Artikel 56 sowie die Verlegung des Sitzes oder der tatsächlichen Verwaltung in die Schweiz.",
-   "muster": "als-gilt",
-   "stand": "2026-01-01",
-   "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1991/1184_1184_1184/de#art_61_a",
-   "status": "entwurf"
-  },
-  {
-   "begriff": "Ende der Steuerpflicht",
-   "ebene": "bund",
-   "erlass": "DBG",
-   "norm": {
-    "snapshot": "bund/DBG",
-    "id": "bund/DBG/art_61_b",
-    "artikel": "61_b",
-    "artikelLabel": "Art. 61b",
-    "block": 1,
-    "absatz": "2",
-    "stelle": "text",
-    "item": null,
-    "marke": null
-   },
-   "zitat": "Als Ende der Steuerpflicht gelten die Verlegung von Vermögenswerten, Betrieben, Teilbetrieben oder Funktionen aus dem Inland in einen ausländischen Geschäftsbetrieb oder in eine ausländische Betriebsstätte, der Übergang zu einer Steuerbefreiung nach Artikel 56 sowie die Verlegung des Sitzes oder der tatsächlichen Verwaltung ins Ausland.",
-   "muster": "als-gilt",
-   "stand": "2026-01-01",
-   "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1991/1184_1184_1184/de#art_61_b",
-   "status": "entwurf"
-  },
-  {
    "begriff": "betriebsnotwendig",
    "ebene": "bund",
    "erlass": "DBG",
@@ -6736,27 +6526,6 @@
    "status": "entwurf"
   },
   {
-   "begriff": "Einreichungsdatum",
-   "ebene": "bund",
-   "erlass": "DesV",
-   "norm": {
-    "snapshot": "bund/DESV",
-    "id": "bund/DESV/art_14",
-    "artikel": "14",
-    "artikelLabel": "Art. 14",
-    "block": 0,
-    "absatz": null,
-    "stelle": "text",
-    "item": null,
-    "marke": null
-   },
-   "zitat": "Als Einreichungsdatum gilt bei Postsendungen der Zeitpunkt, an welchem eine Sendung der Schweizerischen Post zuhanden des IGE übergeben wird.",
-   "muster": "als-gilt",
-   "stand": "2025-07-01",
-   "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2002/183/de#art_14",
-   "status": "entwurf"
-  },
-  {
    "begriff": "Kleinsendung",
    "ebene": "bund",
    "erlass": "DesV",
@@ -6814,6 +6583,27 @@
     "marke": "b"
    },
    "zitat": "betroffene Person: natürliche Person, über die Personendaten bearbeitet werden;",
+   "muster": "legende-einleitung",
+   "stand": "2025-07-07",
+   "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2022/491/de#art_5",
+   "status": "entwurf"
+  },
+  {
+   "begriff": "besonders schützenswerte Personendaten",
+   "ebene": "bund",
+   "erlass": "DSG",
+   "norm": {
+    "snapshot": "bund/DSG",
+    "id": "bund/DSG/art_5",
+    "artikel": "5",
+    "artikelLabel": "Art. 5",
+    "block": 0,
+    "absatz": null,
+    "stelle": "item",
+    "item": 2,
+    "marke": "c"
+   },
+   "zitat": "besonders schützenswerte Personendaten:\nDaten über religiöse, weltanschauliche, politische oder gewerkschaftliche Ansichten oder Tätigkeiten,\nDaten über die Gesundheit, die Intimsphäre oder die Zugehörigkeit zu einer Rasse oder Ethnie,\ngenetische Daten,\nbiometrische Daten, die eine natürliche Person eindeutig identifizieren,\nDaten über verwaltungs- und strafrechtliche Verfolgungen oder Sanktionen,\nDaten über Massnahmen der sozialen Hilfe;",
    "muster": "legende-einleitung",
    "stand": "2025-07-07",
    "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2022/491/de#art_5",
@@ -7090,27 +6880,6 @@
    "muster": "als-gilt",
    "stand": "2025-01-01",
    "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1971/37_37_37/de#art_1_a",
-   "status": "entwurf"
-  },
-  {
-   "begriff": "getrennt lebend",
-   "ebene": "bund",
-   "erlass": "ELV",
-   "norm": {
-    "snapshot": "bund/ELV",
-    "id": "bund/ELV/art_3",
-    "artikel": "3",
-    "artikelLabel": "Art. 3",
-    "block": 3,
-    "absatz": "4",
-    "stelle": "text",
-    "item": null,
-    "marke": null
-   },
-   "zitat": "Als getrennt lebend gelten im Sinne der Absätze 1 und 2 Ehegatten, wenn:",
-   "muster": "als-gilt",
-   "stand": "2025-01-01",
-   "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1971/37_37_37/de#art_3",
    "status": "entwurf"
   },
   {
@@ -8374,6 +8143,27 @@
    "status": "entwurf"
   },
   {
+   "begriff": "Schnittstelle",
+   "ebene": "bund",
+   "erlass": "FAV",
+   "norm": {
+    "snapshot": "bund/FAV",
+    "id": "bund/FAV/art_2",
+    "artikel": "2",
+    "artikelLabel": "Art. 2",
+    "block": 0,
+    "absatz": "1",
+    "stelle": "item",
+    "item": 3,
+    "marke": "d"
+   },
+   "zitat": "Schnittstelle:\nein Netzabschlusspunkt eines Fernmeldenetzes, das ganz oder teilweise für die Bereitstellung von Fernmeldediensten genutzt wird, d. h. der physische Anschlusspunkt, über den die Benutzerinnen und Benutzer Zugang zu einem solchen Netz erhalten (Schnittstelle von ganz oder teilweise für die Bereitstellung von Fernmeldediensten genutzten Fernmeldenetzen), sowie die entsprechenden technischen Spezifikationen, oder\neine Schnittstelle für den Funkweg zwischen Funkanlagen (Luftschnittstelle) sowie die entsprechenden technischen Spezifikationen;",
+   "muster": "legende-einleitung",
+   "stand": "2024-08-15",
+   "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2016/24/de#art_2",
+   "status": "entwurf"
+  },
+  {
    "begriff": "Anbieten",
    "ebene": "bund",
    "erlass": "FAV",
@@ -8794,6 +8584,27 @@
    "status": "entwurf"
   },
   {
+   "begriff": "Finanzinstrumente",
+   "ebene": "bund",
+   "erlass": "FIDLEG",
+   "norm": {
+    "snapshot": "bund/FIDLEG",
+    "id": "bund/FIDLEG/art_3",
+    "artikel": "3",
+    "artikelLabel": "Art. 3",
+    "block": 0,
+    "absatz": null,
+    "stelle": "item",
+    "item": 0,
+    "marke": "a"
+   },
+   "zitat": "Finanzinstrumente:\nBeteiligungspapiere:\nEffekten in Form von Aktien einschliesslich Aktien gleichzustellender Effekten, die Beteiligungs- oder Stimmrechte verleihen, wie Partizipations- oder Genussscheine\nEffekten, die bei Umwandlung oder Ausübung des darin verbrieften Rechts den Erwerb von Beteiligungspapieren nach Strich 1 ermöglichen, sobald sie zur Umwandlung angemeldet wurden,\nForderungspapiere: Effekten, die nicht Beteiligungspapiere sind,\nAnteile an kollektiven Kapitalanlagen nach den Artikeln 7 und 119 des Kollektivanlagengesetzes vom 23. Juni 2006 (KAG),\nstrukturierte Produkte, namentlich kapitalgeschützte Produkte, Produkte mit Maximalrendite und Zertifikate,\nDerivate nach Artikel 2 Buchstabe c des Finanzmarktinfrastrukturgesetzes vom 19. Juni 2015 (FinfraG),\nEinlagen, deren Rückzahlungswert oder Zins risiko- oder kursabhängig ist, ausgenommen solche, deren Zins an einen Zinsindex gebunden ist,\nAnleihensobligationen: Anteile an einem Gesamtdarlehen mit einheitlichen Bedingungen;",
+   "muster": "legende-einleitung",
+   "stand": "2024-03-01",
+   "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2019/758/de#art_3",
+   "status": "entwurf"
+  },
+  {
    "begriff": "Effekten",
    "ebene": "bund",
    "erlass": "FIDLEG",
@@ -9088,27 +8899,6 @@
    "status": "entwurf"
   },
   {
-   "begriff": "nicht in der Schweiz erbracht",
-   "ebene": "bund",
-   "erlass": "FIDLEV",
-   "norm": {
-    "snapshot": "bund/FIDLEV",
-    "id": "bund/FIDLEV/art_2",
-    "artikel": "2",
-    "artikelLabel": "Art. 2",
-    "block": 1,
-    "absatz": "2",
-    "stelle": "text",
-    "item": null,
-    "marke": null
-   },
-   "zitat": "Als nicht in der Schweiz erbracht gelten:",
-   "muster": "als-gilt",
-   "stand": "2022-01-01",
-   "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2019/759/de#art_2",
-   "status": "entwurf"
-  },
-  {
    "begriff": "dauerhafter Datenträger",
    "ebene": "bund",
    "erlass": "FIDLEV",
@@ -9379,6 +9169,27 @@
    "muster": "als-gilt",
    "stand": "2022-01-01",
    "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2019/759/de#art_96",
+   "status": "entwurf"
+  },
+  {
+   "begriff": "Finanzmarktinfrastruktur",
+   "ebene": "bund",
+   "erlass": "FINFRAG",
+   "norm": {
+    "snapshot": "bund/FINFRAG",
+    "id": "bund/FINFRAG/art_2",
+    "artikel": "2",
+    "artikelLabel": "Art. 2",
+    "block": 0,
+    "absatz": null,
+    "stelle": "item",
+    "item": 0,
+    "marke": "a"
+   },
+   "zitat": "Finanzmarktinfrastruktur:\neine Börse (Art. 26 Bst. b),\nein multilaterales Handelssystem (Art. 26 Bst. c),\neine zentrale Gegenpartei (Art. 48),\nein Zentralverwahrer (Art. 61),\nein Transaktionsregister (Art. 74),\nein Handelssystem für Distributed Ledger Technology-Effekten (DLT-Handelssystem; Art. 73a),\nein Zahlungssystem (Art. 81);",
+   "muster": "legende-einleitung",
+   "stand": "2024-02-01",
+   "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2015/853/de#art_2",
    "status": "entwurf"
   },
   {
@@ -10201,27 +10012,6 @@
    "status": "entwurf"
   },
   {
-   "begriff": "wirtschaftlich berechtigt",
-   "ebene": "bund",
-   "erlass": "FinfraV-FINMA",
-   "norm": {
-    "snapshot": "bund/FINFRAV_FINMA",
-    "id": "bund/FINFRAV_FINMA/art_10",
-    "artikel": "10",
-    "artikelLabel": "Art. 10",
-    "block": 0,
-    "absatz": "1",
-    "stelle": "text",
-    "item": null,
-    "marke": null
-   },
-   "zitat": "Als wirtschaftlich berechtigt gilt, wer die aus einer Beteiligung fliessenden Stimmrechte kontrolliert und das wirtschaftliche Risiko aus der Beteiligung trägt.",
-   "muster": "als-gilt",
-   "stand": "2023-02-01",
-   "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2015/855/de#art_10",
-   "status": "entwurf"
-  },
-  {
    "begriff": "indirekter Erwerb oder indirekte Veräusserung einer Beteiligung",
    "ebene": "bund",
    "erlass": "FinfraV-FINMA",
@@ -10471,27 +10261,6 @@
    "muster": "als-gilt",
    "stand": "2024-03-01",
    "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2018/801/de#art_49",
-   "status": "entwurf"
-  },
-  {
-   "begriff": "wirtschaftlich verbunden",
-   "ebene": "bund",
-   "erlass": "FINIV",
-   "norm": {
-    "snapshot": "bund/FINIV",
-    "id": "bund/FINIV/art_3",
-    "artikel": "3",
-    "artikelLabel": "Art. 3",
-    "block": 0,
-    "absatz": null,
-    "stelle": "text",
-    "item": null,
-    "marke": null
-   },
-   "zitat": "Als wirtschaftlich verbunden gelten Gesellschaften oder Einheiten eines Konzerns, soweit sie für andere Gesellschaften oder Einheiten desselben Konzerns Finanzdienstleistungen oder Dienstleistungen als Trustee erbringen.",
-   "muster": "als-gilt",
-   "stand": "2025-01-01",
-   "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2019/763/de#art_3",
    "status": "entwurf"
   },
   {
@@ -11395,27 +11164,6 @@
    "muster": "kurzform",
    "stand": "2020-12-15",
    "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2002/243/de#annex_II",
-   "status": "entwurf"
-  },
-  {
-   "begriff": "Grundlage für die Berechnung des Mindestbetrages",
-   "ebene": "bund",
-   "erlass": "FZV",
-   "norm": {
-    "snapshot": "bund/FZV",
-    "id": "bund/FZV/art_6",
-    "artikel": "6",
-    "artikelLabel": "Art. 6",
-    "block": 0,
-    "absatz": "1",
-    "stelle": "text",
-    "item": null,
-    "marke": null
-   },
-   "zitat": "Als Grundlage für die Berechnung des Mindestbetrages nach Artikel 17 FZG gelten die Beiträge und Eintrittsleistungen der Versicherten.",
-   "muster": "als-gilt",
-   "stand": "2026-08-01",
-   "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1994/2399_2399_2399/de#art_6",
    "status": "entwurf"
   },
   {
@@ -13624,27 +13372,6 @@
    "status": "entwurf"
   },
   {
-   "begriff": "qualifiziert beteiligt",
-   "ebene": "bund",
-   "erlass": "KAG",
-   "norm": {
-    "snapshot": "bund/KAG",
-    "id": "bund/KAG/art_14",
-    "artikel": "14",
-    "artikelLabel": "Art. 14",
-    "block": 4,
-    "absatz": "3",
-    "stelle": "text",
-    "item": null,
-    "marke": null
-   },
-   "zitat": "Als qualifiziert beteiligt gelten, sofern sie an den Personen nach Artikel 13 Absatz 2 direkt oder indirekt mit mindestens 10 Prozent des Kapitals oder der Stimmen beteiligt sind oder ihre Geschäftstätigkeit auf andere Weise massgebend beeinflussen können:",
-   "muster": "als-gilt",
-   "stand": "2024-03-01",
-   "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2006/822/de#art_14",
-   "status": "entwurf"
-  },
-  {
    "begriff": "übrige Fonds für traditionelle Anlagen",
    "ebene": "bund",
    "erlass": "KAG",
@@ -14647,27 +14374,6 @@
     "marke": null
    },
    "zitat": "Als Periode für die Feststellung, ob Leistungen in Anspruch genommen worden sind, gilt das Kalenderjahr.",
-   "muster": "als-gilt",
-   "stand": "2026-08-01",
-   "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1995/3867_3867_3867/de#art_96",
-   "status": "entwurf"
-  },
-  {
-   "begriff": "Zeitpunkt der Inanspruchnahme einer Leistung",
-   "ebene": "bund",
-   "erlass": "KVV",
-   "norm": {
-    "snapshot": "bund/KVV",
-    "id": "bund/KVV/art_96",
-    "artikel": "96",
-    "artikelLabel": "Art. 96",
-    "block": 2,
-    "absatz": "3",
-    "stelle": "text",
-    "item": null,
-    "marke": null
-   },
-   "zitat": "Als Zeitpunkt der Inanspruchnahme einer Leistung gilt das Behandlungsdatum.",
    "muster": "als-gilt",
    "stand": "2026-08-01",
    "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1995/3867_3867_3867/de#art_96",
@@ -15850,27 +15556,6 @@
    "status": "entwurf"
   },
   {
-   "begriff": "Einreichungsdatum",
-   "ebene": "bund",
-   "erlass": "MSchV",
-   "norm": {
-    "snapshot": "bund/MSCHV",
-    "id": "bund/MSCHV/art_14_a",
-    "artikel": "14_a",
-    "artikelLabel": "Art. 14a",
-    "block": 0,
-    "absatz": null,
-    "stelle": "text",
-    "item": null,
-    "marke": null
-   },
-   "zitat": "Als Einreichungsdatum gilt bei Postsendungen der Zeitpunkt, in dem eine Sendung der Schweizerischen Post zuhanden des IGE übergeben wird.",
-   "muster": "als-gilt",
-   "stand": "2025-07-01",
-   "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1993/296_296_296/de#art_14_a",
-   "status": "entwurf"
-  },
-  {
    "begriff": "Produkte nach Artikel 48c MSchG",
    "ebene": "bund",
    "erlass": "MSchV",
@@ -16564,6 +16249,27 @@
    "status": "entwurf"
   },
   {
+   "begriff": "Lieferung",
+   "ebene": "bund",
+   "erlass": "MWSTG",
+   "norm": {
+    "snapshot": "bund/MWSTG",
+    "id": "bund/MWSTG/art_3",
+    "artikel": "3",
+    "artikelLabel": "Art. 3",
+    "block": 0,
+    "absatz": null,
+    "stelle": "item",
+    "item": 3,
+    "marke": "d"
+   },
+   "zitat": "Lieferung:\nVerschaffen der Befähigung, im eigenen Namen über einen Gegenstand wirtschaftlich zu verfügen,\nAbliefern eines Gegenstandes, an dem Arbeiten besorgt worden sind, auch wenn dieser Gegenstand dadurch nicht verändert, sondern bloss geprüft, geeicht, reguliert, in der Funktion kontrolliert oder in anderer Weise behandelt worden ist,\nÜberlassen eines Gegenstandes zum Gebrauch oder zur Nutzung;",
+   "muster": "legende-einleitung",
+   "stand": "2025-03-31",
+   "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2009/615/de#art_3",
+   "status": "entwurf"
+  },
+  {
    "begriff": "Dienstleistung",
    "ebene": "bund",
    "erlass": "MWSTG",
@@ -16621,6 +16327,27 @@
     "marke": "g"
    },
    "zitat": "hoheitliche Tätigkeit: Tätigkeit eines Gemeinwesens oder einer von einem Gemeinwesen eingesetzten Person oder Organisation, die nicht unternehmerischer Natur ist, namentlich nicht marktfähig ist und nicht im Wettbewerb mit Tätigkeiten privater Anbieter steht, selbst wenn für die Tätigkeit Gebühren, Beiträge oder sonstige Abgaben erhoben werden;",
+   "muster": "legende-einleitung",
+   "stand": "2025-03-31",
+   "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2009/615/de#art_3",
+   "status": "entwurf"
+  },
+  {
+   "begriff": "eng verbundene Personen",
+   "ebene": "bund",
+   "erlass": "MWSTG",
+   "norm": {
+    "snapshot": "bund/MWSTG",
+    "id": "bund/MWSTG/art_3",
+    "artikel": "3",
+    "artikelLabel": "Art. 3",
+    "block": 0,
+    "absatz": null,
+    "stelle": "item",
+    "item": 12,
+    "marke": "h"
+   },
+   "zitat": "eng verbundene Personen:\ndie Inhaber und Inhaberinnen von mindestens 20 Prozent des Stamm- oder Grundkapitals eines Unternehmens oder von einer entsprechenden Beteiligung an einer Personengesellschaft oder ihnen nahestehende Personen,\nStiftungen und Vereine, zu denen eine besonders enge wirtschaftliche, vertragliche oder personelle Beziehung besteht; nicht als eng verbundene Personen gelten Vorsorgeeinrichtungen;",
    "muster": "legende-einleitung",
    "stand": "2025-03-31",
    "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2009/615/de#art_3",
@@ -17929,27 +17656,6 @@
    "status": "entwurf"
   },
   {
-   "begriff": "Basis",
-   "ebene": "bund",
-   "erlass": "NBV",
-   "norm": {
-    "snapshot": "bund/NBV",
-    "id": "bund/NBV/art_17",
-    "artikel": "17",
-    "artikelLabel": "Art. 17",
-    "block": 0,
-    "absatz": "1",
-    "stelle": "text",
-    "item": null,
-    "marke": null
-   },
-   "zitat": "Als Basis gilt der SARON (Tagesendfixing).",
-   "muster": "als-gilt",
-   "stand": "2024-07-01",
-   "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2004/233/de#art_17",
-   "status": "entwurf"
-  },
-  {
    "begriff": "Liquidität in einer Währung",
    "ebene": "bund",
    "erlass": "NBV",
@@ -18115,27 +17821,6 @@
    "muster": "als-gilt",
    "stand": "2026-01-01",
    "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/de#art_337",
-   "status": "entwurf"
-  },
-  {
-   "begriff": "angenommen",
-   "ebene": "bund",
-   "erlass": "OR",
-   "norm": {
-    "snapshot": "bund/OR",
-    "id": "bund/OR/art_395",
-    "artikel": "395",
-    "artikelLabel": "Art. 395",
-    "block": 0,
-    "absatz": null,
-    "stelle": "text",
-    "item": null,
-    "marke": null
-   },
-   "zitat": "Als angenommen gilt ein nicht sofort abgelehnter Auftrag, wenn er sich auf die Besorgung solcher Geschäfte bezieht, die der Beauftragte kraft obrigkeitlicher Bestellung oder gewerbsmässig betreibt oder zu deren Besorgung er sich öffentlich empfohlen hat.",
-   "muster": "als-gilt",
-   "stand": "2026-01-01",
-   "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/de#art_395",
    "status": "entwurf"
   },
   {
@@ -18493,27 +18178,6 @@
    "muster": "als-gilt",
    "stand": "2025-07-01",
    "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#art_66",
-   "status": "entwurf"
-  },
-  {
-   "begriff": "Einreichungsdatum",
-   "ebene": "bund",
-   "erlass": "PatV",
-   "norm": {
-    "snapshot": "bund/PATV",
-    "id": "bund/PATV/art_2",
-    "artikel": "2",
-    "artikelLabel": "Art. 2",
-    "block": 0,
-    "absatz": null,
-    "stelle": "text",
-    "item": null,
-    "marke": null
-   },
-   "zitat": "Als Einreichungsdatum gilt bei Postsendungen der Zeitpunkt, in dem eine Sendung der Schweizerischen Post zuhanden des IGE übergeben wird.",
-   "muster": "als-gilt",
-   "stand": "2025-07-01",
-   "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1977/2027_2027_2027/de#art_2",
    "status": "entwurf"
   },
   {
@@ -18976,48 +18640,6 @@
    "muster": "als-gilt",
    "stand": "2026-07-01",
    "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2000/310/de#art_42_b",
-   "status": "entwurf"
-  },
-  {
-   "begriff": "mitinteressiert",
-   "ebene": "bund",
-   "erlass": "RVOV",
-   "norm": {
-    "snapshot": "bund/RVOV",
-    "id": "bund/RVOV/art_4",
-    "artikel": "4",
-    "artikelLabel": "Art. 4",
-    "block": 3,
-    "absatz": "3",
-    "stelle": "text",
-    "item": null,
-    "marke": null
-   },
-   "zitat": "Als mitinteressiert gelten die Verwaltungseinheiten, die einen fachlichen Bezug zum Geschäft haben oder die für die Beurteilung finanzieller, rechtlicher oder formeller Aspekte zuständig sind.",
-   "muster": "als-gilt",
-   "stand": "2026-03-01",
-   "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1999/170/de#art_4",
-   "status": "entwurf"
-  },
-  {
-   "begriff": "Berechnungsgrundlage",
-   "ebene": "bund",
-   "erlass": "RVOV",
-   "norm": {
-    "snapshot": "bund/RVOV",
-    "id": "bund/RVOV/art_8_q",
-    "artikel": "8_q",
-    "artikelLabel": "Art. 8q",
-    "block": 3,
-    "absatz": "4",
-    "stelle": "text",
-    "item": null,
-    "marke": null
-   },
-   "zitat": "als Berechnungsgrundlage gelten 220 Arbeitstage pro Jahr.",
-   "muster": "als-gilt",
-   "stand": "2026-03-01",
-   "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1999/170/de#art_8_q",
    "status": "entwurf"
   },
   {
@@ -19774,48 +19396,6 @@
    "muster": "als-gilt",
    "stand": "2025-01-01",
    "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1991/1256_1256_1256/de#art_24_a",
-   "status": "entwurf"
-  },
-  {
-   "begriff": "Beginn der Steuerpflicht",
-   "ebene": "bund",
-   "erlass": "StHG",
-   "norm": {
-    "snapshot": "bund/STHG",
-    "id": "bund/STHG/art_24_c",
-    "artikel": "24_c",
-    "artikelLabel": "Art. 24c",
-    "block": 1,
-    "absatz": "2",
-    "stelle": "text",
-    "item": null,
-    "marke": null
-   },
-   "zitat": "Als Beginn der Steuerpflicht gelten die Verlegung von Vermögenswerten, Betrieben, Teilbetrieben oder Funktionen aus dem Ausland in einen inländischen Geschäftsbetrieb oder in eine inländische Betriebsstätte, das Ende einer Steuerbefreiung nach Artikel 23 Absatz 1 sowie die Verlegung des Sitzes oder der tatsächlichen Verwaltung in die Schweiz.",
-   "muster": "als-gilt",
-   "stand": "2025-01-01",
-   "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1991/1256_1256_1256/de#art_24_c",
-   "status": "entwurf"
-  },
-  {
-   "begriff": "Ende der Steuerpflicht",
-   "ebene": "bund",
-   "erlass": "StHG",
-   "norm": {
-    "snapshot": "bund/STHG",
-    "id": "bund/STHG/art_24_d",
-    "artikel": "24_d",
-    "artikelLabel": "Art. 24d",
-    "block": 1,
-    "absatz": "2",
-    "stelle": "text",
-    "item": null,
-    "marke": null
-   },
-   "zitat": "Als Ende der Steuerpflicht gelten die Verlegung von Vermögenswerten, Betrieben, Teilbetrieben oder Funktionen aus dem Inland in einen ausländischen Geschäftsbetrieb oder in eine ausländische Betriebsstätte, der Übergang zu einer Steuerbefreiung nach Artikel 23 Absatz 1 sowie die Verlegung des Sitzes oder der tatsächlichen Verwaltung ins Ausland.",
-   "muster": "als-gilt",
-   "stand": "2025-01-01",
-   "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1991/1256_1256_1256/de#art_24_d",
    "status": "entwurf"
   },
   {
@@ -21100,48 +20680,6 @@
    "status": "entwurf"
   },
   {
-   "begriff": "Grundlage für die Bemessung der Taggelder",
-   "ebene": "bund",
-   "erlass": "UVV",
-   "norm": {
-    "snapshot": "bund/UVV",
-    "id": "bund/UVV/art_22",
-    "artikel": "22",
-    "artikelLabel": "Art. 22",
-    "block": 2,
-    "absatz": "3",
-    "stelle": "text",
-    "item": null,
-    "marke": null
-   },
-   "zitat": "Als Grundlage für die Bemessung der Taggelder gilt der letzte vor dem Unfall bezogene Lohn, einschliesslich noch nicht ausbezahlter Lohnbestandteile, auf die ein Rechtsanspruch besteht.",
-   "muster": "als-gilt",
-   "stand": "2026-01-01",
-   "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1983/38_38_38/de#art_22",
-   "status": "entwurf"
-  },
-  {
-   "begriff": "Grundlage für die Bemessung der Renten",
-   "ebene": "bund",
-   "erlass": "UVV",
-   "norm": {
-    "snapshot": "bund/UVV",
-    "id": "bund/UVV/art_22",
-    "artikel": "22",
-    "artikelLabel": "Art. 22",
-    "block": 4,
-    "absatz": "4",
-    "stelle": "text",
-    "item": null,
-    "marke": null
-   },
-   "zitat": "Als Grundlage für die Bemessung der Renten gilt der innerhalb eines Jahres vor dem Unfall bei einem oder mehreren Arbeitgebern bezogene Lohn, einschliesslich noch nicht ausbezahlter Lohnbestandteile, auf die ein Rechtsanspruch besteht.",
-   "muster": "als-gilt",
-   "stand": "2026-01-01",
-   "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1983/38_38_38/de#art_22",
-   "status": "entwurf"
-  },
-  {
    "begriff": "paarige Organe",
    "ebene": "bund",
    "erlass": "UVV",
@@ -21160,27 +20698,6 @@
    "muster": "als-gilt",
    "stand": "2026-01-01",
    "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1983/38_38_38/de#art_29",
-   "status": "entwurf"
-  },
-  {
-   "begriff": "Grundlage für die Berechnung der Teuerungszulagen",
-   "ebene": "bund",
-   "erlass": "UVV",
-   "norm": {
-    "snapshot": "bund/UVV",
-    "id": "bund/UVV/art_44",
-    "artikel": "44",
-    "artikelLabel": "Art. 44",
-    "block": 0,
-    "absatz": "1",
-    "stelle": "text",
-    "item": null,
-    "marke": null
-   },
-   "zitat": "Als Grundlage für die Berechnung der Teuerungszulagen gilt jeweils der für den Monat September massgebende Landesindex der Konsumentenpreise.",
-   "muster": "als-gilt",
-   "stand": "2026-01-01",
-   "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1983/38_38_38/de#art_44",
    "status": "entwurf"
   },
   {
@@ -23977,27 +23494,6 @@
    "status": "entwurf"
   },
   {
-   "begriff": "vervollständigt",
-   "ebene": "bund",
-   "erlass": "VTS",
-   "norm": {
-    "snapshot": "bund/VTS",
-    "id": "bund/VTS/art_29",
-    "artikel": "29",
-    "artikelLabel": "Art. 29",
-    "block": 6,
-    "absatz": "7",
-    "stelle": "text",
-    "item": null,
-    "marke": null
-   },
-   "zitat": "Als vervollständigt gelten Fahrzeuge, die das Ergebnis von mehreren Herstellungsstufen sind und die den einschlägigen technischen Anforderungen dieser Verordnung entsprechen.",
-   "muster": "als-gilt",
-   "stand": "2026-07-01",
-   "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1995/4425_4425_4425/de#art_29",
-   "status": "entwurf"
-  },
-  {
    "begriff": "Hersteller",
    "ebene": "bund",
    "erlass": "VTS",
@@ -24208,6 +23704,27 @@
    "status": "entwurf"
   },
   {
+   "begriff": "Siedlungsabfälle",
+   "ebene": "bund",
+   "erlass": "VVEA",
+   "norm": {
+    "snapshot": "bund/VVEA",
+    "id": "bund/VVEA/art_3",
+    "artikel": "3",
+    "artikelLabel": "Art. 3",
+    "block": 0,
+    "absatz": null,
+    "stelle": "item",
+    "item": 0,
+    "marke": "a"
+   },
+   "zitat": "Siedlungsabfälle:\naus Haushalten stammende Abfälle,\naus Unternehmen mit weniger als 250 Vollzeitstellen stammende Abfälle, deren Zusammensetzung betreffend Inhaltsstoffe und Mengenverhältnisse mit Abfällen aus Haushalten vergleichbar ist,\naus öffentlichen Verwaltungen stammende Abfälle, deren Zusammensetzung betreffend Inhaltsstoffe und Mengenverhältnisse mit Abfällen aus Haushalten vergleichbar ist,\nalle Rückstände, die in Anlagen zur thermischen Behandlung von Abfällen nach den Ziffern 1–3 anfallen, bis sie verwertet oder abgelagert worden sind;",
+   "muster": "legende-einleitung",
+   "stand": "2026-08-01",
+   "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2015/891/de#art_3",
+   "status": "entwurf"
+  },
+  {
    "begriff": "Unternehmen",
    "ebene": "bund",
    "erlass": "VVEA",
@@ -24307,6 +23824,27 @@
     "marke": "f"
    },
    "zitat": "Aushub- und Ausbruchmaterial: Material, das bei Bauarbeiten ausgehoben oder ausgebrochen wird, ausgenommen ist abgetragener Ober- und Unterboden;",
+   "muster": "legende-einleitung",
+   "stand": "2026-08-01",
+   "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2015/891/de#art_3",
+   "status": "entwurf"
+  },
+  {
+   "begriff": "Quecksilberabfälle",
+   "ebene": "bund",
+   "erlass": "VVEA",
+   "norm": {
+    "snapshot": "bund/VVEA",
+    "id": "bund/VVEA/art_3",
+    "artikel": "3",
+    "artikelLabel": "Art. 3",
+    "block": 0,
+    "absatz": null,
+    "stelle": "item",
+    "item": 10,
+    "marke": "fbis"
+   },
+   "zitat": "Quecksilberabfälle:\nAbfälle, die Quecksilber oder Quecksilberverbindungen enthalten,\naus der Behandlung von Quecksilberabfällen nach Ziffer 1 stammendes Quecksilber oder stammende Quecksilberverbindungen; davon ausgenommen ist Quecksilber, dessen Ausfuhr nach Anhang 1.7 Ziffer 2.2.4 oder 4.2 der Chemikalien-Risikoreduktions-Verordnung vom 18. Mai 2005 (ChemRRV) bewilligt worden ist,\nQuecksilber oder Quecksilberverbindungen, das oder die bei industriellen Prozessen nicht mehr benötigt wird oder werden;",
    "muster": "legende-einleitung",
    "stand": "2026-08-01",
    "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2015/891/de#art_3",
@@ -24898,27 +24436,6 @@
    "muster": "als-gilt",
    "stand": "2026-01-01",
    "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1976/2423_2423_2423/de#art_17_a",
-   "status": "entwurf"
-  },
-  {
-   "begriff": "Nachweis der Zollveranlagung und der Versteuerung nach AStG",
-   "ebene": "bund",
-   "erlass": "VZV",
-   "norm": {
-    "snapshot": "bund/VZV",
-    "id": "bund/VZV/art_76",
-    "artikel": "76",
-    "artikelLabel": "Art. 76",
-    "block": 0,
-    "absatz": "1",
-    "stelle": "text",
-    "item": null,
-    "marke": null
-   },
-   "zitat": "Als Nachweis der Zollveranlagung und der Versteuerung nach AStG gilt der zollamtlich abgestempelte Prüfungsbericht (Form. 13.20 A).",
-   "muster": "als-gilt",
-   "stand": "2026-01-01",
-   "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1976/2423_2423_2423/de#art_76",
    "status": "entwurf"
   },
   {
@@ -25881,50 +25398,6 @@
    "status": "entwurf"
   },
   {
-   "begriff": "Beginn der Steuerpflicht",
-   "ebene": "kanton",
-   "kanton": "AI",
-   "erlass": "Steuergesetz, StG (GS 640.000)",
-   "norm": {
-    "snapshot": "kanton/AI-640.000",
-    "id": "kanton/AI/640.000/art_63_bis",
-    "artikel": "63_bis",
-    "artikelLabel": "Art. 63bis",
-    "block": 1,
-    "absatz": "2",
-    "stelle": "text",
-    "item": null,
-    "marke": null
-   },
-   "zitat": "Als Beginn der Steuerpflicht gelten die Verlegung von Vermögenswerten, Betrieben, Teilbetrieben oder Funktionen aus dem Ausland in einen inländischen Geschäftsbetrieb oder in eine inländische Betriebsstätte, das Ende einer Steuerbefreiung nach Art. 58 Abs. 1 dieses Gesetzes sowie die Verlegung des Sitzes oder der tatsächlichen Verwaltung in die Schweiz.",
-   "muster": "als-gilt",
-   "stand": "2024-01-01",
-   "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-   "status": "entwurf"
-  },
-  {
-   "begriff": "Ende der Steuerpflicht",
-   "ebene": "kanton",
-   "kanton": "AI",
-   "erlass": "Steuergesetz, StG (GS 640.000)",
-   "norm": {
-    "snapshot": "kanton/AI-640.000",
-    "id": "kanton/AI/640.000/art_63_ter",
-    "artikel": "63_ter",
-    "artikelLabel": "Art. 63ter",
-    "block": 1,
-    "absatz": "2",
-    "stelle": "text",
-    "item": null,
-    "marke": null
-   },
-   "zitat": "Als Ende der Steuerpflicht gelten die Verlegung von Vermögenswerten, Betrieben, Teilbetrieben oder Funktionen aus dem Inland in einen ausländischen Geschäftsbetrieb oder in eine ausländische Betriebsstätte, der Übergang zu einer Steuerbefreiung nach Art. 58 Abs. 1 dieses Gesetzes sowie die Verlegung des Sitzes oder der tatsächlichen Verwaltung ins Ausland.",
-   "muster": "als-gilt",
-   "stand": "2024-01-01",
-   "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-   "status": "entwurf"
-  },
-  {
    "begriff": "betriebsnotwendig",
    "ebene": "kanton",
    "kanton": "AI",
@@ -26233,28 +25706,6 @@
    "status": "entwurf"
   },
   {
-   "begriff": "mitinteressiert",
-   "ebene": "kanton",
-   "kanton": "AR",
-   "erlass": "Organisationsverordnung, OrV (142.121)",
-   "norm": {
-    "snapshot": "kanton/AR-142.121",
-    "id": "kanton/AR/142.121/art_10",
-    "artikel": "10",
-    "artikelLabel": "Art. 10",
-    "block": 2,
-    "absatz": "3",
-    "stelle": "text",
-    "item": null,
-    "marke": null
-   },
-   "zitat": "Als mitinteressiert gilt, wer einen fachlichen Bezug zum Geschäft hat.",
-   "muster": "als-gilt",
-   "stand": "2026-06-05",
-   "quelleUrl": "https://ar.clex.ch/app/de/texts_of_law/142.121",
-   "status": "entwurf"
-  },
-  {
    "begriff": "Keine Angestellten",
    "ebene": "kanton",
    "kanton": "AR",
@@ -26340,28 +25791,6 @@
    "muster": "als-gilt",
    "stand": "2023-07-01",
    "quelleUrl": "https://ar.clex.ch/app/de/texts_of_law/142.21",
-   "status": "entwurf"
-  },
-  {
-   "begriff": "Basis",
-   "ebene": "kanton",
-   "kanton": "AR",
-   "erlass": "BVO (142.211)",
-   "norm": {
-    "snapshot": "kanton/AR-142.211",
-    "id": "kanton/AR/142.211/art_5",
-    "artikel": "5",
-    "artikelLabel": "Art. 5",
-    "block": 1,
-    "absatz": "2",
-    "stelle": "text",
-    "item": null,
-    "marke": null
-   },
-   "zitat": "Als Basis gilt der Mittelwert innerhalb einer Gehaltsklasse gemäss Lohntabelle.",
-   "muster": "als-gilt",
-   "stand": "2026-01-01",
-   "quelleUrl": "https://ar.clex.ch/app/de/texts_of_law/142.211",
    "status": "entwurf"
   },
   {
@@ -26585,28 +26014,6 @@
    "status": "entwurf"
   },
   {
-   "begriff": "entschuldigt",
-   "ebene": "kanton",
-   "kanton": "AR",
-   "erlass": "Volksschulverordnung; VSV (412.01)",
-   "norm": {
-    "snapshot": "kanton/AR-412.01",
-    "id": "kanton/AR/412.01/art_15",
-    "artikel": "15",
-    "artikelLabel": "Art. 15",
-    "block": 1,
-    "absatz": "2",
-    "stelle": "text",
-    "item": null,
-    "marke": null
-   },
-   "zitat": "Als entschuldigt gelten Absenzen wegen Krankheit, Unfall, Arztbesuch, familiärer Ereignisse oder zwecks Teilnahme an einer berufswahl- oder talentorientierten Veranstaltung und dergleichen.",
-   "muster": "als-gilt",
-   "stand": "2023-08-01",
-   "quelleUrl": "https://ar.clex.ch/app/de/texts_of_law/412.01",
-   "status": "entwurf"
-  },
-  {
    "begriff": "Hochschule",
    "ebene": "kanton",
    "kanton": "AR",
@@ -26648,28 +26055,6 @@
    "muster": "kurzform",
    "stand": "2020-01-01",
    "quelleUrl": "https://ar.clex.ch/app/de/texts_of_law/413.3",
-   "status": "entwurf"
-  },
-  {
-   "begriff": "Stichtag",
-   "ebene": "kanton",
-   "kanton": "AR",
-   "erlass": "Stipendienverordnung (415.211)",
-   "norm": {
-    "snapshot": "kanton/AR-415.211",
-    "id": "kanton/AR/415.211/art_8",
-    "artikel": "8",
-    "artikelLabel": "Art. 8",
-    "block": 0,
-    "absatz": "1",
-    "stelle": "text",
-    "item": null,
-    "marke": null
-   },
-   "zitat": "Als Stichtag gilt der erste Tag des Kalendermonats.",
-   "muster": "als-gilt",
-   "stand": "2018-02-13",
-   "quelleUrl": "https://ar.clex.ch/app/de/texts_of_law/415.211",
    "status": "entwurf"
   },
   {
@@ -26849,28 +26234,6 @@
    "status": "entwurf"
   },
   {
-   "begriff": "Nachweis",
-   "ebene": "kanton",
-   "kanton": "AR",
-   "erlass": "HuV (525.11)",
-   "norm": {
-    "snapshot": "kanton/AR-525.11",
-    "id": "kanton/AR/525.11/art_11",
-    "artikel": "11",
-    "artikelLabel": "Art. 11",
-    "block": 3,
-    "absatz": "4",
-    "stelle": "text",
-    "item": null,
-    "marke": null
-   },
-   "zitat": "Als Nachweis gelten folgende Dokumente:",
-   "muster": "als-gilt",
-   "stand": "2025-01-01",
-   "quelleUrl": "https://ar.clex.ch/app/de/texts_of_law/525.11",
-   "status": "entwurf"
-  },
-  {
    "begriff": "kantonale Jagdbanngebiete und Vogelreservate",
    "ebene": "kanton",
    "kanton": "AR",
@@ -26890,28 +26253,6 @@
    "muster": "als-gilt",
    "stand": "2024-04-01",
    "quelleUrl": "https://ar.clex.ch/app/de/texts_of_law/526.21",
-   "status": "entwurf"
-  },
-  {
-   "begriff": "gebunden",
-   "ebene": "kanton",
-   "kanton": "AR",
-   "erlass": "FHG (612.0)",
-   "norm": {
-    "snapshot": "kanton/AR-612.0",
-    "id": "kanton/AR/612.0/art_7",
-    "artikel": "7",
-    "artikelLabel": "Art. 7",
-    "block": 1,
-    "absatz": "2",
-    "stelle": "text",
-    "item": null,
-    "marke": null
-   },
-   "zitat": "Als gebunden gelten namentlich auch die Ausgaben für:",
-   "muster": "als-gilt",
-   "stand": "2019-06-01",
-   "quelleUrl": "https://ar.clex.ch/app/de/texts_of_law/612.0",
    "status": "entwurf"
   },
   {
@@ -27261,50 +26602,6 @@
     "marke": "d"
    },
    "zitat": "Als Tochtergesellschaft gilt eine Kapitalgesellschaft oder Genossenschaft, an der die übertragende Kapitalgesellschaft oder Genossenschaft zu mindestens 20 Prozent am Grund- oder Stammkapital beteiligt ist.",
-   "muster": "als-gilt",
-   "stand": "2025-01-01",
-   "quelleUrl": "https://ar.clex.ch/app/de/texts_of_law/621.11",
-   "status": "entwurf"
-  },
-  {
-   "begriff": "Beginn der Steuerpflicht",
-   "ebene": "kanton",
-   "kanton": "AR",
-   "erlass": "Steuergesetz (bGS 621.11)",
-   "norm": {
-    "snapshot": "kanton/AR-621.11",
-    "id": "kanton/AR/621.11/art_72_a",
-    "artikel": "72_a",
-    "artikelLabel": "Art. 72a",
-    "block": 1,
-    "absatz": "2",
-    "stelle": "text",
-    "item": null,
-    "marke": null
-   },
-   "zitat": "Als Beginn der Steuerpflicht gelten die Verlegung von Vermögenswerten, Betrieben, Teilbetrieben oder Funktionen aus dem Ausland in einen inländischen Geschäftsbetrieb oder in eine inländische Betriebsstätte, das Ende einer Steuerbefreiung nach Art. 66 Abs. 1 sowie die Verlegung des Sitzes oder der tatsächlichen Verwaltung in die Schweiz.",
-   "muster": "als-gilt",
-   "stand": "2025-01-01",
-   "quelleUrl": "https://ar.clex.ch/app/de/texts_of_law/621.11",
-   "status": "entwurf"
-  },
-  {
-   "begriff": "Ende der Steuerpflicht",
-   "ebene": "kanton",
-   "kanton": "AR",
-   "erlass": "Steuergesetz (bGS 621.11)",
-   "norm": {
-    "snapshot": "kanton/AR-621.11",
-    "id": "kanton/AR/621.11/art_72_b",
-    "artikel": "72_b",
-    "artikelLabel": "Art. 72b",
-    "block": 1,
-    "absatz": "2",
-    "stelle": "text",
-    "item": null,
-    "marke": null
-   },
-   "zitat": "Als Ende der Steuerpflicht gelten die Verlegung von Vermögenswerten, Betrieben, Teilbetrieben oder Funktionen aus dem Inland in einen ausländischen Geschäftsbetrieb oder in eine ausländische Betriebsstätte, der Abschluss der Liquidation, der Übergang zu einer Steuerbefreiung nach Art. 66 Abs. 1 sowie die Verlegung des Sitzes oder der tatsächlichen Verwaltung ins Ausland.",
    "muster": "als-gilt",
    "stand": "2025-01-01",
    "quelleUrl": "https://ar.clex.ch/app/de/texts_of_law/621.11",
@@ -27663,28 +26960,6 @@
    "status": "entwurf"
   },
   {
-   "begriff": "tatsächlich getrennt",
-   "ebene": "kanton",
-   "kanton": "AR",
-   "erlass": "Steuerverordnung (621.111)",
-   "norm": {
-    "snapshot": "kanton/AR-621.111",
-    "id": "kanton/AR/621.111/art_5",
-    "artikel": "5",
-    "artikelLabel": "Art. 5",
-    "block": 1,
-    "absatz": "2",
-    "stelle": "text",
-    "item": null,
-    "marke": null
-   },
-   "zitat": "Als tatsächlich getrennt gilt die Ehe, wenn der gemeinsame Haushalt aufgehoben ist, zwischen den Ehegatten keinerlei Gemeinschaftlichkeit der Mittel für Wohnung und Unterhalt mehr besteht und eine allfällige Unterstützung des einen Ehegatten durch den andern nur noch in ziffernmässig bestimmten Beträgen geleistet wird.",
-   "muster": "als-gilt",
-   "stand": "2024-01-01",
-   "quelleUrl": "https://ar.clex.ch/app/de/texts_of_law/621.111",
-   "status": "entwurf"
-  },
-  {
    "begriff": "Erklärung im Zeitpunkt des Erwerbs",
    "ebene": "kanton",
    "kanton": "AR",
@@ -27814,28 +27089,6 @@
    "muster": "als-gilt",
    "stand": "2024-01-01",
    "quelleUrl": "https://ar.clex.ch/app/de/texts_of_law/621.111",
-   "status": "entwurf"
-  },
-  {
-   "begriff": "Zeitpunkt für die Berechnung der Entschädigung",
-   "ebene": "kanton",
-   "kanton": "AR",
-   "erlass": "Enteignungsgesetz (711.1)",
-   "norm": {
-    "snapshot": "kanton/AR-711.1",
-    "id": "kanton/AR/711.1/art_14",
-    "artikel": "14",
-    "artikelLabel": "Art. 14",
-    "block": 0,
-    "absatz": "1",
-    "stelle": "text",
-    "item": null,
-    "marke": null
-   },
-   "zitat": "Als Zeitpunkt für die Berechnung der Entschädigung gilt die öffentliche Bekanntmachung des Abtretungsplanes (Art. 16–17), als Zeitpunkt für die Bezahlung derjenige der eingetretenen Rechtskraft des Entscheides über die Höhe der Entschädigung (Art. 23).",
-   "muster": "als-gilt",
-   "stand": "1995-01-01",
-   "quelleUrl": "https://ar.clex.ch/app/de/texts_of_law/711.1",
    "status": "entwurf"
   },
   {
@@ -29819,50 +29072,6 @@
    "status": "entwurf"
   },
   {
-   "begriff": "Beginn der Steuerpflicht",
-   "ebene": "kanton",
-   "kanton": "BL",
-   "erlass": "Gesetz über die Staats- und Gemeindesteuern, Steuergesetz (SGS 331)",
-   "norm": {
-    "snapshot": "kanton/BL-331",
-    "id": "kanton/BL/331/art_53_b",
-    "artikel": "53_b",
-    "artikelLabel": "§ 53b",
-    "block": 1,
-    "absatz": "2",
-    "stelle": "text",
-    "item": null,
-    "marke": null
-   },
-   "zitat": "Als Beginn der Steuerpflicht gelten die Verlegung von Vermögenswerten, Betrieben, Teilbetrieben oder Funktionen aus dem Ausland in einen inländischen Geschäftsbetrieb oder in eine inländische Betriebsstätte, das Ende einer Steuerbefreiung nach § 16 sowie die Verlegung des Sitzes oder der tatsächlichen Verwaltung in die Schweiz.",
-   "muster": "als-gilt",
-   "stand": "2023-01-01",
-   "quelleUrl": "https://bl.clex.ch/app/de/texts_of_law/331",
-   "status": "entwurf"
-  },
-  {
-   "begriff": "Ende der Steuerpflicht",
-   "ebene": "kanton",
-   "kanton": "BL",
-   "erlass": "Gesetz über die Staats- und Gemeindesteuern, Steuergesetz (SGS 331)",
-   "norm": {
-    "snapshot": "kanton/BL-331",
-    "id": "kanton/BL/331/art_53_c",
-    "artikel": "53_c",
-    "artikelLabel": "§ 53c",
-    "block": 1,
-    "absatz": "2",
-    "stelle": "text",
-    "item": null,
-    "marke": null
-   },
-   "zitat": "Als Ende der Steuerpflicht gelten die Verlegung von Vermögenswerten, Betrieben, Teilbetrieben oder Funktionen aus dem Inland in einen ausländischen Geschäftsbetrieb oder in eine ausländische Betriebsstätte, der Übergang zu einer Steuerbefreiung nach § 16 sowie die Verlegung des Sitzes oder der tatsächlichen Verwaltung ins Ausland.",
-   "muster": "als-gilt",
-   "stand": "2023-01-01",
-   "quelleUrl": "https://bl.clex.ch/app/de/texts_of_law/331",
-   "status": "entwurf"
-  },
-  {
    "begriff": "geschäftsmässig begründete Aufwendungen",
    "ebene": "kanton",
    "kanton": "BL",
@@ -30523,28 +29732,6 @@
    "status": "entwurf"
   },
   {
-   "begriff": "nicht fertig gestellt",
-   "ebene": "kanton",
-   "kanton": "BS",
-   "erlass": "Verordnung über die Information und den Datenschutz, Informations- und Datenschutzverordnung, IDV (153.270)",
-   "norm": {
-    "snapshot": "kanton/BS-153.270",
-    "id": "kanton/BS/153.270/art_17",
-    "artikel": "17",
-    "artikelLabel": "§ 17",
-    "block": 0,
-    "absatz": "1",
-    "stelle": "text",
-    "item": null,
-    "marke": null
-   },
-   "zitat": "Als nicht fertig gestellt gilt eine Aufzeichnung insbesondere, wenn:",
-   "muster": "als-gilt",
-   "stand": "2025-01-01",
-   "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/153.270",
-   "status": "entwurf"
-  },
-  {
    "begriff": "Angehörige",
    "ebene": "kanton",
    "kanton": "BS",
@@ -30913,28 +30100,6 @@
     "marke": null
    },
    "zitat": "Als sexuelle Belästigung am Arbeitsplatz gilt jede Verhaltensweise wie Gesten, Äusserungen, körperliche Kontakte, Darstellungen mit sexuellem Bezug, – die generell oder im Einzelfall seitens der betroffenen Person unerwünscht ist und – von der die verursachende Person weiss oder wissen müsste, dass diese Verhaltensweise unerwünscht ist.",
-   "muster": "als-gilt",
-   "stand": "2000-07-01",
-   "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/162.500",
-   "status": "entwurf"
-  },
-  {
-   "begriff": "generell unerwünscht",
-   "ebene": "kanton",
-   "kanton": "BS",
-   "erlass": "Verordnung über den Schutz vor sexueller Belästigung am Arbeitsplatz (162.500)",
-   "norm": {
-    "snapshot": "kanton/BS-162.500",
-    "id": "kanton/BS/162.500/art_3",
-    "artikel": "3",
-    "artikelLabel": "§ 3",
-    "block": 1,
-    "absatz": "2",
-    "stelle": "text",
-    "item": null,
-    "marke": null
-   },
-   "zitat": "Als generell unerwünscht gelten Verhaltensweisen mit sexuellem Bezug immer, wenn sie von einer vorgesetzten Stelle als unerwünscht bezeichnet worden sind.",
    "muster": "als-gilt",
    "stand": "2000-07-01",
    "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/162.500",
@@ -31887,28 +31052,6 @@
    "status": "entwurf"
   },
   {
-   "begriff": "anerkannt",
-   "ebene": "kanton",
-   "kanton": "BS",
-   "erlass": "Gesetz über die Verfassungs- und Verwaltungsrechtspflege, VRPG (270.100)",
-   "norm": {
-    "snapshot": "kanton/BS-270.100",
-    "id": "kanton/BS/270.100/art_18",
-    "artikel": "18",
-    "artikelLabel": "§ 18",
-    "block": 0,
-    "absatz": "1",
-    "stelle": "text",
-    "item": null,
-    "marke": null
-   },
-   "zitat": "Als anerkannt gelten auch die in der angefochtenen Verfügung ausdrücklich festgestellten Tatsachen, welche der Rekurrent und die Beigeladenen nicht bestritten haben.",
-   "muster": "als-gilt",
-   "stand": "2021-01-01",
-   "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/270.100",
-   "status": "entwurf"
-  },
-  {
    "begriff": "Gerichte",
    "ebene": "kanton",
    "kanton": "BS",
@@ -31975,28 +31118,6 @@
    "status": "entwurf"
   },
   {
-   "begriff": "nicht bestanden",
-   "ebene": "kanton",
-   "kanton": "BS",
-   "erlass": "Reglement über das Anwaltsexamen (291.900)",
-   "norm": {
-    "snapshot": "kanton/BS-291.900",
-    "id": "kanton/BS/291.900/art_9",
-    "artikel": "9",
-    "artikelLabel": "§ 9",
-    "block": 2,
-    "absatz": "3",
-    "stelle": "text",
-    "item": null,
-    "marke": null
-   },
-   "zitat": "Als nicht bestanden gilt das Anwaltsexamen ebenfalls bei Rückzug der Bewerbung nach Beginn der Prüfungen.",
-   "muster": "als-gilt",
-   "stand": "2020-11-16",
-   "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/291.900",
-   "status": "entwurf"
-  },
-  {
    "begriff": "beruflich selbständig",
    "ebene": "kanton",
    "kanton": "BS",
@@ -32038,28 +31159,6 @@
    "muster": "als-gilt",
    "stand": "2020-07-01",
    "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/292.100",
-   "status": "entwurf"
-  },
-  {
-   "begriff": "wesentlich geändert",
-   "ebene": "kanton",
-   "kanton": "BS",
-   "erlass": "Verordnung über die Fachpersonen und Betriebe im Gesundheitswesen, Bewilligungsverordnung (310.120)",
-   "norm": {
-    "snapshot": "kanton/BS-310.120",
-    "id": "kanton/BS/310.120/art_20",
-    "artikel": "20",
-    "artikelLabel": "§ 20",
-    "block": 2,
-    "absatz": "3",
-    "stelle": "text",
-    "item": null,
-    "marke": null
-   },
-   "zitat": "als wesentlich geändert gelten Verhältnisse insbesondere wenn:",
-   "muster": "als-gilt",
-   "stand": "2024-08-22",
-   "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/310.120",
    "status": "entwurf"
   },
   {
@@ -32145,28 +31244,6 @@
     "marke": null
    },
    "zitat": "Als Basistarife für zahnärztliche und zahntechnische Leistungen gelten die Leistungskataloge (Zahnarzt- und Zahntechnikertarif) gemäss dem Bundesgesetz vom 20. März 1981 über die Unfallversicherung (UVG).",
-   "muster": "als-gilt",
-   "stand": "2012-01-01",
-   "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/328.210",
-   "status": "entwurf"
-  },
-  {
-   "begriff": "unentschuldigt",
-   "ebene": "kanton",
-   "kanton": "BS",
-   "erlass": "Verordnung betreffend die soziale Zahnpflege, Zahnpflegeverordnung (328.210)",
-   "norm": {
-    "snapshot": "kanton/BS-328.210",
-    "id": "kanton/BS/328.210/art_13",
-    "artikel": "13",
-    "artikelLabel": "§ 13",
-    "block": 1,
-    "absatz": "2",
-    "stelle": "text",
-    "item": null,
-    "marke": null
-   },
-   "zitat": "Als unentschuldigt gilt jedes Fernbleiben von der Behandlung, für das nicht spätestens 24 Stunden vor dem vereinbarten Termin eine Abmeldung erfolgte.",
    "muster": "als-gilt",
    "stand": "2012-01-01",
    "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/328.210",
@@ -32679,28 +31756,6 @@
    "status": "entwurf"
   },
   {
-   "begriff": "Ausnahme zu der in diesem Paragraphen genannten Regel",
-   "ebene": "kanton",
-   "kanton": "BS",
-   "erlass": "Vertrag zwischen den Kantonen Basel-Landschaft und Basel-Stadt über die Abgeltung der Kosten der nicht akademischen Berufsausbildungen im Gesundheitswesen auf Sekundarstufe II und auf Tertiärstufe, Vertrag Gesundheitsberufe (427.150)",
-   "norm": {
-    "snapshot": "kanton/BS-427.150",
-    "id": "kanton/BS/427.150/art_3",
-    "artikel": "3",
-    "artikelLabel": "§ 3",
-    "block": 2,
-    "absatz": "3",
-    "stelle": "text",
-    "item": null,
-    "marke": null
-   },
-   "zitat": "Als Ausnahme zu der in diesem Paragraphen genannten Regel gilt für die Ausbildungen auf Sekundarstufe II das Lehrortsprinzip.",
-   "muster": "als-gilt",
-   "stand": "2005-01-01",
-   "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/427.150",
-   "status": "entwurf"
-  },
-  {
    "begriff": "Matrose und Matrosin",
    "ebene": "kanton",
    "kanton": "BS",
@@ -32786,28 +31841,6 @@
    "muster": "kurzform",
    "stand": "2012-01-01",
    "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/428.100",
-   "status": "entwurf"
-  },
-  {
-   "begriff": "beitragsberechtigt",
-   "ebene": "kanton",
-   "kanton": "BS",
-   "erlass": "Interkantonale Fachhochschulvereinbarung ab 2005, FHV (428.300)",
-   "norm": {
-    "snapshot": "kanton/BS-428.300",
-    "id": "kanton/BS/428.300/art_4",
-    "artikel": "4",
-    "artikelLabel": "Art. 4",
-    "block": 0,
-    "absatz": "1",
-    "stelle": "text",
-    "item": null,
-    "marke": null
-   },
-   "zitat": "Als beitragsberechtigt gelten anerkannte Diplomstudiengänge kantonaler oder interkantonaler Fachhochschulen.",
-   "muster": "als-gilt",
-   "stand": "2005-08-01",
-   "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/428.300",
    "status": "entwurf"
   },
   {
@@ -34307,50 +33340,6 @@
    "status": "entwurf"
   },
   {
-   "begriff": "Beginn der Steuerpflicht",
-   "ebene": "kanton",
-   "kanton": "BS",
-   "erlass": "Gesetz über die direkten Steuern, Steuergesetz, StG (640.100)",
-   "norm": {
-    "snapshot": "kanton/BS-640.100",
-    "id": "kanton/BS/640.100/art_73_a",
-    "artikel": "73_a",
-    "artikelLabel": "§ 73a",
-    "block": 1,
-    "absatz": "2",
-    "stelle": "text",
-    "item": null,
-    "marke": null
-   },
-   "zitat": "Als Beginn der Steuerpflicht gelten die Verlegung von Vermögenswerten, Betrieben, Teilbetrieben oder Funktionen aus dem Ausland in einen inländischen Geschäftsbetrieb oder in eine inländische Betriebsstätte, das Ende einer Steuerbefreiung nach § 66 sowie die Verlegung des Sitzes oder der tatsächlichen Verwaltung in die Schweiz.",
-   "muster": "als-gilt",
-   "stand": "2026-01-01",
-   "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/640.100",
-   "status": "entwurf"
-  },
-  {
-   "begriff": "Ende der Steuerpflicht",
-   "ebene": "kanton",
-   "kanton": "BS",
-   "erlass": "Gesetz über die direkten Steuern, Steuergesetz, StG (640.100)",
-   "norm": {
-    "snapshot": "kanton/BS-640.100",
-    "id": "kanton/BS/640.100/art_73_b",
-    "artikel": "73_b",
-    "artikelLabel": "§ 73b",
-    "block": 1,
-    "absatz": "2",
-    "stelle": "text",
-    "item": null,
-    "marke": null
-   },
-   "zitat": "Als Ende der Steuerpflicht gelten die Verlegung von Vermögenswerten, Betrieben, Teilbetrieben oder Funktionen aus dem Inland in einen ausländischen Geschäftsbetrieb oder in eine ausländische Betriebsstätte, der Übergang zu einer Steuerbefreiung nach § 66 sowie die Verlegung des Sitzes oder der tatsächlichen Verwaltung ins Ausland.",
-   "muster": "als-gilt",
-   "stand": "2026-01-01",
-   "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/640.100",
-   "status": "entwurf"
-  },
-  {
    "begriff": "Finanzierungsaufwand",
    "ebene": "kanton",
    "kanton": "BS",
@@ -34609,28 +33598,6 @@
     "marke": null
    },
    "zitat": "Als Besitzesdauer gilt der Zeitraum, während welchem die steuerpflichtige Person Eigentümerin des veräusserten Grundstücks war oder die wirtschaftliche Verfügungsgewalt darüber hatte.",
-   "muster": "als-gilt",
-   "stand": "2026-01-01",
-   "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/640.100",
-   "status": "entwurf"
-  },
-  {
-   "begriff": "Zeitpunkt der Statusänderung",
-   "ebene": "kanton",
-   "kanton": "BS",
-   "erlass": "Gesetz über die direkten Steuern, Steuergesetz, StG (640.100)",
-   "norm": {
-    "snapshot": "kanton/BS-640.100",
-    "id": "kanton/BS/640.100/art_242_bis",
-    "artikel": "242_bis",
-    "artikelLabel": "§ 242bis",
-    "block": 4,
-    "absatz": "5",
-    "stelle": "text",
-    "item": null,
-    "marke": null
-   },
-   "zitat": "Als Zeitpunkt der Statusänderung gilt der Beginn der Steuerperiode, in welcher die juristische Person erstmals nicht mehr nach §§ 78 oder 79 besteuert wird.",
    "muster": "als-gilt",
    "stand": "2026-01-01",
    "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/640.100",
@@ -35253,28 +34220,6 @@
    "status": "entwurf"
   },
   {
-   "begriff": "Beginn der Bauarbeiten",
-   "ebene": "kanton",
-   "kanton": "BS",
-   "erlass": "Verordnung zum Gebäudeversicherungsgesetz (695.110)",
-   "norm": {
-    "snapshot": "kanton/BS-695.110",
-    "id": "kanton/BS/695.110/art_8",
-    "artikel": "8",
-    "artikelLabel": "§ 8",
-    "block": 1,
-    "absatz": "2",
-    "stelle": "text",
-    "item": null,
-    "marke": null
-   },
-   "zitat": "Als Beginn der Bauarbeiten gilt der Zeitpunkt, an dem erstmals Bauteile mit dem Baugrund oder einem bestehenden Gebäude endgültig verbunden werden.",
-   "muster": "als-gilt",
-   "stand": "2010-01-01",
-   "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/695.110",
-   "status": "entwurf"
-  },
-  {
    "begriff": "Wohngebäude",
    "ebene": "kanton",
    "kanton": "BS",
@@ -35627,28 +34572,6 @@
    "status": "entwurf"
   },
   {
-   "begriff": "beteiligt",
-   "ebene": "kanton",
-   "kanton": "BS",
-   "erlass": "Bau- und Planungsgesetz, BPG (730.100)",
-   "norm": {
-    "snapshot": "kanton/BS-730.100",
-    "id": "kanton/BS/730.100/art_133",
-    "artikel": "133",
-    "artikelLabel": "§ 133",
-    "block": 2,
-    "absatz": "3",
-    "stelle": "text",
-    "item": null,
-    "marke": null
-   },
-   "zitat": "Als beteiligt gilt, wer dingliche oder vorgemerkte persönliche Rechte an einem Grundstück im Umlegungsgebiet hat oder solche Rechte für ein im öffentlichen Interesse liegendes Werk beansprucht.",
-   "muster": "als-gilt",
-   "stand": "2025-11-01",
-   "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/730.100",
-   "status": "entwurf"
-  },
-  {
    "begriff": "Strassenbreite",
    "ebene": "kanton",
    "kanton": "BS",
@@ -35910,28 +34833,6 @@
    "muster": "als-gilt",
    "stand": "2024-12-26",
    "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/735.200",
-   "status": "entwurf"
-  },
-  {
-   "begriff": "beteiligt",
-   "ebene": "kanton",
-   "kanton": "BS",
-   "erlass": "Gesetz über Enteignung und Impropriation, Enteignungsgesetz (740.100)",
-   "norm": {
-    "snapshot": "kanton/BS-740.100",
-    "id": "kanton/BS/740.100/art_59",
-    "artikel": "59",
-    "artikelLabel": "§ 59",
-    "block": 2,
-    "absatz": "3",
-    "stelle": "text",
-    "item": null,
-    "marke": null
-   },
-   "zitat": "Als beteiligt gelten auch die Anstösser, die nach dem Zuteilungsplan nichts von der zur Impropriation bestimmten Fläche erhalten sollen.",
-   "muster": "als-gilt",
-   "stand": "2011-01-01",
-   "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/740.100",
    "status": "entwurf"
   },
   {
@@ -36281,28 +35182,6 @@
     "marke": null
    },
    "zitat": "Als «Betriebe» gelten alle Stromverbraucherinnen und -verbraucher, die der Kategorie «Betriebe» zugeordnet wurden und die eine örtliche, technische und organisatorische Einheit zum Zwecke der Erstellung von Gütern und Dienstleistungen bilden (Betriebsstätte, Standort).",
-   "muster": "als-gilt",
-   "stand": "2017-10-01",
-   "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/772.140",
-   "status": "entwurf"
-  },
-  {
-   "begriff": "nicht einbringbar",
-   "ebene": "kanton",
-   "kanton": "BS",
-   "erlass": "Verordnung zur Lenkungsabgabe und zum Strompreis-Bonus (772.140)",
-   "norm": {
-    "snapshot": "kanton/BS-772.140",
-    "id": "kanton/BS/772.140/art_4",
-    "artikel": "4",
-    "artikelLabel": "§ 4",
-    "block": 4,
-    "absatz": "5",
-    "stelle": "text",
-    "item": null,
-    "marke": null
-   },
-   "zitat": "Als nicht einbringbar gilt eine Forderung dann, wenn auch die Stromlieferanten ihre Forderungen für den Stromverkauf abschreiben.",
    "muster": "als-gilt",
    "stand": "2017-10-01",
    "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/772.140",
@@ -37563,28 +36442,6 @@
    "status": "entwurf"
   },
   {
-   "begriff": "besonders benachteiligt",
-   "ebene": "kanton",
-   "kanton": "BS",
-   "erlass": "Gesetz über die Wohnraumförderung, Wohnraumfördergesetz, WRFG (861.500)",
-   "norm": {
-    "snapshot": "kanton/BS-861.500",
-    "id": "kanton/BS/861.500/art_16",
-    "artikel": "16",
-    "artikelLabel": "§ 16",
-    "block": 1,
-    "absatz": "2",
-    "stelle": "text",
-    "item": null,
-    "marke": null
-   },
-   "zitat": "Als besonders benachteiligt gelten insbesondere Personen, die Anspruch auf Ausrichtung von Familienmietzinsbeiträgen Sozialhilfe oder Ergänzungsleistungen zur AHV/IV haben und trotz dieser Sozialleistungen aufgrund ihres soziokulturellen Hintergrunds, der Familiengrösse, einer Behinderung oder zufolge eingeschränkter bzw. fehlender Wohnkompetenz keine ihren Bedürfnissen entsprechende Wohnung finden.",
-   "muster": "als-gilt",
-   "stand": "2025-02-17",
-   "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/861.500",
-   "status": "entwurf"
-  },
-  {
    "begriff": "preisgünstig",
    "ebene": "kanton",
    "kanton": "BS",
@@ -37626,28 +36483,6 @@
    "muster": "als-gilt",
    "stand": "2025-10-01",
    "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/861.520",
-   "status": "entwurf"
-  },
-  {
-   "begriff": "nicht",
-   "ebene": "kanton",
-   "kanton": "BS",
-   "erlass": "Verordnung über den Schutz von Wohnraum, Wohnraumschutzverordnung, WRSchV (861.540)",
-   "norm": {
-    "snapshot": "kanton/BS-861.540",
-    "id": "kanton/BS/861.540/art_22",
-    "artikel": "22",
-    "artikelLabel": "§ 22",
-    "block": 2,
-    "absatz": "3",
-    "stelle": "text",
-    "item": null,
-    "marke": null
-   },
-   "zitat": "Als nicht gemäss WRFG bewilligungsfähig gelten Investitionen in Umbau-, Renovations- und Sanierungsmassnahmen, die gemäss § 5 nicht den überwiegenden Bedürfnissen der Wohnbevölkerung oder nicht der Voraussetzung des Kategorienverbleibs entsprechen.",
-   "muster": "als-gilt",
-   "stand": "2025-11-01",
-   "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/861.540",
    "status": "entwurf"
   },
   {
@@ -38619,28 +37454,6 @@
    "status": "entwurf"
   },
   {
-   "begriff": "Berechnungsgrundlage für die finanzielle Abgeltung der Mehrleistungen",
-   "ebene": "kanton",
-   "kanton": "BS",
-   "erlass": "Vereinbarung über die Basler Verkehrs-Betriebe und die BLT Baselland Transport AG (953.800)",
-   "norm": {
-    "snapshot": "kanton/BS-953.800",
-    "id": "kanton/BS/953.800/art_7",
-    "artikel": "7",
-    "artikelLabel": "§ 7",
-    "block": 2,
-    "absatz": "3",
-    "stelle": "text",
-    "item": null,
-    "marke": null
-   },
-   "zitat": "Als Berechnungsgrundlage für die finanzielle Abgeltung der Mehrleistungen gilt die Kostenstruktur der betriebsführenden Unternehmung.",
-   "muster": "als-gilt",
-   "stand": "1995-01-01",
-   "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/953.800",
-   "status": "entwurf"
-  },
-  {
    "begriff": "BLT",
    "ebene": "kanton",
    "kanton": "BS",
@@ -38924,28 +37737,6 @@
    "muster": "als-gilt",
    "stand": "2017-12-18",
    "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BeE 328.600",
-   "status": "entwurf"
-  },
-  {
-   "begriff": "Stichtag",
-   "ebene": "kanton",
-   "kanton": "BS",
-   "erlass": "Vertrag betreffend die Zusammenarbeit der Gemeinden Bettingen und Riehen für den Betrieb und die Finanzierung ihrer Schulen, Schulvertrag (BeE 411.500)",
-   "norm": {
-    "snapshot": "kanton/BS-BeE 411.500",
-    "id": "kanton/BS/BeE 411.500/art_15",
-    "artikel": "15",
-    "artikelLabel": "§ 15",
-    "block": 1,
-    "absatz": "2",
-    "stelle": "text",
-    "item": null,
-    "marke": null
-   },
-   "zitat": "Als Stichtag gilt der 1. September des betreffenden Jahres.",
-   "muster": "als-gilt",
-   "stand": "2022-01-01",
-   "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BeE 411.500",
    "status": "entwurf"
   },
   {
@@ -39499,28 +38290,6 @@
    "status": "entwurf"
   },
   {
-   "begriff": "Stichtag",
-   "ebene": "kanton",
-   "kanton": "BS",
-   "erlass": "Vertrag betreffend die Zusammenarbeit der Gemeinden Bettingen und Riehen für den Betrieb und die Finanzierung ihrer Schulen, Schulvertrag (RiE 411.500)",
-   "norm": {
-    "snapshot": "kanton/BS-RiE 411.500",
-    "id": "kanton/BS/RiE 411.500/art_15",
-    "artikel": "15",
-    "artikelLabel": "§ 15",
-    "block": 1,
-    "absatz": "2",
-    "stelle": "text",
-    "item": null,
-    "marke": null
-   },
-   "zitat": "Als Stichtag gilt der 1. September des betreffenden Jahres.",
-   "muster": "als-gilt",
-   "stand": "2022-01-01",
-   "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/RiE 411.500",
-   "status": "entwurf"
-  },
-  {
    "begriff": "Gemeindeschulen",
    "ebene": "kanton",
    "kanton": "BS",
@@ -39757,28 +38526,6 @@
     "marke": null
    },
    "zitat": "Als Ausgaben gelten auch:",
-   "muster": "als-gilt",
-   "stand": "2023-01-01",
-   "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/RiE 610.100",
-   "status": "entwurf"
-  },
-  {
-   "begriff": "gebunden",
-   "ebene": "kanton",
-   "kanton": "BS",
-   "erlass": "Finanzhaushaltordnung der Einwohnergemeinde Riehen, Finanzhaushaltordnung; FhO (RiE 610.100)",
-   "norm": {
-    "snapshot": "kanton/BS-RiE 610.100",
-    "id": "kanton/BS/RiE 610.100/art_22",
-    "artikel": "22",
-    "artikelLabel": "§ 22",
-    "block": 1,
-    "absatz": "2",
-    "stelle": "text",
-    "item": null,
-    "marke": null
-   },
-   "zitat": "Als gebunden gelten namentlich Ausgaben, die erforderlich sind:",
    "muster": "als-gilt",
    "stand": "2023-01-01",
    "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/RiE 610.100",
@@ -40423,50 +39170,6 @@
    "status": "entwurf"
   },
   {
-   "begriff": "Beginn der Steuerpflicht",
-   "ebene": "kanton",
-   "kanton": "NW",
-   "erlass": "Gesetz über die Steuern des Kantons und der Gemeinden, Steuergesetz, StG (NG 521.1)",
-   "norm": {
-    "snapshot": "kanton/NW-521.1",
-    "id": "kanton/NW/521.1/art_77_b",
-    "artikel": "77_b",
-    "artikelLabel": "Art. 77b",
-    "block": 1,
-    "absatz": "2",
-    "stelle": "text",
-    "item": null,
-    "marke": null
-   },
-   "zitat": "Als Beginn der Steuerpflicht gelten die Verlegung von Vermögenswerten, Betrieben, Teilbetrieben oder Funktionen aus dem Ausland in einen inländischen Geschäftsbetrieb oder in eine inländische Betriebsstätte, das Ende der Steuerbefreiung nach Art. 74 sowie die Verlegung des Sitzes oder der tatsächlichen Verwaltung in die Schweiz.",
-   "muster": "als-gilt",
-   "stand": "2026-01-01",
-   "quelleUrl": "https://gesetze.nw.ch/app/de/texts_of_law/521.1",
-   "status": "entwurf"
-  },
-  {
-   "begriff": "Ende der Steuerpflicht",
-   "ebene": "kanton",
-   "kanton": "NW",
-   "erlass": "Gesetz über die Steuern des Kantons und der Gemeinden, Steuergesetz, StG (NG 521.1)",
-   "norm": {
-    "snapshot": "kanton/NW-521.1",
-    "id": "kanton/NW/521.1/art_77_c",
-    "artikel": "77_c",
-    "artikelLabel": "Art. 77c",
-    "block": 1,
-    "absatz": "2",
-    "stelle": "text",
-    "item": null,
-    "marke": null
-   },
-   "zitat": "Als Ende der Steuerpflicht gelten die Verlegung von Vermögenswerten, Betrieben, Teilbetrieben oder Funktionen aus dem Inland in einen ausländischen Geschäftsbetrieb oder in eine ausländische Betriebsstätte, der Übergang zu einer Steuerbefreiung nach Art. 74 sowie die Verlegung des Sitzes oder der tatsächlichen Verwaltung ins Ausland.",
-   "muster": "als-gilt",
-   "stand": "2026-01-01",
-   "quelleUrl": "https://gesetze.nw.ch/app/de/texts_of_law/521.1",
-   "status": "entwurf"
-  },
-  {
    "begriff": "Forschung und Entwicklung",
    "ebene": "kanton",
    "kanton": "NW",
@@ -40747,28 +39450,6 @@
     "marke": null
    },
    "zitat": "Als Betriebsstätte gilt eine feste Geschäftseinrichtung, in der die Geschäftstätigkeit eines Unternehmens oder ein freier Beruf ganz oder teilweise ausgeübt wird.",
-   "muster": "als-gilt",
-   "stand": "2026-01-01",
-   "quelleUrl": "https://gdb.ow.ch/app/de/texts_of_law/641.4",
-   "status": "entwurf"
-  },
-  {
-   "begriff": "Bemessungsgrundlage",
-   "ebene": "kanton",
-   "kanton": "OW",
-   "erlass": "Steuergesetz, StG (GDB 641.4)",
-   "norm": {
-    "snapshot": "kanton/OW-641.4",
-    "id": "kanton/OW/641.4/art_16_a",
-    "artikel": "16_a",
-    "artikelLabel": "Art. 16a",
-    "block": 2,
-    "absatz": "3",
-    "stelle": "text",
-    "item": null,
-    "marke": null
-   },
-   "zitat": "Als Bemessungsgrundlage gilt mindestens das Zehnfache der Bemessungsgrundlage für die pauschale Einkommenssteuer.",
    "muster": "als-gilt",
    "stand": "2026-01-01",
    "quelleUrl": "https://gdb.ow.ch/app/de/texts_of_law/641.4",
@@ -41077,50 +39758,6 @@
     "marke": null
    },
    "zitat": "Als betriebsnotwendig gilt nur Anlagevermögen, das dem Betrieb unmittelbar dient; ausgeschlossen sind insbesondere Vermögensobjekte, die dem Unternehmen nur als Vermögensanlage oder nur durch ihren Ertrag dienen.",
-   "muster": "als-gilt",
-   "stand": "2026-01-01",
-   "quelleUrl": "https://gdb.ow.ch/app/de/texts_of_law/641.4",
-   "status": "entwurf"
-  },
-  {
-   "begriff": "Beginn der Steuerpflicht",
-   "ebene": "kanton",
-   "kanton": "OW",
-   "erlass": "Steuergesetz, StG (GDB 641.4)",
-   "norm": {
-    "snapshot": "kanton/OW-641.4",
-    "id": "kanton/OW/641.4/art_84_a",
-    "artikel": "84_a",
-    "artikelLabel": "Art. 84a",
-    "block": 1,
-    "absatz": "2",
-    "stelle": "text",
-    "item": null,
-    "marke": null
-   },
-   "zitat": "Als Beginn der Steuerpflicht gelten die Verlegung von Vermögenswerten, Betrieben, Teilbetrieben oder Funktionen aus dem Ausland in einen inländischen Geschäftsbetrieb oder in eine inländische Betriebsstätte, das Ende einer Steuerbefreiung nach Art. 76 dieses Gesetzes sowie die Verlegung des Sitzes oder der tatsächlichen Verwaltung in die Schweiz.",
-   "muster": "als-gilt",
-   "stand": "2026-01-01",
-   "quelleUrl": "https://gdb.ow.ch/app/de/texts_of_law/641.4",
-   "status": "entwurf"
-  },
-  {
-   "begriff": "Ende der Steuerpflicht",
-   "ebene": "kanton",
-   "kanton": "OW",
-   "erlass": "Steuergesetz, StG (GDB 641.4)",
-   "norm": {
-    "snapshot": "kanton/OW-641.4",
-    "id": "kanton/OW/641.4/art_84_b",
-    "artikel": "84_b",
-    "artikelLabel": "Art. 84b",
-    "block": 1,
-    "absatz": "2",
-    "stelle": "text",
-    "item": null,
-    "marke": null
-   },
-   "zitat": "Als Ende der Steuerpflicht gelten die Verlegung von Vermögenswerten, Betrieben, Teilbetrieben oder Funktionen aus dem Inland in einen ausländischen Geschäftsbetrieb oder in eine ausländische Betriebsstätte, der Übergang zu einer Steuerbefreiung nach Art. 76 Abs. 1 dieses Gesetzes sowie die Verlegung des Sitzes oder der tatsächlichen Verwaltung ins Ausland.",
    "muster": "als-gilt",
    "stand": "2026-01-01",
    "quelleUrl": "https://gdb.ow.ch/app/de/texts_of_law/641.4",
@@ -41677,50 +40314,6 @@
    "status": "entwurf"
   },
   {
-   "begriff": "Beginn der Steuerpflicht",
-   "ebene": "kanton",
-   "kanton": "SG",
-   "erlass": "Steuergesetz, StG (sGS 811.1)",
-   "norm": {
-    "snapshot": "kanton/SG-811.1",
-    "id": "kanton/SG/811.1/art_83_quater",
-    "artikel": "83_quater",
-    "artikelLabel": "Art. 83quater",
-    "block": 1,
-    "absatz": "2",
-    "stelle": "text",
-    "item": null,
-    "marke": null
-   },
-   "zitat": "Als Beginn der Steuerpflicht gelten die Verlegung von Vermögenswerten, Betrieben, Teilbetrieben oder Funktionen aus dem Ausland in einen inländischen Geschäftsbetrieb oder in eine inländische Betriebsstätte, das Ende einer Steuerbefreiung nach Art. 80 Abs. 1 dieses Erlasses sowie die Verlegung des Sitzes oder der tatsächlichen Verwaltung in die Schweiz.",
-   "muster": "als-gilt",
-   "stand": "1999-01-01",
-   "quelleUrl": "https://www.gesetzessammlung.sg.ch/app/de/texts_of_law/811.1",
-   "status": "entwurf"
-  },
-  {
-   "begriff": "Ende der Steuerpflicht",
-   "ebene": "kanton",
-   "kanton": "SG",
-   "erlass": "Steuergesetz, StG (sGS 811.1)",
-   "norm": {
-    "snapshot": "kanton/SG-811.1",
-    "id": "kanton/SG/811.1/art_83_quinquies",
-    "artikel": "83_quinquies",
-    "artikelLabel": "Art. 83quinquies",
-    "block": 1,
-    "absatz": "2",
-    "stelle": "text",
-    "item": null,
-    "marke": null
-   },
-   "zitat": "Als Ende der Steuerpflicht gelten die Verlegung von Vermögenswerten, Betrieben, Teilbetrieben oder Funktionen aus dem Inland in einen ausländischen Geschäftsbetrieb oder in eine ausländische Betriebsstätte, der Abschluss der Liquidation, der Übergang zu einer Steuerbefreiung nach Art. 80 Abs. 1 dieses Erlasses sowie die Verlegung des Sitzes oder der tatsächlichen Verwaltung ins Ausland.",
-   "muster": "als-gilt",
-   "stand": "1999-01-01",
-   "quelleUrl": "https://www.gesetzessammlung.sg.ch/app/de/texts_of_law/811.1",
-   "status": "entwurf"
-  },
-  {
    "begriff": "Forschung und Entwicklung",
    "ebene": "kanton",
    "kanton": "SG",
@@ -42023,28 +40616,6 @@
     "marke": null
    },
    "zitat": "Als Erwerbspreis gilt der durch die Grundbuchbelege ausgewiesene Kaufpreis mit allen weiteren Leistungen des Erwerbers oder der tatsächlich bezahlte niedrigere Preis.",
-   "muster": "als-gilt",
-   "stand": "1999-01-01",
-   "quelleUrl": "https://www.gesetzessammlung.sg.ch/app/de/texts_of_law/811.1",
-   "status": "entwurf"
-  },
-  {
-   "begriff": "abgelaufen",
-   "ebene": "kanton",
-   "kanton": "SG",
-   "erlass": "Steuergesetz, StG (sGS 811.1)",
-   "norm": {
-    "snapshot": "kanton/SG-811.1",
-    "id": "kanton/SG/811.1/art_203",
-    "artikel": "203",
-    "artikelLabel": "Art. 203",
-    "block": 1,
-    "absatz": "2",
-    "stelle": "text",
-    "item": null,
-    "marke": null
-   },
-   "zitat": "Als abgelaufen gilt eine Steuerperiode, für die eine rechtskräftige oder noch keine Veranlagung besteht.",
    "muster": "als-gilt",
    "stand": "1999-01-01",
    "quelleUrl": "https://www.gesetzessammlung.sg.ch/app/de/texts_of_law/811.1",
@@ -42491,28 +41062,6 @@
    "status": "entwurf"
   },
   {
-   "begriff": "Beginn und Ende der Besitzesdauer",
-   "ebene": "kanton",
-   "kanton": "SO",
-   "erlass": "Gesetz über die Staats- und Gemeindesteuern, Steuergesetz (BGS 614.11)",
-   "norm": {
-    "snapshot": "kanton/SO-614.11",
-    "id": "kanton/SO/614.11/art_57",
-    "artikel": "57",
-    "artikelLabel": "§ 57",
-    "block": 2,
-    "absatz": "3",
-    "stelle": "text",
-    "item": null,
-    "marke": null
-   },
-   "zitat": "Als Beginn und Ende der Besitzesdauer gelten",
-   "muster": "als-gilt",
-   "stand": "2025-01-01",
-   "quelleUrl": "https://bgs.so.ch/app/de/texts_of_law/614.11",
-   "status": "entwurf"
-  },
-  {
    "begriff": "Verkehrswert",
    "ebene": "kanton",
    "kanton": "SO",
@@ -42639,50 +41188,6 @@
     "marke": "d"
    },
    "zitat": "Als Tochtergesellschaft gilt eine Kapitalgesellschaft oder Genossenschaft, an der die übertragende Kapitalgesellschaft oder Genossenschaft zu mindestens 20 Prozent am Grund- oder Stammkapital beteiligt ist.",
-   "muster": "als-gilt",
-   "stand": "2025-01-01",
-   "quelleUrl": "https://bgs.so.ch/app/de/texts_of_law/614.11",
-   "status": "entwurf"
-  },
-  {
-   "begriff": "Beginn der Steuerpflicht",
-   "ebene": "kanton",
-   "kanton": "SO",
-   "erlass": "Gesetz über die Staats- und Gemeindesteuern, Steuergesetz (BGS 614.11)",
-   "norm": {
-    "snapshot": "kanton/SO-614.11",
-    "id": "kanton/SO/614.11/art_94_bis",
-    "artikel": "94_bis",
-    "artikelLabel": "§ 94bis",
-    "block": 1,
-    "absatz": "2",
-    "stelle": "text",
-    "item": null,
-    "marke": null
-   },
-   "zitat": "Als Beginn der Steuerpflicht gelten die Verlegung von Vermögenswerten, Betrieben, Teilbetrieben oder Funktionen aus dem Ausland in einen inländischen Geschäftsbetrieb oder in eine inländische Betriebsstätte, das Ende einer Steuerbefreiung nach § 90 Absatz 1 sowie die Verlegung des Sitzes oder der tatsächlichen Verwaltung in die Schweiz.",
-   "muster": "als-gilt",
-   "stand": "2025-01-01",
-   "quelleUrl": "https://bgs.so.ch/app/de/texts_of_law/614.11",
-   "status": "entwurf"
-  },
-  {
-   "begriff": "Ende der Steuerpflicht",
-   "ebene": "kanton",
-   "kanton": "SO",
-   "erlass": "Gesetz über die Staats- und Gemeindesteuern, Steuergesetz (BGS 614.11)",
-   "norm": {
-    "snapshot": "kanton/SO-614.11",
-    "id": "kanton/SO/614.11/art_94_ter",
-    "artikel": "94_ter",
-    "artikelLabel": "§ 94ter",
-    "block": 1,
-    "absatz": "2",
-    "stelle": "text",
-    "item": null,
-    "marke": null
-   },
-   "zitat": "Als Ende der Steuerpflicht gelten die Verlegung von Vermögenswerten, Betrieben, Teilbetrieben oder Funktionen in einen ausländischen Geschäftsbetrieb oder in eine ausländische Betriebsstätte, der Abschluss der Liquidation, der Übergang zu einer Steuerbefreiung nach § 90 Absatz 1 sowie die Verlegung des Sitzes oder der tatsächlichen Verwaltung ins Ausland.",
    "muster": "als-gilt",
    "stand": "2025-01-01",
    "quelleUrl": "https://bgs.so.ch/app/de/texts_of_law/614.11",
@@ -43211,50 +41716,6 @@
     "marke": null
    },
    "zitat": "Als vergleichbare Rechte gelten:",
-   "muster": "als-gilt",
-   "stand": "2025-01-01",
-   "quelleUrl": "https://www.rechtsbuch.tg.ch/app/de/texts_of_law/640.1",
-   "status": "entwurf"
-  },
-  {
-   "begriff": "Beginn der Steuerpflicht",
-   "ebene": "kanton",
-   "kanton": "TG",
-   "erlass": "Steuergesetz, StG (RB 640.1)",
-   "norm": {
-    "snapshot": "kanton/TG-640.1",
-    "id": "kanton/TG/640.1/art_76_c",
-    "artikel": "76_c",
-    "artikelLabel": "§ 76c",
-    "block": 1,
-    "absatz": "2",
-    "stelle": "text",
-    "item": null,
-    "marke": null
-   },
-   "zitat": "Als Beginn der Steuerpflicht gelten die Verlegung von Vermögenswerten, Betrieben, Teilbetrieben oder Funktionen aus dem Ausland in einen inländischen Geschäftsbetrieb oder in eine inländische Betriebsstätte, das Ende einer Steuerbefreiung nach § 75 Abs. 1 sowie die Verlegung des Sitzes oder der tatsächlichen Verwaltung in die Schweiz.",
-   "muster": "als-gilt",
-   "stand": "2025-01-01",
-   "quelleUrl": "https://www.rechtsbuch.tg.ch/app/de/texts_of_law/640.1",
-   "status": "entwurf"
-  },
-  {
-   "begriff": "Ende der Steuerpflicht",
-   "ebene": "kanton",
-   "kanton": "TG",
-   "erlass": "Steuergesetz, StG (RB 640.1)",
-   "norm": {
-    "snapshot": "kanton/TG-640.1",
-    "id": "kanton/TG/640.1/art_76_d",
-    "artikel": "76_d",
-    "artikelLabel": "§ 76d",
-    "block": 1,
-    "absatz": "2",
-    "stelle": "text",
-    "item": null,
-    "marke": null
-   },
-   "zitat": "Als Ende der Steuerpflicht gelten die Verlegung von Vermögenswerten, Betrieben, Teilbetrieben oder Funktionen aus dem Inland in einen ausländischen Geschäftsbetrieb oder in eine ausländische Betriebsstätte, der Übergang zu einer Steuerbefreiung nach § 75 Abs. 1 sowie die Verlegung des Sitzes oder der tatsächlichen Verwaltung ins Ausland.",
    "muster": "als-gilt",
    "stand": "2025-01-01",
    "quelleUrl": "https://www.rechtsbuch.tg.ch/app/de/texts_of_law/640.1",
