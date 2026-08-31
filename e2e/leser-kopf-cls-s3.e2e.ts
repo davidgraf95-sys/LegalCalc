@@ -32,13 +32,14 @@ const BREITEN = [
 // 16.8.2026). Bis H5 lief dieselbe Messung zusätzlich gegen die Ist-Hülle
 // (`?leser=v1`) — mit ihrer Löschung (21.8.2026) entfällt der zweite Lauf,
 // er hätte nur noch dasselbe V3 unter einem wirkungslosen Parameter gemessen.
-const HUELLEN = [
-  { name: 'v3', q: '?leser=v3' },
-] as const;
-
-for (const h of HUELLEN) {
+// DIÄT 31.8.2026 (Runde 2 / Batch A): die `HUELLEN`-Schleife trug seit dem
+// V1-Rückbau (21.8.2026) genau EINEN Eintrag, und dessen `q` war der tote
+// Parameter `?leser=v3` (Produktcode liest ihn nicht, nachgemessen 31.8.2026 —
+// bibliothek/betrieb/testapparat-fang-historie-2026-08-31.md §7 Ziff. 1). Schleife
+// und Parameter sind entfallen; beide Breiten-Fälle bleiben unverändert.
+{
   for (const b of BREITEN) {
-    test(`CLS Erlass-Kopf · ${h.name} @${b.w} (STPO — beide Sidecars als Nachzügler)`, async ({ page }) => {
+    test(`CLS Erlass-Kopf @${b.w} (STPO — beide Sidecars als Nachzügler)`, async ({ page }) => {
       await page.setViewportSize({ width: b.w, height: b.h });
       await page.addInitScript(() => {
         (window as unknown as { __cls: number }).__cls = 0;
@@ -48,7 +49,7 @@ for (const h of HUELLEN) {
           }
         }).observe({ type: 'layout-shift', buffered: true });
       });
-      await page.goto(`/gesetze/bund/STPO${h.q}`);
+      await page.goto('/gesetze/bund/STPO');
       await page.locator('header').first().waitFor({ state: 'visible', timeout: 20_000 });
       // Warten, bis die Warnzeile wirklich da ist — sonst misst man das Nichts.
       // Sie ist zugleich der Nachweis, dass die V3-Hülle den Zeitbezug bekommt
@@ -83,8 +84,11 @@ for (const h of HUELLEN) {
       ).toBeVisible({ timeout: 20_000 });
       await page.waitForTimeout(1500);
       const cls = await page.evaluate(() => (window as unknown as { __cls: number }).__cls);
-      // eslint-disable-next-line no-console -- Messwert gehört in die PR-Belegzeile
-      console.log(`S3-MESSUNG ${h.name} cls@${b.w}=${cls}`);
+      // (Die `eslint-disable-next-line no-console`-Zeile stand hier bis 31.8.2026
+      //  und meldete sich selbst als «Unused eslint-disable directive» — `no-console`
+      //  greift unter `e2e/` gar nicht. Eine Ausnahme von einer Regel, die nicht
+      //  gilt, ist Regelfläche ohne Wirkung, §17-Gegengewicht Ziff. 2.)
+      console.log(`S3-MESSUNG v3 cls@${b.w}=${cls}`);
       // ─── Woher die Schwelle kommt (gemessen 16.8.2026, nicht gesetzt) ────────
       // Gemessen wurde die GANZE Seite, nicht nur der Kopf: 0.0216 @390 und
       // 0.0072 @1280. Die Shift-Quellen (`layout-shift`-`sources`) liegen dabei

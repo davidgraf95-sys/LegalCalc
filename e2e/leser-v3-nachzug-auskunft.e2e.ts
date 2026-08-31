@@ -21,13 +21,7 @@
 //  Ä31 Das Suchfeld trug im Fokus outline 2 px brass + border 1 px brass +
 //      offset 1 px = wieder zwei Ringe (Ä14 war nur «teilweise» erledigt).
 import { test, expect, type Page } from '@playwright/test'
-
-function fehlerSammeln(page: Page): string[] {
-  const fehler: string[] = []
-  page.on('pageerror', (e) => fehler.push(`pageerror: ${e.message}`))
-  page.on('console', (msg) => { if (msg.type() === 'error') fehler.push(`console.error: ${msg.text()}`) })
-  return fehler
-}
+import { fehlerSammeln } from './helpers/fehlerSammeln'
 
 const APP_LEISTE = '[data-app-seitenleiste]'
 
@@ -49,7 +43,7 @@ test.describe('A1 — die Leser-Vorgabe wirkt auch für Bestandsnutzer', () => {
     await page.addInitScript(() => {
       localStorage.setItem('lexmetrik-seitenleiste-eingeklappt', '0')
     })
-    await page.goto('/gesetze/bund/STPO?leser=v3')
+    await page.goto('/gesetze/bund/STPO')
     await expect(page.locator('[data-v3-kopf]')).toBeVisible({ timeout: 20_000 })
 
     expect(await appLeisteBreite(page),
@@ -98,7 +92,7 @@ test.describe('A5 — die Trefferliste sprengt ihre Leiste nicht', () => {
     test.slow() // Staatsvertrag mit Anhängen + Volltextsuche
     const fehler = fehlerSammeln(page)
     await page.setViewportSize({ width: 1440, height: 900 })
-    await page.goto('/gesetze/international/LUGUE?leser=v3')
+    await page.goto('/gesetze/international/LUGUE')
     await expect(page.locator('[data-v3-aside]')).toBeVisible({ timeout: 20_000 })
     await page.locator('[data-v3-suchsprung] input').fill('Gericht')
     await expect(page.locator('[data-treffer-liste]')).toBeVisible({ timeout: 20_000 })
@@ -153,7 +147,7 @@ test.describe('Ä27/Ä28/Ä30/Ä31 — jede Auskunft genau einmal, jeder Ring ge
   test('(e) StPO: EIN Disclosure-Glyph und EINE Konsolidierungs-Warnung', async ({ page }) => {
     const fehler = fehlerSammeln(page)
     await page.setViewportSize({ width: 1440, height: 900 })
-    await page.goto('/gesetze/bund/STPO?leser=v3')
+    await page.goto('/gesetze/bund/STPO')
     await expect(page.locator('[data-v3-uebersicht]')).toBeVisible({ timeout: 20_000 })
 
     const glyph = await page.evaluate(() => {
@@ -235,7 +229,7 @@ test.describe('Ä27/Ä28/Ä30/Ä31 — jede Auskunft genau einmal, jeder Ring ge
   test('(f) BS-Paragrafenerlass: der Zähler bricht nur am Trenner, der Fokus zeigt EINEN Ring', async ({ page }) => {
     const fehler = fehlerSammeln(page)
     await page.setViewportSize({ width: 1440, height: 900 })
-    await page.goto('/gesetze/kanton/BS-154.125?leser=v3')
+    await page.goto('/gesetze/kanton/BS-154.125')
     await expect(page.locator('[data-v3-aside]')).toBeVisible({ timeout: 20_000 })
     const feld = page.locator('[data-v3-suchsprung] input')
     await feld.fill('Gericht')

@@ -2,17 +2,9 @@
 // Browser-Smoke der Rubrik V «Gesetze»: Übersicht rendert + lädt das Manifest,
 // Klick führt in die Lesesicht (Volltext + TOC + In-Gesetz-Suche), keine
 // Console-/Page-Errors, kein Mobil-Overflow. Läuft gegen `vite preview` (dist).
-import { test, expect, type Page } from '@playwright/test'
+import { test, expect } from '@playwright/test'
+import { fehlerSammeln } from './helpers/fehlerSammeln'
 import { LESER_SUCHFELD_NAME } from './helpers/leserBeschriftung';
-
-function fehlerSammeln(page: Page): string[] {
-  const fehler: string[] = []
-  page.on('pageerror', (e) => fehler.push(`pageerror: ${e.message}`))
-  page.on('console', (msg) => {
-    if (msg.type() === 'error') fehler.push(`console.error: ${msg.text()}`)
-  })
-  return fehler
-}
 
 // CI-Härtung 19.7.2026 (BEFUND 3b): der OR-Reader-Test kettet mehrere 15–20-s-Latches
 // (Manifest-/Artikel-Index-/Struktur-Load, TOC, In-Gesetz-Suche). Auf dem 2-vCPU-

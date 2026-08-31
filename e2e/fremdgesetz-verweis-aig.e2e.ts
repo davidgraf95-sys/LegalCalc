@@ -5,19 +5,13 @@
 // (MStG) …». Vor dem Fix: «Artikel 49a» self-verlinkte AIG art_49_a (falsch),
 // «Artikel 66a» link-los, «66abis»/«49abis» nie verlinkt. Nach dem Fix: alle vier
 // Nummern zeigen auf StGB bzw. MStG. Läuft gegen `vite preview` (dist).
-import { test, expect, type Page } from '@playwright/test'
+import { test, expect } from '@playwright/test'
+import { fehlerSammeln } from './helpers/fehlerSammeln'
 
 // ELI-Diskriminatoren (aus src/lib/fedlex.ts FEDLEX):
 const STGB = '54/757_781_799' // SR 311.0
 const MSTG = '43/359_375_369' // SR 321.0
 const AIG = '2007/758'        // SR 142.20 (eigener Erlass — darf NIE Ziel sein)
-
-function fehlerSammeln(page: Page): string[] {
-  const fehler: string[] = []
-  page.on('pageerror', (e) => fehler.push(`pageerror: ${e.message}`))
-  page.on('console', (msg) => { if (msg.type() === 'error') fehler.push(`console.error: ${msg.text()}`) })
-  return fehler
-}
 
 test.describe('Fremdgesetz-Verweis-Routing — AIG Art. 5 Abs. 1 lit. d', () => {
   test('alle 4 Nummern → StGB/MStG, kein AIG-Self-Link', async ({ page }) => {

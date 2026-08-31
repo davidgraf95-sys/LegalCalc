@@ -157,7 +157,7 @@ test.describe('S2 · WCAG 1.4.8 am Fliesstext (≤ 80 ch, lh ≥ 1.5)', () => {
   // Grundgrösse als V1) oder in `LeserRahmenV3` eine eigene Textstufe setzen.
   test('StPO @1440 unter ?leser=v3: dieselbe Stufe wie in der Ist-Hülle (17.00 / 26.35 px)', async ({ page }) => {
     await page.setViewportSize({ width: 1440, height: 900 });
-    await page.goto('/gesetze/bund/STPO?leser=v3');
+    await page.goto('/gesetze/bund/STPO');
     await expect(page.locator('#art-1')).toBeVisible();
     await page.evaluate(() => document.fonts?.ready);
     // Positiv-Sicherung: der Fall muss WIRKLICH in V3 stehen, sonst prüft er die

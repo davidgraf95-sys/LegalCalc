@@ -28,7 +28,8 @@
 // bewusst nicht — er liesse sich nur als handgepflegte Schlüsselliste in
 // vercel.json schreiben (zweite Wahrheit neben dem Register, §5); Herleitung im
 // Kopf von adressUmzug.ts.
-import { test, expect, type Page } from '@playwright/test'
+import { test, expect } from '@playwright/test'
+import { fehlerSammeln } from './helpers/fehlerSammeln'
 
 // CISG: Staatsvertrag MIT gerendertem Volltext (status snapshot) — nur an einem
 // solchen lässt sich der Artikel-Anker über die Weiterleitung hinweg prüfen.
@@ -37,13 +38,6 @@ const NEU = `/gesetze/international/${VERTRAG}`
 const ALT = `/gesetze/bund/${VERTRAG}`
 // Art. 35 CISG (Vertragsmässigkeit der Ware) — im Snapshot vorhanden.
 const ANKER = 'art-35'
-
-function fehlerSammeln(page: Page): string[] {
-  const fehler: string[] = []
-  page.on('pageerror', (e) => fehler.push(`pageerror: ${e.message}`))
-  page.on('console', (msg) => { if (msg.type() === 'error') fehler.push(`console.error: ${msg.text()}`) })
-  return fehler
-}
 
 test.describe('Befund 45 · neue Adresse', () => {
   test('die kanonische Adresse liefert den Leser', async ({ page }) => {

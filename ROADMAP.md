@@ -64,7 +64,6 @@
 §4-lizenz: Live-Rechtsprechung — CC-BY-SA vs. Art. 5 URG, CORS/Rate-Limits unbestätigt
 vps-bestellung-david: E3-Serving + E4-UI hängen an einer VPS-Bestellung (David, ~15 Min; Entscheid David 8.8.2026: «mach ich erst wenn UI noch optimierter wird» — bewusst zurückgestellt, nicht vergessen) — Dossier `bibliothek/betrieb/vps-bestell-dossier-2026-07-17.md` (PR #271). ECHTES David-Gate, kein Bau-Blocker. Bis dahin sind QS-DATA/W2·6-DATA nur im NICHT-VPS-Teil baubar (E0–E4 sind lokal fertig).
 richter-analytik-gate: Richter-/Spruchkörper-Analytik (W3·15-RICHTER). GRENZE (20.7.2026): Filtern/Facette/Verlinkung sind FREI und gebaut (#309/#311); gesperrt bleiben allein RANKING und PROGNOSE. Nur deskriptiv; bewusste Freigabe Davids erforderlich (heikel: Standesrecht, Persönlichkeitsschutz, richterliche Unabhängigkeit)
-zeitreihe-5-snapshots: QS-AUTOPILOT-STUFE1 ist von David freigegeben (Entscheid 7.8.2026 «stufe 1 ja»), aber an die Mindestdatenlage gebunden: erst bauen, wenn messwerte/selbstopt-zeitreihe.json ≥ 5 Snapshots trägt (retro:17-Schwelle). Prüfbar: npm run retro:17 meldet die Datenlage selbst
 david-entscheid-org-umzug: QS-ORG-UMZUG — Repo-Transfer in eine Gratis-Organisation für die native Merge Queue (User-Konten haben keine); Infrastruktur-Entscheid mit ~1 h Nacharbeit (Vercel, Branch-Schutz, Secrets). Erst prüfen, ob der Auto-Nachzug (Checklisten-Zeile unter QS-AUTOMATIK) den BEHIND-Schmerz ausreichend dämpft (Entscheid David 7.8.2026: «B als Schritt, A parken»)
 -->
 
@@ -465,8 +464,8 @@ zgb-a36-anhang: Die ZGB-Gliederung zeigt 74 Artikel des Anhangs «Wortlaut der f
   oder Prüfung.
   **Detail:** [FAHRPLAN-OPTIMIERUNG-2026-07.md](fahrplaene/FAHRPLAN-OPTIMIERUNG-2026-07.md) §1.
 
-- [ ] **Vorschlags-Autopilot (Entwurfs-PRs aus der Messreihe)** *(`QS-AUTOPILOT-STUFE1`)*
-  <!-- @meta id: QS-AUTOPILOT-STUFE1 · status: blocked · blocker: zeitreihe-5-snapshots · dep: [] · feld: betrieb · fahrplan: fahrplaene/FAHRPLAN-PLAN-STEUERUNG.md -->
+- [x] **Vorschlags-Autopilot (Entwurfs-PRs aus der Messreihe)** *(`QS-AUTOPILOT-STUFE1`)*
+  <!-- @meta id: QS-AUTOPILOT-STUFE1 · status: done · blocker: null · dep: [] · feld: betrieb · fahrplan: fahrplaene/FAHRPLAN-PLAN-STEUERUNG.md -->
   David: «stufe 1 ja», gebunden an ≥ 5 Snapshots; Stufe 2/3 NICHT freigegeben. Cron fährt `retro:17`,
   eröffnet Entwurfs-PR, kein Auto-Merge.
   **Detail:** [FAHRPLAN-PLAN-STEUERUNG.md](fahrplaene/FAHRPLAN-PLAN-STEUERUNG.md) § «Selbstoptimierender Bau».

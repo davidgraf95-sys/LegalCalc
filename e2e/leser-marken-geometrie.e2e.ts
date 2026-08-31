@@ -17,6 +17,14 @@ import { test, expect, type Page } from '@playwright/test'
 // `chromium`; V3 wird — wie in `playwright.config.ts` beschrieben — über den
 // Query-Parameter gesetzt.
 //
+// NACHTRAG 31.8.2026 (der Absatz oben bleibt als datierter Beleg stehen): mit der
+// V1-Löschung (H5, 21.8.2026) gibt es nur noch EINE Hülle, und `?leser=v3` ist ein
+// toter Parameter — `src/pages/GesetzLeser.tsx` rendert bedingungslos
+// `LeserRahmenV3`, kein `leser=`-Switch im Produktcode (nachgemessen 31.8.2026 am
+// Stand `337d2c9ef`). Die «V1»-Fälle waren damit zeichenweise ihre eigenen
+// V3-Zwillinge und sind als Duplikate gestrichen; der Parameter ist aus den
+// Adressen entfernt.
+//
 // ── Ä61 · lit.-MARKE LÄUFT ÜBER DEN ITEM-TEXT ────────────────────────────────
 // Die Marken-Spalte der Aufzählungs-Items hatte eine FESTE Breite (`w-6` = 24 px)
 // bei `shrink-0` und rechter Ausrichtung. Eine Marke, die breiter ist, dehnt die
@@ -93,7 +101,13 @@ async function ladeLeser(page: Page, pfad: string): Promise<void> {
 
 test.describe('Ä61 · die lit.-Marke überlappt den Item-Text nicht', () => {
   test.use({ viewport: { width: 1440, height: 1440 } })
-  for (const [name, pfad] of [['V3', '/gesetze/bund/OR?leser=v3'], ['V1', '/gesetze/bund/OR']] as const) {
+  // DIÄT 31.8.2026 (Runde 2 / Batch A): hier standen zwei Adressen, `…/OR?leser=v3`
+  // und `…/OR`. Seit der V1-Löschung (H5, 21.8.2026) liest der Produktcode den
+  // Parameter nicht mehr (`src/pages/GesetzLeser.tsx` rendert bedingungslos
+  // `LeserRahmenV3`) — die beiden Fälle waren also zeichenweise DERSELBE Fall,
+  // zweimal gefahren, beide `test.slow()` auf dem 2038-Artikel-OR. Der zweite ist
+  // als bewiesenes Duplikat gestrichen; die geprüfte Aussage ist unverändert.
+  for (const [name, pfad] of [['V3', '/gesetze/bund/OR']] as const) {
     test(`OR 336c (${name}): lit. cbis/cter/cquater/cquinquies bleiben in ihrer Spalte`, async ({ page }) => {
       test.slow()
       await ladeLeser(page, pfad)
@@ -152,10 +166,14 @@ test.describe('Ä61 · die lit.-Marke überlappt den Item-Text nicht', () => {
 
 test.describe('Ä62 · die Fussnotenmarke bleibt am Wort, nie allein am Zeilenanfang', () => {
   test.use({ viewport: { width: 1440, height: 1440 } })
+  // DIÄT 31.8.2026 (Runde 2 / Batch A): «StGB V1» war `…/STGB` ohne Parameter und
+  // damit — seit der V1-Löschung 21.8.2026 — dieselbe Adresse wie «StGB V3».
+  // Gestrichen als bewiesenes Duplikat (Beleg: bibliothek/betrieb/
+  // testapparat-fang-historie-2026-08-31.md §7 Ziff. 1). Die beiden verbleibenden
+  // Fälle decken beide Erlasse wie zuvor.
   for (const [name, pfad] of [
-    ['StGB V3', '/gesetze/bund/STGB?leser=v3'],
-    ['StPO V3', '/gesetze/bund/STPO?leser=v3'],
-    ['StGB V1', '/gesetze/bund/STGB'],
+    ['StGB V3', '/gesetze/bund/STGB'],
+    ['StPO V3', '/gesetze/bund/STPO'],
   ] as const) {
     test(`${name}: keine Marken-Waise`, async ({ page }) => {
       test.slow()

@@ -68,13 +68,13 @@ async function streifenKante(page: Page): Promise<{ ueberlauf: number; quellen: 
 /** Warmer Zustand: Verlauf UND offener Reiter vorhanden — sonst misst der Fall
  *  einen Streifen, den es im Alltag nach dem ersten Klick nicht mehr gibt. */
 async function waerme(page: Page): Promise<void> {
-  await page.goto('/gesetze/bund/OR?leser=v3')
+  await page.goto('/gesetze/bund/OR')
   await expect(page.locator('article[id^="art-"]').first()).toBeAttached({ timeout: 20_000 })
 }
 
 test.describe('C2 — die Topbar bleibt @320 im Fenster', () => {
   for (const [name, pfad] of [
-    ['Leser', '/gesetze/bund/OR?leser=v3'],
+    ['Leser', '/gesetze/bund/OR'],
     ['Gesetze-Übersicht', '/gesetze'],
     ['Startseite', '/'],
   ] as const) {
