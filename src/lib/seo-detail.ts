@@ -104,7 +104,9 @@ export function metaFuerErlass(e: BrowseErlass): RouteMetadaten {
     titel: `${e.titel} (${e.kuerzel}${srTeil}) — LexMetrik`,
     beschreibung:
       `Volltext von ${e.kuerzel}${e.sr ? ` (SR ${e.sr})` : ''} – ${e.titel}. ` +
-      `Stand ${e.stand}, mit Live-Link zur amtlichen Fassung. ` +
+      // Gleiche Weiche wie im Volltext-Kopf: leerer `stand` (VD-vd-106879,
+      // VD-vd-128150) hiesse sonst «Stand ,» in der indexierten Beschreibung.
+      `${e.stand ? `Stand ${e.stand}` : STAND_UNBEKANNT}, mit Live-Link zur amtlichen Fassung. ` +
       `Massgeblich ist die amtliche Quelle; keine Rechtsberatung.`,
     canonical: SITE_URL + pfad,
   };

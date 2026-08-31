@@ -143,8 +143,10 @@ export function LeserLesespalte({ m }: {
   // GETEILTE Randtitel-Stufe trägt; eine fehlende oder nur EINTEILIGE Marginalie
   // genügt. Solche Artikel stehen im Erlass mitten zwischen den Stufen — im
   // Markup sprangen sie an den Anfang. GEMESSEN 31.8.2026 am committeten Korpus
-  // trifft das noch drei Erlasse: BS-569.500 (§§ 3, 5, 7–9 vor §§ 1, 2, 4, 6,
-  // 10), GR-310.250, ZG-641.1.
+  // trifft das noch VIER Erlasse: BS-569.500 (§§ 3, 5, 7–9 vor §§ 1, 2, 4, 6,
+  // 10), GR-310.250, ZG-641.1 und bund/KKV (Art. 126z Ziff. 2, Position 181
+  // von 211, stand zuoberst — §9-Bug-Check 31.8. hat die Zählung unabhängig
+  // re-deriviert; Testfall KKV in leser-lesereihenfolge-k1a).
   //
   // Das ist keine Kosmetik, sondern eine Falschaussage über den Erlass (§8): der
   // Leser liest eine Reihenfolge, die die amtliche Quelle nicht kennt.

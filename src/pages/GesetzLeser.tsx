@@ -80,8 +80,12 @@ export function GesetzLeser() {
   // Ein Pfad, der keine Erlass-Adresse ist, liefert einen leeren Schlüssel —
   // dann zeigt der Leser seine Fehlseite, statt auf einen geratenen Erlass zu
   // springen (§8). Wächter: `src/tests/leser-schluessel-decode-k1b.test.tsx`.
+  // Trailing Slash normalisieren: `useParams()` tat das implizit; Prod fängt
+  // ihn per `trailingSlash:false` (308) ab, dev/preview nicht — ohne Strip
+  // wäre `/gesetze/kanton/ZH-211.1/` dort eine Fehlseite (§9-Bug-Check
+  // 31.8.2026, Fund 4).
   const { hash, search, pathname } = useLocation();
-  const adresse = zerlegeErlassPfad(pathname);
+  const adresse = zerlegeErlassPfad(pathname.replace(/\/+$/, ''));
   const routenSegment = adresse?.ebene ?? '';
   const schluessel = adresse?.key ?? '';
   const meldeInhaltsKopf = useMeldeInhaltsKopf();

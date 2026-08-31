@@ -235,7 +235,11 @@ export function useSektionSprung(opts: {
  * Zählt der gelesene Erlass seine Bestimmungen mit «§»?
  *
  * Die Weiche gibt es bereits: `bestimmungsEtikett: 'paragraf'` im
- * Grundart-Register (SSoT, §5) — sie wird hier ABGEFRAGT, nicht neu erfunden
+ * Grundart-Register (SSoT, §5) — sie wird hier ABGEFRAGT, nicht neu erfunden.
+ * Ehrlichkeits-Vermerk (§8): das Register führt die Etiketten durchgehend mit
+ * `bestimmungsEtikettStatus: 'entwurf'` — die Link-Entscheidung hängt an einer
+ * noch nicht fachlich abgenommenen Klassifikation. Wirkung bleibt auf
+ * Link/kein-Link beschränkt, der Normtext selbst ändert nie
  * und nicht aus dem Wortlaut geraten (§2). Zugang ist `grundartMeta`, dieselbe
  * Ableitung, die `v3/erlassAnsicht.bestimmungsWort` benutzt.
  *

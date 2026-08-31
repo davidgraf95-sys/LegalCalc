@@ -66,6 +66,11 @@ describe('metaFuerErlass()', () => {
     expect(m.beschreibung).toContain('Stand');
     expect(m.beschreibung.length).toBeGreaterThan(50);
   });
+  it('leerer stand → «Stand unbekannt» statt «Stand ,» in der Beschreibung (§9-Bug-Check Fund 1)', () => {
+    const m = metaFuerErlass({ ...or, stand: '' });
+    expect(m.beschreibung).toContain('Stand unbekannt,');
+    expect(m.beschreibung).not.toContain('Stand ,');
+  });
 });
 
 describe('jsonLdFuerErlass()', () => {

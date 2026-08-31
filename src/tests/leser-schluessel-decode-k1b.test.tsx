@@ -90,6 +90,18 @@ describe('F25 · Routen-Schlüssel wird genau einmal dekodiert (K-1b)', () => {
     expect(schluesselAusRoute('kanton', 'ZH-211.1')).toBe('ZH-211.1');
   });
 
+  it('Trailing Slash wird normalisiert (dev/preview ohne 308; §9-Bug-Check 31.8., Fund 4)', () => {
+    renderToString(
+      <MemoryRouter initialEntries={['/gesetze/kanton/ZH-211.1/']}>
+        <Routes>
+          <Route path="/gesetze/:ebene/:key" element={<GesetzLeser />} />
+        </Routes>
+      </MemoryRouter>,
+    );
+    const treffer = gefangeneProps.at(-1);
+    expect(treffer ? (treffer.schluessel as string) : null).toBe('ZH-211.1');
+  });
+
   it('nur die drei %-Schlüssel überleben einen zweiten Decode-Lauf NICHT', () => {
     // §7-Sonde: Belegt, dass der Zweitdecode GENAU die drei %-Schlüssel zerstört
     // — und dass er sonst nirgends nötig war (alle übrigen sind Fixpunkte).
