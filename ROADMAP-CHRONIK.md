@@ -2814,8 +2814,9 @@ Auftrags-Testmatrix von `ci-diff-klassieren`.
 9 neuen Dateien: **463/463 grün** (byte-gleiche Fallmenge, reiner Datei-Umbau), nach der
 Streichung **462/462 grün**. Abgleich 463 − 1 = 462 geht ohne stillen Verlust auf.
 
-**Was das spart — und was nicht (§8).** Dateien −53 % (19 → 9). Zeilen **+69** (4625 → 4694):
-sechs Herkunfts-Köpfe und achtzehn Banner kosten mehr, als die vereinigten Import-Zeilen
+**Was das spart — und was nicht (§8).** Dateien −53 % (19 → 9). Zeilen **+88** (4625 → 4713,
+gemessen gegen `origin/main`): sechs Herkunfts-Köpfe, achtzehn Banner und der Streich-Vermerk
+kosten mehr, als die vereinigten Import-Zeilen
 sparen. Das ist kein Fehlschlag der Massnahme, sondern ihr ehrlicher Preis — die
 Kommentar-Köpfe SIND der Schutz (§17: eine Lehre, die nur im Chat existiert, gilt als nicht
 gezogen), und sie zu kürzen hätte genau das eingespart, was zu erhalten war. CI-Zeit spart
