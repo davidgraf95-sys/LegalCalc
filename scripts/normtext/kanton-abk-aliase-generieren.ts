@@ -12,24 +12,33 @@
  * generieren.ts (Feld `kz` je Kanton-Eintrag) und scripts/datenhaltung/fts.ts
  * (FTS-Spalte `kuerzel`).
  *
- * QUELLE (§7): das `kuerzel`-Feld der Kanton-Einträge in
- * public/normtext/register.json. Für die API-Pipeline ist es die deterministische
- * Projektion des `abbreviation`-Felds der kantonalen Erlasssammlungs-APIs
- * (LexWork u. a.): adapter-lexwork.ts übernimmt `tol.abbreviation` wörtlich,
- * normtext-snapshot.ts komponiert daraus `Titel, Kürzel (Nr)`, browse-manifest.ts
- * → identitaetAusErlass() löst den String wieder auf. ABER (GP-Befund F1/F2,
- * 31.8.2026): Einträge der PDF-Pipeline tragen stattdessen den REPO-KURATIERTEN
- * Zitat-Namen (src/data/tarif/*-erlassName, Handpflege) — dort ist das Feld
- * KEIN amtlich belegtes Kürzel (Beleg: SG-2808 «Gerichtskostenverordnung (GKV)»,
- * amtlich abbreviation="" laut gesetzessammlung.sg.ch/api/de/texts_of_law/941.12;
- * SZ-173.111 «Gebührenordnung (GebO)», SRSZ-173.111-PDF ohne Kürzel «GebO»).
- * Regel R6 filtert diese Herkunft über ihre offline entscheidbare Spur (Klammer
- * im Wert) fail-closed heraus. KEIN Wert dieses Artefakts wird erfunden oder
- * umgeformt — die Regeln unten entscheiden nur, OB ein Wert als Such-Alias
- * taugt, nie WIE er lautet (einzige Ausnahme: der dokumentierte Semikolon-Split
- * R2, der einen TEIL des amtlichen Werts wählt). PRÜFBAR: kein Alias trägt eine
- * Klammer, jeder Alias steht wörtlich im Register-kuerzel seines Keys
- * (src/tests/kanton-abk-aliase.test.ts, Artefakt-Invarianten).
+ * QUELLE (§7, seit R8.3 Wurzel-Fix F8, 1.9.2026): das ROHE Registerfeld
+ * `abkRoh` der Kanton-Einträge in public/normtext/register.json — die
+ * Projektion des Sidecars public/normtext/kanton-abk-roh.json (Mechanik und
+ * Herkunfts-Klassen api/rueckrechnung: Kopf von kanton-abk-roh.ts). Das Feld
+ * trägt das `abbreviation`-Feld der kantonalen Erlasssammlungs-APIs VERBATIM
+ * und darf leer sein; FEHLT es, führt die Quelle kein amtliches Kürzel —
+ * dann KEIN Alias (fail-closed, gezählt als 'kein-amtliches-kuerzel').
+ * VOR R8.3 las der Generator das `kuerzel`-Feld, das browse-manifest per
+ * Last-Comma-Split aus «Titel, Kürzel (Nr)» ZURÜCKRIET — bei abbreviation=''
+ * (kein Komma) lieferte der No-Comma-Zweig kuerzel=Titel ⇒ 142 Titel-Aliase
+ * (GP2-Befund F8, Live-Belege BS-291.100 «Advokaturgesetz», BS-410.100
+ * «Schulgesetz», AR-421.10 «Archivgesetz», alle amtlich abbreviation='').
+ * KEIN Wert dieses Artefakts wird erfunden oder umgeformt — die Regeln unten
+ * entscheiden nur, OB ein Wert als Such-Alias taugt, nie WIE er lautet
+ * (einzige artefakt-seitige Umformung: der dokumentierte Semikolon-Split R2,
+ * der einen TEIL des amtlichen Werts wählt; upstream existiert daneben der
+ * Last-Comma-Split von identitaetAusErlass — er speist seit R8.3 nur noch die
+ * ANZEIGE-Felder kuerzel/titel, nie mehr dieses Artefakt). PRÜFBAR: kein Alias
+ * trägt eine Klammer, jeder Alias steht wörtlich im Register-abkRoh seines
+ * Keys (src/tests/kanton-abk-aliase.test.ts, Artefakt-Invarianten).
+ *
+ * Hinweis PDF-Pipeline (GP-Befund F1/F2, 31.8.2026, weiterhin gültig):
+ * PDF-Einträge haben kein API-abbreviation; ihr Register-kuerzel ist der
+ * REPO-KURATIERTE Zitat-Name (Beleg: SG-2808 «Gerichtskostenverordnung (GKV)»,
+ * amtlich abbreviation="" laut gesetzessammlung.sg.ch/api/de/texts_of_law/941.12).
+ * Seit R8.3 sind sie strukturell draussen: ohne API-Wert kein abkRoh. R6
+ * (Klammer) bleibt als Wächter auf dem Rohwert bestehen.
  *
  * WARUM NICHT DERSELBE GENERATOR WIE DER BUND (Querschnitt-Frage des Auftrags,
  * geprüft und verneint): abk-aliase-generieren.ts ist eine NETZ-Pipeline gegen
@@ -44,18 +53,24 @@
  *
  * ── Die Ausschluss-Regeln (dokumentiert, deterministisch, je mit Beleg) ──────
  *
- * R1 TITEL-KOPIE (49 Einträge, Stand 31.8.2026). kuerzel === titel entsteht
- *    genau dann, wenn die Quelle KEIN eigenes Kürzel lieferte (kein Komma-Split
- *    in identitaetAusErlass) — der Wert ist der Erlasstitel, kein amtlich
- *    belegtes Kürzel. R1 läuft VOR dem Semikolon-Split R2: ein Semikolon-Tail
- *    aus einer Titel-Kopie wäre ein Titel-Fragment ohne Kürzel-Provenienz
- *    (Beleg: SG-2935/SG-3849, Titel-Kopien MIT Semikolon — fail-closed raus).
+ * R1 — GESTORBEN mit dem Wurzel-Fix F8 (R8.3, Rückbau §17-Gegengewicht).
+ *    R1 («kuerzel === titel ⇒ Titel-Kopie») war ein Flicken auf dem
+ *    zurückgeratenen kuerzel-Feld und hatte eine belegte Lücke: der
+ *    No-Comma-Zweig liefert kuerzel ≠ titel (Titel ohne vs. mit «(Nr)»),
+ *    142 Titel-Aliase rutschten durch (GP2-F8). Seit der Quelle abkRoh ist
+ *    die Sorge strukturell erledigt: leeres abbreviation ⇒ leeres/fehlendes
+ *    Rohfeld ⇒ kein Alias ('kein-amtliches-kuerzel'). Nummern R2–R7 bleiben
+ *    stabil (Bestandsverweise, wie CLAUDE.md-§-Politik).
  *
- * R2 SEMIKOLON-SPLIT «Langform; Kürzel» (21 Einträge, AR-Konvention). Das
- *    abbreviation-Feld einiger Kantone trägt beide Formen in EINEM Wert
- *    («Behindertenfinanzierungsgesetz; BeFiG»). Alias ist der Teil nach dem
- *    letzten Semikolon — das ist die Kürzel-Hälfte DESSELBEN amtlichen Werts,
- *    keine Erfindung.
+ * R2 SEPARATOR-SPLIT «Langform; Kürzel» (AR-Konvention, Semikolon) bzw.
+ *    «Langform, Kürzel» (BS/BE-Konvention, Komma — live belegt 1.9.2026 am
+ *    ROHEN abbreviation-Feld: BS-154.100 «Gerichtsorganisationsgesetz, GOG»,
+ *    BE-168.811 «Parteikostenverordnung, PKV»). Das abbreviation-Feld dieser
+ *    Kantone trägt beide Formen in EINEM Wert; Alias ist der Teil nach dem
+ *    letzten Separator — die Kürzel-Hälfte DESSELBEN amtlichen Werts, keine
+ *    Erfindung. Der Komma-Tail ist zusätzlich fragment-bewacht
+ *    (istKuerzelFragment, T2/S2), damit ein Titel-Binnenkomma nie ein
+ *    Satzfragment zum Alias macht.
  *
  * R3 ZU LANG (> 30 Zeichen). Ein Wert dieser Länge ist ein Kurztitel oder eine
  *    Titel-Abschrift («Vorläufige Verordnung zum Mietrecht», «COVID-19
@@ -87,7 +102,7 @@
  *    AR-Tourismus-Artikel auf Stufe 0. Der Erlass bleibt über seine Titelwörter
  *    auffindbar; nur der Kürzel-Boost entfällt.
  *
- * R6/R7 laufen bewusst NACH R1–R5: ihre Statistik zählt damit exakt die
+ * R6/R7 laufen bewusst NACH R2–R5: ihre Statistik zählt damit exakt die
  * Kandidaten, die sonst ALIAS GEWORDEN wären (prüfbare «trifft exakt N»-
  * Aussage im Test) — die Ausschlussmenge selbst ist von der Reihenfolge
  * unabhängig.
@@ -128,6 +143,11 @@ import { existsSync, readdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { vergleiche } from './vergleich';
+import { aliasAusRoh, type AusschlussGrund } from './kanton-abk-regeln.ts';
+
+// Regel-Kern und Konstanten leben seit R8.3 im reinen Modul kanton-abk-regeln.ts
+// (seiteneffektfrei importierbar); hier re-exportiert für Bestands-Importe.
+export { aliasAusRoh, MAX_LAENGE, KANTONSKUERZEL, type AusschlussGrund } from './kanton-abk-regeln.ts';
 
 const WURZEL = resolve(dirname(fileURLToPath(import.meta.url)), '..', '..');
 const QUELLE = resolve(WURZEL, 'public/normtext/register.json');
@@ -140,52 +160,15 @@ export interface KantonAliasZeile {
   key: string;
 }
 
-/** Warum ein Kandidat KEIN Alias wurde — für Statistik und Tests. */
-export type AusschlussGrund = 'titel-kopie' | 'zu-lang' | 'kleinwoerter' | 'zu-kurz' | 'klammer' | 'kantonskuerzel';
-
-/** R3-Grenze: längstes echtes Mehrwort-Kürzel des Bestands ist 26 Zeichen. */
-export const MAX_LAENGE = 30;
-
-/** R7: die 26 Kantonskürzel (geschlossene Liste; Kopie-Disziplin wie
- *  src/lib/permalink.ts — der Test hält eine GEGENkopie, kein Selbstbeweis). */
-export const KANTONSKUERZEL = new Set(['AG', 'AI', 'AR', 'BE', 'BL', 'BS', 'FR', 'GE', 'GL', 'GR', 'JU', 'LU', 'NE', 'NW', 'OW', 'SG', 'SH', 'SO', 'SZ', 'TG', 'TI', 'UR', 'VD', 'VS', 'ZG', 'ZH']);
-
-const KLEINWORT = /^[a-zäöüéèàçâêîôû]/;
-
-/**
- * Der Regel-Kern: EIN Kandidat (kuerzel, titel) → Alias oder Ausschluss.
- * Reine Funktion (§2), exportiert für die Tests der Gefahren-Klassen.
- */
-export function aliasAusKandidat(
-  kuerzel: string,
-  titel: string,
-): { abk: string } | { abk: null; grund: AusschlussGrund } {
-  const roh = kuerzel.trim();
-  // R1 VOR R2 (fail-closed): eine Titel-Kopie hat keine Kürzel-Provenienz,
-  // auch ihr Semikolon-Tail nicht (Beleg SG-2935/SG-3849).
-  if (roh === titel.trim()) return { abk: null, grund: 'titel-kopie' };
-  // R2: «Langform; Kürzel» → Kürzel-Hälfte desselben amtlichen Werts.
-  let wert = roh;
-  if (wert.includes(';')) {
-    const tail = wert.split(';').pop()!.trim();
-    if (tail) wert = tail;
-  }
-  if (wert.length > MAX_LAENGE) return { abk: null, grund: 'zu-lang' };
-  const kleine = wert.split(/\s+/).filter((w) => KLEINWORT.test(w));
-  if (kleine.length >= 2) return { abk: null, grund: 'kleinwoerter' };
-  if (wert.length < 2) return { abk: null, grund: 'zu-kurz' };
-  // R6/R7 zuletzt (Statistik = artefakt-relevante Ausschlüsse, s. Kopf):
-  if (wert.includes('(') || wert.includes(')')) return { abk: null, grund: 'klammer' };
-  if (KANTONSKUERZEL.has(wert.toUpperCase())) return { abk: null, grund: 'kantonskuerzel' };
-  return { abk: wert };
-}
-
 interface RegisterErlass {
   key: string;
   ebene: string;
   kanton?: string | null;
   kuerzel: string;
   titel: string;
+  /** ROHES amtliches Kürzel (Projektion des kanton-abk-roh-Sidecars); fehlt,
+   *  wenn die Quelle keines führt oder es (noch) nicht belegt ist. */
+  abkRoh?: string;
 }
 
 /** Register lesen — hart scheiternd, nie still leer (§6.7). */
@@ -219,7 +202,7 @@ export function baueAliase(erlasse: RegisterErlass[]): {
       // Ein Kanton-Eintrag ohne Kanton wäre eine stille Herkunfts-Lüge (§8).
       throw new Error(`Kanton-Eintrag ohne kanton-Feld: ${e.key}`);
     }
-    const r = aliasAusKandidat(e.kuerzel ?? '', e.titel ?? '');
+    const r = aliasAusRoh(e.abkRoh ?? '');
     if (r.abk === null) {
       ausgeschlossen.set(r.grund, (ausgeschlossen.get(r.grund) ?? 0) + 1);
       continue;
@@ -241,8 +224,9 @@ function artefakt(zeilen: KantonAliasZeile[], ausgeschlossen: Map<AusschlussGrun
     .join(' · ');
   const kopf = `// AUTO-GENERIERT von scripts/normtext/kanton-abk-aliase-generieren.ts — NICHT von Hand editieren.
 // Amtlich belegte Kürzel der Kanton-Erlasse (abbreviation-Feld der kantonalen
-// Erlasssammlungs-APIs, projiziert über public/normtext/register.json).
-// Ausschluss-Regeln R1–R7 + Klammer-Verzicht: Kopf des Generators (§7, nie erfinden).
+// Erlasssammlungs-APIs, roh im Sidecar kanton-abk-roh.json, projiziert als
+// abkRoh über public/normtext/register.json — R8.3 Wurzel-Fix F8).
+// Ausschluss-Regeln R2–R7 + Klammer-Verzicht: Kopf des Generators (§7, nie erfinden).
 // ${zeilen.length} Aliase über ${kantone.size} Kantone · ausgeschlossen: ${statistik || 'keine'}.
 // Kürzel ist ALIAS, nie Schlüssel: dasselbe abk darf auf mehrere Erlasse zeigen
 // (kantonsübergreifend wie innerhalb eines Kantons); Bund↔Kanton-Kollisionen sind

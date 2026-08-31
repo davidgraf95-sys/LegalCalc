@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-08-31",
+  "erzeugt": "2026-09-01",
   "erlasse": [
     {
       "key": "ZGB",
@@ -5002,7 +5002,8 @@
           "nummer": "29",
           "name": "Advokatur – Notariat"
         }
-      }
+      },
+      "abkRoh": "Anwaltstarif"
     },
     {
       "key": "AG-295.250",
@@ -5062,7 +5063,8 @@
           "nummer": "72",
           "name": "Grundbuch"
         }
-      }
+      },
+      "abkRoh": "GBAG"
     },
     {
       "key": "AG-662.110",
@@ -5092,7 +5094,8 @@
           "nummer": "66",
           "name": "Abgaben und Gebühren"
         }
-      }
+      },
+      "abkRoh": "GebührD"
     },
     {
       "key": "AI-177.410",
@@ -5122,7 +5125,8 @@
           "nummer": "177",
           "name": "Anwaltsrecht"
         }
-      }
+      },
+      "abkRoh": "AnwHV"
     },
     {
       "key": "AI-172.513",
@@ -5152,7 +5156,8 @@
           "nummer": "172",
           "name": "Regierung und Verwaltung"
         }
-      }
+      },
+      "abkRoh": "GebT"
     },
     {
       "key": "AI-173.810",
@@ -5182,7 +5187,8 @@
           "nummer": "173",
           "name": "Gerichte"
         }
-      }
+      },
+      "abkRoh": "GGV"
     },
     {
       "key": "AI-640.000",
@@ -5212,7 +5218,8 @@
           "nummer": "640",
           "name": "Steuern"
         }
-      }
+      },
+      "abkRoh": "StG"
     },
     {
       "key": "AR-621.12",
@@ -5242,7 +5249,8 @@
           "nummer": "62",
           "name": "Steuern und Abgaben"
         }
-      }
+      },
+      "abkRoh": "ABRG"
     },
     {
       "key": "AR-145.52",
@@ -5272,7 +5280,8 @@
           "nummer": "14",
           "name": "Behörden"
         }
-      }
+      },
+      "abkRoh": "Anwaltsgesetz"
     },
     {
       "key": "AR-421.10",
@@ -5332,7 +5341,8 @@
           "nummer": "86",
           "name": "Schutz gegen Feuer- und Elementarschäden"
         }
-      }
+      },
+      "abkRoh": "Assekuranzgesetz"
     },
     {
       "key": "AR-862.11",
@@ -5362,7 +5372,8 @@
           "nummer": "86",
           "name": "Schutz gegen Feuer- und Elementarschäden"
         }
-      }
+      },
+      "abkRoh": "Assekuranzverordnung"
     },
     {
       "key": "AR-956.111",
@@ -5422,7 +5433,8 @@
           "nummer": "12",
           "name": "Bürgerrecht, Niederlassung und Aufenthalt"
         }
-      }
+      },
+      "abkRoh": "Ausweisverordnung"
     },
     {
       "key": "AR-920.13",
@@ -5452,7 +5464,8 @@
           "nummer": "92",
           "name": "Landwirtschaft"
         }
-      }
+      },
+      "abkRoh": "AWV"
     },
     {
       "key": "AR-811.12",
@@ -5482,7 +5495,8 @@
           "nummer": "81",
           "name": "Gesundheit"
         }
-      }
+      },
+      "abkRoh": "Bäderverordnung"
     },
     {
       "key": "AR-721.1",
@@ -5512,7 +5526,8 @@
           "nummer": "72",
           "name": "Raumplanung und Baupolizei"
         }
-      }
+      },
+      "abkRoh": "Baugesetz"
     },
     {
       "key": "AR-721.11",
@@ -5542,7 +5557,8 @@
           "nummer": "72",
           "name": "Raumplanung und Baupolizei"
         }
-      }
+      },
+      "abkRoh": "BauV"
     },
     {
       "key": "AR-852.6",
@@ -5572,7 +5588,8 @@
           "nummer": "85",
           "name": "Fürsorge"
         }
-      }
+      },
+      "abkRoh": "Behindertenfinanzierungsgesetz; BeFiG"
     },
     {
       "key": "AR-852.61",
@@ -5602,7 +5619,8 @@
           "nummer": "85",
           "name": "Fürsorge"
         }
-      }
+      },
+      "abkRoh": "Behindertenfinanzierungsverordnung; BeFiV"
     },
     {
       "key": "AR-721.12",
@@ -5632,7 +5650,8 @@
           "nummer": "72",
           "name": "Raumplanung und Baupolizei"
         }
-      }
+      },
+      "abkRoh": "Beitragsverordnung"
     },
     {
       "key": "AR-421.111",
@@ -5782,7 +5801,8 @@
           "nummer": "21",
           "name": "Ergänzungs- und Ausführungserlasse zum ZGB"
         }
-      }
+      },
+      "abkRoh": "BeurkG"
     },
     {
       "key": "AR-211.211",
@@ -5812,7 +5832,8 @@
           "nummer": "21",
           "name": "Ergänzungs- und Ausführungserlasse zum ZGB"
         }
-      }
+      },
+      "abkRoh": "BeurkV"
     },
     {
       "key": "AR-511.1",
@@ -5872,7 +5893,8 @@
           "nummer": "41",
           "name": "Erziehung"
         }
-      }
+      },
+      "abkRoh": "BLV"
     },
     {
       "key": "AR-142.211",
@@ -5902,7 +5924,8 @@
           "nummer": "14",
           "name": "Behörden"
         }
-      }
+      },
+      "abkRoh": "BVO"
     },
     {
       "key": "AR-146.1",
@@ -5932,7 +5955,8 @@
           "nummer": "14",
           "name": "Behörden"
         }
-      }
+      },
+      "abkRoh": "Datenschutzgesetz"
     },
     {
       "key": "AR-831.1",
@@ -5962,7 +5986,8 @@
           "nummer": "83",
           "name": "Sozialversicherung"
         }
-      }
+      },
+      "abkRoh": "EG AHVG/IVG"
     },
     {
       "key": "AR-761.11",
@@ -5992,7 +6017,8 @@
           "nummer": "76",
           "name": "Verkehr"
         }
-      }
+      },
+      "abkRoh": "EG SVG"
     },
     {
       "key": "AR-414.11",
@@ -6022,7 +6048,8 @@
           "nummer": "41",
           "name": "Erziehung"
         }
-      }
+      },
+      "abkRoh": "EG zum BBG"
     },
     {
       "key": "AR-213.121",
@@ -6052,7 +6079,8 @@
           "nummer": "21",
           "name": "Ergänzungs- und Ausführungserlasse zum ZGB"
         }
-      }
+      },
+      "abkRoh": "EG zum BewG"
     },
     {
       "key": "AR-822.41",
@@ -6082,7 +6110,8 @@
           "nummer": "82",
           "name": "Arbeit"
         }
-      }
+      },
+      "abkRoh": "EG zum FamZG"
     },
     {
       "key": "AR-833.11",
@@ -6112,7 +6141,8 @@
           "nummer": "83",
           "name": "Sozialversicherung"
         }
-      }
+      },
+      "abkRoh": "EG zum KUVG"
     },
     {
       "key": "AR-833.14",
@@ -6142,7 +6172,8 @@
           "nummer": "83",
           "name": "Sozialversicherung"
         }
-      }
+      },
+      "abkRoh": "EG zum KVG"
     },
     {
       "key": "AR-211.1",
@@ -6172,7 +6203,8 @@
           "nummer": "21",
           "name": "Ergänzungs- und Ausführungserlasse zum ZGB"
         }
-      }
+      },
+      "abkRoh": "EG zum ZGB"
     },
     {
       "key": "AR-142.3",
@@ -6202,7 +6234,8 @@
           "nummer": "14",
           "name": "Behörden"
         }
-      }
+      },
+      "abkRoh": "eGovG"
     },
     {
       "key": "AR-813.21",
@@ -6322,7 +6355,8 @@
           "nummer": "81",
           "name": "Gesundheit"
         }
-      }
+      },
+      "abkRoh": "EKOS"
     },
     {
       "key": "AR-750.11",
@@ -6352,7 +6386,8 @@
           "nummer": "75",
           "name": "Energie"
         }
-      }
+      },
+      "abkRoh": "Energieverordnung; kEnV"
     },
     {
       "key": "AR-711.1",
@@ -6382,7 +6417,8 @@
           "nummer": "71",
           "name": "Allgemeine Bestimmungen"
         }
-      }
+      },
+      "abkRoh": "Enteignungsgesetz"
     },
     {
       "key": "AR-861.0",
@@ -6412,7 +6448,8 @@
           "nummer": "86",
           "name": "Schutz gegen Feuer- und Elementarschäden"
         }
-      }
+      },
+      "abkRoh": "Feuerschutzgesetz"
     },
     {
       "key": "AR-861.1",
@@ -6442,7 +6479,8 @@
           "nummer": "86",
           "name": "Schutz gegen Feuer- und Elementarschäden"
         }
-      }
+      },
+      "abkRoh": "Feuerschutzverordnung"
     },
     {
       "key": "AR-861.11",
@@ -6502,7 +6540,8 @@
           "nummer": "61",
           "name": "Allgemeine Bestimmungen"
         }
-      }
+      },
+      "abkRoh": "FHG"
     },
     {
       "key": "AR-613.1",
@@ -6532,7 +6571,8 @@
           "nummer": "61",
           "name": "Allgemeine Bestimmungen"
         }
-      }
+      },
+      "abkRoh": "Finanzausgleichsgesetz"
     },
     {
       "key": "AR-527.2",
@@ -6562,7 +6602,8 @@
           "nummer": "52",
           "name": "Polizei"
         }
-      }
+      },
+      "abkRoh": "Fischereiverordnung"
     },
     {
       "key": "AR-815.13",
@@ -6592,7 +6633,8 @@
           "nummer": "81",
           "name": "Gesundheit"
         }
-      }
+      },
+      "abkRoh": "FKV"
     },
     {
       "key": "AR-811.16",
@@ -6622,7 +6664,8 @@
           "nummer": "81",
           "name": "Gesundheit"
         }
-      }
+      },
+      "abkRoh": "FöPA"
     },
     {
       "key": "AR-955.111",
@@ -6652,7 +6695,8 @@
           "nummer": "95",
           "name": "Industrie, Gewerbe und Handel"
         }
-      }
+      },
+      "abkRoh": "Gastgewerbeverordnung"
     },
     {
       "key": "AR-233.3",
@@ -6682,7 +6726,8 @@
           "nummer": "23",
           "name": "Zivilrechtspflege"
         }
-      }
+      },
+      "abkRoh": "Gebührenordnung"
     },
     {
       "key": "AR-521.13",
@@ -7700,7 +7745,8 @@
           "nummer": "14",
           "name": "Behörden"
         }
-      }
+      },
+      "abkRoh": "GO KR"
     },
     {
       "key": "AR-814.01.3",
@@ -7730,7 +7776,8 @@
           "nummer": "81",
           "name": "Gesundheit"
         }
-      }
+      },
+      "abkRoh": "GOV"
     },
     {
       "key": "AR-955.35",
@@ -7760,7 +7807,8 @@
           "nummer": "95",
           "name": "Industrie, Gewerbe und Handel"
         }
-      }
+      },
+      "abkRoh": "GSK"
     },
     {
       "key": "AR-621.21",
@@ -7790,7 +7838,8 @@
           "nummer": "62",
           "name": "Steuern und Abgaben"
         }
-      }
+      },
+      "abkRoh": "GSV"
     },
     {
       "key": "AR-811.116",
@@ -7820,7 +7869,8 @@
           "nummer": "81",
           "name": "Gesundheit"
         }
-      }
+      },
+      "abkRoh": "Hebammen-Verordnung"
     },
     {
       "key": "AR-811.14",
@@ -7850,7 +7900,8 @@
           "nummer": "81",
           "name": "Gesundheit"
         }
-      }
+      },
+      "abkRoh": "Heimverordnung"
     },
     {
       "key": "AR-525.1",
@@ -7880,7 +7931,8 @@
           "nummer": "52",
           "name": "Polizei"
         }
-      }
+      },
+      "abkRoh": "HuG"
     },
     {
       "key": "AR-525.11",
@@ -7910,7 +7962,8 @@
           "nummer": "52",
           "name": "Polizei"
         }
-      }
+      },
+      "abkRoh": "HuV"
     },
     {
       "key": "AR-955.32",
@@ -7940,7 +7993,8 @@
           "nummer": "95",
           "name": "Industrie, Gewerbe und Handel"
         }
-      }
+      },
+      "abkRoh": "IKV 2020"
     },
     {
       "key": "AR-615.2",
@@ -7970,7 +8024,8 @@
           "nummer": "61",
           "name": "Allgemeine Bestimmungen"
         }
-      }
+      },
+      "abkRoh": "IKZAV"
     },
     {
       "key": "AR-133.1",
@@ -8000,7 +8055,8 @@
           "nummer": "13",
           "name": "Politische Rechte"
         }
-      }
+      },
+      "abkRoh": "Informationsgesetz"
     },
     {
       "key": "AR-925.51",
@@ -8060,7 +8116,8 @@
           "nummer": "41",
           "name": "Erziehung"
         }
-      }
+      },
+      "abkRoh": "IUV"
     },
     {
       "key": "AR-852.5",
@@ -8090,7 +8147,8 @@
           "nummer": "85",
           "name": "Fürsorge"
         }
-      }
+      },
+      "abkRoh": "IVSE"
     },
     {
       "key": "AR-526.2",
@@ -8120,7 +8178,8 @@
           "nummer": "52",
           "name": "Polizei"
         }
-      }
+      },
+      "abkRoh": "Jagdgesetz"
     },
     {
       "key": "AR-526.21",
@@ -8150,7 +8209,8 @@
           "nummer": "52",
           "name": "Polizei"
         }
-      }
+      },
+      "abkRoh": "Jagdverordnung"
     },
     {
       "key": "AR-145.31",
@@ -8210,7 +8270,8 @@
           "nummer": "34",
           "name": "Strafvollzug, Schutzaufsicht und Entlassenenfürsorge"
         }
-      }
+      },
+      "abkRoh": "JVG"
     },
     {
       "key": "AR-861.4",
@@ -8270,7 +8331,8 @@
           "nummer": "41",
           "name": "Erziehung"
         }
-      }
+      },
+      "abkRoh": "kant. BBV"
     },
     {
       "key": "AR-931.11",
@@ -8300,7 +8362,8 @@
           "nummer": "93",
           "name": "Forstwesen"
         }
-      }
+      },
+      "abkRoh": "kantonale Waldverordnung"
     },
     {
       "key": "AR-931.1",
@@ -8330,7 +8393,8 @@
           "nummer": "93",
           "name": "Forstwesen"
         }
-      }
+      },
+      "abkRoh": "Kantonales Waldgesetz"
     },
     {
       "key": "AR-212.331",
@@ -8360,7 +8424,8 @@
           "nummer": "21",
           "name": "Ergänzungs- und Ausführungserlasse zum ZGB"
         }
-      }
+      },
+      "abkRoh": "KAVI"
     },
     {
       "key": "AR-750.1",
@@ -8390,7 +8455,8 @@
           "nummer": "75",
           "name": "Energie"
         }
-      }
+      },
+      "abkRoh": "kEnG"
     },
     {
       "key": "AR-213.310",
@@ -8420,7 +8486,8 @@
           "nummer": "21",
           "name": "Ergänzungs- und Ausführungserlasse zum ZGB"
         }
-      }
+      },
+      "abkRoh": "kGBV"
     },
     {
       "key": "AR-723.1",
@@ -8450,7 +8517,8 @@
           "nummer": "72",
           "name": "Raumplanung und Baupolizei"
         }
-      }
+      },
+      "abkRoh": "kGeoIG"
     },
     {
       "key": "AR-723.101",
@@ -8480,7 +8548,8 @@
           "nummer": "72",
           "name": "Raumplanung und Baupolizei"
         }
-      }
+      },
+      "abkRoh": "kGeoIV"
     },
     {
       "key": "AR-955.31",
@@ -8510,7 +8579,8 @@
           "nummer": "95",
           "name": "Industrie, Gewerbe und Handel"
         }
-      }
+      },
+      "abkRoh": "KGS"
     },
     {
       "key": "AR-233.21",
@@ -8540,7 +8610,8 @@
           "nummer": "23",
           "name": "Zivilrechtspflege"
         }
-      }
+      },
+      "abkRoh": "KGV"
     },
     {
       "key": "AR-415.31",
@@ -8570,7 +8641,8 @@
           "nummer": "41",
           "name": "Erziehung"
         }
-      }
+      },
+      "abkRoh": "KibeG"
     },
     {
       "key": "AR-415.311",
@@ -8600,7 +8672,8 @@
           "nummer": "41",
           "name": "Erziehung"
         }
-      }
+      },
+      "abkRoh": "Kinderbetreuungsverordnung; KibeV"
     },
     {
       "key": "AR-323.1",
@@ -8630,7 +8703,8 @@
           "nummer": "32",
           "name": "Strafverfahren"
         }
-      }
+      },
+      "abkRoh": "kOBV"
     },
     {
       "key": "AR-723.104",
@@ -8660,7 +8734,8 @@
           "nummer": "72",
           "name": "Raumplanung und Baupolizei"
         }
-      }
+      },
+      "abkRoh": "kÖREBKV"
     },
     {
       "key": "AR-122.24",
@@ -8690,7 +8765,8 @@
           "nummer": "12",
           "name": "Bürgerrecht, Niederlassung und Aufenthalt"
         }
-      }
+      },
+      "abkRoh": "KR AsylVo"
     },
     {
       "key": "AR-141.1",
@@ -8720,7 +8796,8 @@
           "nummer": "14",
           "name": "Behörden"
         }
-      }
+      },
+      "abkRoh": "KRG"
     },
     {
       "key": "AR-765.1",
@@ -8750,7 +8827,8 @@
           "nummer": "76",
           "name": "Verkehr"
         }
-      }
+      },
+      "abkRoh": "kRLV"
     },
     {
       "key": "AR-420.1",
@@ -8840,7 +8918,8 @@
           "nummer": "72",
           "name": "Raumplanung und Baupolizei"
         }
-      }
+      },
+      "abkRoh": "kVAV"
     },
     {
       "key": "AR-920.16",
@@ -8870,7 +8949,8 @@
           "nummer": "92",
           "name": "Landwirtschaft"
         }
-      }
+      },
+      "abkRoh": "kWeinV"
     },
     {
       "key": "AR-815.11",
@@ -8900,7 +8980,8 @@
           "nummer": "81",
           "name": "Gesundheit"
         }
-      }
+      },
+      "abkRoh": "LKV"
     },
     {
       "key": "AR-955.321",
@@ -8930,7 +9011,8 @@
           "nummer": "95",
           "name": "Industrie, Gewerbe und Handel"
         }
-      }
+      },
+      "abkRoh": "Lotteriefondsverordnung; LoFV"
     },
     {
       "key": "AR-920.17",
@@ -8960,7 +9042,8 @@
           "nummer": "92",
           "name": "Landwirtschaft"
         }
-      }
+      },
+      "abkRoh": "LQBV"
     },
     {
       "key": "AR-413.1",
@@ -8990,7 +9073,8 @@
           "nummer": "41",
           "name": "Erziehung"
         }
-      }
+      },
+      "abkRoh": "MHG"
     },
     {
       "key": "AR-413.11",
@@ -9020,7 +9104,8 @@
           "nummer": "41",
           "name": "Erziehung"
         }
-      }
+      },
+      "abkRoh": "MHV"
     },
     {
       "key": "AR-142.12",
@@ -9050,7 +9135,8 @@
           "nummer": "14",
           "name": "Behörden"
         }
-      }
+      },
+      "abkRoh": "Organisationsgesetz; OrG"
     },
     {
       "key": "AR-142.121",
@@ -9078,7 +9164,8 @@
           "nummer": "14",
           "name": "Behörden"
         }
-      }
+      },
+      "abkRoh": "OrV"
     },
     {
       "key": "AR-742.1",
@@ -9108,7 +9195,8 @@
           "nummer": "74",
           "name": "Wasserbau und Wasserwirtschaft"
         }
-      }
+      },
+      "abkRoh": "Perimeterverordnung"
     },
     {
       "key": "AR-833.15",
@@ -9138,7 +9226,8 @@
           "nummer": "83",
           "name": "Sozialversicherung"
         }
-      }
+      },
+      "abkRoh": "PFG"
     },
     {
       "key": "AR-920.11",
@@ -9198,7 +9287,8 @@
           "nummer": "83",
           "name": "Sozialversicherung"
         }
-      }
+      },
+      "abkRoh": "PFV"
     },
     {
       "key": "AR-142.21",
@@ -9228,7 +9318,8 @@
           "nummer": "14",
           "name": "Behörden"
         }
-      }
+      },
+      "abkRoh": "PG"
     },
     {
       "key": "AR-142.212",
@@ -9258,7 +9349,8 @@
           "nummer": "14",
           "name": "Behörden"
         }
-      }
+      },
+      "abkRoh": "PGV"
     },
     {
       "key": "AR-142.22",
@@ -9288,7 +9380,8 @@
           "nummer": "14",
           "name": "Behörden"
         }
-      }
+      },
+      "abkRoh": "PKG"
     },
     {
       "key": "AR-521.1",
@@ -9348,7 +9441,8 @@
           "nummer": "52",
           "name": "Polizei"
         }
-      }
+      },
+      "abkRoh": "PolV"
     },
     {
       "key": "AR-811.11.1",
@@ -9408,7 +9502,8 @@
           "nummer": "92",
           "name": "Landwirtschaft"
         }
-      }
+      },
+      "abkRoh": "RebV"
     },
     {
       "key": "AR-422.111.3",
@@ -9558,7 +9653,8 @@
           "nummer": "14",
           "name": "Behörden"
         }
-      }
+      },
+      "abkRoh": "REIS"
     },
     {
       "key": "AR-721.122",
@@ -9618,7 +9714,8 @@
           "nummer": "12",
           "name": "Bürgerrecht, Niederlassung und Aufenthalt"
         }
-      }
+      },
+      "abkRoh": "RR AsylVo"
     },
     {
       "key": "AR-814.01.2",
@@ -9648,7 +9745,8 @@
           "nummer": "81",
           "name": "Gesundheit"
         }
-      }
+      },
+      "abkRoh": "Schadenwehrverordnung"
     },
     {
       "key": "AR-766.1",
@@ -9678,7 +9776,8 @@
           "nummer": "76",
           "name": "Verkehr"
         }
-      }
+      },
+      "abkRoh": "Schiffsführerausweisverordnung; SFAV"
     },
     {
       "key": "AR-412.03",
@@ -9708,7 +9807,8 @@
           "nummer": "41",
           "name": "Erziehung"
         }
-      }
+      },
+      "abkRoh": "Schulleitungsverordnung; SLV"
     },
     {
       "key": "AR-851.1",
@@ -9738,7 +9838,8 @@
           "nummer": "85",
           "name": "Fürsorge"
         }
-      }
+      },
+      "abkRoh": "SHG"
     },
     {
       "key": "AR-851.11",
@@ -9768,7 +9869,8 @@
           "nummer": "85",
           "name": "Fürsorge"
         }
-      }
+      },
+      "abkRoh": "Sozialhilfeverordnung; SHV"
     },
     {
       "key": "AR-812.11",
@@ -9798,7 +9900,8 @@
           "nummer": "81",
           "name": "Gesundheit"
         }
-      }
+      },
+      "abkRoh": "Spitalverbundgesetz; SVARG"
     },
     {
       "key": "AR-612.3",
@@ -9828,7 +9931,8 @@
           "nummer": "61",
           "name": "Allgemeine Bestimmungen"
         }
-      }
+      },
+      "abkRoh": "Sportfondsverordnung"
     },
     {
       "key": "AR-621.11",
@@ -9888,7 +9992,8 @@
           "nummer": "62",
           "name": "Steuern und Abgaben"
         }
-      }
+      },
+      "abkRoh": "Steuerverordnung"
     },
     {
       "key": "AR-415.21",
@@ -9918,7 +10023,8 @@
           "nummer": "41",
           "name": "Erziehung"
         }
-      }
+      },
+      "abkRoh": "Stipendiengesetz"
     },
     {
       "key": "AR-415.211",
@@ -9948,7 +10054,8 @@
           "nummer": "41",
           "name": "Erziehung"
         }
-      }
+      },
+      "abkRoh": "Stipendienverordnung"
     },
     {
       "key": "AR-731.11",
@@ -9978,7 +10085,8 @@
           "nummer": "73",
           "name": "Öffentliche Werke"
         }
-      }
+      },
+      "abkRoh": "StrG"
     },
     {
       "key": "AR-920.12",
@@ -10038,7 +10146,8 @@
           "nummer": "73",
           "name": "Öffentliche Werke"
         }
-      }
+      },
+      "abkRoh": "StrV"
     },
     {
       "key": "AR-212.43",
@@ -10068,7 +10177,8 @@
           "nummer": "21",
           "name": "Ergänzungs- und Ausführungserlasse zum ZGB"
         }
-      }
+      },
+      "abkRoh": "Tarif KESR"
     },
     {
       "key": "AR-955.21",
@@ -10128,7 +10238,8 @@
           "nummer": "92",
           "name": "Landwirtschaft"
         }
-      }
+      },
+      "abkRoh": "TGV"
     },
     {
       "key": "AR-422.2",
@@ -10188,7 +10299,8 @@
           "nummer": "95",
           "name": "Industrie, Gewerbe und Handel"
         }
-      }
+      },
+      "abkRoh": "TV"
     },
     {
       "key": "AR-920.14",
@@ -10218,7 +10330,8 @@
           "nummer": "92",
           "name": "Landwirtschaft"
         }
-      }
+      },
+      "abkRoh": "TZV"
     },
     {
       "key": "AR-814.0",
@@ -10248,7 +10361,8 @@
           "nummer": "81",
           "name": "Gesundheit"
         }
-      }
+      },
+      "abkRoh": "Umwelt- und Gewässerschutzgesetz; UGsG"
     },
     {
       "key": "AR-814.01",
@@ -10278,7 +10392,8 @@
           "nummer": "81",
           "name": "Gesundheit"
         }
-      }
+      },
+      "abkRoh": "Umwelt- und Gewässerschutzverordnung; UGsV"
     },
     {
       "key": "AR-760.11",
@@ -10308,7 +10423,8 @@
           "nummer": "76",
           "name": "Verkehr"
         }
-      }
+      },
+      "abkRoh": "V GöV"
     },
     {
       "key": "AR-822.411",
@@ -10338,7 +10454,8 @@
           "nummer": "82",
           "name": "Arbeit"
         }
-      }
+      },
+      "abkRoh": "V zum FamZG"
     },
     {
       "key": "AR-833.141",
@@ -10368,7 +10485,8 @@
           "nummer": "83",
           "name": "Sozialversicherung"
         }
-      }
+      },
+      "abkRoh": "V zum KVG"
     },
     {
       "key": "AR-925.321",
@@ -10398,7 +10516,8 @@
           "nummer": "92",
           "name": "Landwirtschaft"
         }
-      }
+      },
+      "abkRoh": "VEAV"
     },
     {
       "key": "AR-413.16",
@@ -12618,7 +12737,8 @@
           "nummer": "95",
           "name": "Industrie, Gewerbe und Handel"
         }
-      }
+      },
+      "abkRoh": "VKGS"
     },
     {
       "key": "AR-920.18",
@@ -12648,7 +12768,8 @@
           "nummer": "92",
           "name": "Landwirtschaft"
         }
-      }
+      },
+      "abkRoh": "VNBV"
     },
     {
       "key": "AR-412.00",
@@ -12678,7 +12799,8 @@
           "nummer": "41",
           "name": "Erziehung"
         }
-      }
+      },
+      "abkRoh": "Volksschulgesetz; VSG"
     },
     {
       "key": "AR-412.01",
@@ -12708,7 +12830,8 @@
           "nummer": "41",
           "name": "Erziehung"
         }
-      }
+      },
+      "abkRoh": "Volksschulverordnung; VSV"
     },
     {
       "key": "AR-813.22",
@@ -12858,7 +12981,8 @@
           "nummer": "52",
           "name": "Polizei"
         }
-      }
+      },
+      "abkRoh": "VPTI"
     },
     {
       "key": "AR-143.1",
@@ -12888,7 +13012,8 @@
           "nummer": "14",
           "name": "Behörden"
         }
-      }
+      },
+      "abkRoh": "VRPG"
     },
     {
       "key": "AR-212.01",
@@ -12918,7 +13043,8 @@
           "nummer": "21",
           "name": "Ergänzungs- und Ausführungserlasse zum ZGB"
         }
-      }
+      },
+      "abkRoh": "VStA"
     },
     {
       "key": "AR-741.1",
@@ -12948,7 +13074,8 @@
           "nummer": "74",
           "name": "Wasserbau und Wasserwirtschaft"
         }
-      }
+      },
+      "abkRoh": "Wasserbaugesetz; WBauG"
     },
     {
       "key": "AR-751.223",
@@ -13038,7 +13165,8 @@
           "nummer": "74",
           "name": "Wasserbau und Wasserwirtschaft"
         }
-      }
+      },
+      "abkRoh": "WBauV"
     },
     {
       "key": "AR-142.131",
@@ -13218,7 +13346,8 @@
           "nummer": "15",
           "name": "Behörden"
         }
-      }
+      },
+      "abkRoh": "Gebührenverordnung; GebV"
     },
     {
       "key": "BE-169.81",
@@ -13248,7 +13377,8 @@
           "nummer": "16",
           "name": "Gerichtsorganisation, Anwälte und Notare"
         }
-      }
+      },
+      "abkRoh": "GebVN"
     },
     {
       "key": "BE-215.326.2",
@@ -13278,7 +13408,8 @@
           "nummer": "21",
           "name": "Ergänzungs- und Ausführungserlasse zum ZGB"
         }
-      }
+      },
+      "abkRoh": "HStG"
     },
     {
       "key": "BE-168.811",
@@ -13308,7 +13439,8 @@
           "nummer": "16",
           "name": "Gerichtsorganisation, Anwälte und Notare"
         }
-      }
+      },
+      "abkRoh": "Parteikostenverordnung, PKV"
     },
     {
       "key": "BE-161.12",
@@ -13338,7 +13470,8 @@
           "nummer": "16",
           "name": "Gerichtsorganisation, Anwälte und Notare"
         }
-      }
+      },
+      "abkRoh": "Verfahrenskostendekret, VKD"
     },
     {
       "key": "BL-170.31",
@@ -13368,7 +13501,8 @@
           "nummer": "17",
           "name": "Gerichte, Verwaltungsverfahren und Anwaltsrecht"
         }
-      }
+      },
+      "abkRoh": "Gebührentarif, GebT"
     },
     {
       "key": "BL-211.71",
@@ -13398,7 +13532,8 @@
           "nummer": "21",
           "name": "Zivilrecht"
         }
-      }
+      },
+      "abkRoh": "GebV"
     },
     {
       "key": "BL-217.13",
@@ -13428,7 +13563,8 @@
           "nummer": "21",
           "name": "Zivilrecht"
         }
-      }
+      },
+      "abkRoh": "NotGebV"
     },
     {
       "key": "BL-331",
@@ -13458,7 +13594,8 @@
           "nummer": "33",
           "name": "Steuern"
         }
-      }
+      },
+      "abkRoh": "Steuergesetz"
     },
     {
       "key": "BL-178.112",
@@ -13518,7 +13655,8 @@
           "nummer": "15",
           "name": "Organisation des Kantons"
         }
-      }
+      },
+      "abkRoh": "AB"
     },
     {
       "key": "BS-772.380",
@@ -13548,7 +13686,8 @@
           "nummer": "77",
           "name": "Wasser · Energie"
         }
-      }
+      },
+      "abkRoh": "AB IWB Datenbearbeitung"
     },
     {
       "key": "BS-BeE 786.100",
@@ -13578,7 +13717,8 @@
           "nummer": "BeE 7",
           "name": "Raum- und Bauordnung · Energie · Umweltschutz"
         }
-      }
+      },
+      "abkRoh": "Abfallordnung"
     },
     {
       "key": "BS-RiE 786.100",
@@ -13608,7 +13748,8 @@
           "nummer": "RiE 7",
           "name": "Raum- und Bauordnung · Allmend · Umwelt"
         }
-      }
+      },
+      "abkRoh": "Abfallordnung"
     },
     {
       "key": "BS-786.300",
@@ -13638,7 +13779,8 @@
           "nummer": "78",
           "name": "Umweltschutz"
         }
-      }
+      },
+      "abkRoh": "Abfallvereinbarung BS - BL"
     },
     {
       "key": "BS-786.100",
@@ -13728,7 +13870,8 @@
           "nummer": "73",
           "name": "Hochbauten"
         }
-      }
+      },
+      "abkRoh": "ABPV"
     },
     {
       "key": "BS-413.630",
@@ -13758,7 +13901,8 @@
           "nummer": "41",
           "name": "Schulen"
         }
-      }
+      },
+      "abkRoh": "Abschlussverordnung FMS"
     },
     {
       "key": "BS-410.130",
@@ -13818,7 +13962,8 @@
           "nummer": "21",
           "name": "Bundeszivilrecht: Ergänzende kantonale Erlasse"
         }
-      }
+      },
+      "abkRoh": "Alimentenbevorschussungsverordnung, ABVV"
     },
     {
       "key": "BS-164.170",
@@ -13848,7 +13993,8 @@
           "nummer": "16",
           "name": "Staatspersonal"
         }
-      }
+      },
+      "abkRoh": "ad personam-Verordnung"
     },
     {
       "key": "BS-291.100",
@@ -13908,7 +14054,8 @@
           "nummer": "91",
           "name": "Wirtschaft"
         }
-      }
+      },
+      "abkRoh": "AfWW beider Basel"
     },
     {
       "key": "BS-835.500",
@@ -13938,7 +14085,8 @@
           "nummer": "83",
           "name": "Sozialversicherung"
         }
-      }
+      },
+      "abkRoh": "ALHG"
     },
     {
       "key": "BS-835.510",
@@ -13968,7 +14116,8 @@
           "nummer": "83",
           "name": "Sozialversicherung"
         }
-      }
+      },
+      "abkRoh": "ALHV"
     },
     {
       "key": "BS-322.100",
@@ -13998,7 +14147,8 @@
           "nummer": "32",
           "name": "Krankheiten · Kranken- und Betagtenpflege"
         }
-      }
+      },
+      "abkRoh": "Alkohol- und Drogengesetz"
     },
     {
       "key": "BS-RiE 724.100",
@@ -14028,7 +14178,8 @@
           "nummer": "RiE 7",
           "name": "Raum- und Bauordnung · Allmend · Umwelt"
         }
-      }
+      },
+      "abkRoh": "Allmendordnung"
     },
     {
       "key": "BS-RiE 724.150",
@@ -14058,7 +14209,8 @@
           "nummer": "RiE 7",
           "name": "Raum- und Bauordnung · Allmend · Umwelt"
         }
-      }
+      },
+      "abkRoh": "Allmendreglement"
     },
     {
       "key": "BS-724.140",
@@ -14088,7 +14240,8 @@
           "nummer": "72",
           "name": "Strassen: Bau, Benützung, Unterhalt"
         }
-      }
+      },
+      "abkRoh": "Allmendverordnung"
     },
     {
       "key": "BS-494.400",
@@ -14118,7 +14271,8 @@
           "nummer": "49",
           "name": "Ausbildungsbeiträge · Wissenschafts- und Kulturpflege"
         }
-      }
+      },
+      "abkRoh": "Amerbach-Preis"
     },
     {
       "key": "BS-164.200",
@@ -14148,7 +14302,8 @@
           "nummer": "16",
           "name": "Staatspersonal"
         }
-      }
+      },
+      "abkRoh": "Anerkennungsprämien-Verordnung"
     },
     {
       "key": "BS-419.901",
@@ -14178,7 +14333,8 @@
           "nummer": "41",
           "name": "Schulen"
         }
-      }
+      },
+      "abkRoh": "Anerkennungsverordnung Inland (AVO Inland)"
     },
     {
       "key": "BS-724.115",
@@ -14208,7 +14364,8 @@
           "nummer": "72",
           "name": "Strassen: Bau, Benützung, Unterhalt"
         }
-      }
+      },
+      "abkRoh": "ANöRV"
     },
     {
       "key": "BS-BaB 162.100",
@@ -14238,7 +14395,8 @@
           "nummer": "BaB 1",
           "name": "Grundlagen · Organisation"
         }
-      }
+      },
+      "abkRoh": "Anstellungsordnung, AO"
     },
     {
       "key": "BS-819.400",
@@ -14268,7 +14426,8 @@
           "nummer": "81",
           "name": "Arbeit"
         }
-      }
+      },
+      "abkRoh": "Arbeitsbeschaffungsreservengesetz"
     },
     {
       "key": "BS-812.100",
@@ -14298,7 +14457,8 @@
           "nummer": "81",
           "name": "Arbeit"
         }
-      }
+      },
+      "abkRoh": "Arbeitsgesetz"
     },
     {
       "key": "BS-153.600",
@@ -14328,7 +14488,8 @@
           "nummer": "15",
           "name": "Organisation des Kantons"
         }
-      }
+      },
+      "abkRoh": "Archivgesetz"
     },
     {
       "key": "BS-154.118",
@@ -14358,7 +14519,8 @@
           "nummer": "15",
           "name": "Organisation des Kantons"
         }
-      }
+      },
+      "abkRoh": "Archivierungsreglement"
     },
     {
       "key": "BS-786.150",
@@ -14388,7 +14550,8 @@
           "nummer": "78",
           "name": "Umweltschutz"
         }
-      }
+      },
+      "abkRoh": "ASV"
     },
     {
       "key": "BS-890.800",
@@ -14418,7 +14581,8 @@
           "nummer": "89",
           "name": "Sozialhilfe · Sozialbeiträge"
         }
-      }
+      },
+      "abkRoh": "Asylvertrag"
     },
     {
       "key": "BS-BeE 890.800",
@@ -14448,7 +14612,8 @@
           "nummer": "BeE 8",
           "name": "Arbeit · Soziale Sicherheit"
         }
-      }
+      },
+      "abkRoh": "Asylvertrag"
     },
     {
       "key": "BS-RiE 890.800",
@@ -14478,7 +14643,8 @@
           "nummer": "RiE 8",
           "name": "Soziale Sicherheit"
         }
-      }
+      },
+      "abkRoh": "Asylvertrag"
     },
     {
       "key": "BS-772.600",
@@ -14808,7 +14974,8 @@
           "nummer": "49",
           "name": "Ausbildungsbeiträge · Wissenschafts- und Kulturpflege"
         }
-      }
+      },
+      "abkRoh": "AV"
     },
     {
       "key": "BS-162.200",
@@ -14838,7 +15005,8 @@
           "nummer": "16",
           "name": "Staatspersonal"
         }
-      }
+      },
+      "abkRoh": "Arbeitszeitverordnung, AZV"
     },
     {
       "key": "BS-730.120",
@@ -14868,7 +15036,8 @@
           "nummer": "73",
           "name": "Hochbauten"
         }
-      }
+      },
+      "abkRoh": "Baugebührenverordnung; BauGebV"
     },
     {
       "key": "BS-RiE 497.200",
@@ -14898,7 +15067,8 @@
           "nummer": "RiE 4",
           "name": "Erziehung · Museen · Kultur · Kulturpflege"
         }
-      }
+      },
+      "abkRoh": "Bausanierungsordnung"
     },
     {
       "key": "BS-258.100",
@@ -14928,7 +15098,8 @@
           "nummer": "25",
           "name": "Strafrecht und Strafrechtspflege"
         }
-      }
+      },
+      "abkRoh": "Begnadigungsgesetz"
     },
     {
       "key": "BS-153.300",
@@ -14958,7 +15129,8 @@
           "nummer": "15",
           "name": "Organisation des Kantons"
         }
-      }
+      },
+      "abkRoh": "Behördenportalgesetz"
     },
     {
       "key": "BS-695.500",
@@ -15018,7 +15190,8 @@
           "nummer": "RiE 7",
           "name": "Raum- und Bauordnung · Allmend · Umwelt"
         }
-      }
+      },
+      "abkRoh": "Beitragsreglement Landwirtschaft"
     },
     {
       "key": "BS-BeE 680.100",
@@ -15048,7 +15221,8 @@
           "nummer": "BeE 6",
           "name": "Finanzen · Gemeindegrundstücke"
         }
-      }
+      },
+      "abkRoh": "Benützungs- und Gebührenreglement Baslerhofscheune"
     },
     {
       "key": "BS-414.700",
@@ -15078,7 +15252,8 @@
           "nummer": "41",
           "name": "Schulen"
         }
-      }
+      },
+      "abkRoh": "Benutzungsordnung PDS"
     },
     {
       "key": "BS-420.210",
@@ -15108,7 +15283,8 @@
           "nummer": "42",
           "name": "Berufsbildung · Berufsschulen · Fachhochschule"
         }
-      }
+      },
+      "abkRoh": "Berufsbildungsverordnung"
     },
     {
       "key": "BS-424.100",
@@ -15138,7 +15314,8 @@
           "nummer": "42",
           "name": "Berufsbildung · Berufsschulen · Fachhochschule"
         }
-      }
+      },
+      "abkRoh": "Berufsmaturitätsverordnung"
     },
     {
       "key": "BS-835.600",
@@ -15258,7 +15435,8 @@
           "nummer": "BeE 3",
           "name": "Gesundheit"
         }
-      }
+      },
+      "abkRoh": "Bestattungsordnung"
     },
     {
       "key": "BS-RiE 390.890",
@@ -15288,7 +15466,8 @@
           "nummer": "RiE 3",
           "name": "Gesundheit · Bestattungswesen"
         }
-      }
+      },
+      "abkRoh": "Bestattungsreglement"
     },
     {
       "key": "BS-390.100",
@@ -15318,7 +15497,8 @@
           "nummer": "39",
           "name": "Bestattungen"
         }
-      }
+      },
+      "abkRoh": "BestG"
     },
     {
       "key": "BS-390.115",
@@ -15348,7 +15528,8 @@
           "nummer": "39",
           "name": "Bestattungen"
         }
-      }
+      },
+      "abkRoh": "Bestattungsreglement, BestR"
     },
     {
       "key": "BS-390.110",
@@ -15378,7 +15559,8 @@
           "nummer": "39",
           "name": "Bestattungen"
         }
-      }
+      },
+      "abkRoh": "BestV"
     },
     {
       "key": "BS-340.500",
@@ -15408,7 +15590,8 @@
           "nummer": "34",
           "name": "Heilmittelkontrolle · Gifte"
         }
-      }
+      },
+      "abkRoh": "Betäubungsmittelverordnung"
     },
     {
       "key": "BS-685.340",
@@ -15468,7 +15651,8 @@
           "nummer": "25",
           "name": "Strafrecht und Strafrechtspflege"
         }
-      }
+      },
+      "abkRoh": "Bettelverordnung"
     },
     {
       "key": "BS-310.120",
@@ -15498,7 +15682,8 @@
           "nummer": "31",
           "name": "Medizinalpersonen · Komplementärmedizin"
         }
-      }
+      },
+      "abkRoh": "Bewilligungsverordnung"
     },
     {
       "key": "BS-419.750",
@@ -15528,7 +15713,8 @@
           "nummer": "41",
           "name": "Schulen"
         }
-      }
+      },
+      "abkRoh": "Berufsfachschulvereinbarung, BFSV"
     },
     {
       "key": "BS-869.700",
@@ -15558,7 +15744,8 @@
           "nummer": "86",
           "name": "Soziale Wohnungsvorsorge · Heime · Behindertenhilfe"
         }
-      }
+      },
+      "abkRoh": "BHG"
     },
     {
       "key": "BS-869.710",
@@ -15588,7 +15775,8 @@
           "nummer": "86",
           "name": "Soziale Wohnungsvorsorge · Heime · Behindertenhilfe"
         }
-      }
+      },
+      "abkRoh": "BHV"
     },
     {
       "key": "BS-190.500",
@@ -15618,7 +15806,8 @@
           "nummer": "19",
           "name": "Staat und Kirche"
         }
-      }
+      },
+      "abkRoh": "Bistumskonkordat"
     },
     {
       "key": "BS-164.180",
@@ -15648,7 +15837,8 @@
           "nummer": "16",
           "name": "Staatspersonal"
         }
-      }
+      },
+      "abkRoh": "BKV"
     },
     {
       "key": "BS-787.100",
@@ -15678,7 +15868,8 @@
           "nummer": "78",
           "name": "Umweltschutz"
         }
-      }
+      },
+      "abkRoh": "BoSV"
     },
     {
       "key": "BS-730.100",
@@ -15708,7 +15899,8 @@
           "nummer": "73",
           "name": "Hochbauten"
         }
-      }
+      },
+      "abkRoh": "BPG"
     },
     {
       "key": "BS-730.110",
@@ -15738,7 +15930,8 @@
           "nummer": "73",
           "name": "Hochbauten"
         }
-      }
+      },
+      "abkRoh": "BPV"
     },
     {
       "key": "BS-140.500",
@@ -15768,7 +15961,8 @@
           "nummer": "14",
           "name": "Gleichstellung"
         }
-      }
+      },
+      "abkRoh": "Behindertenrechtegesetz, BRG"
     },
     {
       "key": "BS-790.100",
@@ -15798,7 +15992,8 @@
           "nummer": "79",
           "name": "Baurekurskommission"
         }
-      }
+      },
+      "abkRoh": "BRKG"
     },
     {
       "key": "BS-140.510",
@@ -15828,7 +16023,8 @@
           "nummer": "14",
           "name": "Gleichstellung"
         }
-      }
+      },
+      "abkRoh": "Behindertenrechteverordnung, BRV"
     },
     {
       "key": "BS-789.700",
@@ -15858,7 +16054,8 @@
           "nummer": "78",
           "name": "Umweltschutz"
         }
-      }
+      },
+      "abkRoh": "BSchG"
     },
     {
       "key": "BS-789.710",
@@ -15888,7 +16085,8 @@
           "nummer": "78",
           "name": "Umweltschutz"
         }
-      }
+      },
+      "abkRoh": "BSV"
     },
     {
       "key": "BS-954.400",
@@ -15948,7 +16146,8 @@
           "nummer": "12",
           "name": "Bürgerrecht · Aufenthalt und Niederlassung · Innere Sicherheit"
         }
-      }
+      },
+      "abkRoh": "BüRG"
     },
     {
       "key": "BS-121.110",
@@ -15976,7 +16175,8 @@
           "nummer": "12",
           "name": "Bürgerrecht · Aufenthalt und Niederlassung · Innere Sicherheit"
         }
-      }
+      },
+      "abkRoh": "BüRV"
     },
     {
       "key": "BS-953.100",
@@ -16006,7 +16206,8 @@
           "nummer": "95",
           "name": "Verkehr"
         }
-      }
+      },
+      "abkRoh": "BVB-OG"
     },
     {
       "key": "BS-833.100",
@@ -16036,7 +16237,8 @@
           "nummer": "83",
           "name": "Sozialversicherung"
         }
-      }
+      },
+      "abkRoh": "BVG- und Stiftungsaufsichtsvertrag"
     },
     {
       "key": "BS-153.700",
@@ -16066,7 +16268,8 @@
           "nummer": "15",
           "name": "Organisation des Kantons"
         }
-      }
+      },
+      "abkRoh": "BWPV"
     },
     {
       "key": "BS-427.100",
@@ -16096,7 +16299,8 @@
           "nummer": "42",
           "name": "Berufsbildung · Berufsschulen · Fachhochschule"
         }
-      }
+      },
+      "abkRoh": "BZG"
     },
     {
       "key": "BS-340.800",
@@ -16126,7 +16330,8 @@
           "nummer": "34",
           "name": "Heilmittelkontrolle · Gifte"
         }
-      }
+      },
+      "abkRoh": "Chemikalienverordnung"
     },
     {
       "key": "BS-771.600",
@@ -16216,7 +16421,8 @@
           "nummer": "81",
           "name": "Arbeit"
         }
-      }
+      },
+      "abkRoh": "COVID-19 Bürgschaftsverordnung"
     },
     {
       "key": "BS-819.872",
@@ -16246,7 +16452,8 @@
           "nummer": "81",
           "name": "Arbeit"
         }
-      }
+      },
+      "abkRoh": "COVID-19 Start-up-Bürgschaftsverordnung 2"
     },
     {
       "key": "BS-819.878",
@@ -16276,7 +16483,8 @@
           "nummer": "81",
           "name": "Arbeit"
         }
-      }
+      },
+      "abkRoh": "Covid-19-GRB-Publikumsanlässe"
     },
     {
       "key": "BS-819.879",
@@ -16306,7 +16514,8 @@
           "nummer": "81",
           "name": "Arbeit"
         }
-      }
+      },
+      "abkRoh": "Covid-19-Verordnung Härtefallprogramm"
     },
     {
       "key": "BS-819.179",
@@ -16336,7 +16545,8 @@
           "nummer": "81",
           "name": "Arbeit"
         }
-      }
+      },
+      "abkRoh": "Covid-19-Verordnung Härtefallprogramm 2022"
     },
     {
       "key": "BS-819.879.001",
@@ -16366,7 +16576,8 @@
           "nummer": "81",
           "name": "Arbeit"
         }
-      }
+      },
+      "abkRoh": "Covid-19-Verordnung Unterstützungsprogramm Gastronomie und Hotellerie"
     },
     {
       "key": "BS-164.250",
@@ -16396,7 +16607,8 @@
           "nummer": "16",
           "name": "Staatspersonal"
         }
-      }
+      },
+      "abkRoh": "Dienstaltersgeschenkverordnung, DAGV"
     },
     {
       "key": "BS-660.100",
@@ -16426,7 +16638,8 @@
           "nummer": "66",
           "name": "Bundessteuern"
         }
-      }
+      },
+      "abkRoh": "DBStV"
     },
     {
       "key": "BS-153.310",
@@ -16456,7 +16669,8 @@
           "nummer": "15",
           "name": "Organisation des Kantons"
         }
-      }
+      },
+      "abkRoh": "Datenmarktverordnung, DMV"
     },
     {
       "key": "BS-497.110",
@@ -16486,7 +16700,8 @@
           "nummer": "49",
           "name": "Ausbildungsbeiträge · Wissenschafts- und Kulturpflege"
         }
-      }
+      },
+      "abkRoh": "Denkmalpflegeverordnung, DPV"
     },
     {
       "key": "BS-685.320",
@@ -16516,7 +16731,8 @@
           "nummer": "68",
           "name": "Staatliche Liegenschaften · Materiallagerplätze · Industriegeleise"
         }
-      }
+      },
+      "abkRoh": "DreispitzV"
     },
     {
       "key": "BS-153.275",
@@ -16546,7 +16762,8 @@
           "nummer": "15",
           "name": "Organisation des Kantons"
         }
-      }
+      },
+      "abkRoh": "Drohnenverordnung"
     },
     {
       "key": "BS-212.850",
@@ -16576,7 +16793,8 @@
           "nummer": "21",
           "name": "Bundeszivilrecht: Ergänzende kantonale Erlasse"
         }
-      }
+      },
+      "abkRoh": "EG BG-KKE"
     },
     {
       "key": "BS-561.100",
@@ -16606,7 +16824,8 @@
           "nummer": "56",
           "name": "Gewerbepolizei · Waffen und Munition"
         }
-      }
+      },
+      "abkRoh": "EG BGS"
     },
     {
       "key": "BS-820.100",
@@ -16636,7 +16855,8 @@
           "nummer": "82",
           "name": "Familienzulagen für Arbeitnehmende"
         }
-      }
+      },
+      "abkRoh": "Familienzulagengesetz, EG FamZG"
     },
     {
       "key": "BS-914.200",
@@ -16666,7 +16886,8 @@
           "nummer": "91",
           "name": "Wirtschaft"
         }
-      }
+      },
+      "abkRoh": "EG IVöB"
     },
     {
       "key": "BS-257.500",
@@ -16696,7 +16917,8 @@
           "nummer": "25",
           "name": "Strafrecht und Strafrechtspflege"
         }
-      }
+      },
+      "abkRoh": "EG JStPO"
     },
     {
       "key": "BS-257.900",
@@ -16726,7 +16948,8 @@
           "nummer": "25",
           "name": "Strafrecht und Strafrechtspflege"
         }
-      }
+      },
+      "abkRoh": "EG OHG"
     },
     {
       "key": "BS-257.100",
@@ -16756,7 +16979,8 @@
           "nummer": "25",
           "name": "Strafrecht und Strafrechtspflege"
         }
-      }
+      },
+      "abkRoh": "EG StPO"
     },
     {
       "key": "BS-832.700",
@@ -16786,7 +17010,8 @@
           "nummer": "83",
           "name": "Sozialversicherung"
         }
-      }
+      },
+      "abkRoh": "EG/ELG"
     },
     {
       "key": "BS-832.200",
@@ -16906,7 +17131,8 @@
           "nummer": "30",
           "name": "Gesundheit"
         }
-      }
+      },
+      "abkRoh": "Vereinbarung Ethikkommission Nordwest- und Zentralschweiz, EKNZ"
     },
     {
       "key": "BS-772.100",
@@ -16936,7 +17162,8 @@
           "nummer": "77",
           "name": "Wasser · Energie"
         }
-      }
+      },
+      "abkRoh": "EnG"
     },
     {
       "key": "BS-740.100",
@@ -16966,7 +17193,8 @@
           "nummer": "74",
           "name": "Enteignung"
         }
-      }
+      },
+      "abkRoh": "Enteignungsgesetz"
     },
     {
       "key": "BS-BeE 153.860",
@@ -16996,7 +17224,8 @@
           "nummer": "BeE 1",
           "name": "Grundlagen · Organisation"
         }
-      }
+      },
+      "abkRoh": "Entschädigungsordnung Bettingen"
     },
     {
       "key": "BS-154.300",
@@ -17056,7 +17285,8 @@
           "nummer": "77",
           "name": "Wasser · Energie"
         }
-      }
+      },
+      "abkRoh": "Energieverordnung, EnV"
     },
     {
       "key": "BS-BeE 411.630",
@@ -17086,7 +17316,8 @@
           "nummer": "BeE 4",
           "name": "Erziehung · Wissenschafts- und Kulturpflege"
         }
-      }
+      },
+      "abkRoh": "Ermässigungsreglement Musik Bettingen, ERMBe"
     },
     {
       "key": "BS-914.210",
@@ -17116,7 +17347,8 @@
           "nummer": "91",
           "name": "Wirtschaft"
         }
-      }
+      },
+      "abkRoh": "EV IVöB"
     },
     {
       "key": "BS-164.150",
@@ -17146,7 +17378,8 @@
           "nummer": "16",
           "name": "Staatspersonal"
         }
-      }
+      },
+      "abkRoh": "Einreihungsverordnung, EVO"
     },
     {
       "key": "BS-RiE 911.900",
@@ -17206,7 +17439,8 @@
           "nummer": "41",
           "name": "Schulen"
         }
-      }
+      },
+      "abkRoh": "FDV"
     },
     {
       "key": "BS-610.100",
@@ -17236,7 +17470,8 @@
           "nummer": "61",
           "name": "Finanzordnung"
         }
-      }
+      },
+      "abkRoh": "Finanzhaushaltgesetz, FHG"
     },
     {
       "key": "BS-428.300",
@@ -17266,7 +17501,8 @@
           "nummer": "42",
           "name": "Berufsbildung · Berufsschulen · Fachhochschule"
         }
-      }
+      },
+      "abkRoh": "FHV"
     },
     {
       "key": "BS-170.600",
@@ -17296,7 +17532,8 @@
           "nummer": "17",
           "name": "Gemeinden"
         }
-      }
+      },
+      "abkRoh": "FiLaG"
     },
     {
       "key": "BS-170.610",
@@ -17326,7 +17563,8 @@
           "nummer": "17",
           "name": "Gemeinden"
         }
-      }
+      },
+      "abkRoh": "FiLaV"
     },
     {
       "key": "BS-RiE 610.100",
@@ -17356,7 +17594,8 @@
           "nummer": "RiE 6",
           "name": "Finanzen · Gemeindegrundstücke"
         }
-      }
+      },
+      "abkRoh": "Finanzhaushaltordnung; FhO"
     },
     {
       "key": "BS-610.110",
@@ -17386,7 +17625,8 @@
           "nummer": "61",
           "name": "Finanzordnung"
         }
-      }
+      },
+      "abkRoh": "Finanzhaushaltverordnung"
     },
     {
       "key": "BS-154.125",
@@ -17416,7 +17656,8 @@
           "nummer": "15",
           "name": "Organisation des Kantons"
         }
-      }
+      },
+      "abkRoh": "Finanzreglement"
     },
     {
       "key": "BS-BeE 610.100",
@@ -17446,7 +17687,8 @@
           "nummer": "BeE 6",
           "name": "Finanzen · Gemeindegrundstücke"
         }
-      }
+      },
+      "abkRoh": "Finanzreglement"
     },
     {
       "key": "BS-RiE 912.510",
@@ -17476,7 +17718,8 @@
           "nummer": "RiE 9",
           "name": "Wirtschaft · Freizeitgärten"
         }
-      }
+      },
+      "abkRoh": "Fischereireglement"
     },
     {
       "key": "BS-912.510",
@@ -17506,7 +17749,8 @@
           "nummer": "91",
           "name": "Wirtschaft"
         }
-      }
+      },
+      "abkRoh": "Fischereiverordnung"
     },
     {
       "key": "BS-BeE 730.500",
@@ -17536,7 +17780,8 @@
           "nummer": "BeE 7",
           "name": "Raum- und Bauordnung · Energie · Umweltschutz"
         }
-      }
+      },
+      "abkRoh": "Fondsreglement Mehrwertabgabe"
     },
     {
       "key": "BS-BeE 789.310",
@@ -17566,7 +17811,8 @@
           "nummer": "BeE 7",
           "name": "Raum- und Bauordnung · Energie · Umweltschutz"
         }
-      }
+      },
+      "abkRoh": "Förderung der Biodiversität: Reglement"
     },
     {
       "key": "BS-956.200",
@@ -17626,7 +17872,8 @@
           "nummer": "56",
           "name": "Gewerbepolizei · Waffen und Munition"
         }
-      }
+      },
+      "abkRoh": "FTG"
     },
     {
       "key": "BS-214.200",
@@ -17656,7 +17903,8 @@
           "nummer": "21",
           "name": "Bundeszivilrecht: Ergänzende kantonale Erlasse"
         }
-      }
+      },
+      "abkRoh": "Fundsachenverordnung"
     },
     {
       "key": "BS-162.410",
@@ -17686,7 +17934,8 @@
           "nummer": "16",
           "name": "Staatspersonal"
         }
-      }
+      },
+      "abkRoh": "FUV"
     },
     {
       "key": "BS-610.200",
@@ -17716,7 +17965,8 @@
           "nummer": "61",
           "name": "Finanzordnung"
         }
-      }
+      },
+      "abkRoh": "FVKG"
     },
     {
       "key": "BS-590.100",
@@ -17746,7 +17996,8 @@
           "nummer": "59",
           "name": "Feuerwehr"
         }
-      }
+      },
+      "abkRoh": "Feuerwehrgesetz, FWG"
     },
     {
       "key": "BS-590.200",
@@ -17776,7 +18027,8 @@
           "nummer": "59",
           "name": "Feuerwehr"
         }
-      }
+      },
+      "abkRoh": "FWGeV"
     },
     {
       "key": "BS-590.110",
@@ -17806,7 +18058,8 @@
           "nummer": "59",
           "name": "Feuerwehr"
         }
-      }
+      },
+      "abkRoh": "Feuerwehrverordnung, FWV"
     },
     {
       "key": "BS-BeE 370.700",
@@ -17836,7 +18089,8 @@
           "nummer": "BeE 3",
           "name": "Gesundheit"
         }
-      }
+      },
+      "abkRoh": "Gartenbad-Reglement"
     },
     {
       "key": "BS-563.100",
@@ -17866,7 +18120,8 @@
           "nummer": "56",
           "name": "Gewerbepolizei · Waffen und Munition"
         }
-      }
+      },
+      "abkRoh": "Gastgewerbegesetz"
     },
     {
       "key": "BS-650.410",
@@ -17896,7 +18151,8 @@
           "nummer": "65",
           "name": "Spezielle Steuern und Abgaben"
         }
-      }
+      },
+      "abkRoh": "Gasttaxenverordnung"
     },
     {
       "key": "BS-695.100",
@@ -18016,7 +18272,8 @@
           "nummer": "RiE 1",
           "name": "Grundlagen · Organisation"
         }
-      }
+      },
+      "abkRoh": "Gebührenreglement Einwohnerdienste"
     },
     {
       "key": "BS-BeE 970.170",
@@ -18346,7 +18603,8 @@
           "nummer": "45",
           "name": "Museen · Archive · Bibliotheken · Dokumentation"
         }
-      }
+      },
+      "abkRoh": "Gebührenverordnung"
     },
     {
       "key": "BS-810.140",
@@ -18376,7 +18634,8 @@
           "nummer": "81",
           "name": "Arbeit"
         }
-      }
+      },
+      "abkRoh": "Gebührenverordnung AWA"
     },
     {
       "key": "BS-419.300",
@@ -18466,7 +18725,8 @@
           "nummer": "41",
           "name": "Schulen"
         }
-      }
+      },
+      "abkRoh": "Gebührenverordnung PDS"
     },
     {
       "key": "BS-339.220",
@@ -18496,7 +18756,8 @@
           "nummer": "33",
           "name": "Spitäler · Sanitätsdienst"
         }
-      }
+      },
+      "abkRoh": "Gebührenverordnung Sanität"
     },
     {
       "key": "BS-361.200",
@@ -18526,7 +18787,8 @@
           "nummer": "36",
           "name": "Tierseuchen · Viehhandel · Tierhaltung"
         }
-      }
+      },
+      "abkRoh": "Gebührenverordnung Veterinäramt"
     },
     {
       "key": "BS-724.910",
@@ -18556,7 +18818,8 @@
           "nummer": "72",
           "name": "Strassen: Bau, Benützung, Unterhalt"
         }
-      }
+      },
+      "abkRoh": "GebV NöRG"
     },
     {
       "key": "BS-563.170",
@@ -18586,7 +18849,8 @@
           "nummer": "56",
           "name": "Gewerbepolizei · Waffen und Munition"
         }
-      }
+      },
+      "abkRoh": "GebVGGG"
     },
     {
       "key": "BS-576.170",
@@ -18616,7 +18880,8 @@
           "nummer": "57",
           "name": "Militär und Zivilschutz"
         }
-      }
+      },
+      "abkRoh": "GebVZK"
     },
     {
       "key": "BS-170.100",
@@ -19004,7 +19269,8 @@
           "nummer": "BeE 1",
           "name": "Grundlagen · Organisation"
         }
-      }
+      },
+      "abkRoh": "Geschäftsordnung Gemeindeversammlung"
     },
     {
       "key": "BS-153.280",
@@ -19034,7 +19300,8 @@
           "nummer": "15",
           "name": "Organisation des Kantons"
         }
-      }
+      },
+      "abkRoh": "Geschäftsordnung Information und Datenschutz"
     },
     {
       "key": "BS-491.100",
@@ -20144,7 +20411,8 @@
           "nummer": "30",
           "name": "Gesundheit"
         }
-      }
+      },
+      "abkRoh": "GesG"
     },
     {
       "key": "BS-154.810",
@@ -20174,7 +20442,8 @@
           "nummer": "15",
           "name": "Organisation des Kantons"
         }
-      }
+      },
+      "abkRoh": "Gerichtsgebührenreglement, GGR"
     },
     {
       "key": "BS-119.500",
@@ -20204,7 +20473,8 @@
           "nummer": "11",
           "name": "Kantonsverfassung · Staatsgebiet · Regionale und grenzüberschreitende Zusammenarbeit"
         }
-      }
+      },
+      "abkRoh": "GIZA"
     },
     {
       "key": "BS-834.400",
@@ -20234,7 +20504,8 @@
           "nummer": "83",
           "name": "Sozialversicherung"
         }
-      }
+      },
+      "abkRoh": "GKV"
     },
     {
       "key": "BS-140.110",
@@ -20264,7 +20535,8 @@
           "nummer": "14",
           "name": "Gleichstellung"
         }
-      }
+      },
+      "abkRoh": "GlV"
     },
     {
       "key": "BS-152.100",
@@ -20294,7 +20566,8 @@
           "nummer": "15",
           "name": "Organisation des Kantons"
         }
-      }
+      },
+      "abkRoh": "GO"
     },
     {
       "key": "BS-154.100",
@@ -20324,7 +20597,8 @@
           "nummer": "15",
           "name": "Organisation des Kantons"
         }
-      }
+      },
+      "abkRoh": "Gerichtsorganisationsgesetz, GOG"
     },
     {
       "key": "BS-390.170",
@@ -20354,7 +20628,8 @@
           "nummer": "39",
           "name": "Bestattungen"
         }
-      }
+      },
+      "abkRoh": "GrabmV"
     },
     {
       "key": "BS-162.300",
@@ -20504,7 +20779,8 @@
           "nummer": "BeE 1",
           "name": "Grundlagen · Organisation"
         }
-      }
+      },
+      "abkRoh": "GRPK"
     },
     {
       "key": "BS-783.410",
@@ -20534,7 +20810,8 @@
           "nummer": "78",
           "name": "Umweltschutz"
         }
-      }
+      },
+      "abkRoh": "Grundwasserverordnung"
     },
     {
       "key": "BS-561.111",
@@ -20564,7 +20841,8 @@
           "nummer": "56",
           "name": "Gewerbepolizei · Waffen und Munition"
         }
-      }
+      },
+      "abkRoh": "GSK"
     },
     {
       "key": "BS-519.400",
@@ -20594,7 +20872,8 @@
           "nummer": "51",
           "name": "Polizei"
         }
-      }
+      },
+      "abkRoh": "GVo"
     },
     {
       "key": "BS-955.460",
@@ -20654,7 +20933,8 @@
           "nummer": "65",
           "name": "Spezielle Steuern und Abgaben"
         }
-      }
+      },
+      "abkRoh": "Handänderungssteuergesetz"
     },
     {
       "key": "BS-390.760",
@@ -20714,7 +20994,8 @@
           "nummer": "41",
           "name": "Schulen"
         }
-      }
+      },
+      "abkRoh": "HarmoS"
     },
     {
       "key": "BS-952.601",
@@ -20744,7 +21025,8 @@
           "nummer": "95",
           "name": "Verkehr"
         }
-      }
+      },
+      "abkRoh": "Hausordnung"
     },
     {
       "key": "BS-340.100",
@@ -20804,7 +21086,8 @@
           "nummer": "95",
           "name": "Verkehr"
         }
-      }
+      },
+      "abkRoh": "Herauslösungsvereinbarung"
     },
     {
       "key": "BS-419.810",
@@ -20834,7 +21117,8 @@
           "nummer": "41",
           "name": "Schulen"
         }
-      }
+      },
+      "abkRoh": "HFSV"
     },
     {
       "key": "BS-161.100",
@@ -20864,7 +21148,8 @@
           "nummer": "16",
           "name": "Staatspersonal"
         }
-      }
+      },
+      "abkRoh": "Haftungsgesetz, HG"
     },
     {
       "key": "BS-442.700",
@@ -20894,7 +21179,8 @@
           "nummer": "44",
           "name": "Universität und Universitätsgut · Wissenschaftliche Institute"
         }
-      }
+      },
+      "abkRoh": "Hochschulkonkordat"
     },
     {
       "key": "BS-291.400",
@@ -20924,7 +21210,8 @@
           "nummer": "29",
           "name": "Advokatur und Notariat"
         }
-      }
+      },
+      "abkRoh": "Honorarreglement, HoR"
     },
     {
       "key": "BS-160.100",
@@ -20954,7 +21241,8 @@
           "nummer": "16",
           "name": "Staatspersonal"
         }
-      }
+      },
+      "abkRoh": "Human Resources Management-Verordnung"
     },
     {
       "key": "BS-365.100",
@@ -20984,7 +21272,8 @@
           "nummer": "36",
           "name": "Tierseuchen · Viehhandel · Tierhaltung"
         }
-      }
+      },
+      "abkRoh": "Hundegesetz"
     },
     {
       "key": "BS-365.110",
@@ -21014,7 +21303,8 @@
           "nummer": "36",
           "name": "Tierseuchen · Viehhandel · Tierhaltung"
         }
-      }
+      },
+      "abkRoh": "Hundeverordnung"
     },
     {
       "key": "BS-153.260",
@@ -21044,7 +21334,8 @@
           "nummer": "15",
           "name": "Organisation des Kantons"
         }
-      }
+      },
+      "abkRoh": "IDG"
     },
     {
       "key": "BS-153.270",
@@ -21074,7 +21365,8 @@
           "nummer": "15",
           "name": "Organisation des Kantons"
         }
-      }
+      },
+      "abkRoh": "IDV"
     },
     {
       "key": "BS-561.110",
@@ -21104,7 +21396,8 @@
           "nummer": "56",
           "name": "Gewerbepolizei · Waffen und Munition"
         }
-      }
+      },
+      "abkRoh": "IKV 2020"
     },
     {
       "key": "BS-442.410",
@@ -21134,7 +21427,8 @@
           "nummer": "44",
           "name": "Universität und Universitätsgut · Wissenschaftliche Institute"
         }
-      }
+      },
+      "abkRoh": "Immobilienvereinbarung, ImmoV"
     },
     {
       "key": "BS-154.128",
@@ -21164,7 +21458,8 @@
           "nummer": "15",
           "name": "Organisation des Kantons"
         }
-      }
+      },
+      "abkRoh": "Informatikreglement"
     },
     {
       "key": "BS-RiE 153.300",
@@ -21194,7 +21489,8 @@
           "nummer": "RiE 1",
           "name": "Grundlagen · Organisation"
         }
-      }
+      },
+      "abkRoh": "Informationssicherheitsreglement"
     },
     {
       "key": "BS-610.150",
@@ -21224,7 +21520,8 @@
           "nummer": "61",
           "name": "Finanzordnung"
         }
-      }
+      },
+      "abkRoh": "Inkassoverordnung, InkaV"
     },
     {
       "key": "BS-122.500",
@@ -21254,7 +21551,8 @@
           "nummer": "12",
           "name": "Bürgerrecht · Aufenthalt und Niederlassung · Innere Sicherheit"
         }
-      }
+      },
+      "abkRoh": "Integrationsgesetz"
     },
     {
       "key": "BS-257.820",
@@ -21464,7 +21762,8 @@
           "nummer": "12",
           "name": "Bürgerrecht · Aufenthalt und Niederlassung · Innere Sicherheit"
         }
-      }
+      },
+      "abkRoh": "Integrationsverordnung, IntV"
     },
     {
       "key": "BS-131.100",
@@ -21494,7 +21793,8 @@
           "nummer": "13",
           "name": "Politische Rechte und Pflichten"
         }
-      }
+      },
+      "abkRoh": "IRG"
     },
     {
       "key": "BS-670.100",
@@ -21524,7 +21824,8 @@
           "nummer": "67",
           "name": "Finanzausgleich Bund - Kantone"
         }
-      }
+      },
+      "abkRoh": "Rahmenvereinbarung, IRV"
     },
     {
       "key": "BS-153.320",
@@ -21554,7 +21855,8 @@
           "nummer": "15",
           "name": "Organisation des Kantons"
         }
-      }
+      },
+      "abkRoh": "ISV"
     },
     {
       "key": "BS-153.350",
@@ -21584,7 +21886,8 @@
           "nummer": "15",
           "name": "Organisation des Kantons"
         }
-      }
+      },
+      "abkRoh": "IT-Governance-Verordnung, ITGV"
     },
     {
       "key": "BS-442.300",
@@ -21614,7 +21917,8 @@
           "nummer": "44",
           "name": "Universität und Universitätsgut · Wissenschaftliche Institute"
         }
-      }
+      },
+      "abkRoh": "Interkantonale Universitätsvereinbarung, IUV"
     },
     {
       "key": "BS-333.100",
@@ -21644,7 +21948,8 @@
           "nummer": "33",
           "name": "Spitäler · Sanitätsdienst"
         }
-      }
+      },
+      "abkRoh": "IVHSM"
     },
     {
       "key": "BS-914.600",
@@ -21674,7 +21979,8 @@
           "nummer": "91",
           "name": "Wirtschaft"
         }
-      }
+      },
+      "abkRoh": "IVöB"
     },
     {
       "key": "BS-869.100",
@@ -21704,7 +22010,8 @@
           "nummer": "86",
           "name": "Soziale Wohnungsvorsorge · Heime · Behindertenhilfe"
         }
-      }
+      },
+      "abkRoh": "IVSE"
     },
     {
       "key": "BS-910.500",
@@ -21734,7 +22041,8 @@
           "nummer": "91",
           "name": "Wirtschaft"
         }
-      }
+      },
+      "abkRoh": "IVTH"
     },
     {
       "key": "BS-772.300",
@@ -21764,7 +22072,8 @@
           "nummer": "77",
           "name": "Wasser · Energie"
         }
-      }
+      },
+      "abkRoh": "IWB-Gesetz"
     },
     {
       "key": "BS-258.400",
@@ -21794,7 +22103,8 @@
           "nummer": "25",
           "name": "Strafrecht und Strafrechtspflege"
         }
-      }
+      },
+      "abkRoh": "Jugendstrafvollzugsgesetz, JStVG"
     },
     {
       "key": "BS-258.200",
@@ -21824,7 +22134,8 @@
           "nummer": "25",
           "name": "Strafrecht und Strafrechtspflege"
         }
-      }
+      },
+      "abkRoh": "Justizvollzugsgesetz, JVG"
     },
     {
       "key": "BS-258.210",
@@ -21854,7 +22165,8 @@
           "nummer": "25",
           "name": "Strafrecht und Strafrechtspflege"
         }
-      }
+      },
+      "abkRoh": "Justizvollzugsverordnung, JVV"
     },
     {
       "key": "BS-685.360",
@@ -21944,7 +22256,8 @@
           "nummer": "56",
           "name": "Gewerbepolizei · Waffen und Munition"
         }
-      }
+      },
+      "abkRoh": "Kantonale Sprengstoffverordnung"
     },
     {
       "key": "BS-214.600",
@@ -22064,7 +22377,8 @@
           "nummer": "21",
           "name": "Bundeszivilrecht: Ergänzende kantonale Erlasse"
         }
-      }
+      },
+      "abkRoh": "Kinderbetreuungsbeitragsverordnung, KBBV"
     },
     {
       "key": "BS-832.720",
@@ -22094,7 +22408,8 @@
           "nummer": "83",
           "name": "Sozialversicherung"
         }
-      }
+      },
+      "abkRoh": "KBV"
     },
     {
       "key": "BS-212.400",
@@ -22124,7 +22439,8 @@
           "nummer": "21",
           "name": "Bundeszivilrecht: Ergänzende kantonale Erlasse"
         }
-      }
+      },
+      "abkRoh": "KESG"
     },
     {
       "key": "BS-730.210",
@@ -22154,7 +22470,8 @@
           "nummer": "73",
           "name": "Hochbauten"
         }
-      }
+      },
+      "abkRoh": "KFWV"
     },
     {
       "key": "BS-214.300",
@@ -22184,7 +22501,8 @@
           "nummer": "21",
           "name": "Bundeszivilrecht: Ergänzende kantonale Erlasse"
         }
-      }
+      },
+      "abkRoh": "KGeoIG"
     },
     {
       "key": "BS-214.305",
@@ -22214,7 +22532,8 @@
           "nummer": "21",
           "name": "Bundeszivilrecht: Ergänzende kantonale Erlasse"
         }
-      }
+      },
+      "abkRoh": "KGeoIV"
     },
     {
       "key": "BS-140.100",
@@ -22244,7 +22563,8 @@
           "nummer": "14",
           "name": "Gleichstellung"
         }
-      }
+      },
+      "abkRoh": "Kantonales Gleichstellungsgesetz, KGlG"
     },
     {
       "key": "BS-576.180",
@@ -22274,7 +22594,8 @@
           "nummer": "57",
           "name": "Militär und Zivilschutz"
         }
-      }
+      },
+      "abkRoh": "KGV"
     },
     {
       "key": "BS-331.300",
@@ -22304,7 +22625,8 @@
           "nummer": "33",
           "name": "Spitäler · Sanitätsdienst"
         }
-      }
+      },
+      "abkRoh": "Kinderspitalvertrag"
     },
     {
       "key": "BS-190.100",
@@ -22334,7 +22656,8 @@
           "nummer": "19",
           "name": "Staat und Kirche"
         }
-      }
+      },
+      "abkRoh": "Kirchengesetz"
     },
     {
       "key": "BS-415.100",
@@ -22364,7 +22687,8 @@
           "nummer": "41",
           "name": "Schulen"
         }
-      }
+      },
+      "abkRoh": "KJG"
     },
     {
       "key": "BS-212.250",
@@ -22394,7 +22718,8 @@
           "nummer": "21",
           "name": "Bundeszivilrecht: Ergänzende kantonale Erlasse"
         }
-      }
+      },
+      "abkRoh": "KJHVO"
     },
     {
       "key": "BS-415.150",
@@ -22424,7 +22749,8 @@
           "nummer": "41",
           "name": "Schulen"
         }
-      }
+      },
+      "abkRoh": "Kinder- und Jugendkommissionsverordnung , KJKV"
     },
     {
       "key": "BS-153.200",
@@ -22454,7 +22780,8 @@
           "nummer": "15",
           "name": "Organisation des Kantons"
         }
-      }
+      },
+      "abkRoh": "KKO VO"
     },
     {
       "key": "BS-955.100",
@@ -22484,7 +22811,8 @@
           "nummer": "95",
           "name": "Verkehr"
         }
-      }
+      },
+      "abkRoh": "Kleinschifffahrtsverordnung"
     },
     {
       "key": "BS-257.115",
@@ -22514,7 +22842,8 @@
           "nummer": "25",
           "name": "Strafrecht und Strafrechtspflege"
         }
-      }
+      },
+      "abkRoh": "Kantonale Ordnungsbussenverordnung, KOBV"
     },
     {
       "key": "BS-510.170",
@@ -22544,7 +22873,8 @@
           "nummer": "51",
           "name": "Polizei"
         }
-      }
+      },
+      "abkRoh": "KoGesV"
     },
     {
       "key": "BS-258.300",
@@ -22784,7 +23114,8 @@
           "nummer": "21",
           "name": "Bundeszivilrecht: Ergänzende kantonale Erlasse"
         }
-      }
+      },
+      "abkRoh": "KÖREBKV"
     },
     {
       "key": "BS-BaB 155.400",
@@ -22814,7 +23145,8 @@
           "nummer": "BaB 1",
           "name": "Grundlagen · Organisation"
         }
-      }
+      },
+      "abkRoh": "Korporationsordnung"
     },
     {
       "key": "BS-300.315",
@@ -22844,7 +23176,8 @@
           "nummer": "30",
           "name": "Gesundheit"
         }
-      }
+      },
+      "abkRoh": "Krebsregistervereinbarung"
     },
     {
       "key": "BS-815.110",
@@ -22874,7 +23207,8 @@
           "nummer": "81",
           "name": "Arbeit"
         }
-      }
+      },
+      "abkRoh": "KTV"
     },
     {
       "key": "BS-494.300",
@@ -22934,7 +23268,8 @@
           "nummer": "49",
           "name": "Ausbildungsbeiträge · Wissenschafts- und Kulturpflege"
         }
-      }
+      },
+      "abkRoh": "Kulturvertrag"
     },
     {
       "key": "BS-424.510",
@@ -22994,7 +23329,8 @@
           "nummer": "83",
           "name": "Sozialversicherung"
         }
-      }
+      },
+      "abkRoh": "KVO"
     },
     {
       "key": "BS-164.100",
@@ -23024,7 +23360,8 @@
           "nummer": "16",
           "name": "Staatspersonal"
         }
-      }
+      },
+      "abkRoh": "LG"
     },
     {
       "key": "BS-781.200",
@@ -23054,7 +23391,8 @@
           "nummer": "78",
           "name": "Umweltschutz"
         }
-      }
+      },
+      "abkRoh": "LHV"
     },
     {
       "key": "BS-164.430",
@@ -23084,7 +23422,8 @@
           "nummer": "16",
           "name": "Staatspersonal"
         }
-      }
+      },
+      "abkRoh": "LNV"
     },
     {
       "key": "BS-BaB 164.100",
@@ -23114,7 +23453,8 @@
           "nummer": "BaB 1",
           "name": "Grundlagen · Organisation"
         }
-      }
+      },
+      "abkRoh": "Lohnordnung"
     },
     {
       "key": "BS-RiE 164.100",
@@ -23144,7 +23484,8 @@
           "nummer": "RiE 1",
           "name": "Grundlagen · Organisation"
         }
-      }
+      },
+      "abkRoh": "Lohnordnung"
     },
     {
       "key": "BS-RiE 164.110",
@@ -23174,7 +23515,8 @@
           "nummer": "RiE 1",
           "name": "Grundlagen · Organisation"
         }
-      }
+      },
+      "abkRoh": "Lohnreglement"
     },
     {
       "key": "BS-782.100",
@@ -23204,7 +23546,8 @@
           "nummer": "78",
           "name": "Umweltschutz"
         }
-      }
+      },
+      "abkRoh": "LSV BS"
     },
     {
       "key": "BS-419.910",
@@ -23234,7 +23577,8 @@
           "nummer": "41",
           "name": "Schulen"
         }
-      }
+      },
+      "abkRoh": "MAR"
     },
     {
       "key": "BS-781.220",
@@ -23264,7 +23608,8 @@
           "nummer": "78",
           "name": "Umweltschutz"
         }
-      }
+      },
+      "abkRoh": "Massnahmenverordnung"
     },
     {
       "key": "BS-890.510",
@@ -23294,7 +23639,8 @@
           "nummer": "89",
           "name": "Sozialhilfe · Sozialbeiträge"
         }
-      }
+      },
+      "abkRoh": "Mietbeitragsverordnung, MBVO"
     },
     {
       "key": "BS-154.115",
@@ -23354,7 +23700,8 @@
           "nummer": "89",
           "name": "Sozialhilfe · Sozialbeiträge"
         }
-      }
+      },
+      "abkRoh": "Mietbeitragsgesetz MBG"
     },
     {
       "key": "BS-812.200",
@@ -23384,7 +23731,8 @@
           "nummer": "81",
           "name": "Arbeit"
         }
-      }
+      },
+      "abkRoh": "Mindestlohngesetz, MiLoG"
     },
     {
       "key": "BS-812.210",
@@ -23414,7 +23762,8 @@
           "nummer": "81",
           "name": "Arbeit"
         }
-      }
+      },
+      "abkRoh": "MiLoV"
     },
     {
       "key": "BS-BeE 153.500",
@@ -23444,7 +23793,8 @@
           "nummer": "BeE 1",
           "name": "Grundlagen · Organisation"
         }
-      }
+      },
+      "abkRoh": "Mitwirkungsreglement"
     },
     {
       "key": "BS-780.300",
@@ -23474,7 +23824,8 @@
           "nummer": "78",
           "name": "Umweltschutz"
         }
-      }
+      },
+      "abkRoh": "Mobilitätsfondsverordnung"
     },
     {
       "key": "BS-413.820",
@@ -23504,7 +23855,8 @@
           "nummer": "41",
           "name": "Schulen"
         }
-      }
+      },
+      "abkRoh": "Maturitätsprüfungsverordnung, MPV"
     },
     {
       "key": "BS-861.625",
@@ -23534,7 +23886,8 @@
           "nummer": "86",
           "name": "Soziale Wohnungsvorsorge · Heime · Behindertenhilfe"
         }
-      }
+      },
+      "abkRoh": "Mietreglement, MR"
     },
     {
       "key": "BS-952.801",
@@ -23564,7 +23917,8 @@
           "nummer": "95",
           "name": "Verkehr"
         }
-      }
+      },
+      "abkRoh": "Münchenstein"
     },
     {
       "key": "BS-451.100",
@@ -23594,7 +23948,8 @@
           "nummer": "45",
           "name": "Museen · Archive · Bibliotheken · Dokumentation"
         }
-      }
+      },
+      "abkRoh": "Museumsgesetz"
     },
     {
       "key": "BS-451.110",
@@ -23624,7 +23979,8 @@
           "nummer": "45",
           "name": "Museen · Archive · Bibliotheken · Dokumentation"
         }
-      }
+      },
+      "abkRoh": "Museumsverordnung"
     },
     {
       "key": "BS-954.551",
@@ -23684,7 +24040,8 @@
           "nummer": "12",
           "name": "Bürgerrecht · Aufenthalt und Niederlassung · Innere Sicherheit"
         }
-      }
+      },
+      "abkRoh": "NAG"
     },
     {
       "key": "BS-RiE 370.700",
@@ -23714,7 +24071,8 @@
           "nummer": "RiE 3",
           "name": "Gesundheit · Bestattungswesen"
         }
-      }
+      },
+      "abkRoh": "Naturbadreglement"
     },
     {
       "key": "BS-122.210",
@@ -23744,7 +24102,8 @@
           "nummer": "12",
           "name": "Bürgerrecht · Aufenthalt und Niederlassung · Innere Sicherheit"
         }
-      }
+      },
+      "abkRoh": "NAV"
     },
     {
       "key": "BS-215.700",
@@ -23774,7 +24133,8 @@
           "nummer": "21",
           "name": "Bundeszivilrecht: Ergänzende kantonale Erlasse"
         }
-      }
+      },
+      "abkRoh": "NAV Haushalt BS"
     },
     {
       "key": "BS-215.600",
@@ -23804,7 +24164,8 @@
           "nummer": "21",
           "name": "Bundeszivilrecht: Ergänzende kantonale Erlasse"
         }
-      }
+      },
+      "abkRoh": "NAV LW"
     },
     {
       "key": "BS-724.100",
@@ -23834,7 +24195,8 @@
           "nummer": "72",
           "name": "Strassen: Bau, Benützung, Unterhalt"
         }
-      }
+      },
+      "abkRoh": "NöRG"
     },
     {
       "key": "BS-724.110",
@@ -23864,7 +24226,8 @@
           "nummer": "72",
           "name": "Strassen: Bau, Benützung, Unterhalt"
         }
-      }
+      },
+      "abkRoh": "NöRV"
     },
     {
       "key": "BS-292.100",
@@ -23924,7 +24287,8 @@
           "nummer": "29",
           "name": "Advokatur und Notariat"
         }
-      }
+      },
+      "abkRoh": "Notariatsverordnung, NotV"
     },
     {
       "key": "BS-RiE 730.350",
@@ -23954,7 +24318,8 @@
           "nummer": "RiE 7",
           "name": "Raum- und Bauordnung · Allmend · Umwelt"
         }
-      }
+      },
+      "abkRoh": "OBK-Reglement"
     },
     {
       "key": "BS-153.100",
@@ -23984,7 +24349,8 @@
           "nummer": "15",
           "name": "Organisation des Kantons"
         }
-      }
+      },
+      "abkRoh": "Organisationsgesetz, OG"
     },
     {
       "key": "BS-RiE 153.100",
@@ -24014,7 +24380,8 @@
           "nummer": "RiE 1",
           "name": "Grundlagen · Organisation"
         }
-      }
+      },
+      "abkRoh": "Organisationsreglement, OgR"
     },
     {
       "key": "BS-RiE 132.100",
@@ -24044,7 +24411,8 @@
           "nummer": "RiE 1",
           "name": "Grundlagen · Organisation"
         }
-      }
+      },
+      "abkRoh": "Ordnung politische Rechte, OPR"
     },
     {
       "key": "BS-BaB 132.100",
@@ -24224,7 +24592,8 @@
           "nummer": "BaB 1",
           "name": "Grundlagen · Organisation"
         }
-      }
+      },
+      "abkRoh": "Ordnung für die Drei E. Gesellschaften"
     },
     {
       "key": "BS-410.200",
@@ -24404,7 +24773,8 @@
           "nummer": "RiE 9",
           "name": "Wirtschaft · Freizeitgärten"
         }
-      }
+      },
+      "abkRoh": "Ordnung K-Netz Riehen"
     },
     {
       "key": "BS-411.450",
@@ -24914,7 +25284,8 @@
           "nummer": "BeE 1",
           "name": "Grundlagen · Organisation"
         }
-      }
+      },
+      "abkRoh": "Organisationsreglement"
     },
     {
       "key": "BS-154.150",
@@ -25094,7 +25465,8 @@
           "nummer": "33",
           "name": "Spitäler · Sanitätsdienst"
         }
-      }
+      },
+      "abkRoh": "Öffentliche Spitäler-Gesetz, ÖSpG"
     },
     {
       "key": "BS-951.110",
@@ -25124,7 +25496,8 @@
           "nummer": "95",
           "name": "Verkehr"
         }
-      }
+      },
+      "abkRoh": "ÖV-Verordnung"
     },
     {
       "key": "BS-310.125",
@@ -25154,7 +25527,8 @@
           "nummer": "31",
           "name": "Medizinalpersonen · Komplementärmedizin"
         }
-      }
+      },
+      "abkRoh": "Pflegeausbildungsförderverordnung, PAFV"
     },
     {
       "key": "BS-952.600",
@@ -25184,7 +25558,8 @@
           "nummer": "95",
           "name": "Verkehr"
         }
-      }
+      },
+      "abkRoh": "Parkgaragenverordnung"
     },
     {
       "key": "BS-163.900",
@@ -25214,7 +25589,8 @@
           "nummer": "16",
           "name": "Staatspersonal"
         }
-      }
+      },
+      "abkRoh": "Parkplatz-Reglement"
     },
     {
       "key": "BS-424.500",
@@ -25244,7 +25620,8 @@
           "nummer": "42",
           "name": "Berufsbildung · Berufsschulen · Fachhochschule"
         }
-      }
+      },
+      "abkRoh": "Passerelleverordnung"
     },
     {
       "key": "BS-563.500",
@@ -25274,7 +25651,8 @@
           "nummer": "56",
           "name": "Gewerbepolizei · Waffen und Munition"
         }
-      }
+      },
+      "abkRoh": "Personenbeförderungsverordnung, PBV"
     },
     {
       "key": "BS-169.300",
@@ -25304,7 +25682,8 @@
           "nummer": "16",
           "name": "Staatspersonal"
         }
-      }
+      },
+      "abkRoh": "Personalausschussverordnung"
     },
     {
       "key": "BS-162.100",
@@ -25364,7 +25743,8 @@
           "nummer": "BeE 1",
           "name": "Grundlagen · Organisation"
         }
-      }
+      },
+      "abkRoh": "Personalordnung"
     },
     {
       "key": "BS-RiE 162.100",
@@ -25514,7 +25894,8 @@
           "nummer": "32",
           "name": "Krankheiten · Kranken- und Betagtenpflege"
         }
-      }
+      },
+      "abkRoh": "Pflegebeitragsverordnung"
     },
     {
       "key": "BS-212.260",
@@ -25544,7 +25925,8 @@
           "nummer": "21",
           "name": "Bundeszivilrecht: Ergänzende kantonale Erlasse"
         }
-      }
+      },
+      "abkRoh": "Pflegefamilienverordnung, PFVO"
     },
     {
       "key": "BS-510.430",
@@ -25604,7 +25986,8 @@
           "nummer": "16",
           "name": "Staatspersonal"
         }
-      }
+      },
+      "abkRoh": "Pensionskassengesetz, PKG"
     },
     {
       "key": "BS-569.500",
@@ -25664,7 +26047,8 @@
           "nummer": "51",
           "name": "Polizei"
         }
-      }
+      },
+      "abkRoh": "Polizeigesetz, PolG"
     },
     {
       "key": "BS-510.110",
@@ -25694,7 +26078,8 @@
           "nummer": "51",
           "name": "Polizei"
         }
-      }
+      },
+      "abkRoh": "Polizeiverordnung, PolV"
     },
     {
       "key": "BS-730.310",
@@ -25724,7 +26109,8 @@
           "nummer": "73",
           "name": "Hochbauten"
         }
-      }
+      },
+      "abkRoh": "Parkplatzverordnung, PPV"
     },
     {
       "key": "BS-695.400",
@@ -25814,7 +26200,8 @@
           "nummer": "95",
           "name": "Verkehr"
         }
-      }
+      },
+      "abkRoh": "Parkraumbewirtschaftungsverordnung, PRBV"
     },
     {
       "key": "BS-439.140",
@@ -25844,7 +26231,8 @@
           "nummer": "43",
           "name": "Lehrerbildung"
         }
-      }
+      },
+      "abkRoh": "Prüfungsentschädigungsverordnung"
     },
     {
       "key": "BS-323.100",
@@ -25874,7 +26262,8 @@
           "nummer": "32",
           "name": "Krankheiten · Kranken- und Betagtenpflege"
         }
-      }
+      },
+      "abkRoh": "Psychiatriegesetz"
     },
     {
       "key": "BS-151.200",
@@ -25904,7 +26293,8 @@
           "nummer": "15",
           "name": "Organisation des Kantons"
         }
-      }
+      },
+      "abkRoh": "Publikationsgesetz"
     },
     {
       "key": "BS-151.210",
@@ -25934,7 +26324,8 @@
           "nummer": "15",
           "name": "Organisation des Kantons"
         }
-      }
+      },
+      "abkRoh": "Publikationsverordnung, PublV"
     },
     {
       "key": "BS-419.902",
@@ -25964,7 +26355,8 @@
           "nummer": "41",
           "name": "Schulen"
         }
-      }
+      },
+      "abkRoh": "RAKA"
     },
     {
       "key": "BS-153.610",
@@ -25994,7 +26386,8 @@
           "nummer": "15",
           "name": "Organisation des Kantons"
         }
-      }
+      },
+      "abkRoh": "Registratur- und Archivierungsverordnung"
     },
     {
       "key": "BS-152.500",
@@ -26444,7 +26837,8 @@
           "nummer": "RiE 4",
           "name": "Erziehung · Museen · Kultur · Kulturpflege"
         }
-      }
+      },
+      "abkRoh": "Reglement Bildende Kunst"
     },
     {
       "key": "BS-419.905",
@@ -26624,7 +27018,8 @@
           "nummer": "RiE 4",
           "name": "Erziehung · Museen · Kultur · Kulturpflege"
         }
-      }
+      },
+      "abkRoh": "Reglement Ermässigung Elterntarif Musik; REEMu"
     },
     {
       "key": "BS-369.200",
@@ -27044,7 +27439,8 @@
           "nummer": "RiE 1",
           "name": "Grundlagen · Organisation"
         }
-      }
+      },
+      "abkRoh": "Reglement GFS"
     },
     {
       "key": "BS-RiE 786.180",
@@ -27074,7 +27470,8 @@
           "nummer": "RiE 7",
           "name": "Raum- und Bauordnung · Allmend · Umwelt"
         }
-      }
+      },
+      "abkRoh": "Reglement Mehrweggeschirr"
     },
     {
       "key": "BS-291.900",
@@ -27764,7 +28161,8 @@
           "nummer": "RiE 2",
           "name": "Öffentliche Ordnung"
         }
-      }
+      },
+      "abkRoh": "Reglement Wildtierschutz Riehen"
     },
     {
       "key": "BS-152.150",
@@ -27884,7 +28282,8 @@
           "nummer": "95",
           "name": "Verkehr"
         }
-      }
+      },
+      "abkRoh": "Rheinhafen-Vertrag"
     },
     {
       "key": "BS-415.170",
@@ -28004,7 +28403,8 @@
           "nummer": "86",
           "name": "Soziale Wohnungsvorsorge · Heime · Behindertenhilfe"
         }
-      }
+      },
+      "abkRoh": "Richtlinien Mietzinsgestaltung"
     },
     {
       "key": "BS-811.100",
@@ -28034,7 +28434,8 @@
           "nummer": "81",
           "name": "Arbeit"
         }
-      }
+      },
+      "abkRoh": "RLG"
     },
     {
       "key": "BS-497.800",
@@ -28064,7 +28465,8 @@
           "nummer": "49",
           "name": "Ausbildungsbeiträge · Wissenschafts- und Kulturpflege"
         }
-      }
+      },
+      "abkRoh": "Römervertrag"
     },
     {
       "key": "BS-RiE 132.110",
@@ -28094,7 +28496,8 @@
           "nummer": "RiE 1",
           "name": "Grundlagen · Organisation"
         }
-      }
+      },
+      "abkRoh": "Reglement politische Rechte, RPR"
     },
     {
       "key": "BS-419.700",
@@ -28124,7 +28527,8 @@
           "nummer": "41",
           "name": "Schulen"
         }
-      }
+      },
+      "abkRoh": "RSA 2009"
     },
     {
       "key": "BS-815.150",
@@ -28154,7 +28558,8 @@
           "nummer": "81",
           "name": "Arbeit"
         }
-      }
+      },
+      "abkRoh": "Spielgruppenbeitragsverordnung, SBV"
     },
     {
       "key": "BS-695.300",
@@ -28214,7 +28619,8 @@
           "nummer": "21",
           "name": "Bundeszivilrecht: Ergänzende kantonale Erlasse"
         }
-      }
+      },
+      "abkRoh": "Schlichtungsstellengesetz"
     },
     {
       "key": "BS-410.120",
@@ -28244,7 +28650,8 @@
           "nummer": "41",
           "name": "Schulen"
         }
-      }
+      },
+      "abkRoh": "Schülerinnen- und Schülerverordnung"
     },
     {
       "key": "BS-419.100",
@@ -28334,7 +28741,8 @@
           "nummer": "RiE 4",
           "name": "Erziehung · Museen · Kultur · Kulturpflege"
         }
-      }
+      },
+      "abkRoh": "Schulordnung"
     },
     {
       "key": "BS-421.110",
@@ -28394,7 +28802,8 @@
           "nummer": "RiE 4",
           "name": "Erziehung · Museen · Kultur · Kulturpflege"
         }
-      }
+      },
+      "abkRoh": "Schulreglement"
     },
     {
       "key": "BS-412.100",
@@ -28424,7 +28833,8 @@
           "nummer": "41",
           "name": "Schulen"
         }
-      }
+      },
+      "abkRoh": "Schulvereinbarung"
     },
     {
       "key": "BS-BeE 412.100",
@@ -28454,7 +28864,8 @@
           "nummer": "BeE 4",
           "name": "Erziehung · Wissenschafts- und Kulturpflege"
         }
-      }
+      },
+      "abkRoh": "Schulvereinbarung"
     },
     {
       "key": "BS-RiE 412.100",
@@ -28484,7 +28895,8 @@
           "nummer": "RiE 4",
           "name": "Erziehung · Museen · Kultur · Kulturpflege"
         }
-      }
+      },
+      "abkRoh": "Schulvereinbarung"
     },
     {
       "key": "BS-BeE 411.500",
@@ -28514,7 +28926,8 @@
           "nummer": "BeE 4",
           "name": "Erziehung · Wissenschafts- und Kulturpflege"
         }
-      }
+      },
+      "abkRoh": "Schulvertrag"
     },
     {
       "key": "BS-RiE 411.500",
@@ -28544,7 +28957,8 @@
           "nummer": "RiE 4",
           "name": "Erziehung · Museen · Kultur · Kulturpflege"
         }
-      }
+      },
+      "abkRoh": "Schulvertrag"
     },
     {
       "key": "BS-410.700",
@@ -28574,7 +28988,8 @@
           "nummer": "41",
           "name": "Schulen"
         }
-      }
+      },
+      "abkRoh": "Schullaufbahnverordnung, SLV"
     },
     {
       "key": "BS-781.500",
@@ -28604,7 +29019,8 @@
           "nummer": "78",
           "name": "Umweltschutz"
         }
-      }
+      },
+      "abkRoh": "Smog-Verordnung"
     },
     {
       "key": "BS-162.420",
@@ -28634,7 +29050,8 @@
           "nummer": "16",
           "name": "Staatspersonal"
         }
-      }
+      },
+      "abkRoh": "SMUV"
     },
     {
       "key": "BS-890.700",
@@ -28664,7 +29081,8 @@
           "nummer": "89",
           "name": "Sozialhilfe · Sozialbeiträge"
         }
-      }
+      },
+      "abkRoh": "Harmonisierungsgesetz Sozialleistungen, SoHaG"
     },
     {
       "key": "BS-890.710",
@@ -28694,7 +29112,8 @@
           "nummer": "89",
           "name": "Sozialhilfe · Sozialbeiträge"
         }
-      }
+      },
+      "abkRoh": "SoHaV"
     },
     {
       "key": "BS-953.900",
@@ -28934,7 +29353,8 @@
           "nummer": "16",
           "name": "Staatspersonal"
         }
-      }
+      },
+      "abkRoh": "Spesenverordnung"
     },
     {
       "key": "BS-371.100",
@@ -28994,7 +29414,8 @@
           "nummer": "RiE 6",
           "name": "Finanzen · Gemeindegrundstücke"
         }
-      }
+      },
+      "abkRoh": "Sportplatzreglement"
     },
     {
       "key": "BS-412.750",
@@ -29024,7 +29445,8 @@
           "nummer": "41",
           "name": "Schulen"
         }
-      }
+      },
+      "abkRoh": "SPSSV"
     },
     {
       "key": "BS-333.200",
@@ -29084,7 +29506,8 @@
           "nummer": "91",
           "name": "Wirtschaft"
         }
-      }
+      },
+      "abkRoh": "StaföG"
     },
     {
       "key": "BS-910.210",
@@ -29114,7 +29537,8 @@
           "nummer": "91",
           "name": "Wirtschaft"
         }
-      }
+      },
+      "abkRoh": "StaföV"
     },
     {
       "key": "BS-453.200",
@@ -29144,7 +29568,8 @@
           "nummer": "45",
           "name": "Museen · Archive · Bibliotheken · Dokumentation"
         }
-      }
+      },
+      "abkRoh": "StatG"
     },
     {
       "key": "BS-453.210",
@@ -29174,7 +29599,8 @@
           "nummer": "45",
           "name": "Museen · Archive · Bibliotheken · Dokumentation"
         }
-      }
+      },
+      "abkRoh": "Statistikverordnung"
     },
     {
       "key": "BS-BeB 869.100",
@@ -29294,7 +29720,8 @@
           "nummer": "61",
           "name": "Finanzordnung"
         }
-      }
+      },
+      "abkRoh": "StBG"
     },
     {
       "key": "BS-164.440",
@@ -29324,7 +29751,8 @@
           "nummer": "16",
           "name": "Staatspersonal"
         }
-      }
+      },
+      "abkRoh": "Stellvertretungsverordnung"
     },
     {
       "key": "BS-BeE 640.100",
@@ -29414,7 +29842,8 @@
           "nummer": "RiE 6",
           "name": "Finanzen · Gemeindegrundstücke"
         }
-      }
+      },
+      "abkRoh": "Steuerreglement"
     },
     {
       "key": "BS-640.100",
@@ -29444,7 +29873,8 @@
           "nummer": "64",
           "name": "Allgemeine Steuern"
         }
-      }
+      },
+      "abkRoh": "Steuergesetz, StG"
     },
     {
       "key": "BS-BeE 750.100",
@@ -29474,7 +29904,8 @@
           "nummer": "BeE 7",
           "name": "Raum- und Bauordnung · Energie · Umweltschutz"
         }
-      }
+      },
+      "abkRoh": "Strassen- und Kanalisationsordnung"
     },
     {
       "key": "BS-RiE 750.100",
@@ -29504,7 +29935,8 @@
           "nummer": "RiE 7",
           "name": "Raum- und Bauordnung · Allmend · Umwelt"
         }
-      }
+      },
+      "abkRoh": "Strassen- und Kanalisationsordnung"
     },
     {
       "key": "BS-BeE 750.110",
@@ -29534,7 +29966,8 @@
           "nummer": "BeE 7",
           "name": "Raum- und Bauordnung · Energie · Umweltschutz"
         }
-      }
+      },
+      "abkRoh": "Strassen- und Kanalisationsreglement"
     },
     {
       "key": "BS-RiE 750.110",
@@ -29564,7 +29997,8 @@
           "nummer": "RiE 7",
           "name": "Raum- und Bauordnung · Allmend · Umwelt"
         }
-      }
+      },
+      "abkRoh": "Strassen- und Kanalisationsreglement"
     },
     {
       "key": "BS-428.710",
@@ -29624,7 +30058,8 @@
           "nummer": "64",
           "name": "Allgemeine Steuern"
         }
-      }
+      },
+      "abkRoh": "Steuerverordnung, StV"
     },
     {
       "key": "BS-952.200",
@@ -29654,7 +30089,8 @@
           "nummer": "95",
           "name": "Verkehr"
         }
-      }
+      },
+      "abkRoh": "Strassenverkehrsverordnung, StVO"
     },
     {
       "key": "BS-154.200",
@@ -29684,7 +30120,8 @@
           "nummer": "15",
           "name": "Organisation des Kantons"
         }
-      }
+      },
+      "abkRoh": "Sozialversicherungsgerichtsgesetz, SVGG"
     },
     {
       "key": "BS-561.120",
@@ -29714,7 +30151,8 @@
           "nummer": "56",
           "name": "Gewerbepolizei · Waffen und Munition"
         }
-      }
+      },
+      "abkRoh": "Swisslos-Fonds-Verordnung"
     },
     {
       "key": "BS-561.121",
@@ -29744,7 +30182,8 @@
           "nummer": "56",
           "name": "Gewerbepolizei · Waffen und Munition"
         }
-      }
+      },
+      "abkRoh": "Swisslos-Sportfonds-Verordnung"
     },
     {
       "key": "BS-952.610",
@@ -29804,7 +30243,8 @@
           "nummer": "81",
           "name": "Arbeit"
         }
-      }
+      },
+      "abkRoh": "Taxi-ARV"
     },
     {
       "key": "BS-563.200",
@@ -29834,7 +30274,8 @@
           "nummer": "56",
           "name": "Gewerbepolizei · Waffen und Munition"
         }
-      }
+      },
+      "abkRoh": "Taxigesetz"
     },
     {
       "key": "BS-563.250",
@@ -29864,7 +30305,8 @@
           "nummer": "56",
           "name": "Gewerbepolizei · Waffen und Munition"
         }
-      }
+      },
+      "abkRoh": "Taxiprüfungsreglement"
     },
     {
       "key": "BS-563.280",
@@ -29894,7 +30336,8 @@
           "nummer": "56",
           "name": "Gewerbepolizei · Waffen und Munition"
         }
-      }
+      },
+      "abkRoh": "Taxitarifverordnung"
     },
     {
       "key": "BS-563.210",
@@ -29924,7 +30367,8 @@
           "nummer": "56",
           "name": "Gewerbepolizei · Waffen und Munition"
         }
-      }
+      },
+      "abkRoh": "Taxiverordnung"
     },
     {
       "key": "BS-815.100",
@@ -29954,7 +30398,8 @@
           "nummer": "81",
           "name": "Arbeit"
         }
-      }
+      },
+      "abkRoh": "Tagesbetreuungsgesetz, TBG"
     },
     {
       "key": "BS-815.120",
@@ -29984,7 +30429,8 @@
           "nummer": "81",
           "name": "Arbeit"
         }
-      }
+      },
+      "abkRoh": "Tagesbetreuungsbeitragsverordnung, TBV"
     },
     {
       "key": "BS-412.600",
@@ -30014,7 +30460,8 @@
           "nummer": "41",
           "name": "Schulen"
         }
-      }
+      },
+      "abkRoh": "TFV"
     },
     {
       "key": "BS-365.500",
@@ -30044,7 +30491,8 @@
           "nummer": "36",
           "name": "Tierseuchen · Viehhandel · Tierhaltung"
         }
-      }
+      },
+      "abkRoh": "Tierschutzverordnung"
     },
     {
       "key": "BS-562.530",
@@ -30074,7 +30522,8 @@
           "nummer": "56",
           "name": "Gewerbepolizei · Waffen und Munition"
         }
-      }
+      },
+      "abkRoh": "TPV"
     },
     {
       "key": "BS-117.480",
@@ -30404,7 +30853,8 @@
           "nummer": "41",
           "name": "Schulen"
         }
-      }
+      },
+      "abkRoh": "Übergangsverordnung Schulharmonisierung"
     },
     {
       "key": "BS-411.520",
@@ -30434,7 +30884,8 @@
           "nummer": "41",
           "name": "Schulen"
         }
-      }
+      },
+      "abkRoh": "Übertrittsverordnung"
     },
     {
       "key": "BS-230.700",
@@ -30524,7 +30975,8 @@
           "nummer": "44",
           "name": "Universität und Universitätsgut · Wissenschaftliche Institute"
         }
-      }
+      },
+      "abkRoh": "Universitätsgutsgesetz"
     },
     {
       "key": "BS-440.110",
@@ -30554,7 +31006,8 @@
           "nummer": "44",
           "name": "Universität und Universitätsgut · Wissenschaftliche Institute"
         }
-      }
+      },
+      "abkRoh": "Universitätsstatut"
     },
     {
       "key": "BS-171.600",
@@ -30614,7 +31067,8 @@
           "nummer": "78",
           "name": "Umweltschutz"
         }
-      }
+      },
+      "abkRoh": "USG BS"
     },
     {
       "key": "BS-253.100",
@@ -30644,7 +31098,8 @@
           "nummer": "25",
           "name": "Strafrecht und Strafrechtspflege"
         }
-      }
+      },
+      "abkRoh": "ÜStG"
     },
     {
       "key": "BS-780.200",
@@ -30674,7 +31129,8 @@
           "nummer": "78",
           "name": "Umweltschutz"
         }
-      }
+      },
+      "abkRoh": "UVPV BS"
     },
     {
       "key": "BS-300.600",
@@ -30704,7 +31160,8 @@
           "nummer": "30",
           "name": "Gesundheit"
         }
-      }
+      },
+      "abkRoh": "UZBG"
     },
     {
       "key": "BS-772.180",
@@ -30734,7 +31191,8 @@
           "nummer": "77",
           "name": "Wasser · Energie"
         }
-      }
+      },
+      "abkRoh": "VEEG"
     },
     {
       "key": "BS-832.710",
@@ -30764,7 +31222,8 @@
           "nummer": "83",
           "name": "Sozialversicherung"
         }
-      }
+      },
+      "abkRoh": "VELG"
     },
     {
       "key": "BS-730.320",
@@ -30794,7 +31253,8 @@
           "nummer": "73",
           "name": "Hochbauten"
         }
-      }
+      },
+      "abkRoh": "Veloparkplatzverordnung, VeloPPV"
     },
     {
       "key": "BS-952.800",
@@ -30884,7 +31344,8 @@
           "nummer": "12",
           "name": "Bürgerrecht · Aufenthalt und Niederlassung · Innere Sicherheit"
         }
-      }
+      },
+      "abkRoh": "Vereinbarung Biometrisierung BS BL"
     },
     {
       "key": "BS-340.250",
@@ -30944,7 +31405,8 @@
           "nummer": "33",
           "name": "Spitäler · Sanitätsdienst"
         }
-      }
+      },
+      "abkRoh": "Vereinbarung Sanitätsdienst"
     },
     {
       "key": "BS-953.800",
@@ -31784,7 +32246,8 @@
           "nummer": "13",
           "name": "Politische Rechte und Pflichten"
         }
-      }
+      },
+      "abkRoh": "Vernehmlassungsverordnung"
     },
     {
       "key": "BS-421.760",
@@ -31814,7 +32277,8 @@
           "nummer": "42",
           "name": "Berufsbildung · Berufsschulen · Fachhochschule"
         }
-      }
+      },
+      "abkRoh": "Verordnung AGS LzB"
     },
     {
       "key": "BS-410.910",
@@ -31844,7 +32308,8 @@
           "nummer": "41",
           "name": "Schulen"
         }
-      }
+      },
+      "abkRoh": "Verordnung auswärtige Schulanlässe"
     },
     {
       "key": "BS-164.360",
@@ -33404,7 +33869,8 @@
           "nummer": "41",
           "name": "Schulen"
         }
-      }
+      },
+      "abkRoh": "Verordnung Kooperation Erziehungsberechtigte"
     },
     {
       "key": "BS-494.330",
@@ -33434,7 +33900,8 @@
           "nummer": "49",
           "name": "Ausbildungsbeiträge · Wissenschafts- und Kulturpflege"
         }
-      }
+      },
+      "abkRoh": "Verordnung Kulturvermittlung"
     },
     {
       "key": "BS-780.360",
@@ -33464,7 +33931,8 @@
           "nummer": "78",
           "name": "Umweltschutz"
         }
-      }
+      },
+      "abkRoh": "Verordnung Ladeinfrastruktur"
     },
     {
       "key": "BS-730.700",
@@ -36254,7 +36722,8 @@
           "nummer": "42",
           "name": "Berufsbildung · Berufsschulen · Fachhochschule"
         }
-      }
+      },
+      "abkRoh": "Vertrag Gesundheitsberufe"
     },
     {
       "key": "BS-419.720",
@@ -37514,7 +37983,8 @@
           "nummer": "BeE 1",
           "name": "Grundlagen · Organisation"
         }
-      }
+      },
+      "abkRoh": "Verwaltungsgebührenreglement"
     },
     {
       "key": "BS-BaB 155.700",
@@ -37544,7 +38014,8 @@
           "nummer": "BaB 1",
           "name": "Grundlagen · Organisation"
         }
-      }
+      },
+      "abkRoh": "Verwaltungsordnung"
     },
     {
       "key": "BS-510.900",
@@ -37604,7 +38075,8 @@
           "nummer": "36",
           "name": "Tierseuchen · Viehhandel · Tierhaltung"
         }
-      }
+      },
+      "abkRoh": "Veterinärvereinbarung"
     },
     {
       "key": "BS-453.100",
@@ -37634,7 +38106,8 @@
           "nummer": "45",
           "name": "Museen · Archive · Bibliotheken · Dokumentation"
         }
-      }
+      },
+      "abkRoh": "VGWR BS"
     },
     {
       "key": "BS-257.810",
@@ -37664,7 +38137,8 @@
           "nummer": "25",
           "name": "Strafrecht und Strafrechtspflege"
         }
-      }
+      },
+      "abkRoh": "ViCLAS-Konkordat"
     },
     {
       "key": "BS-257.815",
@@ -37694,7 +38168,8 @@
           "nummer": "25",
           "name": "Strafrecht und Strafrechtspflege"
         }
-      }
+      },
+      "abkRoh": "ViCLAS-Verordnung"
     },
     {
       "key": "BS-119.510",
@@ -37724,7 +38199,8 @@
           "nummer": "11",
           "name": "Kantonsverfassung · Staatsgebiet · Regionale und grenzüberschreitende Zusammenarbeit"
         }
-      }
+      },
+      "abkRoh": "VIZA"
     },
     {
       "key": "BS-561.105",
@@ -37754,7 +38230,8 @@
           "nummer": "56",
           "name": "Gewerbepolizei · Waffen und Munition"
         }
-      }
+      },
+      "abkRoh": "VO EG BGS"
     },
     {
       "key": "BS-212.860",
@@ -37784,7 +38261,8 @@
           "nummer": "21",
           "name": "Bundeszivilrecht: Ergänzende kantonale Erlasse"
         }
-      }
+      },
+      "abkRoh": "VO HAKES"
     },
     {
       "key": "BS-153.340",
@@ -37814,7 +38292,8 @@
           "nummer": "15",
           "name": "Organisation des Kantons"
         }
-      }
+      },
+      "abkRoh": "VoAGOV"
     },
     {
       "key": "BS-214.320",
@@ -37844,7 +38323,8 @@
           "nummer": "21",
           "name": "Bundeszivilrecht: Ergänzende kantonale Erlasse"
         }
-      }
+      },
+      "abkRoh": "VOAV"
     },
     {
       "key": "BS-214.310",
@@ -37874,7 +38354,8 @@
           "nummer": "21",
           "name": "Bundeszivilrecht: Ergänzende kantonale Erlasse"
         }
-      }
+      },
+      "abkRoh": "VOGB"
     },
     {
       "key": "BS-212.410",
@@ -37904,7 +38385,8 @@
           "nummer": "21",
           "name": "Bundeszivilrecht: Ergänzende kantonale Erlasse"
         }
-      }
+      },
+      "abkRoh": "VoKESG"
     },
     {
       "key": "BS-351.100",
@@ -38024,7 +38506,8 @@
           "nummer": "BaB 1",
           "name": "Grundlagen · Organisation"
         }
-      }
+      },
+      "abkRoh": "Vorstadtordnung"
     },
     {
       "key": "BS-162.110",
@@ -38054,7 +38537,8 @@
           "nummer": "16",
           "name": "Staatspersonal"
         }
-      }
+      },
+      "abkRoh": "VPG"
     },
     {
       "key": "BS-270.100",
@@ -38084,7 +38568,8 @@
           "nummer": "27",
           "name": "Verwaltungsgerichtsbarkeit"
         }
-      }
+      },
+      "abkRoh": "VRPG"
     },
     {
       "key": "BS-510.150",
@@ -38114,7 +38599,8 @@
           "nummer": "51",
           "name": "Polizei"
         }
-      }
+      },
+      "abkRoh": "VSMS BS"
     },
     {
       "key": "BS-780.350",
@@ -38144,7 +38630,8 @@
           "nummer": "78",
           "name": "Umweltschutz"
         }
-      }
+      },
+      "abkRoh": "VuV"
     },
     {
       "key": "BS-491.110",
@@ -38174,7 +38661,8 @@
           "nummer": "49",
           "name": "Ausbildungsbeiträge · Wissenschafts- und Kulturpflege"
         }
-      }
+      },
+      "abkRoh": "VVAusbBG"
     },
     {
       "key": "BS-321.200",
@@ -38204,7 +38692,8 @@
           "nummer": "32",
           "name": "Krankheiten · Kranken- und Betagtenpflege"
         }
-      }
+      },
+      "abkRoh": "VvEpG"
     },
     {
       "key": "BS-162.320",
@@ -38234,7 +38723,8 @@
           "nummer": "16",
           "name": "Staatspersonal"
         }
-      }
+      },
+      "abkRoh": "Verordnung betreffend vorzeitige Pensionierung, VvP"
     },
     {
       "key": "BS-300.150",
@@ -38264,7 +38754,8 @@
           "nummer": "30",
           "name": "Gesundheit"
         }
-      }
+      },
+      "abkRoh": "VvTabPG"
     },
     {
       "key": "BS-310.420",
@@ -38294,7 +38785,8 @@
           "nummer": "31",
           "name": "Medizinalpersonen · Komplementärmedizin"
         }
-      }
+      },
+      "abkRoh": "VZH"
     },
     {
       "key": "BS-576.150",
@@ -38324,7 +38816,8 @@
           "nummer": "57",
           "name": "Militär und Zivilschutz"
         }
-      }
+      },
+      "abkRoh": "VZS"
     },
     {
       "key": "BS-568.200",
@@ -38354,7 +38847,8 @@
           "nummer": "56",
           "name": "Gewerbepolizei · Waffen und Munition"
         }
-      }
+      },
+      "abkRoh": "Waffenverordnung"
     },
     {
       "key": "BS-911.600",
@@ -38384,7 +38878,8 @@
           "nummer": "91",
           "name": "Wirtschaft"
         }
-      }
+      },
+      "abkRoh": "WaG BS"
     },
     {
       "key": "BS-132.100",
@@ -38414,7 +38909,8 @@
           "nummer": "13",
           "name": "Politische Rechte und Pflichten"
         }
-      }
+      },
+      "abkRoh": "Wahlgesetz"
     },
     {
       "key": "BS-132.110",
@@ -38444,7 +38940,8 @@
           "nummer": "13",
           "name": "Politische Rechte und Pflichten"
         }
-      }
+      },
+      "abkRoh": "Wahlverordnung"
     },
     {
       "key": "BS-771.500",
@@ -38474,7 +38971,8 @@
           "nummer": "77",
           "name": "Wasser · Energie"
         }
-      }
+      },
+      "abkRoh": "Wassernutzungsgesetz"
     },
     {
       "key": "BS-771.510",
@@ -38504,7 +39002,8 @@
           "nummer": "77",
           "name": "Wasser · Energie"
         }
-      }
+      },
+      "abkRoh": "Wassernutzungsverordnung"
     },
     {
       "key": "BS-RiE 771.200",
@@ -38564,7 +39063,8 @@
           "nummer": "91",
           "name": "Wirtschaft"
         }
-      }
+      },
+      "abkRoh": "WaV BS"
     },
     {
       "key": "BS-153.115",
@@ -38684,7 +39184,8 @@
           "nummer": "31",
           "name": "Medizinalpersonen · Komplementärmedizin"
         }
-      }
+      },
+      "abkRoh": "Weiterbildungsfinanzierungvereinbarung, WFV"
     },
     {
       "key": "BS-162.600",
@@ -38714,7 +39215,8 @@
           "nummer": "16",
           "name": "Staatspersonal"
         }
-      }
+      },
+      "abkRoh": "Whistleblowing-Verordnung"
     },
     {
       "key": "BS-912.200",
@@ -38744,7 +39246,8 @@
           "nummer": "91",
           "name": "Wirtschaft"
         }
-      }
+      },
+      "abkRoh": "WJG"
     },
     {
       "key": "BS-912.210",
@@ -38774,7 +39277,8 @@
           "nummer": "91",
           "name": "Wirtschaft"
         }
-      }
+      },
+      "abkRoh": "WJV"
     },
     {
       "key": "BS-861.500",
@@ -38804,7 +39308,8 @@
           "nummer": "86",
           "name": "Soziale Wohnungsvorsorge · Heime · Behindertenhilfe"
         }
-      }
+      },
+      "abkRoh": "Wohnraumfördergesetz, WRFG"
     },
     {
       "key": "BS-861.520",
@@ -38832,7 +39337,8 @@
           "nummer": "86",
           "name": "Soziale Wohnungsvorsorge · Heime · Behindertenhilfe"
         }
-      }
+      },
+      "abkRoh": "Wohnraumförderungsverordnung, WRFV"
     },
     {
       "key": "BS-861.540",
@@ -38862,7 +39368,8 @@
           "nummer": "86",
           "name": "Soziale Wohnungsvorsorge · Heime · Behindertenhilfe"
         }
-      }
+      },
+      "abkRoh": "Wohnraumschutzverordnung, WRSchV"
     },
     {
       "key": "BS-861.600",
@@ -38892,7 +39399,8 @@
           "nummer": "86",
           "name": "Soziale Wohnungsvorsorge · Heime · Behindertenhilfe"
         }
-      }
+      },
+      "abkRoh": "Wohnstiftungsgesetz, WSG"
     },
     {
       "key": "BS-BeE 328.600",
@@ -38922,7 +39430,8 @@
           "nummer": "BeE 3",
           "name": "Gesundheit"
         }
-      }
+      },
+      "abkRoh": "Zahnpflegeordnung"
     },
     {
       "key": "BS-RiE 328.610",
@@ -38952,7 +39461,8 @@
           "nummer": "RiE 3",
           "name": "Gesundheit · Bestattungswesen"
         }
-      }
+      },
+      "abkRoh": "Zahnpflegereglement"
     },
     {
       "key": "BS-328.210",
@@ -38982,7 +39492,8 @@
           "nummer": "32",
           "name": "Krankheiten · Kranken- und Betagtenpflege"
         }
-      }
+      },
+      "abkRoh": "Zahnpflegeverordnung"
     },
     {
       "key": "BS-RiE 328.600",
@@ -39012,7 +39523,8 @@
           "nummer": "RiE 3",
           "name": "Gesundheit · Bestattungswesen"
         }
-      }
+      },
+      "abkRoh": "Zahpflegeordnung"
     },
     {
       "key": "BS-576.100",
@@ -39042,7 +39554,8 @@
           "nummer": "57",
           "name": "Militär und Zivilschutz"
         }
-      }
+      },
+      "abkRoh": "ZKG"
     },
     {
       "key": "BS-RiE 730.130",
@@ -39102,7 +39615,8 @@
           "nummer": "95",
           "name": "Verkehr"
         }
-      }
+      },
+      "abkRoh": "Zufahrtsverordnung"
     },
     {
       "key": "BS-164.410",
@@ -39132,7 +39646,8 @@
           "nummer": "16",
           "name": "Staatspersonal"
         }
-      }
+      },
+      "abkRoh": "Zulagenverordnung"
     },
     {
       "key": "BS-BaB 155.100",
@@ -39162,7 +39677,8 @@
           "nummer": "BaB 1",
           "name": "Grundlagen · Organisation"
         }
-      }
+      },
+      "abkRoh": "Zunftordnung"
     },
     {
       "key": "BS-956.400",
@@ -39192,7 +39708,8 @@
           "nummer": "95",
           "name": "Verkehr"
         }
-      }
+      },
+      "abkRoh": "Zusammenarbeits-Vereinbarung"
     },
     {
       "key": "BS-172.400",
@@ -39222,7 +39739,8 @@
           "nummer": "17",
           "name": "Gemeinden"
         }
-      }
+      },
+      "abkRoh": "Zusatzabkommen V"
     },
     {
       "key": "BS-BaB 172.400",
@@ -39252,7 +39770,8 @@
           "nummer": "BaB 1",
           "name": "Grundlagen · Organisation"
         }
-      }
+      },
+      "abkRoh": "Zusatzabkommen V"
     },
     {
       "key": "FR-130.11-de",
@@ -39282,7 +39801,8 @@
           "nummer": "13",
           "name": "RECHTSPFLEGE"
         }
-      }
+      },
+      "abkRoh": "JR"
     },
     {
       "key": "FR-635.1.1",
@@ -39312,7 +39832,8 @@
           "nummer": "63",
           "name": "STEUERN"
         }
-      }
+      },
+      "abkRoh": "LDMG"
     },
     {
       "key": "FR-130.11-fr",
@@ -39342,7 +39863,8 @@
           "nummer": "13",
           "name": "RECHTSPFLEGE"
         }
-      }
+      },
+      "abkRoh": "RJ"
     },
     {
       "key": "FR-261.16",
@@ -39522,7 +40044,8 @@
       "fassungsToken": "6f484b8a32077fb248dc7cd0fd81fada",
       "pdfPfad": null,
       "pdfUrl": "https://gesetze.gl.ch/api/de/versions/2283/pdf_file",
-      "pdfStand": "2022-07-01"
+      "pdfStand": "2022-07-01",
+      "abkRoh": "EG ZPO"
     },
     {
       "key": "GL-III%20B_7_1",
@@ -39542,7 +40065,8 @@
       "fassungsToken": "3211018abb5bc64942db2d9391a7a3d9",
       "pdfPfad": null,
       "pdfUrl": "https://gesetze.gl.ch/api/de/versions/2628/pdf_file",
-      "pdfStand": "2026-01-01"
+      "pdfStand": "2026-01-01",
+      "abkRoh": "Gebührentarif ZGB, GebT ZGB"
     },
     {
       "key": "GL-III%20B%2F7%2F1",
@@ -39562,7 +40086,8 @@
       "fassungsToken": "3211018abb5bc64942db2d9391a7a3d9",
       "pdfPfad": null,
       "pdfUrl": "https://gesetze.gl.ch/api/de/versions/2628/pdf_file",
-      "pdfStand": "2026-01-01"
+      "pdfStand": "2026-01-01",
+      "abkRoh": "Gebührentarif ZGB, GebT ZGB"
     },
     {
       "key": "GL-III%20B%2F3%2F2",
@@ -39602,7 +40127,8 @@
       "fassungsToken": "4a9384f7a3fe41cae32e4c3c69a2f24b",
       "pdfPfad": null,
       "pdfUrl": "https://gesetze.gl.ch/api/de/versions/2630/pdf_file",
-      "pdfStand": "2026-01-01"
+      "pdfStand": "2026-01-01",
+      "abkRoh": "Zivil- und Strafprozesskostenverordnung"
     },
     {
       "key": "GR-720.200",
@@ -39632,7 +40158,8 @@
           "nummer": "72",
           "name": "Steuern"
         }
-      }
+      },
+      "abkRoh": "GKStG"
     },
     {
       "key": "GR-310.250",
@@ -39662,7 +40189,8 @@
           "nummer": "31",
           "name": "Allgemeine Bestimmungen"
         }
-      }
+      },
+      "abkRoh": "Honorarverordnung, HV"
     },
     {
       "key": "GR-210.370",
@@ -39692,7 +40220,8 @@
           "nummer": "21",
           "name": "Zivilrecht"
         }
-      }
+      },
+      "abkRoh": "NotGebV"
     },
     {
       "key": "GR-217.200",
@@ -39776,7 +40305,8 @@
           "nummer": "32",
           "name": "Zivilrechtspflege"
         }
-      }
+      },
+      "abkRoh": "VGZ"
     },
     {
       "key": "JU-ju-20029-37829-dl",
@@ -39922,7 +40452,8 @@
       "fassungsToken": "bf9c19537845d20e05c8ec151c2995cf",
       "pdfPfad": null,
       "pdfUrl": "https://srl.lu.ch/api/de/versions/3870/pdf_file",
-      "pdfStand": "2022-01-01"
+      "pdfStand": "2022-01-01",
+      "abkRoh": "BeurkGebV"
     },
     {
       "key": "LU-228",
@@ -39942,7 +40473,8 @@
       "fassungsToken": "ddfd8a803702cdce3c2850d74fb1862d",
       "pdfPfad": null,
       "pdfUrl": "https://srl.lu.ch/api/de/versions/4599/pdf_file",
-      "pdfStand": "2026-01-01"
+      "pdfStand": "2026-01-01",
+      "abkRoh": "Grundbuchgebührentarif, GBGT"
     },
     {
       "key": "LU-645",
@@ -39962,7 +40494,8 @@
       "fassungsToken": "f0e7b4d8ce79a7241d3b16f9ba9afe66",
       "pdfPfad": null,
       "pdfUrl": "https://srl.lu.ch/api/de/versions/4351/pdf_file",
-      "pdfStand": "2025-01-01"
+      "pdfStand": "2025-01-01",
+      "abkRoh": "HStG"
     },
     {
       "key": "LU-265",
@@ -39982,7 +40515,8 @@
       "fassungsToken": "2aa177649f831cf95054a6fefc7b8083",
       "pdfPfad": null,
       "pdfUrl": "https://srl.lu.ch/api/de/versions/4604/pdf_file",
-      "pdfStand": "2026-01-01"
+      "pdfStand": "2026-01-01",
+      "abkRoh": "Justiz-Kostenverordnung, JusKV"
     },
     {
       "key": "LU-3870",
@@ -40102,7 +40636,8 @@
           "nummer": "26",
           "name": "Rechtspflege"
         }
-      }
+      },
+      "abkRoh": "Beurkundungsgebührenverordnung, BeurkGebV"
     },
     {
       "key": "NW-265.51",
@@ -40132,7 +40667,8 @@
           "nummer": "26",
           "name": "Rechtspflege"
         }
-      }
+      },
+      "abkRoh": "Gebührenverordnung, GebV"
     },
     {
       "key": "NW-261.2",
@@ -40162,7 +40698,8 @@
           "nummer": "26",
           "name": "Rechtspflege"
         }
-      }
+      },
+      "abkRoh": "Prozesskostengesetz, PKoG"
     },
     {
       "key": "NW-521.1",
@@ -40192,7 +40729,8 @@
           "nummer": "52",
           "name": "Kantonale und kommunale Steuern"
         }
-      }
+      },
+      "abkRoh": "Steuergesetz, StG"
     },
     {
       "key": "OW-134.15",
@@ -40222,7 +40760,8 @@
           "nummer": "134",
           "name": "Gerichtsbehörden, Anwaltsrecht"
         }
-      }
+      },
+      "abkRoh": "GebOR"
     },
     {
       "key": "OW-213.61",
@@ -40252,7 +40791,8 @@
           "nummer": "213",
           "name": "Sachenrecht, Grundbuch, Grundstückschätzungen"
         }
-      }
+      },
+      "abkRoh": "Grundbuchgebührentarif"
     },
     {
       "key": "OW-641.4",
@@ -40282,7 +40822,8 @@
           "nummer": "641",
           "name": "Steuern"
         }
-      }
+      },
+      "abkRoh": "StG"
     },
     {
       "key": "SG-2808",
@@ -40336,7 +40877,8 @@
           "nummer": "96",
           "name": "Zivil- und Strafrechtspflege"
         }
-      }
+      },
+      "abkRoh": "HonO"
     },
     {
       "key": "SG-811.1",
@@ -40366,7 +40908,8 @@
           "nummer": "81",
           "name": "Steuern und Finanzausgleich"
         }
-      }
+      },
+      "abkRoh": "StG"
     },
     {
       "key": "SG-2935",
@@ -40478,7 +41021,8 @@
           "nummer": "17",
           "name": "Behörden und Verwaltung"
         }
-      }
+      },
+      "abkRoh": "JG"
     },
     {
       "key": "SH-221.101",
@@ -40508,7 +41052,8 @@
           "nummer": "22",
           "name": "Obligationenrecht"
         }
-      }
+      },
+      "abkRoh": "Notariatsgebührenverordnung (221.101 (ergänzend 211.433))"
     },
     {
       "key": "SO-615.11",
@@ -40538,7 +41083,8 @@
           "nummer": "61",
           "name": "Finanzen"
         }
-      }
+      },
+      "abkRoh": "GT"
     },
     {
       "key": "SO-614.11",
@@ -40568,7 +41114,8 @@
           "nummer": "61",
           "name": "Finanzen"
         }
-      }
+      },
+      "abkRoh": "Steuergesetz"
     },
     {
       "key": "SZ-173.111",
@@ -40670,7 +41217,8 @@
           "nummer": "17",
           "name": "Staatliche Gewalten. Behörden"
         }
-      }
+      },
+      "abkRoh": "AnwT"
     },
     {
       "key": "TG-632.1",
@@ -40700,7 +41248,8 @@
           "nummer": "63",
           "name": "Gebühren. Abgaben"
         }
-      }
+      },
+      "abkRoh": "GGG"
     },
     {
       "key": "TG-640.1",
@@ -40730,7 +41279,8 @@
           "nummer": "64",
           "name": "Steuern"
         }
-      }
+      },
+      "abkRoh": "StG"
     },
     {
       "key": "TG-638.1",
@@ -40760,7 +41310,8 @@
           "nummer": "63",
           "name": "Gebühren. Abgaben"
         }
-      }
+      },
+      "abkRoh": "VGG"
     },
     {
       "key": "TI-ti-125101",
@@ -40876,7 +41427,8 @@
           "nummer": "2",
           "name": "Politische Rechte - Behörden"
         }
-      }
+      },
+      "abkRoh": "Gerichtsgebührenreglement, GGebR"
     },
     {
       "key": "VD-vd-210360",
@@ -41032,7 +41584,8 @@
           "nummer": "17",
           "name": "Behörden"
         }
-      }
+      },
+      "abkRoh": "GTar"
     },
     {
       "key": "VS-643.1",
@@ -41062,7 +41615,8 @@
           "nummer": "64",
           "name": "Steuern"
         }
-      }
+      },
+      "abkRoh": "LDM"
     },
     {
       "key": "VS-173.8-fr",
@@ -41092,7 +41646,8 @@
           "nummer": "17",
           "name": "Behörden"
         }
-      }
+      },
+      "abkRoh": "LTar"
     },
     {
       "key": "VS-211.611",
@@ -41122,7 +41677,8 @@
           "nummer": "21",
           "name": "Vollstreckung des Zivilrechts"
         }
-      }
+      },
+      "abkRoh": "OcRF"
     },
     {
       "key": "VS-1413",
@@ -41210,7 +41766,8 @@
           "nummer": "16",
           "name": "Gerichtsorganisation, Verwaltungsrechtspflege, Anwaltsrecht"
         }
-      }
+      },
+      "abkRoh": "AnwT"
     },
     {
       "key": "ZG-215.35",
@@ -41240,7 +41797,8 @@
           "nummer": "21",
           "name": "Zivilrecht"
         }
-      }
+      },
+      "abkRoh": "Grundbuchgebührentarif"
     },
     {
       "key": "ZG-161.7",
@@ -41268,7 +41826,8 @@
           "nummer": "16",
           "name": "Gerichtsorganisation, Verwaltungsrechtspflege, Anwaltsrecht"
         }
-      }
+      },
+      "abkRoh": "Kostenverordnung Obergericht, KoV OG"
     },
     {
       "key": "ZG-641.1",
@@ -41298,7 +41857,8 @@
           "nummer": "64",
           "name": "Gebühren"
         }
-      }
+      },
+      "abkRoh": "Verwaltungsgebührentarif"
     },
     {
       "key": "ZH-211.11",

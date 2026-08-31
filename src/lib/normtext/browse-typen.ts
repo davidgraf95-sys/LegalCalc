@@ -12,6 +12,14 @@ export interface BrowseErlass {
   kanton: string | null;
   kuerzel: string;
   titel: string;
+  /** R8.3 (Wurzel-Fix F8): ROHES amtliches Kürzel der Quelle — Projektion des
+   *  Sidecars public/normtext/kanton-abk-roh.json (abbreviation-Feld verbatim;
+   *  Herkunft api/rueckrechnung: Kopf von scripts/normtext/kanton-abk-roh.ts).
+   *  Nur Kanton-Einträge, und NUR wenn nicht-leer belegt; fehlt ⇒ die Quelle
+   *  führt kein amtliches Kürzel (oder es ist unbelegt) ⇒ kein Such-Alias
+   *  (fail-closed). `kuerzel`/`titel` bleiben die ANZEIGE-Felder aus dem
+   *  Last-Comma-Split und sind KEINE Kürzel-Provenienz. */
+  abkRoh?: string;
   sr: string | null;
   rechtsgebiet: Rechtsgebiet;
   sprache: Sprache;

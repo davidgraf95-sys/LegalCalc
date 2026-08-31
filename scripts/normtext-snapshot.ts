@@ -480,6 +480,8 @@ async function erzeugeKantonsSnapshots(
     tokenFehlt: [],
     fetchFehler: [],
   };
+  // R8.3: in diesem Lauf frisch geholte Roh-Abkürzungen (Key → api-Eintrag).
+  const abkRohLauf: Record<string, import('./normtext/kanton-abk-roh.ts').AbkRohEintrag> = {};
 
   // §8 (kein stilles Überschreiben): zweisprachige Kantone zitieren denselben
   // Erlass über die de- UND die fr-LexWork-URL — verschiedene Sprachfassungen,
@@ -604,10 +606,31 @@ async function erzeugeKantonsSnapshots(
     const projJson = flipKantonErlass(flipDb, { key: `${g.kanton}-${schluessel}`, kanton: g.kanton }, snapshotListe);
     writeFileSync(ausgabePfad, projJson, 'utf8');
 
+    // R8.3 (Wurzel-Fix F8): das ROHE abbreviation-Feld verbatim je geschriebenem
+    // Snapshot festhalten — NUR hier entsteht die Information «leer oder nicht»,
+    // erlassBezeichnung unten verliert sie. Persistiert unten als api-Eintrag im
+    // Sidecar kanton-abk-roh.json (Mechanik: scripts/normtext/kanton-abk-roh.ts).
+    abkRohLauf[`${g.kanton}-${schluessel}`] = {
+      abk: ergebnis.meta.abkuerzung,
+      herkunft: 'api',
+      stand: abgerufen,
+      quelleUrl: `https://${g.host}/api/${g.lang}/texts_of_law/${g.lawId}`,
+    };
+
     cov.totalSnapshots += snapshotListe.length;
     cov.reportZeilen.push(
       `  ${g.kanton}-${schluessel.padEnd(14)} ${snapshotListe.length} Snapshots → ${ausgabePfad}`,
     );
+  }
+
+  // Sidecar-Merge (nur die in DIESEM Lauf geholten Keys überschreiben; fremde
+  // Kantone/Erlasse bleiben unangetastet — der Lauf kann per --kanton gefiltert
+  // sein). Deterministisch sortiert geschrieben.
+  if (Object.keys(abkRohLauf).length > 0) {
+    const { ladeAbkRoh, serialisiereAbkRoh, ABK_ROH_DATEINAME } = await import('./normtext/kanton-abk-roh.ts');
+    const sidecar = { ...ladeAbkRoh('public/normtext'), ...abkRohLauf };
+    writeFileSync(`public/normtext/${ABK_ROH_DATEINAME}`, serialisiereAbkRoh(sidecar), 'utf8');
+    cov.reportZeilen.push(`  kanton-abk-roh.json: ${Object.keys(abkRohLauf).length} api-Einträge nachgeführt`);
   }
 
   return cov;

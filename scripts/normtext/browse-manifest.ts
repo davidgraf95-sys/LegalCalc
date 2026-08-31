@@ -22,6 +22,7 @@ import {
   ERLASS_REGISTER, GEBIET_RANG, kantonGebiet,
   type ErlassRegistereintrag, type Sprache,
 } from '../../src/lib/normtext/register.ts';
+import { ladeAbkRoh, type AbkRohEintrag } from './kanton-abk-roh.ts';
 
 const NORMTEXT_DIR = 'public/normtext';
 
@@ -285,6 +286,7 @@ function kantonEintrag(
   datei: NormSnapshotDatei,
   pq?: PdfQuelle,
   baum?: SystematikBaum,
+  abkRoh?: AbkRohEintrag,
 ): BrowseErlass {
   const kanton = stamm.split('-')[0];
   const erstes = datei.eintraege[0];
@@ -301,12 +303,20 @@ function kantonEintrag(
     pdfPfad: null,
     ...pdfFelder(pq),
     ...sachgebietFelder(sachgebietKantonFuer(baum, kanton, stamm)),
+    ...abkRohFelder(abkRoh),
   };
 }
 
 /** Additiv wie `pdfFelder`: kein Treffer ⇒ kein Feld (§8), nie `undefined` im JSON. */
 function sachgebietFelder(s: SachgebietKanton | undefined): { sachgebietKanton?: SachgebietKanton } {
   return s ? { sachgebietKanton: s } : {};
+}
+
+/** R8.3 (Wurzel-Fix F8): ROHES amtliches Kürzel aus dem Sidecar
+ *  kanton-abk-roh.json — nur wenn NICHT-leer belegt (§8: leer/fehlend heisst
+ *  «Quelle führt kein amtliches Kürzel» ⇒ kein Feld ⇒ kein Such-Alias). */
+function abkRohFelder(e: AbkRohEintrag | undefined): { abkRoh?: string } {
+  return e && e.abk !== '' ? { abkRoh: e.abk } : {};
 }
 
 function liveLinkEintrag(reg: ErlassRegistereintrag): BrowseErlass {
@@ -352,6 +362,7 @@ export function baueBrowseManifest(erzeugt: string, basis = NORMTEXT_DIR): Brows
   const pdfQuellen = ladePdfQuellen(basis);
   const inkrafttreten = ladeInkrafttreten(basis);
   const systematik = ladeSystematik(basis);
+  const abkRoh = ladeAbkRoh(basis);
   const erlasse: BrowseErlass[] = [];
 
   // Bund: jeder Snapshot MUSS einen Register-Eintrag haben (Orphan-Tor).
@@ -369,7 +380,7 @@ export function baueBrowseManifest(erzeugt: string, basis = NORMTEXT_DIR): Brows
     const stamm = f.replace(/\.json$/, '');
     const datei = ladeDatei(join(basis, 'kanton', f));
     if (!datei) continue;
-    erlasse.push(kantonEintrag(stamm, datei, pdfQuellen[stamm], systematik[stamm.split('-')[0]]));
+    erlasse.push(kantonEintrag(stamm, datei, pdfQuellen[stamm], systematik[stamm.split('-')[0]], abkRoh[stamm]));
   }
 
   // Register-Einträge ohne Snapshot ergänzen: 'nur-live-link' (externer Link) und
