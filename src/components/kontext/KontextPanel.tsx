@@ -11,6 +11,7 @@ import { revisionenFuerNorm, revisionTitel, type RevisionAnsicht, type RevisionB
 import { vernehmlassungenFuer, VERNEHMLASSUNG_STATUS_LABEL, type VernehmlassungBezug } from '../../lib/materialien/vernehmlassungen';
 import { AMTLICHE_FASSUNG_NOMEN } from '../../lib/benennung';
 import { datumCh } from '../../lib/normtext/erlassKopfText';
+import { AbrufFehler } from '../ui/AbrufFehler';
 import { Datum } from '../ui/Datum';
 import { GruppenKopf } from '../ui/GruppenKopf';
 import { useLocale, fedlexLokalisiert } from '../locale';
@@ -391,11 +392,13 @@ export function KontextPanel({ typ, normKeys, zusatzGruppen, ohneNormen = false,
               hinweis={botschaftenFehler
                 ? undefined
                 : <><span className="num">{botschaften.length}</span> Botschaft{botschaften.length === 1 ? '' : 'en'} des Bundesrates — maschinell über den amtlichen Fedlex-Projekt-Graphen zugeordnet (ab ~2000), fachlich nicht geprüft; massgeblich bleibt {AMTLICHE_FASSUNG_NOMEN}.</>}>
+              {/* F2-4: eine von vier Abruf-Fehler-Zeilen des Hauses, jetzt aus
+                  `ui/AbrufFehler`. Der Link hiess «Fedlex» — der Name des
+                  ANBIETERS statt des Ziels; Kanon ist «Amtliche Fassung ↗»
+                  (Ä110/B-1, `ui/QuellLink`), der Schlusspunkt entfällt mit dem
+                  Pfeil. Ton und Satzbau unverändert. */}
               {botschaftenFehler ? (
-                <p className="text-body-s text-warn-700">
-                  Entstehungsgeschichte konnte nicht geladen werden. Amtliche Quelle:{' '}
-                  <a href="https://www.fedlex.admin.ch" target="_blank" rel="noopener noreferrer" className="text-brass-700 hover:underline">Fedlex</a>.
-                </p>
+                <AbrufFehler gegenstand="Entstehungsgeschichte" href="https://www.fedlex.admin.ch" />
               ) : (
                 <>
                   <ul className="flex flex-col gap-1.5">
@@ -442,11 +445,9 @@ export function KontextPanel({ typ, normKeys, zusatzGruppen, ohneNormen = false,
               hinweis={revFehler
                 ? undefined
                 : <><span className="num">{revAenderungen.length}</span> Änderungs­erlass{revAenderungen.length === 1 ? '' : 'e'} (AS/RO) — maschinell über den amtlichen Fedlex-Graphen zusammengestellt (verlässlich ab ~2000); massgeblich bleibt die amtliche Sammlung.</>}>
+              {/* F2-4, zweite Fundstelle (Begründung bei der ersten). */}
               {revFehler ? (
-                <p className="text-body-s text-warn-700">
-                  Änderungsverlauf konnte nicht geladen werden. Amtliche Quelle:{' '}
-                  <a href="https://www.fedlex.admin.ch" target="_blank" rel="noopener noreferrer" className="text-brass-700 hover:underline">Fedlex</a>.
-                </p>
+                <AbrufFehler gegenstand="Änderungsverlauf" href="https://www.fedlex.admin.ch" />
               ) : (
                 <>
                   <ul className="flex flex-col gap-1.5">
@@ -517,11 +518,9 @@ export function KontextPanel({ typ, normKeys, zusatzGruppen, ohneNormen = false,
               hinweis={vernehmlassungenFehler
                 ? undefined
                 : <><span className="num">{vernehmlassungen.length}</span> Vernehmlassungsverfahren — maschinell über den amtlichen Fedlex-Gesetzgebungs-Graphen zugeordnet (Reichweite ab ~2006), fachlich nicht geprüft; die Zuordnung kann bei Mantelvorlagen grob sein, massgeblich bleibt {AMTLICHE_FASSUNG_NOMEN}.</>}>
+              {/* F2-4, dritte Fundstelle (Begründung bei der ersten). */}
               {vernehmlassungenFehler ? (
-                <p className="text-body-s text-warn-700">
-                  Gesetzgebung in Arbeit konnte nicht geladen werden. Amtliche Quelle:{' '}
-                  <a href="https://www.fedlex.admin.ch" target="_blank" rel="noopener noreferrer" className="text-brass-700 hover:underline">Fedlex</a>.
-                </p>
+                <AbrufFehler gegenstand="Gesetzgebung in Arbeit" href="https://www.fedlex.admin.ch" />
               ) : (
                 <>
                   <ul className="flex flex-col gap-1.5">

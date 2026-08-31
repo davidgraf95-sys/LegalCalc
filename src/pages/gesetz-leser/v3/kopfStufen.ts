@@ -218,7 +218,8 @@ export function kopfElemente(stufe: KopfStufe): KopfElemente {
 //
 // EHRLICHER REST, unverändert benannt: die zweite Hälfte des Deckels von Kap. 6
 // («≤ 2 reine Icons») bleibt @390 mit ⚖ · ☰ · ··· gerissen. Neu ist, dass die
-// drei WIE EINE FAMILIE aussehen und 32 px Ziel tragen — der Deckel selbst ist
+// drei WIE EINE FAMILIE aussehen und (seit F2-6, 31.8.2026) 44 px Ziel tragen;
+// bis dahin waren es 32 — der Deckel selbst ist
 // als «drei, aber eine Bauform» im Fahrplan datiert nachgeführt; der Rest gehört
 // zu Ä33/Ä34 (Griff-Zahl), nicht hierher.
 
@@ -229,18 +230,30 @@ export const KOPF_GRIFF = 'lc-leiste-griff lc-leiste-griff-fest';
 /**
  * Klassen des Kopf-Griffs.
  *
- * Auf dem Handy-Zuschnitt wächst das Ziel von 24 auf **32 px**
- * (`min-h-8 min-w-8`): die Kopfzeile ist dort 48 px hoch, das Ziel passt also
- * ohne Umbruch, und in der Ort-Zone bleibt Platz (Zeile 350 px, Griff-Zone
- * vorher 84 px). Sonst bleibt `--tap-ziel`: dort bedient eine Maus, und ein
- * grösserer Chip nähme dem Ort Platz, den er braucht.
+ * Auf dem Handy-Zuschnitt wächst das Ziel von 24 auf **44 px**
+ * (`.lc-leiste-griff-komfort` → `--tap-ziel-komfort`, src/index.css). Sonst
+ * bleibt `--tap-ziel`: dort bedient eine Maus, und ein grösserer Chip nähme dem
+ * Ort Platz, den er braucht.
+ *
+ * F2-6 (31.8.2026) — VON 32 AUF 44: hier stand `min-h-8 min-w-8`, also eine
+ * Untergrenze von 32 px. Das war weder der Token `--tap-ziel` (24 px, WCAG 2.5.8
+ * AA) noch das Komfortmass (44 px, WCAG 2.5.5 AAA), sondern eine dritte, nirgends
+ * hergeleitete Zahl — und zwar auf dem einzigen Zuschnitt, auf dem der Finger das
+ * einzige Werkzeug ist (der Abschnitt über `KOPF_GRIFF` nennt 24 px dort selbst
+ * «der schlechteste noch zulässige Wert»). Die alte Begründung für 32 war die
+ * 48 px hohe Kopfzeile: «das Ziel passt also ohne Umbruch, und in der Ort-Zone
+ * bleibt Platz (Zeile 350 px, Griff-Zone vorher 84 px)». Sie trägt 44 ebenso —
+ * 44 passt in 48, und die Griff-Zone wächst von 84 auf ~108 px (zwei Icon-Griffe
+ * +12 px; «Ansicht ▾» ist ohnehin breiter), die Ort-Zone bleibt bei ~242 px.
+ * Als KLASSE statt als Utility-Kette, damit der Wert bei seinem Token bleibt und
+ * das a11y-Tor die Komfort-Griffe an einem stabilen Selektor findet.
  *
  * `mini` als BOOLEAN und nicht als `KopfStufe`: die drei Aufrufer haben die
  * Antwort bereits in der Hand (`form === 'kompakt'`, `kompakt`,
  * `stufe === 'mini'`) und sollen die Stufe nicht neu kennen müssen (§3).
  */
 export function kopfGriffKlassen(mini: boolean): string {
-  return mini ? `${KOPF_GRIFF} min-h-8 min-w-8` : KOPF_GRIFF;
+  return mini ? `${KOPF_GRIFF} lc-leiste-griff-komfort` : KOPF_GRIFF;
 }
 
 /**
@@ -253,7 +266,7 @@ export function kopfGriffKlassen(mini: boolean): string {
  * `check:design-tokens` gemeldet — rot gesehen 18.8.2026. Der Name der Stufe
  * meint hier keine Überschrift, sondern schlicht ihre Grösse; `leading-none`
  * nimmt die mitgelieferte Zeilenhöhe wieder heraus, weil eine Glyphe in einem
- * 32-px-Ziel keine braucht.
+ * Komfort-Ziel keine braucht (bis F2-6: 32 px, seither 44).
  *
  * Getrennt von den Griff-Klassen, weil sonst auch die Zahl im Zähler-Chip
  * mitwüchse — sie ist Text, keine Glyphe.

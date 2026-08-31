@@ -292,16 +292,61 @@
        sondern der normative Wert aus WCAG 2.2, Erfolgskriterium 2.5.8 «Target
        Size (Minimum)», Konformitätsstufe AA (w3.org/TR/WCAG22/#target-size-minimum,
        W3C Recommendation, Stand 5.10.2023). Der Wert steht EINMAL hier; jede
-       Komponente greift ihn als `var(--tap-ziel)`, nie die Zahl (§5/D2). Das
-       Komfort-Ziel für allein stehende Chrome-Griffe bleibt das bestehende
-       `min-h-11`-Muster (44 px, WCAG 2.5.5 AAA) — dort ist die 44 die ANATOMIE
-       des Knopfes (`.lc-btn` height), nicht eine Untergrenze, darum bewusst
-       kein zweites Token (§13/D2: eine Zahl, eine Bedeutung).
+       Komponente greift ihn als `var(--tap-ziel)`, nie die Zahl (§5/D2).
        WCAG-Ausnahmen von 2.5.8, die die Regel NICHT verletzen und die das Tor
        darum nicht misst: Inline-Links im Fliesstext («inline»), Ziele, deren
        Grösse der Browser/UA bestimmt, und Bedienelemente, für die dieselbe
        Funktion daneben gross genug erreichbar ist («equivalent»). */
     --tap-ziel:24px;
+    /* ── KOMFORT-Trefferfläche (W2·19-DESIGN-KONSISTENZ R2/F2-6) ────────────
+       44 px = WCAG 2.2 SC 2.5.5 «Target Size (Enhanced)», Konformitätsstufe AAA
+       (w3.org/TR/WCAG22/#target-size-enhanced, W3C Recommendation 5.10.2023).
+
+       WARUM JETZT DOCH EIN ZWEITES TOKEN (§0.2: Entscheid begründet geändert,
+       nicht still gekippt): bis hierher stand an dieser Stelle «das Komfort-Ziel
+       für allein stehende Chrome-Griffe bleibt das `min-h-11`-Muster … dort ist
+       die 44 die ANATOMIE des Knopfes (`.lc-btn` height), nicht eine
+       Untergrenze, darum bewusst kein zweites Token». Die BEGRÜNDUNG steht
+       unverändert — sie trägt nur den Fall nicht, den F2-6 gefunden hat: die
+       Kopf-Griffe des Lesers V3 (`v3/kopfStufen.kopfGriffKlassen`) setzten auf
+       dem Handy-Zuschnitt `min-h-8 min-w-8`, also eine UNTERGRENZE von 32 px —
+       weder die Anatomie eines `.lc-btn` noch der 24-px-Token, sondern eine
+       dritte, nirgends hergeleitete Zahl. Genau dafür ist ein Token da. Die
+       Anatomie-Fälle (`.lc-btn`-Höhe, `min-h-11` an fertigen Knöpfen) bleiben
+       ausdrücklich, was sie sind — dort ist die 44 kein Mindestmass.
+
+       KONSUMENT: `.lc-leiste-griff-komfort` (unten). Der Wert steht EINMAL
+       hier. */
+    --tap-ziel-komfort:44px;
+    /* ── ABDUNKELNDE FLÄCHE HINTER EINEM OVERLAY (Scrim) · F2-1 ─────────────
+       DREI ROLLEN, DREI DECKUNGEN, EINE FARBE. Die Farbe ist `black` und NICHT
+       `--ink-900`: das Tinten-Token flippt mit dem Thema (hell #201E16, dunkel
+       #E9E7E2), ein `bg-ink-900/30` HELLT im Dunkelmodus also auf, statt
+       abzudunkeln (Herleitung und Messung: `v3/LeserScrim.tsx`, B7-N1;
+       gemessene Leuchtdichte im Lesefeld hell 237.5 → 166.1, dunkel
+       32.7 → 23.0). Vor F2-1 stand dieselbe Zusage in SECHS Fundstellen als
+       Utility-Kette, davon drei mit dem falschen, aufhellenden Token.
+
+       Die Stufung ist ROLLENGEBUNDEN, nicht Geschmack — je grösser die Fläche,
+       die das Overlay einnimmt, desto weiter tritt der Rest zurück:
+         30 %  angeschlagenes Blatt / Menü (Bottom-Sheet, Panel-Blatt,
+               Ansicht-Menü) — 4 Fundstellen
+         40 %  zentrierter modaler Dialog (Tastatur-Hilfe, Norm-Popover im
+               Alt-Pfad) — 2 Fundstellen
+         50 %  Vollflächen-Schublade (`layout/Shell`) — 1 Fundstelle
+       Wer eine Zahl ändert, ändert sie für die ganze ROLLE (§5). Wächter gegen
+       neue Ad-hoc-Scrims: `scripts/check-design-tokens.ts` (Prüfung 5). */
+    --scrim:rgb(0 0 0 / .30);
+    --scrim-dialog:rgb(0 0 0 / .40);
+    --scrim-voll:rgb(0 0 0 / .50);
+    /* Anschlagshöhe der von unten angeschlagenen Blätter (F2-2): die Oberkante
+       liegt knapp unter der klebenden Kopf-Zone — Topbar 4rem + Inhalts-Kopfband
+       2.25rem. Vorher zweimal als `calc(4rem + 2.25rem)` im JSX. Der
+       Gesetz-Leser reicht `SheetRahmen` stattdessen seine GEMESSENE Kopfhöhe
+       `--leser-kopf-h` durch (gesetzt an genau einer Stelle, `.lc-leser` in
+       `gesetz-leser/inhalt.tsx`); rechnerisch ist das derselbe Wert, aber dort
+       eine Messung statt einer Annahme. */
+    --sheet-anschlag:calc(4rem + 2.25rem);
     /* Typografie */
     --tracking-overline:.12em;
     /* Off-Skala-Schriftgrössen, die bewusst nicht aus der Typo-Skala stammen,
@@ -1463,6 +1508,19 @@
   .lc-leiste-griff:hover { background: var(--well); color: var(--brass-700); }
   .lc-leiste-griff-fest { background: var(--well); color: var(--ink-700); padding: 0 6px; }
   .lc-leiste-griff-fest:hover { background: var(--surface); color: var(--brass-700); }
+  /* KOMFORT-Stufe des Griffs (F2-6): auf dem Handy-Zuschnitt, wo der Finger das
+     einzige Werkzeug ist, hebt sie die Untergrenze vom WCAG-2.5.8-Minimum
+     (`--tap-ziel`, 24 px) auf das AAA-Komfortmass `--tap-ziel-komfort` (44 px).
+     Vorher standen dafür `min-h-8 min-w-8` im Klassen-String von
+     `v3/kopfStufen.kopfGriffKlassen` — 32 px, eine dritte Zahl neben Token und
+     Knopf-Anatomie. Als eigene KLASSE und nicht als
+     `min-h-[var(--tap-ziel-komfort)]`-Utility, damit (a) der Wert bei seinem
+     Token bleibt und (b) das a11y-Tor die Komfort-Griffe an einem stabilen
+     Selektor findet. Passt in die 48 px hohe Kopfzeile des Zuschnitts. */
+  .lc-leiste-griff-komfort {
+    min-height: var(--tap-ziel-komfort);
+    min-width: var(--tap-ziel-komfort);
+  }
   /* Senkrechte Rand-SCHIENE des Lesers V3 (H3-Nachzug C5b): der schmale,
      senkrecht beschriftete Öffner, wenn die Gliederung eingeklappt ist. Bis zum
      Nachzug stand die Wertekette als 13 Utilities im JSX — Design-Werte gehören
@@ -1487,6 +1545,17 @@
   .lc-glass {
     background: var(--paper);
   }
+  /* ── Scrim: die abdunkelnde Fläche hinter einem Overlay (F2-1) ─────────────
+     Nur die FARBE/DECKUNG, bewusst NICHT Position, z-Index und
+     `pointer-events`: wo der Scrim liegt und in welcher Ebene, entscheidet die
+     Overlay-Anatomie des Aufrufers (`fixed` in der Einzelansicht, `absolute` in
+     der Overlay-Schicht eines Panes; z-[16] unter dem klebenden Leser-Kopf,
+     z-40 unter einem Blatt). Eine Klasse, die das mitbrächte, wäre an genau
+     einer der sieben Fundstellen richtig. Rollen und Herleitung der drei
+     Deckungen: bei den Tokens oben. */
+  .lc-scrim { background-color: var(--scrim); }
+  .lc-scrim-dialog { background-color: var(--scrim-dialog); }
+  .lc-scrim-voll { background-color: var(--scrim-voll); }
   .lc-badge {
     @apply inline-flex items-center rounded-full;
     font-size: .75rem; font-weight: 500; padding: 2px 10px;

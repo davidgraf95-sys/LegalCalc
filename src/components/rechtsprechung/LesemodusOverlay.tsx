@@ -122,8 +122,20 @@ export function LesemodusOverlay({ ziel, snap, abschnitte, regesteText, massgebl
       className={imPane
         ? '@container/pane pointer-events-auto absolute inset-0 z-50 overflow-y-auto bg-paper'
         : 'fixed inset-0 z-50 overflow-y-auto bg-paper'}>
-      {/* schlanke, sticky Kopfleiste: Identität + Schriftgrösse + Schliessen */}
-      <div className="sticky top-0 z-10 flex items-center gap-3 border-b border-line bg-paper/95 px-5 py-2.5 backdrop-blur-sm">
+      {/* Schlanke, sticky Kopfleiste: Identität + Schriftgrösse + Schliessen.
+          F2-3 (31.8.2026): sie stand als `bg-paper/95` + `backdrop-blur-sm` da —
+          die LETZTE Glas-Fläche dieser Rolle. `src/index.css` (`.lc-glass`, ab
+          «Sticky-Chrome-Kopf (Topbar)») hat den Effekt für klebende Kopfleisten
+          begründet abgeschafft: «Volldeckend statt 96 % + Blur; `backdrop-filter`
+          entfällt gleich mit (ohne Transparenz wirkungslos UND Verdachtsursache
+          des Scroll-Repaint-Flackerns LM-006, dieselbe Fläche)» — Anlass war der
+          extern gemessene Blocker LM-001: «beim Scrollen läuft der Seiteninhalt
+          sichtbar durch den oberen Rand der Kopfleiste». Genau das tat diese
+          Leiste noch, und der Entscheid galt für die ROLLE, nicht für eine
+          Datei. Volldeckend `bg-paper` — dieselbe opake Fläche, die auch der
+          klebende Leser-Kopf (`v3/LeserKopf`) und die Lese-Zeile
+          (`v3/LeserLeseZeile`) tragen. */}
+      <div className="sticky top-0 z-10 flex items-center gap-3 border-b border-line bg-paper px-5 py-2.5">
         <span className="num text-body-s font-medium text-ink-700">{snap.bgeReferenz ?? snap.zitierung}</span>
         <span className="ml-auto inline-flex items-center gap-2">
           {/* 5B-Nachzug (29.8.2026), abgestufte Fassung: Gruppen-Name und

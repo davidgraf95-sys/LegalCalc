@@ -22,6 +22,7 @@ import { PanelZaehler } from './LeserPanelOeffner';
 import { normZitat, panelBezug, trefferZahl, usePanelBezuege, usePanelZustand } from './panelModell';
 import { SuchSprungFeld } from './SuchSprungFeld';
 import { suchZoneAufbau } from './suchZoneAufbau';
+import { SchwebeMeldung } from '../../../components/ui/SchwebeMeldung';
 import { useTrefferBlatt } from './useTrefferBlatt';
 import { useKopfAnspruch } from './useKopfAnspruch';
 import { useStickAusgleich } from './useStickAusgleich';
@@ -388,13 +389,12 @@ export function LeserRahmenV3({ ebene, schluessel }: LeserRahmenV3Props) {
             sichtbarer Sprung von 20 px, sobald er erschien (Bug-Check «Nice»,
             16.8.2026). Derselbe `display: contents`-Träger, der das schon für
             «Weiterlesen» und die Tastatur löst, nimmt den Margin entgegen und
-            wirft ihn weg. */}
+            wirft ihn weg. F2-5 (31.8.2026): Geometrie und Optik kommen aus `ui/SchwebeMeldung` — der Toast war die Abweichung unter drei gleichen Rollen (`top-20` geraten statt `--nt-stick`, darum @390 über den Kopf-Griffen; Herleitung und Messung dort). Behalten: `role="status"` und der Inhalt. */}
         {m.reiterToast && (
-          <div role="status" aria-live="polite"
-            className="fixed right-3 top-20 z-50 flex items-center gap-2 rounded-lg border border-line bg-paper-raised px-3 py-2 text-body-s text-ink-700 shadow-lg">
+          <SchwebeMeldung kante="oben" ausrichtung="rechts" rolle="status" inhaltKlassen="gap-2 px-3 py-2 text-body-s text-ink-700">
             <span aria-hidden className="text-brass-700">⧉</span>
             Im neuen Reiter geöffnet — oben unter ☰
-          </div>
+          </SchwebeMeldung>
         )}
         {!umgebung.istSekundaer && m.weiterlesen && (
           <WeiterlesenChip label={m.weiterlesen.label}
