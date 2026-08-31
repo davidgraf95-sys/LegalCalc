@@ -47,6 +47,7 @@
 
 import { createHash } from 'node:crypto';
 import { typisiereSpalten, type Spalte } from './mehrspaltige-tabelle.ts';
+import { fetchMitWiederholung } from './netz-retry.ts';
 // (segmentiereAnhangZiffern wird für ZH NICHT mehr genutzt — der Anhang wird
 //  spaltenbewusst über extrahiereZhAnhangSpalten gelesen; generischer
 //  Segmentierer bleibt für SG/LU im adapter-pdf.)
@@ -1132,6 +1133,51 @@ export function extrahiereZhNotariatsTarif(
 
 const UA = 'Mozilla/5.0 (LexMetrik Normtext-Snapshot)';
 
+// ── ZH-4b · Netz-Härtung (§17-Wurzelfix, 31.8.2026) ──────────────────────────
+// Vorher: drei NACKTE `fetch` je Erlass ohne Timeout/Wiederholung. Bei 3
+// Erlassen nie aufgefallen; ab ~20 Erlassen schlägt ein transienter Ausfall
+// still zu (der Erlass fehlt kommentarlos im Korpus — Befund Dossier §7).
+//
+// Zwei Massnahmen, beide HIER (nicht global), damit FETCH_CONCURRENCY für die
+// übrigen Kantons-Routen unangetastet bleibt:
+//   1. `fetchMitWiederholung` (netz-retry.ts): Timeout je Versuch + Backoff bei
+//      Netz-Wurf/429/5xx. 4xx bleibt hart (löst sich nicht von selbst).
+//   2. Globale SERIELLE Drossel auf ~1 Request/Sekunde gegen zh.ch/notes.zh.ch.
+//      Das Dossier hat nur seriell ~1 req/s gemessen (§5) — über Parallel-
+//      Massenlast sagt die Messung nichts. Die Drossel gilt prozessweit, also
+//      auch wenn der Aufrufer die Erlasse über pLimit(4) parallel anstösst:
+//      die Erlass-Schleife darf parallel laufen, die Requests tun es nicht.
+const ZH_MIN_ABSTAND_MS = 1000;
+let zhKette: Promise<unknown> = Promise.resolve();
+let zhLetzterStart = 0;
+
+const schlafe = (ms: number): Promise<void> => new Promise((r) => setTimeout(r, ms));
+
+/**
+ * Ein Request gegen die ZH-Hosts: seriell eingereiht, auf ~1 req/s gedrosselt,
+ * mit Timeout + Wiederholung. Wirft nach erschöpften Versuchen (kein stiller
+ * Verlust — der Aufrufer meldet den Erlass als Fehl-Erlass).
+ */
+async function zhFetch(url: string): Promise<Response> {
+  const anDerReihe = zhKette.then(async () => {
+    const wartezeit = ZH_MIN_ABSTAND_MS - (Date.now() - zhLetzterStart);
+    if (wartezeit > 0) await schlafe(wartezeit);
+    zhLetzterStart = Date.now();
+  });
+  // Kette fortschreiben, BEVOR gewartet wird: der nächste Aufrufer hängt sich
+  // hinter diesen Platz (Reihenfolge = Aufrufreihenfolge, kein Gedränge).
+  zhKette = anDerReihe;
+  await anDerReihe;
+  return fetchMitWiederholung(
+    url,
+    { headers: { 'User-Agent': UA } },
+    {
+      beiWiederholung: (versuch, grund, warteMs) =>
+        console.warn(`  ZH-Netz: Wiederholung ${versuch} für ${url} (${grund}) — warte ${warteMs} ms`),
+    },
+  );
+}
+
 /** Extrahiert die OpenAttachment-PDF-URL aus dem Registry-HTML (notes.zh.ch). */
 export function leseAttachmentUrl(registryHtml: string): string | null {
   const m = registryHtml.match(
@@ -1311,7 +1357,7 @@ export async function holeZhPdf(
   registryUrl: string,
 ): Promise<ZhErgebnis> {
   // 1. Registry-HTML.
-  const regRes = await fetch(registryUrl, { headers: { 'User-Agent': UA } });
+  const regRes = await zhFetch(registryUrl);
   if (!regRes.ok) throw new Error(`ZH-Registry ${registryUrl}: HTTP ${regRes.status}`);
   const regHtml = await regRes.text();
 
@@ -1321,7 +1367,7 @@ export async function holeZhPdf(
   }
 
   // 2. OpenAttachment → JS-Redirect.
-  const redirRes = await fetch(attachUrl, { headers: { 'User-Agent': UA } });
+  const redirRes = await zhFetch(attachUrl);
   if (!redirRes.ok) throw new Error(`ZH-Attachment ${attachUrl}: HTTP ${redirRes.status}`);
   const redirHtml = await redirRes.text();
   const pdfUrl = loeseRedirect(redirHtml, attachUrl);
@@ -1330,7 +1376,7 @@ export async function holeZhPdf(
   }
 
   // 3. PDF-Bytes.
-  const pdfRes = await fetch(pdfUrl, { headers: { 'User-Agent': UA } });
+  const pdfRes = await zhFetch(pdfUrl);
   if (!pdfRes.ok) throw new Error(`ZH-PDF ${pdfUrl}: HTTP ${pdfRes.status}`);
   const ct = pdfRes.headers.get('content-type') ?? '';
   const bytes = new Uint8Array(await pdfRes.arrayBuffer());

@@ -783,6 +783,28 @@ function zhLawIdSafe(url: string): string {
   return m ? m[1].replace(/_/g, '.') : url.replace(/[^a-z0-9.]+/gi, '_');
 }
 
+/**
+ * ZH-4b (§17-Wurzelfix / §8, 31.8.2026): Ein gelisteter ZH-Erlass, der nicht
+ * abrufbar war, darf NICHT still fehlen.
+ *
+ * Vorher wurde der Fetch-Fehler nur in eine Log-Zeile geschrieben und der Lauf
+ * baute Manifest/Register/Golden mit der Lücke weiter. Bei drei Erlassen fiel
+ * das noch auf; ab ~20 (deklarative Quellenliste) nicht mehr — genau die
+ * Fehlerklasse, die das Dossier §7 als «schlägt still zu» benennt. Jetzt:
+ * sichtbarer Abbruch mit Fehl-Erlass-Liste VOR dem Golden-Schreiben. Die
+ * Soll-Menge ist `ZH_QUELLEN` ∪ Tarif-Ableitung; ein Fehl-Erlass ist ein
+ * unvollständiger Korpus, kein Teilerfolg.
+ */
+function pruefeZhVollstaendig(zhCov: HtmCoverage): void {
+  if (zhCov.fetchFehler.length === 0) return;
+  const liste = zhCov.fetchFehler.map((f) => `  - ${f.kanton} ${f.url}\n      ${f.fehler}`).join('\n');
+  throw new Error(
+    `ZH-Import UNVOLLSTÄNDIG: ${zhCov.fetchFehler.length} gelistete(r) Erlass(e) nicht abrufbar —\n${liste}\n` +
+      'Lauf abgebrochen vor Manifest/Register/Golden (kein halber Korpus, §8). ' +
+      'Netz/Quelle prüfen und erneut fahren.',
+  );
+}
+
 // ── ZH-Snapshots (zhlex Text-PDF via pdfjs) erzeugen ─────────────────────────
 // Spiegelt die HTM-Phase: Inventar → holeZhPdf (Registry→notes.zh.ch-PDF) →
 // NormSnapshot. quelleUrl = zhlex-Registry-URL (= Manifest-Key). Drift via
@@ -1020,6 +1042,7 @@ async function main(): Promise<void> {
     for (const z of zhCov.reportZeilen) console.log(z);
     console.log(`\nGesamt ZH: ${zhCov.totalSnapshots} Snapshots; fetch-Fehler: ${zhCov.fetchFehler.length}`);
     for (const f of zhCov.fetchFehler) console.log(`  ${f.kanton} ${f.url}: ${f.fehler}`);
+    pruefeZhVollstaendig(zhCov);
 
     // Manifest + Register aus der Platte neu (alle Snapshots; nur ZH verändert).
     const kantonManifest = baueManifest('public/normtext/kanton');
@@ -1120,6 +1143,8 @@ async function main(): Promise<void> {
     ];
     console.log(`\nfetch-Fehler: ${alleFetchFehler.length}`);
     for (const f of alleFetchFehler) console.log(`  ${f}`);
+
+    if (zhCov) pruefeZhVollstaendig(zhCov);
 
     // Manifest + Register aus der Platte neu (alle Dateien; nur die Ziel-Kantone verändert).
     const kantonManifest = baueManifest('public/normtext/kanton');
