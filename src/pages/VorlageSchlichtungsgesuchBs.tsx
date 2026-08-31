@@ -284,6 +284,11 @@ export function VorlageSchlichtungsgesuchBs() {
       case 'klaeger': return (
         <div className="space-y-5">
           {parteiEditor(a.klaeger, (p) => set('klaeger', p), 'Klagende Partei')}
+          {/* R2-F-Nachzug: der frühere Knopf hiess «+ Weitere Partei
+              (Streitgenossenschaft)» — der Fachbegriff darf mit der
+              Vereinheitlichung nicht verschwinden (§8, Wiederherstellung). */}
+          <p className="text-body-s text-ink-600">Mehrere klagende oder beklagte
+            Parteien bilden eine Streitgenossenschaft.</p>
           <div className="space-y-3">
             <Checkbox
               checked={!!a.vertretung}
