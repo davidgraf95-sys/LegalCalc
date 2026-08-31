@@ -143,6 +143,7 @@
     "datenhaltung:manifest": "vite-node scripts/datenhaltung/check-datenhaltung.ts -- --schreibe",
     "datenhaltung:doppellauf": "vite-node scripts/datenhaltung/doppellauf.ts",
     "datenhaltung:turso-sync": "vite-node scripts/datenhaltung/turso-sync.ts",
+    "datenhaltung:nachfuehren": "vite-node scripts/datenhaltung/nachfuehren.ts",
     "datenhaltung:masse-ingest": "vite-node scripts/datenhaltung/masse-ingest.ts",
     "datenhaltung:resolve-zitate": "vite-node scripts/datenhaltung/resolve-zitate.ts",
     "datenhaltung:baue-rangliste": "vite-node scripts/datenhaltung/baue-rangliste.ts",
