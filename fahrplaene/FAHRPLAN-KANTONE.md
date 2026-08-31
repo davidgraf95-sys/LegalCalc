@@ -160,6 +160,12 @@
 >   `src/lib/normtext/relevanz.ts`; `suche-kern.ts` → `scripts/datenhaltung/suche-kern.ts`;
 >   statischer Suchpfad `artikelVolltext.ts` ist bereits ebenen-bewusst, nur der Online-Pfad
 >   (`onlineVolltext.ts`) nicht.
+> - **K-11-Profil (31.8.2026, Dossier `bibliothek/seo/kanton-reader-profil-2026-08-31.md`):** das
+>   50-s-Symptom der Spec war ohne Messbedingung notiert und liess sich nicht reproduzieren
+>   (Maximum 21.6 s bei 6×-CPU + langsamem 3G; Streuung n=12: 8.7 %). Gemessene Blocker:
+>   `/rechtsprechung/register.json` (753 KB gzip) lädt auf jeder Leserseite (−16–19 % First-Article
+>   im A/B) · serielle Kette Register→Snapshot · Drei-Wellen-Chunk-Kaskade. Fixes = eigener
+>   Schritt mit §15-Logikverlust-Bewertung, nicht Teil von W2·13-KANTONE.
 > - **Prozess:** `src/lib/normtext/**` zählt mechanisch als Risikopfad (`istRisikoPfad`) — auch
 >   Display-nahe Edits dort (relevanz.ts, erlassKopfText.ts) brauchen die Gegenprüfung. Der
 >   K-3-Deploy-Vorbehalt («§9-Ja») vom 12.7. ist durch Davids Blanko-Go 24.7. entsperrt.
