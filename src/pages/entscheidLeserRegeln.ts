@@ -110,6 +110,47 @@ export function zaehleNennungen(text: string, zitat: string): number {
   return re ? (text.match(re) ?? []).length : 0;
 }
 
+// ── B-5 (W2·19-DESIGN-KONSISTENZ · B2/BAU-4, 31.8.2026) · KEIN NAME ZWEIMAL ──
+//
+// BEFUND der Finder-Welle B: der Entscheid-Kopf setzte die H1 «BGE 146 III 1»
+// und zwei Zeilen darunter, in der Meta-Zeile, noch einmal denselben Namen als
+// Mono-Chip «146 III 1» — dieselbe Auskunft zweimal auf engem Raum, die zweite
+// ohne eigenen Beitrag.
+//
+// GEMESSEN AM GANZEN KORPUS (31.8.2026, `public/rechtsprechung`): von 1259
+// Snapshot-Einträgen mit `bgeReferenz` tragen 1259 die Referenz WÖRTLICH in
+// ihrer Zitierung — 1259/1259, kein einziger Gegenfall. Der Chip war heute
+// also ausnahmslos eine Wiederholung.
+//
+// TROTZDEM EINE REGEL UND KEIN ERSATZLOSES LÖSCHEN (§8): 100 % ist die Messung
+// von heute, nicht die Zusage von morgen. Ein Entscheid, dessen Zitierung das
+// Aktenzeichen trägt und der zusätzlich in die amtliche Sammlung aufgenommen
+// wurde («BGer 4A_100/2020» mit `bgeReferenz` «146 III 1»), hat eine ZWEITE,
+// echte Identität — die muss sichtbar bleiben. Die Regel entscheidet das an den
+// Daten, nicht an einer Annahme über sie.
+//
+// WORTGRENZE, NICHT SUBSTRING (CLAUDE.md §7): «146 III 1» darf in «BGE 146 III
+// 12» NICHT als enthalten gelten — das ist ein anderer Entscheid, und der Chip
+// müsste dort stehen bleiben. Genau dafür gibt es `zitatMuster` bereits; sie
+// wird hier wiederverwendet statt nachgebaut (§5).
+//
+// §3: reine Darstellungsregel — sie sagt nur, ob eine Angabe noch etwas
+// hinzufügt, nichts über Geltung oder Inhalt des Entscheids.
+
+/**
+ * Trägt die Zitierung die BGE-Referenz bereits wörtlich? `true` ⇒ ein zweiter
+ * Chip mit derselben Referenz wiederholte nur den Titel und entfällt.
+ * Leere/fehlende Referenz ⇒ `false` (es gibt nichts zu wiederholen; der
+ * Aufrufer rendert dann ohnehin nichts).
+ */
+export function referenzImTitel(zitierung: string, bgeReferenz: string | null | undefined): boolean {
+  if (!bgeReferenz) return false;
+  // Frisches Muster je Aufruf: `zitatMuster` liefert ein `g`-Regex, dessen
+  // `lastIndex` sonst zwischen zwei `.test()` weiterwanderte.
+  const re = zitatMuster(bgeReferenz);
+  return re ? re.test(zitierung) : false;
+}
+
 /**
  * Anker aller Erwägungs-Blöcke, die das Zitat wörtlich nennen — in Dokument-
  * Reihenfolge, die Sprungziele des «nächste Fundstelle»-Knopfes. Gleicher

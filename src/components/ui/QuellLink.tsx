@@ -29,7 +29,7 @@ import { AMTLICHE_FASSUNG, AMTLICHE_FASSUNG_AUFGEHOBEN } from '../../lib/benennu
 //
 // §3: reine Darstellung. Der Baustein entscheidet NICHT, ob ein Erlass gilt
 // oder aufgehoben ist — das sagt ihm der Aufrufer über `variante`.
-export function QuellLink({ href, variante = 'geltend', className, children }: {
+export function QuellLink({ href, variante = 'geltend', className, children, title }: {
   href: string;
   /** `aufgehoben` = derselbe Link führt auf die AUFGEHOBENE Konsolidierung; das
    *  gehört nach §8 in den Namen, nicht in eine Fussnote. */
@@ -43,6 +43,13 @@ export function QuellLink({ href, variante = 'geltend', className, children }: {
    *  hinten, gross beginnend): heute genau der Nachfolge-Erlass im
    *  Aufhebungs-Banner. */
   children?: ReactNode;
+  /** Zusatzauskunft am Hover/Fokus — NIE die einzige Trägerin einer Tatsache
+   *  (Touch erreicht sie nicht), immer nur die Ausführung dessen, was der Name
+   *  schon sagt. Nachgezogen am 31.8.2026 für den Entscheid-Leser (B2/BAU-4):
+   *  dort erklärt sie beim BGE ohne aufgelöstes Urteil, wohin der Link statt
+   *  dessen führt — die Tatsache selbst steht sichtbar im Namen
+   *  («Amtliche Fassung (Urteil n. v.) ↗»). */
+  title?: string;
 }) {
   // Der Pfeil bleibt SICHTBARER TEXT und nicht `aria-hidden`: er ist seit Ä110
   // Teil des Namens («Amtliche Fassung ↗»), und die bestehenden Sonden lesen
@@ -61,6 +68,7 @@ export function QuellLink({ href, variante = 'geltend', className, children }: {
       href={href}
       target="_blank"
       rel="noopener noreferrer"
+      title={title}
       className={className ?? 'text-brass-700 hover:underline'}
     >
       {children ? <>{children} ↗</> : kanon}

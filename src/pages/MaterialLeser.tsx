@@ -8,6 +8,7 @@ import { GEBIET_LABEL } from '../lib/normtext/register';
 import { MASSGEBLICH_SATZ } from '../lib/benennung';
 import { Datum } from '../components/ui/Datum';
 import { QuellLink } from '../components/ui/QuellLink';
+import { FehlSeite } from '../components/ui/FehlSeite';
 import { useMeldeInhaltsKopf } from '../components/layout/InhaltsKopfKontext';
 import type { BrowseMaterial } from '../lib/materialien/typen';
 
@@ -78,13 +79,28 @@ export function MaterialLeser() {
     );
   }
 
+  // ── D-6 (Design-Konsistenz, 31.8.2026) · EINE FEHLSEITE ──────────────────
+  // Der Fehl-Zweig baute Kopf und Rückweg selbst: `SeitenKopf` + ein
+  // `lc-btn-outline`-Knopf. Beides kommt jetzt aus `components/ui/FehlSeite`
+  // (Herleitung dort). Sichtbar ändert sich EINES: der Rückweg ist ein ruhiger
+  // Textlink statt eines Knopfes — die Mehrheitsform (4:2), und ein Knopf ist
+  // die Form für die eine ERLEDIGUNG einer Seite, nicht für den Rückweg aus
+  // einer Auskunft (dieselbe Herleitung, die B-1 hier drüber schon für den
+  // `QuellLink` gezogen hat). Der Wortlaut «Alle Materialien» bleibt; der
+  // zweite Halbsatz des Leads («Zurück zur Übersicht der Materialien.») fällt,
+  // weil er nur den Link darunter mit Worten wiederholte.
+  // Der Knopf am DOKUMENTFUSS (unten, geladenes Material) bleibt unberührt: er
+  // schliesst eine gelesene Seite ab und steht in keiner Fehl-Situation.
   if (!material) {
     return (
-      <div className="space-y-6">
-        <SeitenKopf overline="Amtliche Ressourcen" titel="Material nicht gefunden"
-          intro="Dieser Eintrag existiert nicht (mehr). Zurück zur Übersicht der Materialien." />
-        <Link to="/materialien" className="lc-btn lc-btn-outline lc-btn-sm">← Alle Materialien</Link>
-      </div>
+      // `key` roh aus der Adresse, NICHT `decodeURIComponent(key)`: der Router
+      // liefert den Parameter bereits dekodiert, ein zweiter Durchgang wirft bei
+      // einem literalen «%» im Schlüssel — und ein Wurf im Render-Pfad machte aus
+      // einer Fehlseite eine Fehlerseite. Gezeigt wird ohnehin genau das, was in
+      // der Adresse stand (§8).
+      <FehlSeite bereich="Amtliche Ressourcen" objekt="Material" name={key}
+        erklaerung="Dieser Eintrag existiert nicht (mehr)."
+        wege={[{ to: '/materialien', label: 'Alle Materialien' }]} />
     );
   }
 

@@ -50,17 +50,22 @@ describe('A-1 — SeitenTitel: EINE Grössen-Kaskade, kontextabhängig gemessen'
 });
 
 // Die vier Flächen, die den Titel bis 31.8.2026 je einzeln nachbauten. Der
-// `EntscheidLeser` fehlt hier bewusst: er zieht im Paket BAU-4 nach und ist bis
-// dahin der ausgewiesene Rest (Fahrplan §3, Befund A-2/A-5/B-5).
+// `EntscheidLeser` fehlte hier zunächst bewusst: er zog im Paket BAU-4
+// DERSELBEN Runde nach und war bis dahin der ausgewiesene Rest (Fahrplan §3,
+// Befund A-2/A-5/B-5). Seit BAU-4 (31.8.2026) steht er mit — und zwar mit ZWEI
+// H1: dem Kopf-Titel und seinem Zwilling im Lesemodus-Overlay, beide in der
+// Mono-Stimme (`num`), weil der Titel dort die Zitierung selbst ist.
 const KONSUMENTEN = [
   'src/components/layout/SeitenKopf.tsx',
   'src/components/layout/RechnerKopf.tsx',
   'src/components/vorlagen/wizard.tsx',
   'src/pages/gesetz-leser/parts/ErlassLeserKopf.tsx',
+  'src/pages/EntscheidLeser.tsx',
+  'src/components/rechtsprechung/LesemodusOverlay.tsx',
 ];
 
 describe('A-1 — keine zweite Titel-Anatomie mehr (§5/§10)', () => {
-  it('POSITIV-SONDE: alle vier Konsumenten beziehen den Baustein', () => {
+  it('POSITIV-SONDE: alle Konsumenten beziehen den Baustein', () => {
     for (const datei of KONSUMENTEN) {
       expect(readFileSync(datei, 'utf8'), `${datei} importiert SeitenTitel nicht`)
         .toMatch(/import \{ SeitenTitel \} from/);
