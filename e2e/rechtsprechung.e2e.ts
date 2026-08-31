@@ -54,7 +54,8 @@ test.describe('/rechtsprechung — Übersicht', () => {
 test.describe('Verzahnung im Gesetzes-Reader', () => {
   // «BGG zeigt im Kontext-Panel die Bundesgerichtsentscheide-Gruppe» GELÖSCHT
   // 21.8.2026 (H5) — prüfte das Ist-Hüllen-Kontextpanel (`KontextPanel.tsx`).
-  // V3-Deckung: `leser-v3-panel-facetten` (b), die drei Reiter des V3-Panels.
+  // V3-Deckung: `leser-v3-panel-facetten` (b), die Reiter des V3-Panels (seit
+  // W2·7-VZUI vier; der vierte hat mit `leser-v3-panel-anwendung` eine eigene).
 })
 
 test.describe('Reader (über Klick aus der Übersicht)', () => {

@@ -2,17 +2,19 @@ import { useRef, type ReactNode } from 'react';
 import type { BestimmungsWort } from './erlassAnsicht';
 import { PANEL_REITER, reiterTitel, type PanelReiter } from './panelModell';
 
-// ─── Das Panel selbst: EIN Ort, DREI Reiter (FAHRPLAN-LESER-V3 Kap. 4d, H3) ───
+// ─── Das Panel selbst: EIN Ort, VIER Reiter (FAHRPLAN-LESER-V3 Kap. 4d, H3) ───
 //
 // WAS DAS ERSETZT: das `KontextPanel` (765 Z.) mit sechs bedingten Sektionen, die
 // je nach Datenlage erschienen und verschwanden — Pos. 17 «Kontext-Panel
-// überladen». Drei benannte Reiter sind vorhersagbar: der Nutzer weiss, WO er
+// überladen». Benannte Reiter sind vorhersagbar: der Nutzer weiss, WO er
 // nachsieht, bevor er weiss, ob dort etwas steht.
 //
 // Diese Datei ist nur die HÜLLE: Kopf, Reiter-Leiste, Scroller, Fuss. Was in
 // einem Reiter steht, wissen `PanelEntscheide` / `PanelAenderungen` /
-// `PanelMaterialien` — und nur die. Wer einen vierten Reiter braucht, ergänzt
-// `PANEL_REITER` und übergibt einen weiteren Eintrag in `inhalt`.
+// `PanelMaterialien` / `PanelAnwendung` — und nur die. Wer einen weiteren Reiter
+// braucht, ergänzt `PANEL_REITER` und übergibt einen weiteren Eintrag in
+// `inhalt`. H3 baute drei; der vierte («Anwendung») kam mit W2·7-VZUI dazu und
+// hat genau diesen Weg genommen — die Hülle blieb dabei unverändert.
 //
 // ── ECHTE REITER, ALSO ECHTE PFEILTASTEN (W3C ARIA APG «Tabs») ──────────────
 // Anders als bei den Dropdowns des Lesers (dort «ehrliche Disclosure», KEIN
@@ -148,7 +150,13 @@ export function LeserPanel({
           334, gebaut und verworfen). Eine Leiste, die ihr viertes Fach
           verschluckt, ist die Falle; eine, die waagrecht scrollt, ist die
           kleinste ehrliche Antwort. `shrink-0` an den Reitern, sonst quetscht
-          Flexbox sie in die vorhandene Breite statt zu scrollen. */}
+          Flexbox sie in die vorhandene Breite statt zu scrollen.
+
+          DER VIERTE IST SEIT 31.8.2026 DA — «Anwendung», nicht «Zitat-Export»
+          (W2·7-VZUI). Die Vorsorge hat getragen: nachgemessen @1440 `scrollWidth`
+          385 gegen `clientWidth` 350, also 35 px Scrollweg und kein
+          abgeschnittenes Fach; @390 passt die Leiste ganz (388/388). Herleitung
+          samt Etiketten-Wahl im Kopf von `PanelAnwendung.tsx`. */}
       <div ref={leisteRef} role="tablist" aria-label="Kontext-Reiter" onKeyDown={taste}
         className="flex shrink-0 gap-1 overflow-x-auto overflow-y-hidden border-b border-line px-1.5 pt-1.5 [scrollbar-width:none]">
         {PANEL_REITER.map((r) => {

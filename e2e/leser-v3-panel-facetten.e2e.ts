@@ -69,13 +69,20 @@ test.describe('H3 — Panel: Facetten, Reiter, Platzhalter', () => {
     expect(fehler, fehler.join('\n')).toEqual([])
   })
 
-  test('(b) drei Reiter, mit Maus und mit Pfeiltasten', async ({ page }) => {
+  // W2·7-VZUI (31.8.2026): der Reiter «Anwendung» ist als VIERTER dazugekommen —
+  // die Behörden-Ressourcen und die Werkzeuge hatten seit H3 keinen Ort mehr
+  // (Herleitung im Kopf von `v3/PanelAnwendung.tsx`). Die Zahl ist hier bewusst
+  // ein LITERAL und wird nicht aus `PANEL_REITER` abgeleitet: ein Wächter, der
+  // seine Erwartung aus der geprüften Quelle zieht, kann nicht scheitern (§6.7).
+  // Der bestehende Pfeiltasten-Weg bleibt unverändert (der Vierte steht hinten),
+  // ergänzt um den Schritt bis ans neue Ende.
+  test('(b) vier Reiter, mit Maus und mit Pfeiltasten', async ({ page }) => {
     const fehler = fehlerSammeln(page)
     await page.setViewportSize({ width: 1440, height: 900 })
     await panelAuf(page, '/gesetze/bund/STPO?leser=v3')
 
     const reiter = page.locator('[data-v3-panel] [role="tab"]')
-    await expect(reiter).toHaveCount(3)
+    await expect(reiter).toHaveCount(4)
     await expect(page.locator('[data-v3-panel-reiter-inhalt="entscheide"]')).toBeVisible()
 
     await page.locator('[data-v3-panel-reiter="aenderungen"]').click()
@@ -86,8 +93,12 @@ test.describe('H3 — Panel: Facetten, Reiter, Platzhalter', () => {
     await page.locator('[data-v3-panel-reiter="aenderungen"]').press('ArrowRight')
     await expect(page.locator('[data-v3-panel-reiter="materialien"]')).toHaveAttribute('aria-selected', 'true')
     await expect(page.locator('[data-v3-panel-reiter-inhalt="materialien"]')).toBeVisible({ timeout: 20_000 })
+    // Und ein Schritt weiter ⇒ «Anwendung», der neue letzte.
+    await page.locator('[data-v3-panel-reiter="materialien"]').press('ArrowRight')
+    await expect(page.locator('[data-v3-panel-reiter="anwendung"]')).toHaveAttribute('aria-selected', 'true')
+    await expect(page.locator('[data-v3-panel-reiter-inhalt="anwendung"]')).toBeVisible({ timeout: 20_000 })
     // Home springt zurück auf den ersten.
-    await page.locator('[data-v3-panel-reiter="materialien"]').press('Home')
+    await page.locator('[data-v3-panel-reiter="anwendung"]').press('Home')
     await expect(page.locator('[data-v3-panel-reiter="entscheide"]')).toHaveAttribute('aria-selected', 'true')
     expect(fehler, fehler.join('\n')).toEqual([])
   })
