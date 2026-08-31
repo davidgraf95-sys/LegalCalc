@@ -34,7 +34,7 @@ import { fileURLToPath } from 'node:url';
 import pLimit from 'p-limit';
 import type { NormSnapshotDatei } from '../../src/lib/normtext/typen.ts';
 import {
-  ladeAbkRoh, serialisiereAbkRoh, rekonstruiereAbkRoh,
+  ladeAbkRoh, serialisiereAbkRoh, rekonstruiereAbkRoh, lexworkAusUrl,
   ABK_ROH_DATEINAME, type AbkRohMap, type AbkRohEintrag,
 } from './kanton-abk-roh.ts';
 import { aliasAusRoh } from './kanton-abk-regeln.ts';
@@ -72,12 +72,6 @@ export function leseSnapshotKoepfe(dir: string): SnapshotKopf[] {
     });
   }
   return koepfe;
-}
-
-/** LexWork-Bausteine aus der Snapshot-quelleUrl ('https://host/app/de/texts_of_law/id'). */
-export function lexworkAusUrl(url: string): { host: string; lang: 'de' | 'fr'; lawId: string } | null {
-  const m = url.match(/^https:\/\/([^/]+)\/app\/(de|fr)\/texts_of_law\/(.+)$/);
-  return m ? { host: m[1], lang: m[2] as 'de' | 'fr', lawId: decodeURIComponent(m[3]) } : null;
 }
 
 function baueOffline(koepfe: SnapshotKopf[], bestehend: AbkRohMap): {

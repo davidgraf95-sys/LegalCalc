@@ -84,6 +84,13 @@ export function serialisiereAbkRoh(map: AbkRohMap): string {
   return JSON.stringify(sortiert, null, 2) + '\n';
 }
 
+/** LexWork-Bausteine aus einer Snapshot-/API-URL
+ *  ('https://host/{app|api}/de/texts_of_law/id'). Rein; null = kein LexWork. */
+export function lexworkAusUrl(url: string): { host: string; lang: 'de' | 'fr'; lawId: string } | null {
+  const m = url.match(/^https:\/\/([^/]+)\/(?:app|api)\/(de|fr)\/texts_of_law\/(.+)$/);
+  return m ? { host: m[1], lang: m[2] as 'de' | 'fr', lawId: decodeURIComponent(m[3]) } : null;
+}
+
 export interface Rueckrechnung {
   /** Rekonstruiertes Rohfeld ('' = No-Comma/Fragment/mehrdeutig → fail-closed). */
   abk: string;
