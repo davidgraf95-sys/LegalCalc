@@ -82,8 +82,28 @@ const BLATT_ANTEIL = 55;
 
 export function LeserPanelZone({
   form, panelId, paneZiel, paneRolle, zustand, bezuege, erlassKey, quelleUrl, normZitat,
-  artikelLabel, erlassKuerzel, bestimmungsWort, aktArtikel, steckbrief,
+  artikelLabel, erlassKuerzel, bestimmungsWort, aktArtikel, steckbrief, ebene,
 }: {
+  /** ── K-2b/F37 (W2·13-KANTONE, 31.8.2026) · WOHER DIE EBENE KOMMT ──────────
+   *  Ebene des gelesenen Erlasses, DURCHGEREICHT vom Rahmen an die drei Tafeln
+   *  mit ebenen-abhängigem Leerzustand (Entscheide, Materialien, Anwendung).
+   *  Diese Datei ordnet nur an — sie entscheidet nichts daran (§3) und lädt
+   *  nichts nach (§5: der Wert steht im Erlass-Datensatz, den der Rahmen hält).
+   *
+   *  NICHT `erlass.ebene` IM RAHMEN, sondern `erlassAnsicht.panelEbene`: die
+   *  Fundament-Sonde `leser-v3-fundament` duldet den Lesezugriff auf `.ebene`
+   *  in `v3/` ausschliesslich in `erlassAnsicht.ts` — sie hat den ersten
+   *  Bauversuch dieses Schritts prompt rot gemeldet («LeserRahmenV3.tsx liest
+   *  .ebene»). Die Ableitung ist trivial und steht trotzdem dort, weil die
+   *  Zusage nicht «hier wird gerechnet» lautet, sondern «`.ebene` steht an
+   *  EINER Stelle»: eine Zusage mit einer Ausnahme ist keine. Wächst je eine
+   *  echte Weiche daran (etwa die dritte Ebene «international», die es im
+   *  Register schon gibt), wächst sie dort und wirkt in allen drei Tafeln.
+   *
+   *  NICHT das Routen-Segment aus `useLeserV3Modell({ ebene })`: das ist eine
+   *  ADRESS-Angabe und seit Befund 45 nicht mehr deckungsgleich mit der
+   *  fachlichen Ebene (`/gesetze/international/…`). */
+  ebene: 'bund' | 'kanton';
   /** Gestalt des Blatts — `rahmenBild(...)` im Rahmen entscheidet (sie folgt
    *  `panelForm`, ausser wo der aufgeweitete Rahmen eine eigene Spur trägt). */
   form: 'rechts' | 'unten' | 'spalte';
@@ -206,11 +226,12 @@ export function LeserPanelZone({
         klassen={klassen} kantone={kantone} kantoneVerfuegbar={bezuege.kantoneVerfuegbar}
         klassenImErlass={bezuege.klassenImErlass} histogramm={bezuege.histogramm} bereich={bezuege.bereich}
         onKlassen={setzeBezugKlassen} onKantone={setzeBezugKantone}
-        onBereich={(von, bis) => setzeBezugZeit(von, bis)} />
+        onBereich={(von, bis) => setzeBezugZeit(von, bis)}
+        ebene={ebene} />
     ),
     aenderungen: <PanelAenderungen stand={revisionen} quelleUrl={quelleUrl} />,
-    materialien: <PanelMaterialien stand={materialien} quelleUrl={quelleUrl} />,
-    anwendung: <PanelAnwendung softLaw={softLaw} erlassKey={erlassKey ?? ''} />,
+    materialien: <PanelMaterialien stand={materialien} quelleUrl={quelleUrl} ebene={ebene} />,
+    anwendung: <PanelAnwendung softLaw={softLaw} erlassKey={erlassKey ?? ''} ebene={ebene} />,
   } as const;
 
   // ── Die Fläche ────────────────────────────────────────────────────────────

@@ -103,6 +103,25 @@ export interface InternRefs {
    *  wird dann übersprungen — es gibt in einem Fremdgesetz-Chapeau kein «eigenes»
    *  Sprungziel (§1: lieber der Fremd-Verweis als ein falscher Self-Link). */
   fremdKuerzel?: string;
+  /** F41/F40 (W2·13-KANTONE, 31.8.2026): Der gelesene Erlass zählt seine
+   *  Bestimmungen mit «§» (Register-Weiche `bestimmungsEtikett === 'paragraf'`,
+   *  abgeleitet in `useInternRefs`). Zwei Folgen, beide nur hier:
+   *
+   *  F41 — bare «Art. N» wird NICHT mehr self-verlinkt. In einem §-designierten
+   *  Erlass heisst die eigene Bestimmung «§ N»; ein bare «Art. N» darin meint
+   *  praktisch immer ein ANDERES Gesetz (fast durchwegs Bundesrecht, meist in
+   *  der Form «Art. 18 Abs. 2 des Bundesgesetzes …», die keine der Bund-Weichen
+   *  fängt). Der Self-Sprung wäre dann ein plausibel-falscher Link. Gemessen
+   *  31.8.2026 mit den echten Guards: 199 solcher Self-Links in 82 der 775
+   *  §-designierten Erlasse. UNTERDRÜCKT wird nur — es wird NICHT ersatzweise
+   *  auf Bundesrecht verlinkt: die Drafting-Konvention ist ein Indiz, kein
+   *  Beweis, und kein Link ist besser als ein falscher (§1/§8).
+   *
+   *  F40 — «§ N» wird self-verlinkt (siehe PARAGRAF_INTERN unten).
+   *
+   *  Ungesetzt (Bund, Art.-designierte Kantone, Fremdgesetz-Chapeau) ⇒ beides
+   *  aus, Rendering byte-identisch zum Stand davor. */
+  paragrafDesigniert?: boolean;
 }
 const normRef = (s: string): string => s.toLowerCase().replace(/[^a-z0-9]/g, '');
 // «Art. N» / «Artikel N» (+ Buchstabe UND/ODER lat. Suffix als SEPARATE Gruppen,
@@ -116,6 +135,51 @@ const normRef = (s: string): string => s.toLowerCase().replace(/[^a-z0-9]/g, '')
 // jetzt im Schleifenkörper NACH der N2b-Routing-Prüfung (identisches Ergebnis für
 // die bare-«des»-Fälle, aber die «(KÜRZEL)»-Form wird nicht mehr verschluckt).
 const ART_INTERN = /\bArt(?:\.|ikel)\s+(\d+(?:[a-z])?(?:bis|ter|quater|quinquies|sexies)?)(?![0-9a-z])/g;
+
+// ─── F40 · «§ N»-Selbstverweise in §-designierten Erlassen ───────────────────
+// Vorbild ist `RE_PARAGRAF` (KantonNormText.tsx), aber mit der Zerlegung von
+// ART_INTERN: die NUMMER ist eine eigene Gruppe (für die tokenMap), Buchstabe
+// und lat. Suffix sind SEPARATE Alternativen, und `(?![0-9a-z])` schliesst ab.
+// RE_PARAGRAF schreibt `\d+[a-z]?(?:bis|ter)?` ohne Grenze und zerlegt «§ 12bis»
+// in «§ 12b» + «is» — dort bloss eine ungenaue Popover-Markierung, hier ein Link
+// auf den FALSCHEN Paragraphen (§1). Verlinkt wird — wie beim Art.-Pfad — nur
+// «§ N»; ein nachfolgender Passus bleibt Text.
+const PARAGRAF_INTERN =
+  /§\s*(\d+(?:[a-z])?(?:bis|ter|quater|quinquies|sexies)?)(?![0-9a-z])/g;
+// Was zu DEMSELBEN Zitat gehört und darum überlesen werden muss, bevor das
+// Fremd-Signal geprüft wird: Passus-Glieder («Abs. 2», «Absatz 2 Buchstabe a»)
+// und Aufzählungen/Bereiche («§ 19 bis 21», «§ 4 und 5»). Ohne diesen Schritt
+// stünde bei «§ 19 bis 21 der Verordnung über …» nach dem Treffer « bis 21 …»,
+// keine Fremd-Weiche griffe, und der fremde Verordnungs-§ bekäme einen Link auf
+// den eigenen Erlass (echte Fundstelle, SO-615.11 § 50).
+const PARAGRAF_ANHANG = new RegExp(
+  '^(?:'
+  + '\\s+(?:Abs(?:atz|ätze|\\.)|Buchstaben?|Bst\\.|lit\\.|Ziff(?:ern?|\\.)|Satz|Sätze)\\s*[0-9a-z]+(?:bis|ter)?'
+  + '|\\s*(?:bis|und|oder|sowie|,|–|—|-)\\s*(?:§+\\s*)?\\d+(?:[a-z])?(?:bis|ter)?(?![0-9a-z])'
+  + ')+',
+);
+// Fremd-Signal NACH dem Zitat. Zwei Formen, beide führen zu reinem TEXT: ein
+// «StG» in BS ist nicht das «StG» in ZH, und ohne verifizierte Kantons-
+// Auflösung ist jeder Link geraten (§1 — F42 ist nicht gebaut).
+//
+// (a) Ein GROSS beginnendes Wort direkt am Zitat. Der Art.-Pfad prüft hier auf
+//     ein Kürzel-Muster (M12: zwei Grossbuchstaben); kantonal genügt das NICHT.
+//     Kantone hängen den AUSGESCHRIEBENEN Erlassnamen an, und der trägt genau
+//     EINEN Grossbuchstaben: «§ 8 Abs. 3 Integrationsgesetz», «§ 24
+//     Schullaufbahnverordnung», «§ 15 Abs. 1 lit. g Bestattungsgesetz».
+//     GEMESSEN 31.8.2026 über alle 775 §-Erlasse: 122 der sonst erzeugten 3389
+//     Self-Links tragen ein solches Grosswort, und die Stichprobe daraus ist
+//     ganz überwiegend FREMD (Integrations-, Publikations-, Lohn-, Personal-,
+//     Heilmittel- … -gesetz/-verordnung). Einen Satz-ANFANG trifft die Regel
+//     nicht — dort steht die Interpunktion vor dem Leerzeichen. Der Preis sind
+//     die wenigen Fälle, in denen das Grosswort ein gewöhnliches Substantiv ist
+//     («§§ 13–18 Pauschalgebühren festlegen»); bewusst bezahlt — kein Link ist
+//     besser als ein falscher.
+// (b) Der ausgeschriebene Erlassname in Präpositionsform, klein beginnend
+//     («§§ 19 bis 21 der Verordnung über …») — wie die bare-«des/der»-Weiche
+//     des Art.-Pfads.
+const PARAGRAF_FREMD_GROSS = /^\s+[A-ZÄÖÜ]/;
+const PARAGRAF_FREMD_NAME = /^\s+(?:des|der|über|vom)\b/;
 
 function restMitIntern(s: string, key: string, intern?: InternRefs): React.ReactNode {
   if (!intern || !s) return s ? <RechtsprechungText key={key} text={s} /> : null;
@@ -135,6 +199,12 @@ function restMitIntern(s: string, key: string, intern?: InternRefs): React.React
   // Glied: fremd (Gesetz-Signal am Ende, inkl. Genitiv-Map) → NormChip aufs
   // Fremdgesetz; eigenes Kürzel oder kein Signal → Self-Sprung über die tokenMap
   // (nur existierende Token, §8); unterdrückte Regionen bleiben reiner Text (§1).
+  // §-designierter Erlass? Schaltet BEIDE Kantons-Regeln (Herleitung an
+  // `InternRefs.paragrafDesigniert`): F41 sperrt den bare-«Art. N»-Self-Sprung
+  // (Singular wie Plural-Glied), F40 öffnet den «§ N»-Self-Sprung. Die
+  // FREMD-Pfade (N2b-Routing, Fremdgesetz-Chapeau) bleiben unberührt — sie
+  // zeigen ohnehin nie auf den eigenen Erlass.
+  const paragrafErlass = intern.paragrafDesigniert === true;
   const pluralRegionen = artikelnPluralVerweise(s);
   const inPluralRegion = (idx: number) =>
     pluralRegionen.some((r) => idx >= r.oeffnerStart && idx < r.end);
@@ -162,6 +232,7 @@ function restMitIntern(s: string, key: string, intern?: InternRefs): React.React
           node: <NormChip key={gk} artikel={`Art. ${g.roh} ${intern.fremdKuerzel}`} anzeige={g.roh} linkClass={INLINE_CLASS} zielIntern={false} />,
         });
       } else {
+        if (paragrafErlass) continue; // F41
         const token = intern.tokenMap.get(normRef(g.roh));
         if (!token) continue; // kein Artikel dieses Erlasses → Text belassen (§8)
         linkSpans.push({
@@ -174,6 +245,36 @@ function restMitIntern(s: string, key: string, intern?: InternRefs): React.React
         });
       }
     }
+  }
+  // F40: «§ N»-Selbstverweise. NUR in §-designierten Erlassen — dort ist «§ N»
+  // die eigene Bestimmung (Drafting-Konvention des Kantons), und die tokenMap
+  // trägt genau deren Token. Sie reisen im SELBEN Span-Kanal wie die
+  // Plural-Glieder (unten in Text-Reihenfolge emittiert), damit es nur EINE
+  // Zusammensetz-Maschinerie gibt.
+  if (paragrafErlass) {
+    for (const m of s.matchAll(PARAGRAF_INTERN)) {
+      const start = m.index, end = start + m[0].length;
+      if (inPluralRegion(start)) continue; // gehört zu einer «die Artikel …»-Region
+      // Erst den Rest DESSELBEN Zitats überlesen (Passus, Aufzählung), dann das
+      // Fremd-Signal prüfen ⇒ bei Treffer reiner Text (§1: kein geratener Link).
+      const rest = s.slice(end).replace(PARAGRAF_ANHANG, '');
+      if (PARAGRAF_FREMD_GROSS.test(rest) || PARAGRAF_FREMD_NAME.test(rest)) continue;
+      const token = intern.tokenMap.get(normRef(m[1]));
+      if (!token) continue; // keine solche Bestimmung in diesem Erlass → Text (§8)
+      linkSpans.push({
+        start, end,
+        node: (
+          <a key={`${key}-s${start}`} href={`${intern.basisPfad}#art-${token}`}
+            onClick={(e) => { e.preventDefault(); intern.springeZu(token); }}
+            className={INLINE_CLASS}>{m[0]}</a>
+        ),
+      });
+    }
+    // Die Plural-Glieder kamen in Text-Reihenfolge, die §-Treffer angehängt —
+    // der Cursor unten setzt Sortierung voraus. Überlappungen sind nach
+    // `inPluralRegion` keine mehr zu erwarten; `emitPluralBis` verwirft sie
+    // ohnehin (`sp.start < last`).
+    linkSpans.sort((a, b) => a.start - b.start);
   }
   // Plural-Glieder-Spans in Text-Reihenfolge VOR der jeweils nächsten Singular-
   // Emission ausgeben (ein Cursor über linkSpans; Spans in schon konsumierten
@@ -261,6 +362,10 @@ function restMitIntern(s: string, key: string, intern?: InternRefs): React.React
       last = start + m[0].length;
       continue;
     }
+    // F41: §-designierter Erlass ⇒ kein bare-«Art. N»-Self-Sprung. Steht NACH
+    // allen Fremd-Weichen, damit ein echtes Fremd-Routing (N2b, Chapeau) davon
+    // unberührt bleibt — gesperrt ist nur der Sprung auf den EIGENEN Erlass.
+    if (paragrafErlass) continue;
     const token = intern.tokenMap.get(normRef(m[1]));
     if (!token) continue; // kein Artikel dieses Erlasses → als Text belassen
     if (start > last) out.push(<RechtsprechungText key={`${key}-r${last}`} text={s.slice(last, start)} />);

@@ -71,6 +71,25 @@ export function KantonSystematik({ erlasse, sys }: { erlasse: BrowseErlass[]; sy
     ];
   }, [erlasse, sys]);
 
+  // ── K-2e/F43 (W2·13-KANTONE, 31.8.2026) · «NICHT SYSTEMATISIERT» IST UNSERE
+  //    LÜCKE, NICHT DIE DES KANTONS ────────────────────────────────────────────
+  // GEMESSEN am 31.8.2026: `public/normtext/kanton-systematik.json` führt 19 der
+  // 26 Kantone; sieben (ZH GE VD TI SZ NE JU) haben keinen Baum. Dort fällt
+  // JEDER Erlass in den Fallback-Block, und die Seite bestand aus einem einzigen
+  // grauen «Nicht systematisiert». Das las sich als Eigenschaft des Kantons —
+  // als hätte er keine Systematik. Er hat eine; sie ist bei UNS noch nicht
+  // erfasst (Daten-Nachzug, eigener Roadmap-Schritt). §8 verlangt, dass die
+  // Zeile sagt, wessen Lücke sie ist.
+  //
+  // KEINE ZUSAGE MIT DATUM: «folgt später» ist belegbar (der Schritt steht im
+  // Plan), «folgt im September» wäre ein Versprechen, das diese Datei nicht
+  // halten kann.
+  //
+  // Die Weiche fragt den BAUM, nicht die Gruppen: ein Kanton kann einen Baum
+  // haben und trotzdem einen Fallback-Block führen (einzelne Erlasse ohne
+  // amtliche Nummer). Dort ist nichts offen, und der Hinweis wäre falsch.
+  const ohneAmtlichenBaum = (sys?.roots.length ?? 0) === 0;
+
   const alleIds = gruppen.map((g) => g.top);
   const [offen, setOffen] = useState<Set<string>>(() => new Set());
   const alleOffen = alleIds.length > 0 && offen.size >= alleIds.length;
@@ -79,6 +98,13 @@ export function KantonSystematik({ erlasse, sys }: { erlasse: BrowseErlass[]; sy
 
   return (
     <div className="space-y-3">
+      {ohneAmtlichenBaum && gruppen.length > 0 && (
+        <p data-kanton-systematik-offen className="text-body-s text-ink-500 max-w-reading">
+          Die amtliche Systematik dieses Kantons ist noch nicht hinterlegt — die
+          Erlasse stehen darum nach ihrer systematischen Nummer geordnet. Die
+          Sachgebiete folgen mit einem späteren Daten-Nachzug.
+        </p>
+      )}
       <div className="flex justify-end">
         <button type="button" onClick={toggleAlle}
           className="text-body-s font-medium text-brass-700 hover:text-brass-600 transition-colors">

@@ -29,7 +29,7 @@ import { leserCssVariablen } from './leserGeometrie';
 import { rahmenBild, useRahmenRaum } from './rahmenSpalten';
 import { kopfElemente, kopfGlypheKlassen, kopfGriffKlassen, panelForm, useKopfStufe } from './kopfStufen';
 import { useSuchSprungKuerzel } from './suchKuerzel';
-import { bestimmungsWort as bestimmungsWortVon, suchFeldName, suchPlatzhalter } from './erlassAnsicht';
+import { bestimmungsWort as bestimmungsWortVon, panelEbene, suchFeldName, suchPlatzhalter } from './erlassAnsicht';
 import { LeserUebersicht } from './LeserUebersicht';
 import { useLeserV3Modell } from './leserV3Modell';
 
@@ -365,7 +365,7 @@ export function LeserRahmenV3({ ebene, schluessel }: LeserRahmenV3Props) {
               zustand={panel} bezuege={bezuege} erlassKey={erlass.key} quelleUrl={erlass.quelleUrl}
               normZitat={normZitat(panelArtikel, erlass.kuerzel)}
               artikelLabel={panelArtikel} erlassKuerzel={erlass.kuerzel}
-              bestimmungsWort={bestimmungsWort} aktArtikel={panelZiel.token}
+              bestimmungsWort={bestimmungsWort} aktArtikel={panelZiel.token} ebene={panelEbene(erlass)}
               steckbrief={leisteSteht ? null : <LeserUebersicht m={m} bestimmungsWort={bestimmungsWort} />} />
           )
           : null} />
