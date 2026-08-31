@@ -571,6 +571,45 @@ vollständig). Darauf, je EIGENE Runde mit eigener Gegenprüfung:
   Alias-Treffer («GOG»→211.1), Ranking-Entdopplung; jede Änderung gegen
   die eingefrorene K0-Nullprobe + eval:suche bewiesen.
 
+### 5.4 Bau-Optimierungen (Selbstbefund aus der Session 31.8.2026, Auftrag David «optimierter bauen»)
+
+Gemessene Reibung: 3 Gegenprüfungs-Zyklen bis Konvergenz; jede Prüf-Runde
+lud dieselben PDFs neu; ein GP-Fehlalarm (lit./items) kostete eine volle
+Runde. Daraus, priorisiert:
+
+- **O1 · Roh-PDF-Cache (grösster Hebel):** Skill-Prinzip «store raw as
+  golden» für ZH einlösen — Runner legt jedes amtliche PDF unter
+  `daten/pdf-cache-zh/` (gitignored) ab, Schlüssel URL-Hash + ETag;
+  Regenerationen und Prüfer laufen OFFLINE aus dem Cache (Frische holt nur
+  der Drift-Check). Wirkung: Fix-Runden ohne 3×n Netz-Requests, Amts-Host
+  geschont, `check:zh-vollstaendigkeit` CI-fähig offline. **Bauen als
+  ERSTES Stück der Tranche A** (der 155er-Lauf befüllt ihn gleich).
+- **O2 · Builder-Selbst-Gegenprobe (Pflicht im Dispatch):** jeder Bau-Agent
+  fährt VOR seiner Rückgabe das volle Wächter-Set + EINE Mini-Mutations-
+  probe je neuer Prüfung (Kopie-Sandbox) — Ziel: Gegenprüfung konvergiert
+  in 1 Runde statt 3.
+- **O3 · Prüfer-Schema-Steckbrief (fester Dispatch-Baustein):** Blockschema
+  (text/items/mehrspaltig.zeilen/absatz-Suffixe/anhang_*-Tokens) + die
+  bekannten Fehlalarm-Fallen als Standard-Absatz in jedem Prüf-Auftrag —
+  Fehlalarm-Klasse «im falschen Feld gezählt» stirbt.
+- **O4 · `gate:zh`-Bündel:** npm-Alias für die korpusrelevanten Tore
+  (zh-vollstaendigkeit · normtext · golden-normtext · vollstaendigkeit ·
+  struktur-konsistenz · stand-zukunft · tabellen · paritaet · datenhaltung),
+  damit Agenten nicht n Einzelkommandos + Voll-gate fahren.
+- **O5 · Runden-Pipelining:** während die Gegenprüfung von Runde N läuft,
+  baut Runde N+1 bereits im eigenen Worktree (Quittungs-Hash bindet je
+  Branch-Kopf — deshalb NIE in einen Branch bauen, dessen GP läuft);
+  Landungen bleiben seriell.
+- **O6 · Dispatch-Bausteine hier im §:** Standard-Block für jeden Agenten
+  dieses Programms = §14.7 wörtlich + Skill-Ladeliste (korpus-werkstatt +
+  scraping-swiss-official-sources; Prüfer: gegenpruefung) + TABU-Flächen +
+  Netz-Disziplin (~1 req/s, UA mit Kontakt) + O2/O3-Pflichten + «KEIN Push/
+  PR/Quittung ausser beauftragt». Orchestrator kopiert, statt neu zu texten.
+
+*(Bereits eingelöst diese Session: geteilte Scratch-Werkzeuge — Messbank,
+E1-Skripte, PDF-Ablagen — werden agentenübergreifend wiederverwendet;
+Mutationsproben-Regel steht im Skill korpus-werkstatt.)*
+
 ### 5.3 Offene David-Punkte (nicht blockierend gesammelt)
 
 - Fachliche Abnahme: Re-Bless 211.11/215.3/243 + Stichproben-Abnahme
