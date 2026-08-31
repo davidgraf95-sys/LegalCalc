@@ -3,14 +3,8 @@
 // ALLE Schritte und prüft, dass jeder Schritt ohne Render-/Console-Fehler rendert.
 // So fängt eine spätere verhaltensneutrale Datei-Schlankheit (JSX-Extraktion in
 // Geschwister-Komponenten) eine kaputte Extraktion in einem der Schritte.
-import { test, expect, type Page } from '@playwright/test'
-
-function fehlerSammeln(page: Page): string[] {
-  const fehler: string[] = []
-  page.on('pageerror', (e) => fehler.push(`pageerror: ${e.message}`))
-  page.on('console', (m) => { if (m.type() === 'error') fehler.push(`console.error: ${m.text()}`) })
-  return fehler
-}
+import { test, expect } from '@playwright/test'
+import { fehlerSammeln } from './helpers/fehlerSammeln'
 
 test.describe('AG-Gründung Wizard', () => {
   test('rendert jeden Schritt bis «Checkliste & Dokumente» ohne Fehler', async ({ page }) => {

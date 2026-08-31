@@ -15,14 +15,8 @@
 // sabotieren → `npm run build` → Fall laufen lassen → zurücksetzen → `npm run
 // build`. Sabotagen in `e2e/**` (Schwellen, Assertions) wirken sofort.
 import { test, expect, type Page } from '@playwright/test'
+import { fehlerSammeln } from './helpers/fehlerSammeln'
 import { panelAufziehen } from './helpers/panelOeffnen'
-
-function fehlerSammeln(page: Page): string[] {
-  const fehler: string[] = []
-  page.on('pageerror', (e) => fehler.push(`pageerror: ${e.message}`))
-  page.on('console', (msg) => { if (msg.type() === 'error') fehler.push(`console.error: ${msg.text()}`) })
-  return fehler
-}
 
 async function warteLeser(page: Page): Promise<void> {
   await expect(page.locator('[data-v3-kopf]')).toBeVisible({ timeout: 20_000 })
@@ -49,7 +43,7 @@ test.describe('H3-Nachzug — Panel: Lade-Ende, Erreichbarkeit, Gestalt', () => 
     // meldet «erwartet Bestands-Satz, gefunden data-v3-panel-lage="laedt"».
     const fehler = fehlerSammeln(page)
     await page.setViewportSize({ width: 1440, height: 900 })
-    await page.goto('/gesetze/kanton/ZH-211.11?leser=v3')
+    await page.goto('/gesetze/kanton/ZH-211.11')
     await warteLeser(page)
     await panelAufziehen(page)
 
@@ -63,7 +57,7 @@ test.describe('H3-Nachzug — Panel: Lade-Ende, Erreichbarkeit, Gestalt', () => 
 
     // Positiv-Sonde gegen «grün, weil nichts geladen wird»: ein Erlass MIT Shard
     // erreicht denselben Zustand über Daten, nicht über einen 404.
-    await page.goto('/gesetze/bund/STPO?leser=v3')
+    await page.goto('/gesetze/bund/STPO')
     await warteLeser(page)
     await panelAufziehen(page)
     await expect(page.locator('[data-v3-panel] [data-v3-panel-gruppe]').first())
@@ -80,7 +74,7 @@ test.describe('H3-Nachzug — Panel: Lade-Ende, Erreichbarkeit, Gestalt', () => 
     // ('[data-v3-ansicht-panel-auf]') expected visible, got count 0».
     const fehler = fehlerSammeln(page)
     await page.setViewportSize({ width: 390, height: 844 })
-    await page.goto('/gesetze/bund/STPO?leser=v3')
+    await page.goto('/gesetze/bund/STPO')
     await warteLeser(page)
     await schalterAus(page)
 
@@ -106,7 +100,7 @@ test.describe('H3-Nachzug — Panel: Lade-Ende, Erreichbarkeit, Gestalt', () => 
     // aria-controls to match /\S/, got null».
     const fehler = fehlerSammeln(page)
     await page.setViewportSize({ width: 1440, height: 900 })
-    await page.goto('/gesetze/bund/STPO?leser=v3')
+    await page.goto('/gesetze/bund/STPO')
     await warteLeser(page)
 
     const zaehler = page.locator('[data-v3-panel-zaehler]')
@@ -140,7 +134,7 @@ test.describe('H3-Nachzug — Panel: Lade-Ende, Erreichbarkeit, Gestalt', () => 
     // «Blatt deckt den Kopf: blatt.y 100 < kopfUnterkante 159».
     const fehler = fehlerSammeln(page)
     await page.setViewportSize({ width: 1440, height: 900 })
-    await page.goto('/gesetze/bund/STPO?leser=v3')
+    await page.goto('/gesetze/bund/STPO')
     await warteLeser(page)
     await panelAufziehen(page)
 
@@ -224,7 +218,7 @@ test.describe('H3-Nachzug — Panel: Lade-Ende, Erreichbarkeit, Gestalt', () => 
     // Leser kommt über den Anker-Sprung, und der legt den Artikelkopf unter die
     // Klebekante des Kopfs (gemessen y = 192.4 bei scrollY 882, Kopf-Unterkante
     // 193). Die Spec misst darum den Weg des Lesers.
-    await page.goto('/gesetze/bund/STPO?leser=v3#art-1')
+    await page.goto('/gesetze/bund/STPO#art-1')
     await warteLeser(page)
     const artikel = page.locator('#art-1')
     await expect(artikel).toBeAttached({ timeout: 20_000 })
@@ -276,7 +270,7 @@ test.describe('H3-Nachzug — Panel: Lade-Ende, Erreichbarkeit, Gestalt', () => 
     const fehler = fehlerSammeln(page)
     for (const [w, h] of [[390, 844], [1024, 800], [1440, 900]] as const) {
       await page.setViewportSize({ width: w, height: h })
-      await page.goto('/gesetze/bund/STPO?leser=v3')
+      await page.goto('/gesetze/bund/STPO')
       await warteLeser(page)
       await expect(page.locator('#art-1')).toBeAttached({ timeout: 20_000 })
 
@@ -303,7 +297,7 @@ test.describe('H3-Nachzug — Panel: Lade-Ende, Erreichbarkeit, Gestalt', () => 
     // «Filterzeile 348 px, erwartet <= 64».
     const fehler = fehlerSammeln(page)
     await page.setViewportSize({ width: 1440, height: 900 })
-    await page.goto('/gesetze/bund/STPO?leser=v3')
+    await page.goto('/gesetze/bund/STPO')
     await warteLeser(page)
     await panelAufziehen(page)
 

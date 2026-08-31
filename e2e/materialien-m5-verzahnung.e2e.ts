@@ -1,5 +1,6 @@
 // @shard-gruppe: 1
-import { test, expect, type Page } from '@playwright/test'
+import { test, expect } from '@playwright/test'
+import { fehlerSammeln } from './helpers/fehlerSammeln'
 
 // ─── E6a·M5: Amtliche-Materialien-Delta in der Verzahnungs-UI ───────────────
 //
@@ -15,13 +16,6 @@ import { test, expect, type Page } from '@playwright/test'
 // Architektur und wäre zudem ein Produktentscheid, keine Testlücke).
 // Zusicherung in V3 bewusst entfallen, Alt-Spec fällt ersatzlos.
 // Verbleibt: die dritte Spec unten, hüllenneutral (MaterialLeser-Karte).
-
-function fehlerSammeln(page: Page): string[] {
-  const fehler: string[] = []
-  page.on('pageerror', (e) => fehler.push(`pageerror: ${e.message}`))
-  page.on('console', (msg) => { if (msg.type() === 'error') fehler.push(`console.error: ${msg.text()}`) })
-  return fehler
-}
 
 test('MaterialLeser-Karte trägt die nur-verweis-Badge (V3-Vorzug E6a·M5)', async ({ page }) => {
   const fehler = fehlerSammeln(page)

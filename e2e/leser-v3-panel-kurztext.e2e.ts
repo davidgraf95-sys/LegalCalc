@@ -8,15 +8,9 @@
 // (§6.7) VOR `PanelEntscheide.tsx`s Umbau auf `KanteMitVorschau`: der Chip war
 // ein blosser `<Link>`, `[data-regeste-popover]` blieb bei jedem Schritt hier
 // mit Count 0 — kein Popover, kein ⧉, keine `aria-expanded`/`aria-controls`.
-import { test, expect, type Page } from '@playwright/test'
+import { test, expect } from '@playwright/test'
+import { fehlerSammeln } from './helpers/fehlerSammeln'
 import { panelAufziehen } from './helpers/panelOeffnen'
-
-function fehlerSammeln(page: Page): string[] {
-  const fehler: string[] = []
-  page.on('pageerror', (e) => fehler.push(`pageerror: ${e.message}`))
-  page.on('console', (msg) => { if (msg.type() === 'error') fehler.push(`console.error: ${msg.text()}`) })
-  return fehler
-}
 
 test.describe('V3-Panel · Kurztext-Popover am Entscheid-Chip', () => {
   test('Chip zeigt den Kurztext auf Hover + Tastatur, Esc schliesst', async ({ page }) => {
@@ -24,7 +18,7 @@ test.describe('V3-Panel · Kurztext-Popover am Entscheid-Chip', () => {
     const fehler = fehlerSammeln(page)
     // ≥ lg, damit «Daneben öffnen» überhaupt angeboten wird (Pane-Gating).
     await page.setViewportSize({ width: 1440, height: 900 })
-    await page.goto('/gesetze/bund/OR?leser=v3#art-41')
+    await page.goto('/gesetze/bund/OR#art-41')
     await expect(page.locator('[data-v3-kopf]')).toBeVisible({ timeout: 20_000 })
     await panelAufziehen(page)
 

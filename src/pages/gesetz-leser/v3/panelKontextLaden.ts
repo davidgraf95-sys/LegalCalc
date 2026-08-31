@@ -3,6 +3,8 @@ import { revisionenFuerNorm, type RevisionAnsicht } from '../../../lib/normtext/
 import { botschaftenFuer, type BotschaftBezug } from '../../../lib/materialien/botschaften';
 import { vernehmlassungenFuer, type VernehmlassungBezug } from '../../../lib/materialien/vernehmlassungen';
 import { ladeRevisionShard, type RevisionShard } from '../../../lib/verzahnung/artikel-revisionen';
+import { kontextSoftLaw } from '../../../lib/kontext';
+import type { MaterialBezug } from '../../../lib/normtext/werkzeuge';
 
 // ─── Nachladen der Reiter «Änderungen» und «Materialien» (H3, Kap. 7) ────────
 //
@@ -60,6 +62,31 @@ export function useArtikelRevisionShard(erlassKey: string | undefined, laden: bo
     if (!laden || !erlassKey) return;
     let lebt = true;
     void ladeRevisionShard(erlassKey).then((s) => { if (lebt) setStand({ key: erlassKey, wert: s }); });
+    return () => { lebt = false; };
+  }, [erlassKey, laden]);
+  if (!erlassKey || stand?.key !== erlassKey) return NICHT_FERTIG;
+  return { wert: stand.wert, fertig: true };
+}
+
+// ── W2·7-VZUI (31.8.2026) · Behörden-Ressourcen für den Reiter «Anwendung» ───
+// Derselbe Lade-/Gate-Rhythmus wie oben, dritte Quelle: `kontextSoftLaw` zieht
+// die Material-Kanten-Shards und das Browse-Register und liefert die
+// Behördenpublikationen zu diesem Erlass (Kreisschreiben, Wegleitungen,
+// Leitfäden). Das ist der Bestand, den die V3-Hülle beim Ablösen des
+// `KontextPanel` verloren hat — er war nie falsch, er hatte nur keinen Ort mehr
+// (Dateikopf `PanelMaterialien.tsx`: «Soft Law bleibt draussen … offener Punkt
+// im Vollzugsvermerk, nicht stillschweigend weggelassen»).
+//
+// `[]` und «Fetch fehlgeschlagen» sind hier NICHT unterscheidbar: `kontextSoftLaw`
+// löst beides zur leeren Liste auf (`ladeMaterialManifest` → `null` ⇒ `return []`).
+// Der Reiter darf darum «keine erfasst» NICHT behaupten, wo er in Wahrheit
+// nichts weiss — er sagt es so, wie es ist (§8, Wortlaut in `PanelAnwendung`).
+export function useSoftLaw(erlassKey: string | undefined, laden: boolean): Geladen<MaterialBezug[]> {
+  const [stand, setStand] = useState<{ key: string; wert: MaterialBezug[] } | null>(null);
+  useEffect(() => {
+    if (!laden || !erlassKey) return;
+    let lebt = true;
+    void kontextSoftLaw('norm', [erlassKey]).then((r) => { if (lebt) setStand({ key: erlassKey, wert: r }); });
     return () => { lebt = false; };
   }, [erlassKey, laden]);
   if (!erlassKey || stand?.key !== erlassKey) return NICHT_FERTIG;

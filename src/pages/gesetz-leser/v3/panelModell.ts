@@ -30,17 +30,24 @@ import type { Bezug } from '../../../lib/rechtsprechung/bezuege';
 // `lib/rechtsprechung/bezuege`. H3 verschiebt den ZEITPUNKT und den ORT der
 // Darstellung, nicht die Rechnung (§5).
 
-export type PanelReiter = 'entscheide' | 'aenderungen' | 'materialien';
+export type PanelReiter = 'entscheide' | 'aenderungen' | 'materialien' | 'anwendung';
 
 /** Reiter-Ordnung UND Beschriftung aus EINER Quelle (§5): ein Reiter, der hier
  *  fehlt, existiert nirgends; einer, der hier steht, ist überall gleich benannt.
  *  Reihenfolge = die Reihenfolge der Fragen am Gesetzesartikel: wie wird er
  *  ausgelegt (Entscheide) · wie ist er geworden (Änderungen) · woher kommt er
- *  (Materialien). */
+ *  (Materialien) · wie wendet man ihn an (Anwendung).
+ *
+ *  DER VIERTE STEHT HINTEN, NICHT NEBEN «ENTSCHEIDE» (W2·7-VZUI, 31.8.2026):
+ *  fachlich stünde «Anwendung» der Auslegung am nächsten, die Reihe wäre dann
+ *  aber nicht mehr die Frage-Chronologie, die sie erklärt — und ein Umsortieren
+ *  verschöbe den Pfeiltasten-Weg, den `leser-v3-panel-facetten` (b) als Zusage
+ *  misst. Der Zuwachs kostet damit nichts an bestehender Bedienung. */
 export const PANEL_REITER: readonly { id: PanelReiter; label: string }[] = [
   { id: 'entscheide', label: 'Entscheide' },
   { id: 'aenderungen', label: 'Änderungen' },
   { id: 'materialien', label: 'Materialien' },
+  { id: 'anwendung', label: 'Anwendung' },
 ];
 
 /**
@@ -56,7 +63,8 @@ export const PANEL_REITER: readonly { id: PanelReiter; label: string }[] = [
 export function reiterTitel(id: PanelReiter, wort: BestimmungsWort): string {
   if (id === 'entscheide') return `Gerichtsentscheide zu ${bestimmungDativ(wort)}`;
   if (id === 'aenderungen') return 'Änderungserlasse dieses Erlasses';
-  return 'Botschaften und Vernehmlassungen zu diesem Erlass';
+  if (id === 'materialien') return 'Botschaften und Vernehmlassungen zu diesem Erlass';
+  return 'Behörden-Ressourcen und Werkzeuge zu diesem Erlass';
 }
 
 /**
@@ -86,8 +94,8 @@ export const OEFFNER_SELEKTOR = '[data-v3-panel-oeffner]';
  * `0` heisst «geladen, dieser Artikel führt keine Entscheide» und ergibt
  * ebenfalls KEINEN Zähler: ein «0 Entscheide →» ist genau der leere Zähler, den
  * die Erlass-Neutralitäts-Regel verbietet (Kantonserlasse ohne Bezüge).
- * Der Öffner bleibt in beiden Fällen da — er führt zu drei Reitern, nicht nur
- * zu den Entscheiden.
+ * Der Öffner bleibt in beiden Fällen da — er führt zu allen Reitern der Leiste
+ * (seit W2·7-VZUI vier), nicht nur zu den Entscheiden.
  */
 export function oeffnerLabel(anzahl: number | null): string {
   if (anzahl === null || anzahl <= 0) return 'Rechtsprechung';

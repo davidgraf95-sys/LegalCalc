@@ -1,6 +1,6 @@
 ---
 name: lehren
-description: Verwenden, wenn etwas schiefgegangen ist und die Lehre daraus bleiben soll — Trigger «das ist schon wieder passiert», «warum haben wir das nicht gemerkt», «Lehre festhalten», «Postmortem», «das darf nicht nochmal passieren» — oder wenn beim Bau ein wiederkehrendes Fehlermuster auffällt. AUCH verwenden bei §17-Prozessarbeit — ein CI-/Merge-/Doku-/Werkzeug-Prozess soll an der Wurzel behoben, verschlankt, gelöscht oder automatisiert werden: dafür die Fünf-Schritte-Reihenfolge hier. Enthält zudem das Register der belegten Fehlerklassen F1–F9 samt Mechanismus und die Regel, in welcher FORM eine neue Lehre abzulegen ist.
+description: Verwenden, wenn etwas schiefgegangen ist und die Lehre daraus bleiben soll — Trigger «das ist schon wieder passiert», «warum haben wir das nicht gemerkt», «Lehre festhalten», «Postmortem», «das darf nicht nochmal passieren» — oder wenn beim Bau ein wiederkehrendes Fehlermuster auffällt. AUCH verwenden bei §17-Prozessarbeit — ein CI-/Merge-/Doku-/Werkzeug-Prozess soll an der Wurzel behoben, verschlankt, gelöscht oder automatisiert werden: dafür die Fünf-Schritte-Reihenfolge hier. Enthält das F1–F9-Register und die Formregel für neue Lehren.
 ---
 
 # Lehren — belegte Fehlerklassen und wo ihr Gegenmittel sitzt
@@ -46,7 +46,7 @@ den Sabotage-Beweis (§6.7 — Skill `refactoring`, Ziff. 7).
 | **F2g** | Tor rot ohne Defekt (Render-Timing) | 15.8.2026: `qsui-hierarchie.e2e.ts` kippte 3–6/65 unter Last — `.lc-route` blendet ab opacity:0 ein, `checkVisibility({opacityProperty:true})` auf dem Null-Frame ist für jeden Nachfahren false; wechselnde Routen, kein Produktfehler. Ein rotes Tor ohne Defekt ist die §17-Klasse «umschiffter CI-Defekt». | e2e-Specs, die Sichtbarkeit/Geometrie messen, setzen `page.emulateMedia({reducedMotion:'reduce'})` im `beforeEach` (index.css schaltet Animationen ab; Haus-Muster a11y/hist-ansicht/rechtsprechung-richter) — nie `waitForTimeout`. Beweis: 2× 65/65 unter workers=16. |
 | **F3** | Diagnose ohne Verteilung | 4× an einem Tag wurde Messrauschen als Feature-Regression gedeutet; Reruns = ~72 % der CI-Wanduhr. **2. Vorfall 8./9.8.2026 TROTZ §0.3 (a33-Flake):** ein Bau-Agent schloss aus 5/5 grün auf Kausalität (reale Rate ~15 % ⇒ 5/5 ist Glück) und fuhr die Nullprobe erst nach vier widerlegten Hypothesen; derselbe Stand mass kalt 2–4/20 rot, warm 0/40 — die Messbedingung war der grössere Fund. | Dispatch §0 Ziff. 3, **eskaliert 9.8.2026**: (a) Nullprobe am ANFANG der Diagnose (Re-Run auf unverändertem Stand oder reiner Doku-Diff — `ci.yml` klassifiziert seit der CI-Härtung 3.8.2026 selbst) + (b) Streuung gegen den Schwellenabstand + (c) Stichprobe gegen die vermutete Rate dimensionieren und die Messbedingung (kalt/warm, Parallel-Last) mitnennen — eine Rate ohne Bedingung ist keine Zahl. |
 | **F4** | Bericht als Wahrheit | 1× fabrizierter Erfolgsbericht bei 0 Tool-Calls; 1× Injection-Versuch. | `CLAUDE.md` §14 Ziff. 7 (Orchestrator) **+** Dispatch §0 Ziff. 1 (Sub-Agent). Bewusste Doppelablage: Sub-Agenten sehen `CLAUDE.md` nicht. |
-| **F5** | Verlorene Agenten-Arbeit | ~6 Agenten-Tode, einmal ~2 h fast verloren. **2. Form 15.8.2026 (Wartetod):** ein `lex-daten`-Agent spawnte selbst eine Gegenprüfung und wartete 5 h auf deren Verdikt — Sub-Agenten können keine Nachrichten empfangen, das Verdikt landete beim Orchestrator; die fertige Arbeit lag uncommittet im Worktree. | Dispatch §0 Ziff. 4: WIP-Commit nach jedem Teilschritt. Muss den Agenten erreichen, **bevor** er stirbt — ein toter Agent liest nichts nach. **Wartetod:** Sub-Agenten spawnen nie etwas, auf dessen Antwort sie warten müssten — Gegenprüfung ist Orchestrator-Sache (`lex-daten.md` RISIKOPFAD-Zeile, Skill `auftrag` Ziff. 6); der Orchestrator prüft bei >2 h Stille den Worktree (`git status`) statt zu warten. |
+| **F5** | Verlorene Agenten-Arbeit | ~6 Agenten-Tode, einmal ~2 h fast verloren. **2. Form 15.8.2026 (Wartetod):** ein `lex-daten`-Agent spawnte selbst eine Gegenprüfung und wartete 5 h auf deren Verdikt — Sub-Agenten können keine Nachrichten empfangen, das Verdikt landete beim Orchestrator; die fertige Arbeit lag uncommittet im Worktree. | Dispatch §0 Ziff. 4: WIP-Commit nach jedem Teilschritt. Muss den Agenten erreichen, **bevor** er stirbt — ein toter Agent liest nichts nach. **Wartetod:** Sub-Agenten spawnen nie etwas, auf dessen Antwort sie warten müssten — Gegenprüfung ist Orchestrator-Sache (`lex-daten.md` RISIKOPFAD-Zeile, Skill `auftrag` Ziff. 6); der Orchestrator prüft bei >2 h Stille den Worktree (`git status`) statt zu warten. **3. Vorfall 31.8.2026 (Wartetod trotz §0.4):** lex-daten-Agent stoppte «wartend» auf seinen eigenen Hintergrund-Crawl; Weckruf des Orchestrators nötig. **Eskaliert** nach Regel 5: KEIN-WARTE-STOPP-Zeile jetzt in den generierten Agent-Definitionen (dispatch-agents.ts, liest jeder Agent). |
 | **F6** | Doppelarbeit | 2 Sessions bauten denselben CLS-Fix in `SuchResultate.tsx`. **2. Vorfall 28.7.2026 TROTZ §0.5:** `W2·6-NKEY` doppelt gebaut (#397 gemergt, #398 verworfen — ein voller Opus-Bau entsorgt). Die PR-Sonde war blind (Parallel-PR noch nicht offen), der Remote-Branch `worktree-w26-nkey` der Parallel-Session **war sichtbar**; zudem stand der Schritt nie auf `wip`. | Dispatch §0 Ziff. 5, **eskaliert 28.7.2026** (Regel 5): drei Sonden statt einer — PR-Liste + `git ls-remote --heads origin` + `git worktree list` — und Früh-Push des eigenen Branchs. Orchestrator-Seite: Skill `auftrag` Ziff. 2 (@meta `wip` **vor** Baubeginn setzen und pushen). **Eskalation 5.8.2026** (Spiegel-Fall: wip überlebt das Session-Ende — QS-TOK/QS-TOK-AUFRAEUMEN standen nach gelandetem Bau stundenlang «im Bau»): `plan:next` warnt maschinell bei wip ohne Bau-Spur (Branch/Worktree/PR), Landung-Skill Schritt 9 schliesst den Status vor Session-Ende. |
 | **F7** | Zustands-Spiegel nur vorwärts getestet | 7.8.2026 (W2·10-UI-NAV-S): die neue `?q=`-URL-Spiegelung wurde nur vorwärts getestet (tippen → Adresse → Reload); die Gegenprüfung fand per History-Back einen deterministischen Verlust — die Echo-Merkung des Spiegels verfiel nie, ein Back wurde als eigenes Echo missdeutet und binnen 300 ms wieder überschrieben. | Wer eine Zustands↔URL-Spiegelung baut, testet auch **rückwärts** (Back/Forward, geteilte URL, Reload mitten im Debounce), nicht nur vorwärts. Wiederverwendbares Gegenmittel im Code: `src/components/suche/useSucheAusUrl.ts` (reine Übergangsfunktionen, Echo-Merkung verfällt nach genau einem Konsum) samt Unit-Kontrakt + e2e-Back-Szenario — neue Spiegelungen docken dort an statt eigene Merkung zu erfinden (§5). |
 
@@ -77,6 +77,30 @@ David-Rahmen 16.7.) wartet auf David.
    Schaden). Eine Klasse ohne Vorfall ist eine Vermutung, keine Lehre.
 5. **Zweimal aufgetreten trotz Gegenmittel** ⇒ das Gegenmittel greift nicht;
    Form eskalieren (Prosa → Dispatch → Tor).
+
+## §17-Gegengewicht — Rückbau gehört dazu (Auftrag David 13.8.2026)
+
+*Wortlaut wörtlich aus CLAUDE.md §17 hierher verschoben (Token-Diät 30.8.2026 —
+CLAUDE.md lädt bei jedem Dispatch, diese Sätze braucht nur, wer §17-Arbeit tut;
+in CLAUDE.md steht die Kurzform mit Zeiger. Einzige Anpassung am Wortlaut:
+«, Inventar» in Satz 4 gestrichen — den Inventar-Mechanismus gibt es seit dem
+Plan-Neuschnitt 29.8.2026 nicht mehr).*
+
+Die §17-Regel erzeugt nur Zuwachs; nichts verlangte je das Entfernen, und so
+wuchs die Steuerung schneller als das Produkt. Vier Sätze, die in derselben
+Session mitlaufen: (1) Wer etwas hinzufügt, ersetzt zuerst die Stelle, die
+dieselbe Sorge schon trägt — oder sagt im Anlass-Satz, dass es keine gibt.
+(2) Was nicht scheitern kann, wird **gestrichen statt bewacht** (Präzedenz:
+`seq-hart`, drei Vorkommen, null Auswertung) — das gilt ausdrücklich auch für
+den TESTAPPARAT (Auftrag David 14.8.2026): Tests und Tore, die weder
+Rechtslogik noch Rechtsdaten decken und nachweislich nie etwas gefangen haben,
+unterliegen demselben Rückbau (Beweis nach Streich-Massstab,
+`bauschritt`/aufraeumen.md); Prüftiefe auf Rechtslogik/Rechtsdaten ist davon
+ausgenommen und bleibt. (3) Eine Regel ohne datierten Anlass ist
+Rückbau-Kandidat (Chesterton). (4) Der Plan bildet **Kapazität ab, nicht
+Absicht**: was den Deckel sprengt, verliert sein Etikett und lebt als
+Ideen-Liste ohne `@meta` und Tor weiter. Bei Konflikt gewinnt der Rückbau —
+ausser die Stelle hat einen datierten Vorfall verhindert. §1 bleibt unberührt.
 
 ## §17-Prozessarbeit: die Fünf-Schritte-Reihenfolge
 

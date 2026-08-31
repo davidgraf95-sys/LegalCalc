@@ -2,16 +2,8 @@
 // E6a M4 · Content-Release-DoD (§7c Playwright-Beweis): eine ESTV-KS-DB-Material-Karte rendert
 // den SICHTBAREN amtlichen Live-Link (DAM-PDF-URL); die Materialien-Übersicht listet die neuen
 // ESTV-Einträge und bleibt bei 390 px ohne horizontalen Overflow (§15 gefühlte Last / Lesbarkeit).
-import { test, expect, type Page } from '@playwright/test'
-
-function fehlerSammeln(page: Page): string[] {
-  const fehler: string[] = []
-  page.on('pageerror', (e) => fehler.push(`pageerror: ${e.message}`))
-  page.on('console', (msg) => {
-    if (msg.type() === 'error') fehler.push(`console.error: ${msg.text()}`)
-  })
-  return fehler
-}
+import { test, expect } from '@playwright/test'
+import { fehlerSammeln } from './helpers/fehlerSammeln'
 
 test('MaterialLeser einer neuen ESTV-KS-DB-Karte zeigt den sichtbaren amtlichen Live-Link (§7c)', async ({ page }) => {
   const fehler = fehlerSammeln(page)

@@ -2,7 +2,8 @@
 // Browser-Smoke über die Kernrouten: rendert die Seite, sammelt Console-/
 // Page-Errors und prüft den 390px-Viewport auf horizontalen Overflow.
 // Bewusst nur stabile Routen (kein fristenspiegel — wird per S-5c aufgelöst).
-import { test, expect, type Page } from '@playwright/test'
+import { test, expect } from '@playwright/test'
+import { fehlerSammeln } from './helpers/fehlerSammeln'
 
 const ROUTEN = [
   '/',
@@ -23,15 +24,6 @@ const ROUTEN = [
 // '/' entfernt 10.6.2026: empirisch kein Overflow mehr bei 390px
 // (scrollWidth 390 = clientWidth, frischer Build).
 const BEKANNTER_OVERFLOW = new Set<string>([])
-
-function fehlerSammeln(page: Page): string[] {
-  const fehler: string[] = []
-  page.on('pageerror', (e) => fehler.push(`pageerror: ${e.message}`))
-  page.on('console', (msg) => {
-    if (msg.type() === 'error') fehler.push(`console.error: ${msg.text()}`)
-  })
-  return fehler
-}
 
 for (const route of ROUTEN) {
   test.describe(route, () => {

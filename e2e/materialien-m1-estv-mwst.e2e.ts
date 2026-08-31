@@ -2,16 +2,8 @@
 // E6a M1 · Content-Release-DoD (§7c Playwright-Beweis): eine ESTV-MWST-DB-Material-Karte rendert
 // den SICHTBAREN amtlichen Live-Link (stabile Kurz-URL des MWST-Portals); die Materialien-Übersicht
 // listet die neuen MWST-Infos/Branchen-Infos und bleibt bei 390 px ohne horizontalen Overflow (§15).
-import { test, expect, type Page } from '@playwright/test'
-
-function fehlerSammeln(page: Page): string[] {
-  const fehler: string[] = []
-  page.on('pageerror', (e) => fehler.push(`pageerror: ${e.message}`))
-  page.on('console', (msg) => {
-    if (msg.type() === 'error') fehler.push(`console.error: ${msg.text()}`)
-  })
-  return fehler
-}
+import { test, expect } from '@playwright/test'
+import { fehlerSammeln } from './helpers/fehlerSammeln'
 
 test('MaterialLeser einer neuen ESTV-MWST-DB-Karte zeigt den sichtbaren amtlichen Live-Link (§7c)', async ({ page }) => {
   const fehler = fehlerSammeln(page)

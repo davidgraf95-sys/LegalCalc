@@ -29,13 +29,29 @@
 // false` entfernt ⇒ (b) rot mit «Bezugs-Shard schon beim Seitenaufruf geladen:
 // …/rechtsprechung/bezuege/STPO.json». Fall (a) bricht, wenn
 // `erlassVolltextHtml` in `src/lib/seo-detail.ts` auf den Kopf gekürzt wird.
+//
+// DIE ERWEITERUNG AUF `norm-index` EBENFALLS ROT GESEHEN (§6.7, 31.8.2026): mit
+// `normtext` versuchsweise ins Muster aufgenommen lief (b) rot und nannte die
+// sechs Anfragen, die beim Seitenaufruf tatsächlich gehen (`normtext/register`,
+// `currency`, `struktur/bund/STPO`, `bund/STPO`, `revisionen/STPO`,
+// `historie/STPO`). Der Beobachter sieht also, was über die Leitung geht — die
+// grüne Zeile ist eine Messung, keine Annahme.
 import { test, expect, type Page } from '@playwright/test'
 
-const BEZUG_MUSTER = /\/rechtsprechung\/bezuege\//
+// ── BEIDE SHARD-FAMILIEN, NICHT NUR EINE (W2·7-VZUI, 31.8.2026) ─────────────
+// Der Wächter beobachtete bis hierher nur `rechtsprechung/bezuege/`. Die Sorge,
+// aus der er stammt, war aber ausdrücklich, dass im Grundzustand BEIDE Shards
+// unterwegs sind — der schlanke `norm-index/<Erlass>.json` daneben (Befund
+// 2.8.2026, FAHRPLAN-VERZAHNUNG-UI §13). Ein Wächter, der die zweite Familie
+// nicht sieht, kann die Zusage nicht halten, auf die sich der Kopf von
+// `bezugAuswahl.ts` jetzt beruft; er hätte eine Rückkehr des Doppel-Ladens
+// stillschweigend durchgelassen. `norm-index` deckt beide Formen ab: den
+// Monolithen `norm-index.json` und die Erlass-Shards `norm-index/OR.json`.
+const SHARD_MUSTER = /\/rechtsprechung\/(bezuege\/|norm-index)/
 
 function bezugAnfragen(page: Page): string[] {
   const treffer: string[] = []
-  page.on('request', (r) => { if (BEZUG_MUSTER.test(r.url())) treffer.push(r.url()) })
+  page.on('request', (r) => { if (SHARD_MUSTER.test(r.url())) treffer.push(r.url()) })
   return treffer
 }
 
@@ -65,7 +81,7 @@ test.describe('H3 — Prerender bleibt unberührt, das Nachladen bleibt im Brows
   test('(b) Bezugs-Shard: null Anfragen beim Seitenaufruf, genau eine nach dem Öffnen', async ({ page }) => {
     const anfragen = bezugAnfragen(page)
     await page.setViewportSize({ width: 1440, height: 900 })
-    await page.goto('/gesetze/bund/STPO?leser=v3')
+    await page.goto('/gesetze/bund/STPO')
     await expect(page.locator('[data-v3-kopf]')).toBeVisible({ timeout: 20_000 })
     await expect(page.locator('#art-1')).toBeAttached({ timeout: 20_000 })
     // Der Lader läuft im Leerlauf (`beiLeerlauf`) — es wird also bewusst gewartet,

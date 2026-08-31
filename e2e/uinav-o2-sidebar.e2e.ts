@@ -23,13 +23,7 @@
 // Riegel verzeichnet der Beobachter für die ganze Hin-und-Zurück-Folge KEINE
 // einzige Mutation — React committet die Zwischen-Fassung nie.
 import { test, expect, type Page } from '@playwright/test'
-
-function fehlerSammeln(page: Page): string[] {
-  const fehler: string[] = []
-  page.on('pageerror', (e) => fehler.push(`pageerror: ${e.message}`))
-  page.on('console', (msg) => { if (msg.type() === 'error') fehler.push(`console.error: ${msg.text()}`) })
-  return fehler
-}
+import { fehlerSammeln } from './helpers/fehlerSammeln'
 
 const nav = (page: Page) => page.getByRole('navigation', { name: 'Hauptnavigation' })
 

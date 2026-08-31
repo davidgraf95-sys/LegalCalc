@@ -38,14 +38,8 @@
 // `aktArtikel={m.aktArtikel}` durch einen festen Wert ersetzen (z. B.
 // `aktArtikel={'Art. 1'}`) — dann nennt der Kopf nach dem Scrollen eine
 // Bestimmung, die nicht mehr im Bild steht, und (2) fällt in beiden Fällen.
-import { test, expect, type Page, type Locator } from '@playwright/test'
-
-function fehlerSammeln(page: Page): string[] {
-  const fehler: string[] = []
-  page.on('pageerror', (e) => fehler.push(`pageerror: ${e.message}`))
-  page.on('console', (msg) => { if (msg.type() === 'error') fehler.push(`console.error: ${msg.text()}`) })
-  return fehler
-}
+import { test, expect, type Locator } from '@playwright/test'
+import { fehlerSammeln } from './helpers/fehlerSammeln'
 
 /**
  * Die Ortsangabe einer Lesefläche und die Bestimmungen, die dort GERADE
@@ -85,7 +79,7 @@ test.describe('Ä1 — die V3-Kopfzeile nennt den Ort, an dem der Leser wirklich
     test.slow() // grosser Erlass, damit der Spy mehrere Artikelgrenzen sieht
     const fehler = fehlerSammeln(page)
     await page.setViewportSize({ width: 1440, height: 900 })
-    await page.goto('/gesetze/bund/STPO?leser=v3')
+    await page.goto('/gesetze/bund/STPO')
     await expect(page.locator('[data-v3-kopf]')).toBeVisible({ timeout: 20_000 })
     await expect(page.locator('#art-1')).toBeAttached({ timeout: 20_000 })
 

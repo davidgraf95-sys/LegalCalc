@@ -9,20 +9,14 @@
 // `useRevisionen`). ROT GESEHEN (§6.7) VOR der `PanelEntscheide.tsx`-Änderung:
 // `[role=img][aria-label]` blieb an Art. 5 AIG leer — kein ↻ trotz einer
 // Norm, die nach dem Entscheid revidiert wurde.
-import { test, expect, type Page } from '@playwright/test'
+import { test, expect } from '@playwright/test'
+import { fehlerSammeln } from './helpers/fehlerSammeln'
 import { panelAufziehen } from './helpers/panelOeffnen'
-
-function fehlerSammeln(page: Page): string[] {
-  const fehler: string[] = []
-  page.on('pageerror', (e) => fehler.push(`pageerror: ${e.message}`))
-  page.on('console', (msg) => { if (msg.type() === 'error') fehler.push(`console.error: ${msg.text()}`) })
-  return fehler
-}
 
 test.describe('V3-Panel · Normrevisions-Badge am Entscheid-Chip (AIG)', () => {
   test('(a) Entscheid VOR der Revision → ↻-Badge mit Revisionsdatum + AS-Fundstelle', async ({ page }) => {
     const fehler = fehlerSammeln(page)
-    await page.goto('/gesetze/bund/AIG?leser=v3#art-5')
+    await page.goto('/gesetze/bund/AIG#art-5')
     await expect(page.locator('[data-v3-kopf]')).toBeVisible({ timeout: 20_000 })
     await panelAufziehen(page)
     const panel = page.locator('[data-v3-panel]')
@@ -40,7 +34,7 @@ test.describe('V3-Panel · Normrevisions-Badge am Entscheid-Chip (AIG)', () => {
 
   test('(b) Entscheid NACH der Revision → kein Badge (gleich, UI-still)', async ({ page }) => {
     const fehler = fehlerSammeln(page)
-    await page.goto('/gesetze/bund/AIG?leser=v3#art-34')
+    await page.goto('/gesetze/bund/AIG#art-34')
     await expect(page.locator('[data-v3-kopf]')).toBeVisible({ timeout: 20_000 })
     await panelAufziehen(page)
     const panel = page.locator('[data-v3-panel]')

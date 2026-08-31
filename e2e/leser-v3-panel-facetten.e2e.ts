@@ -20,15 +20,9 @@
 // `v3/PanelEntscheide.tsx` verschwinden; (b), wenn der `taste`-Handler in
 // `v3/LeserPanel.tsx` abgeklemmt wird.
 import { test, expect, type Page } from '@playwright/test'
+import { fehlerSammeln } from './helpers/fehlerSammeln'
 import AxeBuilder from '@axe-core/playwright'
 import { panelAufziehen } from './helpers/panelOeffnen'
-
-function fehlerSammeln(page: Page): string[] {
-  const fehler: string[] = []
-  page.on('pageerror', (e) => fehler.push(`pageerror: ${e.message}`))
-  page.on('console', (msg) => { if (msg.type() === 'error') fehler.push(`console.error: ${msg.text()}`) })
-  return fehler
-}
 
 async function panelAuf(page: Page, pfad: string): Promise<void> {
   await page.goto(pfad)
@@ -43,7 +37,7 @@ test.describe('H3 — Panel: Facetten, Reiter, Platzhalter', () => {
   test('(a) Instanz-, Kanton- und Zeit-Facette stehen im Panel', async ({ page }) => {
     const fehler = fehlerSammeln(page)
     await page.setViewportSize({ width: 1440, height: 900 })
-    await panelAuf(page, '/gesetze/bund/STPO?leser=v3')
+    await panelAuf(page, '/gesetze/bund/STPO')
 
     const filter = page.locator('[data-v3-panel] [data-v3-panel-filter]')
     await expect(filter).toBeVisible()
@@ -69,13 +63,20 @@ test.describe('H3 — Panel: Facetten, Reiter, Platzhalter', () => {
     expect(fehler, fehler.join('\n')).toEqual([])
   })
 
-  test('(b) drei Reiter, mit Maus und mit Pfeiltasten', async ({ page }) => {
+  // W2·7-VZUI (31.8.2026): der Reiter «Anwendung» ist als VIERTER dazugekommen —
+  // die Behörden-Ressourcen und die Werkzeuge hatten seit H3 keinen Ort mehr
+  // (Herleitung im Kopf von `v3/PanelAnwendung.tsx`). Die Zahl ist hier bewusst
+  // ein LITERAL und wird nicht aus `PANEL_REITER` abgeleitet: ein Wächter, der
+  // seine Erwartung aus der geprüften Quelle zieht, kann nicht scheitern (§6.7).
+  // Der bestehende Pfeiltasten-Weg bleibt unverändert (der Vierte steht hinten),
+  // ergänzt um den Schritt bis ans neue Ende.
+  test('(b) vier Reiter, mit Maus und mit Pfeiltasten', async ({ page }) => {
     const fehler = fehlerSammeln(page)
     await page.setViewportSize({ width: 1440, height: 900 })
-    await panelAuf(page, '/gesetze/bund/STPO?leser=v3')
+    await panelAuf(page, '/gesetze/bund/STPO')
 
     const reiter = page.locator('[data-v3-panel] [role="tab"]')
-    await expect(reiter).toHaveCount(3)
+    await expect(reiter).toHaveCount(4)
     await expect(page.locator('[data-v3-panel-reiter-inhalt="entscheide"]')).toBeVisible()
 
     await page.locator('[data-v3-panel-reiter="aenderungen"]').click()
@@ -86,8 +87,12 @@ test.describe('H3 — Panel: Facetten, Reiter, Platzhalter', () => {
     await page.locator('[data-v3-panel-reiter="aenderungen"]').press('ArrowRight')
     await expect(page.locator('[data-v3-panel-reiter="materialien"]')).toHaveAttribute('aria-selected', 'true')
     await expect(page.locator('[data-v3-panel-reiter-inhalt="materialien"]')).toBeVisible({ timeout: 20_000 })
+    // Und ein Schritt weiter ⇒ «Anwendung», der neue letzte.
+    await page.locator('[data-v3-panel-reiter="materialien"]').press('ArrowRight')
+    await expect(page.locator('[data-v3-panel-reiter="anwendung"]')).toHaveAttribute('aria-selected', 'true')
+    await expect(page.locator('[data-v3-panel-reiter-inhalt="anwendung"]')).toBeVisible({ timeout: 20_000 })
     // Home springt zurück auf den ersten.
-    await page.locator('[data-v3-panel-reiter="materialien"]').press('Home')
+    await page.locator('[data-v3-panel-reiter="anwendung"]').press('Home')
     await expect(page.locator('[data-v3-panel-reiter="entscheide"]')).toHaveAttribute('aria-selected', 'true')
     expect(fehler, fehler.join('\n')).toEqual([])
   })
@@ -95,7 +100,7 @@ test.describe('H3 — Panel: Facetten, Reiter, Platzhalter', () => {
   test('(c) «Sachgebiet» ist vorgesehen, aber ohne Daten NICHT im DOM', async ({ page }) => {
     const fehler = fehlerSammeln(page)
     await page.setViewportSize({ width: 1440, height: 900 })
-    await panelAuf(page, '/gesetze/bund/STPO?leser=v3')
+    await panelAuf(page, '/gesetze/bund/STPO')
     // Positiv-Sonde daneben: die Filterzeile IST da (sonst prüfte die Abwesenheit
     // unten nur, dass das Panel leer ist).
     await expect(page.locator('[data-v3-panel] [data-v3-panel-filter]')).toBeVisible()
@@ -117,7 +122,7 @@ test.describe('H3 — Panel: Facetten, Reiter, Platzhalter', () => {
     const fehler = fehlerSammeln(page)
     for (const [breite, hoehe] of [[1440, 900], [390, 844]] as const) {
       await page.setViewportSize({ width: breite, height: hoehe })
-      await panelAuf(page, '/gesetze/bund/STPO?leser=v3')
+      await panelAuf(page, '/gesetze/bund/STPO')
       // Auf den nachgeladenen Inhalt warten: eine leere Fläche zu scannen wäre
       // ein grüner Befund über nichts (§6.7).
       await expect(page.locator('[data-v3-panel] [data-v3-panel-gruppe]').first()).toBeVisible({ timeout: 20_000 })
@@ -141,7 +146,7 @@ test.describe('H3 — Panel: Facetten, Reiter, Platzhalter', () => {
   test(`(d) Kantonserlass ohne Bezüge (${erlass}): kein leerer Zähler, kein leeres Element`, async ({ page }) => {
     const fehler = fehlerSammeln(page)
     await page.setViewportSize({ width: 1440, height: 900 })
-    await panelAuf(page, `/gesetze/kanton/${erlass}?leser=v3`)
+    await panelAuf(page, `/gesetze/kanton/${erlass}`)
 
     // Der Öffner trägt keine Zahl — weder eine 0 noch eine erfundene.
     const oeffner = page.locator('[data-v3-panel-zaehler], [data-v3-panel-lasche]').first()

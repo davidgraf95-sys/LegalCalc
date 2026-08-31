@@ -4,6 +4,7 @@
 // Reader-Specs. A9-DoD am Schluss: Bedienbarkeit (Tastatur/Touch/aria/Tap-Ziele)
 // und Flüssigkeit unter CPU-Drossel 6× mit CLS-Beobachter.
 import { test, expect, type Page } from '@playwright/test';
+import { fehlerSammeln } from './helpers/fehlerSammeln';
 import { clsBeobachtenInstallieren, clsAuslesen } from './helpers/cls';
 
 // Der Reader liefert prerendertes Crawler-HTML → auf den Client-Takeover warten,
@@ -12,13 +13,6 @@ async function warteReader(page: Page, url: string): Promise<void> {
   await page.goto(url);
   await expect(page.getByRole('button', { name: 'Ansicht' }).first()).toBeVisible({ timeout: 20000 });
   await expect(page.locator('article[id^="art-"]').first()).toBeVisible({ timeout: 20000 });
-}
-
-function fehlerSammeln(page: Page): string[] {
-  const fehler: string[] = [];
-  page.on('pageerror', (e) => fehler.push(`pageerror: ${e.message}`));
-  page.on('console', (msg) => { if (msg.type() === 'error') fehler.push(`console.error: ${msg.text()}`); });
-  return fehler;
 }
 
 const chip = (page: Page) => page.getByRole('button', { name: /zurück zu/ });

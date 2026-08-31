@@ -65,6 +65,7 @@
 //    Öffnungs-Schritt entfällt darum; gemessen wird unverändert CLS 0 über
 //    Suche, Sprünge und Sheet.
 import { test, expect, type Page } from '@playwright/test';
+import { fehlerSammeln } from './helpers/fehlerSammeln';
 import { LESER_SUCHFELD_NAME } from './helpers/leserBeschriftung';
 
 test.describe.configure({ timeout: 120_000 });
@@ -156,13 +157,6 @@ const gemalt = (page: Page) => page.evaluate(() => {
   const reg = (globalThis as unknown as { CSS?: { highlights?: Map<string, { size: number }> } }).CSS?.highlights;
   return reg?.get('lc-such-treffer')?.size ?? 0;
 });
-
-function fehlerSammeln(page: Page): string[] {
-  const fehler: string[] = [];
-  page.on('pageerror', (e) => fehler.push(`pageerror: ${e.message}`));
-  page.on('console', (msg) => { if (msg.type() === 'error') fehler.push(`console.error: ${msg.text()}`); });
-  return fehler;
-}
 
 /** Reader öffnen und auf den ersten Artikel warten (EIN Ort für das Budget). */
 async function oeffneLeser(page: Page, pfad: string, breite = 1440, hoehe = 900) {

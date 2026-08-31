@@ -2,15 +2,9 @@
 // Browser-Smoke der Rubrik «Rechtsprechung»: Übersicht rendert + lädt das
 // Manifest, Klick führt in den Reader (gegliederter Entscheid), keine Console-/
 // Page-Errors, kein Mobil-Overflow. Läuft gegen `vite preview` (dist).
-import { test, expect, type Page } from '@playwright/test'
+import { test, expect } from '@playwright/test'
+import { fehlerSammeln } from './helpers/fehlerSammeln'
 import { DROSSEL, REAKTIONS_BUDGET, REAKTIONS_LATTE, CONTAINER_BUDGET_CI } from './helpers/budgets'
-
-function fehlerSammeln(page: Page): string[] {
-  const fehler: string[] = []
-  page.on('pageerror', (e) => fehler.push(`pageerror: ${e.message}`))
-  page.on('console', (msg) => { if (msg.type() === 'error') fehler.push(`console.error: ${msg.text()}`) })
-  return fehler
-}
 
 test.describe('/rechtsprechung — Übersicht', () => {
   test('rendert, lädt das Manifest, zeigt Entscheid-Karten ohne Fehler', async ({ page }) => {
@@ -54,7 +48,8 @@ test.describe('/rechtsprechung — Übersicht', () => {
 test.describe('Verzahnung im Gesetzes-Reader', () => {
   // «BGG zeigt im Kontext-Panel die Bundesgerichtsentscheide-Gruppe» GELÖSCHT
   // 21.8.2026 (H5) — prüfte das Ist-Hüllen-Kontextpanel (`KontextPanel.tsx`).
-  // V3-Deckung: `leser-v3-panel-facetten` (b), die drei Reiter des V3-Panels.
+  // V3-Deckung: `leser-v3-panel-facetten` (b), die Reiter des V3-Panels (seit
+  // W2·7-VZUI vier; der vierte hat mit `leser-v3-panel-anwendung` eine eigene).
 })
 
 test.describe('Reader (über Klick aus der Übersicht)', () => {

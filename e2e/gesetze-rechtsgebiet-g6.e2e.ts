@@ -2,16 +2,8 @@
 // G6 (W2·5d) — Rechtsgebiets-Sicht als «Gerüst»: die zweite Gliederung quer zum
 // Bund-Korpus (Querschnitts-Themen + Auto-Grundgerüst). Prüft Rendern, Deep-Link,
 // tolerante Abdeckungs-Angabe, Verzahnung, Rückweg — ohne Console-Fehler/Overflow.
-import { test, expect, type Page } from '@playwright/test'
-
-function fehlerSammeln(page: Page): string[] {
-  const fehler: string[] = []
-  page.on('pageerror', (e) => fehler.push(`pageerror: ${e.message}`))
-  page.on('console', (msg) => {
-    if (msg.type() === 'error') fehler.push(`console.error: ${msg.text()}`)
-  })
-  return fehler
-}
+import { test, expect } from '@playwright/test'
+import { fehlerSammeln } from './helpers/fehlerSammeln'
 
 test.describe('/gesetze — Rechtsgebiets-Sicht (G6)', () => {
   test('Rechtsgebiets-Sicht öffnet Querschnitts-Themen + Grundgerüst, Deep-Link, Rückweg', async ({ page }) => {
