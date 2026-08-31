@@ -88,6 +88,73 @@ Entscheide (SSoT, Andockpunkt, Quellen) stehen im nachfolgenden Abschnitt
 
 ---
 
+## §16 · Suche-Edge-Umzug Kanton — QS-BASIS (d), Etappen K0–K5 *(31.8.2026)*
+
+Umsetzung der Datenhaltungs-Optimierung aus «12. Datenhaltungs-Optimierung»
+(archiviert, s. unten) für den Such-Pfad. Bau auf `feat/qs-basis-suche-edge`,
+Basis `f283f5cb4`. **Merge gesperrt bis zur Gegenprüfung** (Risikopfad
+`scripts/datenhaltung`).
+
+> **Spec-Zugriff korrigiert (31.8.2026).** Der Bau-Auftrag verwies auf «5. Etappen»
+> und «10. Entscheide» *dieser* Datei. Beide Abschnitte liegen seit dem
+> Plan-Neuschnitt 29.8.2026 in `archiv/fahrplaene/FAHRPLAN-DATENHALTUNG.md`; die
+> lebende Datei trägt nur noch §0/§13/§14. Der Verweis war also nicht falsch, aber
+> nicht mehr auflösbar — hier festgehalten, damit die nächste Session nicht
+> dieselbe Suche fährt. Massgeblich waren: Archiv «12.1 Vier technische Posten»
+> (contentless-FTS, Index-Strategie) und «10 (7) Weiche C: Voll-Rebuild».
+
+**K0 Nullprobe.** Kennzahlen vor dem Umbau eingefroren →
+`bibliothek/register/suche-edge-nullprobe-2026-08-31.md`. Kernzahl für jede
+spätere Entscheidung: **Kanton = 4.26 MiB gzip = 45.2 %** des statischen
+Suchindex.
+
+**K1 Recall-Parität.** `fts_artikel` indexierte nur `bloeckeText` — die fünf
+Recall-Felder des statischen Index (m/n/g/tb/f, 21.5 % des Rohtextes) hatten am
+Edge kein Gegenstück. Der Fehler war STILL: die Antwort war nie leer, nur
+schlechter (Query «Miete» → OR 253 und OR 267 mit **null** Treffern, während zehn
+kantonale Gebührenerlasse die Liste anführten). Jetzt sechs FTS-Spalten, gespeist
+aus der geteilten Extraktion `scripts/suche-felder.ts` (§5); Struktur-Sidecar lag
+bereits als `dokument`-Blob in der DB. Nebenbei: `fts_artikel` liegt lokal wie
+remote **contentless** — die alte `content='artikel'`-Deklaration behauptete eine
+Spalte, die es nie gab (`SELECT count(*)` ohne MATCH scheitert deshalb heute
+schon). Das ist Posten (b) aus Archiv-§12.1. Kosten: HOT-Replika 665.46 → 671.00
+MiB (+0.8 %, Budget 1024).
+
+**K2 Ranking-Parität — Entscheid.** Der Auftrag empfahl, `artikelRanking`
+clientseitig auf die Edge-Zeilen anzuwenden. **Verworfen, weil gemessen
+untauglich:** nach K1 lag OR 253 bei «Miete» auf bm25-Rang 128 von 165, ZGB 641
+bei «Eigentum» auf 466 von 658. Ein Client-Re-Ranking sortiert nur das
+zurückgegebene Fenster (max. 50) — es rettet keinen Kandidaten, den die Abfrage
+nie geliefert hat. Die dreistufige topische Ordnung liegt darum IM SQL-Kern, wo
+sie über die ganze Treffermenge wirkt. Ergebnis: 8/8 Fälle des S4-Testsets im
+erlaubten Rang. **Preis, bewusst gezahlt:** die Rang-Politik steht jetzt zweimal
+(SQL + TypeScript) — nicht auflösbar, weil `suche-kern.ts` die Null-Import-Regel
+für `api/**` trägt und es keinen Produktiv-Import `scripts/ → src/` gibt. Die
+Doppelung ist bewacht statt versteckt (`scripts/datenhaltung/suche-rang.test.ts`
+vergleicht beide `KERNERLASSE`-Listen und misst beide Wege am gleichen Testset).
+
+**K3 vorbereitet, NICHT scharf.** `SUCHE_INDEX_EBENEN` baut auf Wunsch einen
+Bund-only-Index (−4.26 MiB gzip); Default AUS, `artikel.json` byte-gleich
+(sha256 `c2a98aea…` vor und nach dem gesamten Schritt). Mitgefundener Defekt
+behoben: der Client hängte eine Ebene auch ohne Einträge als «bereit» ein —
+`fehlendeEbenen` wäre leer geblieben und die Oberfläche hätte Vollständigkeit
+behauptet. **Scharfschaltung ist ein David-Entscheid** (§8), Restliste im
+Bau-Bericht.
+
+**K4 NICHT gebaut** — `scripts/check-perf-budget.ts` ist Top-Level und liegt bei
+einer Parallel-Session. Zieltext als Übergabe im Bau-Bericht.
+
+**K5 Nachführ-Kette.** `npm run datenhaltung:nachfuehren` fährt build → manifest →
+turso-sync → check:turso-frische in Reihenfolge, bricht beim ersten Fehlschlag ab
+(ein Sync auf eine halb gebaute DB stellte sonst einen falschen Index live) und
+überspringt die Turso-Hälfte ohne Token **laut und namentlich**. Seit K1/K2 ist
+eine veraltete Replika keine Verzögerung mehr, sondern eine falsche Auskunft.
+
+**Nicht berührt:** die Heiss/Kalt-Grenze (Archiv-§12.2) bleibt unverändert
+David-Gate; es wurde kein echter Turso-Lauf gefahren (Env fehlt lokal).
+
+---
+
 ## Archivierte Abschnitte *(Plan-Neuschnitt 29.8.2026)*
 
 15 Abschnitt(e) dieser Datei sind wörtlich nach

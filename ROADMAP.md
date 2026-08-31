@@ -449,6 +449,7 @@ zgb-a36-anhang: Die ZGB-Gliederung zeigt 74 Artikel des Anhangs «Wortlaut der f
   - [ ] Dependency-Frische: `npm audit` + Majors + knip-Unlisted als Meldung, nie Stopper. **Lockfile nur über `npx npm@10`.** §3.3.
   - [ ] tailwind 3→4-Migration (PR #503; ~249 className-Dateien visuelle Regression — kein Dependabot-Merge).
   - [ ] Dependabot-Lock-Wurzelfix: npm-Major-Mismatch erzeugt fehlende genestete Einträge (H-8-Muster) — Weg finden, der den Lock automatisch mit npm@10 nachzieht.
+  - [~] **(d) Datenhaltungs-Optimierung — Suche-Edge-Umzug Kanton** (31.8.2026). K0 Nullprobe · K1 Recall-Parität (`fts_artikel` 1→6 Felder, contentless) · K2 Ranking-Parität (topische Stufung IM SQL-Kern; **Befund: bm25 allein reicht nicht — OR 253 lag bei «Miete» auf Rang 128 von 165**, ein Client-Re-Ranking des 50er-Fensters kann das nicht heilen) · K3 Bund-only-Flag **vorbereitet, Default AUS** · K5 Nachführ-Kette. Messungen und Belege: [suche-edge-nullprobe-2026-08-31.md](bibliothek/register/suche-edge-nullprobe-2026-08-31.md). **Offen:** K4 (Suchindex-Budgetzeile — fremde Datei, Parallel-Session) · **K3-Scharfschaltung = David-Entscheid** (§8: kantonale Treffer kämen dann nur noch online; Ersparnis 4.26 MiB gzip = 45.2 %) · Gegenprüfung des Risikopfads. **Detail:** [FAHRPLAN-DATENHALTUNG.md](fahrplaene/FAHRPLAN-DATENHALTUNG.md) §16.
 
 - [ ] **Adversariale Gegenprüfung — Restkampagne + Werkzeug-Härtungen** *(`QS-GP`, `[OF]`)*
   <!-- @meta id: QS-GP · status: ready · blocker: null · dep: [] · feld: betrieb · fahrplan: fahrplaene/FAHRPLAN-LERNPHASE-2026.md -->
