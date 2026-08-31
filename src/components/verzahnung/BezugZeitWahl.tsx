@@ -189,9 +189,29 @@ export function BezugZeitWahl({ bereich, histogramm, onBereich }: {
               );
             })}
           </div>
-          <div className="num tabular-nums flex justify-between pt-0.5 text-micro text-ink-500">
-            <span>{balken[0].jahr}</span>
-            <span>{balken[balken.length - 1].jahr}</span>
+          {/* ── LM-024 (B8, 31.8.2026) · DIE BEDIENBARKEIT STEHT JETZT DA ──────
+              Befund: «sechs Balken ohne Werte, ohne Achsenbeschriftung, ohne
+              Einheit; ob es anklickbar ist, ist nicht erkennbar.» Am gebauten
+              Stand nachgeprüft (OR @1440): Werte je Balken gibt es (`title`
+              «Jahr: N Verknüpfungen»), Einheit und Grundgesamtheit stehen
+              sichtbar im Fusssatz («889 Verknüpfungen in diesem Erlass») — der
+              einzige Teil, der wirklich fehlte, war die BEDIENBARKEIT: sie
+              lebte nur im `aria-label` und im `cursor-ew-resize`, für Sehende
+              also erst NACH dem Hinfahren mit der Maus, auf Touch gar nicht.
+              Der Hinweis kostet keine Zeile: er teilt sich die Achsenzeile mit
+              den beiden Jahreszahlen und wiederholt WORTGLEICH die Formulierung
+              des `aria-label` darüber (§5 — eine Handlung, ein Wortlaut).
+              `num tabular-nums` wandert dabei von der Zeile auf die
+              Jahreszahlen: die Mono-Stimme gehört den Ziffern, nicht dem Satz.
+              NICHT GEBAUT und bewusst nicht: Achsenbeschriftung, Werte am
+              Balken, Legende — das ist Davids Minimalismus-Vorgabe vom
+              28.7.2026 («keine zweite Achse, keine Legende, kein Dashboard»),
+              und sie zu kippen wäre eine Entscheid-Änderung, kein Bugfix
+              (§0.2 des Fahrplans). */}
+          <div className="flex items-baseline justify-between gap-2 pt-0.5 text-micro text-ink-500">
+            <span className="num tabular-nums">{balken[0].jahr}</span>
+            <span className="min-w-0 truncate">Ziehen wählt einen Bereich</span>
+            <span className="num tabular-nums">{balken[balken.length - 1].jahr}</span>
           </div>
         </>
       )}

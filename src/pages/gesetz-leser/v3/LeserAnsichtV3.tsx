@@ -218,11 +218,32 @@ export function LeserAnsichtV3({ kompakt, fussnotenAnzahl, hatAenderungsvermerke
           <V3Switch
             an={opt.fussnoten === 'an'}
             label="Fussnoten"
-            ariaLabel={fussnotenAnzahl != null && fussnotenAnzahl > 0 ? `Fussnoten (${fussnotenAnzahl})` : undefined}
+            // ── LM-025 (B8, 31.8.2026) · DIE ZAHL SAGT JETZT, WAS SIE ZÄHLT ──
+            // Der Befund («neben ‹Fussnoten› steht eine unerklärte Zahl (932)»)
+            // ist SICHTBAR überholt — im V3-Menü steht keine Ziffer mehr, die
+            // A26-Zahl lebt nur noch im Accessible Name. Genau dort war sie
+            // aber weiterhin unerklärt: ein Screenreader las «Fussnoten 932»,
+            // ohne dass irgendetwas sagte, worauf sich die 932 bezieht — für
+            // diese Nutzer war der Befund unverändert reproduzierbar.
+            // Sie ist keine Zahl am Artikel, sondern die Summe über den GANZEN
+            // Erlass (`leserV3Modell.ts` → `fussnotenAnzahl`, Summe der
+            // `fussnoten` aller Struktur-Einträge; am OR gegen das gebaute
+            // Artefakt nachgezählt: 1'686 Artikel, 932 Fussnoten). Der Zusatz
+            // «im Erlass» ist damit keine Schmückung, sondern die
+            // Bezugsgrösse — ohne sie liest sich dieselbe Zahl als «932 hier»
+            // (§8). Entfernen wäre der andere Weg gewesen und kollidiert mit
+            // Davids Entscheid A26 (11.7.2026, Zähler N am Fussnoten-Schalter);
+            // der bleibt unangetastet, er bekommt nur seine Einheit dazu.
+            ariaLabel={fussnotenAnzahl != null && fussnotenAnzahl > 0 ? `Fussnoten (${fussnotenAnzahl} im Erlass)` : undefined}
             // Ä68: dieser Schalter trägt Marker UND Apparat, und zwar ALLE
             // Klassen — auch `kl:'A'`. Er ist damit der einzige, der amtlichen
             // Fussnotentext ausblendet.
-            titel="Amtlicher Fussnoten-Apparat am Artikelfuss ein- oder ausblenden — Marker und Apparat, alle Fussnoten"
+            // LM-025 · dieselbe Erklärung auch für Sehende: der Accessible Name
+            // trägt die Zahl, der Tooltip trägt ihre Bedeutung — ein Wortlaut,
+            // zwei Kanäle (§5). Ohne Zahl (Struktur noch nicht geladen) bleibt
+            // der Satz exakt der bisherige.
+            titel={`Amtlicher Fussnoten-Apparat am Artikelfuss ein- oder ausblenden — Marker und Apparat, alle Fussnoten${
+              fussnotenAnzahl != null && fussnotenAnzahl > 0 ? ` (${fussnotenAnzahl} in diesem Erlass)` : ''}`}
             onKlick={() => schalte('fussnoten', opt.fussnoten === 'an')}
           />
           {/* Ä68 (Entscheid David 17.8.2026) · ENTKOPPELT. Der Schalter blendet

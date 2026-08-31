@@ -67,7 +67,20 @@ export function Tabs<T extends string>({
       // verlieren (§5/§10). Rein semantisch, keine Optik-Änderung.
       role={mode === 'tab' ? 'tablist' : 'group'}
       aria-label={ariaLabel}
-      className={`print:hidden flex ${HOEHE[groesse]} items-stretch gap-1 p-0.5 bg-surface border border-line rounded-lg w-fit max-w-full overflow-x-auto`}
+      // ── LM-063 (B8, 31.8.2026) · DIE LEISTE SAGT JETZT, DASS SIE WEITERGEHT ──
+      // GEMESSEN am gebauten Stand, `/rechner/schkg-fristen` @720: diese Gruppe
+      // war 604 px breit bei 1'193 px Inhalt — **589 px verborgen**, ohne
+      // Verlauf, ohne Maske, ohne sichtbaren Balken. Der achte Reiter
+      // («Schiedsverfahren») endete mitten im Wort, und nichts sagte, dass dort
+      // noch etwas liegt. `/rechner/zpo-fristen` @720: 604/756.
+      // `lc-scrollrand-x` ist die GETEILTE Affordanz (Anatomie und Herleitung im
+      // Regel-Block `lc-scrollrand` in index.css): zwei Deckel in `local` über
+      // zwei Schatten in `scroll` — der Schatten steht genau dann, wenn an
+      // dieser Kante wirklich noch Inhalt liegt, und verschwindet am Ende der
+      // Strecke. Kein JavaScript, kein Listener, kein Re-Render (§2/§15).
+      // `lc-scrollrand-grund-surface`, weil die Leiste auf `bg-surface` sitzt:
+      // der Deckel muss die Farbe der Fläche haben, die er abdeckt.
+      className={`print:hidden flex ${HOEHE[groesse]} items-stretch gap-1 p-0.5 bg-surface border border-line rounded-lg w-fit max-w-full overflow-x-auto lc-scrollrand-x lc-scrollrand-grund-surface`}
     >
       {items.map((it, i) => {
         const aktiv = value === it.code;

@@ -1433,6 +1433,85 @@
   .lc-bezug-linie::-webkit-scrollbar-track { background: transparent; }
   .lc-bezug-linie::-webkit-scrollbar-thumb { background: var(--line); border-radius: 2px; }
 
+  /* ─── `lc-scrollrand-x|y` · Scroll-Affordanz für JEDEN Scroller (B8, 31.8.2026) ─
+     LM-063 (Tab-/Phasen-Leisten schneiden das letzte Fach ab, kein Hinweis) und
+     LM-064 (der Gliederungs-Scroller schneidet die letzte Zeile durch, ohne
+     Rahmen, ohne Zeichen) sind DERSELBE Defekt in zwei Achsen. Gemessen am
+     gebauten Stand 31.8.2026: `/rechner/schkg-fristen` @720 → 604 px sichtbar
+     bei 1'193 px Inhalt (589 px verborgen); `/gesetze/bund/OR` @1440 → der
+     `[data-toc]`-Scroller 728 px sichtbar bei 1'061 px Inhalt, genau eine Zeile
+     vom Rand durchgeschnitten, `border-bottom: 0`, `mask-image: none`.
+
+     WARUM DIESE TECHNIK und nicht der statische Verlauf aus D10: der statische
+     Verlauf behauptet «hier geht es weiter» AUCH am Ende der Strecke (§8) — die
+     Notiz zu LM-061 (30.8.2026) nennt genau das als Grund, ihn nicht ein
+     viertes Mal zu kopieren. Hier deckt das `local`-Paar den Schatten ab,
+     solange man an der jeweiligen Kante steht, und gibt ihn frei, sobald dort
+     wirklich noch Inhalt liegt: die Affordanz KENNT den Scrollstand — ohne
+     JavaScript, ohne Listener, ohne Re-Render (§2/§15).
+
+     WARUM ALS GETEILTE KLASSE und nicht je Bauteil: dieselbe Sorge an vier
+     Scrollern (`ui/Tabs.tsx`, `SachgebietKacheln`, Panel-Reiterleiste,
+     Gliederungs-Scroller) wären vier Kopien, die beim ersten Nachjustieren
+     auseinanderlaufen (§5/§10). Die Anatomie ist wortgleich die der
+     `.lc-bezug-linie` darüber — deren Fassung bleibt unangetastet, weil sie
+     zusätzlich einen sichtbaren dünnen Balken führt (Entscheid David 28.7.2026).
+
+     `--lc-scrollrand-grund` ist der DECKEL-Ton: er muss der Fläche entsprechen,
+     auf der der Scroller sitzt, sonst deckt er mit der falschen Farbe ab.
+     Vorgabe `--paper`; Scroller auf Karten-/Panel-Grund setzen die Variable um
+     (`lc-scrollrand-grund-surface` / `-raised`). Nur `background-image`/-size/
+     -position, nie die `background`-Kurzform: sonst löschte die Klasse die
+     Tailwind-Fläche (`bg-surface`) mit. */
+  .lc-scrollrand-x,
+  .lc-scrollrand-y { --lc-scrollrand-grund: var(--paper); }
+  .lc-scrollrand-grund-surface { --lc-scrollrand-grund: var(--surface); }
+  .lc-scrollrand-grund-raised { --lc-scrollrand-grund: var(--paper-raised); }
+
+  .lc-scrollrand-x {
+    background-image:
+      linear-gradient(to right, var(--lc-scrollrand-grund) 40%, transparent),
+      linear-gradient(to left, var(--lc-scrollrand-grund) 40%, transparent),
+      radial-gradient(farthest-side at 0 50%, rgb(0 0 0 / .22), transparent),
+      radial-gradient(farthest-side at 100% 50%, rgb(0 0 0 / .22), transparent);
+    background-position: left center, right center, left center, right center;
+    background-size: 26px 100%, 26px 100%, 18px 100%, 18px 100%;
+    background-repeat: no-repeat;
+    background-attachment: local, local, scroll, scroll;
+  }
+  .lc-scrollrand-y {
+    background-image:
+      linear-gradient(to bottom, var(--lc-scrollrand-grund) 40%, transparent),
+      linear-gradient(to top, var(--lc-scrollrand-grund) 40%, transparent),
+      radial-gradient(farthest-side at 50% 0, rgb(0 0 0 / .22), transparent),
+      radial-gradient(farthest-side at 50% 100%, rgb(0 0 0 / .22), transparent);
+    background-position: center top, center bottom, center top, center bottom;
+    background-size: 100% 22px, 100% 22px, 100% 14px, 100% 14px;
+    background-repeat: no-repeat;
+    background-attachment: local, local, scroll, scroll;
+  }
+  /* Dunkel: derselbe Ort, umgekehrte Tinte — ein schwarzer Schatten ist auf
+     dunklem Papier unsichtbar, und genau dort wirkte der Schnitt laut Befund
+     wie ein Darstellungsfehler. */
+  html.dark .lc-scrollrand-x {
+    background-image:
+      linear-gradient(to right, var(--lc-scrollrand-grund) 40%, transparent),
+      linear-gradient(to left, var(--lc-scrollrand-grund) 40%, transparent),
+      radial-gradient(farthest-side at 0 50%, rgb(255 255 255 / .20), transparent),
+      radial-gradient(farthest-side at 100% 50%, rgb(255 255 255 / .20), transparent);
+  }
+  html.dark .lc-scrollrand-y {
+    background-image:
+      linear-gradient(to bottom, var(--lc-scrollrand-grund) 40%, transparent),
+      linear-gradient(to top, var(--lc-scrollrand-grund) 40%, transparent),
+      radial-gradient(farthest-side at 50% 0, rgb(255 255 255 / .20), transparent),
+      radial-gradient(farthest-side at 50% 100%, rgb(255 255 255 / .20), transparent);
+  }
+  /* Im Ausdruck gibt es kein Scrollen — ein Schatten wäre dort ein Fleck. */
+  @media print {
+    .lc-scrollrand-x, .lc-scrollrand-y { background-image: none; }
+  }
+
   /* ─── Griffe der Leser-Werkzeugleiste (W2·7-BEZUG/B6, Auftrag David 28.7.2026) ──
      EINE Anatomie für ALLE Bedien-Elemente der Leiste «Gesetze › Bund › ZGB ·
      Art. 212 · Im Gesetz suchen … · Rechtsprechung ▾ · Ansicht ▾ · Stand · ✕».
