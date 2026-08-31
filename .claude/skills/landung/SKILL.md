@@ -207,3 +207,23 @@ belegte Ausreden, Umgehungs-Aufzählung «Buchstabe = Geist»).
 5. Aufräumen: gemergten Branch + Worktree entfernen (lokal + remote).
 6. Karten-ZEILE in `STRUKTUR.md` (deployter Stand, Commit-Hash) — Form:
    Skill `bauschritt` Station E.
+
+## Trailer- und PR-Formregeln (CI-Rot-Lehren 31.8./1.9.2026, §17)
+
+1. **Trailer nur im SCHLUSSBLOCK:** `Roadmap:`/`Roadmap-Status:`/`Gegenpruefung:`/
+   `Co-Authored-By:` in EINEM letzten Absatz ohne Leerzeilen dazwischen —
+   `git %(trailers)` liest nur den letzten Block (PR #604: Verdikt war da,
+   aber durch eine Leerzeile unsichtbar → Merge-Schutz rot). Vor jedem PR
+   lokal `npm run check:merge-schutz` (Sekunden, spart den CI-Lauf).
+2. **`Roadmap-Status: parked(<slug>)` nur mit REGISTRIERTEM Slug:** der Slug
+   muss VOR dem Merge im `@blockers`-Register der ROADMAP stehen, sonst
+   verweigert das Konsistenz-Tor die automatische Plan-Buchung (Main-CI rot,
+   PR #604). Reihenfolge: Blocker-Zeile im PR mitliefern, dann Status-Trailer.
+3. **PR zeigt «no checks reported» → ZUERST Mergeability prüfen**
+   (`gh pr view N --json mergeable`): bei CONFLICTING baut GitHub gar keinen
+   CI-Lauf (PR #605). Fix ist der main-Merge, nicht das Neu-Triggern.
+4. **Quittungs-Hash überlebt einen main-Merge**, solange der Merge den
+   Endinhalt der Risiko-Dateien des eigenen Diffs nicht ändert; ändert die
+   Regeneration eine Risiko-Projektion (register.json!), braucht der
+   Merge-Stand ein enges Nach-Verdikt derselben Prüf-Instanz (belegt 1.9.2026,
+   ZH-Tranche).
