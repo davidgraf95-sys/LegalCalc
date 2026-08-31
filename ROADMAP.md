@@ -65,6 +65,7 @@
 vps-bestellung-david: E3-Serving + E4-UI hängen an einer VPS-Bestellung (David, ~15 Min; Entscheid David 8.8.2026: «mach ich erst wenn UI noch optimierter wird» — bewusst zurückgestellt, nicht vergessen) — Dossier `bibliothek/betrieb/vps-bestell-dossier-2026-07-17.md` (PR #271). ECHTES David-Gate, kein Bau-Blocker. Bis dahin sind QS-DATA/W2·6-DATA nur im NICHT-VPS-Teil baubar (E0–E4 sind lokal fertig).
 richter-analytik-gate: Richter-/Spruchkörper-Analytik (W3·15-RICHTER). GRENZE (20.7.2026): Filtern/Facette/Verlinkung sind FREI und gebaut (#309/#311); gesperrt bleiben allein RANKING und PROGNOSE. Nur deskriptiv; bewusste Freigabe Davids erforderlich (heikel: Standesrecht, Persönlichkeitsschutz, richterliche Unabhängigkeit)
 david-entscheid-org-umzug: QS-ORG-UMZUG — Repo-Transfer in eine Gratis-Organisation für die native Merge Queue (User-Konten haben keine); Infrastruktur-Entscheid mit ~1 h Nacharbeit (Vercel, Branch-Schutz, Secrets). Erst prüfen, ob der Auto-Nachzug (Checklisten-Zeile unter QS-AUTOMATIK) den BEHIND-Schmerz ausreichend dämpft (Entscheid David 7.8.2026: «B als Schritt, A parken»)
+k3-scharfschaltung-folgt: QS-BASIS(d) Suche-Edge — Umzug gelandet (#604), der K3-Umschalter (Kanton-Volltext nur Edge, statischer Index Bund-only, −45 %) ist VORBEREITET und wartet auf die eigene Folge-Landung: Flag an + Budget-Zeile check-perf-budget:152 deklariert senken + Abdeckungszeile useUniversalSuche (Design-Fläche, TABU bis frei). David-Go liegt vor («schalte scharf sobald geprüft und verifiziert», 31.8.2026); Live-Verifikation Edge positiv. KEIN David-Gate — reiner Sequenz-Blocker.
 -->
 
 <!-- @david-fragen
@@ -442,7 +443,7 @@ zgb-a36-anhang: Die ZGB-Gliederung zeigt 74 Artikel des Anhangs «Wortlaut der f
   **Detail:** [FAHRPLAN-BASIS-AUSBAU.md](fahrplaene/FAHRPLAN-BASIS-AUSBAU.md) §1.
 
 - [ ] **Basis-Ausbau — Fundament** *(`QS-BASIS`, `[OF]`)*
-  <!-- @meta id: QS-BASIS · status: ready · blocker: null · dep: [] · feld: betrieb · fahrplan: fahrplaene/FAHRPLAN-BASIS-AUSBAU.md -->
+  <!-- @meta id: QS-BASIS · status: parked · blocker: k3-scharfschaltung-folgt · dep: [] · feld: betrieb · fahrplan: fahrplaene/FAHRPLAN-BASIS-AUSBAU.md -->
   CI/lokal-Tor-Parität + offene B-Einheiten.
   **Detail:** [FAHRPLAN-BASIS-AUSBAU.md](fahrplaene/FAHRPLAN-BASIS-AUSBAU.md) §2.
   - [ ] **`main.tsx` nutzt `createRoot` statt `hydrateRoot`** — prerendertes DOM wird 27–78 ms nach `load` verworfen (Nullprobe auf main bestätigt); Wurzel der «flaky» Tastatur-/Skip-Link-Specs und ein CLS-/TTI-Posten. Fix mit Hydrations-Fehler-Wächter, Vorher/Nachher-Messung, Gegenprüfung, eigener PR.
