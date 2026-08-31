@@ -14,6 +14,7 @@ import {
   berechneZhQuelleHash,
   leseZhStand,
   leseZhStandAusUrl,
+  leseZhPublikationsdatum,
   leseAttachmentUrl,
   loeseRedirect,
 } from '../../scripts/normtext/adapter-zh-pdf.ts';
@@ -134,6 +135,21 @@ describe('ZH-PDF-Adapter — Stand', () => {
 
   it('leseZhStandAusUrl: liefert "" wenn das Slug-Muster nicht matcht (defensiv)', () => {
     expect(leseZhStandAusUrl('https://www.zh.ch/de/.../uebersicht.html')).toBe('');
+  });
+
+  // FIX 2 (Befund E2-H4, 31.8.2026): `stand` ist das Publikationsdatum der
+  // geltenden Nachtragsfassung, nicht das Ur-Inkrafttreten aus dem URL-Slug und
+  // nicht die Loseblatt-Ausgabemarke aus dem PDF-Fussband.
+  it('leseZhPublikationsdatum: liest das amtliche Feld aus dem Registry-HTML', () => {
+    // Wörtliches Markup der Registry-Seite von LS 175.2 (abgerufen 31.8.2026).
+    const html =
+      '<dl class="mdl-descriptionlist">\n                <dt>Publikationsdatum</dt>\n' +
+      '                <dd>01.07.2026</dd>\n            </dl>';
+    expect(leseZhPublikationsdatum(html)).toBe('2026-07-01');
+  });
+
+  it('leseZhPublikationsdatum: liefert "" ohne das Feld (Fallback greift)', () => {
+    expect(leseZhPublikationsdatum('<dt>Erlassdatum</dt><dd>24.05.1959</dd>')).toBe('');
   });
 });
 

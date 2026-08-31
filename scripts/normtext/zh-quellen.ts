@@ -63,17 +63,24 @@ const BASIS = 'https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessa
  * amtlich «GebV StrV», nicht «GebV Strafverfolgung» — das Dossier führte eine
  * Sachbezeichnung statt des amtlichen Kürzels.
  *
+ * NACHGEZOGEN 31.8.2026 (Fix-Runde, Befund E2-H1): LS 101 Kantonsverfassung ist
+ * jetzt in der Liste. Der Adapter kannte nur den «§ N.»-Marker und lieferte für
+ * die KV 0 Artikel; seit `erkenneZhMarker` die Zählweise je Erlass aus der
+ * Textbasis erhebt, liest er die 147 «Art. N»-Bestimmungen vollständig.
+ *
  * ZURÜCKGESTELLT (Qualitäts-Triage §1, 31.8.2026 — bewusst NICHT in der Liste;
  * Begründungen im Bericht/Fahrplan §4):
- *   - LS 101 Kantonsverfassung (KV): zählt in «Art. N», nicht in «§ N.». Der
- *     ZH-Adapter kennt nur den §-Marker → 0 Paragraphen (empirisch geprüft).
- *     Ein Art.-Marker-Zweig berührt den §-Pfad und damit die Bestands-
- *     Snapshots → eigener Bauschritt, nicht hier nebenbei.
  *   - LS 131.11 Gemeindeverordnung (VGG): der Anhang-Spalten-Zweig (für den
  *     NotGebV-Anhang gebaut) liefert hier Ziffern-Token aus einer anders
  *     gebauten Tabelle → erst nach Prüfung dieses Zweigs aufnehmen.
  */
 export const ZH_QUELLEN: readonly ZhQuelle[] = [
+  {
+    nr: '101',
+    titel: 'Verfassung des Kantons Zürich',
+    kuerzel: '',
+    registryUrl: `${BASIS}erlass-101-2005_02_27-2006_01_01-129.html`,
+  },
   {
     nr: '131.1',
     titel: 'Gemeindegesetz (GG)',
@@ -127,7 +134,12 @@ export const ZH_QUELLEN: readonly ZhQuelle[] = [
   {
     nr: '215.1',
     titel: 'Anwaltsgesetz',
-    kuerzel: 'AnwG',
+    // Befund B-9 (Gegenprüfung 31.8.2026): hier stand «AnwG». Der amtliche
+    // Titel trägt keinen Klammerzusatz (JSON-Endpunkt: 'Anwaltsgesetz'), und
+    // die Zeichenfolge «AnwG» kommt im Erlass-PDF nicht vor — das Kürzel war
+    // erfunden (§8). Leeres Feld ist die ehrliche Angabe; das Auflöse-Werkzeug
+    // prüft `kuerzel` seit dieser Runde mit.
+    kuerzel: '',
     registryUrl: `${BASIS}erlass-215_1-2003_11_17-2005_01_01-071.html`,
   },
   {

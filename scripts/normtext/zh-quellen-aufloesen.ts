@@ -110,6 +110,15 @@ if (argumente.length > 0) {
     const probleme: string[] = [];
     if (ist.registryUrl !== soll.registryUrl) probleme.push(`URL ist "${ist.registryUrl}"`);
     if (ist.titel !== soll.titel) probleme.push(`Titel ist "${ist.titel}"`);
+    // Befund B-9 (Gegenprüfung 31.8.2026): `kuerzel` wurde bisher GAR NICHT
+    // geprüft — LS 215.1 trug das erfundene «AnwG», obwohl der amtliche Titel
+    // «Anwaltsgesetz» keinen Klammerzusatz hat. Zulässig ist ausschliesslich
+    // der Klammerzusatz des amtlichen Titels; alles andere ist erfunden (§8).
+    if (ist.kuerzel !== soll.kuerzel) {
+      probleme.push(
+        `Kürzel amtlich "${ist.kuerzel}" (Klammerzusatz), Liste sagt "${soll.kuerzel}"`,
+      );
+    }
     if (probleme.length > 0) {
       console.error(`  FEHLER ${soll.nr} (${soll.kuerzel || '—'}): ${probleme.join(' · ')}`);
       abweichungen++;

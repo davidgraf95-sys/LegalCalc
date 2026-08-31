@@ -44,7 +44,7 @@ describe('extrahiereZhStreitwertStaffel — echte Fixture ZH-215.3 § 4', () => 
 
   it('kopf = [Streitwert, Grundgebühr, Zuschlag]', () => {
     ergebnis = extrahiereZhStreitwertStaffel(STUECKE)!;
-    expect(ergebnis.kopf).toEqual(['Streitwert', 'Grundgebühr', 'Zuschlag']);
+    expect(ergebnis.kopf).toEqual(['Streitwert (in Franken)', 'Grundgebühr (in Franken)', 'Zuschlag']);
   });
 
   it('liefert ≥10 Zeilen (Abs. 1 hat 12 Staffelzeilen)', () => {

@@ -32,7 +32,7 @@ describe('ZH-211.11 § 3 — 2-Spalten-Tabelle (Streitwert | Gebühr)', () => {
 
   it('kopf = [Streitwert, Gebühr] (2-Spalten-Form)', () => {
     const r = extrahiereZhStreitwertStaffel(PAR3)!;
-    expect(r.kopf).toEqual(['Streitwert', 'Gebühr']);
+    expect(r.kopf).toEqual(['Streitwert (in Franken)', 'Gebühr (in Franken)']);
   });
 
   it('liefert ≥ 4 Datenzeilen (§ 3 Abs. 1 hat 4 Staffelzeilen)', () => {
@@ -109,7 +109,7 @@ describe('ZH-211.11 § 4 — 3-Spalten-Tabelle (Streitwert | Grundgebühr | Zusc
 
   it('kopf = [Streitwert, Grundgebühr, Zuschlag] (3-Spalten-Form)', () => {
     const r = extrahiereZhStreitwertStaffel(PAR4)!;
-    expect(r.kopf).toEqual(['Streitwert', 'Grundgebühr', 'Zuschlag']);
+    expect(r.kopf).toEqual(['Streitwert (in Franken)', 'Grundgebühr (in Franken)', 'Zuschlag']);
   });
 
   it('liefert ≥ 8 Datenzeilen (§ 4 Abs. 1 hat 9 Staffelzeilen)', () => {

@@ -970,6 +970,40 @@ export function leseZhStandAusUrl(registryUrl: string): string {
   return `${m[1]}-${m[2]}-${m[3]}`;
 }
 
+/**
+ * Liest das **Publikationsdatum** der geltenden Nachtragsfassung aus dem
+ * zhlex-Registry-HTML → ISO. Das ist der `stand` (Befund E2-H4, 31.8.2026).
+ *
+ * WARUM NICHT DAS URL-DATUM: der zweite Datums-Tripel im Slug ist das
+ * UR-Inkrafttreten des Erlasses. Für das VRG (LS 175.2) ist das der 1.5.1960 —
+ * als «Stand» einer Fassung, die den Rechtszustand von 2026 wiedergibt, ist das
+ * falsch und irreführend (§8).
+ *
+ * WARUM NICHT DER PDF-FUSSBAND-MARKER («1. 10. 26 - 134»): das ist die
+ * Ausgabe-Marke der Loseblatt-Nachführung, die dem Publikationsdatum
+ * vorauslaufen kann — genau die Fehlerklasse, die `check:stand-zukunft` am
+ * SZ-Fall («SRSZ 1.2.2027») festgehalten hat. Gemessen weichen die beiden
+ * Werte in 7 von 24 ZH-Erlassen voneinander ab (z. B. ZH-700.1: Marke
+ * 1.10.2026, Publikationsdatum 1.8.2026).
+ *
+ * BELEG, dass das Publikationsdatum der Fassungsbeginn ist: die Historie
+ * derselben Registry-Seite nennt für die Vorgängerfassung «in Kraft bis
+ * <dasselbe Datum>» (geprüft an allen 24 Erlassen, 31.8.2026 — z. B. LS 175.2:
+ * «Nachtragsnummer 133 (aktuell) · 129 (in Kraft bis 01.07.2026)» und
+ * «Publikationsdatum 01.07.2026»).
+ *
+ * Markup (server-gerendert, kein JS nötig):
+ *   <dt>Publikationsdatum</dt>\n<dd>01.07.2026</dd>
+ * Liefert '' wenn das Feld fehlt — dann greift die Fallback-Kette in holeZhPdf.
+ */
+export function leseZhPublikationsdatum(registryHtml: string): string {
+  const m = registryHtml.match(
+    /<dt>\s*Publikationsdatum\s*<\/dt>\s*<dd>\s*(\d{2})\.(\d{2})\.(\d{4})\s*<\/dd>/,
+  );
+  if (!m) return '';
+  return `${m[3]}-${m[2]}-${m[1]}`;
+}
+
 // ─────────────────────────────────────────────────────────────────────────────
 // x-koordinatenbasierte Streitwert-Staffel-Extraktion (ZH-215.3 § 4, ZH-211.11 § 3 + § 4)
 // ─────────────────────────────────────────────────────────────────────────────
@@ -1001,7 +1035,7 @@ export function leseZhStandAusUrl(registryUrl: string): string {
  */
 export function extrahiereZhStreitwertStaffel(
   stuecke: Array<{ x: number; y: number; h: number; s: string; p: number }>,
-): { kopf: string[]; zeilen: string[][] } | null {
+): { kopf: string[]; zeilen: string[][]; einleitung: string } | null {
   if (stuecke.length === 0) return null;
 
   // ── Schritt 1: Tabellenschrift filtern
@@ -1170,10 +1204,73 @@ export function extrahiereZhStreitwertStaffel(
   // Guard: ≥ 2 Datenzeilen erforderlich (§1: mehrdeutige Geometrie → null)
   if (datenZeilen.length < 2) return null;
 
+  // ── Schritt 5: EINLEITUNGSSATZ vor der Tabelle (Befund E1, 31.8.2026)
+  // Vorher setzte holeZhPdf den Blocktext dieser Absätze hart auf '' — der
+  // Einleitungssatz («Bei vermögensrechtlichen Streitigkeiten beträgt die
+  // Gebühr für das Schlichtungsverfahren:») verschwand mit dem Flachtext der
+  // Tabelle. Er steht in BODY-Schrift (h ≥ 8.7) oberhalb der Kopfzeile und wird
+  // hier aus derselben Region gelesen, ohne die Tabellenwerte zu berühren.
+  const [kopfP, kopfY] = zeilen[kopfIdx][0].split('_').map(Number);
+  const einleitung = leseVortext(stuecke, kopfP, kopfY);
+
+  // Einheitenzeile «(in Franken)» gehört zum Spaltenkopf, nicht zu den Werten.
+  const einheit = tabStuecke.some((s2) => s2.s.includes('(in Franken)'))
+    ? ' (in Franken)'
+    : '';
+  const titel = dreiSpalten
+    ? ['Streitwert', 'Grundgebühr', 'Zuschlag']
+    : ['Streitwert', 'Gebühr'];
   return {
-    kopf: dreiSpalten ? ['Streitwert', 'Grundgebühr', 'Zuschlag'] : ['Streitwert', 'Gebühr'],
+    kopf: titel.map((t, i) => (i < 2 ? `${t}${einheit}` : t)),
     zeilen: datenZeilen,
+    einleitung,
   };
+}
+
+/**
+ * Body-Text einer §-Region OBERHALB der Tabellenkopfzeile (p/y), als ein Satz
+ * zusammengefügt. Rein (§2). Der §-Kopf selbst («§ 3.») wird abgeschnitten —
+ * er ist Adresse, nicht Normtext.
+ */
+function leseVortext(
+  stuecke: Array<{ x: number; y: number; h: number; s: string; p: number }>,
+  kopfP: number,
+  kopfY: number,
+): string {
+  const nachZeile = new Map<string, Array<{ x: number; w: number; s: string }>>();
+  for (const st of stuecke) {
+    if (st.h < 8.7) continue; // nur Body-Schrift
+    const y = Math.round(st.y);
+    if (st.p > kopfP || (st.p === kopfP && y <= kopfY)) continue;
+    const key = `${st.p}_${y}`;
+    let liste = nachZeile.get(key);
+    if (!liste) {
+      liste = [];
+      nachZeile.set(key, liste);
+    }
+    liste.push({ x: st.x, w: 0, s: st.s });
+  }
+  const sortiert = [...nachZeile.entries()].sort((a, b) => {
+    const [pa, ya] = a[0].split('_').map(Number);
+    const [pb, yb] = b[0].split('_').map(Number);
+    return pa - pb || yb - ya;
+  });
+  const roh = sortiert.map(([, liste]) =>
+    liste
+      .sort((a, b) => a.x - b.x)
+      .map((t) => t.s)
+      .join(' ')
+      .replace(/\s+/g, ' ')
+      .trim()
+      // Der Silbentrennstrich am Zeilenende ist ein eigenes PDF-Fragment. In
+      // der §-Region steht keine Fragmentbreite zur Verfügung, darum wird hier
+      // pauschal mit Leerzeichen verbunden — der Trennstrich muss danach wieder
+      // ans Wort («Grund -» → «Grund-»), sonst fügt fuegeZeilen die Silben
+      // nicht zusammen («Grund - gebühr»).
+      .replace(/(\p{L}) -$/u, '$1-'),
+  );
+  const text = fuegeZeilen(roh);
+  return text.replace(/^§+\s*\d+\s*[a-z]?\s*(?:bis|ter|quater|quinquies)?\s*\.\s*/, '').trim();
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -1636,7 +1733,10 @@ export async function holeZhPdf(
   // sich erst beim nächsten `npm run normtext` (Rollout) in die ZH-Snapshots.
   const { zeilen, randText } = await extrahiereZhTextZeilen(bytes.slice());
   const textbasis = serialisiereZhZeilen(zeilen);
-  const artikel = extrahiereAlleZhParagraphen(textbasis);
+  // Zählweise («§ N.» oder «Art. N») einmal je Erlass aus der Textbasis erheben
+  // und für Parser UND Label verwenden (E2-H1) — nie erraten, nie verdrahten.
+  const marker = erkenneZhMarker(textbasis);
+  const artikel = extrahiereAlleZhParagraphen(textbasis, marker);
 
   // Anhang-Tarif SPALTENBEWUSST erfassen (Auftrag David 17.6.2026): der ZH-
   // NotGebV-Anhang ist eine 4-Spalten-Tabelle (Ziffer | Beschreibung | Ansatz |
@@ -1666,7 +1766,11 @@ export async function holeZhPdf(
     const staffel3 = extrahiereZhStreitwertStaffel(par3Stuecke);
     if (staffel3 !== null) {
       const block0 = artikel['3'].bloecke[0];
-      artikel['3'].bloecke[0] = { ...block0, text: '', mehrspaltig: zuKanonisch(staffel3) };
+      artikel['3'].bloecke[0] = {
+        ...block0,
+        text: staffel3.einleitung,
+        mehrspaltig: zuKanonisch(staffel3),
+      };
     }
   }
 
@@ -1676,17 +1780,19 @@ export async function holeZhPdf(
     const staffel = extrahiereZhStreitwertStaffel(par4Stuecke);
     if (staffel !== null) {
       const block0 = artikel['4'].bloecke[0];
-      artikel['4'].bloecke[0] = { ...block0, text: '', mehrspaltig: zuKanonisch(staffel) };
+      artikel['4'].bloecke[0] = {
+        ...block0,
+        text: staffel.einleitung,
+        mehrspaltig: zuKanonisch(staffel),
+      };
     }
   }
 
-  // Stand = In-Kraft-Datum aus dem Registry-URL-Slug (zweites Datum-Tripel, §7/§8).
-  // Der PDF-Fussband-Marker «1. 1. 15 - 87» ist der Loseblatt-Nachtrag-Druckstand,
-  // NICHT das Inkrafttreten → nur noch Fallback.
+  // Stand = Publikationsdatum der geltenden Nachtragsfassung (Befund E2-H4).
   const stand =
+    leseZhPublikationsdatum(regHtml) ||
     leseZhStandAusUrl(registryUrl) ||
     leseZhStand(randText) ||
-    leseZhStand(regHtml) ||
     '';
   // Titel: erste Body-Zeile.
   const titel = zeilen.length > 0 ? zeilen[0].text : '';
@@ -1699,13 +1805,14 @@ export async function holeZhPdf(
   // (Token «anhang_N», Kollisions-Schutz gegen die §§); sonst «§ N» (Paragraphen,
   // inkl. lat. Suffix «8a» aus «8_a»).
   const labels: Record<string, string> = {};
+  const marke = marker === 'artikel' ? 'Art. ' : '§ ';
   for (const token of Object.keys(artikel)) {
     if (token.startsWith(ANHANG_NACKT_PREFIX)) {
       labels[token] = `Anhang Ziff. ${token.slice(ANHANG_NACKT_PREFIX.length)}`;
     } else if (token.includes('.')) {
       labels[token] = `Anhang Ziff. ${token}`;
     } else {
-      labels[token] = `§ ${token.replace(/_/g, '')}`;
+      labels[token] = `${marke}${token.replace(/_/g, '')}`;
     }
   }
   return { meta: { titel, stand, quelleHash }, artikel, labels };
