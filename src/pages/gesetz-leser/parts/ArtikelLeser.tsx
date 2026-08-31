@@ -5,7 +5,7 @@ import { type InternRefs } from '../../../components/NormText';
 import { trenneAenderungshistorie, labelMitBereich, artikelGanzAufgehoben } from '../../../lib/normtext/darstellung';
 import type { Fussnote } from '../../../lib/normtext/browse';
 import { NORM_IM_TEXT, fedlexLinkFuerArtikel } from '../../../lib/fedlex';
-import { NEUER_TAB } from '../benennung';
+import { NEUER_TAB } from '../../../lib/benennung';
 import { NormChip } from '../../../components/vorlagen/NormChip';
 import { KanteMitVorschau } from '../../../components/verzahnung/KanteMitVorschau';
 import { MehrKante } from '../../../components/verzahnung/MehrKante';

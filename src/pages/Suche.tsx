@@ -105,14 +105,35 @@ export function Suche() {
           )}
         </div>
 
-        {/* Inhaltstyp-Facette — nur wenn es etwas zu filtern gibt. */}
+        {/* Inhaltstyp-Facette — nur wenn es etwas zu filtern gibt.
+
+            W2·19-DESIGN-KONSISTENZ · D-1: dieselbe Facetten-Bedienung trug hier
+            eine EIGENE Optik (Pillen `rounded-full border`, Sans, Farbnuance als
+            einziges Auswahl-Signal), während /rechtsprechung dieselbe Sache mit
+            der Chip-Familie `.lc-chip` zeigt. Diese Reihe ist jetzt auf den
+            Kanon gezogen — die lokale `FacetChip`-Kopie ist gelöscht, nicht
+            angeglichen (§5/§10). Damit erbt sie zwei Dinge, die die Kopie nicht
+            hatte: das ✓-Präfix des `.lc-chip-selected` (LM-040 · F4 «selected»:
+            die Auswahl ist ohne Farbvergleich erkennbar, F2 «Farbe nie allein»)
+            und die Chip-Grammatik der `.lc-chip-zeile` (LM-044/N1: <button> =
+            geschlossener Hairline-Rahmen = drückbare Form).
+            Die Optik ändert sich sichtbar — das IST der Kanon (index.css:1229ff). */}
         {q !== '' && facetten.length > 1 && (
-          <div className="flex flex-wrap items-center gap-2" role="group" aria-label="Nach Inhaltstyp filtern">
-            <FacetChip aktiv={aktiverTyp === 'alle'} onClick={() => setTyp('alle')}
-              label="Alle" n={facetten.reduce((s, f) => s + f.n, 0)} />
-            {facetten.map((f) => (
-              <FacetChip key={f.id} aktiv={aktiverTyp === f.id} onClick={() => setTyp(f.id)} label={f.titel} n={f.n} />
-            ))}
+          <div className="lc-chip-zeile flex flex-wrap items-center gap-x-2 gap-y-1.5" role="group" aria-label="Nach Inhaltstyp filtern">
+            {[{ id: 'alle' as const, titel: 'Alle', n: facetten.reduce((s, f) => s + f.n, 0) },
+              ...facetten.map((f) => ({ id: f.id, titel: f.titel, n: f.n }))].map((o) => {
+              const aktiv = aktiverTyp === o.id;
+              return (
+                <button key={o.id} type="button" aria-pressed={aktiv} onClick={() => setTyp(o.id)}
+                  aria-label={`Inhaltstyp: ${o.titel} (${o.n})`}
+                  className={`lc-chip ${aktiv ? 'lc-chip-selected' : ''}`}>
+                  {/* LM-051: der Trenner steht als eigener Textknoten zwischen
+                      Label und Zahl — sonst liest/kopiert man «Gesetzestext34».
+                      ink-600 statt ink-500: 12px-Ziffer auf --well ≥4.5:1 (R4). */}
+                  {o.titel}{' '}<span className={`num ml-1.5 ${aktiv ? '' : 'text-ink-600'}`}>{o.n}</span>
+                </button>
+              );
+            })}
           </div>
         )}
       </div>
@@ -142,23 +163,5 @@ export function Suche() {
           />
         )}
     </div>
-  );
-}
-
-function FacetChip({ label, n, aktiv, onClick }: { label: string; n: number; aktiv: boolean; onClick: () => void }) {
-  return (
-    <button
-      type="button"
-      onClick={onClick}
-      aria-pressed={aktiv}
-      className={`inline-flex items-center gap-1.5 rounded-full border px-3 py-1 text-body-s transition-colors ${
-        aktiv
-          ? 'border-brass-500 bg-brass-100/60 text-brass-800'
-          : 'border-line text-ink-600 hover:border-brass-300 hover:text-brass-700'
-      }`}
-    >
-      {label}
-      <span className="num text-xs text-ink-500">{n}</span>
-    </button>
   );
 }

@@ -4,6 +4,7 @@ import { istLesbar, type BrowseErlass } from '../../lib/normtext/browse-typen';
 import { useErlassOeffnen, istErlassOffen } from '../../lib/useErlassOeffnen';
 import { werkzeugeFuerNorm } from '../../lib/normtext/werkzeuge';
 import { erlassPfad } from '../../lib/normtext/erlassAdresse';
+import { StandChip } from '../ui/StandChip';
 
 // Klick-Handler für eine Erlass-Verlinkung (Punkt G): der <Link> trägt weiter den
 // nackten Basispfad (SEO/Mittelklick/Cmd-Klick/Copy-Link). Nur der EINFACHE
@@ -28,12 +29,10 @@ function macheOeffnenHandler(
 // Darstellung (§3). 'snapshot' UND 'pdf-embed' (amtliches PDF in-app) führen in
 // die In-App-Lesesicht; 'nur-live-link' trägt ehrlich nur den amtlichen Link (§8).
 
-function StandChip({ stand }: { stand: string }) {
-  if (!stand) return null;
-  const m = stand.match(/^(\d{4})-(\d{2})-(\d{2})$/);
-  const anzeige = m ? `${m[3]}.${m[2]}.${m[1]}` : stand;
-  return <span className="lc-chip whitespace-nowrap">Stand <span className="num ml-1">{anzeige}</span></span>;
-}
+// Der Stand-Chip lag hier und in `materialien/MaterialKarte.tsx` zeichengleich
+// als lokale Kopie (Design-Konsistenz, C-Begleitbefund «Stand-Chip-Dedupe»,
+// 31.8.2026). Jetzt EIN Baustein in `ui/StandChip.tsx` — er nutzt zugleich die
+// eine Datums-Quelle `<Datum>` (B-3: Daten laufen in der Textstimme, nicht Mono).
 
 function KarteInhalt({ e }: { e: BrowseErlass }) {
   // Norm↔Werkzeug-Brücke (ROADMAP Schritt 2, Task 4.3): dezenter Hinweis, dass
@@ -205,7 +204,7 @@ export function ErlassKarte({ e }: { e: BrowseErlass }) {
         href={e.quelleUrl}
         target="_blank"
         rel="noopener noreferrer"
-        className="lc-card block p-4 no-underline transition-colors hover:border-brass-400"
+        className="lc-card block p-4 no-underline"
       >
         <KarteInhalt e={e} />
         <span className="mt-2 inline-flex text-xs text-brass-700">↗ amtliche Fassung</span>
@@ -217,7 +216,7 @@ export function ErlassKarte({ e }: { e: BrowseErlass }) {
     <Link
       to={basePath}
       onClick={macheOeffnenHandler(e, basePath, oeffne)}
-      className="lc-card group block p-4 no-underline transition-colors hover:border-brass-400"
+      className="lc-card group block p-4 no-underline"
     >
       <KarteInhalt e={e} />
       <span className="mt-2 inline-flex items-center gap-1 text-xs font-medium text-brass-700 opacity-0 transition-opacity group-hover:opacity-100">

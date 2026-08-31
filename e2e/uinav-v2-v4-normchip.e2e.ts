@@ -81,7 +81,7 @@ test.describe('V2/V4 — Norm-Chip: Hover-Vorschau und interner href', () => {
     await expect(page.locator(`${VORSCHAU}[role="dialog"]`)).toBeVisible()
     await expect(page.locator(`${VORSCHAU}[aria-modal="true"]`)).toBeVisible()
     // Und er trägt den Wortlaut samt amtlichem Zweitlink (§8).
-    await expect(page.locator(VORSCHAU)).toContainText('geltende Fassung')
+    await expect(page.locator(VORSCHAU)).toContainText('Amtliche Fassung ↗')
     expect(fehler).toEqual([])
   })
 

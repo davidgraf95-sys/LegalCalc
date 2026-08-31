@@ -1,0 +1,131 @@
+/**
+ * W2·19-DESIGN-KONSISTENZ · B1/BAU-3 — Befunde D-1, D-2, D-4, D-8.
+ *
+ * Gemeinsamer Nenner der vier Befunde: dieselbe Inhaltsklasse trug mehrere
+ * Optiken, weil jede Fläche ihre eigene Kopie mitbrachte. Behoben wurde nach
+ * §5/§10 — Konsumenten auf den geteilten Baustein ziehen, die Kopie LÖSCHEN.
+ * Genau das prüfen die Sonden hier: nicht «sieht gleich aus», sondern «es gibt
+ * die zweite Definition nicht mehr».
+ *
+ *   D-1  /suche-Facetten: lokale Pillen-Kopie `FacetChip` → `.lc-chip`-Familie.
+ *   D-2  `BezugFacettenWahl` + `PanelSachgebiet`: byte-gleiches KNOPF/AKTIV/
+ *        RUHIG-Tripel in ZWEI Dateien → `.lc-chip` / `.lc-chip-selected`.
+ *   D-4  «Entwurf» trug slate (`lc-badge-soft`) → `lc-badge-entwurf`.
+ *   D-8  Filterzähler trug die ok-Zustandsfarbe (`lc-badge-ok`) → nackte Zahl.
+ *
+ * §6.7 — jede Sonde einmal rot gesehen, indem der jeweilige Ist-Stand VOR dem
+ * Bau eingesetzt wurde (FacetChip zurück, Konstanten-Tripel zurück,
+ * `lc-badge lc-badge-soft` zurück, `num lc-badge lc-badge-ok` zurück).
+ *
+ * Reine Darstellung (§3) — keine Rechtslogik berührt.
+ */
+import { describe, it, expect } from 'vitest';
+import { readFileSync } from 'node:fs';
+import { renderToStaticMarkup } from 'react-dom/server';
+import { PanelSachgebiet } from '../pages/gesetz-leser/v3/PanelSachgebiet';
+
+const rohLies = (p: string) => readFileSync(new URL(p, import.meta.url), 'utf8');
+const CSS = rohLies('../index.css');
+
+/**
+ * Quelltext OHNE Kommentare.
+ *
+ * Warum das sein muss (und beim ersten Lauf sofort zugeschlagen hat): die
+ * Sonden fragen «gibt es die alte Bauform noch?». Der Bau hat aber genau an
+ * jeder behobenen Stelle einen Kommentar hinterlassen, der die alte Bauform
+ * BENENNT («die Marke trug `lc-badge-soft`»). Läse die Sonde den Rohtext, wäre
+ * sie für immer rot — und die naheliegende «Reparatur» wäre, die Begründung aus
+ * dem Code zu löschen. Sie prüft darum den ausführbaren Teil; die Dokumentation
+ * darf und soll den Vorzustand beim Namen nennen (§2b: Belege altern nicht).
+ */
+const lies = (p: string) => rohLies(p)
+  .replace(/\/\*[\s\S]*?\*\//g, '')
+  .split('\n').filter((z) => !/^\s*(\/\/|\*)/.test(z)).join('\n');
+
+describe('D-1 — /suche-Facetten tragen die Chip-Familie, die Kopie ist gelöscht', () => {
+  const quelle = lies('../pages/Suche.tsx');
+
+  it('die lokale Pillen-Komponente existiert nicht mehr', () => {
+    expect(quelle).not.toContain('FacetChip');
+    // Die Pillen-Anatomie selbst (rounded-full + eigener Rahmen) ist mit ihr weg.
+    expect(quelle).not.toContain('rounded-full border');
+  });
+
+  it('die Facetten-Reihe ist eine lc-chip-zeile mit lc-chip/lc-chip-selected', () => {
+    expect(quelle).toContain('lc-chip-zeile');
+    expect(quelle).toContain('lc-chip-selected');
+    // aria bleibt der Auswahl-Träger (das ✓ lebt im ::before, s. index.css).
+    expect(quelle).toContain('aria-pressed');
+  });
+
+  it('das ✓-Präfix, das die Kopie nicht hatte, kommt jetzt aus dem Kanon', () => {
+    expect(CSS).toContain(".lc-chip-selected::before { content: '✓';");
+  });
+});
+
+describe('D-2 — die byte-gleiche Schalter-Optik existiert in KEINER der beiden Dateien mehr', () => {
+  const bezug = lies('../components/verzahnung/BezugFacettenWahl.tsx');
+  const sachgebiet = lies('../pages/gesetz-leser/v3/PanelSachgebiet.tsx');
+
+  it('das KNOPF/AKTIV/RUHIG-Tripel ist in beiden Dateien gelöscht', () => {
+    for (const [name, q] of [['BezugFacettenWahl', bezug], ['PanelSachgebiet', sachgebiet]] as const) {
+      expect(q, `${name}: KNOPF-Konstante`).not.toMatch(/^const KNOPF =/m);
+      expect(q, `${name}: AKTIV-Konstante`).not.toMatch(/^const AKTIV =/m);
+      expect(q, `${name}: RUHIG-Konstante`).not.toMatch(/^const RUHIG =/m);
+      // Die Auswahl-Fläche der Kopie (Farbe als einziges Signal) ist mit weg.
+      expect(q, `${name}: Auswahl allein über Farbfläche`).not.toContain('bg-brass-100/60');
+    }
+  });
+
+  it('der irrige Kommentar «steht seither allein hier» ist mitkorrigiert', () => {
+    expect(bezug).not.toContain('steht seither allein hier');
+  });
+
+  it('PanelSachgebiet rendert lc-chip mit lc-chip-selected für die Auswahl', () => {
+    const html = renderToStaticMarkup(
+      <PanelSachgebiet gebiete={['Strafrecht', 'Zivilrecht']} gewaehlt={['Strafrecht']} onGebiete={() => {}} />,
+    );
+    expect(html).toContain('lc-chip-zeile');
+    expect(html).toContain('lc-chip lc-chip-selected');
+    // Der nicht gewählte Schalter trägt den Ruhezustand — Chip ohne Selected.
+    expect(html).toMatch(/class="lc-chip "[^>]*data-v3-panel-gebiet="Zivilrecht"|data-v3-panel-gebiet="Zivilrecht"[^>]*class="lc-chip "/);
+  });
+
+  it('BezugFacettenWahl benutzt dieselben Klassen (kein zweiter Weg zurück)', () => {
+    expect(bezug).toContain('lc-chip-zeile');
+    expect(bezug).toContain("'lc-chip-selected'");
+  });
+});
+
+describe('D-4 — «Entwurf» trägt die Entwurfs-Marke, nicht den slate-Referenzton', () => {
+  const quelle = lies('../components/normtext/RechtsgebietSicht.tsx');
+
+  it('die Marke ist lc-badge-entwurf', () => {
+    expect(quelle).toContain('<span className="lc-badge-entwurf">Entwurf</span>');
+  });
+
+  it('slate (lc-badge-soft) trägt hier nichts mehr — das Wörterbuch schliesst es aus', () => {
+    expect(quelle).not.toContain('lc-badge-soft');
+  });
+
+  it('der Ehrlichkeits-Wortlaut ist unverändert (§8: einfärben ≠ abschwächen)', () => {
+    expect(quelle).toContain('>Entwurf<');
+  });
+
+  it('lc-badge-entwurf bringt die lc-badge-Anatomie selbst mit (keine zweite Klasse nötig)', () => {
+    expect(CSS).toMatch(/\.lc-badge-entwurf \{\s*@apply lc-badge/);
+  });
+});
+
+describe('D-8 — der Filterzähler ist eine Zählung, kein Status', () => {
+  const quelle = lies('../components/rechtsprechung/FilterSheet.tsx');
+
+  it('die ok-Zustandsfarbe trägt die Zahl nicht mehr (§G-i)', () => {
+    expect(quelle).not.toContain('lc-badge-ok');
+    expect(quelle).not.toContain('lc-badge');
+  });
+
+  it('Kanon der Zählung: nackte Zahl in der num-Stimme', () => {
+    expect(quelle).toContain('<span className="num tabular-nums text-ink-600">{anzahl}</span>');
+  });
+});

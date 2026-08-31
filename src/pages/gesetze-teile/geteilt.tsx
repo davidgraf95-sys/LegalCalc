@@ -5,6 +5,7 @@
 import { usePaneKlasse } from '../../components/layout/PaneKontext';
 import { ErlassKarte, ErlassZeile } from '../../components/normtext/ErlassKarte';
 import { type BrowseErlass } from '../../lib/normtext/browse-typen';
+import { GruppenKopf } from '../../components/ui/GruppenKopf';
 
 export function Gitter({ erlasse }: { erlasse: BrowseErlass[] }) {
   const pk = usePaneKlasse();
@@ -46,10 +47,7 @@ export function GruppenInhalt({ titel, items }: { titel: string; items: BrowseEr
   const verordnungen = items.filter(istVerordnung);
   return (
     <div className="space-y-2.5">
-      <div className="flex items-center gap-3">
-        <h3 className="lc-overline text-brass-700">{titel}</h3>
-        <span aria-hidden className="flex-1 h-px bg-line" />
-      </div>
+      <GruppenKopf titel={titel} />
       {gesetze.length > 0 && <Gitter erlasse={gesetze} />}
       {verordnungen.length > 0 && (
         <div className="pl-3 border-l-2 border-line/70 ml-0.5">

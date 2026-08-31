@@ -6,6 +6,7 @@ import { PassendeRechner } from './PassendeRechner';
 import { NormText } from '../NormText';
 import { useLocale, fedlexLokalisiert } from '../locale';
 import { usePaneKlasse } from '../layout/PaneKontext';
+import { SeitenTitel } from '../ui/SeitenTitel';
 import { dokumentAlsText } from '../../lib/vorlagen/vorlagenText';
 import type { AssembleErgebnis } from '../../lib/vorlagen/engine';
 import { AUSGABE_LABEL, MUSTER, rolleLabel, type AusgabeStil } from '../../lib/vorlagen/formatvorlagen';
@@ -95,7 +96,10 @@ export function VorlagenWizardRahmen({
         {/* overflow-wrap/hyphens: lange Komposita (z.B. «Geheimhaltungsvereinbarung»)
             sprengten den Titel bei 360px → 12px horizontaler Seiten-Overflow
             (Befund David 25.6.2026, nda). Brechen statt überlaufen. */}
-        <h1 className="text-h2 sm:text-h1 font-display font-semibold text-ink-900 [overflow-wrap:anywhere] hyphens-auto">{titel}</h1>
+        {/* A-1: EIN Titel-Baustein (`ui/SeitenTitel`); die Umbruch-Regeln bleiben
+            hier, weil sie diesem Titel gehören (lange Komposita), nicht der
+            Titel-Anatomie. */}
+        <SeitenTitel className="[overflow-wrap:anywhere] hyphens-auto">{titel}</SeitenTitel>
         <p className="text-body-l text-ink-600 max-w-reading">{intro}</p>
         {/* lc-chip-zeile (LM-044/N1): Norm-Chips sind <a> (unterstrichen); der
             Status-Badge daneben liegt auf der lc-badge-Achse (Pille, kein Tick)
