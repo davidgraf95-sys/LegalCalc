@@ -263,8 +263,10 @@ allein dieser §.*
 ZH-Strang bearbeitet werden (§0 Kollisionsregel — lieber ein anhängender
 Abschnitt als ein Merge-Konflikt in fremder Bau-Fläche).*
 
-**Stand: gebaut, Gegenprüfung offen.** Alles `status: 'entwurf'` — was als
-Legaldefinition GILT, ist juristisches Urteil (§7/§8, Abnahme bei David).
+**Stand: gebaut · Gegenprüfung 31.8.2026 WIDERLEGT · Fix-Runde R6.2 gebaut
+(gleicher Tag, Block unten) · erneute Gegenprüfung offen.** Alles
+`status: 'entwurf'` — was als Legaldefinition GILT, ist juristisches Urteil
+(§7/§8, Abnahme bei David).
 
 **Muster-Katalog empirisch erhoben** über den GESAMTEN Korpus (56 113 Artikel,
 1 458 Snapshots), je Kandidat Trefferzahl + deterministische Präzisions-Stichprobe
@@ -305,6 +307,22 @@ haben **623 Blöcke doppelte Item-Marken** (mehrheitlich Spiegelstriche `–`).
 Anker ist jetzt der Item-INDEX. **Jede Runde, die auf Aufzählungspunkte
 verweist (R2 Tabellen, R3 Fussnoten, R5 Verweise), muss denselben Anker
 verwenden** — die Marke ist ein Anzeigefeld, nie ein Schlüssel.
+
+**R6.2 · Fix-Runde nach Gegenprüfung (31.8.2026):** Die GP hat WIDERLEGT —
+als-gilt fing invertierte Fiktionen («Als angenommen gilt …» OR 395, «Als
+nicht bestanden …» BS 291.900), ~48 Rollennomen («Als Grundlage/Beginn/… gilt»)
+und der `rest<5`-Guard warf 8 echte Legende-Köpfe weg (DSG 5, MWSTG 3 …).
+Fix: vier endliche Guards G-N/G-P/G-A/G-R in `definitionen-logik.ts`
+(GP-Signatur am Korpus VERFEINERT: attributives Partizip ist überwiegend echt
+— StPO 111 «beschuldigte Person» bleibt; prädikatives Partizip ist die
+Fiktionsklasse) + Kopf+Unterlisten-Zitate (Tor-Prüfung D rekonstruiert
+byte-genau). Artefakt 2 035 → **1 964** (−79/+8). Neu-Messung n=107:
+**104/107 = 97,2 %** (strengste Lesart 93,5 %). Passiv-«bezeichnet» (B6)
+gemessen und VERWORFEN (13/17 = 76 %, Organ-Ernennungs-Klasse).
+Belegfall-Tests: `scripts/normtext/definitionen-logik.test.ts` (vor Fix
+40/47 rot). Detail + Recall-Verzichte:
+`bibliothek/normtext/legaldefinitionen-muster-erhebung-2026-08-31.md`
+§GP-Korrektur.
 
 **Offen, bewusst nicht in dieser Runde:** fr/it-Regeln (eigene Stichprobe
 nötig) · UI-Anbindung (Begriffs-Hervorhebung im Leser, FAHRPLAN-LESER-V3
