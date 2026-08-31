@@ -7,6 +7,7 @@ import { EntscheidZeile } from '../components/rechtsprechung/EntscheidZeile';
 import { EntscheidFilter } from '../components/rechtsprechung/EntscheidFilter';
 import { SachgebietKacheln } from '../components/rechtsprechung/SachgebietKacheln';
 import { LiveSuche } from '../components/rechtsprechung/LiveSuche';
+import { Leerzustand } from '../components/ui/Leerzustand';
 import {
   ladeEntscheidManifest, ladeRichterRegister, filterEntscheide, sortiere, gruppiereNachLeit,
   gruppiereNachInstanz, zaehleSachgebiete, normLabel,
@@ -405,7 +406,15 @@ export function Rechtsprechung() {
             </div>
 
             {gefiltert.length === 0 ? (
-              <div className="lc-notice">Kein Entscheid gefunden. Filter anpassen oder zurücksetzen.</div>
+              /* W2·19-DESIGN-KONSISTENZ · D-7: EIN Leerzustands-Baustein statt
+                 dreier Bauformen. Vorher eine `lc-notice`-Box mit dem Satz
+                 «… Filter anpassen oder zurücksetzen.» — der Ausweg stand als
+                 Prosa da, aber es gab nichts zu drücken (C1: keine Sackgasse).
+                 Jetzt Aussagesatz + echter Knopf; die Sachgebiets-Achse (Rail/
+                 URL) bleibt dabei erhalten, exakt wie beim «zurücksetzen» der
+                 Filterleiste (§5: EINE Rücksetz-Semantik, nicht zwei). */
+              <Leerzustand art="filter" text="Kein Entscheid gefunden."
+                weiterweg={{ text: 'Filter zurücksetzen', onKlick: () => onFilter({ sachgebiet: werte.sachgebiet ?? null }) }} />
             ) : alsSektionen ? (
               <div className="space-y-8">
                 <Sektion titel="Amtliche Leitentscheide (BGE)" liste={gruppen.leitentscheide} dichte={dichte} onNorm={waehleNorm} speicherKey={deckelKey('leit')} />

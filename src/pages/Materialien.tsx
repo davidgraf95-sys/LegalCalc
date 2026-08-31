@@ -3,6 +3,7 @@ import { SeitenKopf } from '../components/layout/SeitenKopf';
 import { usePaneKlasse } from '../components/layout/PaneKontext';
 import { useSucheAusUrl } from '../components/suche/useSucheAusUrl';
 import { MaterialKarte } from '../components/materialien/MaterialKarte';
+import { Leerzustand } from '../components/ui/Leerzustand';
 import {
   ladeMaterialManifest, gruppiereNachBehoerde, filtere, vorhandeneDoktypen,
   type MaterialFilterWerte,
@@ -125,7 +126,15 @@ export function Materialien() {
           </div>
 
           {gruppen.length === 0 ? (
-            <p className="text-body-s text-ink-500">Kein Material gefunden. Filter zurücksetzen?</p>
+            /* W2·19-DESIGN-KONSISTENZ · D-7: hier stand «Kein Material gefunden.
+               Filter zurücksetzen?» — eine FRAGE an den Nutzer, die keine Antwort
+               entgegennahm. Der Leerzustand berichtet einen Zustand (Aussagesatz);
+               die Handlungsmöglichkeit steht als Bedienelement daneben, nicht als
+               rhetorische Frage im Satz (§8). Der Weiterweg räumt alle drei
+               Achsen dieser Rubrik ab — Behörde, Dokumenttyp, lokales Suchfeld —
+               weil jede von ihnen allein den Leerlauf verursacht haben kann. */
+            <Leerzustand art="filter" text="Kein Material gefunden."
+              weiterweg={{ text: 'Filter zurücksetzen', onKlick: () => { setBehoerde(''); setDoktyp(''); setSuche(''); } }} />
           ) : (
             <div className="space-y-10">
               {gruppen.map((g) => (

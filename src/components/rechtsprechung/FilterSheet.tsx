@@ -86,7 +86,19 @@ export function FilterSheet({ anzahl, children }: {
             <path d="M3 5h18l-7 8v6l-4 2v-8L3 5z" stroke="currentColor" strokeWidth="2" strokeLinejoin="round" />
           </svg>
           Filter
-          {anzahl > 0 && <span className="num lc-badge lc-badge-ok">{anzahl}</span>}
+          {/* W2·19-DESIGN-KONSISTENZ · D-8: die Zahl trug `lc-badge lc-badge-ok`
+              — eine ZUSTANDS-Marke. §G-i trennt Werkstoff- von Zustandsfarbe und
+              reserviert die ok-Rolle (`lc-badge-ok`/`lc-live`/`lc-termin-ring`)
+              für Status; «3 Filter aktiv» ist aber kein Status, sondern eine
+              ZÄHLUNG — und «grün» behauptete zusätzlich, aktive Filter seien
+              etwas Gutes/Bestätigtes (§8). Kanon der Zählung ist die nackte Zahl
+              (12:6:4:2 im Befund-Register), hier also `num` ohne Badge-Fläche.
+              KEINE Pille nötig: der Zähler sitzt im Textfluss des Chips, es
+              gibt nichts abzugrenzen — `lc-badge-soft` wäre nur ein zweiter
+              Kasten im Kasten. ink-600 statt ink-500, weil die 12px-Ziffer auf
+              der `--well`-Fläche des Chips ≥4.5:1 braucht (R4; ink-500 lag bei
+              4.47:1). LM-051: Trenner als eigener Textknoten, sonst «Filter3». */}
+          {anzahl > 0 && <>{' '}<span className="num tabular-nums text-ink-600">{anzahl}</span></>}
         </button>
       </div>
 

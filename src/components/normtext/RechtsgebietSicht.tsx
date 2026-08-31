@@ -64,8 +64,18 @@ function ThemaKarte({ t, proKey }: { t: RechtsgebietThema; proKey: Map<string, B
       <div className="space-y-1.5">
         <div className="flex items-baseline gap-2.5 flex-wrap">
           <h3 className="font-sans font-semibold text-ink-900 text-h3 tracking-tight">{t.label}</h3>
-          {/* §8: das Querschnitts-Delta ist Entwurf bis zur fachlichen Abnahme. */}
-          <span className="lc-badge lc-badge-soft">Entwurf</span>
+          {/* §8: das Querschnitts-Delta ist Entwurf bis zur fachlichen Abnahme.
+              W2·19-DESIGN-KONSISTENZ · D-4: die Marke trug `lc-badge-soft` und
+              damit den SLATE-Ton. Das Farb-Wörterbuch schliesst genau das aus —
+              slate bedeutet ausschliesslich «neutrale, maschinell-prozedurale
+              Referenzinformation ohne Wertung» und ausdrücklich NICHT
+              «ungeprüft/in Vorbereitung» (DESIGN-REGLEMENT-NORMTEXT.md:337 ff.,
+              aufgelöste slate-Doppelbelegung). Der Prüfstands-Zustand «Entwurf»
+              hat seine eigene, hausweit einzige Marke: `lc-badge-entwurf`
+              (index.css:1482 — sie @applyt `lc-badge` bereits selbst, darum hier
+              KEINE zweite Klasse). Der WORTLAUT bleibt unverändert «Entwurf»:
+              §8 wird nicht abgeschwächt, nur richtig eingefärbt. */}
+          <span className="lc-badge-entwurf">Entwurf</span>
         </div>
         <p className="text-body-s text-ink-600 max-w-reading">{t.kurz}</p>
       </div>
