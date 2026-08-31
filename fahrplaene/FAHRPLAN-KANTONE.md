@@ -359,3 +359,24 @@ ROADMAP-Bindung mehr. Titel:
 - §1-C · §14-Intake 20.7.2026 (David) — K-15 und K-16
 - §1-D · §14-Intake 21.7.2026 (David) — K-17
 - §3-N · ROADMAP-Spec `W2·13-KANTONE-DRIFT` — Nachzug (wörtlich verschoben 4.8.2026, ROADMAP-Diät Welle 3)
+
+### §5-R6 · Stand nach GP Runde 3 (1.9.2026) — GEPARKT, Wiederaufnahme = R6.4
+
+GP3 (Opus): WIDERLEGT — Rest-Klasse F5: **29 Zitate ohne Definiens OHNE
+Doppelpunkt** («Als Grundstücke gelten» + items; SO-614.11 §48 amtlich
+belegt), davon **3 sinnverkehrend** (UNO-Pakt-II Art. 8 «gilt nicht» ohne
+die 4 Ausnahmen · AR-862.1 Art. 9/35 Pauschal-Negation ohne Liste) — darum
+NICHT landefähig. F6: Tor-Prüfung F ist an `endsWith(':')` gebunden und
+für diese Klasse strukturell blind (§6.7); D-`kopfOk` hängt an derselben
+Bindung. F7: BS-910.500 §2 lit. b zu Unrecht ganz verworfen (Definiens im
+Kopf). **R6.4-Fix-Skizze (GP3, wörtlich übernehmbar):** Phänomen
+umdefinieren — «Kopf» = einzeiliges Zitat an Fundstelle MIT Items/Kindern
+UND nicht satzabgeschlossen ([.!?»)]$), F und D-kopfOk GEMEINSAM
+umstellen, die 29 anbauen, BS-910.500 wieder rein; erwartete Bilanz
+1949→1950 (29 mehrzeilig). Danach GP Runde 4 + VOR Abnahme: stgb-Pin
+re-pinnen + regenerieren (ROADMAP-Zeile besteht) und UI-Hinweis: Marken
+(a./1.) der Mehrzeiler beim R11-Anschluss aus dem Snapshot zurückholen.
+Bestätigt von GP3: 5/5 Reparierte amtlich identisch, F4-Abweichung trägt
+(ParlG 22/FIDLEG 5 amtlich echt), KVV-96-Gleichbehandlung belegt,
+Determinismus 3/3 sha-gleich, golden byte-gleich, Trennlinie
+Nomen-vs-Partizip in die Bibliothek geschrieben.
