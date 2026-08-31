@@ -76,6 +76,12 @@ byte-gleich nach dem Entfernen, (c) bei Rechtslogik zusätzlich §1-Blick:
 trägt die Stelle einen ungetesteten Rechtsfall, fällt sie NICHT. Beweis vor
 Löschung, nie löschen-und-schauen.
 
+**Fang-Vermerk-Pflicht (Anlass 31.8.2026):** Wer einen Defekt fixt, den ein
+Test oder Tor gefangen hat, schreibt der Chronik-/Fehlerbuch-Zeile den FÄNGER
+zu («gefangen von `<spec/tor>`»). Ohne Fang-Protokoll bleibt jeder spätere
+Rückbau Indizienarbeit — Beleg: Fang-Historie 31.8.2026, genau EIN belegter
+e2e-Fang in 116 Specs (`bibliothek/betrieb/testapparat-fang-historie-2026-08-31.md`).
+
 ## 4 · Fahrplan-Archivierung — verify-then-archive
 
 `check:plan` koppelt **Regel 7** (jede `FAHRPLAN-*.md` unter `fahrplaene/`

@@ -2681,3 +2681,77 @@ Der Registereintrag wird darum aus `@blockers` entfernt und `QS-AUTOPILOT-STUFE1
 `blocked` auf `wip` gesetzt. Das ist **kein Wegfall der Bedingung** (§0 Ziff. 2b — Belege altern
 nicht): die Bedingung galt und gilt, sie ist bloss eingetreten. Wer die Zeitreihe künftig
 zurücksetzt, hat wieder einen Blocker, nicht eine erledigte Frage.
+
+---
+
+## Ent-Regulierung Runde 2 / Batch A — e2e-Diät *(31.8.2026, Anker `QS-EFFIZIENZ`)*
+
+**Auftrag:** David, Ent-Regulierung Runde 2 (`bibliothek/betrieb/entregulierung-2026-08-07.md`
+§Runde 2; Startbedingung «17 Token-Spool-Messpunkte» erfüllt). **Beweisgrundlage für jede Zeile
+unten:** `bibliothek/betrieb/testapparat-fang-historie-2026-08-31.md` — dort auch der Kernbefund,
+der die Zurückhaltung erklärt: es gibt **kein Fehlerbuch, das Fänge Tests zuordnet**, in 116 Specs
+ist genau EIN e2e-Fang belegt. Jeder Rückbau hier ist deshalb indiziengestützt und fällt im
+Zweifel gegen die Streichung aus.
+
+**Zahlen** (beide Stände mit `npx playwright test --list` gezählt, Basis `337d2c9ef`):
+Spec-Dateien **116 → 111** · Fälle **718 → 716** — die beiden Wegfälle sind bewiesene Duplikate,
+sonst kein Fall verloren. Zeilen in `e2e/` netto −417 allein durch die
+`fehlerSammeln`-Zusammenführung. Beweislauf: 57 Fälle über alle berührten Specs lokal grün
+(`--workers=1`, `vite preview` aus dist/, 2.3 min).
+
+### Was gestrichen wurde — je Streichung eine Begründung
+
+- **`e2e/leser-gliederung-kein-overflow.e2e.ts`** — entfällt 31.8.2026: wortlautgleich in
+  `e2e/leser-kein-ueberlauf.e2e.ts` aufgegangen (dort Teil 2), alle drei Fälle erhalten. Beide
+  Specs messen dieselbe Zusage — im Leser läuft nichts quer — auf zwei Ebenen (Seite / TOC-Scroller).
+  `topbar-kein-ueberlauf-320.e2e.ts` ist NICHT aufgenommen: sie misst den App-Streifen @320 und
+  schliesst die übrige Seite ausdrücklich aus (PR #567). Fang-Historie §7 Ziff. 4.
+- **`e2e/leser-kopf-g2b.e2e.ts`** · **`e2e/leser-v3-h4-kopfwege.e2e.ts`** ·
+  **`e2e/leser-kopf-a9.e2e.ts`** · **`e2e/leser-kopf-paritaet.e2e.ts`** — entfallen 31.8.2026 als
+  eigene Dateien: vollständig in `e2e/leser-v3-kopf.e2e.ts` aufgegangen (22 Fälle, Gruppe 1),
+  Datei-Köpfe wörtlich übernommen. Kein Fall gestrichen. Fang-Historie §3 Kandidat 2.
+- **`e2e/leser-v3-kopf-buendig.e2e.ts`** — entfällt 31.8.2026: in `e2e/leser-v3-kopfzeile.e2e.ts`
+  aufgegangen (mit `leser-v3-eine-kopfzeile`, 16 Fälle, Gruppe 6). Kein Fall gestrichen.
+- **Zwei Testfälle in `e2e/leser-marken-geometrie.e2e.ts`** (Ä61 «V1», Ä62 «StGB V1») — gestrichen
+  31.8.2026 als BEWIESENE DUPLIKATE, nicht als Rückbau: seit der V1-Löschung (H5, 21.8.2026) liest
+  der Produktcode `?leser=v3` nicht mehr, die «V1»-Adressen waren damit zeichenweise dieselben wie
+  die V3-Adressen daneben. Beide liefen `test.slow()` auf OR bzw. StGB. Fang-Historie §7 Ziff. 1.
+- **67 lokale Kopien von `function fehlerSammeln`** — gestrichen 31.8.2026 zugunsten von
+  `e2e/helpers/fehlerSammeln.ts` (§5). Kein Testfall berührt. Eine deklarierte Abweichung: die
+  Sonderfassung in `leser-kopf-a9` ist aufgegangen, geändert hat sich allein der WORTLAUT der
+  Fehlermeldung im Rot-Fall, nie die geprüfte Bedingung (`toEqual([])`).
+- **Der tote Query-Parameter `?leser=v3`** — aus 108 URL-Literalen in 35 Specs entfernt.
+  Produktcode-Beweis: `src/pages/GesetzLeser.tsx` rendert bedingungslos `LeserRahmenV3`, kein
+  `leser=`-Switch, kein `v2`-Verzeichnis (Stand `337d2c9ef`). Die elf Split-Adressen
+  `?leser=v3&p=…` bleiben — dort ist er nicht der einzige Query-Teil.
+- **Eine `eslint-disable no-console`-Zeile in `leser-kopf-cls-s3`** — gestrichen 31.8.2026: sie
+  meldete sich selbst als «Unused eslint-disable directive», die Regel greift unter `e2e/` gar
+  nicht. Ausnahme von einer Regel, die nicht gilt.
+
+### Was NICHT gestrichen wurde, obwohl der Auftrag es vorsah (§7-Abweichungen)
+
+- **`e2e/leser-kopf-v2.e2e.ts`** — der Auftrag führte sie als «V2-Erbe, streichen». WIDERLEGT: «V2»
+  ist die Fahrplan-Etappe GESETZESDARSTELLUNG-V2, nicht die Leser-Hülle; alle vier Fälle prüfen den
+  ausgelieferten V3-Stand, B-1 greift `[data-v3-panel]`. Bleibt vollständig, mit Warn-Vermerk im
+  Kopf gegen die Wiederkehr der Fehl-Lesung.
+- **`e2e/leser-kopf-paritaet.e2e.ts`** — geführt als «Paritäts-Zweck V2↔V3 entfällt ohne V2».
+  WIDERLEGT: geprüft wird die PANE-Parität (Einzelansicht ↔ primäres ↔ sekundäres Pane), eine reine
+  V3-Eigenschaft. Der Fall lebt unverändert als Teil 4 in `leser-v3-kopf.e2e.ts`, ebenfalls mit
+  Warn-Vermerk.
+- **`check:inventur`-Reste** — es gibt keine. `package.json` kennt nur noch `report:inventur`; der
+  repo-weite Sweep trifft `check:inventur` ausschliesslich in datierten Artefakten (`archiv/`,
+  `messwerte/selbstopt-zeitreihe.json`, `bibliothek/register/AUDIT-TORE-2026-07-20.md`), die nach
+  §0 Ziff. 2b nicht nachgeführt werden. Der Rückbau war mit `8c544a9fd` bereits vollständig.
+- **Kein Zusammenlegen auf EINE Kopf-Datei.** CI fährt `workers: 1` je Shard, die Wandzeit ist also
+  die schwerste Gruppen-Summe. Gemessen (lokal, kalt, `--workers=1`, dist/): die sechs Kopf-Specs
+  kosten zusammen 87 s; alle in eine Gruppe zu legen hätte eine Gruppe um 87 s beladen. Statt
+  dessen zwei Dateien in den beiden leichtesten Gruppen (1 und 6); Gruppe 8 (die schwerste,
+  267 s laut Lastprobe 18.8.) wird um 28 s ENTLASTET, Gruppe 4 um 35 s. Gegenprobe nach dem Umbau:
+  50.3 + 36.1 = 86.4 s gegen 87.0 s vorher — Zusammenlegen spart keine Laufzeit, nur Regelfläche.
+
+### Prozess-Lehre, verankert
+
+`.claude/skills/bauschritt/aufraeumen.md` §3 trägt neu die **Fang-Vermerk-Pflicht**: wer einen
+Defekt fixt, den ein Test oder Tor gefangen hat, schreibt der Chronik-/Fehlerbuch-Zeile den Fänger
+zu. Ohne Fang-Protokoll bleibt jeder spätere Rückbau Indizienarbeit — genau die Lage, in der dieser
+Batch gearbeitet hat.
