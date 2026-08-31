@@ -260,6 +260,36 @@ allein dieser §.*
 
 ---
 
+## §5 · R8 — Abkürzungen als Such-Aliase, kanton-generisch *(gebaut 31.8.2026)*
+
+**Scope (eng):** Kantonale Erlass-Kürzel («GOG», «StG», «EG zum ZGB») machen die
+Artikel ihres Erlasses in der Volltext-Suche auffindbar — Client UND Edge.
+Kein Zitat-Resolver, keine UI-Änderung, keine neuen Quellen.
+
+- **Alias-Artefakt:** `src/lib/normtext/kanton-abk-aliase.generated.ts` (572 Aliase
+  aus 1231 Kanton-Erlassen; Generator `scripts/normtext/kanton-abk-aliase-generieren.ts`,
+  Drift-Tor `npm run check:kanton-abk-aliase`). Quelle: abbreviation-Feld des
+  Registers (`public/normtext/register.json`), Ausschluss-Regeln R1–R5 im
+  Generator-Kopf. Zwei dokumentierte Gefahren-Klassen, je fail-closed + Test:
+  (1) Bundes-Kürzel-Leck über Klammer-Akronyme (AR-760.12 «(AKV)» = Bundesrecht ⇒
+  KEINE Klammer-Extraktion), (2) «Die Bürgschaft» (AR-222.31, Bundes-Titel-Fragment).
+- **Ebenen-Trennung:** Artefakt trägt nur Kanton-Keys (Riegel); FTS-Spalte
+  zeilen-skopiert. Kollisionen legitim (Kürzel = Alias, nie Schlüssel) —
+  Report `bibliothek/register/kanton-abk-kollisionen-2026-08-31.md`
+  (Bund↔Kanton 7, u. a. StG 6×; Kanton↔Kanton 36).
+- **Client:** Feld `kz` im Suchindex + Kürzel-Stufe in `artikelRanking.ts`
+  (ganze Query == Kürzel ⇒ Stufe 0, vor Marginalien-Treffern; Bund symmetrisch
+  über `ku`). **Edge:** 7. FTS-Spalte `kuerzel` (Gewicht 6) + Einwort-Stufung
+  `hauptSpalten()`; Restlücken (Mehrwort-Kürzel, Präfixe) in `suche-kern.ts`
+  «GILT NICHT» dokumentiert.
+- **Nach der Landung PFLICHT:** `npm run datenhaltung:turso-sync` — die
+  Schema-Änderung kippt den Frische-Wächter Dimension 0 bis zum Sync (gewollt).
+- Offen (Folge-Schritte, NICHT R8): kantonaler Zitat-Resolver (ROADMAP,
+  «Kürzel-/Alias-Tabelle mit Kanton-Scoping» — dieses Artefakt ist dafür die
+  Vorstufe); Erlass-Sprung-Vorschlag in der Befehlspalette für Kanton-Kürzel.
+
+---
+
 ## Archivierte Abschnitte *(Plan-Neuschnitt 29.8.2026)*
 
 9 Abschnitt(e) dieser Datei sind wörtlich nach
