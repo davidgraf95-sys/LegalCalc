@@ -158,6 +158,22 @@ zgb-a36-anhang: Die ZGB-Gliederung zeigt 74 Artikel des Anhangs «Wortlaut der f
 > Beleg mit Norm + Link + Stand (§7), Korrektur nie in der Projektion, immer in der Pipeline-Quelle
 > (§5), golden byte-gleich bzw. deklarierter Re-Bless.
 
+- [~] **Amtlicher Fedlex-Zitatgraph: Erlass-Verweise ohne Artikelnummer + Warn-Bericht + «zitiert von» (Bund)** *(`W2·22-VERWEIS-FEDLEX`, Fremdquellen-Sichtung 2.9.2026)*
+  <!-- @meta id: W2·22-VERWEIS-FEDLEX · status: wip · blocker: null · dep: [W2·20-VERWEIS-SCHAERFE] · feld: korpus -->
+  Quelle: [fremdquellen-sichtung-2026-09-02.md](bibliothek/recherche/fremdquellen-sichtung-2026-09-02.md)
+  §1 (Rangliste #1/#2) + Abschnitt «jolux:Citation» im Dossier (OR: 2 315 Citations = 2 315
+  AKN-Fussnoten-refs; kein `citationToReference`). Risikopfad — Gegenprüfung Pflicht.
+  - [ ] **Z1 Erlass-Verweis ohne Artikelnummer verlinken** («richten sich nach der ZPO», «des
+    Datenschutzgesetzes vom 25. September 2020», «Bucheffektengesetzes vom 3. Oktober 2008 (BEG)»)
+    in `src/lib/fedlex/erkennung.ts`/`positivliste.ts`/`parser.ts`; Erlassdatums-Prüfung wie Form B;
+    Inventar `messwerte/verweis-inventar.json` neu messen; Gegenprüfung Pflicht.
+  - [ ] **Z2 Build-Zeit-Artefakt `messwerte/fedlex-zitatgraph.json`** — je gepinnter Consolidation
+    `jolux:Citation` mit gebundenem `citationToRs` (Sprache DEU, Count-Gate, Content-Type-Prüfung
+    am SPARQL-Endpoint wegen Soft-200), Skript `scripts/fedlex-zitatgraph.ts`.
+  - [ ] **Z3 Warn-Bericht** «Fedlex kennt Erlass-Verweis, Leser verlinkt nicht» (kein hartes Tor;
+    Fussnoten-Rauschen dokumentiert).
+  - [ ] **Z4 Leser-Schicht «zitiert von»** (Erlassebene, nur Bund) — erst nach Z1–Z3 und Abnahme.
+
 - [ ] **Norm-Zeitmaschine + Fassungs-Diff** *(`W2·5g-ZEIT`, Ideen-Intake 20.7.2026)*
   <!-- @meta id: W2·5g-ZEIT · status: ready · blocker: null · dep: [] · feld: korpus · fahrplan: fahrplaene/FAHRPLAN-GESETZESDARSTELLUNG-V2.md -->
   «Art. X, wie er am Tag Y galt» + visueller Diff zweier Konsolidierungen; harte Bau-Reihenfolge
@@ -569,6 +585,19 @@ zgb-a36-anhang: Die ZGB-Gliederung zeigt 74 Artikel des Anhangs «Wortlaut der f
   David: «stufe 1 ja», gebunden an ≥ 5 Snapshots; Stufe 2/3 NICHT freigegeben. Cron fährt `retro:17`,
   eröffnet Entwurfs-PR, kein Auto-Merge.
   **Detail:** [FAHRPLAN-PLAN-STEUERUNG.md](fahrplaene/FAHRPLAN-PLAN-STEUERUNG.md) § «Selbstoptimierender Bau».
+
+- [~] **Verwenden statt bauen — risikoarme Fertigteile aus der Fremdquellen-Sichtung 2.9.2026** *(`QS-VERWENDEN`)*
+  <!-- @meta id: QS-VERWENDEN · status: wip · blocker: null · dep: [] · feld: betrieb -->
+  Quelle: [fremdquellen-sichtung-2026-09-02.md](bibliothek/recherche/fremdquellen-sichtung-2026-09-02.md)
+  §1 (Rangliste). Alles Risiko gering.
+  - [ ] **V1 Lizenz-Tor** — `check:lizenzen` mit Allowlist (MIT/Apache-2.0/BSD/ISC/0BSD/CC0/Unlicense/Python-2.0/BlueOak; MPL-2.0 nur gekennzeichnet) über `npm ls --all --json`/Paket-`license`-Felder, LGPL/GPL/AGPL/CPAL/NOASSERTION = rot; SBOM via cyclonedx-node-npm optional; einmal rot zeigen (§6.7); ins `gate` einhängen. Beleg: Rangliste #3.
+  - [ ] **V2 CI-Cache für `daten/*.db`** mit Schlüssel = sha von `daten-manifest.json` (`actions/cache@v4` in ci.yml), Nachweis: zweiter Lauf trifft den Cache. Beleg: Rangliste #10.
+  - [ ] **V3 Raw-Store Fedlex** — `scripts/fedlex-cache.sh`-Rohfassungen je Korpus-Stand als GitHub-Release-Asset (Tag `korpus-<datum>`), plus `actions/attest-build-provenance`; Prüfung «Raw für jeden Pin vorhanden». Beleg: Rangliste #9.
+  - [ ] **V4 JSON-LD vervollständigen** — `legislationDate`/`legislationLegalForce` in `src/lib/seo-detail.ts` aus Konsolidierungsdatum/`inForceStatus` füllen (Geltungsaussage nur, wo der Pin sie kennt; sonst Feld weglassen). Beleg: Rangliste #12.
+  - [ ] **V5 Atom-Feed «geänderte Erlasse»** aus `daten-manifest.json`-Diff (Paket `feed`), statisch nach `public/feed/erlasse.xml`, deterministisch (keine Bauzeit-Stempel). Beleg: Rangliste #14.
+  - [ ] **V6 valibot-Formprüfung** an den Datei-Grenzen für Manifeste/generierte JSON (nur Grenzen, nie Engines). Beleg: Rangliste #16.
+  - [ ] **V7 Feiertags-Gegenprobe** als reiner Test: kantonale Feiertagsformeln vs. date-holidays CH (Abweichung = Prüfauftrag, kein Fix ohne Quelle). Beleg: Rangliste #15.
+  - [ ] **V8 pagefind-Spike** gegen `suche-eval-gold` (Messung, kein Umbau). Beleg: Rangliste #11.
 
 - [ ] **Repo in eine GitHub-Organisation überführen (Merge Queue)** *(`QS-ORG-UMZUG`)*
   <!-- @meta id: QS-ORG-UMZUG · status: blocked · blocker: david-entscheid-org-umzug · dep: [] · feld: betrieb -->
