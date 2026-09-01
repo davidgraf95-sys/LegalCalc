@@ -4,6 +4,7 @@ import { normLabel, filterEntscheide, richterHaeufigkeit, INSTANZ_ORDNUNG } from
 import type { BrowseEntscheid, RichterRegister } from '../../lib/rechtsprechung/register';
 import { RichterFilter } from './RichterFilter';
 import { FacettenGruppe } from '../ui/FacettenGruppe';
+import { Tabs } from '../ui/Tabs';
 import { SORT_LABEL } from './zustand';
 
 // Schlanke Steuerleiste der Übersicht /rechtsprechung (ersetzt den schweren
@@ -15,6 +16,12 @@ import { SORT_LABEL } from './zustand';
 // Reine Darstellung (§3); Filterung macht filterEntscheide() im Eltern.
 
 const SPRACH_LABEL: Record<string, string> = { de: 'Deutsch', fr: 'Französisch', it: 'Italienisch', rm: 'Rätoromanisch' };
+
+/** Dichte der Ergebnis-Spalte — Segmented-Control aus `ui/Tabs` (R4-1). */
+const DICHTE_ITEMS = [
+  { code: 'liste', label: 'Liste' },
+  { code: 'karten', label: 'Karten' },
+] as const;
 
 function einzigartig<T>(werte: T[]): T[] {
   return [...new Set(werte)];
@@ -158,13 +165,6 @@ export function EntscheidFilter({
   // Beim Zurücksetzen das Sachgebiet (Rail/URL) bewahren — nur Sekundärfilter+Suche leeren.
   const zuruecksetzen = () => onChange({ sachgebiet: werte.sachgebiet ?? null });
 
-  const dichteBtn = (d: 'liste' | 'karten', label: string) => (
-    <button type="button" onClick={() => onDichte(d)} aria-pressed={dichte === d}
-      className={`px-2.5 py-1 text-xs transition-colors ${dichte === d ? 'bg-brass-100 text-brass-800 font-medium' : 'text-ink-500 hover:text-ink-700'}`}>
-      {label}
-    </button>
-  );
-
   return (
     <div className="space-y-2.5">
       {/* Toolbar — eine Zeile (umbrechend auf Mobil). */}
@@ -186,10 +186,12 @@ export function EntscheidFilter({
             {(Object.keys(SORT_LABEL) as SortModus[]).map((s) => <option key={s} value={s}>{SORT_LABEL[s]}</option>)}
           </select>
         </label>
-        <div className="inline-flex shrink-0 overflow-hidden rounded-md border border-line" role="group" aria-label="Ansicht">
-          {dichteBtn('liste', 'Liste')}
-          {dichteBtn('karten', 'Karten')}
-        </div>
+        {/* R4-1 (31.8.2026): die Dichte-Wahl war eine Segmented-Control-Kopie
+            neben `ui/Tabs` — samt der geborgten Chip-Füllung `bg-brass-100
+            text-brass-800` (das `.lc-chip-selected`-Paar). Kopie gelöscht,
+            Optik aus dem Baustein (§5/§10). */}
+        <Tabs items={DICHTE_ITEMS} value={dichte} onChange={onDichte}
+          mode="pressed" groesse="s" ariaLabel="Ansicht" />
       </div>
 
       {/* Facetten-Leiste — die primären Achsen sichtbar (Auftrag 4 «Gemeinwesen»,

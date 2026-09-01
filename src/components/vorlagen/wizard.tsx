@@ -7,6 +7,7 @@ import { NormText } from '../NormText';
 import { useLocale, fedlexLokalisiert } from '../locale';
 import { usePaneKlasse } from '../layout/PaneKontext';
 import { SeitenTitel } from '../ui/SeitenTitel';
+import { Tabs } from '../ui/Tabs';
 import { dokumentAlsText } from '../../lib/vorlagen/vorlagenText';
 import type { AssembleErgebnis } from '../../lib/vorlagen/engine';
 import { AUSGABE_LABEL, MUSTER, rolleLabel, type AusgabeStil } from '../../lib/vorlagen/formatvorlagen';
@@ -398,21 +399,21 @@ function DirektExportZeile({ ergebnis, pdf, docx, blocker }: {
 
 // ── Ausgabe-Stil-Umschalter (nüchtern ⇄ modern) ─────────────────────────────
 // Wirkt zugleich auf Vorschau UND Export (geteilter Store, ausgabeStil.ts).
+//
+// R4-1 (31.8.2026): war eine Segmented-Control-Handkopie neben `ui/Tabs` — samt
+// der geborgten Chip-Füllung `bg-brass-100 text-brass-800` (das
+// `.lc-chip-selected`-Paar; Chip-Farbe gehört an Chips). Kopie gelöscht, Optik
+// aus dem Baustein (§5/§10). Die Titel-Erklärungen wandern in `titel` und
+// bleiben damit wortgleich am Knopf.
+const STIL_ITEMS = [
+  { code: 'nuechtern', label: 'Nüchtern', titel: 'Klassisch-gerichtstauglich (traditionelles Rubrum mit Gedankenstrichen)' },
+  { code: 'modern', label: 'Modern', titel: 'Variante A «Dokument-Handwerk» (ruhige Versal-Labels)' },
+] as const;
+
 function StilUmschalter({ stil }: { stil: AusgabeStil }) {
   return (
-    <div className="inline-flex shrink-0 overflow-hidden rounded-md border border-line text-xs" role="group" aria-label="Ausgabe-Stil">
-      {(['nuechtern', 'modern'] as const).map((s) => (
-        <button key={s} type="button"
-          aria-pressed={stil === s}
-          title={s === 'nuechtern' ? 'Klassisch-gerichtstauglich (traditionelles Rubrum mit Gedankenstrichen)' : 'Variante A «Dokument-Handwerk» (ruhige Versal-Labels)'}
-          onClick={() => setAusgabeStil(s)}
-          className={stil === s
-            ? 'bg-brass-100 px-2.5 py-1 font-medium text-brass-800'
-            : 'bg-surface px-2.5 py-1 text-ink-600 hover:text-ink-900'}>
-          {s === 'nuechtern' ? 'Nüchtern' : 'Modern'}
-        </button>
-      ))}
-    </div>
+    <Tabs items={STIL_ITEMS} value={stil} onChange={setAusgabeStil}
+      mode="pressed" groesse="s" ariaLabel="Ausgabe-Stil" />
   );
 }
 

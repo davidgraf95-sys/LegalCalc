@@ -151,6 +151,21 @@ export function MappenAnsicht({ dokumente, bannerEntwurf, bannerFertig = BANNER_
     <>
       {/* `id`/`data-dokument-platz` an DERSELBEN Stelle wie im Leerzustand: das
           Sprungziel darf sich nicht verschieben, sobald die Dokumente entstehen. */}
+      {/* ── AUSNAHME vom Reiter-Kanon (R4-2, 31.8.2026) ───────────────────────
+          Das Haus kennt seit Runde 4 zwei deklarierte Umschalter-Formen:
+          `ui/Tabs` (Segmented-Control) und `ui/TafelReiter` (Unterstrich-Reiter
+          an der Oberkante einer Tafel). Diese Leiste ist keine von beiden: sie
+          ist die DRITTE Reiter-Form, ausdrücklich deklariert: Chip-Reiter
+          (`lc-chip`), umbrechend statt scrollend. Der Grund liegt im Inhalt —
+          die Fächer sind DOKUMENT-TITEL beliebiger Länge und Zahl (eine Mappe
+          trägt mehrere Schriftstücke). Eine Oberkanten-Leiste schöbe sie
+          waagrecht aus dem Blick; die Chip-Reihe bricht um und zeigt alle. Ihr
+          `role=tab`-Versprechen ist vollständig eingelöst: roving tabindex,
+          ←/→/Home/End (`aufTabTaste` oben), `aria-controls` auf die eine
+          `role="tabpanel"`-Vorschau unten. Das mit einer der beiden anderen
+          Formen zusammenzuziehen hiesse, zwei verschiedene Aussagen gleich
+          darzustellen (§1). Der Wächter `design-r4-umschalter` zitiert diese
+          Begründung wörtlich — verschwindet sie, fällt die Ausnahme. */}
       <div id={zielId} data-dokument-platz className="flex flex-wrap gap-1.5 scroll-mt-24" role="tablist" aria-label="Dokumente der Mappe">
         {dokumente.map((d, i) => {
           const aktiv = d.id === dok.id;

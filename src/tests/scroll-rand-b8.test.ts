@@ -97,7 +97,12 @@ describe('B8 · geteilte Scroll-Affordanz (LM-063/LM-064)', () => {
   const ANKER: ReadonlyArray<readonly [string, string]> = [
     ['src/components/ui/Tabs.tsx', 'lc-scrollrand-x'],
     ['src/components/rechtsprechung/SachgebietKacheln.tsx', 'lc-scrollrand-x'],
-    ['src/pages/gesetz-leser/v3/LeserPanel.tsx', 'lc-scrollrand-x'],
+    // R4-2 (31.8.2026): die Panel-Reiterleiste steht seit dem Reiter-Kanon in
+    // `ui/TafelReiter` — derselbe Wortlaut, nur geteilt (LeserPanel und der
+    // Startseiten-Schnellrechner konsumieren ihn). Der Anker wandert MIT der
+    // Leiste; die Messung von damals (350/385 @1440, LeserPanel) bleibt gültig
+    // und wird nicht nachgeführt, sondern hier ergänzt (§2b).
+    ['src/components/ui/TafelReiter.tsx', 'lc-scrollrand-x'],
     ['src/pages/gesetz-leser/v3/LeserSeitenleiste.tsx', 'lc-scrollrand-y'],
     // LM-061 (Entscheid David 31.8.2026, revidiert D11): beide Startseiten-
     // Streifen tragen die Scrollstand-Affordanz statt der angeschnittenen

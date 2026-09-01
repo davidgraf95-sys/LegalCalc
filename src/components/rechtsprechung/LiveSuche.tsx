@@ -5,6 +5,13 @@ import {
 import { kantonLabel } from './format';
 import { Datum } from '../ui/Datum';
 import { TrefferZeile, TREFFER_ZEILE_RAHMEN } from '../ui/TrefferZeile';
+import { Tabs } from '../ui/Tabs';
+
+/** Sortierung der Live-Treffer — Segmented-Control aus `ui/Tabs` (R4-1). */
+const SORT_ITEMS = [
+  { code: 'relevanz', label: 'Relevanz' },
+  { code: 'datum', label: 'Neueste' },
+] as const;
 
 // Opt-in Live-Volltextsuche über den GESAMTEN Schweizer Korpus (entscheidsuche.ch),
 // weit über die kuratierte LexMetrik-Auswahl hinaus. DISCOVERY, keine Engine (§2):
@@ -106,14 +113,12 @@ export function LiveSuche({ initialQ = '' }: { initialQ?: string }) {
           placeholder="Begriff, Norm oder Aktenzeichen …" aria-label="Live-Suchbegriff"
           className="min-w-0 flex-1 rounded border border-line bg-paper px-3 py-1.5 text-body-s text-ink-900 placeholder:text-[var(--placeholder)] focus:border-brass-600 focus:outline-none focus:shadow-[var(--ring)]"
         />
-        <div className="inline-flex items-stretch overflow-hidden rounded border border-line" role="group" aria-label="Sortierung">
-          {(['relevanz', 'datum'] as const).map((s) => (
-            <button key={s} type="button" onClick={() => setzeSort(s)} aria-pressed={sortNach === s}
-              className={`px-2.5 py-1.5 text-xs ${sortNach === s ? 'bg-well text-brass-700' : 'text-ink-600 hover:bg-paper-sunken'} ${s === 'datum' ? 'border-l border-line' : ''}`}>
-              {s === 'relevanz' ? 'Relevanz' : 'Neueste'}
-            </button>
-          ))}
-        </div>
+        {/* R4-1 (31.8.2026): die sechste Handkopie derselben Segmented-Control.
+            Sie stand nicht im Finder-Befund, sondern fiel dem Wurzel-Wächter
+            `design-r4-umschalter` beim ersten Lauf auf — genau dafür fegt er
+            die App statt einer Datei-Liste (§6.7/§17). Kopie gelöscht. */}
+        <Tabs items={SORT_ITEMS} value={sortNach} onChange={setzeSort}
+          mode="pressed" groesse="s" ariaLabel="Sortierung" />
         <button type="submit" disabled={!q.trim() || laden}
           className="lc-chip hover:text-brass-700 hover:border-brass-400 disabled:opacity-40">
           {laden ? 'sucht …' : 'Suchen'}

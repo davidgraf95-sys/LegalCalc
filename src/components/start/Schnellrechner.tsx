@@ -9,6 +9,9 @@ import { GebvKostenForm } from '../forms/GebvKostenForm';
 import { NotariatGrundbuchForm } from '../forms/NotariatGrundbuchForm';
 import { ZustaendigkeitForm } from '../forms/ZustaendigkeitForm';
 import { getStandardKanton } from '../../lib/einstellungen';
+import { Tabs } from '../ui/Tabs';
+import { TafelReiter } from '../ui/TafelReiter';
+import { tafelId, tafelReiterId } from '../ui/tafelReiterIds';
 
 // ─── Schnellrechner der Startseite (Startseite V2) ──────────────────────────
 //
@@ -17,13 +20,29 @@ import { getStandardKanton } from '../../lib/einstellungen';
 // fahren + Kanton), Gebühren = Prozess/Betreibung/Notariat per Auswahl,
 // Zuständigkeit = Zivilprozess-Zuständigkeit. Jeder Tab verweist zusätzlich
 // ausführlich auf den jeweiligen Voll-Rechner mit dem ganzen Funktionsumfang.
+//
+// ── R4-1/R4-2 (31.8.2026): BEIDE Umschalter dieser Karte waren Handkopien ───
+// Die Reiterleiste oben trug `role="tablist"`/`role="tab"` OHNE Tastatur, ohne
+// `tabindex` und ohne `role="tabpanel"` — ein ARIA-Versprechen ohne Verhalten
+// (§8), gemessen und reproduziert vom R4-Finder. Sie läuft jetzt über
+// `ui/TafelReiter`, die eingelöste Fassung derselben Grammatik aus dem
+// Leser-Panel; damit hat die Karte echte Pfeil-/Home/End-Navigation und eine
+// benannte Tafel. Die Gebührenart darunter war eine Segmented-Control-Kopie und
+// borgte sich für den aktiven Zustand die CHIP-Farbe (`bg-brass-100
+// text-brass-800` = das `.lc-chip-selected`-Paar); sie läuft jetzt über
+// `ui/Tabs` und trägt dessen Aktiv-Füllung. Beide Kopien sind gelöscht, nicht
+// angeglichen (§5/§10) — die Optik der Karte ändert sich dabei sichtbar, und
+// zwar zum Kanon hin. Wächter: `src/tests/design-r4-umschalter.test.ts`.
 
 type Tab = 'fristen' | 'gebuehren' | 'zustaendigkeit';
 
-const TABS: { id: Tab; label: string }[] = [
-  { id: 'fristen', label: 'Fristen' },
-  { id: 'gebuehren', label: 'Gebühren' },
-  { id: 'zustaendigkeit', label: 'Zuständigkeit' },
+/** Namensraum der Reiter-/Tafel-Id-Paare dieser Karte. */
+const TAFEL = 'schnellrechner';
+
+const TABS: { code: Tab; label: string }[] = [
+  { code: 'fristen', label: 'Fristen' },
+  { code: 'gebuehren', label: 'Gebühren' },
+  { code: 'zustaendigkeit', label: 'Zuständigkeit' },
 ];
 
 // Gebühren-Unterauswahl als Segment-Buttons (ein Klick statt Select-Aufklappen,
@@ -31,10 +50,10 @@ const TABS: { id: Tab; label: string }[] = [
 // SCHLANK (NotariatGrundbuchForm minimal: Kanton + Kaufpreis + Steuer); der
 // volle Notariats-/Grundbuchrechner ist verlinkt («auf richtigen verweisen»).
 type GebuehrenArt = 'prozess' | 'betreibung' | 'grundstueck';
-const GEBUEHREN: { id: GebuehrenArt; kurz: string; href: string; rechner: string; was: string }[] = [
-  { id: 'prozess', kurz: 'Prozess', href: '/rechner/prozesskosten', rechner: 'Prozesskostenrechner', was: 'Modifikatoren, Vorschuss, Kostenrisiko, Rechenweg' },
-  { id: 'betreibung', kurz: 'Betreibung', href: '/rechner/betreibungskosten', rechner: 'Betreibungskostenrechner', was: 'alle Gebührenarten, Rechenweg' },
-  { id: 'grundstueck', kurz: 'Grundstück', href: '/rechner/notariat-grundbuch', rechner: 'Notariats-/Grundbuchrechner', was: 'Grundpfand, Handänderungssteuer, interkantonaler Vergleich, PDF' },
+const GEBUEHREN: { code: GebuehrenArt; label: string; href: string; rechner: string; was: string }[] = [
+  { code: 'prozess', label: 'Prozess', href: '/rechner/prozesskosten', rechner: 'Prozesskostenrechner', was: 'Modifikatoren, Vorschuss, Kostenrisiko, Rechenweg' },
+  { code: 'betreibung', label: 'Betreibung', href: '/rechner/betreibungskosten', rechner: 'Betreibungskostenrechner', was: 'alle Gebührenarten, Rechenweg' },
+  { code: 'grundstueck', label: 'Grundstück', href: '/rechner/notariat-grundbuch', rechner: 'Notariats-/Grundbuchrechner', was: 'Grundpfand, Handänderungssteuer, interkantonaler Vergleich, PDF' },
 ];
 
 // Ausführlicher Verweis auf den jeweiligen Voll-Rechner (Auftrag David).
@@ -49,25 +68,16 @@ function VollRechnerHinweis({ href, name, was }: { href: string; name: string; w
 
 function GebuehrenTab() {
   const [art, setArt] = useState<GebuehrenArt>('prozess');
-  const aktiv = GEBUEHREN.find((g) => g.id === art)!;
+  const aktiv = GEBUEHREN.find((g) => g.code === art)!;
   return (
     <div className="space-y-4">
-      {/* Segment-Buttons: ein Klick wählt die Gebührenart (weniger Klicks).
-          3-Spalten-Raster → gleichmässig EINE Reihe (auch auf Mobil, statt
-          ungleichem 2+1-Umbruch); auf schmalen Schirmen kleinere Schrift. */}
-      <div role="tablist" aria-label="Gebührenart" className="grid grid-cols-3 gap-0.5 rounded-lg border border-line bg-surface p-0.5">
-        {GEBUEHREN.map((g) => {
-          const an = g.id === art;
-          return (
-            <button key={g.id} type="button" role="tab" aria-selected={an} onClick={() => setArt(g.id)}
-              className={`truncate px-2 sm:px-3 py-2 text-xs sm:text-body-s font-medium rounded-md transition-colors ${
-                an ? 'bg-brass-100 text-brass-800' : 'text-ink-600 hover:text-ink-900'
-              }`}>
-              {g.kurz}
-            </button>
-          );
-        })}
-      </div>
+      {/* Ein Klick wählt die Gebührenart (weniger Klicks bis zum Resultat,
+          Auftrag David). Die Auswahl schaltet ein Formular UM — das ist die
+          Segmented-Control-Aussage, also `ui/Tabs` (R4-1). `mode="pressed"`
+          und nicht `tab`: eine `role=tab`-Leiste ohne `tabpanel` wäre wieder
+          ein halbes Versprechen (§8); hier steht kein benanntes Fach darunter,
+          sondern schlicht das gewählte Formular. */}
+      <Tabs items={GEBUEHREN} value={art} onChange={setArt} mode="pressed" groesse="s" ariaLabel="Gebührenart" />
       {art === 'prozess' && <ProzesskostenForm minimal />}
       {art === 'betreibung' && <GebvKostenForm minimal />}
       {art === 'grundstueck' && <NotariatGrundbuchForm minimal />}
@@ -91,21 +101,13 @@ export function Schnellrechner() {
       <div className="flex items-center justify-between gap-3 px-5 py-3.5 border-b border-line">
         <span className="lc-overline">Schnell rechnen</span>
       </div>
-      <div role="tablist" aria-label="Schnellrechner" className="flex gap-1 px-3 pt-3">
-        {TABS.map((t) => {
-          const an = t.id === tab;
-          return (
-            <button key={t.id} type="button" role="tab" aria-selected={an}
-              onClick={() => setTab(t.id)}
-              className={`flex-1 px-3 py-2.5 text-body-s font-medium rounded-t-md border-b-2 transition-colors ${
-                an ? 'text-ink-900 border-brass-500 bg-surface-raised' : 'text-ink-600 border-transparent hover:text-ink-900'
-              }`}>
-              {t.label}
-            </button>
-          );
-        })}
-      </div>
-      <div className="p-5">
+      {/* `grund="surface"`, weil die Leiste auf der Kartenfläche sitzt
+          (`.lc-card` = `bg-surface`): der Scrollrand-Deckel muss die Farbe der
+          Fläche haben, die er abdeckt. `breit`, weil die drei Reiter wie bisher
+          die Kartenbreite teilen. */}
+      <TafelReiter items={TABS} value={tab} onChange={setTab} ariaLabel="Schnellrechner"
+        idPraefix={TAFEL} grund="surface" breit />
+      <div className="p-5" role="tabpanel" id={tafelId(TAFEL, tab)} aria-labelledby={tafelReiterId(TAFEL, tab)}>
         {tab === 'fristen' && (
           <div className="space-y-4">
             {/* Zwei Hälften: links rechnen (Eingabe), rechts der Kalender als reine

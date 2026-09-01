@@ -13,6 +13,23 @@ import { KantonWappen } from '../../components/KantonWappen';
 import { SchweizKarte } from '../../components/SchweizKarte';
 import { StufeBadge } from '../../components/normtext/Erfassungsgrad';
 import { erfassungsgrad, STUFE_RANG, STUFE_WORT } from '../../lib/normtext/erfassungsgrad';
+import { Tabs } from '../../components/ui/Tabs';
+
+// R4-1 (31.8.2026): diese Seite trug ZWEI Segmented-Control-Handkopien neben
+// `ui/Tabs` («Ansicht» mit eigener Aktiv-Optik, «Sortieren» mit der geborgten
+// Chip-Füllung `bg-brass-100 text-brass-800`). Beide Kopien sind gelöscht, die
+// Optik kommt aus dem Baustein (§5/§10). Wächter: `design-r4-umschalter`.
+const ANSICHT_ITEMS = [
+  { code: 'karte', label: 'Karte' },
+  { code: 'liste', label: 'Liste' },
+] as const;
+
+const SORT_ITEMS = [
+  { code: 'alpha', label: 'Alphabet' },
+  { code: 'anzahl', label: 'Erlass-Zahl' },
+  { code: 'erfassung', label: 'Erfassungsgrad' },
+  { code: 'region', label: 'Region' },
+] as const;
 
 // Eine Kanton-Kachel des Auswahlrasters (Wappen · Vollname · Erlass-Zähler +
 // Erfassungsgrad-Badge, IA-2 §11.2). Mobil-Fix (G5 · §4.3.6): der Vollname wird
@@ -118,24 +135,18 @@ export function KantonAuswahl({ gruppen, alleKantone, onWaehle, ansicht, onAnsic
 
       <div className="flex flex-wrap items-center justify-between gap-x-4 gap-y-2">
         {/* §4.3.3 — Karte default sichtbar, gleichwertiger Einstieg neben dem Raster. */}
-        <div role="group" aria-label="Ansicht" className="inline-flex rounded-md border border-line bg-paper-sunken/50 p-0.5 text-body-s">
-          {(['karte', 'liste'] as const).map((a) => (
-            <button key={a} type="button" onClick={() => onAnsicht(a)} aria-pressed={ansicht === a}
-              className={`rounded px-3 py-1 font-medium transition-colors ${ansicht === a ? 'bg-paper text-ink-900 shadow-sm' : 'text-ink-500 hover:text-ink-800'}`}>
-              {a === 'karte' ? 'Karte' : 'Liste'}
-            </button>
-          ))}
-        </div>
+        <Tabs items={ANSICHT_ITEMS} value={ansicht} onChange={onAnsicht}
+          mode="pressed" groesse="s" ariaLabel="Ansicht" />
         {/* §4.3.2 — Sortierung des 26er-Rasters (nur in der Liste sinnvoll). */}
         {ansicht === 'liste' && (
-          <div role="group" aria-label="Sortierung" className="inline-flex flex-wrap items-center gap-1.5">
+          <div className="inline-flex flex-wrap items-center gap-1.5">
             <span className="lc-overline">Sortieren</span>
-            {([['alpha', 'Alphabet'], ['anzahl', 'Erlass-Zahl'], ['erfassung', 'Erfassungsgrad'], ['region', 'Region']] as const).map(([id, label]) => (
-              <button key={id} type="button" onClick={() => setSortierung(id)} aria-pressed={sortierung === id}
-                className={`rounded px-2 py-0.5 text-body-s font-medium transition-colors ${sortierung === id ? 'bg-brass-100 text-brass-800' : 'text-ink-500 hover:bg-paper-sunken hover:text-brass-700'}`}>
-                {label}
-              </button>
-            ))}
+            {/* Der Gruppen-Name «Sortierung» sitzt jetzt am Baustein statt an
+                dieser Hülle — `e2e/gesetze-ia-v2-walks` greift ihn über
+                `getByRole('group', { name: 'Sortierung' })` und findet ihn dort
+                unverändert. Die sichtbare Overline bleibt daneben stehen. */}
+            <Tabs items={SORT_ITEMS} value={sortierung} onChange={setSortierung}
+              mode="pressed" groesse="s" ariaLabel="Sortierung" />
           </div>
         )}
       </div>

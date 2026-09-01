@@ -1,7 +1,9 @@
-import { useRef, type ReactNode } from 'react';
+import { type ReactNode } from 'react';
 import type { BestimmungsWort } from './erlassAnsicht';
 import { PANEL_REITER, reiterTitel, type PanelReiter } from './panelModell';
 import { SchliessKnopf } from '../../../components/ui/SchliessKnopf';
+import { TafelReiter } from '../../../components/ui/TafelReiter';
+import { tafelId, tafelReiterId } from '../../../components/ui/tafelReiterIds';
 
 // ─── Das Panel selbst: EIN Ort, VIER Reiter (FAHRPLAN-LESER-V3 Kap. 4d, H3) ───
 //
@@ -20,10 +22,19 @@ import { SchliessKnopf } from '../../../components/ui/SchliessKnopf';
 // ── ECHTE REITER, ALSO ECHTE PFEILTASTEN (W3C ARIA APG «Tabs») ──────────────
 // Anders als bei den Dropdowns des Lesers (dort «ehrliche Disclosure», KEIN
 // role=menu) ist `role="tablist"` hier die richtige Rolle — und sie verspricht
-// Pfeiltasten-Navigation. Das Versprechen wird eingelöst (←/→/Home/End unten),
-// sonst wäre es genau die Lüge, die die Dropdown-Entscheidung vermeidet (§8).
-// Roving tabindex: nur der aktive Reiter ist in der Tab-Folge; ein Tab-Schritt
-// führt von der Leiste in den Inhalt, nicht durch drei Knöpfe.
+// Pfeiltasten-Navigation. Das Versprechen wird eingelöst, sonst wäre es genau
+// die Lüge, die die Dropdown-Entscheidung vermeidet (§8). Roving tabindex: nur
+// der aktive Reiter ist in der Tab-Folge; ein Tab-Schritt führt von der Leiste
+// in den Inhalt, nicht durch vier Knöpfe.
+//
+// SEIT R4-2 (31.8.2026) STEHT DIESE LEISTE NICHT MEHR HIER, sondern in
+// `components/ui/TafelReiter` — Wortlaut und Verhalten unverändert, aber
+// geteilt. Anlass war der Startseiten-Schnellrechner: er trug dieselbe
+// Grammatik als Handkopie, versprach `role="tab"` und lieferte weder Tastatur
+// noch `tabindex` noch eine Tafel. Statt die Kopie anzugleichen wurde die
+// gebaute Form zum Baustein und die Kopie gelöscht (§5/§10). Die Zusagen
+// dieser Datei sind damit die Zusagen des Bausteins; gemessen werden sie
+// weiterhin von `e2e/leser-v3-panel-facetten` (b) und `-anwendung`.
 //
 // ── DER FUSS IST LEER UND HAT EINEN NAMEN ───────────────────────────────────
 // «Zitat-Export-Platz reservieren (nicht bauen)» (H3-Auftrag): der Fuss nimmt
@@ -84,26 +95,11 @@ export function LeserPanel({
    */
   steckbrief?: ReactNode;
 }) {
-  const leisteRef = useRef<HTMLDivElement>(null);
-
-  function taste(e: React.KeyboardEvent<HTMLDivElement>): void {
-    const i = PANEL_REITER.findIndex((r) => r.id === reiter);
-    const letzte = PANEL_REITER.length - 1;
-    const ziel = e.key === 'ArrowRight' ? (i === letzte ? 0 : i + 1)
-      : e.key === 'ArrowLeft' ? (i === 0 ? letzte : i - 1)
-      : e.key === 'Home' ? 0
-      : e.key === 'End' ? letzte
-      : -1;
-    if (ziel < 0) return;
-    e.preventDefault();
-    const neu = PANEL_REITER[ziel];
-    if (!neu) return;
-    setReiter(neu.id);
-    // Der Fokus folgt der Auswahl (APG «Tabs with automatic activation»):
-    // sonst zeigte die Leiste einen anderen Reiter an als den, auf dem der
-    // Fokus steht — zwei Wahrheiten in einer Leiste.
-    leisteRef.current?.querySelector<HTMLElement>(`[data-v3-panel-reiter="${neu.id}"]`)?.focus();
-  }
+  // Reiter-Ordnung und Beschriftung kommen unverändert aus `PANEL_REITER` (§5);
+  // der erklärende Titel ist erlassabhängig und darum eine Funktion (C1).
+  const reiterItems = PANEL_REITER.map((r) => ({
+    code: r.id, label: r.label, titel: reiterTitel(r.id, bestimmungsWort),
+  }));
 
   return (
     // `rounded-xl` mit vollem Rahmen: die Zone gibt dem rechts angeschlagenen
@@ -163,24 +159,8 @@ export function LeserPanel({
           LM-063 an den Rechner-Phasenleisten meldet, nur eine Etage tiefer.
           `lc-scrollrand-x` ist dieselbe geteilte Affordanz wie dort (§5); der
           Deckel-Ton folgt der Panel-Fläche, nicht dem Seitengrund. */}
-      <div ref={leisteRef} role="tablist" aria-label="Kontext-Reiter" onKeyDown={taste}
-        className="lc-scrollrand-x lc-scrollrand-grund-raised flex shrink-0 gap-1 overflow-x-auto overflow-y-hidden border-b border-line px-1.5 pt-1.5 [scrollbar-width:none]">
-        {PANEL_REITER.map((r) => {
-          const aktiv = r.id === reiter;
-          return (
-            <button key={r.id} type="button" role="tab" id={`${panelId}-tab-${r.id}`}
-              data-v3-panel-reiter={r.id}
-              aria-selected={aktiv} aria-controls={`${panelId}-tafel-${r.id}`}
-              tabIndex={aktiv ? 0 : -1} title={reiterTitel(r.id, bestimmungsWort)}
-              onClick={() => setReiter(r.id)}
-              className={`-mb-px shrink-0 whitespace-nowrap rounded-t-md border-b-2 px-2 py-1 text-body-s transition-colors ${
-                aktiv ? 'border-brass-500 font-medium text-ink-900' : 'border-transparent text-ink-500 hover:text-brass-700'
-              }`}>
-              {r.label}
-            </button>
-          );
-        })}
-      </div>
+      <TafelReiter items={reiterItems} value={reiter} onChange={setReiter}
+        ariaLabel="Kontext-Reiter" idPraefix={panelId} datenName="data-v3-panel-reiter" />
 
       {/* ── Der EINE Scroller des Panels ──────────────────────────────────────
           `overscroll-contain`: Wischen im Panel zieht nicht die Seite dahinter
@@ -188,7 +168,7 @@ export function LeserPanel({
           ist im DOM — drei gemountete Tafeln hätten alle drei Ladepfade
           gleichzeitig angestossen und damit das Nachladen ausgehebelt. */}
       <div className="min-h-0 flex-1 overflow-y-auto overflow-x-hidden overscroll-contain [scrollbar-width:thin]">
-        <div role="tabpanel" id={`${panelId}-tafel-${reiter}`} aria-labelledby={`${panelId}-tab-${reiter}`}>
+        <div role="tabpanel" id={tafelId(panelId, reiter)} aria-labelledby={tafelReiterId(panelId, reiter)}>
           {inhalt[reiter]}
         </div>
       </div>

@@ -251,6 +251,25 @@ nachgerüstet — die gemessene Nachrüst-Liste steht im Tor-Kommentar von
 `e2e/a11y.e2e.ts` (Block «Trefferflächen»); die Nachrüstung selbst ist
 `W2·17-UI-BEFUNDE-B10`. Die Liste darf nur schrumpfen, nie wachsen.
 
+**F10 — Umschalter und Reiter: zwei Formen, sonst keine (31.8.2026,
+W2·19-DESIGN-KONSISTENZ R4-1/R4-2; Entscheid-Notiz Orchestrator).** Eine Wahl
+zwischen sich ausschliessenden Optionen wird im Haus auf genau zwei Arten
+gezeichnet, und die Form folgt der Aussage: **Segmented-Control = `ui/Tabs`**
+(gerahmtes Kästchen im Fluss — «welche Ansicht/Sortierung/Phase gilt?»),
+**Reiter an der Tafel-Oberkante = `ui/TafelReiter`** (Unterstrich in Messing,
+tauscht den INHALT der Fläche darunter aus). Wer eine dritte Form braucht,
+deklariert sie am Fundort mit Begründung (Bestand: die Chip-Reiter der
+Dokumentmappe — Fächer beliebiger Zahl und Länge, die umbrechen statt zu
+scrollen). **Chip-Farbe nur für Chips:** `bg-brass-100 text-brass-800` ist das
+Paar von `.lc-chip-selected`; ein Segment, das es borgt, behauptet Chip zu sein
+— der aktive Zustand kommt aus dem jeweiligen Baustein. Wer `role="tab"`
+schreibt, schuldet das ganze APG-Modell (roving tabindex, ←/→/Home/End, eine
+`role="tabpanel"`-Tafel) — ein halbes ARIA-Versprechen ist ein A11y-Defekt (§8).
+Maschinell erzwungen (E1) durch `src/tests/design-r4-umschalter.test.ts`: der
+Sweep fegt die App, nicht eine Datei-Liste. Anlass waren sechs Handkopien der
+Segmented-Control und eine Reiterleiste, die `role="tab"` ohne Tastatur, ohne
+`tabindex` und ohne Tafel versprach.
+
 **F2b — Farbwelt-Sollwerte (Mess-Tor `check:farbwelt`, FAHRPLAN-DESIGN-WAERME
 D-0).** F2 wird maschinell erzwungen: `scripts/check-farbwelt.ts` parst die
 `:root`- und `html.dark`-Token aus `src/index.css` (Werte) gegen die Name→`var()`-
