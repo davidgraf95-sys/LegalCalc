@@ -6,7 +6,7 @@ import { baueBgeIndex, parseBgeSprung } from '../../lib/suche/bgeQuery';
 import { meinenSie } from '../../lib/suche/vorschlag';
 import { vokabularBegriffe } from '../../lib/suche/vokabular';
 import { KATALOG_KARTEN } from '../../lib/startseiteConfig';
-import type { ArtikelSuche } from '../../lib/suche/artikelVolltext';
+import { SUCHE_OHNE_INDEX, type ArtikelSuche } from '../../lib/suche/artikelVolltext';
 import type { PresetIndexEintrag } from '../../lib/presetIndex';
 import type { BrowseErlass } from '../../lib/normtext/browse-typen';
 import type { BrowseEntscheid } from '../../lib/rechtsprechung/register';
@@ -88,7 +88,10 @@ export function useUniversalSuche(q: string, opt: UniversalSucheOpt = {}): Unive
     import('../../lib/suche/artikelVolltext')
       .then((m) => m.ladeArtikelSuche((nachgeladen) => setArtikelSuche(nachgeladen)))
       .then((erste) => setArtikelSuche(erste))
-      .catch(() => setArtikelSuche({ suche: () => [], fehlendeEbenen: [], nurOnlineEbenen: [] }));
+      // Totaler Fehlschlag: der Ersatz meldet BEIDE Ebenen als «nur online»
+      // (SUCHE_OHNE_INDEX) — sonst fiele die Gesetzestext-Gruppe ohne Treffer
+      // aus der Liste und die Suche verschwiege, dass sie gar nichts geladen hat (§8).
+      .catch(() => setArtikelSuche(SUCHE_OHNE_INDEX));
     import('../../lib/normtext/browse').then((m) => m.ladeBrowseManifest()).then((m) => setGesetze(m?.erlasse ?? [])).catch(() => setGesetze([]));
     import('../../lib/rechtsprechung/browse').then((m) => m.ladeEntscheidManifest()).then((m) => setEntscheide(m?.entscheide ?? [])).catch(() => setEntscheide([]));
     import('../../lib/materialien/browse').then((m) => m.ladeMaterialManifest()).then((m) => setMaterialien(m?.materialien ?? [])).catch(() => setMaterialien([]));

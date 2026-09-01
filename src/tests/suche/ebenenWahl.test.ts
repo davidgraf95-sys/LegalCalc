@@ -22,7 +22,7 @@ import { describe, it, expect } from 'vitest';
 import { createHash } from 'node:crypto';
 import * as flex from 'flexsearch';
 import { EBENEN, EBENEN_DEFAULT, baueEbenenIndex, baueIndex, gewaehlteEbenen } from '../../../scripts/such-index-generieren';
-import { baueSucher } from '../../lib/suche/artikelVolltext';
+import { baueSucher, SUCHE_OHNE_INDEX } from '../../lib/suche/artikelVolltext';
 import { artikelGruppe, sucheAlles } from '../../lib/universalSuche';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -225,5 +225,32 @@ describe('K3 Ehrlichkeit in der Trefferliste: «nur online» ist kein «lädt no
     expect(g.eingeschraenkt).toBeUndefined();
     expect(sucheAlles('x', { presets: [], gesetze: [], artikel: [], entscheide: [], materialien: [] })
       .find((x) => x.id === 'artikel')).toBeUndefined();
+  });
+});
+
+// ─── Totaler Index-Fehlschlag: auch DAS muss die Oberfläche sagen (§8) ───────
+//
+// Wenn `artikel.json` gar nicht lädt (Netz, 404, kaputtes JSON), ist lokal NICHTS
+// durchsuchbar — nicht bloss der Kanton. Bis zum 1.9.2026 meldete dieser Pfad
+// «nichts fehlt», die Gesetzestext-Gruppe fiel ohne Treffer aus der Liste und die
+// Suche behauptete stumm «nichts gefunden» über einen Bestand, den sie nie gesehen
+// hatte. Der Ersatz meldet darum beide Ebenen als nur-online — was in diesem
+// Zustand die Wahrheit ist: die Edge-Suche deckt Bund UND Kanton ab.
+describe('K3 Ehrlichkeit beim totalen Index-Fehlschlag', () => {
+  it('SUCHE_OHNE_INDEX meldet beide Ebenen als nur-online', () => {
+    expect(SUCHE_OHNE_INDEX.nurOnlineEbenen).toEqual(['bund', 'kanton']);
+    expect(SUCHE_OHNE_INDEX.suche('miete')).toEqual([]);
+  });
+
+  it('die Gruppe bleibt sichtbar und nennt beide Ebenen', () => {
+    const gruppen = sucheAlles('miete', {
+      presets: [], gesetze: [], artikel: SUCHE_OHNE_INDEX.suche('miete'),
+      entscheide: [], materialien: [],
+      artikelNurOnlineEbenen: SUCHE_OHNE_INDEX.nurOnlineEbenen,
+    });
+    const artikel = gruppen.find((g) => g.id === 'artikel')
+    expect(artikel, 'ohne Gruppe kein Hinweis — die Suche verschwiege den ungeladenen Bestand').toBeDefined();
+    expect(artikel!.hinweis).toContain('Bundeserlasse');
+    expect(artikel!.hinweis).toContain('Kantonale Erlasse');
   });
 });

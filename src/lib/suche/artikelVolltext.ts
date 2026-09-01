@@ -48,6 +48,19 @@ export interface ArtikelSuche {
   nurOnlineEbenen: Ebene[];
 }
 
+/** Ersatz, wenn der Index-Abruf GANZ scheitert (Netz, 404, kaputtes JSON).
+ *  Meldet BEIDE Ebenen als «nur online» — nicht aus Vorsicht, sondern weil es
+ *  in diesem Zustand stimmt: lokal ist nichts durchsuchbar, die Edge-Suche
+ *  deckt Bund UND Kanton ab, also ist sie der einzige verbleibende Weg. Bis zum
+ *  1.9.2026 trug dieser Pfad `fehlendeEbenen: []` / keine Ebene — die
+ *  Gesetzestext-Gruppe fiel damit ohne Treffer aus der Liste und die Suche
+ *  verschwieg, dass ihr halber Bestand gar nicht geladen war (§8). */
+export const SUCHE_OHNE_INDEX: ArtikelSuche = {
+  suche: () => [],
+  fehlendeEbenen: [],
+  nurOnlineEbenen: ['bund', 'kanton'],
+};
+
 let fertig: ArtikelSuche | null = null;
 let ladePromise: Promise<ArtikelSuche> | null = null;
 /** Abnehmer, die beim Nachrücken einer Ebene neu auswerten wollen. */
