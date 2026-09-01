@@ -15,10 +15,11 @@ import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { FEDLEX, type FedlexGesetz } from '../lib/fedlex';
 import {
-  GENITIV_EINTRAEGE, KUERZEL_SCHREIBWEISEN, TITEL_EINTRAEGE, titelGeltung,
+  ERLASSDATUM, GENITIV_EINTRAEGE, KUERZEL_SCHREIBWEISEN, TITEL_EINTRAEGE,
+  titelGeltung, zitiertesDatumIso,
 } from '../lib/fedlex/positivliste';
 
-interface RegisterErlass { key: string; ebene: string; titel?: string; quelleUrl?: string; stand?: string }
+interface RegisterErlass { key: string; ebene: string; titel?: string; quelleUrl?: string; stand?: string; datei?: string }
 const register = JSON.parse(readFileSync(join(process.cwd(), 'public', 'normtext', 'register.json'), 'utf8')) as { erlasse: RegisterErlass[] };
 // Register-Key ist der kanonisierte FEDLEX-Key (Umlaute → UE/OE/AE, «-»/« » entfernt).
 const kanon = (s: string): string =>
@@ -55,8 +56,13 @@ describe('Positivliste V-7a — Kurztitel-Genitive', () => {
     // gesetze («Einführungsgesetz zum Schweizerischen Zivilgesetzbuch») zählen
     // nicht — sie heissen nie «des Zivilgesetzbuches».
     for (const e of GENITIV_EINTRAEGE) {
-      if (e.geltung === 'bund' || e.beleg.startsWith('https://')) continue;
-      const stamm = e.beleg;
+      if (e.geltung === 'bund') continue;
+      // Fix-Runde 1 (Gegenprüfungs-Nebenbefund 1.9.2026): URL-belegte Einträge
+      // wurden hier übersprungen — genau sie tragen aber keinen Register-Titel
+      // als Stamm. Der Stamm kommt dann aus dem Namen selbst (Genitiv-Endung
+      // «-s»/«-es» abgeschnitten): «Versicherungsvertragsgesetzes» →
+      // «Versicherungsvertragsgesetz».
+      const stamm = e.beleg.startsWith('https://') ? e.name.replace(/e?s$/, '') : e.beleg;
       const kantonal = register.erlasse.filter((r) => r.ebene === 'kanton'
         && new RegExp(`^(?:Kantonales\\s+)?${esc(stamm)}\\b`).test((r.titel ?? '').replace(/­/g, '')));
       expect(kantonal.map((r) => r.key), `${e.name} (alle): gleichnamiger kantonaler Erlass — Geltung muss «bund» sein`).toEqual([]);
@@ -97,5 +103,43 @@ describe('Positivliste V-8 — amtliche Kürzel-Schreibweisen', () => {
       expect(new RegExp(`\\((?:[^()]*,\\s*)?${esc(schreibweise)}\\)`).test(titel!),
         `${schreibweise}: nicht in der Titel-Klammer «${titel}»`).toBe(true);
     }
+  });
+});
+
+describe('Positivliste V-5 — Erlassdatum je Ziel (Zeit-Kante, Fix-Runde 1)', () => {
+  // Die Tabelle ist eine PROJEKTION des Struktur-Sidecars (§5), keine zweite
+  // Wahrheit: jeder Wert wird gegen `kopf.erlassdatum` aus der Fedlex-Extraktion
+  // geprüft. Ein von Hand «korrigiertes» Datum reisst diesen Fall.
+  const dateiVon = new Map<string, string>();
+  for (const e of register.erlasse) if (e.ebene === 'bund' && e.datei) dateiVon.set(kanon(e.key), e.datei);
+  const MONATE = ['Januar', 'Februar', 'März', 'April', 'Mai', 'Juni', 'Juli',
+    'August', 'September', 'Oktober', 'November', 'Dezember'];
+
+  it('jeder Wert ist das erlassdatum des Struktur-Sidecars', () => {
+    for (const [gesetz, iso] of Object.entries(ERLASSDATUM)) {
+      const datei = dateiVon.get(kanon(gesetz));
+      expect(datei, `${gesetz}: nicht im Bund-Register`).toBeDefined();
+      const sidecar = JSON.parse(readFileSync(join(process.cwd(), 'public', 'normtext', 'struktur', datei!), 'utf8')) as { kopf?: { erlassdatum?: string } };
+      const roh = sidecar.kopf?.erlassdatum;
+      expect(roh, `${gesetz}: Sidecar ohne kopf.erlassdatum`).toBeDefined();
+      const m = /^vom\s+(\d{1,2})\.\s*([A-Za-zÄÖÜäöü]+)\s+(\d{4})/.exec(roh!);
+      expect(m, `${gesetz}: erlassdatum «${roh}» nicht parsebar`).not.toBeNull();
+      const mo = MONATE.findIndex((x) => x.toLowerCase() === m![2].toLowerCase());
+      const soll = `${m![3]}-${String(mo + 1).padStart(2, '0')}-${m![1].padStart(2, '0')}`;
+      expect(iso, `${gesetz}: Tabelle ${iso} ≠ Sidecar ${soll} («${roh}»)`).toBe(soll);
+    }
+  });
+
+  it('jedes Ziel der Positivliste hat ein Erlassdatum — sonst wäre ein datiertes Zitat nie verlinkbar', () => {
+    const ziele = new Set<FedlexGesetz>([...TITEL_EINTRAEGE.map((e) => e.gesetz), ...GENITIV_EINTRAEGE.map((e) => e.gesetz)]);
+    expect([...ziele].filter((g) => !ERLASSDATUM[g]), 'Ziele ohne Erlassdatum').toEqual([]);
+  });
+
+  it('zitiertesDatumIso: Vollform und eindeutige Abkürzung lösen auf, Mehrdeutiges nicht', () => {
+    expect(zitiertesDatumIso('20. Dezember 1946')).toBe('1946-12-20');
+    expect(zitiertesDatumIso('18. Dez. 1987')).toBe('1987-12-18');
+    expect(zitiertesDatumIso('6. Oktober 2000')).toBe('2000-10-06');
+    expect(zitiertesDatumIso('19. Ju. 1992')).toBeNull(); // Juni/Juli mehrdeutig
+    expect(zitiertesDatumIso('19. Foo 1992')).toBeNull();
   });
 });

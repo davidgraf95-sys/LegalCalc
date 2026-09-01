@@ -331,3 +331,218 @@ export const KUERZEL_SCHREIBWEISEN: ReadonlyArray<readonly [string, FedlexGesetz
 export function schreibweiseZuKey(schreibweise: string): FedlexGesetz | null {
   return KUERZEL_SCHREIBWEISEN.find(([s]) => s === schreibweise)?.[1] ?? null;
 }
+
+// ─── V-5 · Erlassdatum je Ziel-Erlass (Zeit-Kante, Fix-Runde 1 zu W2·20) ──────
+//
+// PROBLEM (Gegenprüfung 1.9.2026, Blocker 2): Die Zitier-Konvention nennt den
+// Erlass mit Datum («des Bundesgesetzes vom 20. September 1949 über die
+// Militärversicherung»). Der Parser las das Datum, verwarf es aber ungeprüft —
+// ein zitierter AUFGEHOBENER Vorgänger-Erlass landete damit auf dem GELTENDEN
+// Gesetz mit anderer Nummerierung. Belegte Falschlinks vor dem Fix:
+//   · bund/STHG/art_76       «Bundesgesetzes vom 20. September 1949 über die
+//                             Militärversicherung» → MVG (geltend: 19.6.1992)
+//   · bund/OR/disp_u13_art_6  Berufsbildungsgesetz 1963 → BBG (13.12.2002)
+//   · bund/BBV/art_74         Berufsbildungsgesetz 1978 → BBG
+//   · bund/LMG/art_43         Beschaffungsgesetz 1994 → BöB (21.6.2019)
+//
+// FIX (§1): Ein im Text ZITIERTES Datum wird gegen das Erlassdatum des Ziels
+// geprüft. Passt es nicht — oder ist für das Ziel kein Erlassdatum bekannt —,
+// wird NICHT verlinkt. Zitier-Tippfehler der Quelle (ZH-211.11 art_13 IPRG
+// «17.9.1987», ATSV art_17_b IVG «19.6.1995») werden dabei zu Text; das ist die
+// konservative und damit richtige Seite.
+//
+// QUELLE (§5, §7): `kopf.erlassdatum` des Struktur-Sidecars
+// `public/normtext/struktur/bund/<KEY>.json` — von `scripts/normtext/
+// kopf-extrahiere.ts` aus der amtlichen Fedlex-Fassung übernommen
+// (`<p class="erlassdatum">vom 19. Juni 1992 (Stand am 1. Januar 2024)</p>`);
+// Quelle-URL und Stand stehen im Register. Diese Tabelle ist eine
+// deterministische PROJEKTION davon, keine zweite Wahrheit: der Wächter
+// `src/tests/fedlex-positivliste.test.ts` vergleicht JEDEN Wert gegen das
+// Sidecar und reisst bei Abweichung oder fehlendem Eintrag.
+export const ERLASSDATUM: Partial<Record<FedlexGesetz, string>> = {
+  'AHVG': '1946-12-20',
+  'AHVV': '1947-10-31',
+  'AIG': '2005-12-16',
+  'AMBV': '2018-11-14',
+  'ASYLG': '1998-06-26',
+  'ATSG': '2000-10-06',
+  'ATSV': '2002-09-11',
+  'AVIG': '1982-06-25',
+  'AVIV': '1983-08-31',
+  'AVO': '2005-11-09',
+  'AdoV': '2011-06-29',
+  'ArG': '1964-03-13',
+  'BANKG': '1934-11-08',
+  'BBG': '2002-12-13',
+  'BBV': '2003-11-19',
+  'BEG': '2008-10-03',
+  'BETMG': '1951-10-03',
+  'BGBB': '1991-10-04',
+  'BGBM': '1995-10-06',
+  'BGFA': '2000-06-23',
+  'BGG': '2005-06-17',
+  'BGOE': '2004-12-17',
+  'BMV': '2009-06-24',
+  'BOEB': '2019-06-21',
+  'BPG': '2000-03-24',
+  'BPR': '1976-12-17',
+  'BUEG': '2014-06-20',
+  'BV': '1999-04-18',
+  'BVG': '1982-06-25',
+  'BVV 2': '1984-04-18',
+  'BVV 3': '1985-11-13',
+  'BankV': '2014-04-30',
+  'BetmKV': '2011-05-25',
+  'BewG': '1983-12-16',
+  'BewV': '1984-10-01',
+  'CO2-Gesetz': '2011-12-23',
+  'ChemV': '2015-06-05',
+  'DBG': '1990-12-14',
+  'DESG': '2001-10-05',
+  'DSG': '2020-09-25',
+  'DSV': '2022-08-31',
+  'DesV': '2002-03-08',
+  'EBG': '1957-12-20',
+  'ELG': '2006-10-06',
+  'ELV': '1971-01-15',
+  'ENTG': '1930-06-20',
+  'ENTSG': '1999-10-08',
+  'EOG': '1952-09-25',
+  'ERV': '2012-06-01',
+  'EnG': '2016-09-30',
+  'EpG': '2012-09-28',
+  'EpV': '2015-04-29',
+  'FAMZG': '2006-03-24',
+  'FAV': '2015-11-25',
+  'FDV': '2007-03-09',
+  'FIDLEG': '2018-06-15',
+  'FIDLEV': '2019-11-06',
+  'FINFRAG': '2015-06-19',
+  'FINIG': '2018-06-15',
+  'FINIV': '2019-11-06',
+  'FINMAG': '2007-06-22',
+  'FMG': '1997-04-30',
+  'FZG': '1993-12-17',
+  'FZV': '1994-10-03',
+  'FamZV': '2007-10-31',
+  'FinfraV': '2015-11-25',
+  'FusG': '2003-10-03',
+  'GLG': '1995-03-24',
+  'GSCHG': '1991-01-24',
+  'GWG': '1997-10-10',
+  'HMG': '2000-12-15',
+  'IPRG': '1987-12-18',
+  'IRSG': '1981-03-20',
+  'IVG': '1959-06-19',
+  'IVV': '1961-01-17',
+  'JSTG': '2003-06-20',
+  'JStPO': '2009-03-20',
+  'KAG': '2006-06-23',
+  'KG': '1995-10-06',
+  'KKG': '2001-03-23',
+  'KKV': '2006-11-22',
+  'KOV': '1911-07-13',
+  'KVG': '1994-03-18',
+  'KVV': '1995-06-27',
+  'LFG': '1948-12-21',
+  'LMG': '2014-06-20',
+  'MG': '1995-02-03',
+  'MSchG': '1992-08-28',
+  'MSchV': '1992-12-23',
+  'MStG': '1927-06-13',
+  'MStP': '1979-03-23',
+  'MVG': '1992-06-19',
+  'MVV': '1993-11-10',
+  'MWSTG': '2009-06-12',
+  'NBV': '2004-03-18',
+  'NHG': '1966-07-01',
+  'NHV': '1991-01-16',
+  'OHG': '2007-03-23',
+  'OR': '1911-03-30',
+  'PARLG': '2002-12-13',
+  'PARTG': '2004-06-18',
+  'PAVO': '1977-10-19',
+  'PRG': '1993-06-18',
+  'PUBLG': '2004-06-18',
+  'PUEG': '1985-12-20',
+  'PatG': '1954-06-25',
+  'PatV': '1977-10-19',
+  'RDV': '2012-11-14',
+  'RPG': '1979-06-22',
+  'RVOG': '1997-03-21',
+  'STBOG': '2010-03-19',
+  'STHG': '1990-12-14',
+  'SVG': '1958-12-19',
+  'SchKG': '1889-04-11',
+  'SortG': '1975-03-20',
+  'StG': '1973-06-27',
+  'StGB': '1937-12-21',
+  'StPO': '2007-10-05',
+  'THG': '1995-10-06',
+  'TxG': '2004-10-08',
+  'URG': '1992-10-09',
+  'URV': '1993-04-26',
+  'USG': '1983-10-07',
+  'UVG': '1981-03-20',
+  'UVPV': '1988-10-19',
+  'UVV': '1982-12-20',
+  'UWG': '1986-12-19',
+  'VAG': '2004-12-17',
+  'VAM': '2018-09-21',
+  'VEV': '2018-08-15',
+  'VFV': '1961-05-26',
+  'VG': '1958-03-14',
+  'VGG': '2005-06-17',
+  'VIL': '1994-11-23',
+  'VIntA': '2018-08-15',
+  'VKKG': '2002-11-06',
+  'VKL': '2002-07-03',
+  'VMWG': '1990-05-09',
+  'VSTRR': '1974-03-22',
+  'VStG': '1965-10-13',
+  'VStV': '1966-12-19',
+  'VTS': '1995-06-19',
+  'VVEA': '2015-12-04',
+  'VVG': '1908-04-02',
+  'VVK': '2007-02-14',
+  'VZAE': '2007-10-24',
+  'VZV': '1976-10-27',
+  'VeVA': '2005-06-22',
+  'VwVG': '1968-12-20',
+  'WAG': '1991-10-04',
+  'WaV': '1992-11-30',
+  'ZEMIS-V': '2006-04-12',
+  'ZGB': '1907-12-10',
+  'ZPO': '2008-12-19',
+  'ZentV': '2001-11-30',
+};
+
+// Monatsnamen der amtlichen Zitier-Konvention; die Abkürzung («18. Dez. 1987»)
+// löst über ein EINDEUTIGES Präfix ab drei Buchstaben auf. Mehrdeutiges («Ju»)
+// bleibt unauflösbar → kein Link (§1, nie raten).
+const MONATE = ['Januar', 'Februar', 'März', 'April', 'Mai', 'Juni', 'Juli',
+  'August', 'September', 'Oktober', 'November', 'Dezember'] as const;
+
+/** Zitiertes Datum («20. Dezember 1946», «18. Dez. 1987») → ISO, sonst null. */
+export function zitiertesDatumIso(roh: string): string | null {
+  const m = /^\s*(\d{1,2})\.\s*([A-Za-zÄÖÜäöüß]+)\.?\s+(\d{4})\s*$/.exec(roh.replace(/­/g, ''));
+  if (!m) return null;
+  const wort = m[2].toLowerCase();
+  const treffer = MONATE.map((x, i) => [x.toLowerCase(), i] as const)
+    .filter(([x]) => x === wort || (wort.length >= 3 && x.startsWith(wort)));
+  if (treffer.length !== 1) return null; // unbekannt oder mehrdeutig → kein Link
+  return `${m[3]}-${String(treffer[0][1] + 1).padStart(2, '0')}-${m[1].padStart(2, '0')}`;
+}
+
+/**
+ * Zeit-Kante (§1): Passt ein im Text zitiertes Erlassdatum zum Ziel-Erlass?
+ * Ohne zitiertes Datum gibt es nichts zu widerlegen → true. Mit Datum muss das
+ * Ziel ein bekanntes Erlassdatum haben UND übereinstimmen — sonst zitiert der
+ * Text einen anderen (i. d. R. aufgehobenen) Erlass und wird nicht verlinkt.
+ */
+export function datumPasst(gesetz: FedlexGesetz, rohDatum: string | null | undefined): boolean {
+  if (!rohDatum) return true;
+  const soll = ERLASSDATUM[gesetz];
+  if (!soll) return false; // Ziel ohne belegtes Erlassdatum → nicht prüfbar → kein Link
+  return zitiertesDatumIso(rohDatum) === soll;
+}

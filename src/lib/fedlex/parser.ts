@@ -15,7 +15,7 @@ import {
   KUERZEL_TOKENS,
   TITEL_FRAGMENTE_ESC,
 } from './erkennung';
-import type { FremdEbene } from './positivliste';
+import { datumPasst, type FremdEbene } from './positivliste';
 
 // ─── Bund-Normverweise im Fliesstext finden (Inline-Auto-Linker) ───────────
 //
@@ -157,6 +157,28 @@ const N2_ARTNR_RE = new RegExp(N2_ARTNR, 'g');
 // Name nicht das gefundene Bundesgesetz → kein Link (§1; gemessener Falschlink
 // BE-154.21 auf main 70002a287). Dasselbe Kürzel wird in die Region eingezogen.
 const KLAMMER_NACH_NAME = new RegExp('^\\s*(?:vom\\s+' + N2_DATUM + '\\s*)?\\(([^()]{1,40})\\)');
+// ─── Fix-Runde 1 zu W2·20 (Gegenprüfung 1.9.2026): zwei Kanten desselben Lecks ─
+//
+// (a) PRÄFIX-BINDUNG. Kurztitel und Titel-Fragment endeten bloss mit `\b`. Ein
+//     LÄNGERER amtlicher Titel, dessen Präfix in der Positivliste steht, band
+//     still auf den kürzeren Erlass — belegter Falschlink vor dem Fix:
+//     kanton/BS/132.100/art_4 «Art. 5 des Bundesgesetzes über die politischen
+//     Rechte der Auslandschweizer vom 19. Dezember 1975» → BPR (SR 161.1);
+//     gemeint ist das BPRAS (SR 161.5). Folgt hinter dem Namen ein weiteres
+//     TITELWORT (grossgeschrieben, ggf. hinter bis zu drei amtlichen Binde-
+//     wörtern), ist der zitierte Erlass NICHT der gefundene → kein Link (§1).
+//     Nicht als Fortsetzung zählen: Datums-Einschub («vom …» — «vom» steht
+//     bewusst NICHT in der Bindewort-Liste), Klammer, Komma und Satzende.
+// (b) ZEIT-KANTE. Das Datum wurde gelesen und ungeprüft verworfen; siehe
+//     `datumPasst` (positivliste.ts) für Belege und Quelle des Erlassdatums.
+const TITEL_FORTSETZUNG = new RegExp(
+  '^\\s+(?:(?:der|die|das|des|dem|den|und|über|für|zur|zum|im|in|an|auf|von|betreffend|gegen|sowie)\\s+){0,3}[A-ZÄÖÜ]',
+);
+// Datums-Einschub INNERHALB der erkannten Einheit («Bundesgesetzes vom D über …»,
+// «des Bundesgesetzes vom D über … (KÜRZEL)») bzw. unmittelbar dahinter
+// («des Datenschutzgesetzes vom D», «… über die politischen Rechte vom D»).
+const DATUM_IN_EINHEIT = new RegExp('\\bvom\\s+(' + N2_DATUM + ')');
+const DATUM_NACH_NAME = new RegExp('^\\s*vom\\s+(' + N2_DATUM + ')');
 /** Woran das Fremdgesetz erkannt wurde (Mess-Klassen im V-1-Tor). */
 export type FremdSignal = 'klammer' | 'genitiv' | 'titel';
 
@@ -211,6 +233,13 @@ export function fremdRoutingFormB(
     : m[4] ? erkenneGenitivGesetz(m[4], ebene)
     : erkenneTitelGesetz(m[5], m[6], ebene);
   if (!gesetz) return null; // Kein auflösbares Signal → kein Link (§1)
+  // Fix-Runde 1 (a): der Name endet hier — folgt ein weiteres Titelwort, meint
+  // der Text einen LÄNGEREN Erlass-Titel (BS-132.100 art_4 → BPRAS, nicht BPR).
+  const nachName = rest.slice(m[0].length);
+  if (signal !== 'klammer' && TITEL_FORTSETZUNG.test(nachName)) return null;
+  // Fix-Runde 1 (b): zitiertes Datum muss das Erlassdatum des Ziels sein.
+  const datum = DATUM_IN_EINHEIT.exec(m[0])?.[1] ?? DATUM_NACH_NAME.exec(nachName)?.[1] ?? null;
+  if (!datumPasst(gesetz, datum)) return null;
   let regionEnd = m[0].length;
   if (signal !== 'klammer') {
     const k = KLAMMER_NACH_NAME.exec(rest.slice(regionEnd));
@@ -523,9 +552,17 @@ export function artikelnPluralVerweise(text: string, ebene: FremdEbene = 'bund')
         : sm[5] ? erkenneTitelGesetz(sm[5], sm[6], ebene) : null;
       // V-7: Klammer nach Name/Titel (auch hinter einem Datum) muss DASSELBE
       // Gesetz nennen — sonst ist der Name nicht das gefundene Bundesgesetz (§1).
+      const nachSignal = rest.slice(sm[0].length);
       if (fremd && !sm[1]) {
-        const k = KLAMMER_NACH_NAME.exec(rest.slice(sm[0].length));
+        const k = KLAMMER_NACH_NAME.exec(nachSignal);
         if (k && erkenneFedlexGesetz(k[1]) !== fremd) fremd = null;
+        // Fix-Runde 1 (a): weiteres Titelwort ⇒ längerer Titel ⇒ kein Link (§1).
+        if (fremd && TITEL_FORTSETZUNG.test(nachSignal)) fremd = null;
+      }
+      // Fix-Runde 1 (b): Zeit-Kante — zitiertes Datum gegen das Erlassdatum.
+      if (fremd) {
+        const datum = DATUM_IN_EINHEIT.exec(sm[0])?.[1] ?? DATUM_NACH_NAME.exec(nachSignal)?.[1] ?? null;
+        if (!datumPasst(fremd, datum)) fremd = null;
       }
       if (fremd) end = pos + sm[0].length;
       else unterdruecken = true; // Klammer-Kürzel ∉ FEDLEX / Name nicht auflösbar → nie ein Falsch-Ziel (§1)

@@ -584,6 +584,40 @@ describe('fremdRoutingFormB — Positivliste V-7 (Kurztitel-Geltung, Volltitel, 
   it('Präfix-Schutz: ein längerer Titel ist kein Treffer für ein kürzeres Fragment', () => {
     // «über die Finanzinstitute» (FINIG) darf «über die Finanzinstitutsaufsicht» nicht binden.
     expect(fremdRoutingFormB(' des Bundesgesetzes über die Finanzinstitutsaufsicht gilt', '5')).toBeNull();
+    // ROT-BEWEIS Fix-Runde 1 (§6.7, Gegenprüfung 1.9.2026): der Wortlaut aus
+    // kanton/BS/132.100/art_4 Abs. 4 — vor dem Fix band das Fragment «über die
+    // politischen Rechte» auf BPR (SR 161.1); gemeint ist das eigenständige
+    // BPRAS (SR 161.5, nicht im Korpus). Das Titelwort NACH dem Fragment ist
+    // das deterministische Signal, dass ein LÄNGERER Titel zitiert wird.
+    const bs = ' des Bundesgesetzes über die politischen Rechte der Auslandschweizer vom 19. Dezember 1975 gemeldet haben.';
+    expect(fremdRoutingFormB(bs, '5', undefined, 'kanton')).toBeNull();
+    expect(fremdRoutingFormB(bs, '5', undefined, 'bund')).toBeNull();
+    expect(artikelnPluralVerweise(
+      'Auslandschweizer, die sich gemäss den Artikeln 5 und 6 des Bundesgesetzes über die politischen Rechte der Auslandschweizer vom 19. Dezember 1975 gemeldet haben.',
+      'kanton',
+    )[0].fremd).toBeNull();
+    // Der KURZE Titel selbst bleibt ein Treffer (kein Rückbau des V-7b-Gewinns).
+    expect(fremdRoutingFormB(' des Bundesgesetzes über die politischen Rechte gilt', '5', undefined, 'kanton')?.gesetz).toBe('BPR');
+  });
+
+  it('Zeit-Kante: ein zitierter aufgehobener Vorgänger-Erlass wird nicht auf das geltende Gesetz verlinkt', () => {
+    // ROT-BEWEIS Fix-Runde 1 (§6.7): Wortlaut aus bund/STHG/art_76 — das
+    // Militärversicherungsgesetz von 1949 ist aufgehoben, das geltende MVG
+    // datiert vom 19.6.1992 und zählt anders. Vor dem Fix: Link auf MVG.
+    const sthg = ' Absatz 2 des Bundesgesetzes vom 20. September 1949 über die Militärversicherung ist hinsichtlich';
+    expect(fremdRoutingFormB(sthg, '47')).toBeNull();
+    expect(artikelnPluralVerweise('nach den Artikeln 47 und 48 des Bundesgesetzes vom 20. September 1949 über die Militärversicherung')[0].fremd).toBeNull();
+    // Dasselbe Muster, weitere belegte Fundstellen (OR disp_u13_art_6 / BBV 74 / LMG 43).
+    expect(fremdRoutingFormB(' des Bundesgesetzes vom 19. April 1978 über die Berufsbildung', '74')).toBeNull();
+    expect(fremdRoutingFormB(' des Bundesgesetzes vom 16. Dezember 1994 über das öffentliche Beschaffungswesen', '43')).toBeNull();
+    // Das GELTENDE Datum bindet weiterhin — auch abgekürzt geschrieben.
+    expect(fremdRoutingFormB(' Absatz 2 des Bundesgesetzes vom 19. Juni 1992 über die Militärversicherung ist', '47')?.gesetz).toBe('MVG');
+    expect(fremdRoutingFormB(' des Bundesgesetzes vom 20. Dez. 1946 über die Alters- und Hinterlassenenversicherung', '71')?.gesetz).toBe('AHVG');
+    // Kurztitel-Genitiv mit Datum: falsches Datum ⇒ kein Link, richtiges ⇒ Link.
+    expect(fremdRoutingFormB(' des Bankengesetzes vom 1. Januar 2000 (BankG) werden', '7')).toBeNull();
+    expect(fremdRoutingFormB(' des Bankengesetzes vom 8. November 1934 (BankG) werden', '7')?.gesetz).toBe('BANKG');
+    // Mehrdeutige Monats-Abkürzung ist nicht auflösbar → kein Link (§1).
+    expect(fremdRoutingFormB(' des Bundesgesetzes vom 19. Ju. 1992 über die Militärversicherung', '47')).toBeNull();
   });
 
   it('Signal-Feld unterscheidet Klammer, Genitiv und Titel', () => {
