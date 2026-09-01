@@ -645,7 +645,7 @@ Turso-Sync mit Recall-Feldern gefahren, Produktions-Probe grün — Live-Probe
 31.8. positiv; + Budget-Zeile deklariert senken + UI-Abdeckungszeile, sobald
 Design-TABU-Fläche frei).
 
-**Phase I — Masse mit Schleife:** Tranche A (155: Ordner 3+10+4 komplett;
+**Phase I — Masse mit Schleife:** Tranche A (amtlich **170**, nicht 155 — Zählkorrektur PR #614, 1.9.2026: Ordner 3+10+4 komplett;
 Vorprüfungen GO 31.8., Grössen 10,3 MB, Fallen im Skill verankert) →
 intensive Prüfrunde (mehrere unabhängige Prüf-Agenten + Messbank + Tore) →
 Befunde fixen → Tranche B (236 + die 5 Ordner-1-Auffüller) → Schleife →
@@ -756,6 +756,25 @@ unverändert.)*
   scraping-swiss-official-sources; Prüfer: gegenpruefung) + TABU-Flächen +
   Netz-Disziplin (~1 req/s, UA mit Kontakt) + O2/O3-Pflichten + «KEIN Push/
   PR/Quittung ausser beauftragt». Orchestrator kopiert, statt neu zu texten.
+- **O7 · `zh-quellen.ts` schreiben statt drucken (Wurzel-Fix, offen seit
+  1.9.2026):** Das Auflöse-Werkzeug DRUCKT heute Einträge, die jemand in
+  `zh-quellen.ts` einsetzt. Mit Tranche A ist die Datei auf 1206 Zeilen
+  gewachsen und musste in die §6.6-Baseline aufgenommen werden
+  (`scripts/schlankheit-bestand.json`) — ein Workaround, kein Zustand:
+  `check-schlankheit.ts` schliesst `*.generated.ts` ausdrücklich aus, «weil
+  ihre Zeilenzahl eine Funktion der Quelldaten ist, kein Wartbarkeits-Signal»,
+  und genau das trifft auf diese Liste zu. FIX: `--schreiben`-Modus, der die
+  beiden Arrays nach `zh-quellen.generated.ts` schreibt; `zh-quellen.ts`
+  behält Interface, Doku und Re-Export und fällt unter 800 Zeilen; der
+  Baseline-Eintrag wird beim selben Schritt wieder GELÖSCHT, nicht bloss
+  stehen gelassen. Vorsicht: `ZH_ZURUECKGESTELLT` trägt GEMESSENE Befunde
+  (Tor-Ausgaben), die der Endpunkt nicht liefert — der Schreib-Modus muss sie
+  erhalten, nicht überschreiben (§2b: Belege altern nicht).
+  Nebenbefund zum Mitnehmen: `schlankheit:update` schreibt die GANZE Baseline
+  neu und hebt dabei die Deckel fremder, ungeänderter Dateien mit (gemessen
+  1.9.2026: normtext-snapshot.ts 1589 → 1682, adapter-htm.ts 957 → 1022 …).
+  Wer einen Eintrag aufnimmt, nimmt NUR seinen auf — sonst wächst die Baseline
+  still mit, genau der Fehlmodus, den das Tor benennt.
 
 *(Bereits eingelöst diese Session: geteilte Scratch-Werkzeuge — Messbank,
 E1-Skripte, PDF-Ablagen — werden agentenübergreifend wiederverwendet;

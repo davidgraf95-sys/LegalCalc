@@ -142,6 +142,8 @@ export function berechne(): Artefakt {
       // V-3: `leserV3Modell` gibt genau diese Karte an `useInternRefs` weiter
       // (Bund ⇒ kein Kanton ⇒ undefined ⇒ die Weiche ruht).
       kantonKuerzel: karteFuerErlass(kantonKarten, e),
+      // V-7: NormText leitet die Ebene aus dem Basispfad ab (`/gesetze/kanton/…`).
+      ebene: e.ebene === 'kanton' ? 'kanton' : 'bund',
     };
 
     for (const eintrag of snap.eintraege) {
@@ -152,7 +154,7 @@ export function berechne(): Artefakt {
         const fremdKey = chapeauZielFremdgesetz(b.text ?? '', e.kuerzel);
         const fremdItems = etabliertFremdgesetz(b.text ?? '', e.kuerzel);
         const itemCtx: Ctx | null = fremdKey
-          ? { tokenMap: new Map(), eigenesKuerzel: '', paragrafDesigniert: false, fremdKuerzel: fremdKey }
+          ? { tokenMap: new Map(), eigenesKuerzel: '', paragrafDesigniert: false, fremdKuerzel: fremdKey, ebene: leser.ebene }
           : fremdItems ? null : leser;
 
         const texte: { text: string; ctx: Ctx | null }[] = [{ text: b.text ?? '', ctx: leser }];
@@ -250,6 +252,11 @@ export function selbsttest(): void {
   const chapeau: Ctx = {
     tokenMap: new Map(), eigenesKuerzel: '', paragrafDesigniert: false, fremdKuerzel: 'AHVG',
   };
+  // V-7: kantonaler Art.-Erlass (AR-146.1 Datenschutzgesetz) — Ebene «kanton».
+  const kantonArt: Ctx = {
+    tokenMap: new Map([['7', '7']]),
+    eigenesKuerzel: 'AR1461', registerKuerzel: 'DSG AR', paragrafDesigniert: false, ebene: 'kanton',
+  };
   const proben: [string, Ctx | null, string, boolean][] = [
     // Text, Kontext, erwartete Klasse der ERSTEN Stelle, erwarteter Selbstmarker
     ['Massgeblich ist Art. 336c OR für diesen Fall.', artErlass, 'anker-fedlex', false],
@@ -308,6 +315,24 @@ export function selbsttest(): void {
     ['Vorbehalten bleibt Art. 65 SSV.', ssv, 'anker-self', false],
     // … derselbe Anker in einem ANDEREN Erlass bleibt der Fedlex-Chip.
     ['Vorbehalten bleibt Art. 65 SSV.', artErlass, 'anker-fedlex', false],
+    // ── V-7/V-8 (Erlassnamen-Positivliste, Kürzel-Schreibweisen) ────────────
+    // V-7b Volltitel mit Datums-Einschub, Bund-Kontext.
+    ['Es gilt Art. 7 des Bundesgesetzes vom 20. Dezember 1946 über die Alters- und Hinterlassenenversicherung.', ssv, 'n2b-titel', false],
+    // … derselbe Volltitel in einem KANTONALEN Erlass (Kopf «Bundesgesetzes» gilt überall).
+    ['Es gilt Art. 80 des Bundesgesetzes über Schuldbetreibung und Konkurs.', kantonArt, 'n2b-titel', false],
+    // … Kopf «Verordnung» nur im Bund; im Kanton bleibt es der des/der-Guard.
+    ['Es gilt Art. 7 der Verordnung über die Krankenversicherung.', ssv, 'n2b-titel', false],
+    ['Es gilt Art. 7 der Verordnung über die Krankenversicherung.', kantonArt, 'art-desder-guard', false],
+    // V-7a Kurztitel mit Geltung «bund»: im Bund Link, im Kanton Text (AR-146.1 heisst gleich).
+    ['Es gilt Art. 7 des Datenschutzgesetzes.', ssv, 'n2b-genitiv', false],
+    ['Es gilt Art. 7 des Datenschutzgesetzes.', kantonArt, 'art-desder-guard', false],
+    // Klammer hinter dem Datum widerspricht dem Namen (BE-154.21, Falschlink auf main) ⇒ kein Link.
+    ['Es gilt Art. 21 des Datenschutzgesetzes vom 19. Februar 1986 (KDSG).', ssv, 'art-desder-guard', false],
+    // Volltitel des GELESENEN Erlasses ist kein Fremdverweis.
+    ['Es gilt Art. 5 des Bundesgesetzes über die Alters- und Hinterlassenenversicherung.', artErlass, 'art-desder-guard', false],
+    // V-8 amtliche Kürzel-Schreibweise: Anker und N2-Unterdrückung erkennen «BankG».
+    ['Massgeblich ist Art. 1b BankG.', ssv, 'anker-fedlex', false],
+    ['Es gilt Artikel 4 Absatz 2 des FinfraG sinngemäss.', ssv, 'art-n2-fremdkuerzel', false],
   ];
   for (const [text, ctx, sollKlasse, sollSelbst] of proben) {
     const st = stellenImText(text, ctx, false);

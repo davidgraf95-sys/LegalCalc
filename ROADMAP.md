@@ -77,21 +77,24 @@ zgb-a36-anhang: Die ZGB-Gliederung zeigt 74 Artikel des Anhangs «Wortlaut der f
      Das Lagebild liest diesen Block mechanisch (davidFragen, scripts/plan/bildDaten.ts) —
      beantwortete Fragen HIER löschen, dann verschwinden sie von der Seite (§5). -->
 
-<!-- @queue: QS-BASIS, QS-PERF, QS-MONITOR-ROT, W2·13-KANTONE-DATEN, W2·5l-NORMTEXT-B2, QS-KORPUS, W2·20-VERWEIS-SCHAERFE, W2·5m-LESER-V3, W2·13-KANTONE-DRIFT, W3·12, W2·5g-ZEIT, W2·14-SIGNAL, W2·6 -->
+<!-- @queue: QS-BASIS, QS-PERF, QS-MONITOR-ROT, W2·13-KANTONE-DATEN, W2·5l-NORMTEXT-B2, QS-KORPUS, W2·20-VERWEIS-SCHAERFE, W2·5m-LESER-V3, W2·21-ZULIEFERER, W2·5n-BUND-VOLL, W2·13-KANTONE-DRIFT, W3·12, W2·5g-ZEIT, W2·14-SIGNAL, W2·6 -->
 <!-- ^ SSoT der Bau-Reihenfolge: plan:next wertet die @queue VOR der Dokumentreihenfolge aus;
      Integrität erzwingt check:plan Regel 8. Priorität ändern = NUR diese Zeile ändern.
      Ohne Queue-Eintrag entscheidet die Dokumentreihenfolge — Produkt-Felder stehen darum
      vor `Betrieb & Prüfstrasse`. -->
 
-> **⬆ OBERSTER OFFENER SCHRITT: `QS-PERF`** (Leser-Tempo); parallel im Bau (`wip`): `QS-BASIS`
+> **⬆ OBERSTER OFFENER SCHRITT: `W2·13-KANTONE-DATEN`**; parallel im Bau (`wip`): `QS-PERF` (Leser-Tempo), `QS-BASIS`
 > (K3-Scharfschaltung Suche-Edge, David-Go liegt vor) und `QS-MONITOR-ROT` (Session 1.9.2026).
 > **Zielbild-Dekret 1.9.2026 (David):** der Gesetzesleser steht im Vordergrund — Ziel sind
 > möglichst alle Gesetze, die ein Schweizer Jurist braucht, und der beste Gesetzesdarsteller für
 > Schweizer Juristen auf dem Markt; Fundament zuerst, wo es dem Leser dient. Die `@queue` bildet
 > die vier Blöcke ab: **1 Fundament** (Suche-Edge · Leser-Tempo · Normen-Monitor · Tag-Leser) →
 > **2 Text-Treue Bund** (Schlusstitel/Fussnoten · Korpus-Lücken · Verweis-Schärfe · Leser-V3-Rest)
-> → **3 Kantone, nur Deutschschweiz** (Entscheid David 1.9.2026: ZH und BS zuerst perfektionieren,
-> dann BE, AG, SG, LU; VD, GE, TI und fr/it-Fassungen ausdrücklich später) → **4 Differenzierung**
+> → **2b Zulieferer-Entscheid** (`W2·21-ZULIEFERER`: OpenCaseLaw & Co. anbinden statt nachbauen? —
+> Entscheid David) → **3 Kantone und Bund-Breite, nur Deutschschweiz** (Entscheid David 1.9.2026: ZH
+> und BS zuerst perfektionieren, dann **Bund-Vollabdeckung SR** (`W2·5n-BUND-VOLL`, billiger als jeder
+> Kanton), dann BE, AG, SG, LU mit fremdem Portal-Wissen als Vorlage und Zweitlesung; VD, GE, TI und
+> fr/it-Fassungen ausdrücklich später) → **4 Differenzierung**
 > (Zeitmaschine · Watchlist · Rechtsprechungs-Nachweis). Rechner, Vorlagen, Design-Wärme, FINMA
 > und Prozess-Schritte ohne Vorfall sind geparkt (`zielbild-gesetzesleser`). Fokus-Dekret 24.7.2026
 > bleibt darin enthalten. Wortlaute der Dekrete → `ROADMAP-CHRONIK.md`.
@@ -125,8 +128,8 @@ zgb-a36-anhang: Die ZGB-Gliederung zeigt 74 Artikel des Anhangs «Wortlaut der f
   - [ ] **des/der-Guard Bund passus-tolerant** *(K-5-Ausläufer, Messung 31.8.2026)* — hätte 371 Self-Links in 226 **Bundes**-Erlassen entfernt ⇒ fachliche Änderung mit eigenem Schritt (§6.3), nicht golden-neutral; Caveat: die «über»-Alternative erzeugt echte Self-Verweise (VTS art_222j), 7 von 8 Stichproben der Kandidaten waren falsch.
   - [ ] **«§ N» in Fremdgesetz-Chapeau-Items verlinken** *(K-5-Lücke, 31.8.2026)* — `ArtikelBody` baut `fremdIntern` ohne `paragrafDesigniert`; dort bleibt «§ N» unverlinkt (konservativ, §1-konform — Nachzug klein).
 
-- [~] **Verweis-Schärfe: Binnenverweise, Aussen-Anzeige, Inventar** *(`W2·20-VERWEIS-SCHAERFE`, Auftrag David 31.8.2026)*
-  <!-- @meta id: W2·20-VERWEIS-SCHAERFE · status: wip · blocker: null · dep: [] · feld: leser · fahrplan: fahrplaene/FAHRPLAN-VERWEIS-SCHAERFE.md -->
+- [ ] **Verweis-Schärfe: Binnenverweise, Aussen-Anzeige, Inventar** *(`W2·20-VERWEIS-SCHAERFE`, Auftrag David 31.8.2026)*
+  <!-- @meta id: W2·20-VERWEIS-SCHAERFE · status: ready · blocker: null · dep: [] · feld: leser · fahrplan: fahrplaene/FAHRPLAN-VERWEIS-SCHAERFE.md -->
   «Art. xx dieses Gesetzes» springt im Gesetz; Verweise nach ausserhalb sind als solche
   erkennbar; Inventar-Schärfe messbar statt Kommentar-Zahlen. Einheiten V-1 (Mess-Tor) →
   V-2 (Selbstmarker-Weiche) → V-3 (Kanton-Kürzel-Resolver) → V-4 (Aussen-Anzeige);
@@ -169,6 +172,16 @@ zgb-a36-anhang: Die ZGB-Gliederung zeigt 74 Artikel des Anhangs «Wortlaut der f
   **Detail:** [FAHRPLAN-NORMTEXT-DARSTELLUNG.md](fahrplaene/FAHRPLAN-NORMTEXT-DARSTELLUNG.md) §M13/§M14
   (§-Sigel nachgezogen 30.8.2026 — Regel 11 bindet).
   - [ ] **Tabellen in Gesetzen lesbar machen** *(hierher verschoben 1.9.2026, Zielbild Gesetzesleser)* — Beispiel-Defekt `/gesetze/kanton/BS-154.810#art-29`; Zellinhalte exakt wie Quelle, mehrdeutig ⇒ Block als Text belassen (§1). Grenze zu `K-7` beachten. [FAHRPLAN-GESETZES-UX.md](fahrplaene/FAHRPLAN-GESETZES-UX.md) §18.
+
+- [ ] **Bund-Vollabdeckung: alle SR-Erlasse mit deutschem Fedlex-XML** *(`W2·5n-BUND-VOLL`, Entscheid David 1.9.2026 nach Quellen-Sichtung)*
+  <!-- @meta id: W2·5n-BUND-VOLL · status: ready · blocker: null · dep: [] · feld: korpus · fahrplan: fahrplaene/FAHRPLAN-FEDLEX-PORTFOLIO.md -->
+  Ziel: von 238 gepinnten auf alle ~5'100–5'500 SR-Erlasse mit deutscher Akoma-Ntoso-Konsolidierung
+  (Inventar per SPARQL, Zweitlesung gegen die Inventare von Legalize-ch und OpenCaseLaw), über die
+  bestehende Fedlex-Pipeline — kein PDF-Weg. **Harte Auflage:** erst nach dem Register-Schnitt aus
+  `QS-PERF` (das 9,5-MB-Register darf nicht mitwachsen; Projektion je Erlass, Deckel `check:perf-budget`).
+  Golden byte-gleich für den Bestand; neue Erlasse Status «entwurf». **Fertig, wenn** das Inventar
+  0 fehlende deutsche XML-Konsolidierungen meldet.
+  **Detail:** [FAHRPLAN-FEDLEX-PORTFOLIO.md](fahrplaene/FAHRPLAN-FEDLEX-PORTFOLIO.md) §21.
 
 - [ ] **Kantonale Gesetze — Daten & Extraktion** *(`W2·13-KANTONE-DATEN`, Aufteilung 8.8.2026, sortenrein)*
   <!-- @meta id: W2·13-KANTONE-DATEN · status: ready · blocker: null · dep: [] · feld: korpus · fahrplan: fahrplaene/FAHRPLAN-KANTONE.md -->
@@ -217,6 +230,9 @@ zgb-a36-anhang: Die ZGB-Gliederung zeigt 74 Artikel des Anhangs «Wortlaut der f
   Reihenfolge-Entscheid 2.7.2026); erst öffnen, wenn keine andere Bulk-Tranche läuft.
   **Reihenfolge (Entscheid David 1.9.2026):** ZH → BS (Perfektionierung des vollständigen
   Bestands) → BE → AG → SG → LU; VD/GE/TI und alle fr/it-Fassungen zuletzt (Zielbild Deutschschweiz).
+  **Methode (1.9.2026):** Texte weiterhin selbst von den amtlichen Portalen (§7); Quellenlisten,
+  Portalpfade und Eigenheiten aus `opencaselaw/scrapers/cantonal_laws/*.py` (MIT) als Vorlage,
+  deren Artikelzahlen je Erlass als unabhängige Zweitlesung unserer Extraktion.
   **Detail:** [FAHRPLAN-GESETZE-IMPORT-3TIER.md](fahrplaene/FAHRPLAN-GESETZE-IMPORT-3TIER.md) §6.
 
 - [ ] **Datenhaltung-Bau: DB-Artefakt + Massen-Korpus + Edge-Suche** *(`W2·6-DATA`, Council 2.7.2026)*
@@ -252,6 +268,9 @@ zgb-a36-anhang: Die ZGB-Gliederung zeigt 74 Artikel des Anhangs «Wortlaut der f
     75 365 Artikel↔Entscheid-Kanten nennen den Artikel im Entscheid-Snapshot gar nicht; Stichprobe
     `bge_148_V_265` trägt `«Art. 4 BGE»` in `zitierteNormen` (Extraktions-Artefakt). Wurzel im
     Bezüge-/Zitat-Generator suchen (Risikopfad, Gegenprüfung), nie in den Daten flicken.
+    *Zuschnitt 1.9.2026:* zuerst den billigen **Filter** (Kante nur, wenn der Artikel im
+    Entscheid-Snapshot wörtlich steht — §1 sofort erfüllt), den Generator-Neubau erst nach
+    `W2·21-ZULIEFERER` (kommt der Graph von dort, entfällt er).
   - [ ] **Kernerlasse-Lücken Bund schliessen** *(Bestandsmessung 1.9.2026, Zielbild Gesetzesleser)* — EMRK (SR 0.101) ist nur PDF-Einbettung, kein Snapshot; EÖBV (SR 211.435.1) und AVG (SR 823.11) fehlen ganz. Fedlex-Adapter, Pin in `fedlex-cache.sh`, §7-Beleg; EMRK-Pin ersetzt die pdf-embed-Zeile nur, wenn der Fedlex-Konsolidierungstext vollständig ist (sonst Einbettung behalten, §8).
   - [ ] **Geltende BMV in den Korpus aufnehmen** — Totalrevision `cc/2025/408` (gleiche SR 412.103.1) fehlt; Nutzer finden nur den historischen Text.
   - [ ] **scope/decl-Sektionen von 12 Staatsverträgen ingestieren** — 23 amtliche Sektionen liegen ausserhalb `div#annex`; golden-Diff erwartet (neue amtliche Substanz).
@@ -288,6 +307,16 @@ zgb-a36-anhang: Die ZGB-Gliederung zeigt 74 Artikel des Anhangs «Wortlaut der f
 ---
 
 ## Rechtsprechung  *(`feld: rechtsprechung`)*
+
+- [ ] **Zulieferer-Entscheid: Nachweis-Index und Materialien anbinden statt nachbauen** *(`W2·21-ZULIEFERER`, Quellen-Sichtung David/Session 1.9.2026)*
+  <!-- @meta id: W2·21-ZULIEFERER · status: ready · blocker: null · dep: [] · feld: rechtsprechung · fahrplan: fahrplaene/FAHRPLAN-RECHTSPRECHUNG.md -->
+  Prüfschritt, kein Bau: Kann LexMetrik den Rechtsprechungs-Nachweis (Fundstelle + amtlicher Link),
+  den Botschaften-Artikel-Index und den Zitationsgraph von OpenCaseLaw (CC0) als Zulieferer nutzen —
+  §7-konform (nur Wegweiser, nie Wahrheit), als tägliche Datei statt Live-Abfrage (Zustandslosigkeit),
+  unter Ausschluss von Gerichten mit umgangenem Bot-Schutz? Ergebnis = Entscheidvorlage an David mit
+  Lizenz-/§7-Matrix je Datenschicht; bestimmt den Zuschnitt von Block 4 (`W2·6`, `W2·14-SIGNAL`-GER,
+  Materialien) und die Tiefe des Phantom-Kanten-Fixes in `QS-KORPUS`.
+  **Detail:** [FAHRPLAN-RECHTSPRECHUNG.md](fahrplaene/FAHRPLAN-RECHTSPRECHUNG.md) §15.
 
 - [ ] **Konsultieren-Klingen — Dach der Rechtsprechungs-Fläche** *(`W2·6`, `[OF]`, amtlich)*
   <!-- @meta id: W2·6 · status: ready · blocker: null · dep: [] · feld: rechtsprechung · fahrplan: fahrplaene/FAHRPLAN-RECHTSPRECHUNG.md -->
@@ -507,14 +536,27 @@ zgb-a36-anhang: Die ZGB-Gliederung zeigt 74 Artikel des Anhangs «Wortlaut der f
   **Detail:** [FAHRPLAN-SEO-A11Y-GOVERNANCE.md](fahrplaene/FAHRPLAN-SEO-A11Y-GOVERNANCE.md) §4/§5
   (§-Sigel nachgezogen 30.8.2026 — Regel 11 bindet).
 
-- [ ] **Geräte-Last / Performance** *(`QS-PERF`, `[OF]`)*
-  <!-- @meta id: QS-PERF · status: ready · blocker: null · dep: [] · feld: betrieb · fahrplan: fahrplaene/FAHRPLAN-PERFORMANCE.md -->
-  Nicht merklich langsamer, ohne Logikverlust (§15). Offen: M-Daten-Pfad (9,5-MB-`register.json` ist
-  der lohnendste Hebel) + Render-/Split-View-Feinschliff. Der **Erst-Render des OR braucht 8,4–17,2 s
+- [~] **Geräte-Last / Performance** *(`QS-PERF`, `[OF]`)*
+  <!-- @meta id: QS-PERF · status: wip · blocker: null · dep: [] · feld: betrieb · fahrplan: fahrplaene/FAHRPLAN-PERFORMANCE.md -->
+  Nicht merklich langsamer, ohne Logikverlust (§15). Der **Erst-Render des OR braucht 8,4–17,2 s
   bis zur Bedienbarkeit** (vermessen 17.8.2026, Nullprobe auf `main` 6/6 rot) — das ist die Wurzel
   des Shard-7-Rots und der Fix gehört hierher, nicht in eine Spec-Anpassung.
+  **Ergänzt 1.9.2026 (Leser-Tempo gebaut, A/B n=5, alte Zahl bleibt stehen — §0/2b):** Das
+  753-KB-`rechtsprechung/register.json` lädt nicht mehr auf Gesetzes-Leserseiten, und der Prerender
+  lädt Register/Struktur im Kopf vor → OR **10 368 → 7 899 ms @4×+4G (−23,8 %)**,
+  **38 296 → 27 432 ms @6×+3G (−28,4 %)**; ungedrosselt misst derselbe Basis-Stand **780 ms**, die
+  17.8.-Zahl ist dort also nicht mehr reproduzierbar. **Bestands-Defekt dabei gefunden UND gefixt:**
+  `InhaltsKopf` montierte die Sprung-Rückmeldungen beim Wechsel auf `kopfzeileSelbst` um → die
+  Deep-Link-Ansage «Springe zur verlinkten Stelle …» blinkte (Aus-Flanke auf die Millisekunde mit
+  dem Zweigwechsel, 3/3); jetzt EIN Träger mit zwei Zuständen, Markup byte-gleich, R7 50/50 grün,
+  volle e2e 722/722. **Offen:** der Snapshot-Preload (+3–10 %) hängt an einer ZWEITEN
+  Reihenfolge-Stelle im Spy-Effekt (`inhalt-hooks.tsx`, 20 Specs, nicht untersucht) ·
+  K3-Chunk-Kaskade · Reader-Kopf-Reflow (Design-Entscheid §13) · `hydrateRoot` (eigener PR unter
+  `QS-BASIS`).
   **Detail:** [FAHRPLAN-PERFORMANCE.md](fahrplaene/FAHRPLAN-PERFORMANCE.md) §1 (dort seit 29.8.2026
-  auch die vollständige Messreihe und der Reader-Kopf-Reflow-Befund, wörtlich aus der ROADMAP).
+  auch die vollständige Messreihe und der Reader-Kopf-Reflow-Befund, wörtlich aus der ROADMAP; §1-N3
+  trägt die A/B-Reihe vom 1.9.2026) und
+  [bibliothek/seo/leser-tempo-qs-perf-2026-09-01.md](bibliothek/seo/leser-tempo-qs-perf-2026-09-01.md).
 
 - [ ] **Optimierungs-Research Juli 2026** *(`QS-OPT`, `[OF]`)*
   <!-- @meta id: QS-OPT · status: parked · blocker: zielbild-gesetzesleser · dep: [] · feld: betrieb · fahrplan: fahrplaene/FAHRPLAN-OPTIMIERUNG-2026-07.md -->

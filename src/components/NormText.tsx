@@ -2,7 +2,7 @@ import { Fragment } from 'react';
 import {
   normVerweiseImText, fremdgesetzNachArtikel, fremdRoutingFormB,
   artikelnPluralVerweise, erkenneFedlexGesetz,
-  type NormVerweisSpan,
+  type NormVerweisSpan, type FremdEbene,
 } from '../lib/fedlex';
 import { NormChip } from './vorlagen/NormChip';
 import { RechtsprechungText } from './RechtsprechungLink';
@@ -407,7 +407,10 @@ function restMitIntern(s: string, key: string, intern?: InternRefs): React.React
   // FREMD-Pfade (N2b-Routing, Fremdgesetz-Chapeau) bleiben unberührt — sie
   // zeigen ohnehin nie auf den eigenen Erlass.
   const paragrafErlass = intern.paragrafDesigniert === true;
-  const pluralRegionen = artikelnPluralVerweise(s);
+  // V-7 (W2·20): Ebene des gelesenen Erlasses — in kantonalen Erlassen lösen
+  // nur ebenenübergreifend eindeutige Bund-Namen auf (`positivliste.ts`).
+  const ebene: FremdEbene = intern.basisPfad.startsWith('/gesetze/kanton/') ? 'kanton' : 'bund';
+  const pluralRegionen = artikelnPluralVerweise(s, ebene);
   const inPluralRegion = (idx: number) =>
     pluralRegionen.some((r) => idx >= r.oeffnerStart && idx < r.end);
   const out: React.ReactNode[] = [];
@@ -534,8 +537,10 @@ function restMitIntern(s: string, key: string, intern?: InternRefs): React.React
     // Darstellung, wie NORM_IM_TEXT-Treffer); die Existenz gegen den Ziel-Erlass
     // prüft das Popover beim Öffnen. Läuft VOR der Self-Link-Logik, damit «Artikel
     // 49a … (MStG)» nie fälschlich auf den eigenen Erlass (AIG art_49_a) zeigt.
-    const routing = fremdRoutingFormB(rest, m[1]);
-    if (routing) {
+    const routing = fremdRoutingFormB(rest, m[1], undefined, ebene);
+    // V-7: nennt der Volltitel den GELESENEN Erlass, ist es kein Fremdverweis —
+    // dann kein Fremd-Chip auf sich selbst; der Rest läuft durch die Self-Weichen.
+    if (routing && kuerzelKanon(routing.gesetz) !== eigenesKuerzel) {
       if (start > last) out.push(<RechtsprechungText key={`${key}-r${last}`} text={s.slice(last, start)} />);
       let cur = 0; // Cursor im rest-Text
       for (const g of routing.glieder) {
@@ -579,7 +584,9 @@ function restMitIntern(s: string, key: string, intern?: InternRefs): React.React
     // («Artikel 5 Absatz 1 über ein Projekt» UVPV 6a, «Art. 111 Abs. 1 der
     // Quellensteuer unterliegen» NW-521.1 118, «Artikel 109 Absatz 1bis über
     // die Tagfahrlichter» VTS 222m). Kein Link ist besser als ein falscher —
-    // ein RICHTIGER Link ist aber besser als keiner (§1/§8).
+    // ein RICHTIGER Link ist aber besser als keiner (§1/§8). V-7 (1.9.2026) holt
+    // die belegbaren Fälle VOR diesem Guard über die Form-B-Positivliste heraus
+    // (Kurztitel/Volltitel, `positivliste.ts`): Guard-Klasse 1 281→930 Stellen.
     if (!selbst && /^\s+(?:des|der|über|vom)\b/.test(rest)) continue;
     // N2 (Form A, ABGEKÜRZTE Kürzel-Form): Nennt der Verweis ein ANDERES
     // Bundesgesetz («Artikel 1a Absatz 1 Buchstabe c AHVG» in der AHVV → AHVG),

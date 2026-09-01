@@ -100,6 +100,20 @@ export function DeepLinkSkeleton() {
         // Anker weiter wie bisher. (Der Satz «die Lande-Bedingung könnte nie
         // eintreten» galt der früheren Warteschleife; seit der Übergabe unten
         // beim ersten Sichten des Ziels bleibt hier der Fall «Ziel kommt nie».)
+        // NACHGEMESSEN 1.9.2026 (QS-PERF/B5, BV#art-8, 6× Drossel, rAF-Sampler,
+        // n=3): Die Annahme «die Artikel erscheinen gemeinsam» trägt — alle 232
+        // Artikel stehen im SELBEN Frame im DOM, und `#art-8` erscheint auf die
+        // Millisekunde mit dem ersten `article[id^="art-"]` (1193/1227/1390 ms,
+        // beide Marker identisch). «Irgendein Artikel da» ist also nicht bloss
+        // plausibel, sondern gemessen dasselbe wie «der Reader steht»; dieser
+        // Zweig ist damit zustandsgekoppelt und bleibt unverändert.
+        // Der Fehlschluss der B5-Diagnose lag anderswo: die Ansage verschwand
+        // vorzeitig, weil `InhaltsKopf` beim Wechsel auf `kopfzeileSelbst`
+        // diese Komponente UNMOUNTETE (zwei return-Zweige, verschiedene
+        // Kind-Position) — Herleitung und Messreihe dort. Wer diesen Zweig
+        // künftig anfasst, prüft zuerst, ob der Reader seine Artikel noch in
+        // EINER Runde rendert; sonst gehört hier ein Vollständigkeits-Signal
+        // des Readers hin, kein «irgendein Artikel».
         if (document.querySelector('article[id^="art-"]')) { schliesse(); return; }
         setAktiv(true);
         raf = window.requestAnimationFrame(pruefe);
