@@ -71,8 +71,6 @@ k3-scharfschaltung-folgt: (historisch, QS-BASIS seit 1.9.2026 ready) QS-BASIS(d)
 -->
 
 <!-- @david-fragen
-fr-it-zielbild: «Alle Schweizer Juristen» schliesst Romandie und Tessin ein — heute 1'488 deutsche und 2 französische Erlasse. Bund auf FR/IT ist machbar (Fedlex liefert die Texte), VD/GE/TI sind von Natur aus fr/it. Empfehlung: Deutschschweiz zuerst fertig (Blöcke 1–3), FR/IT als eigener Block 2027. Ist das dein Zielbild?
-kantons-reihenfolge: Kantons-Ausbau in der Reihenfolge der Juristen-Dichte ZH → BE → VD → AG → SG → LU → GE (FAHRPLAN-KANTONE §K-G5); kleine Kantone bewusst auf Tarife beschränkt. Bestätigen oder umstellen?
 zgb-a36-anhang: Die ZGB-Gliederung zeigt 74 Artikel des Anhangs «Wortlaut der früheren Bestimmungen des sechsten Titels» bewusst NICHT (Alt-Kuration A36; es sind aufgehobene Alt-Fassungen, im Lesetext weiterhin vorhanden und verlinkbar). Deine Vorgabe 13.8. («Artikel-Ebene in allen Gesetzen») ist sonst korpusweit erfüllt. Sollen diese 74 Alt-Artikel AUCH in der Leiste erscheinen? Aufwand: eine Zeile. Empfehlung: Nein (Alt-Recht bläht die Navigation, Lesetext deckt es ab).
 -->
 <!-- ^ Offene Fragen an David OHNE eigenen blockierten Schritt (sonst gehören sie in @blockers).
@@ -92,7 +90,8 @@ zgb-a36-anhang: Die ZGB-Gliederung zeigt 74 Artikel des Anhangs «Wortlaut der f
 > Schweizer Juristen auf dem Markt; Fundament zuerst, wo es dem Leser dient. Die `@queue` bildet
 > die vier Blöcke ab: **1 Fundament** (Suche-Edge · Leser-Tempo · Normen-Monitor · Tag-Leser) →
 > **2 Text-Treue Bund** (Schlusstitel/Fussnoten · Korpus-Lücken · Verweis-Schärfe · Leser-V3-Rest)
-> → **3 Kantone nach Juristen-Dichte** (ZH-Tranchen → BE, VD, AG, SG, LU, GE) → **4 Differenzierung**
+> → **3 Kantone, nur Deutschschweiz** (Entscheid David 1.9.2026: ZH und BS zuerst perfektionieren,
+> dann BE, AG, SG, LU; VD, GE, TI und fr/it-Fassungen ausdrücklich später) → **4 Differenzierung**
 > (Zeitmaschine · Watchlist · Rechtsprechungs-Nachweis). Rechner, Vorlagen, Design-Wärme, FINMA
 > und Prozess-Schritte ohne Vorfall sind geparkt (`zielbild-gesetzesleser`). Fokus-Dekret 24.7.2026
 > bleibt darin enthalten. Wortlaute der Dekrete → `ROADMAP-CHRONIK.md`.
@@ -126,8 +125,8 @@ zgb-a36-anhang: Die ZGB-Gliederung zeigt 74 Artikel des Anhangs «Wortlaut der f
   - [ ] **des/der-Guard Bund passus-tolerant** *(K-5-Ausläufer, Messung 31.8.2026)* — hätte 371 Self-Links in 226 **Bundes**-Erlassen entfernt ⇒ fachliche Änderung mit eigenem Schritt (§6.3), nicht golden-neutral; Caveat: die «über»-Alternative erzeugt echte Self-Verweise (VTS art_222j), 7 von 8 Stichproben der Kandidaten waren falsch.
   - [ ] **«§ N» in Fremdgesetz-Chapeau-Items verlinken** *(K-5-Lücke, 31.8.2026)* — `ArtikelBody` baut `fremdIntern` ohne `paragrafDesigniert`; dort bleibt «§ N» unverlinkt (konservativ, §1-konform — Nachzug klein).
 
-- [ ] **Verweis-Schärfe: Binnenverweise, Aussen-Anzeige, Inventar** *(`W2·20-VERWEIS-SCHAERFE`, Auftrag David 31.8.2026)*
-  <!-- @meta id: W2·20-VERWEIS-SCHAERFE · status: ready · blocker: null · dep: [] · feld: leser · fahrplan: fahrplaene/FAHRPLAN-VERWEIS-SCHAERFE.md -->
+- [~] **Verweis-Schärfe: Binnenverweise, Aussen-Anzeige, Inventar** *(`W2·20-VERWEIS-SCHAERFE`, Auftrag David 31.8.2026)*
+  <!-- @meta id: W2·20-VERWEIS-SCHAERFE · status: wip · blocker: null · dep: [] · feld: leser · fahrplan: fahrplaene/FAHRPLAN-VERWEIS-SCHAERFE.md -->
   «Art. xx dieses Gesetzes» springt im Gesetz; Verweise nach ausserhalb sind als solche
   erkennbar; Inventar-Schärfe messbar statt Kommentar-Zahlen. Einheiten V-1 (Mess-Tor) →
   V-2 (Selbstmarker-Weiche) → V-3 (Kanton-Kürzel-Resolver) → V-4 (Aussen-Anzeige);
@@ -216,6 +215,8 @@ zgb-a36-anhang: Die ZGB-Gliederung zeigt 74 Artikel des Anhangs «Wortlaut der f
   <!-- @meta id: W3·12 · status: ready · blocker: null · dep: [] · feld: korpus · fahrplan: fahrplaene/FAHRPLAN-GESETZE-IMPORT-3TIER.md -->
   Grosser Kantons-Massenimport. Nach Leitprinzip 4 die nächste zu führende Datensäule (Davids
   Reihenfolge-Entscheid 2.7.2026); erst öffnen, wenn keine andere Bulk-Tranche läuft.
+  **Reihenfolge (Entscheid David 1.9.2026):** ZH → BS (Perfektionierung des vollständigen
+  Bestands) → BE → AG → SG → LU; VD/GE/TI und alle fr/it-Fassungen zuletzt (Zielbild Deutschschweiz).
   **Detail:** [FAHRPLAN-GESETZE-IMPORT-3TIER.md](fahrplaene/FAHRPLAN-GESETZE-IMPORT-3TIER.md) §6.
 
 - [ ] **Datenhaltung-Bau: DB-Artefakt + Massen-Korpus + Edge-Suche** *(`W2·6-DATA`, Council 2.7.2026)*

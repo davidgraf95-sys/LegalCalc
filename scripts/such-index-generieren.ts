@@ -41,19 +41,34 @@ const ZIEL = resolve(wurzel, 'public/such-index/artikel.json');
 export const EBENEN = ['bund', 'kanton'] as const;
 export type Ebene = (typeof EBENEN)[number];
 
+/** Ebenen, die der Generator OHNE gesetzte Variable schreibt — seit der
+ *  K3-Scharfschaltung (1.9.2026) nur noch der Bund. Begründung s. u. */
+export const EBENEN_DEFAULT: readonly Ebene[] = ['bund'];
+
 /**
- * EBENEN-WAHL über `SUCHE_INDEX_EBENEN` — VORBEREITET, NICHT SCHARF
- * (QS-BASIS (d) K3, 31.8.2026).
+ * EBENEN-WAHL über `SUCHE_INDEX_EBENEN` — SCHARF seit 1.9.2026
+ * (QS-BASIS (d) K3; vorbereitet 31.8.2026, Default bis dahin «alle Ebenen»).
  *
- * Default ist UNVERÄNDERT «alle Ebenen»: ohne gesetzte Variable ist dieser Schalter
- * wirkungslos und `artikel.json` byte-gleich wie zuvor. Bewiesen — nicht behauptet —
- * in `src/tests/suche/ebenenWahl.test.ts`, Abschnitt «F3 Byte-Beweis»: der sha256 des
- * Default-Laufs wird gegen die Montage aus `baueEbenenIndex` je Ebene gehalten, also
- * gegen genau den Code-Weg, den es VOR dem Schalter gab; ein zweiter Test zeigt, dass
- * der Schalter bei AN nur FILTERT (die Bund-Einträge des gefilterten Laufs sind byte-
- * und reihenfolgegleich mit denen des vollen); ein dritter hält §2 fest.
- * Gesetzt (z. B. `SUCHE_INDEX_EBENEN=bund`) schreibt der Generator einen Index OHNE
- * die weggelassenen Ebenen.
+ * Default ist jetzt `EBENEN_DEFAULT` = **nur Bund**: der ausgelieferte statische
+ * Suchindex trägt keine kantonalen Artikel mehr. Wer den vollen Index braucht
+ * (Mess-Werkzeuge, Vergleichsläufe), setzt `SUCHE_INDEX_EBENEN=bund,kanton`.
+ *
+ * BYTE-BEWEIS (gemessen 1.9.2026, `gzipSync` wie im Perf-Budget-Tor, Korpusstand
+ * `123ffe495`; die K0-Zahlen vom 31.8.2026 bleiben unangetastet daneben stehen —
+ * der Korpus ist seither um die ZH-Kern-Tranche gewachsen):
+ *   · bund+kanton  57 036 Einträge · 47 646.3 KB roh · **9 974.0 KB gzip**
+ *   · bund          25 391 Einträge · 25 496.6 KB roh · **5 311.0 KB gzip**
+ *   · Ersparnis                                        **4 663.0 KB gzip = 46.8 %**
+ * Der Perf-Budget-Deckel für `public/such-index/artikel.json` ist mit derselben
+ * Messung gesenkt worden (scripts/check-perf-budget.ts) — ein Deckel, der die
+ * alte Grösse weiter zuliesse, würde die Rückkehr der Kanton-Ebene NICHT bemerken.
+ *
+ * Was der Schalter tut und was nicht, steht ausführbar in
+ * `src/tests/suche/ebenenWahl.test.ts`: der Vollindex (`bund,kanton`) ist byte-gleich
+ * mit der Montage aus `baueEbenenIndex` je Ebene — also mit dem Code-Weg, den es VOR
+ * dem Schalter gab —, der Default-Lauf byte-gleich mit `baueEbenenIndex('bund')`; der
+ * Schalter FILTERT damit nur, er verändert keinen einzigen Eintrag. Ein dritter Test
+ * hält §2 fest (zwei Läufe byte-gleich).
  *
  * (Bis zum 31.8.2026 verwies dieser Absatz auf einen Byte-Beweis in
  * `src/tests/suchIndex.test.ts` — den es dort nie gab; auch die K3-Tests standen
@@ -75,17 +90,28 @@ export type Ebene = (typeof EBENEN)[number];
  * einem Fallback zu holen. Der Entscheid selbst bleibt unverändert bei David — aber er
  * darf nicht auf einer überzeichneten Grundlage getroffen werden (§8).
  *
- * WARUM TROTZDEM AUS. Ihn abzuschalten heisst, dass kantonale Treffer NUR noch
- * online kommen. Fällt die Edge-Suche aus (Timeout, 5-min-Sperre in
- * onlineVolltext.ts, fehlende Turso-Env), sucht die Seite dann in einem Korpus
- * ohne Kantone. Ob das Produkt das anbieten darf und wie es die Lücke ausweist,
- * ist ein §8-Entscheid über die eigene Vollständigkeit — kein technischer. Er
- * gehört zusammen mit der Heiss/Kalt-Grenze (Fahrplan §12.2) zu David.
- * Restliste für die Scharfschaltung: Bericht dieses Schritts, «K3-Scharfschaltung».
+ * WAS DIE SCHARFSCHALTUNG KOSTET — und wo der Nutzer es sieht. Kantonale Treffer
+ * kommen jetzt NUR noch online. Fällt die Edge-Suche aus (Timeout, 5-min-Sperre in
+ * onlineVolltext.ts, fehlende Turso-Env), sucht die Seite in einem Korpus ohne
+ * Kantone; dazu fehlen dem DB-Weg dauerhaft Präfix-Treffer und Synonym-Expansion.
+ * Genau darum ist die Lücke nicht bloss hingenommen, sondern ANGESCHRIEBEN — und
+ * zwar ohne Rückgriff auf einen Laufzeit-Zufall: das Artefakt trägt in `ebenen` die
+ * tatsächlich indexierten Ebenen, der Client leitet daraus `nurOnlineEbenen` ab
+ * (src/lib/suche/artikelVolltext.ts) und die Trefferliste sagt an der
+ * Gesetzestext-Gruppe, dass kantonale Volltext-Treffer nur aus der Online-Suche
+ * kommen und ohne Verbindung fehlen (src/lib/universalSuche.ts, EBENEN_NUR_ONLINE).
+ * Eine weggelassene Ebene ohne diese Kette wäre eine stille Auskunftslücke (§8):
+ * eine leere kantonale Trefferliste liest sich sonst als «es gibt keine kantonale
+ * Bestimmung».
+ *
+ * ENTSCHEID. Die Scharfschaltung ist ein §8-Entscheid über die eigene
+ * Vollständigkeit, kein technischer; David hat ihn am 31.8.2026 gefällt
+ * («schalte scharf sobald geprüft und verifiziert»), nachdem die Edge-Suche live
+ * verifiziert war. Die Heiss/Kalt-Grenze (Fahrplan §12.2) bleibt davon unberührt.
  */
 export function gewaehlteEbenen(roh = process.env.SUCHE_INDEX_EBENEN): readonly Ebene[] {
   const wunsch = (roh ?? '').trim();
-  if (!wunsch) return EBENEN;
+  if (!wunsch) return EBENEN_DEFAULT;
   const genannt = new Set(wunsch.split(/[,\s]+/).filter(Boolean));
   const unbekannt = [...genannt].filter((e) => !(EBENEN as readonly string[]).includes(e));
   if (unbekannt.length > 0) {
@@ -252,7 +278,8 @@ if (!process.env.VITEST) {
   }).join(' · ');
   if (index.ebenen.length < EBENEN.length) {
     console.log(
-      `gen:suchindex: SUCHE_INDEX_EBENEN ist gesetzt — Index trägt NUR ${index.ebenen.join(', ')}. ` +
+      `gen:suchindex: Index trägt NUR ${index.ebenen.join(', ')} ` +
+        `(${process.env.SUCHE_INDEX_EBENEN ? 'SUCHE_INDEX_EBENEN gesetzt' : 'Default seit K3-Scharfschaltung 1.9.2026'}). ` +
         'Die weggelassenen Ebenen müssen am Edge abgedeckt und in der Oberfläche als fehlend ausgewiesen sein (§8).',
     );
   }

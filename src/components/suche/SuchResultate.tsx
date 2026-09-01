@@ -301,8 +301,14 @@ export function SuchResultate({ gruppen, allesGeladen, q, onAuswahl, onNavigate,
               Ebene geführt werden. Die /gesetze-Kachel «Bundesrecht» zählt den
               Katalog OHNE International (201 vs. 227): zwei Mengen, die ohne
               Benennung wie ein Widerspruch lasen (§8). */}
+          {/* K3-Scharfschaltung (1.9.2026): der statische Index trägt keine
+              kantonalen Artikel mehr — kantonaler Volltext kommt aus der
+              Online-Suche und fehlt ohne Verbindung. «Nur nach Titel» allein
+              wäre jetzt zu wenig gesagt (die Online-Suche findet sehr wohl im
+              Wortlaut) und «durchsucht» zu viel (offline findet sie nichts);
+              die Zeile nennt darum beides (§8). */}
           Durchsucht: {abdeckung.volltext} Erlasse im Volltext (Bund + International) · {abdeckung.bge} BGE ·
-          {' '}kantonale Erlasse ({abdeckung.kantonTitel}): nur nach Titel.{' '}
+          {' '}kantonale Erlasse ({abdeckung.kantonTitel}): nach Titel — im Volltext nur online.{' '}
           <Link to="/abdeckung" onClick={onAuswahl} className="text-brass-700 no-underline hover:text-brass-600">Was ist drin? →</Link>
         </p>
       )}
