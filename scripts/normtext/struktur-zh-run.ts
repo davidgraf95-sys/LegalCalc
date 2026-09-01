@@ -89,16 +89,43 @@ for (const gruppe of sammleZhPdfInventar()) {
   const snap = JSON.parse(readFileSync(snapPfad, 'utf8')) as SnapshotDatei;
   const bestand = new Set(snap.eintraege.map((e) => e.artikel));
 
+  // JEDER Snapshot-§ bekommt einen Eintrag — auch der ohne Randtitel und ohne
+  // eigene Überschrift. Grund ist kein Formalismus, sondern die Anzeige: der
+  // Leser hängt einen Artikel OHNE Sidecar-Eintrag vor den Sektionsbaum, wo er
+  // im Inhaltsverzeichnis unerreichbar ist (Tor `check:struktur-konsistenz`,
+  // das genau diese Klasse am Bund-Korpus bewacht). Ein halbes Sidecar ist für
+  // die Navigation schlechter als gar keines.
+  //
+  // ERBEN, NICHT ERFINDEN: §§, die der Parser nie als Kopf sieht — die aus
+  // einem Sammel-Aufhebungskopf («§§ 66–69.») expandierten und die vor der
+  // ersten Überschrift stehenden — bekommen den Gliederungspfad ihres
+  // VORGÄNGERS in Dokumentreihenfolge. Das ist die Sektion, in der die
+  // Sammelkopf-Zeile im Druckbild tatsächlich steht; ein Randtitel wird dabei
+  // NIE geerbt (§8: die Sektion ist ablesbar, der Randtitel nicht).
+  //
+  // ANHANG-ZIFFERN («1.1», «1.1.2.1», ZH-243/ZH-211.17) erben NICHT: sie
+  // stehen hinter dem letzten §, im Anhang, und würden sonst unter dessen
+  // Abschnitt einsortiert — eine Aussage, die das PDF nicht trägt.
+  const ANHANG_TOKEN = /\./;
   const artikel: Record<string, { gliederung: { ebene: number; label: string }[]; marginalie: string[] }> = {};
   let mitRand = 0;
   let mitGl = 0;
-  for (const token of [...bestand].sort()) {
+  let geerbt = 0;
+  let letzteGliederung: { ebene: number; label: string }[] = [];
+  for (const e of snap.eintraege) {
+    const token = e.artikel;
+    if (token in artikel) continue;
     const a = befund.artikel[token];
-    if (!a) continue;
-    if (a.gliederung.length === 0 && a.marginalie.length === 0) continue;
-    artikel[token] = a;
-    if (a.marginalie.length > 0) mitRand++;
-    if (a.gliederung.length > 0) mitGl++;
+    if (a) {
+      artikel[token] = a;
+      if (a.gliederung.length > 0) letzteGliederung = a.gliederung;
+    } else {
+      const erbe = ANHANG_TOKEN.test(token) ? [] : letzteGliederung;
+      artikel[token] = { gliederung: erbe, marginalie: [] };
+      if (erbe.length > 0) geerbt++;
+    }
+    if (artikel[token].marginalie.length > 0) mitRand++;
+    if (artikel[token].gliederung.length > 0) mitGl++;
   }
 
   gesamtParagrafen += bestand.size;
@@ -110,7 +137,7 @@ for (const gruppe of sammleZhPdfInventar()) {
   zeilenBericht.push(
     `  ${key.padEnd(12)} §§ ${String(bestand.size).padStart(4)} · Randtitel ${String(mitRand).padStart(4)}` +
       ` (${quote.toFixed(0).padStart(3)} %) · Gliederung ${String(mitGl).padStart(4)}` +
-      ` · verworfen ${String(befund.randnotenOhneKopf + befund.randnotenDoppelt).padStart(3)}`,
+      ` · geerbt ${String(geerbt).padStart(3)} · verworfen ${String(befund.randnotenOhneKopf + befund.randnotenDoppelt).padStart(3)}`,
   );
 
   if (Object.keys(artikel).length === 0) continue;

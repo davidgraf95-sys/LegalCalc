@@ -136,6 +136,24 @@
         "Geschäftsverkehr"
       ]
     },
+    "13": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "B. Organisation"
+        }
+      ],
+      "marginalie": []
+    },
+    "14": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "B. Organisation"
+        }
+      ],
+      "marginalie": []
+    },
     "15": {
       "gliederung": [
         {
@@ -288,6 +306,17 @@
         "Änderung bisherigen Rechts"
       ]
     },
+    "4_a": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "B. Organisation"
+        }
+      ],
+      "marginalie": [
+        "b. Aufgaben"
+      ]
+    },
     "15_a": {
       "gliederung": [
         {
@@ -330,17 +359,6 @@
       ],
       "marginalie": [
         "Finanzaufsicht"
-      ]
-    },
-    "4_a": {
-      "gliederung": [
-        {
-          "ebene": 1,
-          "label": "B. Organisation"
-        }
-      ],
-      "marginalie": [
-        "b. Aufgaben"
       ]
     }
   }

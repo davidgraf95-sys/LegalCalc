@@ -171,6 +171,32 @@
         "II. Aufgaben"
       ]
     },
+    "14": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "II. Titel: Das Planungsrecht"
+        },
+        {
+          "ebene": 2,
+          "label": "1. Abschnitt: Die Planungspflicht"
+        }
+      ],
+      "marginalie": []
+    },
+    "15": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "II. Titel: Das Planungsrecht"
+        },
+        {
+          "ebene": 2,
+          "label": "1. Abschnitt: Die Planungspflicht"
+        }
+      ],
+      "marginalie": []
+    },
     "16": {
       "gliederung": [
         {
@@ -372,6 +398,57 @@
         "IV. Plan der öffentlichen Bauten und Anlagen"
       ]
     },
+    "27": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "II. Titel: Das Planungsrecht"
+        },
+        {
+          "ebene": 2,
+          "label": "2. Abschnitt: Die Richtplanung"
+        },
+        {
+          "ebene": 3,
+          "label": "B. Der kantonale Richtplan"
+        }
+      ],
+      "marginalie": []
+    },
+    "28": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "II. Titel: Das Planungsrecht"
+        },
+        {
+          "ebene": 2,
+          "label": "2. Abschnitt: Die Richtplanung"
+        },
+        {
+          "ebene": 3,
+          "label": "B. Der kantonale Richtplan"
+        }
+      ],
+      "marginalie": []
+    },
+    "29": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "II. Titel: Das Planungsrecht"
+        },
+        {
+          "ebene": 2,
+          "label": "2. Abschnitt: Die Richtplanung"
+        },
+        {
+          "ebene": 3,
+          "label": "B. Der kantonale Richtplan"
+        }
+      ],
+      "marginalie": []
+    },
     "30": {
       "gliederung": [
         {
@@ -429,6 +506,57 @@
         "Zuständigkeit"
       ]
     },
+    "33": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "II. Titel: Das Planungsrecht"
+        },
+        {
+          "ebene": 2,
+          "label": "2. Abschnitt: Die Richtplanung"
+        },
+        {
+          "ebene": 3,
+          "label": "E. Festsetzung und Genehmigung"
+        }
+      ],
+      "marginalie": []
+    },
+    "34": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "II. Titel: Das Planungsrecht"
+        },
+        {
+          "ebene": 2,
+          "label": "2. Abschnitt: Die Richtplanung"
+        },
+        {
+          "ebene": 3,
+          "label": "E. Festsetzung und Genehmigung"
+        }
+      ],
+      "marginalie": []
+    },
+    "35": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "II. Titel: Das Planungsrecht"
+        },
+        {
+          "ebene": 2,
+          "label": "2. Abschnitt: Die Richtplanung"
+        },
+        {
+          "ebene": 3,
+          "label": "E. Festsetzung und Genehmigung"
+        }
+      ],
+      "marginalie": []
+    },
     "36": {
       "gliederung": [
         {
@@ -451,6 +579,48 @@
       "marginalie": [
         "Bereich"
       ]
+    },
+    "37": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "II. Titel: Das Planungsrecht"
+        },
+        {
+          "ebene": 2,
+          "label": "3. Abschnitt: Die Nutzungsplanung"
+        },
+        {
+          "ebene": 3,
+          "label": "A. Kantonale und regionale Nutzungszonen"
+        },
+        {
+          "ebene": 4,
+          "label": "I. Die Landwirtschaftszone"
+        }
+      ],
+      "marginalie": []
+    },
+    "38": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "II. Titel: Das Planungsrecht"
+        },
+        {
+          "ebene": 2,
+          "label": "3. Abschnitt: Die Nutzungsplanung"
+        },
+        {
+          "ebene": 3,
+          "label": "A. Kantonale und regionale Nutzungszonen"
+        },
+        {
+          "ebene": 4,
+          "label": "I. Die Landwirtschaftszone"
+        }
+      ],
+      "marginalie": []
     },
     "39": {
       "gliederung": [
@@ -773,6 +943,69 @@
       "marginalie": [
         "V. Wohnzonen"
       ]
+    },
+    "53": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "II. Titel: Das Planungsrecht"
+        },
+        {
+          "ebene": 2,
+          "label": "3. Abschnitt: Die Nutzungsplanung"
+        },
+        {
+          "ebene": 3,
+          "label": "B. Die Bau- und Zonenordnung"
+        },
+        {
+          "ebene": 4,
+          "label": "II. Die Bauzonen"
+        }
+      ],
+      "marginalie": []
+    },
+    "54": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "II. Titel: Das Planungsrecht"
+        },
+        {
+          "ebene": 2,
+          "label": "3. Abschnitt: Die Nutzungsplanung"
+        },
+        {
+          "ebene": 3,
+          "label": "B. Die Bau- und Zonenordnung"
+        },
+        {
+          "ebene": 4,
+          "label": "II. Die Bauzonen"
+        }
+      ],
+      "marginalie": []
+    },
+    "55": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "II. Titel: Das Planungsrecht"
+        },
+        {
+          "ebene": 2,
+          "label": "3. Abschnitt: Die Nutzungsplanung"
+        },
+        {
+          "ebene": 3,
+          "label": "B. Die Bau- und Zonenordnung"
+        },
+        {
+          "ebene": 4,
+          "label": "II. Die Bauzonen"
+        }
+      ],
+      "marginalie": []
     },
     "56": {
       "gliederung": [
@@ -2490,6 +2723,132 @@
       "marginalie": [
         "Aufstellung"
       ]
+    },
+    "131": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "II. Titel: Das Planungsrecht"
+        },
+        {
+          "ebene": 2,
+          "label": "4. Abschnitt: Quartierplan, Grenzbereinigung und Gebietssanierung"
+        },
+        {
+          "ebene": 3,
+          "label": "A. Der Quartierplan"
+        },
+        {
+          "ebene": 4,
+          "label": "1. Grundsätze"
+        }
+      ],
+      "marginalie": []
+    },
+    "132": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "II. Titel: Das Planungsrecht"
+        },
+        {
+          "ebene": 2,
+          "label": "4. Abschnitt: Quartierplan, Grenzbereinigung und Gebietssanierung"
+        },
+        {
+          "ebene": 3,
+          "label": "A. Der Quartierplan"
+        },
+        {
+          "ebene": 4,
+          "label": "1. Grundsätze"
+        }
+      ],
+      "marginalie": []
+    },
+    "133": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "II. Titel: Das Planungsrecht"
+        },
+        {
+          "ebene": 2,
+          "label": "4. Abschnitt: Quartierplan, Grenzbereinigung und Gebietssanierung"
+        },
+        {
+          "ebene": 3,
+          "label": "A. Der Quartierplan"
+        },
+        {
+          "ebene": 4,
+          "label": "1. Grundsätze"
+        }
+      ],
+      "marginalie": []
+    },
+    "134": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "II. Titel: Das Planungsrecht"
+        },
+        {
+          "ebene": 2,
+          "label": "4. Abschnitt: Quartierplan, Grenzbereinigung und Gebietssanierung"
+        },
+        {
+          "ebene": 3,
+          "label": "A. Der Quartierplan"
+        },
+        {
+          "ebene": 4,
+          "label": "1. Grundsätze"
+        }
+      ],
+      "marginalie": []
+    },
+    "135": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "II. Titel: Das Planungsrecht"
+        },
+        {
+          "ebene": 2,
+          "label": "4. Abschnitt: Quartierplan, Grenzbereinigung und Gebietssanierung"
+        },
+        {
+          "ebene": 3,
+          "label": "A. Der Quartierplan"
+        },
+        {
+          "ebene": 4,
+          "label": "1. Grundsätze"
+        }
+      ],
+      "marginalie": []
+    },
+    "136": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "II. Titel: Das Planungsrecht"
+        },
+        {
+          "ebene": 2,
+          "label": "4. Abschnitt: Quartierplan, Grenzbereinigung und Gebietssanierung"
+        },
+        {
+          "ebene": 3,
+          "label": "A. Der Quartierplan"
+        },
+        {
+          "ebene": 4,
+          "label": "1. Grundsätze"
+        }
+      ],
+      "marginalie": []
     },
     "137": {
       "gliederung": [
@@ -6576,6 +6935,33 @@
         "A. Rekursinstanz"
       ]
     },
+    "330": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "V. Titel: Der Rechtsschutz"
+        }
+      ],
+      "marginalie": []
+    },
+    "331": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "V. Titel: Der Rechtsschutz"
+        }
+      ],
+      "marginalie": []
+    },
+    "332": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "V. Titel: Der Rechtsschutz"
+        }
+      ],
+      "marginalie": []
+    },
     "333": {
       "gliederung": [
         {
@@ -6973,6 +7359,224 @@
       ],
       "marginalie": [
         "Inkraftsetzung"
+      ]
+    },
+    "7_a": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "I. Titel: Allgemeine Bestimmungen"
+        }
+      ],
+      "marginalie": [
+        "Verfahren"
+      ]
+    },
+    "43_a": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "II. Titel: Das Planungsrecht"
+        },
+        {
+          "ebene": 2,
+          "label": "3. Abschnitt: Die Nutzungsplanung"
+        },
+        {
+          "ebene": 3,
+          "label": "A. Kantonale und regionale Nutzungszonen"
+        },
+        {
+          "ebene": 4,
+          "label": "II. Die Freihaltezonen"
+        }
+      ],
+      "marginalie": [
+        "D. Zugrecht"
+      ]
+    },
+    "44_a": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "II. Titel: Das Planungsrecht"
+        },
+        {
+          "ebene": 2,
+          "label": "3. Abschnitt: Die Nutzungsplanung"
+        },
+        {
+          "ebene": 3,
+          "label": "A. Kantonale und regionale Nutzungszonen"
+        },
+        {
+          "ebene": 4,
+          "label": "III. Gestaltungspläne für Materialgewinnung"
+        }
+      ],
+      "marginalie": [
+        "Inhalt"
+      ]
+    },
+    "49_a": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "II. Titel: Das Planungsrecht"
+        },
+        {
+          "ebene": 2,
+          "label": "3. Abschnitt: Die Nutzungsplanung"
+        },
+        {
+          "ebene": 3,
+          "label": "B. Die Bau- und Zonenordnung"
+        },
+        {
+          "ebene": 4,
+          "label": "II. Die Bauzonen"
+        }
+      ],
+      "marginalie": [
+        "2. Ausnützung, Bau- und Nutzweise"
+      ]
+    },
+    "49_b": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "II. Titel: Das Planungsrecht"
+        },
+        {
+          "ebene": 2,
+          "label": "3. Abschnitt: Die Nutzungsplanung"
+        },
+        {
+          "ebene": 3,
+          "label": "B. Die Bau- und Zonenordnung"
+        },
+        {
+          "ebene": 4,
+          "label": "II. Die Bauzonen"
+        }
+      ],
+      "marginalie": [
+        "3. Preisgünstiger Wohnraum"
+      ]
+    },
+    "50_a": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "II. Titel: Das Planungsrecht"
+        },
+        {
+          "ebene": 2,
+          "label": "3. Abschnitt: Die Nutzungsplanung"
+        },
+        {
+          "ebene": 3,
+          "label": "B. Die Bau- und Zonenordnung"
+        },
+        {
+          "ebene": 4,
+          "label": "II. Die Bauzonen"
+        }
+      ],
+      "marginalie": [
+        "III a. Quartiererhaltungszonen"
+      ]
+    },
+    "67_a": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "II. Titel: Das Planungsrecht"
+        },
+        {
+          "ebene": 2,
+          "label": "3. Abschnitt: Die Nutzungsplanung"
+        },
+        {
+          "ebene": 3,
+          "label": "B. Die Bau- und Zonenordnung"
+        },
+        {
+          "ebene": 4,
+          "label": "V. Weitere Festlegungen der Bau- und Zonenordnung"
+        }
+      ],
+      "marginalie": [
+        "C. Uferbereich von Seen"
+      ]
+    },
+    "76_a": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "II. Titel: Das Planungsrecht"
+        },
+        {
+          "ebene": 2,
+          "label": "3. Abschnitt: Die Nutzungsplanung"
+        },
+        {
+          "ebene": 3,
+          "label": "B. Die Bau- und Zonenordnung"
+        },
+        {
+          "ebene": 4,
+          "label": "V. Weitere Festlegungen der Bau- und Zonenordnung"
+        }
+      ],
+      "marginalie": [
+        "II. Dachbegrünung"
+      ]
+    },
+    "78_a": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "II. Titel: Das Planungsrecht"
+        },
+        {
+          "ebene": 2,
+          "label": "3. Abschnitt: Die Nutzungsplanung"
+        },
+        {
+          "ebene": 3,
+          "label": "B. Die Bau- und Zonenordnung"
+        },
+        {
+          "ebene": 4,
+          "label": "V. Weitere Festlegungen der Bau- und Zonenordnung"
+        }
+      ],
+      "marginalie": [
+        "J. Erneuerbare Energien"
+      ]
+    },
+    "87_a": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "II. Titel: Das Planungsrecht"
+        },
+        {
+          "ebene": 2,
+          "label": "3. Abschnitt: Die Nutzungsplanung"
+        },
+        {
+          "ebene": 3,
+          "label": "B. Die Bau- und Zonenordnung"
+        },
+        {
+          "ebene": 4,
+          "label": "VII. Gemeinsame Bestimmungen"
+        }
+      ],
+      "marginalie": [
+        "Vorprüfung"
       ]
     },
     "110_a": {
@@ -7480,224 +8084,6 @@
       ],
       "marginalie": [
         "E. Bauten und Anlagen ausserhalb der Bauzonen"
-      ]
-    },
-    "43_a": {
-      "gliederung": [
-        {
-          "ebene": 1,
-          "label": "II. Titel: Das Planungsrecht"
-        },
-        {
-          "ebene": 2,
-          "label": "3. Abschnitt: Die Nutzungsplanung"
-        },
-        {
-          "ebene": 3,
-          "label": "A. Kantonale und regionale Nutzungszonen"
-        },
-        {
-          "ebene": 4,
-          "label": "II. Die Freihaltezonen"
-        }
-      ],
-      "marginalie": [
-        "D. Zugrecht"
-      ]
-    },
-    "44_a": {
-      "gliederung": [
-        {
-          "ebene": 1,
-          "label": "II. Titel: Das Planungsrecht"
-        },
-        {
-          "ebene": 2,
-          "label": "3. Abschnitt: Die Nutzungsplanung"
-        },
-        {
-          "ebene": 3,
-          "label": "A. Kantonale und regionale Nutzungszonen"
-        },
-        {
-          "ebene": 4,
-          "label": "III. Gestaltungspläne für Materialgewinnung"
-        }
-      ],
-      "marginalie": [
-        "Inhalt"
-      ]
-    },
-    "49_a": {
-      "gliederung": [
-        {
-          "ebene": 1,
-          "label": "II. Titel: Das Planungsrecht"
-        },
-        {
-          "ebene": 2,
-          "label": "3. Abschnitt: Die Nutzungsplanung"
-        },
-        {
-          "ebene": 3,
-          "label": "B. Die Bau- und Zonenordnung"
-        },
-        {
-          "ebene": 4,
-          "label": "II. Die Bauzonen"
-        }
-      ],
-      "marginalie": [
-        "2. Ausnützung, Bau- und Nutzweise"
-      ]
-    },
-    "49_b": {
-      "gliederung": [
-        {
-          "ebene": 1,
-          "label": "II. Titel: Das Planungsrecht"
-        },
-        {
-          "ebene": 2,
-          "label": "3. Abschnitt: Die Nutzungsplanung"
-        },
-        {
-          "ebene": 3,
-          "label": "B. Die Bau- und Zonenordnung"
-        },
-        {
-          "ebene": 4,
-          "label": "II. Die Bauzonen"
-        }
-      ],
-      "marginalie": [
-        "3. Preisgünstiger Wohnraum"
-      ]
-    },
-    "50_a": {
-      "gliederung": [
-        {
-          "ebene": 1,
-          "label": "II. Titel: Das Planungsrecht"
-        },
-        {
-          "ebene": 2,
-          "label": "3. Abschnitt: Die Nutzungsplanung"
-        },
-        {
-          "ebene": 3,
-          "label": "B. Die Bau- und Zonenordnung"
-        },
-        {
-          "ebene": 4,
-          "label": "II. Die Bauzonen"
-        }
-      ],
-      "marginalie": [
-        "III a. Quartiererhaltungszonen"
-      ]
-    },
-    "67_a": {
-      "gliederung": [
-        {
-          "ebene": 1,
-          "label": "II. Titel: Das Planungsrecht"
-        },
-        {
-          "ebene": 2,
-          "label": "3. Abschnitt: Die Nutzungsplanung"
-        },
-        {
-          "ebene": 3,
-          "label": "B. Die Bau- und Zonenordnung"
-        },
-        {
-          "ebene": 4,
-          "label": "V. Weitere Festlegungen der Bau- und Zonenordnung"
-        }
-      ],
-      "marginalie": [
-        "C. Uferbereich von Seen"
-      ]
-    },
-    "76_a": {
-      "gliederung": [
-        {
-          "ebene": 1,
-          "label": "II. Titel: Das Planungsrecht"
-        },
-        {
-          "ebene": 2,
-          "label": "3. Abschnitt: Die Nutzungsplanung"
-        },
-        {
-          "ebene": 3,
-          "label": "B. Die Bau- und Zonenordnung"
-        },
-        {
-          "ebene": 4,
-          "label": "V. Weitere Festlegungen der Bau- und Zonenordnung"
-        }
-      ],
-      "marginalie": [
-        "II. Dachbegrünung"
-      ]
-    },
-    "78_a": {
-      "gliederung": [
-        {
-          "ebene": 1,
-          "label": "II. Titel: Das Planungsrecht"
-        },
-        {
-          "ebene": 2,
-          "label": "3. Abschnitt: Die Nutzungsplanung"
-        },
-        {
-          "ebene": 3,
-          "label": "B. Die Bau- und Zonenordnung"
-        },
-        {
-          "ebene": 4,
-          "label": "V. Weitere Festlegungen der Bau- und Zonenordnung"
-        }
-      ],
-      "marginalie": [
-        "J. Erneuerbare Energien"
-      ]
-    },
-    "7_a": {
-      "gliederung": [
-        {
-          "ebene": 1,
-          "label": "I. Titel: Allgemeine Bestimmungen"
-        }
-      ],
-      "marginalie": [
-        "Verfahren"
-      ]
-    },
-    "87_a": {
-      "gliederung": [
-        {
-          "ebene": 1,
-          "label": "II. Titel: Das Planungsrecht"
-        },
-        {
-          "ebene": 2,
-          "label": "3. Abschnitt: Die Nutzungsplanung"
-        },
-        {
-          "ebene": 3,
-          "label": "B. Die Bau- und Zonenordnung"
-        },
-        {
-          "ebene": 4,
-          "label": "VII. Gemeinsame Bestimmungen"
-        }
-      ],
-      "marginalie": [
-        "Vorprüfung"
       ]
     }
   }

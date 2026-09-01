@@ -585,28 +585,6 @@
       ],
       "marginalie": []
     },
-    "18_a": {
-      "gliederung": [
-        {
-          "ebene": 1,
-          "label": "C. Verfahren"
-        }
-      ],
-      "marginalie": [
-        "Beschwerde- und Klagegründe"
-      ]
-    },
-    "33_a": {
-      "gliederung": [
-        {
-          "ebene": 1,
-          "label": "E. Kosten und Entschädigungen"
-        }
-      ],
-      "marginalie": [
-        "Sicherstellung der Gerichtskosten"
-      ]
-    },
     "5_a": {
       "gliederung": [
         {
@@ -638,6 +616,28 @@
       ],
       "marginalie": [
         "Behandlung von Ausstandsbegehren"
+      ]
+    },
+    "18_a": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "C. Verfahren"
+        }
+      ],
+      "marginalie": [
+        "Beschwerde- und Klagegründe"
+      ]
+    },
+    "33_a": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "E. Kosten und Entschädigungen"
+        }
+      ],
+      "marginalie": [
+        "Sicherstellung der Gerichtskosten"
       ]
     }
   }

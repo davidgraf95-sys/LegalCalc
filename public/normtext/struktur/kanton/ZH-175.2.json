@@ -648,6 +648,45 @@
         "c. Nach dem Inhalt der Anordnung"
       ]
     },
+    "45": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Dritter Abschnitt: Die Verwaltungsgerichtsbarkeit"
+        },
+        {
+          "ebene": 2,
+          "label": "B. Beschwerde"
+        }
+      ],
+      "marginalie": []
+    },
+    "46": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Dritter Abschnitt: Die Verwaltungsgerichtsbarkeit"
+        },
+        {
+          "ebene": 2,
+          "label": "B. Beschwerde"
+        }
+      ],
+      "marginalie": []
+    },
+    "47": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Dritter Abschnitt: Die Verwaltungsgerichtsbarkeit"
+        },
+        {
+          "ebene": 2,
+          "label": "B. Beschwerde"
+        }
+      ],
+      "marginalie": []
+    },
     "48": {
       "gliederung": [
         {
@@ -929,6 +968,45 @@
         "e. Vollstreckung"
       ]
     },
+    "67": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Dritter Abschnitt: Die Verwaltungsgerichtsbarkeit"
+        },
+        {
+          "ebene": 2,
+          "label": "B. Beschwerde"
+        }
+      ],
+      "marginalie": []
+    },
+    "68": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Dritter Abschnitt: Die Verwaltungsgerichtsbarkeit"
+        },
+        {
+          "ebene": 2,
+          "label": "B. Beschwerde"
+        }
+      ],
+      "marginalie": []
+    },
+    "69": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Dritter Abschnitt: Die Verwaltungsgerichtsbarkeit"
+        },
+        {
+          "ebene": 2,
+          "label": "B. Beschwerde"
+        }
+      ],
+      "marginalie": []
+    },
     "70": {
       "gliederung": [
         {
@@ -988,6 +1066,97 @@
       "marginalie": [
         "Verfahren"
       ]
+    },
+    "74": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Dritter Abschnitt: Die Verwaltungsgerichtsbarkeit"
+        },
+        {
+          "ebene": 2,
+          "label": "C. Rekurs und Beschwerde in Steuersachen"
+        }
+      ],
+      "marginalie": []
+    },
+    "75": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Dritter Abschnitt: Die Verwaltungsgerichtsbarkeit"
+        },
+        {
+          "ebene": 2,
+          "label": "C. Rekurs und Beschwerde in Steuersachen"
+        }
+      ],
+      "marginalie": []
+    },
+    "76": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Dritter Abschnitt: Die Verwaltungsgerichtsbarkeit"
+        },
+        {
+          "ebene": 2,
+          "label": "C. Rekurs und Beschwerde in Steuersachen"
+        }
+      ],
+      "marginalie": []
+    },
+    "77": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Dritter Abschnitt: Die Verwaltungsgerichtsbarkeit"
+        },
+        {
+          "ebene": 2,
+          "label": "C. Rekurs und Beschwerde in Steuersachen"
+        }
+      ],
+      "marginalie": []
+    },
+    "78": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Dritter Abschnitt: Die Verwaltungsgerichtsbarkeit"
+        },
+        {
+          "ebene": 2,
+          "label": "C. Rekurs und Beschwerde in Steuersachen"
+        }
+      ],
+      "marginalie": []
+    },
+    "79": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Dritter Abschnitt: Die Verwaltungsgerichtsbarkeit"
+        },
+        {
+          "ebene": 2,
+          "label": "C. Rekurs und Beschwerde in Steuersachen"
+        }
+      ],
+      "marginalie": []
+    },
+    "80": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Dritter Abschnitt: Die Verwaltungsgerichtsbarkeit"
+        },
+        {
+          "ebene": 2,
+          "label": "C. Rekurs und Beschwerde in Steuersachen"
+        }
+      ],
+      "marginalie": []
     },
     "81": {
       "gliederung": [
@@ -1264,6 +1433,66 @@
       ],
       "marginalie": [
         "c. Inkrafttreten des Gesetzes"
+      ]
+    },
+    "4_a": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Zweiter Abschnitt: Das Verwaltungsverfahren"
+        },
+        {
+          "ebene": 2,
+          "label": "B. Allgemeine Vorschriften"
+        }
+      ],
+      "marginalie": [
+        "Beschleunigungsgebot"
+      ]
+    },
+    "5_a": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Zweiter Abschnitt: Das Verwaltungsverfahren"
+        },
+        {
+          "ebene": 2,
+          "label": "B. Allgemeine Vorschriften"
+        }
+      ],
+      "marginalie": [
+        "Ausstand"
+      ]
+    },
+    "6_a": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Zweiter Abschnitt: Das Verwaltungsverfahren"
+        },
+        {
+          "ebene": 2,
+          "label": "B. Allgemeine Vorschriften"
+        }
+      ],
+      "marginalie": [
+        "Verfahren mit mehreren Beteiligten"
+      ]
+    },
+    "6_b": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Zweiter Abschnitt: Das Verwaltungsverfahren"
+        },
+        {
+          "ebene": 2,
+          "label": "B. Allgemeine Vorschriften"
+        }
+      ],
+      "marginalie": [
+        "Sitz im Ausland"
       ]
     },
     "10_a": {
@@ -1609,36 +1838,6 @@
         "Wahl- und Abstimmungsverfahren"
       ]
     },
-    "4_a": {
-      "gliederung": [
-        {
-          "ebene": 1,
-          "label": "Zweiter Abschnitt: Das Verwaltungsverfahren"
-        },
-        {
-          "ebene": 2,
-          "label": "B. Allgemeine Vorschriften"
-        }
-      ],
-      "marginalie": [
-        "Beschleunigungsgebot"
-      ]
-    },
-    "5_a": {
-      "gliederung": [
-        {
-          "ebene": 1,
-          "label": "Zweiter Abschnitt: Das Verwaltungsverfahren"
-        },
-        {
-          "ebene": 2,
-          "label": "B. Allgemeine Vorschriften"
-        }
-      ],
-      "marginalie": [
-        "Ausstand"
-      ]
-    },
     "65_a": {
       "gliederung": [
         {
@@ -1654,35 +1853,18 @@
         "d. Kosten"
       ]
     },
-    "6_a": {
+    "80_d": {
       "gliederung": [
         {
           "ebene": 1,
-          "label": "Zweiter Abschnitt: Das Verwaltungsverfahren"
+          "label": "Dritter Abschnitt: Die Verwaltungsgerichtsbarkeit"
         },
         {
           "ebene": 2,
-          "label": "B. Allgemeine Vorschriften"
+          "label": "C. Rekurs und Beschwerde in Steuersachen"
         }
       ],
-      "marginalie": [
-        "Verfahren mit mehreren Beteiligten"
-      ]
-    },
-    "6_b": {
-      "gliederung": [
-        {
-          "ebene": 1,
-          "label": "Zweiter Abschnitt: Das Verwaltungsverfahren"
-        },
-        {
-          "ebene": 2,
-          "label": "B. Allgemeine Vorschriften"
-        }
-      ],
-      "marginalie": [
-        "Sitz im Ausland"
-      ]
+      "marginalie": []
     },
     "86_a": {
       "gliederung": [

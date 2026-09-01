@@ -22,22 +22,27 @@
   "ZH-175.2": {
     "paragrafen": 140,
     "randtitel": 121,
-    "gliederung": 126
+    "gliederung": 140
   },
   "ZH-177.10": {
     "paragrafen": 70,
     "randtitel": 68,
-    "gliederung": 68
+    "gliederung": 70
   },
   "ZH-211.1": {
     "paragrafen": 226,
     "randtitel": 199,
-    "gliederung": 202
+    "gliederung": 226
   },
   "ZH-211.11": {
     "paragrafen": 23,
     "randtitel": 22,
     "gliederung": 23
+  },
+  "ZH-211.112": {
+    "paragrafen": 3,
+    "randtitel": 0,
+    "gliederung": 0
   },
   "ZH-211.12": {
     "paragrafen": 12,
@@ -48,6 +53,11 @@
     "paragrafen": 20,
     "randtitel": 0,
     "gliederung": 20
+  },
+  "ZH-211.14": {
+    "paragrafen": 11,
+    "randtitel": 0,
+    "gliederung": 0
   },
   "ZH-211.15": {
     "paragrafen": 42,
@@ -73,6 +83,11 @@
     "paragrafen": 10,
     "randtitel": 10,
     "gliederung": 10
+  },
+  "ZH-211.23": {
+    "paragrafen": 18,
+    "randtitel": 0,
+    "gliederung": 0
   },
   "ZH-211.25": {
     "paragrafen": 32,
@@ -159,6 +174,16 @@
     "randtitel": 21,
     "gliederung": 22
   },
+  "ZH-215.21": {
+    "paragrafen": 14,
+    "randtitel": 0,
+    "gliederung": 0
+  },
+  "ZH-215.22": {
+    "paragrafen": 3,
+    "randtitel": 0,
+    "gliederung": 0
+  },
   "ZH-215.3": {
     "paragrafen": 25,
     "randtitel": 25,
@@ -167,7 +192,7 @@
   "ZH-230": {
     "paragrafen": 313,
     "randtitel": 1,
-    "gliederung": 172
+    "gliederung": 289
   },
   "ZH-230.31": {
     "paragrafen": 3,
@@ -182,7 +207,7 @@
   "ZH-231.1": {
     "paragrafen": 31,
     "randtitel": 27,
-    "gliederung": 28
+    "gliederung": 31
   },
   "ZH-231.13": {
     "paragrafen": 11,
@@ -209,10 +234,25 @@
     "randtitel": 2,
     "gliederung": 0
   },
+  "ZH-234.1": {
+    "paragrafen": 6,
+    "randtitel": 0,
+    "gliederung": 0
+  },
+  "ZH-234.12": {
+    "paragrafen": 4,
+    "randtitel": 0,
+    "gliederung": 0
+  },
   "ZH-235.15": {
     "paragrafen": 28,
     "randtitel": 27,
     "gliederung": 28
+  },
+  "ZH-235.3": {
+    "paragrafen": 4,
+    "randtitel": 0,
+    "gliederung": 0
   },
   "ZH-242": {
     "paragrafen": 40,
@@ -249,6 +289,21 @@
     "randtitel": 16,
     "gliederung": 16
   },
+  "ZH-245": {
+    "paragrafen": 7,
+    "randtitel": 0,
+    "gliederung": 0
+  },
+  "ZH-252.1": {
+    "paragrafen": 15,
+    "randtitel": 0,
+    "gliederung": 0
+  },
+  "ZH-252.5": {
+    "paragrafen": 10,
+    "randtitel": 0,
+    "gliederung": 0
+  },
   "ZH-281": {
     "paragrafen": 29,
     "randtitel": 28,
@@ -264,6 +319,11 @@
     "randtitel": 19,
     "gliederung": 19
   },
+  "ZH-312": {
+    "paragrafen": 7,
+    "randtitel": 0,
+    "gliederung": 0
+  },
   "ZH-315.1": {
     "paragrafen": 7,
     "randtitel": 7,
@@ -272,6 +332,11 @@
   "ZH-321.2": {
     "paragrafen": 13,
     "randtitel": 13,
+    "gliederung": 0
+  },
+  "ZH-321.3": {
+    "paragrafen": 3,
+    "randtitel": 0,
     "gliederung": 0
   },
   "ZH-321.4": {
@@ -317,7 +382,7 @@
   "ZH-341": {
     "paragrafen": 25,
     "randtitel": 20,
-    "gliederung": 23
+    "gliederung": 25
   },
   "ZH-341.1": {
     "paragrafen": 24,
@@ -337,7 +402,7 @@
   "ZH-611": {
     "paragrafen": 65,
     "randtitel": 62,
-    "gliederung": 63
+    "gliederung": 65
   },
   "ZH-612": {
     "paragrafen": 15,
@@ -367,7 +432,7 @@
   "ZH-614": {
     "paragrafen": 33,
     "randtitel": 30,
-    "gliederung": 31
+    "gliederung": 33
   },
   "ZH-615": {
     "paragrafen": 38,
@@ -377,12 +442,12 @@
   "ZH-631.1": {
     "paragrafen": 329,
     "randtitel": 308,
-    "gliederung": 319
+    "gliederung": 329
   },
   "ZH-631.11": {
     "paragrafen": 81,
     "randtitel": 75,
-    "gliederung": 79
+    "gliederung": 81
   },
   "ZH-631.121": {
     "paragrafen": 14,
@@ -394,10 +459,15 @@
     "randtitel": 13,
     "gliederung": 0
   },
+  "ZH-631.19": {
+    "paragrafen": 2,
+    "randtitel": 0,
+    "gliederung": 0
+  },
   "ZH-631.41": {
     "paragrafen": 43,
     "randtitel": 40,
-    "gliederung": 40
+    "gliederung": 43
   },
   "ZH-631.42": {
     "paragrafen": 42,
@@ -412,6 +482,11 @@
   "ZH-631.423": {
     "paragrafen": 1,
     "randtitel": 1,
+    "gliederung": 0
+  },
+  "ZH-631.424": {
+    "paragrafen": 2,
+    "randtitel": 0,
     "gliederung": 0
   },
   "ZH-631.43": {
@@ -442,7 +517,7 @@
   "ZH-634.1": {
     "paragrafen": 38,
     "randtitel": 34,
-    "gliederung": 35
+    "gliederung": 37
   },
   "ZH-634.2": {
     "paragrafen": 21,
@@ -464,10 +539,15 @@
     "randtitel": 4,
     "gliederung": 0
   },
+  "ZH-691": {
+    "paragrafen": 6,
+    "randtitel": 0,
+    "gliederung": 0
+  },
   "ZH-700.1": {
     "paragrafen": 400,
     "randtitel": 365,
-    "gliederung": 378
+    "gliederung": 400
   },
   "ZH-851.1": {
     "paragrafen": 73,

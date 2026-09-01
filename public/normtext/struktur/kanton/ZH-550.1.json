@@ -851,6 +851,17 @@
         "Änderung bisherigen Rechts"
       ]
     },
+    "7_a": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "2. Abschnitt: Aufgaben der Polizei"
+        }
+      ],
+      "marginalie": [
+        "Bewilligung für gesteigerten Gemeingebrauch"
+      ]
+    },
     "32_a": {
       "gliederung": [
         {
@@ -995,7 +1006,7 @@
         }
       ],
       "marginalie": [
-        "ViCLASDatenbank"
+        "ViCLAS-Datenbank"
       ]
     },
     "54_c": {
@@ -1117,17 +1128,6 @@
       ],
       "marginalie": [
         "Strafbestimmungen"
-      ]
-    },
-    "7_a": {
-      "gliederung": [
-        {
-          "ebene": 1,
-          "label": "2. Abschnitt: Aufgaben der Polizei"
-        }
-      ],
-      "marginalie": [
-        "Bewilligung für gesteigerten Gemeingebrauch"
       ]
     }
   }

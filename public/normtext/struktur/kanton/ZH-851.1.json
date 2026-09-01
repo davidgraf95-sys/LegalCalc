@@ -709,6 +709,92 @@
         "Inkrafttreten"
       ]
     },
+    "3_a": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "A. Allgemeine Bestimmungen"
+        }
+      ],
+      "marginalie": [
+        "c. Förderung der Eingliederung"
+      ]
+    },
+    "3_b": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "A. Allgemeine Bestimmungen"
+        }
+      ],
+      "marginalie": [
+        "d. Gegenleistungen"
+      ]
+    },
+    "3_c": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "A. Allgemeine Bestimmungen"
+        }
+      ],
+      "marginalie": [
+        "e. Interinstitutionelle Zusammenarbeit"
+      ]
+    },
+    "5_a": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "A. Allgemeine Bestimmungen"
+        }
+      ],
+      "marginalie": [
+        "Asylfürsorge a. Zuständigkeit"
+      ]
+    },
+    "5_b": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "A. Allgemeine Bestimmungen"
+        }
+      ],
+      "marginalie": [
+        "b. Bemessung und Ausgestaltung der Hilfe"
+      ]
+    },
+    "5_c": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "A. Allgemeine Bestimmungen"
+        }
+      ],
+      "marginalie": [
+        "Ausländer ohne Aufenthaltsrecht"
+      ]
+    },
+    "5_d": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "A. Allgemeine Bestimmungen"
+        }
+      ],
+      "marginalie": []
+    },
+    "5_e": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "A. Allgemeine Bestimmungen"
+        }
+      ],
+      "marginalie": [
+        "Touristen, Personen mit Kurzaufenthaltsbewilligung, ausländische Arbeitssuchende"
+      ]
+    },
     "15_a": {
       "gliederung": [
         {
@@ -752,39 +838,6 @@
       ],
       "marginalie": [
         "Einstellung von Leistungen"
-      ]
-    },
-    "3_a": {
-      "gliederung": [
-        {
-          "ebene": 1,
-          "label": "A. Allgemeine Bestimmungen"
-        }
-      ],
-      "marginalie": [
-        "c. Förderung der Eingliederung"
-      ]
-    },
-    "3_b": {
-      "gliederung": [
-        {
-          "ebene": 1,
-          "label": "A. Allgemeine Bestimmungen"
-        }
-      ],
-      "marginalie": [
-        "d. Gegenleistungen"
-      ]
-    },
-    "3_c": {
-      "gliederung": [
-        {
-          "ebene": 1,
-          "label": "A. Allgemeine Bestimmungen"
-        }
-      ],
-      "marginalie": [
-        "e. Interinstitutionelle Zusammenarbeit"
       ]
     },
     "47_a": {
@@ -862,59 +915,6 @@
       ],
       "marginalie": [
         "Parteirechte in Strafverfahren"
-      ]
-    },
-    "5_a": {
-      "gliederung": [
-        {
-          "ebene": 1,
-          "label": "A. Allgemeine Bestimmungen"
-        }
-      ],
-      "marginalie": [
-        "Asylfürsorge a. Zuständigkeit"
-      ]
-    },
-    "5_b": {
-      "gliederung": [
-        {
-          "ebene": 1,
-          "label": "A. Allgemeine Bestimmungen"
-        }
-      ],
-      "marginalie": [
-        "b. Bemessung und Ausgestaltung der Hilfe"
-      ]
-    },
-    "5_c": {
-      "gliederung": [
-        {
-          "ebene": 1,
-          "label": "A. Allgemeine Bestimmungen"
-        }
-      ],
-      "marginalie": [
-        "Ausländer ohne Aufenthaltsrecht"
-      ]
-    },
-    "5_d": {
-      "gliederung": [
-        {
-          "ebene": 1,
-          "label": "A. Allgemeine Bestimmungen"
-        }
-      ],
-      "marginalie": []
-    },
-    "5_e": {
-      "gliederung": [
-        {
-          "ebene": 1,
-          "label": "A. Allgemeine Bestimmungen"
-        }
-      ],
-      "marginalie": [
-        "Touristen, Personen mit Kurzaufenthaltsbewilligung, ausländische Arbeitssuchende"
       ]
     }
   }

@@ -4,6 +4,10 @@
     "titel": "Verordnung über die Durchführung des Bundesgesetzes über die direkte Bundessteuer (LS 634.1)"
   },
   "artikel": {
+    "1": {
+      "gliederung": [],
+      "marginalie": []
+    },
     "2": {
       "gliederung": [
         {
@@ -319,6 +323,32 @@
         "Einspracheentscheid"
       ]
     },
+    "23": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "C. Ordentliches Veranlagungsverfahren"
+        },
+        {
+          "ebene": 2,
+          "label": "IV. Einsprache"
+        }
+      ],
+      "marginalie": []
+    },
+    "24": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "C. Ordentliches Veranlagungsverfahren"
+        },
+        {
+          "ebene": 2,
+          "label": "IV. Einsprache"
+        }
+      ],
+      "marginalie": []
+    },
     "25": {
       "gliederung": [
         {
@@ -427,21 +457,6 @@
         "Inkrafttreten"
       ]
     },
-    "14_a": {
-      "gliederung": [
-        {
-          "ebene": 1,
-          "label": "B. Behörden"
-        },
-        {
-          "ebene": 2,
-          "label": "IV. Rechtsmittelinstanzen"
-        }
-      ],
-      "marginalie": [
-        "Rechtsmittelverfahren bei Steuererlass"
-      ]
-    },
     "6_a": {
       "gliederung": [
         {
@@ -485,6 +500,21 @@
       ],
       "marginalie": [
         "Abteilung Rechnungswesen und Controlling"
+      ]
+    },
+    "14_a": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "B. Behörden"
+        },
+        {
+          "ebene": 2,
+          "label": "IV. Rechtsmittelinstanzen"
+        }
+      ],
+      "marginalie": [
+        "Rechtsmittelverfahren bei Steuererlass"
       ]
     }
   }

@@ -31,7 +31,8 @@
  * `baueZhSidecar`. Drei Modellentscheide teilt sie bewusst und deklariert:
  *   · dass die Randspalte an der SCHRIFTHÖHE hängt (hier <= 7.7 pt),
  *   · dass ein Randtitel auf der Grundlinie seines Kopfes steht,
- *   · dass ein Trennstrich am Zeilenende einen Umbruch auflöst.
+ *   · dass ein Trennstrich am Zeilenende einen Umbruch auflöst, ein Binde-
+ *     oder Ergänzungsstrich aber stehen bleibt.
  *   · dass eine Fragment-Lücke ab ~0.2 pt ein Leerzeichen ist (die Klassen
  *     liegen bei <= 0.07 und >= 0.39 pt, gemessen an allen 111 PDF).
  * Alles Übrige ist anders gebaut: die Body-Spalte über den MODUS der x-Werte
@@ -400,9 +401,10 @@ async function zweitlesungRandtitel(bytes: Uint8Array): Promise<Map<string, stri
         const teil = zeilenText(y);
         if (teil === '' || /^[\s,\d]+$/.test(teil)) continue;
         if (txt === '') txt = teil;
-        else if (/[-‐‑­]$/.test(txt) && !/^(?:und|oder|bzw\.|sowie|wie|beziehungsweise)\b/.test(teil)) {
-          txt = txt.slice(0, -1) + teil;
-        } else txt = `${txt} ${teil}`;
+        else if (!/[-‐‑­]$/.test(txt)) txt = `${txt} ${teil}`;
+        else if (/^\p{Lu}/u.test(teil)) txt = txt + teil; // Bindestrich im Kompositum
+        else if (/^(?:und|oder|bzw\.|sowie|wie|beziehungsweise)\b/.test(teil)) txt = `${txt} ${teil}`;
+        else txt = txt.slice(0, -1) + teil; // Trennstrich
       }
       if (txt === '') continue;
       const token = koepfe.get(treffer)!;

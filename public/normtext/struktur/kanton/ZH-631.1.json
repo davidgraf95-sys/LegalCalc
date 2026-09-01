@@ -1360,6 +1360,57 @@
         "2. Beteiligungsabzug a. Grundsatz"
       ]
     },
+    "73": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Erster Teil: Staatssteuern"
+        },
+        {
+          "ebene": 2,
+          "label": "Dritter Abschnitt: Besteuerung der juristischen Personen"
+        },
+        {
+          "ebene": 3,
+          "label": "B. Gewinnsteuer"
+        }
+      ],
+      "marginalie": []
+    },
+    "74": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Erster Teil: Staatssteuern"
+        },
+        {
+          "ebene": 2,
+          "label": "Dritter Abschnitt: Besteuerung der juristischen Personen"
+        },
+        {
+          "ebene": 3,
+          "label": "B. Gewinnsteuer"
+        }
+      ],
+      "marginalie": []
+    },
+    "75": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Erster Teil: Staatssteuern"
+        },
+        {
+          "ebene": 2,
+          "label": "Dritter Abschnitt: Besteuerung der juristischen Personen"
+        },
+        {
+          "ebene": 3,
+          "label": "B. Gewinnsteuer"
+        }
+      ],
+      "marginalie": []
+    },
     "76": {
       "gliederung": [
         {
@@ -4229,6 +4280,125 @@
         "VI. Steuererklärung"
       ]
     },
+    "227": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Zweiter Teil: Gemeindesteuern"
+        },
+        {
+          "ebene": 2,
+          "label": "Zweiter Abschnitt: Grundsteuern"
+        },
+        {
+          "ebene": 3,
+          "label": "B. Grundstückgewinnsteuer"
+        }
+      ],
+      "marginalie": []
+    },
+    "228": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Zweiter Teil: Gemeindesteuern"
+        },
+        {
+          "ebene": 2,
+          "label": "Zweiter Abschnitt: Grundsteuern"
+        },
+        {
+          "ebene": 3,
+          "label": "B. Grundstückgewinnsteuer"
+        }
+      ],
+      "marginalie": []
+    },
+    "229": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Zweiter Teil: Gemeindesteuern"
+        },
+        {
+          "ebene": 2,
+          "label": "Zweiter Abschnitt: Grundsteuern"
+        },
+        {
+          "ebene": 3,
+          "label": "B. Grundstückgewinnsteuer"
+        }
+      ],
+      "marginalie": []
+    },
+    "230": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Zweiter Teil: Gemeindesteuern"
+        },
+        {
+          "ebene": 2,
+          "label": "Zweiter Abschnitt: Grundsteuern"
+        },
+        {
+          "ebene": 3,
+          "label": "B. Grundstückgewinnsteuer"
+        }
+      ],
+      "marginalie": []
+    },
+    "231": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Zweiter Teil: Gemeindesteuern"
+        },
+        {
+          "ebene": 2,
+          "label": "Zweiter Abschnitt: Grundsteuern"
+        },
+        {
+          "ebene": 3,
+          "label": "B. Grundstückgewinnsteuer"
+        }
+      ],
+      "marginalie": []
+    },
+    "232": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Zweiter Teil: Gemeindesteuern"
+        },
+        {
+          "ebene": 2,
+          "label": "Zweiter Abschnitt: Grundsteuern"
+        },
+        {
+          "ebene": 3,
+          "label": "B. Grundstückgewinnsteuer"
+        }
+      ],
+      "marginalie": []
+    },
+    "233": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Zweiter Teil: Gemeindesteuern"
+        },
+        {
+          "ebene": 2,
+          "label": "Zweiter Abschnitt: Grundsteuern"
+        },
+        {
+          "ebene": 3,
+          "label": "B. Grundstückgewinnsteuer"
+        }
+      ],
+      "marginalie": []
+    },
     "234": {
       "gliederung": [
         {
@@ -4917,6 +5087,443 @@
         "VII. Inkrafttreten des neuen Gesetzes"
       ]
     },
+    "9_a": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Erster Teil: Staatssteuern"
+        },
+        {
+          "ebene": 2,
+          "label": "Zweiter Abschnitt: Besteuerung der natürlichen Personen"
+        },
+        {
+          "ebene": 3,
+          "label": "A. Steuerpflicht"
+        }
+      ],
+      "marginalie": [
+        "3. Kollektive Kapitalanlagen"
+      ]
+    },
+    "17_a": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Erster Teil: Staatssteuern"
+        },
+        {
+          "ebene": 2,
+          "label": "Zweiter Abschnitt: Besteuerung der natürlichen Personen"
+        },
+        {
+          "ebene": 3,
+          "label": "B. Einkommenssteuer"
+        }
+      ],
+      "marginalie": [
+        "b. Mitarbeiterbeteiligungen"
+      ]
+    },
+    "17_b": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Erster Teil: Staatssteuern"
+        },
+        {
+          "ebene": 2,
+          "label": "Zweiter Abschnitt: Besteuerung der natürlichen Personen"
+        },
+        {
+          "ebene": 3,
+          "label": "B. Einkommenssteuer"
+        }
+      ],
+      "marginalie": [
+        "c. Einkünfte aus echten Mitarbeiterbeteiligungen"
+      ]
+    },
+    "17_c": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Erster Teil: Staatssteuern"
+        },
+        {
+          "ebene": 2,
+          "label": "Zweiter Abschnitt: Besteuerung der natürlichen Personen"
+        },
+        {
+          "ebene": 3,
+          "label": "B. Einkommenssteuer"
+        }
+      ],
+      "marginalie": [
+        "d. Einkünfte aus unechten Mitarbeiterbeteiligungen"
+      ]
+    },
+    "17_d": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Erster Teil: Staatssteuern"
+        },
+        {
+          "ebene": 2,
+          "label": "Zweiter Abschnitt: Besteuerung der natürlichen Personen"
+        },
+        {
+          "ebene": 3,
+          "label": "B. Einkommenssteuer"
+        }
+      ],
+      "marginalie": [
+        "e. Anteilmässige Besteuerung"
+      ]
+    },
+    "18_a": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Erster Teil: Staatssteuern"
+        },
+        {
+          "ebene": 2,
+          "label": "Zweiter Abschnitt: Besteuerung der natürlichen Personen"
+        },
+        {
+          "ebene": 3,
+          "label": "B. Einkommenssteuer"
+        }
+      ],
+      "marginalie": [
+        "b. Aufschubtatbestände"
+      ]
+    },
+    "18_b": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Erster Teil: Staatssteuern"
+        },
+        {
+          "ebene": 2,
+          "label": "Zweiter Abschnitt: Besteuerung der natürlichen Personen"
+        },
+        {
+          "ebene": 3,
+          "label": "B. Einkommenssteuer"
+        }
+      ],
+      "marginalie": [
+        "c. Teilbesteuerung der Einkünfte aus Beteiligungen des Geschäftsvermögens"
+      ]
+    },
+    "19_a": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Erster Teil: Staatssteuern"
+        },
+        {
+          "ebene": 2,
+          "label": "Zweiter Abschnitt: Besteuerung der natürlichen Personen"
+        },
+        {
+          "ebene": 3,
+          "label": "B. Einkommenssteuer"
+        }
+      ],
+      "marginalie": [
+        "e. Einkommen aus Patenten und vergleichbaren Rechten"
+      ]
+    },
+    "20_a": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Erster Teil: Staatssteuern"
+        },
+        {
+          "ebene": 2,
+          "label": "Zweiter Abschnitt: Besteuerung der natürlichen Personen"
+        },
+        {
+          "ebene": 3,
+          "label": "B. Einkommenssteuer"
+        }
+      ],
+      "marginalie": [
+        "b. Besondere Fälle"
+      ]
+    },
+    "37_a": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Erster Teil: Staatssteuern"
+        },
+        {
+          "ebene": 2,
+          "label": "Zweiter Abschnitt: Besteuerung der natürlichen Personen"
+        },
+        {
+          "ebene": 3,
+          "label": "B. Einkommenssteuer"
+        }
+      ],
+      "marginalie": [
+        "VI. Vereinfachtes Abrechnungsverfahren"
+      ]
+    },
+    "37_b": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Erster Teil: Staatssteuern"
+        },
+        {
+          "ebene": 2,
+          "label": "Zweiter Abschnitt: Besteuerung der natürlichen Personen"
+        },
+        {
+          "ebene": 3,
+          "label": "B. Einkommenssteuer"
+        }
+      ],
+      "marginalie": [
+        "VII. Liquidationsgewinne"
+      ]
+    },
+    "39_a": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Erster Teil: Staatssteuern"
+        },
+        {
+          "ebene": 2,
+          "label": "Zweiter Abschnitt: Besteuerung der natürlichen Personen"
+        },
+        {
+          "ebene": 3,
+          "label": "C. Vermögenssteuer"
+        }
+      ],
+      "marginalie": [
+        "III. Mitarbeiterbeteiligungen"
+      ]
+    },
+    "64_a": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Erster Teil: Staatssteuern"
+        },
+        {
+          "ebene": 2,
+          "label": "Dritter Abschnitt: Besteuerung der juristischen Personen"
+        },
+        {
+          "ebene": 3,
+          "label": "B. Gewinnsteuer"
+        }
+      ],
+      "marginalie": [
+        "b. Patente und vergleichbare Rechte: Begriffe"
+      ]
+    },
+    "64_b": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Erster Teil: Staatssteuern"
+        },
+        {
+          "ebene": 2,
+          "label": "Dritter Abschnitt: Besteuerung der juristischen Personen"
+        },
+        {
+          "ebene": 3,
+          "label": "B. Gewinnsteuer"
+        }
+      ],
+      "marginalie": [
+        "c. Patente und vergleichbare Rechte: Besteuerung"
+      ]
+    },
+    "64_c": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Erster Teil: Staatssteuern"
+        },
+        {
+          "ebene": 2,
+          "label": "Dritter Abschnitt: Besteuerung der juristischen Personen"
+        },
+        {
+          "ebene": 3,
+          "label": "B. Gewinnsteuer"
+        }
+      ],
+      "marginalie": [
+        "d. Aufdeckung stiller Reserven bei Beginn der Steuerpflicht"
+      ]
+    },
+    "64_d": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Erster Teil: Staatssteuern"
+        },
+        {
+          "ebene": 2,
+          "label": "Dritter Abschnitt: Besteuerung der juristischen Personen"
+        },
+        {
+          "ebene": 3,
+          "label": "B. Gewinnsteuer"
+        }
+      ],
+      "marginalie": [
+        "e. Besteuerung stiller Reserven am Ende der Steuerpflicht"
+      ]
+    },
+    "65_a": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Erster Teil: Staatssteuern"
+        },
+        {
+          "ebene": 2,
+          "label": "Dritter Abschnitt: Besteuerung der juristischen Personen"
+        },
+        {
+          "ebene": 3,
+          "label": "B. Gewinnsteuer"
+        }
+      ],
+      "marginalie": [
+        "g. Zusätzlicher Abzug von Forschungs- und Entwicklungsaufwand"
+      ]
+    },
+    "65_b": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Erster Teil: Staatssteuern"
+        },
+        {
+          "ebene": 2,
+          "label": "Dritter Abschnitt: Besteuerung der juristischen Personen"
+        },
+        {
+          "ebene": 3,
+          "label": "B. Gewinnsteuer"
+        }
+      ],
+      "marginalie": [
+        "h. Abzug für Eigenfinanzierung"
+      ]
+    },
+    "65_c": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Erster Teil: Staatssteuern"
+        },
+        {
+          "ebene": 2,
+          "label": "Dritter Abschnitt: Besteuerung der juristischen Personen"
+        },
+        {
+          "ebene": 3,
+          "label": "B. Gewinnsteuer"
+        }
+      ],
+      "marginalie": [
+        "i. Entlastungsbegrenzung"
+      ]
+    },
+    "69_a": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Erster Teil: Staatssteuern"
+        },
+        {
+          "ebene": 2,
+          "label": "Dritter Abschnitt: Besteuerung der juristischen Personen"
+        },
+        {
+          "ebene": 3,
+          "label": "B. Gewinnsteuer"
+        }
+      ],
+      "marginalie": [
+        "n. Gewinne von juristischen Personen mit ideellen Zwecken"
+      ]
+    },
+    "72_a": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Erster Teil: Staatssteuern"
+        },
+        {
+          "ebene": 2,
+          "label": "Dritter Abschnitt: Besteuerung der juristischen Personen"
+        },
+        {
+          "ebene": 3,
+          "label": "B. Gewinnsteuer"
+        }
+      ],
+      "marginalie": [
+        "b. Kapital- und Aufwertungsgewinne"
+      ]
+    },
+    "81_a": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Erster Teil: Staatssteuern"
+        },
+        {
+          "ebene": 2,
+          "label": "Dritter Abschnitt: Besteuerung der juristischen Personen"
+        },
+        {
+          "ebene": 3,
+          "label": "C. Kapitalsteuer"
+        }
+      ],
+      "marginalie": [
+        "4. Ermässigung"
+      ]
+    },
+    "93_a": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Erster Teil: Staatssteuern"
+        },
+        {
+          "ebene": 2,
+          "label": "Vierter Abschnitt: Quellensteuern für natürliche und juristische"
+        },
+        {
+          "ebene": 3,
+          "label": "A. Natürliche Personen mit steuerrechtlichem Wohnsitz oder"
+        }
+      ],
+      "marginalie": [
+        "2. Nachträgliche ordentliche Veranlagung auf Antrag"
+      ]
+    },
     "101_a": {
       "gliederung": [
         {
@@ -5206,158 +5813,6 @@
         "III. Verzeichnis der steuerbefreiten Institutionen"
       ]
     },
-    "17_a": {
-      "gliederung": [
-        {
-          "ebene": 1,
-          "label": "Erster Teil: Staatssteuern"
-        },
-        {
-          "ebene": 2,
-          "label": "Zweiter Abschnitt: Besteuerung der natürlichen Personen"
-        },
-        {
-          "ebene": 3,
-          "label": "B. Einkommenssteuer"
-        }
-      ],
-      "marginalie": [
-        "b. Mitarbeiterbeteiligungen"
-      ]
-    },
-    "17_b": {
-      "gliederung": [
-        {
-          "ebene": 1,
-          "label": "Erster Teil: Staatssteuern"
-        },
-        {
-          "ebene": 2,
-          "label": "Zweiter Abschnitt: Besteuerung der natürlichen Personen"
-        },
-        {
-          "ebene": 3,
-          "label": "B. Einkommenssteuer"
-        }
-      ],
-      "marginalie": [
-        "c. Einkünfte aus echten Mitarbeiterbeteiligungen"
-      ]
-    },
-    "17_c": {
-      "gliederung": [
-        {
-          "ebene": 1,
-          "label": "Erster Teil: Staatssteuern"
-        },
-        {
-          "ebene": 2,
-          "label": "Zweiter Abschnitt: Besteuerung der natürlichen Personen"
-        },
-        {
-          "ebene": 3,
-          "label": "B. Einkommenssteuer"
-        }
-      ],
-      "marginalie": [
-        "d. Einkünfte aus unechten Mitarbeiterbeteiligungen"
-      ]
-    },
-    "17_d": {
-      "gliederung": [
-        {
-          "ebene": 1,
-          "label": "Erster Teil: Staatssteuern"
-        },
-        {
-          "ebene": 2,
-          "label": "Zweiter Abschnitt: Besteuerung der natürlichen Personen"
-        },
-        {
-          "ebene": 3,
-          "label": "B. Einkommenssteuer"
-        }
-      ],
-      "marginalie": [
-        "e. Anteilmässige Besteuerung"
-      ]
-    },
-    "18_a": {
-      "gliederung": [
-        {
-          "ebene": 1,
-          "label": "Erster Teil: Staatssteuern"
-        },
-        {
-          "ebene": 2,
-          "label": "Zweiter Abschnitt: Besteuerung der natürlichen Personen"
-        },
-        {
-          "ebene": 3,
-          "label": "B. Einkommenssteuer"
-        }
-      ],
-      "marginalie": [
-        "b. Aufschubtatbestände"
-      ]
-    },
-    "18_b": {
-      "gliederung": [
-        {
-          "ebene": 1,
-          "label": "Erster Teil: Staatssteuern"
-        },
-        {
-          "ebene": 2,
-          "label": "Zweiter Abschnitt: Besteuerung der natürlichen Personen"
-        },
-        {
-          "ebene": 3,
-          "label": "B. Einkommenssteuer"
-        }
-      ],
-      "marginalie": [
-        "c. Teilbesteuerung der Einkünfte aus Beteiligungen des Geschäftsvermögens"
-      ]
-    },
-    "19_a": {
-      "gliederung": [
-        {
-          "ebene": 1,
-          "label": "Erster Teil: Staatssteuern"
-        },
-        {
-          "ebene": 2,
-          "label": "Zweiter Abschnitt: Besteuerung der natürlichen Personen"
-        },
-        {
-          "ebene": 3,
-          "label": "B. Einkommenssteuer"
-        }
-      ],
-      "marginalie": [
-        "e. Einkommen aus Patenten und vergleichbaren Rechten"
-      ]
-    },
-    "20_a": {
-      "gliederung": [
-        {
-          "ebene": 1,
-          "label": "Erster Teil: Staatssteuern"
-        },
-        {
-          "ebene": 2,
-          "label": "Zweiter Abschnitt: Besteuerung der natürlichen Personen"
-        },
-        {
-          "ebene": 3,
-          "label": "B. Einkommenssteuer"
-        }
-      ],
-      "marginalie": [
-        "b. Besondere Fälle"
-      ]
-    },
     "224_a": {
       "gliederung": [
         {
@@ -5444,291 +5899,6 @@
       ],
       "marginalie": [
         "13. Ausdehnung des Beteiligungsabzugs auf Kapital- und Aufwertungsgewinne"
-      ]
-    },
-    "37_a": {
-      "gliederung": [
-        {
-          "ebene": 1,
-          "label": "Erster Teil: Staatssteuern"
-        },
-        {
-          "ebene": 2,
-          "label": "Zweiter Abschnitt: Besteuerung der natürlichen Personen"
-        },
-        {
-          "ebene": 3,
-          "label": "B. Einkommenssteuer"
-        }
-      ],
-      "marginalie": [
-        "VI. Vereinfachtes Abrechnungsverfahren"
-      ]
-    },
-    "37_b": {
-      "gliederung": [
-        {
-          "ebene": 1,
-          "label": "Erster Teil: Staatssteuern"
-        },
-        {
-          "ebene": 2,
-          "label": "Zweiter Abschnitt: Besteuerung der natürlichen Personen"
-        },
-        {
-          "ebene": 3,
-          "label": "B. Einkommenssteuer"
-        }
-      ],
-      "marginalie": [
-        "VII. Liquidationsgewinne"
-      ]
-    },
-    "39_a": {
-      "gliederung": [
-        {
-          "ebene": 1,
-          "label": "Erster Teil: Staatssteuern"
-        },
-        {
-          "ebene": 2,
-          "label": "Zweiter Abschnitt: Besteuerung der natürlichen Personen"
-        },
-        {
-          "ebene": 3,
-          "label": "C. Vermögenssteuer"
-        }
-      ],
-      "marginalie": [
-        "III. Mitarbeiterbeteiligungen"
-      ]
-    },
-    "64_a": {
-      "gliederung": [
-        {
-          "ebene": 1,
-          "label": "Erster Teil: Staatssteuern"
-        },
-        {
-          "ebene": 2,
-          "label": "Dritter Abschnitt: Besteuerung der juristischen Personen"
-        },
-        {
-          "ebene": 3,
-          "label": "B. Gewinnsteuer"
-        }
-      ],
-      "marginalie": [
-        "b. Patente und vergleichbare Rechte: Begriffe"
-      ]
-    },
-    "64_b": {
-      "gliederung": [
-        {
-          "ebene": 1,
-          "label": "Erster Teil: Staatssteuern"
-        },
-        {
-          "ebene": 2,
-          "label": "Dritter Abschnitt: Besteuerung der juristischen Personen"
-        },
-        {
-          "ebene": 3,
-          "label": "B. Gewinnsteuer"
-        }
-      ],
-      "marginalie": [
-        "c. Patente und vergleichbare Rechte: Besteuerung"
-      ]
-    },
-    "64_c": {
-      "gliederung": [
-        {
-          "ebene": 1,
-          "label": "Erster Teil: Staatssteuern"
-        },
-        {
-          "ebene": 2,
-          "label": "Dritter Abschnitt: Besteuerung der juristischen Personen"
-        },
-        {
-          "ebene": 3,
-          "label": "B. Gewinnsteuer"
-        }
-      ],
-      "marginalie": [
-        "d. Aufdeckung stiller Reserven bei Beginn der Steuerpflicht"
-      ]
-    },
-    "64_d": {
-      "gliederung": [
-        {
-          "ebene": 1,
-          "label": "Erster Teil: Staatssteuern"
-        },
-        {
-          "ebene": 2,
-          "label": "Dritter Abschnitt: Besteuerung der juristischen Personen"
-        },
-        {
-          "ebene": 3,
-          "label": "B. Gewinnsteuer"
-        }
-      ],
-      "marginalie": [
-        "e. Besteuerung stiller Reserven am Ende der Steuerpflicht"
-      ]
-    },
-    "65_a": {
-      "gliederung": [
-        {
-          "ebene": 1,
-          "label": "Erster Teil: Staatssteuern"
-        },
-        {
-          "ebene": 2,
-          "label": "Dritter Abschnitt: Besteuerung der juristischen Personen"
-        },
-        {
-          "ebene": 3,
-          "label": "B. Gewinnsteuer"
-        }
-      ],
-      "marginalie": [
-        "g. Zusätzlicher Abzug von Forschungs- und Entwicklungsaufwand"
-      ]
-    },
-    "65_b": {
-      "gliederung": [
-        {
-          "ebene": 1,
-          "label": "Erster Teil: Staatssteuern"
-        },
-        {
-          "ebene": 2,
-          "label": "Dritter Abschnitt: Besteuerung der juristischen Personen"
-        },
-        {
-          "ebene": 3,
-          "label": "B. Gewinnsteuer"
-        }
-      ],
-      "marginalie": [
-        "h. Abzug für Eigenfinanzierung"
-      ]
-    },
-    "65_c": {
-      "gliederung": [
-        {
-          "ebene": 1,
-          "label": "Erster Teil: Staatssteuern"
-        },
-        {
-          "ebene": 2,
-          "label": "Dritter Abschnitt: Besteuerung der juristischen Personen"
-        },
-        {
-          "ebene": 3,
-          "label": "B. Gewinnsteuer"
-        }
-      ],
-      "marginalie": [
-        "i. Entlastungsbegrenzung"
-      ]
-    },
-    "69_a": {
-      "gliederung": [
-        {
-          "ebene": 1,
-          "label": "Erster Teil: Staatssteuern"
-        },
-        {
-          "ebene": 2,
-          "label": "Dritter Abschnitt: Besteuerung der juristischen Personen"
-        },
-        {
-          "ebene": 3,
-          "label": "B. Gewinnsteuer"
-        }
-      ],
-      "marginalie": [
-        "n. Gewinne von juristischen Personen mit ideellen Zwecken"
-      ]
-    },
-    "72_a": {
-      "gliederung": [
-        {
-          "ebene": 1,
-          "label": "Erster Teil: Staatssteuern"
-        },
-        {
-          "ebene": 2,
-          "label": "Dritter Abschnitt: Besteuerung der juristischen Personen"
-        },
-        {
-          "ebene": 3,
-          "label": "B. Gewinnsteuer"
-        }
-      ],
-      "marginalie": [
-        "b. Kapital- und Aufwertungsgewinne"
-      ]
-    },
-    "81_a": {
-      "gliederung": [
-        {
-          "ebene": 1,
-          "label": "Erster Teil: Staatssteuern"
-        },
-        {
-          "ebene": 2,
-          "label": "Dritter Abschnitt: Besteuerung der juristischen Personen"
-        },
-        {
-          "ebene": 3,
-          "label": "C. Kapitalsteuer"
-        }
-      ],
-      "marginalie": [
-        "4. Ermässigung"
-      ]
-    },
-    "93_a": {
-      "gliederung": [
-        {
-          "ebene": 1,
-          "label": "Erster Teil: Staatssteuern"
-        },
-        {
-          "ebene": 2,
-          "label": "Vierter Abschnitt: Quellensteuern für natürliche und juristische"
-        },
-        {
-          "ebene": 3,
-          "label": "A. Natürliche Personen mit steuerrechtlichem Wohnsitz oder"
-        }
-      ],
-      "marginalie": [
-        "2. Nachträgliche ordentliche Veranlagung auf Antrag"
-      ]
-    },
-    "9_a": {
-      "gliederung": [
-        {
-          "ebene": 1,
-          "label": "Erster Teil: Staatssteuern"
-        },
-        {
-          "ebene": 2,
-          "label": "Zweiter Abschnitt: Besteuerung der natürlichen Personen"
-        },
-        {
-          "ebene": 3,
-          "label": "A. Steuerpflicht"
-        }
-      ],
-      "marginalie": [
-        "3. Kollektive Kapitalanlagen"
       ]
     }
   }

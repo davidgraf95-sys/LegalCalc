@@ -191,6 +191,33 @@
         "Findelkinder"
       ]
     },
+    "18": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "F. Amtstätigkeit"
+        }
+      ],
+      "marginalie": []
+    },
+    "19": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "F. Amtstätigkeit"
+        }
+      ],
+      "marginalie": []
+    },
+    "20": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "F. Amtstätigkeit"
+        }
+      ],
+      "marginalie": []
+    },
     "21": {
       "gliederung": [
         {
@@ -234,6 +261,26 @@
       "marginalie": [
         "Inkrafttreten"
       ]
+    },
+    "1_a": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "A. Zivilstandskreise und Sonderzivilstandsamt"
+        }
+      ],
+      "marginalie": [
+        "Sonderzivilstandsamt"
+      ]
+    },
+    "5_a": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "B. Geschäftsbetrieb"
+        }
+      ],
+      "marginalie": []
     },
     "12_a": {
       "gliederung": [
@@ -279,17 +326,6 @@
         "Amtsübergabe"
       ]
     },
-    "1_a": {
-      "gliederung": [
-        {
-          "ebene": 1,
-          "label": "A. Zivilstandskreise und Sonderzivilstandsamt"
-        }
-      ],
-      "marginalie": [
-        "Sonderzivilstandsamt"
-      ]
-    },
     "20_a": {
       "gliederung": [
         {
@@ -300,15 +336,6 @@
       "marginalie": [
         "Anfechtung von Beschwerdeentscheiden"
       ]
-    },
-    "5_a": {
-      "gliederung": [
-        {
-          "ebene": 1,
-          "label": "B. Geschäftsbetrieb"
-        }
-      ],
-      "marginalie": []
     }
   }
 }

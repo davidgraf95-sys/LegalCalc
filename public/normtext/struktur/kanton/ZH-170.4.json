@@ -139,7 +139,7 @@
         }
       ],
       "marginalie": [
-        "DatenschutzFolgenabschätzung und Vorabkontrolle"
+        "Datenschutz-Folgenabschätzung und Vorabkontrolle"
       ]
     },
     "11": {
@@ -528,21 +528,6 @@
         "Anpassung anderer Erlasse"
       ]
     },
-    "12_a": {
-      "gliederung": [
-        {
-          "ebene": 1,
-          "label": "II. Grundsätze im Umgang mit Informationen"
-        },
-        {
-          "ebene": 2,
-          "label": "2. Besondere Grundsätze im Umgang mit Personendaten"
-        }
-      ],
-      "marginalie": [
-        "Meldepflicht"
-      ]
-    },
     "2_a": {
       "gliederung": [
         {
@@ -574,6 +559,21 @@
       ],
       "marginalie": [
         "c. Teilnahme am wirtschaftlichen Wettbewerb"
+      ]
+    },
+    "12_a": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "II. Grundsätze im Umgang mit Informationen"
+        },
+        {
+          "ebene": 2,
+          "label": "2. Besondere Grundsätze im Umgang mit Personendaten"
+        }
+      ],
+      "marginalie": [
+        "Meldepflicht"
       ]
     },
     "36_a": {

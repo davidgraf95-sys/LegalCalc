@@ -400,6 +400,24 @@
         "Dezentrale Personalmanagementsysteme"
       ]
     },
+    "37": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "G. Datenschutz und Datenbearbeitung"
+        }
+      ],
+      "marginalie": []
+    },
+    "38": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "G. Datenschutz und Datenbearbeitung"
+        }
+      ],
+      "marginalie": []
+    },
     "39": {
       "gliederung": [
         {
@@ -647,6 +665,28 @@
         "Inkrafttreten"
       ]
     },
+    "6_a": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "E. Berufliche Vorsorge"
+        }
+      ],
+      "marginalie": [
+        "Grundsätze"
+      ]
+    },
+    "6_b": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "E. Berufliche Vorsorge"
+        }
+      ],
+      "marginalie": [
+        "Leistungen des Kantons"
+      ]
+    },
     "24_a": {
       "gliederung": [
         {
@@ -752,28 +792,6 @@
       ],
       "marginalie": [
         "Mitteilungspflichten der Strafbehörden"
-      ]
-    },
-    "6_a": {
-      "gliederung": [
-        {
-          "ebene": 1,
-          "label": "E. Berufliche Vorsorge"
-        }
-      ],
-      "marginalie": [
-        "Grundsätze"
-      ]
-    },
-    "6_b": {
-      "gliederung": [
-        {
-          "ebene": 1,
-          "label": "E. Berufliche Vorsorge"
-        }
-      ],
-      "marginalie": [
-        "Leistungen des Kantons"
       ]
     }
   }
