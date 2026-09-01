@@ -657,7 +657,9 @@ David «Speicherlimite aufgehoben» deckt das).
 Tag-Leser-Modul (Vorbau läuft, `scratchpad/tagleser/`, E1-Beweis: Rollen
 Marginalie/Haupttext/Fussnote deterministisch, 119/119 Seiten zeichen-
 vollständig). Darauf, je EIGENE Runde mit eigener Gegenprüfung:
-- **R1 Gliederung:** Randtitel/Marginalien als Sachtitel (483 verworfen),
+- **R1 Gliederung** *(vorgezogen, Auftrag David 2.9.2026 wörtlich: «achte bei zh auch darauf, dass wir
+  marginale extrahieren und in der gliederung darstellen» — Bau läuft seit 2.9., Branch
+  `feat/zh-r1-marginalien`)*: Randtitel/Marginalien als Sachtitel (483 verworfen),
   Kapitel-/Abschnitts-Struktur als eigene Blöcke, die 129 Überschriften-
   Fehlzuordnungen, römische Ebenen. Kreuzvergleich Tag-Weg ↔ Positions-Weg
   als neues Dauer-Tor.
@@ -779,6 +781,12 @@ unverändert.)*
 *(Bereits eingelöst diese Session: geteilte Scratch-Werkzeuge — Messbank,
 E1-Skripte, PDF-Ablagen — werden agentenübergreifend wiederverwendet;
 Mutationsproben-Regel steht im Skill korpus-werkstatt.)*
+
+- **O8 · Regenerations-Kaskade Kanton** *(Befund 2.9.2026, PR #613: `check:zaehler` rot in CI, weil die
+  Regeneration nach dem Register-Nachzug `gen:zaehler` nicht mitfuhr)*: ein Kommando, das nach jedem
+  Register-Eingriff Manifest, Startseiten-Zähler, Paritäts-DB und Verweis-Basislinie in fester Reihenfolge
+  nachzieht (Vorbild `materialien:kaskade`, Befund (g) QS-MONITOR-ROT). Bis dahin: Landungs-Checkliste
+  `gen:zaehler` + `check:verweis-inventar -- --schreiben` nach jedem Merge von main in einen Korpus-Branch.
 
 ### 5.3 Offene David-Punkte (nicht blockierend gesammelt)
 
