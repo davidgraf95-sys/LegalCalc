@@ -66,6 +66,14 @@ Gegenprüfungs-Pflicht per Pfad; die fachliche Schärfe sichert das V-1-Tor. V-7
 liegen in `src/lib/fedlex/**` (Erkenner-Tabellen, kein Risikopfad nach `istRisikoPfad`);
 die kuratierten Einträge gehen als prüfbare Liste in den PR (Zweitblick, Abnahme David).
 
+### §1a · Bekannter konservativer Verlust (Auflage Gegenprüfung 1.9.2026, PR #611)
+
+Die Fortsetzungs-Regel des Volltitel-Zweigs (kein Link, wenn hinter dem Titel-Fragment ein weiteres
+Titelwort folgt, ohne bestätigendes Datum) nimmt rund 11 **richtige** Links mit (z. B. AR-721.1 art_77
+«…des Bundesgesetzes über den Schutz der Gewässer betreffend die Ausscheidung…», AR-832.311 art_7 KVG).
+Bewusst so belassen: §1 «kein Link besser als falscher». Wer sie zurückholen will, braucht eine
+Titel-Vollform je Ziel (nicht das Präfix) — kein Regex-Nachbau.
+
 ## §2 · Mess-Kern (31.8.2026, Kurzform)
 
 Verteilung: 14 691 Self-Links · 2 720 Fremd-Links (Chips) · 7 078 Text, davon
