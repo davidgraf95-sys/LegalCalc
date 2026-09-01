@@ -315,11 +315,22 @@ describe('NormText — A10 Plural-Linker («in den Artikeln …»)', () => {
     expect(out).not.toContain('/gesetze/bund/MWSTG#art-'); // kein Self-Link
   });
 
-  it('unauflösbarer Fremdname unterdrückt (§1): «…Artikeln 91, 163 und 222 des Bundesgesetzes vom …» bleibt Text', () => {
+  // V-7b (W2·20, 1.9.2026, deklarierte fachliche Änderung): der amtliche Volltitel
+  // ist ein deterministisches Fremd-Signal — jedes Glied zeigt auf das SchKG,
+  // nie auf den eigenen Erlass (vorher: pauschal Text).
+  it('Volltitel im Plural (V-7b): «…Artikeln 91, 163 und 222 des Bundesgesetzes vom … über Schuldbetreibung und Konkurs» → SchKG je Glied', () => {
     const tokens91 = new Map<string, string>([['91', '91'], ['163', '163'], ['222', '222']]);
     const internX: InternRefs = { tokenMap: tokens91, basisPfad: '/gesetze/bund/AHVG', springeZu: () => {} };
     const out = ssr(<NormText text="Konkursverwaltungen nach den Artikeln 91, 163 und 222 des Bundesgesetzes vom 11. April 1889 über Schuldbetreibung und Konkurs" intern={internX} />);
-    expect(out).not.toContain('<a'); // NIE ein geratener Self-Link auf ein Fremdgesetz
+    for (const n of ['91', '163', '222']) expect(out).toMatch(new RegExp(`href="[^"]*${eliId('SchKG')}[^"]*#art_${n}"`));
+    expect(out).not.toContain('#art-'); // NIE ein geratener Self-Link auf ein Fremdgesetz
+  });
+
+  it('unbekannter Fremdname unterdrückt (§1): «…Artikeln 91, 163 und 222 des Bundesgesetzes vom … über die Sache» bleibt Text', () => {
+    const tokens91 = new Map<string, string>([['91', '91'], ['163', '163'], ['222', '222']]);
+    const internX: InternRefs = { tokenMap: tokens91, basisPfad: '/gesetze/bund/AHVG', springeZu: () => {} };
+    const out = ssr(<NormText text="Konkursverwaltungen nach den Artikeln 91, 163 und 222 des Bundesgesetzes vom 11. April 1889 über die Sache" intern={internX} />);
+    expect(out).not.toContain('<a');
   });
 
   it('Glied ohne eigenes Token bleibt Text (§8, kein toter Link)', () => {
@@ -380,9 +391,18 @@ describe('NormText — A11 Präambel/Ingress-Verweise (Genitiv-Map)', () => {
     expect(out).not.toContain('#art-81"'); // NIE ein AHVV-Self-Link (§1)
   });
 
-  it('generischer Genitiv OHNE Klammer bleibt unverlinkt: «Artikel 81 des Bundesgesetzes vom …»', () => {
+  // V-7b (W2·20, 1.9.2026, deklarierte fachliche Änderung): der amtliche Volltitel
+  // OHNE Klammer routet auf das genannte Gesetz; ein unbekannter Titel bleibt Text.
+  it('Volltitel OHNE Klammer (V-7b): «Artikel 81 des Bundesgesetzes vom … über die Invalidenversicherung» → IVG art_81, nie Self', () => {
     const internAhvv: InternRefs = { tokenMap: new Map([['81', '81']]), basisPfad: '/gesetze/bund/AHVV', springeZu: () => {} };
     const out = ssr(<NormText text="gestützt auf Artikel 81 des Bundesgesetzes vom 6. Oktober 2000 über die Invalidenversicherung," intern={internAhvv} />);
+    expect(out).toMatch(new RegExp(`href="[^"]*${eliId('IVG')}[^"]*#art_81"`));
+    expect(out).not.toContain('#art-81"'); // NIE ein AHVV-Self-Link (§1)
+  });
+
+  it('unbekannter Titel OHNE Klammer bleibt unverlinkt: «Artikel 81 des Bundesgesetzes vom … über die Sache»', () => {
+    const internAhvv: InternRefs = { tokenMap: new Map([['81', '81']]), basisPfad: '/gesetze/bund/AHVV', springeZu: () => {} };
+    const out = ssr(<NormText text="gestützt auf Artikel 81 des Bundesgesetzes vom 6. Oktober 2000 über die Sache," intern={internAhvv} />);
     expect(out).not.toContain('<a'); // weder Deep-Link (kein Signal) noch Self-Link (§1)
   });
 });

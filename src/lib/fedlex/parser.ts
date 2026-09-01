@@ -4,14 +4,18 @@
 // nur noch die Fassade, die alles Bisherige unveraendert re-exportiert. Gerichtete
 // Kette ohne Zyklus: tabelle ← url ← erkennung ← parser.
 
-import { FEDLEX, type FedlexGesetz } from './tabelle';
+import { type FedlexGesetz } from './tabelle';
 import { artikelToken } from './url';
 import {
   erkenneFedlexGesetz,
   erkenneGenitivGesetz,
+  erkenneTitelGesetz,
   fedlexLinkFuerArtikel,
   GENITIV_NAMEN_ESC,
+  KUERZEL_TOKENS,
+  TITEL_FRAGMENTE_ESC,
 } from './erkennung';
+import type { FremdEbene } from './positivliste';
 
 // ─── Bund-Normverweise im Fliesstext finden (Inline-Auto-Linker) ───────────
 //
@@ -30,7 +34,8 @@ import {
 // auf bekannte Zitat-Tokens beschränkt — so läuft der Match nie über einen
 // Satz oder ein zweites «Art.» hinaus. Jeder Treffer wird vor dem Verlinken
 // zusätzlich gegen fedlexLinkFuerArtikel validiert (kein toter Link).
-const NORM_NAMEN_ESC = (['GebV SchKG', ...Object.keys(FEDLEX)] as string[])
+// V-8 (W2·20): KUERZEL_TOKENS = FEDLEX-Keys + amtliche Schreibweisen («BankG»).
+const NORM_NAMEN_ESC = (['GebV SchKG', ...KUERZEL_TOKENS] as string[])
   // Längste zuerst: «GebV SchKG» vor «SchKG», «StGB» vor «StG» (Suffix-Kollision).
   .sort((a, b) => b.length - a.length)
   .map((n) => n.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'));
@@ -122,6 +127,8 @@ export function fremdgesetzNachArtikel(restNachArtikel: string): FedlexGesetz | 
 // ohne diese Klammer matcht die Einheit NICHT (deterministischer Anker).
 const N2_NAME_WORT = '(?:[A-ZÄÖÜ][A-Za-zÄÖÜäöüß.\\-]*|\\d{1,4}\\.?|vom|von|über|und|der|die|das|des|für|zur|zum|im|in|zu|den|betreffend)';
 const N2_NAME_RUN = '[A-ZÄÖÜ][A-Za-zÄÖÜäöüß.\\-]*(?:\\s+' + N2_NAME_WORT + '){0,14}';
+// Datums-Einschub der Zitier-Konvention («vom 20. Dezember 1946», «vom 18. Dez. 1987»).
+const N2_DATUM = '\\d{1,2}\\.\\s*[A-Za-zÄÖÜäöü]+\\.?\\s+\\d{4}';
 const FREMD_FORM_B = new RegExp(
   '^(\\s*)' +
     // 2: Aufzählungs-Schwanz (weitere Artikelnummern «oder 66abis», «25–31»)
@@ -137,9 +144,21 @@ const FREMD_FORM_B = new RegExp(
       // 4: kuratierter Genitiv-Kurztitel OHNE Klammer («der Bundesverfassung»);
       //    greift NUR, wenn KEINE Klammer folgt (sonst gilt die Klammer, s. o.).
       '|(' + GENITIV_NAMEN_ESC.join('|') + ')\\b(?!\\s*\\()' +
+      // 5/6 (V-7b, W2·20): amtlicher Volltitel «Bundesgesetzes/Verordnung [vom
+      //    D. Monat JJJJ] über …» — Kopfwort + kuratiertes Titel-Fragment; ein
+      //    Datums-Einschub ist Zitier-Konvention, kein Inhalt.
+      '|(Bundesgesetzes|Verordnung)(?:\\s+vom\\s+' + N2_DATUM + ')?\\s+(' + TITEL_FRAGMENTE_ESC.join('|') + ')\\b' +
     ')',
 );
 const N2_ARTNR_RE = new RegExp(N2_ARTNR, 'g');
+// V-7 (W2·20): Klammer NACH dem Namen bzw. nach einem Datums-Einschub («… des
+// Datenschutzgesetzes vom 19. Februar 1986 (KDSG)»). Die Klammer ist das
+// autoritative Signal: nennt sie ein ANDERES oder unbekanntes Kürzel, ist der
+// Name nicht das gefundene Bundesgesetz → kein Link (§1; gemessener Falschlink
+// BE-154.21 auf main 70002a287). Dasselbe Kürzel wird in die Region eingezogen.
+const KLAMMER_NACH_NAME = new RegExp('^\\s*(?:vom\\s+' + N2_DATUM + '\\s*)?\\(([^()]{1,40})\\)');
+/** Woran das Fremdgesetz erkannt wurde (Mess-Klassen im V-1-Tor). */
+export type FremdSignal = 'klammer' | 'genitiv' | 'titel';
 
 /** Ein auf ein Fremdgesetz geroutetes Aufzählungs-Glied. */
 export interface FremdRoutingGlied {
@@ -169,20 +188,37 @@ export interface FremdRoutingGlied {
  *        Fremd-Erlass? Fehlt es (false), wird das Glied NICHT verlinkt (§1, nie
  *        raten). Ohne Prädikat linken alle erkannten Glieder (Fedlex-Deep-Link /
  *        In-Reader-Popover über NormChip — die etablierte Fremdverweis-Darstellung).
- * @returns {gesetz, glieder, regionEnd} oder null (kein Klammer-Kürzel-Signal).
- *          `regionEnd` = Offset in `rest` hinter dem «(KÜRZEL)» (Aufrufer setzt
- *          den Cursor hinter die ganze Einheit).
+ * @param ebene Ebene des LESENDEN Erlasses (V-7): in kantonalen Erlassen lösen
+ *        nur ebenenübergreifend eindeutige Namen auf (`positivliste.ts`).
+ *        Default `bund` = das Verhalten der Bund-Leser; kantonale Aufrufer
+ *        (NormText, Inventar-Tor) reichen `kanton` durch.
+ * @returns {gesetz, glieder, regionEnd, signal} oder null (kein Signal).
+ *          `regionEnd` = Offset in `rest` hinter dem «(KÜRZEL)» bzw. hinter dem
+ *          Namen/Titel (Aufrufer setzt den Cursor hinter die ganze Einheit).
  */
 export function fremdRoutingFormB(
   rest: string,
   ersteNummer: string,
   zielTokenExistiert?: (gesetz: FedlexGesetz, token: string) => boolean,
-): { gesetz: FedlexGesetz; glieder: FremdRoutingGlied[]; regionEnd: number } | null {
+  ebene: FremdEbene = 'bund',
+): { gesetz: FedlexGesetz; glieder: FremdRoutingGlied[]; regionEnd: number; signal: FremdSignal } | null {
   const m = FREMD_FORM_B.exec(rest);
   if (!m) return null;
-  // m[3] = Klammer-Kürzel (∈ FEDLEX), m[4] = kuratierter Genitiv-Kurztitel.
-  const gesetz = m[3] ? erkenneFedlexGesetz(m[3]) : m[4] ? erkenneGenitivGesetz(m[4]) : null;
+  // m[3] = Klammer-Kürzel (∈ FEDLEX), m[4] = kuratierter Genitiv-Kurztitel,
+  // m[5]+m[6] = Kopfwort + amtliches Titel-Fragment (V-7b).
+  const signal: FremdSignal = m[3] ? 'klammer' : m[4] ? 'genitiv' : 'titel';
+  const gesetz = m[3] ? erkenneFedlexGesetz(m[3])
+    : m[4] ? erkenneGenitivGesetz(m[4], ebene)
+    : erkenneTitelGesetz(m[5], m[6], ebene);
   if (!gesetz) return null; // Kein auflösbares Signal → kein Link (§1)
+  let regionEnd = m[0].length;
+  if (signal !== 'klammer') {
+    const k = KLAMMER_NACH_NAME.exec(rest.slice(regionEnd));
+    if (k) {
+      if (erkenneFedlexGesetz(k[1]) !== gesetz) return null; // fremde/unbekannte Klammer (§1)
+      regionEnd += k[0].length;
+    }
+  }
   const linkbar = (roh: string): boolean =>
     zielTokenExistiert ? zielTokenExistiert(gesetz, artikelToken(roh)) : true;
   const gliedFuer = (erst: boolean, roh: string, start: number, end: number): FremdRoutingGlied => ({
@@ -196,7 +232,7 @@ export function fremdRoutingFormB(
     const start = schwanzStart + am.index;
     glieder.push(gliedFuer(false, am[0], start, start + am[0].length));
   }
-  return { gesetz, glieder, regionEnd: m[0].length };
+  return { gesetz, glieder, regionEnd, signal };
 }
 
 // ─── Ketten-Verweise: «Art. A i.V.m. Art. B GESETZ» ──────────────────────────
@@ -392,13 +428,15 @@ const PASSUS_GRUPPE_RE = new RegExp(
 const P_KONN_ZAHL_RE = new RegExp('^\\s*' + P_KONN + '\\s*(?=\\d)');
 // Gesetz-Signal am Ende der Aufzählung. g1 = Klammer-Kürzel (∈ FEDLEX, autoritativ),
 // g2 = kuratierter Genitiv-Kurztitel (nur ohne folgende Klammer), g3 = bare Kürzel
-// (∈ FEDLEX, mit/ohne «des/der»).
+// (∈ FEDLEX, mit/ohne «des/der»), g5+g6 = Kopfwort + amtliches Titel-Fragment
+// (V-7b; Klammer-Nachprüfung wie in fremdRoutingFormB).
 const P_SIGNAL_RE = new RegExp(
   '^\\s*(?:' +
     '(?:(?:des|der|über|vom)\\s+' + N2_NAME_RUN + '\\s*)?\\((' + NORM_NAMEN_ESC.join('|') + ')\\)' +
     '|(?:des|der|über|vom)\\s+(' + GENITIV_NAMEN_ESC.join('|') + ')\\b(?!\\s*\\()' +
     '|(?:des|der|über|vom)\\s+(' + NORM_NAMEN_ESC.join('|') + ')\\b' +
     '|(' + NORM_NAMEN_ESC.join('|') + ')\\b' +
+    '|(?:des|der)\\s+(Bundesgesetzes|Verordnung)(?:\\s+vom\\s+' + N2_DATUM + ')?\\s+(' + TITEL_FRAGMENTE_ESC.join('|') + ')\\b' +
   ')',
 );
 // Unauflösbarer Fremdname am Aufzählungs-Ende («des Bundesgesetzes über …», «der
@@ -436,7 +474,7 @@ function konsumierePassusKette(text: string, pos: number): { pos: number; plural
  * Alle Plural-Aufzählungs-Regionen eines Fliesstexts (A10). Rein/deterministisch
  * (§2). Regionen sind nach `start` sortiert und überschneidungsfrei.
  */
-export function artikelnPluralVerweise(text: string): PluralRegion[] {
+export function artikelnPluralVerweise(text: string, ebene: FremdEbene = 'bund'): PluralRegion[] {
   const regionen: PluralRegion[] = [];
   let grenze = -1; // Ende der zuletzt akzeptierten Region (Überschneidungs-Schutz)
   for (const oeff of text.matchAll(PLURAL_OEFFNER)) {
@@ -480,9 +518,17 @@ export function artikelnPluralVerweise(text: string): PluralRegion[] {
     let end = pos;
     if (sm) {
       const kuerzel = sm[1] ?? sm[3] ?? sm[4];
-      fremd = sm[2] ? erkenneGenitivGesetz(sm[2]) : kuerzel ? erkenneFedlexGesetz(kuerzel) : null;
+      fremd = sm[2] ? erkenneGenitivGesetz(sm[2], ebene)
+        : kuerzel ? erkenneFedlexGesetz(kuerzel)
+        : sm[5] ? erkenneTitelGesetz(sm[5], sm[6], ebene) : null;
+      // V-7: Klammer nach Name/Titel (auch hinter einem Datum) muss DASSELBE
+      // Gesetz nennen — sonst ist der Name nicht das gefundene Bundesgesetz (§1).
+      if (fremd && !sm[1]) {
+        const k = KLAMMER_NACH_NAME.exec(rest.slice(sm[0].length));
+        if (k && erkenneFedlexGesetz(k[1]) !== fremd) fremd = null;
+      }
       if (fremd) end = pos + sm[0].length;
-      else unterdruecken = true; // Klammer-Kürzel ∉ FEDLEX → nie ein Falsch-Ziel (§1)
+      else unterdruecken = true; // Klammer-Kürzel ∉ FEDLEX / Name nicht auflösbar → nie ein Falsch-Ziel (§1)
     } else if (P_FREMD_UNAUFL_RE.test(rest) || P_FREMD_KUERZEL_RE.test(rest) || /^\d/.test(rest)) {
       // «des <unbekannter Fremdname>», ein unbekanntes bare KÜRZEL («… BGSA»)
       // ODER eine abgebrochene Aufzählung (nächstes Zeichen ist eine Zahl = ein
