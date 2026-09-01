@@ -41,7 +41,10 @@ const nurKeys = nurArg
   ? new Set(nurArg.slice('--nur='.length).split(',').map((s) => s.trim()).filter(Boolean))
   : null;
 
+const messreiheSchreiben = process.argv.includes('--messreihe');
+
 const SNAPSHOTS = 'public/normtext/kanton';
+const MESSREIHE = 'scripts/normtext/zh-randtitel-deckung.json';
 const ZIEL = 'public/normtext/struktur/kanton';
 mkdirSync(ZIEL, { recursive: true });
 
@@ -58,6 +61,7 @@ let gesamtMitGliederung = 0;
 let gesamtVerworfen = 0;
 let dateien = 0;
 const zeilenBericht: string[] = [];
+const messwerte: Record<string, { paragrafen: number; randtitel: number; gliederung: number }> = {};
 
 for (const gruppe of sammleZhPdfInventar()) {
   const nr = nummer(gruppe.erlassNr || '');
@@ -110,9 +114,25 @@ for (const gruppe of sammleZhPdfInventar()) {
   );
 
   if (Object.keys(artikel).length === 0) continue;
+  messwerte[key] = { paragrafen: bestand.size, randtitel: mitRand, gliederung: mitGl };
   const inhalt = { erzeugt, kopf: { titel: snap.eintraege[0]?.erlass ?? key }, artikel };
   writeFileSync(join(ZIEL, `${key}.json`), `${JSON.stringify(inhalt, null, 2)}\n`, 'utf8');
   dateien++;
+}
+
+// Die MESSREIHE ist der Wächter-Anker (check:zh-randtitel Prüfung 5): sie
+// friert die Deckung je Erlass ein, damit eine Regression sichtbar wird, die
+// keine Formprüfung sieht. Nur auf ausdrückliches --messreihe, und nur bei
+// einem VOLLLAUF — ein Teillauf (--nur=…) schriebe die übrigen Erlasse weg.
+if (messreiheSchreiben) {
+  if (nurKeys) {
+    console.error('struktur-zh: --messreihe verlangt einen Volllauf (kein --nur=).');
+    process.exit(1);
+  }
+  const sortiert: typeof messwerte = {};
+  for (const k of Object.keys(messwerte).sort()) sortiert[k] = messwerte[k];
+  writeFileSync(MESSREIHE, `${JSON.stringify(sortiert, null, 2)}\n`, 'utf8');
+  console.log(`Messreihe geschrieben: ${MESSREIHE} (${Object.keys(sortiert).length} Erlasse)`);
 }
 
 for (const z of zeilenBericht) console.log(z);

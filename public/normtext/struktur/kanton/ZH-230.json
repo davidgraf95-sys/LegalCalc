@@ -1,0 +1,2918 @@
+{
+  "erzeugt": "2026-09-02",
+  "kopf": {
+    "titel": "Einführungsgesetz zum Schweizerischen Zivilgesetzbuch (EG ZGB) (LS 230)"
+  },
+  "artikel": {
+    "25": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Erster Titel: Zuständigkeit der Behörden und Verfahren"
+        },
+        {
+          "ebene": 2,
+          "label": "D. Das Betreibungsamt"
+        }
+      ],
+      "marginalie": []
+    },
+    "26": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Erster Titel: Zuständigkeit der Behörden und Verfahren"
+        },
+        {
+          "ebene": 2,
+          "label": "E. Verwaltungsbehörden"
+        },
+        {
+          "ebene": 3,
+          "label": "I. Zivilstandsamt"
+        }
+      ],
+      "marginalie": []
+    },
+    "27": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Erster Titel: Zuständigkeit der Behörden und Verfahren"
+        },
+        {
+          "ebene": 2,
+          "label": "E. Verwaltungsbehörden"
+        },
+        {
+          "ebene": 3,
+          "label": "I. Zivilstandsamt"
+        }
+      ],
+      "marginalie": []
+    },
+    "28": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Erster Titel: Zuständigkeit der Behörden und Verfahren"
+        },
+        {
+          "ebene": 2,
+          "label": "E. Verwaltungsbehörden"
+        },
+        {
+          "ebene": 3,
+          "label": "I. Zivilstandsamt"
+        }
+      ],
+      "marginalie": []
+    },
+    "29": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Erster Titel: Zuständigkeit der Behörden und Verfahren"
+        },
+        {
+          "ebene": 2,
+          "label": "E. Verwaltungsbehörden"
+        },
+        {
+          "ebene": 3,
+          "label": "I. Zivilstandsamt"
+        }
+      ],
+      "marginalie": []
+    },
+    "30": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Erster Titel: Zuständigkeit der Behörden und Verfahren"
+        },
+        {
+          "ebene": 2,
+          "label": "E. Verwaltungsbehörden"
+        },
+        {
+          "ebene": 3,
+          "label": "I. Zivilstandsamt"
+        }
+      ],
+      "marginalie": []
+    },
+    "31": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Erster Titel: Zuständigkeit der Behörden und Verfahren"
+        },
+        {
+          "ebene": 2,
+          "label": "E. Verwaltungsbehörden"
+        },
+        {
+          "ebene": 3,
+          "label": "I. Zivilstandsamt"
+        }
+      ],
+      "marginalie": []
+    },
+    "32": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Erster Titel: Zuständigkeit der Behörden und Verfahren"
+        },
+        {
+          "ebene": 2,
+          "label": "E. Verwaltungsbehörden"
+        },
+        {
+          "ebene": 3,
+          "label": "I. Zivilstandsamt"
+        }
+      ],
+      "marginalie": []
+    },
+    "33": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Erster Titel: Zuständigkeit der Behörden und Verfahren"
+        },
+        {
+          "ebene": 2,
+          "label": "E. Verwaltungsbehörden"
+        },
+        {
+          "ebene": 3,
+          "label": "II. Gemeindevorstand"
+        }
+      ],
+      "marginalie": []
+    },
+    "34": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Erster Titel: Zuständigkeit der Behörden und Verfahren"
+        },
+        {
+          "ebene": 2,
+          "label": "E. Verwaltungsbehörden"
+        },
+        {
+          "ebene": 3,
+          "label": "II. Gemeindevorstand"
+        }
+      ],
+      "marginalie": []
+    },
+    "35": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Erster Titel: Zuständigkeit der Behörden und Verfahren"
+        },
+        {
+          "ebene": 2,
+          "label": "E. Verwaltungsbehörden"
+        },
+        {
+          "ebene": 3,
+          "label": "II. Gemeindevorstand"
+        }
+      ],
+      "marginalie": []
+    },
+    "36": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Erster Titel: Zuständigkeit der Behörden und Verfahren"
+        },
+        {
+          "ebene": 2,
+          "label": "E. Verwaltungsbehörden"
+        },
+        {
+          "ebene": 3,
+          "label": "II. Gemeindevorstand"
+        }
+      ],
+      "marginalie": []
+    },
+    "37": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Erster Titel: Zuständigkeit der Behörden und Verfahren"
+        },
+        {
+          "ebene": 2,
+          "label": "E. Verwaltungsbehörden"
+        },
+        {
+          "ebene": 3,
+          "label": "III. Bezirksrat"
+        }
+      ],
+      "marginalie": []
+    },
+    "38": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Erster Titel: Zuständigkeit der Behörden und Verfahren"
+        },
+        {
+          "ebene": 2,
+          "label": "E. Verwaltungsbehörden"
+        },
+        {
+          "ebene": 3,
+          "label": "III. Bezirksrat"
+        }
+      ],
+      "marginalie": []
+    },
+    "41": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Erster Titel: Zuständigkeit der Behörden und Verfahren"
+        },
+        {
+          "ebene": 2,
+          "label": "E. Verwaltungsbehörden"
+        },
+        {
+          "ebene": 3,
+          "label": "III. Bezirksrat"
+        }
+      ],
+      "marginalie": []
+    },
+    "42": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Erster Titel: Zuständigkeit der Behörden und Verfahren"
+        },
+        {
+          "ebene": 2,
+          "label": "E. Verwaltungsbehörden"
+        },
+        {
+          "ebene": 3,
+          "label": "IV. Handelsregisteramt"
+        }
+      ],
+      "marginalie": []
+    },
+    "43": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Erster Titel: Zuständigkeit der Behörden und Verfahren"
+        },
+        {
+          "ebene": 2,
+          "label": "E. Verwaltungsbehörden"
+        },
+        {
+          "ebene": 3,
+          "label": "VI. Staatsanwaltschaft"
+        }
+      ],
+      "marginalie": []
+    },
+    "44": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Erster Titel: Zuständigkeit der Behörden und Verfahren"
+        },
+        {
+          "ebene": 2,
+          "label": "E. Verwaltungsbehörden"
+        },
+        {
+          "ebene": 3,
+          "label": "VII. Regierungsrat"
+        }
+      ],
+      "marginalie": []
+    },
+    "45": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Erster Titel: Zuständigkeit der Behörden und Verfahren"
+        },
+        {
+          "ebene": 2,
+          "label": "E. Verwaltungsbehörden"
+        },
+        {
+          "ebene": 3,
+          "label": "VII. Regierungsrat"
+        }
+      ],
+      "marginalie": []
+    },
+    "47": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Erster Titel: Zuständigkeit der Behörden und Verfahren"
+        },
+        {
+          "ebene": 2,
+          "label": "F. Öffentliche Bekanntmachungen"
+        }
+      ],
+      "marginalie": []
+    },
+    "48": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Zweiter Titel: Kantonales Zivilrecht"
+        },
+        {
+          "ebene": 2,
+          "label": "Erster Abschnitt: Personenrecht"
+        },
+        {
+          "ebene": 3,
+          "label": "A. Elektronische Überwachung zum Schutz gewaltbetroffener"
+        }
+      ],
+      "marginalie": []
+    },
+    "49": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Zweiter Titel: Kantonales Zivilrecht"
+        },
+        {
+          "ebene": 2,
+          "label": "Erster Abschnitt: Personenrecht"
+        },
+        {
+          "ebene": 3,
+          "label": "B. Weitere Bestimmungen zum Personenrecht"
+        }
+      ],
+      "marginalie": []
+    },
+    "50": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Zweiter Titel: Kantonales Zivilrecht"
+        },
+        {
+          "ebene": 2,
+          "label": "Erster Abschnitt: Personenrecht"
+        },
+        {
+          "ebene": 3,
+          "label": "B. Weitere Bestimmungen zum Personenrecht"
+        }
+      ],
+      "marginalie": []
+    },
+    "51": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Zweiter Titel: Kantonales Zivilrecht"
+        },
+        {
+          "ebene": 2,
+          "label": "Erster Abschnitt: Personenrecht"
+        },
+        {
+          "ebene": 3,
+          "label": "B. Weitere Bestimmungen zum Personenrecht"
+        }
+      ],
+      "marginalie": []
+    },
+    "52": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Zweiter Titel: Kantonales Zivilrecht"
+        },
+        {
+          "ebene": 2,
+          "label": "Erster Abschnitt: Personenrecht"
+        },
+        {
+          "ebene": 3,
+          "label": "B. Weitere Bestimmungen zum Personenrecht"
+        }
+      ],
+      "marginalie": []
+    },
+    "53": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Zweiter Titel: Kantonales Zivilrecht"
+        },
+        {
+          "ebene": 2,
+          "label": "Erster Abschnitt: Personenrecht"
+        },
+        {
+          "ebene": 3,
+          "label": "B. Weitere Bestimmungen zum Personenrecht"
+        }
+      ],
+      "marginalie": []
+    },
+    "54": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Zweiter Titel: Kantonales Zivilrecht"
+        },
+        {
+          "ebene": 2,
+          "label": "Erster Abschnitt: Personenrecht"
+        },
+        {
+          "ebene": 3,
+          "label": "B. Weitere Bestimmungen zum Personenrecht"
+        }
+      ],
+      "marginalie": []
+    },
+    "55": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Zweiter Titel: Kantonales Zivilrecht"
+        },
+        {
+          "ebene": 2,
+          "label": "Erster Abschnitt: Personenrecht"
+        },
+        {
+          "ebene": 3,
+          "label": "B. Weitere Bestimmungen zum Personenrecht"
+        }
+      ],
+      "marginalie": []
+    },
+    "56": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Zweiter Titel: Kantonales Zivilrecht"
+        },
+        {
+          "ebene": 2,
+          "label": "Erster Abschnitt: Personenrecht"
+        },
+        {
+          "ebene": 3,
+          "label": "B. Weitere Bestimmungen zum Personenrecht"
+        }
+      ],
+      "marginalie": []
+    },
+    "57": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Zweiter Titel: Kantonales Zivilrecht"
+        },
+        {
+          "ebene": 2,
+          "label": "Zweiter Abschnitt: Familienrecht"
+        },
+        {
+          "ebene": 3,
+          "label": "Abis. Eherecht"
+        }
+      ],
+      "marginalie": []
+    },
+    "64": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Zweiter Titel: Kantonales Zivilrecht"
+        },
+        {
+          "ebene": 2,
+          "label": "Zweiter Abschnitt: Familienrecht"
+        },
+        {
+          "ebene": 3,
+          "label": "Abis. Eherecht"
+        }
+      ],
+      "marginalie": []
+    },
+    "65": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Zweiter Titel: Kantonales Zivilrecht"
+        },
+        {
+          "ebene": 2,
+          "label": "Zweiter Abschnitt: Familienrecht"
+        },
+        {
+          "ebene": 3,
+          "label": "Abis. Eherecht"
+        }
+      ],
+      "marginalie": []
+    },
+    "70": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Zweiter Titel: Kantonales Zivilrecht"
+        },
+        {
+          "ebene": 2,
+          "label": "Zweiter Abschnitt: Familienrecht"
+        },
+        {
+          "ebene": 3,
+          "label": "Abis. Eherecht"
+        }
+      ],
+      "marginalie": []
+    },
+    "71": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Zweiter Titel: Kantonales Zivilrecht"
+        },
+        {
+          "ebene": 2,
+          "label": "Zweiter Abschnitt: Familienrecht"
+        },
+        {
+          "ebene": 3,
+          "label": "Abis. Eherecht"
+        }
+      ],
+      "marginalie": []
+    },
+    "72": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Zweiter Titel: Kantonales Zivilrecht"
+        },
+        {
+          "ebene": 2,
+          "label": "Zweiter Abschnitt: Familienrecht"
+        },
+        {
+          "ebene": 3,
+          "label": "Abis. Eherecht"
+        }
+      ],
+      "marginalie": []
+    },
+    "82": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Zweiter Titel: Kantonales Zivilrecht"
+        },
+        {
+          "ebene": 2,
+          "label": "Zweiter Abschnitt: Familienrecht"
+        },
+        {
+          "ebene": 3,
+          "label": "Abis. Eherecht"
+        }
+      ],
+      "marginalie": []
+    },
+    "117": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Zweiter Titel: Kantonales Zivilrecht"
+        },
+        {
+          "ebene": 2,
+          "label": "Zweiter Abschnitt: Familienrecht"
+        },
+        {
+          "ebene": 3,
+          "label": "Abis. Eherecht"
+        }
+      ],
+      "marginalie": []
+    },
+    "118": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Zweiter Titel: Kantonales Zivilrecht"
+        },
+        {
+          "ebene": 2,
+          "label": "Zweiter Abschnitt: Familienrecht"
+        },
+        {
+          "ebene": 3,
+          "label": "C. Findelkinder"
+        }
+      ],
+      "marginalie": []
+    },
+    "119": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Zweiter Titel: Kantonales Zivilrecht"
+        },
+        {
+          "ebene": 2,
+          "label": "Zweiter Abschnitt: Familienrecht"
+        },
+        {
+          "ebene": 3,
+          "label": "C. Findelkinder"
+        }
+      ],
+      "marginalie": []
+    },
+    "120": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Zweiter Titel: Kantonales Zivilrecht"
+        },
+        {
+          "ebene": 2,
+          "label": "Zweiter Abschnitt: Familienrecht"
+        },
+        {
+          "ebene": 3,
+          "label": "D. Betreibungsrechtliche Bestimmungen"
+        }
+      ],
+      "marginalie": []
+    },
+    "121": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Zweiter Titel: Kantonales Zivilrecht"
+        },
+        {
+          "ebene": 2,
+          "label": "Zweiter Abschnitt: Familienrecht"
+        },
+        {
+          "ebene": 3,
+          "label": "D. Betreibungsrechtliche Bestimmungen"
+        }
+      ],
+      "marginalie": []
+    },
+    "122": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Zweiter Titel: Kantonales Zivilrecht"
+        },
+        {
+          "ebene": 2,
+          "label": "Zweiter Abschnitt: Familienrecht"
+        },
+        {
+          "ebene": 3,
+          "label": "D. Betreibungsrechtliche Bestimmungen"
+        }
+      ],
+      "marginalie": []
+    },
+    "123": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Zweiter Titel: Kantonales Zivilrecht"
+        },
+        {
+          "ebene": 2,
+          "label": "Zweiter Abschnitt: Familienrecht"
+        },
+        {
+          "ebene": 3,
+          "label": "E. Konkubinat"
+        }
+      ],
+      "marginalie": []
+    },
+    "124": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Zweiter Titel: Kantonales Zivilrecht"
+        },
+        {
+          "ebene": 2,
+          "label": "Dritter Abschnitt: Erbrecht"
+        },
+        {
+          "ebene": 3,
+          "label": "A. Erbrecht des Gemeinwesens"
+        }
+      ],
+      "marginalie": []
+    },
+    "125": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Zweiter Titel: Kantonales Zivilrecht"
+        },
+        {
+          "ebene": 2,
+          "label": "Dritter Abschnitt: Erbrecht"
+        },
+        {
+          "ebene": 3,
+          "label": "B. Sicherung des Erbganges"
+        }
+      ],
+      "marginalie": []
+    },
+    "126": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Zweiter Titel: Kantonales Zivilrecht"
+        },
+        {
+          "ebene": 2,
+          "label": "Dritter Abschnitt: Erbrecht"
+        },
+        {
+          "ebene": 3,
+          "label": "B. Sicherung des Erbganges"
+        }
+      ],
+      "marginalie": []
+    },
+    "127": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Zweiter Titel: Kantonales Zivilrecht"
+        },
+        {
+          "ebene": 2,
+          "label": "Dritter Abschnitt: Erbrecht"
+        },
+        {
+          "ebene": 3,
+          "label": "B. Sicherung des Erbganges"
+        }
+      ],
+      "marginalie": []
+    },
+    "128": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Zweiter Titel: Kantonales Zivilrecht"
+        },
+        {
+          "ebene": 2,
+          "label": "Dritter Abschnitt: Erbrecht"
+        },
+        {
+          "ebene": 3,
+          "label": "B. Sicherung des Erbganges"
+        }
+      ],
+      "marginalie": []
+    },
+    "129": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Zweiter Titel: Kantonales Zivilrecht"
+        },
+        {
+          "ebene": 2,
+          "label": "Dritter Abschnitt: Erbrecht"
+        },
+        {
+          "ebene": 3,
+          "label": "C. Öffentliches Inventar"
+        }
+      ],
+      "marginalie": []
+    },
+    "130": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Zweiter Titel: Kantonales Zivilrecht"
+        },
+        {
+          "ebene": 2,
+          "label": "Dritter Abschnitt: Erbrecht"
+        },
+        {
+          "ebene": 3,
+          "label": "C. Öffentliches Inventar"
+        }
+      ],
+      "marginalie": []
+    },
+    "131": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Zweiter Titel: Kantonales Zivilrecht"
+        },
+        {
+          "ebene": 2,
+          "label": "Dritter Abschnitt: Erbrecht"
+        },
+        {
+          "ebene": 3,
+          "label": "C. Öffentliches Inventar"
+        }
+      ],
+      "marginalie": []
+    },
+    "132": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Zweiter Titel: Kantonales Zivilrecht"
+        },
+        {
+          "ebene": 2,
+          "label": "Dritter Abschnitt: Erbrecht"
+        },
+        {
+          "ebene": 3,
+          "label": "C. Öffentliches Inventar"
+        }
+      ],
+      "marginalie": []
+    },
+    "133": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Zweiter Titel: Kantonales Zivilrecht"
+        },
+        {
+          "ebene": 2,
+          "label": "Dritter Abschnitt: Erbrecht"
+        },
+        {
+          "ebene": 3,
+          "label": "D. Teilung der Erbschaft"
+        }
+      ],
+      "marginalie": []
+    },
+    "134": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Zweiter Titel: Kantonales Zivilrecht"
+        },
+        {
+          "ebene": 2,
+          "label": "Dritter Abschnitt: Erbrecht"
+        },
+        {
+          "ebene": 3,
+          "label": "D. Teilung der Erbschaft"
+        }
+      ],
+      "marginalie": []
+    },
+    "135": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Zweiter Titel: Kantonales Zivilrecht"
+        },
+        {
+          "ebene": 2,
+          "label": "Vierter Abschnitt: Sachenrecht"
+        },
+        {
+          "ebene": 3,
+          "label": "A. Allgemeine Bestimmungen"
+        }
+      ],
+      "marginalie": []
+    },
+    "136": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Zweiter Titel: Kantonales Zivilrecht"
+        },
+        {
+          "ebene": 2,
+          "label": "Vierter Abschnitt: Sachenrecht"
+        },
+        {
+          "ebene": 3,
+          "label": "A. Allgemeine Bestimmungen"
+        }
+      ],
+      "marginalie": []
+    },
+    "137": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Zweiter Titel: Kantonales Zivilrecht"
+        },
+        {
+          "ebene": 2,
+          "label": "Vierter Abschnitt: Sachenrecht"
+        },
+        {
+          "ebene": 3,
+          "label": "B. Öffentliche Sachen"
+        }
+      ],
+      "marginalie": []
+    },
+    "168": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Zweiter Titel: Kantonales Zivilrecht"
+        },
+        {
+          "ebene": 2,
+          "label": "Vierter Abschnitt: Sachenrecht"
+        },
+        {
+          "ebene": 3,
+          "label": "C. Inhalt und Beschränkungen des Grundeigentums"
+        },
+        {
+          "ebene": 4,
+          "label": "I. Recht zu bauen und zu graben"
+        }
+      ],
+      "marginalie": []
+    },
+    "169": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Zweiter Titel: Kantonales Zivilrecht"
+        },
+        {
+          "ebene": 2,
+          "label": "Vierter Abschnitt: Sachenrecht"
+        },
+        {
+          "ebene": 3,
+          "label": "C. Inhalt und Beschränkungen des Grundeigentums"
+        },
+        {
+          "ebene": 4,
+          "label": "II. Pflanzen von Sträuchern und Bäumen"
+        }
+      ],
+      "marginalie": []
+    },
+    "170": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Zweiter Titel: Kantonales Zivilrecht"
+        },
+        {
+          "ebene": 2,
+          "label": "Vierter Abschnitt: Sachenrecht"
+        },
+        {
+          "ebene": 3,
+          "label": "C. Inhalt und Beschränkungen des Grundeigentums"
+        },
+        {
+          "ebene": 4,
+          "label": "II. Pflanzen von Sträuchern und Bäumen"
+        }
+      ],
+      "marginalie": []
+    },
+    "171": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Zweiter Titel: Kantonales Zivilrecht"
+        },
+        {
+          "ebene": 2,
+          "label": "Vierter Abschnitt: Sachenrecht"
+        },
+        {
+          "ebene": 3,
+          "label": "C. Inhalt und Beschränkungen des Grundeigentums"
+        },
+        {
+          "ebene": 4,
+          "label": "II. Pflanzen von Sträuchern und Bäumen"
+        }
+      ],
+      "marginalie": []
+    },
+    "172": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Zweiter Titel: Kantonales Zivilrecht"
+        },
+        {
+          "ebene": 2,
+          "label": "Vierter Abschnitt: Sachenrecht"
+        },
+        {
+          "ebene": 3,
+          "label": "C. Inhalt und Beschränkungen des Grundeigentums"
+        },
+        {
+          "ebene": 4,
+          "label": "II. Pflanzen von Sträuchern und Bäumen"
+        }
+      ],
+      "marginalie": []
+    },
+    "173": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Zweiter Titel: Kantonales Zivilrecht"
+        },
+        {
+          "ebene": 2,
+          "label": "Vierter Abschnitt: Sachenrecht"
+        },
+        {
+          "ebene": 3,
+          "label": "C. Inhalt und Beschränkungen des Grundeigentums"
+        },
+        {
+          "ebene": 4,
+          "label": "II. Pflanzen von Sträuchern und Bäumen"
+        }
+      ],
+      "marginalie": []
+    },
+    "174": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Zweiter Titel: Kantonales Zivilrecht"
+        },
+        {
+          "ebene": 2,
+          "label": "Vierter Abschnitt: Sachenrecht"
+        },
+        {
+          "ebene": 3,
+          "label": "C. Inhalt und Beschränkungen des Grundeigentums"
+        },
+        {
+          "ebene": 4,
+          "label": "II. Pflanzen von Sträuchern und Bäumen"
+        }
+      ],
+      "marginalie": []
+    },
+    "175": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Zweiter Titel: Kantonales Zivilrecht"
+        },
+        {
+          "ebene": 2,
+          "label": "Vierter Abschnitt: Sachenrecht"
+        },
+        {
+          "ebene": 3,
+          "label": "C. Inhalt und Beschränkungen des Grundeigentums"
+        },
+        {
+          "ebene": 4,
+          "label": "III. Tretrecht"
+        }
+      ],
+      "marginalie": []
+    },
+    "176": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Zweiter Titel: Kantonales Zivilrecht"
+        },
+        {
+          "ebene": 2,
+          "label": "Vierter Abschnitt: Sachenrecht"
+        },
+        {
+          "ebene": 3,
+          "label": "C. Inhalt und Beschränkungen des Grundeigentums"
+        },
+        {
+          "ebene": 4,
+          "label": "IV. Reckweg"
+        }
+      ],
+      "marginalie": []
+    },
+    "177": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Zweiter Titel: Kantonales Zivilrecht"
+        },
+        {
+          "ebene": 2,
+          "label": "Vierter Abschnitt: Sachenrecht"
+        },
+        {
+          "ebene": 3,
+          "label": "C. Inhalt und Beschränkungen des Grundeigentums"
+        },
+        {
+          "ebene": 4,
+          "label": "V. Einfriedigung"
+        }
+      ],
+      "marginalie": []
+    },
+    "178": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Zweiter Titel: Kantonales Zivilrecht"
+        },
+        {
+          "ebene": 2,
+          "label": "Vierter Abschnitt: Sachenrecht"
+        },
+        {
+          "ebene": 3,
+          "label": "C. Inhalt und Beschränkungen des Grundeigentums"
+        },
+        {
+          "ebene": 4,
+          "label": "V. Einfriedigung"
+        }
+      ],
+      "marginalie": []
+    },
+    "179": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Zweiter Titel: Kantonales Zivilrecht"
+        },
+        {
+          "ebene": 2,
+          "label": "Vierter Abschnitt: Sachenrecht"
+        },
+        {
+          "ebene": 3,
+          "label": "C. Inhalt und Beschränkungen des Grundeigentums"
+        },
+        {
+          "ebene": 4,
+          "label": "V. Einfriedigung"
+        }
+      ],
+      "marginalie": []
+    },
+    "180": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Zweiter Titel: Kantonales Zivilrecht"
+        },
+        {
+          "ebene": 2,
+          "label": "Vierter Abschnitt: Sachenrecht"
+        },
+        {
+          "ebene": 3,
+          "label": "C. Inhalt und Beschränkungen des Grundeigentums"
+        },
+        {
+          "ebene": 4,
+          "label": "VI. Weitere Beschränkungen"
+        }
+      ],
+      "marginalie": []
+    },
+    "181": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Zweiter Titel: Kantonales Zivilrecht"
+        },
+        {
+          "ebene": 2,
+          "label": "Vierter Abschnitt: Sachenrecht"
+        },
+        {
+          "ebene": 3,
+          "label": "C. Inhalt und Beschränkungen des Grundeigentums"
+        },
+        {
+          "ebene": 4,
+          "label": "VI. Weitere Beschränkungen"
+        }
+      ],
+      "marginalie": []
+    },
+    "182": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Zweiter Titel: Kantonales Zivilrecht"
+        },
+        {
+          "ebene": 2,
+          "label": "Vierter Abschnitt: Sachenrecht"
+        },
+        {
+          "ebene": 3,
+          "label": "C. Inhalt und Beschränkungen des Grundeigentums"
+        },
+        {
+          "ebene": 4,
+          "label": "VI. Weitere Beschränkungen"
+        }
+      ],
+      "marginalie": []
+    },
+    "183": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Zweiter Titel: Kantonales Zivilrecht"
+        },
+        {
+          "ebene": 2,
+          "label": "Vierter Abschnitt: Sachenrecht"
+        },
+        {
+          "ebene": 3,
+          "label": "C. Inhalt und Beschränkungen des Grundeigentums"
+        },
+        {
+          "ebene": 4,
+          "label": "VI. Weitere Beschränkungen"
+        }
+      ],
+      "marginalie": []
+    },
+    "184": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Zweiter Titel: Kantonales Zivilrecht"
+        },
+        {
+          "ebene": 2,
+          "label": "Vierter Abschnitt: Sachenrecht"
+        },
+        {
+          "ebene": 3,
+          "label": "D. Inhalt der einzelnen Dienstbarkeiten"
+        }
+      ],
+      "marginalie": []
+    },
+    "185": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Zweiter Titel: Kantonales Zivilrecht"
+        },
+        {
+          "ebene": 2,
+          "label": "Vierter Abschnitt: Sachenrecht"
+        },
+        {
+          "ebene": 3,
+          "label": "D. Inhalt der einzelnen Dienstbarkeiten"
+        }
+      ],
+      "marginalie": []
+    },
+    "186": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Zweiter Titel: Kantonales Zivilrecht"
+        },
+        {
+          "ebene": 2,
+          "label": "Vierter Abschnitt: Sachenrecht"
+        },
+        {
+          "ebene": 3,
+          "label": "D. Inhalt der einzelnen Dienstbarkeiten"
+        }
+      ],
+      "marginalie": []
+    },
+    "187": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Zweiter Titel: Kantonales Zivilrecht"
+        },
+        {
+          "ebene": 2,
+          "label": "Vierter Abschnitt: Sachenrecht"
+        },
+        {
+          "ebene": 3,
+          "label": "D. Inhalt der einzelnen Dienstbarkeiten"
+        }
+      ],
+      "marginalie": []
+    },
+    "188": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Zweiter Titel: Kantonales Zivilrecht"
+        },
+        {
+          "ebene": 2,
+          "label": "Vierter Abschnitt: Sachenrecht"
+        },
+        {
+          "ebene": 3,
+          "label": "D. Inhalt der einzelnen Dienstbarkeiten"
+        }
+      ],
+      "marginalie": []
+    },
+    "189": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Zweiter Titel: Kantonales Zivilrecht"
+        },
+        {
+          "ebene": 2,
+          "label": "Vierter Abschnitt: Sachenrecht"
+        },
+        {
+          "ebene": 3,
+          "label": "D. Inhalt der einzelnen Dienstbarkeiten"
+        }
+      ],
+      "marginalie": []
+    },
+    "190": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Zweiter Titel: Kantonales Zivilrecht"
+        },
+        {
+          "ebene": 2,
+          "label": "Vierter Abschnitt: Sachenrecht"
+        },
+        {
+          "ebene": 3,
+          "label": "D. Inhalt der einzelnen Dienstbarkeiten"
+        }
+      ],
+      "marginalie": []
+    },
+    "191": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Zweiter Titel: Kantonales Zivilrecht"
+        },
+        {
+          "ebene": 2,
+          "label": "Vierter Abschnitt: Sachenrecht"
+        },
+        {
+          "ebene": 3,
+          "label": "D. Inhalt der einzelnen Dienstbarkeiten"
+        }
+      ],
+      "marginalie": []
+    },
+    "192": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Zweiter Titel: Kantonales Zivilrecht"
+        },
+        {
+          "ebene": 2,
+          "label": "Vierter Abschnitt: Sachenrecht"
+        },
+        {
+          "ebene": 3,
+          "label": "D. Inhalt der einzelnen Dienstbarkeiten"
+        }
+      ],
+      "marginalie": []
+    },
+    "193": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Zweiter Titel: Kantonales Zivilrecht"
+        },
+        {
+          "ebene": 2,
+          "label": "Vierter Abschnitt: Sachenrecht"
+        },
+        {
+          "ebene": 3,
+          "label": "D. Inhalt der einzelnen Dienstbarkeiten"
+        }
+      ],
+      "marginalie": []
+    },
+    "194": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Zweiter Titel: Kantonales Zivilrecht"
+        },
+        {
+          "ebene": 2,
+          "label": "Vierter Abschnitt: Sachenrecht"
+        },
+        {
+          "ebene": 3,
+          "label": "E. Grundpfandrechtliche Bestimmungen"
+        }
+      ],
+      "marginalie": []
+    },
+    "195": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Zweiter Titel: Kantonales Zivilrecht"
+        },
+        {
+          "ebene": 2,
+          "label": "Vierter Abschnitt: Sachenrecht"
+        },
+        {
+          "ebene": 3,
+          "label": "E. Grundpfandrechtliche Bestimmungen"
+        }
+      ],
+      "marginalie": []
+    },
+    "196": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Zweiter Titel: Kantonales Zivilrecht"
+        },
+        {
+          "ebene": 2,
+          "label": "Vierter Abschnitt: Sachenrecht"
+        },
+        {
+          "ebene": 3,
+          "label": "E. Grundpfandrechtliche Bestimmungen"
+        }
+      ],
+      "marginalie": []
+    },
+    "197": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Zweiter Titel: Kantonales Zivilrecht"
+        },
+        {
+          "ebene": 2,
+          "label": "Vierter Abschnitt: Sachenrecht"
+        },
+        {
+          "ebene": 3,
+          "label": "E. Grundpfandrechtliche Bestimmungen"
+        }
+      ],
+      "marginalie": []
+    },
+    "198": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Zweiter Titel: Kantonales Zivilrecht"
+        },
+        {
+          "ebene": 2,
+          "label": "Vierter Abschnitt: Sachenrecht"
+        },
+        {
+          "ebene": 3,
+          "label": "E. Grundpfandrechtliche Bestimmungen"
+        }
+      ],
+      "marginalie": []
+    },
+    "199": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Zweiter Titel: Kantonales Zivilrecht"
+        },
+        {
+          "ebene": 2,
+          "label": "Vierter Abschnitt: Sachenrecht"
+        },
+        {
+          "ebene": 3,
+          "label": "E. Grundpfandrechtliche Bestimmungen"
+        }
+      ],
+      "marginalie": []
+    },
+    "200": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Zweiter Titel: Kantonales Zivilrecht"
+        },
+        {
+          "ebene": 2,
+          "label": "Vierter Abschnitt: Sachenrecht"
+        },
+        {
+          "ebene": 3,
+          "label": "E. Grundpfandrechtliche Bestimmungen"
+        }
+      ],
+      "marginalie": []
+    },
+    "201": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Zweiter Titel: Kantonales Zivilrecht"
+        },
+        {
+          "ebene": 2,
+          "label": "Vierter Abschnitt: Sachenrecht"
+        },
+        {
+          "ebene": 3,
+          "label": "E. Grundpfandrechtliche Bestimmungen"
+        }
+      ],
+      "marginalie": []
+    },
+    "202": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Zweiter Titel: Kantonales Zivilrecht"
+        },
+        {
+          "ebene": 2,
+          "label": "Vierter Abschnitt: Sachenrecht"
+        },
+        {
+          "ebene": 3,
+          "label": "F. Vorschriften über das Pfandleihgewerbe und die Kreditgeber"
+        }
+      ],
+      "marginalie": []
+    },
+    "203": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Zweiter Titel: Kantonales Zivilrecht"
+        },
+        {
+          "ebene": 2,
+          "label": "Vierter Abschnitt: Sachenrecht"
+        },
+        {
+          "ebene": 3,
+          "label": "F. Vorschriften über das Pfandleihgewerbe und die Kreditgeber"
+        }
+      ],
+      "marginalie": []
+    },
+    "204": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Zweiter Titel: Kantonales Zivilrecht"
+        },
+        {
+          "ebene": 2,
+          "label": "Vierter Abschnitt: Sachenrecht"
+        },
+        {
+          "ebene": 3,
+          "label": "F. Vorschriften über das Pfandleihgewerbe und die Kreditgeber"
+        }
+      ],
+      "marginalie": []
+    },
+    "205": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Zweiter Titel: Kantonales Zivilrecht"
+        },
+        {
+          "ebene": 2,
+          "label": "Vierter Abschnitt: Sachenrecht"
+        },
+        {
+          "ebene": 3,
+          "label": "F. Vorschriften über das Pfandleihgewerbe und die Kreditgeber"
+        }
+      ],
+      "marginalie": []
+    },
+    "206": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Zweiter Titel: Kantonales Zivilrecht"
+        },
+        {
+          "ebene": 2,
+          "label": "Vierter Abschnitt: Sachenrecht"
+        },
+        {
+          "ebene": 3,
+          "label": "F. Vorschriften über das Pfandleihgewerbe und die Kreditgeber"
+        }
+      ],
+      "marginalie": []
+    },
+    "207": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Zweiter Titel: Kantonales Zivilrecht"
+        },
+        {
+          "ebene": 2,
+          "label": "Vierter Abschnitt: Sachenrecht"
+        },
+        {
+          "ebene": 3,
+          "label": "F. Vorschriften über das Pfandleihgewerbe und die Kreditgeber"
+        }
+      ],
+      "marginalie": []
+    },
+    "208": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Zweiter Titel: Kantonales Zivilrecht"
+        },
+        {
+          "ebene": 2,
+          "label": "Vierter Abschnitt: Sachenrecht"
+        },
+        {
+          "ebene": 3,
+          "label": "F. Vorschriften über das Pfandleihgewerbe und die Kreditgeber"
+        }
+      ],
+      "marginalie": []
+    },
+    "209": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Zweiter Titel: Kantonales Zivilrecht"
+        },
+        {
+          "ebene": 2,
+          "label": "Vierter Abschnitt: Sachenrecht"
+        },
+        {
+          "ebene": 3,
+          "label": "F. Vorschriften über das Pfandleihgewerbe und die Kreditgeber"
+        }
+      ],
+      "marginalie": []
+    },
+    "210": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Zweiter Titel: Kantonales Zivilrecht"
+        },
+        {
+          "ebene": 2,
+          "label": "Vierter Abschnitt: Sachenrecht"
+        },
+        {
+          "ebene": 3,
+          "label": "F. Vorschriften über das Pfandleihgewerbe und die Kreditgeber"
+        }
+      ],
+      "marginalie": []
+    },
+    "211": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Zweiter Titel: Kantonales Zivilrecht"
+        },
+        {
+          "ebene": 2,
+          "label": "Vierter Abschnitt: Sachenrecht"
+        },
+        {
+          "ebene": 3,
+          "label": "F. Vorschriften über das Pfandleihgewerbe und die Kreditgeber"
+        }
+      ],
+      "marginalie": []
+    },
+    "212": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Zweiter Titel: Kantonales Zivilrecht"
+        },
+        {
+          "ebene": 2,
+          "label": "Vierter Abschnitt: Sachenrecht"
+        },
+        {
+          "ebene": 3,
+          "label": "F. Vorschriften über das Pfandleihgewerbe und die Kreditgeber"
+        }
+      ],
+      "marginalie": []
+    },
+    "213": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Zweiter Titel: Kantonales Zivilrecht"
+        },
+        {
+          "ebene": 2,
+          "label": "Vierter Abschnitt: Sachenrecht"
+        },
+        {
+          "ebene": 3,
+          "label": "F. Vorschriften über das Pfandleihgewerbe und die Kreditgeber"
+        }
+      ],
+      "marginalie": []
+    },
+    "214": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Zweiter Titel: Kantonales Zivilrecht"
+        },
+        {
+          "ebene": 2,
+          "label": "Vierter Abschnitt: Sachenrecht"
+        },
+        {
+          "ebene": 3,
+          "label": "F. Vorschriften über das Pfandleihgewerbe und die Kreditgeber"
+        }
+      ],
+      "marginalie": []
+    },
+    "215": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Zweiter Titel: Kantonales Zivilrecht"
+        },
+        {
+          "ebene": 2,
+          "label": "Vierter Abschnitt: Sachenrecht"
+        },
+        {
+          "ebene": 3,
+          "label": "F. Vorschriften über das Pfandleihgewerbe und die Kreditgeber"
+        }
+      ],
+      "marginalie": []
+    },
+    "216": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Zweiter Titel: Kantonales Zivilrecht"
+        },
+        {
+          "ebene": 2,
+          "label": "Vierter Abschnitt: Sachenrecht"
+        },
+        {
+          "ebene": 3,
+          "label": "F. Vorschriften über das Pfandleihgewerbe und die Kreditgeber"
+        }
+      ],
+      "marginalie": []
+    },
+    "217": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Zweiter Titel: Kantonales Zivilrecht"
+        },
+        {
+          "ebene": 2,
+          "label": "Vierter Abschnitt: Sachenrecht"
+        },
+        {
+          "ebene": 3,
+          "label": "G. Grundbuchwesen"
+        }
+      ],
+      "marginalie": []
+    },
+    "218": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Zweiter Titel: Kantonales Zivilrecht"
+        },
+        {
+          "ebene": 2,
+          "label": "Vierter Abschnitt: Sachenrecht"
+        },
+        {
+          "ebene": 3,
+          "label": "G. Grundbuchwesen"
+        }
+      ],
+      "marginalie": []
+    },
+    "219": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Zweiter Titel: Kantonales Zivilrecht"
+        },
+        {
+          "ebene": 2,
+          "label": "Vierter Abschnitt: Sachenrecht"
+        },
+        {
+          "ebene": 3,
+          "label": "G. Grundbuchwesen"
+        }
+      ],
+      "marginalie": []
+    },
+    "220": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Zweiter Titel: Kantonales Zivilrecht"
+        },
+        {
+          "ebene": 2,
+          "label": "Vierter Abschnitt: Sachenrecht"
+        },
+        {
+          "ebene": 3,
+          "label": "G. Grundbuchwesen"
+        }
+      ],
+      "marginalie": []
+    },
+    "221": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Zweiter Titel: Kantonales Zivilrecht"
+        },
+        {
+          "ebene": 2,
+          "label": "Vierter Abschnitt: Sachenrecht"
+        },
+        {
+          "ebene": 3,
+          "label": "G. Grundbuchwesen"
+        }
+      ],
+      "marginalie": []
+    },
+    "222": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Zweiter Titel: Kantonales Zivilrecht"
+        },
+        {
+          "ebene": 2,
+          "label": "Vierter Abschnitt: Sachenrecht"
+        },
+        {
+          "ebene": 3,
+          "label": "G. Grundbuchwesen"
+        }
+      ],
+      "marginalie": []
+    },
+    "223": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Zweiter Titel: Kantonales Zivilrecht"
+        },
+        {
+          "ebene": 2,
+          "label": "Fünfter Abschnitt: Obligationenrecht"
+        },
+        {
+          "ebene": 3,
+          "label": "A. Versteigerung"
+        }
+      ],
+      "marginalie": []
+    },
+    "230": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Zweiter Titel: Kantonales Zivilrecht"
+        },
+        {
+          "ebene": 2,
+          "label": "Fünfter Abschnitt: Obligationenrecht"
+        },
+        {
+          "ebene": 3,
+          "label": "D. Vorlegung von beweglichen Sachen oder Urkunden"
+        }
+      ],
+      "marginalie": []
+    },
+    "231": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Zweiter Titel: Kantonales Zivilrecht"
+        },
+        {
+          "ebene": 2,
+          "label": "Fünfter Abschnitt: Obligationenrecht"
+        },
+        {
+          "ebene": 3,
+          "label": "D. Vorlegung von beweglichen Sachen oder Urkunden"
+        }
+      ],
+      "marginalie": []
+    },
+    "232": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Zweiter Titel: Kantonales Zivilrecht"
+        },
+        {
+          "ebene": 2,
+          "label": "Fünfter Abschnitt: Obligationenrecht"
+        },
+        {
+          "ebene": 3,
+          "label": "D. Vorlegung von beweglichen Sachen oder Urkunden"
+        }
+      ],
+      "marginalie": []
+    },
+    "233": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Zweiter Titel: Kantonales Zivilrecht"
+        },
+        {
+          "ebene": 2,
+          "label": "Fünfter Abschnitt: Obligationenrecht"
+        },
+        {
+          "ebene": 3,
+          "label": "D. Vorlegung von beweglichen Sachen oder Urkunden"
+        }
+      ],
+      "marginalie": []
+    },
+    "234": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Zweiter Titel: Kantonales Zivilrecht"
+        },
+        {
+          "ebene": 2,
+          "label": "Fünfter Abschnitt: Obligationenrecht"
+        },
+        {
+          "ebene": 3,
+          "label": "D. Vorlegung von beweglichen Sachen oder Urkunden"
+        }
+      ],
+      "marginalie": []
+    },
+    "235": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Zweiter Titel: Kantonales Zivilrecht"
+        },
+        {
+          "ebene": 2,
+          "label": "Fünfter Abschnitt: Obligationenrecht"
+        },
+        {
+          "ebene": 3,
+          "label": "D. Vorlegung von beweglichen Sachen oder Urkunden"
+        }
+      ],
+      "marginalie": []
+    },
+    "236": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Zweiter Titel: Kantonales Zivilrecht"
+        },
+        {
+          "ebene": 2,
+          "label": "Sechster Abschnitt: Beurkundung und Beglaubigung"
+        },
+        {
+          "ebene": 3,
+          "label": "A. Öffentliche Beurkundung"
+        }
+      ],
+      "marginalie": []
+    },
+    "237": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Zweiter Titel: Kantonales Zivilrecht"
+        },
+        {
+          "ebene": 2,
+          "label": "Sechster Abschnitt: Beurkundung und Beglaubigung"
+        },
+        {
+          "ebene": 3,
+          "label": "A. Öffentliche Beurkundung"
+        }
+      ],
+      "marginalie": []
+    },
+    "238": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Zweiter Titel: Kantonales Zivilrecht"
+        },
+        {
+          "ebene": 2,
+          "label": "Sechster Abschnitt: Beurkundung und Beglaubigung"
+        },
+        {
+          "ebene": 3,
+          "label": "A. Öffentliche Beurkundung"
+        }
+      ],
+      "marginalie": []
+    },
+    "239": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Zweiter Titel: Kantonales Zivilrecht"
+        },
+        {
+          "ebene": 2,
+          "label": "Sechster Abschnitt: Beurkundung und Beglaubigung"
+        },
+        {
+          "ebene": 3,
+          "label": "A. Öffentliche Beurkundung"
+        }
+      ],
+      "marginalie": []
+    },
+    "240": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Zweiter Titel: Kantonales Zivilrecht"
+        },
+        {
+          "ebene": 2,
+          "label": "Sechster Abschnitt: Beurkundung und Beglaubigung"
+        },
+        {
+          "ebene": 3,
+          "label": "A. Öffentliche Beurkundung"
+        }
+      ],
+      "marginalie": []
+    },
+    "241": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Zweiter Titel: Kantonales Zivilrecht"
+        },
+        {
+          "ebene": 2,
+          "label": "Sechster Abschnitt: Beurkundung und Beglaubigung"
+        },
+        {
+          "ebene": 3,
+          "label": "A. Öffentliche Beurkundung"
+        }
+      ],
+      "marginalie": []
+    },
+    "242": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Zweiter Titel: Kantonales Zivilrecht"
+        },
+        {
+          "ebene": 2,
+          "label": "Sechster Abschnitt: Beurkundung und Beglaubigung"
+        },
+        {
+          "ebene": 3,
+          "label": "A. Öffentliche Beurkundung"
+        }
+      ],
+      "marginalie": []
+    },
+    "243": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Zweiter Titel: Kantonales Zivilrecht"
+        },
+        {
+          "ebene": 2,
+          "label": "Sechster Abschnitt: Beurkundung und Beglaubigung"
+        },
+        {
+          "ebene": 3,
+          "label": "A. Öffentliche Beurkundung"
+        }
+      ],
+      "marginalie": []
+    },
+    "244": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Zweiter Titel: Kantonales Zivilrecht"
+        },
+        {
+          "ebene": 2,
+          "label": "Sechster Abschnitt: Beurkundung und Beglaubigung"
+        },
+        {
+          "ebene": 3,
+          "label": "A. Öffentliche Beurkundung"
+        }
+      ],
+      "marginalie": []
+    },
+    "245": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Zweiter Titel: Kantonales Zivilrecht"
+        },
+        {
+          "ebene": 2,
+          "label": "Sechster Abschnitt: Beurkundung und Beglaubigung"
+        },
+        {
+          "ebene": 3,
+          "label": "A. Öffentliche Beurkundung"
+        }
+      ],
+      "marginalie": []
+    },
+    "246": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Zweiter Titel: Kantonales Zivilrecht"
+        },
+        {
+          "ebene": 2,
+          "label": "Sechster Abschnitt: Beurkundung und Beglaubigung"
+        },
+        {
+          "ebene": 3,
+          "label": "B. Beglaubigungen"
+        }
+      ],
+      "marginalie": []
+    },
+    "247": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Zweiter Titel: Kantonales Zivilrecht"
+        },
+        {
+          "ebene": 2,
+          "label": "Sechster Abschnitt: Beurkundung und Beglaubigung"
+        },
+        {
+          "ebene": 3,
+          "label": "B. Beglaubigungen"
+        }
+      ],
+      "marginalie": []
+    },
+    "248": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Zweiter Titel: Kantonales Zivilrecht"
+        },
+        {
+          "ebene": 2,
+          "label": "Sechster Abschnitt: Beurkundung und Beglaubigung"
+        },
+        {
+          "ebene": 3,
+          "label": "B. Beglaubigungen"
+        }
+      ],
+      "marginalie": []
+    },
+    "249": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Zweiter Titel: Kantonales Zivilrecht"
+        },
+        {
+          "ebene": 2,
+          "label": "Sechster Abschnitt: Beurkundung und Beglaubigung"
+        },
+        {
+          "ebene": 3,
+          "label": "B. Beglaubigungen"
+        }
+      ],
+      "marginalie": []
+    },
+    "250": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Zweiter Titel: Kantonales Zivilrecht"
+        },
+        {
+          "ebene": 2,
+          "label": "Sechster Abschnitt: Beurkundung und Beglaubigung"
+        },
+        {
+          "ebene": 3,
+          "label": "B. Beglaubigungen"
+        }
+      ],
+      "marginalie": []
+    },
+    "251": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Dritter Titel: Übergangs- und Schlussbestimmungen"
+        },
+        {
+          "ebene": 2,
+          "label": "I. Eheliches Güterrecht"
+        }
+      ],
+      "marginalie": []
+    },
+    "252": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Dritter Titel: Übergangs- und Schlussbestimmungen"
+        },
+        {
+          "ebene": 2,
+          "label": "II. Persönliches Eherecht"
+        }
+      ],
+      "marginalie": []
+    },
+    "256": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Dritter Titel: Übergangs- und Schlussbestimmungen"
+        },
+        {
+          "ebene": 2,
+          "label": "IV. Vormundschaftsrecht"
+        }
+      ],
+      "marginalie": []
+    },
+    "257": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Dritter Titel: Übergangs- und Schlussbestimmungen"
+        },
+        {
+          "ebene": 2,
+          "label": "IV. Vormundschaftsrecht"
+        }
+      ],
+      "marginalie": []
+    },
+    "258": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Dritter Titel: Übergangs- und Schlussbestimmungen"
+        },
+        {
+          "ebene": 2,
+          "label": "IV. Vormundschaftsrecht"
+        }
+      ],
+      "marginalie": []
+    },
+    "259": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Dritter Titel: Übergangs- und Schlussbestimmungen"
+        },
+        {
+          "ebene": 2,
+          "label": "V. Grundpfandrecht"
+        }
+      ],
+      "marginalie": []
+    },
+    "260": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Dritter Titel: Übergangs- und Schlussbestimmungen"
+        },
+        {
+          "ebene": 2,
+          "label": "V. Grundpfandrecht"
+        }
+      ],
+      "marginalie": []
+    },
+    "261": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Dritter Titel: Übergangs- und Schlussbestimmungen"
+        },
+        {
+          "ebene": 2,
+          "label": "V. Grundpfandrecht"
+        }
+      ],
+      "marginalie": []
+    },
+    "262": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Dritter Titel: Übergangs- und Schlussbestimmungen"
+        },
+        {
+          "ebene": 2,
+          "label": "V. Grundpfandrecht"
+        }
+      ],
+      "marginalie": []
+    },
+    "266": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Dritter Titel: Übergangs- und Schlussbestimmungen"
+        },
+        {
+          "ebene": 2,
+          "label": "VI. Einführung des Grundbuches"
+        }
+      ],
+      "marginalie": []
+    },
+    "267": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Dritter Titel: Übergangs- und Schlussbestimmungen"
+        },
+        {
+          "ebene": 2,
+          "label": "VI. Einführung des Grundbuches"
+        }
+      ],
+      "marginalie": []
+    },
+    "268": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Dritter Titel: Übergangs- und Schlussbestimmungen"
+        },
+        {
+          "ebene": 2,
+          "label": "VI. Einführung des Grundbuches"
+        }
+      ],
+      "marginalie": []
+    },
+    "269": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Dritter Titel: Übergangs- und Schlussbestimmungen"
+        },
+        {
+          "ebene": 2,
+          "label": "VI. Einführung des Grundbuches"
+        }
+      ],
+      "marginalie": []
+    },
+    "270": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Dritter Titel: Übergangs- und Schlussbestimmungen"
+        },
+        {
+          "ebene": 2,
+          "label": "VI. Einführung des Grundbuches"
+        }
+      ],
+      "marginalie": []
+    },
+    "271": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Dritter Titel: Übergangs- und Schlussbestimmungen"
+        },
+        {
+          "ebene": 2,
+          "label": "VI. Einführung des Grundbuches"
+        }
+      ],
+      "marginalie": []
+    },
+    "272": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Dritter Titel: Übergangs- und Schlussbestimmungen"
+        },
+        {
+          "ebene": 2,
+          "label": "VI. Einführung des Grundbuches"
+        }
+      ],
+      "marginalie": []
+    },
+    "273": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Dritter Titel: Übergangs- und Schlussbestimmungen"
+        },
+        {
+          "ebene": 2,
+          "label": "VI. Einführung des Grundbuches"
+        }
+      ],
+      "marginalie": []
+    },
+    "274": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Dritter Titel: Übergangs- und Schlussbestimmungen"
+        },
+        {
+          "ebene": 2,
+          "label": "VI. Einführung des Grundbuches"
+        }
+      ],
+      "marginalie": []
+    },
+    "275": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Dritter Titel: Übergangs- und Schlussbestimmungen"
+        },
+        {
+          "ebene": 2,
+          "label": "VII. Schlussbestimmungen"
+        }
+      ],
+      "marginalie": []
+    },
+    "276": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Dritter Titel: Übergangs- und Schlussbestimmungen"
+        },
+        {
+          "ebene": 2,
+          "label": "VII. Schlussbestimmungen"
+        }
+      ],
+      "marginalie": []
+    },
+    "277": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Dritter Titel: Übergangs- und Schlussbestimmungen"
+        },
+        {
+          "ebene": 2,
+          "label": "VII. Schlussbestimmungen"
+        }
+      ],
+      "marginalie": []
+    },
+    "278": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Dritter Titel: Übergangs- und Schlussbestimmungen"
+        },
+        {
+          "ebene": 2,
+          "label": "VII. Schlussbestimmungen"
+        }
+      ],
+      "marginalie": []
+    },
+    "124_a": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Zweiter Titel: Kantonales Zivilrecht"
+        },
+        {
+          "ebene": 2,
+          "label": "Dritter Abschnitt: Erbrecht"
+        },
+        {
+          "ebene": 3,
+          "label": "A. Erbrecht des Gemeinwesens"
+        }
+      ],
+      "marginalie": []
+    },
+    "134_a": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Zweiter Titel: Kantonales Zivilrecht"
+        },
+        {
+          "ebene": 2,
+          "label": "Dritter Abschnitt: Erbrecht"
+        },
+        {
+          "ebene": 3,
+          "label": "D. Teilung der Erbschaft"
+        }
+      ],
+      "marginalie": []
+    },
+    "174_bis": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Zweiter Titel: Kantonales Zivilrecht"
+        },
+        {
+          "ebene": 2,
+          "label": "Vierter Abschnitt: Sachenrecht"
+        },
+        {
+          "ebene": 3,
+          "label": "C. Inhalt und Beschränkungen des Grundeigentums"
+        },
+        {
+          "ebene": 4,
+          "label": "II. Pflanzen von Sträuchern und Bäumen"
+        }
+      ],
+      "marginalie": []
+    },
+    "183_bis": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Zweiter Titel: Kantonales Zivilrecht"
+        },
+        {
+          "ebene": 2,
+          "label": "Vierter Abschnitt: Sachenrecht"
+        },
+        {
+          "ebene": 3,
+          "label": "C. Inhalt und Beschränkungen des Grundeigentums"
+        },
+        {
+          "ebene": 4,
+          "label": "VII. Enteignungsähnliche Beschränkungen"
+        }
+      ],
+      "marginalie": []
+    },
+    "183_quater": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Zweiter Titel: Kantonales Zivilrecht"
+        },
+        {
+          "ebene": 2,
+          "label": "Vierter Abschnitt: Sachenrecht"
+        },
+        {
+          "ebene": 3,
+          "label": "C. Inhalt und Beschränkungen des Grundeigentums"
+        },
+        {
+          "ebene": 4,
+          "label": "VII. Enteignungsähnliche Beschränkungen"
+        }
+      ],
+      "marginalie": []
+    },
+    "183_ter": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Zweiter Titel: Kantonales Zivilrecht"
+        },
+        {
+          "ebene": 2,
+          "label": "Vierter Abschnitt: Sachenrecht"
+        },
+        {
+          "ebene": 3,
+          "label": "C. Inhalt und Beschränkungen des Grundeigentums"
+        },
+        {
+          "ebene": 4,
+          "label": "VII. Enteignungsähnliche Beschränkungen"
+        }
+      ],
+      "marginalie": []
+    },
+    "229_a": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Zweiter Titel: Kantonales Zivilrecht"
+        },
+        {
+          "ebene": 2,
+          "label": "Fünfter Abschnitt: Obligationenrecht"
+        },
+        {
+          "ebene": 3,
+          "label": "B. Miete und Pacht"
+        }
+      ],
+      "marginalie": []
+    },
+    "229_b": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Zweiter Titel: Kantonales Zivilrecht"
+        },
+        {
+          "ebene": 2,
+          "label": "Fünfter Abschnitt: Obligationenrecht"
+        },
+        {
+          "ebene": 3,
+          "label": "B. Miete und Pacht"
+        }
+      ],
+      "marginalie": []
+    },
+    "229_c": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Zweiter Titel: Kantonales Zivilrecht"
+        },
+        {
+          "ebene": 2,
+          "label": "Fünfter Abschnitt: Obligationenrecht"
+        },
+        {
+          "ebene": 3,
+          "label": "C. Ehe- und Partnerschaftsvermittlung"
+        }
+      ],
+      "marginalie": []
+    },
+    "235_a": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Zweiter Titel: Kantonales Zivilrecht"
+        },
+        {
+          "ebene": 2,
+          "label": "Fünfter Abschnitt: Obligationenrecht"
+        },
+        {
+          "ebene": 3,
+          "label": "D. Vorlegung von beweglichen Sachen oder Urkunden"
+        }
+      ],
+      "marginalie": []
+    },
+    "236_a": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Zweiter Titel: Kantonales Zivilrecht"
+        },
+        {
+          "ebene": 2,
+          "label": "Sechster Abschnitt: Beurkundung und Beglaubigung"
+        },
+        {
+          "ebene": 3,
+          "label": "A. Öffentliche Beurkundung"
+        }
+      ],
+      "marginalie": []
+    },
+    "250_a": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Zweiter Titel: Kantonales Zivilrecht"
+        },
+        {
+          "ebene": 2,
+          "label": "Sechster Abschnitt: Beurkundung und Beglaubigung"
+        },
+        {
+          "ebene": 3,
+          "label": "B. Beglaubigungen"
+        }
+      ],
+      "marginalie": []
+    },
+    "40_b": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Erster Titel: Zuständigkeit der Behörden und Verfahren"
+        },
+        {
+          "ebene": 2,
+          "label": "E. Verwaltungsbehörden"
+        },
+        {
+          "ebene": 3,
+          "label": "III. Bezirksrat"
+        }
+      ],
+      "marginalie": []
+    },
+    "42_a": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Erster Titel: Zuständigkeit der Behörden und Verfahren"
+        },
+        {
+          "ebene": 2,
+          "label": "E. Verwaltungsbehörden"
+        },
+        {
+          "ebene": 3,
+          "label": "V. Polizei"
+        }
+      ],
+      "marginalie": []
+    },
+    "56_a": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Zweiter Titel: Kantonales Zivilrecht"
+        },
+        {
+          "ebene": 2,
+          "label": "Zweiter Abschnitt: Familienrecht"
+        },
+        {
+          "ebene": 3,
+          "label": "A. Allgemeine Bestimmungen"
+        }
+      ],
+      "marginalie": []
+    },
+    "56_b": {
+      "gliederung": [
+        {
+          "ebene": 1,
+          "label": "Zweiter Titel: Kantonales Zivilrecht"
+        },
+        {
+          "ebene": 2,
+          "label": "Zweiter Abschnitt: Familienrecht"
+        },
+        {
+          "ebene": 3,
+          "label": "A. Allgemeine Bestimmungen"
+        }
+      ],
+      "marginalie": [
+        "Amtliche Meldepflichten"
+      ]
+    }
+  }
+}

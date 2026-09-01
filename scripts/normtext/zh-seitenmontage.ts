@@ -354,6 +354,29 @@ export interface ZhRandblock {
  *  Zeilen a ~10 pt). 12 pt trennt die beiden Klassen mit Sicherheitsabstand. */
 const RANDBLOCK_MAX_LUECKE_PT = 12;
 
+/**
+ * Wort-Luecke IN DER MARGINALIENSPALTE (pt) — eigener Wert, NICHT der des
+ * Bodys (WORT_LUECKE_PT = 0.8).
+ *
+ * WARUM EIGEN: Die Randnote ist in 7.5 pt gesetzt, der Body in 9.18 pt. Die
+ * Laufweite eines Leerzeichens skaliert mit dem Schriftgrad, die Body-Schwelle
+ * ist fuer die Randspalte also zu gross — mit ihr fielen «Varianten-, Teil- und
+ * Grundsatzabstimmung» (ZH-131.1 § 12, Luecke 0.57) und «Zustimmung der
+ * Gemeinden ...» (§ 77, Luecke 0.75) zu «Varianten-,Teil-» und
+ * «Zustimmungder» zusammen. Beide von der unabhaengigen PyMuPDF-Zweitlesung
+ * gefunden (2.9.2026), nicht vom Augenschein.
+ *
+ * DIE MESSUNG (alle 111 ZH-PDF, 2.9.2026): 1369 Fragment-Luecken in der
+ * Marginalienspalte, zwei Klassen ohne Beruehrung —
+ *   · KLEBUNG (kein Leerzeichen): -0.5 ... +0.07 pt, 1327 Faelle. Ausnahmslos
+ *     der Trennstrich hinter einem Wortstamm («meinde» + «-», «richts» + «-»).
+ *   · WORT-LUECKE: 0.39 ... 7.5 pt, 42 Faelle. Ausnahmslos echte Wortgrenzen
+ *     («chtung» + «von», «immung» + «der», «nach §» + «40»).
+ * Zwischen 0.07 und 0.39 liegt kein einziger Wert. 0.25 pt trennt die beiden
+ * Klassen mit Faktor 3.5 bzw. 1.6 Sicherheitsabstand.
+ */
+const MARGINALIE_WORT_LUECKE_PT = 0.25;
+
 /** Anschlusswoerter, die einen ERGAENZUNGSSTRICH belegen («Sozial- | und ...»). */
 const ERGAENZUNGS_ANSCHLUSS = /^(?:und|oder|bzw\.|sowie|wie|beziehungsweise)\b/;
 
@@ -399,15 +422,45 @@ export function sammleZhRandbloecke(stuecke: PdfStueck[]): ZhRandblock[] {
   const marg = stuecke.filter((st) => istZhMarginalie(st, bodyMinX));
   if (marg.length === 0) return [];
 
-  const nachY = new Map<number, PdfStueck[]>();
+  // HOCHSTELLUNGEN IHRER TRAEGERZEILE ZUORDNEN — dieselbe Sorge wie im Body
+  // (s. Bugs B-2/B-4 in montiereZhSeite), hier fuer die Randspalte.
+  //
+  // ANLASS (2.9.2026, von der Zweitlesung gefunden, nicht vom Augenschein):
+  // ZH-232.35 § 7 traegt die Randnote «Beistaendinnen und Beistaende gemaess
+  // Art. 449 a und 314a^bis ZGB». Der lateinische Suffix «bis» steht als
+  // eigene, hoehere Grundlinie (y = 118 gegen y = 115, h = 4.6) und wurde
+  // darum als EIGENE Randtitel-Zeile gelesen — das Ergebnis lautete
+  // «... Art. 449 a und bis 314 a ZGB», der Suffix stand vor seiner Zahl.
+  //
+  // Regel rein geometrisch: eine Gruppe, die NUR aus Stuecken in
+  // Apparat-Groesse besteht, gehoert zur naechsten Randtitel-Zeile darunter
+  // (Δy <= HOCH_TRAEGER_ABSTAND). Reine Ziffernfolgen bleiben ausgenommen —
+  // das sind Fussnoten-Verweise («Grundsatz⁵²»), kein Titelbestandteil.
+  const roh = new Map<number, PdfStueck[]>();
   for (const st of marg) {
     const key = Math.round(st.y);
-    let liste = nachY.get(key);
+    let liste = roh.get(key);
     if (!liste) {
       liste = [];
-      nachY.set(key, liste);
+      roh.set(key, liste);
     }
     liste.push(st);
+  }
+  const absteigend = [...roh.keys()].sort((a, b) => b - a);
+  const nachY = new Map<number, PdfStueck[]>();
+  for (let i = 0; i < absteigend.length; i++) {
+    const y = absteigend[i];
+    const gruppe = roh.get(y)!;
+    const nurHoch =
+      gruppe.every((st) => st.h <= APPARAT_ZIFFER_MAX_H) &&
+      !gruppe.every((st) => /^[\s,\d]+$/.test(st.s));
+    const traegerY = absteigend[i + 1];
+    if (nurHoch && traegerY !== undefined && y - traegerY <= HOCH_TRAEGER_ABSTAND) {
+      const traeger = roh.get(traegerY)!;
+      traeger.push(...gruppe);
+      continue;
+    }
+    nachY.set(y, gruppe);
   }
 
   const zeilen: { y: number; text: string }[] = [];
@@ -423,7 +476,9 @@ export function sammleZhRandbloecke(stuecke: PdfStueck[]): ZhRandblock[] {
         continue;
       }
       const schliessend = /^[.,;:!?)\]]/.test(st.s);
-      if (!schliessend && vorEndeX !== null && st.x - vorEndeX >= WORT_LUECKE_PT) text += ' ';
+      if (!schliessend && vorEndeX !== null && st.x - vorEndeX >= MARGINALIE_WORT_LUECKE_PT) {
+        text += ' ';
+      }
       text += st.s;
       vorEndeX = st.x + st.w;
     }
