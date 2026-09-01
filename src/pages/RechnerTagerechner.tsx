@@ -1,6 +1,7 @@
-import { useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { EinfacheFristForm } from '../components/forms/EinfacheFristForm';
+import type { EinfacheFristMeldung, Ferien } from '../components/forms/einfacheFristTexte';
 import { AllgemeineFristForm } from '../components/forms/AllgemeineFristForm';
 import { ZpoFristenForm } from '../components/forms/ZpoFristenForm';
 import { SchkgFristenForm } from '../components/forms/SchkgFristenForm';
@@ -38,6 +39,14 @@ const VERFAHREN: { code: Verfahren; label: string }[] = [
 // «Allgemein» und sah die Parameter nie.
 const HASH_VERFAHREN: Record<string, Verfahren> = { '#zpo': 'zpo', '#schkg': 'schkg', '#allgemein': 'allgemein' };
 
+// Live-Brücke (Auftrag David 1.9.2026 «der Rechenweg aktualisiert sich nicht
+// automatisch»): das Ferien-Regime des einfachen Rechners oben bestimmt den
+// Voll-Tab unten. VwVG/BGG haben unten kein Formular — dort keine Zuordnung
+// (der einfache Rechner bleibt für diese Regimes die einzige Anzeige).
+const FERIEN_VERFAHREN: Partial<Record<Ferien, Verfahren>> = {
+  keine: 'allgemein', zpo: 'zpo', schkg: 'schkg',
+};
+
 // FE-4: Abzweigungs-Treffer — die Preset-Suche prüft deterministisch auch
 // die «Eigenes Regime»-Spezialrechner (katalogSuche über die Karten, §5);
 // reine Hinweise mit WARUM-Satz, keine Auto-Navigation.
@@ -58,11 +67,36 @@ export function RechnerTagerechner() {
     setLetzterHash(hash);
     if (HASH_VERFAHREN[hash]) setVerfahren(HASH_VERFAHREN[hash]);
   }
+  // Live-Brücke: gültige ÄNDERUNGEN im einfachen Rechner oben fliessen als
+  // EIN stabiles Objekt (Referenz aus dem State) in das aktive Voll-Formular —
+  // dessen Rechenweg rechnet damit automatisch mit den oben eingegebenen
+  // Werten. Der Voll-Tab wird NUR umgeschaltet, wenn das Ferien-Regime oben
+  // wirklich wechselt (GP-Nebenfund 1.9.2026: nicht bei jeder Wertänderung
+  // die manuelle Tab-Wahl überstimmen) — und dann MIT navigate, damit Hash
+  // und sichtbarer Tab nie auseinanderlaufen (GP-Befund B1: der Live-URL-Sync
+  // des LinkTeilenButton schrieb sonst eine ZPO-Query unter #schkg, nach
+  // Reload rechnete das falsche Regime mit den Werten — §1). Ein navigate je
+  // Tastendruck entsteht so nicht: Werte-Meldungen navigieren nie.
+  const [live, setLive] = useState<EinfacheFristMeldung | null>(null);
+  const verfahrenRef = useRef(verfahren);
+  useEffect(() => { verfahrenRef.current = verfahren; });
+  const uebernehmeEingaben = useCallback((m: EinfacheFristMeldung) => {
+    const v = FERIEN_VERFAHREN[m.ferien];
+    if (!v) { setLive(null); return; } // VwVG/BGG: unten kein Formular (GP-Befund B4 — keine veralteten Syncs stehen lassen)
+    setLive(m);
+    if (v !== verfahrenRef.current) {
+      setVerfahren(v);
+      navigate({ search: '', hash: v === 'allgemein' ? '' : `#${v}` }, { replace: true });
+    }
+  }, [navigate]);
   const wechsle = (v: Verfahren) => {
     // Bug-Check 10.6.2026 (MITTEL): Klick auf den AKTIVEN Tab darf die
     // Query (und damit hydratisierte Eingaben) nicht verwerfen.
     if (v === verfahren) return;
     setVerfahren(v);
+    // Manuelle Wahl gewinnt: alte Live-Werte dürfen ein danach (re)gemountetes
+    // Formular nicht mehr überschreiben (Stomp-Loch, Bug-Check 1.9.2026).
+    setLive(null);
     // Such-Parameter gehören zum bisherigen Tab — beim manuellen Wechsel
     // fallen sie weg (die Forms hydratisieren ohnehin nur beim Mount).
     navigate({ search: '', hash: v === 'allgemein' ? '' : `#${v}` }, { replace: true });
@@ -90,6 +124,11 @@ export function RechnerTagerechner() {
   const waehlePreset = (e: PresetIndexEintrag) => {
     setPresetQuery('');
     setVerfahren(e.regime);
+    // Preset gewinnt: ohne dieses Leeren würde der Render-Sync der frisch
+    // aus der Preset-URL hydratisierten Form sofort die ALTEN Live-Werte
+    // darüberschreiben (letzterLive startet beim Remount undefined —
+    // Stomp-Loch, Bug-Check 1.9.2026; e2e-Fall «Preset-Klick gewinnt»).
+    setLive(null);
     setPresetNonce((n) => n + 1);
     navigate({ search: e.query, hash: e.hash }, { replace: true });
   };
@@ -110,7 +149,7 @@ export function RechnerTagerechner() {
             Rechner mit Vorauswahl darunter verwenden.
           </p>
         </div>
-        <EinfacheFristForm />
+        <EinfacheFristForm onEingaben={uebernehmeEingaben} />
       </Card>
       <Card>
         <div className="space-y-1 mb-5">
@@ -234,9 +273,13 @@ export function RechnerTagerechner() {
         {/* Nonce-Key: NUR die Preset-Wahl erzwingt einen Remount (die Form
             hydratisiert dann aus der frisch gesetzten URL — dieselbe Mechanik
             wie die Prefill-Brücken); Teilen-Klicks remounten nicht. */}
-        {verfahren === 'allgemein' && <AllgemeineFristForm key={presetNonce} />}
-        {verfahren === 'zpo' && <ZpoFristenForm key={presetNonce} />}
-        {verfahren === 'schkg' && <SchkgFristenForm key={presetNonce} />}
+        {/* Live-Brücke: `live` erreicht nur die zum Regime passende Form
+            (sonst rechnete etwa die ZPO-Form mit «Keine Ferien»-Eingaben —
+            §1: zwei rechtlich verschiedene Regimes nie stillschweigend
+            gleich behandeln). */}
+        {verfahren === 'allgemein' && <AllgemeineFristForm key={presetNonce} live={live?.ferien === 'keine' ? live : undefined} />}
+        {verfahren === 'zpo' && <ZpoFristenForm key={presetNonce} live={live?.ferien === 'zpo' ? live : undefined} />}
+        {verfahren === 'schkg' && <SchkgFristenForm key={presetNonce} live={live?.ferien === 'schkg' ? live : undefined} />}
       </Card>
     </div>
   );

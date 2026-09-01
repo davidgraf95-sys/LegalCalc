@@ -25,6 +25,7 @@ import { IcsExportButton } from '../IcsExportButton';
 import { FristenKalender } from '../FristenKalender';
 import { getStandardKanton } from '../../lib/einstellungen';
 import { usePaneKlasse } from '../layout/PaneKontext';
+import type { EinfacheFristMeldung } from './einfacheFristTexte';
 
 
 const EINHEITEN: { code: SchkgEinheit; label: string }[] = [
@@ -79,7 +80,12 @@ const DEFAULTS: FormState = {
 // Spec seit FE-3 in lib/rechnerPermalinks.ts (eine Spec, zwei Nutzer: die
 // Form liest/teilt, der Preset-Index des Tagerechners baut dieselben Links).
 
-export function SchkgFristenForm() {
+export function SchkgFristenForm({ live }: {
+  /** Live-Brücke des Tagerechners (Auftrag David 1.9.2026): die oben
+   *  BERÜHRTEN Felder überschreiben die geteilten Felder hier, damit der
+   *  Rechenweg automatisch mitrechnet. */
+  live?: EinfacheFristMeldung;
+} = {}) {
   const ausLink = usePermalinkFelder(SCHKG_LINK_SPEC);
   const [form, setForm] = useState<FormState>(() => ({
     ...DEFAULTS,
@@ -100,6 +106,36 @@ export function SchkgFristenForm() {
   const [override, setOverride] = useState<SchkgModus | ''>((ausLink.override as SchkgModus | undefined) ?? '');
   const [hemmung, setHemmung] = useState<{ an: boolean; von: string; bis: string }>({ an: ausLink.hemmungAn ?? false, von: ausLink.hemmungVon ?? '', bis: ausLink.hemmungBis ?? '' });
   const [rechtsstillstand, setRechtsstillstand] = useState<{ an: boolean; von: string; bis: string }>({ an: ausLink.rsAn ?? false, von: ausLink.rsVon ?? '', bis: ausLink.rsBis ?? '' });
+
+  // Live-Brücke: Sync während des Renderns (Muster «adjusting state»);
+  // Referenzvergleich genügt, die Seite hält `live` im State. Anwendungsregel
+  // (GP-Befund B2): oben Berührtes gewinnt immer; Unberührtes füllt nur
+  // Felder, die hier weder aus dem Permalink stammen noch von Hand geändert
+  // wurden. Der aktive Preset fällt nur bei echter Wert-Änderung.
+  const ausLinkFelder = { ereignis: !!ausLink.ereignis, laenge: ausLink.laenge != null, einheit: !!ausLink.einheit, kanton: !!ausLink.kanton };
+  // Mount-Stand als einmaliger State-Snapshot (kein Ref — Refs sind im
+  // Render tabu, react-hooks/refs); nie aktualisiert, nur Vergleichsbasis.
+  const [mountForm] = useState(form);
+  const ZUORDNUNG = { start: 'ereignis', laenge: 'laenge', einheit: 'einheit', kanton: 'kanton' } as const;
+  const [letzterLive, setLetzterLive] = useState<EinfacheFristMeldung | undefined>(undefined);
+  if (live && live !== letzterLive) {
+    setLetzterLive(live);
+    const n = { ...form };
+    let geaendert = false;
+    (['start', 'laenge', 'einheit', 'kanton'] as const).forEach((k) => {
+      const feld = ZUORDNUNG[k];
+      // Einheit: der einfache Rechner bietet im SchKG-Regime keine Wochen
+      // an (einheitEffektiv) — der Cast engt denselben Wert nur typseitig ein.
+      const wert = k === 'einheit' ? (live.werte.einheit as SchkgEinheit) : live.werte[k];
+      if (live.beruehrt.includes(k) || (!ausLinkFelder[feld] && form[feld] === mountForm[feld])) {
+        if (n[feld] !== wert) { (n as Record<string, unknown>)[feld] = wert; geaendert = true; }
+      }
+    });
+    if (geaendert) {
+      setForm(n);
+      setAktiv(null);
+    }
+  }
 
   const pk = usePaneKlasse();
   const set = <K extends keyof FormState>(k: K, v: FormState[K]) => setForm((f) => ({ ...f, [k]: v }));
