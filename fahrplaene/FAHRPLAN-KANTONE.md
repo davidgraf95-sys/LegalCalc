@@ -645,7 +645,7 @@ Turso-Sync mit Recall-Feldern gefahren, Produktions-Probe grün — Live-Probe
 31.8. positiv; + Budget-Zeile deklariert senken + UI-Abdeckungszeile, sobald
 Design-TABU-Fläche frei).
 
-**Phase I — Masse mit Schleife:** Tranche A (155: Ordner 3+10+4 komplett;
+**Phase I — Masse mit Schleife:** Tranche A (amtlich **170**, nicht 155 — Zählkorrektur PR #614, 1.9.2026: Ordner 3+10+4 komplett;
 Vorprüfungen GO 31.8., Grössen 10,3 MB, Fallen im Skill verankert) →
 intensive Prüfrunde (mehrere unabhängige Prüf-Agenten + Messbank + Tore) →
 Befunde fixen → Tranche B (236 + die 5 Ordner-1-Auffüller) → Schleife →
