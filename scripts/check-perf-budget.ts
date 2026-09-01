@@ -102,6 +102,24 @@ if (entry.length === 1) {
 //    Wartezeit bis zum ersten Treffer an — dann gehört die Staffelung
 //    (artikelVolltext.ts, `baue()`) mit überdacht, nicht bloss die Zahl.
 //
+//    QS-BASIS (d) K3-SCHARFSCHALTUNG (1.9.2026): DECKEL GESENKT, nicht gelockert.
+//    Der Generator schreibt seit heute per Default nur noch die Bund-Ebene
+//    (scripts/such-index-generieren.ts, `EBENEN_DEFAULT`); kantonaler Volltext
+//    kommt aus der Edge-Suche. Gemessen am Korpusstand `123ffe495` mit demselben
+//    `gzipSync`, das dieses Tor verwendet:
+//      · vorher  bund+kanton  57 036 Einträge  9 974.0 KB gzip
+//      · nachher bund          25 391 Einträge  5 311.0 KB gzip
+//      · Ersparnis                             4 663.0 KB gzip = 46.8 %
+//    Neuer Deckel 5 850 KB ⇒ ~539 KB Luft. Umgerechnet auf den JETZT allein
+//    wachsenden Bund-Korpus (25 391 Artikel / ~227 Erlasse ⇒ ~23 KB gzip je
+//    Erlass) sind das ~23 weitere Bundeserlasse — eine normale Tranche passt
+//    durch, ein Massenimport nicht. Warum der Deckel überhaupt mitgehen MUSS:
+//    stünde er weiter bei 10 400 KB, bliebe er nach dem Umzug 96 % über dem Ist
+//    und würde die einzige Regression, die er hier noch abfangen kann — eine
+//    versehentlich zurückkehrende Kanton-Ebene (+4.7 MiB) — nicht bemerken. Ein
+//    Deckel, der nach einer Halbierung stehen bleibt, ist kein Tor mehr,
+//    sondern eine Zahl (§6.7).
+//
 //    W2·6-NKEY (28.7.2026): der Eintrag `norm-index.json` wandert auf
 //    `norm-index-erlasse.json`. Das ist KEINE Deckel-Anhebung, sondern ein
 //    Wechsel des gemessenen Objekts — und der Grund gehört hierher, weil die
@@ -149,7 +167,7 @@ const DATEN_BUDGET: readonly (readonly [string, number])[] = [
   ['public/rechtsprechung/register.json', 780 * 1024],
   ['public/rechtsprechung/richter.json', 24 * 1024],
   ['public/rechtsprechung/norm-index-erlasse.json', 120 * 1024],
-  ['public/such-index/artikel.json', 10_400 * 1024],
+  ['public/such-index/artikel.json', 5_850 * 1024], // K3, 1.9.2026: Ist 5 311 KB gzip (Bund-only)
   // ── W2·7-BEZUG: die drei grössten Bezugs-Shards ───────────────────────────
   //
   // Ein Nutzer lädt immer genau EINEN Shard (den seines Erlasses), nie die
