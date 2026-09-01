@@ -11,11 +11,13 @@
 - **Status:** ERSTRECHERCHE (Messwerte; jede Zahl auf EINER Maschine erhoben —
   belastbar sind die **A/B-Differenzen und Verhältnisse**, nicht die
   Absolutwerte).
-- **Wichtigster Satz zuerst:** Die zwei Massnahmen wirken (−23 bis −28 % unter
-  Drossel), sind aber **nicht landefähig**. Sie machen den Leser schnell genug,
-  dass eine **latente Reihenfolge-Abhängigkeit** in ihm sichtbar wird (Befunde
-  **B4** und **B5**). Der Fix dieser Wurzel gehört **vor** die
-  Perf-Massnahmen — und er ist das eigentliche Ergebnis dieses Schritts.
+- **Wichtigster Satz zuerst:** Die zwei Massnahmen wirken (−22 bis −28 % unter
+  Drossel). Sie machen den Leser schnell genug, dass eine **latente
+  Mount-Kopplung** in ihm sichtbar wird (Befunde **B4** und **B5**) — deren
+  **Wurzel-Fix ist in diesem Schritt gebaut** (Befund **B6**): die
+  Sprung-Rückmeldungen werden beim Kopfzeilen-Wechsel nicht mehr
+  ummontiert. Damit ist die volle e2e-Suite grün (722/722), und der
+  Snapshot-Preload bleibt als eigener Folgeschritt offen.
 - **Abnahme-Status:** keine fachliche Abnahme nötig und keine erteilt — es sind
   Messwerte, keine Rechtsinhalte.
 - **Pflegebedarf:** Die Zahlen altern mit jedem Bundle- und Datenzuwachs. Sie
@@ -123,10 +125,15 @@ Gewinn**, sondern Rauschen.
 
 | Route | vorher | nachher | Δ |
 |---|--:|--:|--:|
-| `/gesetze/bund/OR` | 10 368 | 7 613 | **−2 755 ms (−26.6 %)** |
-| `/gesetze/bund/ZGB` | 8 486 | 6 362 | **−2 124 ms (−25.0 %)** |
-| `/gesetze/bund/StGB` | 6 511 | 4 803 | **−1 708 ms (−26.2 %)** |
-| `/gesetze/kanton/BS-154.100` | 4 902 | 3 781 | **−1 121 ms (−22.9 %)** |
+| `/gesetze/bund/OR` | 10 368 | 7 899 | **−2 469 ms (−23.8 %)** |
+| `/gesetze/bund/ZGB` | 8 486 | 6 399 | **−2 087 ms (−24.6 %)** |
+| `/gesetze/bund/StGB` | 6 511 | 4 834 | **−1 677 ms (−25.8 %)** |
+| `/gesetze/kanton/BS-154.100` | 4 902 | 3 807 | **−1 095 ms (−22.3 %)** |
+
+*Nachher-Spalte auf dem ENDSTAND gemessen, also inklusive Wurzel-Fix (B6).
+Ohne ihn lagen dieselben Zellen bei 7 613 / 6 362 / 4 803 / 3 781 ms — der Fix
+kostet nichts Messbares (die OR-Zelle trägt einen Ausreisser 9 168 ms in
+sonst 7 637–8 029).*
 
 ### 6× CPU · langsames 3G
 
@@ -137,7 +144,7 @@ Gewinn**, sondern Rauschen.
 
 Die Spannen der Einzelläufe überlappen zwischen den Armen in **keiner** Zelle
 der gedrosselten Bedingungen (z. B. OR @4×/4G: 10 226–10 593 gegen
-7 596–7 629 ms) — der Unterschied ist nicht die Streuung.
+7 637–9 168 ms) — der Unterschied ist nicht die Streuung.
 
 ### Anteil je Massnahme (4× CPU + langsames 4G, Zwischenstände n=3)
 
@@ -292,26 +299,75 @@ diese Annahme das Zeitfenster anders, und das Overlay gibt auf, bevor das Ziel
 da ist. Das ist derselbe Wurzelbefund wie B4: **der Leser koppelt Bereitschaft
 an Zeit und Reihenfolge statt an Zustand.**
 
-**Konsequenz für diesen Zweig — ehrlich:** Er ist **nicht landefähig**, solange
-diese Wurzel steht. Es genügt ausdrücklich **nicht**, M2 wegzulassen: auch M1
-allein — die unstrittige, verlustfreie Massnahme — reisst R7 (1/5). Jede
-Beschleunigung tut das. Die Schranke stattdessen zu senken wäre §6.3-widrig und
-hätte hier zusätzlich einen echten Defekt zugedeckt; genau das zeigt der
-Diagnose-Lauf oben. Der Reihenfolge-Fix gehört **vor** die Perf-Massnahmen,
-nicht danach.
+**Konsequenz — und was daraus wurde:** Der Zweig war damit nicht landefähig, und
+es genügte ausdrücklich **nicht**, M2 wegzulassen: auch M1 allein — die
+unstrittige, verlustfreie Massnahme — riss R7 (1/5). Jede Beschleunigung tut
+das. Die Schranke stattdessen zu senken wäre §6.3-widrig gewesen und hätte
+zusätzlich einen echten Defekt zugedeckt; genau das zeigt der Diagnose-Lauf
+oben. Also wurde die Wurzel gesucht — siehe **B6**.
+
+### B6 — Die Wurzel war eine MOUNT-Kopplung, nicht der Toter-Anker-Zweig (gefixt)
+
+Die Vermutung aus B5 (der Toter-Anker-Zweig schliesse zu früh) ist **gemessen
+widerlegt**. rAF-Sampler auf `/gesetze/bund/BV#art-8`, 6× CPU-Drossel, n=3:
+
+- **Alle 232 Artikel erscheinen im SELBEN Frame**, und `#art-8` erscheint auf
+  die Millisekunde mit dem ersten `article[id^="art-"]` (1193 / 1227 / 1390 ms,
+  beide Marker identisch). Die Annahme des Toter-Anker-Zweigs — «die Artikel
+  erscheinen gemeinsam» — trägt also; er ist bereits zustandsgekoppelt.
+- Die Ansage ging trotzdem vorzeitig aus, **und zwar auf die Millisekunde
+  gleichzeitig mit dem Wechsel der Kopfzeile** auf `kopfzeileSelbst`:
+
+  | Overlay-Flanken (ms) | Kopf-Zweig → `still` | Ziel im DOM |
+  |---|--:|--:|
+  | an 678 · **aus 823** · an 836 · aus 1441 | **823** | 1355 |
+  | an 495 · **aus 666** · an 1177 · aus 1250 | **666** | 1177 |
+  | an 501 · **aus 672** · an 1186 · aus 1263 | **672** | 1187 |
+
+**Ursache.** `InhaltsKopf` hatte zwei `return`-Zweige (still / laut), und in
+beiden standen `RuecksprungChip` und `DeepLinkSkeleton`. React ordnet statische
+Kinder nach **Position** zu: im stillen Zweig lag der Chip an Index 0, im lauten
+an Index 1 — der Zweigwechsel war damit kein Update, sondern **Unmount +
+Remount** beider Rückmeldungen. Der Effekt-Cleanup des sterbenden Skeletons rief
+`schliesse()`, die neue Instanz baute die Ansage neu auf. Und dieser
+Zweigwechsel passiert bei **jedem** Leser-Einsprung: die Route
+`/gesetze/:ebene/:key` ist `lazy`, die Shell rät bis dahin eine laute Leiste
+(`kopfVonPfad`), und sobald der Leser steht, meldet er `kopfzeileSelbst`.
+
+Für die Nutzerin war das ein **Blinken** der Ansage «Springe zur verlinkten
+Stelle …» (13–511 ms Lücke) — ein Bestandsfehler, unabhängig vom Tempo. Sichtbar
+wurde er erst, als die Lücke vor den Artikel-Render fiel.
+
+**Fix.** Ein Träger, dessen Zustand nur Attribute, Klassen und den vorderen
+Inhalt ändert; die zwei Rückmeldungen stehen in beiden Zuständen an derselben
+Position und behalten ihre Identität. Gerendertes Markup unverändert (stiller
+Zustand rendert `null` statt der Leisten-Zeile, `undefined`-Attribute lässt
+React weg) — `golden:vergleich` byte-gleich, prerenderte Seiten unverändert, die
+`h-9`-Reservierung des stillen Trägers (CLS-Herleitung `leser-kopf-cls-s3`)
+unberührt.
+
+**Nachher** (identischer Aufbau, n=3): genau **eine** Flanke je Lauf —
+an 533 · aus 1309 (Ziel 1228) · an 520 · aus 1300 (Ziel 1218) ·
+an 523 · aus 1287 (Ziel 1204). Die Ansage steht durchgehend, **bis das Ziel im
+DOM ist**, rund 780 ms lang.
+
+**Beweis.** R7 `--repeat-each=5` unter 6× Drossel: **50/50 grün** (vorher 4/5
+rot). Volle Suite: **722 passed, 0 failed**. Kein Test angepasst — der
+Latenz-Boden `dauerMs > 300` steht unverändert und wird jetzt erfüllt.
 
 ## Offen (nicht in diesem Schritt gebaut)
 
-- **Reihenfolge-Abhängigkeit des Lesers (B4/B5) — der Posten, an dem alles
-  hängt.** Zwei belegte Fundstellen: der Spy-Effekt
-  (`src/pages/gesetz-leser/inhalt-hooks.tsx:337 ff.`) und der
-  Toter-Anker-Zweig (`src/components/layout/DeepLinkSkeleton.tsx`). Beide
-  koppeln an einen Zustandsübergang bzw. an «irgendein Artikel ist da» statt an
-  «der Reader ist fertig». Bis das behoben ist, ist jede Massnahme gesperrt, die
-  dem Leser Daten früher liefert — Preload, Service-Worker-Cache, Edge-Cache,
-  HTTP/2 Push, warmer Reload. Beweismittel: `npm run perf:leser` plus die zwei
-  Spec-Sätze dieses Dossiers. Daran hängen der Snapshot-Preload (+3–10 % je
-  Route, gemessen) **und die Landefähigkeit der hier gebauten Massnahmen**.
+- **Snapshot-Preload (B4) — die Reihenfolge-Abhängigkeit des Spy-Effekts.** Der
+  Deep-Link-Zweig ist mit B6 gefixt; die 20 Specs aus B4 hängen an einer
+  ZWEITEN Stelle: der Spy-Effekt
+  (`src/pages/gesetz-leser/inhalt-hooks.tsx:337 ff.`) setzt über
+  `sektionen`/`ohneGliederung` auf, also über einen Zustandsübergang, den ein
+  sofort verfügbarer Snapshot überspringt. Diese Wurzel ist **nicht** in diesem
+  Schritt untersucht — B6 hat nur die Deep-Link-Kopplung erledigt. Solange sie
+  steht, bleibt gesperrt, was dem Leser den SNAPSHOT früher liefert (Preload,
+  Service-Worker-Cache, Edge-Cache, HTTP/2 Push). Daran hängen gemessene
+  3–10 % je Route. Beweismittel: `npm run perf:leser` plus der 49-Test-Satz
+  dieses Dossiers und der Ein-Zeilen-Eingriff in `scripts/prerender.ts`.
 - **K3 — Drei-Wellen-Chunk-Kaskade.** In der Eager-Welle stehen Chunks, die der
   Leser nicht braucht (`katalogSuche`, drei `browse-*`, `kantone`, `fedlex`,
   `startseiteConfig`). Erwarteter Gewinn nach obiger Rechnung: rund 300 ms

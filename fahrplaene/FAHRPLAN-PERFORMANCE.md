@@ -299,10 +299,10 @@ dieselbe Bedingung wie `e2e/helpers/leserBereit.ts`):**
 | Bedingung | Route | vorher | nachher | Δ |
 |---|---|--:|--:|--:|
 | 1× CPU, ungedrosselt | OR | 788 | 780 | ±0 (Rauschen) |
-| 4× CPU + langsames 4G | OR | 10 368 | 7 613 | **−26.6 %** |
-| 4× CPU + langsames 4G | ZGB | 8 486 | 6 362 | **−25.0 %** |
-| 4× CPU + langsames 4G | StGB | 6 511 | 4 803 | **−26.2 %** |
-| 4× CPU + langsames 4G | BS-154.100 | 4 902 | 3 781 | **−22.9 %** |
+| 4× CPU + langsames 4G | OR | 10 368 | 7 899 | **−23.8 %** |
+| 4× CPU + langsames 4G | ZGB | 8 486 | 6 399 | **−24.6 %** |
+| 4× CPU + langsames 4G | StGB | 6 511 | 4 834 | **−25.8 %** |
+| 4× CPU + langsames 4G | BS-154.100 | 4 902 | 3 807 | **−22.3 %** |
 | 6× CPU + langsames 3G | OR | 38 296 | 27 432 | **−28.4 %** |
 | 6× CPU + langsames 3G | BS-154.100 | 18 538 | 13 975 | **−24.6 %** |
 
@@ -366,14 +366,33 @@ dieselbe Bedingung wie `e2e/helpers/leserBereit.ts`):**
   sobald **irgendein** `article[id^="art-"]` steht, gestützt auf die Annahme
   «die Artikel erscheinen gemeinsam». Wird der Reader schneller, trägt die
   Annahme nicht mehr.
-  **Reihenfolge des Bauens daraus:** erst der Wurzel-Fix (Bereitschaft an
-  ZUSTAND koppeln, nicht an Zeit/Reihenfolge — beide Fundstellen: Spy-Effekt
-  und DeepLinkSkeleton), dann die Perf-Massnahmen, dann der Snapshot-Preload.
-  Die Schranke abzusenken ist ausdrücklich KEIN Weg (§6.3, und sie deckt hier
-  einen echten Defekt).
+  **Reihenfolge des Bauens daraus:** erst der Wurzel-Fix, dann die
+  Perf-Massnahmen, dann der Snapshot-Preload. Die Schranke abzusenken ist
+  ausdrücklich KEIN Weg (§6.3, und sie deckt hier einen echten Defekt).
 
-**Weiterhin offen in `QS-PERF`:** die Reihenfolge-Abhängigkeit oben (grösster
-Posten, blockiert die Landung) · K3-Chunk-Kaskade (Eager-Welle trägt
+- **WURZEL-FIX GEBAUT (1.9.2026) — es war eine MOUNT-Kopplung, nicht der
+  Toter-Anker-Zweig.** Die Vermutung oben ist gemessen widerlegt: alle 232
+  BV-Artikel erscheinen im SELBEN Frame, `#art-8` auf die Millisekunde mit dem
+  ersten von ihnen (1193/1227/1390 ms) — der Toter-Anker-Zweig ist bereits
+  zustandsgekoppelt und bleibt unverändert (Beleg am Fundort verankert, §7).
+  Die Ansage ging vorzeitig aus, weil `InhaltsKopf` ZWEI `return`-Zweige hatte
+  (still/laut) und `RuecksprungChip`/`DeepLinkSkeleton` in beiden an
+  verschiedener Kind-POSITION standen: der Zweigwechsel auf `kopfzeileSelbst`
+  — der bei jedem Leser-Einsprung passiert, weil die Route `lazy` ist — war
+  damit ein UNMOUNT + REMOUNT. Aus-Flanke und Zweigwechsel fielen auf die
+  Millisekunde zusammen (823/823, 666/666, 672/672). Für die Nutzerin ein
+  **Blinken** der Ansage (13–511 ms Lücke) — ein Bestandsfehler, unabhängig vom
+  Tempo; das Tempo hat ihn nur sichtbar gemacht.
+  **Fix:** EIN Träger, zwei Zustände; die Rückmeldungen behalten ihre Position
+  und damit ihre Identität. Markup unverändert, `golden:vergleich` byte-gleich,
+  `h-9`-Reservierung (CLS `leser-kopf-cls-s3`) unberührt.
+  **Nachher:** genau eine Flanke je Lauf, die Ansage steht ~780 ms und bis das
+  Ziel im DOM ist. **R7 50/50 grün** (vorher 4/5 rot), volle Suite
+  **722 passed / 0 failed**. KEIN Test angepasst — `dauerMs > 300` steht
+  unverändert und wird erfüllt.
+
+**Weiterhin offen in `QS-PERF`:** der Snapshot-Preload (B4 — zweite
+Reihenfolge-Stelle im Spy-Effekt, nicht untersucht) · K3-Chunk-Kaskade (Eager-Welle trägt
 `katalogSuche`, drei `browse-*`, `kantone`, `fedlex`, `startseiteConfig`, die
 der Leser nicht braucht) · der Reader-Kopf-Reflow aus §1-N2 (nicht angefasst:
 sein Fix reserviert Kopf-Geometrie und ist damit eine Design-Entscheidung nach
