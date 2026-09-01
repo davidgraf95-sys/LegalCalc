@@ -72,7 +72,7 @@ export function pflichtKlausel(md: string, variante: Klauselvariante = 'voll'): 
  */
 export const PALETTE_STAND = '2026-08-04';
 export const PALETTE: Record<'spitze' | 'stark' | 'mittel' | 'klein', string> = {
-  spitze: 'fable',
+  spitze: 'opus', // Weisung David 1.9.2026: «baue ab sofort nicht mehr mit fable» — Obergrenze Opus, Fable orchestriert nur
   stark: 'opus',
   mittel: 'sonnet',
   klein: 'haiku',
@@ -80,10 +80,10 @@ export const PALETTE: Record<'spitze' | 'stark' | 'mittel' | 'klein', string> = 
 
 /** Auftragsklassen-Zusatz: was diese Klasse ÜBER die Pflicht-Klausel hinaus braucht. */
 export const KLASSEN: Record<string, string> = {
-  bau: 'TABU: kein Merge, kein Deploy, keine Änderung an .claude/ oder CLAUDE.md.\nRÜCKGABE: geänderte Dateien (absolute Pfade) · Tor-Ergebnisse mit Exit-Code · offene Punkte.',
+  bau: 'TABU: kein Merge, kein Deploy, keine Änderung an .claude/ oder CLAUDE.md.\nQUITTUNG: Ein Bauer quittiert NIE seine eigene Arbeit — kein gegenpruefung:ok, keine Zeile im Gegenprüfungs-Register, kein Gegenpruefung:-Trailer (F10, PR #616 2.9.2026); Verdikt kommt vom Prüf-Agenten, Quittung setzt der Orchestrator.\nRÜCKGABE: geänderte Dateien (absolute Pfade) · Tor-Ergebnisse mit Exit-Code · offene Punkte.',
   pruefung: 'TABU: nichts ändern — nur lesen, messen, berichten.\nRÜCKGABE: Befund je Fundstelle (Datei:Zeile) · Beleg · Schweregrad · was du NICHT prüfen konntest.',
   recherche: 'TABU: kein Code, keine Repo-Änderung.\nRÜCKGABE: je Fakt Quelle + Stand + Link; ungedeckte Fragen ausdrücklich als offen markieren.',
-  daten: 'RISIKOPFAD: Gegenprüfung ist Pflicht — sie beauftragt der ORCHESTRATOR nach deiner Rückgabe, NICHT du (F5-Wartetod 15.8.2026: ein Daten-Agent spawnte selbst eine Gegenprüfung und wartete 5 h auf ein Verdikt, das ein Sub-Agent nie empfangen kann). Du lieferst committete Arbeit + Bericht ab und ENDEST. Merge ist gesperrt (check:merge-schutz).\nMANIFEST: Nach jedem Generator-Lauf `npm run datenhaltung:manifest` mitregenerieren — F2b-Vorfall 4.8.2026: #425 landete mit Manifest-Drift, #430 musste heilen.\nRÜCKGABE: Stichprobe n≥10 mit Identitätsbeleg gegen die Amtsquelle + Trefferquote + Commit-SHA der eigenen Arbeit («Commit <sha>», §14.7).',
+  daten: 'QUITTUNG: Ein Bauer quittiert NIE seine eigene Arbeit — kein gegenpruefung:ok, keine Register-Zeile, kein Gegenpruefung:-Trailer (F10, PR #616 2.9.2026).\nRISIKOPFAD: Gegenprüfung ist Pflicht — sie beauftragt der ORCHESTRATOR nach deiner Rückgabe, NICHT du (F5-Wartetod 15.8.2026: ein Daten-Agent spawnte selbst eine Gegenprüfung und wartete 5 h auf ein Verdikt, das ein Sub-Agent nie empfangen kann). Du lieferst committete Arbeit + Bericht ab und ENDEST. Merge ist gesperrt (check:merge-schutz).\nMANIFEST: Nach jedem Generator-Lauf `npm run datenhaltung:manifest` mitregenerieren — F2b-Vorfall 4.8.2026: #425 landete mit Manifest-Drift, #430 musste heilen.\nRÜCKGABE: Stichprobe n≥10 mit Identitätsbeleg gegen die Amtsquelle + Trefferquote + Commit-SHA der eigenen Arbeit («Commit <sha>», §14.7).',
   mechanisch: 'NUR deterministische, per Byte-Diff oder Test maschinell prüfbare Transformation. Verschachtelte Steuer-Strukturen (@meta-Blöcke, Checkbox-Hierarchien) sind KEINE Mechanik — abbrechen und melden statt raten (Vorfall 4.8.2026). Verschiebe-Aufträge nur mit isolation: worktree; Cut und Paste im SELBEN Commit.\nRÜCKGABE: Pfade + Zeilen-/Byte-Delta + Prüfweg (Diff/Test) + Commit-SHA der eigenen Arbeit («Commit <sha>», §14.7), nichts Weiteres.',
   synthese: 'Steuer-Doku: dieser Text lenkt Folge-Sessions. Ehrlich, mit Provenienz (Datum, Anlass, Beleg); Pointer auf den Platte-Zustand statt Detailspeicher; keine Erfolgs-Prosa ohne prüfbares Artefakt.\nRÜCKGABE: der Text selbst + betroffene Pfade + Commit-SHA der eigenen Arbeit («Commit <sha>», §14.7; uncommittiert ⇒ ausdrücklich sagen).',
 };
