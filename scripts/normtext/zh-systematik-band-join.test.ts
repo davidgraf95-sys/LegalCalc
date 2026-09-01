@@ -7,11 +7,21 @@
  * Befund vor dem Fix (gemessen 1.9.2026): 0/24 ZH-Erlasse trugen
  * `sachgebietKanton`. Dieser Test hält beides deterministisch fest:
  *  (a) den Band-Join selbst (synthetischer Baum — unabhängig davon, wie
- *      viele ZH-Erlasse gerade im Register stehen);
+ *      viele ZH-Erlasse gerade im Register stehen), BEIDE Bandgrenzen
+ *      (`von` UND `bis`) je Ordner — nicht nur die untere;
  *  (b) die Deckung am committeten Register — GENERISCH per Band, nicht per
- *      Liste: er zählt die ZH-Einträge ohne `sachgebietKanton`, statt eine
- *      feste ID-Liste abzuklappern, und greift daher auch für Erlasse, die
- *      eine parallel laufende Tranche noch hinzufügt.
+ *      Liste, und als WERT-Assertion: der frisch aus dem aktuellen
+ *      Band-Code berechnete Treffer muss dem committeten `sachgebietKanton`
+ *      exakt entsprechen (nicht bloss «ein Feld ist da»). Damit fällt der
+ *      Test auch bei einer stillen Band-Verschiebung, die zwar weiterhin
+ *      IRGENDein Feld liefert, aber das falsche.
+ *
+ * Gegenprüfung 1.9.2026 (Auflage B1, mittel — bestanden): die ursprüngliche
+ * Fassung dieses Tests prüfte je Ordner nur `von` (nicht `bis`) und im
+ * Register nur Anwesenheit (nicht den Wert) — eine Bandverletzung
+ * (`bis: 176 → 150` in zh-systematik.ts) blieb dadurch grün. Rot-Beweis der
+ * verschärften Fassung: dieselbe Mutation gefahren, beide betroffenen Tests
+ * (Band-Schleife UND Register-Wert-Assertion) wurden rot, siehe Commit-Body.
  */
 import { describe, it, expect } from 'vitest';
 import { readFileSync } from 'node:fs';
@@ -21,14 +31,20 @@ import { baueZhSystematik, ZH_ORDNER } from './zh-systematik';
 const ZH_BAUM = baueZhSystematik();
 
 describe('sachgebietKantonFuer — ZH-Band-Zweig (2c)', () => {
-  it('ordnet eine Hauptnummer aus jedem der 14 Ordner-Bänder korrekt zu', () => {
-    // Je Ordner die untere Bandgrenze prüfen — deckt alle 14 Bänder ab, ohne
-    // eine Erlass-Liste zu pflegen (die Regel gilt generisch per Band).
+  it('ordnet die UNTERE UND OBERE Bandgrenze aus jedem der 14 Ordner-Bänder korrekt zu', () => {
+    // Je Ordner beide Bandgrenzen prüfen — deckt alle 14 Bänder VOLLSTÄNDIG
+    // ab, ohne eine Erlass-Liste zu pflegen (die Regel gilt generisch per
+    // Band). Nur `von` zu prüfen liesse eine verkürzte Obergrenze (z.B. ein
+    // vertauschtes `<`/`<=` in baueZhSystematik(), oder eine falsch
+    // eingetragene Bandgrenze) unentdeckt durch — `bis` schliesst das.
     for (const ordner of ZH_ORDNER) {
-      const stamm = `ZH-${ordner.von}.1`;
-      const treffer = sachgebietKantonFuer(ZH_BAUM, 'ZH', stamm);
-      expect(treffer?.wurzel.nummer, `Band ${ordner.von}–${ordner.bis}`).toBe(ordner.nummer);
-      expect(treffer?.wurzel.name).toBe(ordner.name);
+      for (const grenze of [ordner.von, ordner.bis] as const) {
+        const stamm = `ZH-${grenze}.1`;
+        const treffer = sachgebietKantonFuer(ZH_BAUM, 'ZH', stamm);
+        const beschreibung = `Ordner ${ordner.nummer} (Band ${ordner.von}–${ordner.bis}), Grenze ${grenze}`;
+        expect(treffer?.wurzel.nummer, beschreibung).toBe(ordner.nummer);
+        expect(treffer?.wurzel.name, beschreibung).toBe(ordner.name);
+      }
     }
   });
 
@@ -50,13 +66,23 @@ describe('sachgebietKantonFuer — ZH-Band-Zweig (2c)', () => {
     expect(sachgebietKantonFuer(ZH_BAUM, 'AG', 'AG-131.1')).toBeUndefined();
   });
 
-  it('Register: 0 ZH-Erlasse ohne sachgebietKanton (generisch, nicht als feste Liste)', () => {
+  it('Register: sachgebietKanton je ZH-Erlass stimmt mit dem frisch berechneten Band-Treffer überein (Wert-Assertion)', () => {
+    // WERT-Assertion, nicht nur Anwesenheit (Gegenprüfung B1): für jeden
+    // ZH-Eintrag wird der Treffer aus dem AKTUELLEN Band-Code (ZH_BAUM,
+    // s.o.) neu berechnet und gegen den COMMITTETEN `sachgebietKanton`-Wert
+    // aus register.json verglichen. Eine Band-Verschiebung nach der
+    // Register-Generierung — selbst eine, die weiterhin IRGENDein Feld
+    // liefert — zeigt sich hier als Wert-Abweichung, nicht als Lücke.
+    // Generisch per Band: keine feste ID-Liste, greift daher auch für
+    // Erlasse, die eine parallel laufende Tranche noch hinzufügt.
     const reg = JSON.parse(readFileSync('public/normtext/register.json', 'utf8')) as {
       erlasse: { key: string; ebene: string; kanton: string | null; sachgebietKanton?: unknown }[];
     };
     const zh = reg.erlasse.filter((e) => e.ebene === 'kanton' && e.kanton === 'ZH');
     expect(zh.length, 'ZH-Erlasse im Register').toBeGreaterThan(0);
-    const ohne = zh.filter((e) => !e.sachgebietKanton).map((e) => e.key);
-    expect(ohne).toEqual([]);
+    for (const e of zh) {
+      const frisch = sachgebietKantonFuer(ZH_BAUM, 'ZH', e.key);
+      expect(frisch, e.key).toEqual(e.sachgebietKanton);
+    }
   });
 });
