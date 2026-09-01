@@ -36,8 +36,16 @@ const POOL = 300;
  *  Bestimmung» statt als «wird noch geladen» (§8, Auflage David 25.7.2026). */
 export interface ArtikelSuche {
   suche: (q: string, limit?: number) => SuchTreffer[];
-  /** Noch nicht im Index — leer, sobald alle Ebenen stehen. */
+  /** Noch nicht im Index — leer, sobald alle ERWARTETEN Ebenen stehen. */
   fehlendeEbenen: Ebene[];
+  /** Ebenen, die das Artefakt GAR NICHT trägt (K3-Scharfschaltung 1.9.2026:
+   *  «kanton»). Kategorisch verschieden von `fehlendeEbenen`: dort wird noch
+   *  geladen, hier kommt nichts mehr nach — die Ebene liegt ausschliesslich am
+   *  Edge. Zwei Felder statt eines Flags, weil die Oberfläche zwei VERSCHIEDENE
+   *  Sätze sagen muss: «wird noch geladen» ist eine Vertröstung, «nur online»
+   *  eine dauerhafte Einschränkung mit Offline-Folge (§8). Ein einziges Feld
+   *  hätte die beiden Fälle stillschweigend gleichgesetzt. */
+  nurOnlineEbenen: Ebene[];
 }
 
 let fertig: ArtikelSuche | null = null;
@@ -399,17 +407,29 @@ async function baue(): Promise<ArtikelSuche> {
     import('flexsearch'),
     fetch(import.meta.env.BASE_URL + 'such-index/artikel.json').then((r) => {
       if (!r.ok) throw new Error('Index ' + r.status);
-      return r.json() as Promise<{ eintraege: IndexEintrag[] }>;
+      return r.json() as Promise<{ eintraege: IndexEintrag[]; ebenen?: Ebene[] }>;
     }),
   ]);
   const FlexSearch = ((flex as unknown as { default?: unknown }).default ?? flex) as FlexLike;
   const sucher = baueSucher(daten.eintraege, FlexSearch);
 
+  // WELCHE EBENEN DAS ARTEFAKT ÜBERHAUPT TRÄGT (K3-Scharfschaltung 1.9.2026).
+  // Der Generator schreibt sie in `ebenen` — genau dafür steht das Feld dort seit
+  // K3. Ohne diese Zeile müsste der Client aus der Abwesenheit von Einträgen
+  // RATEN, ob eine Ebene noch lädt oder gar nicht erst gebaut wurde; das sind zwei
+  // verschiedene Auskünfte an den Nutzer (§8). Fallback auf alle Ebenen nur für
+  // ein altes Artefakt ohne das Feld — dann verhält sich der Client wie vor K3.
+  const erwartet: readonly Ebene[] = daten.ebenen?.length
+    ? EBENEN_REIHE.filter((eb) => daten.ebenen!.includes(eb))
+    : EBENEN_REIHE;
+  const nurOnline = EBENEN_REIHE.filter((eb) => !erwartet.includes(eb));
+
   // Stufe 1: Bund — ab hier ist die Suche benutzbar.
   sucher.ergaenze('bund');
   const nachStufe = (): ArtikelSuche => ({
     suche: sucher.suche,
-    fehlendeEbenen: EBENEN_REIHE.filter((eb) => !sucher.bereiteEbenen().includes(eb)),
+    fehlendeEbenen: erwartet.filter((eb) => !sucher.bereiteEbenen().includes(eb)),
+    nurOnlineEbenen: [...nurOnline],
   });
   const erste = nachStufe();
 
@@ -419,7 +439,7 @@ async function baue(): Promise<ArtikelSuche> {
   // sagt dann dauerhaft, dass kantonale Treffer fehlen, statt Vollständigkeit
   // vorzutäuschen (§8).
   void (async () => {
-    for (const eb of EBENEN_REIHE) {
+    for (const eb of erwartet) {
       if (sucher.bereiteEbenen().includes(eb)) continue;
       try { await sucher.ergaenzeGestaffelt(eb); } catch { /* Ebene bleibt als fehlend gemeldet */ }
     }
