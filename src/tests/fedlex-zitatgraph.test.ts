@@ -15,7 +15,7 @@ import {
   exprUri, eliAusWork, normalisiereKanten, baueGraph, serialisiere, erhebe,
 } from '../../scripts/fedlex-zitatgraph';
 import { sparqlSelect } from '../../scripts/fedlex-sparql';
-import { vergleicheErlass } from '../../scripts/check-zitatgraph-warnungen';
+import { vergleicheErlass } from '../../scripts/zitatgraph-vergleich';
 import type { PinVoll } from '../../scripts/fedlex-pins';
 
 const pin = (name: string, eli: string, kons: string, sr: string): PinVoll => ({
