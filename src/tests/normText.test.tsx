@@ -395,9 +395,18 @@ describe('NormText — A11 Präambel/Ingress-Verweise (Genitiv-Map)', () => {
   // OHNE Klammer routet auf das genannte Gesetz; ein unbekannter Titel bleibt Text.
   it('Volltitel OHNE Klammer (V-7b): «Artikel 81 des Bundesgesetzes vom … über die Invalidenversicherung» → IVG art_81, nie Self', () => {
     const internAhvv: InternRefs = { tokenMap: new Map([['81', '81']]), basisPfad: '/gesetze/bund/AHVV', springeZu: () => {} };
-    const out = ssr(<NormText text="gestützt auf Artikel 81 des Bundesgesetzes vom 6. Oktober 2000 über die Invalidenversicherung," intern={internAhvv} />);
+    // FAKTISCH KORRIGIERT (Fix-Runde 1, §7): der Fall trug das Datum des ATSG
+    // («vom 6. Oktober 2000») aus dem Fall darüber — eine erfundene Zitierung.
+    // Das IVG datiert vom 19. Juni 1959; genau so steht es 21× im Bund-Korpus.
+    const out = ssr(<NormText text="gestützt auf Artikel 81 des Bundesgesetzes vom 19. Juni 1959 über die Invalidenversicherung," intern={internAhvv} />);
     expect(out).toMatch(new RegExp(`href="[^"]*${eliId('IVG')}[^"]*#art_81"`));
     expect(out).not.toContain('#art-81"'); // NIE ein AHVV-Self-Link (§1)
+    // Zeit-Kante: ein Datum, das nicht das Erlassdatum des Ziels ist, verlinkt
+    // NICHT — weder auf das Fremdgesetz noch als Self-Link (belegter Tippfehler
+    // der Quelle: bund/ATSV/art_17_b zitiert das IVG «vom 19. Juni 1995»).
+    const falsch = ssr(<NormText text="gestützt auf Artikel 81 des Bundesgesetzes vom 19. Juni 1995 über die Invalidenversicherung," intern={internAhvv} />);
+    expect(falsch).not.toContain(eliId('IVG'));
+    expect(falsch).not.toContain('#art-81"');
   });
 
   it('unbekannter Titel OHNE Klammer bleibt unverlinkt: «Artikel 81 des Bundesgesetzes vom … über die Sache»', () => {
