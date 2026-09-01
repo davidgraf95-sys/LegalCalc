@@ -119,6 +119,42 @@ describe('erlassVerweiseImText — kein Link (§1: lieber keiner als ein falsche
   });
 });
 
+// ─── Rot-Runde 1 (Stichprobe 2.9.2026): zwei Falschlink-Klassen an der Klammer ──
+//
+// Beide wurden an der Handprüfung der ersten 15 neuen Links sichtbar und sind
+// hier wörtlich aus den committeten Snapshots belegt.
+
+describe('erlassVerweiseImText — Klammer-Kanten (Rot-Runde 1)', () => {
+  it('Erlassdatum HINTER dem Klammer-Kürzel wird gelesen: aDSG 1992 ⇒ kein Link auf das DSG 2020', () => {
+    // kanton/BS/215.700/art_8 und kanton/BS/952.820/art_6, Stand 2026-01-01.
+    expect(treffer('Es gelten überdies die Bestimmungen des Bundesgesetzes über den Datenschutz (DSG) vom 19. Juni 1992.')).toEqual([]);
+    // Gegenprobe mit dem RICHTIGEN Erlassdatum (kanton/BS/165.100/art_2).
+    expect(treffer('Es gelten die Bestimmungen des Bundesgesetzes über die Unfallversicherung (UVG) vom 20. März 1981.'))
+      .toEqual([['Bundesgesetzes über die Unfallversicherung', 'UVG']]);
+  });
+
+  it('«(EG StPO)» nennt das kantonale Einführungsgesetz ⇒ kein Link auf die Bundes-StPO', () => {
+    // kanton/BS/154.125/art_5, Stand 2026-01-01 — der Bundesname ist bloss das
+    // Ende des kantonalen Titels «Gesetz über die Einführung der …».
+    const t = 'Der Gerichtsrat beauftragt gemäss § 44 des Gesetzes über die Einführung der '
+      + 'Schweizerischen Strafprozessordnung (EG StPO) vom 13. Oktober 2010 die Inkassostelle';
+    expect(treffer(t)).toEqual([]);
+    expect(treffer('nach § 5 des Einführungsgesetzes zum Schweizerischen Zivilgesetzbuches (EG zum ZGB)')).toEqual([]);
+  });
+
+  it('amtlicher Appositiv «Titel, KÜRZEL» bleibt gültig', () => {
+    expect(treffer('nach den Bestimmungen des Bundesgesetzes über das Schweizer Bürgerrecht (Bürgerrechtsgesetz, BüG) vom 20. Juni 2014'))
+      .toEqual([['Bundesgesetzes über das Schweizer Bürgerrecht', 'BUEG']]);
+  });
+
+  it('ein ARTIKEL-Zitat in der Klammer bestätigt den Erlass (bund/SchKG/art_92, bund/KAG/art_110)', () => {
+    expect(treffer('Vorbehalten bleiben die Bestimmungen des Bundesgesetzes vom 2. April 1908 über den Versicherungsvertrag (Art. 79 Abs. 2 und 80 VVG).'))
+      .toEqual([['Bundesgesetzes vom 2. April 1908 über den Versicherungsvertrag', 'VVG']]);
+    expect(treffer('nach den Vorschriften des Obligationenrechts (Art. 620 ff. OR)'))
+      .toEqual([['Obligationenrechts', 'OR']]);
+  });
+});
+
 // ─── Self-Ausschluss: der Erlass verweist auf sich selbst ───────────────────
 
 describe('erlassVerweiseImText — Self-Ausschluss (gelesener Erlass)', () => {

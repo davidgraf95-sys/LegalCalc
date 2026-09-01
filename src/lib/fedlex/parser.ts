@@ -35,10 +35,10 @@ import { datumPasst, type FremdEbene } from './positivliste';
 // Satz oder ein zweites «Art.» hinaus. Jeder Treffer wird vor dem Verlinken
 // zusätzlich gegen fedlexLinkFuerArtikel validiert (kein toter Link).
 // V-8 (W2·20): KUERZEL_TOKENS = FEDLEX-Keys + amtliche Schreibweisen («BankG»).
-const NORM_NAMEN_ESC = (['GebV SchKG', ...KUERZEL_TOKENS] as string[])
-  // Längste zuerst: «GebV SchKG» vor «SchKG», «StGB» vor «StG» (Suffix-Kollision).
-  .sort((a, b) => b.length - a.length)
-  .map((n) => n.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'));
+// Längste zuerst: «GebV SchKG» vor «SchKG», «StGB» vor «StG» (Suffix-Kollision).
+const NORM_NAMEN: ReadonlyArray<string> = (['GebV SchKG', ...KUERZEL_TOKENS] as string[])
+  .sort((a, b) => b.length - a.length);
+const NORM_NAMEN_ESC = NORM_NAMEN.map((n) => n.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'));
 
 export const NORM_IM_TEXT = new RegExp(
   'Art\\.\\s*\\d+[a-z]?(?:bis|ter|quater|quinquies|sexies)?' +
@@ -314,6 +314,12 @@ export interface NormVerweisSpan {
   artikel: string;
   /** true = Kürzel aus dem Ketten-Ende propagiert (nicht im Quelltext des Glieds). */
   propagiert: boolean;
+  /** Z1 (W2·22): true = BLOSSER Erlass-Verweis OHNE Artikelnummer. `artikel`
+   *  trägt dann nur das FEDLEX-Kürzel und löst auf die Erlass-Seite ohne Anker
+   *  auf; `anzeige` ist der Erlassname aus dem Quelltext. Eigenes Feld, nicht
+   *  aus `anzeige !== artikel` abgeleitet: Renderer UND Mess-Tor sollen die
+   *  Form am Namen erkennen, nicht an einer Zeichenketten-Nebenwirkung. */
+  erlass?: boolean;
 }
 
 // Ketten-Glied (bare «Art. N [Abs./lit./Ziff./Satz …] [f./ff.]») OHNE Kürzel.
@@ -703,6 +709,35 @@ const Z1_VOR_ARTIKEL = new RegExp(
  *  Passus-Kette bleibt weit darunter; die Grenze hält den Scan linear (§15). */
 const Z1_RUECKSCHAU = 240;
 
+/**
+ * Ist der Klammer-Inhalt WIRKLICH das Kürzel des genannten Erlasses?
+ *
+ * `erkenneFedlexGesetz` akzeptiert jedes Zitat, das AUF ein Kürzel endet — ein
+ * führendes Wort stört dort nicht («Art. 5 StGB»). Hinter einem Erlassnamen ist
+ * genau das aber ein anderes Signal: «(EG StPO)», «(EG zum ZGB)» nennen das
+ * kantonale EINFÜHRUNGSGESETZ, nicht den Bundeserlass — der äussere Name ist
+ * dort bloss das Ende eines längeren kantonalen Titels («des Gesetzes über die
+ * Einführung der Schweizerischen Strafprozessordnung»). Belegte Falschlinks der
+ * Rot-Runde: BS-154.125 §5, BS-154.980 §1, BS-258.210 §4, BS-510.100 §31,
+ * BS-212.400 §27, AI-640.000 Art. 179, AR-143.1 Art. 64, AR-741.1 Art. 33,
+ * BE-215.326.2 Art. 22 (9 Stellen).
+ *
+ * Zulässig ist darum nur: (a) der amtliche Appositiv «Titel, KÜRZEL» /
+ * «Titel; KÜRZEL» bzw. das nackte Kürzel — der Teil hinter dem letzten Komma
+ * muss EIN Eintrag der Kürzelliste sein (Mehrwort-Kürzel «GebV SchKG»
+ * eingeschlossen, §5: dieselbe Liste wie der Fliesstext-Scan); (b) ein
+ * ARTIKEL-Zitat desselben Erlasses («(Art. 620 ff. OR)», «(Art. 79 Abs. 2 und
+ * 80 VVG)») — die Klammer verweist dann auf Bestimmungen des GEFUNDENEN
+ * Erlasses und bestätigt ihn; jene Artikel verlinkt NORM_IM_TEXT ohnehin
+ * einzeln (6 Stellen, alle geprüft).
+ */
+function klammerIstKuerzel(inhalt: string): boolean {
+  const rest = (inhalt.split(/[,;]/).pop() ?? '').trim();
+  // `\s` statt `\b`: hinter «Art.» steht kein Wortzeichen, eine Wortgrenze
+  // gibt es dort also nicht — mit `\b` wäre der Artikel-Zweig tot gewesen.
+  return /^Art(?:\.|ikel)\s/.test(rest) || NORM_NAMEN.includes(rest);
+}
+
 /** Identitäts-Normalisierung eines Kürzels für den SELF-Vergleich. Bewusst
  *  eigenständig neben `kuerzelKanon` (NormText.tsx): dort fallen Umlaute weg
  *  ([^A-Z0-9]), womit «BüV» zu «BV» würde — zwei verschiedene Erlasse. Für den
@@ -755,14 +790,26 @@ export function erlassVerweiseImText(text: string, eigenesKuerzel?: string): Nor
     }
     if (!gesetz) continue;
     const nach = text.slice(end);
-    const datum = DATUM_IN_EINHEIT.exec(m[0])?.[1] ?? DATUM_NACH_NAME.exec(nach)?.[1] ?? null;
+    const klammer = KLAMMER_NACH_NAME.exec(nach);
+    if (klammer) {
+      if (erkenneFedlexGesetz(klammer[1]) !== gesetz) continue; // fremde/unbekannte Klammer
+      if (!klammerIstKuerzel(klammer[1])) continue;             // Klammer nennt einen ANDEREN Erlass
+    }
+    // Das Erlassdatum steht an DREI Stellen der Zitier-Konvention: im Titel
+    // («Bundesgesetzes vom D über …»), direkt hinter dem Namen («des DSG vom D»)
+    // ODER hinter dem Klammer-Kürzel («des Bundesgesetzes über den Datenschutz
+    // (DSG) vom 19. Juni 1992»). Die dritte Stelle fehlte zuerst — belegter
+    // Falschlink der Rot-Runde: BS-215.700 §8 und BS-952.820 §6 zitieren das
+    // AUFGEHOBENE aDSG von 1992 und landeten auf dem DSG von 2020 (§1).
+    const datum = DATUM_IN_EINHEIT.exec(m[0])?.[1]
+      ?? DATUM_NACH_NAME.exec(nach)?.[1]
+      ?? (klammer ? DATUM_NACH_NAME.exec(nach.slice(klammer[0].length))?.[1] : null)
+      ?? null;
     if (!datumPasst(gesetz, datum)) continue;      // Zeit-Kante (V-5)
     if (nurMitDatum && !datum) continue;           // gleichnamiger Kantonserlass möglich
-    const klammer = KLAMMER_NACH_NAME.exec(nach);
-    if (klammer && erkenneFedlexGesetz(klammer[1]) !== gesetz) continue; // fremde Klammer
     if (m[1] && !datum && TITEL_FORTSETZUNG.test(nach)) continue;        // Präfix-Bindung
     if (eigenesKuerzel && Z1_IDENT(gesetz) === Z1_IDENT(eigenesKuerzel)) continue; // Self
-    spans.push({ start, end, anzeige: text.slice(start, end), artikel: gesetz, propagiert: false });
+    spans.push({ start, end, anzeige: text.slice(start, end), artikel: gesetz, propagiert: false, erlass: true });
   }
   return spans;
 }

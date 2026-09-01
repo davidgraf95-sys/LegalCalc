@@ -745,17 +745,14 @@ export function NormText({ text, intern }: { text: string; intern?: InternRefs }
     // Glied-Text (zeichenidentisch, §1), Auflösung über das synthetisierte Ziel.
     // V-2 Ziel 3: nennt der Verweis den GELESENEN Erlass, bleibt der Sprung im
     // Leser (Herleitung an `selbstSpanSprung`); sonst unverändert der Chip.
-    // Z1 (W2·22): dieselbe Regel trägt jetzt auch die Erlass-Spanne OHNE
-    // Artikelnummer — dort ist `artikel` das blosse Kürzel («DSG») und die
-    // Anzeige der Erlassname aus dem Quelltext. Die Bedingung fragt darum
-    // direkt, ob Anzeige und Auflösungs-Ziel auseinanderfallen; für jede
-    // bestehende Spanne ist das WORTGLEICH zu `s.propagiert` (Anker: anzeige
-    // === artikel; Ketten-Glied: artikel = Glied-Text + Kürzel) — SSR bleibt
-    // byte-identisch (§6).
+    // Z1 (W2·22): die Erlass-Spanne OHNE Artikelnummer trägt ebenfalls eine
+    // vom Ziel abweichende Anzeige — `artikel` ist dort das blosse Kürzel
+    // («DSG»), angezeigt wird der Erlassname aus dem Quelltext. Bestehende
+    // Spannen sind unberührt, das SSR-Markup bleibt byte-identisch (§6).
     teile.push(
       selbstSpanSprung(s, `${s.start}-${s.artikel}`, intern)
       ?? <NormChip key={`${s.start}-${s.artikel}`} artikel={s.artikel}
-        anzeige={s.anzeige === s.artikel ? undefined : s.anzeige} linkClass={ankerClass} zielIntern={false} />,
+        anzeige={s.propagiert || s.erlass ? s.anzeige : undefined} linkClass={ankerClass} zielIntern={false} />,
     );
     zuletzt = s.end;
   }
