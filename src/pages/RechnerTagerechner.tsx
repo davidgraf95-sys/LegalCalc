@@ -1,7 +1,7 @@
-import { useCallback, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { EinfacheFristForm } from '../components/forms/EinfacheFristForm';
-import type { EinfacheFristEingaben, Ferien } from '../components/forms/einfacheFristTexte';
+import type { EinfacheFristMeldung, Ferien } from '../components/forms/einfacheFristTexte';
 import { AllgemeineFristForm } from '../components/forms/AllgemeineFristForm';
 import { ZpoFristenForm } from '../components/forms/ZpoFristenForm';
 import { SchkgFristenForm } from '../components/forms/SchkgFristenForm';
@@ -67,20 +67,28 @@ export function RechnerTagerechner() {
     setLetzterHash(hash);
     if (HASH_VERFAHREN[hash]) setVerfahren(HASH_VERFAHREN[hash]);
   }
-  // Live-Brücke: gültige ÄNDERUNGEN im einfachen Rechner oben schalten den
-  // Voll-Tab passend um und fliessen als EIN stabiles Objekt (Referenz aus
-  // dem State) in das aktive Voll-Formular — dessen Rechenweg rechnet damit
-  // automatisch mit den oben eingegebenen Werten. Bewusst OHNE navigate():
-  // die Hash-Sync oben reagiert nur auf Hash-ÄNDERUNGEN, ein stehen
-  // bleibender alter Hash stört sie nicht — und ein navigate() je Tastendruck
-  // würde den Router bei jedem Zeichen neu rendern.
-  const [live, setLive] = useState<EinfacheFristEingaben | null>(null);
-  const uebernehmeEingaben = useCallback((e: EinfacheFristEingaben) => {
-    const v = FERIEN_VERFAHREN[e.ferien];
-    if (!v) return; // VwVG/BGG: unten kein Formular — nichts umschalten
-    setLive(e);
-    setVerfahren(v);
-  }, []);
+  // Live-Brücke: gültige ÄNDERUNGEN im einfachen Rechner oben fliessen als
+  // EIN stabiles Objekt (Referenz aus dem State) in das aktive Voll-Formular —
+  // dessen Rechenweg rechnet damit automatisch mit den oben eingegebenen
+  // Werten. Der Voll-Tab wird NUR umgeschaltet, wenn das Ferien-Regime oben
+  // wirklich wechselt (GP-Nebenfund 1.9.2026: nicht bei jeder Wertänderung
+  // die manuelle Tab-Wahl überstimmen) — und dann MIT navigate, damit Hash
+  // und sichtbarer Tab nie auseinanderlaufen (GP-Befund B1: der Live-URL-Sync
+  // des LinkTeilenButton schrieb sonst eine ZPO-Query unter #schkg, nach
+  // Reload rechnete das falsche Regime mit den Werten — §1). Ein navigate je
+  // Tastendruck entsteht so nicht: Werte-Meldungen navigieren nie.
+  const [live, setLive] = useState<EinfacheFristMeldung | null>(null);
+  const verfahrenRef = useRef(verfahren);
+  useEffect(() => { verfahrenRef.current = verfahren; });
+  const uebernehmeEingaben = useCallback((m: EinfacheFristMeldung) => {
+    const v = FERIEN_VERFAHREN[m.ferien];
+    if (!v) { setLive(null); return; } // VwVG/BGG: unten kein Formular (GP-Befund B4 — keine veralteten Syncs stehen lassen)
+    setLive(m);
+    if (v !== verfahrenRef.current) {
+      setVerfahren(v);
+      navigate({ search: '', hash: v === 'allgemein' ? '' : `#${v}` }, { replace: true });
+    }
+  }, [navigate]);
   const wechsle = (v: Verfahren) => {
     // Bug-Check 10.6.2026 (MITTEL): Klick auf den AKTIVEN Tab darf die
     // Query (und damit hydratisierte Eingaben) nicht verwerfen.

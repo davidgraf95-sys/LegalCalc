@@ -30,6 +30,34 @@ test.describe('Fristenrechner: Rechenweg folgt den Eingaben oben', () => {
       .toHaveAttribute('aria-selected', 'true')
   })
 
+  test('Hash folgt dem Regime — Reload rechnet im richtigen Regime weiter (GP-Befund B1)', async ({ page }) => {
+    // Vorher schrieb der Live-URL-Sync eine ZPO-Query OHNE #zpo (bzw. unter
+    // einem alten #schkg): nach Reload interpretierte das falsche Regime die
+    // Werte (§1). Jetzt navigiert der Regime-Wechsel der Brücke mit.
+    await page.goto('/rechner/tagerechner')
+    await page.locator('input[type="number"]').first().fill('8')
+    await expect(page).toHaveURL(/#zpo$/)
+    // Der Live-URL-Sync der Voll-Form trägt die Länge in die Query …
+    await expect(page).toHaveURL(/l=8/)
+    // … und nach dem Reload steht dieselbe Rechnung im selben Regime.
+    await page.reload()
+    await expect(page.getByRole('tab', { name: 'Zivilprozess (ZPO)' }))
+      .toHaveAttribute('aria-selected', 'true')
+    await expect(page.locator('input[type="number"]').nth(1)).toHaveValue('8')
+  })
+
+  test('Unberührtes oben stampft keine Permalink-Werte unten (GP-Befund B2)', async ({ page }) => {
+    // Geteilter ZPO-Link mit 20 Tagen; oben wird NUR der Kanton gewechselt —
+    // die Länge unten muss 20 bleiben (vorher fiel sie still auf den
+    // 10-Tage-Default des einfachen Rechners), der Kanton zieht mit.
+    await page.goto('/rechner/tagerechner?e=2025-03-03&u=tage&l=20&v=ordentlich&k=BE&n=gesetzlich#zpo')
+    await expect(page.locator('input[type="number"]').nth(1)).toHaveValue('20')
+    await page.getByLabel('Kanton (Feiertage)').first().selectOption('AG')
+    await expect(page.locator('input[type="number"]').nth(1)).toHaveValue('20')
+    // Das per Link geteilte Ereignis-Datum bleibt ebenfalls stehen.
+    await expect(page.locator('input[placeholder="TT.MM.JJJJ"]').nth(1)).toHaveValue('03.03.2025')
+  })
+
   test('Preset-Klick gewinnt gegen frühere Live-Werte (Stomp-Loch, Bug-Check 1.9.2026)', async ({ page }) => {
     await page.goto('/rechner/tagerechner')
     // Oben ändern → Live-Brücke aktiv (Voll-Form trägt 8).

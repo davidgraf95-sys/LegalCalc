@@ -29,6 +29,21 @@ export type EinfacheFristEingaben = {
   kanton: Kanton;
 };
 
+// Die Meldung trägt alle vier geteilten Werte PLUS die Liste der seit dem
+// Mount tatsächlich BERÜHRTEN Felder. Anwendungsregel im Voll-Formular
+// (GP-Befund B2, 1.9.2026): Berührtes gewinnt immer; Unberührtes füllt nur
+// Felder, die dort weder aus einem Permalink/Preset stammen noch von Hand
+// geändert wurden. So stampft ein blosser Kanton-Wechsel oben keine per
+// Link geteilte 20-Tage-Frist unten auf den 10-Tage-Default (§1), und ein
+// frisch geöffnetes Voll-Formular startet trotzdem kohärent mit den oben
+// sichtbaren Werten statt mit seinem veralteten Beispiel-Default.
+export type EinfacheFristFeld = 'start' | 'laenge' | 'einheit' | 'kanton';
+export type EinfacheFristMeldung = {
+  ferien: Ferien;
+  werte: Pick<EinfacheFristEingaben, EinfacheFristFeld>;
+  beruehrt: EinfacheFristFeld[];
+};
+
 export const FERIEN_OPTIONEN: { code: Ferien; label: string; sub: string }[] = [
   // Bug-Check §9 (fachliche Lupe, MITTEL): Samstag-Verschiebung folgt dem
   // Fristengesetz (SR 173.110.3, eidg. Recht) — bei reinen Vertragsfristen

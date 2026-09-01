@@ -24,7 +24,7 @@ import { FristenKalender } from '../FristenKalender';
 import { PHASEN, PRESETS, MATERIELL_WARNUNG, type ZpoPhase, type ZpoPreset } from '../../lib/zpoPresets';
 import { getStandardKanton } from '../../lib/einstellungen';
 import { usePaneKlasse } from '../layout/PaneKontext';
-import type { EinfacheFristEingaben } from './einfacheFristTexte';
+import type { EinfacheFristMeldung } from './einfacheFristTexte';
 
 
 const EINHEITEN: { code: ZpoEinheit; label: string }[] = [
@@ -72,10 +72,10 @@ const DEFAULTS: ZpoInput = {
 
 
 export function ZpoFristenForm({ live }: {
-  /** Live-Brücke des Tagerechners (Auftrag David 1.9.2026): geänderte
-   *  Eingaben des einfachen Rechners oben — sie überschreiben die vier
-   *  geteilten Felder, damit der Rechenweg hier automatisch mitrechnet. */
-  live?: EinfacheFristEingaben;
+  /** Live-Brücke des Tagerechners (Auftrag David 1.9.2026): die oben
+   *  BERÜHRTEN Felder überschreiben die geteilten Felder hier, damit der
+   *  Rechenweg automatisch mitrechnet. */
+  live?: EinfacheFristMeldung;
 } = {}) {
   const pk = usePaneKlasse();
   // Permalink einmalig lesen (lazy, validiert) — speist die Initialwerte.
@@ -120,16 +120,32 @@ export function ZpoFristenForm({ live }: {
   });
 
   // Live-Brücke: Sync während des Renderns (Muster «adjusting state»);
-  // Referenzvergleich genügt, die Seite hält `live` im State. Der Preset-
-  // Hinweis wird mit-geleert — die Werte stammen nun aus dem einfachen
-  // Rechner, nicht mehr aus dem Preset (Muster «presetPasst», Bug-Check
-  // 10.6.2026: kein Berufungs-Hinweis neben abweichender Rechnung).
-  const [letzterLive, setLetzterLive] = useState<EinfacheFristEingaben | undefined>(undefined);
+  // Referenzvergleich genügt, die Seite hält `live` im State. Anwendungsregel
+  // (GP-Befund B2): oben Berührtes gewinnt immer; Unberührtes füllt nur
+  // Felder, die hier weder aus dem Permalink stammen noch von Hand geändert
+  // wurden. Der Preset-Hinweis fällt nur bei echter Wert-Änderung (Muster
+  // presetPasst, Bug-Check 10.6.2026: kein Hinweis neben fremder Rechnung).
+  const ausLinkFelder = { ereignis: !!ausLink.ereignis, laenge: ausLink.laenge != null, einheit: !!ausLink.einheit, kanton: !!ausLink.kanton };
+  // Mount-Stand als einmaliger State-Snapshot (kein Ref — Refs sind im
+  // Render tabu, react-hooks/refs); nie aktualisiert, nur Vergleichsbasis.
+  const [mountForm] = useState(form);
+  const ZUORDNUNG = { start: 'ereignis', laenge: 'laenge', einheit: 'einheit', kanton: 'kanton' } as const;
+  const [letzterLive, setLetzterLive] = useState<EinfacheFristMeldung | undefined>(undefined);
   if (live && live !== letzterLive) {
     setLetzterLive(live);
-    setForm((f) => ({ ...f, ereignis: live.start, laenge: live.laenge, einheit: live.einheit, kanton: live.kanton }));
-    setPresetKey('');
-    setPresetHinweis(null);
+    const n = { ...form };
+    let geaendert = false;
+    (['start', 'laenge', 'einheit', 'kanton'] as const).forEach((k) => {
+      const feld = ZUORDNUNG[k];
+      if (live.beruehrt.includes(k) || (!ausLinkFelder[feld] && form[feld] === mountForm[feld])) {
+        if (n[feld] !== live.werte[k]) { (n as Record<string, unknown>)[feld] = live.werte[k]; geaendert = true; }
+      }
+    });
+    if (geaendert) {
+      setForm(n);
+      setPresetKey('');
+      setPresetHinweis(null);
+    }
   }
 
   const set = <K extends keyof ZpoInput>(k: K, v: ZpoInput[K]) => setForm((f) => ({ ...f, [k]: v }));
