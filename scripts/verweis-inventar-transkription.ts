@@ -19,7 +19,7 @@ import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import {
   normVerweiseImText, fremdgesetzNachArtikel, fremdRoutingFormB,
-  artikelnPluralVerweise, erkenneFedlexGesetz,
+  artikelnPluralVerweise, erkenneFedlexGesetz, type FremdEbene,
 } from '../src/lib/fedlex';
 // V-3: dieselbe Token-Ableitung wie die Produktion (§5) — der Link entsteht
 // nur, wenn `parsePassus` einen Anker liefert.
@@ -292,7 +292,9 @@ export const KLASSEN: Record<string, { entscheid: Entscheid; was: string }> = {
   'art-n2-fremdkuerzel': { entscheid: 'TEXT', was: '«Art. N … FEDLEX-Kürzel» (N2 Form A) — Self unterdrückt' },
   'art-self': { entscheid: 'SELF', was: 'bare «Art. N» → Sprung im eigenen Erlass' },
   'm6-chapeau-unterdrueckt': { entscheid: 'TEXT', was: 'Zitat in Items unter unauflösbarem Fremdgesetz-Chapeau (M6)' },
-  'n2b-glied': { entscheid: 'FREMD', was: 'Glied der Form B «Artikel N … des <Name> (KÜRZEL)»' },
+  'n2b-glied': { entscheid: 'FREMD', was: 'Glied der Form B «Artikel N … des <Name> (KÜRZEL)» — Klammer-Kürzel' },
+  'n2b-genitiv': { entscheid: 'FREMD', was: 'Form-B-Glied über kuratierten Kurztitel-Genitiv ohne Klammer («des Bankengesetzes», V-7a; Geltung je Ebene)' },
+  'n2b-titel': { entscheid: 'FREMD', was: 'Form-B-Glied über amtlichen Volltitel «Bundesgesetzes/Verordnung [vom Datum] über …» (V-7b)' },
   'n2b-glied-text': { entscheid: 'TEXT', was: 'Form-B-Glied ohne Ziel-Token (heute strukturell 0 — NormText übergibt kein Prädikat)' },
   'paragraf-fremd-grosswort': { entscheid: 'TEXT', was: '«§ N <Grosswort>» — Fremd-Indiz, kein Link' },
   'paragraf-kanton-kuerzel': { entscheid: 'FREMD', was: '«§ N KÜRZEL» — im Kanton EINDEUTIGES Kürzel eines anderen Erlasses → Link auf dessen Lesesicht (V-3)' },
@@ -321,6 +323,10 @@ export interface Ctx {
   /** V-3: Kürzel → Lese-Adresse der ANDEREN Erlasse desselben Kantons, wie
    *  `baueKantonKuerzelKarte` sie dem Leser gibt (Aufbau im Tor, Abschnitt 4). */
   kantonKuerzel?: ReadonlyMap<string, string>;
+  /** V-7: Ebene des gelesenen Erlasses — NormText leitet sie aus dem Basispfad
+   *  ab (`/gesetze/kanton/…` ⇒ kanton, sonst bund); Kurznamen mit Geltung
+   *  `bund` lösen in kantonalen Erlassen nicht auf (`positivliste.ts`). */
+  ebene?: FremdEbene;
 }
 
 export interface Stelle {
@@ -345,7 +351,8 @@ function restStellen(s: string, ctx: Ctx): Stelle[] {
   if (!s) return [];
   const out: Stelle[] = [];
   const paragrafErlass = ctx.paragrafDesigniert;
-  const pluralRegionen = artikelnPluralVerweise(s);
+  const ebene: FremdEbene = ctx.ebene ?? 'bund';
+  const pluralRegionen = artikelnPluralVerweise(s, ebene);
   const inPluralRegion = (idx: number) =>
     pluralRegionen.some((r) => idx >= r.oeffnerStart && idx < r.end);
 
@@ -420,10 +427,13 @@ function restStellen(s: string, ctx: Ctx): Stelle[] {
     emitPluralBis(m.index);
     const start = m.index;
     const rest = s.slice(start + m[0].length);
-    const routing = fremdRoutingFormB(rest, m[1]);
-    if (routing) {
+    const routing = fremdRoutingFormB(rest, m[1], undefined, ebene);
+    // V-7: Volltitel des GELESENEN Erlasses ist kein Fremdverweis (wie Original).
+    if (routing && kuerzelKanon(routing.gesetz) !== ctx.eigenesKuerzel) {
+      // V-7: Klasse nach Erkennungs-Signal (Klammer / Genitiv-Kurztitel / Volltitel).
+      const klasse = routing.signal === 'klammer' ? 'n2b-glied' : routing.signal === 'genitiv' ? 'n2b-genitiv' : 'n2b-titel';
       for (const g of routing.glieder) {
-        out.push(stelle(g.linkbar ? 'n2b-glied' : 'n2b-glied-text', g.roh, ctx));
+        out.push(stelle(g.linkbar ? klasse : 'n2b-glied-text', g.roh, ctx));
       }
       last = start + m[0].length + routing.regionEnd;
       continue;

@@ -3,6 +3,8 @@
  *
  *   npx vite-node scripts/normtext/zh-quellen-aufloesen.ts            # Liste prüfen
  *   npx vite-node scripts/normtext/zh-quellen-aufloesen.ts 550.1 700.1 # Nummern auflösen
+ *   npx vite-node scripts/normtext/zh-quellen-aufloesen.ts --ordner=3,4,10
+ *                                       # ganze Systematik-Ordner enumerieren
  *
  * Ohne Argumente prüft es die eingetragenen Erlasse gegen die amtliche Quelle
  * (Titel + Registry-URL der geltenden Fassung) und meldet jede Abweichung mit
@@ -20,6 +22,14 @@
  * (geltende Fassung) macht den überholten Pin rot. Rot-Beweis 31.8.2026:
  * 211.1-Pin künstlich auf die historische …-129.html zurückgesetzt → FEHLER
  * «URL ist …-131.html», Exit 1; am echten Stand grün.
+ *
+ * ORDNER-MODUS (Tranche A, 1.9.2026): `--ordner=N[,M]` enumeriert alle in Kraft
+ * stehenden Erlasse eines der 14 amtlichen Systematik-Ordner über denselben
+ * JSON-Endpunkt mit `fileNumber=N` und blättert `page` durch (15 Treffer/Seite).
+ * WARUM eine eigene Betriebsart: die Einzelauflösung braucht einen Request JE
+ * Ordnungsnummer (170 Erlasse = 170 Requests ≈ 3 min); ordner-weise sind es
+ * ~12. Die Kappungs-Falle (>150 Treffer) bleibt bewacht — sie kann hier nicht
+ * greifen, weil je `fileNumber` geblättert wird, aber die Prüfung bleibt stehen.
  *
  * §5: DIESES Werkzeug erzeugt die Einträge in `zh-quellen.ts` — die Liste wird
  * nie von Hand geraten. §2: keine Rechenlogik, reines Erhebungs-/Prüfwerkzeug.
@@ -93,21 +103,92 @@ async function loese(id: string, nr: string): Promise<ZhQuelle | null> {
   };
 }
 
+/**
+ * Alle in Kraft stehenden Erlasse eines Systematik-Ordners (`fileNumber`),
+ * seitenweise. Reihenfolge = LS-Ordnungsnummer (deterministisch sortiert).
+ */
+async function loeseOrdner(id: string, ordner: string): Promise<ZhQuelle[]> {
+  const treffer: ZhQuelle[] = [];
+  // FALLE (empirisch 1.9.2026): `page` ist EINSBASIERT — `page=0` und `page=1`
+  // liefern beide dieselbe erste Seite. Eine nullbasierte Schleife holt darum
+  // Seite 1 doppelt und lässt die LETZTE Seite still weg (Ordner 4: 15 statt
+  // 27 Erlasse). Deshalb 1 … numberOfResultPages, und die Dubletten-Wache
+  // unten bleibt als zweite Sicherung stehen.
+  let seite = 1;
+  for (;;) {
+    const url =
+      `${BASIS}/_jcr_content/main/lawcollectionsearch_${id}.zhweb-zhlex-ls.zhweb-cache.json` +
+      `?fileNumber=${encodeURIComponent(ordner)}&includeRepealedEnactments=false&page=${seite}`;
+    const res = await hole(url);
+    if (res.status === 204) break;
+    const txt = await res.text();
+    if (!res.ok || txt.trim().length === 0) break;
+    const json = JSON.parse(txt) as {
+      data?: Satz[];
+      numberOfResultPages?: number;
+      moreSearchResultsThanAllowed?: boolean;
+    };
+    if (json.moreSearchResultsThanAllowed) {
+      throw new Error(`Ordner ${ordner}: Endpunkt meldet Kappung (>150) — Abfrage verfeinern`);
+    }
+    for (const satz of json.data ?? []) {
+      if (satz.withdrawalDate) continue;
+      const titel = satz.enactmentTitle.trim();
+      const klammer = titel.match(/\(([^()]+)\)\s*$/);
+      treffer.push({
+        nr: satz.referenceNumber,
+        titel,
+        kuerzel: klammer ? klammer[1] : '',
+        registryUrl: new URL(satz.link, 'https://www.zh.ch').toString(),
+      });
+    }
+    if (seite >= (json.numberOfResultPages ?? 1)) break;
+    seite++;
+  }
+  // Doppelte Ordnungsnummern (mehrere geltende Fassungen) sind ein Quell-Signal,
+  // kein stiller Fall: sichtbar melden statt die zweite zu verschlucken (§8).
+  const gesehen = new Map<string, ZhQuelle>();
+  for (const t of treffer) {
+    if (gesehen.has(t.nr)) {
+      console.error(`  WARN Ordner ${ordner}: ${t.nr} mehrfach geltend — von Hand klären`);
+      continue;
+    }
+    gesehen.set(t.nr, t);
+  }
+  return [...gesehen.values()].sort((a, b) =>
+    a.nr.localeCompare(b.nr, 'de', { numeric: true }),
+  );
+}
+
+/** Fertiger `ZH_QUELLEN`-Eintrag als Quelltext (eine Form, §5). */
+function alsEintrag(q: ZhQuelle): string {
+  return (
+    `  {\n    nr: '${q.nr}',\n    titel: ${JSON.stringify(q.titel)},\n` +
+    `    kuerzel: ${JSON.stringify(q.kuerzel)},\n` +
+    `    registryUrl: \`\${BASIS}${q.registryUrl.split('/zhlex-ls/')[1]}\`,\n  },`
+  );
+}
+
 const argumente = process.argv.slice(2).filter((a) => !a.startsWith('-'));
 const id = await komponentenId();
 console.log(`AEM-Komponenten-ID (Laufzeit aufgelöst): ${id}`);
 
-if (argumente.length > 0) {
+const ordnerArg = process.argv.slice(2).find((a) => a.startsWith('--ordner='))?.slice(9);
+
+if (ordnerArg) {
+  for (const ordner of ordnerArg.split(',').map((o) => o.trim()).filter(Boolean)) {
+    const liste = await loeseOrdner(id, ordner);
+    console.log(`\n  // ── Systematik-Ordner ${ordner} — ${liste.length} geltende Erlasse`);
+    for (const q of liste) console.log(alsEintrag(q));
+  }
+} else if (argumente.length > 0) {
   for (const nr of argumente) {
     const q = await loese(id, nr);
     if (!q) {
       console.log(`  { /* ${nr}: KEIN eindeutiger geltender Treffer — von Hand klären */ },`);
       continue;
     }
-    console.log(
-      `  {\n    nr: '${q.nr}',\n    titel: ${JSON.stringify(q.titel)},\n` +
-        `    kuerzel: '${q.kuerzel}',\n    registryUrl: \`\${BASIS}${q.registryUrl.split('/zhlex-ls/')[1]}\`,\n  },`,
-    );
+    console.log(alsEintrag(q));
   }
 } else {
   let abweichungen = 0;
