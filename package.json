@@ -99,6 +99,7 @@
     "normtext:sidecar-differ": "vite-node scripts/normtext/check-sidecar-differ.ts --",
     "normtext:struktur": "vite-node scripts/normtext/struktur-run.ts --",
     "normtext:struktur-kanton": "vite-node scripts/normtext/struktur-kanton-run.ts --",
+    "normtext:struktur-zh": "vite-node scripts/normtext/struktur-zh-run.ts --",
     "normtext:bund-stubs": "vite-node scripts/normtext/bund-stubs-generieren.ts --",
     "fedlex:eli": "vite-node scripts/fedlex-eli-aufloesen.ts --",
     "gen:fedlex-wiedervorlage": "vite-node scripts/fedlex-wiedervorlage-generieren.ts",

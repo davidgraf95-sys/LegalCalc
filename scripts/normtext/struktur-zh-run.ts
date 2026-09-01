@@ -1,0 +1,123 @@
+/**
+ * Runner: die ZH-Struktur-Sidecars (Gliederung + Randtitel) aus den amtlichen
+ * PDF der Zürcher Loseblattsammlung (R1, Auftrag David 2.9.2026).
+ *
+ * WARUM EIN EIGENER RUNNER neben `struktur-kanton-run.ts`: jener holt sein
+ * Material aus der LexWork-JSON-API (`xhtml_tol`) und überspringt jede
+ * PDF-Quelle ausdrücklich — die 111 Zürcher Erlasse haben dort kein
+ * strukturiertes Dokument. Ihre Gliederung und ihre Randtitel stehen
+ * ausschliesslich im Druckbild und müssen über die Geometrie gehoben werden.
+ * Beide Runner schreiben in DASSELBE Verzeichnis nach DEMSELBEN Schema
+ * (`public/normtext/struktur/kanton/<KEY>.json`) — der Leser (`ladeStruktur`)
+ * merkt keinen Unterschied.
+ *
+ * §2: `--datum` aus der Shell, nie `Date.now()`. Reine Präsentations-
+ * Anreicherung (§3) — die Snapshots unter `public/normtext/kanton/` werden
+ * NICHT angefasst, ihr Wortlaut bleibt byte-gleich.
+ *
+ * Aufruf:  npm run normtext:struktur-zh -- --datum=$(date +%F)
+ *          npm run normtext:struktur-zh -- --datum=… --nur=281,131.1
+ */
+import { writeFileSync, mkdirSync, existsSync, readFileSync } from 'node:fs';
+import { join } from 'node:path';
+import { sammleZhPdfInventar } from './inventar-kanton.ts';
+import { leseCache } from './zh-pdf-cache.ts';
+import {
+  extrahiereZhTextZeilen,
+  serialisiereZhZeilen,
+} from './zh-seitenmontage.ts';
+import { erkenneZhMarker } from './adapter-zh-pdf.ts';
+import { baueZhSidecar } from './zh-sidecar.ts';
+
+const datumArg = process.argv.find((a) => a.startsWith('--datum='));
+const erzeugt = datumArg ? datumArg.slice('--datum='.length) : '';
+if (!/^\d{4}-\d{2}-\d{2}$/.test(erzeugt)) {
+  console.error('struktur-zh-run: --datum=YYYY-MM-DD erforderlich (§2).');
+  process.exit(1);
+}
+
+const nurArg = process.argv.find((a) => a.startsWith('--nur='));
+const nurKeys = nurArg
+  ? new Set(nurArg.slice('--nur='.length).split(',').map((s) => s.trim()).filter(Boolean))
+  : null;
+
+const SNAPSHOTS = 'public/normtext/kanton';
+const ZIEL = 'public/normtext/struktur/kanton';
+mkdirSync(ZIEL, { recursive: true });
+
+/** «LS 281» → «281» (der Dateischlüssel ist `ZH-<nr>`). */
+const nummer = (erlassNr: string): string => erlassNr.replace(/^LS\s*/, '').trim();
+
+interface SnapshotDatei {
+  eintraege: { artikel: string; erlass: string }[];
+}
+
+let gesamtParagrafen = 0;
+let gesamtMitRandtitel = 0;
+let gesamtMitGliederung = 0;
+let gesamtVerworfen = 0;
+let dateien = 0;
+const zeilenBericht: string[] = [];
+
+for (const gruppe of sammleZhPdfInventar()) {
+  const nr = nummer(gruppe.erlassNr || '');
+  if (!nr) continue;
+  if (nurKeys && !nurKeys.has(nr)) continue;
+  const key = `ZH-${nr}`;
+  const snapPfad = join(SNAPSHOTS, `${key}.json`);
+  if (!existsSync(snapPfad)) continue; // Erlass nicht im Bestand → kein Sidecar
+
+  const cache = leseCache(gruppe.quelleUrl);
+  if (!cache) {
+    console.error(`  LEER  ${key} — Roh-PDF-Cache leer, 'npm run zh:cache' füllt ihn`);
+    process.exitCode = 1;
+    continue;
+  }
+  const { zeilen, randnoten } = await extrahiereZhTextZeilen(cache.bytes.slice());
+  const textbasis = serialisiereZhZeilen(zeilen);
+  const marker = erkenneZhMarker(textbasis);
+  const befund = baueZhSidecar(textbasis, randnoten, marker);
+
+  // NUR §§, die der Snapshot wirklich führt (§5: der Snapshot ist die Quelle
+  // des Bestands). So kann das Sidecar keinen § erfinden, den der Normtext
+  // nicht kennt — und der Schlussapparat, den der Parser abschneidet, kommt
+  // auch hier nicht in die Gliederung.
+  const snap = JSON.parse(readFileSync(snapPfad, 'utf8')) as SnapshotDatei;
+  const bestand = new Set(snap.eintraege.map((e) => e.artikel));
+
+  const artikel: Record<string, { gliederung: { ebene: number; label: string }[]; marginalie: string[] }> = {};
+  let mitRand = 0;
+  let mitGl = 0;
+  for (const token of [...bestand].sort()) {
+    const a = befund.artikel[token];
+    if (!a) continue;
+    if (a.gliederung.length === 0 && a.marginalie.length === 0) continue;
+    artikel[token] = a;
+    if (a.marginalie.length > 0) mitRand++;
+    if (a.gliederung.length > 0) mitGl++;
+  }
+
+  gesamtParagrafen += bestand.size;
+  gesamtMitRandtitel += mitRand;
+  gesamtMitGliederung += mitGl;
+  gesamtVerworfen += befund.randnotenOhneKopf + befund.randnotenDoppelt;
+
+  const quote = bestand.size === 0 ? 0 : (mitRand / bestand.size) * 100;
+  zeilenBericht.push(
+    `  ${key.padEnd(12)} §§ ${String(bestand.size).padStart(4)} · Randtitel ${String(mitRand).padStart(4)}` +
+      ` (${quote.toFixed(0).padStart(3)} %) · Gliederung ${String(mitGl).padStart(4)}` +
+      ` · verworfen ${String(befund.randnotenOhneKopf + befund.randnotenDoppelt).padStart(3)}`,
+  );
+
+  if (Object.keys(artikel).length === 0) continue;
+  const inhalt = { erzeugt, kopf: { titel: snap.eintraege[0]?.erlass ?? key }, artikel };
+  writeFileSync(join(ZIEL, `${key}.json`), `${JSON.stringify(inhalt, null, 2)}\n`, 'utf8');
+  dateien++;
+}
+
+for (const z of zeilenBericht) console.log(z);
+console.log(
+  `\nstruktur-zh: ${dateien} Sidecar(s) · ${gesamtMitRandtitel}/${gesamtParagrafen} §§ mit Randtitel ` +
+    `(${gesamtParagrafen ? ((gesamtMitRandtitel / gesamtParagrafen) * 100).toFixed(1) : '0'} %) · ` +
+    `${gesamtMitGliederung} §§ mit Gliederung · ${gesamtVerworfen} Randnoten verworfen`,
+);

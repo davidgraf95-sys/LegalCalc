@@ -129,6 +129,12 @@ export interface ZhTextZeile {
    *  (kein einziges Body-Schrift-Fragment) — der Diskriminator für die
    *  arabisch nummerierten Gliederungstitel, s. TITEL_MARKER / GLIEDERUNG_ARABISCH. */
   titelschrift?: true;
+  /** Die (auf ganze Punkte gerundete) y-Position der Zeile auf ihrer Seite.
+   *  NUR für die Randtitel-Zuordnung (R1): der Randtitel im Aussenrand steht
+   *  auf DERSELBEN Grundlinie wie der §-Kopf, den er beschriftet. Das Feld
+   *  wandert NICHT in den serialisierten Text (serialisiereZhZeilen liest es
+   *  nicht) — die Textbasis und damit jeder Snapshot bleiben byte-gleich. */
+  y?: number;
 }
 
 /** Ergebnis der PDF-Layout-Extraktion: Body-Zeilen + der verworfene Kopf-/
@@ -137,6 +143,21 @@ export interface ZhExtrakt {
   zeilen: ZhTextZeile[];
   /** Roh-Text aus den Kopf-/Fussbändern (y>520 / y<60), zeilenfrei verkettet. */
   randText: string;
+  /** Die Randtitel (Marginalien) mit dem INDEX der Textzeile, auf deren
+   *  Grundlinie sie stehen (R1). Der Index ist zugleich der Zeilenindex im
+   *  serialisierten Text — `serialisiereZhZeilen` schreibt genau eine Zeile je
+   *  Element und verbindet mit «\n». Nur so kann der Parser, der allein weiss,
+   *  welche Zeile ein §-Kopf ist, den Randtitel seinem § zuordnen, ohne dass
+   *  die Kopf-Erkennung ein zweites Mal im Code stünde (§5). */
+  randnoten: ZhRandnote[];
+}
+
+/** Ein Randtitel samt der Textzeile, an der er hängt. */
+export interface ZhRandnote {
+  /** Index in `ZhExtrakt.zeilen` = Zeilenindex der serialisierten Textbasis. */
+  zeilenIndex: number;
+  /** Der Randtitel-Wortlaut, wie er im Aussenrand steht. */
+  text: string;
 }
 
 /**
@@ -200,12 +221,44 @@ export async function extrahiereZhTextZeilen(
   // gewönne dort die Titel-Schrift die Mehrheit (§1: der Diskriminator darf
   // nicht seitenweise kippen).
   const bodySchrift = bestimmeBodySchrift(seitenStuecke.flat());
+  const randnoten: ZhRandnote[] = [];
   for (const stuecke of seitenStuecke) {
-    zeilen.push(...montiereZhSeite(stuecke, bodySchrift));
+    // Die Zeilen DIESER Seite: der Anker eines Randtitels liegt immer auf
+    // derselben Seite (die Marginalienspalte steht neben ihrem Satzspiegel).
+    const seitenZeilen = montiereZhSeite(stuecke, bodySchrift);
+    const versatz = zeilen.length;
+    zeilen.push(...seitenZeilen);
+
+    for (const block of sammleZhRandbloecke(stuecke)) {
+      // ZUORDNUNG (rein geometrisch): Der Randtitel steht auf DERSELBEN
+      // Grundlinie wie der Kopf, den er beschriftet — gemessen an ZH-131.1 S. 1
+      // («Gegenstand» y=361 / «§ 1.» y=361; «Autonomie» y=324 / «§ 2.» y=324).
+      // ±ANKER_TOLERANZ_PT fängt die Rundung; gibt es keinen Treffer, FÄLLT DER
+      // RANDTITEL WEG (§8: lieber keine Angabe als eine falsch zugeordnete).
+      let treffer = -1;
+      let bestAbstand = Infinity;
+      for (let i = 0; i < seitenZeilen.length; i++) {
+        const y = seitenZeilen[i].y;
+        if (y === undefined) continue;
+        const abstand = Math.abs(y - block.ankerY);
+        if (abstand < bestAbstand) {
+          bestAbstand = abstand;
+          treffer = i;
+        }
+      }
+      if (treffer < 0 || bestAbstand > ANKER_TOLERANZ_PT) continue;
+      randnoten.push({ zeilenIndex: versatz + treffer, text: block.text });
+    }
   }
 
-  return { zeilen, randText: randStuecke.join(' ') };
+  return { zeilen, randText: randStuecke.join(' '), randnoten };
 }
+
+/** Wie weit die Grundlinie eines Randtitels von der seines Kopfes abweichen
+ *  darf. Gemessen an allen ZH-PDF: der Regelfall ist 0 pt (identische
+ *  Grundlinie); die y-Rundung auf ganze Punkte kann 1 pt kosten. 2 pt ist der
+ *  Sicherheitsabstand — die nächste Body-Zeile liegt ~10 pt entfernt. */
+const ANKER_TOLERANZ_PT = 2;
 
 /**
  * Die BODY-Schrift des Dokuments: die pdfjs-Schriftkennung mit den meisten
@@ -239,6 +292,159 @@ export function bestimmeBodySchrift(stuecke: PdfStueck[]): string | undefined {
  * Erwartet die Stücke einer Seite OHNE Kopf-/Fussband (y ausserhalb 60…530)
  * und ohne Erlasstitel (h ≥ 11) — beides filtert extrahiereZhTextZeilen vorab.
  */
+/** Obergrenze der MARGINALIEN-Schrift (pt). Gemessen an allen 24 ZH-PDF:
+ *  Randnoten stehen durchgängig bei h = 7.5, Body bei h = 9.18. */
+const MARGINALIE_MAX_H = 7.7;
+/** Wie weit links vom Body-Rand eine Marginalie mindestens beginnt (gerade
+ *  Seiten, Aussenrand links). */
+const MARGINALIE_LINKS_PT = 3;
+/** Wie weit rechts vom Body-Rand die Marginalie der ungeraden Seiten beginnt
+ *  (der Body-Textblock ist ~242 pt breit). */
+const MARGINALIE_RECHTS_PT = 250;
+
+/**
+ * Die linke Kante der Body-Spalte einer Seite (Minimum der x-Positionen aller
+ * Body-Höhen-Stücke). Liefert null, wenn die Seite kein Body-Stück trägt.
+ *
+ * EINE Quelle für beide Leser dieser Geometrie (§5): `montiereZhSeite`
+ * VERWIRFT alles im Aussenrand, `sammleZhRandbloecke` SAMMELT genau dasselbe
+ * ein. Läge die Kante zweimal im Code, könnten die beiden Seiten der Münze
+ * auseinanderlaufen und ein Randtitel gleichzeitig fehlen und falsch stehen.
+ */
+export function bodyMinXDerSeite(stuecke: PdfStueck[]): number | null {
+  const bodyXs = stuecke.filter((s) => s.h >= 8.7).map((s) => s.x);
+  return bodyXs.length === 0 ? null : Math.min(...bodyXs);
+}
+
+/**
+ * «Dieses Stück steht im AUSSENRAND und ist damit Marginalie (Randtitel), nicht
+ * Normtext.» — der geteilte Diskriminator (s. bodyMinXDerSeite).
+ *
+ * AUSGENOMMEN ist die Body-HOCHSTELLUNGS-Klasse (5.2 < h < 7.0, h ~ 5.70,
+ * Befund B1/Fix-Runde 4): eine Hochstellung am RECHTEN Zeilenende einer vollen
+ * Body-Zeile steht bei x bis ~360 und fiele mit dem Pauschal-Fenster als
+ * «Marginalie» weg, BEVOR die Zuordnungs- und Exponent-Logik sie je sah — genau
+ * dort sitzt der Einheiten-Exponent («1000 m2» ZH-700.1 § 239a: x = 328.9 bei
+ * bodyMinX = 53.8). Die Marginalien-SCHRIFT (Randnote h ~ 7.5) und ihre
+ * Fussnoten-Ziffern in Apparat-Groesse (h <= 5.2, ZH-175.2 S. 1 «Grundsatz52»)
+ * bleiben erfasst.
+ */
+export function istZhMarginalie(st: PdfStueck, bodyMinX: number): boolean {
+  return (
+    st.h <= MARGINALIE_MAX_H &&
+    !(st.h < HOCH_MAX_H && st.h > APPARAT_ZIFFER_MAX_H) &&
+    (st.x < bodyMinX - MARGINALIE_LINKS_PT || st.x > bodyMinX + MARGINALIE_RECHTS_PT)
+  );
+}
+
+/** Ein zusammenhaengender Randtitel-Block einer Seite. */
+export interface ZhRandblock {
+  /** y-Position der OBERSTEN Zeile des Blocks (auf ganze Punkte gerundet) —
+   *  die Grundlinie, auf der auch der beschriftete §-Kopf steht. */
+  ankerY: number;
+  /** Der zusammengefuegte Randtitel-Text (Umbrueche aufgeloest). */
+  text: string;
+}
+
+/** Groesster y-Abstand (pt) zweier Randtitel-Zeilen, die noch ZUM SELBEN Block
+ *  gehoeren. Gemessen: Zeilenabstand der Marginalienspalte ~8 pt (ZH-131.1 S. 1
+ *  «Gliederung und» y=274 / «Organisation» y=266; S. 2 «Gemeinde-» y=448 /
+ *  «organe» y=440). Der Abstand ZWEIER Randtitel ist der Abstand ihrer §§ und
+ *  betraegt im Bestand nie unter 25 pt (ein § braucht mindestens zwei Body-
+ *  Zeilen a ~10 pt). 12 pt trennt die beiden Klassen mit Sicherheitsabstand. */
+const RANDBLOCK_MAX_LUECKE_PT = 12;
+
+/** Anschlusswoerter, die einen ERGAENZUNGSSTRICH belegen («Sozial- | und ...»). */
+const ERGAENZUNGS_ANSCHLUSS = /^(?:und|oder|bzw\.|sowie|wie|beziehungsweise)\b/;
+
+/**
+ * Fuegt die Zeilen EINES Randtitels zusammen und loest den Zeilenumbruch auf.
+ *
+ * Der Trennstrich am Zeilenende ist im Deutschen zweideutig:
+ *   · TRENNSTRICH  «Gemeinde-» + «organe»            -> «Gemeindeorgane»
+ *   · ERGAENZUNGSSTRICH «Sozial-» + «und Gesundheit» -> «Sozial- und Gesundheit»
+ * Beide unterscheidet der Anschluss: nach einem Ergaenzungsstrich folgt eine der
+ * Konjunktionen «und/oder/bzw./sowie/wie», nach einem Trennstrich der Rest des
+ * Wortes. Regel deterministisch (§2), keine Woerterbuch-Heuristik.
+ */
+function fuegeRandzeilen(zeilen: string[]): string {
+  let out = '';
+  for (const z of zeilen) {
+    if (out === '') {
+      out = z;
+      continue;
+    }
+    if (/[-‐‑]$/.test(out) && !ERGAENZUNGS_ANSCHLUSS.test(z)) {
+      out = out.replace(/[-‐‑]$/, '') + z;
+    } else {
+      out = `${out} ${z}`;
+    }
+  }
+  return out;
+}
+
+/**
+ * Sammelt die Randtitel (Marginalien) EINER Seite — das Spiegelbild zu
+ * `montiereZhSeite`, das genau diese Stuecke verwirft (R1, Auftrag David
+ * 2.9.2026: «achte bei zh auch darauf, dass wir marginale extrahieren und in
+ * der gliederung darstellen»).
+ *
+ * Rein geometrisch (§2), NIE ueber den Wortlaut: massgeblich ist die Spalte
+ * (istZhMarginalie) und der Zeilenabstand, nie was dort steht. Was sich nicht
+ * eindeutig zuordnen laesst, faellt weg statt geraten zu werden (§8).
+ */
+export function sammleZhRandbloecke(stuecke: PdfStueck[]): ZhRandblock[] {
+  const bodyMinX = bodyMinXDerSeite(stuecke);
+  if (bodyMinX === null) return [];
+  const marg = stuecke.filter((st) => istZhMarginalie(st, bodyMinX));
+  if (marg.length === 0) return [];
+
+  const nachY = new Map<number, PdfStueck[]>();
+  for (const st of marg) {
+    const key = Math.round(st.y);
+    let liste = nachY.get(key);
+    if (!liste) {
+      liste = [];
+      nachY.set(key, liste);
+    }
+    liste.push(st);
+  }
+
+  const zeilen: { y: number; text: string }[] = [];
+  for (const y of [...nachY.keys()].sort((a, b) => b - a)) {
+    const grp = nachY.get(y)!.sort((a, b) => a.x - b.x);
+    let text = '';
+    let vorEndeX: number | null = null;
+    for (const st of grp) {
+      // Fussnoten-Verweis IM Randtitel («Grundsatz52», ZH-175.2 S. 1): eine
+      // Hochzahl in Apparat-Groesse. Sie ist kein Bestandteil des Titels.
+      if (st.h <= APPARAT_ZIFFER_MAX_H && /^[\s,\d]+$/.test(st.s)) {
+        vorEndeX = st.x + st.w;
+        continue;
+      }
+      const schliessend = /^[.,;:!?)\]]/.test(st.s);
+      if (!schliessend && vorEndeX !== null && st.x - vorEndeX >= WORT_LUECKE_PT) text += ' ';
+      text += st.s;
+      vorEndeX = st.x + st.w;
+    }
+    const bereinigt = text.replace(/\s+/g, ' ').trim();
+    if (bereinigt !== '') zeilen.push({ y, text: bereinigt });
+  }
+  if (zeilen.length === 0) return [];
+
+  const bloecke: ZhRandblock[] = [];
+  let lauf: { y: number; text: string }[] = [zeilen[0]];
+  for (let i = 1; i < zeilen.length; i++) {
+    if (lauf[lauf.length - 1].y - zeilen[i].y <= RANDBLOCK_MAX_LUECKE_PT) lauf.push(zeilen[i]);
+    else {
+      bloecke.push({ ankerY: lauf[0].y, text: fuegeRandzeilen(lauf.map((z) => z.text)) });
+      lauf = [zeilen[i]];
+    }
+  }
+  bloecke.push({ ankerY: lauf[0].y, text: fuegeRandzeilen(lauf.map((z) => z.text)) });
+  return bloecke;
+}
+
 export function montiereZhSeite(
   stuecke: PdfStueck[],
   bodySchrift?: string,
@@ -277,9 +483,8 @@ export function montiereZhSeite(
   // (in dieser Fix-Runde selbst erzeugt und gemessen, 31.8.2026).
 
   // Body-Spalte dieser Seite aus den Body-Stücken (h≈9.2) bestimmen.
-  const bodyXs = stuecke.filter((s) => s.h >= 8.7).map((s) => s.x);
-  if (bodyXs.length === 0) return zeilen;
-  const bodyMinX = Math.min(...bodyXs);
+  const bodyMinX = bodyMinXDerSeite(stuecke);
+  if (bodyMinX === null) return zeilen;
   // Body-Textblock ist ~242pt breit; Marginalie liegt im Aussenrand:
   //   links  (gerade Seiten): x < bodyMinX − 3
   //   rechts (ungerade Seiten): x > bodyMinX + 250
@@ -294,12 +499,7 @@ export function montiereZhSeite(
   // x = 328.9 bei bodyMinX = 53.8; «10 m².» § 303: x = 354.8 bei 87.8). Die
   // Marginalien-SCHRIFT (Randnote h ≈ 7.5) und ihre Fussnoten-Ziffern in
   // Apparat-Grösse (h ≤ 5.2, ZH-175.2 S. 1 «Grundsatz⁵²») bleiben gefiltert.
-  const istMarginalie = (st: PdfStueck): boolean =>
-    st.h <= 7.7 &&
-    !(st.h < HOCH_MAX_H && st.h > APPARAT_ZIFFER_MAX_H) &&
-    (st.x < bodyMinX - 3 || st.x > bodyMinX + 250);
-
-  const inhaltStuecke = stuecke.filter((st) => !istMarginalie(st));
+  const inhaltStuecke = stuecke.filter((st) => !istZhMarginalie(st, bodyMinX));
 
   // Nach y gruppieren (eine Textzeile). y auf ganze Punkte runden.
   const nachY = new Map<number, PdfStueck[]>();
@@ -532,14 +732,14 @@ export function montiereZhSeite(
       bodyDerZeile.length > 0 &&
       bodyDerZeile.every((st) => st.f !== undefined && st.f !== bodySchrift);
     if (imKopfEinzug && SAMMEL_ZEILE.test(bereinigt)) {
-      zeilen.push({ absatz, text: bereinigt, sammelkopf: true });
+      zeilen.push({ absatz, text: bereinigt, sammelkopf: true, y: yKey });
       continue;
     }
     if (nurTitelschrift) {
-      zeilen.push({ absatz, text: bereinigt, titelschrift: true });
+      zeilen.push({ absatz, text: bereinigt, titelschrift: true, y: yKey });
       continue;
     }
-    zeilen.push({ absatz, text: bereinigt });
+    zeilen.push({ absatz, text: bereinigt, y: yKey });
   }
   return zeilen;
 }
