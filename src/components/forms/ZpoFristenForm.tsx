@@ -24,6 +24,7 @@ import { FristenKalender } from '../FristenKalender';
 import { PHASEN, PRESETS, MATERIELL_WARNUNG, type ZpoPhase, type ZpoPreset } from '../../lib/zpoPresets';
 import { getStandardKanton } from '../../lib/einstellungen';
 import { usePaneKlasse } from '../layout/PaneKontext';
+import type { EinfacheFristEingaben } from './einfacheFristTexte';
 
 
 const EINHEITEN: { code: ZpoEinheit; label: string }[] = [
@@ -70,7 +71,12 @@ const DEFAULTS: ZpoInput = {
 };
 
 
-export function ZpoFristenForm() {
+export function ZpoFristenForm({ live }: {
+  /** Live-Brücke des Tagerechners (Auftrag David 1.9.2026): geänderte
+   *  Eingaben des einfachen Rechners oben — sie überschreiben die vier
+   *  geteilten Felder, damit der Rechenweg hier automatisch mitrechnet. */
+  live?: EinfacheFristEingaben;
+} = {}) {
   const pk = usePaneKlasse();
   // Permalink einmalig lesen (lazy, validiert) — speist die Initialwerte.
   const ausLink = usePermalinkFelder(ZPO_LINK_SPEC);
@@ -112,6 +118,19 @@ export function ZpoFristenForm() {
     einheit: (ausLink.erstreckungEinheit as 'tage' | 'wochen' | undefined) ?? 'tage',
     laenge: ausLink.erstreckungLaenge ?? 10,
   });
+
+  // Live-Brücke: Sync während des Renderns (Muster «adjusting state»);
+  // Referenzvergleich genügt, die Seite hält `live` im State. Der Preset-
+  // Hinweis wird mit-geleert — die Werte stammen nun aus dem einfachen
+  // Rechner, nicht mehr aus dem Preset (Muster «presetPasst», Bug-Check
+  // 10.6.2026: kein Berufungs-Hinweis neben abweichender Rechnung).
+  const [letzterLive, setLetzterLive] = useState<EinfacheFristEingaben | undefined>(undefined);
+  if (live && live !== letzterLive) {
+    setLetzterLive(live);
+    setForm((f) => ({ ...f, ereignis: live.start, laenge: live.laenge, einheit: live.einheit, kanton: live.kanton }));
+    setPresetKey('');
+    setPresetHinweis(null);
+  }
 
   const set = <K extends keyof ZpoInput>(k: K, v: ZpoInput[K]) => setForm((f) => ({ ...f, [k]: v }));
   const presetsDerPhase = PRESETS.filter((p) => p.phase === phase);

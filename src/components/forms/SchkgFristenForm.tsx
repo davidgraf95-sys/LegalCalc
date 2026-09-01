@@ -25,6 +25,7 @@ import { IcsExportButton } from '../IcsExportButton';
 import { FristenKalender } from '../FristenKalender';
 import { getStandardKanton } from '../../lib/einstellungen';
 import { usePaneKlasse } from '../layout/PaneKontext';
+import type { EinfacheFristEingaben } from './einfacheFristTexte';
 
 
 const EINHEITEN: { code: SchkgEinheit; label: string }[] = [
@@ -79,7 +80,12 @@ const DEFAULTS: FormState = {
 // Spec seit FE-3 in lib/rechnerPermalinks.ts (eine Spec, zwei Nutzer: die
 // Form liest/teilt, der Preset-Index des Tagerechners baut dieselben Links).
 
-export function SchkgFristenForm() {
+export function SchkgFristenForm({ live }: {
+  /** Live-Brücke des Tagerechners (Auftrag David 1.9.2026): geänderte
+   *  Eingaben des einfachen Rechners oben — sie überschreiben die vier
+   *  geteilten Felder, damit der Rechenweg hier automatisch mitrechnet. */
+  live?: EinfacheFristEingaben;
+} = {}) {
   const ausLink = usePermalinkFelder(SCHKG_LINK_SPEC);
   const [form, setForm] = useState<FormState>(() => ({
     ...DEFAULTS,
@@ -100,6 +106,19 @@ export function SchkgFristenForm() {
   const [override, setOverride] = useState<SchkgModus | ''>((ausLink.override as SchkgModus | undefined) ?? '');
   const [hemmung, setHemmung] = useState<{ an: boolean; von: string; bis: string }>({ an: ausLink.hemmungAn ?? false, von: ausLink.hemmungVon ?? '', bis: ausLink.hemmungBis ?? '' });
   const [rechtsstillstand, setRechtsstillstand] = useState<{ an: boolean; von: string; bis: string }>({ an: ausLink.rsAn ?? false, von: ausLink.rsVon ?? '', bis: ausLink.rsBis ?? '' });
+
+  // Live-Brücke: Sync während des Renderns (Muster «adjusting state»);
+  // Referenzvergleich genügt, die Seite hält `live` im State. Der aktive
+  // Preset wird mit-geleert — die Werte stammen nun aus dem einfachen
+  // Rechner, nicht mehr aus dem Preset. Einheit: der einfache Rechner
+  // bietet im SchKG-Regime keine Wochen an (einheitEffektiv) — der Cast
+  // engt denselben Wert nur typseitig ein, wie in EinfacheFristForm.
+  const [letzterLive, setLetzterLive] = useState<EinfacheFristEingaben | undefined>(undefined);
+  if (live && live !== letzterLive) {
+    setLetzterLive(live);
+    setForm((f) => ({ ...f, ereignis: live.start, laenge: live.laenge, einheit: live.einheit as SchkgEinheit, kanton: live.kanton }));
+    setAktiv(null);
+  }
 
   const pk = usePaneKlasse();
   const set = <K extends keyof FormState>(k: K, v: FormState[K]) => setForm((f) => ({ ...f, [k]: v }));

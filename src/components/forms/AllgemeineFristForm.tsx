@@ -25,6 +25,7 @@ import { PflichtDisclaimer } from '../PflichtDisclaimer';
 import { KANTONE } from '../../lib/kantone';
 import { getStandardKanton } from '../../lib/einstellungen';
 import { usePaneKlasse } from '../layout/PaneKontext';
+import type { EinfacheFristEingaben } from './einfacheFristTexte';
 
 // ─── Allgemeiner Fristenrechner (Free) – UI ─────────────────────────────────
 // Reine Darstellung; sämtliche Rechtsregeln liegen in lib/allgemeineFrist.ts.
@@ -54,7 +55,12 @@ const DEFAULTS: State = {
 // Mechanik-Presets seit FE-3 in lib/allgemeineFrist.ts (MECHANIK_PRESETS) —
 // der Preset-Index des Tagerechners listet sie von dort (§5).
 
-export function AllgemeineFristForm() {
+export function AllgemeineFristForm({ live }: {
+  /** Live-Brücke des Tagerechners (Auftrag David 1.9.2026): geänderte
+   *  Eingaben des einfachen Rechners oben — sie überschreiben die vier
+   *  geteilten Felder, damit der Rechenweg hier automatisch mitrechnet. */
+  live?: EinfacheFristEingaben;
+} = {}) {
   const pk = usePaneKlasse();
   const [tab, setTab] = useState<'frist' | 'rueckwaerts' | 'zwischen'>('frist');
   // FE-3: Preset-Index-Links tragen den Fach-Preset-Schlüssel (fp=) —
@@ -96,6 +102,18 @@ export function AllgemeineFristForm() {
   const [zustellDatum, setZustellDatum] = useState('');
 
   const set = <K extends keyof State>(k: K, v: State[K]) => setForm((f) => ({ ...f, [k]: v }));
+
+  // Live-Brücke: Sync während des Renderns (Muster «adjusting state», wie die
+  // Hash-Sync der Tagerechner-Seite). Referenzvergleich genügt — die Seite
+  // hält `live` im State und erzeugt je Meldung genau EIN neues Objekt.
+  // Initial undefined: eine frisch (per Regime-Wechsel oben) gemountete Form
+  // übernimmt die Werte schon im ersten Render.
+  const [letzterLive, setLetzterLive] = useState<EinfacheFristEingaben | undefined>(undefined);
+  if (live && live !== letzterLive) {
+    setLetzterLive(live);
+    setTab('frist');
+    setForm((f) => ({ ...f, start: live.start, laenge: live.laenge, einheit: live.einheit, kanton: live.kanton }));
+  }
 
   // P1.3 Validierung (sichtbare Meldungen statt stillem Verhalten)
   const fehler: string[] = [];

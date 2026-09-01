@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { berechneAllgemeineFrist, type Einheit } from '../../lib/allgemeineFrist';
 import { berechneFrist } from '../../lib/zpoFristen';
@@ -16,7 +16,7 @@ import { IcsExportButton } from '../IcsExportButton';
 import type { FristMarkierung } from '../start/FristenKalender';
 import { getStandardKanton } from '../../lib/einstellungen';
 import { usePaneKlasse } from '../layout/PaneKontext';
-import { EINHEITEN, FERIEN_OPTIONEN, icsTitelSchnellrechner, type Ferien } from './einfacheFristTexte';
+import { EINHEITEN, FERIEN_OPTIONEN, icsTitelSchnellrechner, type EinfacheFristEingaben, type Ferien } from './einfacheFristTexte';
 
 // ─── Einfacher Fristenrechner (S-5a FAHRPLAN-STRUKTUR-UMBAU) ────────────────
 //
@@ -69,11 +69,17 @@ function baueMarkierung(start: string, laenge: number, einheit: Einheit, ferien:
   }
 }
 
-export function EinfacheFristForm({ minimal = false, onErgebnis }: {
+export function EinfacheFristForm({ minimal = false, onErgebnis, onEingaben }: {
   minimal?: boolean;
   /** #7: meldet die Kalender-Markierung (Ereignis + Fristende) nach oben — für
    *  ALLE Regimes (jede Engine liefert ein ISO-Enddatum); null bei Fehleingabe. */
   onErgebnis?: (e: { markierung: FristMarkierung; kanton: Kanton } | null) => void;
+  /** Live-Brücke (Auftrag David 1.9.2026): meldet die gültigen Eingaben nach
+   *  oben, damit der Tagerechner sie in das Voll-Formular (mit Rechenweg)
+   *  weiterreicht. Meldet erst ab der ersten ÄNDERUNG nach dem Mount —
+   *  Permalink-/Preset-hydratisierte Voll-Formulare würden sonst beim Laden
+   *  von den Defaults dieses Rechners überschrieben. */
+  onEingaben?: (e: EinfacheFristEingaben) => void;
 } = {}) {
   // Datum-Default heute in LOKALER Zeit (Bug-Check §9, NIEDRIG: toISOString
   // wäre UTC — zwischen 00:00 und 02:00 Schweizer Zeit der Vortag). Auftrag David:
@@ -161,6 +167,25 @@ export function EinfacheFristForm({ minimal = false, onErgebnis }: {
     if (!onErgebnis) return;
     onErgebnis(markierung ? { markierung, kanton } : null);
   }, [onErgebnis, markierung, kanton]);
+
+  // Live-Brücke: gemeldet wird erst, sobald sich mindestens EIN Wert gegenüber
+  // dem Mount-Stand geändert hat (wertbasiert statt «ersten Lauf überspringen» —
+  // StrictMode doppelt Mount-Effekte, ein Lauf-Zähler wäre dort undicht), und
+  // nur bei gültigen Eingaben (kein NaN/Leerdatum in die Voll-Formulare drücken).
+  const mountEingaben = useRef<EinfacheFristEingaben | null>(null);
+  const brueckeAktiv = useRef(false);
+  useEffect(() => {
+    if (!onEingaben || !gueltig) return;
+    const e: EinfacheFristEingaben = { start, laenge, einheit: einheitEffektiv, ferien, kanton };
+    if (!brueckeAktiv.current) {
+      mountEingaben.current ??= e;
+      const i = mountEingaben.current;
+      if (e.start === i.start && e.laenge === i.laenge && e.einheit === i.einheit
+        && e.ferien === i.ferien && e.kanton === i.kanton) return;
+      brueckeAktiv.current = true; // ab der ersten echten Änderung meldet jede weitere
+    }
+    onEingaben(e);
+  }, [onEingaben, gueltig, start, laenge, einheitEffektiv, ferien, kanton]);
 
   const verfeinernZiel = ferien === 'zpo'
     ? zpoFristenLink({ ereignis: start, einheit: einheitEffektiv, laenge, verfahren: 'ordentlich', kanton, fristnatur: 'gesetzlich' })

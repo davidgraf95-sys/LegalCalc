@@ -1,6 +1,7 @@
-import { useState } from 'react';
+import { useCallback, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { EinfacheFristForm } from '../components/forms/EinfacheFristForm';
+import type { EinfacheFristEingaben, Ferien } from '../components/forms/einfacheFristTexte';
 import { AllgemeineFristForm } from '../components/forms/AllgemeineFristForm';
 import { ZpoFristenForm } from '../components/forms/ZpoFristenForm';
 import { SchkgFristenForm } from '../components/forms/SchkgFristenForm';
@@ -38,6 +39,14 @@ const VERFAHREN: { code: Verfahren; label: string }[] = [
 // «Allgemein» und sah die Parameter nie.
 const HASH_VERFAHREN: Record<string, Verfahren> = { '#zpo': 'zpo', '#schkg': 'schkg', '#allgemein': 'allgemein' };
 
+// Live-Brücke (Auftrag David 1.9.2026 «der Rechenweg aktualisiert sich nicht
+// automatisch»): das Ferien-Regime des einfachen Rechners oben bestimmt den
+// Voll-Tab unten. VwVG/BGG haben unten kein Formular — dort keine Zuordnung
+// (der einfache Rechner bleibt für diese Regimes die einzige Anzeige).
+const FERIEN_VERFAHREN: Partial<Record<Ferien, Verfahren>> = {
+  keine: 'allgemein', zpo: 'zpo', schkg: 'schkg',
+};
+
 // FE-4: Abzweigungs-Treffer — die Preset-Suche prüft deterministisch auch
 // die «Eigenes Regime»-Spezialrechner (katalogSuche über die Karten, §5);
 // reine Hinweise mit WARUM-Satz, keine Auto-Navigation.
@@ -67,6 +76,20 @@ export function RechnerTagerechner() {
     // fallen sie weg (die Forms hydratisieren ohnehin nur beim Mount).
     navigate({ search: '', hash: v === 'allgemein' ? '' : `#${v}` }, { replace: true });
   };
+  // Live-Brücke: gültige ÄNDERUNGEN im einfachen Rechner oben schalten den
+  // Voll-Tab passend um und fliessen als EIN stabiles Objekt (Referenz aus
+  // dem State) in das aktive Voll-Formular — dessen Rechenweg rechnet damit
+  // automatisch mit den oben eingegebenen Werten. Bewusst OHNE navigate():
+  // die Hash-Sync oben reagiert nur auf Hash-ÄNDERUNGEN, ein stehen
+  // bleibender alter Hash stört sie nicht — und ein navigate() je Tastendruck
+  // würde den Router bei jedem Zeichen neu rendern.
+  const [live, setLive] = useState<EinfacheFristEingaben | null>(null);
+  const uebernehmeEingaben = useCallback((e: EinfacheFristEingaben) => {
+    const v = FERIEN_VERFAHREN[e.ferien];
+    if (!v) return; // VwVG/BGG: unten kein Formular — nichts umschalten
+    setLive(e);
+    setVerfahren(v);
+  }, []);
   // FE-2 (FAHRPLAN-FRISTEN-EINHEIT): geführte Regime-Frage. Die Weiche
   // FRAGT, sie rät nicht (§2 — keine Erkennung aus Freitext); die Tabs
   // bleiben als Profi-Schnellzugriff, der URL-Hash unverändert.
@@ -110,7 +133,7 @@ export function RechnerTagerechner() {
             Rechner mit Vorauswahl darunter verwenden.
           </p>
         </div>
-        <EinfacheFristForm />
+        <EinfacheFristForm onEingaben={uebernehmeEingaben} />
       </Card>
       <Card>
         <div className="space-y-1 mb-5">
@@ -234,9 +257,13 @@ export function RechnerTagerechner() {
         {/* Nonce-Key: NUR die Preset-Wahl erzwingt einen Remount (die Form
             hydratisiert dann aus der frisch gesetzten URL — dieselbe Mechanik
             wie die Prefill-Brücken); Teilen-Klicks remounten nicht. */}
-        {verfahren === 'allgemein' && <AllgemeineFristForm key={presetNonce} />}
-        {verfahren === 'zpo' && <ZpoFristenForm key={presetNonce} />}
-        {verfahren === 'schkg' && <SchkgFristenForm key={presetNonce} />}
+        {/* Live-Brücke: `live` erreicht nur die zum Regime passende Form
+            (sonst rechnete etwa die ZPO-Form mit «Keine Ferien»-Eingaben —
+            §1: zwei rechtlich verschiedene Regimes nie stillschweigend
+            gleich behandeln). */}
+        {verfahren === 'allgemein' && <AllgemeineFristForm key={presetNonce} live={live?.ferien === 'keine' ? live : undefined} />}
+        {verfahren === 'zpo' && <ZpoFristenForm key={presetNonce} live={live?.ferien === 'zpo' ? live : undefined} />}
+        {verfahren === 'schkg' && <SchkgFristenForm key={presetNonce} live={live?.ferien === 'schkg' ? live : undefined} />}
       </Card>
     </div>
   );
