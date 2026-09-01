@@ -372,12 +372,23 @@ export function ErlassLeserKopf({
           Kind-Zone, wie schon das Aufhebungs-Banner. Neutraler Ton (`.lc-notice`,
           kein `-warn`/`-danger`): eine benannte Auslassung ist kein Fehler, nur
           eine Tatsache (§8). Wortlaut UNVERÄNDERT aus dem Generator (§7 —
-          nichts umformuliert, nichts geraten); bei mehreren Einträgen als Liste. */}
+          nichts umformuliert, nichts geraten); bei mehreren Einträgen als Liste.
+          Link-Quelle F1 (Gegenprüfung Opus, PR #616): `luecken.quelleUrl` ist bei
+          allen 15 heutigen Einträgen identisch zu `erlass.quelleUrl` (unabhängig
+          gemessen) — GENAU das Ziel, das oben schon als «Amtliche Fassung ↗»
+          verlinkt ist (Ä110, EIN ZIEL EIN NAME), darum derselbe Kanon-Name statt
+          des vorherigen, meist toten `erlass.pdfUrl` («Amtliches PDF» — 0 von 15
+          Einträgen trugen ein pdfUrl, der Link fehlte live). `pdfUrl` bleibt
+          Fallback für den (heute unbelegten) Fall eines Sidecars ohne quelleUrl. */}
       {luecken && luecken.hinweise.length > 0 && (
         <div role="note" className="lc-notice text-body-s leading-snug space-y-1.5">
           <p className="font-semibold">
             Nicht vollständig erfasst
-            {erlass.pdfUrl && <> — <QuellLink href={erlass.pdfUrl}>Amtliches PDF</QuellLink></>}
+            {luecken.quelleUrl
+              ? <> — <QuellLink href={luecken.quelleUrl} /></>
+              : erlass.pdfUrl
+                ? <> — <QuellLink href={erlass.pdfUrl}>Amtliches PDF</QuellLink></>
+                : null}
           </p>
           {luecken.hinweise.length === 1 ? (
             <p>{luecken.hinweise[0]}</p>

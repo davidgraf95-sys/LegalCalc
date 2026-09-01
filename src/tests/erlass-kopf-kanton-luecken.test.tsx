@@ -18,10 +18,13 @@ import type { KantonLueckeEintrag } from '../lib/normtext/browse';
 
 const PUB = join(process.cwd(), 'public');
 
+// F1-Fix (Gegenprüfung Opus, PR #616): KEIN erfundenes `pdfUrl` mehr — real
+// tragen 0 von 15 heutigen Lücken-Erlassen eines (unabhängig gemessen), ein
+// Fixture mit `pdfUrl` hätte den toten Zweig verdeckt gehalten.
 const kantonal: BrowseErlass = {
   key: 'ZH-999', kuerzel: 'TEST', titel: 'Test-Erlass (TEST)', ebene: 'kanton',
   sr: null, stand: '2026-01-01', status: 'snapshot', datei: 'kanton/ZH-999.json',
-  quelleUrl: 'https://www.zh.ch/erlass-999.html', pdfUrl: 'https://www.zh.ch/erlass-999.pdf',
+  quelleUrl: 'https://www.zh.ch/erlass-999.html',
 } as BrowseErlass;
 
 const EIN_HINWEIS: KantonLueckeEintrag = {
@@ -71,20 +74,39 @@ describe('§8-Nachzug — Kanton-Lücken-Hinweis im Erlass-Kopf', () => {
     for (const h of ZWEI_HINWEISE.hinweise) expect(html).toContain(h);
   });
 
-  it('verlinkt das amtliche PDF (erlass.pdfUrl) — dieselbe URL wie die Kopf-Aktion', () => {
+  // F1-Fix: die Link-Quelle ist `luecken.quelleUrl` (Sidecar), NICHT
+  // `erlass.pdfUrl` — der bisherige Code las das falsche, meist leere Feld
+  // (0 von 15 realen Einträgen trugen ein pdfUrl, der Link fehlte live).
+  it('F1: quelleUrl vorhanden → Link auf quelleUrl, Kanon-Name «Amtliche Fassung ↗» (Ä110)', () => {
     const html = kopf({ luecken: EIN_HINWEIS });
-    expect(html).toContain(`href="${kantonal.pdfUrl}"`);
+    expect(html).toContain(`href="${EIN_HINWEIS.quelleUrl}"`);
+    expect(html).toContain('Amtliche Fassung ↗');
+    expect(html).not.toContain('Amtliches PDF');
+  });
+
+  it('F1: kein quelleUrl im Sidecar, aber erlass.pdfUrl vorhanden → Fallback-Link «Amtliches PDF»', () => {
+    const ohneQuelle: KantonLueckeEintrag = { ...EIN_HINWEIS, quelleUrl: '' };
+    const mitPdf: BrowseErlass = { ...kantonal, pdfUrl: 'https://www.zh.ch/erlass-999.pdf' };
+    const html = renderToString(
+      <ErlassLeserKopf erlass={mitPdf} overline="Kanton" artikelAnzahl={12} bestimmungsWort="Paragraphen"
+        hinweis="H" luecken={ohneQuelle} />,
+    );
+    expect(html).toContain(`href="${mitPdf.pdfUrl}"`);
     expect(html).toContain('Amtliches PDF');
   });
 
-  it('ohne pdfUrl kein toter Link — der Hinweis steht trotzdem (§8)', () => {
-    const ohnePdf: BrowseErlass = { ...kantonal, pdfUrl: undefined };
+  it('F1: weder quelleUrl noch pdfUrl → kein toter Link, Hinweis steht trotzdem (§8)', () => {
+    const ohneQuelle: KantonLueckeEintrag = { ...EIN_HINWEIS, quelleUrl: '' };
     const html = renderToString(
-      <ErlassLeserKopf erlass={ohnePdf} overline="Kanton" artikelAnzahl={12} bestimmungsWort="Paragraphen"
-        hinweis="H" luecken={EIN_HINWEIS} />,
+      <ErlassLeserKopf erlass={kantonal} overline="Kanton" artikelAnzahl={12} bestimmungsWort="Paragraphen"
+        hinweis="H" luecken={ohneQuelle} />,
     );
     expect(html).toContain('Nicht vollständig erfasst');
     expect(html).toContain(EIN_HINWEIS.hinweise[0]);
+    // Scope auf den Notice-Block (nicht auf den ganzen Kopf — der trägt seinen
+    // eigenen «Amtliche Fassung»-Link in der Aktionen-Zeile IMMER, unabhängig
+    // von luecken): ohne Link schliesst der Absatz direkt nach dem Text.
+    expect(html).toContain('Nicht vollständig erfasst</p>');
   });
 
   it('leere hinweise-Liste: kein Hinweis (nichts Leeres anzeigen)', () => {
@@ -113,9 +135,13 @@ describe('Gegenprüfung — echte kanton-luecken.json/register.json-Daten', () =
     );
     for (const h of eintrag.hinweise) expect(html).toContain(h);
     expect(html).toContain('<ul');
-    // ZH-700.1 trägt heute (2.9.2026) KEIN pdfUrl im Register — der Hinweis
-    // steht trotzdem, ohne toten Link (§8, Randfall unabhängig gemessen).
+    // F1-Fix: ZH-700.1 trägt (wie alle 15) KEIN pdfUrl im Register — aber
+    // SEHR WOHL ein quelleUrl im Sidecar (identisch zu erlass.quelleUrl,
+    // unabhängig gemessen) — der Link steht jetzt, mit dem Kanon-Namen.
     expect(zh7001.pdfUrl).toBeUndefined();
+    expect(eintrag.quelleUrl).toBe(zh7001.quelleUrl);
+    expect(html).toContain(`href="${eintrag.quelleUrl}"`);
+    expect(html).toContain('Amtliche Fassung ↗');
     expect(html).not.toContain('Amtliches PDF');
   });
 
