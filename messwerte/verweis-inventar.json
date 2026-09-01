@@ -2,7 +2,7 @@
   "_zweck": "Verweis-Inventar des Normtext-Korpus (V-1, W2·20-VERWEIS-SCHAERFE). Basislinie: jede Abweichung Artefakt ↔ Neuberechnung ist ROT. Erzeugung und Grenzen: scripts/check-verweis-inventar.ts (Kopf).",
   "_regenerieren": "npm run check:verweis-inventar -- --schreiben",
   "_quellen": {
-    "normTextSha256": "0b9377cf311d685676a681dfa4a72c06c2ee25565600770a8823d5d18c90c1b5",
+    "normTextSha256": "8ed98e7a55313ba36f970bdd5d1904b066daa273dd217397372d3b5b9b0728ce",
     "guards": 23
   },
   "korpus": {
@@ -11,26 +11,26 @@
     "texte": 214419
   },
   "gesamt": {
-    "stellen": 34630,
-    "self": 19842,
-    "fremd": 5001,
-    "text": 9787,
+    "stellen": 34683,
+    "self": 19652,
+    "fremd": 6122,
+    "text": 8909,
     "selbstmarker": 927
   },
   "klassen": [
     {
       "klasse": "anker-fedlex",
       "entscheid": "FREMD",
-      "stellen": 2460,
-      "erlasse": 329,
+      "stellen": 2607,
+      "erlasse": 339,
       "selbstmarker": 0,
       "was": "Voll zitierter Bund-Anker «Art. N GESETZ» (NORM_IM_TEXT)"
     },
     {
       "klasse": "anker-kette",
       "entscheid": "FREMD",
-      "stellen": 63,
-      "erlasse": 32,
+      "stellen": 69,
+      "erlasse": 36,
       "selbstmarker": 0,
       "was": "Ketten-Glied, Kürzel aus dem Anker-Ende propagiert (i.V.m.)"
     },
@@ -53,48 +53,48 @@
     {
       "klasse": "art-desder-guard",
       "entscheid": "TEXT",
-      "stellen": 1285,
-      "erlasse": 386,
+      "stellen": 948,
+      "erlasse": 337,
       "selbstmarker": 0,
       "was": "«Art. N des/der/über/vom …» ohne Klammer-Kürzel"
     },
     {
       "klasse": "art-f41",
       "entscheid": "TEXT",
-      "stellen": 351,
-      "erlasse": 153,
+      "stellen": 302,
+      "erlasse": 130,
       "selbstmarker": 0,
       "was": "bare «Art. N» im §-designierten Erlass — Self-Sperre (F41)"
     },
     {
       "klasse": "art-kein-token",
       "entscheid": "TEXT",
-      "stellen": 1043,
-      "erlasse": 240,
+      "stellen": 957,
+      "erlasse": 218,
       "selbstmarker": 3,
       "was": "bare «Art. N» — Bestimmung existiert im Erlass nicht"
     },
     {
       "klasse": "art-m12-kuerzel",
       "entscheid": "TEXT",
-      "stellen": 1596,
-      "erlasse": 293,
+      "stellen": 1005,
+      "erlasse": 266,
       "selbstmarker": 0,
       "was": "«Art. N KÜRZEL» (unbekanntes Kürzel) — Self unterdrückt (M12)"
     },
     {
       "klasse": "art-n2-fremdkuerzel",
       "entscheid": "TEXT",
-      "stellen": 3379,
-      "erlasse": 237,
+      "stellen": 3861,
+      "erlasse": 252,
       "selbstmarker": 0,
       "was": "«Art. N … FEDLEX-Kürzel» (N2 Form A) — Self unterdrückt"
     },
     {
       "klasse": "art-self",
       "entscheid": "SELF",
-      "stellen": 13071,
-      "erlasse": 474,
+      "stellen": 12899,
+      "erlasse": 471,
       "selbstmarker": 606,
       "was": "bare «Art. N» → Sprung im eigenen Erlass"
     },
@@ -115,12 +115,20 @@
       "was": "Zitat in Items unter unauflösbarem Fremdgesetz-Chapeau (M6)"
     },
     {
+      "klasse": "n2b-genitiv",
+      "entscheid": "FREMD",
+      "stellen": 666,
+      "erlasse": 211,
+      "selbstmarker": 0,
+      "was": "Form-B-Glied über kuratierten Kurztitel-Genitiv ohne Klammer («des Bankengesetzes», V-7a; Geltung je Ebene)"
+    },
+    {
       "klasse": "n2b-glied",
       "entscheid": "FREMD",
-      "stellen": 682,
-      "erlasse": 229,
+      "stellen": 342,
+      "erlasse": 148,
       "selbstmarker": 0,
-      "was": "Glied der Form B «Artikel N … des <Name> (KÜRZEL)»"
+      "was": "Glied der Form B «Artikel N … des <Name> (KÜRZEL)» — Klammer-Kürzel"
     },
     {
       "klasse": "n2b-glied-text",
@@ -129,6 +137,14 @@
       "erlasse": 0,
       "selbstmarker": 0,
       "was": "Form-B-Glied ohne Ziel-Token (heute strukturell 0 — NormText übergibt kein Prädikat)"
+    },
+    {
+      "klasse": "n2b-titel",
+      "entscheid": "FREMD",
+      "stellen": 327,
+      "erlasse": 160,
+      "selbstmarker": 0,
+      "was": "Form-B-Glied über amtlichen Volltitel «Bundesgesetzes/Verordnung [vom Datum] über …» (V-7b)"
     },
     {
       "klasse": "paragraf-fremd-grosswort",
@@ -189,8 +205,8 @@
     {
       "klasse": "plural-glied-fremd",
       "entscheid": "FREMD",
-      "stellen": 1144,
-      "erlasse": 130,
+      "stellen": 1459,
+      "erlasse": 153,
       "selbstmarker": 0,
       "was": "A10-Glied mit aufgelöstem Fremdgesetz-Signal"
     },
@@ -205,7 +221,7 @@
     {
       "klasse": "plural-glied-self",
       "entscheid": "SELF",
-      "stellen": 3476,
+      "stellen": 3458,
       "erlasse": 203,
       "selbstmarker": 0,
       "was": "A10-Glied → Sprung im eigenen Erlass"
@@ -213,8 +229,8 @@
     {
       "klasse": "plural-region-unterdrueckt",
       "entscheid": "TEXT",
-      "stellen": 865,
-      "erlasse": 132,
+      "stellen": 568,
+      "erlasse": 96,
       "selbstmarker": 0,
       "was": "A10-Region mit unauflösbarem Fremdnamen — ganz unterdrückt"
     }

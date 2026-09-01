@@ -35,12 +35,25 @@ Leitplanke überall: **kein Link ist besser als ein falscher Link** (§1); nur v
   Der Grundsatz-Entscheid «korpus-interne Bundes-Fremdziele intern statt Fedlex-extern
   adressieren» hängt an 16 Wächter-Zusicherungen (`NormChip.tsx:76-88`) und ist HIER NICHT
   enthalten — eigener Folge-Schritt nach V-1-Baseline.
-- **V-7 · Erlassnamen-Positivliste (Ausbaustufe, offen)** — zwei gemessene Restklassen
-  brauchen denselben Unterbau: (a) des/der-Guard-Stellen (812; ~20 % echte Self-Links in der
-  V-6-Stichprobe — NIE über eine weichere Guard-Regel lösen), (b) ausgeschriebene
-  Fremdgesetz-Namen mit EINEM Grossbuchstaben (78 Bund-Stellen, Mehrheit echt
-  selbstbezüglich). Auflösung nur über eine kuratierte Namen→Erlass-Liste (Vorbild
-  GENITIV_GESETZ), nie heuristisch (§1).
+- **V-7 · Erlassnamen-Positivliste** *(M; Bund-Stufe gebaut 1.9.2026)* — zwei gemessene
+  Restklassen brauchen denselben Unterbau: (a) des/der-Guard-Stellen (812; ~20 % echte
+  Self-Links in der V-6-Stichprobe — NIE über eine weichere Guard-Regel lösen), (b)
+  ausgeschriebene Fremdgesetz-Namen mit EINEM Grossbuchstaben (78 Bund-Stellen, Mehrheit
+  echt selbstbezüglich). Auflösung nur über eine kuratierte Namen→Erlass-Liste (Vorbild
+  GENITIV_GESETZ), nie heuristisch (§1). **Gebaut:** `src/lib/fedlex/positivliste.ts` —
+  Kurztitel-Genitive mit Geltung je Ebene (`bund`, wenn ein Kanton den Namen ebenfalls
+  vergibt; Falschlink BE-154.21 KDSG→DSG auf main), amtliche Volltitel «Bundesgesetzes/
+  Verordnung [vom Datum] über …» (Register-Titel wörtlich), Klammer-Nachprüfung; Wächter
+  `fedlex-positivliste.test.ts` belegt jeden Eintrag am Bund-Register. Bilanz im V-1-Tor:
+  FREMD 4 900→6 048, 198 falsche Self-Links entfernt (Dossier
+  `bibliothek/normtext/verweis-positivliste-messung-2026-09-01.md`). **Offen:** kantonale
+  Namensliste («§ N des Personalgesetzes», 916 Stellen), Trägergesetz-Kontext («des
+  Gesetzes» 169), Kurztitel ohne FEDLEX-Ziel (Gaststaatgesetz 28 …), historische Titel.
+- **V-8 · Amtliche Kürzel-Schreibweisen** *(S; gebaut 1.9.2026)* — 601 «Art. N KÜRZEL»-
+  Stellen trugen die amtliche Mischschreibung (BankG, AsylG, FinfraG, GSchG …), die
+  FEDLEX-Tabelle den Grossbuchstaben-Key: unbekanntes Kürzel ⇒ Text. Tabelle
+  `KUERZEL_SCHREIBWEISEN` (Beleg: Titel-Klammer im Register) wirkt in Anker, N2, Form B
+  und Chapeau-Eindeutigkeit; M12-Klasse 1 572→991.
 - **V-5 · Zeit-Kante (Übergangs-/Altrecht-Selbstverweise)** *(offen, Konzept nötig)* —
   93 + 72 Stellen meinen eine Vorfassung; Sprung in die geltende Fassung ist ohne Hinweis
   irreführend (§8). Nicht bauen ohne Konzept (hängt an W2·5g-ZEIT); nur im V-1-Report
@@ -49,7 +62,17 @@ Leitplanke überall: **kein Link ist besser als ein falscher Link** (§1); nur v
 **Risikopfad-Hinweis:** Bau berührt `src/components/NormText.tsx`/`NormChip.tsx`/
 `inhalt-sprung.tsx` (kein Risikopfad) — NICHT `src/lib/normtext/**` und NICHT
 `scripts/normtext/**`; der Resolver konsumiert das Manifest zur Laufzeit. Damit keine
-Gegenprüfungs-Pflicht per Pfad; die fachliche Schärfe sichert das V-1-Tor.
+Gegenprüfungs-Pflicht per Pfad; die fachliche Schärfe sichert das V-1-Tor. V-7/V-8 (1.9.)
+liegen in `src/lib/fedlex/**` (Erkenner-Tabellen, kein Risikopfad nach `istRisikoPfad`);
+die kuratierten Einträge gehen als prüfbare Liste in den PR (Zweitblick, Abnahme David).
+
+### §1a · Bekannter konservativer Verlust (Auflage Gegenprüfung 1.9.2026, PR #611)
+
+Die Fortsetzungs-Regel des Volltitel-Zweigs (kein Link, wenn hinter dem Titel-Fragment ein weiteres
+Titelwort folgt, ohne bestätigendes Datum) nimmt rund 11 **richtige** Links mit (z. B. AR-721.1 art_77
+«…des Bundesgesetzes über den Schutz der Gewässer betreffend die Ausscheidung…», AR-832.311 art_7 KVG).
+Bewusst so belassen: §1 «kein Link besser als falscher». Wer sie zurückholen will, braucht eine
+Titel-Vollform je Ziel (nicht das Präfix) — kein Regex-Nachbau.
 
 ## §2 · Mess-Kern (31.8.2026, Kurzform)
 
