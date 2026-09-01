@@ -1,0 +1,37 @@
+[
+  {
+    "paket": "@fontsource-variable/geist@5.2.9",
+    "grund": "OFL-1.1 (SIL Open Font License) — bereits produktiv eingebunden (src/main.tsx, src/index.css). Font-Lizenz erlaubt Bündelung/Weitergabe, ist aber nicht auf der Copyleft-Allowlist. Wartet auf David: Font-Lizenz fachlich abnehmen oder OFL-1.1 in die Allowlist aufnehmen.",
+    "datum": "2026-09-02"
+  },
+  {
+    "paket": "@fontsource-variable/geist-mono@5.3.0",
+    "grund": "OFL-1.1 (SIL Open Font License) — bereits produktiv eingebunden (src/main.tsx, src/index.css). Siehe Eintrag @fontsource-variable/geist. Wartet auf David.",
+    "datum": "2026-09-02"
+  },
+  {
+    "paket": "@fontsource-variable/source-serif-4@5.2.9",
+    "grund": "OFL-1.1 (SIL Open Font License) — bereits produktiv eingebunden (src/main.tsx, src/index.css). Siehe Eintrag @fontsource-variable/geist. Wartet auf David.",
+    "datum": "2026-09-02"
+  },
+  {
+    "paket": "pako@1.0.11",
+    "grund": "(MIT AND Zlib) — transitive Abhängigkeit von docx→jszip (Prod-Dependency, Vorlagen-Export). Zlib ist eine permissive Lizenz, steht nur nicht auf der engen Allowlist. Wartet auf David: Zlib in Allowlist aufnehmen oder Paket separat abnehmen.",
+    "datum": "2026-09-02"
+  },
+  {
+    "paket": "pako@2.1.0",
+    "grund": "(MIT AND Zlib) — transitive Abhängigkeit von jspdf→fast-png (Prod-Dependency, PDF-Export). Siehe Eintrag pako@1.0.11. Wartet auf David.",
+    "datum": "2026-09-02"
+  },
+  {
+    "paket": "apca-w3@0.1.9",
+    "grund": "\"Limited W3 License\" (Referenzimplementierung des APCA-Kontrastmodells) — nur als devDependency in scripts/check-farbwelt.ts genutzt (Design-Token-QS, wird nicht ausgeliefert). Bereits im Einsatz. Wartet auf David: Lizenztext prüfen oder Alternative evaluieren.",
+    "datum": "2026-09-02"
+  },
+  {
+    "paket": "colorparsley@0.1.8",
+    "grund": "AGPL-3.0 — transitive Abhängigkeit von apca-w3, ausschliesslich in scripts/check-farbwelt.ts (devDependency, nie ausgeliefert/verteilt). Bereits im Einsatz. AGPL ist die schärfste Copyleft-Stufe hier — Wartet auf David: fachliche Prüfung mit Priorität, ob Ersatz nötig ist, auch wenn nichts an Endnutzer verteilt wird.",
+    "datum": "2026-09-02"
+  }
+]
