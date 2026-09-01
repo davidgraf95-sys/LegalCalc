@@ -15,7 +15,7 @@
 //  – Routenzahl ≠ deklarierter Zähler → Katalog und Zähler nachführen
 //
 // Aufruf: npm run prerender (setzt frisches `vite build` voraus)
-import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';
+import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { dirname, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { jsonLdFuerPfad, metaFuerPfad, prerenderRouten, SITE_URL } from '../src/lib/seo';
@@ -93,6 +93,7 @@ function rendereTemplate(
   jsonLd: object | null,
   inhalt: string,
   kontext: string,
+  preloads: string[] = [],
 ): string {
   let out = template;
   out = out.replace(/<title>[^<]*<\/title>/, () => `<title>${esc(meta.titel)}</title>`);
@@ -113,9 +114,24 @@ function rendereTemplate(
   const ldTag = jsonLd
     ? `    <script type="application/ld+json">${JSON.stringify(jsonLd).replace(/</g, '\\u003c')}</script>\n`
     : '';
+  // Vorab-Anforderung der Nutzlast, die diese Seite mit Sicherheit braucht
+  // (QS-PERF, 1.9.2026 — Kandidat K2 des Kanton-Reader-Profils in der Variante
+  // OHNE zweite Wahrheit). Der Prerender kennt den Dateipfad zur BAUZEIT aus
+  // demselben Manifest, das auch der Client liest; im Client bleibt das
+  // Register die einzige Quelle des Dateinamens (§5) — der Preload ist reines
+  // Cache-Vorwärmen und beeinflusst KEINE Auswahl. Ein falscher Preload waere
+  // ein 404 im Netzpanel, nie ein falscher Inhalt.
+  //
+  // `as="fetch" crossorigin="anonymous"` ist Absicht: der Client holt die
+  // Dateien mit `fetch()` (mode cors, credentials same-origin). Ohne
+  // `crossorigin` legte der Preload eine no-cors-Anforderung an, die der
+  // spaetere `fetch()` NICHT wiederverwenden koennte — die Datei kaeme zweimal.
+  const preloadTags = preloads
+    .map((href) => `    <link rel="preload" as="fetch" crossorigin="anonymous" href="${esc(href)}" />\n`)
+    .join('');
   out = out.replace(
     '</head>',
-    `    <link rel="canonical" href="${meta.canonical}" />\n${ldTag}  </head>`,
+    `${preloadTags}    <link rel="canonical" href="${meta.canonical}" />\n${ldTag}  </head>`,
   );
   return out.replace(ROOT_MARKER, () => `<div id="root">${inhalt}</div>`);
 }
@@ -305,7 +321,20 @@ for (const e of snapshotErlasse) {
     const inhalt = erlassVolltextHtml(e, datei, currencyMap[e.key]);
     if (inhalt.includes('<script')) throw new Error('Inline-Script im Erlass-Volltext — Builder prüfen');
     const meta = metaFuerErlass(e);
-    const html = rendereTemplate(meta, jsonLdFuerErlass(e), inhalt, meta.pfad);
+    // Die drei Dateien, die der Leser dieser Seite mit Sicherheit anfordert, in
+    // den Kopf vorziehen. Ohne sie laufen sie erst nach drei seriellen Wellen
+    // an (CDP-Wasserfall 1.9.2026, /gesetze/bund/OR @4x CPU + langsames 4G:
+    // Register ab 2672 ms, Snapshot erst ab 5215 ms von 10 009 ms — 52 % der
+    // Wartezeit vergehen, bevor die eigentliche Nutzlast bestellt ist).
+    // `e.ebene` ist die DATEN-Ebene (die Route kann abweichen, Befund 45) —
+    // genau die, die `datenEbeneVonRoute()` im Client herstellt.
+    const strukturRel = `normtext/struktur/${e.ebene}/${e.key}.json`;
+    const preloads = [`/normtext/${e.datei}`, '/normtext/register.json'];
+    // Das Struktur-Sidecar ist optional (404 = Leser ohne Gliederung, kein
+    // Fehler). Nur vorladen, wenn es existiert — ein Preload auf eine fehlende
+    // Datei waere eine Konsolenwarnung ohne Nutzen.
+    if (existsSync(join(PUBLIC, strukturRel))) preloads.push(`/${strukturRel}`);
+    const html = rendereTemplate(meta, jsonLdFuerErlass(e), inhalt, meta.pfad, preloads);
     // Die Datei liegt unter der ROUTEN-Ebene, nicht unter der Daten-Ebene — sonst
     // stünde die Seite nicht an ihrer eigenen canonical-URL (Befund 45).
     schreibeDetail(join(DIST, 'gesetze', routenEbene(e), `${e.key}.html`), html);
