@@ -21,9 +21,14 @@ export { artikelToken, fedlexUrl } from './fedlex/url';
 export {
   erkenneFedlexGesetz,
   erkenneGenitivGesetz,
+  erkenneTitelGesetz,
   chapeauZielFremdgesetz,
   fedlexLinkFuerArtikel,
 } from './fedlex/erkennung';
+export {
+  GENITIV_EINTRAEGE, TITEL_EINTRAEGE, KUERZEL_SCHREIBWEISEN, titelGeltung,
+} from './fedlex/positivliste';
+export type { FremdEbene, Geltung, GenitivEintrag, TitelEintrag, TitelKopf } from './fedlex/positivliste';
 
 export {
   NORM_IM_TEXT,
@@ -32,4 +37,4 @@ export {
   normVerweiseImText,
   artikelnPluralVerweise,
 } from './fedlex/parser';
-export type { FremdRoutingGlied, NormVerweisSpan, PluralRegion } from './fedlex/parser';
+export type { FremdRoutingGlied, FremdSignal, NormVerweisSpan, PluralRegion } from './fedlex/parser';
