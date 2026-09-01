@@ -159,16 +159,30 @@ const N2_ARTNR_RE = new RegExp(N2_ARTNR, 'g');
 const KLAMMER_NACH_NAME = new RegExp('^\\s*(?:vom\\s+' + N2_DATUM + '\\s*)?\\(([^()]{1,40})\\)');
 // ─── Fix-Runde 1 zu W2·20 (Gegenprüfung 1.9.2026): zwei Kanten desselben Lecks ─
 //
-// (a) PRÄFIX-BINDUNG. Kurztitel und Titel-Fragment endeten bloss mit `\b`. Ein
-//     LÄNGERER amtlicher Titel, dessen Präfix in der Positivliste steht, band
-//     still auf den kürzeren Erlass — belegter Falschlink vor dem Fix:
+// (a) PRÄFIX-BINDUNG. Das Titel-Fragment endete bloss mit `\b`. Ein LÄNGERER
+//     amtlicher Titel, dessen Präfix in der Positivliste steht, band still auf
+//     den kürzeren Erlass — belegter Falschlink vor dem Fix:
 //     kanton/BS/132.100/art_4 «Art. 5 des Bundesgesetzes über die politischen
 //     Rechte der Auslandschweizer vom 19. Dezember 1975» → BPR (SR 161.1);
-//     gemeint ist das BPRAS (SR 161.5). Folgt hinter dem Namen ein weiteres
+//     gemeint ist das BPRAS (SR 161.5). Folgt hinter dem Fragment ein weiteres
 //     TITELWORT (grossgeschrieben, ggf. hinter bis zu drei amtlichen Binde-
 //     wörtern), ist der zitierte Erlass NICHT der gefundene → kein Link (§1).
 //     Nicht als Fortsetzung zählen: Datums-Einschub («vom …» — «vom» steht
 //     bewusst NICHT in der Bindewort-Liste), Klammer, Komma und Satzende.
+//     ZWEI bewusste Grenzen (Messung 1.9.2026, 199 Fortsetzungs-Stellen im
+//     Korpus — die Regel darf nur den Falschlink treffen, nicht den Bestand):
+//     · Nur die VOLLTITEL-Form (Kopf + Fragment) ist ein Titel-PRÄFIX. Ein
+//       Kurztitel-Genitiv («des Obligationenrechts über den Auftrag», «des
+//       Strafgesetzbuches im Strafregister») ist bereits vollständig; was folgt,
+//       ist ein thematischer Zusatz, kein längerer Titel — und ein gleichnamiger
+//       Erlass wird dort schon von Geltung und Klammer-Nachprüfung abgefangen
+//       (kein Vorfall, also kein zweiter Wächter — CLAUDE.md §17 Gegengewicht).
+//     · Bestätigt das ZITIERTE Datum den Ziel-Erlass (Erlassdatum-Treffer), ist
+//       der Erlass identifiziert; die Fortsetzung ist dann eine alte Titel-
+//       fassung oder ein Zweck-Zusatz («… vom 20. Dezember 1946 über die Alters-
+//       und Hinterlassenenversicherung für die Erfüllung ihrer Aufgaben»).
+//       Im BS-Fall steht das Datum HINTER der Fortsetzung und wird darum nicht
+//       als Bestätigung gelesen — und es widerspräche dem BPR ohnehin.
 // (b) ZEIT-KANTE. Das Datum wurde gelesen und ungeprüft verworfen; siehe
 //     `datumPasst` (positivliste.ts) für Belege und Quelle des Erlassdatums.
 const TITEL_FORTSETZUNG = new RegExp(
@@ -236,10 +250,10 @@ export function fremdRoutingFormB(
   // Fix-Runde 1 (a): der Name endet hier — folgt ein weiteres Titelwort, meint
   // der Text einen LÄNGEREN Erlass-Titel (BS-132.100 art_4 → BPRAS, nicht BPR).
   const nachName = rest.slice(m[0].length);
-  if (signal !== 'klammer' && TITEL_FORTSETZUNG.test(nachName)) return null;
   // Fix-Runde 1 (b): zitiertes Datum muss das Erlassdatum des Ziels sein.
   const datum = DATUM_IN_EINHEIT.exec(m[0])?.[1] ?? DATUM_NACH_NAME.exec(nachName)?.[1] ?? null;
   if (!datumPasst(gesetz, datum)) return null;
+  if (signal === 'titel' && !datum && TITEL_FORTSETZUNG.test(nachName)) return null;
   let regionEnd = m[0].length;
   if (signal !== 'klammer') {
     const k = KLAMMER_NACH_NAME.exec(rest.slice(regionEnd));
@@ -556,13 +570,12 @@ export function artikelnPluralVerweise(text: string, ebene: FremdEbene = 'bund')
       if (fremd && !sm[1]) {
         const k = KLAMMER_NACH_NAME.exec(nachSignal);
         if (k && erkenneFedlexGesetz(k[1]) !== fremd) fremd = null;
-        // Fix-Runde 1 (a): weiteres Titelwort ⇒ längerer Titel ⇒ kein Link (§1).
-        if (fremd && TITEL_FORTSETZUNG.test(nachSignal)) fremd = null;
       }
-      // Fix-Runde 1 (b): Zeit-Kante — zitiertes Datum gegen das Erlassdatum.
+      // Fix-Runde 1 (b) Zeit-Kante + (a) Titel-Ende — Regeln wie im Singular-Pfad.
       if (fremd) {
         const datum = DATUM_IN_EINHEIT.exec(sm[0])?.[1] ?? DATUM_NACH_NAME.exec(nachSignal)?.[1] ?? null;
         if (!datumPasst(fremd, datum)) fremd = null;
+        else if (sm[5] && !datum && TITEL_FORTSETZUNG.test(nachSignal)) fremd = null;
       }
       if (fremd) end = pos + sm[0].length;
       else unterdruecken = true; // Klammer-Kürzel ∉ FEDLEX / Name nicht auflösbar → nie ein Falsch-Ziel (§1)

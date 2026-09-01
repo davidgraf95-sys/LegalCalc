@@ -11,10 +11,10 @@
     "texte": 210120
   },
   "gesamt": {
-    "stellen": 34494,
-    "self": 19647,
-    "fremd": 6048,
-    "text": 8799,
+    "stellen": 34491,
+    "self": 19638,
+    "fremd": 6004,
+    "text": 8849,
     "selbstmarker": 927
   },
   "klassen": [
@@ -53,24 +53,24 @@
     {
       "klasse": "art-desder-guard",
       "entscheid": "TEXT",
-      "stellen": 930,
-      "erlasse": 329,
+      "stellen": 945,
+      "erlasse": 334,
       "selbstmarker": 0,
       "was": "«Art. N des/der/über/vom …» ohne Klammer-Kürzel"
     },
     {
       "klasse": "art-f41",
       "entscheid": "TEXT",
-      "stellen": 300,
-      "erlasse": 129,
+      "stellen": 302,
+      "erlasse": 130,
       "selbstmarker": 0,
       "was": "bare «Art. N» im §-designierten Erlass — Self-Sperre (F41)"
     },
     {
       "klasse": "art-kein-token",
       "entscheid": "TEXT",
-      "stellen": 929,
-      "erlasse": 203,
+      "stellen": 933,
+      "erlasse": 205,
       "selbstmarker": 3,
       "was": "bare «Art. N» — Bestimmung existiert im Erlass nicht"
     },
@@ -93,7 +93,7 @@
     {
       "klasse": "art-self",
       "entscheid": "SELF",
-      "stellen": 12875,
+      "stellen": 12885,
       "erlasse": 465,
       "selbstmarker": 606,
       "was": "bare «Art. N» → Sprung im eigenen Erlass"
@@ -117,7 +117,7 @@
     {
       "klasse": "n2b-genitiv",
       "entscheid": "FREMD",
-      "stellen": 663,
+      "stellen": 661,
       "erlasse": 207,
       "selbstmarker": 0,
       "was": "Form-B-Glied über kuratierten Kurztitel-Genitiv ohne Klammer («des Bankengesetzes», V-7a; Geltung je Ebene)"
@@ -125,8 +125,8 @@
     {
       "klasse": "n2b-glied",
       "entscheid": "FREMD",
-      "stellen": 343,
-      "erlasse": 146,
+      "stellen": 335,
+      "erlasse": 144,
       "selbstmarker": 0,
       "was": "Glied der Form B «Artikel N … des <Name> (KÜRZEL)» — Klammer-Kürzel"
     },
@@ -141,8 +141,8 @@
     {
       "klasse": "n2b-titel",
       "entscheid": "FREMD",
-      "stellen": 347,
-      "erlasse": 164,
+      "stellen": 323,
+      "erlasse": 158,
       "selbstmarker": 0,
       "was": "Form-B-Glied über amtlichen Volltitel «Bundesgesetzes/Verordnung [vom Datum] über …» (V-7b)"
     },
@@ -205,7 +205,7 @@
     {
       "klasse": "plural-glied-fremd",
       "entscheid": "FREMD",
-      "stellen": 1469,
+      "stellen": 1459,
       "erlasse": 153,
       "selbstmarker": 0,
       "was": "A10-Glied mit aufgelöstem Fremdgesetz-Signal"
@@ -213,15 +213,15 @@
     {
       "klasse": "plural-glied-kein-token",
       "entscheid": "TEXT",
-      "stellen": 65,
-      "erlasse": 33,
+      "stellen": 63,
+      "erlasse": 32,
       "selbstmarker": 0,
       "was": "A10-Glied — Bestimmung existiert im Erlass nicht"
     },
     {
       "klasse": "plural-glied-self",
       "entscheid": "SELF",
-      "stellen": 3477,
+      "stellen": 3458,
       "erlasse": 203,
       "selbstmarker": 0,
       "was": "A10-Glied → Sprung im eigenen Erlass"
@@ -229,8 +229,8 @@
     {
       "klasse": "plural-region-unterdrueckt",
       "entscheid": "TEXT",
-      "stellen": 537,
-      "erlasse": 95,
+      "stellen": 568,
+      "erlasse": 96,
       "selbstmarker": 0,
       "was": "A10-Region mit unauflösbarem Fremdnamen — ganz unterdrückt"
     }
