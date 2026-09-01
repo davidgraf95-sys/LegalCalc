@@ -27,6 +27,11 @@ zurück: QS-BASIS (Sequenz-Marker erfüllt), W2·13-KANTONE-DATEN (Programm läu
 seit Tagen). «Tabellen lesbar» von W2·5g-ZEIT nach W2·5l-NORMTEXT-B2 verschoben (Text-Treue,
 nicht Zeit). Zwei David-Fragen neu: FR/IT-Zielbild, Kantons-Reihenfolge.
 
+**Nachtrag David (Chat, 1.9.2026) zu den zwei offenen Fragen:** «nur deutschschweiz, kantonsreihenfolge
+passt. mach aber zuerst zh und bs und dann der rest. vorallem später die franz italienischen» —
+Zielbild = Deutschschweiz; Reihenfolge ZH → BS → BE → AG → SG → LU, fr/it-Kantone und -Fassungen
+zuletzt. Beide `@david-fragen` damit gelöscht. Dazu «bau bis ich stop sage» (Dauer-Baumandat erneuert).
+
 **Begründungszeile zur Zurückstellung:** kein Schritt gestrichen; die Prüfstrasse ist reif genug
 (CI-Fehlerrate 10 %, 0 von 338 Tor-Läufen rot seit letztem Snapshot), Prozessarbeit läuft nach §17
 reaktiv weiter. Analytics bewusst nicht aktiviert — David ist heute der einzige Nutzer.

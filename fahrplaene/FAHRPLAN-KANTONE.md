@@ -608,6 +608,10 @@ nachrangig («token spahren egal»). Stadt-Zürich-Volltexte bleiben AUS
 
 ### 5.1 Querschnitt-Regeln (gelten für jede Runde)
 
+- **Reihenfolge-Entscheid David 1.9.2026 (überschreibt K-G5 ZH→BE→VD→AG→SG→LU→GE):** Zielbild
+  Deutschschweiz. ZH und BS zuerst perfektionieren, dann BE → AG → SG → LU; VD/GE/TI und fr/it-
+  Fassungen ausdrücklich zuletzt. Kanton-Generik bleibt Pflicht (jede Runde wirkt korpusweit).
+
 1. **Kanton-generisch bauen — «gilt für alle» als Default (verschärft,
    David 31.8.2026 zweite Weisung):** Was für alle Kantone sinnvoll ist,
    wird so gebaut, dass es für alle Kantone GILT — nicht nur dokumentiert.
