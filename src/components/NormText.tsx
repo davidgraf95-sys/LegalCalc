@@ -584,7 +584,9 @@ function restMitIntern(s: string, key: string, intern?: InternRefs): React.React
     // («Artikel 5 Absatz 1 über ein Projekt» UVPV 6a, «Art. 111 Abs. 1 der
     // Quellensteuer unterliegen» NW-521.1 118, «Artikel 109 Absatz 1bis über
     // die Tagfahrlichter» VTS 222m). Kein Link ist besser als ein falscher —
-    // ein RICHTIGER Link ist aber besser als keiner (§1/§8).
+    // ein RICHTIGER Link ist aber besser als keiner (§1/§8). V-7 (1.9.2026) holt
+    // die belegbaren Fälle VOR diesem Guard über die Form-B-Positivliste heraus
+    // (Kurztitel/Volltitel, `positivliste.ts`): Guard-Klasse 1 281→930 Stellen.
     if (!selbst && /^\s+(?:des|der|über|vom)\b/.test(rest)) continue;
     // N2 (Form A, ABGEKÜRZTE Kürzel-Form): Nennt der Verweis ein ANDERES
     // Bundesgesetz («Artikel 1a Absatz 1 Buchstabe c AHVG» in der AHVV → AHVG),
