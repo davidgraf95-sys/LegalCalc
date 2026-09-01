@@ -4,8 +4,10 @@ Alle **datierten Parameter** im Code: Werte, die sich ausserhalb des Repos ände
 und darum regelmässig geprüft werden müssen. Wer einen neuen datierten Wert
 verdrahtet, trägt ihn HIER ein (mit Fundstelle, Stand, Prüfrhythmus).
 
-Stand des Registers: 29.8.2026 (fortlaufend gepflegt — zuletzt inhaltlich
-ergänzt um die angekündigte TI-LTORF-Fassung per 1.1.2027 samt der Feststellung,
+Stand des Registers: 2.9.2026 (fortlaufend gepflegt — zuletzt inhaltlich
+ergänzt um die BWO-Publikation vom 1.9.2026 zum hypothekarischen
+Referenzzinssatz (unverändert 1.25 %, gültig ab 2.9.2026, nächste Publikation
+1.12.2026); davor die angekündigte TI-LTORF-Fassung per 1.1.2027 samt der Feststellung,
 dass die Wiedervorlage-Automatik kantonale Quellen strukturell nicht sieht; davor
 die Fassungs-Bindung der PDF-erfassten Kantons-Snapshots, Fedlex-Pin-Kanonik/
 GL-LexWork-Migration/SG-GKV-Sunset; das Datum wird maschinell gelesen —
@@ -14,7 +16,7 @@ mitziehen, nicht nur beim jährlichen Audit).
 
 | Parameter | Fundstelle | Wert / Stand | Prüfrhythmus | Nächste Prüfung |
 |---|---|---|---|---|
-| Hypothekarischer Referenzzinssatz | `src/lib/vorlagen/mietvertrag.ts` (`MV_PARAMETER.referenzzinssatz`) | 1.25 % (Stand 2.6.2026) | **quartalsweise** (referenzzinssatz.admin.ch) | Anfang Sept. 2026 |
+| Hypothekarischer Referenzzinssatz | `src/lib/vorlagen/mietvertrag.ts` (`MV_PARAMETER.referenzzinssatz`) | 1.25 % (unverändert; Stand 2.9.2026, publiziert 1.9.2026, BWO https://www.bwo.admin.ch/de/referenzzinssatz) | **quartalsweise** (bwo.admin.ch/de/referenzzinssatz) | 1.12.2026 |
 | MWST-Normalsatz | `src/lib/vorlagen/mietvertrag.ts` (`MV_PARAMETER.mwstSatz`) | 8.1 % (seit 1.1.2024) | bei Satzänderung | — |
 | MWST-Normalsatz (Prozesskosten-Cockpit, MwSt auf Parteientschädigung) | `src/data/tarif/typen.ts` (`MWST_NORMALSATZ_PROZENT`) | 8.1 % (seit 1.1.2024, Art. 25 I MWSTG) | bei Satzänderung — **zusammen mit der Mietvertrags-Kopie pflegen** | — |
 | Kantonale Mindestlöhne | `src/lib/vorlagen/arbeitsvertrag.ts` (`AV_MINDESTLOEHNE`) | je Eintrag datiert | **jährlich** (Indexierung per 1.1.) | Jan. 2027 |
