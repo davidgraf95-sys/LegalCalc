@@ -2,15 +2,22 @@
  * ZH-4a · Deklarative ZH-Quellenliste (Zürcher Gesetzessammlung, LS) —
  * 31.8.2026, erweitert 1.9.2026 (Tranche A).
  *
- * BESTAND 1.9.2026: die 21 Kern-Erlasse der Stufe 2 plus die drei vollständigen
- * Systematik-Ordner 3 (Gerichtsorganisation/Zivilrecht/Notariat/Grundbuch, 76),
- * 10 (Finanzen/Steuern/Gebühren, 67) und 4 (SchKG/Strafrecht/Vollzug, 27) —
- * 170 Ordner-Erlasse, davon 12 schon im Kern-Bestand, Vereinigung 179. Die
- * Ordner-Zahlen decken sich mit dem Stufe-1-Inventar (76/67/27, Erhebung
- * 31.8.2026) — unabhängige Gegenprobe der Enumeration.
+ * BESTAND 1.9.2026 (Tranche A): die 21 Kern-Erlasse der Stufe 2 plus die drei
+ * vollständigen Systematik-Ordner 3 (Gerichtsorganisation/Zivilrecht/Notariat/
+ * Grundbuch, 76), 10 (Finanzen/Steuern/Gebühren, 67) und 4 (SchKG/Strafrecht/
+ * Vollzug, 27) — 170 Ordner-Erlasse, davon 12 schon im Kern-Bestand,
+ * Vereinigung 179. Die Ordner-Zahlen decken sich mit dem Stufe-1-Inventar
+ * (76/67/27, Erhebung 31.8.2026) — unabhängige Gegenprobe der Enumeration.
  * Erzeugt mit `zh-quellen-aufloesen.ts --ordner=3,10,4`; alle 12 überlappenden
  * Erlasse trugen Titel, Kürzel und Registry-URL byte-gleich zum amtlichen
  * Endpunkt (0 Konflikte) — der Kern-Bestand ist damit heute nachverifiziert.
+ *
+ * AUFGENOMMEN sind davon 111. Die restlichen 68 stehen mit Grund und
+ * gemessenem Befund in `ZH_ZURUECKGESTELLT` am Ende dieser Datei — 55, weil
+ * ihr PDF gar keine §-/Art.-Gliederung trägt, 13, weil die unabhängige
+ * Zweitlesung (`check:zh-vollstaendigkeit`) an ihnen rot ist. Sie werden NICHT
+ * hineingezwungen: eine ausgewiesene Lücke ist ehrlich, ein halb gelesener
+ * Erlass wäre falscher Text (§8).
  *
  * WARUM DIESE DATEI EXISTIERT (§7-d-Lücke, Dossier §7):
  * Bis hierher war die ZH-Erlassmenge eine ABLEITUNG aus den Tarif-Tabellen
@@ -207,82 +214,16 @@ export const ZH_QUELLEN: readonly ZhQuelle[] = [
     registryUrl: `${BASIS}erlass-211_112-2007_02_06-2007_07_01-071.html`,
   },
   {
-    nr: '211.251',
-    titel: "Reglement der Verwaltungskommission des Obergerichts über die Wahl der Mitglieder und Ersatzmitglieder der Personalausschüsse",
-    kuerzel: "",
-    registryUrl: `${BASIS}erlass-211_251-1979_11_14-1980_01_01-091.html`,
-  },
-  {
-    nr: '212.22',
-    titel: "Beschluss des Kantonsrates über die Stellenprozente sowie die Mindestzahl der Mitglieder der Bezirksgerichte",
-    kuerzel: "",
-    registryUrl: `${BASIS}erlass-212_22-2022_07_11-2022_10_01-118.html`,
-  },
-  {
-    nr: '212.23',
-    titel: "Beschluss des Kantonsrates über die Zahl der Beisitzenden der Arbeitsgerichte für die Amtsdauer 2026&#8211;2032",
-    kuerzel: "",
-    registryUrl: `${BASIS}erlass-212_23-2025_09_29-2026_07_01-133.html`,
-  },
-  {
-    nr: '212.24',
-    titel: "Beschluss des Kantonsrates über die Zahl der Beisitzenden der Mietgerichte für die Amtsdauer 2026&#8211;2032",
-    kuerzel: "",
-    registryUrl: `${BASIS}erlass-212_24-2025_09_29-2026_07_01-133.html`,
-  },
-  {
     nr: '212.51',
     titel: "Verordnung über die Organisation des Obergerichts",
     kuerzel: "",
     registryUrl: `${BASIS}erlass-212_51-2010_11_03-2011_01_01-116.html`,
   },
   {
-    nr: '212.53',
-    titel: "Beschluss des Kantonsrates über die Festsetzung der Besoldungen der Mitglieder des Obergerichts",
-    kuerzel: "",
-    registryUrl: `${BASIS}erlass-212_53-1991_04_22-1991_07_01-073.html`,
-  },
-  {
-    nr: '212.61',
-    titel: "Beschluss des Kantonsrates über die Zahl der Handelsrichterinnen und Handelsrichter",
-    kuerzel: "",
-    registryUrl: `${BASIS}erlass-212_61-2004_05_10-2004_05_10-046.html`,
-  },
-  {
     nr: '212.81',
     titel: "Gesetz über das Sozialversicherungsgericht (GSVGer)",
     kuerzel: "GSVGer",
     registryUrl: `${BASIS}erlass-212_81-1993_03_07-1993_11_01-129.html`,
-  },
-  {
-    nr: '212.82',
-    titel: "Beschluss des Kantonsrates über den Sitz des Sozialversicherungsgerichts",
-    kuerzel: "",
-    registryUrl: `${BASIS}erlass-212_82-2005_12_05-2005_12_05-051.html`,
-  },
-  {
-    nr: '212.83',
-    titel: "Beschluss des Kantonsrates über die Festsetzung der Besoldungen der Mitglieder des Sozialversicherungsgerichts",
-    kuerzel: "",
-    registryUrl: `${BASIS}erlass-212_83-1994_01_03-1994_01_03-079.html`,
-  },
-  {
-    nr: '212.84',
-    titel: "Beschluss des Kantonsrates über die Zahl der Mitglieder und Ersatzmitglieder des Sozialversicherungsgerichts",
-    kuerzel: "",
-    registryUrl: `${BASIS}erlass-212_84-2019_03_04-2019_07_01-105.html`,
-  },
-  {
-    nr: '212.126',
-    titel: "Beschluss des Regierungsrates über die Neuaufteilung der Friedensrichterkreise 3, 4, 5, 6, 9, 10, 11 und 12 (der Stadt Zürich)",
-    kuerzel: "der Stadt Zürich",
-    registryUrl: `${BASIS}erlass-212_126-1996_10_09-1996_10_09-091.html`,
-  },
-  {
-    nr: '212.127',
-    titel: "Beschluss des Regierungsrates über die Vereinigung der Friedensrichterkreise 1 und 2 (der Stadt Zürich)",
-    kuerzel: "der Stadt Zürich",
-    registryUrl: `${BASIS}erlass-212_127-2000_11_29-2000_11_29-031.html`,
   },
   {
     nr: '212.511',
@@ -295,12 +236,6 @@ export const ZH_QUELLEN: readonly ZhQuelle[] = [
     titel: "Akturierungsverordnung",
     kuerzel: "",
     registryUrl: `${BASIS}erlass-212_513-2010_05_12-2011_01_01-071.html`,
-  },
-  {
-    nr: '212.521',
-    titel: "Beschluss des Kantonsrates über die Stellenprozente der Mitglieder und die Zahl der Ersatzmitglieder des Obergerichts",
-    kuerzel: "",
-    registryUrl: `${BASIS}erlass-212_521-2023_03_20-2023_07_01-121.html`,
   },
   {
     nr: '212.811',
@@ -321,18 +256,6 @@ export const ZH_QUELLEN: readonly ZhQuelle[] = [
     registryUrl: `${BASIS}erlass-212_814-2004_10_26-2005_04_01-049.html`,
   },
   {
-    nr: '213.12',
-    titel: "Beschluss des Kantonsrates über die Zahl der ordentlichen Staatsanwältinnen und Staatsanwälte im Kanton und die Verteilung der Wahlstellen auf die Bezirke",
-    kuerzel: "",
-    registryUrl: `${BASIS}erlass-213_12-2008_03_31-2008_05_01-061.html`,
-  },
-  {
-    nr: '213.21',
-    titel: "Verordnung über die Organisation der Oberstaatsanwaltschaft und der Staatsanwaltschaften (VOSTA)",
-    kuerzel: "VOSTA",
-    registryUrl: `${BASIS}erlass-213_21-2004_10_27-2005_01_01-132.html`,
-  },
-  {
     nr: '213.23',
     titel: "Verordnung über das Wahlfähigkeitszeugnis für Staatsanwältinnen und Staatsanwälte",
     kuerzel: "",
@@ -343,12 +266,6 @@ export const ZH_QUELLEN: readonly ZhQuelle[] = [
     titel: "Verordnung zum Bundesgesetz über die Teilung eingezogener Vermögenswerte (VO TEVG)",
     kuerzel: "VO TEVG",
     registryUrl: `${BASIS}erlass-213_27-2011_12_13-2012_04_01-076.html`,
-  },
-  {
-    nr: '213.121',
-    titel: "Beschluss des Regierungsrates über die Verteilung der Wahlstellen der ordentlichen Staatsanwältinnen und Staatsanwälte  auf die Bezirke (Amtsdauer 2009&#8211;2013)",
-    kuerzel: "Amtsdauer 2009&#8211;2013",
-    registryUrl: `${BASIS}erlass-213_121-2008_09_03-2008_09_03-062.html`,
   },
   {
     nr: '213.231',
@@ -465,12 +382,6 @@ export const ZH_QUELLEN: readonly ZhQuelle[] = [
     registryUrl: `${BASIS}erlass-234_1-1988_12_04-1989_01_01-071.html`,
   },
   {
-    nr: '234.3',
-    titel: "Verordnung über die Meldestelle für gefundene Tiere",
-    kuerzel: "",
-    registryUrl: `${BASIS}erlass-234_3-2005_03_09-2005_05_01-049.html`,
-  },
-  {
     nr: '234.12',
     titel: "Verordnung zum Einführungsgesetz zum Bundesgesetz über den Erwerb von Grundstücken durch Personen im Ausland (VBewG)",
     kuerzel: "VBewG",
@@ -489,18 +400,6 @@ export const ZH_QUELLEN: readonly ZhQuelle[] = [
     registryUrl: `${BASIS}erlass-235_15-1979_12_19-1980_01_25-105.html`,
   },
   {
-    nr: '235.41',
-    titel: "Beschluss des Regierungsrates über die Formularpflicht beim Abschluss eines neuen Mietvertrages",
-    kuerzel: "",
-    registryUrl: `${BASIS}erlass-235_41-2013_09_11-2013_11_01-083.html`,
-  },
-  {
-    nr: '235.52',
-    titel: "Beschluss des Regierungsrates über die Zuständigkeit für die Bewilligung zur Ausgabe von Warenpapieren",
-    kuerzel: "",
-    registryUrl: `${BASIS}erlass-235_52-1937_08_05-1937_08_13-091.html`,
-  },
-  {
     nr: '242',
     titel: "Notariatsgesetz (NotG)",
     kuerzel: "NotG",
@@ -511,18 +410,6 @@ export const ZH_QUELLEN: readonly ZhQuelle[] = [
     titel: "Verordnung über den Erwerb des Wahlfähigkeitszeugnisses für Notarinnen und Notare (NotPV)",
     kuerzel: "NotPV",
     registryUrl: `${BASIS}erlass-242_1-2013_09_04-2014_01_01-083.html`,
-  },
-  {
-    nr: '242.2',
-    titel: "Verordnung des Obergerichtes über die Geschäftsführung der Notariate (Notariatsverordnung)",
-    kuerzel: "Notariatsverordnung",
-    registryUrl: `${BASIS}erlass-242_2-1960_11_23-1961_01_01-093.html`,
-  },
-  {
-    nr: '242.5',
-    titel: "Beschluss des Kantonsrates über die Notariatskreise und den Sitz der Notariate",
-    kuerzel: "",
-    registryUrl: `${BASIS}erlass-242_5-1988_11_07-1989_01_01-119.html`,
   },
   {
     nr: '242.15',
@@ -561,12 +448,6 @@ export const ZH_QUELLEN: readonly ZhQuelle[] = [
     registryUrl: `${BASIS}erlass-245-1907_10_18-1907_11_30-091.html`,
   },
   {
-    nr: '252',
-    titel: "Verordnung des Obergerichtes über die Geschäftsführung der Grundbuchämter und die Einführung des eidgenössischen Grundbuches (Kantonale Grundbuchverordnung)",
-    kuerzel: "Kantonale Grundbuchverordnung",
-    registryUrl: `${BASIS}erlass-252-1958_03_26-1958_07_01-127.html`,
-  },
-  {
     nr: '252.1',
     titel: "Verordnung des Obergerichtes über die Grundbuchführung betreffend die Korporationsteilrechte",
     kuerzel: "",
@@ -591,40 +472,10 @@ export const ZH_QUELLEN: readonly ZhQuelle[] = [
     registryUrl: `${BASIS}erlass-281_1-2010_05_12-2010_07_01-071.html`,
   },
   {
-    nr: '281.2',
-    titel: "Verordnung des Obergerichtes über die Geschäftsführung der Konkursämter (Kantonale Konkursverordnung)",
-    kuerzel: "Kantonale Konkursverordnung",
-    registryUrl: `${BASIS}erlass-281_2-1998_12_09-1999_01_01-071.html`,
-  },
-  {
-    nr: '281.11',
-    titel: "Verordnung über die Gebühren der Gemeindeammannämter (GebV GA)",
-    kuerzel: "GebV GA",
-    registryUrl: `${BASIS}erlass-281_11-2018_08_22-2019_05_01-105.html`,
-  },
-  {
-    nr: '281.41',
-    titel: "Stadtammannamts- und Betreibungskreise Winterthur  (Neueinteilung)",
-    kuerzel: "Neueinteilung",
-    registryUrl: `${BASIS}erlass-281_41-2006_04_19-2006_07_01-053.html`,
-  },
-  {
     nr: '281.51',
     titel: "Verordnung des Obergerichts über den Wahlfähigkeitsausweis für Betreibungsbeamtinnen und Betreibungsbeamte",
     kuerzel: "",
     registryUrl: `${BASIS}erlass-281_51-2008_06_18-2009_01_01-091.html`,
-  },
-  {
-    nr: '283.1',
-    titel: "Übereinkunft zwischen der Schweizerischen Eidgenossenschaft und der Krone Württemberg betreffend die Konkursverhältnisse und gleiche Behandlung der beiderseitigen Staatsangehörigen in Konkursfällen",
-    kuerzel: "",
-    registryUrl: `${BASIS}erlass-283_1-1825_12_12-1826_05_13-081.html`,
-  },
-  {
-    nr: '283.2',
-    titel: "Übereinkunft zwischen den schweizerischen Kantonen Zürich, Bern, Luzern, Unterwalden (ob und nid dem Wald), Freiburg, Solothurn, Basel (Stadt- und Landteil), Schaffhausen, St. Gallen, Graubünden, Aargau, Thurgau, Tessin, Waadt, Wallis, Neuenburg, Genf sowie Appenzell AR und dem Königreich Bayern über gleichmässige Behandlung der gegenseitigen Staatsangehörigen in Konkursfällen",
-    kuerzel: "",
-    registryUrl: `${BASIS}erlass-283_2-1834_05_11-1834_06_27-081.html`,
   },
   {
     nr: '312',
@@ -637,12 +488,6 @@ export const ZH_QUELLEN: readonly ZhQuelle[] = [
     titel: "Verordnung über die Kommission zur Bekämpfung von Menschenhandel (Runder Tisch Menschenhandel, VRTM)",
     kuerzel: "Runder Tisch Menschenhandel, VRTM",
     registryUrl: `${BASIS}erlass-315_1-2021_10_06-2022_01_01-115.html`,
-  },
-  {
-    nr: '321.1',
-    titel: "Verordnung über die Zuständigkeit der Gemeinden im Übertretungsstrafrecht",
-    kuerzel: "",
-    registryUrl: `${BASIS}erlass-321_1-2010_11_03-2011_01_01-091.html`,
   },
   {
     nr: '321.2',
@@ -681,34 +526,16 @@ export const ZH_QUELLEN: readonly ZhQuelle[] = [
     registryUrl: `${BASIS}erlass-322-2006_11_29-2007_01_01-079.html`,
   },
   {
-    nr: '322.2',
-    titel: "Beschluss des Regierungsrates über die Amtskreise der Jugendanwaltschaften",
-    kuerzel: "",
-    registryUrl: `${BASIS}erlass-322_2-2007_05_23-2007_06_01-057.html`,
-  },
-  {
     nr: '323.1',
     titel: "Verordnung über die Gebühren, Auslagen und Entschädigungen der Strafverfolgungsbehörden (GebV StrV)",
     kuerzel: "GebV StrV",
     registryUrl: `${BASIS}erlass-323_1-2010_11_24-2011_01_01-103.html`,
   },
   {
-    nr: '326',
-    titel: "Reglement für das Kriminalistische Institut des Kantons Zürich",
-    kuerzel: "",
-    registryUrl: `${BASIS}erlass-326-1961_03_16-1961_04_07-115.html`,
-  },
-  {
     nr: '331',
     titel: "Straf- und Justizvollzugsgesetz (StJVG)",
     kuerzel: "StJVG",
     registryUrl: `${BASIS}erlass-331-2006_06_19-2007_01_01-109.html`,
-  },
-  {
-    nr: '331.1',
-    titel: "Justizvollzugsverordnung (JVV)",
-    kuerzel: "JVV",
-    registryUrl: `${BASIS}erlass-331_1-2006_12_06-2007_01_01-129.html`,
   },
   {
     nr: '331.5',
@@ -751,18 +578,6 @@ export const ZH_QUELLEN: readonly ZhQuelle[] = [
     titel: "Gesetz über Controlling und Rechnungslegung (CRG)",
     kuerzel: "CRG",
     registryUrl: `${BASIS}erlass-611-2006_01_09-2008_04_01-118.html`,
-  },
-  {
-    nr: '611.1',
-    titel: "Rechnungslegungsverordnung (RLV)",
-    kuerzel: "RLV",
-    registryUrl: `${BASIS}erlass-611_1-2007_08_29-2008_04_01-115.html`,
-  },
-  {
-    nr: '611.2',
-    titel: "Finanzcontrollingverordnung (FCV)",
-    kuerzel: "FCV",
-    registryUrl: `${BASIS}erlass-611_2-2008_03_05-2008_04_01-119.html`,
   },
   {
     nr: '612',
@@ -825,24 +640,6 @@ export const ZH_QUELLEN: readonly ZhQuelle[] = [
     registryUrl: `${BASIS}erlass-631_19-2010_11_03-2011_01_01-078.html`,
   },
   {
-    nr: '631.21',
-    titel: "Beschluss des Kantonsrates über die Festsetzung des Steuerfusses für die Jahre 2026 und 2027",
-    kuerzel: "",
-    registryUrl: `${BASIS}erlass-631_21-2025_12_15-2026_01_01-132.html`,
-  },
-  {
-    nr: '631.32',
-    titel: "Weisung des Regierungsrates an die Steuerbehörden über die Bewertung von Liegenschaften und die Festsetzung der Eigenmietwerte ab Steuerperiode 2026 (Weisung 2026)",
-    kuerzel: "Weisung 2026",
-    registryUrl: `${BASIS}erlass-631_32-2024_08_28-2026_01_01-131.html`,
-  },
-  {
-    nr: '631.33',
-    titel: "Verfügung der Finanzdirektion über die Pauschalierung von Berufsauslagen Unselbstständigerwerbender bei der Steuereinschätzung (ab Steuerperiode 2026)",
-    kuerzel: "ab Steuerperiode 2026",
-    registryUrl: `${BASIS}erlass-631_33-2025_09_26-2026_01_01-131.html`,
-  },
-  {
     nr: '631.41',
     titel: "Verordnung über die Quellensteuer für ausländische Arbeitnehmer (Quellensteuerverordnung I)",
     kuerzel: "Quellensteuerverordnung I",
@@ -873,24 +670,6 @@ export const ZH_QUELLEN: readonly ZhQuelle[] = [
     registryUrl: `${BASIS}erlass-631_53-2010_11_12-2011_01_01-122.html`,
   },
   {
-    nr: '631.55',
-    titel: "Weisung der Finanzdirektion über das Meldeverfahren der gegenüber Steuerbehörden zur Auskunft und Anzeige verpflichteten Verwaltungsbehörden, Strafuntersuchungsbehörden und Gerichte",
-    kuerzel: "",
-    registryUrl: `${BASIS}erlass-631_55-1999_11_29-1999_11_29-027.html`,
-  },
-  {
-    nr: '631.61',
-    titel: "Beschluss des Regierungsrates über die Festsetzung des Skontos und die Berechnung von Zinsen für Staats- und Gemeindesteuern",
-    kuerzel: "",
-    registryUrl: `${BASIS}erlass-631_61-1998_10_14-1999_01_01-035.html`,
-  },
-  {
-    nr: '631.62',
-    titel: "Beschluss des Regierungsrates über die Durchführung des Rekursverfahrens bei Steuererlass",
-    kuerzel: "",
-    registryUrl: `${BASIS}erlass-631_62-2016_03_02-2016_07_01-093.html`,
-  },
-  {
     nr: '631.121',
     titel: "Verordnung über die elektronische Einreichung der Steuererklärung",
     kuerzel: "",
@@ -901,18 +680,6 @@ export const ZH_QUELLEN: readonly ZhQuelle[] = [
     titel: "Verordnung über die elektronische Zustellung von Verfügungen und Rechnungen",
     kuerzel: "",
     registryUrl: `${BASIS}erlass-631_122-2012_09_07-2012_12_01-079.html`,
-  },
-  {
-    nr: '631.321',
-    titel: "Übergangsregelung zur Weisung des Regierungsrates an die Steuerbehörden über die Bewertung von Liegenschaften und die Festsetzung der Eigenmietwerte ab Steuerperiode 2026 (Weisung 2026)",
-    kuerzel: "Weisung 2026",
-    registryUrl: `${BASIS}erlass-631_321-2025_11_12-2026_01_01-131.html`,
-  },
-  {
-    nr: '631.322',
-    titel: "Weisung des Regierungsrates an die Steuerbehörden über die Gewährung eines Härtefalleinschlags auf dem Eigenmietwert bei den Staats- und Gemeindesteuern",
-    kuerzel: "",
-    registryUrl: `${BASIS}erlass-631_322-2026_02_25-2026_01_01-132.html`,
   },
   {
     nr: '631.421',
@@ -933,18 +700,6 @@ export const ZH_QUELLEN: readonly ZhQuelle[] = [
     registryUrl: `${BASIS}erlass-631_424-2020_09_10-2021_01_01-111.html`,
   },
   {
-    nr: '631.531',
-    titel: "Beschluss des Kantonsrates über den Sitz des Steuerrekursgerichts sowie die Zahl und den Beschäftigungsgrad seiner Mitglieder und Ersatzmitglieder",
-    kuerzel: "",
-    registryUrl: `${BASIS}erlass-631_531-2010_12_13-2011_01_01-071.html`,
-  },
-  {
-    nr: '631.611',
-    titel: "Beschluss des Regierungsrates über die Festsetzung und Berechnung der Zinsen für die Staats- und Gemeindesteuern",
-    kuerzel: "",
-    registryUrl: `${BASIS}erlass-631_611-2007_07_11-2008_01_01-131.html`,
-  },
-  {
     nr: '632.1',
     titel: "Erbschafts- und Schenkungssteuergesetz (ESchG)",
     kuerzel: "ESchG",
@@ -955,12 +710,6 @@ export const ZH_QUELLEN: readonly ZhQuelle[] = [
     titel: "Verordnung zum Erbschafts- und Schenkungssteuergesetz",
     kuerzel: "",
     registryUrl: `${BASIS}erlass-632_11-1986_11_12-1987_01_01-070.html`,
-  },
-  {
-    nr: '632.111',
-    titel: "Verfügung der Finanzdirektion über die Berechnung von Zinsen für Erbschafts- und Schenkungssteuern",
-    kuerzel: "",
-    registryUrl: `${BASIS}erlass-632_111-2003_08_15-2003_10_01-042.html`,
   },
   {
     nr: '634.1',
@@ -993,156 +742,6 @@ export const ZH_QUELLEN: readonly ZhQuelle[] = [
     registryUrl: `${BASIS}erlass-634_41-1952_03_13-1952_03_31-083.html`,
   },
   {
-    nr: '671.1',
-    titel: "Konkordat zwischen den Kantonen der Schweizerischen Eidgenossenschaft über den Ausschluss von Steuerabkommen",
-    kuerzel: "",
-    registryUrl: `${BASIS}erlass-671_1-1948_12_10-1949_10_06-091.html`,
-  },
-  {
-    nr: '672.601',
-    titel: "Gegenrechtserklärungen zwischen dem Kanton Bern und dem Kanton Zürich betreffend Befreiung von der Erbschaftssteuer",
-    kuerzel: "",
-    registryUrl: `${BASIS}erlass-672_601-1926_07_16-1927_09_29-091.html`,
-  },
-  {
-    nr: '672.602',
-    titel: "Vereinbarung zwischen dem Regierungsrat des Kantons Zürich einerseits und dem Regierungsrat des Kantons Luzern anderseits betreffend Steuerbefreiung für Zuwendungen von der Erbschaftssteuer",
-    kuerzel: "",
-    registryUrl: `${BASIS}erlass-672_602-1929_06_11-1929_07_15-091.html`,
-  },
-  {
-    nr: '672.603',
-    titel: "Gegenrechtsvereinbarung zwischen dem Kanton Zürich und dem Kanton Uri über die Befreiung von der Erbschafts- und Schenkungssteuer",
-    kuerzel: "",
-    registryUrl: `${BASIS}erlass-672_603-1980_05_21-1980_06_02-091.html`,
-  },
-  {
-    nr: '672.606',
-    titel: "Gegenrechtsvereinbarung zwischen dem Kanton Zürich und dem Kanton Obwalden über die Befreiung von der Erbschafts- und Schenkungssteuer",
-    kuerzel: "",
-    registryUrl: `${BASIS}erlass-672_606-1987_08_19-1987_08_25-091.html`,
-  },
-  {
-    nr: '672.607',
-    titel: "Vereinbarung zwischen dem Regierungsrat des Kantons Zürich einerseits und dem Regierungsrat des Kantons Glarus anderseits betreffend Steuerbefreiung für Zuwendungen von der Erbschaftssteuer",
-    kuerzel: "",
-    registryUrl: `${BASIS}erlass-672_607-1931_04_02-1931_04_02-091.html`,
-  },
-  {
-    nr: '672.608',
-    titel: "Vereinbarung zwischen dem Regierungsrat des Kantons Zürich einerseits und dem Regierungsrat des Kantons Zug anderseits betreffend Steuerbefreiung für Zuwendungen von der Erbschaftssteuer",
-    kuerzel: "",
-    registryUrl: `${BASIS}erlass-672_608-1931_01_17-1931_01_29-091.html`,
-  },
-  {
-    nr: '672.609',
-    titel: "Vereinbarung zwischen dem Staatsrat des Kantons Freiburg und dem Regierungsrat des Kantons Zürich betreffend Gegenrecht über Steuerbefreiungen im Schenkungs- und Erbschaftssteuerverfahren",
-    kuerzel: "",
-    registryUrl: `${BASIS}erlass-672_609-1944_10_26-1944_10_31-091.html`,
-  },
-  {
-    nr: '672.610',
-    titel: "Gegenrechtsvereinbarung zwischen den Kantonen Zürich und Solothurn über die Befreiung von der Erbschafts- und Schenkungssteuer",
-    kuerzel: "",
-    registryUrl: `${BASIS}erlass-672_610-1982_05_26-1982_08_10-091.html`,
-  },
-  {
-    nr: '672.611',
-    titel: "Vereinbarung zwischen dem Regierungsrat des Kantons Basel-Stadt einerseits und dem Regierungsrat des Kantons Zürich anderseits betreffend Steuerbefreiung für Zuwendungen von der Erbschaftssteuer",
-    kuerzel: "",
-    registryUrl: `${BASIS}erlass-672_611-1926_05_15-1926_05_26-091.html`,
-  },
-  {
-    nr: '672.612',
-    titel: "Gegenrechtserklärung zwischen dem Regierungsrat des Kantons Basel-Landschaft und dem Regierungsrat des Kantons Zürich über die Befreiung von der Erbschafts- und Schenkungssteuer",
-    kuerzel: "",
-    registryUrl: `${BASIS}erlass-672_612-1952_01_25-1952_02_07-091.html`,
-  },
-  {
-    nr: '672.613',
-    titel: "Vereinbarung zwischen dem Regierungsrat des Kantons Schaffhausen einerseits und dem Regierungsrat des Kantons Zürich anderseits betreffend Befreiung von der Erbschafts- oder Schenkungsabgabe auf Zuwendungen für gemeinnützige Zwecke",
-    kuerzel: "",
-    registryUrl: `${BASIS}erlass-672_613-1928_11_15-1928_12_08-091.html`,
-  },
-  {
-    nr: '672.614',
-    titel: "Gegenrechtsvereinbarung zwischen dem Regierungsrat des Kantons Zürich und dem Regierungsrat des Kantons Appenzell AR über die Steuerbefreiung von Zuwendungen für öffentliche, gemeinnützige, wohltätige, religiöse oder wissenschaftliche Zwecke auf dem Gebiete der Erbschafts-, Vermächtnis- und Schenkungssteuern",
-    kuerzel: "",
-    registryUrl: `${BASIS}erlass-672_614-1968_12_05-1969_01_20-091.html`,
-  },
-  {
-    nr: '672.615',
-    titel: "Gegenrechtsvereinbarung zwischen dem Kanton Zürich und dem Kanton Appenzell I. Rh. über die Befreiung von der Erbschafts- und Schenkungssteuer",
-    kuerzel: "",
-    registryUrl: `${BASIS}erlass-672_615-1981_10_14-1981_11_03-018.html`,
-  },
-  {
-    nr: '672.616',
-    titel: "Vereinbarung zwischen dem Regierungsrat des Kantons Zürich und dem Regierungsrat des Kantons St. Gallen betreffend Steuerbefreiung für Zuwendungen an gemeinnützige, wohltätige oder kirchliche Zwecke",
-    kuerzel: "",
-    registryUrl: `${BASIS}erlass-672_616-1964_06_30-1964_07_23-091.html`,
-  },
-  {
-    nr: '672.617',
-    titel: "Gegenrechtsvereinbarung zwischen dem Kleinen Rat des Kantons Graubünden und dem Regierungsrat des Kantons Zürich über die Befreiung von Zuwendungen zu öffentlichen, gemeinnützigen oder wohltätigen Zwecken von der Erbschafts- und Schenkungssteuer",
-    kuerzel: "",
-    registryUrl: `${BASIS}erlass-672_617-1955_10_13-1955_10_27-090.html`,
-  },
-  {
-    nr: '672.618',
-    titel: "Vereinbarung zwischen dem Regierungsrat des Kantons Aargau und dem Regierungsrat des Kantons Zürich über Befreiungen von der Erbschafts- und Schenkungssteuer für Zuwendungen zu öffentlichen oder gemeinnützigen Zwecken",
-    kuerzel: "",
-    registryUrl: `${BASIS}erlass-672_618-1949_07_29-1949_08_18-091.html`,
-  },
-  {
-    nr: '672.619',
-    titel: "Vereinbarung zwischen dem Regierungsrat des Kantons Thurgau einerseits und dem Regierungsrat des Kantons Zürich anderseits betreffend Steuerbefreiung für Zuwendungen von der Erbschaftssteuer",
-    kuerzel: "",
-    registryUrl: `${BASIS}erlass-672_619-1926_05_29-1926_06_10-091.html`,
-  },
-  {
-    nr: '672.621',
-    titel: "Gegenrechtsvereinbarung zwischen den Kantonen Zürich und Waadt über die Befreiung von der Erbschafts- und Schenkungssteuer",
-    kuerzel: "",
-    registryUrl: `${BASIS}erlass-672_621-1982_05_26-1982_07_14-091.html`,
-  },
-  {
-    nr: '672.622',
-    titel: "Gegenrechtsvereinbarung zwischen den Kantonen Wallis und Zürich betreffend die Befreiung von der Erbschafts- und Schenkungssteuer für Zuwendungen an gemeinnützige oder kirchliche Zwecke",
-    kuerzel: "",
-    registryUrl: `${BASIS}erlass-672_622-1978_08_30-1978_10_05-091.html`,
-  },
-  {
-    nr: '672.623',
-    titel: "Vereinbarung zwischen dem Staatsrat der Republik und des Kantons Neuenburg und dem Regierungsrat des Kantons Zürich betreffend Befreiung von Zuwendungen von der Erbschafts- und Schenkungssteuer",
-    kuerzel: "",
-    registryUrl: `${BASIS}erlass-672_623-1960_10_13-1960_02_01-091.html`,
-  },
-  {
-    nr: '672.625',
-    titel: "Gegenrechtserklärung zwischen dem Regierungsrat des Kantons Jura und dem Regierungsrat des Kantons Zürich betreffend Befreiung von der Erbschaftssteuer",
-    kuerzel: "",
-    registryUrl: `${BASIS}erlass-672_625-1979_04_25-1979_04_25-091.html`,
-  },
-  {
-    nr: '673.11',
-    titel: "Gegenrechtserklärung des Regierungsrates über die Befreiung von Zuwendungen an Institutionen mit besonderen Zwecken in den Vereinigten Staaten von Amerika",
-    kuerzel: "",
-    registryUrl: `${BASIS}erlass-673_11-1953_06_25-1953_06_25-091.html`,
-  },
-  {
-    nr: '673.12',
-    titel: "Vereinbarung zwischen dem Schweizerischen Bundesrat und der Regierung der Französischen Republik über die steuerliche Behandlung von Zuwendungen zu ausschliesslich uneigennützigen Zwecken",
-    kuerzel: "",
-    registryUrl: `${BASIS}erlass-673_12-1979_10_30-1979_10_30-090.html`,
-  },
-  {
-    nr: '682',
-    titel: "Gebührenordnung für die Verwaltungsbehörden",
-    kuerzel: "",
-    registryUrl: `${BASIS}erlass-682-1966_06_30-1966_10_01-099.html`,
-  },
-  {
     nr: '691',
     titel: "Gesetz über das Salzregal und über den Beitritt des Kantons Zürich zur Interkantonalen Vereinbarung über den Salzverkauf in der Schweiz (Salzgesetz)",
     kuerzel: "Salzgesetz",
@@ -1159,5 +758,449 @@ export const ZH_QUELLEN: readonly ZhQuelle[] = [
     titel: "Sozialhilfegesetz (SHG)",
     kuerzel: "SHG",
     registryUrl: `${BASIS}erlass-851_1-1981_06_14-1982_01_01-123.html`,
+  },
+];
+
+/**
+ * §8-RESTLISTE — deklariert, aber BEWUSST NICHT aufgenommen (Tranche A, 1.9.2026).
+ *
+ * WARUM DIESE LISTE EXISTIERT: Die drei Ordner 3/10/4 tragen amtlich 170
+ * geltende Erlasse; 111 davon liegen als Snapshot vor. Die übrigen 68 hier
+ * einfach wegzulassen hiesse, sie unsichtbar zu machen — und genau das ist der
+ * Unterschied zwischen einer ausgewiesenen Lücke und stillem Textverlust (§8).
+ * Die Liste ist damit die Arbeitsvorlage der nächsten Runde, nicht ein Rest.
+ *
+ * ZWEI GRÜNDE, sauber getrennt:
+ *   · `keine-paragrafen` (55): das amtliche PDF trägt keinen einzigen «§ N»-
+ *     oder «Art. N»-Kopf. Es sind Kantonsrats-/Regierungsrats-Beschlüsse,
+ *     Gegenrechtserklärungen und alte Reglemente, die römisch («I., II.») oder
+ *     mit blossen Ziffern gliedern. `erkenneZhMarker` kennt nur die zwei
+ *     Zählweisen, `extrahiereAlleZhParagraphen` fand folglich 0 Bestimmungen.
+ *     Das ist eine ADAPTER-Grenze, kein Quellproblem — die PDFs sind vollständig
+ *     im Cache und byte-verifiziert. Auflösung gehört in die Gliederungs-Runde
+ *     (Fahrplan §5.2 Phase II R1/R4), nicht in eine Sonderregel hier.
+ *   · `zweitlesung-rot` (13): `check:zh-vollstaendigkeit` meldet einen echten
+ *     Befund gegen das PDF. Sie werden NICHT hineingezwungen; der Befund steht
+ *     wörtlich dabei, damit die Fix-Runde nicht neu messen muss.
+ *
+ * Diese Erlasse stehen NICHT in `ZH_QUELLEN` — sie erzeugen also weder Snapshot
+ * noch Register-Eintrag, und die Drift-Wache erwartet sie nicht.
+ */
+export interface ZhZurueckgestellt {
+  nr: string;
+  titel: string;
+  grund: 'keine-paragrafen' | 'zweitlesung-rot';
+  /** Der gemessene Befund im Wortlaut (nie nachträglich «nachgeführt», §2b). */
+  befund: string;
+}
+
+export const ZH_ZURUECKGESTELLT: readonly ZhZurueckgestellt[] = [
+  {
+    nr: '211.251',
+    titel: "Reglement der Verwaltungskommission des Obergerichts über die Wahl der Mitglieder und Ersatzmitglieder der Personalausschüsse",
+    grund: 'zweitlesung-rot',
+    befund: "Zweitlesung rot: 1 § mit gebrochener Zahlenfolge (PDF-Wert fehlt oder steht an anderer Stelle): § 25 bei «47» (Stelle 3 von 7) · 1 § unter dem Zeichen-Deckungsgrad 90 %: § 25 61 % (46/75)",
+  },
+  {
+    nr: '212.22',
+    titel: "Beschluss des Kantonsrates über die Stellenprozente sowie die Mindestzahl der Mitglieder der Bezirksgerichte",
+    grund: 'keine-paragrafen',
+    befund: "Kein einziger §- oder Art.-Kopf im amtlichen PDF (Beschluss/Erklärung/altes Reglement mit römischer oder blosser Ziffern-Gliederung) — der Adapter kennt diese Zählweise nicht und lieferte 0 Bestimmungen.",
+  },
+  {
+    nr: '212.23',
+    titel: "Beschluss des Kantonsrates über die Zahl der Beisitzenden der Arbeitsgerichte für die Amtsdauer 2026&#8211;2032",
+    grund: 'keine-paragrafen',
+    befund: "Kein einziger §- oder Art.-Kopf im amtlichen PDF (Beschluss/Erklärung/altes Reglement mit römischer oder blosser Ziffern-Gliederung) — der Adapter kennt diese Zählweise nicht und lieferte 0 Bestimmungen.",
+  },
+  {
+    nr: '212.24',
+    titel: "Beschluss des Kantonsrates über die Zahl der Beisitzenden der Mietgerichte für die Amtsdauer 2026&#8211;2032",
+    grund: 'keine-paragrafen',
+    befund: "Kein einziger §- oder Art.-Kopf im amtlichen PDF (Beschluss/Erklärung/altes Reglement mit römischer oder blosser Ziffern-Gliederung) — der Adapter kennt diese Zählweise nicht und lieferte 0 Bestimmungen.",
+  },
+  {
+    nr: '212.53',
+    titel: "Beschluss des Kantonsrates über die Festsetzung der Besoldungen der Mitglieder des Obergerichts",
+    grund: 'keine-paragrafen',
+    befund: "Kein einziger §- oder Art.-Kopf im amtlichen PDF (Beschluss/Erklärung/altes Reglement mit römischer oder blosser Ziffern-Gliederung) — der Adapter kennt diese Zählweise nicht und lieferte 0 Bestimmungen.",
+  },
+  {
+    nr: '212.61',
+    titel: "Beschluss des Kantonsrates über die Zahl der Handelsrichterinnen und Handelsrichter",
+    grund: 'keine-paragrafen',
+    befund: "Kein einziger §- oder Art.-Kopf im amtlichen PDF (Beschluss/Erklärung/altes Reglement mit römischer oder blosser Ziffern-Gliederung) — der Adapter kennt diese Zählweise nicht und lieferte 0 Bestimmungen.",
+  },
+  {
+    nr: '212.82',
+    titel: "Beschluss des Kantonsrates über den Sitz des Sozialversicherungsgerichts",
+    grund: 'keine-paragrafen',
+    befund: "Kein einziger §- oder Art.-Kopf im amtlichen PDF (Beschluss/Erklärung/altes Reglement mit römischer oder blosser Ziffern-Gliederung) — der Adapter kennt diese Zählweise nicht und lieferte 0 Bestimmungen.",
+  },
+  {
+    nr: '212.83',
+    titel: "Beschluss des Kantonsrates über die Festsetzung der Besoldungen der Mitglieder des Sozialversicherungsgerichts",
+    grund: 'keine-paragrafen',
+    befund: "Kein einziger §- oder Art.-Kopf im amtlichen PDF (Beschluss/Erklärung/altes Reglement mit römischer oder blosser Ziffern-Gliederung) — der Adapter kennt diese Zählweise nicht und lieferte 0 Bestimmungen.",
+  },
+  {
+    nr: '212.84',
+    titel: "Beschluss des Kantonsrates über die Zahl der Mitglieder und Ersatzmitglieder des Sozialversicherungsgerichts",
+    grund: 'keine-paragrafen',
+    befund: "Kein einziger §- oder Art.-Kopf im amtlichen PDF (Beschluss/Erklärung/altes Reglement mit römischer oder blosser Ziffern-Gliederung) — der Adapter kennt diese Zählweise nicht und lieferte 0 Bestimmungen.",
+  },
+  {
+    nr: '212.126',
+    titel: "Beschluss des Regierungsrates über die Neuaufteilung der Friedensrichterkreise 3, 4, 5, 6, 9, 10, 11 und 12 (der Stadt Zürich)",
+    grund: 'keine-paragrafen',
+    befund: "Kein einziger §- oder Art.-Kopf im amtlichen PDF (Beschluss/Erklärung/altes Reglement mit römischer oder blosser Ziffern-Gliederung) — der Adapter kennt diese Zählweise nicht und lieferte 0 Bestimmungen.",
+  },
+  {
+    nr: '212.127',
+    titel: "Beschluss des Regierungsrates über die Vereinigung der Friedensrichterkreise 1 und 2 (der Stadt Zürich)",
+    grund: 'keine-paragrafen',
+    befund: "Kein einziger §- oder Art.-Kopf im amtlichen PDF (Beschluss/Erklärung/altes Reglement mit römischer oder blosser Ziffern-Gliederung) — der Adapter kennt diese Zählweise nicht und lieferte 0 Bestimmungen.",
+  },
+  {
+    nr: '212.521',
+    titel: "Beschluss des Kantonsrates über die Stellenprozente der Mitglieder und die Zahl der Ersatzmitglieder des Obergerichts",
+    grund: 'keine-paragrafen',
+    befund: "Kein einziger §- oder Art.-Kopf im amtlichen PDF (Beschluss/Erklärung/altes Reglement mit römischer oder blosser Ziffern-Gliederung) — der Adapter kennt diese Zählweise nicht und lieferte 0 Bestimmungen.",
+  },
+  {
+    nr: '213.12',
+    titel: "Beschluss des Kantonsrates über die Zahl der ordentlichen Staatsanwältinnen und Staatsanwälte im Kanton und die Verteilung der Wahlstellen auf die Bezirke",
+    grund: 'keine-paragrafen',
+    befund: "Kein einziger §- oder Art.-Kopf im amtlichen PDF (Beschluss/Erklärung/altes Reglement mit römischer oder blosser Ziffern-Gliederung) — der Adapter kennt diese Zählweise nicht und lieferte 0 Bestimmungen.",
+  },
+  {
+    nr: '213.21',
+    titel: "Verordnung über die Organisation der Oberstaatsanwaltschaft und der Staatsanwaltschaften (VOSTA)",
+    grund: 'zweitlesung-rot',
+    befund: "Zweitlesung rot: 11 Eintrag/Einträge im Snapshot ohne Kopf im PDF: 14, 15, 16, 17, 18, 19, 22, 23, 24, 25 · 1 § mit gebrochener Zahlenfolge (PDF-Wert fehlt oder steht an anderer Stelle): § 13 bei «14» (Stelle 1 von 4)",
+  },
+  {
+    nr: '213.121',
+    titel: "Beschluss des Regierungsrates über die Verteilung der Wahlstellen der ordentlichen Staatsanwältinnen und Staatsanwälte  auf die Bezirke (Amtsdauer 2009&#8211;2013)",
+    grund: 'keine-paragrafen',
+    befund: "Kein einziger §- oder Art.-Kopf im amtlichen PDF (Beschluss/Erklärung/altes Reglement mit römischer oder blosser Ziffern-Gliederung) — der Adapter kennt diese Zählweise nicht und lieferte 0 Bestimmungen.",
+  },
+  {
+    nr: '234.3',
+    titel: "Verordnung über die Meldestelle für gefundene Tiere",
+    grund: 'zweitlesung-rot',
+    befund: "Zweitlesung rot: 1 § mit gebrochener Zahlenfolge (PDF-Wert fehlt oder steht an anderer Stelle): § 9 bei «60» (Stelle 3 von 5) · 1 § unter dem Zeichen-Deckungsgrad 90 %: § 9 74 % (43/58)",
+  },
+  {
+    nr: '235.41',
+    titel: "Beschluss des Regierungsrates über die Formularpflicht beim Abschluss eines neuen Mietvertrages",
+    grund: 'keine-paragrafen',
+    befund: "Kein einziger §- oder Art.-Kopf im amtlichen PDF (Beschluss/Erklärung/altes Reglement mit römischer oder blosser Ziffern-Gliederung) — der Adapter kennt diese Zählweise nicht und lieferte 0 Bestimmungen.",
+  },
+  {
+    nr: '235.52',
+    titel: "Beschluss des Regierungsrates über die Zuständigkeit für die Bewilligung zur Ausgabe von Warenpapieren",
+    grund: 'keine-paragrafen',
+    befund: "Kein einziger §- oder Art.-Kopf im amtlichen PDF (Beschluss/Erklärung/altes Reglement mit römischer oder blosser Ziffern-Gliederung) — der Adapter kennt diese Zählweise nicht und lieferte 0 Bestimmungen.",
+  },
+  {
+    nr: '242.2',
+    titel: "Verordnung des Obergerichtes über die Geschäftsführung der Notariate (Notariatsverordnung)",
+    grund: 'zweitlesung-rot',
+    befund: "Zweitlesung rot: 3 § trägt mehr Zahlen als seine PDF-Region: § 109 +4 · § 112 +2 · § 139 +9",
+  },
+  {
+    nr: '242.5',
+    titel: "Beschluss des Kantonsrates über die Notariatskreise und den Sitz der Notariate",
+    grund: 'keine-paragrafen',
+    befund: "Kein einziger §- oder Art.-Kopf im amtlichen PDF (Beschluss/Erklärung/altes Reglement mit römischer oder blosser Ziffern-Gliederung) — der Adapter kennt diese Zählweise nicht und lieferte 0 Bestimmungen.",
+  },
+  {
+    nr: '252',
+    titel: "Verordnung des Obergerichtes über die Geschäftsführung der Grundbuchämter und die Einführung des eidgenössischen Grundbuches (Kantonale Grundbuchverordnung)",
+    grund: 'zweitlesung-rot',
+    befund: "Zweitlesung rot: 1 § trägt mehr Zahlen als seine PDF-Region: § 41 +7",
+  },
+  {
+    nr: '281.2',
+    titel: "Verordnung des Obergerichtes über die Geschäftsführung der Konkursämter (Kantonale Konkursverordnung)",
+    grund: 'zweitlesung-rot',
+    befund: "Zweitlesung rot: 1 § mit gebrochener Zahlenfolge (PDF-Wert fehlt oder steht an anderer Stelle): § 20 bei «55» (Stelle 3 von 49) · 1 § unter dem Zeichen-Deckungsgrad 90 %: § 20 23 % (114/499)",
+  },
+  {
+    nr: '281.11',
+    titel: "Verordnung über die Gebühren der Gemeindeammannämter (GebV GA)",
+    grund: 'zweitlesung-rot',
+    befund: "Zweitlesung rot: 1 § trägt mehr Zahlen als seine PDF-Region: § 2 +21",
+  },
+  {
+    nr: '281.41',
+    titel: "Stadtammannamts- und Betreibungskreise Winterthur  (Neueinteilung)",
+    grund: 'keine-paragrafen',
+    befund: "Kein einziger §- oder Art.-Kopf im amtlichen PDF (Beschluss/Erklärung/altes Reglement mit römischer oder blosser Ziffern-Gliederung) — der Adapter kennt diese Zählweise nicht und lieferte 0 Bestimmungen.",
+  },
+  {
+    nr: '283.1',
+    titel: "Übereinkunft zwischen der Schweizerischen Eidgenossenschaft und der Krone Württemberg betreffend die Konkursverhältnisse und gleiche Behandlung der beiderseitigen Staatsangehörigen in Konkursfällen",
+    grund: 'keine-paragrafen',
+    befund: "Kein einziger §- oder Art.-Kopf im amtlichen PDF (Beschluss/Erklärung/altes Reglement mit römischer oder blosser Ziffern-Gliederung) — der Adapter kennt diese Zählweise nicht und lieferte 0 Bestimmungen.",
+  },
+  {
+    nr: '283.2',
+    titel: "Übereinkunft zwischen den schweizerischen Kantonen Zürich, Bern, Luzern, Unterwalden (ob und nid dem Wald), Freiburg, Solothurn, Basel (Stadt- und Landteil), Schaffhausen, St. Gallen, Graubünden, Aargau, Thurgau, Tessin, Waadt, Wallis, Neuenburg, Genf sowie Appenzell AR und dem Königreich Bayern über gleichmässige Behandlung der gegenseitigen Staatsangehörigen in Konkursfällen",
+    grund: 'keine-paragrafen',
+    befund: "Kein einziger §- oder Art.-Kopf im amtlichen PDF (Beschluss/Erklärung/altes Reglement mit römischer oder blosser Ziffern-Gliederung) — der Adapter kennt diese Zählweise nicht und lieferte 0 Bestimmungen.",
+  },
+  {
+    nr: '321.1',
+    titel: "Verordnung über die Zuständigkeit der Gemeinden im Übertretungsstrafrecht",
+    grund: 'zweitlesung-rot',
+    befund: "Zweitlesung rot: 1 § trägt mehr Zahlen als seine PDF-Region: § 2 +1",
+  },
+  {
+    nr: '322.2',
+    titel: "Beschluss des Regierungsrates über die Amtskreise der Jugendanwaltschaften",
+    grund: 'keine-paragrafen',
+    befund: "Kein einziger §- oder Art.-Kopf im amtlichen PDF (Beschluss/Erklärung/altes Reglement mit römischer oder blosser Ziffern-Gliederung) — der Adapter kennt diese Zählweise nicht und lieferte 0 Bestimmungen.",
+  },
+  {
+    nr: '326',
+    titel: "Reglement für das Kriminalistische Institut des Kantons Zürich",
+    grund: 'keine-paragrafen',
+    befund: "Kein einziger §- oder Art.-Kopf im amtlichen PDF (Beschluss/Erklärung/altes Reglement mit römischer oder blosser Ziffern-Gliederung) — der Adapter kennt diese Zählweise nicht und lieferte 0 Bestimmungen.",
+  },
+  {
+    nr: '331.1',
+    titel: "Justizvollzugsverordnung (JVV)",
+    grund: 'zweitlesung-rot',
+    befund: "Zweitlesung rot: 1 § trägt mehr Zahlen als seine PDF-Region: § 8 +12",
+  },
+  {
+    nr: '611.1',
+    titel: "Rechnungslegungsverordnung (RLV)",
+    grund: 'zweitlesung-rot',
+    befund: "Zweitlesung rot: 1 § mit gebrochener Zahlenfolge (PDF-Wert fehlt oder steht an anderer Stelle): § 44 bei «2006» (Stelle 3 von 105) · 1 § unter dem Zeichen-Deckungsgrad 90 %: § 44 3 % (128/3715)",
+  },
+  {
+    nr: '611.2',
+    titel: "Finanzcontrollingverordnung (FCV)",
+    grund: 'zweitlesung-rot',
+    befund: "Zweitlesung rot: 1 § trägt mehr Zahlen als seine PDF-Region: § 31 +1",
+  },
+  {
+    nr: '631.21',
+    titel: "Beschluss des Kantonsrates über die Festsetzung des Steuerfusses für die Jahre 2026 und 2027",
+    grund: 'keine-paragrafen',
+    befund: "Kein einziger §- oder Art.-Kopf im amtlichen PDF (Beschluss/Erklärung/altes Reglement mit römischer oder blosser Ziffern-Gliederung) — der Adapter kennt diese Zählweise nicht und lieferte 0 Bestimmungen.",
+  },
+  {
+    nr: '631.32',
+    titel: "Weisung des Regierungsrates an die Steuerbehörden über die Bewertung von Liegenschaften und die Festsetzung der Eigenmietwerte ab Steuerperiode 2026 (Weisung 2026)",
+    grund: 'keine-paragrafen',
+    befund: "Kein einziger §- oder Art.-Kopf im amtlichen PDF (Beschluss/Erklärung/altes Reglement mit römischer oder blosser Ziffern-Gliederung) — der Adapter kennt diese Zählweise nicht und lieferte 0 Bestimmungen.",
+  },
+  {
+    nr: '631.33',
+    titel: "Verfügung der Finanzdirektion über die Pauschalierung von Berufsauslagen Unselbstständigerwerbender bei der Steuereinschätzung (ab Steuerperiode 2026)",
+    grund: 'keine-paragrafen',
+    befund: "Kein einziger §- oder Art.-Kopf im amtlichen PDF (Beschluss/Erklärung/altes Reglement mit römischer oder blosser Ziffern-Gliederung) — der Adapter kennt diese Zählweise nicht und lieferte 0 Bestimmungen.",
+  },
+  {
+    nr: '631.55',
+    titel: "Weisung der Finanzdirektion über das Meldeverfahren der gegenüber Steuerbehörden zur Auskunft und Anzeige verpflichteten Verwaltungsbehörden, Strafuntersuchungsbehörden und Gerichte",
+    grund: 'keine-paragrafen',
+    befund: "Kein einziger §- oder Art.-Kopf im amtlichen PDF (Beschluss/Erklärung/altes Reglement mit römischer oder blosser Ziffern-Gliederung) — der Adapter kennt diese Zählweise nicht und lieferte 0 Bestimmungen.",
+  },
+  {
+    nr: '631.61',
+    titel: "Beschluss des Regierungsrates über die Festsetzung des Skontos und die Berechnung von Zinsen für Staats- und Gemeindesteuern",
+    grund: 'keine-paragrafen',
+    befund: "Kein einziger §- oder Art.-Kopf im amtlichen PDF (Beschluss/Erklärung/altes Reglement mit römischer oder blosser Ziffern-Gliederung) — der Adapter kennt diese Zählweise nicht und lieferte 0 Bestimmungen.",
+  },
+  {
+    nr: '631.62',
+    titel: "Beschluss des Regierungsrates über die Durchführung des Rekursverfahrens bei Steuererlass",
+    grund: 'keine-paragrafen',
+    befund: "Kein einziger §- oder Art.-Kopf im amtlichen PDF (Beschluss/Erklärung/altes Reglement mit römischer oder blosser Ziffern-Gliederung) — der Adapter kennt diese Zählweise nicht und lieferte 0 Bestimmungen.",
+  },
+  {
+    nr: '631.321',
+    titel: "Übergangsregelung zur Weisung des Regierungsrates an die Steuerbehörden über die Bewertung von Liegenschaften und die Festsetzung der Eigenmietwerte ab Steuerperiode 2026 (Weisung 2026)",
+    grund: 'keine-paragrafen',
+    befund: "Kein einziger §- oder Art.-Kopf im amtlichen PDF (Beschluss/Erklärung/altes Reglement mit römischer oder blosser Ziffern-Gliederung) — der Adapter kennt diese Zählweise nicht und lieferte 0 Bestimmungen.",
+  },
+  {
+    nr: '631.322',
+    titel: "Weisung des Regierungsrates an die Steuerbehörden über die Gewährung eines Härtefalleinschlags auf dem Eigenmietwert bei den Staats- und Gemeindesteuern",
+    grund: 'keine-paragrafen',
+    befund: "Kein einziger §- oder Art.-Kopf im amtlichen PDF (Beschluss/Erklärung/altes Reglement mit römischer oder blosser Ziffern-Gliederung) — der Adapter kennt diese Zählweise nicht und lieferte 0 Bestimmungen.",
+  },
+  {
+    nr: '631.531',
+    titel: "Beschluss des Kantonsrates über den Sitz des Steuerrekursgerichts sowie die Zahl und den Beschäftigungsgrad seiner Mitglieder und Ersatzmitglieder",
+    grund: 'keine-paragrafen',
+    befund: "Kein einziger §- oder Art.-Kopf im amtlichen PDF (Beschluss/Erklärung/altes Reglement mit römischer oder blosser Ziffern-Gliederung) — der Adapter kennt diese Zählweise nicht und lieferte 0 Bestimmungen.",
+  },
+  {
+    nr: '631.611',
+    titel: "Beschluss des Regierungsrates über die Festsetzung und Berechnung der Zinsen für die Staats- und Gemeindesteuern",
+    grund: 'keine-paragrafen',
+    befund: "Kein einziger §- oder Art.-Kopf im amtlichen PDF (Beschluss/Erklärung/altes Reglement mit römischer oder blosser Ziffern-Gliederung) — der Adapter kennt diese Zählweise nicht und lieferte 0 Bestimmungen.",
+  },
+  {
+    nr: '632.111',
+    titel: "Verfügung der Finanzdirektion über die Berechnung von Zinsen für Erbschafts- und Schenkungssteuern",
+    grund: 'keine-paragrafen',
+    befund: "Kein einziger §- oder Art.-Kopf im amtlichen PDF (Beschluss/Erklärung/altes Reglement mit römischer oder blosser Ziffern-Gliederung) — der Adapter kennt diese Zählweise nicht und lieferte 0 Bestimmungen.",
+  },
+  {
+    nr: '671.1',
+    titel: "Konkordat zwischen den Kantonen der Schweizerischen Eidgenossenschaft über den Ausschluss von Steuerabkommen",
+    grund: 'keine-paragrafen',
+    befund: "Kein einziger §- oder Art.-Kopf im amtlichen PDF (Beschluss/Erklärung/altes Reglement mit römischer oder blosser Ziffern-Gliederung) — der Adapter kennt diese Zählweise nicht und lieferte 0 Bestimmungen.",
+  },
+  {
+    nr: '672.601',
+    titel: "Gegenrechtserklärungen zwischen dem Kanton Bern und dem Kanton Zürich betreffend Befreiung von der Erbschaftssteuer",
+    grund: 'keine-paragrafen',
+    befund: "Kein einziger §- oder Art.-Kopf im amtlichen PDF (Beschluss/Erklärung/altes Reglement mit römischer oder blosser Ziffern-Gliederung) — der Adapter kennt diese Zählweise nicht und lieferte 0 Bestimmungen.",
+  },
+  {
+    nr: '672.602',
+    titel: "Vereinbarung zwischen dem Regierungsrat des Kantons Zürich einerseits und dem Regierungsrat des Kantons Luzern anderseits betreffend Steuerbefreiung für Zuwendungen von der Erbschaftssteuer",
+    grund: 'keine-paragrafen',
+    befund: "Kein einziger §- oder Art.-Kopf im amtlichen PDF (Beschluss/Erklärung/altes Reglement mit römischer oder blosser Ziffern-Gliederung) — der Adapter kennt diese Zählweise nicht und lieferte 0 Bestimmungen.",
+  },
+  {
+    nr: '672.603',
+    titel: "Gegenrechtsvereinbarung zwischen dem Kanton Zürich und dem Kanton Uri über die Befreiung von der Erbschafts- und Schenkungssteuer",
+    grund: 'keine-paragrafen',
+    befund: "Kein einziger §- oder Art.-Kopf im amtlichen PDF (Beschluss/Erklärung/altes Reglement mit römischer oder blosser Ziffern-Gliederung) — der Adapter kennt diese Zählweise nicht und lieferte 0 Bestimmungen.",
+  },
+  {
+    nr: '672.606',
+    titel: "Gegenrechtsvereinbarung zwischen dem Kanton Zürich und dem Kanton Obwalden über die Befreiung von der Erbschafts- und Schenkungssteuer",
+    grund: 'keine-paragrafen',
+    befund: "Kein einziger §- oder Art.-Kopf im amtlichen PDF (Beschluss/Erklärung/altes Reglement mit römischer oder blosser Ziffern-Gliederung) — der Adapter kennt diese Zählweise nicht und lieferte 0 Bestimmungen.",
+  },
+  {
+    nr: '672.607',
+    titel: "Vereinbarung zwischen dem Regierungsrat des Kantons Zürich einerseits und dem Regierungsrat des Kantons Glarus anderseits betreffend Steuerbefreiung für Zuwendungen von der Erbschaftssteuer",
+    grund: 'keine-paragrafen',
+    befund: "Kein einziger §- oder Art.-Kopf im amtlichen PDF (Beschluss/Erklärung/altes Reglement mit römischer oder blosser Ziffern-Gliederung) — der Adapter kennt diese Zählweise nicht und lieferte 0 Bestimmungen.",
+  },
+  {
+    nr: '672.608',
+    titel: "Vereinbarung zwischen dem Regierungsrat des Kantons Zürich einerseits und dem Regierungsrat des Kantons Zug anderseits betreffend Steuerbefreiung für Zuwendungen von der Erbschaftssteuer",
+    grund: 'keine-paragrafen',
+    befund: "Kein einziger §- oder Art.-Kopf im amtlichen PDF (Beschluss/Erklärung/altes Reglement mit römischer oder blosser Ziffern-Gliederung) — der Adapter kennt diese Zählweise nicht und lieferte 0 Bestimmungen.",
+  },
+  {
+    nr: '672.609',
+    titel: "Vereinbarung zwischen dem Staatsrat des Kantons Freiburg und dem Regierungsrat des Kantons Zürich betreffend Gegenrecht über Steuerbefreiungen im Schenkungs- und Erbschaftssteuerverfahren",
+    grund: 'keine-paragrafen',
+    befund: "Kein einziger §- oder Art.-Kopf im amtlichen PDF (Beschluss/Erklärung/altes Reglement mit römischer oder blosser Ziffern-Gliederung) — der Adapter kennt diese Zählweise nicht und lieferte 0 Bestimmungen.",
+  },
+  {
+    nr: '672.610',
+    titel: "Gegenrechtsvereinbarung zwischen den Kantonen Zürich und Solothurn über die Befreiung von der Erbschafts- und Schenkungssteuer",
+    grund: 'keine-paragrafen',
+    befund: "Kein einziger §- oder Art.-Kopf im amtlichen PDF (Beschluss/Erklärung/altes Reglement mit römischer oder blosser Ziffern-Gliederung) — der Adapter kennt diese Zählweise nicht und lieferte 0 Bestimmungen.",
+  },
+  {
+    nr: '672.611',
+    titel: "Vereinbarung zwischen dem Regierungsrat des Kantons Basel-Stadt einerseits und dem Regierungsrat des Kantons Zürich anderseits betreffend Steuerbefreiung für Zuwendungen von der Erbschaftssteuer",
+    grund: 'keine-paragrafen',
+    befund: "Kein einziger §- oder Art.-Kopf im amtlichen PDF (Beschluss/Erklärung/altes Reglement mit römischer oder blosser Ziffern-Gliederung) — der Adapter kennt diese Zählweise nicht und lieferte 0 Bestimmungen.",
+  },
+  {
+    nr: '672.612',
+    titel: "Gegenrechtserklärung zwischen dem Regierungsrat des Kantons Basel-Landschaft und dem Regierungsrat des Kantons Zürich über die Befreiung von der Erbschafts- und Schenkungssteuer",
+    grund: 'keine-paragrafen',
+    befund: "Kein einziger §- oder Art.-Kopf im amtlichen PDF (Beschluss/Erklärung/altes Reglement mit römischer oder blosser Ziffern-Gliederung) — der Adapter kennt diese Zählweise nicht und lieferte 0 Bestimmungen.",
+  },
+  {
+    nr: '672.613',
+    titel: "Vereinbarung zwischen dem Regierungsrat des Kantons Schaffhausen einerseits und dem Regierungsrat des Kantons Zürich anderseits betreffend Befreiung von der Erbschafts- oder Schenkungsabgabe auf Zuwendungen für gemeinnützige Zwecke",
+    grund: 'keine-paragrafen',
+    befund: "Kein einziger §- oder Art.-Kopf im amtlichen PDF (Beschluss/Erklärung/altes Reglement mit römischer oder blosser Ziffern-Gliederung) — der Adapter kennt diese Zählweise nicht und lieferte 0 Bestimmungen.",
+  },
+  {
+    nr: '672.614',
+    titel: "Gegenrechtsvereinbarung zwischen dem Regierungsrat des Kantons Zürich und dem Regierungsrat des Kantons Appenzell AR über die Steuerbefreiung von Zuwendungen für öffentliche, gemeinnützige, wohltätige, religiöse oder wissenschaftliche Zwecke auf dem Gebiete der Erbschafts-, Vermächtnis- und Schenkungssteuern",
+    grund: 'keine-paragrafen',
+    befund: "Kein einziger §- oder Art.-Kopf im amtlichen PDF (Beschluss/Erklärung/altes Reglement mit römischer oder blosser Ziffern-Gliederung) — der Adapter kennt diese Zählweise nicht und lieferte 0 Bestimmungen.",
+  },
+  {
+    nr: '672.615',
+    titel: "Gegenrechtsvereinbarung zwischen dem Kanton Zürich und dem Kanton Appenzell I. Rh. über die Befreiung von der Erbschafts- und Schenkungssteuer",
+    grund: 'keine-paragrafen',
+    befund: "Kein einziger §- oder Art.-Kopf im amtlichen PDF (Beschluss/Erklärung/altes Reglement mit römischer oder blosser Ziffern-Gliederung) — der Adapter kennt diese Zählweise nicht und lieferte 0 Bestimmungen.",
+  },
+  {
+    nr: '672.616',
+    titel: "Vereinbarung zwischen dem Regierungsrat des Kantons Zürich und dem Regierungsrat des Kantons St. Gallen betreffend Steuerbefreiung für Zuwendungen an gemeinnützige, wohltätige oder kirchliche Zwecke",
+    grund: 'keine-paragrafen',
+    befund: "Kein einziger §- oder Art.-Kopf im amtlichen PDF (Beschluss/Erklärung/altes Reglement mit römischer oder blosser Ziffern-Gliederung) — der Adapter kennt diese Zählweise nicht und lieferte 0 Bestimmungen.",
+  },
+  {
+    nr: '672.617',
+    titel: "Gegenrechtsvereinbarung zwischen dem Kleinen Rat des Kantons Graubünden und dem Regierungsrat des Kantons Zürich über die Befreiung von Zuwendungen zu öffentlichen, gemeinnützigen oder wohltätigen Zwecken von der Erbschafts- und Schenkungssteuer",
+    grund: 'keine-paragrafen',
+    befund: "Kein einziger §- oder Art.-Kopf im amtlichen PDF (Beschluss/Erklärung/altes Reglement mit römischer oder blosser Ziffern-Gliederung) — der Adapter kennt diese Zählweise nicht und lieferte 0 Bestimmungen.",
+  },
+  {
+    nr: '672.618',
+    titel: "Vereinbarung zwischen dem Regierungsrat des Kantons Aargau und dem Regierungsrat des Kantons Zürich über Befreiungen von der Erbschafts- und Schenkungssteuer für Zuwendungen zu öffentlichen oder gemeinnützigen Zwecken",
+    grund: 'keine-paragrafen',
+    befund: "Kein einziger §- oder Art.-Kopf im amtlichen PDF (Beschluss/Erklärung/altes Reglement mit römischer oder blosser Ziffern-Gliederung) — der Adapter kennt diese Zählweise nicht und lieferte 0 Bestimmungen.",
+  },
+  {
+    nr: '672.619',
+    titel: "Vereinbarung zwischen dem Regierungsrat des Kantons Thurgau einerseits und dem Regierungsrat des Kantons Zürich anderseits betreffend Steuerbefreiung für Zuwendungen von der Erbschaftssteuer",
+    grund: 'keine-paragrafen',
+    befund: "Kein einziger §- oder Art.-Kopf im amtlichen PDF (Beschluss/Erklärung/altes Reglement mit römischer oder blosser Ziffern-Gliederung) — der Adapter kennt diese Zählweise nicht und lieferte 0 Bestimmungen.",
+  },
+  {
+    nr: '672.621',
+    titel: "Gegenrechtsvereinbarung zwischen den Kantonen Zürich und Waadt über die Befreiung von der Erbschafts- und Schenkungssteuer",
+    grund: 'keine-paragrafen',
+    befund: "Kein einziger §- oder Art.-Kopf im amtlichen PDF (Beschluss/Erklärung/altes Reglement mit römischer oder blosser Ziffern-Gliederung) — der Adapter kennt diese Zählweise nicht und lieferte 0 Bestimmungen.",
+  },
+  {
+    nr: '672.622',
+    titel: "Gegenrechtsvereinbarung zwischen den Kantonen Wallis und Zürich betreffend die Befreiung von der Erbschafts- und Schenkungssteuer für Zuwendungen an gemeinnützige oder kirchliche Zwecke",
+    grund: 'keine-paragrafen',
+    befund: "Kein einziger §- oder Art.-Kopf im amtlichen PDF (Beschluss/Erklärung/altes Reglement mit römischer oder blosser Ziffern-Gliederung) — der Adapter kennt diese Zählweise nicht und lieferte 0 Bestimmungen.",
+  },
+  {
+    nr: '672.623',
+    titel: "Vereinbarung zwischen dem Staatsrat der Republik und des Kantons Neuenburg und dem Regierungsrat des Kantons Zürich betreffend Befreiung von Zuwendungen von der Erbschafts- und Schenkungssteuer",
+    grund: 'keine-paragrafen',
+    befund: "Kein einziger §- oder Art.-Kopf im amtlichen PDF (Beschluss/Erklärung/altes Reglement mit römischer oder blosser Ziffern-Gliederung) — der Adapter kennt diese Zählweise nicht und lieferte 0 Bestimmungen.",
+  },
+  {
+    nr: '672.625',
+    titel: "Gegenrechtserklärung zwischen dem Regierungsrat des Kantons Jura und dem Regierungsrat des Kantons Zürich betreffend Befreiung von der Erbschaftssteuer",
+    grund: 'keine-paragrafen',
+    befund: "Kein einziger §- oder Art.-Kopf im amtlichen PDF (Beschluss/Erklärung/altes Reglement mit römischer oder blosser Ziffern-Gliederung) — der Adapter kennt diese Zählweise nicht und lieferte 0 Bestimmungen.",
+  },
+  {
+    nr: '673.11',
+    titel: "Gegenrechtserklärung des Regierungsrates über die Befreiung von Zuwendungen an Institutionen mit besonderen Zwecken in den Vereinigten Staaten von Amerika",
+    grund: 'keine-paragrafen',
+    befund: "Kein einziger §- oder Art.-Kopf im amtlichen PDF (Beschluss/Erklärung/altes Reglement mit römischer oder blosser Ziffern-Gliederung) — der Adapter kennt diese Zählweise nicht und lieferte 0 Bestimmungen.",
+  },
+  {
+    nr: '673.12',
+    titel: "Vereinbarung zwischen dem Schweizerischen Bundesrat und der Regierung der Französischen Republik über die steuerliche Behandlung von Zuwendungen zu ausschliesslich uneigennützigen Zwecken",
+    grund: 'zweitlesung-rot',
+    befund: "Zweitlesung rot: 4 § trägt mehr Zahlen als seine PDF-Region: Art. 1 +1 · Art. 2 +1 · Art. 4 +1 · Art. 5 +3",
+  },
+  {
+    nr: '682',
+    titel: "Gebührenordnung für die Verwaltungsbehörden",
+    grund: 'zweitlesung-rot',
+    befund: "Zweitlesung rot: 1 § trägt mehr Zahlen als seine PDF-Region: § 3 +7",
   },
 ];
