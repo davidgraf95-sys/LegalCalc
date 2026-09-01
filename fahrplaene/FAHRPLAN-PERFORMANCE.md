@@ -271,6 +271,69 @@ an einen neuen Ist-Stand nachgeführt, nur ergänzt (§0 Ziff. 2b).
   Startlast: Kopf-Geometrie vor dem Takeover reservieren, statt die Schranke zu
   heben (§8). Diagnose: `e2e/gesetze-historie-badge.e2e.ts`, Datei-Kopf.
 
+### §1-N3 · Leser-Tempo gebaut — A/B 1.9.2026 (ERGÄNZUNG, keine Nachführung)
+
+Die Blöcke oben bleiben unverändert stehen: sie gelten für ihren Stand
+(§0 Ziff. 2b). Was folgt, ist eine **zusätzliche** Messreihe auf dem Basis-Stand
+`cd4dc65cb` und darauf zwei gebaute Massnahmen. Voller Aufbau, Wasserfall und
+alle Einzelläufe: [`bibliothek/seo/leser-tempo-qs-perf-2026-09-01.md`](../bibliothek/seo/leser-tempo-qs-perf-2026-09-01.md).
+Werkzeug im Repo: `npm run perf:leser` (`scripts/perf/leser-tempo.ts`) — bewusst
+**kein Tor** (Timing ist last- und maschinenabhängig; eine Schwelle darauf
+deckelte die Messung statt die Ladekosten, §2/§6.7).
+
+**Gebaut (beide mit Logikverlust-Bewertung «keiner»):**
+1. `Shell.tsx` zieht ein Browse-Manifest nur noch, wenn ein **tatsächlich
+   gezeigter** Pfad ein Label daraus braucht. Bis dahin lud jede
+   Gesetzes-Leserseite `/rechtsprechung/register.json` (753 KB gzip), ohne je
+   ein Label daraus zu lesen.
+2. Der Prerender setzt `<link rel="preload" as="fetch" crossorigin="anonymous">`
+   für Snapshot, Register und Struktur-Sidecar in den Kopf jeder Erlass-Seite —
+   Kandidat K2 des Kanton-Reader-Profils in der Variante **ohne zweite
+   Wahrheit** (das Register bleibt im Client die einzige Quelle des Dateinamens,
+   §5).
+
+**Ergebnis (Median, n=5 je Zelle, je Lauf kalt; Marker `[data-v3-ansicht]` =
+dieselbe Bedingung wie `e2e/helpers/leserBereit.ts`):**
+
+| Bedingung | Route | vorher | nachher | Δ |
+|---|---|--:|--:|--:|
+| 1× CPU, ungedrosselt | OR | 788 | 775 | −1.6 % (Rauschen) |
+| 4× CPU + langsames 4G | OR | 10 368 | 7 406 | **−28.6 %** |
+| 4× CPU + langsames 4G | ZGB | 8 486 | 6 232 | **−26.6 %** |
+| 4× CPU + langsames 4G | StGB | 6 511 | 4 551 | **−30.1 %** |
+| 4× CPU + langsames 4G | BS-154.100 | 4 902 | 3 501 | **−28.6 %** |
+| 6× CPU + langsames 3G | OR | 38 296 | 26 762 | **−30.1 %** |
+| 6× CPU + langsames 3G | BS-154.100 | 18 538 | 13 140 | **−29.1 %** |
+
+**Zwei Befunde, die die Spec fortschreiben — ohne die alten Zahlen anzutasten:**
+
+- **Der OR-Wert «8,4–17,2 s bis bedienbar» (17.8.2026) ist ungedrosselt nicht
+  mehr reproduzierbar.** Am 1.9.2026 misst dieselbe Grösse auf dem
+  unveränderten Basis-Stand **788 ms** (n=5, Spanne 776–853). Der alte Wert wird
+  nicht korrigiert — er gilt für `19a989f93`. Naheliegende, hier **ungeprüfte**
+  Erklärung: dazwischen landete `QS-BASIS (d) K3` (−4.66 MiB gzip Suchindex).
+  Wer die Frage schliessen will, misst beide Stände mit `npm run perf:leser`
+  gegeneinander. Praktische Folge für die Spec: **die Zielgrösse «unter 2 s» ist
+  auf einer schnellen Maschine erfüllt**; der offene Posten heisst nicht mehr
+  «Erst-Render OR», sondern «gedrosselte Geräte und langsame Netze».
+- **Nach den zwei Massnahmen ist die Strecke bandbreiten-, nicht mehr
+  kettengebunden.** Snapshot/Register/Struktur starten bei ~181 ms statt
+  5215/2672/3923 ms; was bleibt, sind ~1.1 MB gzip auf dem kritischen Pfad des
+  OR (bei 1.6 Mbit/s allein ~5.5 s Download). Weitere Gewinne verlangen
+  **weniger Bytes**, nicht eine andere Reihenfolge — der grösste Posten ist
+  strukturell (derselbe Normtext einmal als Prerender-HTML für Crawler/no-JS und
+  einmal als JSON für den Leser; beides zu behalten ist §15-Treue, kein Fehler).
+
+**Weiterhin offen in `QS-PERF`:** K3-Chunk-Kaskade (Eager-Welle trägt
+`katalogSuche`, drei `browse-*`, `kantone`, `fedlex`, `startseiteConfig`, die
+der Leser nicht braucht) · der Reader-Kopf-Reflow aus §1-N2 (nicht angefasst:
+sein Fix reserviert Kopf-Geometrie und ist damit eine Design-Entscheidung nach
+§13, kein reiner Perf-Eingriff; OR-CLS steht bei 0.003 gegen Schranke 0.05) ·
+`hydrateRoot` (bleibt beim ROADMAP-Unterpunkt von `QS-BASIS`: Skill `perf`
+Bauregel 5 verbietet die naive Form, und der Posten verlangt eigenen PR mit
+Hydrations-Fehler-Wächter und Gegenprüfung; sein Anteil ist mit 27–78 ms klein
+gegen die hier gehobenen 3–11 s).
+
 ---
 
 

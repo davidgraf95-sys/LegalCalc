@@ -509,12 +509,20 @@ zgb-a36-anhang: Die ZGB-Gliederung zeigt 74 Artikel des Anhangs «Wortlaut der f
 
 - [~] **Geräte-Last / Performance** *(`QS-PERF`, `[OF]`)*
   <!-- @meta id: QS-PERF · status: wip · blocker: null · dep: [] · feld: betrieb · fahrplan: fahrplaene/FAHRPLAN-PERFORMANCE.md -->
-  Nicht merklich langsamer, ohne Logikverlust (§15). Offen: M-Daten-Pfad (9,5-MB-`register.json` ist
-  der lohnendste Hebel) + Render-/Split-View-Feinschliff. Der **Erst-Render des OR braucht 8,4–17,2 s
+  Nicht merklich langsamer, ohne Logikverlust (§15). Der **Erst-Render des OR braucht 8,4–17,2 s
   bis zur Bedienbarkeit** (vermessen 17.8.2026, Nullprobe auf `main` 6/6 rot) — das ist die Wurzel
   des Shard-7-Rots und der Fix gehört hierher, nicht in eine Spec-Anpassung.
+  **Ergänzt 1.9.2026 (Leser-Tempo gebaut, A/B n=5, alte Zahl bleibt stehen — §0/2b):** Das
+  753-KB-`rechtsprechung/register.json` lädt nicht mehr auf Gesetzes-Leserseiten, und der Prerender
+  lädt Snapshot/Register/Struktur im Kopf vor → OR **10 368 → 7 406 ms @4×+4G (−28,6 %)**,
+  **38 296 → 26 762 ms @6×+3G (−30,1 %)**; ungedrosselt misst derselbe Basis-Stand **788 ms**, die
+  17.8.-Zahl ist dort also nicht mehr reproduzierbar. **Offen:** K3-Chunk-Kaskade, Reader-Kopf-Reflow
+  (Design-Entscheid §13), `hydrateRoot` (eigener PR unter `QS-BASIS`) — die Strecke ist jetzt
+  bandbreiten-, nicht mehr kettengebunden.
   **Detail:** [FAHRPLAN-PERFORMANCE.md](fahrplaene/FAHRPLAN-PERFORMANCE.md) §1 (dort seit 29.8.2026
-  auch die vollständige Messreihe und der Reader-Kopf-Reflow-Befund, wörtlich aus der ROADMAP).
+  auch die vollständige Messreihe und der Reader-Kopf-Reflow-Befund, wörtlich aus der ROADMAP; §1-N3
+  trägt die A/B-Reihe vom 1.9.2026) und
+  [bibliothek/seo/leser-tempo-qs-perf-2026-09-01.md](bibliothek/seo/leser-tempo-qs-perf-2026-09-01.md).
 
 - [ ] **Optimierungs-Research Juli 2026** *(`QS-OPT`, `[OF]`)*
   <!-- @meta id: QS-OPT · status: parked · blocker: zielbild-gesetzesleser · dep: [] · feld: betrieb · fahrplan: fahrplaene/FAHRPLAN-OPTIMIERUNG-2026-07.md -->
