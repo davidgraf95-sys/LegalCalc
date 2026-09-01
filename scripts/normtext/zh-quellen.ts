@@ -50,6 +50,14 @@
  * HTTP 204 und LEEREM Body (kein JSON — Status/Länge vor `JSON.parse` prüfen);
  * ohne `fileNumber`-Slice kappt er hart bei 150 Treffern.
  *
+ * §6.6-BASELINE (1.9.2026, bewusst): mit Tranche A ist diese Datei auf 1206
+ * Zeilen gewachsen und steht in `scripts/schlankheit-bestand.json`. Sie ist
+ * ihrem Wesen nach eine generierte Projektion — `check-schlankheit.ts` nimmt
+ * `*.generated.ts` genau deshalb aus. Der Wurzel-Fix (Schreib-Modus des
+ * Auflöse-Werkzeugs, Baseline-Eintrag danach LÖSCHEN) steht als O7 in
+ * FAHRPLAN-KANTONE §5.4; bis dahin ist der Eintrag ein deklarierter
+ * Workaround, kein Dauerzustand.
+ *
  * §2: reine Daten, keine Laufzeit-Auflösung. Die Liste ist der SOLL-Bestand;
  * fehlt ein gelisteter Erlass im Lauf, bricht `normtext-snapshot.ts` sichtbar
  * ab (ZH-4b) statt still eine Lücke zu schreiben.
