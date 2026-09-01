@@ -287,25 +287,26 @@ deckelte die Messung statt die Ladekosten, §2/§6.7).
    Gesetzes-Leserseite `/rechtsprechung/register.json` (753 KB gzip), ohne je
    ein Label daraus zu lesen.
 2. Der Prerender setzt `<link rel="preload" as="fetch" crossorigin="anonymous">`
-   für Snapshot, Register und Struktur-Sidecar in den Kopf jeder Erlass-Seite —
+   für **Register und Struktur-Sidecar** in den Kopf jeder Erlass-Seite —
    Kandidat K2 des Kanton-Reader-Profils in der Variante **ohne zweite
    Wahrheit** (das Register bleibt im Client die einzige Quelle des Dateinamens,
-   §5).
+   §5). Der Snapshot selbst ist **bewusst nicht** dabei — siehe den dritten
+   Befund unten.
 
 **Ergebnis (Median, n=5 je Zelle, je Lauf kalt; Marker `[data-v3-ansicht]` =
 dieselbe Bedingung wie `e2e/helpers/leserBereit.ts`):**
 
 | Bedingung | Route | vorher | nachher | Δ |
 |---|---|--:|--:|--:|
-| 1× CPU, ungedrosselt | OR | 788 | 775 | −1.6 % (Rauschen) |
-| 4× CPU + langsames 4G | OR | 10 368 | 7 406 | **−28.6 %** |
-| 4× CPU + langsames 4G | ZGB | 8 486 | 6 232 | **−26.6 %** |
-| 4× CPU + langsames 4G | StGB | 6 511 | 4 551 | **−30.1 %** |
-| 4× CPU + langsames 4G | BS-154.100 | 4 902 | 3 501 | **−28.6 %** |
-| 6× CPU + langsames 3G | OR | 38 296 | 26 762 | **−30.1 %** |
-| 6× CPU + langsames 3G | BS-154.100 | 18 538 | 13 140 | **−29.1 %** |
+| 1× CPU, ungedrosselt | OR | 788 | 780 | ±0 (Rauschen) |
+| 4× CPU + langsames 4G | OR | 10 368 | 7 613 | **−26.6 %** |
+| 4× CPU + langsames 4G | ZGB | 8 486 | 6 362 | **−25.0 %** |
+| 4× CPU + langsames 4G | StGB | 6 511 | 4 803 | **−26.2 %** |
+| 4× CPU + langsames 4G | BS-154.100 | 4 902 | 3 781 | **−22.9 %** |
+| 6× CPU + langsames 3G | OR | 38 296 | 27 432 | **−28.4 %** |
+| 6× CPU + langsames 3G | BS-154.100 | 18 538 | 13 975 | **−24.6 %** |
 
-**Zwei Befunde, die die Spec fortschreiben — ohne die alten Zahlen anzutasten:**
+**Drei Befunde, die die Spec fortschreiben — ohne die alten Zahlen anzutasten:**
 
 - **Der OR-Wert «8,4–17,2 s bis bedienbar» (17.8.2026) ist ungedrosselt nicht
   mehr reproduzierbar.** Am 1.9.2026 misst dieselbe Grösse auf dem
@@ -324,7 +325,31 @@ dieselbe Bedingung wie `e2e/helpers/leserBereit.ts`):**
   strukturell (derselbe Normtext einmal als Prerender-HTML für Crawler/no-JS und
   einmal als JSON für den Leser; beides zu behalten ist §15-Treue, kein Fehler).
 
-**Weiterhin offen in `QS-PERF`:** K3-Chunk-Kaskade (Eager-Welle trägt
+- **Der Leser hängt an der REIHENFOLGE, in der er Daten bekommt — ein latenter
+  Defekt, kein Perf-Posten.** Der lohnendste Preload wäre der Snapshot selbst
+  (OR: 344 KB gzip, zuletzt angefordert). Mit ihm im Kopf fallen **20 Specs in
+  8 Dateien** (Scroll-Spy, TOC-Ruhe A33, Weiterlesen-Chip R4/R8,
+  Kopf-Geometrie, Ortsangabe, Split-View-Faltung). Sauber isoliert, je derselbe
+  49-Test-Satz, nichts sonst laufend: Basis-Stand **49 passed** · +Shell-Fix
+  **49 passed** · +Preload Register/Struktur **49 passed** ·
+  +Preload **mit Snapshot** **29 passed / 20 failed**. Symptome: der Spy
+  schreibt die gelesene Stelle nie (`localStorage` bleibt null bis zum 20-s-
+  Timeout, `e2e/leser-weiterlesen-r4-r8.e2e.ts:44`); der Abstand Kopf→Artikel
+  wandert um 44 px gegen Deckel 4 (`e2e/leser-v3-rahmen.e2e.ts:286`).
+  Der Snapshot-Preload ist darum **ausgebaut** (§1/§15: Treue vor Tempo; §6.3:
+  Specs sind das Orakel, nicht die Stellschraube).
+  **Bau-Auftrag daraus:** Der Spy-Effekt
+  (`src/pages/gesetz-leser/inhalt-hooks.tsx:337 ff.`) setzt über
+  `sektionen`/`ohneGliederung` auf, also über einen Zustandsübergang, den ein
+  sofort verfügbarer Snapshot überspringt. Solange das so ist, ist **jede**
+  Massnahme gesperrt, die dem Leser Daten früher liefert als heute
+  (Service-Worker-Cache, Edge-Cache, HTTP/2 Push, warmer Reload) — der Fix
+  gehört an die Wurzel (§17). Beweismittel liegt bereit: derselbe 49-Test-Satz
+  plus der Ein-Zeilen-Eingriff (Snapshot in `preloads`, `scripts/prerender.ts`).
+  Daran hängen gemessene 3–10 % je Route.
+
+**Weiterhin offen in `QS-PERF`:** die Reihenfolge-Abhängigkeit oben (grösster
+Posten) · K3-Chunk-Kaskade (Eager-Welle trägt
 `katalogSuche`, drei `browse-*`, `kantone`, `fedlex`, `startseiteConfig`, die
 der Leser nicht braucht) · der Reader-Kopf-Reflow aus §1-N2 (nicht angefasst:
 sein Fix reserviert Kopf-Geometrie und ist damit eine Design-Entscheidung nach

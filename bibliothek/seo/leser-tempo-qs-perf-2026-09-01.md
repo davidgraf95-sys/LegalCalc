@@ -88,7 +88,11 @@ sichtbar — der Download läuft beim Marker noch.
 | # | Massnahme | Logikverlust |
 |---|---|---|
 | M1 | `Shell.tsx` lädt ein Browse-Manifest nur noch, wenn ein **tatsächlich gezeigter** Pfad ein Label daraus braucht (`[pathname, ...liveSek]`) | **keiner** — kein Label geht verloren, es lädt bei Bedarf nach; Muster von `ReiterUebersicht.tsx` |
-| M2 | Prerender setzt `<link rel="preload" as="fetch" crossorigin="anonymous">` für Snapshot, Register und Struktur-Sidecar in den Kopf jeder Erlass-Seite | **keiner** — Preload ändert nur das WANN, nie das WAS; Register bleibt im Client die einzige Quelle des Dateinamens (§5) |
+| M2 | Prerender setzt `<link rel="preload" as="fetch" crossorigin="anonymous">` für **Register und Struktur-Sidecar** in den Kopf jeder Erlass-Seite | **keiner** — Preload ändert nur das WANN, nie das WAS; Register bleibt im Client die einzige Quelle des Dateinamens (§5) |
+
+M2 umfasste zunächst auch den **Snapshot** selbst; er ist wieder ausgebaut, weil
+er 20 Leser-Specs reisst — siehe Befund **B4** unten. Das ist die grösste
+Einzelerkenntnis dieses Schritts.
 
 Nicht gebaut wurden die im Vorgänger-Dossier als verlustbehaftet bewerteten
 Varianten («Lader ganz auf Rechtsprechungs-Pfade beschränken», «Dateipfad im
@@ -100,48 +104,55 @@ Client ableiten»).
 
 | Route | vorher | nachher | Δ |
 |---|--:|--:|--:|
-| `/gesetze/bund/OR` | 788 | 775 | −13 ms (−1.6 %) |
-| `/gesetze/bund/ZGB` | 708 | 707 | −1 ms |
-| `/gesetze/bund/StGB` | 547 | 556 | +9 ms |
-| `/gesetze/kanton/BS-154.100` | 427 | 434 | +7 ms |
+| `/gesetze/bund/OR` | 788 | 780 | −8 ms |
+| `/gesetze/bund/ZGB` | 708 | 730 | +22 ms |
+| `/gesetze/bund/StGB` | 547 | 559 | +12 ms |
+| `/gesetze/kanton/BS-154.100` | 427 | 431 | +4 ms |
 
 **Ungedrosselt wirkt keine der Massnahmen** — und muss es nicht: dort ist die
 Seite schon vorher unter 1 s bedienbar. Die Differenzen liegen innerhalb der
-Streuung der Einzelläufe und sind **kein Gewinn**, sondern Rauschen.
+Streuung der Einzelläufe (OR: 771–818 gegen 776–853 ms) und sind **kein
+Gewinn**, sondern Rauschen.
 
 ### 4× CPU · langsames 4G (Lighthouse-Mobil-Profil)
 
 | Route | vorher | nachher | Δ |
 |---|--:|--:|--:|
-| `/gesetze/bund/OR` | 10 368 | 7 406 | **−2 962 ms (−28.6 %)** |
-| `/gesetze/bund/ZGB` | 8 486 | 6 232 | **−2 254 ms (−26.6 %)** |
-| `/gesetze/bund/StGB` | 6 511 | 4 551 | **−1 960 ms (−30.1 %)** |
-| `/gesetze/kanton/BS-154.100` | 4 902 | 3 501 | **−1 401 ms (−28.6 %)** |
+| `/gesetze/bund/OR` | 10 368 | 7 613 | **−2 755 ms (−26.6 %)** |
+| `/gesetze/bund/ZGB` | 8 486 | 6 362 | **−2 124 ms (−25.0 %)** |
+| `/gesetze/bund/StGB` | 6 511 | 4 803 | **−1 708 ms (−26.2 %)** |
+| `/gesetze/kanton/BS-154.100` | 4 902 | 3 781 | **−1 121 ms (−22.9 %)** |
 
 ### 6× CPU · langsames 3G
 
 | Route | vorher | nachher | Δ |
 |---|--:|--:|--:|
-| `/gesetze/bund/OR` | 38 296 | 26 762 | **−11 534 ms (−30.1 %)** |
-| `/gesetze/kanton/BS-154.100` | 18 538 | 13 140 | **−5 398 ms (−29.1 %)** |
+| `/gesetze/bund/OR` | 38 296 | 27 432 | **−10 864 ms (−28.4 %)** |
+| `/gesetze/kanton/BS-154.100` | 18 538 | 13 975 | **−4 563 ms (−24.6 %)** |
 
 Die Spannen der Einzelläufe überlappen zwischen den Armen in **keiner** Zelle
 der gedrosselten Bedingungen (z. B. OR @4×/4G: 10 226–10 593 gegen
-7 379–7 421 ms) — der Unterschied ist nicht die Streuung.
+7 596–7 629 ms) — der Unterschied ist nicht die Streuung.
 
-### Anteil je Massnahme (4× CPU + langsames 4G, n=3, Zwischenstände)
+### Anteil je Massnahme (4× CPU + langsames 4G, Zwischenstände n=3)
 
-| Route | Basis | nur M1 | M1+M2 |
+| Route | Basis | nur M1 | M1+M2 (Endstand, n=5) |
 |---|--:|--:|--:|
-| `/gesetze/bund/OR` | 10 009 | 7 609 (−24.0 %) | 7 346 (−3.5 % weiter) |
-| `/gesetze/bund/ZGB` | 8 410 | 6 556 (−22.0 %) | 6 180 (−5.7 %) |
-| `/gesetze/bund/StGB` | 6 273 | 5 093 (−18.8 %) | 4 548 (−10.7 %) |
-| `/gesetze/kanton/BS-154.100` | 4 824 | 4 016 (−16.8 %) | 3 472 (−13.5 %) |
+| `/gesetze/bund/OR` | 10 009 | 7 609 (−24.0 %) | 7 613 |
+| `/gesetze/bund/ZGB` | 8 410 | 6 556 (−22.0 %) | 6 362 |
+| `/gesetze/bund/StGB` | 6 273 | 5 093 (−18.8 %) | 4 803 |
+| `/gesetze/kanton/BS-154.100` | 4 824 | 4 016 (−16.8 %) | 3 781 |
 
-M1 trägt den grösseren Teil und deckt sich mit der Gegenprobe des
-Vorgänger-Dossiers (−16 bis −19 % durch blosses Abwürgen derselben Datei). M2
-wirkt relativ stärker auf den **kleineren** Erlassen — dort hatte die serielle
-Kette den grösseren Anteil an der Gesamtzeit.
+**M1 trägt den weit grösseren Teil** und deckt sich mit der Gegenprobe des
+Vorgänger-Dossiers (−16 bis −19 % durch blosses Abwürgen derselben Datei). M2 in
+der ausgelieferten, snapshot-freien Fassung trägt auf den kleineren Erlassen
+noch 5–6 %, auf dem OR nichts Messbares — dort ist der Register-Start nicht der
+bindende Term.
+
+**Zum Vergleich, was die verworfene Fassung MIT Snapshot-Preload gebracht
+hätte** (n=3, derselbe Aufbau — nicht ausgeliefert, siehe B4): OR 7 346,
+ZGB 6 180, StGB 4 548, BS 3 472 ms; also rund 3–10 % mehr je Route. Diese Zahl
+steht hier, damit die Folgearbeit weiss, was am Reihenfolge-Fix hängt.
 
 ## Befunde
 
@@ -163,12 +174,15 @@ Leser-Tempo, er rekonstruiert keine Mess-Historie).
 Praktische Folge: **Die Zielgrösse «unter 2 s bis bedienbar» war auf einer
 schnellen Maschine schon vor diesem Schritt erfüllt.** Der reale Gewinn dieses
 Schritts liegt dort, wo Nutzerinnen ihn spüren — auf gedrosselter CPU und
-langsamem Netz (−27 bis −30 %).
+langsamem Netz (−23 bis −28 %).
 
 ### B2 — Gedrosselt ist die Strecke bandbreitengebunden, nicht mehr kettengebunden
 
-Nach M1+M2 starten Snapshot, Register und Struktur-Sidecar bei ~181 ms statt
-bei 5215/2672/3923 ms (CDP-Wasserfall nach dem Bau). Was bleibt, ist die
+In der Fassung mit vollem Preload starteten Snapshot, Register und
+Struktur-Sidecar bei ~181 ms statt bei 5215/2672/3923 ms (CDP-Wasserfall). In
+der ausgelieferten Fassung gilt das für Register und Struktur; der Snapshot
+folgt weiterhin dem Register, startet aber rund 2.5 s früher als vorher, weil
+das Register früher da ist. Was bleibt, ist in beiden Fällen die
 **Summe der Bytes**: rund 1.1 MB gzip auf dem kritischen Pfad des OR
 (217 KB Prerender-HTML + ~190 KB Eager-JS + 344 KB Snapshot + 148 KB Register +
 84 KB Struktur + ~110 KB Schriften) — bei 1.6 Mbit/s allein rund 5.5 s reine
@@ -189,8 +203,61 @@ same-origin) kann sie nicht wiederverwenden und lädt die Datei ein zweites Mal
 `crossorigin="anonymous"` empirisch geprüft: im CDP-Wasserfall nach dem Bau
 steht je Datei **genau ein** Eintrag.
 
+### B4 — Der Snapshot-Preload reisst 20 Leser-Specs: der Leser hängt an der Reihenfolge
+
+Der lohnendste Preload wäre der Snapshot selbst (OR: 344 KB gzip, zuletzt
+angefordert). Mit ihm im Kopf fallen **20 Specs in 8 Dateien**: Scroll-Spy,
+TOC-Ruhe (A33), Weiterlesen-Chip (R4/R8), Kopf-Geometrie, Ortsangabe,
+Split-View-Faltung.
+
+**Isolation** — je derselbe 49-Test-Satz, lokal, `--reporter=line`, nichts
+sonst laufend:
+
+| Stand | Ergebnis |
+|---|---|
+| Basis-Stand `cd4dc65cb` (Nullprobe) | 49 passed |
+| + M1 (Shell), ohne Preload | 49 passed |
+| + M1 + Preload Register/Struktur (**ausgeliefert**) | 49 passed |
+| + M1 + Preload Register/Struktur/**Snapshot** | **29 passed, 20 failed** |
+
+Damit ist der Snapshot-Preload als alleinige Ursache belegt und M1 entlastet.
+
+**Mess-Hygiene, ehrlich:** Die erste Beobachtung dieser Rotfälle entstand,
+während parallel eine `perf:leser`-Sonde mit eigenem Browser und eigenem
+`vite preview` lief — also unter **selbstverschuldeter Parallel-Last**, genau
+dem Treiber, den `e2e/gesetze-historie-badge.e2e.ts` als Flake-Wurzel
+dokumentiert. Diese Beobachtung wurde deshalb verworfen und die ganze Reihe
+sauber wiederholt. Die Tabelle oben stammt vollständig aus den sauberen Läufen.
+
+**Symptome (aus den Rotläufen):** der Scroll-Spy schreibt die gelesene Stelle
+nie — `localStorage` bleibt `null` bis zum 20-s-Timeout in `leseBis`
+(`e2e/leser-weiterlesen-r4-r8.e2e.ts:44`); und der Abstand Kopf→Artikel wandert
+um 44 px gegen einen Deckel von 4 px (`e2e/leser-v3-rahmen.e2e.ts:286`).
+
+**Wertung.** Der Preload verschiebt hier nicht nur das WANN. Liegt der Snapshot
+im Cache, ändert sich die **Reihenfolge**, in der der Leser Daten und Rahmen
+bekommt — und der Leser hängt daran. Das ist Funktions-Treue (Scroll-Spy und
+TOC stehen im Skill `perf` namentlich in der Logikverlust-Definition). §1/§15:
+dort gewinnt die Treue, nicht das Tempo; §6.3 verbietet, stattdessen die Specs
+anzupassen.
+
+**Der eigentliche Fund ist nicht der Preload, sondern die
+Reihenfolge-Abhängigkeit im Leser.** Sie ist ein latenter Defekt: jede künftige
+Beschleunigung, die Daten früher liefert (Service-Worker-Cache, HTTP/2 Push,
+Edge-Cache, ein warmer Reload), trifft sie ebenso. Sie gehört behoben, nicht
+umschifft (§17) — Einstiegspunkt ist der Spy-Effekt in
+`src/pages/gesetz-leser/inhalt-hooks.tsx:337 ff.`, dessen Aufsetzen an
+`sektionen`/`ohneGliederung` hängt, also an einem Zustandsübergang, den ein
+sofort verfügbarer Snapshot überspringt. Beweismittel liegt bereit: derselbe
+49-Test-Satz plus der Ein-Zeilen-Eingriff (Snapshot in `preloads` aufnehmen,
+`scripts/prerender.ts`).
+
 ## Offen (nicht in diesem Schritt gebaut)
 
+- **Reihenfolge-Abhängigkeit des Lesers (B4) — der grösste offene Posten.**
+  Bis sie behoben ist, ist jede Massnahme gesperrt, die dem Leser Daten früher
+  liefert als heute. Danach hängt daran der Snapshot-Preload (+3–10 % je Route,
+  gemessen) und mehr.
 - **K3 — Drei-Wellen-Chunk-Kaskade.** In der Eager-Welle stehen Chunks, die der
   Leser nicht braucht (`katalogSuche`, drei `browse-*`, `kantone`, `fedlex`,
   `startseiteConfig`). Erwarteter Gewinn nach obiger Rechnung: rund 300 ms
