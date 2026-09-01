@@ -16,7 +16,7 @@ import { PaneProvider } from './PaneKontext';
 import { InhaltsKopf } from './InhaltsKopf';
 import { InhaltsKopfMeldeProvider, istGesetzLeserPfad, istInhaltsPfad, kopfVonPfad, type KopfDaten } from './InhaltsKopfKontext';
 import { tabSchluessel } from '../../lib/tabs';
-import { verlaufLabel, erlassVonPfad, type VerlaufManifeste } from '../../lib/verlaufLabel';
+import { verlaufLabel, erlassVonPfad, gesetzPfad, entscheidPfad, type VerlaufManifeste } from '../../lib/verlaufLabel';
 import { useDialogFokus } from './useDialogFokus';
 
 // Neutraler Pane-Kontext für den 1-Pane-Fall (DOM-/verhaltensneutral, stabil).
@@ -215,19 +215,9 @@ export function Shell({ children }: { children: ReactNode }) {
   // Pane-Titel/Stand: Manifeste lazy laden, sobald multipane (Label für Gesetz/Entscheid).
   const [manifeste, setManifeste] = useState<VerlaufManifeste>({});
   // Manifeste auch für den Einzelansicht-Kopf (Breadcrumb-Blattlabel) laden.
+  // Der Lade-Effekt steht weiter unten — er braucht `liveSek` (die tatsächlich
+  // gezeigten Pane-Pfade), um zu entscheiden, WELCHES Manifest nötig ist.
   const kopfMoeglich = istInhaltsPfad(pathname);
-  useEffect(() => {
-    if (!multipane && !kopfMoeglich) return;
-    let lebt = true;
-    void (async () => {
-      const [g, e] = await Promise.all([
-        import('../../lib/normtext/browse').then((m) => m.ladeBrowseManifest()).catch(() => null),
-        import('../../lib/rechtsprechung/browse').then((m) => m.ladeEntscheidManifest()).catch(() => null),
-      ]);
-      if (lebt) setManifeste({ gesetze: g, entscheide: e });
-    })();
-    return () => { lebt = false; };
-  }, [multipane, kopfMoeglich]);
   // Kopfdaten der aktuellen Einzelansicht: Inhaltsseiten melden sie (Kontext);
   // sonst Pfad-Fallback. Bei Routenwechsel zurückgesetzt (frische Seite meldet neu).
   const [kopfDaten, setKopfDaten] = useState<KopfDaten | null>(null);
@@ -241,6 +231,48 @@ export function Shell({ children }: { children: ReactNode }) {
     setLiveLocs((m) => (m[seed] === p ? m : { ...m, [seed]: p })), []);
   const livePfad = (i: number) => liveLocs[pane.sekundaer[i]] ?? pane.sekundaer[i];
   const liveSek = pane.sekundaer.map((s) => liveLocs[s] ?? s);
+  // Reader-Labels (Breadcrumb-Blatt, Pane-Titel) brauchen ein Browse-Manifest —
+  // aber nur das der Rubrik, die auch wirklich angezeigt wird.
+  //
+  // Bis 1.9.2026 zog dieser Effekt BEIDE Manifeste für jeden Inhaltspfad. Auf
+  // einer Gesetzes-Leserseite kostete das `/rechtsprechung/register.json`
+  // (9,0 MB roh / 753 KB gzip — `scripts/check-perf-budget.ts` führt es bei
+  // 96,5 % seines Budgets), obwohl daraus dort NIE ein Label gelesen wird:
+  // `verlaufLabel()` greift auf `entscheide` ausschliesslich bei
+  // `/rechtsprechung/:key` zu, `erlassVonPfad()` nur bei `/gesetze/:ebene/:key`
+  // (`src/lib/verlaufLabel.ts`). Gemessen (QS-PERF, `npm run perf:leser`,
+  // 4× CPU + langsames 4G, je Lauf kalt): der Download lief auf `/gesetze/bund/OR`
+  // beim Marker «bedienbar» noch und nahm dem Snapshot Bandbreite.
+  //
+  // KEIN Informationsverlust (§15-Bewertung): Sobald ein gezeigter Pfad ein
+  // Entscheid-Pfad ist — auch erst nach einer Pane-Navigation — lädt der Effekt
+  // nach und das Label erscheint. Labels erscheinen ohnehin asynchron; das
+  // Manifest ist modulweit gecacht, ein zweiter Bedarf kostet keinen zweiten
+  // Download. Muster wörtlich übernommen von `ReiterUebersicht.tsx` (dieselbe
+  // Frage, dort seit je so gelöst — §10: den vorhandenen Rahmen nutzen).
+  const labelPfade = [pathname, ...liveSek];
+  const brauchtGesetze = labelPfade.some((p) => gesetzPfad(p) !== null);
+  const brauchtEntscheide = labelPfade.some((p) => entscheidPfad(p) !== null);
+  useEffect(() => {
+    if (!multipane && !kopfMoeglich) return;
+    if (!brauchtGesetze && !brauchtEntscheide) return;
+    let lebt = true;
+    void (async () => {
+      const [g, e] = await Promise.all([
+        brauchtGesetze
+          ? import('../../lib/normtext/browse').then((m) => m.ladeBrowseManifest()).catch(() => null)
+          : Promise.resolve(null),
+        brauchtEntscheide
+          ? import('../../lib/rechtsprechung/browse').then((m) => m.ladeEntscheidManifest()).catch(() => null)
+          : Promise.resolve(null),
+      ]);
+      // Verschmelzen statt ersetzen: ein einmal geladenes Manifest bleibt gültig
+      // (unveränderlich je Sitzung) und geht beim Schliessen eines Panes nicht
+      // verloren — sonst flackerte ein Label auf den Platzhalter zurück.
+      if (lebt) setManifeste((alt) => ({ gesetze: g ?? alt.gesetze ?? null, entscheide: e ?? alt.entscheide ?? null }));
+    })();
+    return () => { lebt = false; };
+  }, [multipane, kopfMoeglich, brauchtGesetze, brauchtEntscheide]);
   const titelVon = (pfad: string) => {
     const stand = erlassVonPfad(pfad, manifeste)?.stand ?? null;
     const m = stand && /^(\d{4})-(\d{2})-(\d{2})/.exec(stand);

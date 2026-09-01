@@ -105,15 +105,39 @@ export function InhaltsKopf({ daten, breiteKlasse, onSchliessen }: {
   // jenes Kopfes liegt und Klicks auf Krume und Griffe sonst schluckte; die zwei
   // Rückmeldungen holen sich die Klickbarkeit selbst zurück (beide tragen
   // `pointer-events-auto` an ihrem bedienbaren Element).
-  if (daten.kopfzeileSelbst) {
-    return (
-      <div data-inhalt-kopf-still
-        className="pointer-events-none sticky top-16 z-[19] h-9 border-b border-transparent">
-        <RuecksprungChip />
-        <DeepLinkSkeleton />
-      </div>
-    );
-  }
+  // ── WURZEL-FIX 1.9.2026 (QS-PERF/B5) · EIN TRÄGER, ZWEI ZUSTÄNDE ──────────
+  // Diese Datei hatte für «still» und «laut» ZWEI `return`-Zweige, und in beiden
+  // standen `RuecksprungChip` und `DeepLinkSkeleton`. React ordnet statische
+  // Kinder nach POSITION zu: im stillen Zweig lag der Chip an Index 0, im lauten
+  // an Index 1 — der Zweigwechsel war damit kein Update, sondern ein UNMOUNT +
+  // REMOUNT der beiden Rückmeldungen. Und dieser Zweigwechsel passiert bei JEDEM
+  // Leser-Einsprung: die Route `/gesetze/:ebene/:key` ist `lazy`, die Shell rät
+  // bis dahin aus dem Pfad eine laute Leiste (`kopfVonPfad`), und sobald der
+  // Leser steht, meldet er `kopfzeileSelbst`.
+  //
+  // FOLGE, gemessen (BV#art-8, 6× CPU-Drossel, rAF-Sampler, n=3): die
+  // «Springe zur verlinkten Stelle …»-Ansage ging beim Zweigwechsel AUS und
+  // 13–511 ms später wieder AN — ein sichtbares Blinken. Flanken und
+  // Zweigwechsel fielen auf die Millisekunde zusammen:
+  //     an 678 · aus 823 · an 836 · aus 1441   |  Zweig → still @ 823
+  //     an 495 · aus 666 · an 1177 · aus 1250  |  Zweig → still @ 666
+  //     an 501 · aus 672 · an 1186 · aus 1263  |  Zweig → still @ 672
+  // (Ziel `#art-8` im DOM erst bei 1177–1355 ms.) Der Effekt-Cleanup des
+  // sterbenden Skeletons rief `schliesse()`, die neue Instanz baute die Ansage
+  // neu auf. Kein Timing-Zufall, sondern eine Kopplung an den MONTAGEORT.
+  //
+  // Sichtbar wurde das erst, als der Leser schnell genug wurde, dass die Lücke
+  // VOR den Artikel-Render fiel — `e2e/leser-ruecksprung-r5-r7.e2e.ts` wartet
+  // auf «Ansage weg» und las dann in die Lücke hinein (Ziel noch nicht im DOM).
+  // Die Ursache lag aber immer hier, nicht am Tempo (§17: Wurzel, nicht Symptom).
+  //
+  // FIX: EIN Träger, dessen Zustand nur Attribute, Klassen und den VORDEREN
+  // Inhalt ändert; die zwei Rückmeldungen stehen in beiden Zuständen an
+  // derselben Position und behalten damit ihre Identität. Das gerenderte Markup
+  // ist in beiden Zuständen unverändert (der stille Zustand rendert `null` statt
+  // der Leisten-Zeile, `undefined`-Attribute lässt React weg) — Golden und die
+  // prerenderten Seiten bleiben byte-gleich.
+  const still = !!daten.kopfzeileSelbst;
   return (
     // Klebt unter der Topbar (sticky top-16 = 4rem), bleibt beim Scrollen sichtbar
     // (damit der Live-Artikel mitläuft). z ÜBER den Inhalts-Sticky-Leisten (Suche
@@ -126,9 +150,17 @@ export function InhaltsKopf({ daten, breiteKlasse, onSchliessen }: {
     // Topbar-Kontext gefangen ist) → «kopfzeile bei gesetzen verdeckt suchresultate
     // aus dem header». z-[19] hält den Kopf weiter über den Reader-Sticky-Leisten
     // (z-16/z-15 → A26-Panel bleibt oben), lässt aber das Header-Dropdown darüber.
-    <div data-inhalt-kopf className="sticky top-16 z-[19] border-b border-line bg-paper">
+    // Der STILLE Zustand (A-2, `kopfzeileSelbst`) trägt denselben Träger mit
+    // `h-9` reserviertem, transparentem Band — die Herleitung dafür steht oben
+    // («UND WARUM ER SEINE HÖHE BEHÄLT»): fiele er auf 0 px zusammen, sprängen
+    // 37 px und das Bestands-Tor `leser-kopf-cls-s3` riss seine Schwelle.
+    <div data-inhalt-kopf={still ? undefined : true} data-inhalt-kopf-still={still ? true : undefined}
+      className={still
+        ? 'pointer-events-none sticky top-16 z-[19] h-9 border-b border-transparent'
+        : 'sticky top-16 z-[19] border-b border-line bg-paper'}>
       {/* `relative`: Anker für das mobile Overlay-Suchfeld (A35, sucheSlot) — es legt
           sich `absolute` über die Zeile, ohne etwas zu verschieben (§15.2). */}
+      {still ? null : (
       <div className={`${breiteKlasse} relative mx-auto flex h-9 items-center gap-1.5 px-5 sm:gap-2 sm:px-6 md:gap-3`}>
         {/* ① ORT: Krumen und Artikel als EINE Angabe — seit A-4 (31.8.2026)
             aus dem geteilten Baustein `./OrtsAngabe`, den auch der `PaneKopf`
@@ -168,6 +200,7 @@ export function InhaltsKopf({ daten, breiteKlasse, onSchliessen }: {
             komfort={false} />
         </div>
       </div>
+      )}
       {/* W2·10-UI-NAV/R5 + R7: die beiden Sprung-Rückmeldungen der Einzelansicht.
           Sie hängen HIER, weil dieser Kopf die einzige Klammer ist, die über allen
           Inhaltsseiten liegt und zugleich weiss, dass eine läuft — beide rendern
