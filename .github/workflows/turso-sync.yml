@@ -117,6 +117,7 @@ jobs:
       # wuerde ein reiner Code-Fix (z. B. eine Extraktionsregel) stumm den alten DB-Stand
       # aus dem Cache ziehen. KEIN restore-keys: ein Praefix-Treffer waere ein ALTERER
       # Stand, der nie als aktuell gelten darf (§2/§5) — bei Miss wird immer frisch gebaut.
+      # suche-felder.ts ist FTS-Bau-Input ausserhalb datenhaltung/ (Befund F1 31.8.2026) — darum im Schlüssel.
       - name: Cache HOT-Artefakt (DB-Dateien)
         id: db-cache
         if: steps.token.outputs.da == '1'
@@ -126,7 +127,7 @@ jobs:
             daten/normtext.db
             daten/rechtsprechung.db
             daten/soft-law.db
-          key: db-${{ runner.os }}-${{ hashFiles('daten-manifest.json', 'scripts/datenhaltung/**', 'package-lock.json') }}
+          key: db-${{ runner.os }}-${{ hashFiles('daten-manifest.json', 'scripts/datenhaltung/**', 'scripts/suche-felder.ts', 'package-lock.json') }}
 
       - name: HOT-Artefakt bauen (aus committeten JSONs, reproduzierbar)
         if: steps.token.outputs.da == '1' && steps.db-cache.outputs.cache-hit != 'true'
