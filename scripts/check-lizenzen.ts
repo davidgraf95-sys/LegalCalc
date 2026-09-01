@@ -32,6 +32,8 @@ const ALLOWLIST = new Set(
     'BlueOak-1.0.0',
     'CC-BY-4.0',
     'CC-BY-3.0',
+    'OFL-1.1',
+    'Zlib',
   ].map((l) => l.toLowerCase()),
 );
 const WARN_LIZENZ = 'mpl-2.0';
