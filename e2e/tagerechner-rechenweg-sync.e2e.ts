@@ -30,6 +30,19 @@ test.describe('Fristenrechner: Rechenweg folgt den Eingaben oben', () => {
       .toHaveAttribute('aria-selected', 'true')
   })
 
+  test('Preset-Klick gewinnt gegen frühere Live-Werte (Stomp-Loch, Bug-Check 1.9.2026)', async ({ page }) => {
+    await page.goto('/rechner/tagerechner')
+    // Oben ändern → Live-Brücke aktiv (Voll-Form trägt 8).
+    await page.locator('input[type="number"]').first().fill('8')
+    await expect(page.locator('input[type="number"]').nth(1)).toHaveValue('8')
+    // Danach ein Preset wählen: dessen Werte müssen stehen bleiben —
+    // der Render-Sync darf die frisch hydratisierte Form nicht mit den
+    // alten Live-Werten überschreiben.
+    await page.locator('#preset-suche').fill('Berufung')
+    await page.getByRole('button', { name: /Berufung \(ordentlich\)/ }).click()
+    await expect(page.locator('input[type="number"]').nth(1)).toHaveValue('30')
+  })
+
   test('Preset-Link bleibt unangetastet, solange oben nichts geändert wird', async ({ page }) => {
     // Hydrations-Schutz: die Brücke meldet erst ab der ersten NUTZER-Änderung —
     // ein geteilter ZPO-Link (eigene Werte in der Query) darf beim Laden nicht

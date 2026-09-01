@@ -67,15 +67,6 @@ export function RechnerTagerechner() {
     setLetzterHash(hash);
     if (HASH_VERFAHREN[hash]) setVerfahren(HASH_VERFAHREN[hash]);
   }
-  const wechsle = (v: Verfahren) => {
-    // Bug-Check 10.6.2026 (MITTEL): Klick auf den AKTIVEN Tab darf die
-    // Query (und damit hydratisierte Eingaben) nicht verwerfen.
-    if (v === verfahren) return;
-    setVerfahren(v);
-    // Such-Parameter gehören zum bisherigen Tab — beim manuellen Wechsel
-    // fallen sie weg (die Forms hydratisieren ohnehin nur beim Mount).
-    navigate({ search: '', hash: v === 'allgemein' ? '' : `#${v}` }, { replace: true });
-  };
   // Live-Brücke: gültige ÄNDERUNGEN im einfachen Rechner oben schalten den
   // Voll-Tab passend um und fliessen als EIN stabiles Objekt (Referenz aus
   // dem State) in das aktive Voll-Formular — dessen Rechenweg rechnet damit
@@ -90,6 +81,18 @@ export function RechnerTagerechner() {
     setLive(e);
     setVerfahren(v);
   }, []);
+  const wechsle = (v: Verfahren) => {
+    // Bug-Check 10.6.2026 (MITTEL): Klick auf den AKTIVEN Tab darf die
+    // Query (und damit hydratisierte Eingaben) nicht verwerfen.
+    if (v === verfahren) return;
+    setVerfahren(v);
+    // Manuelle Wahl gewinnt: alte Live-Werte dürfen ein danach (re)gemountetes
+    // Formular nicht mehr überschreiben (Stomp-Loch, Bug-Check 1.9.2026).
+    setLive(null);
+    // Such-Parameter gehören zum bisherigen Tab — beim manuellen Wechsel
+    // fallen sie weg (die Forms hydratisieren ohnehin nur beim Mount).
+    navigate({ search: '', hash: v === 'allgemein' ? '' : `#${v}` }, { replace: true });
+  };
   // FE-2 (FAHRPLAN-FRISTEN-EINHEIT): geführte Regime-Frage. Die Weiche
   // FRAGT, sie rät nicht (§2 — keine Erkennung aus Freitext); die Tabs
   // bleiben als Profi-Schnellzugriff, der URL-Hash unverändert.
@@ -113,6 +116,11 @@ export function RechnerTagerechner() {
   const waehlePreset = (e: PresetIndexEintrag) => {
     setPresetQuery('');
     setVerfahren(e.regime);
+    // Preset gewinnt: ohne dieses Leeren würde der Render-Sync der frisch
+    // aus der Preset-URL hydratisierten Form sofort die ALTEN Live-Werte
+    // darüberschreiben (letzterLive startet beim Remount undefined —
+    // Stomp-Loch, Bug-Check 1.9.2026; e2e-Fall «Preset-Klick gewinnt»).
+    setLive(null);
     setPresetNonce((n) => n + 1);
     navigate({ search: e.query, hash: e.hash }, { replace: true });
   };
