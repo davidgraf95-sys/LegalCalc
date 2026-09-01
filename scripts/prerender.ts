@@ -116,11 +116,13 @@ function rendereTemplate(
     : '';
   // Vorab-Anforderung der Nutzlast, die diese Seite mit Sicherheit braucht
   // (QS-PERF, 1.9.2026 — Kandidat K2 des Kanton-Reader-Profils in der Variante
-  // OHNE zweite Wahrheit). Der Prerender kennt den Dateipfad zur BAUZEIT aus
+  // OHNE zweite Wahrheit). Der Prerender kennt die Pfade zur BAUZEIT aus
   // demselben Manifest, das auch der Client liest; im Client bleibt das
   // Register die einzige Quelle des Dateinamens (§5) — der Preload ist reines
-  // Cache-Vorwärmen und beeinflusst KEINE Auswahl. Ein falscher Preload waere
+  // Cache-Vorwärmen und beeinflusst KEINE Auswahl. Ein falscher Preload wäre
   // ein 404 im Netzpanel, nie ein falscher Inhalt.
+  // WELCHE Dateien vorgeladen werden (und welche bewusst nicht), steht an der
+  // Aufrufstelle bei den Erlass-Detailseiten.
   //
   // `as="fetch" crossorigin="anonymous"` ist Absicht: der Client holt die
   // Dateien mit `fetch()` (mode cors, credentials same-origin). Ohne
@@ -321,18 +323,39 @@ for (const e of snapshotErlasse) {
     const inhalt = erlassVolltextHtml(e, datei, currencyMap[e.key]);
     if (inhalt.includes('<script')) throw new Error('Inline-Script im Erlass-Volltext — Builder prüfen');
     const meta = metaFuerErlass(e);
-    // Die drei Dateien, die der Leser dieser Seite mit Sicherheit anfordert, in
-    // den Kopf vorziehen. Ohne sie laufen sie erst nach drei seriellen Wellen
-    // an (CDP-Wasserfall 1.9.2026, /gesetze/bund/OR @4x CPU + langsames 4G:
-    // Register ab 2672 ms, Snapshot erst ab 5215 ms von 10 009 ms — 52 % der
-    // Wartezeit vergehen, bevor die eigentliche Nutzlast bestellt ist).
+    // Register und Struktur-Sidecar in den Kopf vorziehen. Ohne sie laufen sie
+    // erst nach den seriellen Chunk-Wellen an (CDP-Wasserfall 1.9.2026,
+    // /gesetze/bund/OR @4× CPU + langsames 4G: Register ab 2672 ms, Struktur ab
+    // 3923 ms von 10 009 ms).
     // `e.ebene` ist die DATEN-Ebene (die Route kann abweichen, Befund 45) —
     // genau die, die `datenEbeneVonRoute()` im Client herstellt.
+    //
+    // ── WARUM DER SNAPSHOT SELBST NICHT DABEI IST (Messbefund 1.9.2026) ───────
+    // `/normtext/${e.datei}` ist der grösste Posten (OR: 344 KB gzip) und wurde
+    // am spätesten angefordert (ab 5215 ms) — er wäre der lohnendste Preload.
+    // Er ist bewusst NICHT hier: mit ihm im Kopf fallen **20 Leser-Specs** in 8
+    // Dateien (Scroll-Spy, TOC-Ruhe, Weiterlesen-Chip, Kopf-Geometrie,
+    // Ortsangabe, Split-View-Faltung). Isoliert und dreifach belegt, je 49 Tests
+    // desselben Satzes, lokal, nichts sonst laufend:
+    //   Basis-Stand cd4dc65cb                          49 passed
+    //   + Shell-Fix, ohne Preload                      49 passed
+    //   + Preload Register/Struktur (dieser Stand)     49 passed
+    //   + Preload Register/Struktur/SNAPSHOT           29 passed, 20 failed
+    // Symptome u. a.: der Scroll-Spy schreibt die gelesene Stelle nie
+    // (`localStorage` bleibt null, Timeout 20 s) und der Abstand Kopf→Artikel
+    // wandert um 44 px. Der Preload verschiebt damit nicht nur das WANN, er
+    // ändert die Reihenfolge, in der der Leser Daten und Rahmen bekommt — und
+    // der Leser hängt daran. §15/§1: dort gewinnt die Treue, nicht das Tempo,
+    // und §6.3 verbietet, die Specs stattdessen anzupassen.
+    // Der eigentliche Fund ist die Reihenfolge-Abhängigkeit im Leser selbst;
+    // sie ist als eigener Posten in `fahrplaene/FAHRPLAN-PERFORMANCE.md` §1-N3
+    // hinterlegt. Wer sie behebt, kann diesen Preload nachziehen — mit genau
+    // diesem Spec-Satz als Beweis.
     const strukturRel = `normtext/struktur/${e.ebene}/${e.key}.json`;
-    const preloads = [`/normtext/${e.datei}`, '/normtext/register.json'];
+    const preloads = ['/normtext/register.json'];
     // Das Struktur-Sidecar ist optional (404 = Leser ohne Gliederung, kein
     // Fehler). Nur vorladen, wenn es existiert — ein Preload auf eine fehlende
-    // Datei waere eine Konsolenwarnung ohne Nutzen.
+    // Datei wäre eine Konsolenwarnung ohne Nutzen.
     if (existsSync(join(PUBLIC, strukturRel))) preloads.push(`/${strukturRel}`);
     const html = rendereTemplate(meta, jsonLdFuerErlass(e), inhalt, meta.pfad, preloads);
     // Die Datei liegt unter der ROUTEN-Ebene, nicht unter der Daten-Ebene — sonst
