@@ -72,7 +72,7 @@ export function pflichtKlausel(md: string, variante: Klauselvariante = 'voll'): 
  */
 export const PALETTE_STAND = '2026-08-04';
 export const PALETTE: Record<'spitze' | 'stark' | 'mittel' | 'klein', string> = {
-  spitze: 'fable',
+  spitze: 'opus', // Weisung David 1.9.2026: «baue ab sofort nicht mehr mit fable» — Obergrenze Opus, Fable orchestriert nur
   stark: 'opus',
   mittel: 'sonnet',
   klein: 'haiku',
