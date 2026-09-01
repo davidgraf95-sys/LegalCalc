@@ -11,6 +11,11 @@
 - **Status:** ERSTRECHERCHE (Messwerte; jede Zahl auf EINER Maschine erhoben —
   belastbar sind die **A/B-Differenzen und Verhältnisse**, nicht die
   Absolutwerte).
+- **Wichtigster Satz zuerst:** Die zwei Massnahmen wirken (−23 bis −28 % unter
+  Drossel), sind aber **nicht landefähig**. Sie machen den Leser schnell genug,
+  dass eine **latente Reihenfolge-Abhängigkeit** in ihm sichtbar wird (Befunde
+  **B4** und **B5**). Der Fix dieser Wurzel gehört **vor** die
+  Perf-Massnahmen — und er ist das eigentliche Ergebnis dieses Schritts.
 - **Abnahme-Status:** keine fachliche Abnahme nötig und keine erteilt — es sind
   Messwerte, keine Rechtsinhalte.
 - **Pflegebedarf:** Die Zahlen altern mit jedem Bundle- und Datenzuwachs. Sie
@@ -252,12 +257,61 @@ sofort verfügbarer Snapshot überspringt. Beweismittel liegt bereit: derselbe
 49-Test-Satz plus der Ein-Zeilen-Eingriff (Snapshot in `preloads` aufnehmen,
 `scripts/prerender.ts`).
 
+### B5 — Auch die schonende Fassung stösst an dieselbe Wurzel: R7 wird rot
+
+Nach dem Ausbau des Snapshot-Preloads (B4) blieb die volle e2e-Suite mit
+**einem** Rotfall stehen: `e2e/leser-ruecksprung-r5-r7.e2e.ts:201` («R7 —
+Deep-Link-Skeleton»). Gemessen mit `--repeat-each=5`, 6× CPU-Drossel, lokal,
+nichts sonst laufend:
+
+| Stand | R7 | gemessene Overlay-Standzeit |
+|---|---|---|
+| Basis-Stand `cd4dc65cb` (2 Reihen) | **0/10 rot** | (grün, Wert nicht gedruckt) |
+| + M1 (Shell) allein | 1/5 rot | 241 ms |
+| + M1 + M2 (Register/Struktur-Preload) | 4/5 rot | 89 · 103 · 104 · 106 · 151 ms |
+
+Die Assertion lautet `dauerMs > 300` und war an der damals gemessenen Standzeit
+von **1673 ms** kalibriert (Kommentar im Spec). Sie ist ein **Latenz-Boden**:
+sie sagt nicht «das Overlay deckt den Lesebereich» (das prüfen die Frame-Zahl
+und die Deckungsprüfung daneben), sondern «der Einsprung dauert lange». Der
+Einsprung ist jetzt 7–19× schneller — die Assertion meldet einen Fehler für
+einen Fortschritt.
+
+**Und darunter liegt mehr.** In einem Diagnose-Lauf mit testweise gesenkter
+Schranke (50 ms statt 300 ms — **nicht ausgeliefert**, der Eingriff wurde
+zurückgenommen) fiel der Test weiter, nun an einer **substanziellen** Stelle:
+`document.getElementById('art-8')` ist nach dem Verschwinden des Overlays in
+3/5 Läufen `null` (`e2e/leser-ruecksprung-r5-r7.e2e.ts:288`, «Ziel im DOM»).
+Der Latenz-Boden hat diesen Fall bisher verdeckt.
+
+Die Erklärung liegt in `src/components/layout/DeepLinkSkeleton.tsx`: der
+Toter-Anker-Zweig schliesst das Overlay, sobald **irgendein**
+`article[id^="art-"]` im DOM steht — begründet mit der Annahme «die Artikel
+erscheinen gemeinsam (eine Render-Runde)». Wird der Reader schneller, trifft
+diese Annahme das Zeitfenster anders, und das Overlay gibt auf, bevor das Ziel
+da ist. Das ist derselbe Wurzelbefund wie B4: **der Leser koppelt Bereitschaft
+an Zeit und Reihenfolge statt an Zustand.**
+
+**Konsequenz für diesen Zweig — ehrlich:** Er ist **nicht landefähig**, solange
+diese Wurzel steht. Es genügt ausdrücklich **nicht**, M2 wegzulassen: auch M1
+allein — die unstrittige, verlustfreie Massnahme — reisst R7 (1/5). Jede
+Beschleunigung tut das. Die Schranke stattdessen zu senken wäre §6.3-widrig und
+hätte hier zusätzlich einen echten Defekt zugedeckt; genau das zeigt der
+Diagnose-Lauf oben. Der Reihenfolge-Fix gehört **vor** die Perf-Massnahmen,
+nicht danach.
+
 ## Offen (nicht in diesem Schritt gebaut)
 
-- **Reihenfolge-Abhängigkeit des Lesers (B4) — der grösste offene Posten.**
-  Bis sie behoben ist, ist jede Massnahme gesperrt, die dem Leser Daten früher
-  liefert als heute. Danach hängt daran der Snapshot-Preload (+3–10 % je Route,
-  gemessen) und mehr.
+- **Reihenfolge-Abhängigkeit des Lesers (B4/B5) — der Posten, an dem alles
+  hängt.** Zwei belegte Fundstellen: der Spy-Effekt
+  (`src/pages/gesetz-leser/inhalt-hooks.tsx:337 ff.`) und der
+  Toter-Anker-Zweig (`src/components/layout/DeepLinkSkeleton.tsx`). Beide
+  koppeln an einen Zustandsübergang bzw. an «irgendein Artikel ist da» statt an
+  «der Reader ist fertig». Bis das behoben ist, ist jede Massnahme gesperrt, die
+  dem Leser Daten früher liefert — Preload, Service-Worker-Cache, Edge-Cache,
+  HTTP/2 Push, warmer Reload. Beweismittel: `npm run perf:leser` plus die zwei
+  Spec-Sätze dieses Dossiers. Daran hängen der Snapshot-Preload (+3–10 % je
+  Route, gemessen) **und die Landefähigkeit der hier gebauten Massnahmen**.
 - **K3 — Drei-Wellen-Chunk-Kaskade.** In der Eager-Welle stehen Chunks, die der
   Leser nicht braucht (`katalogSuche`, drei `browse-*`, `kantone`, `fedlex`,
   `startseiteConfig`). Erwarteter Gewinn nach obiger Rechnung: rund 300 ms

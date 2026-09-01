@@ -516,12 +516,14 @@ zgb-a36-anhang: Die ZGB-Gliederung zeigt 74 Artikel des Anhangs «Wortlaut der f
   753-KB-`rechtsprechung/register.json` lädt nicht mehr auf Gesetzes-Leserseiten, und der Prerender
   lädt Register/Struktur im Kopf vor → OR **10 368 → 7 613 ms @4×+4G (−26,6 %)**,
   **38 296 → 27 432 ms @6×+3G (−28,4 %)**; ungedrosselt misst derselbe Basis-Stand **780 ms**, die
-  17.8.-Zahl ist dort also nicht mehr reproduzierbar. **Grösster offener Posten (neu gefunden):
-  der Leser hängt an der Reihenfolge, in der er Daten bekommt** — ein Snapshot-Preload reisst
-  20 Leser-Specs (Spy, TOC, Weiterlesen, Kopf-Geometrie), sauber isoliert 49/49 vs. 29/49; solange
-  das so ist, ist jede Massnahme gesperrt, die dem Leser Daten früher liefert. Ferner offen:
-  K3-Chunk-Kaskade, Reader-Kopf-Reflow (Design-Entscheid §13), `hydrateRoot` (eigener PR unter
-  `QS-BASIS`).
+  17.8.-Zahl ist dort also nicht mehr reproduzierbar. **NEUER SPERR-BEFUND — der Leser hängt an
+  der Reihenfolge, in der er Daten bekommt:** ein Snapshot-Preload reisst 20 Leser-Specs (Spy, TOC,
+  Weiterlesen, Kopf-Geometrie; isoliert 49/49 vs. 29/49), und schon die verlustfreie Shell-Massnahme
+  allein reisst den Deep-Link-Test R7 (Basis 0/10, M1 1/5, M1+M2 4/5) — darunter ein echter Defekt
+  in `DeepLinkSkeleton.tsx` (Overlay gibt auf, bevor das Ziel im DOM ist). **Der Perf-Zweig ist
+  damit NICHT landefähig**; erst der Wurzel-Fix (Bereitschaft an Zustand statt an Zeit koppeln),
+  dann die Beschleunigung. Ferner offen: K3-Chunk-Kaskade, Reader-Kopf-Reflow (Design-Entscheid
+  §13), `hydrateRoot` (eigener PR unter `QS-BASIS`).
   **Detail:** [FAHRPLAN-PERFORMANCE.md](fahrplaene/FAHRPLAN-PERFORMANCE.md) §1 (dort seit 29.8.2026
   auch die vollständige Messreihe und der Reader-Kopf-Reflow-Befund, wörtlich aus der ROADMAP; §1-N3
   trägt die A/B-Reihe vom 1.9.2026) und

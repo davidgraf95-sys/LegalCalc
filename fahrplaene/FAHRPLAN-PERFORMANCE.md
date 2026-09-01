@@ -348,8 +348,32 @@ dieselbe Bedingung wie `e2e/helpers/leserBereit.ts`):**
   plus der Ein-Zeilen-Eingriff (Snapshot in `preloads`, `scripts/prerender.ts`).
   Daran hängen gemessene 3–10 % je Route.
 
+- **Dieselbe Wurzel trifft den Deep-Link-Einsprung (R7) — und macht den Zweig
+  NICHT landefähig.** `e2e/leser-ruecksprung-r5-r7.e2e.ts:201` prüft mit
+  `dauerMs > 300`, dass das «Springe zu …»-Overlay steht; die Schranke war an
+  einer damals gemessenen Standzeit von 1673 ms kalibriert. Mit den Massnahmen
+  steht das Overlay 89–241 ms — der Einsprung ist 7–19× schneller, und die
+  Schranke meldet einen Fehler für einen Fortschritt (Latenz-Boden).
+  `--repeat-each=5`, 6× Drossel, lokal: Basis **0/10 rot** · nur M1 **1/5** ·
+  M1+M2 **4/5**. **Es genügt nicht, M2 wegzulassen** — auch die verlustfreie
+  M1 reisst den Test.
+  **Darunter liegt ein echter Defekt, den der Latenz-Boden bisher verdeckt hat:**
+  in einem Diagnose-Lauf mit testweise gesenkter Schranke (nicht ausgeliefert,
+  Eingriff zurückgenommen) fällt der Test an
+  `expect(top, 'Ziel im DOM').not.toBeNull()` (3/5) — das Overlay gibt auf,
+  bevor das Ziel im DOM ist. Ursache in
+  `src/components/layout/DeepLinkSkeleton.tsx`: der Toter-Anker-Zweig schliesst,
+  sobald **irgendein** `article[id^="art-"]` steht, gestützt auf die Annahme
+  «die Artikel erscheinen gemeinsam». Wird der Reader schneller, trägt die
+  Annahme nicht mehr.
+  **Reihenfolge des Bauens daraus:** erst der Wurzel-Fix (Bereitschaft an
+  ZUSTAND koppeln, nicht an Zeit/Reihenfolge — beide Fundstellen: Spy-Effekt
+  und DeepLinkSkeleton), dann die Perf-Massnahmen, dann der Snapshot-Preload.
+  Die Schranke abzusenken ist ausdrücklich KEIN Weg (§6.3, und sie deckt hier
+  einen echten Defekt).
+
 **Weiterhin offen in `QS-PERF`:** die Reihenfolge-Abhängigkeit oben (grösster
-Posten) · K3-Chunk-Kaskade (Eager-Welle trägt
+Posten, blockiert die Landung) · K3-Chunk-Kaskade (Eager-Welle trägt
 `katalogSuche`, drei `browse-*`, `kantone`, `fedlex`, `startseiteConfig`, die
 der Leser nicht braucht) · der Reader-Kopf-Reflow aus §1-N2 (nicht angefasst:
 sein Fix reserviert Kopf-Geometrie und ist damit eine Design-Entscheidung nach
