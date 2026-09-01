@@ -138,3 +138,56 @@ GOG (211.1).
 - OS-Schiene (`zhlex-os`, eigener JSON-Endpunkt): ZH-Pendant zur AS-Vorlauf-Problematik —
   für eine spätere Aktualitäts-Wache relevant, ungeprüft.
 - Massenlast-Verhalten notes.zh.ch (nur seriell ~1 req/s getestet).
+
+---
+
+## 9 Nachtrag 1.9.2026 — Tranche A (Ordner 3, 10, 4): zwei Messbefunde
+
+Additiv nach S8: Ziff. 1–8 bleiben im Wortlaut stehen (Erhebungsstand
+31.8.2026). Diese Ziffer trägt nach, was der Import der drei Ordner
+empirisch ergeben hat.
+
+### 9.1 Ordner-Enumeration bestätigt die Bestandszahlen — und der Endpunkt
+### zählt Seiten EINSBASIERT
+
+Ordner-weise Enumeration (`zh-quellen-aufloesen.ts --ordner=3,10,4`) über
+`fileNumber` + `page` liefert **76 / 67 / 27 = 170** geltende Erlasse. Das
+deckt sich Erlass für Erlass mit Zählweg A aus Ziff. 1 — die Zahlen dort sind
+damit unabhängig gegengeprüft, nicht bloss wiederholt. Alle 12 Erlasse, die
+schon im Kern-Bestand standen, trugen Titel, Kürzel und Registry-URL
+byte-gleich zum amtlichen Endpunkt (0 Konflikte).
+
+**Neue Falle (empirisch belegt 1.9.2026), gehört neben die HTTP-204-Falle aus
+Ziff. 5:** Der Parameter `page` ist **einsbasiert**. `page=0` und `page=1`
+liefern beide dieselbe erste Seite. Eine nullbasierte Schleife
+(`for seite=0; seite < numberOfResultPages`) holt darum Seite 1 doppelt und
+lässt die **letzte** Seite still weg — gemessen an Ordner 4: 15 statt 27
+Erlasse, ohne Fehler, ohne HTTP-Auffälligkeit. Wer ordner-weise enumeriert,
+zählt `1 … numberOfResultPages` und hält eine Dubletten-Wache daneben.
+
+### 9.2 55 von 170 Erlassen tragen gar keine §-/Art.-Gliederung (Adapter-Grenze)
+
+Der ZH-Adapter erhebt die Zählweise je Erlass aus der Textbasis
+(`erkenneZhMarker`: «§ N» oder «Art. N»). **55 der 170 Erlasse dieser drei
+Ordner tragen keinen einzigen Kopf beider Formen** und liefern folglich
+0 Bestimmungen. Es ist kein Quell-, sondern ein Gliederungsbefund — die PDFs
+sind vollständig, byte-verifiziert und im Roh-Cache:
+
+- **Kantonsrats-/Regierungsratsbeschlüsse** («Der Kantonsrat, … beschliesst:»)
+  gliedern römisch («I., II.») oder gar nicht (LS 212.22, 631.21).
+- **Gegenrechtserklärungen zu Erbschafts-/Schenkungssteuern** (die ganze
+  Gruppe LS 672.6xx, 673.11) sind Briefwechsel-Erklärungen mit blosser
+  Ziffern-Gliederung («1., 2., a., b.»).
+- **Alte Reglemente** (LS 326, von 1961) nummerieren Bestimmungen als blosse
+  Ziffern ohne §-Zeichen.
+
+Konsequenz für den Bau: diese Klasse gehört in die Gliederungs-Runde
+(FAHRPLAN-KANTONE §5.2 Phase II R1/R4), nicht in eine Sonderregel im Adapter.
+Bis dahin stehen die Erlasse mit Grund in `ZH_ZURUECKGESTELLT`
+(`scripts/normtext/zh-quellen.ts`) — ausgewiesene Lücke statt falscher Text
+(§8). Dazu 13 Erlasse, an denen die unabhängige Zweitlesung
+(`check:zh-vollstaendigkeit`) einen echten Befund gegen das PDF meldet; ihr
+Befund steht dort im Wortlaut, damit die Fix-Runde nicht neu messen muss.
+
+**Aufgenommen 1.9.2026: 111 Erlasse / 4356 Artikel-Einträge**, Zweitlesung
+111/111 grün, 0 Befunde. Status unverändert «Geltung ungeprüft» (§7/§8).
