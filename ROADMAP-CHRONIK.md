@@ -1,5 +1,37 @@
 # ROADMAP — Erledigt-Chronik (Detail-Archiv erledigter Schritte)
 
+## Zielbild-Dekret Gesetzesleser + Plan-Umbau 1.9.2026 *(Chat David, Session 1.9.2026)*
+
+**Wortlaut David (Chat, 1.9.2026):** «aktuell ist gesetzesleser im vordergrund. also ziel soll es
+sein möglichst alle gesetze zu haben die ein schweizer jurist benötigt. und das zu perfektionieren.
+es soll der beste gesetzesdarsteller für schweizer juristen sein den es auf dem markt gibt.» —
+«aber es ist schon gut, dass wir zuerst fundamentarbeit machen wenn das sinnvoll ist.» —
+«ok bau den bauplan so um … und dann beginne mit dem arbeiten. verwende die richtigen skills. bau
+nach diesem muster bis ich stop sage und versuche token zu spahren.»
+
+**Bestandsmessung, die den Umbau trägt (1.9.2026, `public/normtext/register.json`):** Bund 238
+Erlasse / 25'404 Artikel, Kernbestand praktisch komplett (Lücken: EMRK nur PDF-Einbettung, EÖBV und
+AVG fehlen); Kantone 1'253 Dateien — BS 859 und AR 266 vollständig, ZH 24, 22 Kantone nur Tarife;
+Sprache 1'488 de / 2 fr. Tempo: OR-Erstrender 8,4–17,2 s bis bedienbar (QS-PERF). Vertrauen:
+Normen-Monitor seit ≥5 Wochen rot; 18'854 von 75'365 Artikel↔Entscheid-Kanten Phantom-Zitate.
+Massstab «bester Gesetzesdarsteller» = besser als Fedlex/lexfind: wortgetreu bis in Fussnoten,
+Anhänge und Übergangsbestimmungen · schnell · Verweise springen richtig · Bund + Kanton an einem Ort.
+
+**Umbau:** `@queue` neu in vier Blöcken (1 Fundament: QS-BASIS/K3 · QS-PERF · QS-MONITOR-ROT ·
+W2·13-KANTONE-DATEN/Tag-Leser — 2 Text-Treue Bund: W2·5l-NORMTEXT-B2 · QS-KORPUS · W2·20 ·
+W2·5m — 3 Kantone: W2·13-KANTONE-DRIFT · W3·12 — 4 Differenzierung: W2·5g-ZEIT · W2·14-SIGNAL ·
+W2·6). Geparkt mit Token `zielbild-gesetzesleser`: W2·6b-MAT-FINMA, W2·11-DESIGN, W1·4,
+W1·5-PRAXIS, W2·8, W3-AUSBAU, W2·16-INVENTAR, SEO-A11Y, QS-OPT, QS-GP, QS-AUTOMATIK. Auf `ready`
+zurück: QS-BASIS (Sequenz-Marker erfüllt), W2·13-KANTONE-DATEN (Programm läuft), und die vier
+`wip`-Leichen ohne Bau-Spur W2·20 / W2·7-VZUI / W2·17 / W2·19 (blockierten Leser- und Design-Feld
+seit Tagen). «Tabellen lesbar» von W2·5g-ZEIT nach W2·5l-NORMTEXT-B2 verschoben (Text-Treue,
+nicht Zeit). Zwei David-Fragen neu: FR/IT-Zielbild, Kantons-Reihenfolge.
+
+**Begründungszeile zur Zurückstellung:** kein Schritt gestrichen; die Prüfstrasse ist reif genug
+(CI-Fehlerrate 10 %, 0 von 338 Tor-Läufen rot seit letztem Snapshot), Prozessarbeit läuft nach §17
+reaktiv weiter. Analytics bewusst nicht aktiviert — David ist heute der einzige Nutzer.
+
+
 ## W2·18-FEHLERBUCH — Repro-Durchgang + UI-Fix-Batch 29.8.2026 *(Branch `feat/w2-18-fehlerbuch-ui1`; überführt 29.8.2026)*
 
 Sieben Fehlerbuch-Zeilen abgeschlossen. Vier davon durch einen Fix, drei durch Messung: zwei waren längst erledigt bzw. widerlegt, eine hatte einen falschen Wortlaut. Die Reproduktion lief gegen den Prod-Stand, die Sichtprüfung gegen einen lokalen `vite preview`-Build (eigener Playwright-Prozess, hell + dunkel).
