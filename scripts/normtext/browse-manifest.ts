@@ -151,6 +151,25 @@ export function sachgebietKantonFuer(
     const passt = k.startsWith(treffer[0]) && (!treffer[1] || k.startsWith(treffer[1]));
     return passt ? benenne(treffer[0], treffer[1]) : undefined;   // erster Treffer entscheidet
   }
+
+  // (2c) BAND-ZWEIG (ZH, N0b-Nachtrag 1.9.2026, LU-Klasse — eine defensive
+  //      Zusatzprüfung wie (2b), kein Rateweg): ZH hat keine clex-Systematik
+  //      mit sparsamen Knoten-Nummern, sondern 14 ORDNER-BÄNDER (Nummernband
+  //      '101'–'176' → Ordner '1', …, s. zh-systematik.ts). Ihr Index ist
+  //      darum dicht auf jede Hauptnummer ('LS#101' … 'LS#954') vorgerechnet,
+  //      und zwar unter dem Namensraum 'LS#' — demselben, den
+  //      `systematikSchluessel()` (src/lib/normtext/systematik.ts) aus dem
+  //      Register-Feld `sr` ('LS 131.1') für den GLEICHEN Baum ableitet (§5
+  //      SSoT: ein Baum, zwei Konsumenten). Der Snapshot-`stamm` ('ZH-131.1')
+  //      trägt dieses 'LS'-Präfix nie, darum griffen (2a)/(2b) für ZH bisher
+  //      NIE (Befund 1.9.2026: 0/24). Reiner Zusatz-Zweig, additiv — ändert
+  //      nichts an (1)/(2a)/(2b) und damit nichts am Verhalten anderer
+  //      Kantone; die Hauptnummer ist bei ZH immer dreistellig, ein direkter
+  //      Treffer genügt (keine Kürzungs-Schleife nötig).
+  if (kanton === 'ZH') {
+    const treffer = baum.index[`LS#${ganz}`];
+    if (treffer) return benenne(treffer[0], treffer[1]);
+  }
   return undefined;
 }
 

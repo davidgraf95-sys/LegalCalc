@@ -41316,7 +41316,13 @@
       "stand": "2011-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-215_1-2003_11_17-2005_01_01-071.html",
       "fassungsToken": "37db6b4c1b9503bb851f3a1e04097a4c54bf910e241368db7e9ed16f296d760f",
-      "pdfPfad": null
+      "pdfPfad": null,
+      "sachgebietKanton": {
+        "wurzel": {
+          "nummer": "3",
+          "name": "Gerichtsorganisation - Zivilrecht - Notariat - Grundbuch"
+        }
+      }
     },
     {
       "key": "ZH-232.3",
@@ -41334,7 +41340,13 @@
       "stand": "2022-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-232_3-2012_06_25-2013_01_01-115.html",
       "fassungsToken": "7e89a1deb948d8cad798c2d0e57d8fe65dd7bda5a4f3b57632a6b477dc42c2f8",
-      "pdfPfad": null
+      "pdfPfad": null,
+      "sachgebietKanton": {
+        "wurzel": {
+          "nummer": "3",
+          "name": "Gerichtsorganisation - Zivilrecht - Notariat - Grundbuch"
+        }
+      }
     },
     {
       "key": "ZH-230",
@@ -41352,7 +41364,13 @@
       "stand": "2026-06-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-230-1911_04_02-1912_01_01-133.html",
       "fassungsToken": "ffda5039087d3417b21703a4ef16f559980673dc0e0377fc6f470f8137cb3e70",
-      "pdfPfad": null
+      "pdfPfad": null,
+      "sachgebietKanton": {
+        "wurzel": {
+          "nummer": "3",
+          "name": "Gerichtsorganisation - Zivilrecht - Notariat - Grundbuch"
+        }
+      }
     },
     {
       "key": "ZH-211.11",
@@ -41370,7 +41388,13 @@
       "stand": "2011-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_11-2010_09_08-2011_01_01-087.html",
       "fassungsToken": "b3dc12961821ae0b450519a040bcca8e1709ef8fe1f3e04570ad89959bdf8316",
-      "pdfPfad": null
+      "pdfPfad": null,
+      "sachgebietKanton": {
+        "wurzel": {
+          "nummer": "3",
+          "name": "Gerichtsorganisation - Zivilrecht - Notariat - Grundbuch"
+        }
+      }
     },
     {
       "key": "ZH-131.1",
@@ -41388,7 +41412,13 @@
       "stand": "2026-04-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-131_1-2015_04_20-2018_01_01-132.html",
       "fassungsToken": "713343fbeed4815bc1ab47f62aa6562e5cadfe7f40fe678a1700327b3b6236af",
-      "pdfPfad": null
+      "pdfPfad": null,
+      "sachgebietKanton": {
+        "wurzel": {
+          "nummer": "1",
+          "name": "Verfassung - Kantonsgebiet - Gemeinden - Bürgerrecht - PolitischeRechte - Behörden"
+        }
+      }
     },
     {
       "key": "ZH-211.1",
@@ -41406,7 +41436,13 @@
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "fassungsToken": "5eacdab0463786c7119d6ccd6c23c9cc0e3eaa3221099e37cda5b85aaa29a493",
-      "pdfPfad": null
+      "pdfPfad": null,
+      "sachgebietKanton": {
+        "wurzel": {
+          "nummer": "3",
+          "name": "Gerichtsorganisation - Zivilrecht - Notariat - Grundbuch"
+        }
+      }
     },
     {
       "key": "ZH-170.4",
@@ -41424,7 +41460,13 @@
       "stand": "2024-05-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-170_4-2007_02_12-2008_10_01-125.html",
       "fassungsToken": "865fa7a4d0476a2a4284759b00b571d87487767b61175ecba62dad92648efdec",
-      "pdfPfad": null
+      "pdfPfad": null,
+      "sachgebietKanton": {
+        "wurzel": {
+          "nummer": "1",
+          "name": "Verfassung - Kantonsgebiet - Gemeinden - Bürgerrecht - PolitischeRechte - Behörden"
+        }
+      }
     },
     {
       "key": "ZH-211.15",
@@ -41442,7 +41484,13 @@
       "stand": "2021-11-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_15-2021_07_12-2021_11_01-115.html",
       "fassungsToken": "4c16b2b2a05177ac14f7eae7d02dedda4fd1a18bd0d3fe22cadb0f50ce762d80",
-      "pdfPfad": null
+      "pdfPfad": null,
+      "sachgebietKanton": {
+        "wurzel": {
+          "nummer": "3",
+          "name": "Gerichtsorganisation - Zivilrecht - Notariat - Grundbuch"
+        }
+      }
     },
     {
       "key": "ZH-171.1",
@@ -41460,7 +41508,13 @@
       "stand": "2026-07-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-171_1-2019_03_25-2020_05_01-133.html",
       "fassungsToken": "d5c7c01857e098dbc949183c59a507d61cfde1ca66b584b71398ac409e2aaafb",
-      "pdfPfad": null
+      "pdfPfad": null,
+      "sachgebietKanton": {
+        "wurzel": {
+          "nummer": "1",
+          "name": "Verfassung - Kantonsgebiet - Gemeinden - Bürgerrecht - PolitischeRechte - Behörden"
+        }
+      }
     },
     {
       "key": "ZH-243",
@@ -41478,7 +41532,13 @@
       "stand": "2024-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-243-2009_03_09-2009_07_01-123.html",
       "fassungsToken": "7a7c8ab9ad969a4209801e2b8efbc6981dd76b78b0c2ae165a02dedcc94d4166",
-      "pdfPfad": null
+      "pdfPfad": null,
+      "sachgebietKanton": {
+        "wurzel": {
+          "nummer": "3",
+          "name": "Gerichtsorganisation - Zivilrecht - Notariat - Grundbuch"
+        }
+      }
     },
     {
       "key": "ZH-242",
@@ -41496,7 +41556,13 @@
       "stand": "2017-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-242-1985_06_09-1989_01_01-095.html",
       "fassungsToken": "26a4b5498fb91dd3125e83c486d00a4b461e9306cb5bb45a7d9921b4b30e6d90",
-      "pdfPfad": null
+      "pdfPfad": null,
+      "sachgebietKanton": {
+        "wurzel": {
+          "nummer": "3",
+          "name": "Gerichtsorganisation - Zivilrecht - Notariat - Grundbuch"
+        }
+      }
     },
     {
       "key": "ZH-177.10",
@@ -41514,7 +41580,13 @@
       "stand": "2024-08-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-177_10-1998_09_27-1999_07_01-126.html",
       "fassungsToken": "4beff781ea3968cf7bde9a8c43badecd5160dfd1cdfc4ab02000797d980fd0fc",
-      "pdfPfad": null
+      "pdfPfad": null,
+      "sachgebietKanton": {
+        "wurzel": {
+          "nummer": "2",
+          "name": "Staatspersonal - Kirchen - Religionsgemeinschaften"
+        }
+      }
     },
     {
       "key": "ZH-700.1",
@@ -41532,7 +41604,13 @@
       "stand": "2026-08-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-700_1-1975_09_07-1976_04_01-134.html",
       "fassungsToken": "95eb54853290b153bcd7a8b5af9d6e8c607c0959d7c383516f2ae8bf1934e561",
-      "pdfPfad": null
+      "pdfPfad": null,
+      "sachgebietKanton": {
+        "wurzel": {
+          "nummer": "11",
+          "name": "Raumplanung - Baurecht - Umweltschutz"
+        }
+      }
     },
     {
       "key": "ZH-550.1",
@@ -41550,7 +41628,13 @@
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-550_1-2007_04_23-2009_07_01-131.html",
       "fassungsToken": "2009e23473430690953c5401d2065ef5faac9eb9fc3773bc91948777112a0c0e",
-      "pdfPfad": null
+      "pdfPfad": null,
+      "sachgebietKanton": {
+        "wurzel": {
+          "nummer": "9",
+          "name": "Militär - Bevölkerungsschutz - Polizei"
+        }
+      }
     },
     {
       "key": "ZH-851.1",
@@ -41568,7 +41652,13 @@
       "stand": "2024-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-851_1-1981_06_14-1982_01_01-123.html",
       "fassungsToken": "fbc4b6d08a6d45775e8eea9256ad6c2938fbd882f46edfdba4b914db809ee25d",
-      "pdfPfad": null
+      "pdfPfad": null,
+      "sachgebietKanton": {
+        "wurzel": {
+          "nummer": "13",
+          "name": "Gesundheit - Arbeit - Sozialversicherung - Fürsorge"
+        }
+      }
     },
     {
       "key": "ZH-631.1",
@@ -41586,7 +41676,13 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "fassungsToken": "7b1ed7b46ed0c4801993857424480805e493127835f54f430285c286ee4cb6d7",
-      "pdfPfad": null
+      "pdfPfad": null,
+      "sachgebietKanton": {
+        "wurzel": {
+          "nummer": "10",
+          "name": "Finanzhaushalt - Steuern - Gebühren"
+        }
+      }
     },
     {
       "key": "ZH-331",
@@ -41604,7 +41700,13 @@
       "stand": "2020-06-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-331-2006_06_19-2007_01_01-109.html",
       "fassungsToken": "6b73a9c52e013a6ea7fbb1eb14ca9dcbbedc6167ca70426ffa0164e125f92e4b",
-      "pdfPfad": null
+      "pdfPfad": null,
+      "sachgebietKanton": {
+        "wurzel": {
+          "nummer": "4",
+          "name": "SchuldbetreibungundKonkurs - Strafrecht - Strafvollzug - Opferhilfe - Gewaltschutz"
+        }
+      }
     },
     {
       "key": "ZH-101",
@@ -41622,7 +41724,13 @@
       "stand": "2024-07-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-101-2005_02_27-2006_01_01-129.html",
       "fassungsToken": "4ed77f02d3d98977cd203f9f4c6943ae1554665a279e14cc6a06a900bb8b2ade",
-      "pdfPfad": null
+      "pdfPfad": null,
+      "sachgebietKanton": {
+        "wurzel": {
+          "nummer": "1",
+          "name": "Verfassung - Kantonsgebiet - Gemeinden - Bürgerrecht - PolitischeRechte - Behörden"
+        }
+      }
     },
     {
       "key": "ZH-215.3",
@@ -41640,7 +41748,13 @@
       "stand": "2015-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-215_3-2010_09_08-2011_01_01-087.html",
       "fassungsToken": "e35228719ff0a40deb105d027819f50c14dc690b4a042f411e0b682d08662f4b",
-      "pdfPfad": null
+      "pdfPfad": null,
+      "sachgebietKanton": {
+        "wurzel": {
+          "nummer": "3",
+          "name": "Gerichtsorganisation - Zivilrecht - Notariat - Grundbuch"
+        }
+      }
     },
     {
       "key": "ZH-281.1",
@@ -41658,7 +41772,13 @@
       "stand": "2011-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-281_1-2010_05_12-2010_07_01-071.html",
       "fassungsToken": "df6e27fafa068d63753f1cf37d5fec3ebd7b75134ae5e8a96e5c459a3013efbd",
-      "pdfPfad": null
+      "pdfPfad": null,
+      "sachgebietKanton": {
+        "wurzel": {
+          "nummer": "4",
+          "name": "SchuldbetreibungundKonkurs - Strafrecht - Strafvollzug - Opferhilfe - Gewaltschutz"
+        }
+      }
     },
     {
       "key": "ZH-323.1",
@@ -41676,7 +41796,13 @@
       "stand": "2018-11-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-323_1-2010_11_24-2011_01_01-103.html",
       "fassungsToken": "8b8c7634650628c57e32ab475782f2911f1e34e18c90d17367dbbfa3bae34641",
-      "pdfPfad": null
+      "pdfPfad": null,
+      "sachgebietKanton": {
+        "wurzel": {
+          "nummer": "4",
+          "name": "SchuldbetreibungundKonkurs - Strafrecht - Strafvollzug - Opferhilfe - Gewaltschutz"
+        }
+      }
     },
     {
       "key": "ZH-212.812",
@@ -41694,7 +41820,13 @@
       "stand": "2022-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-212_812-2011_04_12-2011_07_01-115.html",
       "fassungsToken": "dd24e235ccd5d2f63778f865c672f61716664004b51000cfc50de2a1e021cc6a",
-      "pdfPfad": null
+      "pdfPfad": null,
+      "sachgebietKanton": {
+        "wurzel": {
+          "nummer": "3",
+          "name": "Gerichtsorganisation - Zivilrecht - Notariat - Grundbuch"
+        }
+      }
     },
     {
       "key": "ZH-631.11",
@@ -41712,7 +41844,13 @@
       "stand": "2020-02-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_11-1998_04_01-1999_01_01-108.html",
       "fassungsToken": "9d1d75d9a1c07d78aa84796991a4c83bf58c5c94f86ab3437935f7ffcc09c7de",
-      "pdfPfad": null
+      "pdfPfad": null,
+      "sachgebietKanton": {
+        "wurzel": {
+          "nummer": "10",
+          "name": "Finanzhaushalt - Steuern - Gebühren"
+        }
+      }
     },
     {
       "key": "ZH-175.2",
@@ -41730,7 +41868,13 @@
       "stand": "2026-07-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-175_2-1959_05_24-1960_05_01-133.html",
       "fassungsToken": "19a1f6deed988dd6c92b02e2724ed156ed420a2452623558c20a684bfab66ab6",
-      "pdfPfad": null
+      "pdfPfad": null,
+      "sachgebietKanton": {
+        "wurzel": {
+          "nummer": "1",
+          "name": "Verfassung - Kantonsgebiet - Gemeinden - Bürgerrecht - PolitischeRechte - Behörden"
+        }
+      }
     }
   ]
 }
