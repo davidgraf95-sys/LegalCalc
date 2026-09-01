@@ -18,15 +18,20 @@
  */
 import { describe, it, expect, vi, afterEach } from 'vitest';
 import { parseHTML } from 'linkedom';
+import type { NavigateFunction } from 'react-router-dom';
+import { useMeldeInhaltsKopf } from '../components/layout/InhaltsKopfKontext';
+
+type MeldeKopf = ReturnType<typeof useMeldeInhaltsKopf>;
+type GlobalPatch = Record<string, unknown>;
 
 async function fetchAufrufeFuer(ebene: string): Promise<string[]> {
   vi.resetModules();
   const { window, document } = parseHTML('<!doctype html><html><body><div id="root"></div></body></html>');
-  (globalThis as any).window = window;
-  (globalThis as any).document = document;
+  (globalThis as GlobalPatch).window = window;
+  (globalThis as GlobalPatch).document = document;
 
   const aufrufe: string[] = [];
-  (globalThis as any).fetch = vi.fn(async (url: string) => {
+  (globalThis as GlobalPatch).fetch = vi.fn(async (url: string) => {
     aufrufe.push(String(url));
     // Alle Sidecar-Loader in browse.ts behandeln !res.ok als „leer/null" (kein
     // Wurf) — ein pauschales 404 ist darum für JEDE der hier ausgelösten
@@ -41,8 +46,8 @@ async function fetchAufrufeFuer(ebene: string): Promise<string[]> {
 
   function Harness() {
     useLeserDaten({
-      ebene, schluessel: 'X-TEST-999', navigate: (() => {}) as any, erlass: null, istSekundaer: false,
-      meldeInhaltsKopf: (() => {}) as any,
+      ebene, schluessel: 'X-TEST-999', navigate: (() => {}) as unknown as NavigateFunction, erlass: null, istSekundaer: false,
+      meldeInhaltsKopf: (() => {}) as unknown as MeldeKopf,
       setManifest: () => {}, setCurrency: () => {}, setStruktur: () => {}, setKopf: () => {},
       setKantonSys: () => {}, setKantonLuecken: () => {}, setErlass: () => {}, setEintraege: () => {},
       setFehler: () => {},
@@ -63,9 +68,9 @@ async function fetchAufrufeFuer(ebene: string): Promise<string[]> {
 
 describe('F3 — Bund lädt kanton-luecken.json nie (echte Effekt-Ausführung)', () => {
   afterEach(() => {
-    delete (globalThis as any).window;
-    delete (globalThis as any).document;
-    delete (globalThis as any).fetch;
+    delete (globalThis as GlobalPatch).window;
+    delete (globalThis as GlobalPatch).document;
+    delete (globalThis as GlobalPatch).fetch;
   });
 
   it('ebene=bund: KEIN Fetch auf kanton-luecken.json', async () => {
