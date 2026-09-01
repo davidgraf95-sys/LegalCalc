@@ -506,7 +506,11 @@ export function stellenImText(text: string, ctx: Ctx | null, paragrafFuerM6: boo
       for (const m of s.matchAll(PARAGRAF_INTERN)) out.push(stelle('m6-chapeau-unterdrueckt', m[1], leer));
     }
   };
-  const spans = normVerweiseImText(text);
+  // Z1 (W2·22): wie die Produktion — `ctx.eigenesKuerzel` ist der kanonisierte
+  // Register-Schlüssel des gelesenen Erlasses und schliesst den Erlass-Verweis
+  // auf sich selbst aus (NormText übergibt dort das rohe letzte Pfad-Segment;
+  // die Identitäts-Normalisierung in `erlassVerweiseImText` ist idempotent).
+  const spans = normVerweiseImText(text, ctx?.eigenesKuerzel);
   if (spans.length === 0) { rest(text); return out; }
   let zuletzt = 0;
   for (const s of spans) {

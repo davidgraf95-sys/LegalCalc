@@ -723,7 +723,12 @@ export function NormText({ text, intern }: { text: string; intern?: InternRefs }
   // liefert die voll zitierten Anker UND die per «i.V.m.»-Kette propagierten
   // bare Glieder. Für Nicht-Ketten-Text ist die Anker-Menge identisch zum
   // früheren matchAll(NORM_IM_TEXT)-Lauf (additiv, §6).
-  const spans = normVerweiseImText(text);
+  // Z1 (W2·22): der Register-Schlüssel des gelesenen Erlasses schliesst den
+  // Erlass-Verweis auf SICH SELBST aus («Die Bundesverfassung kann jederzeit …
+  // revidiert werden» in der BV) — Herleitung am Parameter von
+  // `erlassVerweiseImText`. Ausserhalb der Lesesicht (Rechner-/Vorlagentexte)
+  // gibt es keinen gelesenen Erlass; dort ist jeder Verweis fremd.
+  const spans = normVerweiseImText(text, intern?.basisPfad.split('/').pop());
   // V-4: der voll zitierte Fremd-Anker trägt das Aussen-Zeichen NUR in der
   // Lesesicht — ausserhalb (Rechner-/Vorlagen-Texte) ist jeder Norm-Verweis
   // fremd, dort unterschiede das Zeichen nichts (Reichweite, s. oben).
@@ -740,10 +745,17 @@ export function NormText({ text, intern }: { text: string; intern?: InternRefs }
     // Glied-Text (zeichenidentisch, §1), Auflösung über das synthetisierte Ziel.
     // V-2 Ziel 3: nennt der Verweis den GELESENEN Erlass, bleibt der Sprung im
     // Leser (Herleitung an `selbstSpanSprung`); sonst unverändert der Chip.
+    // Z1 (W2·22): dieselbe Regel trägt jetzt auch die Erlass-Spanne OHNE
+    // Artikelnummer — dort ist `artikel` das blosse Kürzel («DSG») und die
+    // Anzeige der Erlassname aus dem Quelltext. Die Bedingung fragt darum
+    // direkt, ob Anzeige und Auflösungs-Ziel auseinanderfallen; für jede
+    // bestehende Spanne ist das WORTGLEICH zu `s.propagiert` (Anker: anzeige
+    // === artikel; Ketten-Glied: artikel = Glied-Text + Kürzel) — SSR bleibt
+    // byte-identisch (§6).
     teile.push(
       selbstSpanSprung(s, `${s.start}-${s.artikel}`, intern)
       ?? <NormChip key={`${s.start}-${s.artikel}`} artikel={s.artikel}
-        anzeige={s.propagiert ? s.anzeige : undefined} linkClass={ankerClass} zielIntern={false} />,
+        anzeige={s.anzeige === s.artikel ? undefined : s.anzeige} linkClass={ankerClass} zielIntern={false} />,
     );
     zuletzt = s.end;
   }

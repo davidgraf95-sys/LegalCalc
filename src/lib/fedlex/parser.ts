@@ -337,7 +337,7 @@ const GLIED_VOR_KONNEKTOR = new RegExp(`(${KETTE_GLIED})\\s*(?:${KETTE_KONNEKTOR
  * Für Nicht-Ketten-Text ist die Anker-Menge identisch zu `matchAll(NORM_IM_TEXT)`
  * (gleicher Filter `fedlexLinkFuerArtikel != null`) — additiv, kein Verhalt-Bruch.
  */
-export function normVerweiseImText(text: string): NormVerweisSpan[] {
+export function normVerweiseImText(text: string, eigenesKuerzel?: string): NormVerweisSpan[] {
   const spans: NormVerweisSpan[] = [];
   for (const m of text.matchAll(NORM_IM_TEXT)) {
     const roh = m[0];
@@ -365,6 +365,16 @@ export function normVerweiseImText(text: string): NormVerweisSpan[] {
       });
       grenze = gliedStart;
     }
+  }
+  // Z1 (W2·22): BLOSSE Erlass-Verweise ohne Artikelnummer — rein ADDITIV. Ein
+  // Artikel-Anker (oder ein propagiertes Ketten-Glied) hat IMMER Vorrang: er
+  // nennt die konkrete Bestimmung, die Erlass-Spanne nur den Erlass. Diese
+  // Vorrang-Prüfung steht VOR der allgemeinen Bereinigung unten, weil dort der
+  // frühere Start gewinnt — hier gewinnt der Artikel, gleich wo er beginnt (§1).
+  const artikelSpans = [...spans];
+  for (const e of erlassVerweiseImText(text, eigenesKuerzel)) {
+    if (artikelSpans.some((a) => e.start < a.end && a.start < e.end)) continue;
+    spans.push(e);
   }
   // Sortieren + defensiv überschneidungsfrei halten (Anker/Glieder aus mehreren
   // matchAll-Runden). Bei einer (theoretischen) Überschneidung gewinnt der frühere
@@ -593,4 +603,166 @@ export function artikelnPluralVerweise(text: string, ebene: FremdEbene = 'bund')
     grenze = end;
   }
   return regionen;
+}
+
+// ─── Z1 (W2·22-VERWEIS-FEDLEX): Erlass-Verweis OHNE Artikelnummer ────────────
+//
+// LÜCKE (amtlich belegt, Abgleich gegen die jolux:Citation-Kanten des OR in
+// Fedlex, Stand 2026-01-01): Bis hierher verlinkte der Erkenner einen
+// Bundeserlass NUR, wenn eine Artikelnummer davorstand — «Art. N KÜRZEL»
+// (NORM_IM_TEXT) oder «Artikel N … des <Erlassname>» (Form B / Plural-Region).
+// Der BLOSSE Erlass-Verweis blieb Text, obwohl die Positivliste den Namen
+// kennt. Gemessene Beispiele, wörtlich aus public/normtext/bund/OR.json:
+//   · art_328_b «… die Bestimmungen des Datenschutzgesetzes vom 25. September 2020.»
+//   · art_193   «… richten sich nach der ZPO.»
+//   · art_97    «… des Bundesgesetzes vom 11. April 1889 über Schuldbetreibung
+//                und Konkurs sowie der Zivilprozessordnung vom 19. Dezember 2008 (ZPO)»
+//   · art_622   «… im Sinne des Bucheffektengesetzes vom 3. Oktober 2008 (BEG)»
+//
+// ZIEL ist die ERLASS-Ebene, nicht ein Artikel: `artikel` trägt bloss das
+// FEDLEX-Kürzel, und `fedlexLinkFuerArtikel` liefert dafür die Erlass-URL ohne
+// Anker (dieselbe Ableitung wie beim SchlT-Fall, §5). Der Renderer zeigt
+// unverändert den Quelltext (`anzeige`), verlinkt also zeichenidentisch.
+//
+// DREI ERKENNUNGS-FORMEN, jede mit eigener Eindeutigkeits-Bedingung (§1: kein
+// Link ist besser als ein falscher). Die Regeln sind STRENGER als bei Form B,
+// weil hier keine Artikelnummer das Zitat als Norm-Verweis ausweist:
+//   (a) AMTLICHER VOLLTITEL «Bundesgesetzes [vom D. Monat JJJJ] über …» —
+//       Kopfwort + kuratiertes Titel-Fragment (positivliste.ts). NUR der Kopf
+//       `Bundesgesetzes` (titelGeltung 'alle'): ein Kanton erlässt kein
+//       Bundesgesetz. Der Kopf `Verordnung` ist generisch und bleibt hier
+//       AUSSEN vor — ohne Artikelnummer fehlt jedes zweite Signal.
+//   (b) KURZTITEL-GENITIV aus der Positivliste («des Bucheffektengesetzes»).
+//       Ebenenübergreifend eindeutige Namen (geltung 'alle') lösen direkt auf;
+//       Namen mit geltung 'bund' (ein gleichnamiger kantonaler Erlass ist
+//       belegt — Falschlink BE-154.21 «Datenschutzgesetz») NUR MIT
+//       bestätigendem Erlassdatum im Text. Das Datum identifiziert den Erlass
+//       auch ohne Ebenen-Kontext: das kantonale Datenschutzgesetz trägt ein
+//       anderes (BE: 19. Februar 1986). Darum braucht diese Funktion — anders
+//       als fremdRoutingFormB — keinen `ebene`-Parameter; sie ist in Bund- und
+//       Kantonserlassen gleich streng.
+//   (c) ALLEINSTEHENDES KÜRZEL aus KUERZEL_TOKENS («nach der ZPO») NUR hinter
+//       einem Kontext-Wort der Verweisungssprache (Z1_KONTEXT). Ein nacktes
+//       Kürzel im Fliesstext bleibt Text — «OR» ist auch ein gewöhnliches
+//       Zeichenpaar, und ohne Kontext ist es kein Verweis.
+//
+// VIER NACHPRÜFUNGEN, wörtlich dieselben wie in fremdRoutingFormB (§5):
+//   · Erlassdatum (`datumPasst`): ein zitiertes Datum, das nicht zum Ziel
+//     passt, meint einen anderen — meist aufgehobenen — Erlass ⇒ kein Link.
+//   · Klammer-Kürzel hinter dem Namen: nennt es ein anderes/unbekanntes
+//     Gesetz, ist der Name nicht das gefundene Bundesgesetz ⇒ kein Link.
+//   · Titel-Fortsetzung (Präfix-Bindung, Fix-Runde 1 zu W2·20): folgt hinter
+//     dem Fragment ein weiteres Titelwort und bestätigt kein Datum den Erlass,
+//     ist ein LÄNGERER Titel gemeint (BPRAS statt BPR) ⇒ kein Link.
+//   · Selbstmarker: «dieses Gesetzes», «des vorliegenden Gesetzes» tragen
+//     keinen Erlassnamen und stehen darum in keiner der drei Tabellen — sie
+//     können hier gar nicht auflösen (Negativ-Test hält das fest).
+//
+// ABGRENZUNG zu Form B und Plural-Region (die Artikel-Pfade bleiben zuständig,
+// sonst entstünde ein zweiter Link auf dieselbe Stelle ODER — schlimmer — die
+// Erlass-Spanne schnitte die «Artikel N …»-Einheit auseinander und der bare
+// Artikel fiele auf den Self-Linker zurück, §1):
+//   · RÜCKWÄRTS-GUARD Z1_VOR_ARTIKEL — steht unmittelbar vor der Nennung ein
+//     Artikel-/Paragrafen-Zitat (mit Aufzählung, Passus-Kette, «f./ff.» und
+//     optionaler Präposition), ist Form B zuständig ⇒ keine Erlass-Spanne.
+//     Aus DENSELBEN Bausteinen gebaut wie FREMD_FORM_B (N2_ARTNR/N2_KONN/
+//     N2_PASSUS/N2_WERT), also dessen Spiegelbild, nicht eine zweite Wahrheit.
+//   · PLURAL-GUARD — Nennungen innerhalb einer `artikelnPluralVerweise`-Region
+//     gehören dieser Region (A10). Die Regionen werden nur berechnet, wenn es
+//     überhaupt einen Kandidaten gibt (§15: kein zweiter Voll-Scan pro Text).
+
+/** Kontext-Wörter der Verweisungssprache vor einem ALLEINSTEHENDEN Kürzel. */
+const Z1_KONTEXT = '(?:'
+  + '(?:Bestimmungen|Bestimmung|Vorschriften|Vorschrift|Regelungen|Regelung)\\s+(?:des|der)'
+  + '|(?:nach|gemäss|gemäß)\\s+(?:dem|der|des|den)'
+  + '|im\\s+Sinne\\s+(?:des|der)'
+  + '|nach\\s+Massgabe\\s+(?:des|der)'
+  + '|in\\s+Anwendung\\s+(?:des|der)'
+  + ')';
+// 1 = Kopfwort · 2 = Titel-Fragment · 3 = Kurztitel-Genitiv · 4 = blosses Kürzel.
+// Der Abschluss-Lookahead trennt Kürzel und Namen sauber vom Wortinneren
+// («BEGleitschreiben», «OR-konform») — Identität mit Wortgrenze (§7/§0.2).
+const Z1_ERLASS = new RegExp(
+  '(?:'
+    + '\\b(Bundesgesetzes)(?:\\s+vom\\s+' + N2_DATUM + ')?\\s+(' + TITEL_FRAGMENTE_ESC.join('|') + ')'
+    + '|\\b(' + GENITIV_NAMEN_ESC.join('|') + ')'
+    + '|' + Z1_KONTEXT + '\\s+(' + NORM_NAMEN_ESC.join('|') + ')'
+  + ')(?![-0-9A-Za-zÀ-ÿ­])',
+  'g',
+);
+// Spiegelbild der FREMD_FORM_B-Grammatik, rückwärts gelesen: «Art./Artikel/§ N
+// [, M und K] [Passus W …] [f./ff.] [des|der|…]» unmittelbar vor der Nennung.
+const Z1_VOR_ARTIKEL = new RegExp(
+  '(?:Art\\.|Artikeln?|§§?)\\s*' + N2_ARTNR
+    + '(?:\\s*' + N2_KONN + '\\s*' + N2_ARTNR + ')*'
+    + '(?:\\s+' + N2_PASSUS + '\\s+' + N2_WERT + '(?:\\s*' + N2_KONN + '\\s*' + N2_WERT + ')*)*'
+    + '(?:\\s+ff?\\.)?'
+    + '(?:\\s+(?:des|der|dem|den|über|vom))?\\s*$',
+);
+/** Rückschau-Fenster des Guards: ein Artikel-Zitat mit Aufzählung und
+ *  Passus-Kette bleibt weit darunter; die Grenze hält den Scan linear (§15). */
+const Z1_RUECKSCHAU = 240;
+
+/** Identitäts-Normalisierung eines Kürzels für den SELF-Vergleich. Bewusst
+ *  eigenständig neben `kuerzelKanon` (NormText.tsx): dort fallen Umlaute weg
+ *  ([^A-Z0-9]), womit «BüV» zu «BV» würde — zwei verschiedene Erlasse. Für den
+ *  Self-Ausschluss eines ERLASS-Verweises wäre das ein still verlorener,
+ *  richtiger Link (gemessen: bund/BUEV/art_5 → BV). Hier bleiben Umlaute
+ *  darum erhalten, wie in `KANON` (erkennung.ts); Trennzeichen fallen weg,
+ *  damit Register-Schlüssel («FINFRAV_FINMA») und FEDLEX-Key («FinfraV-FINMA»)
+ *  denselben Erlass bezeichnen. §1: lieber ein Duplikat als eine Abstraktion,
+ *  die zwei verschiedene Identitäts-Begriffe stillschweigend gleichsetzt. */
+const Z1_IDENT = (s: string): string => s.toUpperCase().replace(/[^A-ZÄÖÜ0-9]/g, '');
+
+/**
+ * Alle BLOSSEN Erlass-Verweise eines Fliesstexts (Z1) — Verweise auf einen
+ * Bundeserlass OHNE Artikelnummer. Rein und deterministisch (§2), Spannen nach
+ * `start` sortiert und überschneidungsfrei. `artikel` ist das FEDLEX-Kürzel
+ * (Auflösung auf die Erlass-Seite), `anzeige` der unveränderte Quelltext.
+ *
+ * @param eigenesKuerzel Register-Schlüssel des GELESENEN Erlasses (letztes
+ *        Segment des Lese-Basispfads). Nennt der Text diesen Erlass selbst
+ *        («Die Bundesverfassung kann jederzeit … revidiert werden» in der BV),
+ *        ist es kein Fremdverweis — ein Chip führte den Leser aus der geltenden
+ *        Fassung heraus nach Fedlex, ohne etwas hinzuzufügen. Gemessen
+ *        2.9.2026 über den ganzen Korpus: 26 Stellen, alle in der BV. Ohne
+ *        Argument (Rechner-/Vorlagentexte, Rechtsprechung) gibt es keinen
+ *        gelesenen Erlass — dort ist jeder Verweis fremd.
+ */
+export function erlassVerweiseImText(text: string, eigenesKuerzel?: string): NormVerweisSpan[] {
+  const spans: NormVerweisSpan[] = [];
+  let pluralRegionen: ReturnType<typeof artikelnPluralVerweise> | null = null;
+  for (const m of text.matchAll(Z1_ERLASS)) {
+    const end = m.index + m[0].length;
+    // Form (c): verlinkt wird NUR das Kürzel, nicht das Kontext-Wort davor.
+    const start = m[4] ? end - m[4].length : m.index;
+    // Abgrenzung 1: unmittelbar vorangehendes Artikel-/Paragrafen-Zitat.
+    if (Z1_VOR_ARTIKEL.test(text.slice(Math.max(0, m.index - Z1_RUECKSCHAU), m.index))) continue;
+    // Abgrenzung 2: Plural-Region (A10) — sie bringt ihre eigenen Glieder mit.
+    pluralRegionen ??= artikelnPluralVerweise(text);
+    if (pluralRegionen.some((r) => start < r.end && r.oeffnerStart < end)) continue;
+    // Auflösung je Form + Eindeutigkeits-Bedingung.
+    let gesetz: FedlexGesetz | null;
+    let nurMitDatum = false;
+    if (m[1]) {
+      gesetz = erkenneTitelGesetz(m[1], m[2], 'kanton'); // nur Geltung 'alle'
+    } else if (m[3]) {
+      const eindeutig = erkenneGenitivGesetz(m[3], 'kanton'); // nur Geltung 'alle'
+      gesetz = eindeutig ?? erkenneGenitivGesetz(m[3], 'bund');
+      nurMitDatum = !eindeutig && gesetz != null;
+    } else {
+      gesetz = erkenneFedlexGesetz(m[4]);
+    }
+    if (!gesetz) continue;
+    const nach = text.slice(end);
+    const datum = DATUM_IN_EINHEIT.exec(m[0])?.[1] ?? DATUM_NACH_NAME.exec(nach)?.[1] ?? null;
+    if (!datumPasst(gesetz, datum)) continue;      // Zeit-Kante (V-5)
+    if (nurMitDatum && !datum) continue;           // gleichnamiger Kantonserlass möglich
+    const klammer = KLAMMER_NACH_NAME.exec(nach);
+    if (klammer && erkenneFedlexGesetz(klammer[1]) !== gesetz) continue; // fremde Klammer
+    if (m[1] && !datum && TITEL_FORTSETZUNG.test(nach)) continue;        // Präfix-Bindung
+    if (eigenesKuerzel && Z1_IDENT(gesetz) === Z1_IDENT(eigenesKuerzel)) continue; // Self
+    spans.push({ start, end, anzeige: text.slice(start, end), artikel: gesetz, propagiert: false });
+  }
+  return spans;
 }

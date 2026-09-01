@@ -36,5 +36,6 @@ export {
   fremdRoutingFormB,
   normVerweiseImText,
   artikelnPluralVerweise,
+  erlassVerweiseImText,
 } from './fedlex/parser';
 export type { FremdRoutingGlied, FremdSignal, NormVerweisSpan, PluralRegion } from './fedlex/parser';
