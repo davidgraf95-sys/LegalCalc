@@ -546,3 +546,33 @@ export function datumPasst(gesetz: FedlexGesetz, rohDatum: string | null | undef
   if (!soll) return false; // Ziel ohne belegtes Erlassdatum → nicht prüfbar → kein Link
   return zitiertesDatumIso(rohDatum) === soll;
 }
+
+// ─── Z5 (W2·22) · Kürzel, die im Kantonsrecht einen ANDEREN Erlass bezeichnen ─
+//
+// Der ausgeschriebene Artikelverweis (`ausgeschriebeneVerweiseImText`,
+// `spannen.ts`) bindet an ein BLOSSES Kürzel. Für die grossen Bundeserlasse
+// («ZGB», «StPO», «SchKG») ist das ebenenübergreifend eindeutig — für
+// Kürzel, die JEDER Kanton auch für einen EIGENEN Erlass verwendet, ist es das
+// nicht. Dieselbe Sorge, die oben die GELTUNG der Kurztitel-Genitive trägt,
+// nur auf der Kürzel-Ebene; die Geltungs-Angabe der NAMEN hilft hier nicht
+// («Bundesgesetz über die Stempelabgaben» ist als Name eindeutig, sein Kürzel
+// «StG» ist es nicht).
+//
+// BELEGE (gemessen 2.9.2026 über den ganzen Snapshot-Korpus, vor dem Guard):
+//   · kanton/AR/621.111 art_48 «Einkünfte nach Art. 98 Abs. 2 lit. a und b StG»
+//     — gemeint ist das AR-Steuergesetz, verlinkt wurde SR 641.10
+//     (Stempelabgaben-StG des Bundes).
+//   · kanton/BE/215.326.2 art_28 «Zuständige Behörde im Sinne von Artikel 225
+//     Absatz 2 StG» — gemeint ist das BE-Steuergesetz, verlinkt wurde SR 641.10.
+// Beide Stellen sind für die ABGEKÜRZTE Zitatform (NORM_IM_TEXT) nicht
+// erreichbar, entstünden also erst durch Z5 — darum der Guard hier und nicht
+// weiter unten (§1: kein Link ist besser als ein falscher).
+//
+// AUFNAHME-REGEL (kein Vorrat auf Verdacht, §17-Gegengewicht): ein Eintrag
+// braucht eine gemessene Korpus-Stelle, an der ein Kantonserlass dieses Kürzel
+// für sich selbst oder für einen anderen Kantonserlass verwendet. Fehlt der
+// Beleg, gehört das Kürzel NICHT hierher — sonst gehen richtige Links verloren
+// (gemessen: der Guard kostet im Kantonskorpus 2 von 335 Z5-Links).
+export const KUERZEL_NUR_BUND: ReadonlySet<FedlexGesetz> = new Set<FedlexGesetz>([
+  'StG', // Steuergesetz — jeder Kanton führt eines (Belege oben)
+]);

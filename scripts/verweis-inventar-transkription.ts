@@ -512,7 +512,9 @@ export function stellenImText(text: string, ctx: Ctx | null, paragrafFuerM6: boo
   // Register-Schlüssel des gelesenen Erlasses und schliesst den Erlass-Verweis
   // auf sich selbst aus (NormText übergibt dort das rohe letzte Pfad-Segment;
   // die Identitäts-Normalisierung in `erlassVerweiseImText` ist idempotent).
-  const spans = normVerweiseImText(text, ctx?.eigenesKuerzel);
+  // Z5 (W2·22): wie die Produktion reicht das Tor die Ebene mit durch —
+  // `ctx.ebene` ist dieselbe Ableitung aus dem Lese-Basispfad.
+  const spans = normVerweiseImText(text, ctx?.eigenesKuerzel, ctx?.ebene ?? 'bund');
   if (spans.length === 0) { rest(text); return out; }
   let zuletzt = 0;
   for (const s of spans) {

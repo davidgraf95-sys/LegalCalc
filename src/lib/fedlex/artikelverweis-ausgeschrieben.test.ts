@@ -15,10 +15,11 @@
 
 import { describe, it, expect } from 'vitest';
 import { ausgeschriebeneVerweiseImText, normVerweiseImText } from './spannen';
+import { type FremdEbene } from './positivliste';
 
 /** Kurzform: (anzeige, auflösbares Ziel) je erkannter Spanne. */
-const treffer = (t: string, eigenes?: string) =>
-  ausgeschriebeneVerweiseImText(t, eigenes).map((s) => [s.anzeige, s.artikel] as const);
+const treffer = (t: string, eigenes?: string, ebene: FremdEbene = 'bund') =>
+  ausgeschriebeneVerweiseImText(t, eigenes, ebene).map((s) => [s.anzeige, s.artikel] as const);
 
 // ─── Positiv: die neun amtlich belegten Korpus-Stellen ───────────────────────
 
@@ -160,5 +161,29 @@ describe('normVerweiseImText — Z5 additiv eingehängt', () => {
       ['Art. 684', 'Art. 684 ZGB'],
       ['Art. 679 ZGB', 'Art. 679 ZGB'],
     ]);
+  });
+});
+
+// ─── Ebenen-Eindeutigkeit (KUERZEL_NUR_BUND) ────────────────────────────────
+
+describe('ausgeschriebeneVerweiseImText — Kürzel mit kantonaler Doppelbedeutung', () => {
+  // Belege (gemessen 2.9.2026 über den ganzen Snapshot-Korpus, vor dem Guard):
+  // kanton/AR/621.111 art_48 und kanton/BE/215.326.2 art_28 zitieren ihr EIGENES
+  // Steuergesetz als «StG»; Z5 verlinkte SR 641.10 (Stempelabgaben-StG).
+  const arStG = 'Für die Ermittlung des Einkommens aus unselbständiger Erwerbstätigkeit gelten die Einkünfte nach Art. 98 Abs. 2 lit. a und b StG.';
+  const beStG = 'Zuständige Behörde im Sinne von Artikel 225 Absatz 2 StG ist die Direktion für Inneres und Justiz.';
+
+  it('in einem KANTONALEN Erlass bleibt «StG» Text', () => {
+    expect(treffer(arStG, 'AR-621.111', 'kanton')).toEqual([]);
+    expect(treffer(beStG, 'BE-215.326.2', 'kanton')).toEqual([]);
+  });
+
+  it('in einem BUNDESERLASS bleibt «StG» der Bundes-Verweis (SR 641.10)', () => {
+    expect(treffer(beStG, 'MWSTG', 'bund')).toEqual([['Artikel 225', 'Art. 225 StG']]);
+  });
+
+  it('ebenenübergreifend eindeutige Kürzel verlinken auch im Kanton', () => {
+    const t = 'In Rechtsmittelverfahren nach Artikel 308 ZPO ist die Anwältin zuständig.';
+    expect(treffer(t, 'BE-168.811', 'kanton')).toEqual([['Artikel 308', 'Art. 308 ZPO']]);
   });
 });

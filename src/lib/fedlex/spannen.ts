@@ -23,7 +23,7 @@ import {
   GENITIV_NAMEN_ESC,
   TITEL_FRAGMENTE_ESC,
 } from './erkennung';
-import { datumPasst } from './positivliste';
+import { datumPasst, KUERZEL_NUR_BUND, type FremdEbene } from './positivliste';
 import {
   artikelnPluralVerweise,
   fremdRoutingFormB,
@@ -112,7 +112,11 @@ const GLIED_VOR_KONNEKTOR = new RegExp(`(${KETTE_GLIED})\\s*(?:${KETTE_KONNEKTOR
  * Für Nicht-Ketten-Text ist die Anker-Menge identisch zu `matchAll(NORM_IM_TEXT)`
  * (gleicher Filter `fedlexLinkFuerArtikel != null`) — additiv, kein Verhalt-Bruch.
  */
-export function normVerweiseImText(text: string, eigenesKuerzel?: string): NormVerweisSpan[] {
+export function normVerweiseImText(
+  text: string,
+  eigenesKuerzel?: string,
+  ebene: FremdEbene = 'bund',
+): NormVerweisSpan[] {
   const spans: NormVerweisSpan[] = [];
   for (const m of text.matchAll(NORM_IM_TEXT)) {
     const roh = m[0];
@@ -146,7 +150,7 @@ export function normVerweiseImText(text: string, eigenesKuerzel?: string): NormV
   // Ketten-Glieder haben Vorrang — sie decken dieselbe Stelle bereits ab und
   // verlinken die GANZE Zitat-Einheit statt nur die Artikel-Nennung.
   const ankerSpans = [...spans];
-  for (const a of ausgeschriebeneVerweiseImText(text, eigenesKuerzel)) {
+  for (const a of ausgeschriebeneVerweiseImText(text, eigenesKuerzel, ebene)) {
     if (ankerSpans.some((s) => a.start < s.end && s.start < a.end)) continue;
     spans.push(a);
   }
@@ -417,6 +421,9 @@ export function erlassVerweiseImText(text: string, eigenesKuerzel?: string): Nor
 //   · ZEIT-KANTE (`datumPasst`): ein zitiertes Erlassdatum, das nicht zum Ziel
 //     passt, meint einen anderen — meist aufgehobenen — Erlass («Artikel 5 DSG
 //     vom 19. Juni 1992» ist das aDSG, nicht das DSG von 2020).
+//   · EBENEN-EINDEUTIGKEIT: in einem KANTONALEN Erlass verlinkt ein Kürzel
+//     nicht, das dort üblicherweise einen eigenen Erlass bezeichnet
+//     (`KUERZEL_NUR_BUND`, positivliste.ts — zwei gemessene Falschlinks «StG»).
 // Zusätzlich filtert `fedlexLinkFuerArtikel` wie beim voll zitierten Anker:
 // verlinkt wird nur, was der EINE Resolver wirklich auflöst (kein toter Link).
 //
@@ -461,8 +468,14 @@ const Z5_ARTNR_RE = new RegExp(N2_ARTNR, 'g');
  * @param eigenesKuerzel Register-Schlüssel des GELESENEN Erlasses (letztes
  *        Segment des Lese-Basispfads) — nennt der Verweis diesen Erlass selbst,
  *        ist er kein Fremdverweis und bleibt dem Self-Pfad (Herleitung oben).
+ * @param ebene Ebene des LESENDEN Erlasses (wie in `fremdRoutingFormB`):
+ *        `kanton` sperrt die Kürzel aus `KUERZEL_NUR_BUND`.
  */
-export function ausgeschriebeneVerweiseImText(text: string, eigenesKuerzel?: string): NormVerweisSpan[] {
+export function ausgeschriebeneVerweiseImText(
+  text: string,
+  eigenesKuerzel?: string,
+  ebene: FremdEbene = 'bund',
+): NormVerweisSpan[] {
   const spans: NormVerweisSpan[] = [];
   let pluralRegionen: ReturnType<typeof artikelnPluralVerweise> | null = null;
   let grenze = -1; // Ende der zuletzt akzeptierten Einheit (Überschneidungs-Schutz)
@@ -475,6 +488,9 @@ export function ausgeschriebeneVerweiseImText(text: string, eigenesKuerzel?: str
     const gesetz = erkenneFedlexGesetz(sm[3]);
     if (!gesetz) continue;
     if (eigenesKuerzel && Z1_IDENT(gesetz) === Z1_IDENT(eigenesKuerzel)) continue; // Self
+    // Kürzel, das im Kantonsrecht einen ANDEREN Erlass bezeichnet («StG») —
+    // Belege und Aufnahme-Regel an `KUERZEL_NUR_BUND` (positivliste.ts).
+    if (ebene === 'kanton' && KUERZEL_NUR_BUND.has(gesetz)) continue;
     const rest = text.slice(nachAnker);
     if (fremdRoutingFormB(rest, m[1], undefined, 'bund')) continue; // Form B ist zuständig
     const einheitEnde = nachAnker + sm[0].length;

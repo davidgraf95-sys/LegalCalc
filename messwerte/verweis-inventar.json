@@ -2,7 +2,7 @@
   "_zweck": "Verweis-Inventar des Normtext-Korpus (V-1, W2·20-VERWEIS-SCHAERFE). Basislinie: jede Abweichung Artefakt ↔ Neuberechnung ist ROT. Erzeugung und Grenzen: scripts/check-verweis-inventar.ts (Kopf).",
   "_regenerieren": "npm run check:verweis-inventar -- --schreiben",
   "_quellen": {
-    "normTextSha256": "c09b07ed54d3c3c35739a52b42c7b747226e7a0cd1a583551f77e973e3877c60",
+    "normTextSha256": "0fdc2dbebce57363b9bc1da7c4137711a249f6072cbfa415f1cdeab098a7b9b7",
     "guards": 23
   },
   "korpus": {
@@ -11,13 +11,21 @@
     "texte": 214419
   },
   "gesamt": {
-    "stellen": 35780,
+    "stellen": 36047,
     "self": 19652,
-    "fremd": 7219,
-    "text": 8909,
+    "fremd": 11383,
+    "text": 5012,
     "selbstmarker": 927
   },
   "klassen": [
+    {
+      "klasse": "anker-ausgeschrieben",
+      "entscheid": "FREMD",
+      "stellen": 4164,
+      "erlasse": 254,
+      "selbstmarker": 0,
+      "was": "Ausgeschriebener Artikelverweis «Artikel N … KÜRZEL» → Fremd-Artikel (Z5, W2·22)"
+    },
     {
       "klasse": "anker-erlass",
       "entscheid": "FREMD",
@@ -61,8 +69,8 @@
     {
       "klasse": "art-desder-guard",
       "entscheid": "TEXT",
-      "stellen": 948,
-      "erlasse": 337,
+      "stellen": 911,
+      "erlasse": 330,
       "selbstmarker": 0,
       "was": "«Art. N des/der/über/vom …» ohne Klammer-Kürzel"
     },
@@ -93,8 +101,8 @@
     {
       "klasse": "art-n2-fremdkuerzel",
       "entscheid": "TEXT",
-      "stellen": 3861,
-      "erlasse": 252,
+      "stellen": 2,
+      "erlasse": 2,
       "selbstmarker": 0,
       "was": "«Art. N … FEDLEX-Kürzel» (N2 Form A) — Self unterdrückt"
     },
@@ -117,7 +125,7 @@
     {
       "klasse": "m6-chapeau-unterdrueckt",
       "entscheid": "TEXT",
-      "stellen": 34,
+      "stellen": 33,
       "erlasse": 5,
       "selbstmarker": 0,
       "was": "Zitat in Items unter unauflösbarem Fremdgesetz-Chapeau (M6)"

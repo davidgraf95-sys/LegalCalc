@@ -304,7 +304,10 @@ export function selbsttest(): void {
     // («–e» ist kein Zahlenglied), und der Rest «–e ZGB» trägt kein führendes
     // Leerzeichen. Nur weil der ROHE Rest weiter geprüft wird, greift N2 —
     // eine Ersetzung machte daraus einen falschen Self-Link (150 Stellen).
-    ['Es gilt Art. 5 Buchstaben a–e ZGB sinngemäss.', artErlass, 'art-n2-fremdkuerzel', false],
+    // Z5 (W2·22): seither wird genau diese Stelle nicht mehr unterdrückt,
+    // sondern auf ZGB art_5 verlinkt — die ODER-Regel oben bleibt trotzdem
+    // nötig, denn sie ist es, die das Kürzel überhaupt sichtbar macht.
+    ['Es gilt Art. 5 Buchstaben a–e ZGB sinngemäss.', artErlass, 'anker-ausgeschrieben', false],
     // Abgrenzung: das Passus-Wort selbst ist nie ein Kürzel (EIN Grossbuchstabe).
     ['Es gilt Art. 5 Absatz 2 sinngemäss.', artErlass, 'art-self', false],
     // Im Fremdgesetz-Chapeau ruht die Erweiterung: das genannte Kürzel IST das
@@ -332,7 +335,18 @@ export function selbsttest(): void {
     ['Es gilt Art. 5 des Bundesgesetzes über die Alters- und Hinterlassenenversicherung.', artErlass, 'art-desder-guard', false],
     // V-8 amtliche Kürzel-Schreibweise: Anker und N2-Unterdrückung erkennen «BankG».
     ['Massgeblich ist Art. 1b BankG.', ssv, 'anker-fedlex', false],
-    ['Es gilt Artikel 4 Absatz 2 des FinfraG sinngemäss.', ssv, 'art-n2-fremdkuerzel', false],
+    // Z5 (W2·22): die ausgeschriebene Präpositions-Form wird jetzt geroutet.
+    ['Es gilt Artikel 4 Absatz 2 des FinfraG sinngemäss.', ssv, 'anker-ausgeschrieben', false],
+    // ── Z5-Weichen (W2·22): was der neue Pfad NICHT verlinkt ────────────────
+    // Zeit-Kante: das zitierte Datum ist das des AUFGEHOBENEN aDSG (1992), das
+    // Register führt das DSG von 2020 ⇒ Z5 tritt zurück, N2 unterdrückt weiter.
+    ['Es gilt Artikel 5 DSG vom 19. Juni 1992 sinngemäss.', ssv, 'art-n2-fremdkuerzel', false],
+    // Self: nennt der Verweis den GELESENEN Erlass, bleibt es der Self-Sprung.
+    // (Selbstmarker true: das genannte Kürzel IST das eigene — V-2 Ziel 2.)
+    ['Es gilt Artikel 5 Absatz 2 AHVG sinngemäss.', artErlass, 'art-self', true],
+    // Suffix jenseits der geteilten Nummern-Grammatik («29septies») erzeugt gar
+    // keine Stelle — ART_INTERN matcht die Nummer nicht; der Negativ-Kontrakt
+    // steht darum im Unit-Test (src/lib/fedlex/artikelverweis-ausgeschrieben.test.ts, N6).
   ];
   for (const [text, ctx, sollKlasse, sollSelbst] of proben) {
     const st = stellenImText(text, ctx, false);
