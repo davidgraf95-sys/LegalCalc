@@ -36,9 +36,46 @@ abgeleitete Checkliste, samt den sieben Materialien-System-Befunden (a)–(h):
 
 - [ ] **`QS-MONITOR-ROT` · Normen-Monitor seit ≥5 Wochen rot — Wurzel-Fix** — Aktivierungs-Audit 14.8.2026: `normen-monitor.yml` 5/5 Läufe failure (seit 6.7., Issue #166 offen, 8 rote Läufe in Folge); scheiternde Schritte `check:netz` und LIK-Reihe (BFS O-1.6). Rechtsstand-relevant. DIAGNOSE 14.8. (Session-Befund, Issue #166 beantwortet): Monitor korrekt, Rot ist ECHT — Checkliste: · [ ] LIK-Reihe 2026-05→2026-07 nachziehen (scripts/lik-reihe-generieren.py; amtliche Werte ⇒ Gegenprüfung trotz formal fehlendem Risikopfad-Flag) · [x] 14 nicht-kanonische Fedlex-Pins repariert (#497, 2 Gegenprüfungs-Runden 14/14 SPARQL-rederiviert; PR von 574 auf 10 Dateien entbläht — Automaten-Churn inkl. 115 Kanton-Dateien ist Befund (a2)) · [x] Frische-Automat: gen:historie/check:historie in Kaskade+Prüfliste nachgerüstet (Nullprobe-belegt) · [ ] 10 ESTV-MWST-Snapshot-Drifts aktualisieren (Risikopfad Materialien) · [ ] AIG-Botschaft BOTSCHAFT-2025-3067 nachführen (botschaften-netz rot, Klasse d — materialien:botschaften-Generator; Risikopfad) · [ ] VRV-Vernehmlassung VERN-2026-79 bereinigen (vernehmlassungen-netz rot, Klasse d — Verfahren live nicht mehr gelistet; Risikopfad) · [x] Rest-Sondierung 14.8.: 8 weitere Netz-Tore einzeln GRÜN (caches/zitate/rss-oc/normtext/pdf/pdf-quellen/revisionen/abk) — nur materialien-netz + fedlex-versionen noch offen · [ ] Materialien-System-Befunde 14.8. (aus Korpus-Nachzug, je §17-Wurzel-Fix nötig): (a) `npm run materialien` löscht in DB-losen Worktrees still 11 kanten-Artefakte — Orphan-Bereinigung bei fehlender DB überspringen; (b) Generator-Abgänge ohne Grabstein/Logzeile — Zu-/Abgänge ausgeben, Abgänge bestätigungspflichtig; (c) VERN-Schlüssel erbt mutable Fedlex-Projektnummer (79→78-Umnummerierung belegt) — intrinsische Identität wie bei fga-URIs; (d) botschaften-netz-Stichprobe = 8 feste Keys, blind für Register-Zuwachs (9 neue Erlasse monatelang ungeprüft) — Vollabgleich Grundmenge↔Roh-Dateien; (e) VERN-shas rauschen (stand=Abfragedatum im Hash); (f) Botschaften-Roh ohne ORDER BY — deterministisch sortieren; (h) Fussnoten-Link-Extraktor erzeugt «Link .»-Leerzeichen bei Satzend-Links (TGBV Fn 20/32 belegt, Muster main-weit) — Fix im Extraktor, nie in den Daten; (a2) Frische-Automat fasst bei Bund-Läufen 115 Kanton-Dateien mit Datums-Churn an (Verletzung der eigenen Reset-Invariante cache.sh:31); (g) Generator-Kaskade als EIN Kommando (materialien ⇒ normtext:revisionen ⇒ gen:zaehler — am 14.8. kostete das einzelweise Entdecken zwei CI-Rotläufe auf #499) · [ ] Verfahrens-Gap: Reparatur-Arm (Mo 04:43) vs. Detektions-Arm (Mo 05:17) — Cadence/Reihenfolge entscheiden; check:netz-&&-Kette zeigt nur ersten Befund (eigener deklarierter Schritt, §17).
 
+**Ist-Diagnose 1.9.2026 (Session QS-MONITOR-ROT, Verteilung über 15 Läufe statt Einzelwert
+— Ergänzung, keine Nachführung; die 14.8.-Angaben oben bleiben, wie sie waren):**
+
+- Rotgrund A (6.7.–15.8.: LIK 05–07/2026, ESTV-MWST-Drifts, AIG-Botschaft, VERN-2026-79) ist
+  seit #499 (14.8.), #524 (15.8.) und #581 (30.8., Gegenprüfung bestanden) behoben; Beleg: Lauf
+  31.8. 00:31 UTC GRÜN (`check:lik-frische` 2026-07 ≥ 2026-06 · materialien-netz 48/48 ·
+  botschaften/vernehmlassungen-netz OK). Die ROADMAP-Häkchen fehlten nur.
+- Rotgrund B (24.8., 31.8. 11:38 — der stehende Rotgrund): Kanonik-Arbiter in
+  `check:fedlex-versionen` — Fedlex republiziert html-N-Manifestationen (24.8.: 10 Pins bgg/vgg/
+  aig/glg/ohg/elg/fidlev/beg/lmg/thg; 31.8.: stgb html-0→4). Der Reparatur-Arm
+  (`fedlex-frische.yml`) erkennt und re-pinnt korrekt, sein PR landet aber nicht: Voll-Lauf
+  `npm run normtext` fasst 4860 Kantons-Snapshots mit Datums-Churn an (Befund (a2)) → #596
+  kollidiert an vier ZH-Dateien mit #606 (`git merge-tree`-Beleg) und bleibt liegen; der Monitor
+  läuft 34 min nach dem Reparatur-Lauf, vor dessen Merge. Verfahrens-Gap damit belegt, nicht
+  vermutet.
+- Rotgrund C (30.8. 22:37 + 22:48, beide `workflow_dispatch`): `check:fedlex-abk-netz` — SPARQL-
+  Teilantwort (Live 594 Zeilen, 199/230 SR) gegen Artefakt 597; 00:31 derselbe Lauf mit 597/597
+  grün. Flake der Quelle, fail-closed korrekt («KEIN URTEIL MÖGLICH … NICHT regenerieren»). Kein
+  Fix nötig; Verteilung notiert (2/15 Läufe).
+- ESTV-ToC-Sonde 1.9.2026 (1 GET `tableOfContent.xhtml?publicationId=1248491`): 0× «Publiziert
+  am», 0 Datumsangaben — das ToC trägt keine Publikationsdaten; der Stand-Wechsel MUSS über die
+  Ziffer-Seiten geprüft werden (Stand-Probe je Dokument, `estv-mwst-stand-probe.ts`).
+- Befund (a) war bereits behoben (`soft-law-projektion-run.ts` Z. 48–63: ohne Harvest-Kanten
+  keine Orphan-Bereinigung) — hier nur festgestellt, nicht neu gebaut.
+
 Erledigt und hier als Beleg belassen:
 
   - [x] ESTV-MWST-Drift 15.8. behoben: MI 05 + Branchen-Info 04 Snapshots nachgezogen (Gegenprüfung bestanden), check:materialien-netz 48/48 drift-frei; Monitor-Rotgrund seit 10.8. damit weg.
+  - [x] 1.9.2026 (Branch `feat/qs-monitor-rot`): Verfahrens-Gap geschlossen — Monitor-Cron 07:17 UTC
+    (2,5 h nach dem Reparatur-Arm), Reparatur-PR ohne Kanton-Churn (`--nur=bund` +
+    `normtext:churn-reset`, Befund (a2)), `check:netz` als Runner mit Tafel aller 12 Verdikte
+    (Rot-Beweis: zwei rote Dummy-Glieder beide sichtbar). StGB-Pin html-0→4 (kanonisch, SPARQL
+    isExemplifiedBy; Regenerat aus html-4 = reiner Datums-Churn, Inhalt identisch).
+  - [x] 1.9.2026 Befund (d): `check:botschaften-netz` = Vollabgleich der Grundmenge (227 Erlasse);
+    Mutationsprobe BOTSCHAFT-2025-1528/EOG entfernt → alt grün, neu rot.
+  - [x] 1.9.2026 Befund (f): Roh-Bindings deterministisch (`sortiereBindings`); reproduziert (4 Dateien
+    umsortiert, multiset-identisch), Migration 59 Dateien, zweiter Lauf byte-stabil.
+  - [x] 1.9.2026 Befund (g): `npm run materialien:kaskade -- --datum=…` (Projektion → Revisionen →
+    Zähler → Churn-Reset → Manifest, Abbruch beim ersten Rot).
+  - [x] 1.9.2026 Befund (a): bereits behoben vorgefunden (Projektion ohne Harvest-Kanten löscht nichts).
 
 ---
 

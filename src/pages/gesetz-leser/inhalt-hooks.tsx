@@ -7,7 +7,8 @@ import { aktiverArtikel } from '../../lib/normtext/aktuellerArtikel';
 import { useMeldeInhaltsKopf } from '../../components/layout/InhaltsKopfKontext';
 import {
   ladeBrowseManifest, ladeErlass, ladeErlassDatei, ladeStruktur, ladeErlassKopf, ladeKantonSystematik, ladeCurrency,
-  type Sektion, type StrukturMap, type ErlassKopf, type CurrencyMap,
+  ladeKantonLuecken,
+  type Sektion, type StrukturMap, type ErlassKopf, type CurrencyMap, type KantonLueckenMap,
 } from '../../lib/normtext/browse';
 import type { KantonSystematik } from '../../lib/normtext/systematik';
 import { pfadZu, tabTitel } from './helpers';
@@ -67,13 +68,14 @@ export function useLeserDaten(opts: {
   setStruktur: Dispatch<SetStateAction<StrukturMap | null>>;
   setKopf: Dispatch<SetStateAction<ErlassKopf | null>>;
   setKantonSys: Dispatch<SetStateAction<Record<string, KantonSystematik>>>;
+  setKantonLuecken: Dispatch<SetStateAction<KantonLueckenMap>>;
   setErlass: Dispatch<SetStateAction<BrowseErlass | null>>;
   setEintraege: Dispatch<SetStateAction<NormSnapshot[] | null>>;
   setFehler: Dispatch<SetStateAction<boolean>>;
 }): void {
   const {
     ebene, schluessel, navigate, erlass, istSekundaer,
-    setManifest, setCurrency, setStruktur, setKopf, setKantonSys, setErlass, setEintraege, setFehler,
+    setManifest, setCurrency, setStruktur, setKopf, setKantonSys, setKantonLuecken, setErlass, setEintraege, setFehler,
   } = opts;
 
   useEffect(() => {
@@ -91,6 +93,9 @@ export function useLeserDaten(opts: {
     // N13: Systematik-Bäume nur für die Kanton-Lesesicht laden; fehlen sie, bleibt
     // die Overline ohne Sachgebiet (§8 — nichts Erfundenes).
     if (daten === 'kanton') void ladeKantonSystematik().then((s) => { if (lebt) setKantonSys(s); });
+    // §8-Nachzug (PR #614-Auflage): Erlass-Lücken ebenso nur für Kanton laden —
+    // der Bund trägt keine Einträge (§15, kein Zusatz-Fetch).
+    if (daten === 'kanton') void ladeKantonLuecken().then((l) => { if (lebt) setKantonLuecken(l); });
     void ladeErlass(schluessel).then(async (e) => {
       if (!lebt) return;
       if (!e) {

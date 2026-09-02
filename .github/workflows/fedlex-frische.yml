@@ -21,7 +21,7 @@ name: Fedlex-Frische-Automatik
 
 on:
   schedule:
-    - cron: '43 4 * * 1' # montags 04:43 UTC (vor dem 05:17-Monitor)
+    - cron: '43 4 * * 1' # montags 04:43 UTC (vor dem 07:17-Monitor; Abstand seit 1.9.2026 2,5 h, s. normen-monitor.yml)
   workflow_dispatch:
 
 # Auto-Merge-PRs, die von github.token erstellt werden, lösen KEINE CI aus (GH-
@@ -140,7 +140,15 @@ jobs:
             echo "Kein Re-Pin — keine Regenerierung nötig."
           else
             echo "cache.sh re-gepinnt → Snapshots/Struktur/Register regenerieren."
-            npm run normtext -- --datum=${{ steps.datum.outputs.iso }}
+            # `--nur=bund` seit 1.9.2026 (QS-MONITOR-ROT, Befund (a2)): der Voll-Lauf
+            # regenerierte 4860 Kantons-Snapshots mit reinem Datums-Churn; PR #596
+            # (31.8.) kollidierte an vier ZH-Dateien mit der ZH-Tranche #606 und
+            # blieb liegen, während der Monitor auf main am selben Pin rot stand.
+            # Dieser Workflow hebt ausschliesslich BUND-Pins — die Kantons-Phasen
+            # gehören nicht in seinen Diff (dieselbe Begründung wie bei
+            # gen:pdf-quellen unten). Golden-Index wird gemischt, Kanton-Einträge
+            # bleiben (scripts/normtext-snapshot.ts, Nur-Bund-Modus).
+            npm run normtext -- --datum=${{ steps.datum.outputs.iso }} --nur=bund
             # gen:pdf-quellen VOR dem Register: register.json projiziert
             # pdfUrl/pdfStand aus pdf-quellen.json (§5-Kaskade). Fehlte bis
             # 29.8.2026 — der Re-Pin der RDV hob ihre Konsolidierung von
@@ -155,6 +163,12 @@ jobs:
             npm run gen:pdf-quellen -- --nur=bund
             npm run normtext:register -- --datum=${{ steps.datum.outputs.iso }}
             npm run normtext:struktur -- --datum=${{ steps.datum.outputs.iso }}
+            # Churn-Reset seit 1.9.2026 (Befund (a2)): Dateien, die sich NUR in
+            # `erzeugt`/`abgerufen` unterscheiden, zurück auf HEAD — der PR trägt
+            # danach nur Substanz (Pin-Hebung, neue Fassung). Vor den abgeleiteten
+            # Generatoren und vor dem Manifest, damit beide vom bereinigten
+            # Stand ausgehen. Reset-Regel bisher nur von Hand (fedlex-cache.sh).
+            npm run normtext:churn-reset -- --pfad=public/normtext
             npm run gen:fedlex-wiedervorlage -- --datum=${{ steps.datum.outputs.iso }}
             npm run gen:verfall
             # gen:historie VOR dem Manifest: Historie-Shards leiten aus den

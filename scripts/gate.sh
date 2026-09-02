@@ -99,11 +99,18 @@ if [ "$mode" = "voll" ]; then
   # Fehlt der Cache, wird der Offline-Teil ÜBERSPRUNGEN und das laut gesagt —
   # ein stilles Weglassen wäre ein Tor, das nicht scheitern kann (§6.7).
   run "zh-artefakt" npx vite-node scripts/normtext/check-zh-vollstaendigkeit.ts -- --artefakt
+  # Dieselbe Zweiteilung fuer die ZH-RANDTITEL (R1, 2.9.2026): die Pruefungen
+  # 1-5 sind reine Artefakt-Aussagen (kein erfundener Token, Form, Gliederung
+  # lueckenlos, Messreihe), Pruefung 6 ist die Zweitlesung aus dem PDF.
+  run "zh-randtitel-artefakt" npx vite-node scripts/normtext/check-zh-randtitel.ts -- --artefakt
   if [ -d daten/pdf-cache-zh ] && [ -n "$(ls -A daten/pdf-cache-zh 2>/dev/null)" ]; then
     run "zh-vollstaendigkeit" npx vite-node scripts/normtext/check-zh-vollstaendigkeit.ts -- --offline
+    run "zh-randtitel" npx vite-node scripts/normtext/check-zh-randtitel.ts
   else
     printf '  --   %s\n' "zh-vollstaendigkeit ÜBERSPRUNGEN: Roh-PDF-Cache leer — 'npm run zh:cache' füllt ihn"
     ereignis "gate:zh-vollstaendigkeit-uebersprungen" true
+    printf '  --   %s\n' "zh-randtitel ÜBERSPRUNGEN: Roh-PDF-Cache leer — 'npm run zh:cache' füllt ihn"
+    ereignis "gate:zh-randtitel-uebersprungen" true
   fi
 fi
 
