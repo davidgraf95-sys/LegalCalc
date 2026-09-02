@@ -247,7 +247,7 @@ console.log('alles grün.');
  * Leerzeichen-Klasse; jede andere Abweichung bleibt sichtbar.
  */
 function vergleichbar(s: string): string {
-  return s.replace(/[\s  ]+/g, ' ').trim();
+  return s.replace(/[\s\u00a0\u202f]+/g, ' ').trim();
 }
 
 interface RohStueck {

@@ -156,7 +156,7 @@ export function baueZhSidecar(
   // Der Gliederungs-STAPEL: der Pfad von der äussersten Stufe bis zur aktuell
   // offenen. Eine neue Überschrift schliesst alle Stufen gleichen oder tieferen
   // Rangs und legt sich darauf.
-  let stapel: { rang: number; label: string }[] = [];
+  const stapel: { rang: number; label: string }[] = [];
   let ersterKopfGesehen = false;
 
   const zeilen = text.split('\n');
