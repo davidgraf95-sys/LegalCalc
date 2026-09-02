@@ -132,7 +132,7 @@ Sprachregel bleibt CLAUDE.md §13.3 (klar für Fach UND Laie) — keine parallel
 
 ## §15 · ROADMAP-Spec `W2·21-ZULIEFERER` — Anbinden statt nachbauen (Prüfschritt, 1.9.2026)
 
-**Anlass:** Quellen-Sichtung 1.9.2026 (`bibliothek/recherche/fremdquellen-sichtung-2026-09-01.md`).
+**Anlass:** Quellen-Sichtung 1.9.2026 (`bibliothek/recherche/fremdquellen-sichtung-2026-09-02.md` (absorbiert)).
 OpenCaseLaw (CC0-Daten, MIT-Code, tägliche Parquet-Lieferung, REST/MCP) trägt einen Nachweis-Index
 über 1,05 Mio. Entscheide mit Original-URL, ~10 Mio. Entscheid→Entscheid-Kanten, 12,4 Mio.
 Entscheid→Artikel-Verweise und 84'000 Botschafts-Artikel-Verweise. Das deckt die Bau-Absicht von
