@@ -190,11 +190,11 @@ belegte Ausreden, Umgehungs-Aufzählung «Buchstabe = Geist»).
 
 ## 4 · Nachkontrolle
 
-0. **Kein main-Push vor grünem Deploy-Job (F13, 2.9.2026):** jeder weitere
-   Push ohne `[skip ci]` cancelt über die Concurrency den Lauf des Merge-
-   Commits, und ein Doku-Lauf deployt nicht — der Merge bleibt unausgeliefert.
-   Erst Nachkontrolle 1 abschliessen, dann Doku pushen (bis der ci.yml-Fix
-   «main seriell» gelandet ist).
+0. **Kein main-Push vor grünem Deploy-Job (F13, 2.9.2026):** Beleg #629 — der
+   Lauf des Merge-Commits endete «cancelled», nachdem ~30 s später ein Doku-Push
+   folgte; der Doku-Lauf deployt nicht, der Merge blieb unausgeliefert (Ursache
+   offen, siehe Skill `lehren` F13). Erst Nachkontrolle 1 abschliessen, dann
+   Doku pushen; ein gecancelter Merge-Lauf wird mit `gh run rerun <id>` geheilt.
 1. **Deploy dem Merge-Commit zuordnen:** Job «Deploy (Prod, Vercel CLI)» im
    Actions-Lauf des Merge-Commits grün — er verifiziert die Live-Kennung
    selbst (`<meta lexmetrik-build>`, 3×20 s). **Skipped ist hier NICHT grün**
