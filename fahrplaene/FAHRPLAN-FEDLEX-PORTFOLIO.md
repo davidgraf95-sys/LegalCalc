@@ -385,7 +385,7 @@ Trailer `Roadmap: QS-KORPUS`, Gegenstand unverändert.*
 
 ## §21 · ROADMAP-Spec `W2·5n-BUND-VOLL` — Bund-Vollabdeckung (Entscheid David 1.9.2026)
 
-**Anlass:** Quellen-Sichtung 1.9.2026 (`bibliothek/recherche/fremdquellen-sichtung-2026-09-01.md`):
+**Anlass:** Quellen-Sichtung 1.9.2026 (`bibliothek/recherche/fremdquellen-sichtung-2026-09-02.md` (absorbiert)):
 Legalize-ch (5'139) und OpenCaseLaw (5'525) zeigen, dass alle SR-Erlasse mit deutschem Akoma-Ntoso-XML
 maschinell ladbar sind; LexMetrik pinnt 238. Zielbild «alle Gesetze, die ein Schweizer Jurist braucht»
 heisst für den Bund: die ganze SR, nicht nur der Kern.
