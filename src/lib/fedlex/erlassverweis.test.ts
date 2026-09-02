@@ -12,7 +12,7 @@
 
 import { describe, it, expect } from 'vitest';
 import { FEDLEX } from './tabelle';
-import { erlassVerweiseImText, normVerweiseImText } from './parser';
+import { erlassVerweiseImText, normVerweiseImText } from '../fedlex';
 
 /** Kurzform: (anzeige, gesetz) je erkannter Erlass-Spanne. */
 const treffer = (t: string) =>
