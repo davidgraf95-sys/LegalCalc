@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-08-30",
+  "erzeugt": "2026-09-01",
   "materialien": [
     {
       "key": "ESTV-KS-DBG-5A",
@@ -150,7 +150,7 @@
         "MWSTG"
       ],
       "hinweis": "Amtliche ESTV-MWST-Webpublikation (Verwaltungsverordnung), kein Gesetzesrang; Inhalt laufend versioniert.",
-      "sha": "84dfeb6b5016c8780560ae492ea0848bd03f90ed9e361bdef4ec6a5cdcac3aed"
+      "sha": "49d5c3bf06b61bd01d0c0af56a997b16dfc7286027eb3d3fbc4c2d86858b05e0"
     },
     {
       "key": "ESTV-MWST-INFO-02",
@@ -172,7 +172,7 @@
         "MWSTV"
       ],
       "hinweis": "Amtliche ESTV-MWST-Webpublikation (Verwaltungsverordnung), kein Gesetzesrang; Inhalt laufend versioniert.",
-      "sha": "35a6af622e0ca4e4a9fd4b479ec33de8492b2ffd0c031285c263e2d07e133720"
+      "sha": "30e0386629b145874481acdf93bb5780b852e7527fef500d7ea46c2741b7e2bf"
     },
     {
       "key": "ESTV-MWST-INFO-03",
@@ -194,7 +194,7 @@
         "MWSTV"
       ],
       "hinweis": "Amtliche ESTV-MWST-Webpublikation (Verwaltungsverordnung), kein Gesetzesrang; Inhalt laufend versioniert.",
-      "sha": "bd60a5867e6a41cbf09e6a1eaf3081481437a2e90ad81977e74abf3e2b44eadb"
+      "sha": "27e0e1543a1f5dac134244116710dfc3310803e051a63e1bb8f8ea0bf7930bc0"
     },
     {
       "key": "ESTV-MWST-INFO-04",
@@ -216,7 +216,7 @@
         "MWSTV"
       ],
       "hinweis": "Amtliche ESTV-MWST-Webpublikation (Verwaltungsverordnung), kein Gesetzesrang; Inhalt laufend versioniert.",
-      "sha": "b8652763f211b4a0acaddc754fa2b2f9efdb6936d9e08b4b7259028763e88897"
+      "sha": "ebe5df4dd9a7443f1e52bd1712ead1adc071c73888bdd924e62dd23775fdb072"
     },
     {
       "key": "ESTV-MWST-INFO-05",
@@ -238,7 +238,7 @@
         "MWSTV"
       ],
       "hinweis": "Amtliche ESTV-MWST-Webpublikation (Verwaltungsverordnung), kein Gesetzesrang; Inhalt laufend versioniert.",
-      "sha": "8ff34dab392bf0d248120e25992737aa6367c5e4be13d25fe91793cc2449fa02"
+      "sha": "e36be3026d2582cce40f48beeb1d4b486ffbfe89ed55d88f674f18f3c3995817"
     },
     {
       "key": "ESTV-MWST-INFO-06",
@@ -260,7 +260,7 @@
         "MWSTV"
       ],
       "hinweis": "Amtliche ESTV-MWST-Webpublikation (Verwaltungsverordnung), kein Gesetzesrang; Inhalt laufend versioniert.",
-      "sha": "0d1efc3aab9b4cc3f9b0a86b5d841386d88c561f35e2513d1163f8855d9f1698"
+      "sha": "af9f15a24b452faa85b72ac73131cf9966bebc0e4630b6e535d804062401f990"
     },
     {
       "key": "ESTV-MWST-INFO-07",
@@ -275,14 +275,14 @@
       "sprache": "de",
       "status": "nur-live-link",
       "quelleUrl": "https://www.gate.estv.admin.ch/mwst-webpublikationen/public/MI/07",
-      "stand": "2026-05-26",
+      "stand": "2026-08-31",
       "rang": 107,
       "normKeys": [
         "MWSTG",
         "MWSTV"
       ],
       "hinweis": "Amtliche ESTV-MWST-Webpublikation (Verwaltungsverordnung), kein Gesetzesrang; Inhalt laufend versioniert.",
-      "sha": "f5470a952cce6e0530d74875c29e747b498136d54caa1519e4d4201d2066c636"
+      "sha": "be5a06f59a8ac7f3da74bd18b25326f36d2f0f2574ca350e88d72be7d0718340"
     },
     {
       "key": "ESTV-MWST-INFO-08",
@@ -304,7 +304,7 @@
         "MWSTV"
       ],
       "hinweis": "Amtliche ESTV-MWST-Webpublikation (Verwaltungsverordnung), kein Gesetzesrang; Inhalt laufend versioniert.",
-      "sha": "3e56382baedcef9539fc9c4cb89fb69b7281e0c7fbfd10d69662e6f153d79a7b"
+      "sha": "082bbf8f1e46480c63a57d22dc6c4fcc3303ed0c335b623b80f0b62590c88596"
     },
     {
       "key": "ESTV-MWST-INFO-10",
@@ -326,7 +326,7 @@
         "MWSTV"
       ],
       "hinweis": "Amtliche ESTV-MWST-Webpublikation (Verwaltungsverordnung), kein Gesetzesrang; Inhalt laufend versioniert.",
-      "sha": "36373a917ea3985e9b9b0e4d2dfd8258b7817fea7d5b942bf4584dda80758cef"
+      "sha": "6946702b4ce300d8c23e25207f92328a9b1dc6b318f16115599dc6b00b16bab7"
     },
     {
       "key": "ESTV-MWST-INFO-11",
@@ -348,7 +348,7 @@
         "MWSTV"
       ],
       "hinweis": "Amtliche ESTV-MWST-Webpublikation (Verwaltungsverordnung), kein Gesetzesrang; Inhalt laufend versioniert.",
-      "sha": "43f8a6c071a4bcc6d1ae61eef555df6dd846ff4b90b250306fb8b02525ae3847"
+      "sha": "2d094e00b65bbc0f9e75151b4defec6cf483fbd91e8f48e91e102e9dd0e301f5"
     },
     {
       "key": "ESTV-MWST-INFO-12",
@@ -363,14 +363,14 @@
       "sprache": "de",
       "status": "nur-live-link",
       "quelleUrl": "https://www.gate.estv.admin.ch/mwst-webpublikationen/public/MI/12",
-      "stand": "2026-06-11",
+      "stand": "2026-08-31",
       "rang": 112,
       "normKeys": [
         "MWSTG",
         "MWSTV"
       ],
       "hinweis": "Amtliche ESTV-MWST-Webpublikation (Verwaltungsverordnung), kein Gesetzesrang; Inhalt laufend versioniert.",
-      "sha": "a2ffd9de6e86fe97d9928b5bc8645d237a502edaa41f47c5565e93ba058751ae"
+      "sha": "9e5bb06918ab04abb2162fa6963708c47fd8bce4e597c323962096a7cee6faf8"
     },
     {
       "key": "ESTV-MWST-INFO-13",
@@ -385,14 +385,14 @@
       "sprache": "de",
       "status": "nur-live-link",
       "quelleUrl": "https://www.gate.estv.admin.ch/mwst-webpublikationen/public/MI/13",
-      "stand": "2026-07-27",
+      "stand": "2026-08-31",
       "rang": 113,
       "normKeys": [
         "MWSTG",
         "MWSTV"
       ],
       "hinweis": "Amtliche ESTV-MWST-Webpublikation (Verwaltungsverordnung), kein Gesetzesrang; Inhalt laufend versioniert.",
-      "sha": "d77dcbbd18fa9ab3ded4bdaca866364d95004be55a5c0418a01b0f67f5a87c02"
+      "sha": "77ce55a5749cd90cd8b75efc69388c20c457b00350c7aa3f8791ca130dbc98dd"
     },
     {
       "key": "ESTV-MWST-INFO-14",
@@ -414,7 +414,7 @@
         "MWSTV"
       ],
       "hinweis": "Amtliche ESTV-MWST-Webpublikation (Verwaltungsverordnung), kein Gesetzesrang; Inhalt laufend versioniert.",
-      "sha": "53c18c625d047afad3f66de95a227fadd6099ef2382bc2c686af194b0e7c4fd9"
+      "sha": "53aad81db82f79fa66b822bb5cfd2bd21295438b9a0eda1e8caaecb7f70f4747"
     },
     {
       "key": "ESTV-MWST-INFO-15",
@@ -429,14 +429,14 @@
       "sprache": "de",
       "status": "nur-live-link",
       "quelleUrl": "https://www.gate.estv.admin.ch/mwst-webpublikationen/public/MI/15",
-      "stand": "2026-08-18",
+      "stand": "2026-08-31",
       "rang": 115,
       "normKeys": [
         "MWSTG",
         "MWSTV"
       ],
       "hinweis": "Amtliche ESTV-MWST-Webpublikation (Verwaltungsverordnung), kein Gesetzesrang; Inhalt laufend versioniert.",
-      "sha": "ed68f163d7be401fe899886ac13c432b3da81d4d80b658fe642560e1b5fb9eaf"
+      "sha": "fcb80c1cbd75964a768b5478b148aa85c517ba13d44815c1e9abcee52acf6acd"
     },
     {
       "key": "ESTV-MWST-INFO-16",
@@ -458,7 +458,7 @@
         "MWSTV"
       ],
       "hinweis": "Amtliche ESTV-MWST-Webpublikation (Verwaltungsverordnung), kein Gesetzesrang; Inhalt laufend versioniert.",
-      "sha": "5ab69c183208f8e3b0c51f3238da7f6eeddf21e9ff951b0d3ff035c749c56921"
+      "sha": "7de7b8263f7b170b117bffc2c215a4f7c38ff41716d4d0c8db59b47654c0a506"
     },
     {
       "key": "ESTV-MWST-INFO-17",
@@ -480,7 +480,7 @@
         "MWSTV"
       ],
       "hinweis": "Amtliche ESTV-MWST-Webpublikation (Verwaltungsverordnung), kein Gesetzesrang; Inhalt laufend versioniert.",
-      "sha": "d44e040d4d57216bff8e8691b6f1d960ed568e3226308217e9e260ffc34c603b"
+      "sha": "168c2557ce4ca6177c62d3a682ca2ec1b9b6398aca6a48d5ccaadd9fc6876c86"
     },
     {
       "key": "ESTV-MWST-INFO-18",
@@ -502,7 +502,7 @@
         "MWSTV"
       ],
       "hinweis": "Amtliche ESTV-MWST-Webpublikation (Verwaltungsverordnung), kein Gesetzesrang; Inhalt laufend versioniert.",
-      "sha": "92930aeaecf1b6f5e9fdcfe5ea85c1129e72f80d194efa33d6368d850cdfc67d"
+      "sha": "ef35985e3757017cdb941e578084b9b0d8f1bed1259d83ad4fd6c99d678a94f1"
     },
     {
       "key": "ESTV-MWST-INFO-19",
@@ -524,7 +524,7 @@
         "MWSTV"
       ],
       "hinweis": "Amtliche ESTV-MWST-Webpublikation (Verwaltungsverordnung), kein Gesetzesrang; Inhalt laufend versioniert.",
-      "sha": "6c6e7677087963d634f8abca5d255fc53fd62d01a4bd662fd96765d2a3459595"
+      "sha": "84862eece4b0afedd06b39a03d776be144cc1ada3d70d729ab83bf6cbec96978"
     },
     {
       "key": "ESTV-MWST-INFO-20",
@@ -546,7 +546,7 @@
         "MWSTV"
       ],
       "hinweis": "Amtliche ESTV-MWST-Webpublikation (Verwaltungsverordnung), kein Gesetzesrang; Inhalt laufend versioniert.",
-      "sha": "2e7c8adbfe3c49ca56df6b92c2443e70c6e2a1ddd5eb42e7b822cd43c3db8de5"
+      "sha": "e25a1a0c4c508213ba0e4fbb49aa358b124fe74b2a1bb8ef4834bf29d0a523a8"
     },
     {
       "key": "ESTV-MWST-INFO-21",
@@ -567,7 +567,7 @@
         "MWSTG"
       ],
       "hinweis": "Amtliche ESTV-MWST-Webpublikation (Verwaltungsverordnung), kein Gesetzesrang; Inhalt laufend versioniert.",
-      "sha": "acd489d1bfb58bec681b3d0932f672c97aea514c779611906bb3d2d7054d6575"
+      "sha": "255a8d4710eeb3ec8835e74dc4069df5c9ad38b4bf98dad20db0a4b38fb2cc88"
     },
     {
       "key": "ESTV-MWST-INFO-22",
@@ -589,7 +589,7 @@
         "MWSTV"
       ],
       "hinweis": "Amtliche ESTV-MWST-Webpublikation (Verwaltungsverordnung), kein Gesetzesrang; Inhalt laufend versioniert.",
-      "sha": "f7c5e5123ddc07810b6db23af0d46e2f04613fc87a0f4fa16fc3bf450623c3fa"
+      "sha": "0e1f7423eee6ffdb7a46a68fb3b63baf941944b443309316d0b2de3e56336164"
     },
     {
       "key": "ESTV-MWST-BRANCHEN-INFO-01",
@@ -611,7 +611,7 @@
         "MWSTV"
       ],
       "hinweis": "Amtliche ESTV-MWST-Webpublikation (Verwaltungsverordnung), kein Gesetzesrang; Inhalt laufend versioniert.",
-      "sha": "27aebc332ab126db4aab642bd5ab64525207440ca034ea809ee6822606e40f3a"
+      "sha": "ddbbd4451a5b38ebeee67b6404f440613bff96a561a30dfa556ca75a7706bac5"
     },
     {
       "key": "ESTV-MWST-BRANCHEN-INFO-02",
@@ -633,7 +633,7 @@
         "MWSTV"
       ],
       "hinweis": "Amtliche ESTV-MWST-Webpublikation (Verwaltungsverordnung), kein Gesetzesrang; Inhalt laufend versioniert.",
-      "sha": "7d4d453ceeedb2a5ecbbd161d9ec7005d962fe344a1e908864acebf31d66777f"
+      "sha": "083419d7474a6fd286372887e9ba9d889e0290809c029783c0c28b3096cd012a"
     },
     {
       "key": "ESTV-MWST-BRANCHEN-INFO-03",
@@ -655,7 +655,7 @@
         "MWSTV"
       ],
       "hinweis": "Amtliche ESTV-MWST-Webpublikation (Verwaltungsverordnung), kein Gesetzesrang; Inhalt laufend versioniert.",
-      "sha": "ed0329eef08211012733b768722f895e9ba05dfb09f9e0c747234dab19709b98"
+      "sha": "ffcb4b0a44f8fe5d2ffa462856e499900bb55b0c82b7d0f99a4ea4522f011581"
     },
     {
       "key": "ESTV-MWST-BRANCHEN-INFO-04",
@@ -677,7 +677,7 @@
         "MWSTV"
       ],
       "hinweis": "Amtliche ESTV-MWST-Webpublikation (Verwaltungsverordnung), kein Gesetzesrang; Inhalt laufend versioniert.",
-      "sha": "02956ef18d1f1631b511d42db5b046f7602f37485bbe1d363dc74c99b19cdb1b"
+      "sha": "f812cbc898034314cb9b6711cb2c63853b144fec8a9229c251de4650afa8dd18"
     },
     {
       "key": "ESTV-MWST-BRANCHEN-INFO-05",
@@ -699,7 +699,7 @@
         "MWSTV"
       ],
       "hinweis": "Amtliche ESTV-MWST-Webpublikation (Verwaltungsverordnung), kein Gesetzesrang; Inhalt laufend versioniert.",
-      "sha": "74d2b40d1ca3587c3220c7b5f3629625e1799d2c81731ea02c7d7bf14467d8df"
+      "sha": "dfb1ff2c52306a819fc2dea9ca235173bac94ec911ace3fde7578f6d64f03a44"
     },
     {
       "key": "ESTV-MWST-BRANCHEN-INFO-06",
@@ -721,7 +721,7 @@
         "MWSTV"
       ],
       "hinweis": "Amtliche ESTV-MWST-Webpublikation (Verwaltungsverordnung), kein Gesetzesrang; Inhalt laufend versioniert.",
-      "sha": "8bd3b0964960c34092bbb47369411e4e6860bc98a4d188c8e9bd4d49e2cc412a"
+      "sha": "fa12227a77012d665a0fb7cf72e7c54490488250721bfb785681dbf973af28a0"
     },
     {
       "key": "ESTV-MWST-BRANCHEN-INFO-07",
@@ -742,7 +742,7 @@
         "MWSTG"
       ],
       "hinweis": "Amtliche ESTV-MWST-Webpublikation (Verwaltungsverordnung), kein Gesetzesrang; Inhalt laufend versioniert.",
-      "sha": "c79b8b1fb7f7fcb221af40c59a6d5976b5a9f69785de5f6640c972650905d27d"
+      "sha": "39ef78d5d51548ac2f37f1e541332392e3cd5fdf9acc55bdffce86ec0ea41e43"
     },
     {
       "key": "ESTV-MWST-BRANCHEN-INFO-08",
@@ -764,7 +764,7 @@
         "MWSTV"
       ],
       "hinweis": "Amtliche ESTV-MWST-Webpublikation (Verwaltungsverordnung), kein Gesetzesrang; Inhalt laufend versioniert.",
-      "sha": "6090cf29809046254e656ab813aa8c081ff38f952f7f63734d292128758277ae"
+      "sha": "3f6a5403f3d7f3151be839f92a8535895be27c8f4f22bb7a5fd506264a9259cf"
     },
     {
       "key": "ESTV-MWST-BRANCHEN-INFO-09",
@@ -786,7 +786,7 @@
         "MWSTV"
       ],
       "hinweis": "Amtliche ESTV-MWST-Webpublikation (Verwaltungsverordnung), kein Gesetzesrang; Inhalt laufend versioniert.",
-      "sha": "d426a2577a9f4a75b2a6b45ddc4c968e1ff3e63f11953152fd4640287f859da4"
+      "sha": "57807a1b0a5cc7b4f13960161adf0d4a3f58322732ed13e6e6627acba5a83f8d"
     },
     {
       "key": "ESTV-MWST-BRANCHEN-INFO-10",
@@ -801,14 +801,14 @@
       "sprache": "de",
       "status": "nur-live-link",
       "quelleUrl": "https://www.gate.estv.admin.ch/mwst-webpublikationen/public/MBI/10",
-      "stand": "2025-12-04",
+      "stand": "2026-09-01",
       "rang": 210,
       "normKeys": [
         "MWSTG",
         "MWSTV"
       ],
       "hinweis": "Amtliche ESTV-MWST-Webpublikation (Verwaltungsverordnung), kein Gesetzesrang; Inhalt laufend versioniert.",
-      "sha": "041b67baf9826dc6b601c63ddf422f9500f690a4a2acecd4c182f9defb0fb573"
+      "sha": "f9e053975d38e8bbe519fe495418cbf447406bf355bf276aaf71dbfe0c31865b"
     },
     {
       "key": "ESTV-MWST-BRANCHEN-INFO-11",
@@ -830,7 +830,7 @@
         "MWSTV"
       ],
       "hinweis": "Amtliche ESTV-MWST-Webpublikation (Verwaltungsverordnung), kein Gesetzesrang; Inhalt laufend versioniert.",
-      "sha": "c6e31793924b909c937604662abb34b8e175fa8689195e17c1a14a84ddde8c7c"
+      "sha": "5c2075d3d9519a8e6d7f2454bb35c52d9924107bf51b2ff0563b96f0e6c9ea94"
     },
     {
       "key": "ESTV-MWST-BRANCHEN-INFO-12",
@@ -852,7 +852,7 @@
         "MWSTV"
       ],
       "hinweis": "Amtliche ESTV-MWST-Webpublikation (Verwaltungsverordnung), kein Gesetzesrang; Inhalt laufend versioniert.",
-      "sha": "3e41dc75c44c46875b08fcacc0427326b33af07e94be38190623ef4461ef9829"
+      "sha": "9f689a9c34ac3085c4bcdb4a43db4f8145b166f3df11723f956b428986f87fe8"
     },
     {
       "key": "ESTV-MWST-BRANCHEN-INFO-13",
@@ -874,7 +874,7 @@
         "MWSTV"
       ],
       "hinweis": "Amtliche ESTV-MWST-Webpublikation (Verwaltungsverordnung), kein Gesetzesrang; Inhalt laufend versioniert.",
-      "sha": "52cdc0e0a12089b0af1ebd5096de1af3b14b96ee44e8d88431792c2567b51760"
+      "sha": "55535d74e15ae5097b53198ff8d4ee5676785b6c1a1b6eaf4490f47e3c0f7f8a"
     },
     {
       "key": "ESTV-MWST-BRANCHEN-INFO-14",
@@ -896,7 +896,7 @@
         "MWSTV"
       ],
       "hinweis": "Amtliche ESTV-MWST-Webpublikation (Verwaltungsverordnung), kein Gesetzesrang; Inhalt laufend versioniert.",
-      "sha": "762311851a57eeb32378ecc36c951f490dbd2ddfeec7e63ca2e351d4783cd11e"
+      "sha": "f25e7da2cd0db191eab9bcc0082a3b0a44b161fe420753cb4956aad593e1c002"
     },
     {
       "key": "ESTV-MWST-BRANCHEN-INFO-15",
@@ -918,7 +918,7 @@
         "MWSTV"
       ],
       "hinweis": "Amtliche ESTV-MWST-Webpublikation (Verwaltungsverordnung), kein Gesetzesrang; Inhalt laufend versioniert.",
-      "sha": "5058c7c6ccce0c0890284ffdcacd52eb32a3077168871ad65f95e46abcc072b4"
+      "sha": "71fc502e24b7d60cee19e5668d5a5169cb9bd2f6e3712cd8d575e5cfdf83e6a1"
     },
     {
       "key": "ESTV-MWST-BRANCHEN-INFO-16",
@@ -940,7 +940,7 @@
         "MWSTV"
       ],
       "hinweis": "Amtliche ESTV-MWST-Webpublikation (Verwaltungsverordnung), kein Gesetzesrang; Inhalt laufend versioniert.",
-      "sha": "b7efb8ba995cdbba16d912281db1ce66002b0fde55f7a9c163b4716c74c7d35e"
+      "sha": "4fac8ee5591c7a573887b3c15152e6cd83b5376bb8d4ec3187af173af237b277"
     },
     {
       "key": "ESTV-MWST-BRANCHEN-INFO-17",
@@ -962,7 +962,7 @@
         "MWSTV"
       ],
       "hinweis": "Amtliche ESTV-MWST-Webpublikation (Verwaltungsverordnung), kein Gesetzesrang; Inhalt laufend versioniert.",
-      "sha": "4d815bf91d67600a861f9dee75d002e4b4b96121dc21163ad877fa54a63ac0b7"
+      "sha": "04205aefdf9c848778ceef490381a079af7d26479a2a3520488dc49a660a5386"
     },
     {
       "key": "ESTV-MWST-BRANCHEN-INFO-18",
@@ -984,7 +984,7 @@
         "MWSTV"
       ],
       "hinweis": "Amtliche ESTV-MWST-Webpublikation (Verwaltungsverordnung), kein Gesetzesrang; Inhalt laufend versioniert.",
-      "sha": "b1489422400145aa54007ed7fc06d90071d207a8ac4d73e1a53f54122fd3fe33"
+      "sha": "40c8f474fee0f0165a01d31f5ae43c943817addd18230c575de6e92403355a65"
     },
     {
       "key": "ESTV-MWST-BRANCHEN-INFO-19",
@@ -1006,7 +1006,7 @@
         "MWSTV"
       ],
       "hinweis": "Amtliche ESTV-MWST-Webpublikation (Verwaltungsverordnung), kein Gesetzesrang; Inhalt laufend versioniert.",
-      "sha": "c5224828a6a84530615e9e2d10794a68fbdac50f46c1df62ab6371bce50b7c40"
+      "sha": "4f0a0030fa8331796fa80a88fa90d44d48864fd87e938a8157f0f300c5e811fe"
     },
     {
       "key": "ESTV-MWST-BRANCHEN-INFO-20",
@@ -1028,7 +1028,7 @@
         "MWSTV"
       ],
       "hinweis": "Amtliche ESTV-MWST-Webpublikation (Verwaltungsverordnung), kein Gesetzesrang; Inhalt laufend versioniert.",
-      "sha": "e37c78bed4d46c89f29ea31338cdb6bfe04224ae8e45f95e169af4cc64a08b78"
+      "sha": "18bbb4c620a940e5520b17def1273fd8491dfab4c54ec7ba99ec78b97d1450a0"
     },
     {
       "key": "ESTV-MWST-BRANCHEN-INFO-21",
@@ -1050,7 +1050,7 @@
         "MWSTV"
       ],
       "hinweis": "Amtliche ESTV-MWST-Webpublikation (Verwaltungsverordnung), kein Gesetzesrang; Inhalt laufend versioniert.",
-      "sha": "ecc15f9ed92c4f54b985331e0a8e2aae6ad5250bf1b12f6f64d8791225bea515"
+      "sha": "368a462ebfe396e5a17e6c9e8525735da47d1c9e5c43eef8ad1e2d6260792419"
     },
     {
       "key": "ESTV-MWST-BRANCHEN-INFO-22",
@@ -1071,7 +1071,7 @@
         "MWSTG"
       ],
       "hinweis": "Amtliche ESTV-MWST-Webpublikation (Verwaltungsverordnung), kein Gesetzesrang; Inhalt laufend versioniert.",
-      "sha": "54d0a228206eb3aa8b9b05334def1389e5c9c808d5ca1a9f79b07c15e828b816"
+      "sha": "2c5b7829dd54fd299a7f618f2b6b180f8e7d1b64d3786a609717411d0f57f4b3"
     },
     {
       "key": "ESTV-MWST-BRANCHEN-INFO-23",
@@ -1093,7 +1093,7 @@
         "MWSTV"
       ],
       "hinweis": "Amtliche ESTV-MWST-Webpublikation (Verwaltungsverordnung), kein Gesetzesrang; Inhalt laufend versioniert.",
-      "sha": "5f2ce4765318fee228e5237cbb4cbd86d81a5dbd5c29a180ae22bb711b5579de"
+      "sha": "fa6e071cbef2e33fa0e59ef03a599bd344e317fa1150209fe29192d7b4d15ac6"
     },
     {
       "key": "ESTV-MWST-BRANCHEN-INFO-24",
@@ -1115,7 +1115,7 @@
         "MWSTV"
       ],
       "hinweis": "Amtliche ESTV-MWST-Webpublikation (Verwaltungsverordnung), kein Gesetzesrang; Inhalt laufend versioniert.",
-      "sha": "bd20ed377f440a5528363ade873c257f73d66016e5104548c3885ee672f5c031"
+      "sha": "8dd8e6e0a3cb904dbf10de66ea12e27464860da09dcf45cae331b18b752c83a4"
     },
     {
       "key": "ESTV-MWST-BRANCHEN-INFO-25",
@@ -1137,7 +1137,7 @@
         "MWSTV"
       ],
       "hinweis": "Amtliche ESTV-MWST-Webpublikation (Verwaltungsverordnung), kein Gesetzesrang; Inhalt laufend versioniert.",
-      "sha": "37e21d149aa12d2c9a9cc6f37ce5a45a01e2f0e6726a6d60321980dfa999cf2c"
+      "sha": "18a8a2f895041a27ece370ea34fc73c2ffc9e126e7df3b04ca9335929dde586a"
     },
     {
       "key": "ESTV-MWST-BRANCHEN-INFO-26",
@@ -1159,7 +1159,7 @@
         "MWSTV"
       ],
       "hinweis": "Amtliche ESTV-MWST-Webpublikation (Verwaltungsverordnung), kein Gesetzesrang; Inhalt laufend versioniert.",
-      "sha": "4af1c02175cababf1da0e80f2b74f2fb2d00e57eee8477160f78f1ad3d8949ba"
+      "sha": "d38f773cda220f0a90070517dd1e4bd83611d6d86a8f39836a595a59427b51a7"
     },
     {
       "key": "ESTV-MWST-BRANCHEN-INFO-27",
@@ -1181,7 +1181,7 @@
         "MWSTV"
       ],
       "hinweis": "Amtliche ESTV-MWST-Webpublikation (Verwaltungsverordnung), kein Gesetzesrang; Inhalt laufend versioniert.",
-      "sha": "7b69f4f09591e21adbc08d44ae819015a55fe2d3edd566fc9801a2e1d8753a26"
+      "sha": "f0b5b6b140f9338407b63a4197b3d057f24a226407e99a982383817ad5e1b9bc"
     },
     {
       "key": "ESTV-KS-DBG-4",

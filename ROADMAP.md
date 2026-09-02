@@ -77,14 +77,15 @@ zgb-a36-anhang: Die ZGB-Gliederung zeigt 74 Artikel des Anhangs «Wortlaut der f
      Das Lagebild liest diesen Block mechanisch (davidFragen, scripts/plan/bildDaten.ts) —
      beantwortete Fragen HIER löschen, dann verschwinden sie von der Seite (§5). -->
 
-<!-- @queue: QS-BASIS, QS-PERF, QS-MONITOR-ROT, W2·13-KANTONE-DATEN, W2·5l-NORMTEXT-B2, QS-KORPUS, W2·20-VERWEIS-SCHAERFE, W2·5m-LESER-V3, W2·21-ZULIEFERER, W2·5n-BUND-VOLL, W2·13-KANTONE-DRIFT, W3·12, W2·5g-ZEIT, W2·14-SIGNAL, W2·6 -->
+<!-- @queue: W2·13-KANTONE-DATEN, W2·5l-NORMTEXT-B2, QS-KORPUS, W2·20-VERWEIS-SCHAERFE, W2·5m-LESER-V3, W2·21-ZULIEFERER, W2·5n-BUND-VOLL, W2·13-KANTONE-DRIFT, W3·12, W2·5g-ZEIT, W2·14-SIGNAL, W2·6 -->
 <!-- ^ SSoT der Bau-Reihenfolge: plan:next wertet die @queue VOR der Dokumentreihenfolge aus;
      Integrität erzwingt check:plan Regel 8. Priorität ändern = NUR diese Zeile ändern.
      Ohne Queue-Eintrag entscheidet die Dokumentreihenfolge — Produkt-Felder stehen darum
      vor `Betrieb & Prüfstrasse`. -->
 
-> **⬆ OBERSTER OFFENER SCHRITT: `W2·13-KANTONE-DATEN`**; parallel im Bau (`wip`): `QS-PERF` (Leser-Tempo), `QS-BASIS`
-> (K3-Scharfschaltung Suche-Edge, David-Go liegt vor) und `QS-MONITOR-ROT` (Session 1.9.2026).
+> **⬆ OBERSTER OFFENER SCHRITT: `W2·13-KANTONE-DATEN`** (ZH-Programm: Randtitel R1 in Landung, danach
+> Tag-Leser-Rest). Block 1 gelandet 1./2.9.2026: K3 (#610), Leser-Tempo (#612), Normen-Monitor (#623) —
+> deren Restlisten bleiben in den Schritten, sind nicht mehr Queue-Kopf.
 > **Zielbild-Dekret 1.9.2026 (David):** der Gesetzesleser steht im Vordergrund — Ziel sind
 > möglichst alle Gesetze, die ein Schweizer Jurist braucht, und der beste Gesetzesdarsteller für
 > Schweizer Juristen auf dem Markt; Fundament zuerst, wo es dem Leser dient. Die `@queue` bildet
@@ -115,8 +116,8 @@ zgb-a36-anhang: Die ZGB-Gliederung zeigt 74 Artikel des Anhangs «Wortlaut der f
   - [ ] **S4 · Kantons-Probe** — Kantonserlasse rendern unverändert (Fokus Bund, nichts bricht); der H2-Kontaktbogen deckt nur Bund ab. Kap. 7.
   - [ ] **Tor-Konflikt `erlassAnsicht.ts`-Deckel** *(§17-Wurzel-Fix, Befund 31.8.2026)* — `leser-v3-fundament` verlangt jede `.ebene`-Ableitung in `erlassAnsicht.ts` UND deckelt die Datei (421/420er-Grenze, muss unter `leserV3Modell.ts` bleiben); die nächste erzwungene Ableitung hat keinen Platz. Deckel neu kalibrieren oder Datei schneiden — Wurzel-Fix, kein Einzelfall-Umschiffen.
 
-- [x] **Kantonale Gesetze — Darstellung & Suche** *(`W2·13-KANTONE`, Auftrag David 12.7.2026, `[OF]`)*
-  <!-- @meta id: W2·13-KANTONE · status: done · blocker: null · dep: [] · feld: leser · fahrplan: fahrplaene/FAHRPLAN-KANTONE.md -->
+- [ ] **Kantonale Gesetze — Darstellung & Suche** *(`W2·13-KANTONE`, Auftrag David 12.7.2026, `[OF]`)*
+  <!-- @meta id: W2·13-KANTONE · status: ready · blocker: null · dep: [] · feld: leser · fahrplan: fahrplaene/FAHRPLAN-KANTONE.md -->
   Hier die NICHT-Risiko-Einheiten (reine Darstellung/Suche/Anzeige); Extraktion & Daten liegen in
   `W2·13-KANTONE-DATEN`. **Fertig, wenn** K-1 bis K-11 abgehakt sind.
   **Detail:** [FAHRPLAN-KANTONE.md](fahrplaene/FAHRPLAN-KANTONE.md) §2.
@@ -158,6 +159,22 @@ zgb-a36-anhang: Die ZGB-Gliederung zeigt 74 Artikel des Anhangs «Wortlaut der f
 > Jede Zeile dieses Felds berührt Extraktion oder amtliche Substanz ⇒ **Gegenprüfung Pflicht**,
 > Beleg mit Norm + Link + Stand (§7), Korrektur nie in der Projektion, immer in der Pipeline-Quelle
 > (§5), golden byte-gleich bzw. deklarierter Re-Bless.
+
+- [~] **Amtlicher Fedlex-Zitatgraph: Erlass-Verweise ohne Artikelnummer + Warn-Bericht + «zitiert von» (Bund)** *(`W2·22-VERWEIS-FEDLEX`, Fremdquellen-Sichtung 2.9.2026)*
+  <!-- @meta id: W2·22-VERWEIS-FEDLEX · status: wip · blocker: null · dep: [W2·20-VERWEIS-SCHAERFE] · feld: korpus -->
+  Quelle: [fremdquellen-sichtung-2026-09-02.md](bibliothek/recherche/fremdquellen-sichtung-2026-09-02.md)
+  §1 (Rangliste #1/#2) + Abschnitt «jolux:Citation» im Dossier (OR: 2 315 Citations = 2 315
+  AKN-Fussnoten-refs; kein `citationToReference`). Risikopfad — Gegenprüfung Pflicht.
+  - [ ] **Z1 Erlass-Verweis ohne Artikelnummer verlinken** («richten sich nach der ZPO», «des
+    Datenschutzgesetzes vom 25. September 2020», «Bucheffektengesetzes vom 3. Oktober 2008 (BEG)»)
+    in `src/lib/fedlex/erkennung.ts`/`positivliste.ts`/`parser.ts`; Erlassdatums-Prüfung wie Form B;
+    Inventar `messwerte/verweis-inventar.json` neu messen; Gegenprüfung Pflicht.
+  - [ ] **Z2 Build-Zeit-Artefakt `messwerte/fedlex-zitatgraph.json`** — je gepinnter Consolidation
+    `jolux:Citation` mit gebundenem `citationToRs` (Sprache DEU, Count-Gate, Content-Type-Prüfung
+    am SPARQL-Endpoint wegen Soft-200), Skript `scripts/fedlex-zitatgraph.ts`.
+  - [ ] **Z3 Warn-Bericht** «Fedlex kennt Erlass-Verweis, Leser verlinkt nicht» (kein hartes Tor;
+    Fussnoten-Rauschen dokumentiert).
+  - [ ] **Z4 Leser-Schicht «zitiert von»** (Erlassebene, nur Bund) — erst nach Z1–Z3 und Abnahme.
 
 - [ ] **Norm-Zeitmaschine + Fassungs-Diff** *(`W2·5g-ZEIT`, Ideen-Intake 20.7.2026)*
   <!-- @meta id: W2·5g-ZEIT · status: ready · blocker: null · dep: [] · feld: korpus · fahrplan: fahrplaene/FAHRPLAN-GESETZESDARSTELLUNG-V2.md -->
@@ -295,15 +312,18 @@ zgb-a36-anhang: Die ZGB-Gliederung zeigt 74 Artikel des Anhangs «Wortlaut der f
   - [ ] **WARTET AUF DAVID:** die 4 Fedlex-Fundstellen dem Fedlex-Betrieb melden? Empfehlung: ja — belegte Fehler in der amtlichen Publikation, Meldung kostet wenig.
   - [ ] Stufe 2: Abgleich über Artikelnummer statt eId; Vollausbau auf alle 227 Pins nach Laufzeit.
 
-- [~] **Normen-Monitor seit ≥5 Wochen rot — Wurzel-Fix** *(`QS-MONITOR-ROT`, Aktivierungs-Audit 14.8.2026)*
-  <!-- @meta id: QS-MONITOR-ROT · status: wip · blocker: null · dep: [] · feld: korpus · fahrplan: fahrplaene/FAHRPLAN-OFFENE-BEFUNDE.md -->
+- [ ] **Normen-Monitor seit ≥5 Wochen rot — Wurzel-Fix** *(`QS-MONITOR-ROT`, Aktivierungs-Audit 14.8.2026)*
+  <!-- @meta id: QS-MONITOR-ROT · status: ready · blocker: null · dep: [] · feld: korpus · fahrplan: fahrplaene/FAHRPLAN-OFFENE-BEFUNDE.md -->
   Rechtsstand-relevant: `normen-monitor.yml` 5/5 Läufe failure. Diagnose 14.8. — **das Rot ist ECHT**,
   der Monitor korrekt. **Detail:** [FAHRPLAN-OFFENE-BEFUNDE.md](fahrplaene/FAHRPLAN-OFFENE-BEFUNDE.md) §2.
-  - [ ] LIK-Reihe 2026-05→2026-07 nachziehen (amtliche Werte ⇒ Gegenprüfung).
-  - [ ] 10 ESTV-MWST-Snapshot-Drifts aktualisieren · AIG-Botschaft BOTSCHAFT-2025-3067 nachführen · VRV-Vernehmlassung VERN-2026-79 bereinigen.
+  - [x] LIK-Reihe 2026-05→2026-07 nachziehen (amtliche Werte ⇒ Gegenprüfung). *(#499 14.8., bestätigt #581 30.8.: 30/30 Identitätstreffer BFS cc-d-05.02.08; Häkchen 1.9.2026)*
+  - [x] 10 ESTV-MWST-Snapshot-Drifts aktualisieren · AIG-Botschaft BOTSCHAFT-2025-3067 nachführen · VRV-Vernehmlassung VERN-2026-79 bereinigen. *(#524 15.8. + #581 30.8., Gegenprüfung bestanden; Häkchen 1.9.2026)*
   - [ ] **§17-Wurzel-Fix:** soft-law-Detektor prüft nur den ToC-Token, nicht das Publikationsdatum — Detektor zusätzlich auf `stand`-Wechsel, Token nur über cipherDisplay-Anker.
   - [ ] Sieben Materialien-System-Befunde (a)–(h) je mit eigenem Wurzel-Fix — Liste im Fahrplan-§.
-  - [ ] Verfahrens-Gap Reparatur-Arm vs. Detektions-Arm: Kadenz/Reihenfolge entscheiden; die `check:netz`-&&-Kette zeigt nur den ersten Befund.
+  - [x] Verfahrens-Gap Reparatur-Arm vs. Detektions-Arm — ✅ 2.9.2026 (PR #623): Monitor-Cron 07:17 UTC nach dem Reparatur-Arm, Reparatur-PR ohne Kanton-Churn, Tafel aller 12 Verdikte statt &&-Kette.
+  - [ ] **Auflagen Gegenprüfung PR #623 (2.9.2026):** Stand-Wächter deckt 34/48 ESTV-Dokumente — 14 nur geloggt bzw. Fallback-Ziffer ohne Dok-Stand (`check-materialien-netz.ts:203-205`, `estv-mwst-stand-probe.ts:57`); Delay 300 ms vs. Doku «~1 req/s» angleichen. Restliste Befunde (b), (c), (e), (h) + `check:vernehmlassungen-netz` 8-Key-Blindheit.
+  - [ ] **§17 Tor-Reihenfolge: Generat-Konsistenz vor Merge-Schutz** *(Befund Gegenprüfung PR #618, 2.9.2026)* — `check:verfall-ui`/`check:zaehler` laufen im Tor-Lauf erst NACH dem Merge-Schutz und damit bei fehlendem Verdikt nie; die Gegenprüfung sah eine Projektion, die kein Tor angefasst hatte. Billige Generat-Checks vor den Merge-Schutz ziehen oder Pfad-Hook auf `parameter-verfall.md` → `gen:verfall`.
+  - [ ] **Pflegetermin 1.10.2026:** 14 «Künftige Fassung»-Einträge (OR/StGB/BankG/GwG u. a., SR-Tabellen) werden fällig — Register `parameter-verfall.md`, vorher nachführen (Hinweis Referenzzins-Agent 2.9.2026).
 
 ---
 
@@ -500,8 +520,8 @@ zgb-a36-anhang: Die ZGB-Gliederung zeigt 74 Artikel des Anhangs «Wortlaut der f
   Wachstums-Schwellen.
   **Detail:** [FAHRPLAN-BASIS-AUSBAU.md](fahrplaene/FAHRPLAN-BASIS-AUSBAU.md) §1.
 
-- [~] **Basis-Ausbau — Fundament** *(`QS-BASIS`, `[OF]`)*
-  <!-- @meta id: QS-BASIS · status: wip · blocker: null · dep: [] · feld: betrieb · fahrplan: fahrplaene/FAHRPLAN-BASIS-AUSBAU.md -->
+- [ ] **Basis-Ausbau — Fundament** *(`QS-BASIS`, `[OF]`)*
+  <!-- @meta id: QS-BASIS · status: ready · blocker: null · dep: [] · feld: betrieb · fahrplan: fahrplaene/FAHRPLAN-BASIS-AUSBAU.md -->
   CI/lokal-Tor-Parität + offene B-Einheiten.
   **Detail:** [FAHRPLAN-BASIS-AUSBAU.md](fahrplaene/FAHRPLAN-BASIS-AUSBAU.md) §2.
   - [ ] **`main.tsx` nutzt `createRoot` statt `hydrateRoot`** — prerendertes DOM wird 27–78 ms nach `load` verworfen (Nullprobe auf main bestätigt); Wurzel der «flaky» Tastatur-/Skip-Link-Specs und ein CLS-/TTI-Posten. Fix mit Hydrations-Fehler-Wächter, Vorher/Nachher-Messung, Gegenprüfung, eigener PR.
@@ -537,8 +557,8 @@ zgb-a36-anhang: Die ZGB-Gliederung zeigt 74 Artikel des Anhangs «Wortlaut der f
   **Detail:** [FAHRPLAN-SEO-A11Y-GOVERNANCE.md](fahrplaene/FAHRPLAN-SEO-A11Y-GOVERNANCE.md) §4/§5
   (§-Sigel nachgezogen 30.8.2026 — Regel 11 bindet).
 
-- [~] **Geräte-Last / Performance** *(`QS-PERF`, `[OF]`)*
-  <!-- @meta id: QS-PERF · status: wip · blocker: null · dep: [] · feld: betrieb · fahrplan: fahrplaene/FAHRPLAN-PERFORMANCE.md -->
+- [ ] **Geräte-Last / Performance** *(`QS-PERF`, `[OF]`)*
+  <!-- @meta id: QS-PERF · status: ready · blocker: null · dep: [] · feld: betrieb · fahrplan: fahrplaene/FAHRPLAN-PERFORMANCE.md -->
   Nicht merklich langsamer, ohne Logikverlust (§15). Der **Erst-Render des OR braucht 8,4–17,2 s
   bis zur Bedienbarkeit** (vermessen 17.8.2026, Nullprobe auf `main` 6/6 rot) — das ist die Wurzel
   des Shard-7-Rots und der Fix gehört hierher, nicht in eine Spec-Anpassung.
@@ -570,6 +590,20 @@ zgb-a36-anhang: Die ZGB-Gliederung zeigt 74 Artikel des Anhangs «Wortlaut der f
   David: «stufe 1 ja», gebunden an ≥ 5 Snapshots; Stufe 2/3 NICHT freigegeben. Cron fährt `retro:17`,
   eröffnet Entwurfs-PR, kein Auto-Merge.
   **Detail:** [FAHRPLAN-PLAN-STEUERUNG.md](fahrplaene/FAHRPLAN-PLAN-STEUERUNG.md) § «Selbstoptimierender Bau».
+
+- [~] **Verwenden statt bauen — risikoarme Fertigteile aus der Fremdquellen-Sichtung 2.9.2026** *(`QS-VERWENDEN`)*
+  <!-- @meta id: QS-VERWENDEN · status: wip · blocker: null · dep: [] · feld: betrieb -->
+  Quelle: [fremdquellen-sichtung-2026-09-02.md](bibliothek/recherche/fremdquellen-sichtung-2026-09-02.md)
+  §1 (Rangliste). Alles Risiko gering.
+  - [x] **V1 Lizenz-Tor** — `check:lizenzen` mit Allowlist (MIT/Apache-2.0/BSD/ISC/0BSD/CC0/Unlicense/Python-2.0/BlueOak; MPL-2.0 nur gekennzeichnet) über `npm ls --all --json`/Paket-`license`-Felder, LGPL/GPL/AGPL/CPAL/NOASSERTION = rot; SBOM via cyclonedx-node-npm optional; einmal rot zeigen (§6.7); ins `gate` einhängen. Beleg: Rangliste #3.
+  - [ ] **V1b check:lizenzen in ci.yml Tore-Job verdrahten** (Paritäts-Allowlist danach entfernen) — Folgeschritt aus Bug-Check-Nachzug PR #622 (Absprache 2.9.2026).
+  - [x] **V2 Cache für `daten/*.db`** im Turso-Sync-Workflow (`turso-sync.yml`, Job sync; ci.yml baut keine DBs, Tore bauen in-memory aus JSON) mit Schlüssel = `daten-manifest.json` + `scripts/datenhaltung/**` + `scripts/suche-felder.ts` + `package-lock.json` (`actions/cache@v4`, kein restore-key). Nutzen: wiederholte sync-Läufe ohne Datenänderung (der Cron-Job frische baut nichts). Beleg: Rangliste #10, PR #621.
+  - [ ] **V3 Raw-Store Fedlex** — `scripts/fedlex-cache.sh`-Rohfassungen je Korpus-Stand als GitHub-Release-Asset (Tag `korpus-<datum>`), plus `actions/attest-build-provenance`; Prüfung «Raw für jeden Pin vorhanden». Beleg: Rangliste #9.
+  - [ ] **V4 JSON-LD vervollständigen** — `legislationDate`/`legislationLegalForce` in `src/lib/seo-detail.ts` aus Konsolidierungsdatum/`inForceStatus` füllen (Geltungsaussage nur, wo der Pin sie kennt; sonst Feld weglassen). Beleg: Rangliste #12.
+  - [ ] **V5 Atom-Feed «geänderte Erlasse»** aus `daten-manifest.json`-Diff (Paket `feed`), statisch nach `public/feed/erlasse.xml`, deterministisch (keine Bauzeit-Stempel). Beleg: Rangliste #14.
+  - [ ] **V6 valibot-Formprüfung** an den Datei-Grenzen für Manifeste/generierte JSON (nur Grenzen, nie Engines). Beleg: Rangliste #16.
+  - [ ] **V7 Feiertags-Gegenprobe** als reiner Test: kantonale Feiertagsformeln vs. date-holidays CH (Abweichung = Prüfauftrag, kein Fix ohne Quelle). Beleg: Rangliste #15.
+  - [ ] **V8 pagefind-Spike** gegen `suche-eval-gold` (Messung, kein Umbau). Beleg: Rangliste #11.
 
 - [ ] **Repo in eine GitHub-Organisation überführen (Merge Queue)** *(`QS-ORG-UMZUG`)*
   <!-- @meta id: QS-ORG-UMZUG · status: blocked · blocker: david-entscheid-org-umzug · dep: [] · feld: betrieb -->

@@ -28,6 +28,38 @@ export async function ladeKantonSystematik(): Promise<Record<string, KantonSyste
   return systematikPromise;
 }
 
+// ── Kanton-Lücken-Sidecar (§8-Nachzug, Auflage PR #614) — bewusst ausgelassene
+// Teile eines kantonalen Erlasses (Anhänge, Übergangs-/Schlussbestimmungen),
+// die der §-Parser NICHT erfasst (`public/normtext/kanton-luecken.json`,
+// erzeugt von `scripts/normtext-snapshot.ts`). Nur Kantone — der Bund trägt
+// keine Einträge; kein Zusatz-Fetch dort (§15, Aufrufer prüft `daten==='kanton'`).
+export interface KantonLueckeEintrag {
+  quelleUrl: string;
+  erlass: string;
+  /** Klartext-Sätze aus dem Generator — unverändert, nichts umformuliert (§8). */
+  hinweise: string[];
+}
+export type KantonLueckenMap = Record<string, KantonLueckeEintrag>;
+
+let kantonLueckenPromise: Promise<KantonLueckenMap> | null = null;
+
+/** Lädt kanton-luecken.json einmal (gecacht). Fehlt sie, ist die Map leer (kein Hinweis). */
+export async function ladeKantonLuecken(): Promise<KantonLueckenMap> {
+  if (!kantonLueckenPromise) {
+    kantonLueckenPromise = (async () => {
+      try {
+        const res = await fetch('/normtext/kanton-luecken.json');
+        if (!res.ok) return {};
+        const datei = (await res.json()) as { erlasse?: KantonLueckenMap };
+        return datei.erlasse ?? {};
+      } catch {
+        return {};
+      }
+    })();
+  }
+  return kantonLueckenPromise;
+}
+
 // ── Currency-Sidecar (P1-d): geltend-geprüft-Datum + angekündigte Fassung ────
 /** Ein Currency-Eintrag je Erlass-Key (public/normtext/currency.json). */
 export interface CurrencyEintrag {

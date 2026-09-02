@@ -39,6 +39,7 @@ export function LeserErlassKopfZone({ m, erlass, artikelAnzahl, bestimmungsWort 
   return (
     <ErlassLeserKopf erlass={erlass} artikelAnzahl={artikelAnzahl} bestimmungsWort={bestimmungsWort}
       currency={m.currency?.[erlass.key]} nichtKonsolidiert={m.nichtKonsolidiert}
+      luecken={m.kantonLuecken[erlass.key]}
       kennzahlen={m.gliederung.kennzahlen} nichtKonsolidiertSeit={m.nichtKonsolidiertSeit}
       // Ä-(d) aus S3: bei sehr langen Titeln steht die Kennung VOR dem Titel
       // statt am Ende einer dreizeiligen H1 (`erlassAnsicht.titelKennung`).
