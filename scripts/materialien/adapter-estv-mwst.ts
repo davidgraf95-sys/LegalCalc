@@ -163,30 +163,26 @@ export function parseTocBaum(html: string): TocBaum {
 }
 
 /**
- * Normalisiert das ToC-XHTML für den Drift-Hash: JSF-ViewState-Werte genullt (volatil je
- * Request — zwei normalisierte Fetches sind live byte-gleich, 4.7.2026). Rein.
+ * Drift-Token einer Publikation = sha256/16 über die cipherDisplay-ANKER des ToC-Baums
+ * (publicationId · componentId · Label je Knoten, in Dokumentreihenfolge) — §3 Q1.
  *
- * `main-active` ergänzt 30.8.2026 (§17-Wurzel-Fix QS-MONITOR-ROT, PR #581): die
- * JSF-Navigation markiert je nach Sitzung/Abrufweg ein anderes `<li
- * role="presentation">` mit `class="main-active"` — der Diff zwischen «Drift»
- * und «kein Drift» derselben Seite war genau diese eine Zeile (sechs Tor-Läufe,
- * jedes Mal eine andere Rotmenge; INFO-12 in 20 Einzelabrufen 20/20 stabil).
- * Ein sitzungsabhängiger Navigations-Zustand ist kein Inhalt; ihn mitzuhashen
- * macht das Drift-Tor flaky, ohne je echte Drift zu fangen. Bewusst ENG: nur
- * das Attribut `class="main-active"` auf `<li>` — Inhaltsklassen bleiben im Hash.
+ * §17-Wurzel-Fix 1.9.2026 (QS-MONITOR-ROT, Spec FAHRPLAN-OFFENE-BEFUNDE §2): bis 31.8.2026
+ * hashte der Token das KOMPLETTE ToC-XHTML nach Regex-Normalisierung (ViewState genullt
+ * 4.7., `main-active` gestrippt 30.8./PR #581). Jede dieser Normalisierungen war ein
+ * Sonderfall einer offenen Klasse: alles, was der JSF-Seitenrahmen je Sitzung anders
+ * rendert (Nav-Markierung, Hover-Zustand, Nonces), kippte den Token ohne eine Zeile Inhalt
+ * — sechs Tor-Läufe, sechs Rotmengen (Beleg PR #581). Die Anker SIND der Inhalt (Version +
+ * Ziffern-Baum + Titel); der Rest ist Rahmen und gehört nicht in den Hash. Wirft bei
+ * leerem Baum (parseTocBaum): ein Shell-Fetch (Casemates/Fehlerseite) bekommt KEINEN
+ * Token mehr, der alte Voll-Hash lieferte für ihn einen stabilen, falschen Wert.
+ * Publikationsdatum-Wechsel OHNE Baum-Änderung fängt die Stand-Probe je Dokument im Netz-Tor
+ * (estv-mwst-stand-probe.ts) — das ToC trägt live keine Daten (Sonde 1.9.2026: 0 Treffer).
+ * Rein.
  */
-export function normalisiereToc(html: string): string {
-  return html
-    .replace(
-      /(name="javax\.faces\.ViewState"[^>]*value=")[^"]*(")/g,
-      '$1$2',
-    )
-    .replace(/(<li\b[^>]*?)\s*class="main-active"/g, '$1');
-}
-
-/** Drift-Token einer Publikation = sha256/16 über das normalisierte komplette ToC-XHTML (§3 Q1). */
 export function tocDriftToken(html: string): string {
-  return createHash('sha256').update(normalisiereToc(html), 'utf8').digest('hex').slice(0, 16);
+  const baum = parseTocBaum(html);
+  const kern = baum.knoten.map((k) => `${baum.publicationId}|${k.componentId}|${k.label}`).join('\n');
+  return createHash('sha256').update(kern, 'utf8').digest('hex').slice(0, 16);
 }
 
 export interface ZifferBefund {
