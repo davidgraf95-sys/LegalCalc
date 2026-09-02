@@ -520,6 +520,7 @@ zgb-a36-anhang: Die ZGB-Gliederung zeigt 74 Artikel des Anhangs «Wortlaut der f
   Läuft unsere Automatik wirklich, und würde sie scheitern können? Offen: Turso-Wächter-Abdeckung +
   Wachstums-Schwellen.
   **Detail:** [FAHRPLAN-BASIS-AUSBAU.md](fahrplaene/FAHRPLAN-BASIS-AUSBAU.md) §1.
+  - [ ] **§17 Plan-Buchung-Fallback akzeptiert den Roadmap-Block nur als letzten PR-Body-Absatz** *(#628 nicht gebucht, 2.9.2026)* — Wurzel-Kandidat: Block an beliebiger Stelle des Bodys akzeptieren oder `check:merge-schutz` prüft den PR-Body-Aufbau.
 
 - [ ] **Basis-Ausbau — Fundament** *(`QS-BASIS`, `[OF]`)*
   <!-- @meta id: QS-BASIS · status: ready · blocker: null · dep: [] · feld: betrieb · fahrplan: fahrplaene/FAHRPLAN-BASIS-AUSBAU.md -->
@@ -599,12 +600,13 @@ zgb-a36-anhang: Die ZGB-Gliederung zeigt 74 Artikel des Anhangs «Wortlaut der f
   Quelle: [fremdquellen-sichtung-2026-09-02.md](bibliothek/recherche/fremdquellen-sichtung-2026-09-02.md)
   §1 (Rangliste). Alles Risiko gering.
   - [x] **V1 Lizenz-Tor** — `check:lizenzen` mit Allowlist (MIT/Apache-2.0/BSD/ISC/0BSD/CC0/Unlicense/Python-2.0/BlueOak; MPL-2.0 nur gekennzeichnet) über `npm ls --all --json`/Paket-`license`-Felder, LGPL/GPL/AGPL/CPAL/NOASSERTION = rot; SBOM via cyclonedx-node-npm optional; einmal rot zeigen (§6.7); ins `gate` einhängen. Beleg: Rangliste #3.
-  - [ ] **V1b check:lizenzen in ci.yml Tore-Job verdrahten** (Paritäts-Allowlist danach entfernen) — Folgeschritt aus Bug-Check-Nachzug PR #622 (Absprache 2.9.2026).
+  - [x] **V1b check:lizenzen in ci.yml Tore-Job verdrahten** (Paritäts-Allowlist danach entfernen) — Folgeschritt aus Bug-Check-Nachzug PR #622 (Absprache 2.9.2026).
   - [x] **V2 Cache für `daten/*.db`** im Turso-Sync-Workflow (`turso-sync.yml`, Job sync; ci.yml baut keine DBs, Tore bauen in-memory aus JSON) mit Schlüssel = `daten-manifest.json` + `scripts/datenhaltung/**` + `scripts/suche-felder.ts` + `package-lock.json` (`actions/cache@v4`, kein restore-key). Nutzen: wiederholte sync-Läufe ohne Datenänderung (der Cron-Job frische baut nichts). Beleg: Rangliste #10, PR #621.
-  - [ ] **V3 Raw-Store Fedlex** — `scripts/fedlex-cache.sh`-Rohfassungen je Korpus-Stand als GitHub-Release-Asset (Tag `korpus-<datum>`), plus `actions/attest-build-provenance`; Prüfung «Raw für jeden Pin vorhanden». Beleg: Rangliste #9.
-  - [ ] **V4 JSON-LD vervollständigen** — `legislationDate`/`legislationLegalForce` in `src/lib/seo-detail.ts` aus Konsolidierungsdatum/`inForceStatus` füllen (Geltungsaussage nur, wo der Pin sie kennt; sonst Feld weglassen). Beleg: Rangliste #12.
-  - [ ] **V5 Atom-Feed «geänderte Erlasse»** aus `daten-manifest.json`-Diff (Paket `feed`), statisch nach `public/feed/erlasse.xml`, deterministisch (keine Bauzeit-Stempel). Beleg: Rangliste #14.
-  - [ ] **V6 valibot-Formprüfung** an den Datei-Grenzen für Manifeste/generierte JSON (nur Grenzen, nie Engines). Beleg: Rangliste #16.
+  - [x] **V3 Raw-Store Fedlex** — `scripts/fedlex-cache.sh`-Rohfassungen je Korpus-Stand als GitHub-Release-Asset (Tag `korpus-raw-<datum>`), plus `actions/attest-build-provenance`; Prüfung «Raw für jeden Pin vorhanden» via `check:raw-store`. Beleg: Rangliste #9.
+  - [x] **V4 JSON-LD vervollständigen** — `legislationDateVersion`/`legislationLegalForce` in `src/lib/seo-detail.ts` aus Konsolidierungsdatum/`inForceStatus` füllen (Geltungsaussage nur, wo der Pin sie kennt; sonst Feld weglassen; Bug-Check #630: Feldname korrekt `legislationDateVersion`, nicht `legislationDate`). Beleg: Rangliste #12.
+  - [x] **V5 Atom-Feed «geänderte Erlasse»** aus `public/normtext/register.json` (`status==='snapshot'`, Feld `stand`) statisch nach `public/feed/erlasse.xml`, deterministisch (keine Bauzeit-Stempel, sha256 zweier Läufe identisch); handgebautes XML statt Paket `feed` (§17 Rückbau-Gegengewicht). Beleg: Rangliste #14, PR (QS-VERWENDEN V5+V6).
+  - [ ] **V5b check:feed in ci.yml Tore-Job verdrahten** (Paritäts-Allowlist-Eintrag danach entfernen) — Folgeschritt aus der Gegenprüfung 2.9.2026 (Auflage H-2): das Drift-Tor `check:feed` läuft bis dahin nur lokal in `check:seriell`/`gate`, nicht im PR-Pfad; analog V1b für `check:lizenzen`.
+  - [x] **V6 valibot-Formprüfung** an den Datei-Grenzen für Manifeste/generierte JSON (nur Grenzen, nie Engines): `daten-manifest.json` (turso-sync.ts Quell-Riegel) + `public/normtext/register.json` (ingest.ts ladeRegister()). Beleg: Rangliste #16, PR (QS-VERWENDEN V5+V6).
   - [~] **V7 Feiertags-Gegenprobe** als reiner Test: kantonale Feiertagsformeln vs. date-holidays CH (Abweichung = Prüfauftrag, kein Fix ohne Quelle). Beleg: Rangliste #15. `src/tests/feiertage-gegenprobe.test.ts`, 26 Kantone × 2024–2027; 45 Rohabweichungen, 43 über eine kommentierte Ausnahmeliste (Norm/Kommentar-Beleg je Eintrag) als gewollt erklärt, 1 offen: Näfelser Fahrt GL 2027 (`test.skip`, TODO(David) — Formel nennt 1.4., date-holidays 8.4., nur 2026 amtlich gegen gl.ch verifiziert).
   - [ ] **V8 pagefind-Spike** gegen `suche-eval-gold` (Messung, kein Umbau). Beleg: Rangliste #11.
 

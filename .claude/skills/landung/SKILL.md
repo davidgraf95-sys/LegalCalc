@@ -232,3 +232,8 @@ belegte Ausreden, Umgehungs-Aufzählung «Buchstabe = Geist»).
    Regeneration eine Risiko-Projektion (register.json!), braucht der
    Merge-Stand ein enges Nach-Verdikt derselben Prüf-Instanz (belegt 1.9.2026,
    ZH-Tranche).
+5. **Der Roadmap-Trailer-Block muss der LETZTE Absatz im PR-Body sein — auch
+   nach der Zeile «🤖 Generated with …»:** Squash-Merges übernehmen den
+   PR-Body nicht in den Commit, und der Fallback in `plan-buchung.yml` liest
+   den letzten Absatz des Bodys; stand der Block davor, blieb die Buchung
+   aus («Kein vollständiger Buchungs-Trailer», PR #628, 2.9.2026).

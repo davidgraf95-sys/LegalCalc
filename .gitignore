@@ -123,3 +123,8 @@ __pycache__/
 
 # Token-Spool je Session-Ende (QS-EFFIZIENZ 14.8.2026; Konsument: selbstopt:erheben)
 messwerte/token-spool.jsonl
+
+# Raw-Store-Arbeitsverzeichnis (QS-VERWENDEN V3, 2.9.2026): geladene Fedlex-
+# Rohdateien landen hier NUR temporär (korpus-raw-release.yml), werden als
+# Release-Archiv veröffentlicht und nie committet.
+/raw/

@@ -493,6 +493,13 @@ jobs:
       - name: Dispatch-Pflichtklausel (§0-Generator lauffähig)
         if: needs.diff.outputs.art != 'doku'
         run: npm run check:dispatch-klausel
+      # Lizenz-Tor (QS-VERWENDEN V1b, 2.9.2026): prüft ALLE installierten
+      # Abhängigkeiten (prod + dev) gegen die Allowlist permissiver Lizenzen —
+      # unabhängig vom Diff-Inhalt (npm ls --all liest node_modules, nicht den
+      # PR-Diff), darum ohne die art!=doku-Schranke der Nachbar-Tore. Vorher
+      # nur lokal in check:seriell/gate — Verdrahtung war Folgeschritt V1b.
+      - name: Lizenz-Tor (Abhängigkeiten)
+        run: npm run check:lizenzen
       # ── R1-Nachzug (20.7.2026): die bis dahin unsichtbaren Tore ─────────────
       # Das Tor-Wirksamkeits-Audit (bibliothek/, PR #318) hat die 20 Allowlist-
       # Begruendungen per Sabotage geprueft: 17 halten NICHT, 2 sind gar keine
