@@ -56,6 +56,11 @@ trägt dieselben Treue-Pflichten wie prerenderter: Ctrl+F, Anker, Print,
 Provenienz (CLAUDE.md §7 a–d), ehrlicher Fehlerzustand (§8). Ein Pfad, der
 kürzt, ist Logikverlust.
 
+**7. Sonden nie neben der e2e-Suite.** Eine eigene Mess-Sonde (`perf:leser`,
+Lighthouse, Preview auf Zweit-Port) neben laufendem `test:e2e` erzeugt
+Last-Scheinfehler in beide Richtungen (1.9.2026: 21 Scheinfehler, Beobachtung
+verworfen). Erst messen, dann testen — nie gleichzeitig.
+
 ## Messung
 
 Zwei getrennte Tore (Faktenkorrektur 7.8.2026, Reglement-Audit — die frühere

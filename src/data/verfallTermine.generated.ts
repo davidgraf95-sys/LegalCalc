@@ -12,19 +12,11 @@ export type VerfallTermin = {
   rhythmus?: string;
 };
 
-export const VERFALL_STAND = "29.8.2026";
+export const VERFALL_STAND = "2.9.2026";
 export const VERFALL_QUELLE = "bibliothek/register/parameter-verfall.md";
 export const VERFALL_MANUELL_ANZAHL = 21;
 
 export const VERFALL_TERMINE: VerfallTermin[] = [
-  {
-    "label": "Hypothekarischer Referenzzinssatz",
-    "datum": "2026-09-01",
-    "quelle": "Tabelle",
-    "fundstelle": "`src/lib/vorlagen/mietvertrag.ts` (`MV_PARAMETER.referenzzinssatz`)",
-    "wert": "1.25 % (Stand 2.6.2026)",
-    "rhythmus": "quartalsweise (referenzzinssatz.admin.ch)"
-  },
   {
     "label": "Künftige Fassung BankG (SR 952.0)",
     "datum": "2026-10-01",
@@ -144,6 +136,14 @@ export const VERFALL_TERMINE: VerfallTermin[] = [
     "fundstelle": "`src/lib/vorlagen/mietvertrag.ts` (`MV_FORMULARPFLICHT`)",
     "wert": "BWO 4.2.2026",
     "rhythmus": "jährlich; BE ändert dynamisch per 1.11.2026"
+  },
+  {
+    "label": "Hypothekarischer Referenzzinssatz",
+    "datum": "2026-12-01",
+    "quelle": "Tabelle",
+    "fundstelle": "`src/lib/vorlagen/mietvertrag.ts` (`MV_PARAMETER.referenzzinssatz`)",
+    "wert": "1.25 % (unverändert; Stand 2.9.2026, publiziert 1.9.2026, BWO https://www.bwo.admin.ch/de/referenzzinssatz)",
+    "rhythmus": "quartalsweise (bwo.admin.ch/de/referenzzinssatz)"
   },
   {
     "label": "Künftige Fassung ChemRRV (SR 814.81)",

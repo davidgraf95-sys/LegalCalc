@@ -6,31 +6,31 @@
     "guards": 23
   },
   "korpus": {
-    "erlasse": 1479,
-    "eintraege": 58703,
-    "texte": 210120
+    "erlasse": 1566,
+    "eintraege": 60271,
+    "texte": 214419
   },
   "gesamt": {
-    "stellen": 34491,
-    "self": 19638,
-    "fremd": 6004,
-    "text": 8849,
+    "stellen": 34683,
+    "self": 19652,
+    "fremd": 6122,
+    "text": 8909,
     "selbstmarker": 927
   },
   "klassen": [
     {
       "klasse": "anker-fedlex",
       "entscheid": "FREMD",
-      "stellen": 2509,
-      "erlasse": 317,
+      "stellen": 2607,
+      "erlasse": 339,
       "selbstmarker": 0,
       "was": "Voll zitierter Bund-Anker «Art. N GESETZ» (NORM_IM_TEXT)"
     },
     {
       "klasse": "anker-kette",
       "entscheid": "FREMD",
-      "stellen": 65,
-      "erlasse": 32,
+      "stellen": 69,
+      "erlasse": 36,
       "selbstmarker": 0,
       "was": "Ketten-Glied, Kürzel aus dem Anker-Ende propagiert (i.V.m.)"
     },
@@ -53,8 +53,8 @@
     {
       "klasse": "art-desder-guard",
       "entscheid": "TEXT",
-      "stellen": 945,
-      "erlasse": 334,
+      "stellen": 948,
+      "erlasse": 337,
       "selbstmarker": 0,
       "was": "«Art. N des/der/über/vom …» ohne Klammer-Kürzel"
     },
@@ -69,32 +69,32 @@
     {
       "klasse": "art-kein-token",
       "entscheid": "TEXT",
-      "stellen": 933,
-      "erlasse": 205,
+      "stellen": 957,
+      "erlasse": 218,
       "selbstmarker": 3,
       "was": "bare «Art. N» — Bestimmung existiert im Erlass nicht"
     },
     {
       "klasse": "art-m12-kuerzel",
       "entscheid": "TEXT",
-      "stellen": 991,
-      "erlasse": 259,
+      "stellen": 1005,
+      "erlasse": 266,
       "selbstmarker": 0,
       "was": "«Art. N KÜRZEL» (unbekanntes Kürzel) — Self unterdrückt (M12)"
     },
     {
       "klasse": "art-n2-fremdkuerzel",
       "entscheid": "TEXT",
-      "stellen": 3842,
-      "erlasse": 241,
+      "stellen": 3861,
+      "erlasse": 252,
       "selbstmarker": 0,
       "was": "«Art. N … FEDLEX-Kürzel» (N2 Form A) — Self unterdrückt"
     },
     {
       "klasse": "art-self",
       "entscheid": "SELF",
-      "stellen": 12885,
-      "erlasse": 465,
+      "stellen": 12899,
+      "erlasse": 471,
       "selbstmarker": 606,
       "was": "bare «Art. N» → Sprung im eigenen Erlass"
     },
@@ -117,16 +117,16 @@
     {
       "klasse": "n2b-genitiv",
       "entscheid": "FREMD",
-      "stellen": 661,
-      "erlasse": 207,
+      "stellen": 666,
+      "erlasse": 211,
       "selbstmarker": 0,
       "was": "Form-B-Glied über kuratierten Kurztitel-Genitiv ohne Klammer («des Bankengesetzes», V-7a; Geltung je Ebene)"
     },
     {
       "klasse": "n2b-glied",
       "entscheid": "FREMD",
-      "stellen": 335,
-      "erlasse": 144,
+      "stellen": 342,
+      "erlasse": 148,
       "selbstmarker": 0,
       "was": "Glied der Form B «Artikel N … des <Name> (KÜRZEL)» — Klammer-Kürzel"
     },
@@ -141,8 +141,8 @@
     {
       "klasse": "n2b-titel",
       "entscheid": "FREMD",
-      "stellen": 323,
-      "erlasse": 158,
+      "stellen": 327,
+      "erlasse": 160,
       "selbstmarker": 0,
       "was": "Form-B-Glied über amtlichen Volltitel «Bundesgesetzes/Verordnung [vom Datum] über …» (V-7b)"
     },

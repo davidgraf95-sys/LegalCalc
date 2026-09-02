@@ -657,7 +657,9 @@ David «Speicherlimite aufgehoben» deckt das).
 Tag-Leser-Modul (Vorbau läuft, `scratchpad/tagleser/`, E1-Beweis: Rollen
 Marginalie/Haupttext/Fussnote deterministisch, 119/119 Seiten zeichen-
 vollständig). Darauf, je EIGENE Runde mit eigener Gegenprüfung:
-- **R1 Gliederung:** Randtitel/Marginalien als Sachtitel (483 verworfen),
+- **R1 Gliederung** *(vorgezogen, Auftrag David 2.9.2026 wörtlich: «achte bei zh auch darauf, dass wir
+  marginale extrahieren und in der gliederung darstellen» — Bau läuft seit 2.9., Branch
+  `feat/zh-r1-marginalien`)*: Randtitel/Marginalien als Sachtitel (483 verworfen),
   Kapitel-/Abschnitts-Struktur als eigene Blöcke, die 129 Überschriften-
   Fehlzuordnungen, römische Ebenen. Kreuzvergleich Tag-Weg ↔ Positions-Weg
   als neues Dauer-Tor.
@@ -756,10 +758,35 @@ unverändert.)*
   scraping-swiss-official-sources; Prüfer: gegenpruefung) + TABU-Flächen +
   Netz-Disziplin (~1 req/s, UA mit Kontakt) + O2/O3-Pflichten + «KEIN Push/
   PR/Quittung ausser beauftragt». Orchestrator kopiert, statt neu zu texten.
+- **O7 · `zh-quellen.ts` schreiben statt drucken (Wurzel-Fix, offen seit
+  1.9.2026):** Das Auflöse-Werkzeug DRUCKT heute Einträge, die jemand in
+  `zh-quellen.ts` einsetzt. Mit Tranche A ist die Datei auf 1206 Zeilen
+  gewachsen und musste in die §6.6-Baseline aufgenommen werden
+  (`scripts/schlankheit-bestand.json`) — ein Workaround, kein Zustand:
+  `check-schlankheit.ts` schliesst `*.generated.ts` ausdrücklich aus, «weil
+  ihre Zeilenzahl eine Funktion der Quelldaten ist, kein Wartbarkeits-Signal»,
+  und genau das trifft auf diese Liste zu. FIX: `--schreiben`-Modus, der die
+  beiden Arrays nach `zh-quellen.generated.ts` schreibt; `zh-quellen.ts`
+  behält Interface, Doku und Re-Export und fällt unter 800 Zeilen; der
+  Baseline-Eintrag wird beim selben Schritt wieder GELÖSCHT, nicht bloss
+  stehen gelassen. Vorsicht: `ZH_ZURUECKGESTELLT` trägt GEMESSENE Befunde
+  (Tor-Ausgaben), die der Endpunkt nicht liefert — der Schreib-Modus muss sie
+  erhalten, nicht überschreiben (§2b: Belege altern nicht).
+  Nebenbefund zum Mitnehmen: `schlankheit:update` schreibt die GANZE Baseline
+  neu und hebt dabei die Deckel fremder, ungeänderter Dateien mit (gemessen
+  1.9.2026: normtext-snapshot.ts 1589 → 1682, adapter-htm.ts 957 → 1022 …).
+  Wer einen Eintrag aufnimmt, nimmt NUR seinen auf — sonst wächst die Baseline
+  still mit, genau der Fehlmodus, den das Tor benennt.
 
 *(Bereits eingelöst diese Session: geteilte Scratch-Werkzeuge — Messbank,
 E1-Skripte, PDF-Ablagen — werden agentenübergreifend wiederverwendet;
 Mutationsproben-Regel steht im Skill korpus-werkstatt.)*
+
+- **O8 · Regenerations-Kaskade Kanton** *(Befund 2.9.2026, PR #613: `check:zaehler` rot in CI, weil die
+  Regeneration nach dem Register-Nachzug `gen:zaehler` nicht mitfuhr)*: ein Kommando, das nach jedem
+  Register-Eingriff Manifest, Startseiten-Zähler, Paritäts-DB und Verweis-Basislinie in fester Reihenfolge
+  nachzieht (Vorbild `materialien:kaskade`, Befund (g) QS-MONITOR-ROT). Bis dahin: Landungs-Checkliste
+  `gen:zaehler` + `check:verweis-inventar -- --schreiben` nach jedem Merge von main in einen Korpus-Branch.
 
 ### 5.3 Offene David-Punkte (nicht blockierend gesammelt)
 
