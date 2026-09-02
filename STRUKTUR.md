@@ -46,6 +46,10 @@ Artikelverweise («Artikel 29 Absatz 1 ATSG») unterdrückt → Kandidat Z5, nic
 begonnen. **Wartet auf David:** Prototype-Fund 6.9., AGPL-Ausnahmen
 apca-w3/colorparsley, MCP-Server-Entscheid.
 
+**Nachtrag:** Weiterbau 2.9. nachmittags: QS-VERWENDEN V1b+V4 (#630), V3 Raw-Store
+(#631), V5 Feed + V6 valibot (#632, GP), V7 Feiertags-Gegenprobe (#633, 1 Skip GL
+2027 wartet auf David), V8 Spike (Notiz). Dossier #617 gelandet 442376f89.
+
 ## Session 1./2.9.2026 (Abend+Nacht) — Zielbild Gesetzesleser: Plan-Umbau, Block 1 gelandet, Zürich 111 Erlasse live (15 PRs, 8 Gegenprüfungen)
 
 **Gelandet + live (Live-Kennung zuletzt `2758c5246`):** Auftrag David 1.9.2026
