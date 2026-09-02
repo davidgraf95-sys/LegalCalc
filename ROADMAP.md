@@ -607,7 +607,7 @@ zgb-a36-anhang: Die ZGB-Gliederung zeigt 74 Artikel des Anhangs «Wortlaut der f
   - [ ] **V5 Atom-Feed «geänderte Erlasse»** aus `daten-manifest.json`-Diff (Paket `feed`), statisch nach `public/feed/erlasse.xml`, deterministisch (keine Bauzeit-Stempel). Beleg: Rangliste #14.
   - [ ] **V6 valibot-Formprüfung** an den Datei-Grenzen für Manifeste/generierte JSON (nur Grenzen, nie Engines). Beleg: Rangliste #16.
   - [ ] **V7 Feiertags-Gegenprobe** als reiner Test: kantonale Feiertagsformeln vs. date-holidays CH (Abweichung = Prüfauftrag, kein Fix ohne Quelle). Beleg: Rangliste #15.
-  - [ ] **V8 pagefind-Spike** gegen `suche-eval-gold` (Messung, kein Umbau). Beleg: Rangliste #11.
+  - [x] **V8 pagefind-Spike** gegen `suche-eval-gold` (Messung, kein Umbau) — Spike gemessen 2.9.2026: nicht ersetzen (Notiz [bibliothek/recherche/pagefind-spike-2026-09-02.md](bibliothek/recherche/pagefind-spike-2026-09-02.md)). Beleg: Rangliste #11.
 
 - [ ] **Repo in eine GitHub-Organisation überführen (Merge Queue)** *(`QS-ORG-UMZUG`)*
   <!-- @meta id: QS-ORG-UMZUG · status: blocked · blocker: david-entscheid-org-umzug · dep: [] · feld: betrieb -->
