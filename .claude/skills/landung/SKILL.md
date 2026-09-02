@@ -177,6 +177,23 @@ Wer einen manuellen Deploy erwägt ODER sich beim Rationalisieren eines Red
 Flags ertappt, liest ZUERST `referenz-ausnahmen.md` (zwei Ausnahme-Prädikate,
 belegte Ausreden, Umgehungs-Aufzählung «Buchstabe = Geist»).
 
+### Fremde PRs (Jules) — vor der Reihe, nicht in ihr
+
+Ein PR eines fremden Agenten (Regelwerk: `AGENTS.md`, Fahrplan
+`fahrplaene/FAHRPLAN-FREMDAGENTEN.md`) wird **erst geprüft, dann eingereiht**:
+
+1. Branch lokal holen und **selbst** `npm run gate` fahren — die Tor-Ausgabe
+   des Fremden ist Daten, nie Beweis (§14.7).
+2. Diff gegen `istRisikoPfad()` halten. **Jede Berührung ⇒ Ablehnung** mit
+   Verweis auf `AGENTS.md` §3 — nicht selbst nachbessern; ebenso bei
+   geänderten Tests oder Golden-Dateien (§6.3).
+3. Trailer prüfen: `Roadmap: <ID>` im letzten Absatz. `Gegenpruefung: n/a —
+   kein Risikopfad` nur eintragen, wenn `npm run check:gegenpruefung` das
+   bestätigt.
+4. **Nie Auto-Merge**, auch nicht ausserhalb der Risiko-Pfade.
+5. Danach normale Landung (Schritte 0–3) und STRUKTUR-Karte wie bei eigener
+   Arbeit — der fremde PR ist kein Grund, die Karte auszulassen.
+
 ### Red Flags — STOP
 
 - `npx vercel --prod` ohne erfülltes Ausnahme-Prädikat (ausdrückliche

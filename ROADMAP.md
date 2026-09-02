@@ -535,6 +535,17 @@ zgb-a36-anhang: Die ZGB-Gliederung zeigt 74 Artikel des Anhangs «Wortlaut der f
   die Checkliste liegt seit 29.8.2026 dort statt hier (sie war eine Merge-Konflikt-Falle: 6 Konflikte
   in EINER Zeile bei 15 PRs).
 
+- [~] **Fremde Agenten im Bau — Jules, Antigravity, Gemini** *(`QS-FREMDAGENTEN`, Freigabe David 3.9.2026)*
+  <!-- @meta id: QS-FREMDAGENTEN · status: wip · blocker: null · dep: [] · feld: betrieb · fahrplan: fahrplaene/FAHRPLAN-FREMDAGENTEN.md -->
+  Ziel: neben Claude Code eine zweite Bauequipe (Jules) und einen Lese-/Sichtungsweg (Antigravity,
+  Gemini) auf der grünen Spur nutzen — risikofrei, eng umrissen, Tor-geprüft. Grenzen: Risikopfade
+  bleiben Claude-Unteragenten, Verdikte und Landung bleiben bei Claude, die fachliche Abnahme bei
+  David; jede Phase hat eine Rückbau-Schwelle statt einer Bewachung.
+  **Detail:** [FAHRPLAN-FREMDAGENTEN.md](fahrplaene/FAHRPLAN-FREMDAGENTEN.md) §2.
+  - [ ] Pilot Jules (AGENTS.md, Umgebung, ein Issue, Landung durch Claude). §2.
+  - [ ] Messversuch Gemini-Zweitblick (fünf Gegenprüfungen, Rückbau-Schwelle). §2/§3.
+  - [ ] Pilot Gemini-Langtext/PDF-Sichtung. §2.
+
 - [ ] **Automatik-Gesundheit** *(`QS-AUTOMATIK`, `[OF]`)*
   <!-- @meta id: QS-AUTOMATIK · status: parked · blocker: zielbild-gesetzesleser · dep: [] · feld: betrieb · fahrplan: fahrplaene/FAHRPLAN-BASIS-AUSBAU.md -->
   Läuft unsere Automatik wirklich, und würde sie scheitern können? Offen: Turso-Wächter-Abdeckung +
