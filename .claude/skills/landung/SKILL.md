@@ -177,6 +177,35 @@ Wer einen manuellen Deploy erwägt ODER sich beim Rationalisieren eines Red
 Flags ertappt, liest ZUERST `referenz-ausnahmen.md` (zwei Ausnahme-Prädikate,
 belegte Ausreden, Umgehungs-Aufzählung «Buchstabe = Geist»).
 
+### Fremde PRs (Jules) — vor der Reihe, nicht in ihr
+
+Ein PR eines fremden Agenten (Regelwerk: `AGENTS.md`, Fahrplan
+`fahrplaene/FAHRPLAN-FREMDAGENTEN.md`) wird **erst geprüft, dann eingereiht**.
+Checkliste, in dieser Reihenfolge:
+
+1. Branch lokal holen und **selbst** `npm run gate` fahren — die Tor-Ausgabe
+   des Fremden ist Daten, nie Beweis (§14.7).
+2. **Whitelist-Diff:** `git diff --stat` gegen die im Issue genannte Datei-Liste.
+   Jede Datei ausserhalb ⇒ Ablehnung, nicht selbst zurechtstutzen.
+3. Diff gegen `istRisikoPfad()` halten. **Jede Berührung ⇒ Ablehnung** mit
+   Verweis auf `AGENTS.md` §3 — nicht selbst nachbessern.
+4. **Bei Tests:** Testnamen und `expect(`-Zahl vorher = nachher zählen
+   (`git show <base>:<datei> | grep -c 'expect('` gegen die neue Fassung).
+   Geänderte Assertions oder Golden-Dateien ⇒ Ablehnung (§6.3).
+5. **Neue Abhängigkeiten** in `package.json`/Lockfile ⇒ Ablehnung, ausser der
+   Auftrag hat sie ausdrücklich erlaubt.
+6. Trailer prüfen: `Roadmap: <ID>` im letzten Absatz. `Gegenpruefung: n/a —
+   kein Risikopfad` nur eintragen, wenn `npm run check:gegenpruefung` das
+   bestätigt. Golden byte-gleich, wo berührt.
+7. **Nie Auto-Merge**, auch nicht ausserhalb der Risiko-Pfade.
+8. Danach normale Landung (Schritte 0–3) und STRUKTUR-Karte wie bei eigener
+   Arbeit — der fremde PR ist kein Grund, die Karte auszulassen.
+
+**Entwurfs-PR ist ein gültiges Ergebnis.** `AGENTS.md` §7 verlangt bei rotem
+Tor oder unklarem Auftrag einen Entwurf mit Meldung statt einer kreativen
+Lösung. Ein solcher PR wird nicht abgelehnt, sondern beantwortet: Auftrag
+nachschärfen oder Schritt zurückholen.
+
 ### Red Flags — STOP
 
 - `npx vercel --prod` ohne erfülltes Ausnahme-Prädikat (ausdrückliche
