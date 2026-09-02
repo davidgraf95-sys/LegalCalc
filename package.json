@@ -51,6 +51,7 @@
     "check:zyklen": "vite-node scripts/check-zyklen.ts",
     "check:smoke": "vite-node scripts/smoke-render.tsx",
     "check:caches": "bash scripts/fedlex-cache.sh",
+    "check:raw-store": "vite-node scripts/check-raw-store.ts",
     "check:zitate": "vite-node scripts/norm-zitate-pruefen.ts",
     "check:fedlex-versionen": "vite-node scripts/fedlex-versionen-pruefen.ts",
     "zitatgraph:generieren": "vite-node scripts/fedlex-zitatgraph.ts",
