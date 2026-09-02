@@ -545,6 +545,13 @@ jobs:
       - name: ZH-Vollständigkeit (Artefakt-Teil, ohne PDF)
         if: needs.diff.outputs.art != 'doku'
         run: npm run check:zh-vollstaendigkeit -- --artefakt
+      # Randtitel/Gliederung der ZH-Sidecars (R1, 2.9.2026). Der Artefakt-Teil
+      # braucht kein PDF: er haelt die Sidecars gegen die Snapshots und gegen
+      # die eingefrorene Deckungs-Messreihe. Die Zweitlesung aus dem Roh-PDF
+      # laeuft lokal im `gate` (Cache ist gitignored).
+      - name: ZH-Randtitel (Artefakt-Teil, ohne PDF)
+        if: needs.diff.outputs.art != 'doku'
+        run: npm run check:zh-randtitel -- --artefakt
       # Verdrahtet 15.8.2026 (QS-AUTOMATIK-PARITAET lit. b): diese drei standen
       # bis dahin NUR in fedlex-frische.yml — einem schedule-Workflow. Das ist
       # Wächter-, nicht PR-Deckung: er meldet Korpus-Drift erst NACH dem Merge
