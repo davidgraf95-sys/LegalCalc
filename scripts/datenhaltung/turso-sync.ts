@@ -91,6 +91,7 @@ import { readFileSync, existsSync } from 'node:fs';
 import { createHash } from 'node:crypto';
 import { DatabaseSync } from 'node:sqlite';
 import { manifestDb } from './manifest';
+import { parseDatenManifest } from './validierung';
 import { ddlFtsArtikel, ddlFtsEntscheide } from './fts';
 import { leseFtsSchatten, ftsDokumente } from './turso-fts-index';
 import {
@@ -428,10 +429,10 @@ async function main(): Promise<void> {
   //     (Gegenprüfung Runde 5, M1) — dieselbe Lücke, die im Wächter schon als «‹nicht leer›
   //     reicht nicht» erkannt worden war. Der sha kommt aus `manifestDb()`, also aus exakt
   //     derselben Kanonisierung, die `daten-manifest.json` erzeugt hat.
-  const manifest = JSON.parse(readFileSync(MANIFEST_DATEI, 'utf8')) as Record<
-    string,
-    Record<string, { zeilen: number; sha: string }>
-  >;
+  // V6 (QS-VERWENDEN): Formprüfung an der Grenze statt ungeprüftem Typ-Cast —
+  // ein verstümmeltes Manifest bricht hier klar ab, statt als `undefined`
+  // stillschweigend durch den Quell-Riegel unten zu rutschen.
+  const manifest = parseDatenManifest(JSON.parse(readFileSync(MANIFEST_DATEI, 'utf8')), MANIFEST_DATEI);
   const istNormtext = manifestDb(normtext);
   const istRspr = manifestDb(rspr);
   const zuPruefen: Array<[string, { zeilen: number; sha: string } | undefined, { zeilen: number; sha: string } | undefined]> = [
