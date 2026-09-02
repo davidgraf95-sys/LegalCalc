@@ -23,7 +23,9 @@ import {
   GENITIV_NAMEN_ESC,
   TITEL_FRAGMENTE_ESC,
 } from './erkennung';
-import { datumPasst, KUERZEL_NUR_BUND, type FremdEbene } from './positivliste';
+import {
+  datumPasst, historischeFassung, KUERZEL_NUR_BUND, zusatzwortSperre, type FremdEbene,
+} from './positivliste';
 import {
   artikelnPluralVerweise,
   fremdRoutingFormB,
@@ -469,7 +471,13 @@ const Z5_ARTNR_RE = new RegExp(N2_ARTNR, 'g');
  *        Segment des Lese-Basispfads) — nennt der Verweis diesen Erlass selbst,
  *        ist er kein Fremdverweis und bleibt dem Self-Pfad (Herleitung oben).
  * @param ebene Ebene des LESENDEN Erlasses (wie in `fremdRoutingFormB`):
- *        `kanton` sperrt die Kürzel aus `KUERZEL_NUR_BUND`.
+ *        `kanton` sperrt die Kürzel aus `KUERZEL_NUR_BUND` und wird an die
+ *        beiden Abgrenzungs-Aufrufe (`fremdRoutingFormB`,
+ *        `artikelnPluralVerweise`) DURCHGEREICHT — sie standen bis zum
+ *        GP-Nachzug (PR #635) hart auf `bund`, während der Renderer die echte
+ *        Ebene führt (NormText.tsx). Gemessen: keine Klasse ändert sich, die
+ *        Divergenz zum Inventar bleibt 0 — der Fix schliesst die Bauchlandung,
+ *        bevor ein Genitiv-/Titel-Signal mit kantonaler Geltung sie auslöst (§5).
  */
 export function ausgeschriebeneVerweiseImText(
   text: string,
@@ -492,9 +500,14 @@ export function ausgeschriebeneVerweiseImText(
     // Belege und Aufnahme-Regel an `KUERZEL_NUR_BUND` (positivliste.ts).
     if (ebene === 'kanton' && KUERZEL_NUR_BUND.has(gesetz)) continue;
     const rest = text.slice(nachAnker);
-    if (fremdRoutingFormB(rest, m[1], undefined, 'bund')) continue; // Form B ist zuständig
+    if (fremdRoutingFormB(rest, m[1], undefined, ebene)) continue; // Form B ist zuständig
     const einheitEnde = nachAnker + sm[0].length;
-    pluralRegionen ??= artikelnPluralVerweise(text);
+    // GP-Nachzug PR #635: «AVO Inland» ist nicht die eidg. AVO, und «KAG in der
+    // Fassung vom …» meint eine aufgehobene Fassung — Belege an beiden Guards.
+    const nachEinheit = text.slice(einheitEnde);
+    if (zusatzwortSperre(nachEinheit)) continue;   // anderer Erlass (§1)
+    if (historischeFassung(nachEinheit)) continue; // historische Fassung (§7/§8)
+    pluralRegionen ??= artikelnPluralVerweise(text, ebene);
     if (pluralRegionen.some((r) => start < r.end && r.oeffnerStart < einheitEnde)) continue;
     const datum = DATUM_IN_EINHEIT.exec(sm[0])?.[1]
       ?? DATUM_NACH_NAME.exec(text.slice(einheitEnde))?.[1]

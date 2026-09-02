@@ -187,3 +187,83 @@ describe('ausgeschriebeneVerweiseImText — Kürzel mit kantonaler Doppelbedeutu
     expect(treffer(t, 'BE-168.811', 'kanton')).toEqual([['Artikel 308', 'Art. 308 ZPO']]);
   });
 });
+
+// ─── GP-Nachzug (PR #635) B1: Kürzel + Zusatzwort = ein ANDERER Erlass ───────
+
+describe('ausgeschriebeneVerweiseImText — Kürzel mit titel-weiterführendem Zusatzwort', () => {
+  // Belege wörtlich aus den committeten Snapshots (§7). Gemeint ist die
+  // interkantonale «Anerkennungsverordnung Inland (AVO Inland)» der SDK/GDK
+  // (liegt als kanton/BS/419.901 selbst im Korpus), NICHT die eidgenössische
+  // Aufsichtsverordnung AVO (SR 961.011). Herleitung: `KUERZEL_ZUSATZ_SPERRE`.
+  const bs905 = 'Die Inhaberinnen und Inhaber eines anerkannten Diploms gemäss Abs. 1 sind gemäss Art. 10 Abs. 2 AVO Inland berechtigt, den im Anhang III der AVO Inland aufgeführten Titel zu tragen. Der Titel lautet: «Osteopathin/Osteopath». Gemäss Art. 10 der AVO Inland sind Titelinhaberinnen und -inhaber berechtigt, dem Titel den Vermerk «mit schweizerisch anerkanntem Diplom» hinzuzufügen.';
+  const bs902 = 'Entscheide der Rekurskommission können gemäss Art. 11 Abs. 3 AVO Inland vom 20. Mai 1999 angefochten werden.';
+
+  it('BS-419.905 art_2: «AVO Inland» bleibt Text (nie SR 961.011)', () => {
+    expect(treffer(bs905, 'BS-419.905', 'kanton')).toEqual([]);
+  });
+
+  it('BS-419.902 art_11: «AVO Inland vom 20. Mai 1999» bleibt Text', () => {
+    expect(treffer(bs902, 'BS-419.902', 'kanton')).toEqual([]);
+  });
+
+  // GEGENFÄLLE: das Kürzel OHNE Zusatzwort verlinkt unverändert — der Guard
+  // greift nur beim Zusatzwort, nicht bei jedem grossgeschriebenen Folgewort
+  // (57 der 60 gemessenen Stellen sind richtige Links, s. Konstante).
+  it('Gegenfall 1: «AVO» ohne Zusatzwort verlinkt weiterhin', () => {
+    const t = 'Entscheide der Rekurskommission können gemäss Art. 11 Abs. 3 AVO angefochten werden.';
+    expect(treffer(t, 'BS-419.902', 'kanton')).toEqual([['Art. 11', 'Art. 11 AVO']]);
+  });
+
+  it('Gegenfall 2: grossgeschriebener Satz-Fortgang bleibt verlinkt (CHEMV art_1)', () => {
+    const t = 'Stoffe, Zubereitungen und Gegenstände, die nach Artikel 7 USG Abfälle sind.';
+    expect(treffer(t, 'CHEMV')).toEqual([['Artikel 7', 'Art. 7 USG']]);
+  });
+
+  it('Gegenfall 3: «findet Artikel 333 OR Anwendung» bleibt verlinkt (FUSG art_49)', () => {
+    const t = 'Auf den Übergang der Arbeitsverhältnisse findet Artikel 333 OR Anwendung.';
+    expect(treffer(t, 'FUSG')).toEqual([['Artikel 333', 'Art. 333 OR']]);
+  });
+});
+
+// ─── GP-Nachzug (PR #635) B2: Verweis auf eine HISTORISCHE Fassung ───────────
+
+describe('ausgeschriebeneVerweiseImText — «in der Fassung vom …»', () => {
+  // Belege wörtlich aus den committeten Snapshots (§7). Der Leser zeigt immer
+  // die GELTENDE Fassung; KAG art_18 existiert dort nicht mehr. Herleitung:
+  // `historischeFassung` (positivliste.ts).
+  it('FINIV art_93: «Artikel 18 Absatz 3 KAG in der Fassung vom …» bleibt Text', () => {
+    const t = 'Befreiungen, welche die FINMA gestützt auf Artikel 18 Absatz 3 KAG in der Fassung vom 28. September 2012 Vermögensverwaltern kollektiver Kapitalanlagen gewährt hat, gelten im Rahmen von Artikel 7 dieser Verordnung weiter.';
+    expect(treffer(t, 'FINIV')).toEqual([]);
+  });
+
+  it('FIDLEV art_105: «Artikel 120 Absatz 4 KAG in der Fassung vom 1. März 2013» bleibt Text', () => {
+    const t = 'Artikel 120 Absatz 4 KAG in der Fassung vom 1. März 2013;';
+    expect(treffer(t, 'FIDLEV')).toEqual([]);
+  });
+
+  it('AIG art_126_a: «Artikel 87 des AsylG in der Fassung vom 26. Juni 1998» bleibt Text', () => {
+    const t = 'Entsteht vor Inkrafttreten der Änderung vom 16. Dezember 2005 des AsylG ein Zwischen- oder Schlussabrechnungsgrund nach Artikel 87 des AsylG in der Fassung vom 26. Juni 1998, so erfolgen die Zwischen- oder Schlussabrechnung und die Saldierung des Kontos nach bisherigem Recht.';
+    expect(treffer(t, 'AIG')).toEqual([]);
+  });
+
+  it('«in der bis … geltenden Fassung» bleibt ebenfalls Text', () => {
+    const t = 'Massgebend ist Artikel 18 KAG in der bis zum 31. Dezember 2019 geltenden Fassung.';
+    expect(treffer(t, 'FINIV')).toEqual([]);
+  });
+
+  // GEGENFÄLLE: nur die BESTIMMTE vergangene Fassung sperrt.
+  it('Gegenfall 1: blosses «vom <Erlassdatum>» verlinkt wie bisher (Zeit-Kante)', () => {
+    // Das Erlassdatum des KAG (23. Juni 2006, `ERLASSDATUM`) passt → `datumPasst`
+    // lässt durch, und ohne «in der Fassung» greift der neue Guard nicht.
+    const t = 'Befreiungen, welche die FINMA gestützt auf Artikel 18 Absatz 3 KAG vom 23. Juni 2006 gewährt hat.';
+    expect(treffer(t, 'FINIV')).toEqual([['Artikel 18', 'Art. 18 KAG']]);
+    // Ein FREMDES Datum sperrt weiterhin die Zeit-Kante, nicht der neue Guard.
+    const alt = t.replace('vom 23. Juni 2006', 'vom 28. September 2012');
+    expect(treffer(alt, 'FINIV')).toEqual([]);
+  });
+
+  it('Gegenfall 2: DYNAMISCHER Verweis «in der jeweils geltenden Fassung» verlinkt weiter', () => {
+    const t = 'Massgebend ist Artikel 18 KAG in der jeweils geltenden Fassung.';
+    expect(treffer(t, 'FINIV')).toEqual([['Artikel 18', 'Art. 18 KAG']]);
+  });
+});

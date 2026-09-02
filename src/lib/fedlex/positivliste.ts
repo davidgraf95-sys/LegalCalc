@@ -576,3 +576,89 @@ export function datumPasst(gesetz: FedlexGesetz, rohDatum: string | null | undef
 export const KUERZEL_NUR_BUND: ReadonlySet<FedlexGesetz> = new Set<FedlexGesetz>([
   'StG', // Steuergesetz — jeder Kanton führt eines (Belege oben)
 ]);
+
+// ─── Z5-Nachzug (GP zu PR #635) · Kürzel + ZUSATZWORT = ein ANDERER Erlass ───
+//
+// Ein bare Bundes-Kürzel bindet nur dann an den Bundeserlass, wenn es FÜR SICH
+// steht. Folgt ihm ein Wort, das den Kurztitel WEITERFÜHRT, meint der Text
+// einen anderen — hier: interkantonalen — Erlass mit demselben Stamm-Kürzel.
+//
+// BELEGE (gemessen 2.9.2026 über den ganzen Snapshot-Korpus, vor dem Guard):
+//   · kanton/BS/419.905 art_2 «Gemäss Art. 10 der AVO Inland sind …» (2 Z5-
+//     Stellen) und kanton/BS/419.902 art_11 «gemäss Art. 11 Abs. 3 AVO Inland
+//     vom 20. Mai 1999» — gemeint ist die interkantonale «Anerkennungs-
+//     verordnung Inland (AVO Inland)» der SDK/GDK, die als kanton/BS/419.901
+//     SELBST im Korpus liegt; verlinkt wurde SR 961.011 (eidgenössische
+//     Aufsichtsverordnung AVO). Das Zusatzwort blockiert zugleich die
+//     Zeit-Kante: «vom 20. Mai 1999» steht HINTER «Inland» und wird von
+//     DATUM_NACH_NAME (`^\s*vom`) nicht mehr gesehen.
+//   · «VO Ausland der GDK» (kanton/BS/419.903) belegt das Gegenstück; «AVO
+//     Inland» kommt im Korpus 21-mal vor.
+//
+// AUFNAHME-REGEL (wie bei KUERZEL_NUR_BUND: kein Vorrat auf Verdacht,
+// §17-Gegengewicht): nur Wörter mit einer gemessenen Korpus-Stelle, an der sie
+// einem Fedlex-Kürzel UNMITTELBAR folgen und dort den Titel eines anderen
+// Erlasses weiterführen.
+//   · GEPRÜFT UND NICHT AUFGENOMMEN: «GDK», «EDK», «SODK» — im ganzen Korpus
+//     folgt keines davon je einem Fedlex-Kürzel (gemessen: «Die GDK», «NW EDK»,
+//     «Vorstand SODK»). Ein Guard, der nicht scheitern kann, wird nicht gebaut.
+//   · VERWORFEN: die allgemeine Regel «irgendein grossgeschriebenes Folgewort
+//     sperrt». Gemessen 60 Z5-Stellen mit grossgeschriebenem Folgewort — 57
+//     davon sind RICHTIGE Links, deren Folgewort blosser Satz-Fortgang ist
+//     («… die nach Artikel 7 USG Abfälle sind», «… findet Artikel 333 OR
+//     Anwendung», «… gemäss Artikel 11 AHVG Anspruch …»). Die Regel hätte 57
+//     richtige Links gekostet, um 3 falsche zu heilen (§1 schneidet in beide
+//     Richtungen: ein fehlender Link ist auch ein Mangel).
+export const KUERZEL_ZUSATZ_SPERRE: readonly string[] = ['Inland', 'Ausland'];
+
+const ZUSATZWORT_RE = new RegExp('^\\s+(?:' + KUERZEL_ZUSATZ_SPERRE.join('|') + ')\\b');
+
+/**
+ * Folgt dem eben erkannten Kürzel ein titel-weiterführendes Zusatzwort? Dann
+ * nennt der Text einen ANDEREN Erlass → kein Link (§1).
+ *
+ * @param nachKuerzel Quelltext UNMITTELBAR hinter dem Kürzel.
+ */
+export function zusatzwortSperre(nachKuerzel: string): boolean {
+  return ZUSATZWORT_RE.test(nachKuerzel);
+}
+
+// ─── Z5-Nachzug (GP zu PR #635) · Verweis auf eine HISTORISCHE Fassung ───────
+//
+// «Artikel 18 Absatz 3 KAG in der Fassung vom 28. September 2012» meint eine
+// AUFGEHOBENE Fassung, nicht die geltende — der Leser zeigt aber immer die
+// geltende (§7). Der Zielartikel existiert dort oft gar nicht mehr: belegt an
+// bund/FINIV art_93 (KAG art_18 ist in der geltenden Fassung weg). Also KEIN
+// Link — bewusste Unter-Verlinkung, historische Fassungen sind nicht der
+// Zielraum des Lesers (§8).
+//
+// Die Zeit-Kante `datumPasst` fasst diese Stellen NICHT: sie sucht das
+// ERLASSdatum unmittelbar hinter dem Namen (`DATUM_NACH_NAME`, `^\s*vom`),
+// hier steht «in der Fassung» dazwischen — und das genannte Datum ist ohnehin
+// ein Revisions-, kein Erlassdatum.
+//
+// ENG gefasst auf die Formen, die eine BESTIMMTE VERGANGENE Fassung nennen.
+// Bewusst NICHT erfasst sind die DYNAMISCHEN Verweise auf die jeweils geltende
+// Fassung — sie zeigen genau dorthin, wohin der Leser führt, und bleiben
+// verlinkt (gemessen im Korpus: «in der jeweils geltenden Fassung» 3×, «in der
+// jeweils gültigen Fassung» 1×, «in der für die Schweiz verbindlichen Fassung»
+// 22×).
+const HISTORISCHE_FASSUNG = new RegExp(
+  '^[\\s,]*in\\s+(?:der|seiner|ihrer)\\s+(?:'
+    // «in der Fassung vom 1. März 2013» · «in seiner Fassung vom …»
+    + 'Fassung\\s+vom\\b'
+    // «in der bis zum 31. Dezember 2019 geltenden Fassung» — wortweise
+    // begrenzt (bis sechs Wörter), damit das Muster nie über einen Satz läuft.
+    + '|bis\\s+(?:\\S+\\s+){1,6}?geltenden\\s+Fassung\\b'
+    + ')',
+);
+
+/**
+ * Zielt der Verweis ausdrücklich auf eine bestimmte VERGANGENE Fassung? Dann
+ * kein Link (§7/§8). Herleitung und Abgrenzung oben.
+ *
+ * @param nachKuerzel Quelltext UNMITTELBAR hinter dem Kürzel bzw. Erlassnamen.
+ */
+export function historischeFassung(nachKuerzel: string): boolean {
+  return HISTORISCHE_FASSUNG.test(nachKuerzel);
+}

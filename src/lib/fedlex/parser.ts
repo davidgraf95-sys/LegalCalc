@@ -18,7 +18,7 @@ import {
   KUERZEL_TOKENS,
   TITEL_FRAGMENTE_ESC,
 } from './erkennung';
-import { datumPasst, type FremdEbene } from './positivliste';
+import { datumPasst, historischeFassung, type FremdEbene } from './positivliste';
 
 // ─── Bund-Normverweise im Fliesstext finden (Inline-Auto-Linker) ───────────
 //
@@ -256,6 +256,9 @@ export function fremdRoutingFormB(
   // Fix-Runde 1 (b): zitiertes Datum muss das Erlassdatum des Ziels sein.
   const datum = DATUM_IN_EINHEIT.exec(m[0])?.[1] ?? DATUM_NACH_NAME.exec(nachName)?.[1] ?? null;
   if (!datumPasst(gesetz, datum)) return null;
+  // GP-Nachzug PR #635: «… KAG in der Fassung vom 28. September 2012» zielt auf
+  // eine aufgehobene Fassung — Beleg und Abgrenzung an `historischeFassung`.
+  if (historischeFassung(nachName)) return null;
   if (signal === 'titel' && !datum && TITEL_FORTSETZUNG.test(nachName)) return null;
   let regionEnd = m[0].length;
   if (signal !== 'klammer') {
@@ -476,6 +479,8 @@ export function artikelnPluralVerweise(text: string, ebene: FremdEbene = 'bund')
       if (fremd) {
         const datum = DATUM_IN_EINHEIT.exec(sm[0])?.[1] ?? DATUM_NACH_NAME.exec(nachSignal)?.[1] ?? null;
         if (!datumPasst(fremd, datum)) fremd = null;
+        // GP-Nachzug PR #635: bestimmte VERGANGENE Fassung → kein Link (§7/§8).
+        else if (historischeFassung(nachSignal)) fremd = null;
         else if (sm[5] && !datum && TITEL_FORTSETZUNG.test(nachSignal)) fremd = null;
       }
       if (fremd) end = pos + sm[0].length;
