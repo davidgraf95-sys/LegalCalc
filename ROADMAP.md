@@ -520,6 +520,7 @@ zgb-a36-anhang: Die ZGB-Gliederung zeigt 74 Artikel des Anhangs «Wortlaut der f
   Läuft unsere Automatik wirklich, und würde sie scheitern können? Offen: Turso-Wächter-Abdeckung +
   Wachstums-Schwellen.
   **Detail:** [FAHRPLAN-BASIS-AUSBAU.md](fahrplaene/FAHRPLAN-BASIS-AUSBAU.md) §1.
+  - [ ] **§17 Plan-Buchung-Fallback akzeptiert den Roadmap-Block nur als letzten PR-Body-Absatz** *(#628 nicht gebucht, 2.9.2026)* — Wurzel-Kandidat: Block an beliebiger Stelle des Bodys akzeptieren oder `check:merge-schutz` prüft den PR-Body-Aufbau.
 
 - [ ] **Basis-Ausbau — Fundament** *(`QS-BASIS`, `[OF]`)*
   <!-- @meta id: QS-BASIS · status: ready · blocker: null · dep: [] · feld: betrieb · fahrplan: fahrplaene/FAHRPLAN-BASIS-AUSBAU.md -->
