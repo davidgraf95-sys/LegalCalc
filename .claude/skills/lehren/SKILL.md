@@ -86,6 +86,14 @@ definitionen lief als «doku» ohne Tore-Job durch; erst fremde PRs wurden an
 `scripts/dispatch.ts`, Dispatch-Template zählen in der Diff-Klassierung als
 «werkzeug» (PR der Parallel-Session lexmetrik-a1); Quelle ändern, nie die
 Projektion (§5; Wurzel-Fix PR #624).
+**F13 — Folge-Push cancelt den Deploy des Merges (2.9.2026, #629).** Ein
+Doku-Push auf main direkt nach einem Squash-Merge brach über die CI-
+Concurrency den Lauf des Merge-Commits ab; der Doku-Lauf überspringt den
+Deploy-Job → der Merge war nie live (Sidecar 404), erst `gh run rerun`
+heilte. `[skip ci]`-Buchungscommits lösen das nicht aus. Gegenmittel:
+Wurzel = `cancel-in-progress` nur für PR-Läufe, main-Läufe seriell (Fix-PR
+der Zielbild-Session, ci.yml); bis dahin Regel Skill `landung` Nachkontrolle
+1: nach einem Code-Merge kein weiterer main-Push, bis der Deploy-Job grün ist.
 
 ## Eine neue Lehre ablegen
 
