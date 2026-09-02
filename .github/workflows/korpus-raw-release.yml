@@ -68,7 +68,7 @@ jobs:
       # Sammelt NUR die Dateien ein, die scripts/fedlex-pins.ts als Pins
       # führt (kein zweiter Pin-Bestand), und schreibt das sha256-Manifest.
       - name: Rohfassungen nach raw/ einsammeln + Manifest schreiben
-        run: npx vite-node scripts/gen-raw-manifest.ts -- /tmp raw > raw/MANIFEST.txt
+        run: mkdir -p raw && npx vite-node scripts/gen-raw-manifest.ts -- /tmp raw > raw/MANIFEST.txt
 
       - name: Pin-Zusammenfassung für die Release-Notes
         id: zusammenfassung
@@ -84,11 +84,12 @@ jobs:
         run: |
           set -euo pipefail
           datum="${{ steps.datum.outputs.iso }}"
+          tar_det=(--sort=name --mtime=@0 --owner=0 --group=0 --numeric-owner)
           if command -v zstd >/dev/null 2>&1; then
-            tar --sort=name -cf - raw | zstd -19 -T0 -o "fedlex-raw-${datum}.tar.zst"
+            tar "${tar_det[@]}" -cf - raw | zstd -19 -T0 -o "fedlex-raw-${datum}.tar.zst"
             datei="fedlex-raw-${datum}.tar.zst"
           else
-            tar --sort=name -czf "fedlex-raw-${datum}.tar.gz" raw
+            tar "${tar_det[@]}" -czf "fedlex-raw-${datum}.tar.gz" raw
             datei="fedlex-raw-${datum}.tar.gz"
           fi
           echo "datei=${datei}" >> "$GITHUB_OUTPUT"
@@ -121,7 +122,9 @@ jobs:
 
           Rückholung: \`gh release download ${tag}\`
           Frischeprüfung gegen den aktuellen Pin-Stand: \`npm run check:raw-store\`"
-          gh release create "$tag" "$DATEI" \
+          # Re-Run am selben Tag ersetzt den Stand (Tag wäre sonst belegt).
+          gh release delete "$tag" --yes --cleanup-tag || true
+          gh release create "$tag" "$DATEI" raw/MANIFEST.txt \
             --title "Fedlex Raw-Store ${DATUM}" \
             --notes "$notes"
 

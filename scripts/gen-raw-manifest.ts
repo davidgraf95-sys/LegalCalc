@@ -52,9 +52,14 @@ if (fehlend.length > 0) {
   process.exit(1);
 }
 
+// Pin-Stand statt Bauzeit-Stempel (§2 — kein Date.now in deterministischen
+// Artefakten): das jüngste kons-Datum unter den aktuellen Pins, aus den
+// Daten selbst, nicht aus der Laufzeit.
+const pinStand = pins.reduce((max, p) => (p.kons > max ? p.kons : max), pins[0]?.kons ?? '');
+
 const kopf = [
   '# Fedlex Raw-Store Manifest',
-  `# generiert ${new Date().toISOString()}`,
+  `# Pin-Stand: ${pinStand}`,
   `# Pins/Dateien: ${pins.length}`,
   '#',
   '# sha256  groesse_bytes  dateiname  eli  kons',
