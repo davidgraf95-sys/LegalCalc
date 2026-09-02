@@ -71,8 +71,9 @@ Regenerations-Kaskade Kanton (`gen:zaehler` fehlte nach Register-Nachzug, #613 r
 §17-Zeile Generat-Checks vor Merge-Schutz (#618). Sitzungslimit 00:50 brach zwei
 Agenten ab — Resume per SendMessage trug (Worktree-Stand blieb).
 
-**Offen (steuert Folge-Session):** ZH-Randtitel R1 (`feat/zh-r1-marginalien`, 3 Commits
-im Agent-Worktree, PR/GP ausstehend — Auftrag David 2.9.); Tag-Leser-Rest (Silbentrennung
+**Nachtrag:** ZH-Randtitel R1 gelandet (#629, GP Opus bestanden: 645/669 §§ wörtlich, 0 Verschiebungen;
+3405/4356 §§ mit Randtitel, Gliederung mit Abschnitten; Auflage ZH-615 §§ 1–2 als Restposten).
+**Offen (steuert Folge-Session):** Tag-Leser-Rest (Silbentrennung
 «Grenzund», ≥48 Stellen); Monitor-Auflagen (Stand-Wächter 34/48, Delay-Doku) und F4
 (Lücken-Hinweis fehlt im Prerender) als ROADMAP-Zeilen; Pflegetermin 1.10.2026 (14
 «Künftige Fassung»); David-Entscheid Merge-Queue (BEHIND-Ping-Pong kostete heute Nacht

@@ -217,7 +217,7 @@ export interface ZhErgebnis {
  *
  * «§§ …» (Bereichs-/Sammelüberschrift wie «§§ 137bis–144.») ist KEIN Kopf.
  */
-const PARAGRAF_KOPF =
+export const PARAGRAF_KOPF =
   /^(?:¶\d+(?:bis|ter|quater|quinquies)?\s+)?§(?!§)\s*(\d+)\s*([a-z])?\s*(bis|ter|quater|quinquies)?\s*\./;
 
 /**
@@ -228,7 +228,7 @@ const PARAGRAF_KOPF =
  * einen Quer­verweis leistet die Zeilenanker-Disziplin plus die Marker-Wahl je
  * Erlass (siehe erkenneMarker) — in einem «§»-Erlass feuert dieses Muster nie.
  */
-const ARTIKEL_KOPF =
+export const ARTIKEL_KOPF =
   /^(?:¶\d+(?:bis|ter|quater|quinquies)?\s+)?Art\.\s*(\d+)\s*([a-z])?\s*(bis|ter|quater|quinquies)?(?=\s|$)/;
 
 /**
@@ -274,7 +274,7 @@ const LIT_MARKE = /^([a-z])\.\s*(\S.*)?$/;
  *  Titel, ohne § und ohne Absatztext. Wird zwischen Artikeln verworfen.
  *  Der lat. Suffix («Abis. Eherecht», ZH-230) gehört dazu: er ist hochgestellt
  *  gesetzt und wird seit der Hochstellungs-Zuordnung an den Buchstaben gefügt. */
-const GLIEDERUNG =
+export const GLIEDERUNG =
   /^(?:[A-Z](?:bis|ter|quater|quinquies)?|[IVXL]+)\.\s+[A-ZÄÖÜ]/;
 
 /**
@@ -295,7 +295,7 @@ const GLIEDERUNG =
  * Die BUCHSTABEN-Form («A. Allgemein», «III. Bezirksrat») fängt weiterhin
  * GLIEDERUNG; sie war nie undicht.
  */
-const GLIEDERUNG_ZAEHLEND =
+export const GLIEDERUNG_ZAEHLEND =
   /^(?:\d+|[IVXLC]+|(?:Ers|Zwei|Drit|Vier|Fünf|Sechs|Sieb|Sieben|Ach|Neun|Zehn|Elf|Zwölf)ter)\.?\s+(?:Kapitel|Abschnitt|Unterabschnitt|Teil|Titel|Abteilung):/;
 
 /**
@@ -315,7 +315,7 @@ const GLIEDERUNG_ZAEHLEND =
  * Der lateinische Suffix ist zugelassen («1bis. Ergänzende Ordnung»), damit die
  * Form dieselbe Suffix-Reichweite hat wie GLIEDERUNG.
  */
-const GLIEDERUNG_ARABISCH =
+export const GLIEDERUNG_ARABISCH =
   /^\d+(?:bis|ter|quater|quinquies)?\.\s*\S/;
 
 /**
@@ -344,7 +344,7 @@ const TITEL_KETTE_MAX = 2;
  * damit im Snapshot NICHT enthalten (§8: ausgewiesene Lücke statt falscher
  * Zuordnung); ihre Aufnahme als eigener Eintragstyp ist ZH-4d-Stoff.
  */
-const SCHLUSSAPPARAT = /^(?:Übergangs|Schluss)bestimmung(?:en)?\b/;
+export const SCHLUSSAPPARAT = /^(?:Übergangs|Schluss)bestimmung(?:en)?\b/;
 
 /** ANHANG-Titel am Zeilenanfang — nur die echte Überschrift, nicht jedes Wort
  *  «Anhang». Zulässig: «Anhang», «Anhang 1», «Anhang: Gebührentarif (§ 1)».
@@ -352,7 +352,7 @@ const SCHLUSSAPPARAT = /^(?:Übergangs|Schluss)bestimmung(?:en)?\b/;
  *  Fliesstext-Zeile in ZH-851.1 § 5e lit. c — sie kappte mit der alten Fassung
  *  `^Anhang(:|\b)` den halben Erlass; in der Fix-Runde 2 selbst erzeugt und
  *  gemessen, 31.8.2026). */
-const ANHANG_TITEL = /^Anhang(?:\s*\d*)?(?::|$)/;
+export const ANHANG_TITEL = /^Anhang(?:\s*\d*)?(?::|$)/;
 
 /** Absatz-Marker «¶N» am Zeilenanfang (von serialisiereZhZeilen gesetzt; der
  *  Resttext ist optional — die Absatznummer steht oft auf der eigenen Zeile).
