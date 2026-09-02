@@ -13,16 +13,16 @@
   "gesamt": {
     "stellen": 36047,
     "self": 19652,
-    "fremd": 11383,
-    "text": 5012,
+    "fremd": 11364,
+    "text": 5031,
     "selbstmarker": 927
   },
   "klassen": [
     {
       "klasse": "anker-ausgeschrieben",
       "entscheid": "FREMD",
-      "stellen": 4164,
-      "erlasse": 254,
+      "stellen": 4151,
+      "erlasse": 253,
       "selbstmarker": 0,
       "was": "Ausgeschriebener Artikelverweis «Artikel N … KÜRZEL» → Fremd-Artikel (Z5, W2·22)"
     },
@@ -69,8 +69,8 @@
     {
       "klasse": "art-desder-guard",
       "entscheid": "TEXT",
-      "stellen": 911,
-      "erlasse": 330,
+      "stellen": 914,
+      "erlasse": 331,
       "selbstmarker": 0,
       "was": "«Art. N des/der/über/vom …» ohne Klammer-Kürzel"
     },
@@ -101,8 +101,8 @@
     {
       "klasse": "art-n2-fremdkuerzel",
       "entscheid": "TEXT",
-      "stellen": 2,
-      "erlasse": 2,
+      "stellen": 13,
+      "erlasse": 5,
       "selbstmarker": 0,
       "was": "«Art. N … FEDLEX-Kürzel» (N2 Form A) — Self unterdrückt"
     },
@@ -141,7 +141,7 @@
     {
       "klasse": "n2b-glied",
       "entscheid": "FREMD",
-      "stellen": 342,
+      "stellen": 341,
       "erlasse": 148,
       "selbstmarker": 0,
       "was": "Glied der Form B «Artikel N … des <Name> (KÜRZEL)» — Klammer-Kürzel"
@@ -221,7 +221,7 @@
     {
       "klasse": "plural-glied-fremd",
       "entscheid": "FREMD",
-      "stellen": 1459,
+      "stellen": 1454,
       "erlasse": 153,
       "selbstmarker": 0,
       "was": "A10-Glied mit aufgelöstem Fremdgesetz-Signal"
@@ -245,7 +245,7 @@
     {
       "klasse": "plural-region-unterdrueckt",
       "entscheid": "TEXT",
-      "stellen": 568,
+      "stellen": 573,
       "erlasse": 96,
       "selbstmarker": 0,
       "was": "A10-Region mit unauflösbarem Fremdnamen — ganz unterdrückt"

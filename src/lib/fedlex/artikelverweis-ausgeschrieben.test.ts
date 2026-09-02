@@ -15,6 +15,7 @@
 
 import { describe, it, expect } from 'vitest';
 import { ausgeschriebeneVerweiseImText, normVerweiseImText } from './spannen';
+import { fremdRoutingFormB } from './parser';
 import { type FremdEbene } from './positivliste';
 
 /** Kurzform: (anzeige, auflösbares Ziel) je erkannter Spanne. */
@@ -265,5 +266,31 @@ describe('ausgeschriebeneVerweiseImText — «in der Fassung vom …»', () => {
   it('Gegenfall 2: DYNAMISCHER Verweis «in der jeweils geltenden Fassung» verlinkt weiter', () => {
     const t = 'Massgebend ist Artikel 18 KAG in der jeweils geltenden Fassung.';
     expect(treffer(t, 'FINIV')).toEqual([['Artikel 18', 'Art. 18 KAG']]);
+  });
+});
+
+// ─── GP-Nachzug (PR #635) B2: derselbe Guard auf den PARSER-Pfaden ──────────
+//
+// «in der Fassung vom …» ist keine Z5-Eigenheit — die Form-B-Auflösung
+// (`fremdRoutingFormB`) und der Plural-Pfad tragen dieselbe Sorge. Belege
+// wörtlich aus den committeten Snapshots (§7).
+
+describe('fremdRoutingFormB — «in der Fassung vom …»', () => {
+  const nachArtikel = (t: string, nr: string) =>
+    fremdRoutingFormB(t.slice(t.indexOf(nr) + nr.length), nr, undefined, 'bund');
+
+  it('OR disp_u3_art_3: «des Obligationenrechts in der Fassung vom 18. Dezember 1936» → kein Routing', () => {
+    const t = 'Bis zur vollständigen Leistung der Einlagen in der Höhe des Stammkapitals haften die Gesellschafter nach Artikel 802 des Obligationenrechts in der Fassung vom 18. Dezember 1936.';
+    expect(nachArtikel(t, '802')).toBeNull();
+  });
+
+  it('FIDLEV art_105: Satzzeichen zwischen Klammer-Kürzel und Fassungs-Angabe sperrt ebenfalls', () => {
+    const t = 'Artikel 20 des Kollektivanlagengesetzes vom 23. Juni 2006 (KAG); in der Fassung vom 1. März 2013;';
+    expect(nachArtikel(t, '20')).toBeNull();
+  });
+
+  it('Gegenfall: dieselbe Einheit OHNE Fassungs-Angabe routet unverändert auf das KAG', () => {
+    const t = 'Artikel 20 des Kollektivanlagengesetzes vom 23. Juni 2006 (KAG);';
+    expect(nachArtikel(t, '20')?.gesetz).toBe('KAG');
   });
 });

@@ -38,9 +38,9 @@ Eine Zeile ist damit ein **Prüfhinweis**, kein Fehlerbeleg.
 | Erlasse im Graph | 227 |
 | davon verglichen (Snapshot vorhanden) | 227 |
 | Fedlex-Kanten vergleichbar (Ziel im Korpus, eId im Snapshot) | 3703 |
-| davon vom Leser verlinkt | 2640 (71.3 %) |
-| **A · Ziel erkannt, aber nicht verlinkt (N2 Form A)** | **0 (0.0 %)** |
-| **B · Warnungen (Fedlex kennt Ziel, Leser erkennt es dort nicht)** | **1063 (28.7 %)** |
+| davon vom Leser verlinkt | 2636 (71.2 %) |
+| **A · Ziel erkannt, aber nicht verlinkt (N2 Form A)** | **3 (0.1 %)** |
+| **B · Warnungen (Fedlex kennt Ziel, Leser erkennt es dort nicht)** | **1064 (28.7 %)** |
 | R2 · Ziel ausserhalb des Korpus | 1689 |
 | R4 · eId ohne Snapshot-Eintrag | 188 |
 | Graph-Erlasse ohne Snapshot | 0 |
@@ -49,7 +49,12 @@ Eine Zeile ist damit ein **Prüfhinweis**, kein Fehlerbeleg.
 Normtext das Zielkürzel ausgeschrieben («Artikel N Absatz M KÜRZEL») und LexMetrik
 erkennt es — bis W2·22 Z5 (2.9.2026) wurde der Link dort nur unterdrückt, seither
 routet ihn `ausgeschriebeneVerweiseImText`; A ist damit von 824 auf 0 gefallen und
-bleibt als Wächter gegen Rückfall und neue Zitierformen stehen. In B mischen sich
+bleibt als Wächter gegen Rückfall und neue Zitierformen stehen. Der Gegenprüfungs-
+Nachzug zu Z5 (2.9.2026) hat A bewusst wieder auf 3 gehoben: FIDLEV art_111, KKV
+art_126_z_octies und FINIV art_93 zitieren das Ziel «in der Fassung vom …», also eine
+AUFGEHOBENE Fassung — der Leser zeigt die geltende, in der die Zielbestimmung teils
+gar nicht mehr existiert. Fedlex kennt die Kante trotzdem; hier ist A der RICHTIGE
+Zustand, nicht ein Rückstand (Guard `historischeFassung`, positivliste.ts). In B mischen sich
 R1 (Fussnoten) und R3 (absichtliche Zurückhaltung); B ist ohne Einzelprüfung
 nicht auswertbar.
 
@@ -57,6 +62,21 @@ nicht auswertbar.
 
 | Erlass | SR | A | B | verlinkt |
 |---|---|---|---|---|
+| FIDLEV | 950.11 | 1 | 3 | 12 |
+| KKV | 951.311 | 1 | 5 | 28 |
+| FINIV | 954.11 | 1 | 6 | 36 |
+
+### A · FIDLEV (SR 950.11) — 1 Stellen
+
+- Fedlex kennt Ziel-SR 951.31 (KAG) aus eId `art_111`; LexMetrik erkennt dasselbe Ziel, verlinkt es aber nicht.
+
+### A · KKV (SR 951.311) — 1 Stellen
+
+- Fedlex kennt Ziel-SR 951.312 (KKV-FINMA) aus eId `art_126_z_octies`; LexMetrik erkennt dasselbe Ziel, verlinkt es aber nicht.
+
+### A · FINIV (SR 954.11) — 1 Stellen
+
+- Fedlex kennt Ziel-SR 951.31 (KAG) aus eId `art_93`; LexMetrik erkennt dasselbe Ziel, verlinkt es aber nicht.
 
 ## Klasse B — Erlasse mit den meisten Warnungen (Top 25)
 

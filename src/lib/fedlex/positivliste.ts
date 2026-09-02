@@ -644,7 +644,11 @@ export function zusatzwortSperre(nachKuerzel: string): boolean {
 // jeweils gültigen Fassung» 1×, «in der für die Schweiz verbindlichen Fassung»
 // 22×).
 const HISTORISCHE_FASSUNG = new RegExp(
-  '^[\\s,]*in\\s+(?:der|seiner|ihrer)\\s+(?:'
+  // Vorspann `[\\s,;]`: die amtliche Zitierweise schiebt zwischen Kürzel und
+  // Fassungs-Angabe gelegentlich ein Satzzeichen ein (belegt bund/FIDLEV art_105:
+  // «Artikel 20 des Kollektivanlagengesetzes vom 23. Juni 2006 (KAG); in der
+  // Fassung vom 1. März 2013;»).
+  '^[\\s,;]*in\\s+(?:der|seiner|ihrer)\\s+(?:'
     // «in der Fassung vom 1. März 2013» · «in seiner Fassung vom …»
     + 'Fassung\\s+vom\\b'
     // «in der bis zum 31. Dezember 2019 geltenden Fassung» — wortweise
