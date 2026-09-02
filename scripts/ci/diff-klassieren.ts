@@ -29,7 +29,7 @@
  * QS-PLAN-EINFACH 14.8.2026, Punkt 3 — 78 %-Messwert der Browser-Shards).
  * KONSERVATIV: jede andere Datei (auch package.json, e2e/**, scripts/** sonst)
  * bleibt `code`. */
-const CODE_FERNE_MUSTER: readonly RegExp[] = [
+export const CODE_FERNE_MUSTER: readonly RegExp[] = [
   /\.md$/,
   /^scripts\/plan\//,
   /^scripts\/cowork\//,
@@ -50,7 +50,7 @@ const CODE_FERNE_MUSTER: readonly RegExp[] = [
  * (sie bleiben über `CODE_FERNE_MUSTER` — `.claude/`/`docs/` — code-fern,
  * Bau + alle Node-Tore laufen weiter voll), nur der `doku`-Kurzschluss greift
  * für sie nicht mehr. */
-const WERKZEUG_TROTZ_MD_MUSTER: readonly RegExp[] = [
+export const WERKZEUG_TROTZ_MD_MUSTER: readonly RegExp[] = [
   /^\.claude\/agents\//,
   /^docs\/token-oekonomie\/dispatch-template\.md$/,
 ];

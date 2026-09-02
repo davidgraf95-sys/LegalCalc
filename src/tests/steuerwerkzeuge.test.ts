@@ -11,7 +11,12 @@ import {
   istRefactorCommit,
   istTestDatei,
 } from '../../scripts/testtreue-kern';
-import { klassifiziereDateien, klassifiziereDiff } from '../../scripts/ci/diff-klassieren';
+import {
+  CODE_FERNE_MUSTER,
+  klassifiziereDateien,
+  klassifiziereDiff,
+  WERKZEUG_TROTZ_MD_MUSTER,
+} from '../../scripts/ci/diff-klassieren';
 import {
   dispatchText,
   KLASSEN,
@@ -638,5 +643,40 @@ describe('klassifiziereDateien — die einzelnen code-fernen Flächen', () => {
 
   it('scripts/plan/x.ts + scripts/logik-sweep.ts → code (ein Ausreisser genügt)', () => {
     expect(klassifiziereDateien(['scripts/plan/x.ts', 'scripts/logik-sweep.ts'])).toBe('code');
+  });
+});
+
+// ─── Bash↔TS-Parität: CODE_FERN_RE/WERKZEUG_TROTZ_MD_RE ────────────────────────
+// Bug-Check PR #626 (2.9.2026): ci.yml pflegt die beiden Klassierungsmuster als
+// Bash-ERE-Literale (Zeile ~178/184) PARALLEL zu den TS-Regex-Arrays in
+// diff-klassieren.ts (CODE_FERNE_MUSTER/WERKZEUG_TROTZ_MD_MUSTER) — ohne
+// diesen Test kann eine Seite driften, ohne dass ein Tor es je bemerkt (§6.7).
+
+describe('Bash↔TS-Parität — CODE_FERN_RE/WERKZEUG_TROTZ_MD_RE (Bug-Check #626)', () => {
+  const ciYml = readFileSync('.github/workflows/ci.yml', 'utf8');
+
+  function bashMuster(name: string): string {
+    const treffer = ciYml.match(new RegExp(`^\\s*${name}='\\((.+)\\)'$`, 'm'));
+    if (!treffer) throw new Error(`${name} nicht in ci.yml gefunden`);
+    return treffer[1];
+  }
+
+  // `.source` einer JS-Regex-Literal escaped den Delimiter "/" syntaktisch
+  // immer als "\/" — reiner JS-Literal-Zwang, keine Bash-Konvention. Für den
+  // String-Vergleich mit der unescaped Bash-ERE wird das auf "/" normalisiert;
+  // semantisch sind "\/" und "/" in grep -E identisch.
+  function tsMuster(muster: readonly RegExp[]): string {
+    return muster
+      .map((r) => r.source)
+      .join('|')
+      .replace(/\\\//g, '/');
+  }
+
+  it('CODE_FERN_RE (ci.yml) == CODE_FERNE_MUSTER (diff-klassieren.ts)', () => {
+    expect(bashMuster('CODE_FERN_RE')).toBe(tsMuster(CODE_FERNE_MUSTER));
+  });
+
+  it('WERKZEUG_TROTZ_MD_RE (ci.yml) == WERKZEUG_TROTZ_MD_MUSTER (diff-klassieren.ts)', () => {
+    expect(bashMuster('WERKZEUG_TROTZ_MD_RE')).toBe(tsMuster(WERKZEUG_TROTZ_MD_MUSTER));
   });
 });
