@@ -2,7 +2,7 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 import { useDialogFokus } from '../../components/layout/useDialogFokus';
 import { usePaneKontext } from '../../components/layout/PaneKontext';
 import { useMeldeInhaltsKopf } from '../../components/layout/InhaltsKopfKontext';
-import type { StrukturMap, ErlassKopf, CurrencyMap } from '../../lib/normtext/browse';
+import type { StrukturMap, ErlassKopf, CurrencyMap, KantonLueckenMap } from '../../lib/normtext/browse';
 import type { KantonSystematik } from '../../lib/normtext/systematik';
 import type { BrowseErlass, BrowseManifest } from '../../lib/normtext/browse-typen';
 import type { NormSnapshot } from '../../lib/normtext/typen';
@@ -415,6 +415,9 @@ export function useLeserAnsichtZustand({ tocAuf, setTocAuf }: {
   // N13: amtliche Kanton-Systematik (lazy) — liefert das echte Sachgebiet eines
   // kantonalen Erlasses für die Reader-Overline (statt Einheits-«Öffentliches Recht»).
   const [kantonSys, setKantonSys] = useState<Record<string, KantonSystematik>>({});
+  // §8-Nachzug (PR #614-Auflage): ausgewiesene Erlass-Lücken je kantonalem
+  // Erlass-Key — analog `kantonSys` lazy geladen, nur für die Kanton-Lesesicht.
+  const [kantonLuecken, setKantonLuecken] = useState<KantonLueckenMap>({});
   // BGer-Entscheide/Materialien/Werkzeuge zu diesem Erlass: das einheitliche
   // KontextPanel (B3) lädt + zeigt sie selbst (Single Source, §5) — am Leseende.
   const sekRefs = useRef<Map<string, HTMLElement>>(new Map());
@@ -445,6 +448,7 @@ export function useLeserAnsichtZustand({ tocAuf, setTocAuf }: {
   return {
     tocOffen, setTocOffen, istXl, imPane, wurzel, overlayWurzel, istSekundaer,
     meldeInhaltsKopf, aktArtikel, setAktArtikel, kantonSys, setKantonSys,
+    kantonLuecken, setKantonLuecken,
     sekRefs, tocDrawerRef, tabArtikelTimer, aktArtikelTimer, tocBaumTimer, tocTouchRef,
   };
 }
