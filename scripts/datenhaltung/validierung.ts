@@ -3,14 +3,15 @@
 // committetes, aber nicht typsicher erzeugtes JSON-Dokument in die
 // Datenhaltungs-Logik einfliesst — `daten-manifest.json` (Quell-Riegel in
 // turso-sync.ts) und `public/normtext/register.json` (ladeRegister() in
-// ingest.ts). Reine Eingangs-Kontrolle (§2: KEINE Engine/Rechenlogik hier) —
-// fehlt ein Pflichtfeld oder stimmt der Typ nicht, meldet der Aufrufer Pfad +
-// Befund und bricht mit Exit 1 ab, statt mit `undefined` weiterzurechnen
-// (bisher: ungeprüfter `JSON.parse(...) as T`-Typ-Cast an beiden Stellen).
+// ingest.ts, seit Gegenprüfung 2.9.2026 H-3 auch scripts/feed-generieren.ts).
+// Reine Eingangs-Kontrolle (§2: KEINE Engine/Rechenlogik hier) — fehlt ein
+// Pflichtfeld oder stimmt der Typ nicht, meldet der Aufrufer Pfad + Befund
+// und bricht mit Exit 1 ab, statt mit `undefined` weiterzurechnen (bisher:
+// ungeprüfter `JSON.parse(...) as T`-Typ-Cast an beiden Stellen).
 //
-// Schema bewusst minimal: nur die Felder, die die beiden Aufrufer TATSÄCHLICH
-// lesen, als `looseObject` (Rest der Datei bleibt unvalidiert durch, §6 —
-// kein Verhaltenswechsel für ungenutzte Felder).
+// Schema bewusst minimal: nur die Felder, die die Aufrufer TATSÄCHLICH lesen,
+// als `looseObject` (Rest der Datei bleibt unvalidiert durch, §6 — kein
+// Verhaltenswechsel für ungenutzte Felder).
 import * as v from 'valibot';
 
 // ─── daten-manifest.json ─────────────────────────────────────────────────────
@@ -35,12 +36,21 @@ export function parseDatenManifest(roh: unknown, pfad: string): DatenManifest {
 // ─── public/normtext/register.json ───────────────────────────────────────────
 const RegisterErlassSchema = v.looseObject({
   key: v.string(),
-  ebene: v.string(),
+  // picklist statt string (Gegenprüfung 2.9.2026, H-4): Echtdaten kennen nur
+  // diese zwei Werte (register.json, geprüft 2.9.2026) — ein dritter Wert ist
+  // ein Formfehler, kein neuer Fachbegriff, und soll hier scheitern statt
+  // unerkannt durchzulaufen.
+  ebene: v.picklist(['bund', 'kanton']),
   kanton: v.nullable(v.string()),
   sr: v.nullable(v.string()),
   titel: v.string(),
   rechtsgebiet: v.string(),
   status: v.string(),
+  // kuerzel/stand dazu (Gegenprüfung 2.9.2026, H-3): scripts/feed-generieren.ts
+  // liest jetzt über dieselbe Grenze wie ingest.ts (gleiche Datei, gleiches
+  // Schema statt ungeprüftem Cast) und braucht beide Felder für den Atom-Feed.
+  kuerzel: v.string(),
+  stand: v.string(),
 });
 const RegisterSchema = v.looseObject({
   erzeugt: v.string(),

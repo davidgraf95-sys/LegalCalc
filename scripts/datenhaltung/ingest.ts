@@ -171,8 +171,9 @@ export function ingestNormtext(db: DatabaseSync): Zaehler {
 // Kanton == Dateiname-Stamm ('AG-291.150', mit Bindestrich) ≠ quelle 'AG' (E1-Rest B).
 // V6 (QS-VERWENDEN): Typ + Formprüfung kommen aus validierung.ts (§5 — nicht
 // hier ein zweites Mal deklarieren). `ebene` bleibt in dieser Datei ein
-// String-Vergleich (`reg.ebene !== 'bund'`), das bricht mit der Lockerung von
-// der literalen Union auf `string` nicht.
+// String-Vergleich (`reg.ebene !== 'bund'`) — seit Gegenprüfung 2.9.2026 (H-4)
+// ist `RegisterErlass.ebene` wieder die literale Union `'bund' | 'kanton'`
+// (picklist statt string), der Vergleich bricht damit nicht.
 type RegisterErlass = RegisterErlassTyp;
 
 function ladeRegister(): Map<string, RegisterErlass> {

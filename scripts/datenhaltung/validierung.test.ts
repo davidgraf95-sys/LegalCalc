@@ -44,8 +44,12 @@ describe('parseRegister', () => {
     titel: 'Obligationenrecht',
     rechtsgebiet: 'privat',
     status: 'snapshot',
-    // zusätzliches, nicht validiertes Feld — muss unverändert durchgereicht werden
+    // kuerzel/stand seit Gegenprüfung 2.9.2026 (H-3) validierte Pflichtfelder
+    // (scripts/feed-generieren.ts braucht beide über dieselbe Grenze).
+    kuerzel: 'OR',
     stand: '2026-01-01',
+    // zusätzliches, nicht validiertes Feld — muss unverändert durchgereicht werden
+    datei: 'bund/OR.json',
   };
 
   it('lässt ein vollständiges Register unverändert durch (inkl. unvalidierter Zusatzfelder)', () => {
@@ -64,5 +68,13 @@ describe('parseRegister', () => {
   it('bricht mit Exit 1 ab, wenn "erlasse" fehlt', () => {
     mitExitAlsWurf();
     expect(() => parseRegister({ erzeugt: '2026-09-02' }, 'fixture.json')).toThrow('process.exit(1)');
+  });
+
+  it('bricht mit Exit 1 ab, wenn "ebene" nicht "bund"/"kanton" ist (H-4 picklist)', () => {
+    mitExitAlsWurf();
+    const fehlerhaft = { ...ERLASS_GUELTIG, ebene: 'gemeinde' };
+    expect(() =>
+      parseRegister({ erzeugt: '2026-09-02', erlasse: [fehlerhaft] }, 'fixture.json'),
+    ).toThrow('process.exit(1)');
   });
 });

@@ -11,7 +11,8 @@
 // übergebenen Register (`public/normtext/register.json`) — `status ===
 // 'snapshot'` = echter Volltext (dieselbe Zählregel wie gen-startseite-
 // zaehler.ts, nicht «nur-live-link»/«pdf-embed»), Feld `stand` =
-// Konsolidierungsdatum je Erlass.
+// Konsolidierungsdatum je Erlass. Sortierung per Codepoint, locale-unabhängig
+// (Gegenprüfung 2.9.2026).
 //
 // Zwei Erlasse ohne gültigen `stand` (VD-vd-106879, VD-vd-128150 — bekannte
 // Lücke, s. `STAND_UNBEKANNT` in erlassKopfText.ts) werden ausgelassen: ohne
@@ -24,6 +25,15 @@ import { esc } from '../src/lib/seo-detail.ts';
 import { erlassPfad } from '../src/lib/normtext/erlassAdresse.ts';
 import { SITE_URL } from '../src/lib/seo.ts';
 import type { BrowseErlass } from '../src/lib/normtext/browse-typen.ts';
+
+/** Codepoint-Vergleich statt `localeCompare` (§2): `localeCompare` ist
+ *  ICU-abhängig — unter `LC_ALL=tr_TR.UTF-8` sortiert es anders als unter
+ *  `LC_ALL=C`/`de_DE.UTF-8` (Gegenprüfung 2.9.2026, gemessen: unterschiedlicher
+ *  sha256 von public/feed/erlasse.xml je Locale). Maschinelle Ausgabe braucht
+ *  eine Sortierung, die überall dasselbe Ergebnis liefert. */
+function cmp(a: string, b: string): number {
+  return a < b ? -1 : a > b ? 1 : 0;
+}
 
 function eintragXml(e: BrowseErlass): string {
   const url = SITE_URL + erlassPfad(e);
@@ -45,7 +55,7 @@ function eintragXml(e: BrowseErlass): string {
 export function baueFeedXml(alleErlasse: readonly BrowseErlass[]): string {
   const eintraege = alleErlasse
     .filter((e) => e.status === 'snapshot' && /^\d{4}-\d{2}-\d{2}$/.test(e.stand))
-    .sort((a, b) => (a.stand === b.stand ? a.kuerzel.localeCompare(b.kuerzel) : b.stand.localeCompare(a.stand)));
+    .sort((a, b) => (a.stand === b.stand ? cmp(a.kuerzel, b.kuerzel) : cmp(b.stand, a.stand)));
 
   if (eintraege.length === 0) {
     throw new Error('baueFeedXml: kein Erlass mit status "snapshot" + gültigem Stand — Register leer/kaputt?');

@@ -30,18 +30,18 @@
     <summary>Stand 2026-08-01 (SR 837.02).</summary>
   </entry>
   <entry>
-    <id>https://lexmetrik.vercel.app/gesetze/bund/BUEV</id>
-    <title>BüV — Verordnung über das Schweizer Bürgerrecht (Bürgerrechtsverordnung, BüV)</title>
-    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/bund/BUEV" />
-    <updated>2026-08-01T00:00:00Z</updated>
-    <summary>Stand 2026-08-01 (SR 141.01).</summary>
-  </entry>
-  <entry>
     <id>https://lexmetrik.vercel.app/gesetze/bund/BVV_2</id>
     <title>BVV 2 — Verordnung über die berufliche Alters-, Hinterlassenen- und Invalidenvorsorge (BVV 2)</title>
     <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/bund/BVV_2" />
     <updated>2026-08-01T00:00:00Z</updated>
     <summary>Stand 2026-08-01 (SR 831.441.1).</summary>
+  </entry>
+  <entry>
+    <id>https://lexmetrik.vercel.app/gesetze/bund/BUEV</id>
+    <title>BüV — Verordnung über das Schweizer Bürgerrecht (Bürgerrechtsverordnung, BüV)</title>
+    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/bund/BUEV" />
+    <updated>2026-08-01T00:00:00Z</updated>
+    <summary>Stand 2026-08-01 (SR 141.01).</summary>
   </entry>
   <entry>
     <id>https://lexmetrik.vercel.app/gesetze/bund/FZV</id>
@@ -149,6 +149,13 @@
     <summary>Stand 2026-07-01 (SR BaB 152.100).</summary>
   </entry>
   <entry>
+    <id>https://lexmetrik.vercel.app/gesetze/bund/KVG</id>
+    <title>KVG — Bundesgesetz über die Krankenversicherung</title>
+    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/bund/KVG" />
+    <updated>2026-07-01T00:00:00Z</updated>
+    <summary>Stand 2026-07-01 (SR 832.10).</summary>
+  </entry>
+  <entry>
     <id>https://lexmetrik.vercel.app/gesetze/kanton/ZH-171.1</id>
     <title>Kantonsratsgesetz (KRG) — Kantonsratsgesetz (KRG) (LS 171.1)</title>
     <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/ZH-171.1" />
@@ -161,13 +168,6 @@
     <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/ZG-161.7" />
     <updated>2026-07-01T00:00:00Z</updated>
     <summary>Stand 2026-07-01 (SR BGS 161.7).</summary>
-  </entry>
-  <entry>
-    <id>https://lexmetrik.vercel.app/gesetze/bund/KVG</id>
-    <title>KVG — Bundesgesetz über die Krankenversicherung</title>
-    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/bund/KVG" />
-    <updated>2026-07-01T00:00:00Z</updated>
-    <summary>Stand 2026-07-01 (SR 832.10).</summary>
   </entry>
   <entry>
     <id>https://lexmetrik.vercel.app/gesetze/bund/MEPV</id>
@@ -205,13 +205,6 @@
     <summary>Stand 2026-07-01 (SR 741.01).</summary>
   </entry>
   <entry>
-    <id>https://lexmetrik.vercel.app/gesetze/kanton/ZH-175.2</id>
-    <title>Verwaltungsrechtspflegegesetz (VRG) — Verwaltungsrechtspflegegesetz (VRG) (LS 175.2)</title>
-    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/ZH-175.2" />
-    <updated>2026-07-01T00:00:00Z</updated>
-    <summary>Stand 2026-07-01 (SR LS 175.2).</summary>
-  </entry>
-  <entry>
     <id>https://lexmetrik.vercel.app/gesetze/bund/VIL</id>
     <title>VIL — Verordnung über die Infrastruktur der Luftfahrt (VIL)</title>
     <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/bund/VIL" />
@@ -231,6 +224,13 @@
     <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/bund/VTS" />
     <updated>2026-07-01T00:00:00Z</updated>
     <summary>Stand 2026-07-01 (SR 741.41).</summary>
+  </entry>
+  <entry>
+    <id>https://lexmetrik.vercel.app/gesetze/kanton/ZH-175.2</id>
+    <title>Verwaltungsrechtspflegegesetz (VRG) — Verwaltungsrechtspflegegesetz (VRG) (LS 175.2)</title>
+    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/ZH-175.2" />
+    <updated>2026-07-01T00:00:00Z</updated>
+    <summary>Stand 2026-07-01 (SR LS 175.2).</summary>
   </entry>
   <entry>
     <id>https://lexmetrik.vercel.app/gesetze/bund/ZGB</id>
@@ -338,13 +338,6 @@
     <summary>Stand 2026-06-01 (SR 730.115).</summary>
   </entry>
   <entry>
-    <id>https://lexmetrik.vercel.app/gesetze/kanton/ZH-230</id>
-    <title>Einführungsgesetz zum Schweizerischen Zivilgesetzbuch (EG ZGB) — Einführungsgesetz zum Schweizerischen Zivilgesetzbuch (EG ZGB) (LS 230)</title>
-    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/ZH-230" />
-    <updated>2026-06-01T00:00:00Z</updated>
-    <summary>Stand 2026-06-01 (SR LS 230).</summary>
-  </entry>
-  <entry>
     <id>https://lexmetrik.vercel.app/gesetze/bund/EOG</id>
     <title>EOG — Bundesgesetz über den Erwerbsersatz (Erwerbsersatzordnung)</title>
     <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/bund/EOG" />
@@ -357,6 +350,13 @@
     <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/bund/EOV" />
     <updated>2026-06-01T00:00:00Z</updated>
     <summary>Stand 2026-06-01 (SR 834.11).</summary>
+  </entry>
+  <entry>
+    <id>https://lexmetrik.vercel.app/gesetze/kanton/ZH-230</id>
+    <title>Einführungsgesetz zum Schweizerischen Zivilgesetzbuch (EG ZGB) — Einführungsgesetz zum Schweizerischen Zivilgesetzbuch (EG ZGB) (LS 230)</title>
+    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/ZH-230" />
+    <updated>2026-06-01T00:00:00Z</updated>
+    <summary>Stand 2026-06-01 (SR LS 230).</summary>
   </entry>
   <entry>
     <id>https://lexmetrik.vercel.app/gesetze/bund/FMG</id>
@@ -688,13 +688,6 @@
     <summary>Stand 2026-01-19 (SR 0.211.231.011).</summary>
   </entry>
   <entry>
-    <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-786.100</id>
-    <title>Abfallverordnung — Abfallverordnung (786.100)</title>
-    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/BS-786.100" />
-    <updated>2026-01-01T00:00:00Z</updated>
-    <summary>Stand 2026-01-01 (SR 786.100).</summary>
-  </entry>
-  <entry>
     <id>https://lexmetrik.vercel.app/gesetze/bund/AHVG</id>
     <title>AHVG — Bundesgesetz über die Alters- und Hinterlassenenversicherung (AHVG)</title>
     <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/bund/AHVG" />
@@ -709,18 +702,39 @@
     <summary>Stand 2026-01-01 (SR 831.101).</summary>
   </entry>
   <entry>
-    <id>https://lexmetrik.vercel.app/gesetze/kanton/ZG-163.4</id>
-    <title>AnwT — Verordnung über den Anwaltstarif</title>
-    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/ZG-163.4" />
-    <updated>2026-01-01T00:00:00Z</updated>
-    <summary>Stand 2026-01-01 (SR BGS 163.4).</summary>
-  </entry>
-  <entry>
     <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-786.150</id>
     <title>ASV — Verordnung über Abfallsammlungen in der Stadt Basel</title>
     <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/BS-786.150" />
     <updated>2026-01-01T00:00:00Z</updated>
     <summary>Stand 2026-01-01 (SR 786.150).</summary>
+  </entry>
+  <entry>
+    <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-497.120</id>
+    <title>AV — Archäologieverordnung</title>
+    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/BS-497.120" />
+    <updated>2026-01-01T00:00:00Z</updated>
+    <summary>Stand 2026-01-01 (SR 497.120).</summary>
+  </entry>
+  <entry>
+    <id>https://lexmetrik.vercel.app/gesetze/bund/AVIG</id>
+    <title>AVIG — Bundesgesetz über die obligatorische Arbeitslosenversicherung und die Insolvenzentschädigung (Arbeitslosenversicherungsgesetz, AVIG)</title>
+    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/bund/AVIG" />
+    <updated>2026-01-01T00:00:00Z</updated>
+    <summary>Stand 2026-01-01 (SR 837.0).</summary>
+  </entry>
+  <entry>
+    <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-786.100</id>
+    <title>Abfallverordnung — Abfallverordnung (786.100)</title>
+    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/BS-786.100" />
+    <updated>2026-01-01T00:00:00Z</updated>
+    <summary>Stand 2026-01-01 (SR 786.100).</summary>
+  </entry>
+  <entry>
+    <id>https://lexmetrik.vercel.app/gesetze/kanton/ZG-163.4</id>
+    <title>AnwT — Verordnung über den Anwaltstarif</title>
+    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/ZG-163.4" />
+    <updated>2026-01-01T00:00:00Z</updated>
+    <summary>Stand 2026-01-01 (SR BGS 163.4).</summary>
   </entry>
   <entry>
     <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-772.500</id>
@@ -751,18 +765,18 @@
     <summary>Stand 2026-01-01 (SR BaB 153.110).</summary>
   </entry>
   <entry>
-    <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-497.120</id>
-    <title>AV — Archäologieverordnung</title>
-    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/BS-497.120" />
+    <id>https://lexmetrik.vercel.app/gesetze/bund/BKV</id>
+    <title>BKV — Verordnung des EFD über den Abzug der Berufskosten unselbstständig Erwerbstätiger bei der direkten Bundessteuer (Berufskostenverordnung)</title>
+    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/bund/BKV" />
     <updated>2026-01-01T00:00:00Z</updated>
-    <summary>Stand 2026-01-01 (SR 497.120).</summary>
+    <summary>Stand 2026-01-01 (SR 642.118.1).</summary>
   </entry>
   <entry>
-    <id>https://lexmetrik.vercel.app/gesetze/bund/AVIG</id>
-    <title>AVIG — Bundesgesetz über die obligatorische Arbeitslosenversicherung und die Insolvenzentschädigung (Arbeitslosenversicherungsgesetz, AVIG)</title>
-    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/bund/AVIG" />
+    <id>https://lexmetrik.vercel.app/gesetze/kanton/AR-142.211</id>
+    <title>BVO — BVO (142.211)</title>
+    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/AR-142.211" />
     <updated>2026-01-01T00:00:00Z</updated>
-    <summary>Stand 2026-01-01 (SR 837.0).</summary>
+    <summary>Stand 2026-01-01 (SR 142.211).</summary>
   </entry>
   <entry>
     <id>https://lexmetrik.vercel.app/gesetze/kanton/AR-721.11</id>
@@ -779,25 +793,11 @@
     <summary>Stand 2026-01-01 (SR RiE 390.890).</summary>
   </entry>
   <entry>
-    <id>https://lexmetrik.vercel.app/gesetze/bund/BKV</id>
-    <title>BKV — Verordnung des EFD über den Abzug der Berufskosten unselbstständig Erwerbstätiger bei der direkten Bundessteuer (Berufskostenverordnung)</title>
-    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/bund/BKV" />
-    <updated>2026-01-01T00:00:00Z</updated>
-    <summary>Stand 2026-01-01 (SR 642.118.1).</summary>
-  </entry>
-  <entry>
     <id>https://lexmetrik.vercel.app/gesetze/bund/BOEB</id>
     <title>BöB — Bundesgesetz über das öffentliche Beschaffungswesen (BöB)</title>
     <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/bund/BOEB" />
     <updated>2026-01-01T00:00:00Z</updated>
     <summary>Stand 2026-01-01 (SR 172.056.1).</summary>
-  </entry>
-  <entry>
-    <id>https://lexmetrik.vercel.app/gesetze/kanton/AR-142.211</id>
-    <title>BVO — BVO (142.211)</title>
-    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/AR-142.211" />
-    <updated>2026-01-01T00:00:00Z</updated>
-    <summary>Stand 2026-01-01 (SR 142.211).</summary>
   </entry>
   <entry>
     <id>https://lexmetrik.vercel.app/gesetze/bund/DBG</id>
@@ -870,6 +870,13 @@
     <summary>Stand 2026-01-01 (SR SRL Nr. 228).</summary>
   </entry>
   <entry>
+    <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-119.500</id>
+    <title>GIZA — Gesetz über die internationale Zusammenarbeit zwecks Armutsbekämpfung und Stärkung der nachhaltigen Entwicklung</title>
+    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/BS-119.500" />
+    <updated>2026-01-01T00:00:00Z</updated>
+    <summary>Stand 2026-01-01 (SR 119.500).</summary>
+  </entry>
+  <entry>
     <id>https://lexmetrik.vercel.app/gesetze/kanton/AI-172.513</id>
     <title>GebT — Gebührentarif</title>
     <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/AI-172.513" />
@@ -891,18 +898,18 @@
     <summary>Stand 2026-01-01 (SR GS III B/7/1).</summary>
   </entry>
   <entry>
-    <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-772.420</id>
-    <title>Gebührentarif der IWB Industrielle Werke Basel für den Anschluss und die Nutzung des Netzes für elektrische Energie sowie die Messung von Elektrizität — Gebührentarif der IWB Industrielle Werke Basel für den Anschluss und die Nutzung des Netzes für elektrische Energie sowie die Messung von Elektrizität (772.420)</title>
-    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/BS-772.420" />
-    <updated>2026-01-01T00:00:00Z</updated>
-    <summary>Stand 2026-01-01 (SR 772.420).</summary>
-  </entry>
-  <entry>
     <id>https://lexmetrik.vercel.app/gesetze/bund/GEBV_SCHKG</id>
     <title>GebV SchKG — Gebührenverordnung zum SchKG</title>
     <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/bund/GEBV_SCHKG" />
     <updated>2026-01-01T00:00:00Z</updated>
     <summary>Stand 2026-01-01 (SR 281.35).</summary>
+  </entry>
+  <entry>
+    <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-772.420</id>
+    <title>Gebührentarif der IWB Industrielle Werke Basel für den Anschluss und die Nutzung des Netzes für elektrische Energie sowie die Messung von Elektrizität — Gebührentarif der IWB Industrielle Werke Basel für den Anschluss und die Nutzung des Netzes für elektrische Energie sowie die Messung von Elektrizität (772.420)</title>
+    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/BS-772.420" />
+    <updated>2026-01-01T00:00:00Z</updated>
+    <summary>Stand 2026-01-01 (SR 772.420).</summary>
   </entry>
   <entry>
     <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-BaB%20111.100</id>
@@ -926,25 +933,11 @@
     <summary>Stand 2026-01-01 (SR LS 211.1).</summary>
   </entry>
   <entry>
-    <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-119.500</id>
-    <title>GIZA — Gesetz über die internationale Zusammenarbeit zwecks Armutsbekämpfung und Stärkung der nachhaltigen Entwicklung</title>
-    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/BS-119.500" />
-    <updated>2026-01-01T00:00:00Z</updated>
-    <summary>Stand 2026-01-01 (SR 119.500).</summary>
-  </entry>
-  <entry>
     <id>https://lexmetrik.vercel.app/gesetze/international/HBEWUE</id>
     <title>HBewÜ — Übereinkommen vom 18. März 1970 über die Beweisaufnahme im Ausland in Zivil- oder Handelssachen (HBewÜ)</title>
     <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/international/HBEWUE" />
     <updated>2026-01-01T00:00:00Z</updated>
     <summary>Stand 2026-01-01 (SR 0.274.132).</summary>
-  </entry>
-  <entry>
-    <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-442.410</id>
-    <title>ImmoV — Vereinbarung über das Immobilienwesen der Universität Basel, Immobilienvereinbarung</title>
-    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/BS-442.410" />
-    <updated>2026-01-01T00:00:00Z</updated>
-    <summary>Stand 2026-01-01 (SR 442.410).</summary>
   </entry>
   <entry>
     <id>https://lexmetrik.vercel.app/gesetze/bund/IPRG</id>
@@ -961,18 +954,18 @@
     <summary>Stand 2026-01-01 (SR 831.20).</summary>
   </entry>
   <entry>
+    <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-442.410</id>
+    <title>ImmoV — Vereinbarung über das Immobilienwesen der Universität Basel, Immobilienvereinbarung</title>
+    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/BS-442.410" />
+    <updated>2026-01-01T00:00:00Z</updated>
+    <summary>Stand 2026-01-01 (SR 442.410).</summary>
+  </entry>
+  <entry>
     <id>https://lexmetrik.vercel.app/gesetze/kanton/LU-265</id>
     <title>JusKV — Verordnung über die Kosten in Zivil-, Straf- und verwaltungsgerichtlichen Verfahren, Justiz-Kostenverordnung</title>
     <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/LU-265" />
     <updated>2026-01-01T00:00:00Z</updated>
     <summary>Stand 2026-01-01 (SR SRL Nr. 265).</summary>
-  </entry>
-  <entry>
-    <id>https://lexmetrik.vercel.app/gesetze/kanton/AR-723.101</id>
-    <title>kGeoIV — kGeoIV (723.101)</title>
-    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/AR-723.101" />
-    <updated>2026-01-01T00:00:00Z</updated>
-    <summary>Stand 2026-01-01 (SR 723.101).</summary>
   </entry>
   <entry>
     <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-834.410</id>
@@ -1010,13 +1003,6 @@
     <summary>Stand 2026-01-01 (SR 220).</summary>
   </entry>
   <entry>
-    <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-RiE%20162.110</id>
-    <title>Personalreglement — Personalreglement (RiE 162.110)</title>
-    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/BS-RiE%20162.110" />
-    <updated>2026-01-01T00:00:00Z</updated>
-    <summary>Stand 2026-01-01 (SR RiE 162.110).</summary>
-  </entry>
-  <entry>
     <id>https://lexmetrik.vercel.app/gesetze/kanton/AR-833.151</id>
     <title>PFV — PFV (833.151)</title>
     <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/AR-833.151" />
@@ -1031,13 +1017,6 @@
     <summary>Stand 2026-01-01 (SR 142.212).</summary>
   </entry>
   <entry>
-    <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-510.430</id>
-    <title>Pilotversuchsverordnung über die Qualitätssicherung des kantonalen Bedrohungsmanagements — Pilotversuchsverordnung über die Qualitätssicherung des kantonalen Bedrohungsmanagements (510.430)</title>
-    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/BS-510.430" />
-    <updated>2026-01-01T00:00:00Z</updated>
-    <summary>Stand 2026-01-01 (SR 510.430).</summary>
-  </entry>
-  <entry>
     <id>https://lexmetrik.vercel.app/gesetze/kanton/AR-142.22</id>
     <title>PKG — PKG (142.22)</title>
     <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/AR-142.22" />
@@ -1045,11 +1024,39 @@
     <summary>Stand 2026-01-01 (SR 142.22).</summary>
   </entry>
   <entry>
+    <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-RiE%20162.110</id>
+    <title>Personalreglement — Personalreglement (RiE 162.110)</title>
+    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/BS-RiE%20162.110" />
+    <updated>2026-01-01T00:00:00Z</updated>
+    <summary>Stand 2026-01-01 (SR RiE 162.110).</summary>
+  </entry>
+  <entry>
+    <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-510.430</id>
+    <title>Pilotversuchsverordnung über die Qualitätssicherung des kantonalen Bedrohungsmanagements — Pilotversuchsverordnung über die Qualitätssicherung des kantonalen Bedrohungsmanagements (510.430)</title>
+    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/BS-510.430" />
+    <updated>2026-01-01T00:00:00Z</updated>
+    <summary>Stand 2026-01-01 (SR 510.430).</summary>
+  </entry>
+  <entry>
     <id>https://lexmetrik.vercel.app/gesetze/kanton/ZH-550.1</id>
     <title>Polizeigesetz (PolG) — Polizeigesetz (PolG) (LS 550.1)</title>
     <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/ZH-550.1" />
     <updated>2026-01-01T00:00:00Z</updated>
     <summary>Stand 2026-01-01 (SR LS 550.1).</summary>
+  </entry>
+  <entry>
+    <id>https://lexmetrik.vercel.app/gesetze/kanton/AR-142.211.1</id>
+    <title>REIS — REIS (142.211.1)</title>
+    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/AR-142.211.1" />
+    <updated>2026-01-01T00:00:00Z</updated>
+    <summary>Stand 2026-01-01 (SR 142.211.1).</summary>
+  </entry>
+  <entry>
+    <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-RiE%20494.300</id>
+    <title>Reglement Bildende Kunst — Reglement betreffend die Förderung der Bildenden Kunst durch die Gemeinde Riehen</title>
+    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/BS-RiE%20494.300" />
+    <updated>2026-01-01T00:00:00Z</updated>
+    <summary>Stand 2026-01-01 (SR RiE 494.300).</summary>
   </entry>
   <entry>
     <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-RiE%20494.400</id>
@@ -1071,13 +1078,6 @@
     <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/BS-RiE%20782.420" />
     <updated>2026-01-01T00:00:00Z</updated>
     <summary>Stand 2026-01-01 (SR RiE 782.420).</summary>
-  </entry>
-  <entry>
-    <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-RiE%20494.300</id>
-    <title>Reglement Bildende Kunst — Reglement betreffend die Förderung der Bildenden Kunst durch die Gemeinde Riehen</title>
-    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/BS-RiE%20494.300" />
-    <updated>2026-01-01T00:00:00Z</updated>
-    <summary>Stand 2026-01-01 (SR RiE 494.300).</summary>
   </entry>
   <entry>
     <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-BaB%20153.300</id>
@@ -1129,13 +1129,6 @@
     <summary>Stand 2026-01-01 (SR RiB 121.150).</summary>
   </entry>
   <entry>
-    <id>https://lexmetrik.vercel.app/gesetze/kanton/AR-142.211.1</id>
-    <title>REIS — REIS (142.211.1)</title>
-    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/AR-142.211.1" />
-    <updated>2026-01-01T00:00:00Z</updated>
-    <summary>Stand 2026-01-01 (SR 142.211.1).</summary>
-  </entry>
-  <entry>
     <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-497.800</id>
     <title>Römervertrag — Vertrag über die Römerstadt Augusta Raurica</title>
     <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/BS-497.800" />
@@ -1143,18 +1136,18 @@
     <summary>Stand 2026-01-01 (SR 497.800).</summary>
   </entry>
   <entry>
-    <id>https://lexmetrik.vercel.app/gesetze/bund/SCHKG</id>
-    <title>SchKG — Bundesgesetz über Schuldbetreibung und Konkurs</title>
-    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/bund/SCHKG" />
-    <updated>2026-01-01T00:00:00Z</updated>
-    <summary>Stand 2026-01-01 (SR 281.1).</summary>
-  </entry>
-  <entry>
     <id>https://lexmetrik.vercel.app/gesetze/bund/SKV</id>
     <title>SKV — Strassenverkehrskontrollverordnung (SKV)</title>
     <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/bund/SKV" />
     <updated>2026-01-01T00:00:00Z</updated>
     <summary>Stand 2026-01-01 (SR 741.013).</summary>
+  </entry>
+  <entry>
+    <id>https://lexmetrik.vercel.app/gesetze/bund/SCHKG</id>
+    <title>SchKG — Bundesgesetz über Schuldbetreibung und Konkurs</title>
+    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/bund/SCHKG" />
+    <updated>2026-01-01T00:00:00Z</updated>
+    <summary>Stand 2026-01-01 (SR 281.1).</summary>
   </entry>
   <entry>
     <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-781.500</id>
@@ -1220,6 +1213,34 @@
     <summary>Stand 2026-01-01 (SR 812.212.21).</summary>
   </entry>
   <entry>
+    <id>https://lexmetrik.vercel.app/gesetze/bund/VVV</id>
+    <title>VVV — Verkehrsversicherungsverordnung (VVV)</title>
+    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/bund/VVV" />
+    <updated>2026-01-01T00:00:00Z</updated>
+    <summary>Stand 2026-01-01 (SR 741.31).</summary>
+  </entry>
+  <entry>
+    <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-576.150</id>
+    <title>VZS — Verordnung über den Zivilschutz</title>
+    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/BS-576.150" />
+    <updated>2026-01-01T00:00:00Z</updated>
+    <summary>Stand 2026-01-01 (SR 576.150).</summary>
+  </entry>
+  <entry>
+    <id>https://lexmetrik.vercel.app/gesetze/bund/VZV</id>
+    <title>VZV — Verordnung über die Zulassung von Personen und Fahrzeugen zum Strassenverkehr (Verkehrszulassungsverordnung, VZV)</title>
+    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/bund/VZV" />
+    <updated>2026-01-01T00:00:00Z</updated>
+    <summary>Stand 2026-01-01 (SR 741.51).</summary>
+  </entry>
+  <entry>
+    <id>https://lexmetrik.vercel.app/gesetze/kanton/AR-625.21</id>
+    <title>Verordnung zum Bundesgesetz vom 13. Oktober 1965 über die Verrechnungssteuer — Verordnung zum Bundesgesetz vom 13. Oktober 1965 über die Verrechnungssteuer (625.21)</title>
+    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/AR-625.21" />
+    <updated>2026-01-01T00:00:00Z</updated>
+    <summary>Stand 2026-01-01 (SR 625.21).</summary>
+  </entry>
+  <entry>
     <id>https://lexmetrik.vercel.app/gesetze/kanton/AR-222.218</id>
     <title>Verordnung über den Normalarbeitsvertrag für hauswirtschaftliche Arbeitnehmer und Arbeitnehmerinnen — Verordnung über den Normalarbeitsvertrag für hauswirtschaftliche Arbeitnehmer und Arbeitnehmerinnen (222.218)</title>
     <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/AR-222.218" />
@@ -1248,34 +1269,6 @@
     <summary>Stand 2026-01-01.</summary>
   </entry>
   <entry>
-    <id>https://lexmetrik.vercel.app/gesetze/kanton/AR-625.21</id>
-    <title>Verordnung zum Bundesgesetz vom 13. Oktober 1965 über die Verrechnungssteuer — Verordnung zum Bundesgesetz vom 13. Oktober 1965 über die Verrechnungssteuer (625.21)</title>
-    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/AR-625.21" />
-    <updated>2026-01-01T00:00:00Z</updated>
-    <summary>Stand 2026-01-01 (SR 625.21).</summary>
-  </entry>
-  <entry>
-    <id>https://lexmetrik.vercel.app/gesetze/bund/VVV</id>
-    <title>VVV — Verkehrsversicherungsverordnung (VVV)</title>
-    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/bund/VVV" />
-    <updated>2026-01-01T00:00:00Z</updated>
-    <summary>Stand 2026-01-01 (SR 741.31).</summary>
-  </entry>
-  <entry>
-    <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-576.150</id>
-    <title>VZS — Verordnung über den Zivilschutz</title>
-    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/BS-576.150" />
-    <updated>2026-01-01T00:00:00Z</updated>
-    <summary>Stand 2026-01-01 (SR 576.150).</summary>
-  </entry>
-  <entry>
-    <id>https://lexmetrik.vercel.app/gesetze/bund/VZV</id>
-    <title>VZV — Verordnung über die Zulassung von Personen und Fahrzeugen zum Strassenverkehr (Verkehrszulassungsverordnung, VZV)</title>
-    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/bund/VZV" />
-    <updated>2026-01-01T00:00:00Z</updated>
-    <summary>Stand 2026-01-01 (SR 741.51).</summary>
-  </entry>
-  <entry>
     <id>https://lexmetrik.vercel.app/gesetze/kanton/AR-142.211.3</id>
     <title>Weisungen über die Kriterien zur individuellen Lohnbestimmung für Lehrende an kantonalen Schulen — Weisungen über die Kriterien zur individuellen Lohnbestimmung für Lehrende an kantonalen Schulen (142.211.3)</title>
     <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/AR-142.211.3" />
@@ -1288,6 +1281,13 @@
     <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/GL-III-A.5" />
     <updated>2026-01-01T00:00:00Z</updated>
     <summary>Stand 2026-01-01 (SR GS III A/5).</summary>
+  </entry>
+  <entry>
+    <id>https://lexmetrik.vercel.app/gesetze/kanton/AR-723.101</id>
+    <title>kGeoIV — kGeoIV (723.101)</title>
+    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/AR-723.101" />
+    <updated>2026-01-01T00:00:00Z</updated>
+    <summary>Stand 2026-01-01 (SR 723.101).</summary>
   </entry>
   <entry>
     <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-152.110</id>
@@ -1353,18 +1353,18 @@
     <summary>Stand 2025-11-03 (SR 111.100).</summary>
   </entry>
   <entry>
-    <id>https://lexmetrik.vercel.app/gesetze/kanton/AR-145.311</id>
-    <title>Beschluss über die Zahl der Vizepräsidenten oder Vizepräsidentinnen des Kantonsgerichts — Beschluss über die Zahl der Vizepräsidenten oder Vizepräsidentinnen des Kantonsgerichts (145.311)</title>
-    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/AR-145.311" />
-    <updated>2025-11-01T00:00:00Z</updated>
-    <summary>Stand 2025-11-01 (SR 145.311).</summary>
-  </entry>
-  <entry>
     <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-730.100</id>
     <title>BPG — Bau- und Planungsgesetz</title>
     <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/BS-730.100" />
     <updated>2025-11-01T00:00:00Z</updated>
     <summary>Stand 2025-11-01 (SR 730.100).</summary>
+  </entry>
+  <entry>
+    <id>https://lexmetrik.vercel.app/gesetze/kanton/AR-145.311</id>
+    <title>Beschluss über die Zahl der Vizepräsidenten oder Vizepräsidentinnen des Kantonsgerichts — Beschluss über die Zahl der Vizepräsidenten oder Vizepräsidentinnen des Kantonsgerichts (145.311)</title>
+    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/AR-145.311" />
+    <updated>2025-11-01T00:00:00Z</updated>
+    <summary>Stand 2025-11-01 (SR 145.311).</summary>
   </entry>
   <entry>
     <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-152.100</id>
@@ -1451,13 +1451,6 @@
     <summary>Stand 2025-10-01 (SR 221.213.11).</summary>
   </entry>
   <entry>
-    <id>https://lexmetrik.vercel.app/gesetze/kanton/AR-741.1</id>
-    <title>Wasserbaugesetz; WBauG — Wasserbaugesetz; WBauG (741.1)</title>
-    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/AR-741.1" />
-    <updated>2025-10-01T00:00:00Z</updated>
-    <summary>Stand 2025-10-01 (SR 741.1).</summary>
-  </entry>
-  <entry>
     <id>https://lexmetrik.vercel.app/gesetze/kanton/AR-741.11</id>
     <title>WBauV — WBauV (741.11)</title>
     <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/AR-741.11" />
@@ -1470,6 +1463,13 @@
     <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/BS-861.520" />
     <updated>2025-10-01T00:00:00Z</updated>
     <summary>Stand 2025-10-01 (SR 861.520).</summary>
+  </entry>
+  <entry>
+    <id>https://lexmetrik.vercel.app/gesetze/kanton/AR-741.1</id>
+    <title>Wasserbaugesetz; WBauG — Wasserbaugesetz; WBauG (741.1)</title>
+    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/AR-741.1" />
+    <updated>2025-10-01T00:00:00Z</updated>
+    <summary>Stand 2025-10-01 (SR 741.1).</summary>
   </entry>
   <entry>
     <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-154.112</id>
@@ -1500,18 +1500,18 @@
     <summary>Stand 2025-09-01 (SR 640.110).</summary>
   </entry>
   <entry>
-    <id>https://lexmetrik.vercel.app/gesetze/kanton/AR-761.114</id>
-    <title>Verordnung über die Organisation des Strassenverkehrsamtes — Verordnung über die Organisation des Strassenverkehrsamtes (761.114)</title>
-    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/AR-761.114" />
-    <updated>2025-09-01T00:00:00Z</updated>
-    <summary>Stand 2025-09-01 (SR 761.114).</summary>
-  </entry>
-  <entry>
     <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-510.150</id>
     <title>VSMS BS — Kantonale Verordnung über Massnahmen zur Unterstützung der Sicherheit von Minderheiten mit besonderen Schutzbedürfnissen</title>
     <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/BS-510.150" />
     <updated>2025-09-01T00:00:00Z</updated>
     <summary>Stand 2025-09-01 (SR 510.150).</summary>
+  </entry>
+  <entry>
+    <id>https://lexmetrik.vercel.app/gesetze/kanton/AR-761.114</id>
+    <title>Verordnung über die Organisation des Strassenverkehrsamtes — Verordnung über die Organisation des Strassenverkehrsamtes (761.114)</title>
+    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/AR-761.114" />
+    <updated>2025-09-01T00:00:00Z</updated>
+    <summary>Stand 2025-09-01 (SR 761.114).</summary>
   </entry>
   <entry>
     <id>https://lexmetrik.vercel.app/gesetze/kanton/ZG-641.1</id>
@@ -1654,25 +1654,11 @@
     <summary>Stand 2025-07-01 (SR 312.1).</summary>
   </entry>
   <entry>
-    <id>https://lexmetrik.vercel.app/gesetze/kanton/AR-213.310</id>
-    <title>kGBV — kGBV (213.310)</title>
-    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/AR-213.310" />
-    <updated>2025-07-01T00:00:00Z</updated>
-    <summary>Stand 2025-07-01 (SR 213.310).</summary>
-  </entry>
-  <entry>
     <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-890.510</id>
     <title>MBVO — Verordnung zum Gesetz über die Ausrichtung von Mietbeiträgen, Mietbeitragsverordnung</title>
     <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/BS-890.510" />
     <updated>2025-07-01T00:00:00Z</updated>
     <summary>Stand 2025-07-01 (SR 890.510).</summary>
-  </entry>
-  <entry>
-    <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-890.500</id>
-    <title>Mietbeitragsgesetz MBG — Gesetz über die Ausrichtung von Mietbeiträgen</title>
-    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/BS-890.500" />
-    <updated>2025-07-01T00:00:00Z</updated>
-    <summary>Stand 2025-07-01 (SR 890.500).</summary>
   </entry>
   <entry>
     <id>https://lexmetrik.vercel.app/gesetze/bund/MSCHG</id>
@@ -1687,6 +1673,13 @@
     <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/bund/MSCHV" />
     <updated>2025-07-01T00:00:00Z</updated>
     <summary>Stand 2025-07-01 (SR 232.111).</summary>
+  </entry>
+  <entry>
+    <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-890.500</id>
+    <title>Mietbeitragsgesetz MBG — Gesetz über die Ausrichtung von Mietbeiträgen</title>
+    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/BS-890.500" />
+    <updated>2025-07-01T00:00:00Z</updated>
+    <summary>Stand 2025-07-01 (SR 890.500).</summary>
   </entry>
   <entry>
     <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-833.110</id>
@@ -1745,18 +1738,18 @@
     <summary>Stand 2025-07-01 (SR 231.11).</summary>
   </entry>
   <entry>
+    <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-310.420</id>
+    <title>VZH — Verordnung über die Zulassung und Höchstzahlen von ambulanten Leistungserbringern</title>
+    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/BS-310.420" />
+    <updated>2025-07-01T00:00:00Z</updated>
+    <summary>Stand 2025-07-01 (SR 310.420).</summary>
+  </entry>
+  <entry>
     <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-118.400</id>
     <title>Vereinbarung über die Nordwestschweizer Regierungskonferenz — Vereinbarung über die Nordwestschweizer Regierungskonferenz (118.400)</title>
     <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/BS-118.400" />
     <updated>2025-07-01T00:00:00Z</updated>
     <summary>Stand 2025-07-01 (SR 118.400).</summary>
-  </entry>
-  <entry>
-    <id>https://lexmetrik.vercel.app/gesetze/kanton/ZH-631.121</id>
-    <title>Verordnung über die elektronische Einreichung der Steuererklärung — Verordnung über die elektronische Einreichung der Steuererklärung (LS 631.121)</title>
-    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/ZH-631.121" />
-    <updated>2025-07-01T00:00:00Z</updated>
-    <summary>Stand 2025-07-01 (SR LS 631.121).</summary>
   </entry>
   <entry>
     <id>https://lexmetrik.vercel.app/gesetze/kanton/AR-625.31</id>
@@ -1766,11 +1759,18 @@
     <summary>Stand 2025-07-01 (SR 625.31).</summary>
   </entry>
   <entry>
-    <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-310.420</id>
-    <title>VZH — Verordnung über die Zulassung und Höchstzahlen von ambulanten Leistungserbringern</title>
-    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/BS-310.420" />
+    <id>https://lexmetrik.vercel.app/gesetze/kanton/ZH-631.121</id>
+    <title>Verordnung über die elektronische Einreichung der Steuererklärung — Verordnung über die elektronische Einreichung der Steuererklärung (LS 631.121)</title>
+    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/ZH-631.121" />
     <updated>2025-07-01T00:00:00Z</updated>
-    <summary>Stand 2025-07-01 (SR 310.420).</summary>
+    <summary>Stand 2025-07-01 (SR LS 631.121).</summary>
+  </entry>
+  <entry>
+    <id>https://lexmetrik.vercel.app/gesetze/kanton/AR-213.310</id>
+    <title>kGBV — kGBV (213.310)</title>
+    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/AR-213.310" />
+    <updated>2025-07-01T00:00:00Z</updated>
+    <summary>Stand 2025-07-01 (SR 213.310).</summary>
   </entry>
   <entry>
     <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-910.200</id>
@@ -1808,18 +1808,18 @@
     <summary>Stand 2025-06-19 (SR 510.110).</summary>
   </entry>
   <entry>
-    <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-140.110</id>
-    <title>GlV — Gleichstellungsverordnung</title>
-    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/BS-140.110" />
-    <updated>2025-06-15T00:00:00Z</updated>
-    <summary>Stand 2025-06-15 (SR 140.110).</summary>
-  </entry>
-  <entry>
     <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-154.100</id>
     <title>GOG — Gesetz betreffend die Organisation der Gerichte und der Staatsanwaltschaft, Gerichtsorganisationsgesetz</title>
     <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/BS-154.100" />
     <updated>2025-06-15T00:00:00Z</updated>
     <summary>Stand 2025-06-15 (SR 154.100).</summary>
+  </entry>
+  <entry>
+    <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-140.110</id>
+    <title>GlV — Gleichstellungsverordnung</title>
+    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/BS-140.110" />
+    <updated>2025-06-15T00:00:00Z</updated>
+    <summary>Stand 2025-06-15 (SR 140.110).</summary>
   </entry>
   <entry>
     <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-122.510</id>
@@ -2039,18 +2039,18 @@
     <summary>Stand 2025-03-01 (SR RiE 132.110).</summary>
   </entry>
   <entry>
-    <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-310.170</id>
-    <title>Verordnung über die Gebühren im Gesundheitswesen — Verordnung über die Gebühren im Gesundheitswesen (310.170)</title>
-    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/BS-310.170" />
-    <updated>2025-03-01T00:00:00Z</updated>
-    <summary>Stand 2025-03-01 (SR 310.170).</summary>
-  </entry>
-  <entry>
     <id>https://lexmetrik.vercel.app/gesetze/kanton/AR-212.01</id>
     <title>VStA — VStA (212.01)</title>
     <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/AR-212.01" />
     <updated>2025-03-01T00:00:00Z</updated>
     <summary>Stand 2025-03-01 (SR 212.01).</summary>
+  </entry>
+  <entry>
+    <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-310.170</id>
+    <title>Verordnung über die Gebühren im Gesundheitswesen — Verordnung über die Gebühren im Gesundheitswesen (310.170)</title>
+    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/BS-310.170" />
+    <updated>2025-03-01T00:00:00Z</updated>
+    <summary>Stand 2025-03-01 (SR 310.170).</summary>
   </entry>
   <entry>
     <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-861.500</id>
@@ -2088,18 +2088,18 @@
     <summary>Stand 2025-02-01 (SR 451.110).</summary>
   </entry>
   <entry>
-    <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-152.250</id>
-    <title>Reglement über die Teilnahme an Abstimmungen in Abwesenheit — Reglement über die Teilnahme an Abstimmungen in Abwesenheit (152.250)</title>
-    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/BS-152.250" />
-    <updated>2025-02-01T00:00:00Z</updated>
-    <summary>Stand 2025-02-01 (SR 152.250).</summary>
-  </entry>
-  <entry>
     <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-152.150</id>
     <title>Reglement zum Schutz der persönlichen Integrität der Grossratsmitglieder des Kantons Basel-Stadt — Reglement zum Schutz der persönlichen Integrität der Grossratsmitglieder des Kantons Basel-Stadt (152.150)</title>
     <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/BS-152.150" />
     <updated>2025-02-01T00:00:00Z</updated>
     <summary>Stand 2025-02-01 (SR 152.150).</summary>
+  </entry>
+  <entry>
+    <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-152.250</id>
+    <title>Reglement über die Teilnahme an Abstimmungen in Abwesenheit — Reglement über die Teilnahme an Abstimmungen in Abwesenheit (152.250)</title>
+    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/BS-152.250" />
+    <updated>2025-02-01T00:00:00Z</updated>
+    <summary>Stand 2025-02-01 (SR 152.250).</summary>
   </entry>
   <entry>
     <id>https://lexmetrik.vercel.app/gesetze/bund/ERV</id>
@@ -2130,6 +2130,13 @@
     <summary>Stand 2025-01-10 (SR 642.118.2).</summary>
   </entry>
   <entry>
+    <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-162.200</id>
+    <title>AZV — Verordnung zur Arbeitszeit der Mitarbeiterinnen und Mitarbeiter des Kantons Basel-Stadt, Arbeitszeitverordnung</title>
+    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/BS-162.200" />
+    <updated>2025-01-01T00:00:00Z</updated>
+    <summary>Stand 2025-01-01 (SR 162.200).</summary>
+  </entry>
+  <entry>
     <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-911.700</id>
     <title>AfWW beider Basel — Vereinbarung über das Amt für Wald und Wild beider Basel</title>
     <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/BS-911.700" />
@@ -2149,27 +2156,6 @@
     <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/TG-176.31" />
     <updated>2025-01-01T00:00:00Z</updated>
     <summary>Stand 2025-01-01 (SR RB 176.31).</summary>
-  </entry>
-  <entry>
-    <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-162.200</id>
-    <title>AZV — Verordnung zur Arbeitszeit der Mitarbeiterinnen und Mitarbeiter des Kantons Basel-Stadt, Arbeitszeitverordnung</title>
-    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/BS-162.200" />
-    <updated>2025-01-01T00:00:00Z</updated>
-    <summary>Stand 2025-01-01 (SR 162.200).</summary>
-  </entry>
-  <entry>
-    <id>https://lexmetrik.vercel.app/gesetze/bund/BANKV</id>
-    <title>BankV — Verordnung über die Banken und Sparkassen (Bankenverordnung, BankV)</title>
-    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/bund/BANKV" />
-    <updated>2025-01-01T00:00:00Z</updated>
-    <summary>Stand 2025-01-01 (SR 952.02).</summary>
-  </entry>
-  <entry>
-    <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-BeE%20680.100</id>
-    <title>Benützungs- und Gebührenreglement Baslerhofscheune — Benützungs- und Gebührenreglement Baslerhofscheune Bettingen</title>
-    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/BS-BeE%20680.100" />
-    <updated>2025-01-01T00:00:00Z</updated>
-    <summary>Stand 2025-01-01 (SR BeE 680.100).</summary>
   </entry>
   <entry>
     <id>https://lexmetrik.vercel.app/gesetze/bund/BGBM</id>
@@ -2200,6 +2186,20 @@
     <summary>Stand 2025-01-01 (SR 831.461.3).</summary>
   </entry>
   <entry>
+    <id>https://lexmetrik.vercel.app/gesetze/bund/BANKV</id>
+    <title>BankV — Verordnung über die Banken und Sparkassen (Bankenverordnung, BankV)</title>
+    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/bund/BANKV" />
+    <updated>2025-01-01T00:00:00Z</updated>
+    <summary>Stand 2025-01-01 (SR 952.02).</summary>
+  </entry>
+  <entry>
+    <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-BeE%20680.100</id>
+    <title>Benützungs- und Gebührenreglement Baslerhofscheune — Benützungs- und Gebührenreglement Baslerhofscheune Bettingen</title>
+    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/BS-BeE%20680.100" />
+    <updated>2025-01-01T00:00:00Z</updated>
+    <summary>Stand 2025-01-01 (SR BeE 680.100).</summary>
+  </entry>
+  <entry>
     <id>https://lexmetrik.vercel.app/gesetze/bund/CO2_GESETZ</id>
     <title>CO2-Gesetz — Bundesgesetz über die Reduktion der CO2-Emissionen (CO2-Gesetz)</title>
     <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/bund/CO2_GESETZ" />
@@ -2228,13 +2228,6 @@
     <summary>Stand 2025-01-01 (SR 831.301).</summary>
   </entry>
   <entry>
-    <id>https://lexmetrik.vercel.app/gesetze/bund/EPV</id>
-    <title>EpV — Verordnung über die Bekämpfung übertragbarer Krankheiten des Menschen (Epidemienverordnung, EpV)</title>
-    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/bund/EPV" />
-    <updated>2025-01-01T00:00:00Z</updated>
-    <summary>Stand 2025-01-01 (SR 818.101.1).</summary>
-  </entry>
-  <entry>
     <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-BeE%20411.630</id>
     <title>ERMBe — Reglement betreffend die Ermässigung der Elterntarife für den ausserschulischen Musikunterricht, Ermässigungsreglement Musik Bettingen</title>
     <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/BS-BeE%20411.630" />
@@ -2247,6 +2240,27 @@
     <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/BS-164.150" />
     <updated>2025-01-01T00:00:00Z</updated>
     <summary>Stand 2025-01-01 (SR 164.150).</summary>
+  </entry>
+  <entry>
+    <id>https://lexmetrik.vercel.app/gesetze/bund/EPV</id>
+    <title>EpV — Verordnung über die Bekämpfung übertragbarer Krankheiten des Menschen (Epidemienverordnung, EpV)</title>
+    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/bund/EPV" />
+    <updated>2025-01-01T00:00:00Z</updated>
+    <summary>Stand 2025-01-01 (SR 818.101.1).</summary>
+  </entry>
+  <entry>
+    <id>https://lexmetrik.vercel.app/gesetze/bund/FINIV</id>
+    <title>FINIV — Verordnung über die Finanzinstitute (Finanzinstitutsverordnung, FINIV)</title>
+    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/bund/FINIV" />
+    <updated>2025-01-01T00:00:00Z</updated>
+    <summary>Stand 2025-01-01 (SR 954.11).</summary>
+  </entry>
+  <entry>
+    <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-610.200</id>
+    <title>FVKG — Finanz- und Verwaltungskontrollgesetz</title>
+    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/BS-610.200" />
+    <updated>2025-01-01T00:00:00Z</updated>
+    <summary>Stand 2025-01-01 (SR 610.200).</summary>
   </entry>
   <entry>
     <id>https://lexmetrik.vercel.app/gesetze/bund/FAMZV</id>
@@ -2263,18 +2277,32 @@
     <summary>Stand 2025-01-01 (SR 958.11).</summary>
   </entry>
   <entry>
-    <id>https://lexmetrik.vercel.app/gesetze/bund/FINIV</id>
-    <title>FINIV — Verordnung über die Finanzinstitute (Finanzinstitutsverordnung, FINIV)</title>
-    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/bund/FINIV" />
+    <id>https://lexmetrik.vercel.app/gesetze/kanton/GR-720.200</id>
+    <title>GKStG — Gesetz über die Gemeinde- und Kirchensteuern</title>
+    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/GR-720.200" />
     <updated>2025-01-01T00:00:00Z</updated>
-    <summary>Stand 2025-01-01 (SR 954.11).</summary>
+    <summary>Stand 2025-01-01 (SR BR 720.200).</summary>
   </entry>
   <entry>
-    <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-610.200</id>
-    <title>FVKG — Finanz- und Verwaltungskontrollgesetz</title>
-    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/BS-610.200" />
+    <id>https://lexmetrik.vercel.app/gesetze/kanton/VS-173.8-de</id>
+    <title>GTar — Gesetz betreffend den Tarif der Kosten und Entschädigungen vor Gerichts- oder Verwaltungsbehörden</title>
+    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/VS-173.8-de" />
     <updated>2025-01-01T00:00:00Z</updated>
-    <summary>Stand 2025-01-01 (SR 610.200).</summary>
+    <summary>Stand 2025-01-01 (SR SR 173.8).</summary>
+  </entry>
+  <entry>
+    <id>https://lexmetrik.vercel.app/gesetze/kanton/NW-265.51</id>
+    <title>GebV — Verordnung zum Gesetz über die amtlichen Kosten, Gebührenverordnung</title>
+    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/NW-265.51" />
+    <updated>2025-01-01T00:00:00Z</updated>
+    <summary>Stand 2025-01-01 (SR NG 265.51).</summary>
+  </entry>
+  <entry>
+    <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-563.170</id>
+    <title>GebVGGG — Gebührenverordnung zum Gastgewerbegesetz</title>
+    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/BS-563.170" />
+    <updated>2025-01-01T00:00:00Z</updated>
+    <summary>Stand 2025-01-01 (SR 563.170).</summary>
   </entry>
   <entry>
     <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-RiE%20153.840</id>
@@ -2298,20 +2326,6 @@
     <summary>Stand 2025-01-01 (SR 361.200).</summary>
   </entry>
   <entry>
-    <id>https://lexmetrik.vercel.app/gesetze/kanton/NW-265.51</id>
-    <title>GebV — Verordnung zum Gesetz über die amtlichen Kosten, Gebührenverordnung</title>
-    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/NW-265.51" />
-    <updated>2025-01-01T00:00:00Z</updated>
-    <summary>Stand 2025-01-01 (SR NG 265.51).</summary>
-  </entry>
-  <entry>
-    <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-563.170</id>
-    <title>GebVGGG — Gebührenverordnung zum Gastgewerbegesetz</title>
-    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/BS-563.170" />
-    <updated>2025-01-01T00:00:00Z</updated>
-    <summary>Stand 2025-01-01 (SR 563.170).</summary>
-  </entry>
-  <entry>
     <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-300.100</id>
     <title>GesG — Gesundheitsgesetz</title>
     <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/BS-300.100" />
@@ -2324,20 +2338,6 @@
     <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/ZH-351" />
     <updated>2025-01-01T00:00:00Z</updated>
     <summary>Stand 2025-01-01 (SR LS 351).</summary>
-  </entry>
-  <entry>
-    <id>https://lexmetrik.vercel.app/gesetze/kanton/GR-720.200</id>
-    <title>GKStG — Gesetz über die Gemeinde- und Kirchensteuern</title>
-    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/GR-720.200" />
-    <updated>2025-01-01T00:00:00Z</updated>
-    <summary>Stand 2025-01-01 (SR BR 720.200).</summary>
-  </entry>
-  <entry>
-    <id>https://lexmetrik.vercel.app/gesetze/kanton/VS-173.8-de</id>
-    <title>GTar — Gesetz betreffend den Tarif der Kosten und Entschädigungen vor Gerichts- oder Verwaltungsbehörden</title>
-    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/VS-173.8-de" />
-    <updated>2025-01-01T00:00:00Z</updated>
-    <summary>Stand 2025-01-01 (SR SR 173.8).</summary>
   </entry>
   <entry>
     <id>https://lexmetrik.vercel.app/gesetze/bund/HMG</id>
@@ -2382,13 +2382,6 @@
     <summary>Stand 2025-01-01 (SR 772.300).</summary>
   </entry>
   <entry>
-    <id>https://lexmetrik.vercel.app/gesetze/kanton/ZH-231.1</id>
-    <title>Kantonale Zivilstandsverordnung (ZVO) — Kantonale Zivilstandsverordnung (ZVO) (LS 231.1)</title>
-    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/ZH-231.1" />
-    <updated>2025-01-01T00:00:00Z</updated>
-    <summary>Stand 2025-01-01 (SR LS 231.1).</summary>
-  </entry>
-  <entry>
     <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-832.720</id>
     <title>KBV — Verordnung über die Vergütung von Krankheits- und Behinderungskosten bei den Ergänzungsleistungen</title>
     <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/BS-832.720" />
@@ -2401,6 +2394,13 @@
     <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/BS-214.300" />
     <updated>2025-01-01T00:00:00Z</updated>
     <summary>Stand 2025-01-01 (SR 214.300).</summary>
+  </entry>
+  <entry>
+    <id>https://lexmetrik.vercel.app/gesetze/kanton/ZH-231.1</id>
+    <title>Kantonale Zivilstandsverordnung (ZVO) — Kantonale Zivilstandsverordnung (ZVO) (LS 231.1)</title>
+    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/ZH-231.1" />
+    <updated>2025-01-01T00:00:00Z</updated>
+    <summary>Stand 2025-01-01 (SR LS 231.1).</summary>
   </entry>
   <entry>
     <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-BaB%20164.100</id>
@@ -2431,18 +2431,18 @@
     <summary>Stand 2025-01-01 (SR 312.5).</summary>
   </entry>
   <entry>
-    <id>https://lexmetrik.vercel.app/gesetze/bund/PARTG</id>
-    <title>PartG — Bundesgesetz über die eingetragene Partnerschaft gleichgeschlechtlicher Paare (Partnerschaftsgesetz, PartG)</title>
-    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/bund/PARTG" />
-    <updated>2025-01-01T00:00:00Z</updated>
-    <summary>Stand 2025-01-01 (SR 211.231).</summary>
-  </entry>
-  <entry>
     <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-952.560</id>
     <title>PRBV — Verordnung über die Parkraumbewirtschaftung, Parkraumbewirtschaftungsverordnung</title>
     <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/BS-952.560" />
     <updated>2025-01-01T00:00:00Z</updated>
     <summary>Stand 2025-01-01 (SR 952.560).</summary>
+  </entry>
+  <entry>
+    <id>https://lexmetrik.vercel.app/gesetze/bund/PARTG</id>
+    <title>PartG — Bundesgesetz über die eingetragene Partnerschaft gleichgeschlechtlicher Paare (Partnerschaftsgesetz, PartG)</title>
+    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/bund/PARTG" />
+    <updated>2025-01-01T00:00:00Z</updated>
+    <summary>Stand 2025-01-01 (SR 211.231).</summary>
   </entry>
   <entry>
     <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-BaB%20172.300</id>
@@ -2452,13 +2452,6 @@
     <summary>Stand 2025-01-01 (SR BaB 172.300).</summary>
   </entry>
   <entry>
-    <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-RiE%20153.500</id>
-    <title>Reglement über die Mitwirkung der Quartierbevölkerung der Gemeinde Riehen — Reglement über die Mitwirkung der Quartierbevölkerung der Gemeinde Riehen (RiE 153.500)</title>
-    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/BS-RiE%20153.500" />
-    <updated>2025-01-01T00:00:00Z</updated>
-    <summary>Stand 2025-01-01 (SR RiE 153.500).</summary>
-  </entry>
-  <entry>
     <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-BaB%20164.110</id>
     <title>Reglement zur Lohnordnung — Reglement zur Lohnordnung (BaB 164.110)</title>
     <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/BS-BaB%20164.110" />
@@ -2466,25 +2459,18 @@
     <summary>Stand 2025-01-01 (SR BaB 164.110).</summary>
   </entry>
   <entry>
+    <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-RiE%20153.500</id>
+    <title>Reglement über die Mitwirkung der Quartierbevölkerung der Gemeinde Riehen — Reglement über die Mitwirkung der Quartierbevölkerung der Gemeinde Riehen (RiE 153.500)</title>
+    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/BS-RiE%20153.500" />
+    <updated>2025-01-01T00:00:00Z</updated>
+    <summary>Stand 2025-01-01 (SR RiE 153.500).</summary>
+  </entry>
+  <entry>
     <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-162.420</id>
     <title>SMUV — Verordnung über den Schwangerschafts- und Mutterschaftsurlaub</title>
     <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/BS-162.420" />
     <updated>2025-01-01T00:00:00Z</updated>
     <summary>Stand 2025-01-01 (SR 162.420).</summary>
-  </entry>
-  <entry>
-    <id>https://lexmetrik.vercel.app/gesetze/kanton/AR-621.11</id>
-    <title>Steuergesetz — Steuergesetz (bGS 621.11)</title>
-    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/AR-621.11" />
-    <updated>2025-01-01T00:00:00Z</updated>
-    <summary>Stand 2025-01-01 (SR bGS 621.11).</summary>
-  </entry>
-  <entry>
-    <id>https://lexmetrik.vercel.app/gesetze/kanton/SO-614.11</id>
-    <title>Steuergesetz — Gesetz über die Staats- und Gemeindesteuern</title>
-    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/SO-614.11" />
-    <updated>2025-01-01T00:00:00Z</updated>
-    <summary>Stand 2025-01-01 (SR BGS 614.11).</summary>
   </entry>
   <entry>
     <id>https://lexmetrik.vercel.app/gesetze/kanton/TG-640.1</id>
@@ -2499,6 +2485,20 @@
     <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/bund/STHG" />
     <updated>2025-01-01T00:00:00Z</updated>
     <summary>Stand 2025-01-01 (SR 642.14).</summary>
+  </entry>
+  <entry>
+    <id>https://lexmetrik.vercel.app/gesetze/kanton/AR-621.11</id>
+    <title>Steuergesetz — Steuergesetz (bGS 621.11)</title>
+    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/AR-621.11" />
+    <updated>2025-01-01T00:00:00Z</updated>
+    <summary>Stand 2025-01-01 (SR bGS 621.11).</summary>
+  </entry>
+  <entry>
+    <id>https://lexmetrik.vercel.app/gesetze/kanton/SO-614.11</id>
+    <title>Steuergesetz — Gesetz über die Staats- und Gemeindesteuern</title>
+    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/SO-614.11" />
+    <updated>2025-01-01T00:00:00Z</updated>
+    <summary>Stand 2025-01-01 (SR BGS 614.11).</summary>
   </entry>
   <entry>
     <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-815.100</id>
@@ -2527,34 +2527,6 @@
     <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/BS-832.710" />
     <updated>2025-01-01T00:00:00Z</updated>
     <summary>Stand 2025-01-01 (SR 832.710).</summary>
-  </entry>
-  <entry>
-    <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-163.400</id>
-    <title>Verordnung betreffend Verpflegung von Mitarbeiterinnen und Mitarbeitern des Kantons Basel-Stadt — Verordnung betreffend Verpflegung von Mitarbeiterinnen und Mitarbeitern des Kantons Basel-Stadt (163.400)</title>
-    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/BS-163.400" />
-    <updated>2025-01-01T00:00:00Z</updated>
-    <summary>Stand 2025-01-01 (SR 163.400).</summary>
-  </entry>
-  <entry>
-    <id>https://lexmetrik.vercel.app/gesetze/kanton/GR-217.200</id>
-    <title>Verordnung über die Gebühren der Grundbuchämter — Verordnung über die Gebühren der Grundbuchämter (BR 217.200)</title>
-    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/GR-217.200" />
-    <updated>2025-01-01T00:00:00Z</updated>
-    <summary>Stand 2025-01-01 (SR BR 217.200).</summary>
-  </entry>
-  <entry>
-    <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-BeE%20890.500</id>
-    <title>Vertrag zwischen der Einwohnergemeinde Riehen und der Einwohnergemeinde Bettingen betreffend die Leistungserbringung in den Bereichen der Sozialhilfe, Sozialberatung und Wohnassistenz — Vertrag zwischen der Einwohnergemeinde Riehen und der Einwohnergemeinde Bettingen betreffend die Leistungserbringung in den Bereichen der Sozialhilfe, Sozialberatung und Wohnassistenz</title>
-    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/BS-BeE%20890.500" />
-    <updated>2025-01-01T00:00:00Z</updated>
-    <summary>Stand 2025-01-01 (SR BeE 890.500).</summary>
-  </entry>
-  <entry>
-    <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-RiE%20890.500</id>
-    <title>Vertrag zwischen der Einwohnergemeinde Riehen und der Einwohnergemeinde Bettingen betreffend die Leistungserbringung in den Bereichen der Sozialhilfe, Sozialberatung und Wohnassistenz — Vertrag zwischen der Einwohnergemeinde Riehen und der Einwohnergemeinde Bettingen betreffend die Leistungserbringung in den Bereichen der Sozialhilfe, Sozialberatung und Wohnassistenz</title>
-    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/BS-RiE%20890.500" />
-    <updated>2025-01-01T00:00:00Z</updated>
-    <summary>Stand 2025-01-01 (SR RiE 890.500).</summary>
   </entry>
   <entry>
     <id>https://lexmetrik.vercel.app/gesetze/bund/VFV</id>
@@ -2590,6 +2562,34 @@
     <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/bund/VSTV" />
     <updated>2025-01-01T00:00:00Z</updated>
     <summary>Stand 2025-01-01 (SR 642.211).</summary>
+  </entry>
+  <entry>
+    <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-163.400</id>
+    <title>Verordnung betreffend Verpflegung von Mitarbeiterinnen und Mitarbeitern des Kantons Basel-Stadt — Verordnung betreffend Verpflegung von Mitarbeiterinnen und Mitarbeitern des Kantons Basel-Stadt (163.400)</title>
+    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/BS-163.400" />
+    <updated>2025-01-01T00:00:00Z</updated>
+    <summary>Stand 2025-01-01 (SR 163.400).</summary>
+  </entry>
+  <entry>
+    <id>https://lexmetrik.vercel.app/gesetze/kanton/GR-217.200</id>
+    <title>Verordnung über die Gebühren der Grundbuchämter — Verordnung über die Gebühren der Grundbuchämter (BR 217.200)</title>
+    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/GR-217.200" />
+    <updated>2025-01-01T00:00:00Z</updated>
+    <summary>Stand 2025-01-01 (SR BR 217.200).</summary>
+  </entry>
+  <entry>
+    <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-BeE%20890.500</id>
+    <title>Vertrag zwischen der Einwohnergemeinde Riehen und der Einwohnergemeinde Bettingen betreffend die Leistungserbringung in den Bereichen der Sozialhilfe, Sozialberatung und Wohnassistenz — Vertrag zwischen der Einwohnergemeinde Riehen und der Einwohnergemeinde Bettingen betreffend die Leistungserbringung in den Bereichen der Sozialhilfe, Sozialberatung und Wohnassistenz</title>
+    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/BS-BeE%20890.500" />
+    <updated>2025-01-01T00:00:00Z</updated>
+    <summary>Stand 2025-01-01 (SR BeE 890.500).</summary>
+  </entry>
+  <entry>
+    <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-RiE%20890.500</id>
+    <title>Vertrag zwischen der Einwohnergemeinde Riehen und der Einwohnergemeinde Bettingen betreffend die Leistungserbringung in den Bereichen der Sozialhilfe, Sozialberatung und Wohnassistenz — Vertrag zwischen der Einwohnergemeinde Riehen und der Einwohnergemeinde Bettingen betreffend die Leistungserbringung in den Bereichen der Sozialhilfe, Sozialberatung und Wohnassistenz</title>
+    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/BS-RiE%20890.500" />
+    <updated>2025-01-01T00:00:00Z</updated>
+    <summary>Stand 2025-01-01 (SR RiE 890.500).</summary>
   </entry>
   <entry>
     <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-911.610</id>
@@ -2788,18 +2788,18 @@
     <summary>Stand 2024-08-12 (SR 413.825).</summary>
   </entry>
   <entry>
-    <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-410.100</id>
-    <title>Schulgesetz — Schulgesetz (410.100)</title>
-    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/BS-410.100" />
-    <updated>2024-08-12T00:00:00Z</updated>
-    <summary>Stand 2024-08-12 (SR 410.100).</summary>
-  </entry>
-  <entry>
     <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-412.750</id>
     <title>SPSSV — Verordnung über die Schulung und Förderung von Schülerinnen und Schülern mit besonderem Bildungsbedarf sowie die Spitalschulung, Sonderpädagogik- und Spitalschulverordnung</title>
     <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/BS-412.750" />
     <updated>2024-08-12T00:00:00Z</updated>
     <summary>Stand 2024-08-12 (SR 412.750).</summary>
+  </entry>
+  <entry>
+    <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-410.100</id>
+    <title>Schulgesetz — Schulgesetz (410.100)</title>
+    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/BS-410.100" />
+    <updated>2024-08-12T00:00:00Z</updated>
+    <summary>Stand 2024-08-12 (SR 410.100).</summary>
   </entry>
   <entry>
     <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-412.600</id>
@@ -2872,18 +2872,18 @@
     <summary>Stand 2024-07-01 (SR 772.100).</summary>
   </entry>
   <entry>
-    <id>https://lexmetrik.vercel.app/gesetze/kanton/AG-662.110</id>
-    <title>GebührD — Gebührendekret</title>
-    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/AG-662.110" />
-    <updated>2024-07-01T00:00:00Z</updated>
-    <summary>Stand 2024-07-01 (SR SAR 662.110).</summary>
-  </entry>
-  <entry>
     <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-519.400</id>
     <title>GVo — Verordnung über die Beglaubigungsgebühren sowie die Gebühren auf dem Gebiet der Einwohnerkontrolle und des Ausländerrechts</title>
     <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/BS-519.400" />
     <updated>2024-07-01T00:00:00Z</updated>
     <summary>Stand 2024-07-01 (SR 519.400).</summary>
+  </entry>
+  <entry>
+    <id>https://lexmetrik.vercel.app/gesetze/kanton/AG-662.110</id>
+    <title>GebührD — Gebührendekret</title>
+    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/AG-662.110" />
+    <updated>2024-07-01T00:00:00Z</updated>
+    <summary>Stand 2024-07-01 (SR SAR 662.110).</summary>
   </entry>
   <entry>
     <id>https://lexmetrik.vercel.app/gesetze/bund/MSTP</id>
@@ -3257,11 +3257,18 @@
     <summary>Stand 2024-01-09 (SR 0.232.04).</summary>
   </entry>
   <entry>
-    <id>https://lexmetrik.vercel.app/gesetze/kanton/AG-291.150</id>
-    <title>Anwaltstarif — Dekret über die Entschädigung der Anwälte</title>
-    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/AG-291.150" />
+    <id>https://lexmetrik.vercel.app/gesetze/bund/ATSG</id>
+    <title>ATSG — Bundesgesetz über den Allgemeinen Teil des Sozialversicherungsrechts (ATSG)</title>
+    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/bund/ATSG" />
     <updated>2024-01-01T00:00:00Z</updated>
-    <summary>Stand 2024-01-01 (SR SAR 291.150).</summary>
+    <summary>Stand 2024-01-01 (SR 830.1).</summary>
+  </entry>
+  <entry>
+    <id>https://lexmetrik.vercel.app/gesetze/bund/ATSV</id>
+    <title>ATSV — Verordnung über den Allgemeinen Teil des Sozialversicherungsrechts (ATSV)</title>
+    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/bund/ATSV" />
+    <updated>2024-01-01T00:00:00Z</updated>
+    <summary>Stand 2024-01-01 (SR 830.11).</summary>
   </entry>
   <entry>
     <id>https://lexmetrik.vercel.app/gesetze/kanton/AI-177.410</id>
@@ -3269,6 +3276,13 @@
     <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/AI-177.410" />
     <updated>2024-01-01T00:00:00Z</updated>
     <summary>Stand 2024-01-01 (SR GS 177.410).</summary>
+  </entry>
+  <entry>
+    <id>https://lexmetrik.vercel.app/gesetze/kanton/AG-291.150</id>
+    <title>Anwaltstarif — Dekret über die Entschädigung der Anwälte</title>
+    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/AG-291.150" />
+    <updated>2024-01-01T00:00:00Z</updated>
+    <summary>Stand 2024-01-01 (SR SAR 291.150).</summary>
   </entry>
   <entry>
     <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-890.800</id>
@@ -3292,18 +3306,18 @@
     <summary>Stand 2024-01-01 (SR RiE 890.800).</summary>
   </entry>
   <entry>
-    <id>https://lexmetrik.vercel.app/gesetze/bund/ATSG</id>
-    <title>ATSG — Bundesgesetz über den Allgemeinen Teil des Sozialversicherungsrechts (ATSG)</title>
-    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/bund/ATSG" />
+    <id>https://lexmetrik.vercel.app/gesetze/kanton/AR-412.02</id>
+    <title>BLV — BLV (412.02)</title>
+    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/AR-412.02" />
     <updated>2024-01-01T00:00:00Z</updated>
-    <summary>Stand 2024-01-01 (SR 830.1).</summary>
+    <summary>Stand 2024-01-01 (SR 412.02).</summary>
   </entry>
   <entry>
-    <id>https://lexmetrik.vercel.app/gesetze/bund/ATSV</id>
-    <title>ATSV — Verordnung über den Allgemeinen Teil des Sozialversicherungsrechts (ATSV)</title>
-    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/bund/ATSV" />
+    <id>https://lexmetrik.vercel.app/gesetze/bund/BPG</id>
+    <title>BPG — Bundespersonalgesetz (BPG)</title>
+    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/bund/BPG" />
     <updated>2024-01-01T00:00:00Z</updated>
-    <summary>Stand 2024-01-01 (SR 830.11).</summary>
+    <summary>Stand 2024-01-01 (SR 172.220.1).</summary>
   </entry>
   <entry>
     <id>https://lexmetrik.vercel.app/gesetze/bund/BANKG</id>
@@ -3318,20 +3332,6 @@
     <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/BS-835.600" />
     <updated>2024-01-01T00:00:00Z</updated>
     <summary>Stand 2024-01-01 (SR 835.600).</summary>
-  </entry>
-  <entry>
-    <id>https://lexmetrik.vercel.app/gesetze/kanton/AR-412.02</id>
-    <title>BLV — BLV (412.02)</title>
-    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/AR-412.02" />
-    <updated>2024-01-01T00:00:00Z</updated>
-    <summary>Stand 2024-01-01 (SR 412.02).</summary>
-  </entry>
-  <entry>
-    <id>https://lexmetrik.vercel.app/gesetze/bund/BPG</id>
-    <title>BPG — Bundespersonalgesetz (BPG)</title>
-    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/bund/BPG" />
-    <updated>2024-01-01T00:00:00Z</updated>
-    <summary>Stand 2024-01-01 (SR 172.220.1).</summary>
   </entry>
   <entry>
     <id>https://lexmetrik.vercel.app/gesetze/bund/ENTSG</id>
@@ -3362,18 +3362,18 @@
     <summary>Stand 2024-01-01 (SR 211.432.1).</summary>
   </entry>
   <entry>
-    <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-BaB%20153.840</id>
-    <title>Gebührenreglement der Zentralen Dienste — Gebührenreglement der Zentralen Dienste (BaB 153.840)</title>
-    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/BS-BaB%20153.840" />
-    <updated>2024-01-01T00:00:00Z</updated>
-    <summary>Stand 2024-01-01 (SR BaB 153.840).</summary>
-  </entry>
-  <entry>
     <id>https://lexmetrik.vercel.app/gesetze/kanton/AI-173.810</id>
     <title>GGV — Verordnung über die Gebühren der Gerichte</title>
     <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/AI-173.810" />
     <updated>2024-01-01T00:00:00Z</updated>
     <summary>Stand 2024-01-01 (SR GS 173.810).</summary>
+  </entry>
+  <entry>
+    <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-BaB%20153.840</id>
+    <title>Gebührenreglement der Zentralen Dienste — Gebührenreglement der Zentralen Dienste (BaB 153.840)</title>
+    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/BS-BaB%20153.840" />
+    <updated>2024-01-01T00:00:00Z</updated>
+    <summary>Stand 2024-01-01 (SR BaB 153.840).</summary>
   </entry>
   <entry>
     <id>https://lexmetrik.vercel.app/gesetze/bund/IRSG</id>
@@ -3390,18 +3390,18 @@
     <summary>Stand 2024-01-01 (SR 833.1).</summary>
   </entry>
   <entry>
-    <id>https://lexmetrik.vercel.app/gesetze/kanton/ZH-243</id>
-    <title>Notariatsgebührenverordnung (NotGebV) — Notariatsgebührenverordnung (NotGebV) (LS 243)</title>
-    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/ZH-243" />
-    <updated>2024-01-01T00:00:00Z</updated>
-    <summary>Stand 2024-01-01 (SR LS 243).</summary>
-  </entry>
-  <entry>
     <id>https://lexmetrik.vercel.app/gesetze/kanton/GR-210.370</id>
     <title>NotGebV — Verordnung über die Notariatsgebühren</title>
     <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/GR-210.370" />
     <updated>2024-01-01T00:00:00Z</updated>
     <summary>Stand 2024-01-01 (SR BR 210.370).</summary>
+  </entry>
+  <entry>
+    <id>https://lexmetrik.vercel.app/gesetze/kanton/ZH-243</id>
+    <title>Notariatsgebührenverordnung (NotGebV) — Notariatsgebührenverordnung (NotGebV) (LS 243)</title>
+    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/ZH-243" />
+    <updated>2024-01-01T00:00:00Z</updated>
+    <summary>Stand 2024-01-01 (SR LS 243).</summary>
   </entry>
   <entry>
     <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-RiE%20153.100</id>
@@ -3418,13 +3418,6 @@
     <summary>Stand 2024-01-01 (SR RiE 970.110).</summary>
   </entry>
   <entry>
-    <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-RiE%20350.100</id>
-    <title>Reglement betreffend die Vergabe von Beiträgen im Bereich Gesundheit und Soziales — Reglement betreffend die Vergabe von Beiträgen im Bereich Gesundheit und Soziales (RiE 350.100)</title>
-    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/BS-RiE%20350.100" />
-    <updated>2024-01-01T00:00:00Z</updated>
-    <summary>Stand 2024-01-01 (SR RiE 350.100).</summary>
-  </entry>
-  <entry>
     <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-RiE%20411.630</id>
     <title>Reglement Ermässigung Elterntarif Musik; REEMu — Reglement betreffend die Ermässigung der Elterntarife für den ausserschulischen Musikunterricht in Riehen</title>
     <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/BS-RiE%20411.630" />
@@ -3437,6 +3430,13 @@
     <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/BS-RiE%20786.180" />
     <updated>2024-01-01T00:00:00Z</updated>
     <summary>Stand 2024-01-01 (SR RiE 786.180).</summary>
+  </entry>
+  <entry>
+    <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-RiE%20350.100</id>
+    <title>Reglement betreffend die Vergabe von Beiträgen im Bereich Gesundheit und Soziales — Reglement betreffend die Vergabe von Beiträgen im Bereich Gesundheit und Soziales (RiE 350.100)</title>
+    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/BS-RiE%20350.100" />
+    <updated>2024-01-01T00:00:00Z</updated>
+    <summary>Stand 2024-01-01 (SR RiE 350.100).</summary>
   </entry>
   <entry>
     <id>https://lexmetrik.vercel.app/gesetze/kanton/ZH-851.1</id>
@@ -3453,13 +3453,6 @@
     <summary>Stand 2024-01-01 (SR 173.71).</summary>
   </entry>
   <entry>
-    <id>https://lexmetrik.vercel.app/gesetze/kanton/AR-621.111</id>
-    <title>Steuerverordnung — Steuerverordnung (621.111)</title>
-    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/AR-621.111" />
-    <updated>2024-01-01T00:00:00Z</updated>
-    <summary>Stand 2024-01-01 (SR 621.111).</summary>
-  </entry>
-  <entry>
     <id>https://lexmetrik.vercel.app/gesetze/bund/STG</id>
     <title>StG — Bundesgesetz über die Stempelabgaben</title>
     <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/bund/STG" />
@@ -3472,6 +3465,13 @@
     <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/AI-640.000" />
     <updated>2024-01-01T00:00:00Z</updated>
     <summary>Stand 2024-01-01 (SR GS 640.000).</summary>
+  </entry>
+  <entry>
+    <id>https://lexmetrik.vercel.app/gesetze/kanton/AR-621.111</id>
+    <title>Steuerverordnung — Steuerverordnung (621.111)</title>
+    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/AR-621.111" />
+    <updated>2024-01-01T00:00:00Z</updated>
+    <summary>Stand 2024-01-01 (SR 621.111).</summary>
   </entry>
   <entry>
     <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-RiE%20750.100</id>
@@ -3488,18 +3488,18 @@
     <summary>Stand 2024-01-01 (SR 211.432.11).</summary>
   </entry>
   <entry>
-    <id>https://lexmetrik.vercel.app/gesetze/kanton/GR-3348</id>
-    <title>Verordnung über die Notariatsgebühren (NotGebV) — Verordnung über die Notariatsgebühren (NotGebV) (BR 210.370)</title>
-    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/GR-3348" />
-    <updated>2024-01-01T00:00:00Z</updated>
-    <summary>Stand 2024-01-01 (SR BR 210.370).</summary>
-  </entry>
-  <entry>
     <id>https://lexmetrik.vercel.app/gesetze/bund/VVG</id>
     <title>VVG — Bundesgesetz über den Versicherungsvertrag</title>
     <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/bund/VVG" />
     <updated>2024-01-01T00:00:00Z</updated>
     <summary>Stand 2024-01-01 (SR 221.229.1).</summary>
+  </entry>
+  <entry>
+    <id>https://lexmetrik.vercel.app/gesetze/kanton/GR-3348</id>
+    <title>Verordnung über die Notariatsgebühren (NotGebV) — Verordnung über die Notariatsgebühren (NotGebV) (BR 210.370)</title>
+    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/GR-3348" />
+    <updated>2024-01-01T00:00:00Z</updated>
+    <summary>Stand 2024-01-01 (SR BR 210.370).</summary>
   </entry>
   <entry>
     <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-164.410</id>
@@ -3621,13 +3621,6 @@
     <summary>Stand 2023-09-01 (SR 946.51).</summary>
   </entry>
   <entry>
-    <id>https://lexmetrik.vercel.app/gesetze/bund/VOEB</id>
-    <title>VöB — Verordnung über das öffentliche Beschaffungswesen (VöB)</title>
-    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/bund/VOEB" />
-    <updated>2023-09-01T00:00:00Z</updated>
-    <summary>Stand 2023-09-01 (SR 172.056.11).</summary>
-  </entry>
-  <entry>
     <id>https://lexmetrik.vercel.app/gesetze/bund/VSTRR</id>
     <title>VStrR — Bundesgesetz über das Verwaltungsstrafrecht (VStrR)</title>
     <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/bund/VSTRR" />
@@ -3635,11 +3628,11 @@
     <summary>Stand 2023-09-01 (SR 313.0).</summary>
   </entry>
   <entry>
-    <id>https://lexmetrik.vercel.app/gesetze/bund/ZENTV</id>
-    <title>ZentV — Verordnung über kriminalpolizeiliche Zentralstellen des Bundes (ZentV)</title>
-    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/bund/ZENTV" />
+    <id>https://lexmetrik.vercel.app/gesetze/bund/VOEB</id>
+    <title>VöB — Verordnung über das öffentliche Beschaffungswesen (VöB)</title>
+    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/bund/VOEB" />
     <updated>2023-09-01T00:00:00Z</updated>
-    <summary>Stand 2023-09-01 (SR 360.1).</summary>
+    <summary>Stand 2023-09-01 (SR 172.056.11).</summary>
   </entry>
   <entry>
     <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-576.100</id>
@@ -3647,6 +3640,13 @@
     <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/BS-576.100" />
     <updated>2023-09-01T00:00:00Z</updated>
     <summary>Stand 2023-09-01 (SR 576.100).</summary>
+  </entry>
+  <entry>
+    <id>https://lexmetrik.vercel.app/gesetze/bund/ZENTV</id>
+    <title>ZentV — Verordnung über kriminalpolizeiliche Zentralstellen des Bundes (ZentV)</title>
+    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/bund/ZENTV" />
+    <updated>2023-09-01T00:00:00Z</updated>
+    <summary>Stand 2023-09-01 (SR 360.1).</summary>
   </entry>
   <entry>
     <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-910.230</id>
@@ -3824,6 +3824,13 @@
     <summary>Stand 2023-06-01 (SR 731.11).</summary>
   </entry>
   <entry>
+    <id>https://lexmetrik.vercel.app/gesetze/bund/VGR</id>
+    <title>VGR — Geschäftsreglement für das Bundesverwaltungsgericht (VGR)</title>
+    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/bund/VGR" />
+    <updated>2023-06-01T00:00:00Z</updated>
+    <summary>Stand 2023-06-01 (SR 173.320.1).</summary>
+  </entry>
+  <entry>
     <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-132.150</id>
     <title>Verordnung über den Testbetrieb für die elektronische Stimmabgabe — Verordnung über den Testbetrieb für die elektronische Stimmabgabe (132.150)</title>
     <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/BS-132.150" />
@@ -3843,13 +3850,6 @@
     <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/AR-422.161" />
     <updated>2023-06-01T00:00:00Z</updated>
     <summary>Stand 2023-06-01 (SR 422.161).</summary>
-  </entry>
-  <entry>
-    <id>https://lexmetrik.vercel.app/gesetze/bund/VGR</id>
-    <title>VGR — Geschäftsreglement für das Bundesverwaltungsgericht (VGR)</title>
-    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/bund/VGR" />
-    <updated>2023-06-01T00:00:00Z</updated>
-    <summary>Stand 2023-06-01 (SR 173.320.1).</summary>
   </entry>
   <entry>
     <id>https://lexmetrik.vercel.app/gesetze/international/HEUE</id>
@@ -4041,6 +4041,13 @@
     <summary>Stand 2023-01-01 (SR 221.301).</summary>
   </entry>
   <entry>
+    <id>https://lexmetrik.vercel.app/gesetze/kanton/AR-621.21</id>
+    <title>GSV — GSV (621.21)</title>
+    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/AR-621.21" />
+    <updated>2023-01-01T00:00:00Z</updated>
+    <summary>Stand 2023-01-01 (SR 621.21).</summary>
+  </entry>
+  <entry>
     <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-724.910</id>
     <title>GebV NöRG — Gebührenverordnung zum Gesetz über die Nutzung des öffentlichen Raumes</title>
     <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/BS-724.910" />
@@ -4055,13 +4062,6 @@
     <summary>Stand 2023-01-01 (SR RiE 111.100).</summary>
   </entry>
   <entry>
-    <id>https://lexmetrik.vercel.app/gesetze/kanton/AR-621.21</id>
-    <title>GSV — GSV (621.21)</title>
-    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/AR-621.21" />
-    <updated>2023-01-01T00:00:00Z</updated>
-    <summary>Stand 2023-01-01 (SR 621.21).</summary>
-  </entry>
-  <entry>
     <id>https://lexmetrik.vercel.app/gesetze/bund/GWV_FINMA</id>
     <title>GwV-FINMA — Verordnung der Eidgenössischen Finanzmarktaufsicht über die Bekämpfung von Geldwäscherei und Terrorismusfinanzierung im Finanzsektor (Geldwäschereiverordnung-FINMA, GwV-FINMA)</title>
     <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/bund/GWV_FINMA" />
@@ -4069,11 +4069,11 @@
     <summary>Stand 2023-01-01 (SR 955.033.0).</summary>
   </entry>
   <entry>
-    <id>https://lexmetrik.vercel.app/gesetze/kanton/AR-750.1</id>
-    <title>kEnG — kEnG (750.1)</title>
-    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/AR-750.1" />
+    <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-RiE%20772.150</id>
+    <title>Ordnung zum Energiesparfonds für Gemeindeliegenschaften — Ordnung zum Energiesparfonds für Gemeindeliegenschaften (RiE 772.150)</title>
+    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/BS-RiE%20772.150" />
     <updated>2023-01-01T00:00:00Z</updated>
-    <summary>Stand 2023-01-01 (SR 750.1).</summary>
+    <summary>Stand 2023-01-01 (SR RiE 772.150).</summary>
   </entry>
   <entry>
     <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-212.910</id>
@@ -4081,13 +4081,6 @@
     <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/BS-212.910" />
     <updated>2023-01-01T00:00:00Z</updated>
     <summary>Stand 2023-01-01 (SR 212.910).</summary>
-  </entry>
-  <entry>
-    <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-RiE%20772.150</id>
-    <title>Ordnung zum Energiesparfonds für Gemeindeliegenschaften — Ordnung zum Energiesparfonds für Gemeindeliegenschaften (RiE 772.150)</title>
-    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/BS-RiE%20772.150" />
-    <updated>2023-01-01T00:00:00Z</updated>
-    <summary>Stand 2023-01-01 (SR RiE 772.150).</summary>
   </entry>
   <entry>
     <id>https://lexmetrik.vercel.app/gesetze/kanton/BL-331</id>
@@ -4116,6 +4109,13 @@
     <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/bund/ZAVV" />
     <updated>2023-01-01T00:00:00Z</updated>
     <summary>Stand 2023-01-01 (SR 364.3).</summary>
+  </entry>
+  <entry>
+    <id>https://lexmetrik.vercel.app/gesetze/kanton/AR-750.1</id>
+    <title>kEnG — kEnG (750.1)</title>
+    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/AR-750.1" />
+    <updated>2023-01-01T00:00:00Z</updated>
+    <summary>Stand 2023-01-01 (SR 750.1).</summary>
   </entry>
   <entry>
     <id>https://lexmetrik.vercel.app/gesetze/bund/BPR</id>
@@ -4230,18 +4230,18 @@
     <summary>Stand 2022-05-30 (SR 494.300).</summary>
   </entry>
   <entry>
-    <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-790.150</id>
-    <title>Verordnung betreffend die Sachverständigen der Baurekurskommission — Verordnung betreffend die Sachverständigen der Baurekurskommission (790.150)</title>
-    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/BS-790.150" />
-    <updated>2022-05-28T00:00:00Z</updated>
-    <summary>Stand 2022-05-28 (SR 790.150).</summary>
-  </entry>
-  <entry>
     <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-214.310</id>
     <title>VOGB — Verordnung über das Grundbuch</title>
     <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/BS-214.310" />
     <updated>2022-05-28T00:00:00Z</updated>
     <summary>Stand 2022-05-28 (SR 214.310).</summary>
+  </entry>
+  <entry>
+    <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-790.150</id>
+    <title>Verordnung betreffend die Sachverständigen der Baurekurskommission — Verordnung betreffend die Sachverständigen der Baurekurskommission (790.150)</title>
+    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/BS-790.150" />
+    <updated>2022-05-28T00:00:00Z</updated>
+    <summary>Stand 2022-05-28 (SR 790.150).</summary>
   </entry>
   <entry>
     <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-819.878</id>
@@ -4482,13 +4482,6 @@
     <summary>Stand 2022-01-01 (SR 442.300).</summary>
   </entry>
   <entry>
-    <id>https://lexmetrik.vercel.app/gesetze/kanton/AR-323.1</id>
-    <title>kOBV — kOBV (323.1)</title>
-    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/AR-323.1" />
-    <updated>2022-01-01T00:00:00Z</updated>
-    <summary>Stand 2022-01-01 (SR 323.1).</summary>
-  </entry>
-  <entry>
     <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-BaB%20155.400</id>
     <title>Korporationsordnung — Reglement über die Organisation der Bürgerkorporation Kleinhüningen</title>
     <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/BS-BaB%20155.400" />
@@ -4538,6 +4531,27 @@
     <summary>Stand 2022-01-01 (SR 371.100).</summary>
   </entry>
   <entry>
+    <id>https://lexmetrik.vercel.app/gesetze/kanton/TG-638.1</id>
+    <title>VGG — Verordnung des Grossen Rates über die Gebühren der Strafverfolgungs- und Gerichtsbehörden</title>
+    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/TG-638.1" />
+    <updated>2022-01-01T00:00:00Z</updated>
+    <summary>Stand 2022-01-01 (SR RB 638.1).</summary>
+  </entry>
+  <entry>
+    <id>https://lexmetrik.vercel.app/gesetze/bund/VGVP</id>
+    <title>VGV — Verordnung über Getränkeverpackungen (VGV)</title>
+    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/bund/VGVP" />
+    <updated>2022-01-01T00:00:00Z</updated>
+    <summary>Stand 2022-01-01 (SR 814.621).</summary>
+  </entry>
+  <entry>
+    <id>https://lexmetrik.vercel.app/gesetze/kanton/ZH-315.1</id>
+    <title>VRTM) — Verordnung über die Kommission zur Bekämpfung von Menschenhandel (Runder Tisch Menschenhandel</title>
+    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/ZH-315.1" />
+    <updated>2022-01-01T00:00:00Z</updated>
+    <summary>Stand 2022-01-01 (SR LS 315.1).</summary>
+  </entry>
+  <entry>
     <id>https://lexmetrik.vercel.app/gesetze/kanton/AR-331.1</id>
     <title>Verordnung über das Strafregister — Verordnung über das Strafregister (331.1)</title>
     <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/AR-331.1" />
@@ -4557,20 +4571,6 @@
     <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/LU-3870" />
     <updated>2022-01-01T00:00:00Z</updated>
     <summary>Stand 2022-01-01 (SR SRL 258).</summary>
-  </entry>
-  <entry>
-    <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-212.191</id>
-    <title>Verordnung über die elektronische Überwachung zum Schutz gewaltbetroffener Personen — Verordnung über die elektronische Überwachung zum Schutz gewaltbetroffener Personen (212.191)</title>
-    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/BS-212.191" />
-    <updated>2022-01-01T00:00:00Z</updated>
-    <summary>Stand 2022-01-01 (SR 212.191).</summary>
-  </entry>
-  <entry>
-    <id>https://lexmetrik.vercel.app/gesetze/kanton/ZH-230.5</id>
-    <title>Verordnung über die elektronische Überwachung zum Schutz gewaltbetroffener Personen (VeÜ) — Verordnung über die elektronische Überwachung zum Schutz gewaltbetroffener Personen (VeÜ) (LS 230.5)</title>
-    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/ZH-230.5" />
-    <updated>2022-01-01T00:00:00Z</updated>
-    <summary>Stand 2022-01-01 (SR LS 230.5).</summary>
   </entry>
   <entry>
     <id>https://lexmetrik.vercel.app/gesetze/kanton/AR-122.22</id>
@@ -4594,6 +4594,20 @@
     <summary>Stand 2022-01-01 (SR LS 212.811).</summary>
   </entry>
   <entry>
+    <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-212.191</id>
+    <title>Verordnung über die elektronische Überwachung zum Schutz gewaltbetroffener Personen — Verordnung über die elektronische Überwachung zum Schutz gewaltbetroffener Personen (212.191)</title>
+    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/BS-212.191" />
+    <updated>2022-01-01T00:00:00Z</updated>
+    <summary>Stand 2022-01-01 (SR 212.191).</summary>
+  </entry>
+  <entry>
+    <id>https://lexmetrik.vercel.app/gesetze/kanton/ZH-230.5</id>
+    <title>Verordnung über die elektronische Überwachung zum Schutz gewaltbetroffener Personen (VeÜ) — Verordnung über die elektronische Überwachung zum Schutz gewaltbetroffener Personen (VeÜ) (LS 230.5)</title>
+    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/ZH-230.5" />
+    <updated>2022-01-01T00:00:00Z</updated>
+    <summary>Stand 2022-01-01 (SR LS 230.5).</summary>
+  </entry>
+  <entry>
     <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-442.400</id>
     <title>Vertrag zwischen den Kantonen Basel-Landschaft und Basel-Stadt über die gemeinsame Trägerschaft der Universität Basel — Vertrag zwischen den Kantonen Basel-Landschaft und Basel-Stadt über die gemeinsame Trägerschaft der Universität Basel (442.400)</title>
     <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/BS-442.400" />
@@ -4608,20 +4622,6 @@
     <summary>Stand 2022-01-01 (SR BaB 155.700).</summary>
   </entry>
   <entry>
-    <id>https://lexmetrik.vercel.app/gesetze/kanton/TG-638.1</id>
-    <title>VGG — Verordnung des Grossen Rates über die Gebühren der Strafverfolgungs- und Gerichtsbehörden</title>
-    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/TG-638.1" />
-    <updated>2022-01-01T00:00:00Z</updated>
-    <summary>Stand 2022-01-01 (SR RB 638.1).</summary>
-  </entry>
-  <entry>
-    <id>https://lexmetrik.vercel.app/gesetze/bund/VGVP</id>
-    <title>VGV — Verordnung über Getränkeverpackungen (VGV)</title>
-    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/bund/VGVP" />
-    <updated>2022-01-01T00:00:00Z</updated>
-    <summary>Stand 2022-01-01 (SR 814.621).</summary>
-  </entry>
-  <entry>
     <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-BaB%20155.200</id>
     <title>Vorstadtordnung — Reglement über die Organisation der Vorstadtgesellschaften Grossbasels</title>
     <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/BS-BaB%20155.200" />
@@ -4629,18 +4629,18 @@
     <summary>Stand 2022-01-01 (SR BaB 155.200).</summary>
   </entry>
   <entry>
-    <id>https://lexmetrik.vercel.app/gesetze/kanton/ZH-315.1</id>
-    <title>VRTM) — Verordnung über die Kommission zur Bekämpfung von Menschenhandel (Runder Tisch Menschenhandel</title>
-    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/ZH-315.1" />
-    <updated>2022-01-01T00:00:00Z</updated>
-    <summary>Stand 2022-01-01 (SR LS 315.1).</summary>
-  </entry>
-  <entry>
     <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-BaB%20155.100</id>
     <title>Zunftordnung — Reglement über die Organisation der E. Zünfte der Stadt Basel</title>
     <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/BS-BaB%20155.100" />
     <updated>2022-01-01T00:00:00Z</updated>
     <summary>Stand 2022-01-01 (SR BaB 155.100).</summary>
+  </entry>
+  <entry>
+    <id>https://lexmetrik.vercel.app/gesetze/kanton/AR-323.1</id>
+    <title>kOBV — kOBV (323.1)</title>
+    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/AR-323.1" />
+    <updated>2022-01-01T00:00:00Z</updated>
+    <summary>Stand 2022-01-01 (SR 323.1).</summary>
   </entry>
   <entry>
     <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-861.600</id>
@@ -4776,18 +4776,18 @@
     <summary>Stand 2021-07-01 (SR 890.710).</summary>
   </entry>
   <entry>
-    <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-310.800</id>
-    <title>Verordnung betreffend Ausrichtung von Inkonvenienzentschädigungen für Geburtshilfe und Wochenbettbetreuung — Verordnung betreffend Ausrichtung von Inkonvenienzentschädigungen für Geburtshilfe und Wochenbettbetreuung (310.800)</title>
-    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/BS-310.800" />
-    <updated>2021-07-01T00:00:00Z</updated>
-    <summary>Stand 2021-07-01 (SR 310.800).</summary>
-  </entry>
-  <entry>
     <id>https://lexmetrik.vercel.app/gesetze/bund/VKKG</id>
     <title>VKKG — Verordnung zum Konsumkreditgesetz (VKKG)</title>
     <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/bund/VKKG" />
     <updated>2021-07-01T00:00:00Z</updated>
     <summary>Stand 2021-07-01 (SR 221.214.11).</summary>
+  </entry>
+  <entry>
+    <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-310.800</id>
+    <title>Verordnung betreffend Ausrichtung von Inkonvenienzentschädigungen für Geburtshilfe und Wochenbettbetreuung — Verordnung betreffend Ausrichtung von Inkonvenienzentschädigungen für Geburtshilfe und Wochenbettbetreuung (310.800)</title>
+    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/BS-310.800" />
+    <updated>2021-07-01T00:00:00Z</updated>
+    <summary>Stand 2021-07-01 (SR 310.800).</summary>
   </entry>
   <entry>
     <id>https://lexmetrik.vercel.app/gesetze/kanton/AR-751.224</id>
@@ -4853,18 +4853,18 @@
     <summary>Stand 2021-04-01 (SR 390.170).</summary>
   </entry>
   <entry>
-    <id>https://lexmetrik.vercel.app/gesetze/kanton/AR-811.112</id>
-    <title>Verordnung über die Gesundheitsvorsorge in Schulen und Heimen für Kinder und Jugendliche — Verordnung über die Gesundheitsvorsorge in Schulen und Heimen für Kinder und Jugendliche (811.112)</title>
-    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/AR-811.112" />
-    <updated>2021-04-01T00:00:00Z</updated>
-    <summary>Stand 2021-04-01 (SR 811.112).</summary>
-  </entry>
-  <entry>
     <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-390.500</id>
     <title>Verordnung über Gebühren im Bestattungswesen — Verordnung über Gebühren im Bestattungswesen (390.500)</title>
     <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/BS-390.500" />
     <updated>2021-04-01T00:00:00Z</updated>
     <summary>Stand 2021-04-01 (SR 390.500).</summary>
+  </entry>
+  <entry>
+    <id>https://lexmetrik.vercel.app/gesetze/kanton/AR-811.112</id>
+    <title>Verordnung über die Gesundheitsvorsorge in Schulen und Heimen für Kinder und Jugendliche — Verordnung über die Gesundheitsvorsorge in Schulen und Heimen für Kinder und Jugendliche (811.112)</title>
+    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/AR-811.112" />
+    <updated>2021-04-01T00:00:00Z</updated>
+    <summary>Stand 2021-04-01 (SR 811.112).</summary>
   </entry>
   <entry>
     <id>https://lexmetrik.vercel.app/gesetze/kanton/ZH-213.231</id>
@@ -4972,6 +4972,20 @@
     <summary>Stand 2021-01-01 (SR 170.600).</summary>
   </entry>
   <entry>
+    <id>https://lexmetrik.vercel.app/gesetze/kanton/AR-955.35</id>
+    <title>GSK — GSK (955.35)</title>
+    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/AR-955.35" />
+    <updated>2021-01-01T00:00:00Z</updated>
+    <summary>Stand 2021-01-01 (SR 955.35).</summary>
+  </entry>
+  <entry>
+    <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-561.111</id>
+    <title>GSK — Gesamtschweizerisches Geldspielkonkordat</title>
+    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/BS-561.111" />
+    <updated>2021-01-01T00:00:00Z</updated>
+    <summary>Stand 2021-01-01 (SR 561.111).</summary>
+  </entry>
+  <entry>
     <id>https://lexmetrik.vercel.app/gesetze/kanton/BL-170.31</id>
     <title>GebT — Verordnung über die Gebühren der Gerichte, Gebührentarif</title>
     <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/BL-170.31" />
@@ -4991,20 +5005,6 @@
     <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/AR-955.22" />
     <updated>2021-01-01T00:00:00Z</updated>
     <summary>Stand 2021-01-01 (SR 955.22).</summary>
-  </entry>
-  <entry>
-    <id>https://lexmetrik.vercel.app/gesetze/kanton/AR-955.35</id>
-    <title>GSK — GSK (955.35)</title>
-    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/AR-955.35" />
-    <updated>2021-01-01T00:00:00Z</updated>
-    <summary>Stand 2021-01-01 (SR 955.35).</summary>
-  </entry>
-  <entry>
-    <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-561.111</id>
-    <title>GSK — Gesamtschweizerisches Geldspielkonkordat</title>
-    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/BS-561.111" />
-    <updated>2021-01-01T00:00:00Z</updated>
-    <summary>Stand 2021-01-01 (SR 561.111).</summary>
   </entry>
   <entry>
     <id>https://lexmetrik.vercel.app/gesetze/kanton/AR-955.32</id>
@@ -5047,13 +5047,6 @@
     <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/bund/KKV_FINMA" />
     <updated>2021-01-01T00:00:00Z</updated>
     <summary>Stand 2021-01-01 (SR 951.312).</summary>
-  </entry>
-  <entry>
-    <id>https://lexmetrik.vercel.app/gesetze/kanton/AR-723.104</id>
-    <title>kÖREBKV — kÖREBKV (723.104)</title>
-    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/AR-723.104" />
-    <updated>2021-01-01T00:00:00Z</updated>
-    <summary>Stand 2021-01-01 (SR 723.104).</summary>
   </entry>
   <entry>
     <id>https://lexmetrik.vercel.app/gesetze/kanton/ZH-612</id>
@@ -5112,11 +5105,18 @@
     <summary>Stand 2021-01-01 (SR 561.121).</summary>
   </entry>
   <entry>
-    <id>https://lexmetrik.vercel.app/gesetze/kanton/ZH-631.423</id>
-    <title>Verordnung der Finanzdirektion über die Steuerfreibeträge von quellensteuerpflichtigen Personen ohne steuerrechtlichen Wohnsitz oder Aufenthalt in der Schweiz — Verordnung der Finanzdirektion über die Steuerfreibeträge von quellensteuerpflichtigen Personen ohne steuerrechtlichen Wohnsitz oder Aufenthalt in der Schweiz (LS 631.423)</title>
-    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/ZH-631.423" />
+    <id>https://lexmetrik.vercel.app/gesetze/kanton/AR-522.3</id>
+    <title>VPTI — VPTI (522.3)</title>
+    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/AR-522.3" />
     <updated>2021-01-01T00:00:00Z</updated>
-    <summary>Stand 2021-01-01 (SR LS 631.423).</summary>
+    <summary>Stand 2021-01-01 (SR 522.3).</summary>
+  </entry>
+  <entry>
+    <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-270.100</id>
+    <title>VRPG — Gesetz über die Verfassungs- und Verwaltungsrechtspflege</title>
+    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/BS-270.100" />
+    <updated>2021-01-01T00:00:00Z</updated>
+    <summary>Stand 2021-01-01 (SR 270.100).</summary>
   </entry>
   <entry>
     <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-494.330</id>
@@ -5124,6 +5124,13 @@
     <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/BS-494.330" />
     <updated>2021-01-01T00:00:00Z</updated>
     <summary>Stand 2021-01-01 (SR 494.330).</summary>
+  </entry>
+  <entry>
+    <id>https://lexmetrik.vercel.app/gesetze/kanton/ZH-631.423</id>
+    <title>Verordnung der Finanzdirektion über die Steuerfreibeträge von quellensteuerpflichtigen Personen ohne steuerrechtlichen Wohnsitz oder Aufenthalt in der Schweiz — Verordnung der Finanzdirektion über die Steuerfreibeträge von quellensteuerpflichtigen Personen ohne steuerrechtlichen Wohnsitz oder Aufenthalt in der Schweiz (LS 631.423)</title>
+    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/ZH-631.423" />
+    <updated>2021-01-01T00:00:00Z</updated>
+    <summary>Stand 2021-01-01 (SR LS 631.423).</summary>
   </entry>
   <entry>
     <id>https://lexmetrik.vercel.app/gesetze/kanton/ZH-612.1</id>
@@ -5196,20 +5203,6 @@
     <summary>Stand 2021-01-01 (SR RiE 832.680).</summary>
   </entry>
   <entry>
-    <id>https://lexmetrik.vercel.app/gesetze/kanton/AR-522.3</id>
-    <title>VPTI — VPTI (522.3)</title>
-    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/AR-522.3" />
-    <updated>2021-01-01T00:00:00Z</updated>
-    <summary>Stand 2021-01-01 (SR 522.3).</summary>
-  </entry>
-  <entry>
-    <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-270.100</id>
-    <title>VRPG — Gesetz über die Verfassungs- und Verwaltungsrechtspflege</title>
-    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/BS-270.100" />
-    <updated>2021-01-01T00:00:00Z</updated>
-    <summary>Stand 2021-01-01 (SR 270.100).</summary>
-  </entry>
-  <entry>
     <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-780.350</id>
     <title>VuV — Verordnung über umweltfreundliche Verkehrsmittel</title>
     <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/BS-780.350" />
@@ -5222,6 +5215,13 @@
     <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/BS-162.320" />
     <updated>2021-01-01T00:00:00Z</updated>
     <summary>Stand 2021-01-01 (SR 162.320).</summary>
+  </entry>
+  <entry>
+    <id>https://lexmetrik.vercel.app/gesetze/kanton/AR-723.104</id>
+    <title>kÖREBKV — kÖREBKV (723.104)</title>
+    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/AR-723.104" />
+    <updated>2021-01-01T00:00:00Z</updated>
+    <summary>Stand 2021-01-01 (SR 723.104).</summary>
   </entry>
   <entry>
     <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-819.870</id>
@@ -5406,13 +5406,6 @@
     <summary>Stand 2020-07-01 (SR 811.100).</summary>
   </entry>
   <entry>
-    <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-563.200</id>
-    <title>Taxigesetz — Gesetz betreffend das Erbringen von Taxidienstleistungen</title>
-    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/BS-563.200" />
-    <updated>2020-07-01T00:00:00Z</updated>
-    <summary>Stand 2020-07-01 (SR 563.200).</summary>
-  </entry>
-  <entry>
     <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-562.530</id>
     <title>TPV — Verordnung zum Trödel- und Pfandleihgewerbe, Trödel- und Pfandleihverordnung</title>
     <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/BS-562.530" />
@@ -5420,11 +5413,25 @@
     <summary>Stand 2020-07-01 (SR 562.530).</summary>
   </entry>
   <entry>
+    <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-563.200</id>
+    <title>Taxigesetz — Gesetz betreffend das Erbringen von Taxidienstleistungen</title>
+    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/BS-563.200" />
+    <updated>2020-07-01T00:00:00Z</updated>
+    <summary>Stand 2020-07-01 (SR 563.200).</summary>
+  </entry>
+  <entry>
     <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-122.250</id>
     <title>Vereinbarung Biometrisierung BS BL — Vereinbarung über die Zusammenarbeit der Kantone Basel-Stadt und Basel-Landschaft bei der Erfassung von biometrischen Daten für Schweizerpässe</title>
     <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/BS-122.250" />
     <updated>2020-07-01T00:00:00Z</updated>
     <summary>Stand 2020-07-01 (SR 122.250).</summary>
+  </entry>
+  <entry>
+    <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-782.420</id>
+    <title>Verordnung betreffend Strassenmusik und Strassenkunst — Verordnung betreffend Strassenmusik und Strassenkunst (782.420)</title>
+    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/BS-782.420" />
+    <updated>2020-07-01T00:00:00Z</updated>
+    <summary>Stand 2020-07-01 (SR 782.420).</summary>
   </entry>
   <entry>
     <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-812.500</id>
@@ -5446,13 +5453,6 @@
     <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/BS-153.110" />
     <updated>2020-07-01T00:00:00Z</updated>
     <summary>Stand 2020-07-01 (SR 153.110).</summary>
-  </entry>
-  <entry>
-    <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-782.420</id>
-    <title>Verordnung betreffend Strassenmusik und Strassenkunst — Verordnung betreffend Strassenmusik und Strassenkunst (782.420)</title>
-    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/BS-782.420" />
-    <updated>2020-07-01T00:00:00Z</updated>
-    <summary>Stand 2020-07-01 (SR 782.420).</summary>
   </entry>
   <entry>
     <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-724.500</id>
@@ -5602,11 +5602,11 @@
     <summary>Stand 2020-01-01 (SR 215.600).</summary>
   </entry>
   <entry>
-    <id>https://lexmetrik.vercel.app/gesetze/kanton/AR-413.3</id>
-    <title>Vereinbarung über die Ost – Ostschweizer Fachhochschule — Vereinbarung über die Ost – Ostschweizer Fachhochschule (413.3)</title>
-    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/AR-413.3" />
+    <id>https://lexmetrik.vercel.app/gesetze/kanton/AR-143.1</id>
+    <title>VRPG — VRPG (143.1)</title>
+    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/AR-143.1" />
     <updated>2020-01-01T00:00:00Z</updated>
-    <summary>Stand 2020-01-01 (SR 413.3).</summary>
+    <summary>Stand 2020-01-01 (SR 143.1).</summary>
   </entry>
   <entry>
     <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-911.200</id>
@@ -5614,6 +5614,13 @@
     <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/BS-911.200" />
     <updated>2020-01-01T00:00:00Z</updated>
     <summary>Stand 2020-01-01 (SR 911.200).</summary>
+  </entry>
+  <entry>
+    <id>https://lexmetrik.vercel.app/gesetze/kanton/AR-413.3</id>
+    <title>Vereinbarung über die Ost – Ostschweizer Fachhochschule — Vereinbarung über die Ost – Ostschweizer Fachhochschule (413.3)</title>
+    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/AR-413.3" />
+    <updated>2020-01-01T00:00:00Z</updated>
+    <summary>Stand 2020-01-01 (SR 413.3).</summary>
   </entry>
   <entry>
     <id>https://lexmetrik.vercel.app/gesetze/kanton/AR-524.2</id>
@@ -5642,13 +5649,6 @@
     <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/BS-257.113" />
     <updated>2020-01-01T00:00:00Z</updated>
     <summary>Stand 2020-01-01 (SR 257.113).</summary>
-  </entry>
-  <entry>
-    <id>https://lexmetrik.vercel.app/gesetze/kanton/AR-143.1</id>
-    <title>VRPG — VRPG (143.1)</title>
-    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/AR-143.1" />
-    <updated>2020-01-01T00:00:00Z</updated>
-    <summary>Stand 2020-01-01 (SR 143.1).</summary>
   </entry>
   <entry>
     <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-411.350</id>
@@ -5833,18 +5833,18 @@
     <summary>Stand 2019-06-01 (SR 142.13).</summary>
   </entry>
   <entry>
-    <id>https://lexmetrik.vercel.app/gesetze/kanton/AR-131.13</id>
-    <title>Verordnung über die eidpflichtigen Behördenmitglieder der Gemeinden — Verordnung über die eidpflichtigen Behördenmitglieder der Gemeinden (131.13)</title>
-    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/AR-131.13" />
-    <updated>2019-06-01T00:00:00Z</updated>
-    <summary>Stand 2019-06-01 (SR 131.13).</summary>
-  </entry>
-  <entry>
     <id>https://lexmetrik.vercel.app/gesetze/kanton/AR-811.13</id>
     <title>Verordnung über die Gesundheitsfachpersonen — Verordnung über die Gesundheitsfachpersonen (811.13)</title>
     <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/AR-811.13" />
     <updated>2019-06-01T00:00:00Z</updated>
     <summary>Stand 2019-06-01 (SR 811.13).</summary>
+  </entry>
+  <entry>
+    <id>https://lexmetrik.vercel.app/gesetze/kanton/AR-131.13</id>
+    <title>Verordnung über die eidpflichtigen Behördenmitglieder der Gemeinden — Verordnung über die eidpflichtigen Behördenmitglieder der Gemeinden (131.13)</title>
+    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/AR-131.13" />
+    <updated>2019-06-01T00:00:00Z</updated>
+    <summary>Stand 2019-06-01 (SR 131.13).</summary>
   </entry>
   <entry>
     <id>https://lexmetrik.vercel.app/gesetze/kanton/ZH-235.15</id>
@@ -5966,6 +5966,13 @@
     <summary>Stand 2019-01-01 (SR 861.250).</summary>
   </entry>
   <entry>
+    <id>https://lexmetrik.vercel.app/gesetze/kanton/AR-816.11</id>
+    <title>Verordnung zum Bundesgesetz vom 13. Juni 1928 betreffend Massnahmen gegen die Tuberkulose — Verordnung zum Bundesgesetz vom 13. Juni 1928 betreffend Massnahmen gegen die Tuberkulose (816.11)</title>
+    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/AR-816.11" />
+    <updated>2019-01-01T00:00:00Z</updated>
+    <summary>Stand 2019-01-01 (SR 816.11).</summary>
+  </entry>
+  <entry>
     <id>https://lexmetrik.vercel.app/gesetze/kanton/AR-731.113</id>
     <title>Verordnung über das Parkieren auf Staatsarealen — Verordnung über das Parkieren auf Staatsarealen (731.113)</title>
     <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/AR-731.113" />
@@ -5985,13 +5992,6 @@
     <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/BS-789.110" />
     <updated>2019-01-01T00:00:00Z</updated>
     <summary>Stand 2019-01-01 (SR 789.110).</summary>
-  </entry>
-  <entry>
-    <id>https://lexmetrik.vercel.app/gesetze/kanton/AR-816.11</id>
-    <title>Verordnung zum Bundesgesetz vom 13. Juni 1928 betreffend Massnahmen gegen die Tuberkulose — Verordnung zum Bundesgesetz vom 13. Juni 1928 betreffend Massnahmen gegen die Tuberkulose (816.11)</title>
-    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/AR-816.11" />
-    <updated>2019-01-01T00:00:00Z</updated>
-    <summary>Stand 2019-01-01 (SR 816.11).</summary>
   </entry>
   <entry>
     <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-340.800</id>
@@ -6197,13 +6197,6 @@
     <summary>Stand 2018-01-01 (SR 121.100).</summary>
   </entry>
   <entry>
-    <id>https://lexmetrik.vercel.app/gesetze/kanton/VD-vd-210360</id>
-    <title>en lien avec le Règlement du 2 juillet 2014 fixant le tarif des émoluments du registre foncier (RE-RF) (BLV 211.61 (LRF) / BLV 211.61.1 (RE-RF)) — Loi du 9 octobre 2012 sur le registre foncier (LRF), Chapitre V Emoluments (art. 26-29)</title>
-    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/VD-vd-210360" />
-    <updated>2018-01-01T00:00:00Z</updated>
-    <summary>Stand 2018-01-01.</summary>
-  </entry>
-  <entry>
     <id>https://lexmetrik.vercel.app/gesetze/kanton/AR-1203</id>
     <title>Gebührentarif für die Gemeinden — Gebührentarif für die Gemeinden (bGS 153.2)</title>
     <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/AR-1203" />
@@ -6246,11 +6239,11 @@
     <summary>Stand 2018-01-01 (SR 812.350).</summary>
   </entry>
   <entry>
-    <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-410.150</id>
-    <title>Übergangsverordnung Schulharmonisierung — Übergangsverordnung betreffend den Übergang von der bisherigen Schullaufbahn zur neuen harmonisierten Schullaufbahn</title>
-    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/BS-410.150" />
+    <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-212.860</id>
+    <title>VO HAKES — Verordnung zum Einführungsgesetz zum Bundesgesetz über internationale Kindesentführung und die Haager Übereinkommen zum Schutz von Kindern und Erwachsenen</title>
+    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/BS-212.860" />
     <updated>2018-01-01T00:00:00Z</updated>
-    <summary>Stand 2018-01-01 (SR 410.150).</summary>
+    <summary>Stand 2018-01-01 (SR 212.860).</summary>
   </entry>
   <entry>
     <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-510.200</id>
@@ -6288,11 +6281,18 @@
     <summary>Stand 2018-01-01 (SR 785.740).</summary>
   </entry>
   <entry>
-    <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-212.860</id>
-    <title>VO HAKES — Verordnung zum Einführungsgesetz zum Bundesgesetz über internationale Kindesentführung und die Haager Übereinkommen zum Schutz von Kindern und Erwachsenen</title>
-    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/BS-212.860" />
+    <id>https://lexmetrik.vercel.app/gesetze/kanton/VD-vd-210360</id>
+    <title>en lien avec le Règlement du 2 juillet 2014 fixant le tarif des émoluments du registre foncier (RE-RF) (BLV 211.61 (LRF) / BLV 211.61.1 (RE-RF)) — Loi du 9 octobre 2012 sur le registre foncier (LRF), Chapitre V Emoluments (art. 26-29)</title>
+    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/VD-vd-210360" />
     <updated>2018-01-01T00:00:00Z</updated>
-    <summary>Stand 2018-01-01 (SR 212.860).</summary>
+    <summary>Stand 2018-01-01.</summary>
+  </entry>
+  <entry>
+    <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-410.150</id>
+    <title>Übergangsverordnung Schulharmonisierung — Übergangsverordnung betreffend den Übergang von der bisherigen Schullaufbahn zur neuen harmonisierten Schullaufbahn</title>
+    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/BS-410.150" />
+    <updated>2018-01-01T00:00:00Z</updated>
+    <summary>Stand 2018-01-01 (SR 410.150).</summary>
   </entry>
   <entry>
     <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-685.320</id>
@@ -6624,27 +6624,6 @@
     <summary>Stand 2017-01-01 (SR 833.141).</summary>
   </entry>
   <entry>
-    <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-460.220</id>
-    <title>Verordnung über die Abschlussprüfungen der Maturitätskurse für Berufstätige — Verordnung über die Abschlussprüfungen der Maturitätskurse für Berufstätige (460.220)</title>
-    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/BS-460.220" />
-    <updated>2017-01-01T00:00:00Z</updated>
-    <summary>Stand 2017-01-01 (SR 460.220).</summary>
-  </entry>
-  <entry>
-    <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-258.450</id>
-    <title>Verordnung über die finanzielle Beteiligung von verurteilten Personen und Eltern an jugendstrafrechtlichen Sanktionen — Verordnung über die finanzielle Beteiligung von verurteilten Personen und Eltern an jugendstrafrechtlichen Sanktionen (258.450)</title>
-    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/BS-258.450" />
-    <updated>2017-01-01T00:00:00Z</updated>
-    <summary>Stand 2017-01-01 (SR 258.450).</summary>
-  </entry>
-  <entry>
-    <id>https://lexmetrik.vercel.app/gesetze/kanton/ZH-634.2</id>
-    <title>Verordnung über die Rückerstattung der Verrechnungssteuer — Verordnung über die Rückerstattung der Verrechnungssteuer (LS 634.2)</title>
-    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/ZH-634.2" />
-    <updated>2017-01-01T00:00:00Z</updated>
-    <summary>Stand 2017-01-01 (SR LS 634.2).</summary>
-  </entry>
-  <entry>
     <id>https://lexmetrik.vercel.app/gesetze/kanton/AR-213.113</id>
     <title>Verordnung zum Bundesgesetz über das bäuerliche Bodenrecht — Verordnung zum Bundesgesetz über das bäuerliche Bodenrecht (213.113)</title>
     <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/AR-213.113" />
@@ -6659,11 +6638,25 @@
     <summary>Stand 2017-01-01 (SR 811.11).</summary>
   </entry>
   <entry>
-    <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-447.650</id>
-    <title>Vertrag zwischen den Kantonen Basel-Landschaft und Basel-Stadt über die gemeinsame Trägerschaft des Schweizerischen Tropen- und Public Health-Instituts — Vertrag zwischen den Kantonen Basel-Landschaft und Basel-Stadt über die gemeinsame Trägerschaft des Schweizerischen Tropen- und Public Health-Instituts (447.650)</title>
-    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/BS-447.650" />
+    <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-460.220</id>
+    <title>Verordnung über die Abschlussprüfungen der Maturitätskurse für Berufstätige — Verordnung über die Abschlussprüfungen der Maturitätskurse für Berufstätige (460.220)</title>
+    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/BS-460.220" />
     <updated>2017-01-01T00:00:00Z</updated>
-    <summary>Stand 2017-01-01 (SR 447.650).</summary>
+    <summary>Stand 2017-01-01 (SR 460.220).</summary>
+  </entry>
+  <entry>
+    <id>https://lexmetrik.vercel.app/gesetze/kanton/ZH-634.2</id>
+    <title>Verordnung über die Rückerstattung der Verrechnungssteuer — Verordnung über die Rückerstattung der Verrechnungssteuer (LS 634.2)</title>
+    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/ZH-634.2" />
+    <updated>2017-01-01T00:00:00Z</updated>
+    <summary>Stand 2017-01-01 (SR LS 634.2).</summary>
+  </entry>
+  <entry>
+    <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-258.450</id>
+    <title>Verordnung über die finanzielle Beteiligung von verurteilten Personen und Eltern an jugendstrafrechtlichen Sanktionen — Verordnung über die finanzielle Beteiligung von verurteilten Personen und Eltern an jugendstrafrechtlichen Sanktionen (258.450)</title>
+    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/BS-258.450" />
+    <updated>2017-01-01T00:00:00Z</updated>
+    <summary>Stand 2017-01-01 (SR 258.450).</summary>
   </entry>
   <entry>
     <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-869.750</id>
@@ -6671,6 +6664,13 @@
     <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/BS-869.750" />
     <updated>2017-01-01T00:00:00Z</updated>
     <summary>Stand 2017-01-01 (SR 869.750).</summary>
+  </entry>
+  <entry>
+    <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-447.650</id>
+    <title>Vertrag zwischen den Kantonen Basel-Landschaft und Basel-Stadt über die gemeinsame Trägerschaft des Schweizerischen Tropen- und Public Health-Instituts — Vertrag zwischen den Kantonen Basel-Landschaft und Basel-Stadt über die gemeinsame Trägerschaft des Schweizerischen Tropen- und Public Health-Instituts (447.650)</title>
+    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/BS-447.650" />
+    <updated>2017-01-01T00:00:00Z</updated>
+    <summary>Stand 2017-01-01 (SR 447.650).</summary>
   </entry>
   <entry>
     <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-RiE%20730.130</id>
@@ -6743,32 +6743,11 @@
     <summary>Stand 2016-09-30 (SR 811.14).</summary>
   </entry>
   <entry>
-    <id>https://lexmetrik.vercel.app/gesetze/kanton/AR-931.11</id>
-    <title>kantonale Waldverordnung — kantonale Waldverordnung (931.11)</title>
-    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/AR-931.11" />
-    <updated>2016-09-30T00:00:00Z</updated>
-    <summary>Stand 2016-09-30 (SR 931.11).</summary>
-  </entry>
-  <entry>
     <id>https://lexmetrik.vercel.app/gesetze/kanton/AR-122.24</id>
     <title>KR AsylVo — KR AsylVo (122.24)</title>
     <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/AR-122.24" />
     <updated>2016-09-30T00:00:00Z</updated>
     <summary>Stand 2016-09-30 (SR 122.24).</summary>
-  </entry>
-  <entry>
-    <id>https://lexmetrik.vercel.app/gesetze/kanton/AR-723.105</id>
-    <title>kVAV — kVAV (723.105)</title>
-    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/AR-723.105" />
-    <updated>2016-09-30T00:00:00Z</updated>
-    <summary>Stand 2016-09-30 (SR 723.105).</summary>
-  </entry>
-  <entry>
-    <id>https://lexmetrik.vercel.app/gesetze/kanton/AR-920.16</id>
-    <title>kWeinV — kWeinV (920.16)</title>
-    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/AR-920.16" />
-    <updated>2016-09-30T00:00:00Z</updated>
-    <summary>Stand 2016-09-30 (SR 920.16).</summary>
   </entry>
   <entry>
     <id>https://lexmetrik.vercel.app/gesetze/kanton/AR-920.11</id>
@@ -6790,6 +6769,62 @@
     <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/AR-731.111" />
     <updated>2016-09-30T00:00:00Z</updated>
     <summary>Stand 2016-09-30 (SR 731.111).</summary>
+  </entry>
+  <entry>
+    <id>https://lexmetrik.vercel.app/gesetze/kanton/AR-955.14</id>
+    <title>Verordnung zum Bundesgesetz vom 21. Juni 1932 über die gebrannten Wasser (Alkoholgesetz) — Verordnung zum Bundesgesetz vom 21. Juni 1932 über die gebrannten Wasser (Alkoholgesetz) (955.14)</title>
+    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/AR-955.14" />
+    <updated>2016-09-30T00:00:00Z</updated>
+    <summary>Stand 2016-09-30 (SR 955.14).</summary>
+  </entry>
+  <entry>
+    <id>https://lexmetrik.vercel.app/gesetze/kanton/AR-222.215</id>
+    <title>Verordnung zum Bundesgesetz vom 28. September 1956 über die Allgemeinverbindlicherklärung von Gesamtarbeitsverträgen — Verordnung zum Bundesgesetz vom 28. September 1956 über die Allgemeinverbindlicherklärung von Gesamtarbeitsverträgen (222.215)</title>
+    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/AR-222.215" />
+    <updated>2016-09-30T00:00:00Z</updated>
+    <summary>Stand 2016-09-30 (SR 222.215).</summary>
+  </entry>
+  <entry>
+    <id>https://lexmetrik.vercel.app/gesetze/kanton/AR-956.11</id>
+    <title>Verordnung zum Bundesgesetz über das Messwesen — Verordnung zum Bundesgesetz über das Messwesen (956.11)</title>
+    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/AR-956.11" />
+    <updated>2016-09-30T00:00:00Z</updated>
+    <summary>Stand 2016-09-30 (SR 956.11).</summary>
+  </entry>
+  <entry>
+    <id>https://lexmetrik.vercel.app/gesetze/kanton/AR-955.51</id>
+    <title>Verordnung zum Bundesgesetz über den Konsumkredit vom 23. März 2001 (KKG) und zur bundesrätlichen Verordnung zum Konsumkreditgesetz vom 6. November 2002 (VKKG) — Verordnung zum Bundesgesetz über den Konsumkredit vom 23. März 2001 (KKG) und zur bundesrätlichen Verordnung zum Konsumkreditgesetz vom 6. November 2002 (VKKG) (955.51)</title>
+    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/AR-955.51" />
+    <updated>2016-09-30T00:00:00Z</updated>
+    <summary>Stand 2016-09-30 (SR 955.51).</summary>
+  </entry>
+  <entry>
+    <id>https://lexmetrik.vercel.app/gesetze/kanton/AR-511.21</id>
+    <title>Verordnung zum Zivilschutzgesetz — Verordnung zum Zivilschutzgesetz (511.21)</title>
+    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/AR-511.21" />
+    <updated>2016-09-30T00:00:00Z</updated>
+    <summary>Stand 2016-09-30 (SR 511.21).</summary>
+  </entry>
+  <entry>
+    <id>https://lexmetrik.vercel.app/gesetze/kanton/AR-122.21</id>
+    <title>Verordnung zur Bundesgesetzgebung über die Ausländerinnen und Ausländer — Verordnung zur Bundesgesetzgebung über die Ausländerinnen und Ausländer (122.21)</title>
+    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/AR-122.21" />
+    <updated>2016-09-30T00:00:00Z</updated>
+    <summary>Stand 2016-09-30 (SR 122.21).</summary>
+  </entry>
+  <entry>
+    <id>https://lexmetrik.vercel.app/gesetze/kanton/AR-824.01</id>
+    <title>Verordnung zur Bundesgesetzgebung über die in die Schweiz entsandten Arbeitnehmerinnen und Arbeitnehmer und flankierende Massnahmen — Verordnung zur Bundesgesetzgebung über die in die Schweiz entsandten Arbeitnehmerinnen und Arbeitnehmer und flankierende Massnahmen (824.01)</title>
+    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/AR-824.01" />
+    <updated>2016-09-30T00:00:00Z</updated>
+    <summary>Stand 2016-09-30 (SR 824.01).</summary>
+  </entry>
+  <entry>
+    <id>https://lexmetrik.vercel.app/gesetze/kanton/AR-841.2</id>
+    <title>Verordnung über Massnahmen zur Sanierung der Wohnverhältnisse in den Berggebieten — Verordnung über Massnahmen zur Sanierung der Wohnverhältnisse in den Berggebieten (841.2)</title>
+    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/AR-841.2" />
+    <updated>2016-09-30T00:00:00Z</updated>
+    <summary>Stand 2016-09-30 (SR 841.2).</summary>
   </entry>
   <entry>
     <id>https://lexmetrik.vercel.app/gesetze/kanton/AR-824.11</id>
@@ -6827,67 +6862,32 @@
     <summary>Stand 2016-09-30 (SR 911.11).</summary>
   </entry>
   <entry>
-    <id>https://lexmetrik.vercel.app/gesetze/kanton/AR-841.2</id>
-    <title>Verordnung über Massnahmen zur Sanierung der Wohnverhältnisse in den Berggebieten — Verordnung über Massnahmen zur Sanierung der Wohnverhältnisse in den Berggebieten (841.2)</title>
-    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/AR-841.2" />
-    <updated>2016-09-30T00:00:00Z</updated>
-    <summary>Stand 2016-09-30 (SR 841.2).</summary>
-  </entry>
-  <entry>
-    <id>https://lexmetrik.vercel.app/gesetze/kanton/AR-956.11</id>
-    <title>Verordnung zum Bundesgesetz über das Messwesen — Verordnung zum Bundesgesetz über das Messwesen (956.11)</title>
-    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/AR-956.11" />
-    <updated>2016-09-30T00:00:00Z</updated>
-    <summary>Stand 2016-09-30 (SR 956.11).</summary>
-  </entry>
-  <entry>
-    <id>https://lexmetrik.vercel.app/gesetze/kanton/AR-955.51</id>
-    <title>Verordnung zum Bundesgesetz über den Konsumkredit vom 23. März 2001 (KKG) und zur bundesrätlichen Verordnung zum Konsumkreditgesetz vom 6. November 2002 (VKKG) — Verordnung zum Bundesgesetz über den Konsumkredit vom 23. März 2001 (KKG) und zur bundesrätlichen Verordnung zum Konsumkreditgesetz vom 6. November 2002 (VKKG) (955.51)</title>
-    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/AR-955.51" />
-    <updated>2016-09-30T00:00:00Z</updated>
-    <summary>Stand 2016-09-30 (SR 955.51).</summary>
-  </entry>
-  <entry>
-    <id>https://lexmetrik.vercel.app/gesetze/kanton/AR-955.14</id>
-    <title>Verordnung zum Bundesgesetz vom 21. Juni 1932 über die gebrannten Wasser (Alkoholgesetz) — Verordnung zum Bundesgesetz vom 21. Juni 1932 über die gebrannten Wasser (Alkoholgesetz) (955.14)</title>
-    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/AR-955.14" />
-    <updated>2016-09-30T00:00:00Z</updated>
-    <summary>Stand 2016-09-30 (SR 955.14).</summary>
-  </entry>
-  <entry>
-    <id>https://lexmetrik.vercel.app/gesetze/kanton/AR-222.215</id>
-    <title>Verordnung zum Bundesgesetz vom 28. September 1956 über die Allgemeinverbindlicherklärung von Gesamtarbeitsverträgen — Verordnung zum Bundesgesetz vom 28. September 1956 über die Allgemeinverbindlicherklärung von Gesamtarbeitsverträgen (222.215)</title>
-    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/AR-222.215" />
-    <updated>2016-09-30T00:00:00Z</updated>
-    <summary>Stand 2016-09-30 (SR 222.215).</summary>
-  </entry>
-  <entry>
-    <id>https://lexmetrik.vercel.app/gesetze/kanton/AR-511.21</id>
-    <title>Verordnung zum Zivilschutzgesetz — Verordnung zum Zivilschutzgesetz (511.21)</title>
-    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/AR-511.21" />
-    <updated>2016-09-30T00:00:00Z</updated>
-    <summary>Stand 2016-09-30 (SR 511.21).</summary>
-  </entry>
-  <entry>
-    <id>https://lexmetrik.vercel.app/gesetze/kanton/AR-122.21</id>
-    <title>Verordnung zur Bundesgesetzgebung über die Ausländerinnen und Ausländer — Verordnung zur Bundesgesetzgebung über die Ausländerinnen und Ausländer (122.21)</title>
-    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/AR-122.21" />
-    <updated>2016-09-30T00:00:00Z</updated>
-    <summary>Stand 2016-09-30 (SR 122.21).</summary>
-  </entry>
-  <entry>
-    <id>https://lexmetrik.vercel.app/gesetze/kanton/AR-824.01</id>
-    <title>Verordnung zur Bundesgesetzgebung über die in die Schweiz entsandten Arbeitnehmerinnen und Arbeitnehmer und flankierende Massnahmen — Verordnung zur Bundesgesetzgebung über die in die Schweiz entsandten Arbeitnehmerinnen und Arbeitnehmer und flankierende Massnahmen (824.01)</title>
-    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/AR-824.01" />
-    <updated>2016-09-30T00:00:00Z</updated>
-    <summary>Stand 2016-09-30 (SR 824.01).</summary>
-  </entry>
-  <entry>
     <id>https://lexmetrik.vercel.app/gesetze/kanton/AR-511.2</id>
     <title>Zivilschutzgesetz — Zivilschutzgesetz (511.2)</title>
     <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/AR-511.2" />
     <updated>2016-09-30T00:00:00Z</updated>
     <summary>Stand 2016-09-30 (SR 511.2).</summary>
+  </entry>
+  <entry>
+    <id>https://lexmetrik.vercel.app/gesetze/kanton/AR-723.105</id>
+    <title>kVAV — kVAV (723.105)</title>
+    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/AR-723.105" />
+    <updated>2016-09-30T00:00:00Z</updated>
+    <summary>Stand 2016-09-30 (SR 723.105).</summary>
+  </entry>
+  <entry>
+    <id>https://lexmetrik.vercel.app/gesetze/kanton/AR-920.16</id>
+    <title>kWeinV — kWeinV (920.16)</title>
+    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/AR-920.16" />
+    <updated>2016-09-30T00:00:00Z</updated>
+    <summary>Stand 2016-09-30 (SR 920.16).</summary>
+  </entry>
+  <entry>
+    <id>https://lexmetrik.vercel.app/gesetze/kanton/AR-931.11</id>
+    <title>kantonale Waldverordnung — kantonale Waldverordnung (931.11)</title>
+    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/AR-931.11" />
+    <updated>2016-09-30T00:00:00Z</updated>
+    <summary>Stand 2016-09-30 (SR 931.11).</summary>
   </entry>
   <entry>
     <id>https://lexmetrik.vercel.app/gesetze/international/HUVUE</id>
@@ -6918,18 +6918,18 @@
     <summary>Stand 2016-07-01 (SR 322.100).</summary>
   </entry>
   <entry>
-    <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-340.500</id>
-    <title>Betäubungsmittelverordnung — Kantonale Verordnung betreffend Betäubungsmittel</title>
-    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/BS-340.500" />
-    <updated>2016-07-01T00:00:00Z</updated>
-    <summary>Stand 2016-07-01 (SR 340.500).</summary>
-  </entry>
-  <entry>
     <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-790.100</id>
     <title>BRKG — Gesetz betreffend die Baurekurskommission</title>
     <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/BS-790.100" />
     <updated>2016-07-01T00:00:00Z</updated>
     <summary>Stand 2016-07-01 (SR 790.100).</summary>
+  </entry>
+  <entry>
+    <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-340.500</id>
+    <title>Betäubungsmittelverordnung — Kantonale Verordnung betreffend Betäubungsmittel</title>
+    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/BS-340.500" />
+    <updated>2016-07-01T00:00:00Z</updated>
+    <summary>Stand 2016-07-01 (SR 340.500).</summary>
   </entry>
   <entry>
     <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-257.500</id>
@@ -6946,18 +6946,18 @@
     <summary>Stand 2016-07-01 (SR 154.123).</summary>
   </entry>
   <entry>
-    <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-813.300</id>
-    <title>Gesetz betreffend das ständige staatliche Einigungsamt — Gesetz betreffend das ständige staatliche Einigungsamt (813.300)</title>
-    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/BS-813.300" />
-    <updated>2016-07-01T00:00:00Z</updated>
-    <summary>Stand 2016-07-01 (SR 813.300).</summary>
-  </entry>
-  <entry>
     <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-771.300</id>
     <title>Gesetz betreffend Einführung des Bundesgesetzes über Nutzbarmachung der Wasserkräfte — Gesetz betreffend Einführung des Bundesgesetzes über Nutzbarmachung der Wasserkräfte (771.300)</title>
     <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/BS-771.300" />
     <updated>2016-07-01T00:00:00Z</updated>
     <summary>Stand 2016-07-01 (SR 771.300).</summary>
+  </entry>
+  <entry>
+    <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-813.300</id>
+    <title>Gesetz betreffend das ständige staatliche Einigungsamt — Gesetz betreffend das ständige staatliche Einigungsamt (813.300)</title>
+    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/BS-813.300" />
+    <updated>2016-07-01T00:00:00Z</updated>
+    <summary>Stand 2016-07-01 (SR 813.300).</summary>
   </entry>
   <entry>
     <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-955.200</id>
@@ -7156,13 +7156,6 @@
     <summary>Stand 2016-01-01 (SR 920.13).</summary>
   </entry>
   <entry>
-    <id>https://lexmetrik.vercel.app/gesetze/kanton/AR-811.12</id>
-    <title>Bäderverordnung — Bäderverordnung (811.12)</title>
-    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/AR-811.12" />
-    <updated>2016-01-01T00:00:00Z</updated>
-    <summary>Stand 2016-01-01 (SR 811.12).</summary>
-  </entry>
-  <entry>
     <id>https://lexmetrik.vercel.app/gesetze/kanton/NW-268.12</id>
     <title>BeurkGebV — Verordnung über die Beurkundungsgebühren, Beurkundungsgebührenverordnung</title>
     <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/NW-268.12" />
@@ -7182,6 +7175,13 @@
     <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/AR-511.1" />
     <updated>2016-01-01T00:00:00Z</updated>
     <summary>Stand 2016-01-01 (SR 511.1).</summary>
+  </entry>
+  <entry>
+    <id>https://lexmetrik.vercel.app/gesetze/kanton/AR-811.12</id>
+    <title>Bäderverordnung — Bäderverordnung (811.12)</title>
+    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/AR-811.12" />
+    <updated>2016-01-01T00:00:00Z</updated>
+    <summary>Stand 2016-01-01 (SR 811.12).</summary>
   </entry>
   <entry>
     <id>https://lexmetrik.vercel.app/gesetze/kanton/AR-761.11</id>
@@ -7219,6 +7219,13 @@
     <summary>Stand 2016-01-01 (SR 760.12).</summary>
   </entry>
   <entry>
+    <id>https://lexmetrik.vercel.app/gesetze/kanton/AR-815.13</id>
+    <title>FKV — FKV (815.13)</title>
+    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/AR-815.13" />
+    <updated>2016-01-01T00:00:00Z</updated>
+    <summary>Stand 2016-01-01 (SR 815.13).</summary>
+  </entry>
+  <entry>
     <id>https://lexmetrik.vercel.app/gesetze/kanton/AR-861.11</id>
     <title>Feuerwehrkonzept — Feuerwehrkonzept (861.11)</title>
     <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/AR-861.11" />
@@ -7226,11 +7233,11 @@
     <summary>Stand 2016-01-01 (SR 861.11).</summary>
   </entry>
   <entry>
-    <id>https://lexmetrik.vercel.app/gesetze/kanton/AR-815.13</id>
-    <title>FKV — FKV (815.13)</title>
-    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/AR-815.13" />
+    <id>https://lexmetrik.vercel.app/gesetze/kanton/TG-632.1</id>
+    <title>GGG — Gesetz über die Gebühren und Gemengsteuern der Grundbuchämter und Notariate</title>
+    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/TG-632.1" />
     <updated>2016-01-01T00:00:00Z</updated>
-    <summary>Stand 2016-01-01 (SR 815.13).</summary>
+    <summary>Stand 2016-01-01 (SR RB 632.1).</summary>
   </entry>
   <entry>
     <id>https://lexmetrik.vercel.app/gesetze/kanton/AR-815.111.1</id>
@@ -7268,25 +7275,11 @@
     <summary>Stand 2016-01-01 (SR 612.2).</summary>
   </entry>
   <entry>
-    <id>https://lexmetrik.vercel.app/gesetze/kanton/TG-632.1</id>
-    <title>GGG — Gesetz über die Gebühren und Gemengsteuern der Grundbuchämter und Notariate</title>
-    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/TG-632.1" />
-    <updated>2016-01-01T00:00:00Z</updated>
-    <summary>Stand 2016-01-01 (SR RB 632.1).</summary>
-  </entry>
-  <entry>
     <id>https://lexmetrik.vercel.app/gesetze/kanton/AR-525.1</id>
     <title>HuG — HuG (525.1)</title>
     <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/AR-525.1" />
     <updated>2016-01-01T00:00:00Z</updated>
     <summary>Stand 2016-01-01 (SR 525.1).</summary>
-  </entry>
-  <entry>
-    <id>https://lexmetrik.vercel.app/gesetze/kanton/AR-414.111</id>
-    <title>kant. BBV — kant. BBV (414.111)</title>
-    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/AR-414.111" />
-    <updated>2016-01-01T00:00:00Z</updated>
-    <summary>Stand 2016-01-01 (SR 414.111).</summary>
   </entry>
   <entry>
     <id>https://lexmetrik.vercel.app/gesetze/kanton/AR-815.11</id>
@@ -7310,13 +7303,6 @@
     <summary>Stand 2016-01-01 (SR 142.12).</summary>
   </entry>
   <entry>
-    <id>https://lexmetrik.vercel.app/gesetze/kanton/AR-742.1</id>
-    <title>Perimeterverordnung — Perimeterverordnung (742.1)</title>
-    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/AR-742.1" />
-    <updated>2016-01-01T00:00:00Z</updated>
-    <summary>Stand 2016-01-01 (SR 742.1).</summary>
-  </entry>
-  <entry>
     <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-166.100</id>
     <title>PKG — Gesetz betreffend die Pensionskasse Basel-Stadt, Pensionskassengesetz</title>
     <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/BS-166.100" />
@@ -7329,6 +7315,13 @@
     <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/NW-261.2" />
     <updated>2016-01-01T00:00:00Z</updated>
     <summary>Stand 2016-01-01 (SR NG 261.2).</summary>
+  </entry>
+  <entry>
+    <id>https://lexmetrik.vercel.app/gesetze/kanton/AR-742.1</id>
+    <title>Perimeterverordnung — Perimeterverordnung (742.1)</title>
+    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/AR-742.1" />
+    <updated>2016-01-01T00:00:00Z</updated>
+    <summary>Stand 2016-01-01 (SR 742.1).</summary>
   </entry>
   <entry>
     <id>https://lexmetrik.vercel.app/gesetze/kanton/AR-521.1</id>
@@ -7380,18 +7373,18 @@
     <summary>Stand 2016-01-01 (SR 925.32).</summary>
   </entry>
   <entry>
-    <id>https://lexmetrik.vercel.app/gesetze/kanton/AR-422.2</id>
-    <title>Tierschutzverordnung — Tierschutzverordnung (422.2)</title>
-    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/AR-422.2" />
-    <updated>2016-01-01T00:00:00Z</updated>
-    <summary>Stand 2016-01-01 (SR 422.2).</summary>
-  </entry>
-  <entry>
     <id>https://lexmetrik.vercel.app/gesetze/kanton/AR-920.14</id>
     <title>TZV — TZV (920.14)</title>
     <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/AR-920.14" />
     <updated>2016-01-01T00:00:00Z</updated>
     <summary>Stand 2016-01-01 (SR 920.14).</summary>
+  </entry>
+  <entry>
+    <id>https://lexmetrik.vercel.app/gesetze/kanton/AR-422.2</id>
+    <title>Tierschutzverordnung — Tierschutzverordnung (422.2)</title>
+    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/AR-422.2" />
+    <updated>2016-01-01T00:00:00Z</updated>
+    <summary>Stand 2016-01-01 (SR 422.2).</summary>
   </entry>
   <entry>
     <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-300.600</id>
@@ -7406,6 +7399,13 @@
     <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/AR-822.411" />
     <updated>2016-01-01T00:00:00Z</updated>
     <summary>Stand 2016-01-01 (SR 822.411).</summary>
+  </entry>
+  <entry>
+    <id>https://lexmetrik.vercel.app/gesetze/bund/VBB</id>
+    <title>VFRR — Verordnung über die im Betreibungs- und Konkursverfahren zu verwendenden Formulare und Register sowie die Rechnungsführung (VFRR)</title>
+    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/bund/VBB" />
+    <updated>2016-01-01T00:00:00Z</updated>
+    <summary>Stand 2016-01-01 (SR 281.31).</summary>
   </entry>
   <entry>
     <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-953.930</id>
@@ -7427,6 +7427,41 @@
     <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/ZH-281.51" />
     <updated>2016-01-01T00:00:00Z</updated>
     <summary>Stand 2016-01-01 (SR LS 281.51).</summary>
+  </entry>
+  <entry>
+    <id>https://lexmetrik.vercel.app/gesetze/kanton/AR-822.11</id>
+    <title>Verordnung zum Bundesgesetz vom 13. März 1964 über die Arbeit in Industrie, Gewerbe und Handel (Arbeitsgesetz) — Verordnung zum Bundesgesetz vom 13. März 1964 über die Arbeit in Industrie, Gewerbe und Handel (Arbeitsgesetz)</title>
+    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/AR-822.11" />
+    <updated>2016-01-01T00:00:00Z</updated>
+    <summary>Stand 2016-01-01 (SR 822.11).</summary>
+  </entry>
+  <entry>
+    <id>https://lexmetrik.vercel.app/gesetze/kanton/AR-956.33</id>
+    <title>Verordnung zum Bundesgesetz vom 25. März 1977 über explosionsgefährliche Stoffe — Verordnung zum Bundesgesetz vom 25. März 1977 über explosionsgefährliche Stoffe (956.33)</title>
+    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/AR-956.33" />
+    <updated>2016-01-01T00:00:00Z</updated>
+    <summary>Stand 2016-01-01 (SR 956.33).</summary>
+  </entry>
+  <entry>
+    <id>https://lexmetrik.vercel.app/gesetze/kanton/AR-921.3</id>
+    <title>Verordnung zum Bundesgesetz über die landwirtschaftliche Pacht — Verordnung zum Bundesgesetz über die landwirtschaftliche Pacht (921.3)</title>
+    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/AR-921.3" />
+    <updated>2016-01-01T00:00:00Z</updated>
+    <summary>Stand 2016-01-01 (SR 921.3).</summary>
+  </entry>
+  <entry>
+    <id>https://lexmetrik.vercel.app/gesetze/kanton/AR-832.311</id>
+    <title>Verordnung über Ergänzungsleistungen zur Alters-, Hinterlassenen- und Invalidenversicherung — Verordnung über Ergänzungsleistungen zur Alters-, Hinterlassenen- und Invalidenversicherung</title>
+    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/AR-832.311" />
+    <updated>2016-01-01T00:00:00Z</updated>
+    <summary>Stand 2016-01-01 (SR 832.311).</summary>
+  </entry>
+  <entry>
+    <id>https://lexmetrik.vercel.app/gesetze/kanton/AR-822.61</id>
+    <title>Verordnung über Massnahmen gegen die Schwarzarbeit — Verordnung über Massnahmen gegen die Schwarzarbeit (822.61)</title>
+    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/AR-822.61" />
+    <updated>2016-01-01T00:00:00Z</updated>
+    <summary>Stand 2016-01-01 (SR 822.61).</summary>
   </entry>
   <entry>
     <id>https://lexmetrik.vercel.app/gesetze/kanton/AR-816.31</id>
@@ -7464,13 +7499,6 @@
     <summary>Stand 2016-01-01 (SR 625.11).</summary>
   </entry>
   <entry>
-    <id>https://lexmetrik.vercel.app/gesetze/kanton/AR-512.111</id>
-    <title>Verordnung über die kantonale Militärverwaltung — Verordnung über die kantonale Militärverwaltung (512.111)</title>
-    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/AR-512.111" />
-    <updated>2016-01-01T00:00:00Z</updated>
-    <summary>Stand 2016-01-01 (SR 512.111).</summary>
-  </entry>
-  <entry>
     <id>https://lexmetrik.vercel.app/gesetze/kanton/AR-421.15</id>
     <title>Verordnung über die Kantonsbibliothek — Verordnung über die Kantonsbibliothek (421.15)</title>
     <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/AR-421.15" />
@@ -7492,46 +7520,11 @@
     <summary>Stand 2016-01-01 (SR 494.700).</summary>
   </entry>
   <entry>
-    <id>https://lexmetrik.vercel.app/gesetze/kanton/AR-832.311</id>
-    <title>Verordnung über Ergänzungsleistungen zur Alters-, Hinterlassenen- und Invalidenversicherung — Verordnung über Ergänzungsleistungen zur Alters-, Hinterlassenen- und Invalidenversicherung</title>
-    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/AR-832.311" />
+    <id>https://lexmetrik.vercel.app/gesetze/kanton/AR-512.111</id>
+    <title>Verordnung über die kantonale Militärverwaltung — Verordnung über die kantonale Militärverwaltung (512.111)</title>
+    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/AR-512.111" />
     <updated>2016-01-01T00:00:00Z</updated>
-    <summary>Stand 2016-01-01 (SR 832.311).</summary>
-  </entry>
-  <entry>
-    <id>https://lexmetrik.vercel.app/gesetze/kanton/AR-822.61</id>
-    <title>Verordnung über Massnahmen gegen die Schwarzarbeit — Verordnung über Massnahmen gegen die Schwarzarbeit (822.61)</title>
-    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/AR-822.61" />
-    <updated>2016-01-01T00:00:00Z</updated>
-    <summary>Stand 2016-01-01 (SR 822.61).</summary>
-  </entry>
-  <entry>
-    <id>https://lexmetrik.vercel.app/gesetze/kanton/AR-921.3</id>
-    <title>Verordnung zum Bundesgesetz über die landwirtschaftliche Pacht — Verordnung zum Bundesgesetz über die landwirtschaftliche Pacht (921.3)</title>
-    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/AR-921.3" />
-    <updated>2016-01-01T00:00:00Z</updated>
-    <summary>Stand 2016-01-01 (SR 921.3).</summary>
-  </entry>
-  <entry>
-    <id>https://lexmetrik.vercel.app/gesetze/kanton/AR-822.11</id>
-    <title>Verordnung zum Bundesgesetz vom 13. März 1964 über die Arbeit in Industrie, Gewerbe und Handel (Arbeitsgesetz) — Verordnung zum Bundesgesetz vom 13. März 1964 über die Arbeit in Industrie, Gewerbe und Handel (Arbeitsgesetz)</title>
-    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/AR-822.11" />
-    <updated>2016-01-01T00:00:00Z</updated>
-    <summary>Stand 2016-01-01 (SR 822.11).</summary>
-  </entry>
-  <entry>
-    <id>https://lexmetrik.vercel.app/gesetze/kanton/AR-956.33</id>
-    <title>Verordnung zum Bundesgesetz vom 25. März 1977 über explosionsgefährliche Stoffe — Verordnung zum Bundesgesetz vom 25. März 1977 über explosionsgefährliche Stoffe (956.33)</title>
-    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/AR-956.33" />
-    <updated>2016-01-01T00:00:00Z</updated>
-    <summary>Stand 2016-01-01 (SR 956.33).</summary>
-  </entry>
-  <entry>
-    <id>https://lexmetrik.vercel.app/gesetze/bund/VBB</id>
-    <title>VFRR — Verordnung über die im Betreibungs- und Konkursverfahren zu verwendenden Formulare und Register sowie die Rechnungsführung (VFRR)</title>
-    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/bund/VBB" />
-    <updated>2016-01-01T00:00:00Z</updated>
-    <summary>Stand 2016-01-01 (SR 281.31).</summary>
+    <summary>Stand 2016-01-01 (SR 512.111).</summary>
   </entry>
   <entry>
     <id>https://lexmetrik.vercel.app/gesetze/kanton/AR-813.22</id>
@@ -7546,6 +7539,13 @@
     <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/AR-751.3" />
     <updated>2016-01-01T00:00:00Z</updated>
     <summary>Stand 2016-01-01 (SR 751.3).</summary>
+  </entry>
+  <entry>
+    <id>https://lexmetrik.vercel.app/gesetze/kanton/AR-414.111</id>
+    <title>kant. BBV — kant. BBV (414.111)</title>
+    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/AR-414.111" />
+    <updated>2016-01-01T00:00:00Z</updated>
+    <summary>Stand 2016-01-01 (SR 414.111).</summary>
   </entry>
   <entry>
     <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-162.600</id>
@@ -7800,18 +7800,18 @@
     <summary>Stand 2014-08-18 (SR 410.120).</summary>
   </entry>
   <entry>
-    <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-410.910</id>
-    <title>Verordnung auswärtige Schulanlässe — Verordnung über die auswärtigen Schulanlässe der Schulen des Kantons Basel-Stadt</title>
-    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/BS-410.910" />
-    <updated>2014-08-18T00:00:00Z</updated>
-    <summary>Stand 2014-08-18 (SR 410.910).</summary>
-  </entry>
-  <entry>
     <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-410.140</id>
     <title>Verordnung Kooperation Erziehungsberechtigte — Verordnung über die Kooperation zwischen der Schule und den Erziehungsberechtigten</title>
     <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/BS-410.140" />
     <updated>2014-08-18T00:00:00Z</updated>
     <summary>Stand 2014-08-18 (SR 410.140).</summary>
+  </entry>
+  <entry>
+    <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-410.910</id>
+    <title>Verordnung auswärtige Schulanlässe — Verordnung über die auswärtigen Schulanlässe der Schulen des Kantons Basel-Stadt</title>
+    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/BS-410.910" />
+    <updated>2014-08-18T00:00:00Z</updated>
+    <summary>Stand 2014-08-18 (SR 410.910).</summary>
   </entry>
   <entry>
     <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-427.950</id>
@@ -7856,18 +7856,18 @@
     <summary>Stand 2014-02-02 (SR RiE 681.700).</summary>
   </entry>
   <entry>
-    <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-491.100</id>
-    <title>Gesetz betreffend Ausbildungsbeiträge — Gesetz betreffend Ausbildungsbeiträge (491.100)</title>
-    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/BS-491.100" />
-    <updated>2014-01-26T00:00:00Z</updated>
-    <summary>Stand 2014-01-26 (SR 491.100).</summary>
-  </entry>
-  <entry>
     <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-834.400</id>
     <title>GKV — Gesetz über die Krankenversicherung im Kanton Basel-Stadt</title>
     <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/BS-834.400" />
     <updated>2014-01-26T00:00:00Z</updated>
     <summary>Stand 2014-01-26 (SR 834.400).</summary>
+  </entry>
+  <entry>
+    <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-491.100</id>
+    <title>Gesetz betreffend Ausbildungsbeiträge — Gesetz betreffend Ausbildungsbeiträge (491.100)</title>
+    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/BS-491.100" />
+    <updated>2014-01-26T00:00:00Z</updated>
+    <summary>Stand 2014-01-26 (SR 491.100).</summary>
   </entry>
   <entry>
     <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-190.100</id>
@@ -8094,6 +8094,13 @@
     <summary>Stand 2013-01-01 (SR 423.100).</summary>
   </entry>
   <entry>
+    <id>https://lexmetrik.vercel.app/gesetze/kanton/AR-212.33</id>
+    <title>Gesetz über Inkassohilfe und Bevorschussung von Unterhaltsbeiträgen für Kinder — Gesetz über Inkassohilfe und Bevorschussung von Unterhaltsbeiträgen für Kinder (212.33)</title>
+    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/AR-212.33" />
+    <updated>2013-01-01T00:00:00Z</updated>
+    <summary>Stand 2013-01-01 (SR 212.33).</summary>
+  </entry>
+  <entry>
     <id>https://lexmetrik.vercel.app/gesetze/kanton/AR-121.1</id>
     <title>Gesetz über das Landrecht und das Gemeindebürgerrecht — Gesetz über das Landrecht und das Gemeindebürgerrecht (121.1)</title>
     <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/AR-121.1" />
@@ -8106,13 +8113,6 @@
     <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/AR-911.1" />
     <updated>2013-01-01T00:00:00Z</updated>
     <summary>Stand 2013-01-01 (SR 911.1).</summary>
-  </entry>
-  <entry>
-    <id>https://lexmetrik.vercel.app/gesetze/kanton/AR-212.33</id>
-    <title>Gesetz über Inkassohilfe und Bevorschussung von Unterhaltsbeiträgen für Kinder — Gesetz über Inkassohilfe und Bevorschussung von Unterhaltsbeiträgen für Kinder (212.33)</title>
-    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/AR-212.33" />
-    <updated>2013-01-01T00:00:00Z</updated>
-    <summary>Stand 2013-01-01 (SR 212.33).</summary>
   </entry>
   <entry>
     <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-610.150</id>
@@ -8157,6 +8157,20 @@
     <summary>Stand 2013-01-01 (SR 212.600).</summary>
   </entry>
   <entry>
+    <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-569.110</id>
+    <title>Verordnung zum Gesetz betreffend öffentliche Filmvorführungen und Abgabe von elektronischen Trägermedien — Verordnung zum Gesetz betreffend öffentliche Filmvorführungen und Abgabe von elektronischen Trägermedien (569.110)</title>
+    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/BS-569.110" />
+    <updated>2013-01-01T00:00:00Z</updated>
+    <summary>Stand 2013-01-01 (SR 569.110).</summary>
+  </entry>
+  <entry>
+    <id>https://lexmetrik.vercel.app/gesetze/kanton/ZH-232.35</id>
+    <title>Verordnung über Entschädigung und Spesenersatz bei Beistandschaften (ESBV) — Verordnung über Entschädigung und Spesenersatz bei Beistandschaften (ESBV) (LS 232.35)</title>
+    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/ZH-232.35" />
+    <updated>2013-01-01T00:00:00Z</updated>
+    <summary>Stand 2013-01-01 (SR LS 232.35).</summary>
+  </entry>
+  <entry>
     <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-212.500</id>
     <title>Verordnung über die Ausbildung der mit Kindesanhörungen und Kindesvertretung beauftragten Personen — Verordnung über die Ausbildung der mit Kindesanhörungen und Kindesvertretung beauftragten Personen (212.500)</title>
     <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/BS-212.500" />
@@ -8169,20 +8183,6 @@
     <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/ZH-322" />
     <updated>2013-01-01T00:00:00Z</updated>
     <summary>Stand 2013-01-01 (SR LS 322).</summary>
-  </entry>
-  <entry>
-    <id>https://lexmetrik.vercel.app/gesetze/kanton/ZH-232.35</id>
-    <title>Verordnung über Entschädigung und Spesenersatz bei Beistandschaften (ESBV) — Verordnung über Entschädigung und Spesenersatz bei Beistandschaften (ESBV) (LS 232.35)</title>
-    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/ZH-232.35" />
-    <updated>2013-01-01T00:00:00Z</updated>
-    <summary>Stand 2013-01-01 (SR LS 232.35).</summary>
-  </entry>
-  <entry>
-    <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-569.110</id>
-    <title>Verordnung zum Gesetz betreffend öffentliche Filmvorführungen und Abgabe von elektronischen Trägermedien — Verordnung zum Gesetz betreffend öffentliche Filmvorführungen und Abgabe von elektronischen Trägermedien (569.110)</title>
-    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/BS-569.110" />
-    <updated>2013-01-01T00:00:00Z</updated>
-    <summary>Stand 2013-01-01 (SR 569.110).</summary>
   </entry>
   <entry>
     <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-569.150</id>
@@ -8213,18 +8213,18 @@
     <summary>Stand 2012-12-01 (SR LS 631.122).</summary>
   </entry>
   <entry>
-    <id>https://lexmetrik.vercel.app/gesetze/kanton/AR-723.1</id>
-    <title>kGeoIG — kGeoIG (723.1)</title>
-    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/AR-723.1" />
-    <updated>2012-11-01T00:00:00Z</updated>
-    <summary>Stand 2012-11-01 (SR 723.1).</summary>
-  </entry>
-  <entry>
     <id>https://lexmetrik.vercel.app/gesetze/kanton/BL-217.13</id>
     <title>NotGebV — Verordnung über die Notariatsgebühren</title>
     <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/BL-217.13" />
     <updated>2012-11-01T00:00:00Z</updated>
     <summary>Stand 2012-11-01 (SR SGS 217.13).</summary>
+  </entry>
+  <entry>
+    <id>https://lexmetrik.vercel.app/gesetze/kanton/AR-723.1</id>
+    <title>kGeoIG — kGeoIG (723.1)</title>
+    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/AR-723.1" />
+    <updated>2012-11-01T00:00:00Z</updated>
+    <summary>Stand 2012-11-01 (SR 723.1).</summary>
   </entry>
   <entry>
     <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-410.500</id>
@@ -8318,13 +8318,6 @@
     <summary>Stand 2012-01-01 (SR 822.32).</summary>
   </entry>
   <entry>
-    <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-331.100</id>
-    <title>ÖSpG — Gesetz über die öffentlichen Spitäler des Kantons Basel-Stadt, Öffentliche Spitäler-Gesetz</title>
-    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/BS-331.100" />
-    <updated>2012-01-01T00:00:00Z</updated>
-    <summary>Stand 2012-01-01 (SR 331.100).</summary>
-  </entry>
-  <entry>
     <id>https://lexmetrik.vercel.app/gesetze/kanton/BE-168.811</id>
     <title>PKV — Verordnung über die Bemessung des Parteikostenersatzes, Parteikostenverordnung</title>
     <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/BE-168.811" />
@@ -8337,6 +8330,13 @@
     <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/BS-153.610" />
     <updated>2012-01-01T00:00:00Z</updated>
     <summary>Stand 2012-01-01 (SR 153.610).</summary>
+  </entry>
+  <entry>
+    <id>https://lexmetrik.vercel.app/gesetze/bund/VZG</id>
+    <title>VZG — Verordnung des Bundesgerichts über die Zwangsverwertung von Grundstücken (VZG)</title>
+    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/bund/VZG" />
+    <updated>2012-01-01T00:00:00Z</updated>
+    <summary>Stand 2012-01-01 (SR 281.42).</summary>
   </entry>
   <entry>
     <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-118.300</id>
@@ -8381,18 +8381,18 @@
     <summary>Stand 2012-01-01 (SR 365.300).</summary>
   </entry>
   <entry>
-    <id>https://lexmetrik.vercel.app/gesetze/bund/VZG</id>
-    <title>VZG — Verordnung des Bundesgerichts über die Zwangsverwertung von Grundstücken (VZG)</title>
-    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/bund/VZG" />
-    <updated>2012-01-01T00:00:00Z</updated>
-    <summary>Stand 2012-01-01 (SR 281.42).</summary>
-  </entry>
-  <entry>
     <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-328.210</id>
     <title>Zahnpflegeverordnung — Verordnung betreffend die soziale Zahnpflege</title>
     <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/BS-328.210" />
     <updated>2012-01-01T00:00:00Z</updated>
     <summary>Stand 2012-01-01 (SR 328.210).</summary>
+  </entry>
+  <entry>
+    <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-331.100</id>
+    <title>ÖSpG — Gesetz über die öffentlichen Spitäler des Kantons Basel-Stadt, Öffentliche Spitäler-Gesetz</title>
+    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/BS-331.100" />
+    <updated>2012-01-01T00:00:00Z</updated>
+    <summary>Stand 2012-01-01 (SR 331.100).</summary>
   </entry>
   <entry>
     <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-361.300</id>
@@ -8416,18 +8416,18 @@
     <summary>Stand 2011-08-01 (SR 460.200).</summary>
   </entry>
   <entry>
-    <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-951.110</id>
-    <title>ÖV-Verordnung — Verordnung zum Gesetz über den öffentlichen Verkehr</title>
-    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/BS-951.110" />
-    <updated>2011-07-01T00:00:00Z</updated>
-    <summary>Stand 2011-07-01 (SR 951.110).</summary>
-  </entry>
-  <entry>
     <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-956.550</id>
     <title>Vereinbarung über die Fluglärmkommission und die Ombudsstelle für Fluglärmklagen — Vereinbarung über die Fluglärmkommission und die Ombudsstelle für Fluglärmklagen (956.550)</title>
     <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/BS-956.550" />
     <updated>2011-07-01T00:00:00Z</updated>
     <summary>Stand 2011-07-01 (SR 956.550).</summary>
+  </entry>
+  <entry>
+    <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-951.110</id>
+    <title>ÖV-Verordnung — Verordnung zum Gesetz über den öffentlichen Verkehr</title>
+    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/BS-951.110" />
+    <updated>2011-07-01T00:00:00Z</updated>
+    <summary>Stand 2011-07-01 (SR 951.110).</summary>
   </entry>
   <entry>
     <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-562.400</id>
@@ -8542,18 +8542,18 @@
     <summary>Stand 2011-01-01 (SR SHR 211.433).</summary>
   </entry>
   <entry>
-    <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-955.460</id>
-    <title>Hafenordnung für die Rheinhäfen beider Basel — Hafenordnung für die Rheinhäfen beider Basel (955.460)</title>
-    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/BS-955.460" />
-    <updated>2011-01-01T00:00:00Z</updated>
-    <summary>Stand 2011-01-01 (SR 955.460).</summary>
-  </entry>
-  <entry>
     <id>https://lexmetrik.vercel.app/gesetze/kanton/GR-310.250</id>
     <title>HV — Verordnung über die Bemessung des Honorars der Rechtsanwältinnen und Rechtsanwälte, Honorarverordnung</title>
     <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/GR-310.250" />
     <updated>2011-01-01T00:00:00Z</updated>
     <summary>Stand 2011-01-01 (SR BR 310.250).</summary>
+  </entry>
+  <entry>
+    <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-955.460</id>
+    <title>Hafenordnung für die Rheinhäfen beider Basel — Hafenordnung für die Rheinhäfen beider Basel (955.460)</title>
+    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/BS-955.460" />
+    <updated>2011-01-01T00:00:00Z</updated>
+    <summary>Stand 2011-01-01 (SR 955.460).</summary>
   </entry>
   <entry>
     <id>https://lexmetrik.vercel.app/gesetze/kanton/AR-615.2</id>
@@ -8899,18 +8899,18 @@
     <summary>Stand 2010-01-01 (SR 419.100).</summary>
   </entry>
   <entry>
-    <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-123.410</id>
-    <title>Verordnung betreffend die Umsetzung des Konkordats über Massnahmen gegen Gewalt anlässlich von Sportveranstaltungen — Verordnung betreffend die Umsetzung des Konkordats über Massnahmen gegen Gewalt anlässlich von Sportveranstaltungen (123.410)</title>
-    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/BS-123.410" />
-    <updated>2010-01-01T00:00:00Z</updated>
-    <summary>Stand 2010-01-01 (SR 123.410).</summary>
-  </entry>
-  <entry>
     <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-772.310</id>
     <title>Verordnung betreffend Organisation der Energie- und Trinkwasserversorgung — Verordnung betreffend Organisation der Energie- und Trinkwasserversorgung (772.310)</title>
     <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/BS-772.310" />
     <updated>2010-01-01T00:00:00Z</updated>
     <summary>Stand 2010-01-01 (SR 772.310).</summary>
+  </entry>
+  <entry>
+    <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-123.410</id>
+    <title>Verordnung betreffend die Umsetzung des Konkordats über Massnahmen gegen Gewalt anlässlich von Sportveranstaltungen — Verordnung betreffend die Umsetzung des Konkordats über Massnahmen gegen Gewalt anlässlich von Sportveranstaltungen (123.410)</title>
+    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/BS-123.410" />
+    <updated>2010-01-01T00:00:00Z</updated>
+    <summary>Stand 2010-01-01 (SR 123.410).</summary>
   </entry>
   <entry>
     <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-695.110</id>
@@ -8941,18 +8941,18 @@
     <summary>Stand 2009-12-03 (SR 421.770).</summary>
   </entry>
   <entry>
-    <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-911.400</id>
-    <title>Verordnung betreffend den kantonalen Pflanzenschutzdienst — Verordnung betreffend den kantonalen Pflanzenschutzdienst (911.400)</title>
-    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/BS-911.400" />
-    <updated>2009-12-03T00:00:00Z</updated>
-    <summary>Stand 2009-12-03 (SR 911.400).</summary>
-  </entry>
-  <entry>
     <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-910.300</id>
     <title>Verordnung betreffend den Vollzug des Bundesgesetzes über die wirtschaftliche Landesversorgung (LVG) — Verordnung betreffend den Vollzug des Bundesgesetzes über die wirtschaftliche Landesversorgung (LVG) (910.300)</title>
     <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/BS-910.300" />
     <updated>2009-12-03T00:00:00Z</updated>
     <summary>Stand 2009-12-03 (SR 910.300).</summary>
+  </entry>
+  <entry>
+    <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-911.400</id>
+    <title>Verordnung betreffend den kantonalen Pflanzenschutzdienst — Verordnung betreffend den kantonalen Pflanzenschutzdienst (911.400)</title>
+    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/BS-911.400" />
+    <updated>2009-12-03T00:00:00Z</updated>
+    <summary>Stand 2009-12-03 (SR 911.400).</summary>
   </entry>
   <entry>
     <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-215.500</id>
@@ -8969,18 +8969,18 @@
     <summary>Stand 2009-12-03 (SR 813.310).</summary>
   </entry>
   <entry>
-    <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-164.170</id>
-    <title>ad personam-Verordnung — Verordnung betreffend ad personam-Einreihung und ad personam-Einstufung</title>
-    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/BS-164.170" />
-    <updated>2009-09-20T00:00:00Z</updated>
-    <summary>Stand 2009-09-20 (SR 164.170).</summary>
-  </entry>
-  <entry>
     <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-164.160</id>
     <title>Verordnung über die Beschleunigung und die Verzögerung des Stufenaufstiegs gemäss § 10 des Lohngesetzes — Verordnung über die Beschleunigung und die Verzögerung des Stufenaufstiegs gemäss § 10 des Lohngesetzes (164.160)</title>
     <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/BS-164.160" />
     <updated>2009-09-20T00:00:00Z</updated>
     <summary>Stand 2009-09-20 (SR 164.160).</summary>
+  </entry>
+  <entry>
+    <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-164.170</id>
+    <title>ad personam-Verordnung — Verordnung betreffend ad personam-Einreihung und ad personam-Einstufung</title>
+    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/BS-164.170" />
+    <updated>2009-09-20T00:00:00Z</updated>
+    <summary>Stand 2009-09-20 (SR 164.170).</summary>
   </entry>
   <entry>
     <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-414.300</id>
@@ -9179,13 +9179,6 @@
     <summary>Stand 2009-01-01 (SR 772.580).</summary>
   </entry>
   <entry>
-    <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-721.700</id>
-    <title>Verordnung betreffend den Vollzug des Bundesgesetzes über die Nationalstrassen vom 8. März 1960 — Verordnung betreffend den Vollzug des Bundesgesetzes über die Nationalstrassen vom 8. März 1960 (721.700)</title>
-    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/BS-721.700" />
-    <updated>2009-01-01T00:00:00Z</updated>
-    <summary>Stand 2009-01-01 (SR 721.700).</summary>
-  </entry>
-  <entry>
     <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-163.200</id>
     <title>Verordnung betreffend Dienstwohnungen — Verordnung betreffend Dienstwohnungen (163.200)</title>
     <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/BS-163.200" />
@@ -9200,32 +9193,11 @@
     <summary>Stand 2009-01-01 (SR 214.710).</summary>
   </entry>
   <entry>
-    <id>https://lexmetrik.vercel.app/gesetze/kanton/GL-III%2520B%252F3%252F2</id>
-    <title>Verordnung über Beurkundung und Beglaubigung mit Gebührentarif — Verordnung über Beurkundung und Beglaubigung mit Gebührentarif (GS III B/3/2)</title>
-    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/GL-III%2520B%252F3%252F2" />
+    <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-721.700</id>
+    <title>Verordnung betreffend den Vollzug des Bundesgesetzes über die Nationalstrassen vom 8. März 1960 — Verordnung betreffend den Vollzug des Bundesgesetzes über die Nationalstrassen vom 8. März 1960 (721.700)</title>
+    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/BS-721.700" />
     <updated>2009-01-01T00:00:00Z</updated>
-    <summary>Stand 2009-01-01 (SR GS III B/3/2).</summary>
-  </entry>
-  <entry>
-    <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-813.400</id>
-    <title>Verordnung über das Verfahren vor dem Einigungsamt als vertraglichem Schiedsgericht — Verordnung über das Verfahren vor dem Einigungsamt als vertraglichem Schiedsgericht (813.400)</title>
-    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/BS-813.400" />
-    <updated>2009-01-01T00:00:00Z</updated>
-    <summary>Stand 2009-01-01 (SR 813.400).</summary>
-  </entry>
-  <entry>
-    <id>https://lexmetrik.vercel.app/gesetze/kanton/AR-222.216</id>
-    <title>Verordnung über den Normalarbeitsvertrag für Betriebs- und Hausangestellte in der Landwirtschaft — Verordnung über den Normalarbeitsvertrag für Betriebs- und Hausangestellte in der Landwirtschaft (222.216)</title>
-    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/AR-222.216" />
-    <updated>2009-01-01T00:00:00Z</updated>
-    <summary>Stand 2009-01-01 (SR 222.216).</summary>
-  </entry>
-  <entry>
-    <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-784.300</id>
-    <title>Verordnung über die Gebühren der Abteilung Stadtentwässerung im Tiefbauamt — Verordnung über die Gebühren der Abteilung Stadtentwässerung im Tiefbauamt (784.300)</title>
-    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/BS-784.300" />
-    <updated>2009-01-01T00:00:00Z</updated>
-    <summary>Stand 2009-01-01 (SR 784.300).</summary>
+    <summary>Stand 2009-01-01 (SR 721.700).</summary>
   </entry>
   <entry>
     <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-215.210</id>
@@ -9261,6 +9233,34 @@
     <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/BS-835.210" />
     <updated>2009-01-01T00:00:00Z</updated>
     <summary>Stand 2009-01-01 (SR 835.210).</summary>
+  </entry>
+  <entry>
+    <id>https://lexmetrik.vercel.app/gesetze/kanton/GL-III%2520B%252F3%252F2</id>
+    <title>Verordnung über Beurkundung und Beglaubigung mit Gebührentarif — Verordnung über Beurkundung und Beglaubigung mit Gebührentarif (GS III B/3/2)</title>
+    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/GL-III%2520B%252F3%252F2" />
+    <updated>2009-01-01T00:00:00Z</updated>
+    <summary>Stand 2009-01-01 (SR GS III B/3/2).</summary>
+  </entry>
+  <entry>
+    <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-813.400</id>
+    <title>Verordnung über das Verfahren vor dem Einigungsamt als vertraglichem Schiedsgericht — Verordnung über das Verfahren vor dem Einigungsamt als vertraglichem Schiedsgericht (813.400)</title>
+    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/BS-813.400" />
+    <updated>2009-01-01T00:00:00Z</updated>
+    <summary>Stand 2009-01-01 (SR 813.400).</summary>
+  </entry>
+  <entry>
+    <id>https://lexmetrik.vercel.app/gesetze/kanton/AR-222.216</id>
+    <title>Verordnung über den Normalarbeitsvertrag für Betriebs- und Hausangestellte in der Landwirtschaft — Verordnung über den Normalarbeitsvertrag für Betriebs- und Hausangestellte in der Landwirtschaft (222.216)</title>
+    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/AR-222.216" />
+    <updated>2009-01-01T00:00:00Z</updated>
+    <summary>Stand 2009-01-01 (SR 222.216).</summary>
+  </entry>
+  <entry>
+    <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-784.300</id>
+    <title>Verordnung über die Gebühren der Abteilung Stadtentwässerung im Tiefbauamt — Verordnung über die Gebühren der Abteilung Stadtentwässerung im Tiefbauamt (784.300)</title>
+    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/BS-784.300" />
+    <updated>2009-01-01T00:00:00Z</updated>
+    <summary>Stand 2009-01-01 (SR 784.300).</summary>
   </entry>
   <entry>
     <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-257.920</id>
@@ -9662,18 +9662,18 @@
     <summary>Stand 2005-01-01 (SR LS 215.22).</summary>
   </entry>
   <entry>
-    <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-162.880</id>
-    <title>Verordnung über dienstrechtliche Bestimmungen zur Einführung des Bundesgesetzes über die verdeckte Ermittlung — Verordnung über dienstrechtliche Bestimmungen zur Einführung des Bundesgesetzes über die verdeckte Ermittlung (162.880)</title>
-    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/BS-162.880" />
-    <updated>2005-01-01T00:00:00Z</updated>
-    <summary>Stand 2005-01-01 (SR 162.880).</summary>
-  </entry>
-  <entry>
     <id>https://lexmetrik.vercel.app/gesetze/kanton/AR-511.11</id>
     <title>Verordnung zum Bevölkerungsschutzgesetz — Verordnung zum Bevölkerungsschutzgesetz (511.11)</title>
     <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/AR-511.11" />
     <updated>2005-01-01T00:00:00Z</updated>
     <summary>Stand 2005-01-01 (SR 511.11).</summary>
+  </entry>
+  <entry>
+    <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-162.880</id>
+    <title>Verordnung über dienstrechtliche Bestimmungen zur Einführung des Bundesgesetzes über die verdeckte Ermittlung — Verordnung über dienstrechtliche Bestimmungen zur Einführung des Bundesgesetzes über die verdeckte Ermittlung (162.880)</title>
+    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/BS-162.880" />
+    <updated>2005-01-01T00:00:00Z</updated>
+    <summary>Stand 2005-01-01 (SR 162.880).</summary>
   </entry>
   <entry>
     <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-427.150</id>
@@ -9893,18 +9893,18 @@
     <summary>Stand 2000-08-01 (SR 427.800).</summary>
   </entry>
   <entry>
-    <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-411.520</id>
-    <title>Übertrittsverordnung — Verordnung betreffend den Übertritt von Lehrkräften an die Orientierungsschule und an die Weiterbildungsschule</title>
-    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/BS-411.520" />
-    <updated>2000-07-01T00:00:00Z</updated>
-    <summary>Stand 2000-07-01 (SR 411.520).</summary>
-  </entry>
-  <entry>
     <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-162.500</id>
     <title>Verordnung über den Schutz vor sexueller Belästigung am Arbeitsplatz — Verordnung über den Schutz vor sexueller Belästigung am Arbeitsplatz (162.500)</title>
     <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/BS-162.500" />
     <updated>2000-07-01T00:00:00Z</updated>
     <summary>Stand 2000-07-01 (SR 162.500).</summary>
+  </entry>
+  <entry>
+    <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-411.520</id>
+    <title>Übertrittsverordnung — Verordnung betreffend den Übertritt von Lehrkräften an die Orientierungsschule und an die Weiterbildungsschule</title>
+    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/BS-411.520" />
+    <updated>2000-07-01T00:00:00Z</updated>
+    <summary>Stand 2000-07-01 (SR 411.520).</summary>
   </entry>
   <entry>
     <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-419.901</id>
@@ -10285,18 +10285,18 @@
     <summary>Stand 1986-01-01 (SR BeB 152.100).</summary>
   </entry>
   <entry>
-    <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-954.540</id>
-    <title>Übereinkunft betreffend die Erweiterung des Badischen Hauptbahnhofs und die Erstellung eines Rangier- und Werkstättenbahnhofs auf dem Gebiete des Kantons Basel-Stadt — Übereinkunft betreffend die Erweiterung des Badischen Hauptbahnhofs und die Erstellung eines Rangier- und Werkstättenbahnhofs auf dem Gebiete des Kantons Basel-Stadt (954.540)</title>
-    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/BS-954.540" />
-    <updated>1985-10-07T00:00:00Z</updated>
-    <summary>Stand 1985-10-07 (SR 954.540).</summary>
-  </entry>
-  <entry>
     <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-954.510</id>
     <title>Vertrag zwischen der schweizerischen Eidgenossenschaft und dem Grossherzogtum Baden, betreffend die Weiterführung der badischen Eisenbahnen über schweizerisches Gebiet — Vertrag zwischen der schweizerischen Eidgenossenschaft und dem Grossherzogtum Baden, betreffend die Weiterführung der badischen Eisenbahnen über schweizerisches Gebiet</title>
     <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/BS-954.510" />
     <updated>1985-10-07T00:00:00Z</updated>
     <summary>Stand 1985-10-07 (SR 954.510).</summary>
+  </entry>
+  <entry>
+    <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-954.540</id>
+    <title>Übereinkunft betreffend die Erweiterung des Badischen Hauptbahnhofs und die Erstellung eines Rangier- und Werkstättenbahnhofs auf dem Gebiete des Kantons Basel-Stadt — Übereinkunft betreffend die Erweiterung des Badischen Hauptbahnhofs und die Erstellung eines Rangier- und Werkstättenbahnhofs auf dem Gebiete des Kantons Basel-Stadt (954.540)</title>
+    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/BS-954.540" />
+    <updated>1985-10-07T00:00:00Z</updated>
+    <summary>Stand 1985-10-07 (SR 954.540).</summary>
   </entry>
   <entry>
     <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-649.810</id>
@@ -10593,18 +10593,18 @@
     <summary>Stand 1973-12-06 (SR 841.1).</summary>
   </entry>
   <entry>
-    <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-164.720</id>
-    <title>Verordnung betreffend die Entschädigung für die Trainingsleiter am Hochschulsport der Universität Basel — Verordnung betreffend die Entschädigung für die Trainingsleiter am Hochschulsport der Universität Basel (164.720)</title>
-    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/BS-164.720" />
-    <updated>1973-01-16T00:00:00Z</updated>
-    <summary>Stand 1973-01-16 (SR 164.720).</summary>
-  </entry>
-  <entry>
     <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-164.700</id>
     <title>Verordnung betreffend die Entschädigung für Lehraufträge am Turnlehrerkurs der Universität Basel — Verordnung betreffend die Entschädigung für Lehraufträge am Turnlehrerkurs der Universität Basel (164.700)</title>
     <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/BS-164.700" />
     <updated>1973-01-16T00:00:00Z</updated>
     <summary>Stand 1973-01-16 (SR 164.700).</summary>
+  </entry>
+  <entry>
+    <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-164.720</id>
+    <title>Verordnung betreffend die Entschädigung für die Trainingsleiter am Hochschulsport der Universität Basel — Verordnung betreffend die Entschädigung für die Trainingsleiter am Hochschulsport der Universität Basel (164.720)</title>
+    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/BS-164.720" />
+    <updated>1973-01-16T00:00:00Z</updated>
+    <summary>Stand 1973-01-16 (SR 164.720).</summary>
   </entry>
   <entry>
     <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-164.680</id>
