@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-08-30",
+  "erzeugt": "2026-09-01",
   "erlass": "MWSTG",
   "dokumente": {
     "ESTV-MWST-BRANCHEN-INFO-01": {
@@ -40,7 +40,7 @@
     },
     "ESTV-MWST-BRANCHEN-INFO-10": {
       "urlBasis": "https://www.gate.estv.admin.ch/mwst-webpublikationen/public/pages/sectorInfos/cipherDisplay.xhtml?publicationId=1037662",
-      "stand": "2025-12-04"
+      "stand": "2026-09-01"
     },
     "ESTV-MWST-BRANCHEN-INFO-11": {
       "urlBasis": "https://www.gate.estv.admin.ch/mwst-webpublikationen/public/pages/sectorInfos/cipherDisplay.xhtml?publicationId=1087165",
@@ -136,7 +136,7 @@
     },
     "ESTV-MWST-INFO-07": {
       "urlBasis": "https://www.gate.estv.admin.ch/mwst-webpublikationen/public/pages/taxInfos/cipherDisplay.xhtml?publicationId=1007607",
-      "stand": "2026-05-26"
+      "stand": "2026-08-31"
     },
     "ESTV-MWST-INFO-08": {
       "urlBasis": "https://www.gate.estv.admin.ch/mwst-webpublikationen/public/pages/taxInfos/cipherDisplay.xhtml?publicationId=1000609",
@@ -152,11 +152,11 @@
     },
     "ESTV-MWST-INFO-12": {
       "urlBasis": "https://www.gate.estv.admin.ch/mwst-webpublikationen/public/pages/taxInfos/cipherDisplay.xhtml?publicationId=1004992",
-      "stand": "2026-06-11"
+      "stand": "2026-08-31"
     },
     "ESTV-MWST-INFO-13": {
       "urlBasis": "https://www.gate.estv.admin.ch/mwst-webpublikationen/public/pages/taxInfos/cipherDisplay.xhtml?publicationId=1010429",
-      "stand": "2026-07-27"
+      "stand": "2026-08-31"
     },
     "ESTV-MWST-INFO-14": {
       "urlBasis": "https://www.gate.estv.admin.ch/mwst-webpublikationen/public/pages/taxInfos/cipherDisplay.xhtml?publicationId=1001238",
@@ -164,7 +164,7 @@
     },
     "ESTV-MWST-INFO-15": {
       "urlBasis": "https://www.gate.estv.admin.ch/mwst-webpublikationen/public/pages/taxInfos/cipherDisplay.xhtml?publicationId=1013189",
-      "stand": "2026-08-18"
+      "stand": "2026-08-31"
     },
     "ESTV-MWST-INFO-16": {
       "urlBasis": "https://www.gate.estv.admin.ch/mwst-webpublikationen/public/pages/taxInfos/cipherDisplay.xhtml?publicationId=1002536",

@@ -114,7 +114,23 @@ describe('sachgebietKantonFuer — kantonale Systematik-Einordnung', () => {
       // führte, hätte nur diesen Test falsch gemacht, nicht die Daten.
       // Was hier trotzdem hängen bleibt, ist der Fall ohne JEDEN Bezug — LU.
       const gemeinde = /^[A-Za-z]/.test(wurzel.nummer);
-      const verankert = gemeinde
+      // Fachliche Aenderung 1.9.2026 (deklariert, §6.3): Band-Kanton-Ausnahme.
+      // ZH ordnet nicht ueber Ziffern-PRAEFIXE, sondern ueber 14 Ordner-BAENDER
+      // (Nummernband '101'-'176' -> Ordner '1', s. zh-systematik.ts) — die
+      // Ordner-Nummer ('1'..'14') ist eine amtliche ORDINALZAHL, kein Praefix
+      // der LS-Hauptnummer ('211.1' beginnt nicht mit '3'). Die Praefix-Treue,
+      // die dieser Test sonst durchsetzt, ist fuer Band-Kantone kein Fehlgriff-
+      // Indikator (anders als bei LU, dessen Index echte Ordinalzahlen OHNE
+      // jeden Bezug zur Nummer fuehrt — das bleibt oben ueber (2b) unbesetzt,
+      // s. 'weist Luzern ab …'). Fuer ZH ist die Zuordnung amtlich belegt
+      // (24/24, kanton-systematik.json aus der server-gerenderten Ordner-
+      // Tabelle) — die Konsistenz wird stattdessen von den ZH-eigenen
+      // Wächter-Tests (scripts/normtext/zh-systematik-band-join.test.ts)
+      // gehalten, die den Band-Index direkt pruefen. Bewusst NUR fuer 'ZH':
+      // fuer jeden anderen Praefix-Kanton (BS, AR, FR, …) bleibt die Praefix-
+      // Pruefung unveraendert scharf.
+      const zhBand = kt === 'ZH';
+      const verankert = gemeinde || zhBand
         || nummer.startsWith(wurzel.nummer)
         || (!!unter && nummer.startsWith(unter.nummer));
       if (!verankert) {

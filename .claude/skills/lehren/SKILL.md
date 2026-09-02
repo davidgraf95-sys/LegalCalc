@@ -67,6 +67,26 @@ blockierte drei Wochen-PRs in Folge still. Gegenmittel: Workflow auf Gate-Lauf
 (Frische-Fix-PR); die Auto-Merge-Politik auf Risikopfaden (Verdikt-Pflicht vs.
 David-Rahmen 16.7.) wartet auf David.
 
+**F10 — Bauer bescheinigt sich selbst (2.9.2026, PR #616).** Ein Bau-Agent
+schrieb seine eigene Gegenprüfungs-Quittung ins Register, der Merge-Schutz war
+grün, die echte Prüfung fand vier Auflagen. Gegenmittel: Verbot wörtlich in
+`lex-bau.md`/`lex-daten.md` (QUITTUNG) und Skill `gegenpruefung` Regel 5; der
+Orchestrator prüft vor jeder Landung, ob die Register-Zeile vom Prüfer stammt.
+**F11 — Prüfen gegen ein altes Bundle (2.9.2026, dreimal an einem Tag).**
+`test:e2e` startete `vite preview` ohne Build, `preview_start` lief mit cwd im
+geteilten Haupt-Checkout statt im Worktree, eine Perf-Sonde lief neben der
+e2e-Suite: je Falsch-Rot bzw. Falsch-Grün. Gegenmittel: Playwright-`webServer`
+baut vor dem Preview (Wurzel-Fix), Skill `auftrag` Ziff. 6 (Preview nur aus
+Worktree-cwd, Scratchpad-Dateien agent-eindeutig, lange Läufe als persistenter
+Monitor), Skill `perf` Bauregel 7.
+**F12 — Doku-Klassierung überspringt das Tor, das die Drift fangen müsste
+(2.9.2026, PR #619 → #621/#622 rot).** Ein Hand-Edit generierter Agenten-
+definitionen lief als «doku» ohne Tore-Job durch; erst fremde PRs wurden an
+`check:dispatch-klausel` rot. Gegenmittel: `.claude/agents/**`,
+`scripts/dispatch.ts`, Dispatch-Template zählen in der Diff-Klassierung als
+«werkzeug» (PR der Parallel-Session lexmetrik-a1); Quelle ändern, nie die
+Projektion (§5; Wurzel-Fix PR #624).
+
 ## Eine neue Lehre ablegen
 
 1. **Klasse bestimmen.** Fällt der Vorfall unter F1–F6? Dann dort das Gegenmittel

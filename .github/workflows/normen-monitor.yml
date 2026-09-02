@@ -31,7 +31,13 @@ name: Normen-Monitor
 
 on:
   schedule:
-    - cron: '17 5 * * 1' # montags 05:17 UTC (wöchentlich)
+    # Montags 07:17 UTC — seit 1.9.2026 2,5 h NACH dem Reparatur-Arm (fedlex-frische.yml,
+    # 04:43 UTC). Verfahrens-Gap QS-MONITOR-ROT: bei 05:17 lief der Detektor 34 min nach
+    # dem Reparatur-Lauf, dessen PR (CI ≈ 15 min + Auto-Merge) noch nicht auf main war —
+    # der Monitor meldete den Pin rot, den der Reparatur-Arm schon gehoben hatte (24.8.:
+    # 10 Pins, 31.8.: StGB). Reihenfolge-Entscheid: erst reparieren, dann messen; der
+    # Detektor prüft main, nicht den Reparatur-Branch.
+    - cron: '17 7 * * 1'
   workflow_dispatch:
 
 env:
