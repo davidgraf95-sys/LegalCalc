@@ -570,6 +570,27 @@ describe('klassifiziereDiff — Auftrags-Testmatrix', () => {
   it('[scripts/plan/x.ts + src/App.tsx] → code (eine app-nahe Datei genügt)', () => {
     expect(klassifiziereDiff(['scripts/plan/x.ts', 'src/App.tsx'])).toBe('code');
   });
+
+  // Anlass PR #619 (2.9.2026): .claude/agents/lex-bau.md wurde von Hand
+  // geändert, der reine-.md-Kurzschluss stufte den Diff als `doku` ein, der
+  // Tore-Job (u. a. check:dispatch-klausel) lief nicht (§6.7).
+  it('[.claude/agents/lex-bau.md] → code-fern (nicht doku — Tore-Job muss laufen)', () => {
+    expect(klassifiziereDiff(['.claude/agents/lex-bau.md'])).toBe('code-fern');
+  });
+
+  it('[.claude/agents/lex-bau.md + lex-daten.md] → code-fern (nicht doku)', () => {
+    expect(klassifiziereDiff(['.claude/agents/lex-bau.md', '.claude/agents/lex-daten.md'])).toBe(
+      'code-fern',
+    );
+  });
+
+  it('[docs/token-oekonomie/dispatch-template.md] → code-fern (nicht doku)', () => {
+    expect(klassifiziereDiff(['docs/token-oekonomie/dispatch-template.md'])).toBe('code-fern');
+  });
+
+  it('[.claude/agents/lex-bau.md + ROADMAP.md] → code-fern (gemischt mit echter Doku bleibt code-fern)', () => {
+    expect(klassifiziereDiff(['.claude/agents/lex-bau.md', 'ROADMAP.md'])).toBe('code-fern');
+  });
 });
 
 describe('klassifiziereDateien — die einzelnen code-fernen Flächen', () => {
