@@ -34,6 +34,50 @@ werden direkt unter dem KARTEN-Anker eingefügt (jüngste zuoberst).
 
 <!-- KARTEN -->
 
+## Session 1./2.9.2026 (Abend+Nacht) — Zielbild Gesetzesleser: Plan-Umbau, Block 1 gelandet, Zürich 111 Erlasse live (15 PRs, 8 Gegenprüfungen)
+
+**Gelandet + live (Live-Kennung zuletzt `2758c5246`):** Auftrag David 1.9.2026
+(«gesetzesleser im vordergrund … bester gesetzesdarsteller für schweizer juristen»,
+«fundament zuerst», «bau bis ich stop sage», «nur deutschschweiz, zh und bs zuerst»,
+2.9.: «marginale extrahieren und in der gliederung darstellen», «alles sauber fertig
+und abschliessen»). Orchestrator-Session (Fable orchestriert nur, Weisung 1.9.: Unter-
+agenten ohne Fable, Obergrenze Opus). **Plan:** Vier-Block-Queue, 11 Schritte geparkt
+(`zielbild-gesetzesleser`), Deutschschweiz-Reihenfolge ZH→BS→BE→AG→SG→LU, Quellen-
+Sichtung (9 Repos/Datensätze, Dossier `bibliothek/recherche/fremdquellen-sichtung-
+2026-09-01.md`) → neue Schritte `W2·5n-BUND-VOLL`, `W2·21-ZULIEFERER`, `W3·12`-Methode.
+**Zürich:** Tranche A 111 Erlasse/4356 Einträge (amtlich 170 in Ordner 3/10/4, 68
+ausgewiesen zurückgestellt; GP 11/11 live gegen zh.ch, Mutationsprobe rot), Sachgebiet-
+Join per Ordner-Band 111/111 (GP 24/24 + 111/111 nachgerechnet, 14/14 Ordner live
+wortgleich), Kanton-Lücken-Hinweis im Erlass-Kopf mit amtlichem Link (GP nach Fix-
+Runde: Link zog am falschen Feld, 0/15). **Fundament:** K3 Suche-Edge scharf (statischer
+Index −46,8 %, Kanton nur online, §8-Hinweis), Leser-Tempo −22…−28 % unter Drossel +
+Wurzel-Fix blinkender Deep-Link-Hinweis (Nebenbefund: OR ungedrosselt 0,8 s — der 17,2-s-
+Wert vom 17.8. ist überholt), Normen-Monitor: Rotgründe A/B/C getrennt, Reparatur-Arm
+ohne Kanton-Churn, Cron 07:17 UTC, Tafel 12 Verdikte, ESTV 48/48 Stand-Proben, StGB
+html-4 kanonisch (html-0 = 9-KB-Shell), PR #596 geschlossen. Verweis-Schärfe V-7/V-8:
++1 148 Fremdlinks, −198 falsche Selbstlinks; GP fand Präfix-Bindung (BS-132.100 → BPR
+statt BPRAS) + Zeit-Kante (4 Fassungs-Falschlinks) → Fix-Runde, ~11 richtige Links
+bewusst mit weg (§1, Fahrplan §1a). Referenzzins 1,25 % unverändert, Termin 1.12.2026
+(GP-Blocker: `gen:verfall` fehlte → nachgezogen). Playwright baut lokal vor dem Preview.
+**Belege:** #608 `df9395aba` · #609 `ab009b2a3` · #610 `cd4dc65cb` · #611 `d856f0150` · #612 `3c0ea33ec` · #613 `127a65b24` · #614 `6ca58c301` · #615 `d49b9e3d8` · #616 `349f6c671` · #618 `2758c5246` · #619 `1e0d446a2` · #620 `ac4db5fd8` · #623 `fecd59c76` · #624 `309a034b6` · #625 `37e97782a`.
+
+**§17-Lehren (verankert):** F10 Bauer-Selbstquittung (Skill gegenpruefung Regel 5,
+dispatch.ts QUITTUNG-Klausel — erst als Hand-Edit der generierten Agentendefinitionen,
+Wurzel-Fix #624 in die Quelle; Palette spitze=opus), F11 Prüfen gegen altes Bundle
+(webServer baut lokal, #620; auftrag Ziff. 6 Umgebungs-Fallen: Scratchpad geteilt,
+preview_start im Haupt-Checkout, Bash-Timeout 10 min, CI-Wächter je SHA), F12 Doku-
+Klassierung überspringt das Tor (Parallel-Session lexmetrik-a1, PR #626), O8
+Regenerations-Kaskade Kanton (`gen:zaehler` fehlte nach Register-Nachzug, #613 rot),
+§17-Zeile Generat-Checks vor Merge-Schutz (#618). Sitzungslimit 00:50 brach zwei
+Agenten ab — Resume per SendMessage trug (Worktree-Stand blieb).
+
+**Offen (steuert Folge-Session):** ZH-Randtitel R1 (`feat/zh-r1-marginalien`, 3 Commits
+im Agent-Worktree, PR/GP ausstehend — Auftrag David 2.9.); Tag-Leser-Rest (Silbentrennung
+«Grenzund», ≥48 Stellen); Monitor-Auflagen (Stand-Wächter 34/48, Delay-Doku) und F4
+(Lücken-Hinweis fehlt im Prerender) als ROADMAP-Zeilen; Pflegetermin 1.10.2026 (14
+«Künftige Fassung»); David-Entscheid Merge-Queue (BEHIND-Ping-Pong kostete heute Nacht
+mehr Zeit als der Bau). Parallel-Session lexmetrik-a1 landet #622/#621/#626 seriell.
+
 ## Session 1.9.2026 — Aufräumen auf EIN main + Fristenrechner-Live-Brücke (#607, Squash `17d84f492`)
 
 **Gelandet + live (Deploy-Job grün, Live-Kennung 17d84f49):** Auftrag David
