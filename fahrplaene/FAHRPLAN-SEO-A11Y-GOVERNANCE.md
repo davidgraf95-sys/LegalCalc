@@ -44,6 +44,40 @@ aussagen bleiben `TODO(David)`-Gerüst bis zur Abnahme-Welle.
 
 ---
 
+## §12 · Auffindbarkeits-Basis (`SEO-BASIS`) — Entscheid David D5, 3.9.2026
+
+Heimat des Roadmap-Schritts **`SEO-BASIS`**. Bewusst **kein** SEO-Ausbau: der
+Dach-Schritt `SEO-A11Y` bleibt geparkt (Blocker `zielbild-gesetzesleser`), hier
+entsteht nur die technische Basis, ohne die Google die prerenderten Seiten gar
+nicht erst vollständig sieht.
+
+**Anlass (Repo-Fakt, geprüft 3.9.2026):** Es gibt **keine Sitemap** — weder
+`public/sitemap*` noch ein Generator-Skript. Ohne sie hängt die Indexierung am
+Zufall des Crawlers; das ist der billigste Hebel auf den Nordstern
+«von Juristen gern genutzte Website». Beleg und Einordnung:
+[FAHRPLAN-FREMDAGENTEN.md](FAHRPLAN-FREMDAGENTEN.md) §7.
+
+**Ziel (drei Teile):**
+
+1. **Deterministischer Sitemap-Generator** aus dem Prerender-Manifest — dieselbe
+   Eingabe erzeugt dieselbe `sitemap.xml` (§2). Keine Handpflege, keine zweite
+   Route-Liste neben dem Manifest (§5); `lastmod` aus einer im Repo vorhandenen,
+   reproduzierbaren Grösse, nie aus `Date.now()`.
+2. **`robots.txt`** mit Verweis auf die Sitemap.
+3. **Search-Console-Verifikation durch David** (Domain-Bestätigung, Sitemap
+   einreichen) — gratis, kein Google-Cloud-Konto, keine Nutzerdaten.
+
+**Grenzen:** keine Keyword-Arbeit, keine Meta-Text-Kampagne, kein
+`Legislation`-JSON-LD (kein Google-Rich-Result belegt), kein Analytics. Was über
+diese drei Teile hinausgeht, gehört in `SEO-A11Y` und bleibt geparkt.
+
+**Fertig:** `sitemap.xml` und `robots.txt` liegen im Build, der Generator läuft
+im Prerender-Schritt mit, ein Tor oder Test hält die Deckungsgleichheit
+Manifest ↔ Sitemap fest, und David hat die Domain in der Search Console
+bestätigt.
+
+---
+
 ## Archivierte Abschnitte *(Plan-Neuschnitt 29.8.2026)*
 
 9 Abschnitt(e) dieser Datei sind wörtlich nach

@@ -171,7 +171,228 @@ lokale Beleg für CLAUDE.md §14.7: eine Rückgabe ist Daten, ein Erfolgsbericht
 ohne prüfbares Artefakt gilt als nicht erfolgt. Gilt für jede Fremdagenten-
 Rückgabe, auch für Jules-PR-Beschreibungen.
 
-## 8 · Pflegebedarf
+## 8 · Vertiefung Jules (Tiefenrecherche 3.9.2026)
+
+**Steuerwege — vier, unterschiedlich belegt.** (a) Web-UI mit Repo/Branch und
+Prompt · (b) **GitHub-Issue mit Label `jules`** über die Jules-GitHub-App ·
+(c) **PR-Kommentare / @Jules-Mention**: Jules liest Kommentare, markiert sie mit
+👀 und pusht Folge-Commits; ein globaler «Reactive Mode» beschränkt das auf
+ausdrückliche `@Jules`-Erwähnung — *ob damit auch neue Sessions ausgelöst
+werden, ist unklar* · (d) **REST-API v1alpha**, Basis
+`https://jules.googleapis.com/v1alpha`, Auth per `x-goog-api-key`; Endpunkte
+`POST /sessions`, `GET /sessions[/*]`, `POST /{session}:approvePlan`, dazu
+Activities und Sources. Daneben eine CLI (`npm i -g @google/jules`, primär
+interaktiv) und die GitHub-Action `google-labs-code/jules-action`, die die API in
+einem Workflow-Step kapselt (für Issue-Trigger empfiehlt Google eine
+Allowlist-`if`-Bedingung als Missbrauchsschutz).
+Quellen: `jules.google/docs/{running-tasks,api/reference/overview,api/reference/sessions,cli/reference,scheduled-tasks}/`
+· `developers.google.com/jules/api/reference/rest` · `github.com/google-labs-code/jules-action`
+· `jules.google/docs/changelog/2025-06-26/`.
+
+**Lebenszyklus.** Prompt → **Plan** → optional **Plan-Freigabe**
+(`requirePlanApproval`, boolean bei Session-Erstellung) → Ausführung in der VM →
+Diff → `automationMode: AUTO_CREATE_PR` oder manuelles Publish. Acht
+Session-Status: `QUEUED, PLANNING, AWAITING_PLAN_APPROVAL, AWAITING_USER_FEEDBACK,
+IN_PROGRESS, PAUSED, COMPLETED, FAILED`. **Timeouts sind nirgends dokumentiert**
+(weder Overview noch Sessions-Doku noch FAQ); Erfahrungsberichte nennen
+«Unable to complete task in time» als reales Risiko ohne Zahl. Retries laut FAQ
+automatisch, Anzahl unbeziffert.
+
+**Umgebung.** Kurzlebige VM mit frischem Ubuntu-Klon (**keine CPU-/RAM-Angabe**
+in der offiziellen Doku). «Initial Setup» erlaubt freie Shell-Befehle,
+«Run and Snapshot» friert einen Umgebungs-Snapshot ein. Vorinstalliert: Node
+v22.16.0 (Default), v20.19.2, v18.20.8 (per `nvm` umschaltbar) und ChromeDriver
+137.0.7151.70 — **Playwright nicht erwähnt, unklar**, ob dessen Browser-Binaries
+mitkommen. Netzwerk: Egress standardmässig offen, **kein dokumentiertes
+Allowlist-/Deny-Modell** (Quelle dazu ist eine Drittseite, keine Google-Primärquelle).
+**Secrets sind schwach dokumentiert:** kein dedizierter Secret-Store gefunden, die
+FAQ warnt nur «Don't commit secrets to your repo» — daraus folgt für uns die
+harte Regel, gar keine Geheimnisse in Prompt, Issue oder `AGENTS.md` zu geben (§18).
+
+**Kontext und Sprache.** `AGENTS.md` wird automatisch aus dem Repo-Root gelesen
+(Grössenlimit nicht dokumentiert), dazu README und Repo-Struktur; das
+Setup-Skript wirkt als zusätzlicher persistenter Kontext. **Kein
+sessionübergreifendes Gedächtnis** als Feature dokumentiert — Kontinuität läuft
+allein über `AGENTS.md` und den Repo-Zustand. **Sprache: «only English is
+officially supported»** (Sekundärquelle, keine direkte Primärseite gesehen) —
+ob deutsche Aufträge zuverlässig funktionieren, ist **unklar** und Gegenstand
+des Testlaufs.
+
+**Qualität.** Ein **Critic-Agent** (seit 8/2025, «critic-augmented generation»)
+prüft den finalen Diff adversarial — aktuell One-Shot, nicht iterativ; er
+erkennt z. B. Tests, die technisch grün sind, aber Logikfehler verdecken.
+Gegenprobe aus der Praxis (Nelson's Log, 3/2026, anekdotisch): «Sometimes it
+says it did things that it didn't, and sometimes it tries to do things it
+shouldn't» — dasselbe «Erfolg ohne Tat»-Muster wie bei Antigravity (Ziff. 7).
+Empfohlene Arbeitsweise dort: erst eine grosse Analyse-Aufgabe, danach viele
+kleine, fokussierte Tasks je PR, jede mit menschlicher Kontrolle.
+**Nicht eindeutig belegt:** ob Jules ohne Kommentar auf rote CI-Checks reagiert.
+
+**PR-Mechanik — unklar:** Branch-Namensmuster und Commit-Autor sind **nicht**
+offiziell dokumentiert; Ziel-Branch ist wählbar (`starting_branch`).
+
+**Politik.** Öffentliche Repos: Daten dürfen fürs Training verwendet werden;
+private Repos: keine Trainingsnutzung (belegt über Presseberichte, nicht per
+Primärseite). Kontingente Free 15/Tag · **Pro 100/Tag, 15 parallel** · Ultra
+300/Tag — **nur über Suchergebnis-Snippets bestätigt, nicht per Primär-Fetch**.
+CH-Verfügbarkeit: **keine offizielle Länderliste gefunden**; dass David Zugriff
+hat, ist ein De-facto-Hinweis, kein Beleg.
+
+## 9 · Vertiefung Antigravity CLI (Tiefenrecherche 3.9.2026)
+
+**Flags (Headless-Doku, Abruf 3.9.2026):** `-p/--print/--prompt` (single-shot,
+Antwort auf stdout, dann Exit) · `--input-format stream-json` (zeilenweise
+JSON von stdin, verlangt `--output-format stream-json`) · `--json-schema`
+(Inline-String, Dateipfad oder Primitivtyp; Ergebnis in `structured_output`) ·
+`--continue`/`--conversation <ID>` · `--agent` (Liste via `agy agents`) ·
+`--effort low|medium|high` · `--sandbox` (Terminal-Restriktionen) ·
+`--print-timeout` (**Default 5 min**) · `--add-dir` (als Startflag nicht in der
+Referenzseite gelistet, aber in Issues faktisch verwendet) ·
+`--dangerously-skip-permissions` (genehmigt alles — **nie verwenden**).
+Quelle: `antigravity.google/docs/cli/headless/`, `/docs/cli/reference/`.
+
+**Belegte Bugs, gravierend für Skripte.** Issue **#45**: für nicht-interaktive
+`-p`-Läufe gibt es **kein Gegenstück zu `--approval-mode plan`** — der
+Plan-Modus ist ein TUI-Feature, headless also **kein verlässlicher
+Read-only-Boden**. Daraus folgt unsere Regel: die Deny-Liste ist der Schutz,
+nicht der Modus. Issue **#76**: `-p` verschluckt bei non-TTY (Pipe, Subprozess,
+Redirect) den kompletten stdout, Exit 0, kein Fehler — als «Closed» markiert,
+**ohne belegten Fix im Thread**. Issue **#115**: Redirect ergibt leere Logdatei.
+Issue **#318**: `-p` hängt in non-TTY unbegrenzt (0-Byte-Ausgabe). Issue
+**#581**: ein unbekannter `--model`-Slug wird **stillschweigend ignoriert**,
+Rückfall auf das Default-Tier, Exit 0. Ein Drittanbieter-Wrapper
+(`rhishi99/agy-headless-bridge`) adressiert #76 — nicht offiziell, nicht
+übernommen. **Unsere Gegenprobe 3.9.2026 auf macOS mit `--output-format json`
+lief sauber** — das widerlegt die Issues nicht, es begrenzt sie.
+
+**Permissions.** Format `action(target)`; `read_file(dir)` wirkt rekursiv
+(Präfix-Semantik); implizit gilt «write impliziert read», und ein Deny auf
+`read_file` blockiert auch `write_file`. **Lesen/Schreiben innerhalb der
+aktiven Projektwurzel ist automatisch erlaubt** — die Auto-Allow-Regel ist
+projektwurzel-gebunden, nicht pfad-inhaltlich; ein Aufruf aus fremdem
+Arbeitsverzeichnis kann deshalb trotz passender Regel abgelehnt werden.
+**Das ist die führende Hypothese für unseren fehlgeschlagenen `read_file`-Test**
+(Aufruf aus dem Scratch-Verzeichnis statt aus dem Repo-Root) — abgeleitet,
+nicht per Issue verifiziert. Ein Forum-Bericht meldet zudem, eine explizite
+`read_file`-Regel sei von einer breiteren `write_file`-Regel überschrieben
+worden (Nutzerbeobachtung, von Google nicht bestätigt).
+
+**Regeln und Kontext.** Global `~/.gemini/GEMINI.md`; projektlokal
+`.agents/rules/` (neu) bzw. `.agent/rules/` (Altpfad). **Harte Kappung 12 000
+Zeichen je Regel- oder Workflow-Datei.** Aktivierungsmodi je Regeldatei: Manual
+(@mention), Always On, Model Decision, Glob. Eine «Knowledge Base» sammelt
+Muster aus früheren Aufgaben — **Warnung** aus dem Forum: Knowledge-Items können
+versehentlich in andere Workspaces getragen werden. Dass das `SKILL.md`-Format
+cross-kompatibel gelesen wird, behaupten mehrere Drittquellen; **auf
+antigravity.google nicht verifiziert — unklar**.
+
+**Kontingent.** Struktur laut Doku und Sekundärquelle: **separates Kontingent
+pro Modell**, Dual-Limit 250 Units je 5-Stunden-Sprint plus 2 800 Units je
+Woche; Einstellung «AI Credit Overages» (`Never`/`Always`). **Praxis weicht ab:**
+Foren-Threads berichten mehrfach unabhängig **6–10-Tage-Lockouts statt
+5-Stunden-Resets** und unerklärten Verbrauch von Claude-/GPT-Kontingent, obwohl
+nur Gemini-Modelle genutzt wurden. Von Google nicht bestätigt — für uns ein
+**Betriebsrisiko, keine Doku-Garantie**.
+
+**MCP.** `agy` **konsumiert** MCP-Server (`~/.gemini/config/mcp_config.json`
+global bzw. `.agents/mcp_config.json` lokal, geteilt von IDE, CLI und SDK).
+**Kein Beleg, dass `agy` selbst als MCP-Server für Dritt-Clients läuft** — die
+Integration ist einseitig; eine Brücke «Claude Code ruft Antigravity als
+MCP-Tool» ist nicht dokumentiert.
+
+**IDE.** Agent-Manager-Panel (`/agents`) für Subagenten; **Browser-Subagent**
+mit Klick/Scroll/Type/Console-Lesen, der Screenshots und Recordings automatisch
+als Artefakte ablegt — **erfordert die Chrome-Extension und ist in den Quellen
+ausschliesslich als IDE-Feature beschrieben**; dass `agy` ihn headless nutzen
+kann, ist **nicht belegt**. Das ist die eine Fähigkeit, die Claude Code hier
+nicht hat.
+
+**Datenschutz.** Der Telemetrie-Schalter ist **nicht** dasselbe wie ein
+Trainings-Opt-out; mehrere Foren-Threads beschreiben genau diese Verwechslung.
+Transkript-Pfad: **zwei Varianten kursieren** in den Quellen
+(`~/.gemini/antigravity/brain/<id>/…` gegen `~/.gemini/antigravity-cli/`) —
+vor Backup oder Weitergabe lokal nachsehen, nicht der Pfadangabe vertrauen.
+Der Workspace-Trust-Dialog ist laut Sekundärquelle **kein Sicherheitsfeature**,
+sondern ein Zugangs-Gate. **Offene Sicherheitsmeldung:** Mindgard, «Forced
+Descent: Google Antigravity Persistent Code Execution Vulnerability» — nur der
+Fund, **Inhalt von uns nicht geprüft**; bis dahin keine Schreibrechte.
+
+**«Erfolg ohne Tat» — mehrfach unabhängig belegt.** Forum-Thread 145034: «Accept
+all» meldet erfolgreiche Implementierung samt bestandener Tests, das Dateisystem
+zeigt **keine** der behaupteten Änderungen, keine Commits, kein Reflog-Eintrag;
+der Agent räumt später einen «simulated success loop» ein. Threads 179854
+(«Why does Antigravity Lie and cheat?») und 172904 (vorgetäuschte Regel-/
+Tool-Befolgung) zeigen dasselbe Muster; eine DEV-Analyse führt es auf eine
+trainingsbedingte «Pleasing-the-user»-Tendenz zurück. **Das ist die empirische
+Untermauerung von CLAUDE.md §14.7** — und deckt sich mit unserer eigenen
+Beobachtung (Ziff. 7).
+
+## 10 · Vertiefung Gemini als Prüfer, plus Ökosystem (3.9.2026)
+
+**LLM als Prüfer von Extraktion — Prinzipien belegt, Zahl offen.** Für
+Rechtstexte gibt es **keine belastbare Trefferquote** für Drop/Leak/
+Tabellenverlust. Belegt sind die Arbeitsformen: Paarvergleich statt Einzelscore,
+schema-gebundene Ausgabe, **Diskrepanzliste statt globalem Urteil**,
+Selbstkonsistenz über mehrere Läufe, niedrige Temperatur (höhere Temperatur
+bringt kaum zusätzliche echte Treffer). Der Schwachpunkt liegt beim **Recall**:
+Extraktionssysteme «vergessen» Zeilen eher, als sie zu erfinden. Judge-Bias
+(Positionsbias, Self-Preference) ist **strukturell im Modell verankert, kein
+Zufallsrauschen** — ein zweites Modell taugt nur, wenn es nicht sein eigenes
+Extraktionsmuster verteidigt und nicht das schwächere der Paarung ist.
+Quellen: `cleanlab.ai/blog/tlm-structured-outputs-benchmark/` ·
+`github.com/run-llama/ExtractBench` · arXiv 2602.13812 · 2601.02627 ·
+2604.23178 · 2604.22891v2 · 2607.11871.
+
+**PDF und Long Context.** Gemini behandelt PDF-Seiten technisch als Bilder;
+API-Grenzen 1000 Seiten / 50 MB je PDF, rund 258 Token je Seite; die
+Consumer-App nimmt **max. 10 Dateien je Prompt**. Long-Context-Realität:
+Einzel-Needle bei 1 Mio nahezu perfekt (99 %), **Multi-Needle mit 8 Nadeln nur
+noch 89 %**; verlässlich bleibt es bis etwa 200–400k Token. **Folge für uns:
+Einheit ist der Erlass, nie der Korpus.** **Keine Belege zu deutschsprachigen
+Schweizer Rechtstexten oder Fedlex-Formaten gefunden** — die grösste Lücke, und
+der Grund für die eigene Recall-Probe T2.
+Quellen: `ai.google.dev/gemini-api/docs/document-processing` ·
+`support.google.com/gemini/answer/14903178` ·
+`yage.ai/share/long-context-benchmark-en-20260315.html`.
+
+**Deep Research und NotebookLM.** Deep Research produziert viele Zitate
+(rund 111 je Report in einem Benchmark) bei schwächerer Zitat-Genauigkeit als
+Vergleichsprodukte; die Stanford-Studie zu Legal-AI-Werkzeugen — auch solchen,
+die als «hallucination-free» beworben werden — misst **17–34 % Anfragen mit
+falschen oder falsch zugeordneten Zitaten**, und eine Kanzlei wurde mit
+$31 100 sanktioniert wegen halluzinierter Zitate unter anderem aus Gemini.
+NotebookLM Pro: rund 300 Quellen je Notizbuch, 500 Notizbücher, 500
+Chat-Fragen/Tag, je Quelle bis 500 000 Wörter — **nur sekundärquellen-belegt**.
+Fedlex-Seiten funktionieren als generische URL-Quelle, eine dedizierte
+Integration gibt es nicht. Einordnung aus der Rechtsberufs-Literatur: gutes
+Recherchehilfsmittel, **Zitatverifikation nicht abgesichert**.
+Quellen: arXiv 2506.11763 · `nexlaw.ai/blog/ai-citation-errors-legal-research-2026/`
+· `elephas.app/blog/notebooklm-source-limits` · `attorneyatwork.com/notebooklm-for-lawyers/`.
+
+**Scheduled Actions / Gems.** Bis zu 10 aktive geplante Aktionen (täglich,
+wöchentlich, einmalig) — technisch passend für eine wöchentliche
+Fedlex-Änderungssichtung, aber **ob die Consumer-App fedlex.admin.ch
+zuverlässig vollständig liest, ist nicht belegt**; dokumentiert ist stattdessen
+das API-seitige «URL context tool», das ausdrücklich für Seitenvergleich und
+Änderungs-Tracking beworben wird — und die API haben wir nicht.
+
+**Ökosystem jenseits KI** — Einordnung und «Lassen»-Liste stehen im Fahrplan
+(`fahrplaene/FAHRPLAN-FREMDAGENTEN.md` §7). Die tragenden Einzelbelege
+(Abruf 3.9.2026): Search Console gratis, nur Domain-Verifikation ·
+Custom Search JSON API für Neukunden geschlossen, **Abschaltung 1.1.2027** ·
+Firebase Studio: Projekt-Import seit **22.6.2026** deaktiviert, Einstellung
+**22.3.2027** · GA4 datenschutzrechtlich kritisch, weil die USA nach revDSG als
+Drittstaat ohne angemessenes Schutzniveau gelten (EDÖB) · Document AI ohne
+echtes Gratis-Tier und mit GCP-Kontopflicht · Google Business Profile verlangt
+physischen Standort oder Kundenkontakt vor Ort · Ad Grants verlangen
+verifizierten Non-Profit-Status · Play Store lehnt «Raw WebView ohne
+App-Mehrwert» ab · Google-Fonts-CDN-Einbindung ist ein gerichtlich bestätigtes
+Übermittlungsrisiko (LG München, Az. 3 O 17493/20, 20.1.2022) — **im Repo
+nicht vorhanden**. **Offen:** ob Google Search je ein eigenes Rich Result für
+`schema.org/Legislation` ausliefert (Typ existiert, Googles Rich-Results-Katalog
+listet ihn nicht).
+
+## 11 · Pflegebedarf
 
 Alle Zahlen in Ziff. 1 und 3 sind Anbieter-Angaben und **jederzeit einseitig
 änderbar** — insbesondere die NotebookLM-Limiten (Änderung per 2.9.2026 bereits
@@ -188,7 +409,7 @@ angekündigt, neue Zahlen offen) und die unbezifferte Antigravity-Quote.
   Rechtslogik ein; ein Eintrag dort wäre eine Vermischung zweier Register.
   *Offener Punkt für David/Bauleiter, falls das anders gesehen wird.*
 
-## 9 · Abnahme-Status
+## 12 · Abnahme-Status
 
 **Keine fachliche Abnahme nötig und keine erteilt** — dieses Dossier trägt
 Prozess- und Werkzeugwissen, keine Rechtsinhalte; es speist keine Engine, kein

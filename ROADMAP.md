@@ -542,9 +542,18 @@ zgb-a36-anhang: Die ZGB-Gliederung zeigt 74 Artikel des Anhangs «Wortlaut der f
   bleiben Claude-Unteragenten, Verdikte und Landung bleiben bei Claude, die fachliche Abnahme bei
   David; jede Phase hat eine Rückbau-Schwelle statt einer Bewachung.
   **Detail:** [FAHRPLAN-FREMDAGENTEN.md](fahrplaene/FAHRPLAN-FREMDAGENTEN.md) §2.
-  - [ ] Pilot Jules (AGENTS.md, Umgebung, ein Issue, Landung durch Claude). §2.
-  - [ ] Messversuch Gemini-Zweitblick (fünf Gegenprüfungen, Rückbau-Schwelle). §2/§3.
-  - [ ] Pilot Gemini-Langtext/PDF-Sichtung. §2.
+  - [ ] Phase 0 — Testläufe T1–T6 (Jules-Pilot, agy-Recall, agy-Betrieb, NotebookLM, Prüfer-Probe, Tabu-Probe). §2.
+  - [ ] Pilot Jules — 2–3 PRs auf der grünen Spur, Landung durch Claude. §2/§3.
+  - [ ] Diskrepanz-Finder Korpus-Werkstatt (`agy` gegen Erlass-Snapshot, manueller Schritt, kein Tor). §2/§3.
+  - [ ] Zweitblick-Messung (fünf Durchgänge, Rückbau-Schwelle). §2/§3.
+
+- [ ] **Auffindbarkeits-Basis: Sitemap + Search Console (kein SEO-Ausbau)** *(`SEO-BASIS`, Entscheid David D5, 3.9.2026)*
+  <!-- @meta id: SEO-BASIS · status: ready · blocker: null · dep: [] · feld: betrieb · fahrplan: fahrplaene/FAHRPLAN-SEO-A11Y-GOVERNANCE.md -->
+  Ziel: Das Repo hat heute keine Sitemap — Suchmaschinen sehen die prerenderten Seiten nur, soweit sie
+  sie zufällig finden. Ein deterministischer Generator aus dem Prerender-Manifest, dazu `robots.txt`
+  und die Search-Console-Verifikation durch David. Grenze: **kein SEO-Ausbau** — `SEO-A11Y` bleibt
+  geparkt, hier entsteht nur die technische Basis.
+  **Detail:** [FAHRPLAN-SEO-A11Y-GOVERNANCE.md](fahrplaene/FAHRPLAN-SEO-A11Y-GOVERNANCE.md) §12.
 
 - [ ] **Automatik-Gesundheit** *(`QS-AUTOMATIK`, `[OF]`)*
   <!-- @meta id: QS-AUTOMATIK · status: parked · blocker: zielbild-gesetzesleser · dep: [] · feld: betrieb · fahrplan: fahrplaene/FAHRPLAN-BASIS-AUSBAU.md -->
