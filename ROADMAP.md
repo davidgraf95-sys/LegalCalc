@@ -165,15 +165,15 @@ zgb-a36-anhang: Die ZGB-Gliederung zeigt 74 Artikel des Anhangs «Wortlaut der f
   Quelle: [fremdquellen-sichtung-2026-09-02.md](bibliothek/recherche/fremdquellen-sichtung-2026-09-02.md)
   §1 (Rangliste #1/#2) + Abschnitt «jolux:Citation» im Dossier (OR: 2 315 Citations = 2 315
   AKN-Fussnoten-refs; kein `citationToReference`). Risikopfad — Gegenprüfung Pflicht.
-  - [ ] **Z1 Erlass-Verweis ohne Artikelnummer verlinken** («richten sich nach der ZPO», «des
+  - [x] **Z1 Erlass-Verweis ohne Artikelnummer verlinken** («richten sich nach der ZPO», «des
     Datenschutzgesetzes vom 25. September 2020», «Bucheffektengesetzes vom 3. Oktober 2008 (BEG)»)
     in `src/lib/fedlex/erkennung.ts`/`positivliste.ts`/`parser.ts`; Erlassdatums-Prüfung wie Form B;
-    Inventar `messwerte/verweis-inventar.json` neu messen; Gegenprüfung Pflicht.
-  - [ ] **Z2 Build-Zeit-Artefakt `messwerte/fedlex-zitatgraph.json`** — je gepinnter Consolidation
+    Inventar `messwerte/verweis-inventar.json` neu messen; Gegenprüfung Pflicht. (#628)
+  - [x] **Z2 Build-Zeit-Artefakt `messwerte/fedlex-zitatgraph.json`** — je gepinnter Consolidation
     `jolux:Citation` mit gebundenem `citationToRs` (Sprache DEU, Count-Gate, Content-Type-Prüfung
-    am SPARQL-Endpoint wegen Soft-200), Skript `scripts/fedlex-zitatgraph.ts`.
-  - [ ] **Z3 Warn-Bericht** «Fedlex kennt Erlass-Verweis, Leser verlinkt nicht» (kein hartes Tor;
-    Fussnoten-Rauschen dokumentiert).
+    am SPARQL-Endpoint wegen Soft-200), Skript `scripts/fedlex-zitatgraph.ts`. (#627)
+  - [x] **Z3 Warn-Bericht** «Fedlex kennt Erlass-Verweis, Leser verlinkt nicht» (kein hartes Tor;
+    Fussnoten-Rauschen dokumentiert). (#627)
   - [ ] **Z4 Leser-Schicht «zitiert von»** (Erlassebene, nur Bund) — erst nach Z1–Z3 und Abnahme.
 
 - [ ] **Norm-Zeitmaschine + Fassungs-Diff** *(`W2·5g-ZEIT`, Ideen-Intake 20.7.2026)*
