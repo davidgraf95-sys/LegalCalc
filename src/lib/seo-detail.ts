@@ -145,11 +145,25 @@ export function metaFuerMaterial(m: BrowseMaterial): RouteMetadaten {
 }
 
 // ─── JSON-LD ─────────────────────────────────────────────────────────────────
-// Erlass: schema.org Legislation + BreadcrumbList. NUR Identitätsfelder
-// (legislationIdentifier = SR, name, alternateName, inLanguage, url) — KEINE
-// legislationLegalForce/legislationDate (Geltungsaussage = TODO(David)).
+// Erlass: schema.org Legislation + BreadcrumbList. Identitätsfelder
+// (legislationIdentifier = SR, name, alternateName, inLanguage, url) plus
+// `legislationDate` = das Stand-/Konsolidierungsdatum des gepinnten Snapshots
+// (BrowseErlass.stand), NUR wenn es ein valides ISO-Datum ist — zwei
+// Registereinträge (VD-vd-106879, VD-vd-128150) tragen `stand: ''`, dort
+// bleibt das Feld weg statt ein falsches Datum zu emittieren (QS-VERWENDEN
+// V4, 2.9.2026). `legislationLegalForce` bleibt bewusst UNGESETZT: der
+// Datensatz trägt keinen POSITIVEN Geltungsstatus — nur die negative
+// Aufhebungsmarke `aufgehoben` (aufhebungen.ts), deren blosse ABSENZ laut
+// browse-typen.ts als Default "geltend" gilt. Das ist eine Annahme, keine
+// Ablesung; eine Geltungsaussage ohne Datengrundlage widerspräche §8. Bleibt
+// TODO(David), bis ein echtes positives Feld (z. B. Fedlex inForceStatus)
+// im Datensatz existiert.
 // Entscheid: NUR BreadcrumbList — schema.org hat keinen validen Gerichtsentscheid-
 // Typ; nichts erfinden (§8). Reicher Kopf + Meta tragen die Indexierung.
+
+/** Valides ISO-Datum `YYYY-MM-DD` — Schutz gegen `stand: ''` (zwei VD-Einträge,
+ *  gemessen 31.8.2026, siehe erlassKopfText.ts STAND_UNBEKANNT). */
+const ISO_DATUM = /^\d{4}-\d{2}-\d{2}$/;
 
 function breadcrumb(stufen: Array<{ name: string; pfad: string }>): object {
   return {
@@ -174,6 +188,7 @@ export function jsonLdFuerErlass(e: BrowseErlass): object {
     isPartOf: { '@type': 'WebSite', name: 'LexMetrik', url: `${SITE_URL}/` },
   };
   if (e.sr) legislation.legislationIdentifier = e.sr;
+  if (ISO_DATUM.test(e.stand)) legislation.legislationDate = e.stand;
   return {
     '@context': 'https://schema.org',
     '@graph': [

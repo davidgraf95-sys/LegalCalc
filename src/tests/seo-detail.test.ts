@@ -74,16 +74,25 @@ describe('metaFuerErlass()', () => {
 });
 
 describe('jsonLdFuerErlass()', () => {
-  it('emittiert Legislation (ohne Geltungsaussage) + BreadcrumbList', () => {
+  it('emittiert Legislation (mit legislationDate, ohne legislationLegalForce) + BreadcrumbList', () => {
     const ld = jsonLdFuerErlass(or) as { '@graph': Array<Record<string, unknown>> };
     const leg = ld['@graph'][0];
     expect(leg['@type']).toBe('Legislation');
     expect(leg.legislationIdentifier).toBe('220');
     expect(leg.name).toBe(or.titel);
-    // §7: keine Geltungsaussage
+    // V4 (QS-VERWENDEN, 2.9.2026): legislationDate = gepinntes Stand-Datum,
+    // wenn valides ISO-Datum im Datensatz vorhanden (OR: '2026-01-01').
+    expect(leg.legislationDate).toBe(or.stand);
+    expect(or.stand).toMatch(/^\d{4}-\d{2}-\d{2}$/);
+    // §8: kein positiver Geltungsstatus im Datensatz → keine Geltungsaussage
     expect(leg).not.toHaveProperty('legislationLegalForce');
-    expect(leg).not.toHaveProperty('legislationDate');
     expect(ld['@graph'][1]['@type']).toBe('BreadcrumbList');
+  });
+  it('lässt legislationDate weg, wenn `stand` kein valides ISO-Datum ist (§9-Bug-Check-Fall, zwei VD-Einträge)', () => {
+    const ld = jsonLdFuerErlass({ ...or, stand: '' }) as { '@graph': Array<Record<string, unknown>> };
+    const leg = ld['@graph'][0];
+    expect(leg).not.toHaveProperty('legislationDate');
+    expect(leg).not.toHaveProperty('legislationLegalForce');
   });
 });
 
