@@ -174,6 +174,26 @@ zgb-a36-anhang: Die ZGB-Gliederung zeigt 74 Artikel des Anhangs «Wortlaut der f
     am SPARQL-Endpoint wegen Soft-200), Skript `scripts/fedlex-zitatgraph.ts`. (#627)
   - [x] **Z3 Warn-Bericht** «Fedlex kennt Erlass-Verweis, Leser verlinkt nicht» (kein hartes Tor;
     Fussnoten-Rauschen dokumentiert). (#627)
+  - [x] **Z5 Ausgeschriebene Artikelverweise («Artikel N Absatz M KÜRZEL») verlinken** — Anlass
+    Z3-Klasse A (824 amtlich belegte Kanten): das Ziel war erkannt (N2 Form A), der Link aber nur
+    unterdrückt. Neue reine Funktion `ausgeschriebeneVerweiseImText` (`src/lib/fedlex/spannen.ts`),
+    additiv in `normVerweiseImText`; Guards Self · Form B · A10-Plural · Zeit-Kante ·
+    `KUERZEL_NUR_BUND` (kantonale Doppelbedeutung «StG»). +4166 Links, Klasse A 824 → 0,
+    Stichprobe 15/15. Gegenprüfung Pflicht.
+  - [ ] **Z6 Gemessene Rest-Kanten der Verweis-Erkennung** (Nebenfunde aus Z5 und seiner
+    Gegenprüfung, 2.9.2026):
+    (a) Artikelnummern mit Suffix jenseits `bis…sexies` («Artikel 29septies AHVG», 5 Korpus-Stellen)
+    kennt die GETEILTE Nummern-Grammatik nicht — `ART_INTERN`, `N2_ARTNR`, `artikelToken`(SUFFIX)
+    und `fedlexLinkFuerArtikel` müssen gemeinsam erweitert werden, sonst entsteht ein falscher
+    Anker; ~~(b) «… KAG in der Fassung vom 28. September 2012» zitiert eine ALTE Fassung~~ —
+    **erledigt** mit dem Gegenprüfungs-Nachzug zu Z5 (Guard `historischeFassung`,
+    `src/lib/fedlex/positivliste.ts`; 19 Links gemessen zurückgebaut, PR #635);
+    (c) **Artikel-Anker gegen den Ziel-Snapshot prüfen, Fallback Erlass-Link** — ein Fremd-Anker
+    entsteht heute allein aus Kürzel + Nummer, ohne dass die Zielbestimmung im Snapshot des
+    Zielerlasses nachgeschlagen wird. Gemessen 2.9.2026: 16 tote Artikel-Anker aus Z5 (StGB
+    `art_91_a` ×4, StGB `art_340` …); dieselbe Mechanik trägt auch die ALTEN Anker-Pfade, der
+    Bestand ist also mitzumessen. Zielbild: existiert das Ziel-Token nicht, auf den Erlass-Link
+    zurückfallen statt auf einen toten Sprung (§8). Risikopfad — Gegenprüfung Pflicht.
   - [ ] **Z4 Leser-Schicht «zitiert von»** (Erlassebene, nur Bund) — erst nach Z1–Z3 und Abnahme.
 
 - [ ] **Norm-Zeitmaschine + Fassungs-Diff** *(`W2·5g-ZEIT`, Ideen-Intake 20.7.2026)*

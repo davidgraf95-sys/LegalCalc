@@ -409,7 +409,7 @@ function restMitIntern(s: string, key: string, intern?: InternRefs): React.React
   const paragrafErlass = intern.paragrafDesigniert === true;
   // V-7 (W2·20): Ebene des gelesenen Erlasses — in kantonalen Erlassen lösen
   // nur ebenenübergreifend eindeutige Bund-Namen auf (`positivliste.ts`).
-  const ebene: FremdEbene = intern.basisPfad.startsWith('/gesetze/kanton/') ? 'kanton' : 'bund';
+  const ebene: FremdEbene = ebeneFuer(intern.basisPfad);
   const pluralRegionen = artikelnPluralVerweise(s, ebene);
   const inPluralRegion = (idx: number) =>
     pluralRegionen.some((r) => idx >= r.oeffnerStart && idx < r.end);
@@ -693,6 +693,13 @@ function restMitIntern(s: string, key: string, intern?: InternRefs): React.React
 // Artikel existiert im gelesenen Erlass. Sonst bleibt der Fremd-Chip stehen —
 // der Absprung nach Fedlex ist der schlechtere, aber nie der falsche Weg.
 // Der angezeigte Text ist unverändert `s.anzeige` (zeichenidentisch, §1).
+/** V-7/Z5: Ebene des gelesenen Erlasses aus seinem Lese-Basispfad — EINE
+ *  Ableitung für den Fliesstext-Lauf (`restMitIntern`) und den Spannen-Lauf
+ *  (`normVerweiseImText`), damit beide dieselbe Ebene sehen (§5). */
+function ebeneFuer(basisPfad: string): FremdEbene {
+  return basisPfad.startsWith('/gesetze/kanton/') ? 'kanton' : 'bund';
+}
+
 function selbstSpanSprung(s: NormVerweisSpan, key: string, intern?: InternRefs): React.ReactNode {
   if (!intern || intern.fremdKuerzel) return null;
   const gesetz = erkenneFedlexGesetz(s.artikel);
@@ -728,7 +735,12 @@ export function NormText({ text, intern }: { text: string; intern?: InternRefs }
   // revidiert werden» in der BV) — Herleitung am Parameter von
   // `erlassVerweiseImText`. Ausserhalb der Lesesicht (Rechner-/Vorlagentexte)
   // gibt es keinen gelesenen Erlass; dort ist jeder Verweis fremd.
-  const spans = normVerweiseImText(text, intern?.basisPfad.split('/').pop());
+  // Z5 (W2·22): die Ebene entscheidet mit — in kantonalen Erlassen verlinkt
+  // der ausgeschriebene Verweis kein Kürzel, das dort einen eigenen Erlass
+  // bezeichnet (Herleitung an `KUERZEL_NUR_BUND`, positivliste.ts).
+  const spans = normVerweiseImText(
+    text, intern?.basisPfad.split('/').pop(), intern ? ebeneFuer(intern.basisPfad) : 'bund',
+  );
   // V-4: der voll zitierte Fremd-Anker trägt das Aussen-Zeichen NUR in der
   // Lesesicht — ausserhalb (Rechner-/Vorlagen-Texte) ist jeder Norm-Verweis
   // fremd, dort unterschiede das Zeichen nichts (Reichweite, s. oben).
@@ -749,10 +761,13 @@ export function NormText({ text, intern }: { text: string; intern?: InternRefs }
     // vom Ziel abweichende Anzeige — `artikel` ist dort das blosse Kürzel
     // («DSG»), angezeigt wird der Erlassname aus dem Quelltext. Bestehende
     // Spannen sind unberührt, das SSR-Markup bleibt byte-identisch (§6).
+    // Z5 (W2·22): dasselbe für den AUSGESCHRIEBENEN Artikelverweis — `artikel`
+    // ist das synthetisierte «Art. N KÜRZEL», angezeigt wird die Artikel-
+    // Nennung des Quelltexts («Artikel 29»); Passus und Kürzel bleiben Text.
     teile.push(
       selbstSpanSprung(s, `${s.start}-${s.artikel}`, intern)
       ?? <NormChip key={`${s.start}-${s.artikel}`} artikel={s.artikel}
-        anzeige={s.propagiert || s.erlass ? s.anzeige : undefined} linkClass={ankerClass} zielIntern={false} />,
+        anzeige={s.propagiert || s.erlass || s.ausgeschrieben ? s.anzeige : undefined} linkClass={ankerClass} zielIntern={false} />,
     );
     zuletzt = s.end;
   }

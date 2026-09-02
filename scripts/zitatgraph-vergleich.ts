@@ -72,6 +72,13 @@
 // ist hier NICHT nachgebaut — die Klasse ist eine Triage-Grösse, keine exakte
 // Zählung der heute unterdrückten Links.
 //
+// NACHTRAG Z5 (W2·22, 2.9.2026) — der Befund oben ist datiert und bleibt so
+// stehen (er beschreibt den Stand vor dem Fix). SEITHER routet
+// `ausgeschriebeneVerweiseImText` (spannen.ts) genau diese Form aktiv, und
+// `normVerweiseImText` gibt die Spannen mit aus; die Klasse-A-Zahl fiel damit
+// von 824 auf 0. Die Spalte bleibt bestehen: sie ist der Wächter, der einen
+// Rückfall oder eine neue Zitierform sofort wieder sichtbar macht.
+//
 // Der einzige transkribierte Bestandteil ist die bare-«Artikel N»-Regex, die
 // Schritt 3 die Ansatzstelle gibt — sie wird NICHT neu geschrieben, sondern aus
 // dem bestehenden Guard-Register `G.ART_INTERN`
@@ -334,9 +341,15 @@ export function berichte(): { inhalt: string; log: string[] } | null {
   z.push(`| R4 · eId ohne Snapshot-Eintrag | ${gesamtOhneEId} |`);
   z.push(`| Graph-Erlasse ohne Snapshot | ${ohneSnapshot} |`, '');
   z.push('**Klasse A ist der belegte Rückstand**, Klasse B die offene Frage. In A nennt der');
-  z.push('Normtext das Zielkürzel ausgeschrieben («Artikel N Absatz M KÜRZEL»), LexMetrik');
-  z.push('erkennt es und verlinkt es trotzdem nicht (Kontrakt heute: nur Unterdrückung des');
-  z.push('falschen Self-Links) — und Fedlex bestätigt genau dieses Ziel. In B mischen sich');
+  z.push('Normtext das Zielkürzel ausgeschrieben («Artikel N Absatz M KÜRZEL») und LexMetrik');
+  z.push('erkennt es — bis W2·22 Z5 (2.9.2026) wurde der Link dort nur unterdrückt, seither');
+  z.push('routet ihn `ausgeschriebeneVerweiseImText`; A ist damit von 824 auf 0 gefallen und');
+  z.push('bleibt als Wächter gegen Rückfall und neue Zitierformen stehen. Der Gegenprüfungs-');
+  z.push('Nachzug zu Z5 (2.9.2026) hat A bewusst wieder auf 3 gehoben: FIDLEV art_111, KKV');
+  z.push('art_126_z_octies und FINIV art_93 zitieren das Ziel «in der Fassung vom …», also eine');
+  z.push('AUFGEHOBENE Fassung — der Leser zeigt die geltende, in der die Zielbestimmung teils');
+  z.push('gar nicht mehr existiert. Fedlex kennt die Kante trotzdem; hier ist A der RICHTIGE');
+  z.push('Zustand, nicht ein Rückstand (Guard `historischeFassung`, positivliste.ts). In B mischen sich');
   z.push('R1 (Fussnoten) und R3 (absichtliche Zurückhaltung); B ist ohne Einzelprüfung');
   z.push('nicht auswertbar.', '');
   z.push(`## Klasse A — erkannt, nicht verlinkt (Top ${DETAIL_ERLASSE})`, '');

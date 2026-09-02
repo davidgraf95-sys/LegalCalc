@@ -23,9 +23,12 @@ import {
   GENITIV_NAMEN_ESC,
   TITEL_FRAGMENTE_ESC,
 } from './erkennung';
-import { datumPasst } from './positivliste';
+import {
+  datumPasst, historischeFassung, KUERZEL_NUR_BUND, zusatzwortSperre, type FremdEbene,
+} from './positivliste';
 import {
   artikelnPluralVerweise,
+  fremdRoutingFormB,
   DATUM_IN_EINHEIT,
   DATUM_NACH_NAME,
   KLAMMER_NACH_NAME,
@@ -82,6 +85,12 @@ export interface NormVerweisSpan {
    *  aus `anzeige !== artikel` abgeleitet: Renderer UND Mess-Tor sollen die
    *  Form am Namen erkennen, nicht an einer Zeichenketten-Nebenwirkung. */
   erlass?: boolean;
+  /** Z5 (W2·22): true = AUSGESCHRIEBENER Artikelverweis («Artikel 29 Absatz 1
+   *  ATSG»). `anzeige` ist die Artikel-Nennung aus dem Quelltext, `artikel` das
+   *  synthetisierte «Art. N KÜRZEL»; Passus-Kette und Kürzel bleiben Text.
+   *  Eigenes Feld aus demselben Grund wie `erlass` — die Formklasse des
+   *  Mess-Tors (`anker-ausgeschrieben`) hängt an ihm. */
+  ausgeschrieben?: boolean;
 }
 
 // Ketten-Glied (bare «Art. N [Abs./lit./Ziff./Satz …] [f./ff.]») OHNE Kürzel.
@@ -105,13 +114,26 @@ const GLIED_VOR_KONNEKTOR = new RegExp(`(${KETTE_GLIED})\\s*(?:${KETTE_KONNEKTOR
  * Für Nicht-Ketten-Text ist die Anker-Menge identisch zu `matchAll(NORM_IM_TEXT)`
  * (gleicher Filter `fedlexLinkFuerArtikel != null`) — additiv, kein Verhalt-Bruch.
  */
-export function normVerweiseImText(text: string, eigenesKuerzel?: string): NormVerweisSpan[] {
+export function normVerweiseImText(
+  text: string,
+  eigenesKuerzel?: string,
+  ebene: FremdEbene = 'bund',
+): NormVerweisSpan[] {
   const spans: NormVerweisSpan[] = [];
   for (const m of text.matchAll(NORM_IM_TEXT)) {
     const roh = m[0];
     // Nur verlinken, was der eine Resolver wirklich auflöst (kein toter Link, §8).
     if (fedlexLinkFuerArtikel(roh) == null) continue;
     const start = m.index;
+    // GP-Nachzug PR #635: die beiden Guards gehören AUCH auf den voll zitierten
+    // Anker, nicht nur auf Z5 — die abgekürzte Zitatform «Art. 11 Abs. 3 AVO
+    // Inland» (kanton/BS/419.902 art_11, kanton/BS/419.905 art_2) trifft
+    // NORM_IM_TEXT direkt und wurde von der Z5-Sperre gar nicht erreicht
+    // (gemessen 2.9.2026 im Vorher/Nachher-Dump aller Link-Pfade). Belege und
+    // Abgrenzung stehen an den Guards (positivliste.ts).
+    const nachAnker = text.slice(start + roh.length);
+    if (zusatzwortSperre(nachAnker)) continue;   // anderer Erlass (§1)
+    if (historischeFassung(nachAnker)) continue; // historische Fassung (§7/§8)
     spans.push({ start, end: start + roh.length, anzeige: roh, artikel: roh, propagiert: false });
     // Kürzel des Anker-Endes → auf vorangehende bare Glieder propagieren.
     const kuerzel = erkenneFedlexGesetz(roh);
@@ -133,6 +155,15 @@ export function normVerweiseImText(text: string, eigenesKuerzel?: string): NormV
       });
       grenze = gliedStart;
     }
+  }
+  // Z5 (W2·22): AUSGESCHRIEBENE Artikelverweise («Artikel 29 Absatz 1 ATSG»),
+  // rein ADDITIV. Der voll zitierte Anker (NORM_IM_TEXT) und die propagierten
+  // Ketten-Glieder haben Vorrang — sie decken dieselbe Stelle bereits ab und
+  // verlinken die GANZE Zitat-Einheit statt nur die Artikel-Nennung.
+  const ankerSpans = [...spans];
+  for (const a of ausgeschriebeneVerweiseImText(text, eigenesKuerzel, ebene)) {
+    if (ankerSpans.some((s) => a.start < s.end && s.start < a.end)) continue;
+    spans.push(a);
   }
   // Z1 (W2·22): BLOSSE Erlass-Verweise ohne Artikelnummer — rein ADDITIV. Ein
   // Artikel-Anker (oder ein propagiertes Ketten-Glied) hat IMMER Vorrang: er
@@ -357,6 +388,159 @@ export function erlassVerweiseImText(text: string, eigenesKuerzel?: string): Nor
     if (m[1] && !datum && TITEL_FORTSETZUNG.test(nach)) continue;        // Präfix-Bindung
     if (eigenesKuerzel && Z1_IDENT(gesetz) === Z1_IDENT(eigenesKuerzel)) continue; // Self
     spans.push({ start, end, anzeige: text.slice(start, end), artikel: gesetz, propagiert: false, erlass: true });
+  }
+  return spans;
+}
+
+// ─── Z5 (W2·22-VERWEIS-FEDLEX): AUSGESCHRIEBENER Artikelverweis mit Kürzel ───
+//
+// LÜCKE (amtlich belegt, Zitatgraph-Bericht `messwerte/zitatgraph-warnungen.md`
+// aus den jolux:Citation-Kanten von Fedlex, Stand 2026-01-01): 824 der 3703
+// vergleichbaren Kanten (22.3 %) fielen in die Klasse A — der Normtext nennt
+// das Ziel-Kürzel AUSGESCHRIEBEN («Artikel 29 Absatz 1 ATSG», IVG art_10),
+// `fremdgesetzNachArtikel` (N2 Form A, `parser.ts`) ERKENNT es, und der
+// Kontrakt bis hierher war blosse UNTERDRÜCKUNG des falschen Self-Links
+// («lieber kein Link als ein falscher», David-Entscheid 28.6.2026; der
+// Kommentar dort sagt ausdrücklich, das aktive Routing sei zurückgestellt).
+// Z5 löst die Zurückstellung ein: dasselbe erkannte Kürzel IST das Ziel.
+//
+// GRAMMATIK — dieselben Bausteine wie FREMDGESETZ_NACH_ARTIKEL (N2_ARTNR /
+// N2_KONN / N2_PASSUS / N2_WERT aus `parser.ts`), keine zweite Wahrheit über
+// die Zitierform (§5). Erfasst «Art./Artikel N[a][bis…] [, M und K]
+// [Absatz|Absätze|Buchstabe|Ziffer|Satz W …] [des|der|über|vom] KÜRZEL»:
+//   · Der Anker ist zeichengleich zu ART_INTERN (NormText.tsx) — genau die
+//     Stellen, an denen heute unterdrückt wird.
+//   · JEDE genannte Artikelnummer wird EINZELN geroutet (wie fremdRoutingFormB
+//     und die A10-Region): «Artikel 66a oder 66abis StGB» ⇒ zwei Links.
+//   · Ziel-Anker ist der ARTIKEL (`art_N`); Absatz/Buchstabe/Ziffer und das
+//     Kürzel selbst bleiben reiner Text — die etablierte Fremdverweis-
+//     Darstellung der Form B.
+//
+// FÜNF NACHPRÜFUNGEN (§1: kein Link ist besser als ein falscher):
+//   · KÜRZEL-IDENTITÄT: nur Tokens aus NORM_NAMEN (FEDLEX-Keys + amtliche
+//     Schreibweisen), mit Wortgrenze — «ORganisation» ist kein OR-Verweis.
+//   · SELF-AUSSCHLUSS wie in Z1: nennt der Verweis den GELESENEN Erlass, ist er
+//     kein Fremdverweis; die Stelle bleibt dem bewährten Self-Pfad in
+//     `restMitIntern` (In-Reader-Sprung, nur bei existierendem Token).
+//   · FORM B hat Vorrang: trägt die Stelle ein Klammer-Kürzel, einen
+//     Kurztitel-Genitiv oder einen amtlichen Volltitel, ist `fremdRoutingFormB`
+//     zuständig (dort mit Ebenen-Geltung und Präfix-Bindung) — Z5 tritt zurück,
+//     sonst entstünden zwei Links auf dieselbe Einheit.
+//   · PLURAL-REGION (A10) bringt ihre eigenen Glieder mit — Nennungen innerhalb
+//     einer Region gehören ihr (derselbe Guard wie in `erlassVerweiseImText`;
+//     die Regionen werden nur bei vorhandenem Kandidaten berechnet, §15).
+//   · ZEIT-KANTE (`datumPasst`): ein zitiertes Erlassdatum, das nicht zum Ziel
+//     passt, meint einen anderen — meist aufgehobenen — Erlass («Artikel 5 DSG
+//     vom 19. Juni 1992» ist das aDSG, nicht das DSG von 2020).
+//   · EBENEN-EINDEUTIGKEIT: in einem KANTONALEN Erlass verlinkt ein Kürzel
+//     nicht, das dort üblicherweise einen eigenen Erlass bezeichnet
+//     (`KUERZEL_NUR_BUND`, positivliste.ts — zwei gemessene Falschlinks «StG»).
+// Zusätzlich filtert `fedlexLinkFuerArtikel` wie beim voll zitierten Anker:
+// verlinkt wird nur, was der EINE Resolver wirklich auflöst (kein toter Link).
+//
+// ZWEI BEWUSSTE GRENZEN, beide gemessen (2.9.2026, ganzer Snapshot-Korpus):
+//   · Artikelnummern mit Suffix jenseits von bis/ter/quater/quinquies/sexies
+//     («Artikel 29septies AHVG», IVG art_11a) bleiben unverlinkt. Die Grenze
+//     sitzt NICHT hier, sondern in der geteilten Nummern-Grammatik: ART_INTERN,
+//     N2_ARTNR, `artikelToken` (SUFFIX) und `fedlexLinkFuerArtikel` kennen die
+//     höheren Suffixe alle nicht — ein hier erzwungener Treffer ergäbe den
+//     falschen Anker «#art_29septies» statt «#art_29_septies». Korpus-Bestand:
+//     5 Stellen mit septies/octies-Nummer, davon EINE in Z5-Form. Der Wurzel-Fix
+//     ist ein eigener Schritt an der Nummern-Grammatik, kein Sonderweg hier
+//     (§17: Workaround nur mit hinterlegtem Wurzel-Fix).
+//   · Keine Ketten-Propagierung: «Art. 5 i.V.m. Artikel 6 OR» verlinkt das
+//     ausgeschriebene Glied, nicht das vorangehende bare. Die Ketten-Regel
+//     hängt an NORM_IM_TEXT und bleibt unberührt (rein additiv, §6).
+
+/** Anker: zeichengleich zu ART_INTERN (`NormText.tsx`) — «Art. N» / «Artikel N»
+ *  mit Wort-Ende-Anker, damit «29septies» nicht zu «29s» zerfällt. Die
+ *  Nummern-Alternation kommt aus N2_ARTNR (§5), die negative Nachschau hält die
+ *  bekannte Backtracking-Falle geschlossen (Herleitung in `parser.ts`). */
+const Z5_ANKER = new RegExp('\\bArt(?:\\.|ikel)\\s+(' + N2_ARTNR + ')(?![0-9a-zäöü])', 'g');
+/** Schwanz UNMITTELBAR nach dem Anker — Spiegelbild von FREMDGESETZ_NACH_ARTIKEL
+ *  (parser.ts), nur mit Gruppen für die Offsets der Aufzählungs-Glieder:
+ *  1 = führender Whitespace · 2 = Aufzählungs-Schwanz · 3 = Kürzel. */
+const Z5_SCHWANZ = new RegExp(
+  '^(\\s+)'
+    + '((?:' + N2_KONN + '\\s*' + N2_ARTNR + '\\s*)*)'
+    + '(?:' + N2_PASSUS + '\\s+' + N2_WERT + '(?:\\s*' + N2_KONN + '\\s*' + N2_WERT + ')*\\s+)*'
+    + '(?:(?:des|der|über|vom)\\s+)?'
+    + '(' + NORM_NAMEN_ESC.join('|') + ')\\b',
+);
+const Z5_ARTNR_RE = new RegExp(N2_ARTNR, 'g');
+
+/**
+ * Alle AUSGESCHRIEBENEN Artikelverweise eines Fliesstexts (Z5) — «Art./Artikel
+ * N … KÜRZEL» mit benanntem Fremderlass. Rein und deterministisch (§2), Spannen
+ * nach `start` sortiert und überschneidungsfrei. `anzeige` ist der unveränderte
+ * Quelltext-Ausschnitt der Artikel-Nennung, `artikel` das synthetisierte
+ * «Art. N KÜRZEL» (Auflösung über denselben Resolver wie jeder andere Anker).
+ *
+ * @param eigenesKuerzel Register-Schlüssel des GELESENEN Erlasses (letztes
+ *        Segment des Lese-Basispfads) — nennt der Verweis diesen Erlass selbst,
+ *        ist er kein Fremdverweis und bleibt dem Self-Pfad (Herleitung oben).
+ * @param ebene Ebene des LESENDEN Erlasses (wie in `fremdRoutingFormB`):
+ *        `kanton` sperrt die Kürzel aus `KUERZEL_NUR_BUND` und wird an die
+ *        beiden Abgrenzungs-Aufrufe (`fremdRoutingFormB`,
+ *        `artikelnPluralVerweise`) DURCHGEREICHT — sie standen bis zum
+ *        GP-Nachzug (PR #635) hart auf `bund`, während der Renderer die echte
+ *        Ebene führt (NormText.tsx). Gemessen: keine Klasse ändert sich, die
+ *        Divergenz zum Inventar bleibt 0 — der Fix schliesst die Bauchlandung,
+ *        bevor ein Genitiv-/Titel-Signal mit kantonaler Geltung sie auslöst (§5).
+ */
+export function ausgeschriebeneVerweiseImText(
+  text: string,
+  eigenesKuerzel?: string,
+  ebene: FremdEbene = 'bund',
+): NormVerweisSpan[] {
+  const spans: NormVerweisSpan[] = [];
+  let pluralRegionen: ReturnType<typeof artikelnPluralVerweise> | null = null;
+  let grenze = -1; // Ende der zuletzt akzeptierten Einheit (Überschneidungs-Schutz)
+  for (const m of text.matchAll(Z5_ANKER)) {
+    const start = m.index;
+    if (start < grenze) continue;
+    const nachAnker = start + m[0].length;
+    const sm = Z5_SCHWANZ.exec(text.slice(nachAnker));
+    if (!sm) continue;
+    const gesetz = erkenneFedlexGesetz(sm[3]);
+    if (!gesetz) continue;
+    if (eigenesKuerzel && Z1_IDENT(gesetz) === Z1_IDENT(eigenesKuerzel)) continue; // Self
+    // Kürzel, das im Kantonsrecht einen ANDEREN Erlass bezeichnet («StG») —
+    // Belege und Aufnahme-Regel an `KUERZEL_NUR_BUND` (positivliste.ts).
+    if (ebene === 'kanton' && KUERZEL_NUR_BUND.has(gesetz)) continue;
+    const rest = text.slice(nachAnker);
+    if (fremdRoutingFormB(rest, m[1], undefined, ebene)) continue; // Form B ist zuständig
+    const einheitEnde = nachAnker + sm[0].length;
+    // GP-Nachzug PR #635: «AVO Inland» ist nicht die eidg. AVO, und «KAG in der
+    // Fassung vom …» meint eine aufgehobene Fassung — Belege an beiden Guards.
+    const nachEinheit = text.slice(einheitEnde);
+    if (zusatzwortSperre(nachEinheit)) continue;   // anderer Erlass (§1)
+    if (historischeFassung(nachEinheit)) continue; // historische Fassung (§7/§8)
+    pluralRegionen ??= artikelnPluralVerweise(text, ebene);
+    if (pluralRegionen.some((r) => start < r.end && r.oeffnerStart < einheitEnde)) continue;
+    const datum = DATUM_IN_EINHEIT.exec(sm[0])?.[1]
+      ?? DATUM_NACH_NAME.exec(text.slice(einheitEnde))?.[1]
+      ?? null;
+    if (!datumPasst(gesetz, datum)) continue; // Zeit-Kante (V-5)
+    // Erstes Glied = die Anker-Nennung; die Aufzählungs-Glieder aus dem Schwanz
+    // (Gruppe 2) mit ihrem Offset im Quelltext — wie in `fremdRoutingFormB`.
+    const glieder: { roh: string; start: number; end: number }[] = [
+      { roh: m[1], start, end: nachAnker },
+    ];
+    const schwanzStart = nachAnker + sm[1].length;
+    for (const am of sm[2].matchAll(Z5_ARTNR_RE)) {
+      const s2 = schwanzStart + am.index;
+      glieder.push({ roh: am[0], start: s2, end: s2 + am[0].length });
+    }
+    for (const g of glieder) {
+      const artikel = `Art. ${g.roh} ${gesetz}`;
+      if (fedlexLinkFuerArtikel(artikel) == null) continue; // kein toter Link (§8)
+      spans.push({
+        start: g.start, end: g.end, anzeige: text.slice(g.start, g.end),
+        artikel, propagiert: false, ausgeschrieben: true,
+      });
+    }
+    grenze = einheitEnde;
   }
   return spans;
 }
