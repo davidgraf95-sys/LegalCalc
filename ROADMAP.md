@@ -77,14 +77,15 @@ zgb-a36-anhang: Die ZGB-Gliederung zeigt 74 Artikel des Anhangs «Wortlaut der f
      Das Lagebild liest diesen Block mechanisch (davidFragen, scripts/plan/bildDaten.ts) —
      beantwortete Fragen HIER löschen, dann verschwinden sie von der Seite (§5). -->
 
-<!-- @queue: QS-BASIS, QS-PERF, QS-MONITOR-ROT, W2·13-KANTONE-DATEN, W2·5l-NORMTEXT-B2, QS-KORPUS, W2·20-VERWEIS-SCHAERFE, W2·5m-LESER-V3, W2·21-ZULIEFERER, W2·5n-BUND-VOLL, W2·13-KANTONE-DRIFT, W3·12, W2·5g-ZEIT, W2·14-SIGNAL, W2·6 -->
+<!-- @queue: W2·13-KANTONE-DATEN, W2·5l-NORMTEXT-B2, QS-KORPUS, W2·20-VERWEIS-SCHAERFE, W2·5m-LESER-V3, W2·21-ZULIEFERER, W2·5n-BUND-VOLL, W2·13-KANTONE-DRIFT, W3·12, W2·5g-ZEIT, W2·14-SIGNAL, W2·6 -->
 <!-- ^ SSoT der Bau-Reihenfolge: plan:next wertet die @queue VOR der Dokumentreihenfolge aus;
      Integrität erzwingt check:plan Regel 8. Priorität ändern = NUR diese Zeile ändern.
      Ohne Queue-Eintrag entscheidet die Dokumentreihenfolge — Produkt-Felder stehen darum
      vor `Betrieb & Prüfstrasse`. -->
 
-> **⬆ OBERSTER OFFENER SCHRITT: `W2·13-KANTONE-DATEN`**; parallel im Bau (`wip`): `QS-PERF` (Leser-Tempo), `QS-BASIS`
-> (K3-Scharfschaltung Suche-Edge, David-Go liegt vor) und `QS-MONITOR-ROT` (Session 1.9.2026).
+> **⬆ OBERSTER OFFENER SCHRITT: `W2·13-KANTONE-DATEN`** (ZH-Programm: Randtitel R1 in Landung, danach
+> Tag-Leser-Rest). Block 1 gelandet 1./2.9.2026: K3 (#610), Leser-Tempo (#612), Normen-Monitor (#623) —
+> deren Restlisten bleiben in den Schritten, sind nicht mehr Queue-Kopf.
 > **Zielbild-Dekret 1.9.2026 (David):** der Gesetzesleser steht im Vordergrund — Ziel sind
 > möglichst alle Gesetze, die ein Schweizer Jurist braucht, und der beste Gesetzesdarsteller für
 > Schweizer Juristen auf dem Markt; Fundament zuerst, wo es dem Leser dient. Die `@queue` bildet
@@ -311,8 +312,8 @@ zgb-a36-anhang: Die ZGB-Gliederung zeigt 74 Artikel des Anhangs «Wortlaut der f
   - [ ] **WARTET AUF DAVID:** die 4 Fedlex-Fundstellen dem Fedlex-Betrieb melden? Empfehlung: ja — belegte Fehler in der amtlichen Publikation, Meldung kostet wenig.
   - [ ] Stufe 2: Abgleich über Artikelnummer statt eId; Vollausbau auf alle 227 Pins nach Laufzeit.
 
-- [~] **Normen-Monitor seit ≥5 Wochen rot — Wurzel-Fix** *(`QS-MONITOR-ROT`, Aktivierungs-Audit 14.8.2026)*
-  <!-- @meta id: QS-MONITOR-ROT · status: wip · blocker: null · dep: [] · feld: korpus · fahrplan: fahrplaene/FAHRPLAN-OFFENE-BEFUNDE.md -->
+- [ ] **Normen-Monitor seit ≥5 Wochen rot — Wurzel-Fix** *(`QS-MONITOR-ROT`, Aktivierungs-Audit 14.8.2026)*
+  <!-- @meta id: QS-MONITOR-ROT · status: ready · blocker: null · dep: [] · feld: korpus · fahrplan: fahrplaene/FAHRPLAN-OFFENE-BEFUNDE.md -->
   Rechtsstand-relevant: `normen-monitor.yml` 5/5 Läufe failure. Diagnose 14.8. — **das Rot ist ECHT**,
   der Monitor korrekt. **Detail:** [FAHRPLAN-OFFENE-BEFUNDE.md](fahrplaene/FAHRPLAN-OFFENE-BEFUNDE.md) §2.
   - [x] LIK-Reihe 2026-05→2026-07 nachziehen (amtliche Werte ⇒ Gegenprüfung). *(#499 14.8., bestätigt #581 30.8.: 30/30 Identitätstreffer BFS cc-d-05.02.08; Häkchen 1.9.2026)*
@@ -519,8 +520,8 @@ zgb-a36-anhang: Die ZGB-Gliederung zeigt 74 Artikel des Anhangs «Wortlaut der f
   Wachstums-Schwellen.
   **Detail:** [FAHRPLAN-BASIS-AUSBAU.md](fahrplaene/FAHRPLAN-BASIS-AUSBAU.md) §1.
 
-- [~] **Basis-Ausbau — Fundament** *(`QS-BASIS`, `[OF]`)*
-  <!-- @meta id: QS-BASIS · status: wip · blocker: null · dep: [] · feld: betrieb · fahrplan: fahrplaene/FAHRPLAN-BASIS-AUSBAU.md -->
+- [ ] **Basis-Ausbau — Fundament** *(`QS-BASIS`, `[OF]`)*
+  <!-- @meta id: QS-BASIS · status: ready · blocker: null · dep: [] · feld: betrieb · fahrplan: fahrplaene/FAHRPLAN-BASIS-AUSBAU.md -->
   CI/lokal-Tor-Parität + offene B-Einheiten.
   **Detail:** [FAHRPLAN-BASIS-AUSBAU.md](fahrplaene/FAHRPLAN-BASIS-AUSBAU.md) §2.
   - [ ] **`main.tsx` nutzt `createRoot` statt `hydrateRoot`** — prerendertes DOM wird 27–78 ms nach `load` verworfen (Nullprobe auf main bestätigt); Wurzel der «flaky» Tastatur-/Skip-Link-Specs und ein CLS-/TTI-Posten. Fix mit Hydrations-Fehler-Wächter, Vorher/Nachher-Messung, Gegenprüfung, eigener PR.
@@ -556,8 +557,8 @@ zgb-a36-anhang: Die ZGB-Gliederung zeigt 74 Artikel des Anhangs «Wortlaut der f
   **Detail:** [FAHRPLAN-SEO-A11Y-GOVERNANCE.md](fahrplaene/FAHRPLAN-SEO-A11Y-GOVERNANCE.md) §4/§5
   (§-Sigel nachgezogen 30.8.2026 — Regel 11 bindet).
 
-- [~] **Geräte-Last / Performance** *(`QS-PERF`, `[OF]`)*
-  <!-- @meta id: QS-PERF · status: wip · blocker: null · dep: [] · feld: betrieb · fahrplan: fahrplaene/FAHRPLAN-PERFORMANCE.md -->
+- [ ] **Geräte-Last / Performance** *(`QS-PERF`, `[OF]`)*
+  <!-- @meta id: QS-PERF · status: ready · blocker: null · dep: [] · feld: betrieb · fahrplan: fahrplaene/FAHRPLAN-PERFORMANCE.md -->
   Nicht merklich langsamer, ohne Logikverlust (§15). Der **Erst-Render des OR braucht 8,4–17,2 s
   bis zur Bedienbarkeit** (vermessen 17.8.2026, Nullprobe auf `main` 6/6 rot) — das ist die Wurzel
   des Shard-7-Rots und der Fix gehört hierher, nicht in eine Spec-Anpassung.
