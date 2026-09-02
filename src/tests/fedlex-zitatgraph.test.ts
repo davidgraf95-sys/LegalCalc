@@ -94,17 +94,17 @@ describe('Z2 · Graph-Bau', () => {
 
   it('invertiert ausgehende zu eingehenden Kanten', () => {
     const zgb = g.erlasse.find((k) => k.sr === '210')!;
-    expect(zgb.eingehend).toEqual([
+    expect(zgb.eingehendAusKorpus).toEqual([
       { vonSr: '220', vonEId: 'art_2' }, { vonSr: '220', vonEId: 'art_7' },
     ]);
-    expect(g.erlasse.find((k) => k.sr === '220')!.eingehend)
+    expect(g.erlasse.find((k) => k.sr === '220')!.eingehendAusKorpus)
       .toEqual([{ vonSr: '210', vonEId: 'art_11' }]);
   });
 
   it('macht aus einem Selbstzitat keine eingehende Kante', () => {
     const or = g.erlasse.find((k) => k.sr === '220')!;
     expect(or.ausgehend.some((a) => a.zielSr === '220')).toBe(true); // ausgehend bleibt
-    expect(or.eingehend.some((a) => a.vonSr === '220')).toBe(false); // eingehend nie
+    expect(or.eingehendAusKorpus.some((a) => a.vonSr === '220')).toBe(false); // eingehend nie
   });
 
   it('erzeugt keine eingehende Kante für ein nicht gepinntes Ziel', () => {
@@ -125,7 +125,7 @@ describe('Z2 · Graph-Bau', () => {
   });
 
   it('zählt den Korpus über beide Richtungen', () => {
-    expect(g.korpus).toEqual({ erlasse: 2, ausgehend: 5, eingehend: 3, ohneKanten: 0 });
+    expect(g.korpus).toEqual({ erlasse: 2, ausgehend: 5, eingehendAusKorpus: 3, ohneKanten: 0 });
   });
 });
 
@@ -137,6 +137,25 @@ describe('Z2 · Fehlerpfade — lieber kein Artefakt als ein stilles Halbes', ()
       res([binding(e, 'art_1', '210', 'https://fedlex.data.admin.ch/eli/cc/24/233_245_233/text')]),
     ]);
     await expect(erhebe([OR], f)).rejects.toThrow(/Count-Gate gerissen.*COUNT sagt 3, geliefert 1/s);
+  });
+
+  it('reisst das Count-Gate bei einer leeren, aber gültigen Antwort (vakuant)', async () => {
+    // {results:{bindings:[]}} ist eine GÜLTIGE Antwort (kein Fehler, kein HTML) — ohne die
+    // VALUES-Soll-Prüfung liefe die COUNT-Schleife mit null Iterationen glatt durch und ein
+    // Teil-Artefakt mit 0 Kanten entstünde. Das darf nicht sein (Kopf-Kommentar «KEIN TEIL-ARTEFAKT»).
+    const f = fakeFetch([res([]), res([])]);
+    await expect(erhebe([OR], f)).rejects.toThrow(/vakuant.*1 von 1 Pin/s);
+  });
+
+  it('reisst das Count-Gate, wenn ein einzelner Pin ganz in der COUNT-Antwort fehlt', async () => {
+    // Zwei Pins angefragt, nur einer erscheint in der COUNT-Antwort (Endpunkt-Defekt) — muss
+    // auffallen, obwohl der ANWESENDE Pin für sich genommen ein stimmiges COUNT=0 hätte.
+    const eOr = exprUri(OR);
+    const f = fakeFetch([
+      res([{ fromExpr: { value: eOr }, n: { value: '0' } }]),
+      res([]),
+    ]);
+    await expect(erhebe([OR, ZGB], f)).rejects.toThrow(/vakuant.*1 von 2 Pin/s);
   });
 
   it('bricht bei HTTP 200 MIT HTML-Fehlerseite ab (Content-Type, nie Statuscode)', async () => {

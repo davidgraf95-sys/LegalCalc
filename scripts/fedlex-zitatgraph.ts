@@ -52,14 +52,21 @@
 //  · KEIN TEIL-ARTEFAKT. Erst wenn alle Batches und alle Count-Gates
 //    durchgelaufen sind, wird geschrieben. HTML-Antwort, Timeout oder
 //    Count-Abweichung ⇒ Abbruch mit Klartext-Meldung, Datei bleibt unberührt.
-//  · EINGEHEND = INVERSION DER AUSGEHENDEN KANTEN. Der Auftrag verlangt die
-//    eingehenden Kanten «auf die gepinnte Consolidation des ZITIERENDEN Erlasses
-//    gefiltert». Eine Consolidation ist nur für einen GEPINNTEN Erlass definiert
-//    — die Menge der so gefilterten eingehenden Kanten ist deshalb GENAU die
-//    Umkehrung der über alle Pins erhobenen ausgehenden Kanten. Wir invertieren
-//    lokal statt 227 weitere Abfragen zu stellen: identisches Ergebnis, halbe
-//    Netzlast, und der Graph ist per Konstruktion in sich konsistent (keine
-//    eingehende Kante ohne ihre ausgehende).
+//  · EINGEHENDAUSKORPUS = INVERSION DER AUSGEHENDEN KANTEN, NUR KORPUSINTERN.
+//    Der Auftrag verlangt die eingehenden Kanten «auf die gepinnte Consolidation
+//    des ZITIERENDEN Erlasses gefiltert». Eine Consolidation ist nur für einen
+//    GEPINNTEN Erlass definiert — die Menge der so gefilterten eingehenden
+//    Kanten ist deshalb GENAU die Umkehrung der über alle Pins erhobenen
+//    ausgehenden Kanten. Wir invertieren lokal statt 227 weitere Abfragen zu
+//    stellen: identisches Ergebnis, halbe Netzlast, und der Graph ist per
+//    Konstruktion in sich konsistent (keine eingehende Kante ohne ihre
+//    ausgehende) — ABER das Feld heisst bewusst `eingehendAusKorpus`, nicht
+//    `eingehend`: es zeigt nur Zitate AUS DEN GEPINNTEN 227 ERLASSEN. Ein
+//    NICHT gepinnter Erlass, der einen Pin zitiert (z. B. RAG SR 221.302
+//    zitiert das OR [SR 220] an 7 Stellen), taucht hier NICHT auf — der
+//    Endpunkt würde die eingehenden Kanten nur über eine 228. Abfrage pro
+//    Zielerlass gegen den gesamten Fedlex-Bestand liefern, was der Auftrag
+//    ausdrücklich nicht verlangt («keine Zusatzabfragen»).
 //
 // Regenerieren: `npm run zitatgraph:generieren`.
 
@@ -97,13 +104,13 @@ export interface ErlassKnoten {
   /** Gepinnte Konsolidierung als ISO-Datum. */
   stand: string;
   ausgehend: AusKante[];
-  eingehend: EinKante[];
+  eingehendAusKorpus: EinKante[];
 }
 export interface Zitatgraph {
   _zweck: string;
   _regenerieren: string;
   _grenzen: string[];
-  korpus: { erlasse: number; ausgehend: number; eingehend: number; ohneKanten: number };
+  korpus: { erlasse: number; ausgehend: number; eingehendAusKorpus: number; ohneKanten: number };
   erlasse: ErlassKnoten[];
 }
 
@@ -164,7 +171,7 @@ export function baueGraph(pins: PinVoll[], kantenJeExpr: Map<string, AusKante[]>
   const knoten = new Map<string, ErlassKnoten>();
   for (const p of pins) {
     if (!p.sr) continue;
-    if (!knoten.has(p.sr)) knoten.set(p.sr, { sr: p.sr, stand: p.kons, ausgehend: [], eingehend: [] });
+    if (!knoten.has(p.sr)) knoten.set(p.sr, { sr: p.sr, stand: p.kons, ausgehend: [], eingehendAusKorpus: [] });
     const k = knoten.get(p.sr)!;
     for (const kante of kantenJeExpr.get(exprUri(p)) ?? []) k.ausgehend.push(kante);
   }
@@ -178,13 +185,13 @@ export function baueGraph(pins: PinVoll[], kantenJeExpr: Map<string, AusKante[]>
       const schluessel = `${k.sr}|${a.eId}`;
       if (einGesehen.get(ziel.sr)!.has(schluessel)) continue;
       einGesehen.get(ziel.sr)!.add(schluessel);
-      ziel.eingehend.push({ vonSr: k.sr, vonEId: a.eId });
+      ziel.eingehendAusKorpus.push({ vonSr: k.sr, vonEId: a.eId });
     }
   }
   const erlasse = [...knoten.values()].sort((a, b) => cmp(a.sr, b.sr) || cmp(a.stand, b.stand));
   for (const k of erlasse) {
     k.ausgehend.sort((a, b) => cmp(a.eId, b.eId) || cmp(a.zielSr, b.zielSr) || cmp(a.zielEli, b.zielEli));
-    k.eingehend.sort((a, b) => cmp(a.vonSr, b.vonSr) || cmp(a.vonEId, b.vonEId));
+    k.eingehendAusKorpus.sort((a, b) => cmp(a.vonSr, b.vonSr) || cmp(a.vonEId, b.vonEId));
   }
   return {
     _zweck:
@@ -197,13 +204,13 @@ export function baueGraph(pins: PinVoll[], kantenJeExpr: Map<string, AusKante[]>
       'Fedlex unterscheidet nicht, ob eine Citation im Normtext oder in einer FUSSNOTE steht — beides erscheint hier als Kante.',
       'Ziel ist stets nur die Erlass-Ebene: Fedlex führt kein citationToReference, die zitierte Bestimmung des ZIELS ist unbekannt.',
       'Sprache DEU fest gebunden (ohne den Filter liefert der Endpunkt jede Kante fünffach).',
-      'eingehend = Inversion der ausgehenden Kanten über die gepinnte Consolidation; Zitate aus NICHT gepinnten Erlassen fehlen darum.',
+      'eingehendAusKorpus = Inversion der ausgehenden Kanten über die gepinnte Consolidation — NUR korpusintern: ein NICHT gepinnter Erlass, der einen Pin zitiert (z. B. RAG SR 221.302 zitiert das OR SR 220 an 7 Stellen), erscheint hier NICHT.',
     ],
     korpus: {
       erlasse: erlasse.length,
       ausgehend: erlasse.reduce((n, k) => n + k.ausgehend.length, 0),
-      eingehend: erlasse.reduce((n, k) => n + k.eingehend.length, 0),
-      ohneKanten: erlasse.filter((k) => k.ausgehend.length === 0 && k.eingehend.length === 0).length,
+      eingehendAusKorpus: erlasse.reduce((n, k) => n + k.eingehendAusKorpus.length, 0),
+      ohneKanten: erlasse.filter((k) => k.ausgehend.length === 0 && k.eingehendAusKorpus.length === 0).length,
     },
     erlasse,
   };
@@ -229,23 +236,46 @@ SELECT ?fromExpr ?eId ?toWork ?rs WHERE {
 }`;
 }
 
+/**
+ * OPTIONAL statt Pflicht-Pattern: nur so liefert die Gruppierung für JEDEN
+ * `?fromExpr`-Wert aus VALUES eine Zeile — auch mit COUNT 0. Mit einem
+ * Pflicht-Pattern (wie in `datenAbfrage`) fehlt ein Pin ohne Treffer in der
+ * Antwort ganz; genau das machte das Count-Gate vakuant: eine gültige LEERE
+ * `{results:{bindings:[]}}`-Antwort (0 Treffer über den ganzen Batch, z. B.
+ * bei einem Endpunkt-Defekt) lief unbemerkt durch, weil die Schleife unten
+ * nur über vorhandene Zeilen iterierte, nie über die VALUES-Soll-Menge.
+ * COUNT(?c) statt COUNT(*): bei einer OPTIONAL-Nichtübereinstimmung bleibt
+ * ?c ungebunden — COUNT(*) zählte die eine (leere) Lösungszeile trotzdem als
+ * 1, COUNT(?c) zählt nur gebundene Vorkommen und liefert korrekt 0.
+ */
 function zaehlAbfrage(valuesInline: string): string {
   return `PREFIX jolux: <http://data.legilux.public.lu/resource/ontology/jolux#>
-SELECT ?fromExpr (COUNT(*) AS ?n) WHERE {
+SELECT ?fromExpr (COUNT(?c) AS ?n) WHERE {
   VALUES ?fromExpr { ${valuesInline} }
-  ?c a jolux:Citation ;
-     jolux:citationFromLegalResource ?fromExpr ;
-     jolux:citationFromReference ?eId ;
-     jolux:citationToLegalResource ?toWork ;
-     jolux:citationToRs ?rs ;
-     jolux:language ${DEU} .
+  OPTIONAL {
+    ?c a jolux:Citation ;
+       jolux:citationFromLegalResource ?fromExpr ;
+       jolux:citationFromReference ?eId ;
+       jolux:citationToLegalResource ?toWork ;
+       jolux:citationToRs ?rs ;
+       jolux:language ${DEU} .
+  }
 } GROUP BY ?fromExpr`;
 }
 
 /**
  * Alle ausgehenden Kanten der gepinnten Erlasse, batchweise erhoben und je
  * Batch gegen die COUNT-Abfrage geprüft. Wirft bei jeder Abweichung — lieber
- * kein Artefakt als ein still unvollständiges (Skill-Falle 4).
+ * kein Artefakt als ein still unvollständiges (Skill-Falle 4). Das Gate prüft
+ * ZWEI Richtungen, nicht nur eine: (a) für jede von der COUNT-Abfrage
+ * gemeldete `?fromExpr`-Zeile muss die Daten-Abfrage exakt so viele rohe
+ * Zeilen geliefert haben (wie zuvor); (b) JEDER Pin des Batches (die
+ * VALUES-Soll-Menge) muss überhaupt als Zeile in der COUNT-Antwort
+ * erscheinen — mit OPTIONAL oben ist das immer der Fall, ausser der
+ * Endpunkt liefert eine unvollständige oder leere Antwort. Ohne (b) lässt
+ * eine gültige leere `{results:{bindings:[]}}`-Antwort die Schleife (a) mit
+ * null Iterationen glatt durchlaufen und ein Teil-Artefakt mit 0 Kanten
+ * entsteht — genau das verbietet der Kopf-Kommentar («KEIN TEIL-ARTEFAKT»).
  */
 export async function erhebe(
   pins: PinVoll[],
@@ -254,14 +284,17 @@ export async function erhebe(
   const alle = new Map<string, AusKante[]>();
   for (let i = 0; i < pins.length; i += BATCH) {
     const teil = pins.slice(i, i + BATCH);
-    const inline = teil.map((p) => `<${exprUri(p)}>`).join(' ');
+    const sollExprs = teil.map((p) => exprUri(p));
+    const inline = sollExprs.map((e) => `<${e}>`).join(' ');
     const zaehl = await sparqlSelect(zaehlAbfrage(inline), fetchImpl);
     const daten = await sparqlSelect(datenAbfrage(inline), fetchImpl);
     const { kanten, rohZeilen } = normalisiereKanten(daten);
+    const gesehen = new Set<string>();
     for (const b of zaehl) {
       const expr = b.fromExpr?.value;
       const soll = Number(b.n?.value ?? 'NaN');
       if (!expr) continue;
+      gesehen.add(expr);
       const ist = rohZeilen.get(expr) ?? 0;
       if (soll !== ist) {
         throw new Error(
@@ -269,6 +302,14 @@ export async function erhebe(
           + 'Ergebnis still unvollständig (Batch verkleinern), kein Artefakt geschrieben.',
         );
       }
+    }
+    const fehlend = sollExprs.filter((e) => !gesehen.has(e));
+    if (fehlend.length > 0) {
+      throw new Error(
+        `Count-Gate gerissen (vakuant): ${fehlend.length} von ${sollExprs.length} Pin(s) fehlen `
+        + `ganz in der COUNT-Antwort — ${fehlend.join(', ')}. Endpunkt lieferte eine unvollständige `
+        + 'oder leere Antwort, kein Artefakt geschrieben.',
+      );
     }
     for (const [expr, k] of kanten) alle.set(expr, k);
   }
@@ -305,7 +346,7 @@ async function main(): Promise<void> {
   const ohneExpr = pins.filter((p) => !kanten.has(exprUri(p)));
   console.log(
     `  ${graph.korpus.erlasse} Erlasse · ${graph.korpus.ausgehend} ausgehende · `
-    + `${graph.korpus.eingehend} eingehende Kanten · ${graph.korpus.ohneKanten} ohne Kante`,
+    + `${graph.korpus.eingehendAusKorpus} eingehende Kanten (nur korpusintern) · ${graph.korpus.ohneKanten} ohne Kante`,
   );
   console.log(`  ${Buffer.byteLength(inhalt)} Bytes · ${dauer} s Erhebung`);
   console.log(`  SHA-256 vorher  ${vorher}`);

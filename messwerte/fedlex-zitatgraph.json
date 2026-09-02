@@ -6,12 +6,12 @@
     "Fedlex unterscheidet nicht, ob eine Citation im Normtext oder in einer FUSSNOTE steht — beides erscheint hier als Kante.",
     "Ziel ist stets nur die Erlass-Ebene: Fedlex führt kein citationToReference, die zitierte Bestimmung des ZIELS ist unbekannt.",
     "Sprache DEU fest gebunden (ohne den Filter liefert der Endpunkt jede Kante fünffach).",
-    "eingehend = Inversion der ausgehenden Kanten über die gepinnte Consolidation; Zitate aus NICHT gepinnten Erlassen fehlen darum."
+    "eingehendAusKorpus = Inversion der ausgehenden Kanten über die gepinnte Consolidation — NUR korpusintern: ein NICHT gepinnter Erlass, der einen Pin zitiert (z. B. RAG SR 221.302 zitiert das OR SR 220 an 7 Stellen), erscheint hier NICHT."
   ],
   "korpus": {
     "erlasse": 227,
     "ausgehend": 5581,
-    "eingehend": 3820,
+    "eingehendAusKorpus": 3820,
     "ohneKanten": 9
   },
   "erlasse": [
@@ -30,7 +30,7 @@
           "zielEli": "cc/1976/689_689_689"
         }
       ],
-      "eingehend": []
+      "eingehendAusKorpus": []
     },
     {
       "sr": "0.103.2",
@@ -47,7 +47,7 @@
           "zielEli": "cc/1948/1048_1037_1010"
         }
       ],
-      "eingehend": [
+      "eingehendAusKorpus": [
         {
           "vonSr": "351.1",
           "vonEId": "art_2"
@@ -58,13 +58,13 @@
       "sr": "0.105",
       "stand": "2026-05-28",
       "ausgehend": [],
-      "eingehend": []
+      "eingehendAusKorpus": []
     },
     {
       "sr": "0.107",
       "stand": "2026-06-12",
       "ausgehend": [],
-      "eingehend": [
+      "eingehendAusKorpus": [
         {
           "vonSr": "142.20",
           "vonEId": "art_81"
@@ -75,19 +75,19 @@
       "sr": "0.108",
       "stand": "2023-04-19",
       "ausgehend": [],
-      "eingehend": []
+      "eingehendAusKorpus": []
     },
     {
       "sr": "0.109",
       "stand": "2026-05-01",
       "ausgehend": [],
-      "eingehend": []
+      "eingehendAusKorpus": []
     },
     {
       "sr": "0.111",
       "stand": "2020-05-08",
       "ausgehend": [],
-      "eingehend": []
+      "eingehendAusKorpus": []
     },
     {
       "sr": "0.142.112.681",
@@ -199,7 +199,7 @@
           "zielEli": "cc/2002/276"
         }
       ],
-      "eingehend": [
+      "eingehendAusKorpus": [
         {
           "vonSr": "142.20",
           "vonEId": "art_2"
@@ -418,7 +418,7 @@
       "sr": "0.142.30",
       "stand": "2012-06-14",
       "ausgehend": [],
-      "eingehend": [
+      "eingehendAusKorpus": [
         {
           "vonSr": "0.311.35",
           "vonEId": "art_60"
@@ -473,7 +473,7 @@
       "sr": "0.142.40",
       "stand": "2026-05-22",
       "ausgehend": [],
-      "eingehend": [
+      "eingehendAusKorpus": [
         {
           "vonSr": "142.20",
           "vonEId": "art_59"
@@ -500,7 +500,7 @@
       "sr": "0.172.030.4",
       "stand": "2024-09-04",
       "ausgehend": [],
-      "eingehend": []
+      "eingehendAusKorpus": []
     },
     {
       "sr": "0.211.213.02",
@@ -512,13 +512,13 @@
           "zielEli": "cc/1948/1048_1037_1010"
         }
       ],
-      "eingehend": []
+      "eingehendAusKorpus": []
     },
     {
       "sr": "0.211.221.311",
       "stand": "2025-05-07",
       "ausgehend": [],
-      "eingehend": []
+      "eingehendAusKorpus": []
     },
     {
       "sr": "0.211.230.02",
@@ -530,7 +530,7 @@
           "zielEli": "cc/1969/181_191_191"
         }
       ],
-      "eingehend": [
+      "eingehendAusKorpus": [
         {
           "vonSr": "0.211.231.011",
           "vonEId": "art_50"
@@ -555,7 +555,7 @@
           "zielEli": "cc/1983/1694_1694_1694"
         }
       ],
-      "eingehend": [
+      "eingehendAusKorpus": [
         {
           "vonSr": "291",
           "vonEId": "art_85"
@@ -566,7 +566,7 @@
       "sr": "0.211.232.1",
       "stand": "2023-05-09",
       "ausgehend": [],
-      "eingehend": [
+      "eingehendAusKorpus": [
         {
           "vonSr": "291",
           "vonEId": "art_85"
@@ -577,7 +577,7 @@
       "sr": "0.221.211.1",
       "stand": "2026-05-22",
       "ausgehend": [],
-      "eingehend": []
+      "eingehendAusKorpus": []
     },
     {
       "sr": "0.231.15",
@@ -649,7 +649,7 @@
           "zielEli": "cc/47/462_466_476"
         }
       ],
-      "eingehend": []
+      "eingehendAusKorpus": []
     },
     {
       "sr": "0.232.04",
@@ -711,7 +711,7 @@
           "zielEli": "cc/1970/602_603_603"
         }
       ],
-      "eingehend": [
+      "eingehendAusKorpus": [
         {
           "vonSr": "232.11",
           "vonEId": "art_3"
@@ -761,7 +761,7 @@
           "zielEli": "cc/2004/745"
         }
       ],
-      "eingehend": [
+      "eingehendAusKorpus": [
         {
           "vonSr": "0.275.12",
           "vonEId": "art_26"
@@ -788,7 +788,7 @@
           "zielEli": "cc/2004/745"
         }
       ],
-      "eingehend": [
+      "eingehendAusKorpus": [
         {
           "vonSr": "291",
           "vonEId": "art_11"
@@ -850,7 +850,7 @@
           "zielEli": "cc/1994/2809_2809_2809"
         }
       ],
-      "eingehend": [
+      "eingehendAusKorpus": [
         {
           "vonSr": "272",
           "vonEId": "art_327_a"
@@ -885,7 +885,7 @@
           "zielEli": "cc/1963/772_769_797"
         }
       ],
-      "eingehend": []
+      "eingehendAusKorpus": []
     },
     {
       "sr": "0.353.1",
@@ -997,7 +997,7 @@
           "zielEli": "cc/1988/761_761_761"
         }
       ],
-      "eingehend": []
+      "eingehendAusKorpus": []
     },
     {
       "sr": "0.741.611",
@@ -1009,7 +1009,7 @@
           "zielEli": "cc/1983/1933_1933_1933"
         }
       ],
-      "eingehend": []
+      "eingehendAusKorpus": []
     },
     {
       "sr": "0.748.0",
@@ -1051,7 +1051,7 @@
           "zielEli": "cc/39/551_565_576"
         }
       ],
-      "eingehend": [
+      "eingehendAusKorpus": [
         {
           "vonSr": "142.204",
           "vonEId": "art_10"
@@ -1124,7 +1124,7 @@
           "zielEli": "cc/2003/23"
         }
       ],
-      "eingehend": []
+      "eingehendAusKorpus": []
     },
     {
       "sr": "101",
@@ -1181,7 +1181,7 @@
           "zielEli": "cc/2003/510"
         }
       ],
-      "eingehend": [
+      "eingehendAusKorpus": [
         {
           "vonSr": "142.311",
           "vonEId": "art_32"
@@ -1248,7 +1248,7 @@
           "zielEli": "cc/2006/301"
         }
       ],
-      "eingehend": [
+      "eingehendAusKorpus": [
         {
           "vonSr": "142.20",
           "vonEId": "art_62"
@@ -1316,7 +1316,7 @@
           "zielEli": "cc/54/757_781_799"
         }
       ],
-      "eingehend": []
+      "eingehendAusKorpus": []
     },
     {
       "sr": "142.20",
@@ -1938,7 +1938,7 @@
           "zielEli": "cc/1999/358"
         }
       ],
-      "eingehend": [
+      "eingehendAusKorpus": [
         {
           "vonSr": "142.31",
           "vonEId": "art_102_m"
@@ -2489,7 +2489,7 @@
           "zielEli": "cc/2020/1059"
         }
       ],
-      "eingehend": [
+      "eingehendAusKorpus": [
         {
           "vonSr": "142.204",
           "vonEId": "art_27"
@@ -2702,7 +2702,7 @@
           "zielEli": "cc/2003/428"
         }
       ],
-      "eingehend": [
+      "eingehendAusKorpus": [
         {
           "vonSr": "142.201",
           "vonEId": "art_87"
@@ -2743,7 +2743,7 @@
           "zielEli": "cc/2004/745"
         }
       ],
-      "eingehend": [
+      "eingehendAusKorpus": [
         {
           "vonSr": "142.201",
           "vonEId": "art_77_g"
@@ -3208,7 +3208,7 @@
           "zielEli": "cc/2007/758"
         }
       ],
-      "eingehend": [
+      "eingehendAusKorpus": [
         {
           "vonSr": "142.20",
           "vonEId": "art_103_c"
@@ -3530,7 +3530,7 @@
           "zielEli": "cc/2004/677"
         }
       ],
-      "eingehend": [
+      "eingehendAusKorpus": [
         {
           "vonSr": "142.201",
           "vonEId": "art_74"
@@ -3715,7 +3715,7 @@
           "zielEli": "cc/2007/758"
         }
       ],
-      "eingehend": [
+      "eingehendAusKorpus": [
         {
           "vonSr": "142.201",
           "vonEId": "art_65"
@@ -3849,7 +3849,7 @@
           "zielEli": "cc/2022/568"
         }
       ],
-      "eingehend": [
+      "eingehendAusKorpus": [
         {
           "vonSr": "142.201",
           "vonEId": "art_87_a"
@@ -4288,7 +4288,7 @@
           "zielEli": "cc/1998/892_892_892"
         }
       ],
-      "eingehend": [
+      "eingehendAusKorpus": [
         {
           "vonSr": "142.201",
           "vonEId": "art_87"
@@ -4357,7 +4357,7 @@
           "zielEli": "cc/2007/861"
         }
       ],
-      "eingehend": [
+      "eingehendAusKorpus": [
         {
           "vonSr": "142.201",
           "vonEId": "art_8"
@@ -4432,7 +4432,7 @@
           "zielEli": "cc/27/317_321_377"
         }
       ],
-      "eingehend": [
+      "eingehendAusKorpus": [
         {
           "vonSr": "172.220.1",
           "vonEId": "art_34_c"
@@ -4505,7 +4505,7 @@
           "zielEli": "cc/2022/491"
         }
       ],
-      "eingehend": [
+      "eingehendAusKorpus": [
         {
           "vonSr": "172.010",
           "vonEId": "art_57_s"
@@ -4606,7 +4606,7 @@
           "zielEli": "cc/2006/218"
         }
       ],
-      "eingehend": [
+      "eingehendAusKorpus": [
         {
           "vonSr": "171.10",
           "vonEId": "art_174"
@@ -4716,7 +4716,7 @@
           "zielEli": "cc/27/317_321_377"
         }
       ],
-      "eingehend": [
+      "eingehendAusKorpus": [
         {
           "vonSr": "0.353.1",
           "vonEId": "decl_u2"
@@ -4839,7 +4839,7 @@
           "zielEli": "cc/2022/491"
         }
       ],
-      "eingehend": [
+      "eingehendAusKorpus": [
         {
           "vonSr": "0.274.131",
           "vonEId": "decl_u2/lvl_u2"
@@ -5169,7 +5169,7 @@
           "zielEli": "cc/1988/1162_1162_1162"
         }
       ],
-      "eingehend": [
+      "eingehendAusKorpus": [
         {
           "vonSr": "101",
           "vonEId": "art_61_a"
@@ -5415,7 +5415,7 @@
           "zielEli": "cc/2006/355"
         }
       ],
-      "eingehend": [
+      "eingehendAusKorpus": [
         {
           "vonSr": "142.204",
           "vonEId": "art_34"
@@ -5756,7 +5756,7 @@
           "zielEli": "cc/27/317_321_377"
         }
       ],
-      "eingehend": [
+      "eingehendAusKorpus": [
         {
           "vonSr": "172.220.111.3",
           "vonEId": "art_1"
@@ -5901,7 +5901,7 @@
           "zielEli": "cc/1997/2022_2022_2022"
         }
       ],
-      "eingehend": [
+      "eingehendAusKorpus": [
         {
           "vonSr": "142.20",
           "vonEId": "art_108_d"
@@ -6450,7 +6450,7 @@
           "zielEli": "cc/2006/218"
         }
       ],
-      "eingehend": [
+      "eingehendAusKorpus": [
         {
           "vonSr": "173.110",
           "vonEId": "art_83"
@@ -6546,7 +6546,7 @@
           "zielEli": "cc/2022/491"
         }
       ],
-      "eingehend": [
+      "eingehendAusKorpus": [
         {
           "vonSr": "784.101.1",
           "vonEId": "art_42"
@@ -6728,7 +6728,7 @@
           "zielEli": "cc/27/317_321_377"
         }
       ],
-      "eingehend": [
+      "eingehendAusKorpus": [
         {
           "vonSr": "151.1",
           "vonEId": "art_13"
@@ -7029,7 +7029,7 @@
           "zielEli": "cc/1969/737_757_755"
         }
       ],
-      "eingehend": [
+      "eingehendAusKorpus": [
         {
           "vonSr": "172.010.1",
           "vonEId": "art_27_a"
@@ -7274,7 +7274,7 @@
           "zielEli": "cc/2015/853"
         }
       ],
-      "eingehend": [
+      "eingehendAusKorpus": [
         {
           "vonSr": "142.31",
           "vonEId": "art_6"
@@ -7559,7 +7559,7 @@
           "zielEli": "cc/2022/568"
         }
       ],
-      "eingehend": []
+      "eingehendAusKorpus": []
     },
     {
       "sr": "173.32",
@@ -7731,7 +7731,7 @@
           "zielEli": "cc/2005/734"
         }
       ],
-      "eingehend": [
+      "eingehendAusKorpus": [
         {
           "vonSr": "142.20",
           "vonEId": "art_108_d_bis"
@@ -7863,7 +7863,7 @@
           "zielEli": "cc/2003/510"
         }
       ],
-      "eingehend": []
+      "eingehendAusKorpus": []
     },
     {
       "sr": "173.320.2",
@@ -7880,7 +7880,7 @@
           "zielEli": "cc/1969/737_757_755"
         }
       ],
-      "eingehend": [
+      "eingehendAusKorpus": [
         {
           "vonSr": "830.11",
           "vonEId": "art_12_a"
@@ -8042,7 +8042,7 @@
           "zielEli": "cc/2006/218"
         }
       ],
-      "eingehend": [
+      "eingehendAusKorpus": [
         {
           "vonSr": "172.021",
           "vonEId": "art_63"
@@ -8366,7 +8366,7 @@
           "zielEli": "cc/11/529_488_529"
         }
       ],
-      "eingehend": [
+      "eingehendAusKorpus": [
         {
           "vonSr": "141.0",
           "vonEId": "art_32"
@@ -9307,7 +9307,7 @@
           "zielEli": "cc/63/1185_1183_1185"
         }
       ],
-      "eingehend": []
+      "eingehendAusKorpus": []
     },
     {
       "sr": "211.221.36",
@@ -9329,7 +9329,7 @@
           "zielEli": "cc/2015/652"
         }
       ],
-      "eingehend": [
+      "eingehendAusKorpus": [
         {
           "vonSr": "836.21",
           "vonEId": "art_3"
@@ -9351,7 +9351,7 @@
           "zielEli": "cc/2009/379"
         }
       ],
-      "eingehend": [
+      "eingehendAusKorpus": [
         {
           "vonSr": "312.0",
           "vonEId": "art_168"
@@ -9393,7 +9393,7 @@
           "zielEli": "cc/24/233_245_233"
         }
       ],
-      "eingehend": [
+      "eingehendAusKorpus": [
         {
           "vonSr": "142.20",
           "vonEId": "art_109_c"
@@ -9552,7 +9552,7 @@
           "zielEli": "cc/2006/218"
         }
       ],
-      "eingehend": [
+      "eingehendAusKorpus": [
         {
           "vonSr": "210",
           "vonEId": "art_619"
@@ -9654,7 +9654,7 @@
           "zielEli": "cc/2007/860"
         }
       ],
-      "eingehend": [
+      "eingehendAusKorpus": [
         {
           "vonSr": "211.432.1",
           "vonEId": "art_56"
@@ -9750,7 +9750,7 @@
           "zielEli": "cc/24/233_245_233"
         }
       ],
-      "eingehend": []
+      "eingehendAusKorpus": []
     },
     {
       "sr": "211.432.1",
@@ -9977,7 +9977,7 @@
           "zielEli": "cc/2018/29"
         }
       ],
-      "eingehend": []
+      "eingehendAusKorpus": []
     },
     {
       "sr": "211.432.11",
@@ -10044,7 +10044,7 @@
           "zielEli": "cc/2008/393"
         }
       ],
-      "eingehend": []
+      "eingehendAusKorpus": []
     },
     {
       "sr": "220",
@@ -10441,7 +10441,7 @@
           "zielEli": "cc/24/233_245_233"
         }
       ],
-      "eingehend": [
+      "eingehendAusKorpus": [
         {
           "vonSr": "142.201",
           "vonEId": "art_22_a"
@@ -11601,7 +11601,7 @@
           "zielEli": "cc/2017/763"
         }
       ],
-      "eingehend": []
+      "eingehendAusKorpus": []
     },
     {
       "sr": "221.214.1",
@@ -11638,7 +11638,7 @@
           "zielEli": "cc/2003/510"
         }
       ],
-      "eingehend": [
+      "eingehendAusKorpus": [
         {
           "vonSr": "954.1",
           "vonEId": "art_75"
@@ -11655,7 +11655,7 @@
           "zielEli": "cc/2003/674"
         }
       ],
-      "eingehend": []
+      "eingehendAusKorpus": []
     },
     {
       "sr": "221.229.1",
@@ -11782,7 +11782,7 @@
           "zielEli": "cc/2005/734"
         }
       ],
-      "eingehend": [
+      "eingehendAusKorpus": [
         {
           "vonSr": "220",
           "vonEId": "art_348_b"
@@ -12016,7 +12016,7 @@
           "zielEli": "cc/27/317_321_377"
         }
       ],
-      "eingehend": [
+      "eingehendAusKorpus": [
         {
           "vonSr": "211.412.11",
           "vonEId": "art_62"
@@ -12279,7 +12279,7 @@
           "zielEli": "cc/2006/822"
         }
       ],
-      "eingehend": [
+      "eingehendAusKorpus": [
         {
           "vonSr": "642.211",
           "vonEId": "art_11"
@@ -12296,7 +12296,7 @@
           "zielEli": "cc/2006/822"
         }
       ],
-      "eingehend": []
+      "eingehendAusKorpus": []
     },
     {
       "sr": "231.1",
@@ -12368,7 +12368,7 @@
           "zielEli": "cc/2006/352"
         }
       ],
-      "eingehend": [
+      "eingehendAusKorpus": [
         {
           "vonSr": "281.1",
           "vonEId": "art_92"
@@ -12413,7 +12413,7 @@
           "zielEli": "cc/2007/255"
         }
       ],
-      "eingehend": []
+      "eingehendAusKorpus": []
     },
     {
       "sr": "232.11",
@@ -12590,7 +12590,7 @@
           "zielEli": "cc/1970/620_620_620"
         }
       ],
-      "eingehend": [
+      "eingehendAusKorpus": [
         {
           "vonSr": "817.0",
           "vonEId": "art_18"
@@ -12732,7 +12732,7 @@
           "zielEli": "cc/2009/150"
         }
       ],
-      "eingehend": [
+      "eingehendAusKorpus": [
         {
           "vonSr": "0.232.04",
           "vonEId": "art_12"
@@ -12789,7 +12789,7 @@
           "zielEli": "cc/1974/1857_1857_1857"
         }
       ],
-      "eingehend": [
+      "eingehendAusKorpus": [
         {
           "vonSr": "0.232.04",
           "vonEId": "art_12"
@@ -12816,7 +12816,7 @@
           "zielEli": "cc/2007/255"
         }
       ],
-      "eingehend": []
+      "eingehendAusKorpus": []
     },
     {
       "sr": "232.14",
@@ -12963,7 +12963,7 @@
           "zielEli": "cc/2001/422"
         }
       ],
-      "eingehend": [
+      "eingehendAusKorpus": [
         {
           "vonSr": "173.110",
           "vonEId": "art_100"
@@ -13125,7 +13125,7 @@
           "zielEli": "cc/1969/737_757_755"
         }
       ],
-      "eingehend": [
+      "eingehendAusKorpus": [
         {
           "vonSr": "0.232.04",
           "vonEId": "art_12"
@@ -13152,7 +13152,7 @@
           "zielEli": "cc/27/317_321_377"
         }
       ],
-      "eingehend": [
+      "eingehendAusKorpus": [
         {
           "vonSr": "291",
           "vonEId": "annex_u1/lvl_u1/lvl_I"
@@ -13243,7 +13243,7 @@
           "zielEli": "cc/1997/2022_2022_2022"
         }
       ],
-      "eingehend": [
+      "eingehendAusKorpus": [
         {
           "vonSr": "142.20",
           "vonEId": "art_102_c"
@@ -13489,7 +13489,7 @@
           "zielEli": "cc/2004/677"
         }
       ],
-      "eingehend": [
+      "eingehendAusKorpus": [
         {
           "vonSr": "142.201",
           "vonEId": "art_89_a"
@@ -13595,7 +13595,7 @@
           "zielEli": "cc/27/317_321_377"
         }
       ],
-      "eingehend": [
+      "eingehendAusKorpus": [
         {
           "vonSr": "172.056.1",
           "vonEId": "art_44"
@@ -13691,7 +13691,7 @@
           "zielEli": "cc/51/117_121_129"
         }
       ],
-      "eingehend": [
+      "eingehendAusKorpus": [
         {
           "vonSr": "172.021",
           "vonEId": "art_14"
@@ -14231,7 +14231,7 @@
           "zielEli": "cc/2022/491"
         }
       ],
-      "eingehend": [
+      "eingehendAusKorpus": [
         {
           "vonSr": "173.110",
           "vonEId": "art_77"
@@ -14766,7 +14766,7 @@
           "zielEli": "cc/2003/510"
         }
       ],
-      "eingehend": [
+      "eingehendAusKorpus": [
         {
           "vonSr": "171.10",
           "vonEId": "annex_2"
@@ -15195,7 +15195,7 @@
           "zielEli": "cc/24/233_245_233"
         }
       ],
-      "eingehend": []
+      "eingehendAusKorpus": []
     },
     {
       "sr": "281.32",
@@ -15237,7 +15237,7 @@
           "zielEli": "cc/1996/2937_2937_2937"
         }
       ],
-      "eingehend": [
+      "eingehendAusKorpus": [
         {
           "vonSr": "281.42",
           "vonEId": "art_122"
@@ -15307,7 +15307,7 @@
           "zielEli": "cc/51/117_121_129"
         }
       ],
-      "eingehend": [
+      "eingehendAusKorpus": [
         {
           "vonSr": "281.32",
           "vonEId": "art_84"
@@ -15584,7 +15584,7 @@
           "zielEli": "cc/27/751_749_771"
         }
       ],
-      "eingehend": [
+      "eingehendAusKorpus": [
         {
           "vonSr": "211.432.1",
           "vonEId": "art_55"
@@ -15786,7 +15786,7 @@
           "zielEli": "cc/2005/317"
         }
       ],
-      "eingehend": [
+      "eingehendAusKorpus": [
         {
           "vonSr": "0.275.12",
           "vonEId": "annex_I"
@@ -16361,7 +16361,7 @@
           "zielEli": "cc/2008/232"
         }
       ],
-      "eingehend": [
+      "eingehendAusKorpus": [
         {
           "vonSr": "0.353.1",
           "vonEId": "decl_u2"
@@ -17511,7 +17511,7 @@
           "zielEli": "cc/54/757_781_799"
         }
       ],
-      "eingehend": [
+      "eingehendAusKorpus": [
         {
           "vonSr": "220",
           "vonEId": "art_928_a"
@@ -18049,7 +18049,7 @@
           "zielEli": "cc/2003/510"
         }
       ],
-      "eingehend": [
+      "eingehendAusKorpus": [
         {
           "vonSr": "171.10",
           "vonEId": "art_153"
@@ -18425,7 +18425,7 @@
           "zielEli": "cc/2010/267"
         }
       ],
-      "eingehend": [
+      "eingehendAusKorpus": [
         {
           "vonSr": "313.0",
           "vonEId": "art_23"
@@ -18477,7 +18477,7 @@
           "zielEli": "cc/2007/804"
         }
       ],
-      "eingehend": [
+      "eingehendAusKorpus": [
         {
           "vonSr": "142.20",
           "vonEId": "art_50"
@@ -18640,7 +18640,7 @@
           "zielEli": "cc/2010/267"
         }
       ],
-      "eingehend": [
+      "eingehendAusKorpus": [
         {
           "vonSr": "173.110",
           "vonEId": "art_81"
@@ -19166,7 +19166,7 @@
           "zielEli": "cc/54/757_781_799"
         }
       ],
-      "eingehend": [
+      "eingehendAusKorpus": [
         {
           "vonSr": "142.20",
           "vonEId": "art_109_f"
@@ -19646,7 +19646,7 @@
           "zielEli": "cc/54/757_781_799"
         }
       ],
-      "eingehend": [
+      "eingehendAusKorpus": [
         {
           "vonSr": "170.32",
           "vonEId": "art_13"
@@ -19860,7 +19860,7 @@
           "zielEli": "cc/54/757_781_799"
         }
       ],
-      "eingehend": [
+      "eingehendAusKorpus": [
         {
           "vonSr": "0.353.1",
           "vonEId": "decl_u2"
@@ -19977,7 +19977,7 @@
           "zielEli": "cc/2008/736"
         }
       ],
-      "eingehend": []
+      "eingehendAusKorpus": []
     },
     {
       "sr": "364.3",
@@ -19999,7 +19999,7 @@
           "zielEli": "cc/2008/767"
         }
       ],
-      "eingehend": [
+      "eingehendAusKorpus": [
         {
           "vonSr": "142.312",
           "vonEId": "art_58"
@@ -20051,7 +20051,7 @@
           "zielEli": "cc/1988/223_223_223"
         }
       ],
-      "eingehend": [
+      "eingehendAusKorpus": [
         {
           "vonSr": "142.201",
           "vonEId": "art_65"
@@ -20194,7 +20194,7 @@
           "zielEli": "cc/1992/2521_2521_2521"
         }
       ],
-      "eingehend": [
+      "eingehendAusKorpus": [
         {
           "vonSr": "412.103.1",
           "vonEId": "art_16"
@@ -20224,7 +20224,7 @@
           "zielEli": "cc/2003/748"
         }
       ],
-      "eingehend": [
+      "eingehendAusKorpus": [
         {
           "vonSr": "412.101",
           "vonEId": "art_22"
@@ -20336,7 +20336,7 @@
           "zielEli": "cc/1999/404"
         }
       ],
-      "eingehend": [
+      "eingehendAusKorpus": [
         {
           "vonSr": "173.110",
           "vonEId": "art_117"
@@ -20449,7 +20449,7 @@
           "zielEli": "cc/2014/616"
         }
       ],
-      "eingehend": []
+      "eingehendAusKorpus": []
     },
     {
       "sr": "510.10",
@@ -20621,7 +20621,7 @@
           "zielEli": "cc/2017/494"
         }
       ],
-      "eingehend": [
+      "eingehendAusKorpus": [
         {
           "vonSr": "172.021",
           "vonEId": "art_3"
@@ -20855,7 +20855,7 @@
           "zielEli": "cc/27/317_321_377"
         }
       ],
-      "eingehend": [
+      "eingehendAusKorpus": [
         {
           "vonSr": "172.010.1",
           "vonEId": "art_22_c"
@@ -21112,7 +21112,7 @@
           "zielEli": "cc/54/757_781_799"
         }
       ],
-      "eingehend": [
+      "eingehendAusKorpus": [
         {
           "vonSr": "101",
           "vonEId": "art_130"
@@ -21300,7 +21300,7 @@
           "zielEli": "cc/24/233_245_233"
         }
       ],
-      "eingehend": [
+      "eingehendAusKorpus": [
         {
           "vonSr": "812.121",
           "vonEId": "art_27"
@@ -21402,7 +21402,7 @@
           "zielEli": "cc/1993/2080_2080_2080"
         }
       ],
-      "eingehend": [
+      "eingehendAusKorpus": [
         {
           "vonSr": "730.0",
           "vonEId": "art_50_a"
@@ -21644,7 +21644,7 @@
           "zielEli": "cc/63/837_843_843"
         }
       ],
-      "eingehend": [
+      "eingehendAusKorpus": [
         {
           "vonSr": "173.32",
           "vonEId": "art_51"
@@ -21767,7 +21767,7 @@
       "sr": "642.118.1",
       "stand": "2026-01-01",
       "ausgehend": [],
-      "eingehend": []
+      "eingehendAusKorpus": []
     },
     {
       "sr": "642.118.2",
@@ -21799,7 +21799,7 @@
           "zielEli": "cc/1991/392_392_392"
         }
       ],
-      "eingehend": []
+      "eingehendAusKorpus": []
     },
     {
       "sr": "642.14",
@@ -22001,7 +22001,7 @@
           "zielEli": "cc/54/757_781_799"
         }
       ],
-      "eingehend": [
+      "eingehendAusKorpus": [
         {
           "vonSr": "221.301",
           "vonEId": "art_103"
@@ -22195,7 +22195,7 @@
           "zielEli": "cc/2006/822"
         }
       ],
-      "eingehend": [
+      "eingehendAusKorpus": [
         {
           "vonSr": "172.010.1",
           "vonEId": "art_22_c"
@@ -22282,7 +22282,7 @@
           "zielEli": "cc/51/117_121_129"
         }
       ],
-      "eingehend": []
+      "eingehendAusKorpus": []
     },
     {
       "sr": "700",
@@ -22324,7 +22324,7 @@
           "zielEli": "cc/2017/762"
         }
       ],
-      "eingehend": [
+      "eingehendAusKorpus": [
         {
           "vonSr": "142.31",
           "vonEId": "art_95_a"
@@ -22487,7 +22487,7 @@
           "zielEli": "cc/1993/2904_2904_2904"
         }
       ],
-      "eingehend": [
+      "eingehendAusKorpus": [
         {
           "vonSr": "451.1",
           "vonEId": "art_26"
@@ -22586,7 +22586,7 @@
           "zielEli": "cc/24/233_245_233"
         }
       ],
-      "eingehend": [
+      "eingehendAusKorpus": [
         {
           "vonSr": "142.31",
           "vonEId": "art_95_b"
@@ -22887,7 +22887,7 @@
           "zielEli": "cc/2017/308"
         }
       ],
-      "eingehend": [
+      "eingehendAusKorpus": [
         {
           "vonSr": "173.110",
           "vonEId": "art_83"
@@ -23143,7 +23143,7 @@
           "zielEli": "cc/54/757_781_799"
         }
       ],
-      "eingehend": [
+      "eingehendAusKorpus": [
         {
           "vonSr": "0.353.1",
           "vonEId": "decl_u2"
@@ -23341,7 +23341,7 @@
           "zielEli": "cc/2006/245"
         }
       ],
-      "eingehend": [
+      "eingehendAusKorpus": [
         {
           "vonSr": "741.51",
           "vonEId": "annex_1_bis/lvl_u1"
@@ -23508,7 +23508,7 @@
           "zielEli": "cc/1995/4425_4425_4425"
         }
       ],
-      "eingehend": [
+      "eingehendAusKorpus": [
         {
           "vonSr": "741.01",
           "vonEId": "art_108"
@@ -23825,7 +23825,7 @@
           "zielEli": "cc/1962/1364_1409_1420"
         }
       ],
-      "eingehend": [
+      "eingehendAusKorpus": [
         {
           "vonSr": "741.11",
           "vonEId": "art_1"
@@ -23941,7 +23941,7 @@
           "zielEli": "cc/1981/480_480_480"
         }
       ],
-      "eingehend": [
+      "eingehendAusKorpus": [
         {
           "vonSr": "741.01",
           "vonEId": "art_108"
@@ -24381,7 +24381,7 @@
           "zielEli": "cc/1962/1364_1409_1420"
         }
       ],
-      "eingehend": [
+      "eingehendAusKorpus": [
         {
           "vonSr": "741.013",
           "vonEId": "art_2"
@@ -24809,7 +24809,7 @@
           "zielEli": "cc/2005/163"
         }
       ],
-      "eingehend": [
+      "eingehendAusKorpus": [
         {
           "vonSr": "741.013",
           "vonEId": "art_2"
@@ -25139,7 +25139,7 @@
           "zielEli": "cc/2004/320"
         }
       ],
-      "eingehend": [
+      "eingehendAusKorpus": [
         {
           "vonSr": "173.32",
           "vonEId": "art_33"
@@ -25386,7 +25386,7 @@
           "zielEli": "cc/1974/1857_1857_1857"
         }
       ],
-      "eingehend": [
+      "eingehendAusKorpus": [
         {
           "vonSr": "0.353.1",
           "vonEId": "decl_u2"
@@ -25499,7 +25499,7 @@
           "zielEli": "cc/63/1377_1378_1381"
         }
       ],
-      "eingehend": []
+      "eingehendAusKorpus": []
     },
     {
       "sr": "784.10",
@@ -25586,7 +25586,7 @@
           "zielEli": "cc/2018/31"
         }
       ],
-      "eingehend": [
+      "eingehendAusKorpus": [
         {
           "vonSr": "171.10",
           "vonEId": "annex_2"
@@ -25720,7 +25720,7 @@
           "zielEli": "cc/2025/318"
         }
       ],
-      "eingehend": [
+      "eingehendAusKorpus": [
         {
           "vonSr": "784.10",
           "vonEId": "art_16"
@@ -25867,7 +25867,7 @@
           "zielEli": "cc/2016/18"
         }
       ],
-      "eingehend": [
+      "eingehendAusKorpus": [
         {
           "vonSr": "741.41",
           "vonEId": "art_80"
@@ -25937,7 +25937,7 @@
           "zielEli": "cc/1974/1857_1857_1857"
         }
       ],
-      "eingehend": [
+      "eingehendAusKorpus": [
         {
           "vonSr": "812.21",
           "vonEId": "art_2_a"
@@ -26135,7 +26135,7 @@
           "zielEli": "cc/2018/786"
         }
       ],
-      "eingehend": [
+      "eingehendAusKorpus": [
         {
           "vonSr": "0.353.1",
           "vonEId": "decl_u2"
@@ -26309,7 +26309,7 @@
           "zielEli": "cc/54/757_781_799"
         }
       ],
-      "eingehend": [
+      "eingehendAusKorpus": [
         {
           "vonSr": "812.212.21",
           "vonEId": "art_40"
@@ -26471,7 +26471,7 @@
           "zielEli": "cc/1974/1857_1857_1857"
         }
       ],
-      "eingehend": [
+      "eingehendAusKorpus": [
         {
           "vonSr": "173.32",
           "vonEId": "art_33"
@@ -26630,7 +26630,7 @@
           "zielEli": "cc/2013/643"
         }
       ],
-      "eingehend": [
+      "eingehendAusKorpus": [
         {
           "vonSr": "641.201",
           "vonEId": "art_49"
@@ -26812,7 +26812,7 @@
           "zielEli": "cc/2008/614"
         }
       ],
-      "eingehend": [
+      "eingehendAusKorpus": [
         {
           "vonSr": "812.212.1",
           "vonEId": "art_12"
@@ -26966,7 +26966,7 @@
           "zielEli": "cc/2022/491"
         }
       ],
-      "eingehend": [
+      "eingehendAusKorpus": [
         {
           "vonSr": "814.81",
           "vonEId": "annex_1_17/lvl_u1/lvl_5"
@@ -27225,7 +27225,7 @@
           "zielEli": "cc/2017/62"
         }
       ],
-      "eingehend": [
+      "eingehendAusKorpus": [
         {
           "vonSr": "814.81",
           "vonEId": "annex_1_17/lvl_u1/lvl_2"
@@ -27355,7 +27355,7 @@
           "zielEli": "cc/1991/857_857_857"
         }
       ],
-      "eingehend": [
+      "eingehendAusKorpus": [
         {
           "vonSr": "173.110",
           "vonEId": "art_117"
@@ -27512,7 +27512,7 @@
           "zielEli": "cc/2017/762"
         }
       ],
-      "eingehend": []
+      "eingehendAusKorpus": []
     },
     {
       "sr": "814.20",
@@ -27599,7 +27599,7 @@
           "zielEli": "cc/1991/2259_2259_2259"
         }
       ],
-      "eingehend": [
+      "eingehendAusKorpus": [
         {
           "vonSr": "451",
           "vonEId": "art_22"
@@ -27760,7 +27760,7 @@
           "zielEli": "cc/1998/1854_1854_1854"
         }
       ],
-      "eingehend": [
+      "eingehendAusKorpus": [
         {
           "vonSr": "814.600",
           "vonEId": "annex_2/lvl_u1/lvl_1/lvl_1_1"
@@ -27820,7 +27820,7 @@
           "zielEli": "cc/2008/389"
         }
       ],
-      "eingehend": [
+      "eingehendAusKorpus": [
         {
           "vonSr": "741.41",
           "vonEId": "art_3"
@@ -27925,7 +27925,7 @@
           "zielEli": "cc/2008/389"
         }
       ],
-      "eingehend": [
+      "eingehendAusKorpus": [
         {
           "vonSr": "748.131.1",
           "vonEId": "art_24"
@@ -28011,7 +28011,7 @@
           "zielEli": "cc/1998/2261_2261_2261"
         }
       ],
-      "eingehend": [
+      "eingehendAusKorpus": [
         {
           "vonSr": "813.11",
           "vonEId": "annex_1/lvl_u1/lvl_3"
@@ -28059,7 +28059,7 @@
           "zielEli": "cc/2005/478"
         }
       ],
-      "eingehend": [
+      "eingehendAusKorpus": [
         {
           "vonSr": "813.11",
           "vonEId": "annex_1/lvl_u1/lvl_3"
@@ -28106,7 +28106,7 @@
           "zielEli": "cc/2015/670"
         }
       ],
-      "eingehend": []
+      "eingehendAusKorpus": []
     },
     {
       "sr": "814.81",
@@ -28553,7 +28553,7 @@
           "zielEli": "cc/1960/590_635_621"
         }
       ],
-      "eingehend": [
+      "eingehendAusKorpus": [
         {
           "vonSr": "813.11",
           "vonEId": "annex_1/lvl_u1/lvl_3"
@@ -28688,7 +28688,7 @@
           "zielEli": "cc/1974/1857_1857_1857"
         }
       ],
-      "eingehend": [
+      "eingehendAusKorpus": [
         {
           "vonSr": "232.11",
           "vonEId": "art_48_b"
@@ -28805,7 +28805,7 @@
           "zielEli": "cc/1974/1857_1857_1857"
         }
       ],
-      "eingehend": [
+      "eingehendAusKorpus": [
         {
           "vonSr": "142.20",
           "vonEId": "art_65_a"
@@ -28888,7 +28888,7 @@
           "zielEli": "cc/2022/568"
         }
       ],
-      "eingehend": []
+      "eingehendAusKorpus": []
     },
     {
       "sr": "822.11",
@@ -28940,7 +28940,7 @@
           "zielEli": "cc/27/317_321_377"
         }
       ],
-      "eingehend": [
+      "eingehendAusKorpus": [
         {
           "vonSr": "101",
           "vonEId": "art_196"
@@ -29062,7 +29062,7 @@
           "zielEli": "cc/2025/565"
         }
       ],
-      "eingehend": [
+      "eingehendAusKorpus": [
         {
           "vonSr": "822.112",
           "vonEId": "art_17_c"
@@ -29148,7 +29148,7 @@
           "zielEli": "cc/2000/243"
         }
       ],
-      "eingehend": [
+      "eingehendAusKorpus": [
         {
           "vonSr": "822.111",
           "vonEId": "annex_u1/lvl_u1/lvl_14"
@@ -29184,7 +29184,7 @@
           "zielEli": "cc/1982/1676_1676_1676"
         }
       ],
-      "eingehend": [
+      "eingehendAusKorpus": [
         {
           "vonSr": "822.111",
           "vonEId": "art_63"
@@ -29220,7 +29220,7 @@
           "zielEli": "cc/1997/2022_2022_2022"
         }
       ],
-      "eingehend": []
+      "eingehendAusKorpus": []
     },
     {
       "sr": "822.115",
@@ -29267,7 +29267,7 @@
           "zielEli": "cc/2012/698"
         }
       ],
-      "eingehend": [
+      "eingehendAusKorpus": [
         {
           "vonSr": "822.111",
           "vonEId": "art_41"
@@ -29329,7 +29329,7 @@
           "zielEli": "cc/27/317_321_377"
         }
       ],
-      "eingehend": [
+      "eingehendAusKorpus": [
         {
           "vonSr": "142.513",
           "vonEId": "annex_1/lvl_u1/lvl_u1"
@@ -29438,7 +29438,7 @@
           "zielEli": "cc/63/837_843_843"
         }
       ],
-      "eingehend": [
+      "eingehendAusKorpus": [
         {
           "vonSr": "172.021",
           "vonEId": "art_3"
@@ -30512,7 +30512,7 @@
           "zielEli": "cc/2022/568"
         }
       ],
-      "eingehend": [
+      "eingehendAusKorpus": [
         {
           "vonSr": "832.102",
           "vonEId": "art_90_a"
@@ -30909,7 +30909,7 @@
           "zielEli": "cc/54/757_781_799"
         }
       ],
-      "eingehend": [
+      "eingehendAusKorpus": [
         {
           "vonSr": "101",
           "vonEId": "art_197"
@@ -31843,7 +31843,7 @@
           "zielEli": "cc/1982/2184_2184_2184"
         }
       ],
-      "eingehend": [
+      "eingehendAusKorpus": [
         {
           "vonSr": "142.513",
           "vonEId": "art_25_a"
@@ -32055,7 +32055,7 @@
           "zielEli": "cc/1961/29_29_29"
         }
       ],
-      "eingehend": [
+      "eingehendAusKorpus": [
         {
           "vonSr": "831.201",
           "vonEId": "disp_u10"
@@ -32691,7 +32691,7 @@
           "zielEli": "cc/2002/510"
         }
       ],
-      "eingehend": [
+      "eingehendAusKorpus": [
         {
           "vonSr": "101",
           "vonEId": "art_197"
@@ -33214,7 +33214,7 @@
           "zielEli": "cc/2008/51"
         }
       ],
-      "eingehend": [
+      "eingehendAusKorpus": [
         {
           "vonSr": "831.101",
           "vonEId": "art_222"
@@ -33433,7 +33433,7 @@
           "zielEli": "cc/1995/1328_1328_1328"
         }
       ],
-      "eingehend": [
+      "eingehendAusKorpus": [
         {
           "vonSr": "142.20",
           "vonEId": "art_43"
@@ -33633,7 +33633,7 @@
           "zielEli": "cc/63/837_843_843"
         }
       ],
-      "eingehend": []
+      "eingehendAusKorpus": []
     },
     {
       "sr": "831.40",
@@ -34015,7 +34015,7 @@
           "zielEli": "cc/2002/510"
         }
       ],
-      "eingehend": [
+      "eingehendAusKorpus": [
         {
           "vonSr": "172.220.1",
           "vonEId": "art_32_g"
@@ -34519,7 +34519,7 @@
           "zielEli": "cc/1960/590_635_621"
         }
       ],
-      "eingehend": [
+      "eingehendAusKorpus": [
         {
           "vonSr": "210",
           "vonEId": "art_123"
@@ -34734,7 +34734,7 @@
           "zielEli": "cc/1984/543_543_543"
         }
       ],
-      "eingehend": [
+      "eingehendAusKorpus": [
         {
           "vonSr": "641.10",
           "vonEId": "art_13"
@@ -34913,7 +34913,7 @@
           "zielEli": "cc/63/837_843_843"
         }
       ],
-      "eingehend": [
+      "eingehendAusKorpus": [
         {
           "vonSr": "831.425",
           "vonEId": "art_19"
@@ -34981,7 +34981,7 @@
           "zielEli": "cc/63/837_843_843"
         }
       ],
-      "eingehend": [
+      "eingehendAusKorpus": [
         {
           "vonSr": "641.10",
           "vonEId": "art_13"
@@ -35311,7 +35311,7 @@
           "zielEli": "cc/2005/734"
         }
       ],
-      "eingehend": [
+      "eingehendAusKorpus": [
         {
           "vonSr": "142.20",
           "vonEId": "art_86"
@@ -35980,7 +35980,7 @@
           "zielEli": "cc/1999/358"
         }
       ],
-      "eingehend": [
+      "eingehendAusKorpus": [
         {
           "vonSr": "830.11",
           "vonEId": "art_17_b"
@@ -36085,7 +36085,7 @@
           "zielEli": "cc/2007/537"
         }
       ],
-      "eingehend": [
+      "eingehendAusKorpus": [
         {
           "vonSr": "832.102",
           "vonEId": "disp_u13"
@@ -36120,7 +36120,7 @@
           "zielEli": "cc/63/1185_1183_1185"
         }
       ],
-      "eingehend": [
+      "eingehendAusKorpus": [
         {
           "vonSr": "211.432.1",
           "vonEId": "art_51"
@@ -36266,7 +36266,7 @@
           "zielEli": "cc/1995/1328_1328_1328"
         }
       ],
-      "eingehend": [
+      "eingehendAusKorpus": [
         {
           "vonSr": "812.212.21",
           "vonEId": "art_46"
@@ -36668,7 +36668,7 @@
           "zielEli": "cc/2002/510"
         }
       ],
-      "eingehend": [
+      "eingehendAusKorpus": [
         {
           "vonSr": "172.220.111.3",
           "vonEId": "art_10_c"
@@ -37011,7 +37011,7 @@
           "zielEli": "cc/63/837_843_843"
         }
       ],
-      "eingehend": [
+      "eingehendAusKorpus": [
         {
           "vonSr": "831.201",
           "vonEId": "art_66"
@@ -37281,7 +37281,7 @@
           "zielEli": "cc/2002/510"
         }
       ],
-      "eingehend": [
+      "eingehendAusKorpus": [
         {
           "vonSr": "642.11",
           "vonEId": "art_202"
@@ -37497,7 +37497,7 @@
           "zielEli": "cc/1982/1676_1676_1676"
         }
       ],
-      "eingehend": []
+      "eingehendAusKorpus": []
     },
     {
       "sr": "834.1",
@@ -37844,7 +37844,7 @@
           "zielEli": "cc/1995/4093_4093_4093"
         }
       ],
-      "eingehend": [
+      "eingehendAusKorpus": [
         {
           "vonSr": "172.220.111.3",
           "vonEId": "art_59"
@@ -38072,7 +38072,7 @@
           "zielEli": "cc/63/837_843_843"
         }
       ],
-      "eingehend": [
+      "eingehendAusKorpus": [
         {
           "vonSr": "831.201",
           "vonEId": "art_81_bis"
@@ -38207,7 +38207,7 @@
           "zielEli": "cc/2002/510"
         }
       ],
-      "eingehend": [
+      "eingehendAusKorpus": [
         {
           "vonSr": "172.220.111.3",
           "vonEId": "art_51_a"
@@ -38337,7 +38337,7 @@
           "zielEli": "cc/63/837_843_843"
         }
       ],
-      "eingehend": [
+      "eingehendAusKorpus": [
         {
           "vonSr": "172.220.111.3",
           "vonEId": "art_51_a"
@@ -38669,7 +38669,7 @@
           "zielEli": "cc/1993/3043_3043_3043"
         }
       ],
-      "eingehend": [
+      "eingehendAusKorpus": [
         {
           "vonSr": "221.229.1",
           "vonEId": "art_100"
@@ -38907,7 +38907,7 @@
           "zielEli": "cc/63/837_843_843"
         }
       ],
-      "eingehend": [
+      "eingehendAusKorpus": [
         {
           "vonSr": "832.202",
           "vonEId": "art_53"
@@ -39004,7 +39004,7 @@
           "zielEli": "cc/1979/1573_1573_1573"
         }
       ],
-      "eingehend": [
+      "eingehendAusKorpus": [
         {
           "vonSr": "412.101",
           "vonEId": "art_77"
@@ -39095,7 +39095,7 @@
           "zielEli": "cc/1979/1573_1573_1573"
         }
       ],
-      "eingehend": []
+      "eingehendAusKorpus": []
     },
     {
       "sr": "935.61",
@@ -39147,7 +39147,7 @@
           "zielEli": "cc/2022/600"
         }
       ],
-      "eingehend": [
+      "eingehendAusKorpus": [
         {
           "vonSr": "172.021",
           "vonEId": "art_13"
@@ -39209,7 +39209,7 @@
           "zielEli": "cc/1974/1857_1857_1857"
         }
       ],
-      "eingehend": [
+      "eingehendAusKorpus": [
         {
           "vonSr": "251",
           "vonEId": "art_3"
@@ -39249,13 +39249,13 @@
           "zielEli": "cc/1974/1857_1857_1857"
         }
       ],
-      "eingehend": []
+      "eingehendAusKorpus": []
     },
     {
       "sr": "944.3",
       "stand": "2021-08-20",
       "ausgehend": [],
-      "eingehend": []
+      "eingehendAusKorpus": []
     },
     {
       "sr": "946.51",
@@ -39292,7 +39292,7 @@
           "zielEli": "cc/54/757_781_799"
         }
       ],
-      "eingehend": [
+      "eingehendAusKorpus": [
         {
           "vonSr": "784.10",
           "vonEId": "art_31"
@@ -39329,7 +39329,7 @@
           "zielEli": "cc/54/757_781_799"
         }
       ],
-      "eingehend": [
+      "eingehendAusKorpus": [
         {
           "vonSr": "784.101.2",
           "vonEId": "annex_4/lvl_u1"
@@ -39535,7 +39535,7 @@
           "zielEli": "cc/2018/801"
         }
       ],
-      "eingehend": [
+      "eingehendAusKorpus": [
         {
           "vonSr": "220",
           "vonEId": "art_40_a"
@@ -39905,7 +39905,7 @@
           "zielEli": "cc/2015/853"
         }
       ],
-      "eingehend": [
+      "eingehendAusKorpus": [
         {
           "vonSr": "951.311",
           "vonEId": "art_133"
@@ -40037,7 +40037,7 @@
           "zielEli": "cc/2022/568"
         }
       ],
-      "eingehend": []
+      "eingehendAusKorpus": []
     },
     {
       "sr": "951.31",
@@ -40319,7 +40319,7 @@
           "zielEli": "cc/27/317_321_377"
         }
       ],
-      "eingehend": [
+      "eingehendAusKorpus": [
         {
           "vonSr": "220",
           "vonEId": "art_939"
@@ -40758,7 +40758,7 @@
           "zielEli": "cc/24/233_245_233"
         }
       ],
-      "eingehend": [
+      "eingehendAusKorpus": [
         {
           "vonSr": "950.11",
           "vonEId": "annex_6/lvl_u1/lvl_1"
@@ -41225,7 +41225,7 @@
           "zielEli": "cc/2006/859"
         }
       ],
-      "eingehend": [
+      "eingehendAusKorpus": [
         {
           "vonSr": "831.441.1",
           "vonEId": "art_53"
@@ -41447,7 +41447,7 @@
           "zielEli": "cc/27/317_321_377"
         }
       ],
-      "eingehend": [
+      "eingehendAusKorpus": [
         {
           "vonSr": "220",
           "vonEId": "art_1126"
@@ -41891,7 +41891,7 @@
           "zielEli": "cc/2019/758"
         }
       ],
-      "eingehend": [
+      "eingehendAusKorpus": [
         {
           "vonSr": "951.131",
           "vonEId": "annex_u1/lvl_u1"
@@ -42161,7 +42161,7 @@
           "zielEli": "cc/2014/273"
         }
       ],
-      "eingehend": [
+      "eingehendAusKorpus": [
         {
           "vonSr": "951.131",
           "vonEId": "art_2"
@@ -42433,7 +42433,7 @@
           "zielEli": "cc/2008/736"
         }
       ],
-      "eingehend": [
+      "eingehendAusKorpus": [
         {
           "vonSr": "220",
           "vonEId": "art_689_e"
@@ -42841,7 +42841,7 @@
           "zielEli": "cc/2006/822"
         }
       ],
-      "eingehend": [
+      "eingehendAusKorpus": [
         {
           "vonSr": "951.311",
           "vonEId": "art_129_b"
@@ -43078,7 +43078,7 @@
           "zielEli": "cc/54/757_781_799"
         }
       ],
-      "eingehend": [
+      "eingehendAusKorpus": [
         {
           "vonSr": "142.513",
           "vonEId": "art_10"
@@ -43261,7 +43261,7 @@
           "zielEli": "cc/51/117_121_129"
         }
       ],
-      "eingehend": []
+      "eingehendAusKorpus": []
     },
     {
       "sr": "956.1",
@@ -43443,7 +43443,7 @@
           "zielEli": "cc/2001/123"
         }
       ],
-      "eingehend": [
+      "eingehendAusKorpus": [
         {
           "vonSr": "173.32",
           "vonEId": "art_33"
@@ -43874,7 +43874,7 @@
           "zielEli": "cc/2004/677"
         }
       ],
-      "eingehend": [
+      "eingehendAusKorpus": [
         {
           "vonSr": "950.11",
           "vonEId": "art_39"
@@ -43955,7 +43955,7 @@
           "zielEli": "cc/27/317_321_377"
         }
       ],
-      "eingehend": [
+      "eingehendAusKorpus": [
         {
           "vonSr": "210",
           "vonEId": "art_901"
@@ -44167,7 +44167,7 @@
           "zielEli": "cc/2005/734"
         }
       ],
-      "eingehend": [
+      "eingehendAusKorpus": [
         {
           "vonSr": "173.110",
           "vonEId": "art_83"
@@ -44425,7 +44425,7 @@
           "zielEli": "cc/2012/812"
         }
       ],
-      "eingehend": [
+      "eingehendAusKorpus": [
         {
           "vonSr": "951.131",
           "vonEId": "art_29"
@@ -44456,7 +44456,7 @@
           "zielEli": "cc/2010/408"
         }
       ],
-      "eingehend": [
+      "eingehendAusKorpus": [
         {
           "vonSr": "950.11",
           "vonEId": "annex_1/lvl_u1/lvl_2/lvl_2_6"
@@ -44665,7 +44665,7 @@
           "zielEli": "cc/1969/737_757_755"
         }
       ],
-      "eingehend": [
+      "eingehendAusKorpus": [
         {
           "vonSr": "173.32",
           "vonEId": "art_52"
@@ -44940,7 +44940,7 @@
           "zielEli": "cc/2015/839"
         }
       ],
-      "eingehend": [
+      "eingehendAusKorpus": [
         {
           "vonSr": "956.122",
           "vonEId": "annex_u1/lvl_u1"
