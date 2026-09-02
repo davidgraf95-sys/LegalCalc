@@ -172,10 +172,16 @@ jobs:
           # `vite-node`-Aufruf bräuchte Checkout + `npx -y npm@11 ci` bei JEDEM Lauf,
           # nicht nur bei code-fernen. Dieselbe Regel liegt zusätzlich als
           # reine, Vitest-getestete Funktion in scripts/ci/diff-klassieren.ts
-          # (§6.7-Beweis dort, `npx vitest run src/tests/ci-diff-klassieren.
+          # (§6.7-Beweis dort, `npx vitest run src/tests/steuerwerkzeuge.
           # test.ts`) — die Pfadliste hier ist wortgleich zu deren
           # CODE_FERNE_MUSTER, damit beide Fassungen nicht auseinanderlaufen.
           CODE_FERN_RE='(\.md$|^scripts/plan/|^scripts/cowork/|^\.claude/|^docs/|^bibliothek/|^messwerte/|^archiv/)'
+          # Trotz `.md`-Endung KEIN reiner Doku-Fall (Anlass PR #619, 2.9.2026):
+          # .claude/agents/lex-bau.md wurde von Hand geändert, der reine-.md-
+          # Kurzschluss unten stufte den Diff als `doku` ein, der Tore-Job
+          # (check:dispatch-klausel) lief nicht (§6.7). Wortgleich zu
+          # WERKZEUG_TROTZ_MD_MUSTER in scripts/ci/diff-klassieren.ts.
+          WERKZEUG_TROTZ_MD_RE='(^\.claude/agents/|^docs/token-oekonomie/dispatch-template\.md$)'
           # `merge_group` und `workflow_dispatch` fahren unverändert das volle
           # Programm: die Merge Queue prüft einen Stand, der gleich main WIRD,
           # und ein Handstart ist immer als Volllauf gemeint.
@@ -236,10 +242,12 @@ jobs:
               echo "Dateizahl ${anzahl} (leer oder an der API-Kappungsgrenze 300) — volles Programm."
               exit 0
             fi
-            # Doku-Menge: alle .md. (Die frühere inventar.ts-Ausnahme ist mit
-            # der Löschung von scripts/plan/inventar.ts obsolet — Plan-Neuschnitt
-            # 29.8.2026; die Messung dazu steht historisch im Kopf, lit. a.)
-            if grep -qvE '\.md$' push-dateien.txt; then
+            # Doku-Menge: alle .md UND keine davon Werkzeug-Konfiguration
+            # trotz .md-Endung (WERKZEUG_TROTZ_MD_RE, Anlass PR #619 oben).
+            # (Die frühere inventar.ts-Ausnahme ist mit der Löschung von
+            # scripts/plan/inventar.ts obsolet — Plan-Neuschnitt 29.8.2026;
+            # die Messung dazu steht historisch im Kopf, lit. a.)
+            if grep -qvE '\.md$' push-dateien.txt || grep -qE "$WERKZEUG_TROTZ_MD_RE" push-dateien.txt; then
               # Nicht rein Doku — app-ferne Zusatz-Klasse prüfen (CODE_FERN_RE,
               # Kopf dieses Schritts) statt sofort das volle Programm.
               if grep -qvE "$CODE_FERN_RE" push-dateien.txt; then
@@ -252,7 +260,7 @@ jobs:
               fi
             else
               echo "art=doku" >> "$GITHUB_OUTPUT"
-              echo "Reiner Doku-Push (${anzahl} Datei(en)) — Merge-Schutz, Testtreue und check:plan laufen ECHT, restliche Code-Tore quittieren."
+              echo "Reiner Doku-Push (${anzahl} Datei(en)) — Merge-Schutz, Testtreue, check:plan, check:steuerdeckel und check:bibliothek laufen ECHT, restliche Code-Tore quittieren."
             fi
             exit 0
           fi
@@ -269,9 +277,10 @@ jobs:
             echo "LEERER DIFF (changed_files=0) — genau die Klasse, die bis 3.8.2026 gar keinen Lauf und damit einen ewig 'expected'en Required-Kontext erzeugte (PR #417). Kontexte werden jetzt gemeldet."
             exit 0
           fi
-          if grep -qvE '\.md$' pr-dateien.txt; then
-            # Nicht rein .md — app-ferne Zusatz-Klasse prüfen (CODE_FERN_RE,
-            # Kopf dieses Schritts).
+          if grep -qvE '\.md$' pr-dateien.txt || grep -qE "$WERKZEUG_TROTZ_MD_RE" pr-dateien.txt; then
+            # Nicht rein .md (oder Werkzeug-Konfiguration trotz .md-Endung,
+            # WERKZEUG_TROTZ_MD_RE oben, Anlass PR #619) — app-ferne
+            # Zusatz-Klasse prüfen (CODE_FERN_RE, Kopf dieses Schritts).
             if grep -qvE "$CODE_FERN_RE" pr-dateien.txt; then
               echo "art=code" >> "$GITHUB_OUTPUT"
               echo "App-nahe Dateien im Diff — volles Programm:"
@@ -287,7 +296,7 @@ jobs:
             fi
           else
             echo "art=doku" >> "$GITHUB_OUTPUT"
-            echo "Reine .md-Änderung (${anzahl} Datei(en)) — Merge-Schutz und check:plan laufen ECHT, restliche Code-Tore quittieren."
+            echo "Reine .md-Änderung (${anzahl} Datei(en)) — Merge-Schutz, check:plan, check:steuerdeckel und check:bibliothek laufen ECHT, restliche Code-Tore quittieren."
           fi
 
   bau:
@@ -395,8 +404,11 @@ jobs:
       # ── Katalog-Inventur ENTFERNT (14.8.2026, QS-PLAN-EINFACH) ──────────────
       # Das Skript hat keinen Abbruchpfad und konnte nie rot werden (§6.7) —
       # es heisst jetzt ehrlich `report:inventur` und läuft auf Abruf.
+      # LÄUFT IMMER (auch art=doku), seit Bug-Check #626 (2.9.2026): ein reiner
+      # bibliothek/**-Diff ist selbst .md-only und wurde vom `art != 'doku'`-
+      # Gate bisher komplett übersprungen — das einzige md-lesende Tor, das
+      # NICHT wie check:plan/check:steuerdeckel schon unconditional lief.
       - name: Bibliotheks-Standards (S1–S10)
-        if: needs.diff.outputs.art != 'doku'
         run: npm run check:bibliothek
       # ── check:verfall STEHT HIER BEWUSST NICHT MEHR (3.8.2026, K7) ──────────
       # Es ist das einzige Tor im PR-Pfad, dessen Ergebnis von der WANDUHR
@@ -591,7 +603,7 @@ jobs:
         run: npm run check:seo-index && npm run check:verfall-ui
       - name: Kurzquittung (Doku-/Leer-Diff)
         if: needs.diff.outputs.art == 'doku'
-        run: echo "Kein Code im Diff — Merge-Schutz und check:plan sind oben ECHT gelaufen; die übrigen Code-Tore sind nicht betroffen."
+        run: echo "Kein Code im Diff — Merge-Schutz, check:plan, check:steuerdeckel und check:bibliothek sind oben ECHT gelaufen; die übrigen Code-Tore sind nicht betroffen."
 
   e2e:
     name: Browser-Smoke Shard ${{ matrix.gruppe }}/8 (Playwright)
