@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useMemo, useState, type Dispatch, type MutableRefObject, type RefObject, type SetStateAction } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { aktualisiereTabArtikel } from '../../../lib/tabs';
-import { baueGliederungsbaum, type CurrencyMap, type ErlassKopf, type Sektion, type StrukturMap } from '../../../lib/normtext/browse';
+import { baueGliederungsbaum, type CurrencyMap, type ErlassKopf, type Sektion, type StrukturMap, type KantonLueckenMap } from '../../../lib/normtext/browse';
 import type { BrowseErlass } from '../../../lib/normtext/browse-typen';
 import type { NormSnapshot } from '../../../lib/normtext/typen';
 import type { KantonSystematik } from '../../../lib/normtext/systematik';
@@ -61,7 +61,7 @@ export interface LeserV3Modell {
   currency: CurrencyMap | null;
   fehler: boolean;
   manifest: ReturnType<typeof useLeserZustand>['manifest'];
-  kantonSys: Record<string, KantonSystematik>;
+  kantonSys: Record<string, KantonSystematik>; kantonLuecken: KantonLueckenMap; // §8-Nachzug PR #614
 
   /** Amtliche Gliederung: voller Baum für die Lesespalte … */
   sektionen: Sektion[];
@@ -210,13 +210,13 @@ export function useLeserV3Modell({ ebene: routenSegment, schluessel }: { ebene: 
   } = useLeserTocZustand();
   const {
     tocOffen, setTocOffen, istXl, imPane, wurzel, overlayWurzel, istSekundaer,
-    meldeInhaltsKopf, aktArtikel, setAktArtikel, kantonSys, setKantonSys,
+    meldeInhaltsKopf, aktArtikel, setAktArtikel, kantonSys, setKantonSys, kantonLuecken, setKantonLuecken,
     sekRefs, tocDrawerRef, tabArtikelTimer, aktArtikelTimer, tocBaumTimer, tocTouchRef,
   } = useLeserAnsichtZustand({ tocAuf, setTocAuf });
 
   useLeserDaten({
     ebene: routenSegment, schluessel, navigate, erlass, istSekundaer, meldeInhaltsKopf,
-    setManifest, setCurrency, setStruktur, setKopf, setKantonSys, setErlass, setEintraege, setFehler,
+    setManifest, setCurrency, setStruktur, setKopf, setKantonSys, setKantonLuecken, setErlass, setEintraege, setFehler,
   });
 
   // ── Ableitungen ───────────────────────────────────────────────────────────
@@ -395,7 +395,7 @@ export function useLeserV3Modell({ ebene: routenSegment, schluessel }: { ebene: 
 
   return {
     modell: {
-      erlass, eintraege, struktur, kopf, currency, fehler, manifest, kantonSys,
+      erlass, eintraege, struktur, kopf, currency, fehler, manifest, kantonSys, kantonLuecken,
       sektionen, ohneGliederung, gliederung, alleKnotenIds,
       gliederungsTiefe, fussnotenAnzahl, hatAenderungsvermerke, kantonErlassAnzahl,
       nichtKonsolidiert, nichtKonsolidiertSeit,

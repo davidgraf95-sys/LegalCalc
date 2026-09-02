@@ -79,6 +79,13 @@ e2e-Suite: je Falsch-Rot bzw. Falsch-Grün. Gegenmittel: Playwright-`webServer`
 baut vor dem Preview (Wurzel-Fix), Skill `auftrag` Ziff. 6 (Preview nur aus
 Worktree-cwd, Scratchpad-Dateien agent-eindeutig, lange Läufe als persistenter
 Monitor), Skill `perf` Bauregel 7.
+**F12 — Doku-Klassierung überspringt das Tor, das die Drift fangen müsste
+(2.9.2026, PR #619 → #621/#622 rot).** Ein Hand-Edit generierter Agenten-
+definitionen lief als «doku» ohne Tore-Job durch; erst fremde PRs wurden an
+`check:dispatch-klausel` rot. Gegenmittel: `.claude/agents/**`,
+`scripts/dispatch.ts`, Dispatch-Template zählen in der Diff-Klassierung als
+«werkzeug» (PR der Parallel-Session lexmetrik-a1); Quelle ändern, nie die
+Projektion (§5; Wurzel-Fix PR #624).
 
 ## Eine neue Lehre ablegen
 
