@@ -86,6 +86,17 @@ definitionen lief als «doku» ohne Tore-Job durch; erst fremde PRs wurden an
 `scripts/dispatch.ts`, Dispatch-Template zählen in der Diff-Klassierung als
 «werkzeug» (PR der Parallel-Session lexmetrik-a1); Quelle ändern, nie die
 Projektion (§5; Wurzel-Fix PR #624).
+**F13 — Merge-Lauf auf main endete «cancelled», Merge nie live (2.9.2026, #629).**
+Beobachtung: `gh run list` zeigte den CI-Lauf des Squash-Commits 1123b1974 als
+`cancelled`, ~30 s nachdem ein Doku-Push (9cdbb6a55) auf main folgte; der
+Doku-Lauf überspringt den Deploy-Job → Live-Build blieb auf dem Vorgänger
+(Sidecar 404), erst `gh run rerun` heilte. **Ursache offen:** ci.yml hat seit
+26.7.2026 `cancel-in-progress: ${{ github.ref != 'refs/heads/main' }}` — die
+Concurrency kann es nicht gewesen sein (Mechanik-Agent 2.9., Reproduktion
+negativ). Kandidaten: ein Selbst-Cancel-Schritt im Workflow bei bewegtem HEAD,
+oder ein GitHub-seitiger Abbruch. ROADMAP-Zeile unter `QS-AUTOMATIK` (Ursache
+klären, Rot-Beweis). Bis dahin Regel Skill `landung` Nachkontrolle 0: nach
+einem Code-Merge kein weiterer main-Push, bis der Deploy-Job grün ist.
 
 ## Eine neue Lehre ablegen
 

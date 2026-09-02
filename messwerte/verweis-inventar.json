@@ -2,7 +2,7 @@
   "_zweck": "Verweis-Inventar des Normtext-Korpus (V-1, W2·20-VERWEIS-SCHAERFE). Basislinie: jede Abweichung Artefakt ↔ Neuberechnung ist ROT. Erzeugung und Grenzen: scripts/check-verweis-inventar.ts (Kopf).",
   "_regenerieren": "npm run check:verweis-inventar -- --schreiben",
   "_quellen": {
-    "normTextSha256": "8ed98e7a55313ba36f970bdd5d1904b066daa273dd217397372d3b5b9b0728ce",
+    "normTextSha256": "c09b07ed54d3c3c35739a52b42c7b747226e7a0cd1a583551f77e973e3877c60",
     "guards": 23
   },
   "korpus": {
@@ -11,13 +11,21 @@
     "texte": 214419
   },
   "gesamt": {
-    "stellen": 34683,
+    "stellen": 35780,
     "self": 19652,
-    "fremd": 6122,
+    "fremd": 7219,
     "text": 8909,
     "selbstmarker": 927
   },
   "klassen": [
+    {
+      "klasse": "anker-erlass",
+      "entscheid": "FREMD",
+      "stellen": 1097,
+      "erlasse": 363,
+      "selbstmarker": 0,
+      "was": "Blosser Erlass-Verweis OHNE Artikelnummer → Erlass-Seite (Z1, W2·22)"
+    },
     {
       "klasse": "anker-fedlex",
       "entscheid": "FREMD",

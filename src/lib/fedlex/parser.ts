@@ -2,7 +2,11 @@
 //
 // Teil der Achsen-Aufteilung von src/lib/fedlex.ts (QS-CODE-SPLITS): dort steht
 // nur noch die Fassade, die alles Bisherige unveraendert re-exportiert. Gerichtete
-// Kette ohne Zyklus: tabelle ← url ← erkennung ← parser.
+// Kette ohne Zyklus: tabelle ← url ← erkennung ← parser ← spannen.
+//
+// Diese Datei hält die ZITATFORMEN (Regex-Grammatik, Form B, Plural-Regionen);
+// die Spannen-Bildung (Ketten-Propagierung, Erlass-Verweise) steht seit dem
+// §6.6-Split vom 2.9.2026 in `spannen.ts` und importiert die Bausteine von hier.
 
 import { type FedlexGesetz } from './tabelle';
 import { artikelToken } from './url';
@@ -10,7 +14,6 @@ import {
   erkenneFedlexGesetz,
   erkenneGenitivGesetz,
   erkenneTitelGesetz,
-  fedlexLinkFuerArtikel,
   GENITIV_NAMEN_ESC,
   KUERZEL_TOKENS,
   TITEL_FRAGMENTE_ESC,
@@ -35,10 +38,10 @@ import { datumPasst, type FremdEbene } from './positivliste';
 // Satz oder ein zweites «Art.» hinaus. Jeder Treffer wird vor dem Verlinken
 // zusätzlich gegen fedlexLinkFuerArtikel validiert (kein toter Link).
 // V-8 (W2·20): KUERZEL_TOKENS = FEDLEX-Keys + amtliche Schreibweisen («BankG»).
-const NORM_NAMEN_ESC = (['GebV SchKG', ...KUERZEL_TOKENS] as string[])
-  // Längste zuerst: «GebV SchKG» vor «SchKG», «StGB» vor «StG» (Suffix-Kollision).
-  .sort((a, b) => b.length - a.length)
-  .map((n) => n.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'));
+// Längste zuerst: «GebV SchKG» vor «SchKG», «StGB» vor «StG» (Suffix-Kollision).
+export const NORM_NAMEN: ReadonlyArray<string> = (['GebV SchKG', ...KUERZEL_TOKENS] as string[])
+  .sort((a, b) => b.length - a.length);
+export const NORM_NAMEN_ESC = NORM_NAMEN.map((n) => n.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'));
 
 export const NORM_IM_TEXT = new RegExp(
   'Art\\.\\s*\\d+[a-z]?(?:bis|ter|quater|quinquies|sexies)?' +
@@ -71,10 +74,10 @@ export const NORM_IM_TEXT = new RegExp(
 // Backtracking-Falle; ein `(?![0-9a-z])`-Anker wie in ART_INTERN würde sie zwar
 // heilen, die alternationsbasierte Form ist aber auch ohne Anker korrekt und wird
 // hier global gescannt).
-const N2_ARTNR = '\\d+(?:bis|ter|quater|quinquies|sexies|[a-z](?:bis|ter|quater|quinquies|sexies)?)?';
-const N2_PASSUS = '(?:Abs(?:atz|ätze|\\.)|Buchstaben?|Bst\\.|lit\\.|Ziff(?:ern?|\\.)|Satz|Sätze)';
-const N2_WERT = '(?:' + N2_ARTNR + '|[a-z]|[ivxl]+)';
-const N2_KONN = '(?:[–-]|und|oder|bis|,|sowie)';
+export const N2_ARTNR = '\\d+(?:bis|ter|quater|quinquies|sexies|[a-z](?:bis|ter|quater|quinquies|sexies)?)?';
+export const N2_PASSUS = '(?:Abs(?:atz|ätze|\\.)|Buchstaben?|Bst\\.|lit\\.|Ziff(?:ern?|\\.)|Satz|Sätze)';
+export const N2_WERT = '(?:' + N2_ARTNR + '|[a-z]|[ivxl]+)';
+export const N2_KONN = '(?:[–-]|und|oder|bis|,|sowie)';
 const FREMDGESETZ_NACH_ARTIKEL = new RegExp(
   '^\\s+' +
     // weitere Artikelnummern im selben Verweis («1a oder 2 …», «25–31 …»)
@@ -128,7 +131,7 @@ export function fremdgesetzNachArtikel(restNachArtikel: string): FedlexGesetz | 
 const N2_NAME_WORT = '(?:[A-ZÄÖÜ][A-Za-zÄÖÜäöüß.\\-]*|\\d{1,4}\\.?|vom|von|über|und|der|die|das|des|für|zur|zum|im|in|zu|den|betreffend)';
 const N2_NAME_RUN = '[A-ZÄÖÜ][A-Za-zÄÖÜäöüß.\\-]*(?:\\s+' + N2_NAME_WORT + '){0,14}';
 // Datums-Einschub der Zitier-Konvention («vom 20. Dezember 1946», «vom 18. Dez. 1987»).
-const N2_DATUM = '\\d{1,2}\\.\\s*[A-Za-zÄÖÜäöü]+\\.?\\s+\\d{4}';
+export const N2_DATUM = '\\d{1,2}\\.\\s*[A-Za-zÄÖÜäöü]+\\.?\\s+\\d{4}';
 const FREMD_FORM_B = new RegExp(
   '^(\\s*)' +
     // 2: Aufzählungs-Schwanz (weitere Artikelnummern «oder 66abis», «25–31»)
@@ -156,7 +159,7 @@ const N2_ARTNR_RE = new RegExp(N2_ARTNR, 'g');
 // autoritative Signal: nennt sie ein ANDERES oder unbekanntes Kürzel, ist der
 // Name nicht das gefundene Bundesgesetz → kein Link (§1; gemessener Falschlink
 // BE-154.21 auf main 70002a287). Dasselbe Kürzel wird in die Region eingezogen.
-const KLAMMER_NACH_NAME = new RegExp('^\\s*(?:vom\\s+' + N2_DATUM + '\\s*)?\\(([^()]{1,40})\\)');
+export const KLAMMER_NACH_NAME = new RegExp('^\\s*(?:vom\\s+' + N2_DATUM + '\\s*)?\\(([^()]{1,40})\\)');
 // ─── Fix-Runde 1 zu W2·20 (Gegenprüfung 1.9.2026): zwei Kanten desselben Lecks ─
 //
 // (a) PRÄFIX-BINDUNG. Das Titel-Fragment endete bloss mit `\b`. Ein LÄNGERER
@@ -185,14 +188,14 @@ const KLAMMER_NACH_NAME = new RegExp('^\\s*(?:vom\\s+' + N2_DATUM + '\\s*)?\\(([
 //       als Bestätigung gelesen — und es widerspräche dem BPR ohnehin.
 // (b) ZEIT-KANTE. Das Datum wurde gelesen und ungeprüft verworfen; siehe
 //     `datumPasst` (positivliste.ts) für Belege und Quelle des Erlassdatums.
-const TITEL_FORTSETZUNG = new RegExp(
+export const TITEL_FORTSETZUNG = new RegExp(
   '^\\s+(?:(?:der|die|das|des|dem|den|und|über|für|zur|zum|im|in|an|auf|von|betreffend|gegen|sowie)\\s+){0,3}[A-ZÄÖÜ]',
 );
 // Datums-Einschub INNERHALB der erkannten Einheit («Bundesgesetzes vom D über …»,
 // «des Bundesgesetzes vom D über … (KÜRZEL)») bzw. unmittelbar dahinter
 // («des Datenschutzgesetzes vom D», «… über die politischen Rechte vom D»).
-const DATUM_IN_EINHEIT = new RegExp('\\bvom\\s+(' + N2_DATUM + ')');
-const DATUM_NACH_NAME = new RegExp('^\\s*vom\\s+(' + N2_DATUM + ')');
+export const DATUM_IN_EINHEIT = new RegExp('\\bvom\\s+(' + N2_DATUM + ')');
+export const DATUM_NACH_NAME = new RegExp('^\\s*vom\\s+(' + N2_DATUM + ')');
 /** Woran das Fremdgesetz erkannt wurde (Mess-Klassen im V-1-Tor). */
 export type FremdSignal = 'klammer' | 'genitiv' | 'titel';
 
@@ -276,108 +279,6 @@ export function fremdRoutingFormB(
     glieder.push(gliedFuer(false, am[0], start, start + am[0].length));
   }
   return { gesetz, glieder, regionEnd, signal };
-}
-
-// ─── Ketten-Verweise: «Art. A i.V.m. Art. B GESETZ» ──────────────────────────
-//
-// PROBLEM (Referenz BGE 151 III 377, Auftrag David 3.7.2026): In einer
-// Verweis-Kette trägt nur das LETZTE Glied das Gesetzeskürzel («Art. 684 i.V.m.
-// Art. 679 ZGB»). NORM_IM_TEXT findet nur dieses letzte, voll zitierte Glied;
-// die vorangehenden bare «Art. N» blieben unverlinkt, obwohl sie DASSELBE
-// Gesetz meinen (juristische Drafting-Konvention: das Kürzel am Ketten-Ende gilt
-// für alle Glieder).
-//
-// FIX: Das Kürzel des Ketten-Endes wird auf die vorangehenden bare Glieder
-// PROPAGIERT und jedes Glied einzeln verlinkt. §1-Vorsicht (lieber ein Glied
-// unverlinkt als falsch verlinkt):
-//   · Propagiert wird NUR über echte Ketten-Konnektoren (i.V.m. / in Verbindung
-//     mit / und / sowie / Komma) und nur auf BARE «Art. N»-Glieder OHNE eigenes
-//     Kürzel. Trägt ein Glied ein EIGENES Kürzel («Art. 5 OR und Art. 6 ZGB»),
-//     ist es ein separates Zitat und wird NICHT umgehängt.
-//   · Die Kette bricht an allem, was kein Konnektor+Glied ist: Semikolon,
-//     BGE-/Urteil-Zitate, Satzgrenzen, Präpositionen («der Verordnung»),
-//     fremdes Kürzel dazwischen.
-//   · «f./ff.» und Abs./lit./Ziff.-Zusätze brechen die Kette NICHT (Teil des
-//     Glieds).
-// Die Anzeige bleibt zeichenidentisch (§1): das Glied zeigt genau seinen
-// Quelltext, nur das AUFLÖSUNGS-Ziel erhält das propagierte Kürzel.
-
-/** Ein aufgelöster Norm-Verweis im Fliesstext (Anker ODER propagiertes Ketten-Glied). */
-export interface NormVerweisSpan {
-  /** Start-Offset im Quelltext. */
-  start: number;
-  /** End-Offset im Quelltext (exklusiv). */
-  end: number;
-  /** Anzeigetext = exakter Quelltext-Ausschnitt (zeichenidentisch, §1). */
-  anzeige: string;
-  /** Auflösbarer Verweis-Text (mit Kürzel), z. B. 'Art. 684 ZGB' — Ziel der Auflösung. */
-  artikel: string;
-  /** true = Kürzel aus dem Ketten-Ende propagiert (nicht im Quelltext des Glieds). */
-  propagiert: boolean;
-}
-
-// Ketten-Glied (bare «Art. N [Abs./lit./Ziff./Satz …] [f./ff.]») OHNE Kürzel.
-const KETTE_ART = 'Art\\.\\s*\\d+[a-z]?(?:bis|ter|quater|quinquies|sexies)?';
-const KETTE_PASSUS =
-  '(?:\\s+(?:Abs\\.|lit\\.|Bst\\.|Ziff\\.|Ziffer|Satz)\\s*(?:\\d+[a-z]?(?:bis|ter|quater|quinquies|sexies)?|[a-z]))*';
-const KETTE_FOLGE = '(?:\\s+ff?\\.)?';
-const KETTE_GLIED = `${KETTE_ART}${KETTE_PASSUS}${KETTE_FOLGE}`;
-// Ketten-Konnektoren (NICHT Semikolon — der bricht die Kette bewusst).
-const KETTE_KONNEKTOR = '(?:i\\.\\s?V\\.\\s?m\\.|in Verbindung mit|und|sowie|,)';
-// Ein bare Glied UNMITTELBAR vor dem Anker: «GLIED <KONNEKTOR>» am Text-Ende.
-const GLIED_VOR_KONNEKTOR = new RegExp(`(${KETTE_GLIED})\\s*(?:${KETTE_KONNEKTOR})\\s*$`);
-
-/**
- * Alle auflösbaren Bund-Norm-Verweise eines Fliesstexts — die von NORM_IM_TEXT
- * gefundenen voll zitierten Anker PLUS die per Ketten-Regel propagierten bare
- * Glieder. Reine, deterministische Funktion (§2): EINE Wahrheit der Ketten-Regel
- * für Renderer (NormText) und Fundstellen-Suche (Rechtsprechung).
- *
- * Die zurückgegebenen Spans sind nach `start` sortiert und überschneidungsfrei.
- * Für Nicht-Ketten-Text ist die Anker-Menge identisch zu `matchAll(NORM_IM_TEXT)`
- * (gleicher Filter `fedlexLinkFuerArtikel != null`) — additiv, kein Verhalt-Bruch.
- */
-export function normVerweiseImText(text: string): NormVerweisSpan[] {
-  const spans: NormVerweisSpan[] = [];
-  for (const m of text.matchAll(NORM_IM_TEXT)) {
-    const roh = m[0];
-    // Nur verlinken, was der eine Resolver wirklich auflöst (kein toter Link, §8).
-    if (fedlexLinkFuerArtikel(roh) == null) continue;
-    const start = m.index;
-    spans.push({ start, end: start + roh.length, anzeige: roh, artikel: roh, propagiert: false });
-    // Kürzel des Anker-Endes → auf vorangehende bare Glieder propagieren.
-    const kuerzel = erkenneFedlexGesetz(roh);
-    if (!kuerzel) continue;
-    let grenze = start;
-    for (;;) {
-      const mm = GLIED_VOR_KONNEKTOR.exec(text.slice(0, grenze));
-      if (!mm) break;
-      const gliedStart = mm.index;
-      const gliedText = mm[1];
-      // Synthese: Glied-Text + propagiertes Kürzel = auflösbarer Verweis. Die
-      // Anzeige bleibt der reine Glied-Text (zeichenidentisch, §1).
-      spans.push({
-        start: gliedStart,
-        end: gliedStart + gliedText.length,
-        anzeige: gliedText,
-        artikel: `${gliedText} ${kuerzel}`,
-        propagiert: true,
-      });
-      grenze = gliedStart;
-    }
-  }
-  // Sortieren + defensiv überschneidungsfrei halten (Anker/Glieder aus mehreren
-  // matchAll-Runden). Bei einer (theoretischen) Überschneidung gewinnt der frühere
-  // Span; überlappende werden verworfen — nie doppelt oder verschachtelt verlinken.
-  spans.sort((a, b) => a.start - b.start || b.end - a.end);
-  const rein: NormVerweisSpan[] = [];
-  let letztesEnde = -1;
-  for (const s of spans) {
-    if (s.start < letztesEnde) continue;
-    rein.push(s);
-    letztesEnde = s.end;
-  }
-  return rein;
 }
 
 // ─── A10 (Bug David 5.7.2026, MWSTG Art. 5): PLURAL-Aufzählung «in den Artikeln

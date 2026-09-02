@@ -18,59 +18,17 @@
  */
 
 import { SAMMEL_MARKER, SAMMEL_ZEILE } from './zh-sammelkopf.ts';
+import {
+  APPARAT_ZIFFER_MAX_H, HOCH_MAX_H, HOCH_TRAEGER_ABSTAND, WORT_LUECKE_PT,
+  type PdfStueck,
+} from './zh-schriftmasse.ts';
+import { bodyMinXDerSeite, istZhMarginalie, sammleZhRandbloecke } from './zh-randspalte.ts';
+export { bodyMinXDerSeite, istZhMarginalie, sammleZhRandbloecke } from './zh-randspalte.ts';
+export type { ZhRandblock } from './zh-randspalte.ts';
 
 // ─────────────────────────────────────────────────────────────────────────────
 // PDF-Text-Extraktion (pdfjs, BUILD-time, NUR in scripts/)
 // ─────────────────────────────────────────────────────────────────────────────
-
-/** Ein extrahiertes Text-Fragment mit Koordinaten (für die Layout-Analyse). */
-interface PdfStueck {
-  x: number;
-  y: number;
-  h: number;
-  s: string;
-  /** Fragment-Breite (pt) — für die Spalten-Lücken-Erkennung. */
-  w: number;
-  /** pdfjs-Schriftkennung (`fontName`, dokument-lokal wie «g_d10_f2»). Trägt
-   *  den Gliederungstitel-Diskriminator, s. TITEL_MARKER. Optional, damit die
-   *  bestehenden Geometrie-Unit-Tests ohne Schrift-Angabe gültig bleiben. */
-  f?: string;
-}
-
-// ── Geometrie-Schwellen (empirisch erhoben, Fix-Runde 31.8.2026) ─────────────
-// Messgrundlage: Roh-Stücke aller 24 ZH-PDF (pdfjs, y∈[60,530], h<11), Lücke =
-// x(nächstes) − (x+width)(voriges) innerhalb EINER Textzeile.
-//
-// WORT_LUECKE_PT — ab wann eine Fragment-Lücke ein echtes Leerzeichen ist.
-// Gemessene Verteilung (Body-Schrift h≈9.18, nach Hochstellungs-Zuordnung):
-//   −0.7 … +0.4  Silbentrennstrich, direkt anschliessende Interpunktion  (kein Space)
-//    1.3 … 20    jede Lücke ist ein echtes Leerzeichen («Art.»|«1», «§»|«73»,
-//                «400»|«000» = schmaler Tausenderabstand, lit.-Marke|Text,
-//                Blocksatz-Spatien, Tabellenspalten)
-// Zwischen 0.4 und 1.3 liegt im ganzen Bestand KEIN Body-Fragmentpaar → 0.8 pt
-// trennt beide Klassen mit Sicherheitsabstand nach beiden Seiten.
-//
-// VORHER (Bug B-4, Gegenprüfung 31.8.2026): nur Lücken > 18 pt bekamen ein
-// Leerzeichen. Alles darunter klebte zusammen — «§34», «Abs.1», «Art.68»,
-// «ZPOvor», und über die entfernte Fussnoten-Hochzahl hinweg «BGFAnicht»,
-// «Kantonsverfassungund». Eingefügt wird weiterhin NUR Whitespace, nie ein
-// Zeichen geändert/entfernt/umgestellt (§1).
-const WORT_LUECKE_PT = 0.8;
-
-/** Grenzhöhe (pt): darunter ist ein Stück hochgestellt (Absatzzahl, Fussnoten-
- *  Verweis, lat. Suffix «bis»/«ter»). Body ist h≈9.18, Hochstellung h≈5.70. */
-const HOCH_MAX_H = 7.0;
-
-/** Grenzhöhe (pt) der Fussnoten-DEFINITIONS-Ziffer am Seitenfuss. Gemessene
- *  Höhen im Gesamtbestand: 4.32/4.62/4.92/5.04 (Fussnoten-Apparat, Grundschrift
- *  7.98) gegen 5.70 (Body-Hochstellung, Grundschrift 9.18) — die beiden Klassen
- *  berühren sich nicht; 5.2 pt trennt sie. */
-const APPARAT_ZIFFER_MAX_H = 5.2;
-
-/** Maximaler y-Abstand (pt) zwischen einer Hochstellung und ihrer Trägerzeile.
- *  Gemessen: durchgängig 2.76 pt (Hochstellung liegt über der Grundlinie);
- *  der Zeilenabstand beträgt ≈10.2 pt, eine Verwechslung ist ausgeschlossen. */
-const HOCH_TRAEGER_ABSTAND = 5;
 
 /**
  * Einzug (pt) der KOPF-Spalte gegenüber der Body-Spalte (Fix-Runde 2,
@@ -129,6 +87,12 @@ export interface ZhTextZeile {
    *  (kein einziges Body-Schrift-Fragment) — der Diskriminator für die
    *  arabisch nummerierten Gliederungstitel, s. TITEL_MARKER / GLIEDERUNG_ARABISCH. */
   titelschrift?: true;
+  /** Die (auf ganze Punkte gerundete) y-Position der Zeile auf ihrer Seite.
+   *  NUR für die Randtitel-Zuordnung (R1): der Randtitel im Aussenrand steht
+   *  auf DERSELBEN Grundlinie wie der §-Kopf, den er beschriftet. Das Feld
+   *  wandert NICHT in den serialisierten Text (serialisiereZhZeilen liest es
+   *  nicht) — die Textbasis und damit jeder Snapshot bleiben byte-gleich. */
+  y?: number;
 }
 
 /** Ergebnis der PDF-Layout-Extraktion: Body-Zeilen + der verworfene Kopf-/
@@ -137,6 +101,21 @@ export interface ZhExtrakt {
   zeilen: ZhTextZeile[];
   /** Roh-Text aus den Kopf-/Fussbändern (y>520 / y<60), zeilenfrei verkettet. */
   randText: string;
+  /** Die Randtitel (Marginalien) mit dem INDEX der Textzeile, auf deren
+   *  Grundlinie sie stehen (R1). Der Index ist zugleich der Zeilenindex im
+   *  serialisierten Text — `serialisiereZhZeilen` schreibt genau eine Zeile je
+   *  Element und verbindet mit «\n». Nur so kann der Parser, der allein weiss,
+   *  welche Zeile ein §-Kopf ist, den Randtitel seinem § zuordnen, ohne dass
+   *  die Kopf-Erkennung ein zweites Mal im Code stünde (§5). */
+  randnoten: ZhRandnote[];
+}
+
+/** Ein Randtitel samt der Textzeile, an der er hängt. */
+export interface ZhRandnote {
+  /** Index in `ZhExtrakt.zeilen` = Zeilenindex der serialisierten Textbasis. */
+  zeilenIndex: number;
+  /** Der Randtitel-Wortlaut, wie er im Aussenrand steht. */
+  text: string;
 }
 
 /**
@@ -200,12 +179,44 @@ export async function extrahiereZhTextZeilen(
   // gewönne dort die Titel-Schrift die Mehrheit (§1: der Diskriminator darf
   // nicht seitenweise kippen).
   const bodySchrift = bestimmeBodySchrift(seitenStuecke.flat());
+  const randnoten: ZhRandnote[] = [];
   for (const stuecke of seitenStuecke) {
-    zeilen.push(...montiereZhSeite(stuecke, bodySchrift));
+    // Die Zeilen DIESER Seite: der Anker eines Randtitels liegt immer auf
+    // derselben Seite (die Marginalienspalte steht neben ihrem Satzspiegel).
+    const seitenZeilen = montiereZhSeite(stuecke, bodySchrift);
+    const versatz = zeilen.length;
+    zeilen.push(...seitenZeilen);
+
+    for (const block of sammleZhRandbloecke(stuecke)) {
+      // ZUORDNUNG (rein geometrisch): Der Randtitel steht auf DERSELBEN
+      // Grundlinie wie der Kopf, den er beschriftet — gemessen an ZH-131.1 S. 1
+      // («Gegenstand» y=361 / «§ 1.» y=361; «Autonomie» y=324 / «§ 2.» y=324).
+      // ±ANKER_TOLERANZ_PT fängt die Rundung; gibt es keinen Treffer, FÄLLT DER
+      // RANDTITEL WEG (§8: lieber keine Angabe als eine falsch zugeordnete).
+      let treffer = -1;
+      let bestAbstand = Infinity;
+      for (let i = 0; i < seitenZeilen.length; i++) {
+        const y = seitenZeilen[i].y;
+        if (y === undefined) continue;
+        const abstand = Math.abs(y - block.ankerY);
+        if (abstand < bestAbstand) {
+          bestAbstand = abstand;
+          treffer = i;
+        }
+      }
+      if (treffer < 0 || bestAbstand > ANKER_TOLERANZ_PT) continue;
+      randnoten.push({ zeilenIndex: versatz + treffer, text: block.text });
+    }
   }
 
-  return { zeilen, randText: randStuecke.join(' ') };
+  return { zeilen, randText: randStuecke.join(' '), randnoten };
 }
+
+/** Wie weit die Grundlinie eines Randtitels von der seines Kopfes abweichen
+ *  darf. Gemessen an allen ZH-PDF: der Regelfall ist 0 pt (identische
+ *  Grundlinie); die y-Rundung auf ganze Punkte kann 1 pt kosten. 2 pt ist der
+ *  Sicherheitsabstand — die nächste Body-Zeile liegt ~10 pt entfernt. */
+const ANKER_TOLERANZ_PT = 2;
 
 /**
  * Die BODY-Schrift des Dokuments: die pdfjs-Schriftkennung mit den meisten
@@ -277,9 +288,8 @@ export function montiereZhSeite(
   // (in dieser Fix-Runde selbst erzeugt und gemessen, 31.8.2026).
 
   // Body-Spalte dieser Seite aus den Body-Stücken (h≈9.2) bestimmen.
-  const bodyXs = stuecke.filter((s) => s.h >= 8.7).map((s) => s.x);
-  if (bodyXs.length === 0) return zeilen;
-  const bodyMinX = Math.min(...bodyXs);
+  const bodyMinX = bodyMinXDerSeite(stuecke);
+  if (bodyMinX === null) return zeilen;
   // Body-Textblock ist ~242pt breit; Marginalie liegt im Aussenrand:
   //   links  (gerade Seiten): x < bodyMinX − 3
   //   rechts (ungerade Seiten): x > bodyMinX + 250
@@ -294,12 +304,7 @@ export function montiereZhSeite(
   // x = 328.9 bei bodyMinX = 53.8; «10 m².» § 303: x = 354.8 bei 87.8). Die
   // Marginalien-SCHRIFT (Randnote h ≈ 7.5) und ihre Fussnoten-Ziffern in
   // Apparat-Grösse (h ≤ 5.2, ZH-175.2 S. 1 «Grundsatz⁵²») bleiben gefiltert.
-  const istMarginalie = (st: PdfStueck): boolean =>
-    st.h <= 7.7 &&
-    !(st.h < HOCH_MAX_H && st.h > APPARAT_ZIFFER_MAX_H) &&
-    (st.x < bodyMinX - 3 || st.x > bodyMinX + 250);
-
-  const inhaltStuecke = stuecke.filter((st) => !istMarginalie(st));
+  const inhaltStuecke = stuecke.filter((st) => !istZhMarginalie(st, bodyMinX));
 
   // Nach y gruppieren (eine Textzeile). y auf ganze Punkte runden.
   const nachY = new Map<number, PdfStueck[]>();
@@ -532,14 +537,14 @@ export function montiereZhSeite(
       bodyDerZeile.length > 0 &&
       bodyDerZeile.every((st) => st.f !== undefined && st.f !== bodySchrift);
     if (imKopfEinzug && SAMMEL_ZEILE.test(bereinigt)) {
-      zeilen.push({ absatz, text: bereinigt, sammelkopf: true });
+      zeilen.push({ absatz, text: bereinigt, sammelkopf: true, y: yKey });
       continue;
     }
     if (nurTitelschrift) {
-      zeilen.push({ absatz, text: bereinigt, titelschrift: true });
+      zeilen.push({ absatz, text: bereinigt, titelschrift: true, y: yKey });
       continue;
     }
-    zeilen.push({ absatz, text: bereinigt });
+    zeilen.push({ absatz, text: bereinigt, y: yKey });
   }
   return zeilen;
 }
