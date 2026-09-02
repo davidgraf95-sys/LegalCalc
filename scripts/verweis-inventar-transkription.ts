@@ -282,6 +282,7 @@ export type Entscheid = 'SELF' | 'FREMD' | 'TEXT';
 export const KLASSEN: Record<string, { entscheid: Entscheid; was: string }> = {
   'anker-fedlex': { entscheid: 'FREMD', was: 'Voll zitierter Bund-Anker «Art. N GESETZ» (NORM_IM_TEXT)' },
   'anker-kette': { entscheid: 'FREMD', was: 'Ketten-Glied, Kürzel aus dem Anker-Ende propagiert (i.V.m.)' },
+  'anker-erlass': { entscheid: 'FREMD', was: 'Blosser Erlass-Verweis OHNE Artikelnummer → Erlass-Seite (Z1, W2·22)' },
   'anker-self': { entscheid: 'SELF', was: 'Voll zitierter Anker auf den GELESENEN Erlass → Sprung statt Fedlex-Chip (V-2 Ziel 3)' },
   'art-chapeau-fremd': { entscheid: 'FREMD', was: 'bare «Art. N» unter Fremdgesetz-Chapeau → Zielgesetz (M6-D)' },
   'gliederungs-genitiv': { entscheid: 'TEXT', was: '«Art./§ N dieses Titels/Abschnitts …» — Gliederungseinheit, nie der Erlass (Härtung 31.8.2026)' },
@@ -506,7 +507,11 @@ export function stellenImText(text: string, ctx: Ctx | null, paragrafFuerM6: boo
       for (const m of s.matchAll(PARAGRAF_INTERN)) out.push(stelle('m6-chapeau-unterdrueckt', m[1], leer));
     }
   };
-  const spans = normVerweiseImText(text);
+  // Z1 (W2·22): wie die Produktion — `ctx.eigenesKuerzel` ist der kanonisierte
+  // Register-Schlüssel des gelesenen Erlasses und schliesst den Erlass-Verweis
+  // auf sich selbst aus (NormText übergibt dort das rohe letzte Pfad-Segment;
+  // die Identitäts-Normalisierung in `erlassVerweiseImText` ist idempotent).
+  const spans = normVerweiseImText(text, ctx?.eigenesKuerzel);
   if (spans.length === 0) { rest(text); return out; }
   let zuletzt = 0;
   for (const s of spans) {
@@ -514,7 +519,7 @@ export function stellenImText(text: string, ctx: Ctx | null, paragrafFuerM6: boo
     out.push(
       selbstSpanSprung(s, ctx)
         ? stelle('anker-self', null, ctx ?? leer)
-        : stelle(s.propagiert ? 'anker-kette' : 'anker-fedlex', null, ctx ?? leer),
+        : stelle(s.erlass ? 'anker-erlass' : s.propagiert ? 'anker-kette' : 'anker-fedlex', null, ctx ?? leer),
     );
     zuletzt = s.end;
   }
