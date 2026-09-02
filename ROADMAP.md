@@ -525,6 +525,7 @@ zgb-a36-anhang: Die ZGB-Gliederung zeigt 74 Artikel des Anhangs «Wortlaut der f
   CI/lokal-Tor-Parität + offene B-Einheiten.
   **Detail:** [FAHRPLAN-BASIS-AUSBAU.md](fahrplaene/FAHRPLAN-BASIS-AUSBAU.md) §2.
   - [ ] **`main.tsx` nutzt `createRoot` statt `hydrateRoot`** — prerendertes DOM wird 27–78 ms nach `load` verworfen (Nullprobe auf main bestätigt); Wurzel der «flaky» Tastatur-/Skip-Link-Specs und ein CLS-/TTI-Posten. Fix mit Hydrations-Fehler-Wächter, Vorher/Nachher-Messung, Gegenprüfung, eigener PR.
+  - [ ] **§17 BEHIND-Schleife durch Plan-Buchung** *(Befund Parallel-Session 2.9.2026, an einer Nacht mit 5 offenen PRs belegt)* — jeder Squash-Merge erzeugt via `plan-buchung.yml` einen Folge-Commit auf main (`[skip ci]`), der alle offenen PRs sofort BEHIND setzt; bei «up to date»-Pflicht kostet jede Landung damit einen zweiten vollen CI-Lauf (15–20 min). Wurzel-Kandidaten: Buchung im PR-Branch vor dem Merge statt auf main, oder Merge-Queue (`QS-ORG-UMZUG`, David-Entscheid). Bis dahin: Landungen zwischen Sessions ansagen, je Seite genau ein Nachzug.
   - [ ] Totcode-Meldung wird echtes Tor `check:tot` — blockierend bei NEUEN Meldungen (Basis: 1). §3.2.
   - [ ] Dependency-Frische: `npm audit` + Majors + knip-Unlisted als Meldung, nie Stopper. **Lockfile nur über `npx npm@10`.** §3.3.
   - [ ] tailwind 3→4-Migration (PR #503; ~249 className-Dateien visuelle Regression — kein Dependabot-Merge).
