@@ -294,3 +294,35 @@ describe('fremdRoutingFormB — «in der Fassung vom …»', () => {
     expect(nachArtikel(t, '20')?.gesetz).toBe('KAG');
   });
 });
+
+// ─── GP-Nachzug (PR #635) B1/B2: derselbe Guard auf dem VOLL ZITIERTEN Anker ─
+//
+// Eigener Nachbefund aus dem Vorher/Nachher-Dump aller Link-Pfade (2.9.2026):
+// die ABGEKÜRZTE Zitatform «Art. 11 Abs. 3 AVO Inland» trifft `NORM_IM_TEXT`
+// direkt und wurde von der Z5-Sperre gar nicht erreicht — zwei falsche Links
+// blieben nach dem ersten Fix stehen. Die Guards sitzen darum an BEIDEN Stellen.
+
+describe('normVerweiseImText — Guards auch auf dem voll zitierten Anker', () => {
+  const ziele = (t: string, eigenes: string, ebene: FremdEbene = 'bund') =>
+    normVerweiseImText(t, eigenes, ebene).map((s) => s.artikel);
+
+  it('BS-419.902 art_11: «Art. 11 Abs. 3 AVO Inland vom 20. Mai 1999» bleibt Text', () => {
+    const t = 'Entscheide der Rekurskommission können gemäss Art. 11 Abs. 3 AVO Inland vom 20. Mai 1999 angefochten werden.';
+    expect(ziele(t, 'BS-419.902', 'kanton')).toEqual([]);
+  });
+
+  it('BS-419.905 art_2: «Art. 10 Abs. 2 AVO Inland» bleibt Text', () => {
+    const t = 'Die Inhaberinnen und Inhaber eines anerkannten Diploms gemäss Abs. 1 sind gemäss Art. 10 Abs. 2 AVO Inland berechtigt, den Titel zu tragen.';
+    expect(ziele(t, 'BS-419.905', 'kanton')).toEqual([]);
+  });
+
+  it('Gegenfall: «Art. 11 Abs. 3 AVO» ohne Zusatzwort verlinkt weiterhin', () => {
+    const t = 'Entscheide der Rekurskommission können gemäss Art. 11 Abs. 3 AVO angefochten werden.';
+    expect(ziele(t, 'BS-419.902', 'kanton')).toEqual(['Art. 11 Abs. 3 AVO']);
+  });
+
+  it('«Art. 18 Abs. 3 KAG in der Fassung vom 28. September 2012» bleibt Text', () => {
+    const t = 'Befreiungen, welche die FINMA gestützt auf Art. 18 Abs. 3 KAG in der Fassung vom 28. September 2012 gewährt hat.';
+    expect(ziele(t, 'FINIV')).toEqual([]);
+  });
+});

@@ -125,6 +125,15 @@ export function normVerweiseImText(
     // Nur verlinken, was der eine Resolver wirklich auflöst (kein toter Link, §8).
     if (fedlexLinkFuerArtikel(roh) == null) continue;
     const start = m.index;
+    // GP-Nachzug PR #635: die beiden Guards gehören AUCH auf den voll zitierten
+    // Anker, nicht nur auf Z5 — die abgekürzte Zitatform «Art. 11 Abs. 3 AVO
+    // Inland» (kanton/BS/419.902 art_11, kanton/BS/419.905 art_2) trifft
+    // NORM_IM_TEXT direkt und wurde von der Z5-Sperre gar nicht erreicht
+    // (gemessen 2.9.2026 im Vorher/Nachher-Dump aller Link-Pfade). Belege und
+    // Abgrenzung stehen an den Guards (positivliste.ts).
+    const nachAnker = text.slice(start + roh.length);
+    if (zusatzwortSperre(nachAnker)) continue;   // anderer Erlass (§1)
+    if (historischeFassung(nachAnker)) continue; // historische Fassung (§7/§8)
     spans.push({ start, end: start + roh.length, anzeige: roh, artikel: roh, propagiert: false });
     // Kürzel des Anker-Endes → auf vorangehende bare Glieder propagieren.
     const kuerzel = erkenneFedlexGesetz(roh);

@@ -13,8 +13,8 @@
   "gesamt": {
     "stellen": 36047,
     "self": 19652,
-    "fremd": 11364,
-    "text": 5031,
+    "fremd": 11362,
+    "text": 5033,
     "selbstmarker": 927
   },
   "klassen": [
@@ -37,8 +37,8 @@
     {
       "klasse": "anker-fedlex",
       "entscheid": "FREMD",
-      "stellen": 2607,
-      "erlasse": 339,
+      "stellen": 2605,
+      "erlasse": 337,
       "selbstmarker": 0,
       "was": "Voll zitierter Bund-Anker «Art. N GESETZ» (NORM_IM_TEXT)"
     },
@@ -101,8 +101,8 @@
     {
       "klasse": "art-n2-fremdkuerzel",
       "entscheid": "TEXT",
-      "stellen": 13,
-      "erlasse": 5,
+      "stellen": 15,
+      "erlasse": 7,
       "selbstmarker": 0,
       "was": "«Art. N … FEDLEX-Kürzel» (N2 Form A) — Self unterdrückt"
     },
