@@ -749,10 +749,13 @@ export function NormText({ text, intern }: { text: string; intern?: InternRefs }
     // vom Ziel abweichende Anzeige — `artikel` ist dort das blosse Kürzel
     // («DSG»), angezeigt wird der Erlassname aus dem Quelltext. Bestehende
     // Spannen sind unberührt, das SSR-Markup bleibt byte-identisch (§6).
+    // Z5 (W2·22): dasselbe für den AUSGESCHRIEBENEN Artikelverweis — `artikel`
+    // ist das synthetisierte «Art. N KÜRZEL», angezeigt wird die Artikel-
+    // Nennung des Quelltexts («Artikel 29»); Passus und Kürzel bleiben Text.
     teile.push(
       selbstSpanSprung(s, `${s.start}-${s.artikel}`, intern)
       ?? <NormChip key={`${s.start}-${s.artikel}`} artikel={s.artikel}
-        anzeige={s.propagiert || s.erlass ? s.anzeige : undefined} linkClass={ankerClass} zielIntern={false} />,
+        anzeige={s.propagiert || s.erlass || s.ausgeschrieben ? s.anzeige : undefined} linkClass={ankerClass} zielIntern={false} />,
     );
     zuletzt = s.end;
   }

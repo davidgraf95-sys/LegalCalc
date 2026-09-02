@@ -38,5 +38,5 @@ export {
   artikelnPluralVerweise,
 } from './fedlex/parser';
 export type { FremdRoutingGlied, FremdSignal, PluralRegion } from './fedlex/parser';
-export { normVerweiseImText, erlassVerweiseImText } from './fedlex/spannen';
+export { normVerweiseImText, erlassVerweiseImText, ausgeschriebeneVerweiseImText } from './fedlex/spannen';
 export type { NormVerweisSpan } from './fedlex/spannen';
