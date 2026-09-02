@@ -14,8 +14,9 @@
 // §7/§8: Titel/Meta/JSON-LD NUR aus Strukturfeldern der Manifeste. Der Volltext
 // stammt WÖRTLICH aus dem Snapshot (dieselbe kanonische Quelle, die der Reader
 // fetcht — keine zweite Wahrheit). KEINE kuratierten Beschreibungen, KEINE
-// Geltungsaussage: schema.org legislationLegalForce/legislationDate bleiben aus
-// (snapshot ≠ in Kraft — TODO(David), Welle ab 1.12.2026).
+// Geltungsaussage: schema.org legislationLegalForce bleibt aus (keine
+// Geltungsaussage ohne positives Datenfeld); legislationDateVersion = gepinnter
+// Stand, s. Block unten (snapshot ≠ in Kraft — TODO(David), Welle ab 1.12.2026).
 
 import { SITE_URL, type RouteMetadaten } from './seo';
 import { AMTLICHE_FASSUNG, AMTLICHE_FASSUNG_NOMEN, MASSGEBLICH_SATZ } from './benennung';
@@ -147,8 +148,10 @@ export function metaFuerMaterial(m: BrowseMaterial): RouteMetadaten {
 // ─── JSON-LD ─────────────────────────────────────────────────────────────────
 // Erlass: schema.org Legislation + BreadcrumbList. Identitätsfelder
 // (legislationIdentifier = SR, name, alternateName, inLanguage, url) plus
-// `legislationDate` = das Stand-/Konsolidierungsdatum des gepinnten Snapshots
-// (BrowseErlass.stand), NUR wenn es ein valides ISO-Datum ist — zwei
+// `legislationDateVersion` = das Stand-/Konsolidierungsdatum des gepinnten
+// Snapshots (BrowseErlass.stand) — schema.org: "point-in-time at which the
+// provided description of the legislation is valid" (eli:version_date), NICHT
+// das Verabschiedungsdatum (legislationDate) — NUR wenn es ein valides ISO-Datum ist — zwei
 // Registereinträge (VD-vd-106879, VD-vd-128150) tragen `stand: ''`, dort
 // bleibt das Feld weg statt ein falsches Datum zu emittieren (QS-VERWENDEN
 // V4, 2.9.2026). `legislationLegalForce` bleibt bewusst UNGESETZT: der
@@ -188,7 +191,7 @@ export function jsonLdFuerErlass(e: BrowseErlass): object {
     isPartOf: { '@type': 'WebSite', name: 'LexMetrik', url: `${SITE_URL}/` },
   };
   if (e.sr) legislation.legislationIdentifier = e.sr;
-  if (ISO_DATUM.test(e.stand)) legislation.legislationDate = e.stand;
+  if (ISO_DATUM.test(e.stand)) legislation.legislationDateVersion = e.stand;
   return {
     '@context': 'https://schema.org',
     '@graph': [
