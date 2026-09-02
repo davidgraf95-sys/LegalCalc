@@ -34,6 +34,18 @@ werden direkt unter dem KARTEN-Anker eingefügt (jüngste zuoberst).
 
 <!-- KARTEN -->
 
+## Session lexmetrik-a1, 2.9.2026 — «Verwenden statt bauen»: Sichtung 19 Quellen (PR #617)
+
+Gelandet: #622 Lizenz-Tor `check:lizenzen` (`9e8ca343a`), #621 Turso-DB-Cache
+(`8c4084775`), #626 Diff-Klassierung `.claude/agents`=Werkzeug + Doku-Tore
+(`50d5c6ed0`), #628 Erlass-Verweise ohne Artikelnummer +1 097 Links, GP bestanden
+n=24, `src/lib/fedlex` jetzt Risikopfad (`905fbb4c4`), #627 Fedlex-Zitatgraph
+227 Erlasse/5 581 Kanten + Warn-Bericht, GP bestanden mit 2 Auflagen (`4d4433744`).
+**Offen:** QS-VERWENDEN V1b, V3–V8; W2·22 Z4; Neufund 824 ausgeschriebene
+Artikelverweise («Artikel 29 Absatz 1 ATSG») unterdrückt → Kandidat Z5, nicht
+begonnen. **Wartet auf David:** Prototype-Fund 6.9., AGPL-Ausnahmen
+apca-w3/colorparsley, MCP-Server-Entscheid.
+
 ## Session 1./2.9.2026 (Abend+Nacht) — Zielbild Gesetzesleser: Plan-Umbau, Block 1 gelandet, Zürich 111 Erlasse live (15 PRs, 8 Gegenprüfungen)
 
 **Gelandet + live (Live-Kennung zuletzt `2758c5246`):** Auftrag David 1.9.2026
