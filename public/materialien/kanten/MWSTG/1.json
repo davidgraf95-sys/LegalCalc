@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-08-30",
+  "erzeugt": "2026-09-01",
   "erlass": "MWSTG",
   "kanten": [
     {
@@ -3053,12 +3053,21 @@
           "url": "&componentId=1044633"
         },
         {
-          "z": "Ziff. 3.1.1",
-          "url": "&componentId=1044640"
-        },
-        {
           "z": "Ziff. 4.2",
           "url": "&componentId=1044676"
+        }
+      ]
+    },
+    {
+      "dok": "ESTV-MWST-BRANCHEN-INFO-10",
+      "artikel": "18",
+      "quelle": "amtlich",
+      "konfidenz": "regex-hoch",
+      "stand": "2026-09-01",
+      "fundstellen": [
+        {
+          "z": "Ziff. 3.1.1",
+          "url": "&componentId=1044640"
         }
       ]
     },
@@ -13329,19 +13338,6 @@
         {
           "z": "Teil A",
           "url": "&componentId=1010181"
-        }
-      ]
-    },
-    {
-      "dok": "ESTV-MWST-INFO-02",
-      "artikel": "12",
-      "quelle": "amtlich",
-      "konfidenz": "regex-hoch",
-      "stand": "2025-01-14",
-      "fundstellen": [
-        {
-          "z": "Teil A · Ziff. 2",
-          "url": "&componentId=1010274"
         }
       ]
     }
