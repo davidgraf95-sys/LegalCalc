@@ -185,9 +185,12 @@ Pfad ist **nicht** agent-exklusiv — Dateinamen mit Agent-/Schritt-Kennung
 (`pr612-body.md`, nie `pr-body.md`; zwei PR-Bodies gingen verloren); (b)
 `preview_start`/`launch.json` startet den Server im **Haupt-Checkout**, nicht im
 Worktree — Preview aus dem Worktree nur mit eigenem `vite`-Prozess im
-Worktree-cwd, sonst prüft man fremden Code; (c) Hintergrund-Bash-Läufe werden
-nach ~70 min von der Umgebung beendet — lange Crawls als persistenter Monitor
-oder in Etappen mit Zwischen-Commit; (d) `test:e2e` prüft ohne vorherigen
+Worktree-cwd, sonst prüft man fremden Code; (c) Hintergrund-Bash-Läufe haben
+ein hartes Tool-Timeout von **10 min** (600 000 ms; ein Agenten-Crawl starb nach
+~70 min als Monitor) — Warte-Schleifen ≤ 9 min und neu setzen, lange Crawls als
+persistenter Monitor oder in Etappen mit Zwischen-Commit; Wächter auf CI je
+SHA prüfen (`gh run list --branch … headSha`), nicht per `gh pr checks`, das
+auch abgebrochene Alt-Läufe als «fail» zeigt; (d) `test:e2e` prüft ohne vorherigen
 `npm run build` ein altes `dist` — Wurzel-Fix im `webServer` (F11), bis dahin
 immer erst bauen.
 

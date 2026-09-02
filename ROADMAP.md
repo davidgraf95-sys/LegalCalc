@@ -303,7 +303,10 @@ zgb-a36-anhang: Die ZGB-Gliederung zeigt 74 Artikel des Anhangs «Wortlaut der f
   - [x] 10 ESTV-MWST-Snapshot-Drifts aktualisieren · AIG-Botschaft BOTSCHAFT-2025-3067 nachführen · VRV-Vernehmlassung VERN-2026-79 bereinigen. *(#524 15.8. + #581 30.8., Gegenprüfung bestanden; Häkchen 1.9.2026)*
   - [ ] **§17-Wurzel-Fix:** soft-law-Detektor prüft nur den ToC-Token, nicht das Publikationsdatum — Detektor zusätzlich auf `stand`-Wechsel, Token nur über cipherDisplay-Anker.
   - [ ] Sieben Materialien-System-Befunde (a)–(h) je mit eigenem Wurzel-Fix — Liste im Fahrplan-§.
-  - [x] Verfahrens-Gap Reparatur-Arm vs. Detektions-Arm: Kadenz/Reihenfolge entscheiden; die `check:netz`-&&-Kette zeigt nur den ersten Befund. *(1.9.2026: Monitor 07:17 UTC = 2,5 h nach Reparatur-Arm; Reparatur-PR ohne Kanton-Churn (`--nur=bund` + `normtext:churn-reset`); `check:netz` = Runner mit Tafel aller 12 Verdikte)*
+  - [x] Verfahrens-Gap Reparatur-Arm vs. Detektions-Arm — ✅ 2.9.2026 (PR #623): Monitor-Cron 07:17 UTC nach dem Reparatur-Arm, Reparatur-PR ohne Kanton-Churn, Tafel aller 12 Verdikte statt &&-Kette.
+  - [ ] **Auflagen Gegenprüfung PR #623 (2.9.2026):** Stand-Wächter deckt 34/48 ESTV-Dokumente — 14 nur geloggt bzw. Fallback-Ziffer ohne Dok-Stand (`check-materialien-netz.ts:203-205`, `estv-mwst-stand-probe.ts:57`); Delay 300 ms vs. Doku «~1 req/s» angleichen. Restliste Befunde (b), (c), (e), (h) + `check:vernehmlassungen-netz` 8-Key-Blindheit.
+  - [ ] **§17 Tor-Reihenfolge: Generat-Konsistenz vor Merge-Schutz** *(Befund Gegenprüfung PR #618, 2.9.2026)* — `check:verfall-ui`/`check:zaehler` laufen im Tor-Lauf erst NACH dem Merge-Schutz und damit bei fehlendem Verdikt nie; die Gegenprüfung sah eine Projektion, die kein Tor angefasst hatte. Billige Generat-Checks vor den Merge-Schutz ziehen oder Pfad-Hook auf `parameter-verfall.md` → `gen:verfall`.
+  - [ ] **Pflegetermin 1.10.2026:** 14 «Künftige Fassung»-Einträge (OR/StGB/BankG/GwG u. a., SR-Tabellen) werden fällig — Register `parameter-verfall.md`, vorher nachführen (Hinweis Referenzzins-Agent 2.9.2026).
 
 ---
 
