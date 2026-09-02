@@ -1,11 +1,9 @@
 import { describe, it, expect } from 'vitest';
-import { schaetzeArtikelHoehe, A2_HOEHE_FALLBACK } from '../pages/gesetz-leser/berechnungen';
+import { schaetzeArtikelHoehe } from '../pages/gesetz-leser/berechnungen';
 import type { NormSnapshot } from '../lib/normtext/typen';
 
-// W2·5d U-POSITION/A2: die per-Artikel-Höhenschätzung speist die inhalts-
-// proportionale content-visibility-Platzhalterhöhe (Scrollbalken-Proportionalität).
-// Deterministisch (§2) + monoton (mehr Inhalt ⇒ nie kleiner) — DAS ist die für
-// einen proportionalen Balken nötige Eigenschaft; Pixel-Genauigkeit ist nicht Ziel.
+// W2·5d U-POSITION/A2: siehe artikel-hoehe-schaetzung-basis.test.ts für den
+// Kontext. Diese Datei trägt die Wachstums-/Proportionalitätsfälle.
 
 function art(bloecke: NormSnapshot['bloecke'], titel?: string): NormSnapshot {
   return {
@@ -15,18 +13,7 @@ function art(bloecke: NormSnapshot['bloecke'], titel?: string): NormSnapshot {
   } as NormSnapshot;
 }
 
-describe('schaetzeArtikelHoehe (A2)', () => {
-  it('ist deterministisch (gleiche Eingabe ⇒ gleiche Ausgabe)', () => {
-    const e = art([{ absatz: '1', text: 'Ein Absatz mit etwas Text.' }]);
-    expect(schaetzeArtikelHoehe(e)).toBe(schaetzeArtikelHoehe(e));
-  });
-
-  it('respektiert eine sinnvolle Mindesthöhe', () => {
-    expect(schaetzeArtikelHoehe(art([]))).toBeGreaterThanOrEqual(120);
-    // Aufgehobener Einzeiler bleibt klein — deutlich unter dem alten Flach-Default.
-    expect(schaetzeArtikelHoehe(art([{ absatz: null, text: '…' }]))).toBeLessThan(A2_HOEHE_FALLBACK);
-  });
-
+describe('schaetzeArtikelHoehe (A2) — Wachstum', () => {
   it('wächst monoton mit dem Inhalt (mehr Absätze/Items/Zeilen ⇒ nie kleiner)', () => {
     const klein = art([{ absatz: '1', text: 'Kurz.' }]);
     const mittel = art([
