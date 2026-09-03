@@ -542,7 +542,7 @@ zgb-a36-anhang: Die ZGB-Gliederung zeigt 74 Artikel des Anhangs «Wortlaut der f
   bleiben Claude-Unteragenten, Verdikte und Landung bleiben bei Claude, die fachliche Abnahme bei
   David; jede Phase hat eine Rückbau-Schwelle statt einer Bewachung.
   **Detail:** [FAHRPLAN-FREMDAGENTEN.md](fahrplaene/FAHRPLAN-FREMDAGENTEN.md) §2.
-  - [x] Phase 0 — Testläufe T1–T6 (Jules-Pilot, agy-Recall, agy-Betrieb, NotebookLM, Prüfer-Probe, Tabu-Probe); Messwerte §5 (T6 offen). §2.
+  - [x] Phase 0 — Testläufe T1–T6 (Jules-Pilot, agy-Recall, agy-Betrieb, NotebookLM, Prüfer-Probe, Tabu-Probe); Messwerte §5 (T4 David offen, T6: AGENTS.md hält nicht als Zaun). §2.
   - [ ] Pilot Jules — 2–3 PRs auf der grünen Spur, Landung durch Claude. §2/§3.
   - [ ] Diskrepanz-Finder Korpus-Werkstatt (`agy` gegen Erlass-Snapshot, manueller Schritt, kein Tor). §2/§3.
   - [ ] Zweitblick-Messung (fünf Durchgänge, Rückbau-Schwelle). §2/§3.

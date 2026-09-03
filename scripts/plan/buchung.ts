@@ -206,6 +206,17 @@ export { TRAILER_KEYS };
  * Wert oder verbotenen Zeichen, wirft diese Funktion — wie `parseBuchung` —
  * und der Aufrufer (CLI unten) beendet den Prozess mit Exit 1: ein erkannter,
  * aber kaputter/bösartiger Buchungsversuch darf nie still verpuffen.
+ *
+ * `Roadmap:` OHNE `Roadmap-Status:` ist seit 3.9.2026 KEIN Fehler mehr
+ * (Wurzel-Fix, Anlass: Workflow-Lauf 33694227189 bei PR #636 rot). Ein
+ * Schritt, der nach der Landung bewusst `wip` bleibt (mehrere PRs pro
+ * Schritt, z. B. QS-FREMDAGENTEN), hat keinen gültigen Merge-Status-Trailer —
+ * ein Body mit nur `Roadmap:` ist dafür der einzig korrekte Zustand (Skill
+ * `landung` Ziff. 9), symmetrisch zum Commit-Pfad (dort ruft der Workflow
+ * `parseBuchung` ohnehin nur auf, wenn BEIDE Commit-Trailer vorhanden sind —
+ * ein fehlender Status-Trailer ist dort ebenfalls "nichts zu tun", nie Exit 1).
+ * `Roadmap-Status:` OHNE `Roadmap:` bleibt der ECHTE halbe Block (eine
+ * Status-Buchung ohne Ziel-ID ist nie gültig) und wirft weiterhin.
  */
 export function parseBuchungAusPrBody(body: string): Buchung | null {
   const block = extractTrailerBlock(body);
@@ -214,18 +225,21 @@ export function parseBuchungAusPrBody(body: string): Buchung | null {
   // Kein Buchungs-Key im Block: stiller Normalfall (auch ein reiner
   // Gegenpruefung-Trailer ist keine Buchungs-Absicht).
   if (!roadmap && !status) return null;
-  // HALBER Buchungs-Block: erkennbare Absicht, aber unvollständig — z. B.
-  // `Roadmap:` und `Roadmap-Status:` durch eine Leerzeile getrennt, sodass nur
-  // der letzte Absatz als Block zählt. Das verpuffte bis 15.8.2026 STILL
+  // `Roadmap:` ohne `Roadmap-Status:`: gültiger wip-Normalfall (s. oben) —
+  // nichts zu tun, kein Fehler.
+  if (roadmap && !status) return null;
+  // ECHTER halber Block: `Roadmap-Status:` ohne `Roadmap:`, oder die beiden
+  // Trailer stehen in verschiedenen Absätzen (siehe extractTrailerBlock, nur
+  // der letzte vollständige Absatz zählt). Das verpuffte bis 15.8.2026 STILL
   // (Realfall PR #507: Workflow «success» ohne Buchung, Hand-Buchung nötig).
   // Erkannter, aber kaputter Buchungsversuch => laut (Exit 1), nie still.
-  if (!roadmap || !status) {
+  if (!roadmap) {
     throw new Error(
-      `PR-Body: unvollständiger Buchungs-Block (Roadmap=${roadmap ?? '—'}, ` +
-      `Roadmap-Status=${status ?? '—'}) — beide Trailer müssen im SELBEN Absatz ` +
-      `stehen (zusammenhängender Block, Skill landung Ziff. 9).`);
+      `PR-Body: unvollständiger Buchungs-Block (Roadmap=—, Roadmap-Status=${status}) — ` +
+      `beide Trailer müssen im SELBEN Absatz stehen (zusammenhängender Block, ` +
+      `Skill landung Ziff. 9).`);
   }
-  return parseBuchung(roadmap, status);
+  return parseBuchung(roadmap, status as string);
 }
 
 // CLI, zwei Modi:
@@ -250,8 +264,14 @@ if (!process.env.VITEST) {
           console.log(`id=${b.id}`);
           console.log(`status=${b.status}`);
           console.log(`blocker=${b.blocker ?? ''}`);
+        } else {
+          // Kein (vollständiger) Buchungs-Trailer -> bewusst KEINE Zeile auf
+          // stdout (das geht direkt in $GITHUB_OUTPUT, jede Fremdzeile dort
+          // wäre ein ungültiger Eintrag) — der Hinweis geht auf stderr, Exit 0.
+          console.error(
+            'PR-Body: kein vollständiger Buchungs-Trailer (oder Roadmap ohne ' +
+            'Status — gültiger wip-Normalfall seit 3.9.2026) — nichts zu tun.');
         }
-        // kein Trailer-Block im PR-Body: bewusst keine Ausgabe, Exit 0 (still).
       } catch (e) {
         console.error(e instanceof Error ? e.message : String(e));
         process.exit(1);

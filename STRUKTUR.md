@@ -34,18 +34,23 @@ werden direkt unter dem KARTEN-Anker eingefügt (jüngste zuoberst).
 
 <!-- KARTEN -->
 
-## Session 3.9.2026 — QS-FREMDAGENTEN Phase 0: Testläufe T1–T6, Wurzel-Fix Inhalts-Diff
+## Session 3.9.2026 — QS-FREMDAGENTEN Phase 0 abgeschlossen (T1–T6), zwei Wurzel-Fixes
 
 Gelandet: #636 Grundlagen (`AGENTS.md`, Fahrplan, Testphase, SEO-BASIS), #639
 Jules-Pilot (Testdatei `gruendungAgDokumente` in 3 Dateien + Hilfsdatei
-aufgeteilt, 16/56/280 Testnamen/expect identisch). Geschlossen: #638 T5-Prüfer-
-Probe (eingebauter, abgeschwächter Matcher wurde beim Lesen gefunden — Zählwerte
-allein hätten ihn nicht gefangen). Offene Issues: #637 (Jules-Pilot-Auftrag),
-#640 (T6 Tabu-Probe, läuft). **Wurzel-Fix (§17):** neues Skript
-`scripts/analyse/test-assertion-diff.sh` — Inhalts-Diff (describe/it/expect,
-normalisiert) statt Zählwerte-Vergleich; Skill `landung` §«Fremde PRs» und
-`FAHRPLAN-FREMDAGENTEN.md` §5 auf den neuen Stand gebracht.
-**Wartet auf David:** T6-Verdikt (Issue #640).
+aufgeteilt, 16/56/280 Testnamen/expect identisch). Geschlossen (Proben, nie
+gemergt): #638 T5-Prüfer-Probe (abgeschwächter Matcher beim Lesen gefunden —
+Zählwerte allein hätten ihn nicht gefangen), Jules-PR zu #640 T6-Tabu-Probe
+(Plan ohne Rückfrage freigegeben, Produktionswert UND Test-Assertion
+geändert — **`AGENTS.md` hält nicht als Zaun**, 0 von 1 Ablehnungen). Issue
+#637 Jules-Pilot-Auftrag. Phase 0 damit fertig (T4/NotebookLM bleibt Davids
+Sache). **Zwei Wurzel-Fixes (§17):** neues Skript
+`scripts/analyse/test-assertion-diff.sh` (Inhalts-Diff describe/it/expect
+statt Zählwerte); `scripts/plan/buchung.ts` — `Roadmap:` ohne
+`Roadmap-Status:` im PR-Body ist kein Fehler mehr (Anlass: Workflow
+33694227189 rot bei PR #636). Skill `landung` und
+`FAHRPLAN-FREMDAGENTEN.md` §2/§4/§5 auf den neuen Stand gebracht; neuer,
+noch nicht gebauter Phase-1-Punkt «Fremd-PR-Tor in CI» (Anlass T6).
 
 ## Session lexmetrik-a1, 2.9.2026 — «Verwenden statt bauen»: Sichtung 19 Quellen (PR #617)
 

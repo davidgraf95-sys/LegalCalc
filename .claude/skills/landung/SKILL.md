@@ -155,10 +155,15 @@ npm run check:perf-budget  # liest dist, Chrome-frei
    Roadmap: <ID>
    Roadmap-Status: done|ready|parked(<token>)
    ```
-   `plan-buchung.yml` liest ihn nach dem Squash-Merge; halber Block = Lauf
-   laut rot. Commit-Trailer zusätzlich erlaubt, keine Pflicht. Fällt die
-   Auto-Buchung aus: `plan:set` im nächsten PR/Sammel-Push (kein direkter
-   main-Push). Form: Skill `auftrag` Ziff. 5; Historie: `referenz-ci.md`.
+   `plan-buchung.yml` liest ihn nach dem Squash-Merge; ein ECHTER halber
+   Block (`Roadmap-Status:` ohne `Roadmap:`, oder beide Zeilen in
+   verschiedenen Absätzen) = Lauf laut rot. Commit-Trailer zusätzlich
+   erlaubt, keine Pflicht. Fällt die Auto-Buchung aus: `plan:set` im
+   nächsten PR/Sammel-Push (kein direkter main-Push). Form: Skill `auftrag`
+   Ziff. 5; Historie: `referenz-ci.md`.
+   **Bleibt der Schritt nach der Landung `wip`:** im PR-Body nur
+   `Roadmap: <ID>`, kein Status — das Skript bucht dann nichts (seit
+   3.9.2026, Wurzel-Fix Workflow-Lauf 33694227189 bei PR #636).
 
 ### Auto-Merge ist auf Risiko-Pfaden gesperrt
 
