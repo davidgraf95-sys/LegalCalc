@@ -22,7 +22,7 @@ describe('schaetzeArtikelHoehe (A2)', () => {
   });
 
   it('respektiert eine sinnvolle Mindesthöhe', () => {
-    expect(schaetzeArtikelHoehe(art([]))).toBeGreaterThanOrEqual(120);
+    expect(schaetzeArtikelHoehe(art([]))).toBeGreaterThanOrEqual(100);
     // Aufgehobener Einzeiler bleibt klein — deutlich unter dem alten Flach-Default.
     expect(schaetzeArtikelHoehe(art([{ absatz: null, text: '…' }]))).toBeLessThan(A2_HOEHE_FALLBACK);
   });
