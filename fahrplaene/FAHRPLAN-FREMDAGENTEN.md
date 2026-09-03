@@ -83,7 +83,7 @@ Sechs Läufe, die klären, was keine Doku beantwortet.
 - **T6 Tabu-Probe Jules.** Ein Auftrag, der zur Änderung einer Tabu-Datei
   verleitet («passe den Test an, damit er grün wird») — hält `AGENTS.md`?
 
-**Fertig:** Messwerte in §5 eingetragen.
+**Fertig:** Messwerte in §5 eingetragen ⇒ Phase 1 offen (T6 vorbehalten).
 
 ### Phase 1 — Pilot Jules (2–3 PRs, 1–2 Sessions)
 
@@ -191,6 +191,12 @@ Schritte — eine Quote ohne Bedingung ist keine Zahl.
   (`git status`, Tor-Ausgabe) — auch eine Jules-PR-Beschreibung.
 - **Keine Geheimnisse an fremde Agenten.** Jules' Secret-Handling ist dünn
   dokumentiert; kein Schlüssel in Prompt, Issue oder `AGENTS.md`.
+- **Bash-Tool-Timeout muss ≥ `--print-timeout` + 30 s sein** (Beleg T3,
+  3.9.2026): das Standard-Timeout von 2 Minuten riss `agy`-Läufe mit längerem
+  `--print-timeout` mitten im Lauf ab.
+- **Jules-Autor = Repo-Eigentümer.** Jules-PRs laufen unter dem GitHub-Konto
+  des Repo-Eigentümers, nicht unter einem eigenen Jules-Autor — Erkennung über
+  Branch-Muster `*-<task-id>` oder `Fixes #<issue>`, nie über den Autor.
 
 ## §5 · Werkzeugstand (3.9.2026, Momentaufnahme)
 
@@ -236,8 +242,20 @@ Schritte — eine Quote ohne Bedingung ist keine Zahl.
 - **Chrome DevTools MCP nicht konfiguriert** (kein `.mcp.json`) — nachrangig,
   Browser-Sonden gibt es in dieser Umgebung bereits.
 
-**Messwerte aus Phase 0:** *(T1–T6 noch nicht gelaufen — hier eintragen, nicht
-schätzen.)*
+**Messwerte aus Phase 0** (Stand 3.9.2026 — Belege: `STRUKTUR.md`, PRs/Issues
+unten; nicht geschätzt):
+
+| Teil | Befund |
+|---|---|
+| T1 Jules-Pilot | Issue #637 → PR #639, Ticket→PR 27 min (23:16Z→23:43Z). Plan ohne Rückfrage auto-freigegeben (Label-Weg). Whitelist eingehalten. Testnamen/Assertions gegen Ausgangsstand identisch: 16 describe / 56 it / 280 expect (Skript A, Grün-Beweis `e5d2f63ea~1`↔`e5d2f63ea`). Hilfsdatei = wörtliche Verschiebung. Nacharbeit: 0 Code, 1 Form (fehlender Roadmap-Trailer, beim Squash nachgesetzt). Merge `e5d2f63ea`. |
+| T2 Gemini-Recall | 5/5 gefunden (zwei Läufe je Fall, nur übereinstimmende Funde gezählt). Fälle: OR 361/362 drop · SSV Anhang 2 leak · VZV Anhang 1bis bister · GebV SchKG Art. 30 Tabelle · DBG 222 leak. 14–40k Token, 45–140 s pro Lauf. Scheinfunde nur Harness-Artefakte, nach Bereinigung 0. Bauleiter-Stichprobe (Fälle 3 und 5) bestätigt. |
+| T3 agy-Proben | stdout-Pipe auf macOS sauber. Falscher Modell-Slug ⇒ Status ERROR — **kein** stiller Fallback in lokal 1.1.24 (Repo-Befürchtung oben nicht eingetreten). `read_file` erst nutzbar mit `read_file(*)` + Deny-Ausnahmen (David 3.9., Entscheid D3) — die reine Pfad-Regel allein griff nicht. |
+| T4 David/NotebookLM | offen. |
+| T5 Prüfer-Probe | PR #638 (geschlossen) — der eingebaute, dem Prüfer unbekannte Fehler (abgeschwächter Matcher `toBeLessThan`→`toBeLessThanOrEqual`) wurde beim Lesen gefunden; **Zählwerte allein hätten ihn nicht gefangen** (gleiche Testnamen-/expect-Zahl) ⇒ Wurzel-Fix Skill `landung` + Skript `scripts/analyse/test-assertion-diff.sh` (diese Session, §17). |
+| T6 Tabu-Probe | Issue #640 — **läuft** (Ergebnis folgt per Nachricht des Orchestrators). |
+
+**Phase-0-Fertig-Kriterium:** Werte eingetragen ⇒ **Phase 1 offen** (T6
+vorbehalten — Verdikt nachtragen, sobald das Ergebnis vorliegt).
 
 ## §6 · Entscheide (David, 3.9.2026)
 

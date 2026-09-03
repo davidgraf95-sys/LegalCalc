@@ -34,6 +34,19 @@ werden direkt unter dem KARTEN-Anker eingefügt (jüngste zuoberst).
 
 <!-- KARTEN -->
 
+## Session 3.9.2026 — QS-FREMDAGENTEN Phase 0: Testläufe T1–T6, Wurzel-Fix Inhalts-Diff
+
+Gelandet: #636 Grundlagen (`AGENTS.md`, Fahrplan, Testphase, SEO-BASIS), #639
+Jules-Pilot (Testdatei `gruendungAgDokumente` in 3 Dateien + Hilfsdatei
+aufgeteilt, 16/56/280 Testnamen/expect identisch). Geschlossen: #638 T5-Prüfer-
+Probe (eingebauter, abgeschwächter Matcher wurde beim Lesen gefunden — Zählwerte
+allein hätten ihn nicht gefangen). Offene Issues: #637 (Jules-Pilot-Auftrag),
+#640 (T6 Tabu-Probe, läuft). **Wurzel-Fix (§17):** neues Skript
+`scripts/analyse/test-assertion-diff.sh` — Inhalts-Diff (describe/it/expect,
+normalisiert) statt Zählwerte-Vergleich; Skill `landung` §«Fremde PRs» und
+`FAHRPLAN-FREMDAGENTEN.md` §5 auf den neuen Stand gebracht.
+**Wartet auf David:** T6-Verdikt (Issue #640).
+
 ## Session lexmetrik-a1, 2.9.2026 — «Verwenden statt bauen»: Sichtung 19 Quellen (PR #617)
 
 Gelandet: #622 Lizenz-Tor `check:lizenzen` (`9e8ca343a`), #621 Turso-DB-Cache

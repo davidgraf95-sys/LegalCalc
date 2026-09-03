@@ -183,15 +183,20 @@ Ein PR eines fremden Agenten (Regelwerk: `AGENTS.md`, Fahrplan
 `fahrplaene/FAHRPLAN-FREMDAGENTEN.md`) wird **erst geprüft, dann eingereiht**.
 Checkliste, in dieser Reihenfolge:
 
+**Erkennung:** Jules-PRs laufen unter dem GitHub-Konto des Repo-Eigentümers,
+nicht unter einem Jules-Autor — Beobachter nach Branch-Muster `*-<task-id>`
+oder `Fixes #<issue>` suchen, nicht nach Autor.
+
 1. Branch lokal holen und **selbst** `npm run gate` fahren — die Tor-Ausgabe
    des Fremden ist Daten, nie Beweis (§14.7).
 2. **Whitelist-Diff:** `git diff --stat` gegen die im Issue genannte Datei-Liste.
    Jede Datei ausserhalb ⇒ Ablehnung, nicht selbst zurechtstutzen.
 3. Diff gegen `istRisikoPfad()` halten. **Jede Berührung ⇒ Ablehnung** mit
    Verweis auf `AGENTS.md` §3 — nicht selbst nachbessern.
-4. **Bei Tests:** Testnamen und `expect(`-Zahl vorher = nachher zählen
-   (`git show <base>:<datei> | grep -c 'expect('` gegen die neue Fassung).
-   Geänderte Assertions oder Golden-Dateien ⇒ Ablehnung (§6.3).
+4. **Bei Tests:** `bash scripts/analyse/test-assertion-diff.sh origin/main origin/<branch>`
+   muss Exit 0 liefern (T5-Beleg 3.9.2026: gleiche Zählwerte, abgeschwächter
+   Matcher — nur der Inhalts-Diff fand ihn). Geänderte Assertions oder
+   Golden-Dateien ⇒ Ablehnung (§6.3).
 5. **Neue Abhängigkeiten** in `package.json`/Lockfile ⇒ Ablehnung, ausser der
    Auftrag hat sie ausdrücklich erlaubt.
 6. Trailer prüfen: `Roadmap: <ID>` im letzten Absatz. `Gegenpruefung: n/a —
@@ -239,7 +244,10 @@ nachschärfen oder Schritt zurückholen.
    nach dem Merge (Solls: `fahrplaene/FAHRPLAN-PERFORMANCE.md`); manuell nur
    bei Verdacht.
 5. Aufräumen: gemergten Branch + Worktree entfernen (lokal + remote).
-6. Karten-ZEILE in `STRUKTUR.md` (deployter Stand, Commit-Hash) — Form:
+6. Hat der Merge `package-lock.json` geändert: `npm ci` im Haupt-Checkout
+   nachziehen (Beleg 3.9.2026: fehlende `valibot`/`date-holidays` machten
+   `npm test` in jedem neuen Worktree rot).
+7. Karten-ZEILE in `STRUKTUR.md` (deployter Stand, Commit-Hash) — Form:
    Skill `bauschritt` Station E.
 
 ## Trailer- und PR-Formregeln (CI-Rot-Lehren 31.8./1.9.2026, §17)
