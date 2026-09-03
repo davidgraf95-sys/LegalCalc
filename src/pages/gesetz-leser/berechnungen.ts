@@ -195,7 +195,7 @@ export function schaetzeArtikelHoehe(e: NormSnapshot): number {
     if (b.tabelle) h += b.tabelle.length * 28 + 14;                                  // Füllpunkt-Tarif
     if (b.mehrspaltig) h += (b.mehrspaltig.zeilen.length + 1) * 30 + 14;             // Mehrspalten-Tabelle inkl. Kopf
   }
-  return Math.max(120, Math.round(h));
+  return Math.max(100, Math.round(h));
 }
 
 // ─── Fussnoten-Reihung ────────────────────────────────────────────────────────
