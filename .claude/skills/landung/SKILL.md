@@ -198,7 +198,7 @@ oder `Fixes #<issue>` suchen, nicht nach Autor.
    Jede Datei ausserhalb ⇒ Ablehnung, nicht selbst zurechtstutzen.
 3. Diff gegen `istRisikoPfad()` halten. **Jede Berührung ⇒ Ablehnung** mit
    Verweis auf `AGENTS.md` §3 — nicht selbst nachbessern.
-4. **Bei Tests:** `bash scripts/analyse/test-assertion-diff.sh origin/main origin/<branch>`
+4. **Bei Tests:** `npx vite-node scripts/analyse/test-assertion-diff.ts origin/main origin/<branch>`
    muss Exit 0 liefern (T5-Beleg 3.9.2026: gleiche Zählwerte, abgeschwächter
    Matcher — nur der Inhalts-Diff fand ihn). Geänderte Assertions oder
    Golden-Dateien ⇒ Ablehnung (§6.3).

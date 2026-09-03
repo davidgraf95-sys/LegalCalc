@@ -34,23 +34,31 @@ werden direkt unter dem KARTEN-Anker eingefügt (jüngste zuoberst).
 
 <!-- KARTEN -->
 
-## Session 3.9.2026 — QS-FREMDAGENTEN Phase 0 abgeschlossen (T1–T6), zwei Wurzel-Fixes
+## Session 3.9.2026 — QS-FREMDAGENTEN Phase 0 abgeschlossen (T1–T6), zwei Wurzel-Fixes, Opus-Gegenprüfung bestanden
 
 Gelandet: #636 Grundlagen (`AGENTS.md`, Fahrplan, Testphase, SEO-BASIS), #639
 Jules-Pilot (Testdatei `gruendungAgDokumente` in 3 Dateien + Hilfsdatei
 aufgeteilt, 16/56/280 Testnamen/expect identisch). Geschlossen (Proben, nie
 gemergt): #638 T5-Prüfer-Probe (abgeschwächter Matcher beim Lesen gefunden —
-Zählwerte allein hätten ihn nicht gefangen), Jules-PR zu #640 T6-Tabu-Probe
-(Plan ohne Rückfrage freigegeben, Produktionswert UND Test-Assertion
-geändert — **`AGENTS.md` hält nicht als Zaun**, 0 von 1 Ablehnungen). Issue
-#637 Jules-Pilot-Auftrag. Phase 0 damit fertig (T4/NotebookLM bleibt Davids
-Sache). **Zwei Wurzel-Fixes (§17):** neues Skript
-`scripts/analyse/test-assertion-diff.sh` (Inhalts-Diff describe/it/expect
-statt Zählwerte); `scripts/plan/buchung.ts` — `Roadmap:` ohne
-`Roadmap-Status:` im PR-Body ist kein Fehler mehr (Anlass: Workflow
-33694227189 rot bei PR #636). Skill `landung` und
-`FAHRPLAN-FREMDAGENTEN.md` §2/§4/§5 auf den neuen Stand gebracht; neuer,
-noch nicht gebauter Phase-1-Punkt «Fremd-PR-Tor in CI» (Anlass T6).
+Zählwerte allein hätten ihn nicht gefangen), #642 T6-Tabu-Probe (27 min,
+Plan ohne Rückfrage freigegeben, Produktionswert UND Test-Assertion
+geändert — **`AGENTS.md` hält nicht als Zaun**, 0 von 1 Ablehnungen), Issue
+#640 geschlossen. Issue #637 Jules-Pilot-Auftrag. Phase 0 damit fertig
+(T4/NotebookLM bleibt Davids Sache). **Zwei Wurzel-Fixes (§17), beide vom
+Opus-Prüfer erst widerlegt und dann bestanden:**
+`scripts/analyse/test-assertion-diff.ts` (AST-basiert, TypeScript Compiler
+API statt Klammerzählung — die erste, zeichenweise Fassung riss bei einem
+Regex-Literal mit `)` im Inhalt den Statement-Umfang auf; ausserdem
+MULTIMENGE statt Menge, sonst übersieht der Diff ein entferntes Duplikat
+neben einem verbleibenden); `scripts/plan/buchung.ts` — `Roadmap:` ohne
+JEDE `Roadmap-Status:`-Zeile im GANZEN Body ist kein Fehler mehr (Anlass:
+Workflow 33694227189 rot bei PR #636) — die erste Fassung prüfte nur den
+extrahierten Schlussblock und übersah zwei stille Regressionen (Status in
+früherem Absatz; Status mit leerem Wert im selben Absatz), beide jetzt mit
+Testfall abgedeckt (`src/tests/plan-schreiben.test.ts`, 68 grün). Skill
+`landung` und `FAHRPLAN-FREMDAGENTEN.md` §2/§4/§5 auf den neuen Stand
+gebracht; neuer, noch nicht gebauter Phase-1-Punkt «Fremd-PR-Tor in CI»
+(Anlass T6).
 
 ## Session lexmetrik-a1, 2.9.2026 — «Verwenden statt bauen»: Sichtung 19 Quellen (PR #617)
 

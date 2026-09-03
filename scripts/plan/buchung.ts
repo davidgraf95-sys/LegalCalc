@@ -199,6 +199,13 @@ export function extractTrailerBlock(text: string): Record<string, string> {
 // Aufrufer ausserhalb dieser Datei braucht die Liste heute.
 export { TRAILER_KEYS };
 
+// Erkennt eine `Roadmap-Status:`-Zeile IRGENDWO im Body — nicht nur im
+// extrahierten Schlussblock (Gegenprüfungs-Befund 3.9.2026, Opus-Prüfer:
+// Regression A/B). Case-insensitive, zeilenweise (führender Leerraum
+// zugelassen), damit auch eine Erwähnung ausserhalb des finalen Absatzes
+// erkannt wird.
+const IRGENDWO_STATUS_ZEILE_RE = /^\s*roadmap-status\s*:/im;
+
 /**
  * Liest die Buchungs-Trailer ersatzweise aus einem PR-Body. Gibt `null`
  * zurück, wenn dort kein vollständiger Trailer-Block steht (stiller
@@ -207,39 +214,57 @@ export { TRAILER_KEYS };
  * und der Aufrufer (CLI unten) beendet den Prozess mit Exit 1: ein erkannter,
  * aber kaputter/bösartiger Buchungsversuch darf nie still verpuffen.
  *
- * `Roadmap:` OHNE `Roadmap-Status:` ist seit 3.9.2026 KEIN Fehler mehr
- * (Wurzel-Fix, Anlass: Workflow-Lauf 33694227189 bei PR #636 rot). Ein
- * Schritt, der nach der Landung bewusst `wip` bleibt (mehrere PRs pro
- * Schritt, z. B. QS-FREMDAGENTEN), hat keinen gültigen Merge-Status-Trailer —
- * ein Body mit nur `Roadmap:` ist dafür der einzig korrekte Zustand (Skill
- * `landung` Ziff. 9), symmetrisch zum Commit-Pfad (dort ruft der Workflow
- * `parseBuchung` ohnehin nur auf, wenn BEIDE Commit-Trailer vorhanden sind —
- * ein fehlender Status-Trailer ist dort ebenfalls "nichts zu tun", nie Exit 1).
- * `Roadmap-Status:` OHNE `Roadmap:` bleibt der ECHTE halbe Block (eine
- * Status-Buchung ohne Ziel-ID ist nie gültig) und wirft weiterhin.
+ * VERHALTENSÄNDERUNG 3.9.2026 (deklariert, §6.3; Beleg: Workflow-Lauf
+ * 33694227189 bei PR #636 rot): `Roadmap:` OHNE jede `Roadmap-Status:`-Zeile
+ * im GESAMTEN Body ist kein Fehler mehr — «lone Roadmap = noop». Ein Schritt,
+ * der nach der Landung bewusst `wip` bleibt (mehrere PRs pro Schritt, z. B.
+ * QS-FREMDAGENTEN), hat keinen gültigen Merge-Status-Trailer; ein Body mit
+ * nur `Roadmap:` ist dafür der einzig korrekte Zustand (Skill `landung`
+ * Ziff. 9), symmetrisch zum Commit-Pfad (dort ruft der Workflow `parseBuchung`
+ * ohnehin nur auf, wenn BEIDE Commit-Trailer vorhanden sind).
+ *
+ * GEGENPRÜFUNGS-KORREKTUR 3.9.2026 (Opus-Prüfer widerlegte die erste Fassung):
+ * Der Noop-Fall darf sich NICHT auf den extrahierten Schlussblock stützen,
+ * sondern muss den GANZEN Body prüfen — sonst zwei stille Regressionen:
+ * (A) `Roadmap-Status:` steht in einem FRÜHEREN Absatz, `Roadmap:` allein im
+ *     letzten — der Schlussblock enthält nur `Roadmap`, ein naiver Blick auf
+ *     den Block hielte das für den Noop-Fall, obwohl irgendwo im Body sehr
+ *     wohl eine Status-Absicht steht. Sobald IRGENDWO eine
+ *     `Roadmap-Status:`-Zeile vorkommt, gelten die alten strengen Regeln
+ *     (beide Trailer im SELBEN Schlussabsatz, nicht-leerer gültiger Wert) —
+ *     sonst Wurf, nie still.
+ * (B) `Roadmap-Status:` steht im SELBEN Absatz wie `Roadmap:`, aber mit
+ *     LEEREM Wert (`Roadmap-Status:` ohne Rest) — ein naiver Blick auf
+ *     `!status` behandelt einen leeren String genauso wie "keine Zeile
+ *     vorhanden" und würde fälschlich null liefern. Die Zeile ist aber da;
+ *     ein leerer Wert ist kein gültiger Status => Wurf.
+ * Die Weiche unten prüft darum ZUERST den ganzen Body (nicht den Block).
  */
 export function parseBuchungAusPrBody(body: string): Buchung | null {
   const block = extractTrailerBlock(body);
   const roadmap = block['Roadmap'];
   const status = block['Roadmap-Status'];
-  // Kein Buchungs-Key im Block: stiller Normalfall (auch ein reiner
-  // Gegenpruefung-Trailer ist keine Buchungs-Absicht).
-  if (!roadmap && !status) return null;
-  // `Roadmap:` ohne `Roadmap-Status:`: gültiger wip-Normalfall (s. oben) —
-  // nichts zu tun, kein Fehler.
-  if (roadmap && !status) return null;
-  // ECHTER halber Block: `Roadmap-Status:` ohne `Roadmap:`, oder die beiden
-  // Trailer stehen in verschiedenen Absätzen (siehe extractTrailerBlock, nur
-  // der letzte vollständige Absatz zählt). Das verpuffte bis 15.8.2026 STILL
-  // (Realfall PR #507: Workflow «success» ohne Buchung, Hand-Buchung nötig).
-  // Erkannter, aber kaputter Buchungsversuch => laut (Exit 1), nie still.
-  if (!roadmap) {
-    throw new Error(
-      `PR-Body: unvollständiger Buchungs-Block (Roadmap=—, Roadmap-Status=${status}) — ` +
-      `beide Trailer müssen im SELBEN Absatz stehen (zusammenhängender Block, ` +
-      `Skill landung Ziff. 9).`);
+
+  // Keine `Roadmap-Status:`-Zeile IRGENDWO im Body -> nichts zu tun, auch
+  // wenn `Roadmap:` (allein) da ist oder gar kein Trailer vorkommt.
+  if (!IRGENDWO_STATUS_ZEILE_RE.test(body)) {
+    return null;
   }
-  return parseBuchung(roadmap, status as string);
+
+  // Ab hier: irgendwo im Body steht eine `Roadmap-Status:`-Zeile -> die alten
+  // strengen Regeln gelten wieder unbedingt: BEIDE Trailer müssen im selben
+  // Schlussabsatz stehen (extractTrailerBlock liefert nur dann für BEIDE
+  // Keys einen Wert), UND der Status-Wert darf nicht leer sein. Das verpuffte
+  // bis 15.8.2026 STILL (Realfall PR #507: Workflow «success» ohne Buchung,
+  // Hand-Buchung nötig). Erkannter, aber kaputter Buchungsversuch => laut
+  // (Exit 1), nie still.
+  if (!roadmap || !status) {
+    throw new Error(
+      `PR-Body: unvollständiger Buchungs-Block (Roadmap=${roadmap ?? '—'}, ` +
+      `Roadmap-Status=${status || '—'}) — beide Trailer müssen im SELBEN Absatz ` +
+      `stehen (zusammenhängender Block, Skill landung Ziff. 9).`);
+  }
+  return parseBuchung(roadmap, status);
 }
 
 // CLI, zwei Modi:
