@@ -19,6 +19,7 @@ import { useLocale, fedlexLokalisiert } from '../locale';
 import { usePaneSteuerung } from '../layout/usePaneLayout';
 import { KantenChip } from '../verzahnung/KantenChip';
 import { StatusBadge } from '../verzahnung/StatusBadge';
+import { ZeichenLegende } from '../verzahnung/ZeichenLegende';
 import { ArtikelKontextZeilen } from './ArtikelKontextGruppe';
 // §6.6-Split (9.8.2026): die geteilte Gruppen-Hülle lebt daneben; der
 // Re-Export hält den bisherigen Import-Pfad `./KontextPanel` für alle
@@ -619,6 +620,25 @@ export function KontextPanel({ typ, normKeys, zusatzGruppen, ohneNormen = false,
                     <Link to={alleEntscheideZiel} className="text-body-s text-brass-700 hover:underline">
                       Alle <span className="num">{entscheide?.length}</span> erfassten Entscheide ansehen →
                     </Link>
+                  )}
+                  {/* LM-134 (W2·17-UI-BEFUNDE-B9, 4.9.2026) · DER ★ WIRD AUF DER
+                      SEITE ERKLÄRT, NICHT NUR IM TOOLTIP. Gemessen @1440 auf
+                      `/materialien/ESTV-KS-DBG-5A`: 8 Sterne in dieser Liste,
+                      aria-label und title tragen «Leitentscheid — amtlich
+                      publizierter BGE», SICHTBAR steht die Erklärung nirgends
+                      (`title` ist auf Touch tot). Das ist wortgleich die Lücke,
+                      die LM-050 in B1 geschlossen hat — und ihr Bauteil steht
+                      schon: `verzahnung/ZeichenLegende` (Toggletip, Texte aus
+                      GLYPH_LEGENDE, §5 dieselbe Quelle wie aria-label/title).
+                      Wiederverwendet statt einer zweiten Legende (§10); der
+                      Mount-Punkt ist neu, die Komponente unverändert.
+                      Die Bedingung ist §8: die Legende steht nur, wenn in DIESER
+                      Liste wirklich ein ★ zu sehen ist — eine Erklärung für ein
+                      unsichtbares Zeichen wäre eine Fehlversprechung (dieselbe
+                      Begründung, mit der ZeichenLegende ihren ⧉-Eintrag an
+                      `kannOeffnen` bindet). */}
+                  {sichtbareEntscheide.some((r) => r.leitcharakter === 'leitentscheid') && (
+                    <ZeichenLegende />
                   )}
                 </>
               )}
