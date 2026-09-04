@@ -9,6 +9,7 @@
 //
 //   npm run gen:pdf-quellen -- --datum=$(date +%F)            (Netz, manuell)
 //   npm run gen:pdf-quellen -- --nur=bund --datum=…           (nur Bund)
+//   npm run gen:pdf-quellen -- --nur=kanton --kanton=BE       (nur ein Kanton)
 //
 // Quellen (ausschliesslich amtlich, §7):
 //   · Bund   — Fedlex-SPARQL `jolux:isExemplifiedBy` der pdf-a-Manifestation der
@@ -203,10 +204,24 @@ function heute(): string {
 async function main() {
   const nurArg = process.argv.find((a) => a.startsWith('--nur='));
   const nur = nurArg ? nurArg.slice('--nur='.length) : 'beide';
+  // `--kanton=BE[,SG]` grenzt die KANTONALE Erhebung auf einzelne Kantone ein
+  // (QS-MONITOR-ROT, 4.9.2026). WARUM: eine Kanton-Reparatur an EINEM Erlass
+  // (hier BE 154.21) musste bisher alle 1231 kantonalen Quellen neu befragen —
+  // derselbe Churn-Schaden, gegen den der Bund-Arm 1.9.2026 `--nur=bund` bekam
+  // (fedlex-frische.yml: «13 BS-Erlasse verloren dabei ihren PDF-Link … ein
+  // echter, aber sachfremder Befund, der einen eigenen Schritt verdient»).
+  // Ohne Flag unverändertes Verhalten (alle Kantone); die `delete`-Zeile unten
+  // räumt nur die GEFILTERTEN Keys, fremde Sidecar-Einträge bleiben.
+  const kantonArg = process.argv.find((a) => a.startsWith('--kanton='));
+  const kantonFilter = kantonArg
+    ? new Set(kantonArg.slice('--kanton='.length).split(',').map((s) => s.trim().toUpperCase()).filter(Boolean))
+    : null;
   const erlasse = (JSON.parse(readFileSync(REGISTER_JSON, 'utf8')) as { erlasse: ErlassBasis[] }).erlasse;
   const snap = erlasse.filter((e) => e.status === 'snapshot' && e.quelleUrl);
   const bund = snap.filter((e) => e.ebene === 'bund' && e.sr);
-  const kanton = snap.filter((e) => e.ebene === 'kanton');
+  const kanton = snap.filter(
+    (e) => e.ebene === 'kanton' && (!kantonFilter || (e.kanton !== null && kantonFilter.has(e.kanton.toUpperCase()))),
+  );
 
   // Bestehende Sidecar-Einträge erhalten, wenn nur ein Teil neu erhoben wird.
   let map: PdfQuellenMap = {};
