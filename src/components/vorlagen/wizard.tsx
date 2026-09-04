@@ -1,6 +1,7 @@
 import { useMemo, useState, type Dispatch, type ReactNode, type SetStateAction } from 'react';
 import { Link } from 'react-router-dom';
-import { FehlerBox, KopierButton, NormLink, Stepper, useZielSichtbar } from './ui';
+import { FehlerBox, KopierButton, NormLink, Stepper } from './ui';
+import { useZielSichtbar } from './useZielSichtbar';
 import { NormChip } from './NormChip';
 import { PassendeRechner } from './PassendeRechner';
 import { NormText } from '../NormText';
