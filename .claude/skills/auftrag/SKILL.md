@@ -141,6 +141,22 @@ erbracht und die Haupt-Session misst selbst nach. Anlass: eine falsche
 Nullproben-Behauptung hätte eine echte Lesemass-Regression beinahe
 durchgelassen — erst die Gegen-Messung auf main fing sie. **Repo-Fakt-Behauptungen («es gibt kein X») nur mit repo-weiter Suche** (`grep -rn` über `scripts/ src/`, Blick in `dist/`), nie nur nach Dateinamen unter `public/` — Beleg 4.9.2026: «keine Sitemap» war falsch (Generator inline in `scripts/prerender.ts`), ein Sonnet-Bauer fing es per Nullprobe vor dem Bau ab.
 
+**Grüne Spur → Jules (Phase 4 QS-FREMDAGENTEN, 4.9.2026):** Vor jedem Dispatch an
+`lex-bau` prüfen, ob der Schritt auf die grüne Spur gehört — dann geht er als
+GitHub-Issue mit Label `jules` an Jules (Google), nicht an einen Claude-Agenten
+(Vorlage: `docs/token-oekonomie/jules-ticket-vorlage.md`; Belege: 5/5 PRs ohne
+Code-Nacharbeit, ~30 min, kein Claude-Kontingent). Kriterien, alle vier: (a) keine
+Datei, für die `istRisikoPfad()` wahr ist, und nichts ausserhalb `src/**`; (b)
+Fertig-Kriterium maschinell (Tore, gleiche Tests, Golden) — kein Sichtentscheid,
+keine fachliche Wertung; (c) ein Ziel, ≤ ~5 Dateien, Whitelist benennbar; (d)
+keine offene David-Frage. Typische Fälle: Datei-Splits (Schlankheit §6.6),
+Verschiebungen, Typ-Härtungen ohne Verhaltensänderung. Nie: Tests ändern, neue
+Tests, Rechenlogik, Extraktion, Steuer-Doku. Landung nach Skill `landung`
+§«Fremde PRs» durch einen Opus-Prüfer plus Bauleiter-Mechanik; Jules' eigene
+Erfolgsmeldung zählt nichts (§14.7). Drei bis fünf Tickets pro Session sind
+der Richtwert; Jules-«proactive suggestions» nie direkt starten, sondern hier
+einordnen.
+
 **Rollenteilung** (David 4./7.8.2026): Der Orchestrator delegiert Bau- und
 Prüfarbeit, macht aber selbst: Plan-/Doku-Buchhaltung, Landungs-Mechanik,
 kleine verifizierte Fixes < ~30 Min, Konfig-Flächen (mit Davids Freigabe).
