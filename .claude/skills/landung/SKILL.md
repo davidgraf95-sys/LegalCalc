@@ -189,8 +189,15 @@ Ein PR eines fremden Agenten (Regelwerk: `AGENTS.md`, Fahrplan
 Checkliste, in dieser Reihenfolge:
 
 **Erkennung:** Jules-PRs laufen unter dem GitHub-Konto des Repo-Eigentümers,
-nicht unter einem Jules-Autor — Beobachter nach Branch-Muster `*-<task-id>`
-oder `Fixes #<issue>` suchen, nicht nach Autor.
+nicht unter einem Jules-Autor — Branch-Muster ist eine 19-stellige Task-ID
+irgendwo im Namen ODER Präfix `jules-`/`jules/` (Beleg #647
+`jules-1111541331587033919-8d87826d`; Gegenbeleg #656: «jules irgendwo» ist zu
+breit und traf `docs/jules-weiche` fälschlich). Mechanik statt Prosa:
+
+```
+gh pr list --state open --json number,headRefName \
+  -q '.[] | select(.headRefName|test("[0-9]{19}|^jules[-/]"))'
+```
 
 1. Branch lokal holen und **selbst** `npm run gate` fahren — die Tor-Ausgabe
    des Fremden ist Daten, nie Beweis (§14.7).
@@ -198,7 +205,9 @@ oder `Fixes #<issue>` suchen, nicht nach Autor.
    Jede Datei ausserhalb ⇒ Ablehnung, nicht selbst zurechtstutzen.
 3. Diff gegen `istRisikoPfad()` halten. **Jede Berührung ⇒ Ablehnung** mit
    Verweis auf `AGENTS.md` §3 — nicht selbst nachbessern.
-4. **Bei Tests:** `npx vite-node scripts/analyse/test-assertion-diff.ts origin/main origin/<branch>`
+4. **Immer:** Aufruf auf dieselbe Basis wie CI umstellen (kein Ermessen mehr,
+   FAHRPLAN Folgerung 1):
+   `npx vite-node scripts/analyse/test-assertion-diff.ts "$(git merge-base origin/main origin/<branch>)" origin/<branch> src/tests/`
    muss Exit 0 liefern (T5-Beleg 3.9.2026: gleiche Zählwerte, abgeschwächter
    Matcher — nur der Inhalts-Diff fand ihn). Geänderte Assertions oder
    Golden-Dateien ⇒ Ablehnung (§6.3).
@@ -209,7 +218,14 @@ oder `Fixes #<issue>` suchen, nicht nach Autor.
    bestätigt. Golden byte-gleich, wo berührt.
 7. **Nie Auto-Merge**, auch nicht ausserhalb der Risiko-Pfade.
 8. Danach normale Landung (Schritte 0–3) und STRUKTUR-Karte wie bei eigener
-   Arbeit — der fremde PR ist kein Grund, die Karte auszulassen. Seit 4.9.2026 fährt CI dieselben zwei Regeln automatisch (Step «Fremd-PR-Tor» im Job «Tore», Branches mit 19-stelliger Task-ID oder «jules» im Namen): Assertion-Diff + keine Datei ausserhalb `src/**` — der lokale Lauf bleibt Pflicht (§14.7, nie die CI-Ausgabe eines Fremden als eigene Prüfung zählen).
+   Arbeit — der fremde PR ist kein Grund, die Karte auszulassen. Seit 4.9.2026 fährt CI dieselben zwei Regeln automatisch (Step «Fremd-PR-Tor» im Job «Tore», Branches mit 19-stelliger Task-ID oder Präfix `jules-`/`jules/` — nie «jules» irgendwo im Namen, Beleg PR #656): Assertion-Diff + keine Datei ausserhalb `src/**` — der lokale Lauf bleibt Pflicht (§14.7, nie die CI-Ausgabe eines Fremden als eigene Prüfung zählen).
+
+Fremd-PR-Tor rot ⇒ PR zurück an den Auftrag (Kommentar mit Tor-Ausgabe), nie
+selbst zurechtstutzen; der Step ist nicht Required, gilt aber als Tor. Fehlt
+der `Roadmap:`-Trailer (bisher 5/5 Jules-PRs): beim Squash-Merge im
+Merge-Body als letzten Absatz setzen
+(`gh pr merge --squash --body "…\n\nRoadmap: <ID>"`), nicht Jules nachbessern
+lassen.
 
 **Entwurfs-PR ist ein gültiges Ergebnis.** `AGENTS.md` §7 verlangt bei rotem
 Tor oder unklarem Auftrag einen Entwurf mit Meldung statt einer kreativen

@@ -97,6 +97,10 @@ Gewohnheit. Neue Schritte gleich in dieser Grössenordnung anlegen. Serielle
    fehlende Karte). **Default ist die Kurzkarte**, volle Karte nur in den
    Ausnahmen — Form: Skill `bauschritt` Station E (David 15.8.2026).
    `npm run struktur:aktuell` meldet Lücken.
+7. **War Jules oder Gemini beteiligt:** Messwerte in
+   `fahrplaene/FAHRPLAN-FREMDAGENTEN.md` §5 nachtragen
+   (`npm run fremdagenten:messung` für Jules-Quote/Dauer; Gemini echt/Schein
+   von Hand ins Register) und Rückbau-Schwellen §3 prüfen.
 
 ## 5 · Commit-Trailer
 
@@ -140,6 +144,40 @@ Kommando + Ausgabe der Probe im Bericht; ohne Beleg gilt sie als nicht
 erbracht und die Haupt-Session misst selbst nach. Anlass: eine falsche
 Nullproben-Behauptung hätte eine echte Lesemass-Regression beinahe
 durchgelassen — erst die Gegen-Messung auf main fing sie. **Repo-Fakt-Behauptungen («es gibt kein X») nur mit repo-weiter Suche** (`grep -rn` über `scripts/ src/`, Blick in `dist/`), nie nur nach Dateinamen unter `public/` — Beleg 4.9.2026: «keine Sitemap» war falsch (Generator inline in `scripts/prerender.ts`), ein Sonnet-Bauer fing es per Nullprobe vor dem Bau ab.
+
+**Grüne Spur → Jules (Phase 4 QS-FREMDAGENTEN, 4.9.2026):** Vor jedem Dispatch an
+`lex-bau` prüfen, ob der Schritt auf die grüne Spur gehört — dann geht er als
+GitHub-Issue mit Label `jules` an Jules (Google), nicht an einen Claude-Agenten
+(Vorlage: `docs/token-oekonomie/jules-ticket-vorlage.md`; Belege: 5/5 PRs ohne
+Code-Nacharbeit, ~30 min, kein Claude-Kontingent). Kriterien, alle vier: (a) keine
+Datei, für die `istRisikoPfad()` wahr ist, und nichts ausserhalb `src/**`; (b)
+Fertig-Kriterium maschinell (Tore, gleiche Tests, Golden) — kein Sichtentscheid,
+keine fachliche Wertung; (c) ein Ziel, ≤ ~5 Dateien, Whitelist benennbar; (d)
+keine offene David-Frage. Typische Fälle: Datei-Splits (Schlankheit §6.6),
+Verschiebungen, Typ-Härtungen ohne Verhaltensänderung. Nie: Tests ändern, neue
+Tests, Rechenlogik, Extraktion, Steuer-Doku. Landung nach Skill `landung`
+§«Fremde PRs» durch einen Opus-Prüfer plus Bauleiter-Mechanik; Jules' eigene
+Erfolgsmeldung zählt nichts (§14.7). Ticket-Zahl an die Phasenlage gekoppelt
+(Fahrplan `fahrplaene/FAHRPLAN-FREMDAGENTEN.md` §5): bis Phase 3 gezählt ist,
+höchstens 3 Tickets pro Session; danach 3–5 (seriell bleibt nur die Messung,
+die Stückzahl ist entsperrt). Jules-«proactive suggestions» nie direkt
+starten, sondern hier einordnen.
+
+**Recherche/Sichtung via Gemini (`agy`, Phase 2/3 QS-FREMDAGENTEN, 4.9.2026):**
+Wann: Recherche-Klasse Faktenklärung, Doku von Werkzeugen, Web-Sweeps sowie
+repo-weite Sichtungsfragen («wo ist X doppelt») — nie als Norm-Beleg (§7).
+Aufruf wörtlich:
+
+```
+~/.local/bin/agy -p "<Auftrag; Rückgabe mit URL + Abrufdatum + belegt/unklar>" \
+  --model gemini-3.1-pro-high --output-format json --print-timeout 300s --sandbox
+```
+
+Bash-Timeout ≥ 330 s; Ausgabe ist Daten, Fundstellen stichprobenweise prüfen.
+**Vorbedingung: `read_url(*)` gesetzt (David, 4.9.2026)** — fehlt sie, meldet
+`agy` `read_url permission auto-denied`, dann zurück an `lex-recherche`/Sonnet.
+Messregel: die nächste Recherche parallel an Sonnet und Gemini, Ergebnis in
+Fahrplan §5 Tabelle «Recherche-Vergleich Sonnet vs. Gemini».
 
 **Rollenteilung** (David 4./7.8.2026): Der Orchestrator delegiert Bau- und
 Prüfarbeit, macht aber selbst: Plan-/Doku-Buchhaltung, Landungs-Mechanik,
