@@ -17,7 +17,11 @@ Zahlen unten sind **Momentaufnahmen vom Abrufdatum**, keine Zusicherungen.
 
 **Verwendung im Repo:** `fahrplaene/FAHRPLAN-FREMDAGENTEN.md` (Rollenmodell,
 Phasen, Messkriterien) · `AGENTS.md` (Regelwerk für fremde Agenten) ·
-ROADMAP-Schritt `QS-FREMDAGENTEN`.
+ROADMAP-Schritt `QS-FREMDAGENTEN`. **Seit 4.9.2026 auch im
+Selbstoptimierungs-Kreislauf** (Fahrplan §3): Stufe 1
+(`scripts/plan/selbstopt-erheben.ts`) erhebt Jules-/Gemini-Kennzahlen aus
+dieser Fläche, Stufe 2 (`scripts/plan/retro17Kern.ts`) deutet sie gegen die
+§3-Schwellen — Detail dort.
 
 ---
 

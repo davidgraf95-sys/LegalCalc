@@ -51,6 +51,18 @@ export const NIE_ROT_MINDEST_LAEUFE = 30;
 export const CI_FAILURE_SCHWELLE = 0.2;
 export const CI_RERUN_SCHWELLE = 0.15;
 
+// ── Fremdagenten (QS-FREMDAGENTEN, 4.9.2026) — Schwellen aus Fahrplan §2/§3 ──
+
+/** Unter so vielen Jules-PRs (gemerged+geschlossen, 7 Tage) ist die Quote nicht belastbar. */
+export const JULES_QUOTE_MIN_N = 3;
+/** Fahrplan §3 «Phase 1 Jules … < 2 von 3 ⇒ zurück auf Doku-only». */
+export const JULES_RUECKBAU_QUOTE = 2 / 3;
+/** Fahrplan §2 Phase 4: Skalierungs-Kandidat ab dieser Quote UND dieser Median-Dauer. */
+export const JULES_SKALIEREN_QUOTE = 5 / 6;
+export const JULES_SKALIEREN_MEDIAN_MAX_MIN = 45;
+/** Fahrplan §3 «Phase 3 Zweitblick … n = 5». */
+export const ZWEITBLICK_DURCHGAENGE_SCHWELLE = 5;
+
 /** Die Marke, an der jede maschinell erzeugte Vorschlagszeile erkennbar ist. */
 export const ENTWURF_MARKE = '<!-- ENTWURF retro:17 — Übernahme nur durch Session-/David-Entscheid -->';
 
@@ -58,7 +70,19 @@ export const ENTWURF_MARKE = '<!-- ENTWURF retro:17 — Übernahme nur durch Ses
 
 export interface Befund {
   /** Kurzschlüssel der Regel — stabil, damit Befunde vergleichbar bleiben. */
-  art: 'rot-haeufung' | 'nie-rot' | 'ci-failure' | 'ci-rerun' | 'f-klasse';
+  art:
+    | 'rot-haeufung'
+    | 'nie-rot'
+    | 'ci-failure'
+    | 'ci-rerun'
+    | 'f-klasse'
+    | 'jules-rueckbau'
+    | 'jules-skalieren'
+    | 'jules-lehre'
+    | 'gemini-rueckbau'
+    | 'zweitblick-schwelle'
+    | 'kontingent-beleg'
+    | 'jules-alarm';
   /** Vorgeschlagener Schritt-Titel (fett im ROADMAP-Bullet). */
   titel: string;
   /** Der belegende Satz: Zahlen, Schwelle, Quelle. */
@@ -191,6 +215,122 @@ export function befunde(z: Zeitreihe, chronik: string): Befund[] {
       hinweis:
         'Regel 5 des Skills `lehren`: zweimal trotz Gegenmittel ⇒ Form eskalieren (Prosa → Dispatch → Tor). ' +
         'Keine neue Regel danebenlegen, das bestehende Gegenmittel verschärfen.',
+    });
+  }
+
+  // (5) Fremdagenten — Jules und Gemini, aus dem letzten Snapshot (Stufe 1,
+  //     QS-FREMDAGENTEN). `letzter.fremdagenten` ist bei alten Snapshots
+  //     (Schema < 3, migriert) und bei Ausfall der jeweiligen Quelle `null` —
+  //     jede Teilregel schweigt dann, statt mit erfundenen Zahlen zu deuten.
+  const jules = letzter.fremdagenten?.jules ?? null;
+  if (jules) {
+    // (a)+(b) Quote ohne Nacharbeit — Proxy gemerged/(gemerged+geschlossen),
+    //     weil die Fahrplan-Spalte «Nacharbeit» nicht automatisch erfasst ist
+    //     (s. `JulesMessung`-Docstring in `fremdagenten-messung.ts`).
+    const n = jules.prs_gemerged_7d + jules.prs_geschlossen_7d;
+    if (n >= JULES_QUOTE_MIN_N) {
+      const quote = jules.prs_gemerged_7d / n;
+      if (quote < JULES_RUECKBAU_QUOTE) {
+        out.push({
+          art: 'jules-rueckbau',
+          titel: 'Rückbau: Jules nur Doku/Mechanik',
+          anlass:
+            `Quote ohne Nacharbeit (gemerged/(gemerged+geschlossen)) ${quoteText(quote)} über n=${n} PRs der ` +
+            `letzten 7 Tage (${jules.prs_gemerged_7d} gemerged, ${jules.prs_geschlossen_7d} geschlossen); ` +
+            `Schwelle ${quoteText(JULES_RUECKBAU_QUOTE)} (Fahrplan §3 «Phase 1 Jules … < 2 von 3»)`,
+          hinweis:
+            'Fahrplan §3 Rückbau-Regel: der betroffene Teil wird zurückgebaut, nicht bewacht. Flächen: ' +
+            '`auftrag`-Weiche, `AGENTS.md`, ci.yml-Step, `landung`-Absatz, Ticket-Vorlage, Label.',
+        });
+      } else if (
+        quote >= JULES_SKALIEREN_QUOTE &&
+        jules.median_dauer_min !== null &&
+        jules.median_dauer_min <= JULES_SKALIEREN_MEDIAN_MAX_MIN
+      ) {
+        out.push({
+          art: 'jules-skalieren',
+          titel: 'Ticketzahl auf 3–5 anheben (Phase 4)',
+          anlass:
+            `Quote ${quoteText(quote)} über n=${n} PRs · Median-Dauer ${jules.median_dauer_min} min; ` +
+            `Schwellen ${quoteText(JULES_SKALIEREN_QUOTE)} und ≤ ${JULES_SKALIEREN_MEDIAN_MAX_MIN} min (Fahrplan §2 Phase 4)`,
+          hinweis:
+            'Erst die Fahrplan-Spalte «Nacharbeit» gegenlesen (hier nicht automatisch erfasst) — erst dann ' +
+            'seriell auf 3–5 Tickets pro Session anheben (Stückzahl entsperrt 4.9.2026, Messung bleibt Pflicht).',
+        });
+      }
+    }
+
+    // (c) Jeder geschlossene Jules-PR der letzten 7 Tage ⇒ Lehre verankern.
+    if (jules.prs_geschlossen_7d > 0) {
+      out.push({
+        art: 'jules-lehre',
+        titel: 'Lehre verankern: Tor-Regel oder Vorlagen-Zeile (Beleg #662 → Kommentar-Bilanz)',
+        anlass: `${jules.prs_geschlossen_7d} geschlossene(r) Jules-PR(s) in den letzten 7 Tagen (Quelle: Jules-Messung)`,
+        hinweis:
+          'Formregel Skill `lehren`, Ergänzung Fremdagenten: die Ablehnung noch in DERSELBEN Session als ' +
+          'Tor-Regel (Fremd-PR-Tor/Erstfilter) oder Vorlagen-Zeile verankern — nie nur als Kommentar.',
+      });
+    }
+  }
+
+  const gemini = letzter.fremdagenten?.gemini ?? null;
+  if (gemini) {
+    // (d) Diskrepanz-Finder: mehr Schein- als echte Funde ⇒ Rückbau prüfen.
+    if (gemini.diskrepanz_schein > gemini.diskrepanz_echt) {
+      out.push({
+        art: 'gemini-rueckbau',
+        titel: 'Rückbau Diskrepanz-Finder prüfen',
+        anlass:
+          `Phase-2-Register: Schein ${gemini.diskrepanz_schein} > echt ${gemini.diskrepanz_echt} über ` +
+          `${gemini.diskrepanz_laeufe} Erlass-Läufe (Fahrplan §3 «Schein > echt ⇒ Rückbau»)`,
+        hinweis:
+          'Flächen bei Rückbau: `scripts/analyse/gemini-diskrepanz*.ts`, `korpus-werkstatt`-Absatz, ' +
+          '`gegenpruefung`-Station.',
+      });
+    }
+
+    // (e) Phase-3-Zweitblick-Durchgänge erreichen die Zähl-Schwelle.
+    if (gemini.zweitblick_durchgaenge >= ZWEITBLICK_DURCHGAENGE_SCHWELLE) {
+      out.push({
+        art: 'zweitblick-schwelle',
+        titel: 'Schwelle §3 anwenden, Verdikt eintragen',
+        anlass:
+          `${gemini.zweitblick_durchgaenge} Zweitblick-Durchgänge im §5-Register erreicht ` +
+          `(Schwelle n=${ZWEITBLICK_DURCHGAENGE_SCHWELLE}, Fahrplan §3 «Phase 3 … mehr Schein als echt ⇒ Weg zu»)`,
+        hinweis:
+          'Echt gegen Schein über die Durchgänge auszählen und das Verdikt in Fahrplan §3 eintragen — ' +
+          'dieses Werkzeug zählt nur die Durchgänge, nicht das Verdikt.',
+      });
+    }
+
+    // (f) Jedes protokollierte Kontingent-Ereignis ⇒ Fahrplan-Zahlen abgleichen.
+    if (gemini.kontingent_ereignisse >= 1) {
+      out.push({
+        art: 'kontingent-beleg',
+        titel: 'Limiten im Fahrplan belegen/korrigieren',
+        anlass:
+          `${gemini.kontingent_ereignisse} Kontingent-Ereignis(se) im §5-Register (Fahrplan §5: Zahlen ` +
+          `100/Tag · 15 parallel für Jules bislang unbelegt)`,
+        hinweis:
+          'Das erste real beobachtete Ereignis belegt die Fahrplan-Zahlen oder korrigiert sie — Eintrag ' +
+          'gegen die Tabelle prüfen, Text bei Bedarf anpassen (Fahrplan §4 «Limite erkennen»).',
+      });
+    }
+  }
+
+  // (g) Alarm «Issue ohne Annahme» — eigenständig von der Quote, da er einen
+  //     akuten Betriebszustand meldet, keinen Verlauf.
+  if (jules?.alarm) {
+    out.push({
+      art: 'jules-alarm',
+      titel: 'Jules-Verbindung prüfen — Issue seit über 10 min ohne Annahme',
+      anlass:
+        `Alarm aus der letzten Kontingent-/Ticket-Messung (tickets_24h=${jules.tickets_24h}); Signal ` +
+        `«kein "Jules is on it" binnen 10 min» (Fahrplan §4 «Limite erkennen»)`,
+      hinweis:
+        'Erst `npm run fremdagenten:messung -- --kontingent` laufen lassen: Tages-/Parallel-Stopp, ' +
+        'App-Problem oder eine hängende Session unterscheiden. Bis geklärt: keine neuen Jules-Tickets ' +
+        '(Skill `auftrag` Ziff. 6 «Grüne Spur → Jules»).',
     });
   }
 

@@ -301,6 +301,15 @@ Gemini-Finder: `scripts/analyse/gemini-diskrepanz*.ts`,
 **Messbedingung mitschreiben:** Jede Quote nennt n, Zeitraum und Art der
 Schritte — eine Quote ohne Bedingung ist keine Zahl.
 
+**Selbstoptimierungs-Kreislauf (QS-FREMDAGENTEN, 4.9.2026):** Der Kreislauf
+läuft automatisch: Stufe 1 erhebt, Stufe 2 schlägt vor, Autopilot legt
+wöchentlich den Entwurf vor; die Session übernimmt oder verwirft mit
+Begründung. Stufe 1 (`npm run selbstopt:erheben`) zieht die Jules-Zahlen
+dieser Tabelle über `erhebeJules()` und die drei §5-Register unten
+deterministisch aus dieser Datei; Stufe 2 (`npm run retro:17`) deutet sie
+gegen die Schwellen dieser Tabelle. Detail und Quellenlage:
+`bibliothek/fremdagenten-google-ai-pro-2026-09.md`.
+
 ## §4 · Sicherheit und Daten
 
 - **Öffentliches Repo.** Issues und PRs sind öffentlich lesbar; darin nur

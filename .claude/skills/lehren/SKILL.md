@@ -31,6 +31,20 @@ nicht ins .md. **Netto-Prosa-Zuwachs ist zu begründen.**
 Und: **ein Tor ist erst ein Tor, wenn es einmal rot war.** Wer eines baut, zeigt
 den Sabotage-Beweis (§6.7 — Skill `refactoring`, Ziff. 7).
 
+### Formregel-Ergänzung: Fremdagenten (QS-FREMDAGENTEN, 4.9.2026)
+
+Jede **Ablehnung eines Fremd-PRs** (Jules geschlossen, nie gemergt) und jede
+**Schein-Klasse des Diskrepanz-Finders** (Gemini-Fund als Schein protokolliert)
+wird in DERSELBEN Session nach der Formregel oben verankert — als Tor-Regel
+(Fremd-PR-Tor/Erstfilter) oder als Vorlagen-Zeile —, **nie nur als Kommentar**
+im Fahrplan-Register. Belege, dass das wirkt: der Assertion-Diff aus T5 (PR
+#638, `scripts/analyse/test-assertion-diff.ts`), die Kommentar-Bilanz aus
+#662 (Fremd-PR-Tor Regel 3), die Label-/Tabellen-Regeln aus #650
+(deterministischer Erstfilter). Stufe 2 (`retro:17`) trägt seit demselben
+Auftrag einen Erinnerungs-Vorschlag: jeder in den letzten 7 Tagen
+geschlossene Jules-PR erzeugt eine ENTWURF-Zeile «Lehre verankern» — sie
+ersetzt die Formregel nicht, sie erinnert nur daran, wenn sie vergessen ginge.
+
 ## Register der belegten Fehlerklassen (Vorfälle seit 18.7.2026)
 
 | # | Klasse | Was passierte | Gegenmittel — wo es sitzt |

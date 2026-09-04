@@ -56,8 +56,15 @@ export const GENERIERT_MARKE =
  * nachgetragen — s. `migriere()` in `selbstopt-erheben.ts`. Das ist kein
  * Umschreiben von Messwerten: nachgetragen wird ausschliesslich die Aussage
  * «nicht gemessen», und die ist für jene Snapshots wahr.
+ *
+ * **3** seit 4.9.2026 (QS-FREMDAGENTEN, Spec «Fremdagenten in den
+ * Selbstoptimierungs-Kreislauf»): neues Pflichtfeld `fremdagenten` (Jules-
+ * und Gemini-Kennzahlen, s. `FremdagentenBlock`). Dieselbe Migrationslinie
+ * wie bei `tokens`: ältere Snapshots bekommen `{ jules: null, gemini: null,
+ * claude_token_pro_schritt: null }` nachgetragen — «nicht gemessen» trifft
+ * für sie zu, kein gemessener Wert wird angefasst.
  */
-export const SCHEMA_VERSION = 2;
+export const SCHEMA_VERSION = 3;
 
 // ───────────────────────────── Tor-Ereignisse ─────────────────────────────
 
@@ -233,6 +240,133 @@ export function parseFKlassen(md: string): Record<string, number> {
   const sortiert: Record<string, number> = {};
   for (const k of Object.keys(out).sort()) sortiert[k] = out[k];
   return sortiert;
+}
+
+// ───────────────────────── Fremdagenten (QS-FREMDAGENTEN) ─────────────────────────
+
+/**
+ * Jules-Kennzahlen eines Snapshots. Erhoben von `erhebeJules()` in
+ * `scripts/analyse/fremdagenten-messung.ts` (§5: eine Definition der
+ * Jules-Branch-/Dauer-Logik, nicht zwei) über die letzten 7 Tage.
+ */
+export interface JulesMessung {
+  /** Jules-PRs, in den letzten 7 Tagen GEMERGED. */
+  prs_gemerged_7d: number;
+  /** Jules-PRs, in den letzten 7 Tagen GESCHLOSSEN ohne Merge. */
+  prs_geschlossen_7d: number;
+  /** Median Ticket→PR-Dauer der gemergten PRs, `null` ohne auflösbare Issue-Referenz. */
+  median_dauer_min: number | null;
+  /** Jules-Issues (Label `jules`), angelegt in den letzten 24 h. */
+  tickets_24h: number;
+  /** Mindestens ein Issue der letzten 24 h seit > 10 min ohne «Jules is on it» (Fahrplan §4 «Limite erkennen»). */
+  alarm: boolean;
+}
+
+/**
+ * Gemini-Kennzahlen eines Snapshots — Zeilen der drei §5-Register-Tabellen in
+ * `fahrplaene/FAHRPLAN-FREMDAGENTEN.md`, gezählt/summiert von
+ * `parseFremdagentenRegister`.
+ *
+ * `diskrepanz_echt`/`diskrepanz_schein` stehen NICHT wörtlich in der Spec
+ * (dort nur `diskrepanz_laeufe`) — ABWEICHUNG, offengelegt (§7): Retro-Regel
+ * (d) («Gemini Schein > echt ⇒ Rückbau Diskrepanz-Finder prüfen») kann sie
+ * ohne diese Summen nicht bilden, und `retro17Kern.ts` liest laut eigenem
+ * Vertrag ausschliesslich Zeitreihe + Chronik — ein Zusatz-Lesen der
+ * Fahrplan-Datei dort wäre der grössere Bruch.
+ */
+export interface GeminiMessung {
+  /** Zeilen im Diskrepanz-Finder-Register (Phase 2). */
+  diskrepanz_laeufe: number;
+  /** Summe der Spalte «echt» über dasselbe Register. */
+  diskrepanz_echt: number;
+  /** Summe der Spalte «Schein» über dasselbe Register. */
+  diskrepanz_schein: number;
+  /** Zeilen im Zweitblick-Register (Phase 3). */
+  zweitblick_durchgaenge: number;
+  /** Zeilen im Kontingent-Ereignisse-Register (Fahrplan §4). */
+  kontingent_ereignisse: number;
+}
+
+export interface FremdagentenBlock {
+  jules: JulesMessung | null;
+  gemini: GeminiMessung | null;
+  /**
+   * Claude-Token pro gelandetem Schritt (Fahrplan §3, Zeile «Gesamt»). Noch
+   * keine automatische Quelle — bleibt bewusst als Platzhalter `null`
+   * geschrieben, bis eine Messung dafür existiert (nicht dieselbe Semantik
+   * wie ein Ausfall: es ist keine Quelle, die je erhoben würde und scheitern
+   * könnte, sondern eine, die noch gar nicht gebaut ist).
+   */
+  claude_token_pro_schritt: null;
+}
+
+/** Register-Überschriften — WÖRTLICH aus §5 übernommen (Auftragsvorgabe). */
+const REGISTER_DISKREPANZ = '**Diskrepanz-Finder-Läufe (Phase 2)**';
+const REGISTER_ZWEITBLICK = '**Phase 3 — Zweitblick-Durchgänge**';
+const REGISTER_KONTINGENT = '**Kontingent-Ereignisse**';
+
+/**
+ * Zählt die Datenzeilen einer Markdown-Tabelle, die auf `marke` folgt (erste
+ * Zeile mit führendem `|` ist die Kopfzeile, die zweite die Trennzeile, alles
+ * Weitere bis zur ersten Nicht-Tabellenzeile ist Daten). Findet `marke`
+ * nicht, ist die Zeilenzahl 0 (kein Absturz, s. `parseFKlassen`-Vorbild): ein
+ * umbenannter Registertitel soll den Parser sichtbar auf 0 fallen lassen,
+ * nicht raten.
+ */
+function zaehleRegisterZeilen(md: string, marke: string): { zeilen: number; roh: string[] } {
+  const start = md.indexOf(marke);
+  if (start < 0) return { zeilen: 0, roh: [] };
+  const rest = md.slice(start).split('\n');
+  let i = 0;
+  while (i < rest.length && !rest[i].trim().startsWith('|')) i++;
+  if (i >= rest.length) return { zeilen: 0, roh: [] };
+  i += 2; // Kopfzeile + Trennzeile überspringen
+  const roh: string[] = [];
+  while (i < rest.length && rest[i].trim().startsWith('|')) {
+    roh.push(rest[i]);
+    i++;
+  }
+  return { zeilen: roh.length, roh };
+}
+
+/** Eine Tabellenzeile → Zellinhalte (ohne führende/schliessende Leerzelle). */
+function zellen(zeile: string): string[] {
+  const t = zeile.trim();
+  const ohneRand = t.replace(/^\|/, '').replace(/\|$/, '');
+  return ohneRand.split('|').map((z) => z.trim());
+}
+
+/** Erste Zahl in einer Zelle, oder 0 (leere/Platzhalter-Zellen wie «—»). */
+function zellZahl(zelle: string | undefined): number {
+  const m = /-?\d+/.exec(zelle ?? '');
+  return m ? Number(m[0]) : 0;
+}
+
+/**
+ * Parst die drei §5-Register aus `fahrplaene/FAHRPLAN-FREMDAGENTEN.md`
+ * deterministisch (Zeilen zählen, `echt`/`Schein` summieren). Kein Netz, kein
+ * `gh` — reiner Text-Parser wie `parseFKlassen`.
+ *
+ * Spaltenreihenfolge des Diskrepanz-Registers (§5): Datum | Erlass | Artikel
+ * mit Diff | an Gemini | echt | Schein | Tokens — Spalten 5 und 6 (nullbasiert
+ * nach dem Split ohne Randzellen: Index 4 und 5).
+ */
+export function parseFremdagentenRegister(md: string): GeminiMessung {
+  const diskrepanz = zaehleRegisterZeilen(md, REGISTER_DISKREPANZ);
+  let echt = 0;
+  let schein = 0;
+  for (const roh of diskrepanz.roh) {
+    const z = zellen(roh);
+    echt += zellZahl(z[4]);
+    schein += zellZahl(z[5]);
+  }
+  return {
+    diskrepanz_laeufe: diskrepanz.zeilen,
+    diskrepanz_echt: echt,
+    diskrepanz_schein: schein,
+    zweitblick_durchgaenge: zaehleRegisterZeilen(md, REGISTER_ZWEITBLICK).zeilen,
+    kontingent_ereignisse: zaehleRegisterZeilen(md, REGISTER_KONTINGENT).zeilen,
+  };
 }
 
 // ────────────────────────────── Rework-Heuristik ──────────────────────────────
@@ -632,6 +766,13 @@ export interface Snapshot {
    */
   tokens: TokenKennzahl | null;
   fKlassen: Record<string, number>;
+  /**
+   * Jules-/Gemini-Kennzahlen (QS-FREMDAGENTEN, Schema 3). Pflichtfeld wie
+   * `fKlassen`: das Objekt selbst fehlt nie, seine beiden Quellen dürfen
+   * `null` sein (nicht erhoben — `gh`/Netz fehlt bzw. die Fahrplan-Datei ist
+   * nicht lesbar), dann steht der Grund in `ausfaelle`.
+   */
+  fremdagenten: FremdagentenBlock;
   /** Namen der ausgefallenen Quellen — Degradations-Muster wie `sammleLage()`. */
   ausfaelle: string[];
 }
@@ -747,6 +888,22 @@ export function pruefeZeitreihe(roh: string | null): string[] {
     if (!istZahlenRegister(sn.fKlassen)) {
       fehler.push(`${wo}: "fKlassen" fehlt oder ist kein Register Klasse→Zahl`);
     }
+    const fa = sn.fremdagenten as Partial<FremdagentenBlock> | undefined;
+    if (fa === undefined) {
+      fehler.push(`${wo}: "fremdagenten" fehlt — bei nicht erhobener Quelle gehören die Teilfelder ausdrücklich null hierher`);
+    } else if (!fa || typeof fa !== 'object') {
+      fehler.push(`${wo}: "fremdagenten" ist kein Objekt`);
+    } else {
+      if (fa.jules !== null && !istJulesMessung(fa.jules)) {
+        fehler.push(`${wo}: "fremdagenten.jules" ist weder null noch eine valide Jules-Messung`);
+      }
+      if (fa.gemini !== null && !istGeminiMessung(fa.gemini)) {
+        fehler.push(`${wo}: "fremdagenten.gemini" ist weder null noch eine valide Gemini-Messung`);
+      }
+      if (fa.claude_token_pro_schritt !== null) {
+        fehler.push(`${wo}: "fremdagenten.claude_token_pro_schritt" muss null sein (noch keine automatische Quelle)`);
+      }
+    }
     // Die vier Ausfall-Felder: `null` ist zulässig (Quelle nicht erhoben),
     // Fehlen nicht. Der Unterschied ist der ganze Punkt — «nicht gemessen»
     // muss im Artefakt stehen und darf nicht durch Abwesenheit ausgedrückt
@@ -772,6 +929,32 @@ function istAggregat(a: unknown): a is TorAggregat {
 function istZahlenRegister(a: unknown): a is Record<string, number> {
   if (!a || typeof a !== 'object' || Array.isArray(a)) return false;
   return Object.values(a as Record<string, unknown>).every((v) => typeof v === 'number');
+}
+
+function istJulesMessung(a: unknown): a is JulesMessung {
+  const o = a as Partial<JulesMessung> | null;
+  return (
+    !!o &&
+    typeof o === 'object' &&
+    typeof o.prs_gemerged_7d === 'number' &&
+    typeof o.prs_geschlossen_7d === 'number' &&
+    (o.median_dauer_min === null || typeof o.median_dauer_min === 'number') &&
+    typeof o.tickets_24h === 'number' &&
+    typeof o.alarm === 'boolean'
+  );
+}
+
+function istGeminiMessung(a: unknown): a is GeminiMessung {
+  const o = a as Partial<GeminiMessung> | null;
+  return (
+    !!o &&
+    typeof o === 'object' &&
+    typeof o.diskrepanz_laeufe === 'number' &&
+    typeof o.diskrepanz_echt === 'number' &&
+    typeof o.diskrepanz_schein === 'number' &&
+    typeof o.zweitblick_durchgaenge === 'number' &&
+    typeof o.kontingent_ereignisse === 'number'
+  );
 }
 
 /** Letzter Snapshot oder `null` — die Anzeige-Seiten fragen nur danach. */
