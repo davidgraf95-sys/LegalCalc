@@ -2,21 +2,37 @@
 // Korpus-Werkstatt (FAHRPLAN-FREMDAGENTEN §2 Phase 2, §4, §5).
 //
 // SICHTWERKZEUG, KEIN TOR: vergleicht amtlichen Fedlex-Text gegen unseren
-// Normtext-Snapshot mit einem zweiten Modell (Gemini via `agy`) und listet
-// mögliche Abweichungen. Exit 0 bei technisch gelungenem Lauf, unabhängig vom
+// Normtext-Snapshot. Exit 0 bei technisch gelungenem Lauf, unabhängig vom
 // Fundinhalt — kein CI-Schritt, keine Landungs-Voraussetzung (Fahrplan §2
-// Phase 2 «Ablage»).
+// Phase 2 «Ablage»). Exit 2 bei falschem Aufruf, Exit 1 bei Abbruch vor dem
+// ersten Lauf.
+//
+// ZWEI SCHRITTE, in dieser Reihenfolge (Umbau 4.9.2026):
+//   1. DETERMINISTISCH — String-Diff über die beiden Klartext-Reduktionen.
+//      Das ist der BELEG: reproduzierbar, modellunabhängig, kostenlos.
+//   2. GEMINI — bekommt NUR die Artikel, bei denen Schritt 1 angeschlagen hat
+//      (plus ±1 Artikel Kontext), und beantwortet die Frage, die ein Diff
+//      nicht beantworten kann: WAS die Abweichung bedeutet (drop/leak/
+//      tabelle/bister/zahl/sonst).
+//
+// Warum diese Reihenfolge: der AMBV-Pilot vom 4.9.2026 zeigte Gemini bei
+// `--effort high` mit 0 von 5 echten Snapshot-Defekten (Klasse Silbentrennung/
+// Interpunktion) — zeichengenauer Abgleich ist genau das, was ein Sprachmodell
+// am schlechtesten kann und ein Diff perfekt. Umgekehrt sagt ein Diff nichts
+// darüber, ob eine Abweichung ein Verlust oder nur eine andere Schreibweise
+// ist. Jedes Werkzeug macht jetzt das, worin es gut ist.
 //
 // §14.7 VERTRAUENSGRENZE: die agy/Gemini-Ausgabe ist eine VERDACHTSLISTE,
 // NIE ein Beleg (Gemini hat nachweislich Taten behauptet, die nicht
 // stattfanden — Fahrplan §4). Jeder gemeldete Fund gehört von einem Menschen
 // oder einer Gegenprüfungs-Session gegen die amtliche Quelle geprüft, bevor er
-// "Befund" heisst.
+// "Befund" heisst. Teil 1 des Berichts ist der Beleg, Teil 2 die Deutung.
 //
 // Aufruf:
 //   npx vite-node scripts/analyse/gemini-diskrepanz.ts bund/DBG
+//   npx vite-node scripts/analyse/gemini-diskrepanz.ts bund/AMBV --nur-diff
 //   npx vite-node scripts/analyse/gemini-diskrepanz.ts bund/OR --artikel 220-230 --laeufe 2
-//   npx vite-node scripts/analyse/gemini-diskrepanz.ts bund/DBG --out /pfad/bericht.md
+//   npx vite-node scripts/analyse/gemini-diskrepanz.ts bund/DBG --effort high --out /pfad/bericht.md
 //
 // Voraussetzung: der Fedlex-Filestore-Cache muss bereits gepinnt vorliegen
 // (`bash scripts/fedlex-cache.sh` — NICHT von hier aus live geladen, s.u.).
@@ -27,15 +43,40 @@ import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import type { NormSnapshotDatei } from '../../src/lib/normtext/typen.ts';
 import {
+  ermittleAbweichungen,
   formatiereArtikel,
   reduziereQuelleHtml,
   reduziereSnapshot,
+  sortiereArtikelSchluessel,
+  waehleMitKontext,
+  type ArtikelBefund,
   type ArtikelKlartext,
 } from './gemini-diskrepanz-text.ts';
 
-const GRUPPEN_BUDGET_ZEICHEN = 200_000;
+// ARG_MAX-Wache: der Prompt geht als EIN argv-Element an agy. Linux begrenzt
+// ein einzelnes Argument auf MAX_ARG_STRLEN = 128 KiB (32 Seiten), unabhängig
+// vom grosszügigeren Gesamt-ARG_MAX; macOS kennt diese Einzelgrenze nicht —
+// darum liefe ein zu grosser Prompt hier durch und erst in CI mit E2BIG auf.
+// agy nimmt einen Prompt NICHT über stdin entgegen (empirisch geprüft
+// 4.9.2026: `--print` ohne Wert => "empty prompt"; `--input-format
+// stream-json` verlangt zusätzlich `--output-format stream-json`, also ein
+// zweites, ungeprüftes Parse-Format). Statt einen zweiten Übergabepfad zu
+// bauen und zu bewachen, bleibt der Prompt klein genug, dass die Grenze nie
+// erreicht wird — der deterministische Erstfilter schickt ohnehin nur noch
+// die abweichenden Artikel.
+const MAX_ARG_BYTES = 120_000;
+const GRUPPEN_BUDGET_ZEICHEN = 90_000;
 const AGY = join(process.env.HOME ?? '', '.local/bin/agy');
-const MODELL = 'gemini-3.1-pro-high';
+// Die Denkstufe steckt bei agy im MODELLNAMEN, nicht in `--effort` — beides
+// zusammen wird abgelehnt ("--model gemini-3.1-pro-high conflicts with
+// --effort=low", empirisch 4.9.2026). Für Gemini 3.1 Pro gibt es nur `low`
+// und `high`; eine Medium-Stufe existiert bei diesem Modell NICHT
+// (`agy models`, 4.9.2026).
+const MODELLE = {
+  low: 'gemini-3.1-pro-low',
+  high: 'gemini-3.1-pro-high',
+} as const;
+type Effort = keyof typeof MODELLE;
 const PRINT_TIMEOUT_S = 300;
 // >= print-timeout(300s) + 30s ist die Fahrplan-§4-UNTERGRENZE. Beobachtung
 // Pilotlauf 4.9.2026 (VZV, grosse Gruppe): der agy-Prozess lief >400s, OHNE
@@ -63,32 +104,98 @@ interface AgyLauf {
   tokens: number;
 }
 
-function parseArgs(argv: string[]) {
+/**
+ * Argumentfehler => Exit 2 (nicht 1): «falsch aufgerufen» ist etwas anderes
+ * als «Lauf technisch gescheitert», und ein Aufrufer soll die beiden
+ * unterscheiden können.
+ */
+class ArgFehler extends Error {}
+
+const AUFRUF =
+  'Aufruf: gemini-diskrepanz.ts <ebene/erlass, z.B. bund/DBG> ' +
+  '[--artikel N-M] [--laeufe N>=2] [--effort low|high] [--kontext N] [--out pfad] [--nur-diff]';
+
+interface Optionen {
+  ebene: string;
+  erlass: string;
+  artikelVon?: number;
+  artikelBis?: number;
+  laeufe: number;
+  effort: Effort;
+  kontext: number;
+  out?: string;
+  nurDiff: boolean;
+}
+
+function parseArgs(argv: string[]): Optionen {
   const ziel = argv[0];
-  if (!ziel || !ziel.includes('/')) {
-    throw new Error('Aufruf: gemini-diskrepanz.ts <ebene/erlass, z.B. bund/DBG> [--artikel N-M] [--laeufe N] [--out pfad]');
-  }
+  if (!ziel || !ziel.includes('/')) throw new ArgFehler(AUFRUF);
   const [ebene, erlass] = ziel.split('/');
   let artikelVon: number | undefined;
   let artikelBis: number | undefined;
   let laeufe = 2;
+  let effort: Effort = 'low';
+  let kontext = 1;
   let out: string | undefined;
+  let nurDiff = false;
+
+  const wert = (i: number, flagge: string): string => {
+    const v = argv[i];
+    if (v === undefined || v.startsWith('--')) {
+      throw new ArgFehler(`${flagge} braucht einen Wert.\n${AUFRUF}`);
+    }
+    return v;
+  };
+
   for (let i = 1; i < argv.length; i++) {
-    if (argv[i] === '--artikel') {
-      const spanne = argv[++i] ?? '';
-      const [von, bis] = spanne.split('-').map((s) => parseInt(s, 10));
-      if (!Number.isNaN(von)) artikelVon = von;
+    const flagge = argv[i];
+    if (flagge === '--artikel') {
+      const spanne = wert(++i, '--artikel');
+      const [von, bis] = spanne.split('-').map((x) => parseInt(x, 10));
+      if (Number.isNaN(von)) throw new ArgFehler(`--artikel erwartet "N-M", erhalten: ${spanne}`);
+      artikelVon = von;
       if (!Number.isNaN(bis)) artikelBis = bis;
-    } else if (argv[i] === '--laeufe') {
-      {
-        const wert = parseInt(argv[++i] ?? '2', 10);
-        laeufe = Number.isNaN(wert) ? 2 : wert; // explizite 0 bleibt 0 (nicht auf 2 zurückfallen)
+    } else if (flagge === '--laeufe') {
+      const roh = wert(++i, '--laeufe');
+      const n = parseInt(roh, 10);
+      // Der Konsens IST das Verfahren (Fahrplan §2 Phase 2: «zwei Läufe, nur
+      // übereinstimmende Funde zählen»). Bei < 2 Läufen gibt es keinen
+      // Konsens — die alte Fassung liess `--laeufe 0` zu und schrieb dann
+      // einen Bericht «keine Funde», OHNE dass je ein Lauf stattfand. Das ist
+      // die gefährlichste Ausgabe, die dieses Werkzeug haben kann.
+      if (Number.isNaN(n) || n < 2) {
+        throw new ArgFehler(
+          `--laeufe muss >= 2 sein (Konsens über mehrere Läufe ist das Verfahren), erhalten: ${roh}`,
+        );
       }
-    } else if (argv[i] === '--out') {
-      out = argv[++i];
+      laeufe = n;
+    } else if (flagge === '--effort') {
+      const roh = wert(++i, '--effort');
+      if (roh === 'medium') {
+        throw new ArgFehler(
+          'Gemini 3.1 Pro kennt keine Medium-Stufe (agy models, 4.9.2026) — erlaubt: low|high.',
+        );
+      }
+      if (roh !== 'low' && roh !== 'high') {
+        throw new ArgFehler(`--effort erwartet low|high, erhalten: ${roh}`);
+      }
+      effort = roh;
+    } else if (flagge === '--kontext') {
+      const roh = wert(++i, '--kontext');
+      const n = parseInt(roh, 10);
+      if (Number.isNaN(n) || n < 0) throw new ArgFehler(`--kontext erwartet eine Zahl >= 0, erhalten: ${roh}`);
+      kontext = n;
+    } else if (flagge === '--out') {
+      out = wert(++i, '--out');
+    } else if (flagge === '--nur-diff') {
+      nurDiff = true;
+    } else {
+      // Stillschweigend ignorierte Flags sind die schlimmste Sorte Fehler:
+      // ein Tippfehler in --laeufe sähe wie ein normaler Lauf aus.
+      throw new ArgFehler(`Unbekanntes Argument: ${flagge}\n${AUFRUF}`);
     }
   }
-  return { ebene, erlass, artikelVon, artikelBis, laeufe, out };
+  return { ebene, erlass, artikelVon, artikelBis, laeufe, effort, kontext, out, nurDiff };
 }
 
 /** Liest den Pin-Eintrag `name|eli|kons|n|anker|sr` aus scripts/fedlex-cache.sh — liest nur, ändert den Risikopfad nicht. */
@@ -138,10 +245,9 @@ interface Gruppe {
 function bildeGruppen(
   quelle: Map<string, ArtikelKlartext>,
   snapshot: Map<string, ArtikelKlartext>,
+  auswahl: string[],
 ): Gruppe[] {
-  const schluessel = [...new Set([...quelle.keys(), ...snapshot.keys()])].sort(
-    (a, b) => (parseInt(a, 10) || 0) - (parseInt(b, 10) || 0) || a.localeCompare(b),
-  );
+  const schluessel = [...auswahl].sort(sortiereArtikelSchluessel);
   const gruppen: Gruppe[] = [];
   let aktuell: string[] = [];
   let aktuellQuelle: string[] = [];
@@ -160,9 +266,9 @@ function bildeGruppen(
 
   for (const k of schluessel) {
     const q = quelle.get(k);
-    const s = snapshot.get(k);
+    const sn = snapshot.get(k);
     const qText = q ? `=== Art. ${k} (Quelle) ===\n${formatiereArtikel(q)}` : `=== Art. ${k} (Quelle) ===\n[kein Fedlex-Artikel gefunden]`;
-    const sText = s ? `=== Art. ${k} (Snapshot) ===\n${formatiereArtikel(s)}` : `=== Art. ${k} (Snapshot) ===\n[kein Snapshot-Eintrag]`;
+    const sText = sn ? `=== Art. ${k} (Snapshot) ===\n${formatiereArtikel(sn)}` : `=== Art. ${k} (Snapshot) ===\n[kein Snapshot-Eintrag]`;
     const zusatz = qText.length + sText.length;
     if (zeichen + zusatz > GRUPPEN_BUDGET_ZEICHEN && aktuell.length) flush();
     aktuell.push(k);
@@ -201,12 +307,23 @@ ${snapshot}
 `;
 }
 
-function rufeAgyAuf(prompt: string, tempDir: string, label: string): AgyLauf {
+function rufeAgyAuf(prompt: string, tempDir: string, label: string, modell: string): AgyLauf {
   // Temp-Datei als Provenienz/Debug-Artefakt (Fahrplan-Vorgabe); die Übergabe an
   // agy selbst läuft per argv (execFileSync ohne Shell — kein `$(cat …)`-Quoting-
-  // Risiko bei bis zu ~200k Zeichen Prompt-Länge, s. Gruppen-Budget oben).
+  // Risiko), aber sie MUSS unter der Linux-Einzelargument-Grenze bleiben.
   const promptDatei = join(tempDir, `${label}.txt`);
   writeFileSync(promptDatei, prompt, 'utf8');
+  const bytes = Buffer.byteLength(prompt, 'utf8');
+  if (bytes > MAX_ARG_BYTES) {
+    // Lieber ein sichtbarer Status als ein E2BIG, das nur auf Linux auftritt:
+    // ein Lauf, der hier still durchginge und in CI scheiterte, wäre genau die
+    // Sorte Umgebungs-Abhängigkeit, die man nicht bemerkt.
+    process.stderr.write(
+      `Prompt zu gross (${bytes} B > ${MAX_ARG_BYTES} B, Linux MAX_ARG_STRLEN) — ` +
+        `Gruppe ${label} übersprungen. Kleiner schneiden (--artikel N-M).\n`,
+    );
+    return { status: 'PROMPT_ZU_GROSS', modell: '', abweichungen: [], dauerS: 0, tokens: 0 };
+  }
   let stdout: string;
   try {
     stdout = execFileSync(
@@ -215,9 +332,7 @@ function rufeAgyAuf(prompt: string, tempDir: string, label: string): AgyLauf {
         '-p',
         prompt,
         '--model',
-        MODELL,
-        '--effort',
-        'high',
+        modell,
         '--output-format',
         'json',
         '--print-timeout',
@@ -281,11 +396,18 @@ function konsens(laeufe: AgyLauf[]): Abweichung[] {
   );
 }
 
+function kuerze(s: string, n = 160): string {
+  const flach = s.replace(/\|/g, '\\|').replace(/\n/g, ' ');
+  return flach.length > n ? `${flach.slice(0, n)}…` : flach;
+}
+
 async function main() {
-  const { ebene, erlass, artikelVon, artikelBis, laeufe, out } = parseArgs(process.argv.slice(2));
+  const { ebene, erlass, artikelVon, artikelBis, laeufe, effort, kontext, out, nurDiff } =
+    parseArgs(process.argv.slice(2));
   if (ebene !== 'bund') {
-    throw new Error(`Ebene "${ebene}" nicht unterstützt (Pilot nur "bund" — Fedlex-Cache-Pins sind bundesrechtlich).`);
+    throw new ArgFehler(`Ebene "${ebene}" nicht unterstützt (Pilot nur "bund" — Fedlex-Cache-Pins sind bundesrechtlich).`);
   }
+  const modell = MODELLE[effort];
 
   const html = ladeQuelle(erlass);
   const snapshotDatei = ladeSnapshot(ebene, erlass);
@@ -308,7 +430,15 @@ async function main() {
   });
   const snapshotMap = reduziereSnapshot(eintraegeGefiltert);
 
-  const gruppen = bildeGruppen(quelleMap, snapshotMap);
+  // SCHRITT 1 — deterministisch. Kein Modell, kein Netz, keine Kosten.
+  const befunde: ArtikelBefund[] = ermittleAbweichungen(quelleMap, snapshotMap);
+  const abweichend = befunde.filter((b) => b.abweichend);
+  const auswahl = waehleMitKontext(befunde, kontext);
+
+  // SCHRITT 2 — Gemini, aber NUR auf den abweichenden Artikeln (+ Kontext).
+  const gruppen = nurDiff || !auswahl.length
+    ? []
+    : bildeGruppen(quelleMap, snapshotMap, auswahl);
   const tempDir = mkdtempSync(join(tmpdir(), 'diskrepanz-'));
 
   const alleFunde: Array<Abweichung & { gruppe: number }> = [];
@@ -321,34 +451,83 @@ async function main() {
     const g = gruppen[gi];
     const laeufeErg: AgyLauf[] = [];
     for (let li = 0; li < laeufe; li++) {
-      const lauf = rufeAgyAuf(g.prompt, tempDir, `gruppe${gi}-lauf${li}`);
+      const lauf = rufeAgyAuf(g.prompt, tempDir, `gruppe${gi}-lauf${li}`, modell);
       laeufeErg.push(lauf);
       gesamtTokens += lauf.tokens;
       gesamtDauer += lauf.dauerS;
+      // Die Wache prüft ZWEI Dinge: dass der Lauf überhaupt gelang, und dass
+      // die Selbstauskunft plausibel ist. Ohne die Status-Prüfung schlug sie
+      // bei jedem gescheiterten Lauf an (`modell` ist dann leer) und erzeugte
+      // eine Warnung über einen "Fallback", der nie stattfand.
       if (lauf.status === 'SUCCESS' && !/gemini/i.test(lauf.modell)) modellWarnung = true;
     }
     statusJeGruppe.push(laeufeErg.map((l) => l.status).join('/'));
-    const gefunden = konsens(laeufeErg);
-    for (const f of gefunden) alleFunde.push({ ...f, gruppe: gi });
+    for (const f of konsens(laeufeErg)) alleFunde.push({ ...f, gruppe: gi });
   }
 
   const zeilen: string[] = [];
-  zeilen.push(`# Gemini-Diskrepanz-Finder — ${ebene}/${erlass.toUpperCase()}`);
+  zeilen.push(`# Diskrepanz-Bericht — ${ebene}/${erlass.toUpperCase()}`);
   zeilen.push('');
-  zeilen.push('SICHTWERKZEUG — Verdachtsliste, kein Beleg (§14.7). Jeder Fund gehört gegen die amtliche Fassung geprüft.');
-  zeilen.push('');
-  zeilen.push(`Gruppen: ${gruppen.length} · Läufe je Gruppe: ${laeufe} · Modell: ${MODELL} · Status je Gruppe: ${statusJeGruppe.join(', ')}`);
+  zeilen.push(
+    `Artikel im Vergleich: ${befunde.length} · mit deterministischer Differenz: ${abweichend.length} · ` +
+      `an Gemini gesendet (inkl. ±${kontext} Kontext): ${auswahl.length} in ${gruppen.length} Gruppe(n)`,
+  );
+  zeilen.push(
+    `Läufe je Gruppe: ${laeufe} · Modell: ${gruppen.length ? modell : '— (kein Lauf nötig)'} · ` +
+      `Status je Gruppe: ${statusJeGruppe.join(', ') || '—'}`,
+  );
   zeilen.push(`Tokens gesamt: ${gesamtTokens} · Dauer gesamt: ${gesamtDauer.toFixed(1)} s`);
-  if (modellWarnung) zeilen.push('WARNUNG: mindestens ein Lauf meldete ein Modell ohne "Gemini" im Selbstangabe-Feld — möglicher stiller Fallback (Fahrplan §4).');
   zeilen.push('');
-  if (!alleFunde.length) {
-    zeilen.push('Keine übereinstimmenden Funde (Konsens über alle Läufe).');
+
+  // ─── Teil 1: der BELEG (deterministisch, ohne Modell) ───
+  zeilen.push('## 1 · Deterministische Abweichungen (Beleg)');
+  zeilen.push('');
+  zeilen.push('Zeichengenauer Diff der beiden Reduktionen. Diese Liste ist reproduzierbar und');
+  zeilen.push('modellunabhängig — sie ist der Befund, an dem Teil 2 gemessen wird.');
+  zeilen.push('');
+  if (!abweichend.length) {
+    zeilen.push('Keine Abweichung. Quelle und Snapshot reduzieren zu identischem Klartext.');
+  } else {
+    zeilen.push('| Artikel | Zeile | Quelle sagt | Snapshot sagt |');
+    zeilen.push('|---|---|---|---|');
+    for (const b of abweichend) {
+      if (b.labelQuelle !== b.labelSnapshot) {
+        zeilen.push(`| ${b.artikel} | (Label) | ${kuerze(b.labelQuelle)} | ${kuerze(b.labelSnapshot)} |`);
+      }
+      for (const z of b.zeilen) {
+        zeilen.push(`| ${b.artikel} | ${z.zeile} | ${kuerze(z.quelle)} | ${kuerze(z.snapshot)} |`);
+      }
+    }
+  }
+  zeilen.push('');
+
+  // ─── Teil 2: die DEUTUNG (Verdachtsliste, §14.7) ───
+  zeilen.push('## 2 · Geminis Klassierung dazu (Konsens über alle Läufe)');
+  zeilen.push('');
+  zeilen.push('VERDACHTSLISTE, KEIN BELEG (§14.7). Gemini deutet die Abweichungen aus Teil 1;');
+  zeilen.push('es findet sie nicht und bestätigt sie nicht. Jede Zeile gehört gegen die');
+  zeilen.push('amtliche Fassung geprüft, bevor sie «Befund» heisst.');
+  zeilen.push('');
+  if (modellWarnung) {
+    zeilen.push(
+      'WARNUNG: mindestens ein gelungener Lauf gab im Feld `modell` etwas ohne «Gemini» an. ' +
+        'Das Feld ist eine SELBSTAUSKUNFT des Modells, kein verifizierter Nachweis — es belegt ' +
+        'weder, welches Modell wirklich antwortete, noch schliesst sein Fehlen einen stillen ' +
+        'Fallback aus (Fahrplan §4).',
+    );
+    zeilen.push('');
+  }
+  if (nurDiff) {
+    zeilen.push('Übersprungen (--nur-diff).');
+  } else if (!auswahl.length) {
+    zeilen.push('Kein Lauf nötig — Teil 1 fand keine Abweichung.');
+  } else if (!alleFunde.length) {
+    zeilen.push('Keine übereinstimmende Klassierung über alle Läufe.');
   } else {
     zeilen.push('| Artikel | Absatz | Klasse | Quelle sagt | Snapshot sagt |');
     zeilen.push('|---|---|---|---|---|');
     for (const f of alleFunde) {
-      const trim = (s: string) => s.replace(/\|/g, '\\|').replace(/\n/g, ' ').slice(0, 200);
-      zeilen.push(`| ${f.artikel} | ${f.absatz} | ${f.klasse} | ${trim(f.quelle)} | ${trim(f.snapshot)} |`);
+      zeilen.push(`| ${f.artikel} | ${f.absatz} | ${f.klasse} | ${kuerze(f.quelle, 200)} | ${kuerze(f.snapshot, 200)} |`);
     }
   }
   const bericht = zeilen.join('\n') + '\n';
@@ -361,11 +540,13 @@ async function main() {
 }
 
 main().catch((err) => {
-  // Abbruch VOR/OHNE agy-Lauf (fehlender Pin/Cache, falsche Ebene, Argumentfehler):
-  // das ist kein "technisch gelungener Lauf" — Exit 1, damit ein Abbruch nicht
-  // wie ein leerer Befund aussieht. Ein agy-Lauf, der selbst fehlschlägt, wird
-  // dagegen INNERHALB main() aufgefangen (Status im Bericht) und endet mit
-  // Exit 0 (Sichtwerkzeug, kein Tor — Fahrplan §2 Phase 2 "Ablage").
+  // Drei Ausgänge, bewusst unterscheidbar:
+  //   2 = falsch aufgerufen (unbekanntes Flag, --laeufe < 2, falsche Ebene)
+  //   1 = Abbruch VOR/OHNE agy-Lauf (fehlender Pin/Cache) — kein "technisch
+  //       gelungener Lauf", damit ein Abbruch nicht wie ein leerer Befund aussieht
+  //   0 = Lauf gelungen, unabhängig vom Fundinhalt (Sichtwerkzeug, kein Tor —
+  //       Fahrplan §2 Phase 2 "Ablage"); ein agy-Lauf, der selbst fehlschlägt,
+  //       wird INNERHALB main() aufgefangen und steht als Status im Bericht.
   process.stderr.write(`FEHLER: ${(err as Error).message}\n`);
-  process.exitCode = 1;
+  process.exitCode = err instanceof ArgFehler ? 2 : 1;
 });

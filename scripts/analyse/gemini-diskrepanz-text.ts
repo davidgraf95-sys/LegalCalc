@@ -406,3 +406,96 @@ export function formatiereArtikel(a: ArtikelKlartext): string {
   if (a.fussnoten) teile.push(`--- Fussnoten (Quelle) ---\n${a.fussnoten}`);
   return teile.join('\n');
 }
+
+// ─── Deterministischer Erstfilter ────────────────────────────────────────
+//
+// Nachbesserung 4.9.2026: die erste Fassung schickte JEDEN Artikel eines
+// Erlasses an Gemini und liess das Modell die Abweichung suchen. Das ist
+// teuer, langsam (Fahrplan-Timing-Befund: > 600 s je Gruppe bei `high`) und
+// verlangt vom Modell genau das, was es nachweislich am schlechtesten kann —
+// zeichengenauen Abgleich (AMBV-Pilot: 0 von 5 echten Defekten gefunden).
+//
+// Umgekehrte Arbeitsteilung: der Vergleich ist DETERMINISTISCH (String-Diff
+// über die beiden Reduktionen), Gemini bekommt nur noch die Artikel, bei
+// denen der Diff bereits angeschlagen hat, und beantwortet die Frage, die ein
+// Diff nicht beantworten kann — WAS die Abweichung bedeutet (drop/leak/
+// tabelle/bister/zahl/sonst). Kein Artikel ohne Differenz kostet mehr Tokens.
+
+export interface ZeilenAbweichung {
+  artikel: string;
+  /** 0-basierte Zeilennummer innerhalb des reduzierten Artikeltexts. */
+  zeile: number;
+  quelle: string;
+  snapshot: string;
+}
+
+export interface ArtikelBefund {
+  artikel: string;
+  /** true, wenn Quelle und Snapshot sich unterscheiden (Label ODER Text). */
+  abweichend: boolean;
+  labelQuelle: string;
+  labelSnapshot: string;
+  zeilen: ZeilenAbweichung[];
+}
+
+const FEHLT_QUELLE = '[kein Fedlex-Artikel gefunden]';
+const FEHLT_SNAPSHOT = '[kein Snapshot-Eintrag]';
+
+/** Sortierschlüssel für Artikel-Token ('5' < '5a' < '5bis' < '6'). */
+export function sortiereArtikelSchluessel(a: string, b: string): number {
+  return (parseInt(a, 10) || 0) - (parseInt(b, 10) || 0) || a.localeCompare(b);
+}
+
+/**
+ * Vergleicht beide Reduktionen Artikel für Artikel und Zeile für Zeile.
+ * Reine Funktion, kein Modell, kein Netz — das Ergebnis ist der BELEG, an dem
+ * jede spätere Gemini-Aussage gemessen wird (§14.7: das Modell liefert eine
+ * Deutung, nie den Befund selbst).
+ */
+export function ermittleAbweichungen(
+  quelle: Map<string, ArtikelKlartext>,
+  snapshot: Map<string, ArtikelKlartext>,
+): ArtikelBefund[] {
+  const schluessel = [...new Set([...quelle.keys(), ...snapshot.keys()])].sort(
+    sortiereArtikelSchluessel,
+  );
+  const befunde: ArtikelBefund[] = [];
+  for (const k of schluessel) {
+    const q = quelle.get(k);
+    const s = snapshot.get(k);
+    const qText = q?.text ?? FEHLT_QUELLE;
+    const sText = s?.text ?? FEHLT_SNAPSHOT;
+    const labelQuelle = q?.label ?? '—';
+    const labelSnapshot = s?.label ?? '—';
+    const zeilen: ZeilenAbweichung[] = [];
+    if (qText !== sText) {
+      const qz = qText.split('\n');
+      const sz = sText.split('\n');
+      for (let i = 0; i < Math.max(qz.length, sz.length); i++) {
+        if (qz[i] !== sz[i]) {
+          zeilen.push({ artikel: k, zeile: i, quelle: qz[i] ?? '', snapshot: sz[i] ?? '' });
+        }
+      }
+    }
+    const abweichend = zeilen.length > 0 || labelQuelle !== labelSnapshot;
+    befunde.push({ artikel: k, abweichend, labelQuelle, labelSnapshot, zeilen });
+  }
+  return befunde;
+}
+
+/**
+ * Die Artikel, die an Gemini gehen: jeder abweichende Artikel plus ein
+ * Nachbar auf jeder Seite. Der Kontext ist kein Luxus — ein `drop` sieht in
+ * Isolation oft aus wie eine Umnummerierung, und ohne den Nachbarartikel
+ * kann das Modell nicht unterscheiden, ob Text FEHLT oder VERSCHOBEN ist.
+ */
+export function waehleMitKontext(befunde: ArtikelBefund[], kontext = 1): string[] {
+  const gewaehlt = new Set<number>();
+  befunde.forEach((b, i) => {
+    if (!b.abweichend) return;
+    for (let d = -kontext; d <= kontext; d++) {
+      if (i + d >= 0 && i + d < befunde.length) gewaehlt.add(i + d);
+    }
+  });
+  return [...gewaehlt].sort((a, b) => a - b).map((i) => befunde[i].artikel);
+}
