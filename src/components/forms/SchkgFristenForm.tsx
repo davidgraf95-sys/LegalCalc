@@ -279,11 +279,19 @@ export function SchkgFristenForm({ live }: {
           <DatumsFeld value={form.ereignis} onChange={(v) => set('ereignis', v)} className={inputCls} />
         </Field>
 
+        {/* ZWEI Controls in EINEM Field: die sichtbare Beschriftung «Fristtyp
+            & Länge» steht über beiden und kann darum keinem von beiden per
+            `htmlFor` gehören (ein `label` beschriftet genau ein Control).
+            Beide bekommen deshalb einen eigenen zugänglichen Namen — sonst
+            sind sie für Screenreader und Sprachsteuerung namenlos (gemessen
+            am Flächen-Tor 5.9.2026: `label` + `select-name`, beide critical).
+            Die Namen wiederholen das Sichtbare und ergänzen die Rolle, damit
+            «Länge» und «Einheit» unterscheidbar bleiben. */}
         {!istDual && !istInfo && (
           <Field label="Fristtyp & Länge">
             <div className="flex gap-2">
-              <input type="number" inputMode="decimal" min={1} step={1} value={form.laenge} onChange={(e) => set('laenge', Number(e.target.value))} className={inputCls + ' w-24'} />
-              <select value={form.einheit} onChange={(e) => set('einheit', e.target.value as SchkgEinheit)} className={inputCls}>
+              <input type="number" inputMode="decimal" min={1} step={1} value={form.laenge} onChange={(e) => set('laenge', Number(e.target.value))} className={inputCls + ' w-24'} aria-label="Länge der Frist (Anzahl)" />
+              <select value={form.einheit} onChange={(e) => set('einheit', e.target.value as SchkgEinheit)} className={inputCls} aria-label="Einheit der Frist">
                 {EINHEITEN.map((u) => <option key={u.code} value={u.code}>{u.label}</option>)}
               </select>
             </div>
