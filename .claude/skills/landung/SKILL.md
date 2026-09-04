@@ -209,7 +209,7 @@ oder `Fixes #<issue>` suchen, nicht nach Autor.
    bestätigt. Golden byte-gleich, wo berührt.
 7. **Nie Auto-Merge**, auch nicht ausserhalb der Risiko-Pfade.
 8. Danach normale Landung (Schritte 0–3) und STRUKTUR-Karte wie bei eigener
-   Arbeit — der fremde PR ist kein Grund, die Karte auszulassen.
+   Arbeit — der fremde PR ist kein Grund, die Karte auszulassen. Seit 4.9.2026 fährt CI dieselben zwei Regeln automatisch (Step «Fremd-PR-Tor» im Job «Tore», Branches mit 19-stelliger Task-ID oder «jules» im Namen): Assertion-Diff + keine Datei ausserhalb `src/**` — der lokale Lauf bleibt Pflicht (§14.7, nie die CI-Ausgabe eines Fremden als eigene Prüfung zählen).
 
 **Entwurfs-PR ist ein gültiges Ergebnis.** `AGENTS.md` §7 verlangt bei rotem
 Tor oder unklarem Auftrag einen Entwurf mit Meldung statt einer kreativen
