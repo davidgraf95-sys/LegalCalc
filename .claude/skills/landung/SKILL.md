@@ -220,7 +220,7 @@ gh pr list --state open --json number,headRefName \
 8. Danach normale Landung (Schritte 0–3) und STRUKTUR-Karte wie bei eigener
    Arbeit — der fremde PR ist kein Grund, die Karte auszulassen. Seit 4.9.2026 fährt CI dieselben zwei Regeln automatisch (Step «Fremd-PR-Tor» im Job «Tore», Branches mit 19-stelliger Task-ID oder Präfix `jules-`/`jules/` — nie «jules» irgendwo im Namen, Beleg PR #656): Assertion-Diff + keine Datei ausserhalb `src/**` — der lokale Lauf bleibt Pflicht (§14.7, nie die CI-Ausgabe eines Fremden als eigene Prüfung zählen).
 
-Kommentar-Bilanz (Regel 3 des Tors, Beleg #662: 197 Kommentarzeilen gelöscht, um die Zeilen-Grenze zu erreichen) — bei Sichtprüfung zusätzlich datierte Belegzeilen zählen. Fremd-PR-Tor rot ⇒ PR zurück an den Auftrag (Kommentar mit Tor-Ausgabe), nie
+Absichtliche Proben (T5/T6-Art) tragen das Label `probe` und zählen in `fremdagenten:messung` nie als Ablehnung — Label vor dem Schliessen setzen. Kommentar-Bilanz (Regel 3 des Tors, Beleg #662: 197 Kommentarzeilen gelöscht, um die Zeilen-Grenze zu erreichen) — bei Sichtprüfung zusätzlich datierte Belegzeilen zählen. Fremd-PR-Tor rot ⇒ PR zurück an den Auftrag (Kommentar mit Tor-Ausgabe), nie
 selbst zurechtstutzen; der Step ist nicht Required, gilt aber als Tor. Fehlt
 der `Roadmap:`-Trailer (bisher 5/5 Jules-PRs): beim Squash-Merge im
 Merge-Body als letzten Absatz setzen
