@@ -88,6 +88,9 @@ liegen lassen.
 - **Keine Datei über die Schlankheits-Grenze** — `npm run check:schlankheit`
   hält Dateien ab 800 Zeilen fest und lässt keine Baseline wachsen.
 - **Golden byte-gleich**, wo berührt (`npm run golden:vergleich`).
+- **Jules-Branches: CI prüft Assertion-Diff + Dateigrenzen automatisch**
+  (CI-Schritt «Fremd-PR-Tor» im Job «Tore», T6 3.9.2026) — das gilt zusätzlich zu 3./4.
+  oben, nicht statt ihnen.
 
 ## 5 · Bauregeln, die kein Tor erzwingt
 

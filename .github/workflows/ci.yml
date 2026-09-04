@@ -381,6 +381,33 @@ jobs:
         run: npm run check:merge-schutz
       - name: Testtreue (§6.3 — refactor-Commits ändern keine Tests)
         run: npm run check:testtreue
+      # Fremd-PR-Tor (T6, 3.9.2026, fahrplaene/FAHRPLAN-FREMDAGENTEN.md §2
+      # Phase 1): nur Branches im Jules-Muster (19-stellige Task-ID im Namen oder
+      # «jules» im Namen) sind
+      # zuständig — Regex-Erkennung im Shell-Step, weil `if:` keine Regex kann.
+      # Bewusst KEIN eigenes check-*.ts (Steuerungs-Deckel, §17-Gegengewicht):
+      # Regel 1 = bestehendes scripts/analyse/test-assertion-diff.ts (Jules darf
+      # Tests verschieben, nie ändern), Regel 2 = keine Datei ausserhalb src/**
+      # (Risikopfade deckt check:merge-schutz). Exit ≠ 0 des Diff-Skripts (1 oder
+      # 2 = Referenz fehlt) ist rot — ein Tor ohne Referenz ist kein Tor.
+      - name: Fremd-PR-Tor (Assertion-Diff + Dateigrenzen, Jules-Branches)
+        if: github.event_name == 'pull_request'
+        env:
+          HEAD_REF: ${{ github.head_ref }}
+        run: |
+          # Jules-Muster (Beleg 4.9.2026, PR #647): `jules-<19 Ziffern>-<8 hex>` ODER
+          # `<slug>-<19 Ziffern>` — also: 19-Ziffern-Lauf irgendwo oder "jules" im Namen.
+          if ! [[ "$HEAD_REF" =~ [0-9]{19} || "$HEAD_REF" == *jules* ]]; then
+            echo "Fremd-PR-Tor: nicht zuständig ($HEAD_REF)"; exit 0
+          fi
+          git fetch -q origin main
+          basis=$(git merge-base origin/main HEAD)
+          npx vite-node scripts/analyse/test-assertion-diff.ts "$basis" HEAD src/tests/
+          ausserhalb=$(git diff --name-only "$basis"..HEAD | grep -v '^src/' || true)
+          if [ -n "$ausserhalb" ]; then
+            echo "Fremd-PR-Tor ROT — Jules-Branch ändert Dateien ausserhalb src/**:"; echo "$ausserhalb"; exit 1
+          fi
+          echo "Fremd-PR-Tor grün ($HEAD_REF, Basis ${basis:0:8})"
       - name: Plan-Inventar-Konsistenz (Node-only, günstig — darum vor tsc/Build)
         run: npm run check:plan
       # Steuerungs-Deckel (David 15.8.2026 «Steuerungszuwachs minimieren, und
