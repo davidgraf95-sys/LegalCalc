@@ -5,7 +5,10 @@
 // Normtext-Snapshot. Exit 0 bei technisch gelungenem Lauf, unabhängig vom
 // Fundinhalt — kein CI-Schritt, keine Landungs-Voraussetzung (Fahrplan §2
 // Phase 2 «Ablage»). Exit 2 bei falschem Aufruf, Exit 1 bei Abbruch vor dem
-// ersten Lauf.
+// ersten Lauf, Exit 3 wenn mindestens ein agy-Lauf als Kontingent-Sperre
+// klassiert wurde (scripts/analyse/agy-status.ts, Fahrplan §4 «Limite
+// erkennen») — statt eines generischen Fehlers: zurück an Claude, Sperre in
+// Fahrplan §5 protokollieren.
 //
 // ZWEI SCHRITTE, in dieser Reihenfolge (Umbau 4.9.2026):
 //   1. DETERMINISTISCH — String-Diff über die beiden Klartext-Reduktionen.
@@ -53,6 +56,7 @@ import {
   type ArtikelBefund,
   type ArtikelKlartext,
 } from './gemini-diskrepanz-text.ts';
+import { klassiereAgyFehler, KONTINGENT_MELDUNG } from './agy-status.ts';
 
 // ARG_MAX-Wache: der Prompt geht als EIN argv-Element an agy. Linux begrenzt
 // ein einzelnes Argument auf MAX_ARG_STRLEN = 128 KiB (32 Seiten), unabhängig
@@ -376,6 +380,16 @@ function rufeAgyAuf(prompt: string, tempDir: string, label: string, modell: stri
       { timeout: CHILD_TIMEOUT_MS, killSignal: 'SIGKILL', maxBuffer: 64 * 1024 * 1024, encoding: 'utf8' },
     );
   } catch (err) {
+    // execFileSync füllt bei nicht-null Exit-Code err.stdout/err.stderr —
+    // «leeres stdout mit stderr-Hinweis» ist genau dieser Fall. Selbe
+    // Musterprüfung wie bei status !== 'SUCCESS' (agy-status.ts).
+    const fehler = err as Error & { stdout?: string | Buffer; stderr?: string | Buffer };
+    const stderrText = fehler.stderr ? String(fehler.stderr) : '';
+    const klass = klassiereAgyFehler(`${fehler.message} ${stderrText}`);
+    if (klass.art === 'kontingent') {
+      process.stderr.write(`${KONTINGENT_MELDUNG} (${label}): ${klass.text}\n`);
+      return { status: 'KONTINGENT', modell: '', abweichungen: [], dauerS: 0, tokens: 0 };
+    }
     process.stderr.write(`agy-Aufruf fehlgeschlagen (${label}): ${(err as Error).message}\n`);
     return {
       status: 'ERROR',
@@ -392,6 +406,11 @@ function rufeAgyAuf(prompt: string, tempDir: string, label: string, modell: stri
     return { status: 'PARSE_FEHLER', modell: '', abweichungen: [], dauerS: 0, tokens: 0 };
   }
   if (envelope.status !== 'SUCCESS') {
+    const klass = klassiereAgyFehler(`${envelope.status} ${envelope.response ?? ''}`);
+    if (klass.art === 'kontingent') {
+      process.stderr.write(`${KONTINGENT_MELDUNG} (${label}): ${klass.text}\n`);
+      return { status: 'KONTINGENT', modell: '', abweichungen: [], dauerS: envelope.duration_seconds ?? 0, tokens: envelope.usage?.total_tokens ?? 0 };
+    }
     return { status: envelope.status, modell: '', abweichungen: [], dauerS: envelope.duration_seconds ?? 0, tokens: envelope.usage?.total_tokens ?? 0 };
   }
   let payload: { modell: string; abweichungen: Abweichung[] };
@@ -482,6 +501,7 @@ async function main() {
   let gesamtTokens = 0;
   let gesamtDauer = 0;
   let modellWarnung = false;
+  let kontingentGefunden = false;
   const statusJeGruppe: string[] = [];
 
   for (let gi = 0; gi < gruppen.length; gi++) {
@@ -490,6 +510,7 @@ async function main() {
     for (let li = 0; li < laeufe; li++) {
       const lauf = rufeAgyAuf(g.prompt, tempDir, `gruppe${gi}-lauf${li}`, modell);
       laeufeErg.push(lauf);
+      if (lauf.status === 'KONTINGENT') kontingentGefunden = true;
       gesamtTokens += lauf.tokens;
       gesamtDauer += lauf.dauerS;
       // Die Wache prüft ZWEI Dinge: dass der Lauf überhaupt gelang, und dass
@@ -574,6 +595,14 @@ async function main() {
   const zielpfad = out ?? join(tempDir, `bericht-${erlass.toLowerCase()}.md`);
   writeFileSync(zielpfad, bericht, 'utf8');
   process.stderr.write(`\nBericht geschrieben: ${zielpfad}\n`);
+
+  if (kontingentGefunden) {
+    // Exit 3 statt des generischen 0/1 — «Lauf technisch gelungen, aber
+    // Kontingent gesperrt» ist ein eigener, unterscheidbarer Ausgang
+    // (Fahrplan §4 «Limite erkennen»), kein normaler Erfolg.
+    process.stderr.write(`${KONTINGENT_MELDUNG}\n`);
+    process.exitCode = 3;
+  }
 }
 
 main().catch((err) => {
