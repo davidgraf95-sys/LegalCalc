@@ -52,8 +52,22 @@ const rel = (p: string) => p.slice(WURZEL.length + 1);
 
 // ─── B3-1/B3-2 · der dichte Gruppenkopf ─────────────────────────────────────
 
-/** Das dichte Rezept: Overline-Kopf, Zähler unmittelbar am Titel. */
-const DICHT_REZEPT = /className="lc-overline"[^>]*>[\s\S]{0,80}?<span className="num tabular-nums ml-1 font-normal normal-case/;
+/**
+ * Das dichte Rezept: Overline-Kopf, Zähler unmittelbar am Titel.
+ *
+ * ── R4-B (5.9.2026) · zweimal zu eng gefasst, beides behoben ───────────────
+ * (1) Der Ausdruck verlangte `className="lc-overline"` — die Klasse ALLEIN in
+ *     ihren Anführungszeichen. Jeder Kopf, der daneben noch Layout trug
+ *     (`className="lc-overline shrink-0 whitespace-nowrap …"`), lief durch.
+ * (2) Geprüft wurde eine Vierer-LISTE statt der App. Das ist die Vakuum-Falle,
+ *     die R3-α für vier andere Wächter aufgelöst hat (`tests/appDateien.ts`) —
+ *     hier stand sie noch.
+ * GEMESSEN am 5.9.2026: beides zusammen verdeckte die achte Kopie,
+ * `pages/gesetz-leser/parts/BezuegeZeile.tsx` Z. 154–157 («KANTONAL 13»).
+ * Der Sweep unten wird ohne deren Migration rot — das ist der Rot-Beweis
+ * (§6.7) dieses Pakets.
+ */
+const DICHT_REZEPT = /className="[^"]*\blc-overline\b[^"]*"[^>]*>[\s\S]{0,80}?<span className="num tabular-nums ml-1 font-normal normal-case/;
 
 describe('B3-1/B3-2 · dichte Gruppenköpfe laufen über `ui/GruppenKopf`', () => {
   const migriert = [
@@ -61,10 +75,14 @@ describe('B3-1/B3-2 · dichte Gruppenköpfe laufen über `ui/GruppenKopf`', () =
     'pages/gesetz-leser/v3/PanelMaterialien.tsx',
     'pages/gesetz-leser/v3/PanelEntscheide.tsx',
     'components/kontext/KontextGruppe.tsx',
+    // R4-B: vom App-weiten Sweep gefunden, nicht von der Liste.
+    'pages/gesetz-leser/parts/BezuegeZeile.tsx',
   ];
 
-  it('keine der migrierten Flächen zeichnet das dichte Rezept noch selbst', () => {
-    const rueckfaelle = migriert.filter((r) => DICHT_REZEPT.test(ohneKommentare(lies(r))));
+  it('KEINE Fläche der App zeichnet das dichte Rezept noch selbst', () => {
+    const rueckfaelle = alleTsx()
+      .filter((p) => DICHT_REZEPT.test(ohneKommentare(readFileSync(p, 'utf8'))))
+      .map(rel);
     expect(rueckfaelle).toEqual([]);
   });
 
