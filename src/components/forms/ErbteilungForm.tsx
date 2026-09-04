@@ -206,7 +206,14 @@ export function ErbteilungForm() {
         <GruppenTitel><NormText text={`1. Parentel – Nachkommen (Art. 457 ZGB)`} /></GruppenTitel>
         <div className={pk('grid grid-cols-1 sm:grid-cols-2 gap-4', 'grid grid-cols-1 @lg/pane:grid-cols-2 gap-4')}>
           <Field label="Lebende Kinder (Anzahl)">
-            <input type="number" inputMode="decimal" min={0} step={1} value={kinderLebend} onChange={(e) => setKinderLebend(Number(e.target.value))} className={inputCls + ' w-28'} />
+            {/* LM-072 (B12, 4.9.2026): die feste Feldbreite ist weg — das Feld folgt jetzt
+                seiner Rasterzelle wie jedes andere `Field` derselben Reihe. GEMESSEN
+                @1440 stand es als 112 px neben Feldern von 495 px, ohne dass die
+                schmalere Breite etwas aussagte (§8: eine Breite ist eine Zusage über
+                die erwartete Eingabelänge). Die schmalen Felder der INLINE-Reihen
+                (Zahl + Einheit nebeneinander, `w-24`) bleiben, dort trägt die Breite
+                die Zusammengehörigkeit. */}
+            <input type="number" inputMode="decimal" min={0} step={1} value={kinderLebend} onChange={(e) => setKinderLebend(Number(e.target.value))} className={inputCls} />
           </Field>
           <Field label="Vorverstorbene Kinder mit Nachkommen (Stämme)" hint="Deren Nachkommen treten nach Stämmen ein (Art. 457 Abs. 3)">
             {/* Der Wrapper-<div> bleibt: `Field` verknüpft nur ein natives
