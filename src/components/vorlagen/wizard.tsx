@@ -131,8 +131,16 @@ export function VorlagenWizardRahmen({
             )}
             {/* B2/D-1.5 (QS-UI 8b Teil 2): Der Speicher-Hinweis lief mit 976 px über
                 die volle Spaltenbreite — gemessen auf 24 Vorlagen-Flächen. Prosa hält
-                die Lesespalte; Kacheln und Tabellen bleiben unbegrenzt. */}
-            <p className="text-xs text-ink-500 max-w-reading">
+                die Lesespalte; Kacheln und Tabellen bleiben unbegrenzt.
+                LM-125 (W2·17-UI-BEFUNDE-B9, 4.9.2026): `max-w-reading` (40rem) ist das
+                Mass der 16-px-Prosa, nicht das der Feinschrift. Auf der 12-px-Stufe
+                mass dieser Hinweis @1440 110 ch/Zeile (2 Zeilen à 640 px) — über der
+                WCAG-Decke SC 1.4.8 (80 ch). `max-w-kleintext` ist die
+                Feinschrift-Spalte des Hauses (Herleitung am Token in
+                `tailwind.config.js`); dieselbe Messung und dasselbe Mittel wie T2
+                (`kontext/KontextGruppe`, Hinweis-Slot) und T3 (`ArtikelLeser`,
+                Fussnotenapparat), beide 29.8.2026. */}
+            <p className="text-xs text-ink-500 max-w-kleintext">
               {fussnote ?? 'Ihre Eingaben verlassen den Browser nicht, werden aber lokal auf diesem Gerät zwischengespeichert und bleiben nach dem Schliessen erhalten — auf geteilten oder fremden Rechnern bitte «Eingaben zurücksetzen».'}
             </p>
           </div>
@@ -191,9 +199,17 @@ export function VorlagenWizardRahmen({
               Griff. Das Tor (qsui-hierarchie I8) prüft, dass an der Stelle des
               Verdikts immer etwas steht: das Dokument, ein Platzhalter oder ein
               benannter Griff — nie nichts. */}
-          <summary data-dokument-platz className="cursor-pointer select-none list-none [&::-webkit-details-marker]:hidden px-4 py-3 flex items-center justify-between text-body-s font-medium text-ink-700">
+          {/* LM-060 (B15, 4.9.2026): hier standen ZWEI Klappmarken. Diese
+              Summary zeichnete ihr eigenes ▾ und schaltete den nativen Marker
+              ab — die App-weite `details > summary::after`-Regel (index.css)
+              hängte ihr «▸» aber weiterhin als drittes Flex-Kind ganz rechts
+              an. GEMESSEN @640 (bei 1440 ist die Klappe `md:hidden`):
+              `::after` = "  ▸" UND ein Textknoten «▾» in derselben Summary.
+              Der Rückbau IST der Fix (§17): eigenes Zeichen und die beiden
+              Marker-Abschaltungen fallen weg, das EINE Zeichen kommt aus der
+              geteilten Regel — dort rechtsbündig und drehend. */}
+          <summary data-dokument-platz className="cursor-pointer select-none px-4 py-3 text-body-s font-medium text-ink-700">
             <span>Vorschau & Bausteinprotokoll</span>
-            <span aria-hidden className="text-ink-500">▾</span>
           </summary>
           <div className="px-4 pb-4">{vorschau}</div>
         </details>

@@ -19,6 +19,7 @@ import { useLocale, fedlexLokalisiert } from '../locale';
 import { usePaneSteuerung } from '../layout/usePaneLayout';
 import { KantenChip } from '../verzahnung/KantenChip';
 import { StatusBadge } from '../verzahnung/StatusBadge';
+import { ZeichenLegende } from '../verzahnung/ZeichenLegende';
 import { ArtikelKontextZeilen } from './ArtikelKontextGruppe';
 // §6.6-Split (9.8.2026): die geteilte Gruppen-Hülle lebt daneben; der
 // Re-Export hält den bisherigen Import-Pfad `./KontextPanel` für alle
@@ -606,10 +607,19 @@ export function KontextPanel({ typ, normKeys, zusatzGruppen, ohneNormen = false,
                             {artikel && (
                               <span className="num text-micro text-ink-500"> · via Art. {artikel}</span>
                             )}
-                            {r.regesteKurz && <span className="text-ink-500"> — {absicherWortgrenze(r.regesteKurz)}</span>}
                           </Link>
                           {kannOeffnen && !istOffen(ziel) && (
                             <DanebenKnopf ziel={ziel} label={r.zitierung} oeffneDaneben={oeffneDaneben} className="ml-1 align-middle" />
+                          )}
+                          {/* LM-129 (B9, 4.9.2026): der Auszug lief als Fortsetzung DESSELBEN <a>
+                              hinter der Zitierung her — das ⧉ landete dadurch mitten in der
+                              dritten Zeile. Eigener Block: das ⧉ schliesst die kurze
+                              Zitierungs-Zeile ab, und der Linkname trägt nicht mehr bis zu
+                              240 Zeichen Regeste. Wortlaut unverändert (`absicherWortgrenze`);
+                              nur der em-Strich entfällt, den der Umbruch ersetzt.
+                              Messreihe: FAHRPLAN-UI-BEFUNDE §10 LM-129. */}
+                          {r.regesteKurz && (
+                            <span className="mt-0.5 block text-ink-500">{absicherWortgrenze(r.regesteKurz)}</span>
                           )}
                         </li>
                       );
@@ -619,6 +629,14 @@ export function KontextPanel({ typ, normKeys, zusatzGruppen, ohneNormen = false,
                     <Link to={alleEntscheideZiel} className="text-body-s text-brass-700 hover:underline">
                       Alle <span className="num">{entscheide?.length}</span> erfassten Entscheide ansehen →
                     </Link>
+                  )}
+                  {/* LM-134 (B9, 4.9.2026): die ★ dieser Liste trugen ihre Erklärung nur
+                      in aria-label/title (auf Touch tot). Wiederverwendet statt zweiter
+                      Legende: `verzahnung/ZeichenLegende` — in B1/LM-050 für genau diese
+                      Lücke gebaut, Texte aus GLYPH_LEGENDE (§5, dieselbe Quelle). Steht nur
+                      bei sichtbarem ★ (§8), wie dort der ⧉-Eintrag an `kannOeffnen` hängt. */}
+                  {sichtbareEntscheide.some((r) => r.leitcharakter === 'leitentscheid') && (
+                    <ZeichenLegende />
                   )}
                 </>
               )}

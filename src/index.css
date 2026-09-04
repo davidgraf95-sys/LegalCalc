@@ -1843,11 +1843,48 @@
   .lc-wert-puls { animation: lc-wert-puls var(--dur-base) var(--ease); }
 
   /* Aufklappbare Hinweise: dezentes Disclosure-Symbol statt Default-Dreieck.
-     (Die frühere .lc-disclosure-Ausnahme war ungenutzt — entfernt, E13.) */
-  details > summary { list-style: none; }
+     (Die frühere .lc-disclosure-Ausnahme war ungenutzt — entfernt, E13.)
+
+     ── LM-053/LM-056/LM-060 (B15, 4.9.2026) · EIN AKKORDEON-BILD ─────────────
+     GEMESSEN am gebauten Stand vor dem Bau: auf `/rechner/zpo-fristen` @1440
+     standen ZWEI Klapp-Bilder nebeneinander. Die drei Ergebnis-Akkordeons
+     («Rechenweg (6 Schritte)», «Annahmen (4)», «Hinweise / Vorbehalte (2)»)
+     sind `<button>` von 954 px mit `justify-content: space-between` und einem
+     ▼ am RECHTEN Rand; die `<details>` derselben Seite («Für die Rechtsschrift
+     …», «Rechtlicher Hinweis …») waren `display: list-item` mit diesem `::after`
+     als 7.7–9.8 px kleinem «▸» MITTEN IM TEXTFLUSS am Zeilenende. Dasselbe
+     Bauteil, zwei Gestalten — und die kleine Variante war so leise, dass die
+     Sichtprüfung sie auf `/rechtsprechung` gar nicht als Aufklapp-Zeichen las
+     («kein Pfeil … sieht aus wie ein leeres Eingabefeld», LM-053; gemessen
+     9.8 px in ink-400 am Ende einer 790 px breiten Summary).
+
+     Die Regel bleibt die EINE Stelle (§5) — sie wird nur stark genug, um das
+     Bild zu tragen: die Summary wird zur Flex-Zeile, das Zeichen wandert per
+     `margin-left: auto` an die rechte Kante (dieselbe Stelle wie beim
+     Button-Akkordeon) und DREHT sich beim Öffnen, statt seine Glyphe zu
+     tauschen. Die Glyphe bleibt bewusst «▸»: `e2e/leser-v3-nachzug-auskunft`
+     misst sie als Positiv-Sonde für «die App-weite Regel lebt» (§6.3 — kein
+     Test wird angefasst), und die Drehung ist ohnehin das ehrlichere
+     Zustandssignal als ein Glyphentausch.
+
+     KEIN `justify-content` hier: `v3/UebersichtBox` trägt ihr eigenes,
+     vorangestelltes ▸ (Ä5/Ä27, Ausnahme unten) — ein `space-between` würde
+     dort Zeichen und Text über die volle Breite auseinanderziehen. `auto`-
+     Marge am Zeichen erreicht dasselbe, ohne fremde Summarys umzubauen. */
+  details > summary {
+    list-style: none;
+    display: flex; align-items: center; gap: .5rem;
+  }
   details > summary::-webkit-details-marker { display: none; }
-  details > summary::after { content: '  ▸'; color: var(--ink-400); font-size: .7em; }
-  details[open] > summary::after { content: '  ▾'; }
+  details > summary::after {
+    content: '▸'; color: var(--ink-400); font-size: .9em; line-height: 1;
+    margin-left: auto; flex: none;
+    transition: transform var(--dur-base) var(--ease);
+  }
+  details[open] > summary::after { transform: rotate(90deg); }
+  @media (prefers-reduced-motion: reduce) {
+    details > summary::after { transition: none; }
+  }
   /* ── Ä5/Ä27 (H2b-Nachzug) · NUR EIN DISCLOSURE-ZEICHEN ─────────────────────
      Ä5 entfernte das hängende «·» aus der V3-Übersichtszeile, ihr zweites
      hängendes Zeichen blieb: die Regel oben hängt an JEDE `<summary>` ein «▸»
