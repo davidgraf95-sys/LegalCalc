@@ -22,7 +22,7 @@ Beispiel-PRs sind Beleg, nicht Massstab.
 - neue Dateien `src/components/normtext/ArtikelBody.<teil>.tsx` / `.ts` (höchstens zwei, jede ≤ 800 Zeilen)
 
 ## Tabu
-Alles andere: keine Tests, keine anderen Komponenten, kein `src/lib/**`, kein `scripts/**`, `package.json`, `.github/**`, Steuer-Doku. Keine neuen Abhängigkeiten, keine Umbenennung von Props/Exports, keine Logik-, Text- oder Style-Änderung (auch keine «Verbesserungen» nebenbei).
+Alles andere: keine Tests, keine anderen Komponenten, kein `src/lib/**`, kein `scripts/**`, `package.json`, `.github/**`, Steuer-Doku. Keine neuen Abhängigkeiten, keine Umbenennung von Props/Exports, keine Logik-, Text- oder Style-Änderung (auch keine «Verbesserungen» nebenbei). **Kommentare sind Inhalt:** sie wandern mit dem Code mit, werden nie gelöscht oder gekürzt (die Prüfstrasse zählt sie).
 
 ## Fertig-Kriterium (maschinell)
 1. `npm ci` · `npm run build` grün · `npm test` grün mit gleicher Testanzahl · `npm run lint` 0 Fehler · `npx tsc -b` sauber.
