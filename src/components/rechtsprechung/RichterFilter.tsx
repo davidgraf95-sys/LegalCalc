@@ -119,7 +119,18 @@ export function RichterFilter({ aktiv, aktivName, registerGeladen, optionen, onW
              steht damit an genau einer Stelle, dem Chip. Reine Beschriftung,
              keine Änderung an Auswahl-, Filter- oder Tastaturlogik (§3). */
           placeholder={aktiv ? 'Anderen Namen suchen …' : 'Name eingeben …'}
-          aria-label={aktiv ? 'Nach anderer Richter:in filtern' : 'Nach Richter:in filtern'}
+          /* NACHZUG 5.9.2026 (CI «Browser-Smoke» Shard 2/8, PR #674). Der erste
+             Bau oben wechselte MIT dem Placeholder auch den zugänglichen Namen
+             auf «Nach anderer Richter:in filtern». Das war zu viel: der
+             zugängliche Name ist die IDENTITÄT des Bedienelements und darf
+             nicht mit seinem Zustand wechseln (WCAG 4.1.2) — sonst verliert
+             jede Referenz darauf ihr Ziel, sobald ein Richter gesetzt ist.
+             Belegt am 5.9.2026 lokal gegen dist: e2e/rechtsprechung-richter.e2e.ts
+             Zeile 149 und 176 fanden die Combobox nach
+             `?richter=<slug>` nicht mehr (2 failed / 10 passed). Der Name
+             bleibt darum konstant; das Zurücktreten aus LM-095 trägt allein
+             der sichtbare Placeholder, den Zustand trägt der Aktiv-Chip. */
+          aria-label="Nach Richter:in filtern"
           autoComplete="off"
           role="combobox"
           aria-expanded={hatListbox}

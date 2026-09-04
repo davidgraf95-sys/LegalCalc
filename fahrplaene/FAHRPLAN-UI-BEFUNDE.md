@@ -188,6 +188,15 @@ nachgemessen; echte `mouse.wheel`-Eingaben statt programmatischem Scrollen (§0.
     gefiltert wird. Der Chip bleibt, wo er ist (dokumentierter Entscheid, `EntscheidFilter`: «sonst doppelte
     Repräsentation»); stattdessen TRITT DAS FELD ZURÜCK — Platzhalter und `aria-label` sagen bei gesetztem
     Wert «Anderen Namen suchen …» (nachgemessen). Keine Änderung an Auswahl-, Filter- oder Tastaturlogik.
+  · **CI-Nachzug** 5.9.2026 — der Bau oben wechselte MIT dem Platzhalter auch das `aria-label`
+    («Nach anderer Richter:in filtern»). Damit verlor die Combobox bei gesetztem Richter ihren
+    zugänglichen NAMEN; CI «Browser-Smoke» Shard 2/8 wurde rot. Lokal gegen `dist` reproduziert
+    (2 failed / 10 passed): `e2e/rechtsprechung-richter.e2e.ts` Zeile 149 und 176 fanden
+    `getByRole('combobox', { name: 'Nach Richter:in filtern' })` nach `?richter=<slug>` nicht mehr.
+    Der zugängliche Name ist die Identität des Bedienelements und darf nicht mit dessen Zustand
+    wechseln (WCAG 4.1.2) — `aria-label` ist wieder konstant «Nach Richter:in filtern»; das
+    Zurücktreten trägt allein der sichtbare Platzhalter, den gesetzten Wert der Aktiv-Chip.
+    Test unangetastet (§6.3). Danach 12/12 grün.
 - [x] **LM-096** · Mittel · Neben jedem Normchip steht ein eigenes, etwa 16 px grosses Kopiersymbol … [Verdacht → FAHRPLAN-VERZAHNUNG-UI.md **§0. Kritik-Einarbeitung**, Tabellenzeile 3b (Grammatik-Regel 1: «⧉ nur auf KontextPanel-Chips + NormPopover…]
   · **erledigt (überholt)** 4.9.2026 — in der Sache nicht mehr reproduzierbar: das Symbol ist kein
     Kopiersymbol, sondern der ⧉-«nebeneinander öffnen»-Knopf. Gemessen auf
