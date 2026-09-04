@@ -212,7 +212,7 @@ export function LeserTrefferListe({
                   data-treffer-aktiv={aktiv ? '1' : undefined}
                   aria-current={aktiv ? 'location' : undefined}
                   aria-expanded={offen}
-                  className={`w-full rounded px-1.5 py-1.5 text-left transition-colors ${aktiv ? 'bg-paper-sunken/70' : 'hover:bg-paper-sunken/60'}`}>
+                  className={`w-full rounded px-1.5 py-1.5 text-left transition-colors ${aktiv ? 'bg-paper-sunken/70' : 'lc-hover-flaeche'}`}>
                   {/* ── Ä10/Ä26 (H2b-Nachzug) · DAS ETIKETT SPRENGT DIE LEISTE NICHT
                       Gemessen 17.8.2026 (LugÜ, Suche «Gericht»): `shrink-0` am
                       Etikett war für «Art. 47» richtig und für Anhänge falsch —
@@ -303,7 +303,7 @@ export function LeserTrefferListe({
                             data-treffer-stelle-aktiv={stelleAktiv ? '1' : undefined}
                             aria-current={stelleAktiv ? 'location' : undefined}
                             className={`flex w-full items-baseline gap-1.5 rounded px-1.5 py-1 text-left transition-colors ${
-                              stelleAktiv ? 'bg-brass-100/60' : 'hover:bg-paper-sunken/60'}`}>
+                              stelleAktiv ? 'bg-brass-100/60' : 'lc-hover-flaeche'}`}>
                             <span aria-hidden className="shrink-0 text-micro tabular-nums text-ink-400">{f.rang + 1}</span>
                             <Schnipsel a={f.ausschnitt} />
                           </button>
@@ -326,7 +326,7 @@ export function LeserTrefferListe({
             begriff, n: (g.begriff === begriff ? g.n : TREFFER_DECKEL) + TREFFER_DECKEL,
             auf: g.begriff === begriff ? g.auf : [],
           }))}
-          className="mt-2 flex min-h-11 w-full items-center justify-center rounded-md px-2 text-body-s text-ink-600 transition-colors hover:bg-paper-sunken/60 hover:text-brass-700">
+          className="mt-2 flex min-h-11 w-full items-center justify-center rounded-md px-2 text-body-s text-ink-600 transition-colors lc-hover-flaeche hover:text-brass-700">
           {rest} weitere anzeigen
         </button>
       )}

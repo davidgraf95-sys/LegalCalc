@@ -42,7 +42,7 @@ export function GliederungUmschalter({ wert, onWahl }: {
         {GLIEDERUNGEN.map((g) => (
           <button key={g.id} type="button" onClick={() => onWahl(g.id)} aria-pressed={wert === g.id}
             className={`rounded px-2.5 py-0.5 text-body-s font-medium transition-colors ${
-              wert === g.id ? 'bg-brass-100 text-brass-800' : 'text-ink-500 hover:bg-paper-sunken hover:text-brass-700'
+              wert === g.id ? 'bg-brass-100 text-brass-800' : 'text-ink-500 lc-hover-flaeche hover:text-brass-700'
             }`}>
             {g.label}
           </button>

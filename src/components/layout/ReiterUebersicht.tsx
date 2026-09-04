@@ -177,7 +177,7 @@ export function ReiterUebersicht() {
               {/* LM-180 (Fahrplan B5, §6): reiner Text mit Hover-Fläche las sich
                   nicht als Button (Befund). `lc-btn-outline lc-btn-sm` nutzt die
                   geteilte Button-Familie (§13 Token statt Ad-hoc-Stil) statt
-                  eigener Optik. Nebenbei behoben: `hover:bg-paper-sunken/60`
+                  eigener Optik. Nebenbei behoben: `lc-hover-flaeche`
                   erzeugte keine CSS-Regel (DESIGN-D0, Deckkraft-Suffix auf
                   opakem Hex-Token — Wurzel-Fix bleibt W2·11-DESIGN); der Hover
                   wirkte dadurch bislang gar nicht. */}

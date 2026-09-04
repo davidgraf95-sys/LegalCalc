@@ -996,7 +996,15 @@
      Echte Kapitälchen (smcp) führen Geist/Geist Mono nicht → Uppercase+Tracking
      der Overlines bleibt; Mediävalziffern im Fliesstext bewusst NICHT (Daten und
      Normzitate sollen versalziffrig bleiben). */
-  .num { font-family: var(--font-mono), ui-monospace, monospace; font-variant-numeric: lining-nums tabular-nums; }
+  /* R5-B (5.9.2026) · EINE Deklaration für «Versal- und Tabellenziffern».
+     Der Ziffernsatz und die Monospace-Familie sind ZWEI Entscheide: es gibt
+     Flächen, die den ersten wollen und den zweiten nicht (Rechner-Verdikt im
+     Display-Schnitt, Vorlagen-Vorschau im Sans). Die trugen die Deklaration
+     bisher roh als `style={{ fontVariantNumeric: … }}` — dieselbe Wahrheit ein
+     zweites Mal (§5/F9). `.lc-ziffern` ist die Rolle ohne Familie, `.num`
+     bleibt Rolle + Familie und ist Zeichen für Zeichen wirkungsgleich. */
+  .num, .lc-ziffern { font-variant-numeric: lining-nums tabular-nums; }
+  .num { font-family: var(--font-mono), ui-monospace, monospace; }
 
   /* «&» in Display-Titeln: ruhige Sans-Glyphe (Geist) statt der
      verschnörkelten Fraunces-Form; leicht reduziert für optischen Ausgleich. */
@@ -1105,6 +1113,36 @@
      als Geschwister über dem Link liegen müssen). */
   :is(a, button, [role='button'], [data-aktiv]).lc-card { @apply transition-colors; }
   :is(a, button, [role='button'], [data-aktiv]).lc-card:hover { border-color: var(--brass-400); }
+
+  /* ── R5-D (5.9.2026) · EINE neutrale Hover-Fläche ─────────────────────────
+     Das Gegenstück zur Karten-Grammatik darüber: die anklickbare ZEILE
+     (Trefferliste, Inhaltsverzeichnis, Reiter, Verlauf, Buchstaben-Leiste)
+     tönt beim Überfahren ihren Grund ein.
+     GEMESSEN am Preview 5.9.2026 (`/gesetze/bund/OR`, `/gesetze`,
+     `/rechtsprechung/…`): 33 Fundstellen in 21 Dateien, FÜNF Schreibweisen für
+     EINE Aussage — `hover:bg-paper-sunken` (13×), `.../60` (15×), `.../70`
+     (1×), `hover:bg-well` (3×), `hover:bg-paper/60` (1×). Die Runde-5-Liste
+     kannte davon drei; die beiden letzten fand erst der App-weite Ausdruck,
+     weil er nach der SACHE fragt («eine Utility tönt eine neutrale Fläche beim
+     Überfahren ein») und nicht nach einem Token-Namen — dieselbe Wurzel wie
+     R4-D (`setKopiert(` liess `setOk(` durch).
+     Auf `--paper` sind das 1.055:1 bei voller Stufe gegen 1.036:1 bei 60 % —
+     der verdünnte Schritt ist zwei Drittel eines ohnehin knappen.
+     KANON ist die VOLLE Stufe, und zwar nicht wegen der Mehrheit (die läge bei
+     60 %), sondern weil DESIGN-REGLEMENT §G-j Interaktions-Zustände auf EINE
+     Regel legt: «eine Flexoki-Stufe tiefer», getragen von einer ROLLE. Eine
+     Alpha-Verdünnung ist keine Stufe, sondern eine Zwischenlage ohne Namen.
+     Die Rolle heisst hier `--well` (= `--paper-sunken`, die eingesenkte
+     Fläche) und wird schon von `.lc-leiste-griff:hover` so verwendet — die
+     Klasse zieht die 33 Stellen auf diesen bestehenden Baustein (§5/§10),
+     sie erfindet keinen neuen Ton. Der Übergang gehört zur Regel und liegt
+     darum hier, nicht 33-mal daneben.
+     WCAG-neutral: der Grund wird ausschliesslich DUNKLER; der Kontrast der
+     dunklen Schrift darauf kann dabei nur steigen, nie fallen.
+     OB die Stufe an sich kräftiger sein soll, ist eine Geschmacks- und keine
+     Konsistenzfrage — sie liegt bei David (Runde-5-Rückgabe), nicht hier. */
+  .lc-hover-flaeche { @apply transition-colors; }
+  .lc-hover-flaeche:hover { background-color: var(--well); }
   /* Ergebnis-Kachel (Hauptwerte in Ergebnisblöcken) — eine Anatomie überall */
   .lc-tile { @apply bg-surface-raised border border-line rounded-xl p-4; }
   /* Akzent-Oberkante (massgeblich) — EINE Quelle statt 6×

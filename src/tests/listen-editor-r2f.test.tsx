@@ -19,7 +19,14 @@ import { ListenEditor } from '../components/vorlagen/ui';
 
 /** Alle handgeschriebenen Darstellungs-Dateien unter src/ (ohne Tests: die
  *  zitieren die verbotenen Muster als Beleg — dieselbe Vorsichtsmassnahme wie
- *  in eingabe-bausteine-r2e.test.tsx). */
+ *  in eingabe-bausteine-r2e.test.tsx).
+ *
+ *  R5-A (5.9.2026) · begruendete Ausnahme von `appDateien.ts`: dieser Sweep
+ *  fegt bewusst NUR HANDGESCHRIEBENES — `.generated.tsx?` bleibt draussen (acht
+ *  solche Dateien liegen heute unter src/). Der geteilte Baustein kennt diese
+ *  Grenze nicht und darf sie auch nicht lernen, weil die uebrigen Waechter
+ *  generierten Code sehr wohl pruefen wollen. Zwei verschiedene Fragen, zwei
+ *  Sweeps — keine Dublette. */
 function darstellungsDateien(wurzel = 'src'): string[] {
   const raus: string[] = [];
   for (const name of readdirSync(wurzel)) {

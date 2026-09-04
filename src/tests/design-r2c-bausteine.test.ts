@@ -21,12 +21,16 @@
  * Reine Darstellung (§3) — keine Rechtslogik berührt.
  */
 import { describe, it, expect } from 'vitest';
-import { readFileSync, readdirSync, statSync } from 'node:fs';
+// R5-A (5.9.2026) · §5: Verzeichnis-Wanderung und Kommentar-Sieb standen hier
+// als eigene Kopie von `appDateien.ts`. Ein Wächter, der seinen Sweep selbst
+// nachbaut, ist ab der ersten Abweichung ein anderer Wächter als sein
+// Nachbar — beide hängen jetzt an der einen Quelle.
 import { join } from 'node:path';
+import { APP_WURZEL, alleQuellen, ohneKommentare, liesRoh } from './appDateien';
 
-const WURZEL = join(__dirname, '..');
+const WURZEL = APP_WURZEL;
 
-const rohLies = (rel: string) => readFileSync(join(WURZEL, rel), 'utf8');
+const rohLies = (pfad: string) => liesRoh(join(WURZEL, pfad));
 
 /** Quelltext OHNE Kommentare — die Herleitungen dürfen den Vorzustand beim
  *  Namen nennen (§2b), ohne die Sonde für immer rot zu färben. */
@@ -34,23 +38,7 @@ const lies = (rel: string) => rohLies(rel)
   .replace(/\/\*[\s\S]*?\*\//g, '')
   .split('\n').filter((z) => !/^\s*(\/\/|\*)/.test(z)).join('\n');
 
-/** Alle .tsx/.ts unter src/, ohne Tests und Fixtures. */
-function alleQuellen(dir = WURZEL, treffer: string[] = []): string[] {
-  for (const name of readdirSync(dir)) {
-    const p = join(dir, name);
-    if (statSync(p).isDirectory()) {
-      if (name === 'tests' || name === 'fixtures') continue;
-      alleQuellen(p, treffer);
-    } else if (name.endsWith('.tsx') || name.endsWith('.ts')) {
-      treffer.push(p);
-    }
-  }
-  return treffer;
-}
 
-const ohneKommentare = (roh: string) => roh
-  .replace(/\/\*[\s\S]*?\*\//g, '')
-  .split('\n').filter((z) => !/^\s*(\/\/|\*)/.test(z)).join('\n');
 
 // ─── C-4 · EINE Treffer-Zeile ───────────────────────────────────────────────
 
@@ -91,7 +79,7 @@ describe('C-4 · Treffer-Zeilen laufen über EINEN Baustein', () => {
 
   it('der Baustein ist genau einmal definiert', () => {
     const definitionen = alleQuellen()
-      .filter((d) => /export function TrefferZeile\(/.test(readFileSync(d, 'utf8')));
+      .filter((d) => /export function TrefferZeile\(/.test(liesRoh(d)));
     expect(definitionen.map((d) => d.slice(WURZEL.length + 1)))
       .toEqual(['components/ui/TrefferZeile.tsx']);
   });
@@ -138,7 +126,7 @@ describe('C-5 · Einstiegs-Kacheln laufen über EINEN Baustein', () => {
 
   it('der Baustein ist genau einmal definiert', () => {
     const definitionen = alleQuellen()
-      .filter((d) => /export function RubrikKachel\(/.test(readFileSync(d, 'utf8')));
+      .filter((d) => /export function RubrikKachel\(/.test(liesRoh(d)));
     expect(definitionen.map((d) => d.slice(WURZEL.length + 1)))
       .toEqual(['components/ui/RubrikKachel.tsx']);
   });
@@ -154,14 +142,14 @@ describe('D-3 · Auswahl-Pillen laufen über SelectionGrid', () => {
 
   it('die invertierte ink-900-Füllung als Auswahl-Signal ist nirgends mehr', () => {
     const funde = alleQuellen()
-      .filter((d) => ohneKommentare(readFileSync(d, 'utf8')).includes(INVERS))
+      .filter((d) => ohneKommentare(liesRoh(d)).includes(INVERS))
       .map((d) => d.slice(WURZEL.length + 1));
     expect(funde).toEqual([]);
   });
 
   it('die Pillen-Anatomie steht genau einmal — im Baustein', () => {
     const funde = alleQuellen()
-      .filter((d) => PILLE.test(ohneKommentare(readFileSync(d, 'utf8'))))
+      .filter((d) => PILLE.test(ohneKommentare(liesRoh(d))))
       .map((d) => d.slice(WURZEL.length + 1));
     expect(funde).toEqual(['components/ui/SelectionGrid.tsx']);
   });

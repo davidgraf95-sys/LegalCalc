@@ -25,7 +25,7 @@ export function EntscheidZeile({ e, onNorm }: {
     : `/rechtsprechung/${encodeURIComponent(e.key)}`;
   const bezeichnung = verweis ? `Vollständiges Urteil zu BGE ${verweis.bgeReferenz}` : themaText(e);
   return (
-    <div className="group relative flex items-stretch gap-3 px-4 py-3 hover:bg-well transition-colors">
+    <div className="group relative flex items-stretch gap-3 px-4 py-3 lc-hover-flaeche">
       {/* Overlay-Link über der ganzen Zeile (Navigation); Name = Bezeichnung. */}
       <Link to={ziel} aria-label={bezeichnung} className="absolute inset-0 no-underline" />
 
