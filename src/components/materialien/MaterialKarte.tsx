@@ -20,7 +20,7 @@ export function MaterialKarte({ m }: { m: BrowseMaterial }) {
   return (
     <Link
       to={`/materialien/${encodeURIComponent(m.key)}`}
-      className="lc-card group block p-4 no-underline"
+      className="lc-card group flex h-full flex-col p-4 no-underline"
     >
       <div className="flex items-baseline justify-between gap-3">
         <span className="lc-overline">{overline}</span>
@@ -32,7 +32,13 @@ export function MaterialKarte({ m }: { m: BrowseMaterial }) {
           Genau das war der Befund: «Stand 01.02.2022» war formal nicht von einem
           Normverweis «ZGB» zu unterscheiden. Die Opt-in-Klasse macht die
           Flachheit zur ERKLÄRTEN Aussage statt zum Zufall (§23). */}
-      <div className="lc-chip-zeile mt-3 flex flex-wrap items-center gap-x-3 gap-y-1.5 text-xs text-ink-500">
+      {/* LM-028 (B11-Karten, 4.9.2026): `mt-auto` hängt die Metazeile an den
+          Kartenfuss statt an den Titel. Gemessen auf `/materialien` (1440 px):
+          in einer Reihe gleich hoher Karten (157 px) sass «ESTV · Stand …» bei
+          drei- gegen zweizeiligem Titel auf y 92 bzw. 73 — 19 px auseinander.
+          Die Karte ist dafür eine Flex-Spalte (`flex h-full flex-col`); die
+          Kartenhöhe selbst bleibt unverändert (A3-Abnahme unberührt). */}
+      <div className="lc-chip-zeile mt-auto pt-3 flex flex-wrap items-center gap-x-3 gap-y-1.5 text-xs text-ink-500">
         <span className="font-medium text-ink-700">{m.behoerdeKuerzel}</span>
         <StandChip stand={m.stand} />
       </div>

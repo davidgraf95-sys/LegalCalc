@@ -71,7 +71,16 @@ export function RubrikKachel({ ziel, onWahl, icon, zahl, einheit, titel, nutzen,
       <span className="font-sans font-semibold text-ink-900 text-h3 tracking-tight transition-colors group-hover:text-brass-700">{titel}</span>
       <span className="text-body-s leading-snug text-ink-700">{nutzen}</span>
       {extra}
-      <span aria-hidden className="mt-1 text-body-s font-medium text-brass-700">Öffnen →</span>
+      {/* LM-027/LM-038 (B11-Karten, 4.9.2026): `mt-auto` verankert die
+          Abschlusszeile am Kartenfuss. Gemessen auf `/` (1440 px) sass sie in
+          einer Reihe gleich hoher Kacheln (322 px) auf FÜNF Höhen — y 265 / 280
+          / 280 / 222 / 203 —, weil sie dem unterschiedlich langen Nutzensatz
+          folgte; auf `/gesetze` auf drei (139 / 144 / 119), dort zusätzlich von
+          der Erfassungsgrad-Legende der «Kantone»-Kachel verschoben. Der
+          A3-Entscheid («Kacheln einer Reihe gleich hoch», Abnahme offen) wird
+          NICHT gekippt: die Kachelhöhe bleibt, wie sie ist — nur die
+          Abschlusszeile fluchtet. */}
+      <span aria-hidden className="mt-auto pt-1 text-body-s font-medium text-brass-700">Öffnen →</span>
     </>
   );
   return ziel !== undefined
