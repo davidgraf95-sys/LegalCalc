@@ -89,7 +89,23 @@ export function Einstellungen() {
   };
 
   return (
-    <div className="max-w-[44rem] space-y-8">
+    // ── LM-136 (W2·17-UI-BEFUNDE/B16) · KEIN EINZELWERT FÜR DIE LESEBREITE ────
+    // Hier stand `max-w-[44rem]`. Gemessen 4.9.2026 @1440 (Preview von
+    // origin/main): der Shell deckelt zentral auf `max-w-content` (1120 px, innen
+    // 312→1384) — die Rechnerseiten laufen bis 1384, /einstellungen brach schon
+    // bei 1016 ab. Die Abweichung entstand also nicht im Shell (D7-Heilung trägt),
+    // sondern an diesem inneren Wrapper, und 44 rem ist ein Wert, den sonst
+    // NIEMAND trägt: die statischen Schwesterseiten /kontakt, /ueber und
+    // /datenschutz stehen alle auf `max-w-reading` (40 rem). Angeglichen auf
+    // dasselbe Token — gleichartige Seiten, gleiche Inhaltsbreite, und ein
+    // Arbitrary-Wert weniger im Design-System (§13/design.md: Tokens statt
+    // Rohwerten).
+    //
+    // NICHT geändert, weil Kanon und kein Defekt: der dritte Teil des Befundes
+    // («der Fliesstextblock der Startseite ist schmaler als alles darüber»). Die
+    // Lesespalte unter breiteren Modulen ist die gewollte Satzbreite (§13.2,
+    // dieselbe Herleitung wie Responsive-Audit D3 in pages/Methodik.tsx).
+    <div className="max-w-reading space-y-8">
       <SeitenKopf overline="Persönlich" titel="Einstellungen"
         intro="Standardwerte für die ganze Seite — sie werden lokal in diesem Browser gespeichert, nie übermittelt." />
 
