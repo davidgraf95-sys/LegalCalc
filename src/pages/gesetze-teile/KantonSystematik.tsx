@@ -144,7 +144,16 @@ export function KantonSystematik({ erlasse, sys }: { erlasse: BrowseErlass[]; sy
                   <GruppenKopf stufe={4} titel={u.titel} zahl={u.items.length}
                     marke={<span aria-hidden className="num text-xs text-brass-700 shrink-0">{u.sub}</span>} />
                 )}
-                <div className={pk('grid grid-cols-1 sm:grid-cols-2 gap-x-5 gap-y-2', 'grid grid-cols-1 @lg/pane:grid-cols-2 gap-x-5 gap-y-2')}>
+                {/* ── LM-141 (W2·17-UI-BEFUNDE/B16) · LESERICHTUNG ───────────────
+                    Hier stand `grid grid-cols-1 sm:grid-cols-2 gap-x-5 gap-y-2`.
+                    Ein Grid füllt ZEILENWEISE, also springt man beim Lesen bei
+                    jedem Eintrag über die Spalte; `columns` füllt SPALTENWEISE.
+                    Dies ist die DEFAULT-Sicht der im Befund genannten Route
+                    (/gesetze?ebene=kanton&kt=BS mit `gliederung=systematisch`) —
+                    dieselbe Umstellung wie in `GesetzeGliederung` für die beiden
+                    anderen Kanton-Sichten. Abstände und Umbruchschutz trägt
+                    `.lc-listenspalten` (src/index.css). */}
+                <div className={pk('lc-listenspalten columns-1 sm:columns-2', 'lc-listenspalten columns-1 @lg/pane:columns-2')}>
                   {u.items.map((e) => <SysZeile key={e.key} e={e} />)}
                 </div>
               </section>

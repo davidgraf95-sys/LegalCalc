@@ -8,6 +8,10 @@ import { aktivePosition, flacheTreffer, naechsterKey, vorigerKey, gewaehlterHref
 import { useZuletzt } from './useZuletzt';
 import { SchliessKnopf } from '../ui/SchliessKnopf';
 
+/** Platzhalter des Suchfelds — lang, wo er ganz hineinpasst, sonst kurz (LM-124). */
+const PLATZHALTER_LANG = 'Suchen oder Norm springen (z. B. «OR 257d») …';
+const PLATZHALTER_KURZ = 'Suche · OR 257d …';
+
 // ─── Globale Suche im Top-Streifen (UI-Welle: Dropdown überall) ─────────────
 //
 // EIN Feld über Rechner+Vorlagen, Fristen-Vorlagen, Gesetze und Rechtsprechung
@@ -48,6 +52,52 @@ export function HeaderSuche({ onFokusModus, onFokusZurueck }: {
     const auf = () => setIstMobil(!mq.matches);
     mq.addEventListener('change', auf);
     return () => mq.removeEventListener('change', auf);
+  }, []);
+
+  // ─── LM-124 (W2·17-UI-BEFUNDE-B9, 4.9.2026) · DER PLATZHALTER MISST SEINEN
+  //     EIGENEN PLATZ ────────────────────────────────────────────────────────
+  //
+  // Der lange Satz wurde bisher an der VIEWPORT-Schwelle gewählt (`istMobil`,
+  // 640 px). Der Viewport ist die falsche Zahl — dieselbe Lehre wie bei
+  // `ui/SeitenTitel` (A-1): was zählt, ist die Breite, die das FELD wirklich
+  // bekommt, und die hängt an drei Dingen zugleich (Fensterbreite,
+  // Topbar-Aufteilung, Schriftskala A−/A+).
+  //
+  // GEMESSEN am gebauten Stand, Bedarf des langen Satzes gegen den freien Platz
+  // im Feld (`/rechner/zpo-fristen`): @1440/100 % 302 gegen 504 px — passt;
+  // @1440/140 % 422 gegen 315 px — passt NICHT (der Befund); @1024/100 % 302
+  // gegen 141 px und @768/100 % 302 gegen 240 px — passt ebenfalls nicht, und
+  // zwar schon ohne jede Skalenstufe. Die Viewport-Schwelle konnte das nicht
+  // sehen: sie kennt weder die Topbar-Aufteilung noch die Wurzel-Schriftgrösse.
+  //
+  // Die Antwort ist die, die `useSchriftskala` schon gibt (Stufenband 0.9–1.4,
+  // «damit Tap-Ziele und Layout nicht brechen»): passt der lange Satz nicht,
+  // steht der kurze — er trägt das Sprung-Beispiel, auf das es ankommt, und war
+  // für 390 px ohnehin schon formuliert. KEIN neuer Text, keine dritte Variante.
+  // Canvas-`measureText` statt eines Mess-Knotens: kein zusätzlicher Layout-Lauf
+  // im ResizeObserver-Rückruf (und damit keine Rückkopplung — der Platzhalter
+  // ändert die Feldbreite nicht).
+  const [platzKnapp, setPlatzKnapp] = useState(false);
+  useEffect(() => {
+    const el = feld.current;
+    if (!el || typeof ResizeObserver === 'undefined') return;
+    const messen = () => {
+      const cs = getComputedStyle(el);
+      const c2d = document.createElement('canvas').getContext('2d');
+      if (!c2d) return;
+      c2d.font = cs.font || `${cs.fontSize} ${cs.fontFamily}`;
+      const noetig = c2d.measureText(PLATZHALTER_LANG).width;
+      const platz = el.clientWidth - parseFloat(cs.paddingLeft) - parseFloat(cs.paddingRight);
+      setPlatzKnapp(noetig > platz + 1);
+    };
+    const ro = new ResizeObserver(messen);
+    ro.observe(el);
+    // Die Schriftskala ändert die Feldbreite nicht zwingend (rem-Layout wächst
+    // mit), wohl aber den BEDARF — darum zusätzlich am Wurzel-Element horchen.
+    const mo = new MutationObserver(messen);
+    mo.observe(document.documentElement, { attributes: true, attributeFilter: ['style'] });
+    messen();
+    return () => { ro.disconnect(); mo.disconnect(); };
   }, []);
 
   // Debounce: Eingabe → Such-Query (~120 ms) — stösst zugleich das Lazy-Laden an.
@@ -240,9 +290,11 @@ export function HeaderSuche({ onFokusModus, onFokusZurueck }: {
         onChange={(e) => { setWert(e.target.value); setOffen(true); setEnterQ(null); }}
         onFocus={() => setOffen(true)}
         onKeyDown={aufTaste}
-        // Mobil kurz: der lange Satz war auf 390 px ohnehin abgeschnitten und
-        // verriet gerade das Sprung-Beispiel nicht mehr, auf das es ankommt.
-        placeholder={istMobil ? 'Suche · OR 257d …' : 'Suchen oder Norm springen (z. B. «OR 257d») …'}
+        // Kurz, sobald der lange Satz nicht ins Feld passt: er war dort ohnehin
+        // abgeschnitten und verriet gerade das Sprung-Beispiel nicht mehr, auf
+        // das es ankommt. Der Auslöser ist seit LM-124 die gemessene Feldbreite
+        // statt der Viewport-Schwelle (Herleitung oben bei `platzKnapp`).
+        placeholder={platzKnapp ? PLATZHALTER_KURZ : PLATZHALTER_LANG}
         // text-base (16 px) UNTER sm: alles darunter löst in iOS Safari beim
         // Fokus einen Seiten-Zoom aus, aus dem der Nutzer von Hand wieder
         // herausfinden muss (S6). Ab sm bleibt die kompakte Streifen-Grösse.
