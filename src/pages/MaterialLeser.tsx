@@ -175,7 +175,24 @@ export function MaterialLeser() {
           Entscheid gebunden). */}
       <KontextPanel typ="material" normKeys={m.normKeys} />
 
-      <div className="border-t border-line pt-6">
+      {/* ── LM-137 (W2·17-UI-BEFUNDE/B16) · TRENNLINIEN DERSELBEN EBENE FLUCHTEN ─
+          Diese Linie lief ungedeckelt über die volle Spalte. Gemessen 4.9.2026
+          @1440 auf /materialien/ESTV-KS-DBG-5A (Preview von origin/main): die Linie
+          über «Alle Materialien» endete bei 1384, die Linie unter «KONTEXT»
+          unmittelbar darüber bei 952 — zwei Abschluss-Linien derselben Ebene in
+          zwei Breiten. Die 952 sind kein Defekt, sondern die Lesespalte, auf der
+          der ganze Seitenkörper steht (`lc-notice max-w-reading`, `KontextPanel`
+          `… max-w-reading`); es fehlte allein hier. Deckel angeglichen — der
+          Inhalt steht damit in EINER Spaltenbreite.
+
+          NICHT geändert, weil Kanon und kein Defekt: dass der Leser-KOPF breiter
+          läuft als der Körper. Das ist die Bänder-Ordnung des geteilten
+          `LeserKopfGeruest` (B-4), die Erlass-, Entscheid- und Material-Leser
+          gemeinsam tragen — dieselbe Trennung, die E6/A37 im Gesetz-Leser gebaut
+          hat (breiter Kopf, Lesespalte für den Text). Ebenso Kanon ist der im
+          selben Befund genannte Entscheid-Aufbau «Titel/Meta breit, Entscheidtext
+          in der Lesespalte» (Reglement R1, 60–75 Zeichen). */}
+      <div className="border-t border-line pt-6 max-w-reading">
         <Link to="/materialien" className="lc-btn lc-btn-outline lc-btn-sm">← Alle Materialien</Link>
       </div>
     </article>
