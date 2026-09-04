@@ -309,7 +309,9 @@ export function VerjaehrungForm() {
                 massgeblich={ergebnis.massgeblicheFrist === 'absolut'}
               />
             )}
-            <EckdatenKachel akzent num label="Verjährungseintritt"
+            {/* LM-034: «noch offen» ist ein Satz, keine Zahl — Mono nur, wenn
+                ein Datum steht (DESIGN-REGLEMENT §4b(e)). */}
+            <EckdatenKachel akzent num={!!ergebnis.verjaehrungISO} label="Verjährungseintritt"
               wert={ergebnis.verjaehrungISO ? `${datumOderStrich(ergebnis.verjaehrungISO)} · 24.00 Uhr` : 'noch offen'} />
             <div className="lc-tile">
               <p className="text-xs text-ink-500 mb-1">Am Stichtag ({datumOderStrich(stichtag)})</p>
