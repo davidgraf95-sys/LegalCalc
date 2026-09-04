@@ -89,15 +89,16 @@ export function fruehesSuchKuerzelStarten(): void {
   window.addEventListener('keydown', vorlauf);
 }
 
-/** Das Suchfeld meldet sich als Empfänger an.
- *  @returns true, wenn im Vorlauf ein Kürzel gedrückt wurde und der Aufrufer es
- *  jetzt einlösen soll (der Wunsch wird dabei verbraucht — er löst höchstens
- *  einmal aus). */
-export function suchKuerzelEmpfaengerAnmelden(fokussiere: () => void): boolean {
+/** Das Suchfeld meldet sich als Empfänger an — und löst dabei einen im Vorlauf
+ *  gemerkten Tastendruck ein (höchstens einmal; der Wunsch ist danach
+ *  verbraucht). Das Einlösen läuft bewusst DEFERRED: der Aufrufer ist ein
+ *  React-Effekt, und ein synchroner `setState` in dessen Rumpf kaskadiert
+ *  Renders (Repo-Muster, Tor `lint`/`react-hooks/set-state-in-effect`). */
+export function suchKuerzelEmpfaengerAnmelden(fokussiere: () => void): void {
   empfaenger = fokussiere;
-  const offen = wunschOffen;
+  if (!wunschOffen) return;
   wunschOffen = false;
-  return offen;
+  window.setTimeout(fokussiere, 0);
 }
 
 /** Abmelden beim Unmount — nur die EIGENE Anmeldung, damit ein Aufräumen nicht

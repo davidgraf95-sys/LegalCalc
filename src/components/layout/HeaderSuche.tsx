@@ -221,7 +221,7 @@ export function HeaderSuche({ onFokusModus, onFokusZurueck }: {
     // ersten React-Commit. Ein ⌘K aus dem Fenster davor hat `main.tsx` gemerkt
     // — hier wird es eingelöst. Ab der Anmeldung hält sich der Vorlauf heraus,
     // die Mechanik oben (samt Vorrangregel B1) bleibt die einzige, die zählt.
-    if (suchKuerzelEmpfaengerAnmelden(fokussiere)) fokussiere();
+    suchKuerzelEmpfaengerAnmelden(fokussiere);
     return () => {
       suchKuerzelEmpfaengerAbmelden(fokussiere);
       window.removeEventListener('keydown', handler);
