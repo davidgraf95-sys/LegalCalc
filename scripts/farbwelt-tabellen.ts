@@ -65,6 +65,39 @@ export const PFLICHT: Paar[] = [
   //     ihre brass-Kante auf `--surface` (dort 3.28, seit je Pflichtpaar). Ein
   //     Riss-Eintrag ohne belegten Konsumenten wäre ein erfundener Befund (§7),
   //     darum bleibt es ein Messwert in der Audit-Liste, kein Tor-Eintrag.
+  // ── QS-UI Teilpass (e), 5.9.2026: TEXT auf den TÖNUNGSFLÄCHEN ──────────────
+  // Die Baseline kannte für die getönten Flächen nur ihre KANTEN (NICHT(...))
+  // und je EINEN Textton (brass-800/brass-100, *-700/*-bg). Der Fliesstext und
+  // der Sekundärtext, die real darauf stehen, waren ungeprüft — 76 Call-Sites
+  // `bg-brass-100`, dazu jede `lc-notice`.
+  // ANLASS ist kein Verdacht, sondern ein Fund: das neue Flächen-axe-Tor
+  // meldete auf `/rechner/schkg-fristen` einen Feld-Hinweis in ink-500 im
+  // brass-Kasten mit 4.36:1 (AA verlangt 4.5) — an dieser Baseline vorbei, weil
+  // ink-500 nur gegen paper/surface/well/raised geprüft war. Nachgemessen am
+  // Token (culori, hell·dunkel): ink-500/brass-100 = 4.366·4.543 — im HELLEN
+  // Modus unter der Schwelle. Der Call-Site ist in derselben Einheit auf
+  // ink-600 gehoben; der Tier ink-500 gehört damit NICHT auf brass-100, und
+  // genau das hält die folgende Zeile fest, indem sie ink-600 als geprüften
+  // Boden festnagelt (ink-500 bleibt bewusst aussen vor — ein Pflichtpaar
+  // wäre heute rot, ein Riss-Eintrag eine Warnung ohne Konsumenten).
+  // Gemessen, alle mit Reserve (hell·dunkel):
+  //   ink-900/brass-100 14.283·12.173 · ink-600/brass-100 6.303·6.794
+  //   brass-700/brass-100 4.634·8.217
+  //   ink-900/{warn,danger,sage,slate}-bg 15.040·12.051 / 14.339·13.122 /
+  //     14.688·12.584 / 14.531·12.822
+  //   ink-600/{warn,danger,sage,slate}-bg 6.637·6.725 / 6.328·7.323 /
+  //     6.482·7.023 / 6.412·7.156
+  TEXT('ink-900', 'brass-100', 'QS-UI (e): Fliesstext im Hervorhebungskasten (.lc-highlight, bg-brass-100 ×76)'),
+  TEXT('ink-600', 'brass-100', 'QS-UI (e): Sekundär-/Hinweistext im brass-Kasten — Boden statt ink-500 (4.366 hell)'),
+  TEXT('brass-700', 'brass-100', 'QS-UI (e): Link/Akzent im brass-Kasten'),
+  TEXT('ink-900', 'warn-bg', 'QS-UI (e): Fliesstext in lc-notice-warn'),
+  TEXT('ink-900', 'danger-bg', 'QS-UI (e): Fliesstext in lc-notice-danger'),
+  TEXT('ink-900', 'sage-bg', 'QS-UI (e): Fliesstext auf sage-Tönung'),
+  TEXT('ink-900', 'slate-bg', 'QS-UI (e): Fliesstext auf slate-Tönung'),
+  TEXT('ink-600', 'warn-bg', 'QS-UI (e): Sekundärtext in lc-notice-warn'),
+  TEXT('ink-600', 'danger-bg', 'QS-UI (e): Sekundärtext in lc-notice-danger'),
+  TEXT('ink-600', 'sage-bg', 'QS-UI (e): Sekundärtext auf sage-Tönung'),
+  TEXT('ink-600', 'slate-bg', 'QS-UI (e): Sekundärtext auf slate-Tönung'),
   // Sekundär-/Meta-/Feinschrift-Basis (lc-overline/lc-fineprint/lc-notice = ink-600)
   TEXT('ink-600', 'well', 'lc-overline/lc-fineprint (index.css:350/374)'),
   TEXT('ink-600', 'paper', 'ink-600 Sekundärtext'),

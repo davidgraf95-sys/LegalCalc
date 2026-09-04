@@ -254,7 +254,20 @@ const Zeile = memo(function Zeile({
               // meldet die Zeile darum `true` (die Sektionen stehen offen), und
               // der erste Klick schliesst sie. Der zweite öffnet beides.
               onClick={() => onToggle(k.ids, auf)}
-              aria-expanded={auf} aria-label={auf ? 'Einklappen' : 'Aufklappen'}
+              // KONSTANTER, EINDEUTIGER Name (QS-UI Teilpass (e), 5.9.2026).
+              // Vorher: `auf ? 'Einklappen' : 'Aufklappen'` — zwei Fehler in
+              // einem, gemessen an /gesetze/bund/GEBV_HREG (11 Artikel):
+              // (1) der Zustand stand DOPPELT — `aria-expanded` sagt ihn schon,
+              //     der Name sagte ihn ein zweites Mal («Einklappen, erweitert»),
+              //     und er WECHSELTE beim Klick: Sprachsteuerung zielt danach auf
+              //     einen Namen, den es nicht mehr gibt;
+              // (2) der Name benannte nicht, WAS er klappt — mehrere Knöpfe der
+              //     Gliederung hiessen wortgleich «Aufklappen» und waren in der
+              //     Knopf-Liste eines Screenreaders ununterscheidbar (WCAG 4.1.2).
+              // Jetzt trägt der Name die Zeile, die er klappt; den Zustand trägt
+              // allein `aria-expanded`. Bewacht von `ARIA_ZUSTANDSNAME`
+              // (eslint.config.js).
+              aria-expanded={auf} aria-label={`«${voll}» auf- und zuklappen`}
               // F3/C5 (Design-Qualitäts-Pass 29.8.2026): ink-300 → ink-500.
               // Das Dreieck ist die EINZIGE Affordanz dieses Knopfes (kein
               // Rahmen, keine Fläche, 11 px). Gemessen gegen `--paper`:

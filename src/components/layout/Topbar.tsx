@@ -72,6 +72,20 @@ export function Topbar({ onMenu, schubladeOffen, seitenleisteEingeklappt, onSeit
         <button
           type="button"
           className="lc-btn lc-btn-ghost lc-btn-sm hidden lg:inline-flex shrink-0 min-h-11 min-w-11"
+          // ZURÜCKGESTELLT, nicht übersehen (QS-UI Teilpass (e), 5.9.2026).
+          // Gemessen @1440: vor dem Klick «Seitenleiste ausblenden» / pressed=true,
+          // danach «Seitenleiste einblenden» / pressed=false — der Zustand steht
+          // doppelt und in ENTGEGENGESETZTER Richtung («ausblenden, gedrückt»,
+          // während die Leiste eingeblendet IST). Richtig wäre ein konstanter
+          // Name («Seitenleiste ein- und ausblenden»), Zustand allein in
+          // `aria-pressed`. Der Umbau ändert den zugänglichen Namen und damit
+          // die Bestands-Assertion `e2e/leser-history-hash.e2e.ts:129`
+          // (`getByRole('button', { name: 'Seitenleiste einblenden' })`) —
+          // eine Test-Änderung ist nach §6.3 eine fachliche Änderung und gehört
+          // in einen eigenen deklarierten Schritt, nicht in diese Einheit
+          // (Auflage der Bau-Spec: Tests des Bestands nicht ändern).
+          // Protokolliert in fahrplaene/FAHRPLAN-UI-QUALITAET.md §2.4 Ziff. 1.
+          // eslint-disable-next-line no-restricted-syntax
           aria-label={seitenleisteEingeklappt ? 'Seitenleiste einblenden' : 'Seitenleiste ausblenden'}
           aria-pressed={!seitenleisteEingeklappt}
           onClick={onSeitenleisteUmschalten}

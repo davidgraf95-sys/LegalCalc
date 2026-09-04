@@ -36,6 +36,42 @@ Daraus folgen drei Leitsätze, die über allen Teil-Schritten stehen:
 **Ausdrücklich NICHT Ziel:** ein grosser visueller Wurf, ein Marken-Relaunch oder ein
 Umbau der Token-Schicht. Farbwärme/Atmosphäre ist und bleibt `W2·11-DESIGN`.
 
+## §2.4 · Teilpass (e) — Stand 5.9.2026 und offene Liste
+
+*(Neuer Abschnitt. §2.1–§2.3 liegen in [`archiv/fahrplaene/FAHRPLAN-UI-QUALITAET.md`](../archiv/fahrplaene/FAHRPLAN-UI-QUALITAET.md); dort steht die Herleitung, hier der laufende Stand. §4 Ziff. 1–3 — Gate-Verschärfung — ebenfalls im Archiv.)*
+
+**Erledigt in dieser Einheit** (Trailer `Roadmap: QS-UI`):
+
+| §4 | Punkt | Ergebnis |
+|---|---|---|
+| Ziff. 2 | axe von Stichprobe auf Flächendeckung | `e2e/a11y-flaeche.e2e.ts` — alle 62 prerenderten Routen (Quelle `prerenderRouten()`, §5 SSoT) statt bisher sieben, plus Rechner-Ergebnis und Wizard-Schritt 2. Erstlauf rot mit **vier** echten Verstössen (2 critical, 2 serious) auf `/rechner/schkg-fristen` und `/rechner/kuendigung`; alle vier gefixt, Nachlauf 58/58 grün in 29.4 s (4 Worker, lokal, kalt). |
+| Ziff. 1 | Farbwelt-Baseline enger | Pflichtpaare **80 → 102**: Fliesstext (ink-900) und Sekundärtext (ink-600) auf allen fünf Tönungsflächen (brass-100, warn/danger/sage/slate-bg) sind jetzt hart geprüft. Die Baseline kannte dort bisher nur die Kanten und je einen Textton — genau daran war der 4.36:1-Befund oben vorbeigelaufen. Keine neue Warnung; die acht beratenden D-1/D-4/D-5-Warnungen bleiben unverändert (ihr Abbau ist Token-Arbeit = `W2·11-DESIGN`, §0 «ausdrücklich NICHT Ziel»). |
+| §17 | `aria-label` mit Zustand | ESLint-Regel `ARIA_ZUSTANDSNAME` (`eslint.config.js`) — konstanter Name neben `aria-expanded/pressed/selected/checked`. Ein Fund gefixt (`SektionBaumTOC`), zwei zurückgestellt (unten). |
+
+**Offen — mit Grund, nicht vergessen:**
+
+1. **`Topbar.tsx` Seitenleisten-Schalter.** Gemessen @1440: «Seitenleiste ausblenden»/`pressed=true` →
+   nach Klick «Seitenleiste einblenden»/`pressed=false`. Der Zustand steht doppelt und
+   gegenläufig. Fix = konstanter Name; er ändert den zugänglichen Namen und damit die
+   Bestands-Assertion `e2e/leser-history-hash.e2e.ts:129`. Test-Änderung ist nach §6.3 eine
+   fachliche Änderung ⇒ eigener deklarierter Schritt. Inline gegrandfathert, mit Verweis hierher.
+2. **`ArtikelLeser.tsx` Artikel-Chevron.** Gemessen an `/gesetze/bund/GEBV_HREG`: **zwölf** Knöpfe
+   mit dem wortgleichen Namen «Artikel einklappen» auf einer Seite (auf dem OR wären es 1099) —
+   für Screenreader ununterscheidbar, für Sprachsteuerung nach dem Klick nicht mehr auffindbar
+   (WCAG 4.1.2). Muster für den Fix steht fertig im Zwilling `SektionBaumTOC.tsx`. Blockiert
+   durch `e2e/gesetze-ux-9punkte.e2e.ts:76–89` (dieselbe §6.3-Lage wie Ziff. 1).
+   **Ziff. 1+2 zusammen sind EIN kleiner Folgeschritt** — zwei `aria-label`, drei Test-Zeilen.
+3. **Restliste Ziff. 6/7 (Archiv §2.2/§2.3) unverändert offen:** der Settle-Fix gegen die
+   Falsch-Rot-Klasse von `e2e/qsui-hierarchie.e2e.ts` unter Parallel-Last (Ziff. 7) und das
+   Nachziehen von I3 auf `checkVisibility()` (Ziff. 6, ausdrücklich **erst nach** Ziff. 7).
+   Beide leben in `e2e/qsui-hierarchie.e2e.ts` — Bestands-Spec, in dieser Einheit per Auflage
+   nicht anzufassen. Sie brauchen denselben Folgeschritt-Rahmen wie Ziff. 1+2.
+4. **`bg-brass-200` als Text-Grund ungeprüft.** Gemessen ink-500/brass-200 = 3.739 hell ·
+   2.619 dunkel, ink-600/brass-200 = 5.398 · 3.917 — beide unter AA im dunklen Modus. Heute
+   folgenlos: die einzigen Call-Sites sind `hover:bg-brass-200` an `lc-chip` (Hover-Zustand,
+   von axe nicht gemessen). Kein Pflichtpaar aufgenommen, weil es heute rot wäre und der
+   Konsument ein Hover-Zustand ist — aber die Zahl steht hier, statt still zu verschwinden (§8).
+
 ## §8 · ROADMAP-Spec QS-UI (wörtlich verschoben 31.7.2026)
 
 > **→ Bau-Spec: §1–§6 dieser Datei.** Dieser § ist die *wörtlich hierher verschobene ROADMAP-Prosa* (Wortlaut-Heimat), nicht die Bau-Spezifikation — wer nur ihn slict, baut ohne die verbindlichen Einheiten, Entscheide und Querschnitt-Regeln.
