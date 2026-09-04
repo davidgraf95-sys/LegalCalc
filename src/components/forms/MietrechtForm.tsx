@@ -279,14 +279,25 @@ export function MietrechtForm() {
           {/* FE-5: byte-gleiches Markup → geteilte EckdatenKachel (Inventur
               10.6.2026: einzige exakt deckungsgleiche Rest-Dublette). */}
           <div className={`grid grid-cols-1 ${pk('sm:grid-cols-3', '@xl/pane:grid-cols-3')} gap-3`}>
-            <EckdatenKachel akzent num
+            {/* LM-039 (B11-Karten, 4.9.2026): der Platzhalter war ein nacktes
+                «–» — auf /rechner/mietrecht trug die dritte Kachel neben zwei
+                Datums-Kacheln nur diesen Strich (4.9. gemessen). Ein Strich
+                sagt nicht, WAS fehlt. Der Ersatztext ist bewusst der bereits im
+                Haus stehende Wortlaut für genau diesen Fall
+                (`lib/fristenspiegel/vermieterkuendigung.ts`: «kein Datum
+                berechnet»): er behauptet NICHT «nicht anwendbar» und nicht
+                «nicht berechenbar» — die Unterscheidung ist eine fachliche
+                Aussage, die die Engine heute nicht liefert (§8, §5).
+                LM-034: `num` folgt dem Wert, nicht der Kachel — Sätze bleiben
+                in der Textstimme (DESIGN-REGLEMENT §4b(e)). */}
+            <EckdatenKachel akzent num={ergebnis.status !== 'nichtig' && !!ergebnis.endtermin}
               label={ergebnis.status === 'nichtig' ? 'Form' : 'Mietverhältnis endet am'}
-              wert={ergebnis.status === 'nichtig' ? 'NICHTIG (Art. 266o OR)' : ergebnis.endtermin ?? '–'} />
-            <EckdatenKachel num label="Spätester Zugang für diesen Termin"
-              wert={ergebnis.spaetesterZugang ?? '–'} />
-            <EckdatenKachel num
+              wert={ergebnis.status === 'nichtig' ? 'NICHTIG (Art. 266o OR)' : ergebnis.endtermin ?? 'kein Datum berechnet'} />
+            <EckdatenKachel num={!!ergebnis.spaetesterZugang} label="Spätester Zugang für diesen Termin"
+              wert={ergebnis.spaetesterZugang ?? 'kein Datum berechnet'} />
+            <EckdatenKachel num={!!(ergebnis.zahlungsfristEnde ?? ergebnis.anfechtungBis)}
               label={ergebnis.zahlungsfristEnde ? 'Zahlungsfrist läuft bis' : 'Anfechtung/Erstreckung bis'}
-              wert={ergebnis.zahlungsfristEnde ?? ergebnis.anfechtungBis ?? '–'} />
+              wert={ergebnis.zahlungsfristEnde ?? ergebnis.anfechtungBis ?? 'kein Datum berechnet'} />
           </div>
 
           <ErgebnisAnzeige titel="Kündigungstermine und -fristen (Art. 253 ff. OR)" ergebnis={ergebnis} />

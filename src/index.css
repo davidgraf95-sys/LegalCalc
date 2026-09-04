@@ -1109,7 +1109,15 @@
   .lc-tile { @apply bg-surface-raised border border-line rounded-xl p-4; }
   /* Akzent-Oberkante (massgeblich) — EINE Quelle statt 6×
      inline border-t-[3px]; die Bedeutung trägt die Farbe, nicht die Stelle. */
-  .lc-akzent-brass { border-top: 3px solid var(--brass-line); }
+  /* LM-033 (B11-Karten, 4.9.2026): die Akzent-Oberkante ist 3 px stark, der
+     Rahmen von `.lc-tile` 1 px — die 2 px Differenz schoben den Inhalt der
+     hervorgehobenen Kachel nach unten. Gemessen auf `/rechner/mietrecht`
+     (1440 px): Beschriftung y 19 gegen 17 px, Wert y 40 gegen 38 px bei sonst
+     gleich hohen Kacheln (86 px); dasselbe auf erbteilung/verjaehrung. Die
+     2 px werden am Innenabstand zurückgenommen (`.lc-tile` = p-4 = 1rem, und
+     beide Klassen liegen ausschliesslich auf `.lc-tile`) — Oberkante und
+     Kachelhöhe bleiben unverändert, die Grundlinien fluchten wieder. */
+  .lc-akzent-brass { border-top: 3px solid var(--brass-line); padding-top: calc(1rem - 2px); }
   /* Danger-Variante derselben Oberkante (Design-Konsistenz R2-F/F1-5,
      31.8.2026). Sie markiert nicht «massgeblich», sondern «Sperre/kein
      statthaftes Rechtsmittel» — gemessen waren dafür drei handgebaute
@@ -1117,7 +1125,7 @@
      StrafZustaendigkeitTeil, VorlageKuendigungArbeitgeber). Die Farbe trägt
      die Bedeutung, die Anatomie ist dieselbe wie bei Messing; `--danger-line`
      hält den Kontrast im Dunkelmodus (index.css:461). */
-  .lc-akzent-danger { border-top: 3px solid var(--danger-line); }
+  .lc-akzent-danger { border-top: 3px solid var(--danger-line); padding-top: calc(1rem - 2px); }
 
   /* FristenKalender (Überarbeitung 7.6.2026, Auftrag David) — zwei Rezepte:
 
