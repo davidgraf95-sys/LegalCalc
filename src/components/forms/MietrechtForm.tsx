@@ -240,7 +240,14 @@ export function MietrechtForm() {
         )}
         {art === 'ordentlich' && istRaum && (
           <Field label="Vereinbarte Kündigungsfrist in Monaten" optional hint="Länger als das Gesetz zulässig; kürzer wäre nichtig (Art. 266a Abs. 1 OR)">
-            <input type="number" inputMode="decimal" min={1} value={fristMonate} onChange={(e) => setFristMonate(e.target.value)} className={inputCls + ' w-28'} />
+            {/* LM-072 (B12, 4.9.2026): die feste Feldbreite ist weg — das Feld folgt jetzt
+                seiner Rasterzelle wie jedes andere `Field` derselben Reihe. GEMESSEN
+                @1440 stand es als 112 px neben Feldern von 495 px, ohne dass die
+                schmalere Breite etwas aussagte (§8: eine Breite ist eine Zusage über
+                die erwartete Eingabelänge). Die schmalen Felder der INLINE-Reihen
+                (Zahl + Einheit nebeneinander, `w-24`) bleiben, dort trägt die Breite
+                die Zusammengehörigkeit. */}
+            <input type="number" inputMode="decimal" min={1} value={fristMonate} onChange={(e) => setFristMonate(e.target.value)} className={inputCls} />
           </Field>
         )}
         {art === 'zahlungsverzug' && (
