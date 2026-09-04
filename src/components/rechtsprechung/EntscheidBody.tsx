@@ -90,6 +90,20 @@ export function EntscheidBody({ abschnitte, zitierung, bgeReferenz }: {
     const basis = bgeReferenz ? `BGE ${bgeReferenz}` : zitierung;
     return e ? `${basis}, E. ${e}` : basis;
   }
+  // ── R4-D-AUSNAHME (5.9.2026), ausdrücklich statt still ────────────────────
+  // Diese Fläche schreibt als einzige der App noch selbst in die
+  // Zwischenablage. Grund: ihre Quittung ist KEINE Quittung im Sinne des
+  // geteilten Hooks. `useKopieren` setzt eine Marke, lässt sie 1600 ms stehen
+  // und nimmt sie zurück — für ein sichtbares ✓ am Knopf. Hier gibt es kein ✓;
+  // es gibt eine `aria-live`-Ansage für Screenreader (Z. 240), und die braucht
+  // den Zähler `n`: wird DIESELBE Fundstelle zweimal kopiert, ändert sich der
+  // Ansage-Text nicht, und ohne wechselnden Zustand liest der Screenreader die
+  // zweite Kopie nicht vor. Die Ansage darf auch nicht nach 1600 ms
+  // verschwinden — sie ist ein Ereignis, kein Zustand.
+  // Den Hook darauf zu biegen hiesse, zwei verschiedene Rückmeldungen in einen
+  // Baustein zu zwingen — genau die Abstraktion, vor der §1 warnt. Bewacht:
+  // `src/tests/eingabe-bausteine-r2e.test.tsx`, Abschnitt R4-D, zitiert diese
+  // Begründung wörtlich.
   function kopiere(ev: MouseEvent, zitat: string, anker: string) {
     if (typeof navigator !== 'undefined' && navigator.clipboard && typeof location !== 'undefined') {
       ev.preventDefault();
