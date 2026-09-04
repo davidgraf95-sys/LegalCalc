@@ -423,4 +423,4 @@ Phasenlage gekoppelt, neuer Absatz Gemini-Recherche, Definition of Done
 Punkt 7), Skill `bauschritt` Station E (Verweis auf Punkt 7), Skill
 `korpus-werkstatt` (Vorbedingungszeile, Kleinbefund-Regel), Skill
 `gegenpruefung` (Station Phase-3-Zählung), `fahrplaene/FAHRPLAN-FREMDAGENTEN.md`
-(§2/§3/§5 nachgezogen). Beleg PR #<wird beim PR-Erstellen nachgetragen>.
+(§2/§3/§5 nachgezogen). Beleg PR #660.
