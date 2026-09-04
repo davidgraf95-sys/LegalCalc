@@ -37,7 +37,15 @@ const GRUPPEN_BUDGET_ZEICHEN = 200_000;
 const AGY = join(process.env.HOME ?? '', '.local/bin/agy');
 const MODELL = 'gemini-3.1-pro-high';
 const PRINT_TIMEOUT_S = 300;
-const CHILD_TIMEOUT_MS = 340_000; // >= print-timeout(300s) + 30s (Fahrplan §4)
+// >= print-timeout(300s) + 30s ist die Fahrplan-§4-UNTERGRENZE. Beobachtung
+// Pilotlauf 4.9.2026 (VZV, grosse Gruppe): der agy-Prozess lief >400s, OHNE
+// dass execFileSync ihn beim vorherigen 340s-Wert sichtbar per SIGTERM beendet
+// hätte (manuell abgebrochen, nicht abschliessend geklärt ob/wann Node
+// eingegriffen hätte) — Timeout grosszügiger gesetzt UND killSignal auf
+// SIGKILL gehärtet (SIGTERM kann von einem Prozess ignoriert/verzögert
+// werden), damit ein hängender Lauf zuverlässig endet statt den ganzen
+// Skript-Durchlauf zu blockieren.
+const CHILD_TIMEOUT_MS = 600_000;
 
 interface Abweichung {
   artikel: string;
@@ -216,7 +224,7 @@ function rufeAgyAuf(prompt: string, tempDir: string, label: string): AgyLauf {
         `${PRINT_TIMEOUT_S}s`,
         '--sandbox',
       ],
-      { timeout: CHILD_TIMEOUT_MS, maxBuffer: 64 * 1024 * 1024, encoding: 'utf8' },
+      { timeout: CHILD_TIMEOUT_MS, killSignal: 'SIGKILL', maxBuffer: 64 * 1024 * 1024, encoding: 'utf8' },
     );
   } catch (err) {
     process.stderr.write(`agy-Aufruf fehlgeschlagen (${label}): ${(err as Error).message}\n`);
