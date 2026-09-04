@@ -145,6 +145,73 @@ describe('R3-α/B3-9 — die Kopier-Quittung steht überall gleich lang', () => 
   });
 });
 
+// ─── R4-D · EINE Kopier-MECHANIK, nicht nur eine Kopier-Zahl ────────────────
+//
+// GEMESSEN (5.9.2026, Quelltext): R3-α hatte die DAUER vereinheitlicht, die
+// Mechanik lief weiter fünfmal von Hand — und auseinander:
+//
+//   Fundort                        Erfolg erst nach Promise?  Timer-Ersatz  Unmount
+//   useKopieren (Kanon)                    ja                    ja           ja
+//   vorlagen/Dokumentmappe Z.123           ja                    ja           ja
+//   vorlagen/useWizardState Z.67           ja                    ja           ja
+//   pages/EntscheidLeser Z.582             ja                    NEIN         NEIN
+//   gesetz-leser/parts/ArtikelLeser Z.344  ja                    NEIN         NEIN
+//   components/LinkTeilenButton Z.47      NEIN                   NEIN         NEIN
+//
+// Die letzte Zeile war ein §8-Defekt: `void writeText(…)` plus sofortiges
+// `setKopiert(true)` meldete «Link kopiert ✓» auch über eine unveränderte
+// Zwischenablage — genau der Fehlgriff, gegen den `useKopieren` am 6.6.2026
+// gebaut wurde. Wurzel war die Signatur: der Hook nahm den Text an der
+// HOOK-Zeile, vier der fünf Flächen kennen ihn erst beim KLICK.
+describe('R4-D — `navigator.clipboard.writeText` läuft nur im geteilten Hook', () => {
+  /**
+   * Wer selbst schreiben darf — und WARUM. Die Begründung steht AM FUNDORT und
+   * wird hier wörtlich verlangt: eine Ausnahme, die man nur im Test sieht, ist
+   * eine unsichtbare Ausnahme (Doktrin `tests/appDateien.ts`, R3-α).
+   */
+  const ERLAUBT: Record<string, string> = {
+    'components/useKopieren.ts': 'die eine Mechanik',
+    'components/rechtsprechung/EntscheidBody.tsx':
+      'R4-D-AUSNAHME',
+  };
+
+  it('keine Fläche der App schreibt selbst in die Zwischenablage', () => {
+    const funde = alleQuellen()
+      .filter((d) => /clipboard\??\.\s*writeText/.test(liesOhneKommentare(d)))
+      .map(rel)
+      .filter((r) => !(r in ERLAUBT));
+    expect(funde, 'eigene Kopier-Mechanik statt `useKopieren` (components/useKopieren.ts)').toEqual([]);
+  });
+
+  it('jede Ausnahme trägt ihre Begründung am Fundort', () => {
+    for (const [r, grund] of Object.entries(ERLAUBT)) {
+      if (r === 'components/useKopieren.ts') continue;
+      const d = alleQuellen().find((x) => rel(x) === r);
+      expect(d, `${r} existiert`).toBeDefined();
+      expect(quelle(d!), `${r}: Begründung am Fundort`).toContain(grund);
+    }
+  });
+
+  it('NEGATIV-KONTROLLE: der Ausdruck findet die Vorher-Formen', () => {
+    // Wortlaute im Stand vom 31.8.2026 — Belege, nie nachgeführt (§2b).
+    for (const vorher of [
+      'void navigator.clipboard.writeText(`${location.origin}${pathname}${q}${hash}`);',
+      'navigator.clipboard?.writeText(text).then(',
+      'void navigator.clipboard?.writeText(text).then(() => {',
+    ]) {
+      expect(/clipboard\??\.\s*writeText/.test(vorher), vorher).toBe(true);
+    }
+    expect(/clipboard\??\.\s*writeText/.test('const { kopiert, kopieren } = useKopieren();')).toBe(false);
+  });
+
+  it('der Hook nimmt den Text auch beim Klick — sonst kann ihn niemand nutzen', () => {
+    const h = quelle(alleQuellen().find((d) => rel(d) === 'components/useKopieren.ts')!);
+    expect(h, '`kopieren(text)` bzw. `kopieren({text, marke})`')
+      .toMatch(/kopieren: \(was\?: string \| KopierAuftrag\) => void/);
+    expect(h, 'MARKE für Flächen mit zwei Kopier-Zielen').toContain('marke: string;');
+  });
+});
+
 describe('R2-E — der Wert-Vertrag der Bausteine bleibt unverändert', () => {
   it('DatumsFeld: ISO rein, TT.MM.JJJJ auf dem Schirm (F1-1)', () => {
     const html = renderToString(<DatumsFeld value="2026-06-01" onChange={() => {}} />);

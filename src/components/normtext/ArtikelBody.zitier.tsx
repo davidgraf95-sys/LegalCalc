@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { zitatMitAusweis, heuteIso } from '../../lib/format';
 import type { AusweisBasis } from './ArtikelBody.helfer';
+import { useKopieren } from '../useKopieren';
 
 // Klickbare Zitat-Marke (Absatznummer oder lit./Ziff.). Kopiert die präzise
 // Fundstelle; kurzes ✓ als Rückmeldung. Nur in der Lesesicht (zitierKontext).
@@ -9,7 +10,13 @@ import type { AusweisBasis } from './ArtikelBody.helfer';
 export function ZitierMarke({ zitat, ausweis, sup, klasse, children }: {
   zitat: string; ausweis?: AusweisBasis; sup?: boolean; klasse?: string; children: React.ReactNode;
 }) {
-  const [ok, setOk] = useState(false);
+  // R4-D (5.9.2026): hier stand eine SECHSTE handgebaute Kopier-Mechanik — und
+  // mit 1200 ms die VIERTE Verweildauer, obwohl R3-α die Dauer schon
+  // vereinheitlicht hatte. Der R3-α-Wächter sah sie nicht: sein Ausdruck sucht
+  // `setKopiert(`, diese Stelle heisst `setOk(`. Ein Wächter, der an einem
+  // Variablennamen hängt, bewacht den Namen, nicht die Sache (§6.7) — der
+  // R4-D-Sweep geht darum über `clipboard.writeText`.
+  const { kopiert: ok, kopieren } = useKopieren();
   const kopiere = () => {
     const text = ausweis && typeof window !== 'undefined'
       ? zitatMitAusweis(zitat, {
@@ -18,9 +25,7 @@ export function ZitierMarke({ zitat, ausweis, sup, klasse, children }: {
           permalink: `${window.location.origin}${ausweis.permalinkBasis}`,
         })
       : zitat;
-    void navigator.clipboard?.writeText(text).then(() => {
-      setOk(true); window.setTimeout(() => setOk(false), 1200);
-    });
+    kopieren(text);
   };
   // DESIGN-D0: `text-brass-700/55` → `text-brass-700`. Die Deckkraft war seit je
   // ein No-op (Fund B4) — ausgeliefert wurde immer das volle brass-700 (5.41:1,
