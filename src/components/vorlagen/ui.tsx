@@ -232,10 +232,24 @@ export function Stepper({ schritte, aktiv, onWechsel }: {
           return (
             <button key={s.id} type="button" onClick={() => i <= aktiv && onWechsel(i)}
               aria-current={istAktiv ? 'step' : undefined}
+              // ── LM-058 (B15, 4.9.2026) · ERREICHBARKEIT WIRD GESAGT ─────────
+              // GEMESSEN vor dem Bau auf `/rechner/zustaendigkeit` @1440
+              // (Schritt 1 aktiv): die Schritte 2-6 trugen `disabled=false`,
+              // `aria-disabled=null`, `cursor: default` und keinen `title` —
+              // der Klick lief still ins Leere (`i <= aktiv` fing ihn ab), und
+              // weder Maus noch Screenreader erfuhren, warum. Der halbe Befund
+              // war schon überholt (Fortschritt IST dargestellt: ✓-Kreise,
+              // aktiver Ring, mobile `role=progressbar`), diese Hälfte nicht.
+              // BEWUSST `aria-disabled` statt `disabled`: `disabled` nähme den
+              // Schritt aus der Tabreihenfolge und änderte damit die BEDIENUNG;
+              // hier ändert sich nur, was die Leiste über sich sagt (§3). Die
+              // Klick-Sperre bleibt Wort für Wort dieselbe.
+              aria-disabled={i > aktiv ? true : undefined}
+              title={i > aktiv ? 'Noch nicht erreichbar — vorherige Schritte zuerst ausfüllen' : undefined}
               className={`inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg text-xs font-medium transition-colors ${
                 istAktiv ? 'bg-surface-raised border border-line text-brass-700 shadow-sm'
                 : erledigt ? 'text-ink-700 hover:bg-brass-100/50'
-                : 'text-ink-500 cursor-default'
+                : 'text-ink-500 cursor-not-allowed'
               }`}>
               <span className={`num inline-flex items-center justify-center w-5 h-5 rounded-full text-micro ${
                 erledigt ? 'bg-brass-500 text-ink-900' : istAktiv ? 'border border-brass-500 text-brass-700' : 'border border-line text-ink-500'

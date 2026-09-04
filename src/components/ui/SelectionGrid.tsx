@@ -139,7 +139,22 @@ export function SelectionGrid<T extends string>({
                     — dort misst ink-500 4.37:1 (unter AA), ink-600 6.3:1. Die
                     Messung stammt von den Vorlagen-Kopien, die B3-4 hier
                     einzieht; sie darf beim Einziehen nicht verloren gehen. */}
-                {it.sub !== undefined && <span className="block text-xs text-ink-600">{it.sub}</span>}
+                {/* LM-130 (W2·17-UI-BEFUNDE-B9, 4.9.2026) · DIE UNTERZEILE BRICHT,
+                    SIE LÄUFT NICHT AUS DER KACHEL. Gemessen @390 auf
+                    `/vorlagen/nda`, Block «Detailgrad» (`grid-cols-3`, Spalte
+                    100 px): «vollständige Grundausstattung» brauchte 98 px in
+                    einem 74 px breiten Kasten — 24 px Überlauf, der über den
+                    Kartenrand und unter die Nachbarkachel lief (Screenshot-Beweis,
+                    ein DOM-Wächter allein hätte ihn nicht gezeigt). Ursache ist
+                    nicht das Raster, sondern das EINE unteilbare Kompositum:
+                    «Grundausstattung» ist breiter als jede 100-px-Spalte.
+                    Die Regel ist die des Hauses und wortgleich mit der des
+                    Vorlagen-Titels (`vorlagen/wizard.tsx`): `hyphens-auto` trennt
+                    an der Silbengrenze (mit Trennstrich, in Chromium headless wie
+                    headed gemessen), `[overflow-wrap:anywhere]` fängt den
+                    pathologischen Rest. Am Baustein, nicht an der Fundstelle —
+                    dieselbe Kachel-Anatomie trägt alle Untertyp-Raster (§5). */}
+                {it.sub !== undefined && <span className="block text-xs text-ink-600 [overflow-wrap:anywhere] hyphens-auto">{it.sub}</span>}
               </>
             )}
           </button>
