@@ -265,9 +265,15 @@ export function EinfacheFristForm({ minimal = false, onErgebnis, onEingaben }: {
             {FERIEN_OPTIONEN.map((o) => (
               <label key={o.code}
                 className={`lc-card px-3 py-2 cursor-pointer space-y-0.5 ${ferien === o.code ? 'ring-2 ring-brass-400' : ''}`}>
-                <span className="flex items-center gap-2">
+                {/* LM-077/LM-082 (B19): items-start statt items-center — bei
+                    zweizeiligen Titeln (z. B. «Betreibungsferien (SchKG)»)
+                    zentrierte der Radiobutton sonst zwischen den Zeilen statt
+                    auf Höhe der ersten Zeile zu stehen; das versetzte die
+                    gesamte Karte gegenüber einzeiligen Nachbarn um ~11 px. */}
+                <span className="flex items-start gap-2">
                   <input type="radio" name="einfache-frist-ferien" value={o.code}
-                    checked={ferien === o.code} onChange={() => waehleFerien(o.code)} />
+                    checked={ferien === o.code} onChange={() => waehleFerien(o.code)}
+                    className="mt-0.5" />
                   <span className="text-body-s font-medium text-ink-900">{o.label}</span>
                 </span>
                 <span className="block text-xs text-ink-500 leading-snug">{o.sub}</span>
