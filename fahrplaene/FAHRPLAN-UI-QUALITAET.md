@@ -50,6 +50,54 @@ Umbau der Token-Schicht. Farbwärme/Atmosphäre ist und bleibt `W2·11-DESIGN`.
 
 **Offen — mit Grund, nicht vergessen:**
 
+> **NACHTRAG 5.9.2026 — Folgeschritt `feat/qs-ui-aria-folgeschritt` (PR-Basis `feat/qs-ui-axe-aria`).**
+> **Ziff. 1, 2 und 3 sind damit erledigt**; die Absätze darunter bleiben im Wortlaut stehen,
+> weil sie den Stand vom 5.9.2026 *vor* diesem Schritt belegen (§0 Ziff. 2b: datierte Belege
+> werden ergänzt, nicht nachgeführt). Was gebaut wurde:
+>
+> - **Ziff. 1** `Topbar.tsx` → konstant «Seitenleiste ein- und ausblenden», Zustand allein in
+>   `aria-pressed`. Inline-Ausnahme entfernt, `ARIA_ZUSTANDSNAME` dort wieder scharf
+>   (Rot-Beweis: alte Namen probeweise zurückgebaut ⇒ `eslint` `Topbar.tsx 89:23 error`,
+>   `ArtikelLeser.tsx 493:31 error`, Exit 1; danach Exit 0).
+> - **Ziff. 2** `ArtikelLeser.tsx` → «‹Art. N› auf- und zuklappen» (Muster des Zwillings
+>   `SektionBaumTOC.tsx`), Zustand allein in `aria-expanded`. Inline-Ausnahme entfernt.
+>   **Dopplung gemessen** (Viewport 1440×900, alle `aria-expanded`-Knöpfe innerhalb der
+>   Artikel, 1.5 s nach `#art-1`): `/gesetze/bund/GEBV_HREG` **12 wortgleiche → 0**
+>   (13 Klappknöpfe, 13 verschiedene Namen); `/gesetze/bund/OR` **1598 wortgleiche →
+>   grösste Gruppe 12** («Art. 1»). *(Die 1598 sind dieselbe Sache wie die 1099 unten,
+>   nur mit weiterem Griff erhoben — beide Zahlen stehen, keine ersetzt die andere.)*
+>   Die restlichen 12 sind die «Art. 1» der Übergangsbestimmungen (`art-disp_uN_art_1`);
+>   **11 davon sind nicht sichtbar** (`checkVisibility() === false`), auf dem Schirm steht
+>   genau EIN «‹Art. 1› auf- und zuklappen». Ein Pfad-Präfix für die
+>   Übergangsbestimmungen wäre der nächste Schritt — heute ohne Nutzer-Schaden, darum
+>   gemeldet statt gebaut (§8).
+> - **Ziff. 3 · Restliste Ziff. 7 (Settle-Fix) war bereits gebaut**, nicht offen: der
+>   `test.beforeEach`-`reducedMotion`-Griff in `e2e/qsui-hierarchie.e2e.ts` stammt aus
+>   **PR #522 vom 15.8.2026** («qsui-hierarchie-Tor entflakt, 2 × 65/65 unter workers=16»).
+>   Die Zeile «unverändert offen» unten ist insoweit überholt. Nachgemessen 5.9.2026 am
+>   unveränderten Stand: `--workers=16` kalt direkt nach dem Build **65/65 grün (28.4 s)**,
+>   `--workers=14` warm **65/65 grün (27.8 s)** — 130/130. Gegen die dokumentierte Rate
+>   (3–6 von 65) ist das kein Glück, sondern eine Falsifikation (p ≈ 2·10⁻³ … 4·10⁻⁶).
+> - **Ziff. 3 · Restliste Ziff. 6 (I3 auf `checkVisibility()`) nachgezogen** — die
+>   Reihenfolge-Auflage «erst Ziff. 7» ist damit eingehalten. Die Optionen stehen als
+>   `SICHTBAR` genau einmal und werden von I3 und I6 geteilt (§5). **Rot-Beweis** am
+>   unveränderten Stand (Sonde `/rechner/verzugszins` @1280×800, 900-px-Absatz in
+>   denselben DOM injiziert, beide Filterketten nebeneinander):
+>   Fall A · Absatz in geschlossenem `<details>` → alt **1** Verstoss, neu **0**
+>   (genau die Falsch-Rot-Klasse) · Fall B · Absatz sichtbar → alt **1**, neu **1**
+>   (§6.7-Gegenprobe: das Tor beisst weiter). Nachlauf `--workers=16`: 65/65 grün.
+> - **Test-Änderungen** (deklarierte fachliche Änderung, §6.3-Ausnahme; Vorher/Nachher
+>   je Zeile im Commit-Body): `e2e/leser-history-hash.e2e.ts:129` sowie
+>   `e2e/gesetze-ux-9punkte.e2e.ts:76/80/88/89`. Das Umschalt-Signal, auf das die
+>   Gesetze-Spec wartete, ist nicht verloren, sondern präziser: statt auf einen
+>   Namenswechsel wartet sie auf `aria-expanded`.
+> - **Gemeldet, nicht gebaut:** in der Gliederung (`SektionBaumTOC.tsx`, in Teilpass (e)
+>   umgebaut) tragen auf `/gesetze/bund/GEBV_HREG` **zwei sichtbare** Knöpfe den
+>   wortgleichen Namen «‹Anhänge› auf- und zuklappen» — der Name führt nur den
+>   Knoten-Titel, nicht den Pfad. Dieselbe WCAG-4.1.2-Klasse, andere Datei; gehört in
+>   einen eigenen Schritt.
+
+
 1. **`Topbar.tsx` Seitenleisten-Schalter.** Gemessen @1440: «Seitenleiste ausblenden»/`pressed=true` →
    nach Klick «Seitenleiste einblenden»/`pressed=false`. Der Zustand steht doppelt und
    gegenläufig. Fix = konstanter Name; er ändert den zugänglichen Namen und damit die
