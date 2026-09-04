@@ -210,8 +210,11 @@ export function StreitwertForm() {
         )}
       </div>
 
-      {/* Widerklage */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+      {/* Widerklage — LM-080 (B19): pl-3 gleicht die linke Feldkante an die
+          Begehren-Unterkarte an (ListenEditor → `.lc-panel p-3`, geteilter
+          Baustein `vorlagen/ui.tsx` unverändert); ohne die Angleichung stand
+          diese Zeile rund 13 px weiter links als die Felder in «Begehren 1». */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pl-3">
         <Field label="Widerklage (CHF)" hint="leer lassen, wenn keine Widerklage (Art. 94 ZPO)">
           <BetragsFeld value={widerklageRoh} onChange={setWiderklageRoh} className={inputCls}
             placeholder="Streitwert der Widerklage" aria-label="Streitwert der Widerklage" />
