@@ -10,6 +10,7 @@
 import { describe, it, expect } from 'vitest';
 import {
   artikelLabelAusId,
+  schaeleJson,
   reduziereQuelleHtml,
   reduziereSnapshot,
   formatiereArtikel,
@@ -349,5 +350,48 @@ describe('(5) Absatzmarker auf beiden Pfaden gleich', () => {
       ],
     })]).get('9')!;
     expect(q.text).toBe(s.text);
+  });
+});
+
+describe('(6) schaeleJson — Verpackung der Modellantwort', () => {
+  // REALE Antworten aus den Pilotläufen vom 4.9.2026 (tempDir-Artefakt
+  // `gruppe0-lauf0-antwort-roh.txt`), nicht konstruiert.
+  it('nimmt bei ZWEI aneinandergehängten Objekten das letzte (schema-erzwungene)', () => {
+    // Mit --json-schema liefert agy erst das vom Modell formulierte Objekt,
+    // dann das erzwungene mit toolAction/toolSummary. Aneinandergehängt ist
+    // das kein gültiges JSON — genau daran scheiterte der DBG-Lauf.
+    const roh = `{
+  "modell": "Gemini 3.1 Pro",
+  "abweichungen": [
+    {
+      "artikel": "Art. 22",
+      "absatz": "3 a.",
+      "quelle": "",
+      "snapshot": "2. Ist dieser Zinssatz negativ oder null, so beträgt der Ertragsanteil null Prozent.",
+      "klasse": "leak"
+    }
+  ]
+}
+{"abweichungen":[{"absatz":"3 a.","artikel":"Art. 22","klasse":"leak","quelle":"","snapshot":"2. Ist dieser Zinssatz negativ oder null, so beträgt der Ertragsanteil null Prozent."}],"modell":"Gemini 3.1 Pro","toolAction":"Finishing task","toolSummary":"Finish task"}`;
+    const kern = schaeleJson(roh);
+    expect(kern).not.toBeNull();
+    const payload = JSON.parse(kern!) as { modell: string; abweichungen: unknown[]; toolAction?: string };
+    expect(payload.toolAction).toBe('Finishing task');
+    expect(payload.abweichungen).toHaveLength(1);
+  });
+
+  it('entfernt einen ```json-Zaun', () => {
+    expect(schaeleJson('```json\n{"modell":"x","abweichungen":[]}\n```')).toBe('{"modell":"x","abweichungen":[]}');
+  });
+
+  it('lässt sich von geschweiften Klammern IM Text nicht täuschen', () => {
+    const kern = schaeleJson('{"modell":"x","abweichungen":[{"quelle":"ein } im Text","klasse":"sonst"}]}');
+    expect(kern).not.toBeNull();
+    expect(JSON.parse(kern!).abweichungen[0].quelle).toBe('ein } im Text');
+  });
+
+  it('meldet kaputtes JSON als Fehlschlag statt es zu reparieren', () => {
+    expect(schaeleJson('Hier ist die Antwort: {"modell": "x", "abweichungen": [')).toBeNull();
+    expect(schaeleJson('gar kein JSON')).toBeNull();
   });
 });

@@ -499,3 +499,55 @@ export function waehleMitKontext(befunde: ArtikelBefund[], kontext = 1): string[
   });
   return [...gewaehlt].sort((a, b) => a - b).map((i) => befunde[i].artikel);
 }
+
+// ─── Antwort-Verpackung ──────────────────────────────────────────────────
+
+/**
+ * Schält das massgebliche JSON-Objekt aus einer Modellantwort.
+ *
+ * Zwei Verpackungen kommen real vor (beide am 4.9.2026 gemessen):
+ *   - ein ```json-Zaun oder ein Begleitsatz um das Objekt herum;
+ *   - MIT `--json-schema` liefert agy ZWEI Objekte hintereinander — erst das
+ *     vom Modell formulierte, dann das schema-erzwungene (zusätzlich mit
+ *     `toolAction`/`toolSummary` angereichert). Aneinandergehängt ist das
+ *     kein gültiges JSON; das LETZTE Objekt ist das massgebliche.
+ *
+ * Darum: alle Objekte auf oberster Klammerebene sammeln und von hinten das
+ * erste zurückgeben, das sich parsen lässt. Bewusst KEIN Reparieren von
+ * kaputtem JSON — was auch so nicht parst, bleibt ein Fehlschlag.
+ */
+export function schaeleJson(roh: string): string | null {
+  const text = roh.trim().replace(/^```(?:json)?\s*/i, '').replace(/\s*```$/, '').trim();
+  const kandidaten: string[] = [];
+  let tiefe = 0;
+  let start = -1;
+  let imString = false;
+  let escaped = false;
+  for (let i = 0; i < text.length; i++) {
+    const c = text[i];
+    if (imString) {
+      if (escaped) escaped = false;
+      else if (c === '\\') escaped = true;
+      else if (c === '"') imString = false;
+      continue;
+    }
+    if (c === '"') { imString = true; continue; }
+    if (c === '{') {
+      if (tiefe === 0) start = i;
+      tiefe++;
+    } else if (c === '}') {
+      tiefe--;
+      if (tiefe === 0 && start !== -1) {
+        kandidaten.push(text.slice(start, i + 1));
+        start = -1;
+      }
+    }
+  }
+  for (let i = kandidaten.length - 1; i >= 0; i--) {
+    try {
+      JSON.parse(kandidaten[i]);
+      return kandidaten[i];
+    } catch { /* nächsten Kandidaten versuchen */ }
+  }
+  return null;
+}

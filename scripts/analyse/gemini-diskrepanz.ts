@@ -44,6 +44,7 @@ import { join } from 'node:path';
 import type { NormSnapshotDatei } from '../../src/lib/normtext/typen.ts';
 import {
   ermittleAbweichungen,
+  schaeleJson,
   formatiereArtikel,
   reduziereQuelleHtml,
   reduziereSnapshot,
@@ -307,12 +308,43 @@ ${snapshot}
 `;
 }
 
+/**
+ * JSON-Schema für die Antwort — von der Fahrplan-Spec (§2 Phase 2) verlangt
+ * («--json-schema mit Selbstangabe-Feld `modell`»), in der ersten Fassung
+ * aber nie übergeben. Ohne Schema antwortete Gemini in den Pilotläufen vom
+ * 4.9.2026 in 2 von 2 Erlassen in EINEM der beiden Läufe mit etwas, das kein
+ * nacktes JSON war — der Konsens ist damit strukturell immer leer.
+ */
+const ANTWORT_SCHEMA = JSON.stringify({
+  type: 'object',
+  properties: {
+    modell: { type: 'string' },
+    abweichungen: {
+      type: 'array',
+      items: {
+        type: 'object',
+        properties: {
+          artikel: { type: 'string' },
+          absatz: { type: 'string' },
+          quelle: { type: 'string' },
+          snapshot: { type: 'string' },
+          klasse: { type: 'string', enum: ['drop', 'leak', 'tabelle', 'bister', 'zahl', 'sonst'] },
+        },
+        required: ['artikel', 'absatz', 'quelle', 'snapshot', 'klasse'],
+      },
+    },
+  },
+  required: ['modell', 'abweichungen'],
+});
+
 function rufeAgyAuf(prompt: string, tempDir: string, label: string, modell: string): AgyLauf {
   // Temp-Datei als Provenienz/Debug-Artefakt (Fahrplan-Vorgabe); die Übergabe an
   // agy selbst läuft per argv (execFileSync ohne Shell — kein `$(cat …)`-Quoting-
   // Risiko), aber sie MUSS unter der Linux-Einzelargument-Grenze bleiben.
   const promptDatei = join(tempDir, `${label}.txt`);
   writeFileSync(promptDatei, prompt, 'utf8');
+  const schemaDatei = join(tempDir, 'antwort-schema.json');
+  writeFileSync(schemaDatei, ANTWORT_SCHEMA, 'utf8');
   const bytes = Buffer.byteLength(prompt, 'utf8');
   if (bytes > MAX_ARG_BYTES) {
     // Lieber ein sichtbarer Status als ein E2BIG, das nur auf Linux auftritt:
@@ -333,6 +365,8 @@ function rufeAgyAuf(prompt: string, tempDir: string, label: string, modell: stri
         prompt,
         '--model',
         modell,
+        '--json-schema',
+        schemaDatei,
         '--output-format',
         'json',
         '--print-timeout',
@@ -361,9 +395,12 @@ function rufeAgyAuf(prompt: string, tempDir: string, label: string, modell: stri
     return { status: envelope.status, modell: '', abweichungen: [], dauerS: envelope.duration_seconds ?? 0, tokens: envelope.usage?.total_tokens ?? 0 };
   }
   let payload: { modell: string; abweichungen: Abweichung[] };
+  const kern = schaeleJson(envelope.response ?? '');
   try {
-    payload = JSON.parse(envelope.response);
+    if (kern === null) throw new Error('kein JSON-Objekt in der Antwort');
+    payload = JSON.parse(kern);
   } catch {
+    writeFileSync(join(tempDir, `${label}-antwort-roh.txt`), envelope.response ?? '', 'utf8');
     return { status: 'ANTWORT_KEIN_JSON', modell: '', abweichungen: [], dauerS: envelope.duration_seconds, tokens: envelope.usage?.total_tokens ?? 0 };
   }
   return {
