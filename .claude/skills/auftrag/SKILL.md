@@ -139,7 +139,7 @@ Agenten-Aussage «Vorbestand/Flake, per Nullprobe belegt» gilt nur mit
 Kommando + Ausgabe der Probe im Bericht; ohne Beleg gilt sie als nicht
 erbracht und die Haupt-Session misst selbst nach. Anlass: eine falsche
 Nullproben-Behauptung hätte eine echte Lesemass-Regression beinahe
-durchgelassen — erst die Gegen-Messung auf main fing sie.
+durchgelassen — erst die Gegen-Messung auf main fing sie. **Repo-Fakt-Behauptungen («es gibt kein X») nur mit repo-weiter Suche** (`grep -rn` über `scripts/ src/`, Blick in `dist/`), nie nur nach Dateinamen unter `public/` — Beleg 4.9.2026: «keine Sitemap» war falsch (Generator inline in `scripts/prerender.ts`), ein Sonnet-Bauer fing es per Nullprobe vor dem Bau ab.
 
 **Rollenteilung** (David 4./7.8.2026): Der Orchestrator delegiert Bau- und
 Prüfarbeit, macht aber selbst: Plan-/Doku-Buchhaltung, Landungs-Mechanik,

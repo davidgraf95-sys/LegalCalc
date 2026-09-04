@@ -95,7 +95,7 @@ Issue. Claude prüft nach Skill `landung` §«Fremde PRs (Jules)» und landet.
 
 **Fremd-PR-Tor in CI, Anlass T6 — gebaut 4.9.2026.** Shell-Schritt «Fremd-PR-Tor»
 im CI-Job «Tore» (`.github/workflows/ci.yml`; bewusst kein eigenes `check-*.ts`, Steuerungs-Deckel §17-Gegengewicht — Regel 1 nutzt `scripts/analyse/test-assertion-diff.ts`): für Branches im
-Jules-Muster (19-stellige Task-ID oder «jules» im Namen; Beleg 4.9.2026 PR #647: `jules-1111541331587033919-8d87826d`) (`*-<19-stellige Task-ID>`) automatisch (1) den Assertion-Diff
+Jules-Muster (19-stellige Task-ID oder «jules» im Namen; Beleg 4.9.2026 PR #647: `jules-1111541331587033919-8d87826d`) automatisch (1) den Assertion-Diff
 (`scripts/analyse/test-assertion-diff.ts` gegen `merge-base(origin/main,
 HEAD)`) und (2) eine Datei-Allowlist `src/**` prüfen — strenger als die
 ursprüngliche Prosa («Risikopfad-/Steuer-Doku-Berührung»): eine Allowlist
@@ -379,6 +379,14 @@ Schritte — eine Quote ohne Bedingung ist keine Zahl.
 
 - **Keine Sitemap** — kein `public/sitemap*`, kein Generator-Skript. Das ist die
   Lücke, die der neue Schritt `SEO-BASIS` schliesst (D5).
+  **Korrektur 4.9.2026 (Nullbefund Sonnet-Bauer beim Bau von `SEO-BASIS`): FALSCH.**
+  Die Sitemap existiert seit 11.6.2026 (Commit a29fbe6c2; Index mit 4 Teil-Sitemaps seit
+  1.9.2026, #612): Generator inline in `scripts/prerender.ts` (~Z. 463–504), schreibt
+  `dist/sitemap.xml` + `dist/robots.txt` (8280 URLs, `SITE_URL` aus `src/lib/seo.ts`),
+  Drift-Check im Build, Prod-Smoke `scripts/betrieb/prod-smoke.ts`, Tests `src/tests/seo.test.ts`.
+  Der Faktencheck vom 3.9. suchte nur Dateinamen unter `public/` — Lehre: Repo-Fakten nur mit
+  repo-weitem `grep` und Blick in `dist/` behaupten (Skill `auftrag` Ziff. 6). `SEO-BASIS` ist
+  technisch erledigt; offen bleibt nur die Search-Console-Verifikation (David, kein Bau).
 - **Lighthouse ist vorhanden** (`.github/workflows/perf-kalibrierung.yml`, `scripts/perf/lighthouse-budget.ts`)
   — nichts zu tun.
 - **Keine Google-Fonts-CDN-Links** im Repo — das gerichtlich bestätigte
@@ -403,13 +411,30 @@ unten; nicht geschätzt):
    den Whitelist-Diff fahren — kein Ermessen (Skill `landung` §«Fremde PRs»).
 2. Auftrags-Vorlage: Die Whitelist bleibt Pflicht, aber der Schutz kommt aus
    dem Review, nicht aus dem Text von `AGENTS.md`.
-3. **Neuer Phase-1-Punkt (Prosa, noch nicht gebaut):** Fremd-PR-Tor in CI —
+3. **Phase-1-Punkt — gebaut 4.9.2026 (#645, Branch-Muster #649):** Fremd-PR-Tor in CI —
    für Branches im Jules-Muster (`*-<19-stellige Task-ID>`) automatisch den
    Assertion-Diff gegen `main` sowie Risikopfad-/Steuer-Doku-Berührung
    prüfen, rot bei Abweichung. Siehe §2 Phase 1.
 
 **Phase-0-Fertig-Kriterium:** Werte eingetragen ⇒ **Phase 1 offen** (T4 bleibt
 Davids Sache, unabhängig davon).
+
+**Phase 1 — Messwerte (4.9.2026, abgeschlossen):**
+
+| Teil | Befund |
+|---|---|
+| Pilot 2 (Issue #643 → PR #648) | `normtext-fedlex.test.ts` 940 Z. → 4 Dateien (max. 455); 25 describe / 81 it / 172 expect identisch (AST-Diff); eigener Vitest-Lauf 81 grün; Ticket→PR 30 min; Nacharbeit 0 Code, 1 Form (Trailer). Merge `cecaa3ccf`. |
+| Pilot 3 (Issue #644 → PR #647) | `vorlagen.test.ts` 893 Z. → 4 Dateien (max. 423); 11 / 70 / 243 identisch; 99 Tests grün; 30 min; Nacharbeit 0 Code, 1 Form. Merge `77f08f29e`. Branch hiess `jules-1111541331587033919-8d87826d` ⇒ Muster-Fix #649. |
+| Fremd-PR-Tor scharf | CI-Step lief auf #647 und #648 real (Jules-Branch erkannt, drei Vergleiche «identisch»); auf Nicht-Jules-Branches «nicht zuständig». Kein eigenes `check-*.ts` (Steuerungs-Deckel riss um 3,5 KB ⇒ Rückbau auf Shell-Step, §17-Gegengewicht). |
+| Quote ohne Nacharbeit | **3 von 3** Jules-PRs ohne Code-Nacharbeit durch Gate + Landungs-Check (n = 3, 3./4.9.2026, Art: Test-Splits). Schwelle «< 2 von 3» nicht gerissen. Einziger wiederkehrender Mangel: fehlender `Roadmap:`-Trailer (Form, beim Squash nachgesetzt). |
+| Claude-Token pro gelandetem Schritt | Bauleiter-Review eines Jules-PRs ≈ 10–20k Token (Diff-Stat, AST-Diff, eigener Testlauf, Squash); Bau durch Claude-Unteragent in dieser Session 118k (T5-Probe) bis 275k (Phase-0-PR) ⇒ Faktor ~5–10 zugunsten Jules — Messbedingung: mechanische Schritte, n = 3; Landungs-Mechanik (CI-Warten, update-branch) kommt in beiden Fällen dazu. |
+| Beobachtung | E2E-Shards 2/8 flackerten einmal auf dem aktualisierten #650 (Artikel-Anker, Richter-Facette), Rerun grün; main gleichzeitig grün. |
+
+**Stand nach dieser Session (4.9.2026):** Phase 0 ✓ · Phase 1 ✓ (3/3) · Phase 2 ✓ (#650,
+Diskrepanz-Finder mit deterministischem Erstfilter, Pilot AMBV 8/8 klassiert) · **offen:** Phase 3
+(Zweitblick-Messung, fünf echte Gegenprüfungen — entsteht im Alltag, nicht erzwingbar) und Phase 4
+(Skalierung: 3–5 Jules-Issues pro Session; Jules-API mit Plan-Gegenlesen D4; Antigravity-Claude D7).
+Schritt-Status darum `ready`, nicht `wip`.
 
 ## §6 · Entscheide (David, 3.9.2026)
 
@@ -435,7 +460,7 @@ Repo-Ist-Stand vom 3.9.2026.
 
 | Werkzeug | Befund | Einordnung |
 |---|---|---|
-| Search Console + Sitemap | gratis, nur Domain-Verifikation; **Repo hat keine Sitemap** | **nehmen** — Schritt `SEO-BASIS` (D5), direkter Nordstern-Hebel |
+| Search Console + Sitemap | gratis, nur Domain-Verifikation; ~~Repo hat keine Sitemap~~ **Korrektur 4.9.2026: Sitemap existiert** (Repo-Fakten oben) | Search-Console-Verifikation durch David; `SEO-BASIS` technisch erledigt (Nullbefund) |
 | Lighthouse CI | **schon vorhanden** | nichts zu tun |
 | Google Fonts self-host | **nicht betroffen** (kein CDN-Link) | nichts zu tun |
 | Chrome DevTools MCP | offiziell, gratis, **nicht konfiguriert** | nachrangig; bei QS-PERF-Bedarf |

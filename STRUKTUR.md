@@ -34,6 +34,19 @@ werden direkt unter dem KARTEN-Anker eingefügt (jüngste zuoberst).
 
 <!-- KARTEN -->
 
+## Session 4.9.2026 — QS-FREMDAGENTEN Phase 1 + 2 gelandet, SEO-BASIS Nullbefund, Landungskette 645–650
+
+Gelandet: #641 Phase-0-Ergebnisse (AST-Assertion-Diff, Plan-Buchung-Fix inkl. Fence-Zitate,
+Opus-Zweitblick 2×), #645 Fremd-PR-Tor als CI-Shell-Step (Rückbau statt Deckel-Anhebung),
+#649 Jules-Branch-Muster, #647/#648 Jules-Piloten 2+3 (Test-Splits, 3/3 ohne Code-Nacharbeit,
+Tor lief scharf grün), #650 Gemini-Diskrepanz-Finder (Opus widerlegte Fassung 1 — Label-/
+Tabellen-/Aufhebungs-Scheinfunde, stille Berichte; Nachbesserung mit deterministischem
+Erstfilter, 10 neue Tests Rot/Grün, Pilot AMBV 8/8, Bauleiter-Kontrolllauf). Nullbefund
+`SEO-BASIS`: Sitemap existiert seit 11.6.2026 — Faktencheck vom 3.9. war falsch, Schritt `done`,
+Lehre in Skill `auftrag` Ziff. 6. Korpus-Funde unter `QS-KORPUS` gebucht (AMBV Silbentrennung,
+VZV Art. 3 Marken). `QS-FREMDAGENTEN` ⇒ `ready` (offen: Phase 3 Zweitblick-Messung, Phase 4
+Skalierung). E2E-Shards 2/8 einmal geflackert (Rerun grün).
+
 ## Session 3.9.2026 — QS-FREMDAGENTEN Phase 0 abgeschlossen (T1–T6), zwei Wurzel-Fixes, Opus-Gegenprüfung bestanden
 
 Gelandet: #636 Grundlagen (`AGENTS.md`, Fahrplan, Testphase, SEO-BASIS), #639

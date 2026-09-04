@@ -57,6 +57,16 @@ Zufall des Crawlers; das ist der billigste Hebel auf den Nordstern
 «von Juristen gern genutzte Website». Beleg und Einordnung:
 [FAHRPLAN-FREMDAGENTEN.md](FAHRPLAN-FREMDAGENTEN.md) §7.
 
+**Nullbefund 4.9.2026 (Sonnet-Bauer, vor dem Bau geprüft — §0 Ziff. 3a):** Der Anlass ist
+falsch. Die Sitemap existiert seit 11.6.2026 (Commit a29fbe6c2), als Index mit 4 Teil-Sitemaps
+seit 1.9.2026 (#612): Generator inline in `scripts/prerender.ts` (~Z. 463–504), Ausgabe
+`dist/sitemap.xml` + `dist/robots.txt` (8280 URLs), `SITE_URL` aus `src/lib/seo.ts`,
+Vollständigkeits-Drift-Check im Build, Prod-Smoke `scripts/betrieb/prod-smoke.ts` Z. 119–124,
+Tests `src/tests/seo.test.ts`. Ein zweiter Generator hätte die Sitemap auf 62 Katalog-Routen
+verkleinert — bewusst NICHT gebaut (§5). **Damit sind die Ziele 1 und 2 unten bereits erfüllt;
+offen ist nur Ziel 3, die Search-Console-Verifikation (Davids Handgriff, kein Bau).** Schritt
+`SEO-BASIS` ⇒ `done` (4.9.2026).
+
 **Ziel (drei Teile):**
 
 1. **Deterministischer Sitemap-Generator** aus dem Prerender-Manifest — dieselbe
