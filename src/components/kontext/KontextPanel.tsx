@@ -607,10 +607,30 @@ export function KontextPanel({ typ, normKeys, zusatzGruppen, ohneNormen = false,
                             {artikel && (
                               <span className="num text-micro text-ink-500"> · via Art. {artikel}</span>
                             )}
-                            {r.regesteKurz && <span className="text-ink-500"> — {absicherWortgrenze(r.regesteKurz)}</span>}
                           </Link>
                           {kannOeffnen && !istOffen(ziel) && (
                             <DanebenKnopf ziel={ziel} label={r.zitierung} oeffneDaneben={oeffneDaneben} className="ml-1 align-middle" />
+                          )}
+                          {/* LM-129 (W2·17-UI-BEFUNDE-B9, 4.9.2026) · DER AUSZUG IST EIN
+                              ABSATZ, KEIN LINKTEXT — UND DAS ⧉ STEHT NICHT DARIN.
+                              Gemessen @1440 auf `/materialien/ESTV-KS-DBG-5A`: der
+                              Regeste-Auszug lief als Fortsetzung DESSELBEN <a> hinter der
+                              Zitierung her, das ⧉ folgte ihm und landete dadurch mitten in
+                              der dritten Zeile (gemessen 42 px unter der Eintragsoberkante,
+                              x = 729 in einem 312–952 px breiten Eintrag) — ein
+                              Bedienelement im Fliesstext. Der Auszug steht jetzt als
+                              eigener Block darunter; das ⧉ schliesst die kurze
+                              Zitierungs-Zeile ab und steht damit am Zeilenrand.
+                              MITBEHOBEN, gleiche Wurzel: der zugängliche Name des Links
+                              war Zitierung PLUS bis zu 240 Zeichen Regeste — jetzt trägt
+                              er nur noch das, was er ansteuert. Der em-Strich entfällt: er
+                              war der Inline-Trenner, den der Zeilenumbruch ersetzt.
+                              Wortlaut unverändert (`absicherWortgrenze` wie zuvor) — die
+                              im Befund gerügte Trennung MITTEN IM WORT ist am gebauten
+                              Stand nicht mehr reproduzierbar (alle 8 Auszüge enden an
+                              einer Wortgrenze), sie steht darum nicht zur Debatte. */}
+                          {r.regesteKurz && (
+                            <span className="mt-0.5 block text-ink-500">{absicherWortgrenze(r.regesteKurz)}</span>
                           )}
                         </li>
                       );
