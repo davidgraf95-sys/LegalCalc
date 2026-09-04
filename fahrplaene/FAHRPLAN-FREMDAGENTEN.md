@@ -129,7 +129,8 @@ bis/ter-Fix — betraf u. a. AMBV und VZV):
 |---|---|---|---|---|---|---|
 | AMBV | 1 | 2 | 101 299 | 135.2 s | SUCCESS/SUCCESS | 0 |
 | AMBV (Zweitlauf, Bug-Reproduktion `--laeufe 0`) | 1 | 2 | 97 220 | 161.8 s | SUCCESS/ANTWORT_KEIN_JSON | 0 (Konsens korrekt leer — ein Lauf lieferte kein valides JSON, die Fallback-Wache griff) |
-| VZV | siehe unten | 2 | siehe unten | siehe unten | siehe unten | siehe unten |
+| VZV (Art. 1–40, 173k Zeichen, 1 Gruppe) | 1 | 2 | — | >600 s (Lauf 1 ETIMEDOUT) | ERROR/abgebrochen | 0 (Konsens korrekt leer — Timeout-Wache griff) |
+| VZV (Art. 1–10, 63k Zeichen, 1 Gruppe) | 1 | 2 (Lauf 2 nach Lauf-1-Timeout abgebrochen) | — | >600 s (Lauf 1 ETIMEDOUT) | ERROR/abgebrochen | 0 (Konsens korrekt leer) |
 
 AMBV: keine Funde — Negativ-Kontrolle (Erlass ohne bekannten Extraktionsfehler).
 Scope V1: nur `<article id="art_N">`-Artikel (kein Anhang-Tabellenparsing) —
@@ -137,8 +138,29 @@ sonst systematischer Scheinfund «kein Fedlex-Artikel gefunden» je
 Anhangs-Eintrag (beobachtet am ungefixten AMBV-Lauf, in
 `reduziereSnapshot`-Filter behoben). HINWEIS: der historische T2-bister-Fall
 (VZV Anhang 1bis, Fix 5bf9dbb9a) lag selbst in einem Anhang — Scope V1 kann
-ihn NICHT wiederfinden; der VZV-Pilotlauf unten prüft nur die Artikel-Ebene
-desselben Erlasses, ist also KEIN Recall-Test des bekannten Falls.
+ihn NICHT wiederfinden; die VZV-Pilotläufe unten prüfen nur die Artikel-Ebene
+desselben Erlasses, sind also KEIN Recall-Test des bekannten Falls.
+
+**Timing-Befund (eigener Fund, nicht im T2-Recall-Test sichtbar):** T2 mass
+kleine, handkuratierte Ausschnitte (10–40k Zeichen, 45–140 s). Ein ECHTER
+Artikel-Bereich mit vollem Kontext skaliert schlechter UND hängt nicht nur an
+der Zeichenzahl: VZV Art. 1–40 (173k Zeichen) UND selbst Art. 1–10 (63k
+Zeichen, deutlich unter AMBVs 62k/135s) liessen `agy --effort high` je über
+600 s laufen, bis der gehärtete Timeout (`killSignal SIGKILL`, s. Commit
+`fix(gemini-diskrepanz)`) sauber mit `ETIMEDOUT` griff — die Konsens-Wache
+zeigte danach korrekt 0 Funde statt eines falschen Erfolgs. Erste Fassung des
+Skripts (Timeout 340s, Default-`killSignal SIGTERM`) hatte den ersten dieser
+Läufe NICHT beendet (>400s ohne Terminierung, manuell abgebrochen) — das
+Härten war kein Nice-to-have, sondern behob einen echten Hänger. Dass AUCH
+das kleinere Art.-1–10-Fenster nicht in 600s durchlief (Lauf 2 nach
+Lauf-1-Timeout ungeduldig abgebrochen statt ein zweites Mal 600s abzuwarten),
+spricht dafür, dass VZVs Inhalt (dichte technische Aufzählungen,
+Fahrzeug-/Führerschein-Kategorien) bei `--effort high` grundsätzlich lange
+Denkzeit braucht — nicht nur die Zeichenzahl. Praxisfolge: bei Erlassen
+dieser Art zuerst mit `--effort medium` oder sehr kleinen `--artikel`-Fenstern
+(≤5 Artikel) prüfen, ob ein Lauf überhaupt in nützlicher Zeit durchläuft,
+bevor grössere Gruppen gefahren werden — offene Frage für David/Folge-Session,
+nicht in diesem Schritt final geklärt.
 
 
 ### Phase 3 — Zweitblick-Messung (5 Durchgänge, verteilt)
