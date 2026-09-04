@@ -3,7 +3,7 @@
 Verwendung: Roadmap-Schritt/Unterpunkt ausgewählt (Kriterien: Skill `auftrag` Ziff. 6 «Grüne Spur →
 Jules»), Platzhalter ersetzen, als GitHub-Issue mit Label `jules` anlegen (`gh issue create --label jules
 --body-file …`). Jules startet innert Minuten, liefert nach ~30 min einen PR unter dem Konto des
-Repo-Eigentümers (Branch mit 19-stelliger Task-ID oder «jules» im Namen). Landung: Skill `landung`
+Repo-Eigentümers (Branch mit 19-stelliger Task-ID; eigene Branches nie mit `jules-`/`jules/` beginnen). Landung: Skill `landung`
 §«Fremde PRs (Jules)» — eigener Tor-Lauf, `scripts/analyse/test-assertion-diff.ts`, Whitelist-Diff,
 Trailer beim Squash nachsetzen. Das Beispiel unten ist das reale Ticket #654 (Komponenten-Split); für
 Test-Splits siehe #643/#644 (Zählwerte describe/it/expect als Fertig-Kriterium).
