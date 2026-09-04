@@ -128,11 +128,94 @@ bis/ter-Fix — betraf u. a. AMBV und VZV):
 | Erlass | Gruppen | Läufe | Tokens gesamt | Dauer gesamt | Status je Gruppe | Konsens-Funde |
 |---|---|---|---|---|---|---|
 | AMBV | 1 | 2 | 101 299 | 135.2 s | SUCCESS/SUCCESS | 0 |
-| AMBV (Zweitlauf, Bug-Reproduktion `--laeufe 0`) | 1 | 2 | 97 220 | 161.8 s | SUCCESS/ANTWORT_KEIN_JSON | 0 (Konsens korrekt leer — ein Lauf lieferte kein valides JSON, die Fallback-Wache griff) |
+| AMBV (Zweitlauf mit `--laeufe 0`) | 1 | 0 angefordert, **2 tatsächlich gelaufen** | 97 220 | 161.8 s | SUCCESS/ANTWORT_KEIN_JSON | 0 |
 | VZV (Art. 1–40, 173k Zeichen, 1 Gruppe) | 1 | 2 | — | >600 s (Lauf 1 ETIMEDOUT) | ERROR/abgebrochen | 0 (Konsens korrekt leer — Timeout-Wache griff) |
 | VZV (Art. 1–10, 63k Zeichen, 1 Gruppe) | 1 | 2 (Lauf 2 nach Lauf-1-Timeout abgebrochen) | — | >600 s (Lauf 1 ETIMEDOUT) | ERROR/abgebrochen | 0 (Konsens korrekt leer) |
 
-AMBV: keine Funde — Negativ-Kontrolle (Erlass ohne bekannten Extraktionsfehler).
+**Diese erste Auswertung war falsch — Korrektur 4.9.2026 (Opus-Gegenblick zu
+PR #650).** Die Zeile «AMBV: keine Funde — Negativ-Kontrolle» hat aus dem
+Ausbleiben von Funden auf einen fehlerfreien Erlass geschlossen. Der
+deterministische String-Diff über dieselben zwei Reduktionen zeigt das
+Gegenteil: **AMBV hat sieben Abweichungen, davon fünf echte Snapshot-Defekte**
+in `public/normtext/bund/AMBV.json` — Art. 6 «Zwischen produkten», «Erfah
+rung», «natur wissenschaftliche», «Hochschul aus bildung», «Fütterungs arznei
+mitteln»; Art. 12 «Qualifika tionen»; Art. 14 «GMP-Kon trollsysteme»; Art. 11
+«werden ;» und Art. 12 «ausreicht ;»; Art. 21 «werden .». Die beiden übrigen
+waren Harness-Scheinfunde (Aufhebungs-Artikel Art. 47, Label «Art. 49_a» gegen
+«Art. 49a») und sind seither behoben. **Gemini fand null davon** — bei
+`--effort high`, in zwei Läufen. Das ist kein Erfolg der Negativ-Kontrolle,
+sondern ein **Recall-Ausfall in der Klasse Silbentrennung/Interpunktion**:
+genau der zeichengenaue Abgleich, den ein Sprachmodell am schlechtesten kann.
+
+Zwei Folgerungen, beide umgesetzt:
+1. **Abwesenheit von Funden ist kein Befund.** Ein Lauf ohne Treffer darf nie
+   wieder als «Negativ-Kontrolle» gebucht werden, solange nicht ein
+   unabhängiges, deterministisches Verfahren dasselbe sagt (§0 Ziff. 3:
+   ein Einzelwert ist ein Verdacht, keine Ursache).
+2. **Die Arbeitsteilung ist umgedreht** (PR #650): der Diff sucht, Gemini
+   deutet nur noch die gefundenen Stellen. Siehe Messreihe unten.
+
+Die fünf AMBV-Defekte und ein zweiter, gravierenderer Fund (VZV Art. 3/4: die
+amtlichen Ausweiskategorien `<dt>A: </dt>`/`<dt>BE: </dt>` stehen im Snapshot
+als generische, teils doppelte lit.-Marken `a,b,c,d,b,c,d` — aus «Kategorie
+BE» wird «lit. b») sind als Kleinbefunde unter `QS-KORPUS` in der ROADMAP
+gebucht. Hier wird nichts geflickt: `public/normtext/**` ist Risikopfad.
+
+**Umbau und Neu-Pilot (4.9.2026, PR #650).** Der Ablauf ist umgedreht: ein
+deterministischer String-Diff über beide Klartext-Reduktionen sucht die
+Abweichungen, und nur die betroffenen Artikel (plus ±1 Kontext) gehen an
+Gemini — für die eine Frage, die ein Diff nicht beantwortet: was die
+Abweichung *bedeutet*. Zusätzlich wurden vier Harness-Scheinfundquellen in der
+Reduktion behoben (Label `art_10_bis`, Aufhebungs-Artikel, Tabellen-Einzug und
+-Kopfzeile, zweiteilige Absatzmarker) und `--json-schema` endlich übergeben,
+wie diese Spec es oben verlangt.
+
+| Erlass | Artikel im Vergleich | mit Diff | an Gemini | Gruppen | Läufe | Tokens | Dauer | Status | Konsens-Zeilen | davon echt |
+|---|---|---|---|---|---|---|---|---|---|---|
+| AMBV | 75 | 5 | 12 | 1 | 2 | 59 528 | 180.3 s | SUCCESS/SUCCESS | 8 | **8** |
+| DBG Art. 1–60 | 65 | 1 | 3 | 1 | 2 | 54 836 | 179.7 s | SUCCESS/SUCCESS | 1 | **0** |
+
+*Echt/Schein von Hand gegen den gepinnten Fedlex-Text geprüft.* Die acht
+AMBV-Zeilen sind exakt die fünf oben genannten Snapshot-Defekte. Die eine
+DBG-Zeile (Art. 22, Klasse `leak`) ist **kein** Befund: Gegenprobe an der
+Quelle zeigt, dass beide Sätze («Ist dieser Zinssatz negativ», «Ist diese
+Rendite negativ») amtlich existieren und unser Snapshot sie korrekt führt —
+der Verlust liegt im Vergleichsparser, weil Fedlex die Aufzählung durch eine
+eingeschobene Formel-Grafik in zwei `<dl>` zerteilt und die
+Verschachtelungsstufe dort strukturell nicht mehr ausdrückt. Genau dafür ist
+Teil 2 als Verdachtsliste gekennzeichnet.
+
+**Der entscheidende Vergleich.** Dieselbe Gemini-Version, dieselben fünf
+AMBV-Defekte:
+
+| | alter Ablauf (Gemini sucht) | neuer Ablauf (Diff sucht, Gemini deutet) |
+|---|---|---|
+| Artikel an das Modell | 75 | 12 |
+| Tokens | 101 299 | 59 528 |
+| Effort | high | low |
+| Gefunden/klassiert | **0 von 5** | **8 von 8 Diff-Zeilen** |
+
+Das Modell wurde nicht besser — es bekam die richtige Aufgabe. Zeichengenauer
+Abgleich ist das, was ein Sprachmodell am schlechtesten kann und ein Diff
+perfekt; Deutung ist umgekehrt.
+
+**Zwei Werkzeug-Befunde, die den Lauf vorher wertlos machten** (beide behoben,
+beide vorher nicht sichtbar, weil ein leerer Konsens wie «keine Funde» aussah):
+`--json-schema` wurde nie übergeben; und MIT Schema liefert `agy` **zwei**
+JSON-Objekte hintereinander (das formulierte und das erzwungene, letzteres um
+`toolAction`/`toolSummary` angereichert) — aneinandergehängt kein gültiges
+JSON. Ohne den Fix meldeten AMBV und DBG in 2 von 2 Erlassen je einen Lauf als
+`ANTWORT_KEIN_JSON`, und der Konsens war strukturell immer leer.
+
+**Drei Spec-Punkte oben sind mit `agy` nicht baubar** (empirisch 4.9.2026):
+die Denkstufe steckt im MODELLNAMEN, `--model gemini-3.1-pro-high` und
+`--effort` schliessen einander aus, und Gemini 3.1 Pro hat gar keine
+Medium-Stufe (`agy models`: nur `-low`/`-high`). Gebaut wurde darum
+`--effort low|high` als Wahl der Modellvariante, Default `low`. Ein Prompt
+über stdin geht ebenfalls nicht (`--print` ohne Wert ⇒ «empty prompt»; die
+stdin-Route `--input-format stream-json` erzwingt ein zweites Ausgabeformat) —
+statt eines zweiten Übergabepfads bleibt der Prompt unter der Linux-Grenze für
+ein einzelnes Argument (Budget 90k Zeichen statt 200k, plus Byte-Wache).
 Scope V1: nur `<article id="art_N">`-Artikel (kein Anhang-Tabellenparsing) —
 sonst systematischer Scheinfund «kein Fedlex-Artikel gefunden» je
 Anhangs-Eintrag (beobachtet am ungefixten AMBV-Lauf, in
