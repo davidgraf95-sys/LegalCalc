@@ -9,6 +9,7 @@
 
 import { describe, it, expect } from 'vitest';
 import {
+  artikelLabelAusId,
   reduziereQuelleHtml,
   reduziereSnapshot,
   formatiereArtikel,
@@ -190,6 +191,18 @@ describe('(1) Artikel-Label aus der Fedlex-ID', () => {
     // JEDEN bis/ter/a-Artikel hinweg.
     expect(reduziereQuelleHtml(Q_ART_10BIS).get('10_bis')!.label).toBe('Art. 10bis');
     expect(reduziereQuelleHtml(Q_ART_12A).get('12_a')!.label).toBe('Art. 12a');
+  });
+
+  it('liest ein rein numerisches Folgesegment als SPANNE («Art. 49–50», nicht «Art. 4950»)', () => {
+    // Realer Bestand: public/normtext/bund/DBG.json führt art_43_48,
+    // art_73_78, art_86_87, art_208_220; GEBV_SCHKG.json art_49_50, art_58_60
+    // — jeweils mit Snapshot-Label «Art. 43–48» usw. (Gedankenstrich U+2013).
+    expect(artikelLabelAusId('49_50')).toBe('Art. 49\u201350');
+    expect(artikelLabelAusId('208_220')).toBe('Art. 208\u2013220');
+    // Abgrenzung: Buchstaben- und Ordinal-Suffixe bleiben angehängt.
+    expect(artikelLabelAusId('220_a')).toBe('Art. 220a');
+    expect(artikelLabelAusId('335_c')).toBe('Art. 335c');
+    expect(artikelLabelAusId('1_bis')).toBe('Art. 1bis');
   });
 
   it('stimmt mit dem Snapshot-Label überein (Quelle == Snapshot, kein Fund)', () => {

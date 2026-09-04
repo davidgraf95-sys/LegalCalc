@@ -36,6 +36,153 @@ function normWs(s: string): string {
   return s.replace(/\u00a0/g, ' ').replace(/[ \t]+/g, ' ').replace(/ *\n */g, '\n').trim();
 }
 
+// ─── Gemeinsame Bausteine (Quelle UND Snapshot benutzen DIESELBEN) ───────
+//
+// Nachbesserung 4.9.2026: die erste Fassung hatte je Seite eigene Render-
+// Pfade — Einzug, Zellentrenner und Absatzmarker liefen auseinander und
+// erzeugten Scheinfunde auf JEDEM Tabellen-, bis/ter- und Aufhebungsartikel
+// (gemessen an GEBV_SCHKG/AMBV/DBG). Alles, was beide Seiten gleich
+// darstellen müssen, steht darum ab hier genau einmal.
+
+/** Einheitlicher Einzug für alles, was unter einem Absatz hängt (Items, Tabellenzeilen). */
+const EINZUG = '  ';
+
+/** Einheitlicher Klartext für einen artikelweit aufgehobenen Artikel. */
+const AUFGEHOBEN = '(aufgehoben)';
+
+/**
+ * Erkennt den Aufhebungs-Zustand auf BEIDEN Seiten: Fedlex liefert für einen
+ * aufgehobenen Artikel einen Body, der ausser dem Fussnoten-Apparat NICHTS
+ * enthält (Klartext also leer, s. AMBV Art. 47); unser Snapshot führt an
+ * derselben Stelle den amtlichen Auslassungs-Platzhalter «…». Ohne diese
+ * Normalisierung ist jeder aufgehobene Artikel ein garantierter Scheinfund.
+ */
+function istAufgehoben(text: string): boolean {
+  const t = text.trim();
+  return t === '' || t === '…' || t === '...' || t === AUFGEHOBEN;
+}
+
+/**
+ * Menschliches Artikel-Label aus dem Fedlex-Anker-Token.
+ * Fedlex trennt lateinische Ordinal-Suffixe und Buchstaben-Zusätze mit einem
+ * Unterstrich (`art_220_a`, `art_335_c`, `art_1_bis`), unser Snapshot schreibt
+ * sie zusammen (`Art. 220a`, `Art. 335c`, `Art. 1bis`). Massgeblich ist die
+ * Snapshot-Schreibweise (`NormSnapshot.artikelLabel`) — sonst meldet der
+ * Vergleich für jeden bis/ter/a-Artikel eine Label-Abweichung, die keine ist.
+ */
+export function artikelLabelAusId(nummer: string): string {
+  const teile = nummer.split('_');
+  let label = teile[0];
+  for (const t of teile.slice(1)) {
+    // Rein numerisches Folgesegment = ARTIKELSPANNE («art_49_50» ist die
+    // gemeinsam aufgehobene Strecke Art. 49–50, nicht «Art. 4950»); der
+    // Snapshot schreibt sie mit Gedankenstrich. Alles andere ist ein Suffix
+    // (Buchstabe oder lateinisches Ordinale) und wird angehängt.
+    label += /^\d+$/.test(t) ? `\u2013${t}` : t;
+  }
+  return `Art. ${label}`;
+}
+
+/**
+ * Marke einer Aufzählung (lit./Ziff./Kategorie) auf die nackte Form bringen:
+ * Fedlex schreibt «a. », «1. », aber auch «A: » (VZV Art. 3 Ausweiskategorien);
+ * der Snapshot führt die Marke ohne jedes Satzzeichen. Beide Seiten laufen
+ * durch diese Funktion, damit nur ein ECHTER Markenunterschied (z.B. amtlich
+ * «A» gegen extrahiert «a») sichtbar bleibt.
+ */
+function normMarke(m: string): string {
+  return m.replace(/[.:;,]\s*$/, '').trim();
+}
+
+/** Eine Aufzählungszeile — identisch für Quelle (dl/dt/dd) und Snapshot (items). */
+function itemZeile(tiefe: number, marke: string, text: string): string {
+  const einzug = EINZUG.repeat(1 + tiefe);
+  const m = normMarke(marke);
+  // Fortsetzungszeile ohne eigene Marke (Fedlex: leeres <dt>, z.B. VZV Art. 3):
+  // kein Phantom-Punkt voranstellen.
+  if (!m) return `${einzug}${normWs(text)}`.trimEnd();
+  return `${einzug}${m}. ${normWs(text)}`.trimEnd();
+}
+
+/**
+ * Eine Tabellenzeile — identisch für Quelle (<tr>/<td>) und Snapshot
+ * (`tabelle`, `mehrspaltig`, `verweis`).
+ *
+ * BEWUSSTE ENTSCHEIDUNG zur Zellgrenze: die amtliche Quelle streut eine
+ * Tarifstaffel über Layout-Zellen inklusive Leerzellen («» | «» | «» | «bis» |
+ * «100» | «7.–»), unser Generator verdichtet sie zum kanonischen Spaltenmodell
+ * («bis 100» | «7.–»). Beide Zellzerlegungen sind korrekt, nur verschieden —
+ * ein Vergleich MIT Zellgrenzen meldete darum jede Tarif-Tabelle als
+ * Struktur-Abweichung, obwohl der Inhalt identisch ist (gemessen an
+ * GebV SchKG Art. 16). Der Klartext lässt die Zellgrenze deshalb weg und
+ * vergleicht den ZELLINHALT in Lesereihenfolge; die Spaltenzahl selbst ist
+ * ohnehin deterministisch tor-geprüft (T-B2, src/lib/normtext/typen.ts).
+ * Preis: dieser Vergleich sieht eine reine Spalten-VERSCHIEBUNG nicht — das
+ * ist die dokumentierte Restklasse, kein Versehen.
+ */
+function tabellenZeile(zellen: string[]): string | null {
+  const gefuellt = zellen.map((z) => normWs(z)).filter((z) => z !== '');
+  if (!gefuellt.length) return null;
+  return `${EINZUG}${gefuellt.join(' ')}`;
+}
+
+/**
+ * Absatzzeile mit inline gesetztem Marker. Entdoppelt eine Nummer, die im
+ * Text bereits steht — die Quelle trägt sie als <sup> IM textContent, und
+ * mehrere Snapshot-Einträge führen sie zusätzlich am Textanfang
+ * (public/normtext/bund/DBG.json Art. 20 Abs. 4–7: `absatz: "4"` UND
+ * `text: "4 Schüttet …"`). Ohne Entdoppelung stünde dort «4 4 Schüttet …».
+ */
+function absatzZeile(marker: string, text: string): string {
+  const m = normWs(marker).replace(/\s+/g, '');
+  let t = normWs(text);
+  if (m) {
+    // Whitespace-TOLERANT vergleichen: die Quelle liefert «1bis» als zwei
+    // getrennte <sup> und damit im textContent als «1 bis», der Snapshot als
+    // «1bis». Beide Schreibweisen müssen als derselbe Präfix erkannt werden.
+    let i = 0;
+    let j = 0;
+    while (j < m.length && i < t.length) {
+      if (/\s/.test(t[i])) { i++; continue; }
+      if (t[i].toLowerCase() !== m[j].toLowerCase()) { i = -1; break; }
+      i++; j++;
+    }
+    if (i >= 0 && j === m.length) {
+      const rest = t.slice(i);
+      if (rest === '' || /^[\s.,;:)]/.test(rest)) t = rest.trim();
+    }
+  }
+  if (!m) return t;
+  return `${m} ${t}`.trim();
+}
+
+/**
+ * Absatzmarker eines Fedlex-<p class="absatz">: die FÜHRENDEN <sup>-Elemente
+ * zusammengezogen. «1bis» steht dort als zwei getrennte Elemente
+ * (`<sup>1</sup><sup>bis</sup>`, GebV SchKG Art. 9) — die alte Fassung las nur
+ * das erste, verwarf es am Test `/^\d+$/` nicht, und liess «bis» als losen
+ * Text im Absatz stehen («1 bis Erfordert …» gegen Snapshot «1bis Erfordert
+ * …»). Fussnoten-Referenzen sind zu diesem Zeitpunkt bereits entfernt
+ * (`stripFussnotenRefs`), können den Marker also nicht verfälschen.
+ */
+const ORDINAL_SUFFIX = 'bis|ter|quater|quinquies|sexies|septies|octies|novies|decies';
+
+function absatzMarkerVon(p: Element): string {
+  const teile: string[] = [];
+  for (const knoten of Array.from(p.childNodes) as Element[]) {
+    if (knoten.nodeType === 1 && knoten.tagName?.toLowerCase() === 'sup') {
+      teile.push(normWs(knoten.textContent ?? ''));
+      continue;
+    }
+    // Reiner Whitespace (inkl. &nbsp;) trennt die <sup> voneinander; alles
+    // andere ist bereits Fliesstext und beendet den Marker.
+    if (knoten.nodeType === 3 && normWs(knoten.textContent ?? '') === '') continue;
+    break;
+  }
+  const roh = teile.join('').replace(/\s+/g, '');
+  return new RegExp(`^\\d+(${ORDINAL_SUFFIX})?$`, 'i').test(roh) ? roh : '';
+}
+
 // ─── Quelle (Fedlex-HTML) ────────────────────────────────────────────────
 
 /** Entfernt Fussnoten-Referenzmarker (<sup><a href="#fn-...">N</a></sup>) — reines Verweis-Rauschen, kein Normtext. */
@@ -61,34 +208,35 @@ function textOf(el: Element | null): string {
  */
 function renderDl(dl: Element, tiefe = 0): string[] {
   const zeilen: string[] = [];
-  const einzug = '  '.repeat(1 + tiefe);
   const kinder = Array.from(dl.children);
   for (let i = 0; i < kinder.length; i++) {
     const k = kinder[i];
     if (k.tagName?.toLowerCase() !== 'dt') continue;
-    const marke = textOf(k).replace(/\.\s*$/, '').trim();
+    const marke = textOf(k);
     const dd = kinder[i + 1]?.tagName?.toLowerCase() === 'dd' ? kinder[i + 1] : null;
     if (!dd) {
-      zeilen.push(`${einzug}${marke}.`);
+      const nur = itemZeile(tiefe, marke, '');
+      if (nur.trim()) zeilen.push(nur);
       continue;
     }
     const ddOhneUnterlisten = dd.cloneNode(true) as Element;
     for (const sub of Array.from(ddOhneUnterlisten.querySelectorAll('dl'))) sub.remove();
-    const eigenerText = normWs(ddOhneUnterlisten.textContent ?? '');
-    zeilen.push(`${einzug}${marke}. ${eigenerText}`.trimEnd());
+    zeilen.push(itemZeile(tiefe, marke, ddOhneUnterlisten.textContent ?? ''));
     const unterlisten = Array.from(dd.children).filter((c) => c.tagName?.toLowerCase() === 'dl');
     for (const sub of unterlisten) zeilen.push(...renderDl(sub, tiefe + 1));
   }
   return zeilen;
 }
 
-/** Rendert eine amtliche <table> zeilenweise, Zellen mit " | " getrennt (Struktur bleibt sichtbar). */
+/** Rendert eine amtliche <table> zeilenweise über `tabellenZeile` (dieselbe Funktion wie beim Snapshot). */
 function renderTable(table: Element): string[] {
   const zeilen: string[] = [];
-  const rows = Array.from(table.querySelectorAll('tr'));
-  for (const row of rows) {
-    const zellen = Array.from(row.querySelectorAll('th,td')).map((z) => normWs(z.textContent ?? ''));
-    if (zellen.length) zeilen.push(zellen.join(' | '));
+  for (const row of Array.from(table.querySelectorAll('tr'))) {
+    const zellen = Array.from(row.querySelectorAll('th,td')).map((z) => z.textContent ?? '');
+    const zeile = tabellenZeile(zellen);
+    // Eine Kopfzeile ohne jeden Titeltext (reine Layout-Zeile) fällt hier von
+    // selbst weg — dieselbe Wache wie beim Snapshot mit leeren `spalten[].titel`.
+    if (zeile) zeilen.push(zeile);
   }
   return zeilen;
 }
@@ -98,26 +246,22 @@ function renderBodyChildren(container: Element): string {
   const teile: string[] = [];
   for (const kind of Array.from(container.children)) {
     const tag = kind.tagName?.toLowerCase();
-    if (tag === 'p') {
+    if (tag === 'p' && !kind.querySelector('table')) {
       const cls = kind.getAttribute('class') ?? '';
       if (cls.includes('footnotes')) continue;
-      const sup = kind.querySelector('sup');
-      let marker = '';
-      if (sup && cls.includes('absatz')) {
-        const supText = normWs(sup.textContent ?? '');
-        if (/^\d+$/.test(supText)) marker = `${supText} `;
-      }
+      const marker = cls.includes('absatz') ? absatzMarkerVon(kind) : '';
       const txt = normWs(kind.textContent ?? '');
-      const withoutLeadingNum = marker && txt.startsWith(normWs(sup!.textContent ?? ''))
-        ? txt.slice(normWs(sup!.textContent ?? '').length).trim()
-        : txt;
-      if (marker) teile.push(`${marker}${withoutLeadingNum}`.trim());
-      else if (txt) teile.push(txt);
+      const zeile = absatzZeile(marker, txt);
+      if (zeile) teile.push(zeile);
     } else if (tag === 'dl') {
       teile.push(...renderDl(kind));
     } else if (tag === 'table') {
       teile.push(...renderTable(kind));
-    } else if (tag === 'div' || tag === 'section') {
+    } else if (tag === 'div' || tag === 'section' || tag === 'p') {
+      // `tag === 'p'` erreicht diesen Zweig nur noch für ein <p>, das eine
+      // <table> umschliesst (Fedlex schreibt `<p><div class="table">…`, was
+      // strenggenommen invalides HTML ist) — dort darf NICHT der textContent
+      // genommen werden, sonst kollabiert die Tabelle zu einer Textwurst.
       const cls = kind.getAttribute('class') ?? '';
       if (cls.includes('footnotes')) continue;
       const nested = renderBodyChildren(kind);
@@ -173,13 +317,15 @@ export function reduziereQuelleHtml(
     // Stichprobe) — ein Vergleich der Randtitel wäre ein systematischer
     // Scheinfund über JEDEN Artikel hinweg, kein realer Korpus-Fehler (T2-
     // Lehre: keine Harness-Artefakte einstreuen). `div.collapseable` enthält
-    // ohnehin nur den Artikelkörper, nicht das <h6>.
-    const label = `Art. ${nummer}`;
+    // ohnehin nur den Artikelkörper, nicht das <h6>. Die Schreibweise folgt
+    // dem Snapshot (`artikelLabelAusId`), nicht dem Anker-Token.
+    const label = artikelLabelAusId(nummer);
 
     const body = klon.querySelector('div.collapseable') ?? klon;
     const fussnotenEl = body.querySelector('div.footnotes');
     const fussnoten = renderFussnoten(fussnotenEl);
-    const text = renderBodyChildren(body);
+    const roherText = renderBodyChildren(body);
+    const text = istAufgehoben(roherText) ? AUFGEHOBEN : roherText;
 
     out.set(nummer, { artikel: nummer, label, text, fussnoten });
   }
@@ -190,29 +336,44 @@ export function reduziereQuelleHtml(
 
 function renderSnapshotBlock(b: NormSnapshot['bloecke'][number]): string {
   const zeilen: string[] = [];
+
+  // Anhang-Zwischenüberschrift (M13-Annex): erscheint in der Quelle als
+  // blosses <h2>–<h6> ohne Absatzmarker, also auch hier als nackte Zeile —
+  // ABER ohne frühen `return`. Die alte Fassung kehrte hier sofort zurück und
+  // verwarf items/tabelle/mehrspaltig DESSELBEN Blocks; heute trägt kein
+  // Snapshot diese Kombination (0 Treffer über public/normtext/**), morgen
+  // wäre es ein stiller, unsichtbarer drop.
   if (b.titel) {
-    zeilen.push(normWs(b.text));
-    return zeilen.join('\n');
+    const titelText = normWs(b.text);
+    if (titelText) zeilen.push(titelText);
+  } else {
+    const zeile = absatzZeile(b.absatz ?? '', b.text ?? '');
+    if (zeile) zeilen.push(zeile);
   }
-  const marker = b.absatz ? `${b.absatz} ` : '';
-  const haupttext = normWs(b.text ?? '');
-  if (marker || haupttext) zeilen.push(`${marker}${haupttext}`.trim());
+
   for (const item of b.items ?? []) {
-    const einzug = '  '.repeat(1 + (item.tiefe ?? 0));
-    zeilen.push(`${einzug}${item.marke}. ${normWs(item.text)}`.trimEnd());
+    zeilen.push(itemZeile(item.tiefe ?? 0, item.marke, item.text));
   }
   for (const zeile of b.tabelle ?? []) {
-    zeilen.push(`  ${normWs(zeile.beschreibung)} | ${normWs(zeile.betrag)}`);
+    const z = tabellenZeile([zeile.beschreibung, zeile.betrag]);
+    if (z) zeilen.push(z);
   }
   if (b.mehrspaltig) {
-    const kopf = b.mehrspaltig.spalten?.map((s) => s.titel) ?? b.mehrspaltig.kopf ?? [];
-    if (kopf.length) zeilen.push(`  ${kopf.map(normWs).join(' | ')}`);
+    const kopf = b.mehrspaltig.spalten?.map((sp) => sp.titel) ?? b.mehrspaltig.kopf ?? [];
+    // Keine Phantom-Kopfzeile: `spalten` mit durchgehend leerem `titel` ist
+    // real und häufig (ELG Art. 14, SSV Art. 1/66, VZV Art. 84) — die alte
+    // Fassung machte daraus die Zeile "   | ", die in der Quelle nichts
+    // entspricht. `tabellenZeile` verwirft sie von selbst.
+    const kopfZeile = tabellenZeile(kopf);
+    if (kopfZeile) zeilen.push(kopfZeile);
     for (const zeile of b.mehrspaltig.zeilen) {
-      zeilen.push(`  ${zeile.map(normWs).join(' | ')}`);
+      const z = tabellenZeile(zeile);
+      if (z) zeilen.push(z);
     }
   }
   if (b.verweis) {
-    zeilen.push(`  ${normWs(b.verweis.etikett)} ${normWs(b.verweis.ziffern)}`);
+    const z = tabellenZeile([b.verweis.etikett, b.verweis.ziffern]);
+    if (z) zeilen.push(z);
   }
   return zeilen.filter(Boolean).join('\n');
 }
@@ -226,10 +387,14 @@ export function reduziereSnapshot(eintraege: NormSnapshot[]): Map<string, Artike
   const out = new Map<string, ArtikelKlartext>();
   for (const e of eintraege) {
     const zeilen = e.bloecke.map(renderSnapshotBlock).filter(Boolean);
+    const roherText = zeilen.join('\n');
     out.set(e.artikel, {
       artikel: e.artikel,
       label: e.artikelLabel,
-      text: zeilen.join('\n'),
+      // Aufgehobener Artikel: der Snapshot führt den amtlichen Auslassungs-
+      // Platzhalter «…», die Quelle einen leeren Body — beide Seiten auf
+      // denselben Klartext normalisieren (sonst garantierter Scheinfund).
+      text: istAufgehoben(roherText) ? AUFGEHOBEN : roherText,
       fussnoten: '',
     });
   }
