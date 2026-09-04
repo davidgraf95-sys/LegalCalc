@@ -1803,6 +1803,22 @@
   .lc-list > li { position: relative; padding-left: 1.25rem; }
   .lc-list > li::before { content: '–'; position: absolute; left: 0; color: var(--brass-600); }
 
+  /* ── LM-141 (W2·17-UI-BEFUNDE/B16) · ZWEISPALTIGE LISTE, DIE VON OBEN NACH
+     UNTEN LIEST ─────────────────────────────────────────────────────────────
+     Lange Erlasslisten standen in einem `grid … sm:grid-cols-2`. Ein Grid füllt
+     ZEILENWEISE: Eintrag 1 links, Eintrag 2 rechts, Eintrag 3 wieder links —
+     wer die Liste liest, springt bei jedem Eintrag über die Spalte. Gemessen
+     4.9.2026 @1440 auf /gesetze?ebene=kanton&kt=BS (859 Erlasse, Preview von
+     origin/main). Mehrspaltensatz (`columns`) füllt dagegen SPALTENWEISE: erst
+     die linke Spalte von oben nach unten, dann die rechte — dieselbe Platz-
+     ausnutzung, aber eine Liste, der man folgen kann.
+     Die Klasse liegt hier und nicht als Utility-Kette am Aufrufer, weil
+     `break-inside` je KIND gesetzt sein muss (sonst reisst ein zweizeiliger
+     Titel am Spaltenende auseinander) und der Bestand keine `[&>*]:`-Variants
+     kennt — eine benannte Klasse statt eines neuen Utility-Musters. */
+  .lc-listenspalten { column-gap: 1.25rem; }
+  .lc-listenspalten > * { break-inside: avoid; margin-bottom: .5rem; }
+
   /* Live-Berechnung: dezentes Einblenden des Ergebnisses */
   .lc-reveal { animation: lc-fade var(--dur-slow) var(--ease); }
   @keyframes lc-fade { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
