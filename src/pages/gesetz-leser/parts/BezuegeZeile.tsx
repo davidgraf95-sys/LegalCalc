@@ -211,7 +211,7 @@ const StatusGruppe = memo(function StatusGruppe({ status, kanten, gesamtRoh, fil
             aria-label={`${zahl(Math.min(PRO_SCHRITT, rest))} weitere laden — ${zahlZeile} gezeigt, ${STATUS_LABEL[status]}`}
             className="lc-overline shrink-0 whitespace-nowrap rounded px-1.5 py-0.5 transition-colors hover:bg-brass-100/40 hover:text-brass-700"
           >
-            weitere <span className="num tabular-nums">{Math.min(PRO_SCHRITT, rest)}</span>
+            weitere <span className="num">{Math.min(PRO_SCHRITT, rest)}</span>
           </button>
         )}
       </div>

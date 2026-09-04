@@ -166,10 +166,10 @@ export function SysZeile({ e }: { e: BrowseErlass }) {
   const altDezent = jahr != null && Number(jahr) < 1990;
   const inhalt = (
     <>
-      <span className="num text-xs text-ink-500 shrink-0 w-20 tabular-nums truncate">{e.sr}</span>
+      <span className="num text-xs text-ink-500 shrink-0 w-20 truncate">{e.sr}</span>
       <span className="text-ink-700 break-words group-hover/z:text-brass-700 min-w-0">{e.titel}</span>
       {istLesbar(e) ? (
-        <span className="shrink-0 flex items-baseline gap-2 num text-xs tabular-nums">
+        <span className="shrink-0 flex items-baseline gap-2 num text-xs">
           {e.artikelAnzahl > 0 && <span className="text-ink-500">{e.artikelAnzahl} Art.</span>}
           {/* Sehr alte Stände dezent (italic) statt blass — Kontrast (S10/WCAG) bleibt gewahrt. */}
           {jahr && <span className={`hidden sm:inline text-ink-500${altDezent ? ' italic' : ''}`}>{jahr}</span>}

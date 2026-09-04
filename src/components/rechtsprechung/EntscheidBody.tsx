@@ -107,7 +107,7 @@ export function EntscheidBody({ abschnitte, zitierung, bgeReferenz }: {
   function Ziffer({ label, marke, anker, stark }: { label: string; marke: string; anker: string; stark: boolean }) {
     return (
       <a href={`#${anker}`} onClick={(e) => kopiere(e, pinCite(marke), anker)} title={`${pinCite(marke)} — Fundstelle kopieren`}
-        className={`mb-1 inline-flex items-baseline no-underline num tabular-nums font-semibold ${stark ? 'text-ink-900 text-base' : 'text-ink-700 text-body-s'}`}>
+        className={`mb-1 inline-flex items-baseline no-underline num font-semibold ${stark ? 'text-ink-900 text-base' : 'text-ink-700 text-body-s'}`}>
         {label}
         <span aria-hidden className="ml-1.5 text-brass-600 opacity-0 group-hover:opacity-80 group-focus-within:opacity-80 transition-opacity">§</span>
       </a>
@@ -163,7 +163,7 @@ export function EntscheidBody({ abschnitte, zitierung, bgeReferenz }: {
         <ol className="space-y-3">
           {nummeriert.map((b, i) => (
             <li key={i} className="grid grid-cols-[1.7rem_minmax(0,1fr)] gap-x-2">
-              <span className="num tabular-nums font-semibold text-ink-700">{b.marke}</span>
+              <span className="num font-semibold text-ink-700">{b.marke}</span>
               <p className="font-serif text-[length:var(--rsp-fs,1.08rem)] leading-[1.65] text-ink-800 whitespace-pre-line break-words"><BodyText text={b.text} /></p>
             </li>
           ))}

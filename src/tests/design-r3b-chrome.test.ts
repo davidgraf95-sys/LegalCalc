@@ -262,6 +262,50 @@ describe('A3-1 · das Schliess-✕ kommt aus EINEM Baustein', () => {
   });
 });
 
+// ─── R4-C · `.num` UND `tabular-nums` sind kein Paar, sondern ein Konflikt ──
+
+/**
+ * GEMESSEN am Preview (5.9.2026, Chromium 1440×900, `getComputedStyle`):
+ *
+ *   `<span class="num">`                → font-variant-numeric: lining-nums tabular-nums
+ *   `<span class="num tabular-nums">`   → font-variant-numeric: tabular-nums
+ *
+ * Die Utility ist also NICHT bloss tot (so stand es in der R3-γ-Liste), sie ist
+ * SCHÄDLICH: `.num` lebt in `@layer components`, `tabular-nums` in
+ * `@layer utilities` — die spätere Schicht gewinnt und ersetzt die ganze
+ * Deklaration, `lining-nums` fällt dabei weg. Genau das, was der Kommentar an
+ * `.num` (index.css) als «ausdrücklich Versal- UND Tabellenziffern» verlangt,
+ * schaltete das vermeintlich redundante Wort ab.
+ *
+ * Betroffen waren 16 Fundstellen in 11 Dateien; Ziffern derselben Rolle liefen
+ * dadurch in zwei Rendering-Modi — der Kernbefund dieses Fahrplans.
+ *
+ * `tabular-nums` OHNE `.num` bleibt zulässig und unberührt: dort trägt die
+ * Utility die Textstimme (`ui/Datum`, Stand-Zeilen, Treffer-Zähler) und hat
+ * keinen Konflikt-Partner.
+ */
+describe('R4-C · keine Klassenliste trägt `.num` und `tabular-nums` zugleich', () => {
+  const konflikt = (quelle: string): string[] =>
+    (quelle.match(/class[nN]ame=\{?[`"][^`"]*[`"]/g) ?? [])
+      .filter((t) => /\bnum\b/.test(t.replace(/tabular-nums/g, '')) && t.includes('tabular-nums'));
+
+  it('NEGATIV-KONTROLLE: die Sonde sieht die Vorher-Form, und nur sie', () => {
+    // Wortlaut aus `verzahnung/BezugZeitWahl.tsx` Z. 212 im Stand vom
+    // 31.8.2026 — Beleg, nie nachgeführt (§2b).
+    expect(konflikt('<span className="num tabular-nums">{jahr}</span>')).toHaveLength(1);
+    // Die zwei erlaubten Nachbarschaften bleiben grün:
+    expect(konflikt('<span className="num text-ink-500">{n}</span>')).toEqual([]);
+    expect(konflikt('<p className="text-xs tabular-nums">{stand}</p>')).toEqual([]);
+  });
+
+  it('App-weit keine Fundstelle mehr', () => {
+    for (const p of alleTsx()) {
+      const funde = konflikt(ohneKommentare(readFileSync(p, 'utf8')));
+      expect(funde, `${rel(p)}: \`tabular-nums\` neben \`.num\` nimmt \`lining-nums\` weg`).toEqual([]);
+    }
+  });
+});
+
 // ─── A3-2 · EINE Schwebefläche ──────────────────────────────────────────────
 
 /**
