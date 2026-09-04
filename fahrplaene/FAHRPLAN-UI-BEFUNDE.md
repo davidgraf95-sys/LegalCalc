@@ -311,6 +311,55 @@ reproduzieren (§0.1); nicht Reproduzierbares als «erledigt (überholt)» schli
 
 **Code-Flächen (grob, aus den Routen):** `src/pages/Gesetze.tsx`, `src/components/suche`, `src/lib/suche`.
 **Risiko-Klasse:** RISIKO — Such-/Ranking-Logik (LM-187 Substring-Treffer) ist keine reine UI: `check:gegenpruefung` + `eval:suche`.
+**B18-Logik (offen, Gegenprüfung Pflicht).** Aus B18 zurückgestellt, weil die Lösung nicht
+Darstellung ist, sondern Treffer-Auswahl bzw. Hervorhebungs-Logik berührt — Bau nur mit eigenem
+Nachweis (§0.3), `check:gegenpruefung` und `eval:suche` als Vorher/Nachher-Messung:
+
+- [x] **LM-187 · Hervorhebung auf Wortteilen.** Reproduziert 5.9.2026 @1440 auf
+  `/rechner/zpo-fristen`, «OR 257d» in die Kopfsuche: `<mark>` liegt auf «or» in «S**or**gfalt»
+  (Treffer «Art. 272a OR» / «Art. 271a OR»).
+  **Fundstelle-Korrektur (§7).** Die Dedup-Notiz nennt `artikelVolltext.ts:66` `lower.includes(w)`.
+  Das kann es nicht sein: die `snippet()`-Funktion dort filtert `w.length > 2`, «or» kommt nie durch.
+  Der Marker entsteht in der Darstellungsschicht, in `src/components/suche/SuchResultate.tsx`
+  (`markiere()`, Kommentar «Wörter ab 2 Zeichen … case-insensitiv als `<mark>` umschlossen»): das
+  aus den Query-Wörtern gebaute Muster hat keinen Wortanfangs-Anker und trifft darum jedes
+  Vorkommen mitten im Wort.
+  **Warum trotzdem zurückgestellt:** die Hervorhebung soll die TREFFER-Semantik spiegeln, und die
+  ist `tokenize: 'forward'` (Präfix ab Wortanfang, `artikelVolltext.ts:226 ff.`) — wer den Marker
+  ändert, entscheidet mit, was als Treffer-Begründung gilt. Bau darum mit Vorher/Nachher-Messung
+  gegen `eval:suche` und mit `check:gegenpruefung`, nicht als UI-Handgriff.
+  Der Rausch-Treffer-Teil desselben Befunds ist überholt (5 sinnvolle Treffer, s. oben); der
+  Präfix-Recall aus IA-1 (PR #264) bleibt unangetastet.
+  — **gebaut** (Batch `B18-Logik`, 5.9.2026, PR-Zweig `feat/ui-befunde-b18-logik`): neue reine
+  Einheit `src/lib/suche/hervorhebung.ts` (`hervorhebungsStellen()`) liefert die Marker-Spannen;
+  `markiere()` in `SuchResultate.tsx` trägt nur noch die Darstellung (§3), `escapeRe` entfällt.
+  Die Semantik wird nicht nachgebaut, sondern aus den Bausteinen der Suche bezogen (§5):
+  `sucherTerme()` (artikelRanking.ts, §-Anker «Vorbereitete Termlisten einer Query») für die
+  Tokenisierung, `normalisiereBegriff()` (vokabular.ts) für die Normalisierung und dieselbe
+  Wortgrenzen-Regel wie `trifftWortgrenze()` (artikelVolltext.ts, §-Anker «UND-Verknüpfung +
+  Wortgrenzen-Schutz» — ersetzt die frühere `:226 ff.`-Zeilenangabe, §0.2). Eine zeichenweise
+  Rückwärts-Karte hält die Spanne trotz längenändernder Normalisierung (NFKD, Ligaturen)
+  zeichengenau.
+  **Nachweis Vorher/Nachher** (lokaler Preview von origin/main bzw. vom Fix, 1440 px,
+  10 Queries — «OR 257d», «Miete», «Kündigung», «über», «Ueber», «Verjährung», «Notwehr»,
+  «Art. 74 OR», «vaterschaftsurlaub lohn», «c++ (or)»): Trefferlisten **10/10 identisch**
+  (Reihenfolge und Wortlaut jeder Zeile). `eval:suche` vorher = nachher bis auf die Laufzeitzeile
+  (gesamt Recall@1 0.623 · Recall@5 0.681 · Recall@10 0.725 · MRR 0.651 · NDCG@10 0.667) — auch
+  strukturell unberührt, `scripts/suche-eval.ts` importiert weder `SuchResultate.tsx` noch
+  `hervorhebung.ts`. Entfallen sind ausschliesslich Marker im Wortinneren: «or» in
+  «S**or**gfalt» (2×), «miete» in «Ver**miete**r»/«Unter**miete**» (5×), «kündigung» in
+  «Wohnungs**kündigung**», «verjährung» in «Verfolgungs**verjährung**» (3×), «lohn» in
+  «Jahres**lohn**es»/«Natural**lohn**», «or» in «V**or**sitzende». Neu markiert wird «Or» in
+  «**Or**ganisation»/«**Or**t» bei der Query «c++ (or)» — dort markierte die alte Regex-Fassung
+  gar nichts, obwohl die Suche mit dem Term «or» getroffen hatte.
+  13 neue Unit-Tests: `src/tests/suche-markiere.test.ts` (Wortanfang, Umlaut «über»/«Ueber»,
+  NFD-Zerlegung, Bindestrich, Mehrwort, Sonderzeichen, Überlappung). Bestehende Tests
+  unverändert (§6.3).
+  **`check:gegenpruefung` meldet «keine Risiko-Datei»** — `istRisikoPfad()` deckt
+  `src/lib/suche/**` und `src/components/suche/**` nicht ab. Die RISIKO-Klasse dieses Blocks ist
+  also eine Fahrplan-Setzung, die das Tor nicht tragen kann; die Gegenprüfung bleibt als
+  MENSCHLICHER Schritt geschuldet und wird nicht vom grünen Tor quittiert (§6.7).
+
 **Prod-Re-Audit-Pflicht:** ja — vor Baubeginn alle Befunde dieses Batches am Prod-Stand
 reproduzieren (§0.1); nicht Reproduzierbares als «erledigt (überholt)» schliessen.
 
