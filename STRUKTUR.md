@@ -134,27 +134,6 @@ Agenten ab — Resume per SendMessage trug (Worktree-Stand blieb).
 «Künftige Fassung»); David-Entscheid Merge-Queue (BEHIND-Ping-Pong kostete heute Nacht
 mehr Zeit als der Bau). Parallel-Session lexmetrik-a1 landet #622/#621/#626 seriell.
 
-## Session 1.9.2026 — Aufräumen auf EIN main + Fristenrechner-Live-Brücke (#607, Squash `17d84f492`)
-
-**Gelandet + live (Deploy-Job grün, Live-Kennung 17d84f49):** Auftrag David
-(«räum alles auf, sodass nur noch ein main; korrigiere den fristenrechner —
-der rechenweg aktualisiert sich nicht automatisch»). **Aufräumen:** 5 Worktrees
-(design/design-shot/r6/r8/zh) entfernt, 8 lokale Branches gelöscht — alle
-zuvor als gelandet verifiziert (#583/#585/#586/#603/#606); unkommittete
-Design-Runde-4-Arbeit als WIP `4931a08c4` auf `origin/feat/w219-runde4`
-gesichert. Auf origin bewusst belassen: `feat/r6-…`/`feat/r8-…` (geparkte
-ZH-Runden mit Handoff) + offene PR-Branches (#591 Autopilot, #596 Fedlex,
-4× Dependabot). **Fristenrechner (#607):** Der Rechenweg gehörte zum unteren
-Voll-Formular mit eigenen Defaults — Eingaben oben erreichten ihn nie. Neu
-meldet der einfache Rechner Änderungen (Werte + Berührt-Liste) an die Seite;
-Regime steuert den Voll-Tab (mit Hash-Navigation), unten gilt: Berührtes
-gewinnt, Unberührtes füllt nur nicht-hydratisierte, unveränderte Felder.
-Reine Darstellungs-Komposition (§3), keine Engine berührt, Golden byte-gleich.
-GP-Verdikt (Opus, Prüfer≠Bau) fand B1/B2 HOCH (Hash-Divergenz → falsches
-Regime nach Reload; Voll-Meldung stampfte Permalink-Werte) — beide behoben,
-B3 als dokumentierte Abweichung im PR. e2e-Spec `tagerechner-rechenweg-sync`
-(6 Fälle, rot am Alt-Stand bewiesen), volle Batterie lokal + CI grün.
-
 ## Session 7.–8.8.2026 (Nacht) — W2·10-UI-NAV -S/-V/-O/-J gelandet + QS-GP-BEREICH + 3 Sicherheits-Patches (#463–#467)
 
 **Fable-Orchestrator, entschleunigter Zyklus je Einheit: Opus-Bau → adversariale Gegenprüfung (anderes Modell, read-only) → Auflagen-Fix → nächste; adversarialer Schlussdurchgang vor der Landung; serielle Landekette #464→#463→#465→#466→#467, alle gemergt.**
