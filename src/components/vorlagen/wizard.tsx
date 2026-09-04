@@ -199,9 +199,17 @@ export function VorlagenWizardRahmen({
               Griff. Das Tor (qsui-hierarchie I8) prüft, dass an der Stelle des
               Verdikts immer etwas steht: das Dokument, ein Platzhalter oder ein
               benannter Griff — nie nichts. */}
-          <summary data-dokument-platz className="cursor-pointer select-none list-none [&::-webkit-details-marker]:hidden px-4 py-3 flex items-center justify-between text-body-s font-medium text-ink-700">
+          {/* LM-060 (B15, 4.9.2026): hier standen ZWEI Klappmarken. Diese
+              Summary zeichnete ihr eigenes ▾ und schaltete den nativen Marker
+              ab — die App-weite `details > summary::after`-Regel (index.css)
+              hängte ihr «▸» aber weiterhin als drittes Flex-Kind ganz rechts
+              an. GEMESSEN @640 (bei 1440 ist die Klappe `md:hidden`):
+              `::after` = "  ▸" UND ein Textknoten «▾» in derselben Summary.
+              Der Rückbau IST der Fix (§17): eigenes Zeichen und die beiden
+              Marker-Abschaltungen fallen weg, das EINE Zeichen kommt aus der
+              geteilten Regel — dort rechtsbündig und drehend. */}
+          <summary data-dokument-platz className="cursor-pointer select-none px-4 py-3 text-body-s font-medium text-ink-700">
             <span>Vorschau & Bausteinprotokoll</span>
-            <span aria-hidden className="text-ink-500">▾</span>
           </summary>
           <div className="px-4 pb-4">{vorschau}</div>
         </details>
