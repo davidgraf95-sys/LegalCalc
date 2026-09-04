@@ -15,13 +15,14 @@
 //   damit die UI ruhig auf den Fallback (direkter Live-Link) zurückfallen kann.
 
 import type { NormSnapshot, NormSnapshotDatei } from './typen';
+import { normtextDateiUrl } from './erlassAdresse';
 
 const dateiCache = new Map<string, Promise<NormSnapshotDatei | null>>();
 
 function pfad(ebene: 'bund' | 'kanton', quelle: string, erlassRef?: string): string {
   return ebene === 'kanton'
-    ? `/normtext/kanton/${quelle}-${erlassRef ?? ''}.json`
-    : `/normtext/bund/${quelle}.json`;
+    ? normtextDateiUrl(`kanton/${quelle}-${erlassRef ?? ''}.json`)
+    : normtextDateiUrl(`bund/${quelle}.json`);
 }
 
 // Holt eine JSON-Datei. Rückgabe null NUR bei echter 404 (Datei existiert
@@ -95,7 +96,11 @@ export async function ladeKantonSnapshotViaUrl(
   const dateiname = manifest[quelleUrl];
   if (!dateiname) return null;
 
-  const dateiUrl = `/normtext/kanton/${dateiname}`;
+  // Dieselbe Adress-Regel wie im Leser (§5): der Dateiname aus dem Manifest ist
+  // der ROHE Schlüssel + `.json` und trägt bei drei Glarner Erlassen selbst
+  // `%20`/`%2F` — roh in die URL geschrieben, sucht die Auslieferung eine
+  // andere Datei (Live-Nachweis 5.9.2026).
+  const dateiUrl = normtextDateiUrl(`kanton/${dateiname}`);
   const datei = await ladeDatei(dateiUrl);
   if (!datei || !Array.isArray(datei.eintraege)) return null;
 

@@ -36,7 +36,7 @@ import {
   jsonLdFuerMaterial,
   materialDetailHtml,
 } from '../src/lib/seo-detail';
-import { routenEbene } from '../src/lib/normtext/erlassAdresse';
+import { normtextDateiUrl, routenEbene } from '../src/lib/normtext/erlassAdresse';
 import type { BrowseErlass } from '../src/lib/normtext/browse-typen';
 import type { NormSnapshotDatei } from '../src/lib/normtext/typen';
 import type { BrowseEntscheid } from '../src/lib/rechtsprechung/register';
@@ -351,12 +351,18 @@ for (const e of snapshotErlasse) {
     // sie ist als eigener Posten in `fahrplaene/FAHRPLAN-PERFORMANCE.md` §1-N3
     // hinterlegt. Wer sie behebt, kann diesen Preload nachziehen — mit genau
     // diesem Spec-Satz als Beweis.
-    const strukturRel = `normtext/struktur/${e.ebene}/${e.key}.json`;
+    const strukturRel = `struktur/${e.ebene}/${e.key}.json`;
     const preloads = ['/normtext/register.json'];
     // Das Struktur-Sidecar ist optional (404 = Leser ohne Gliederung, kein
     // Fehler). Nur vorladen, wenn es existiert — ein Preload auf eine fehlende
     // Datei wäre eine Konsolenwarnung ohne Nutzen.
-    if (existsSync(join(PUBLIC, strukturRel))) preloads.push(`/${strukturRel}`);
+    // Die URL des Preloads folgt derselben Adress-Regel wie der Fetch im Leser
+    // (`normtextDateiUrl`, §5) — sonst zeigte der Preload für die drei
+    // Schlüssel mit «%» in der Kanonik auf eine Datei, die es nicht gibt, und
+    // der Leser lüde dieselbe Datei ein zweites Mal unter der richtigen
+    // Adresse. Der Existenz-Test bleibt am ROHEN Pfad: er fragt das
+    // Dateisystem, nicht die Auslieferung.
+    if (existsSync(join(PUBLIC, 'normtext', strukturRel))) preloads.push(normtextDateiUrl(strukturRel));
     const html = rendereTemplate(meta, jsonLdFuerErlass(e), inhalt, meta.pfad, preloads);
     // Die Datei liegt unter der ROUTEN-Ebene, nicht unter der Daten-Ebene — sonst
     // stünde die Seite nicht an ihrer eigenen canonical-URL (Befund 45).
