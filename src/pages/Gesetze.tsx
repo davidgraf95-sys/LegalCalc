@@ -488,8 +488,20 @@ export function Gesetze() {
               ? <Leerzustand art="bestand" text="Kein Erlass gefunden." />
               : (
                 <div className="space-y-4">
-                  {/* A15 — Gliederungs-Umschalter (dieselbe Bedienung auf allen Säulen). */}
-                  <div className="flex justify-end">
+                  {/* A15 — Gliederungs-Umschalter (dieselbe Bedienung auf allen Säulen).
+                      ── LM-143 (W2·17-UI-BEFUNDE/B16) · ERKLÄRUNG UND UMSCHALTER
+                      STEHEN BEIEINANDER. Die Hülle stand auf `justify-end`.
+                      Gemessen 4.9.2026 @1440 auf /gesetze?ebene=bund (Preview von
+                      origin/main): der Umschalter «Relevanz · Systematisch ·
+                      Rechtsgebiet» klebte rechts bei x = 1076–1384, der Satz, der
+                      genau diese Wahl erklärt (`RelevanzHinweis` als erstes Kind
+                      der gewählten Sicht), begann links bei x = 333 und 145 px
+                      tiefer — Bedienelement und Erklärung diagonal über die Seite
+                      verteilt. Linksbündig fluchten sie an derselben Kante und
+                      stehen unmittelbar übereinander. Die drei Säulen (Bund,
+                      International, Kanton) tragen dieselbe Änderung — «dieselbe
+                      Bedienung auf allen Säulen» gilt auch für ihre Stellung. */}
+                  <div className="flex justify-start">
                     <GliederungUmschalter wert={gliederung} onWahl={setzeGliederung} />
                   </div>
                   {gliederung === 'relevanz'
@@ -512,7 +524,7 @@ export function Gesetze() {
                 Für die Schweiz massgebliche Staatsverträge und internationales Recht — je mit Live-Link zur amtlichen Fassung (Fedlex SR 0.* bzw. EUR-Lex). Einzelne Erlasse (z. B. EMRK) werden als amtliches PDF in-app angezeigt; massgeblich bleibt stets {AMTLICHE_FASSUNG_NOMEN}.
               </p>
               {/* A15 — Gliederungs-Umschalter (dieselbe Bedienung auf allen Säulen). */}
-              <div className="flex justify-end">
+              <div className="flex justify-start">
                 <GliederungUmschalter wert={gliederung} onWahl={setzeGliederung} />
               </div>
               {gliederung === 'relevanz'
@@ -598,7 +610,7 @@ export function Gesetze() {
                     {/* A14/A15 — Gliederungs-Umschalter für die Erlasse dieses Kantons
                         (die G5-Umschalter Alphabet/Erlass-Zahl/Region auf dem 26er-
                         Raster bleiben davon unberührt — sie ordnen die KANTONE). */}
-                    <div className="flex justify-end">
+                    <div className="flex justify-start">
                       <GliederungUmschalter wert={gliederung} onWahl={setzeGliederung} />
                     </div>
                     {(() => {
