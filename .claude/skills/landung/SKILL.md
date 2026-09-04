@@ -155,10 +155,15 @@ npm run check:perf-budget  # liest dist, Chrome-frei
    Roadmap: <ID>
    Roadmap-Status: done|ready|parked(<token>)
    ```
-   `plan-buchung.yml` liest ihn nach dem Squash-Merge; halber Block = Lauf
-   laut rot. Commit-Trailer zusätzlich erlaubt, keine Pflicht. Fällt die
-   Auto-Buchung aus: `plan:set` im nächsten PR/Sammel-Push (kein direkter
-   main-Push). Form: Skill `auftrag` Ziff. 5; Historie: `referenz-ci.md`.
+   `plan-buchung.yml` liest ihn nach dem Squash-Merge; ein ECHTER halber
+   Block (`Roadmap-Status:` ohne `Roadmap:`, oder beide Zeilen in
+   verschiedenen Absätzen) = Lauf laut rot. Commit-Trailer zusätzlich
+   erlaubt, keine Pflicht. Fällt die Auto-Buchung aus: `plan:set` im
+   nächsten PR/Sammel-Push (kein direkter main-Push). Form: Skill `auftrag`
+   Ziff. 5; Historie: `referenz-ci.md`.
+   **Bleibt der Schritt nach der Landung `wip`:** im PR-Body nur
+   `Roadmap: <ID>`, kein Status — das Skript bucht dann nichts (seit
+   3.9.2026, Wurzel-Fix Workflow-Lauf 33694227189 bei PR #636).
 
 ### Auto-Merge ist auf Risiko-Pfaden gesperrt
 
@@ -183,15 +188,20 @@ Ein PR eines fremden Agenten (Regelwerk: `AGENTS.md`, Fahrplan
 `fahrplaene/FAHRPLAN-FREMDAGENTEN.md`) wird **erst geprüft, dann eingereiht**.
 Checkliste, in dieser Reihenfolge:
 
+**Erkennung:** Jules-PRs laufen unter dem GitHub-Konto des Repo-Eigentümers,
+nicht unter einem Jules-Autor — Beobachter nach Branch-Muster `*-<task-id>`
+oder `Fixes #<issue>` suchen, nicht nach Autor.
+
 1. Branch lokal holen und **selbst** `npm run gate` fahren — die Tor-Ausgabe
    des Fremden ist Daten, nie Beweis (§14.7).
 2. **Whitelist-Diff:** `git diff --stat` gegen die im Issue genannte Datei-Liste.
    Jede Datei ausserhalb ⇒ Ablehnung, nicht selbst zurechtstutzen.
 3. Diff gegen `istRisikoPfad()` halten. **Jede Berührung ⇒ Ablehnung** mit
    Verweis auf `AGENTS.md` §3 — nicht selbst nachbessern.
-4. **Bei Tests:** Testnamen und `expect(`-Zahl vorher = nachher zählen
-   (`git show <base>:<datei> | grep -c 'expect('` gegen die neue Fassung).
-   Geänderte Assertions oder Golden-Dateien ⇒ Ablehnung (§6.3).
+4. **Bei Tests:** `npx vite-node scripts/analyse/test-assertion-diff.ts origin/main origin/<branch>`
+   muss Exit 0 liefern (T5-Beleg 3.9.2026: gleiche Zählwerte, abgeschwächter
+   Matcher — nur der Inhalts-Diff fand ihn). Geänderte Assertions oder
+   Golden-Dateien ⇒ Ablehnung (§6.3).
 5. **Neue Abhängigkeiten** in `package.json`/Lockfile ⇒ Ablehnung, ausser der
    Auftrag hat sie ausdrücklich erlaubt.
 6. Trailer prüfen: `Roadmap: <ID>` im letzten Absatz. `Gegenpruefung: n/a —
@@ -239,7 +249,10 @@ nachschärfen oder Schritt zurückholen.
    nach dem Merge (Solls: `fahrplaene/FAHRPLAN-PERFORMANCE.md`); manuell nur
    bei Verdacht.
 5. Aufräumen: gemergten Branch + Worktree entfernen (lokal + remote).
-6. Karten-ZEILE in `STRUKTUR.md` (deployter Stand, Commit-Hash) — Form:
+6. Hat der Merge `package-lock.json` geändert: `npm ci` im Haupt-Checkout
+   nachziehen (Beleg 3.9.2026: fehlende `valibot`/`date-holidays` machten
+   `npm test` in jedem neuen Worktree rot).
+7. Karten-ZEILE in `STRUKTUR.md` (deployter Stand, Commit-Hash) — Form:
    Skill `bauschritt` Station E.
 
 ## Trailer- und PR-Formregeln (CI-Rot-Lehren 31.8./1.9.2026, §17)
