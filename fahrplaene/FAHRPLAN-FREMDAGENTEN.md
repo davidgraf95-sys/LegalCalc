@@ -354,6 +354,30 @@ Schritte — eine Quote ohne Bedingung ist keine Zahl.
   `jules-`/`jules/` (vereinheitlicht mit §2 Phase 1 und Skill `landung`,
   4.9.2026 — nie «jules irgendwo im Namen», Gegenbeleg PR #656), nie über den
   Autor.
+- **Limite erkennen (Auftrag David 4.9.2026: «stelle sicher, dass wir merken,
+  wenn die Limite erreicht ist»).** Beide Zahlen oben (Jules 100/Tag·15
+  parallel, Antigravity «alle 5 h aufgefrischt bis Wochenlimit») sind
+  **unbelegt** — nur aus Zweitquellen, nie selbst beobachtet; das erste
+  tatsächlich beobachtete Ereignis belegt sie oder korrigiert sie (Tabelle
+  unten). Signale je Dienst: **Jules** antwortet auf ein `jules`-Issue
+  normalerweise binnen ~1 min mit «Jules is on it» und nach Fertigstellung
+  mit «Ready for a review! A PR …» — bleibt diese Annahme über 10 min aus,
+  ist ein Tages- oder Parallel-Stopp der wahrscheinlichste Grund (kann auch
+  ein App-Problem sein, unterscheidet das Skript nicht). **Antigravity**
+  zeigt Erschöpfung vermutlich als `status` ungleich `SUCCESS` mit einem
+  Text nach Muster `quota|rate.?limit|429|resource.?exhausted|too many|
+  exceeded|limit` (Musterherkunft: HTTP/gRPC-Standardformen plus übliche
+  Klartext-Varianten — nie beobachtet) oder als Timeout. **Skript:**
+  `npm run fremdagenten:messung -- --kontingent` prüft beides in einem
+  Lauf (Jules-Issues der letzten 24 h + ein trivialer `agy`-Ping,
+  Musterprüfung geteilt über `scripts/analyse/agy-status.ts`, auch von
+  `gemini-diskrepanz.ts` genutzt) — **Exit 3** heisst Kontingent-Alarm.
+  **Fallback bei Exit 3:** keine neuen Jules-Tickets (Skill `auftrag` Ziff. 6
+  «Grüne Spur → Jules»), Gemini-Recherche zurück an `lex-recherche`/Sonnet
+  (Skill `auftrag` Ziff. 6 «Recherche/Sichtung via Gemini»). **Protokoll:**
+  jedes real beobachtete Ereignis in die Tabelle «Kontingent-Ereignisse» in
+  §5 eintragen — nie ein Tor, CI-Schritt oder eine Landung davon abhängig
+  machen (Regel oben unverändert).
 
 ## §5 · Werkzeugstand (3.9.2026, Momentaufnahme)
 
@@ -461,6 +485,14 @@ Davids Sache, unabhängig davon).
 **Recherche-Vergleich Sonnet vs. Gemini** (leer, Messregel Skill `auftrag` Ziff. 6b):
 
 | Datum | Auftrag | Sonnet-Ergebnis | Gemini-Ergebnis | Abweichung |
+|---|---|---|---|---|
+
+**Kontingent-Ereignisse** (leer, Skript `npm run fremdagenten:messung --
+--kontingent`, Regel §4 «Limite erkennen» — die Zahlen 100/Tag und 15
+parallel für Jules sind unbelegt; das erste hier eingetragene Ereignis
+belegt sie oder korrigiert sie):
+
+| Datum | Dienst | Signal | Dauer | Folge |
 |---|---|---|---|---|
 
 **Stand nach dieser Session (4.9.2026):** Phase 0 ✓ · Phase 1 ✓ (3/3) · Phase 2 ✓ (#650,
