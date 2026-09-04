@@ -55,8 +55,15 @@ for (const [fam, val] of Object.entries(farben)) {
   }
 }
 const FAMILIEN = Object.keys(farben).join('|');
-// Utility-Präfixe, die eine Farbe tragen:
-const PRAEFIX = 'bg|text|border|ring|from|via|to|divide|outline|fill|stroke|decoration|placeholder|caret|accent|ring-offset';
+// Utility-Präfixe, die eine Farbe tragen. `shadow` ergänzt 5.9.2026 (D0-Nachzug,
+// s. Prüfung 3): Tailwind 3 nimmt an `shadow-` eine FARBE entgegen — gemessen
+// erzeugt `shadow-brass-500/40` die Deklaration `--tw-shadow-color: color-mix(…)`.
+// Damit kann dort dieselbe stille No-op-Klasse entstehen wie an `bg-`, und die
+// Aufzählung war schlicht unvollständig. Die Formen OHNE Farbe (`shadow-sm|md|lg`,
+// `shadow-[var(--ring)]`) laufen weiter durch: FARB_RE verlangt hinter dem Präfix
+// eine Haus-FAMILIE, und `sm`/`md`/`lg` sind keine; ARBITRARY_FARB_RE greift nur
+// bei `#`/`rgb`/`hsl`, nicht bei `var(`.
+const PRAEFIX = 'bg|text|border|ring|from|via|to|divide|outline|fill|stroke|decoration|placeholder|caret|accent|ring-offset|shadow';
 // Fängt <praefix>-<familie>[-<stufe>] (Stufe optional = DEFAULT); /<alpha> wird ignoriert.
 const FARB_RE = new RegExp(`\\b(?:${PRAEFIX})-(${FAMILIEN})(?:-([a-z0-9.]+))?(?:/[0-9.]+)?\\b`, 'g');
 
@@ -68,6 +75,9 @@ const FARB_RE = new RegExp(`\\b(?:${PRAEFIX})-(${FAMILIEN})(?:-([a-z0-9.]+))?(?:
 const DEFAULT_PALETTE = 'red|green|blue|yellow|orange|purple|pink|gray|grey|zinc|neutral|stone|amber|lime|emerald|teal|cyan|sky|indigo|violet|fuchsia|rose';
 const DEFAULT_FARB_RE = new RegExp(`\\b(?:${PRAEFIX})-(?:${DEFAULT_PALETTE})-[0-9]+(?:/[0-9.]+)?\\b`, 'g');
 // ── Verbot: Arbitrary-Color Hex/rgb/hsl in Komponenten (§13 Pkt.1). var(--…) bleibt erlaubt (Token-Escape). ──
+// ACHTUNG (D0, 5.9.2026): der Token-Escape ist nur OHNE Deckkraft-Suffix
+// gefahrlos. `…-[var(--token)]/60` erzeugt in Tailwind 3 keine CSS-Regel —
+// diesen Fall prüft nicht diese Zeile, sondern Prüfung 3 (ALPHA_UTIL_RE).
 const ARBITRARY_FARB_RE = new RegExp(`\\b(?:${PRAEFIX})-\\[(?:#|rgb|hsl)[^\\]]*\\]`, 'g');
 // ── Verbot: eigene FARBE am Fokusring (E-1, Design-Konsistenz 31.8.2026) ────
 // Der Fokusring hat GENAU EINE Rolle: `--focus` (src/index.css) — hell
@@ -140,7 +150,35 @@ const KOMMENTAR_ZEILE_RE = /^\s*(?:\/\/|\*|\/\*|\{\/\*)/;
 // ── Deckkraft-Suffix (Prüfung 3, D0): <praefix>-<farbe>/<alpha>. Bewusst OHNE
 // Familien-Filter — auch die Tailwind-Keyword-Farben (bg-black/50) laufen mit,
 // die Kompilation entscheidet. Nur Farb-Präfixe, damit w-1/2 & Co. nicht greifen.
-const ALPHA_UTIL_RE = new RegExp(`\\b(?:${PRAEFIX})-[a-z]+(?:-[a-z0-9]+)*\\/[0-9.]+\\b`, 'g');
+//
+// BEIDE SEITEN DÜRFEN AUCH IN KLAMMERN STEHEN (D0-Wurzel-Fix 5.9.2026). Der
+// Ausdruck verlangte hinter dem Präfix einen benannten Token (`[a-z]+…`) und
+// hinter dem Schrägstrich eine nackte Zahl. Damit sah Prüfung 3 die
+// ARBITRARY-Schreibweise nicht — und genau die ist im Haus ausdrücklich
+// erlaubt: ARBITRARY_FARB_RE verbietet nur `#`/`rgb`/`hsl` und lässt
+// `…-[var(--token)]` als «Token-Escape» stehen (2 Fundstellen im Bestand,
+// `text-[var(--placeholder)]` und `shadow-[var(--ring)]`). Wer an eine davon
+// ein `/60` hängt, schreibt den D0-Fehler in seiner reinsten Form:
+//   GEMESSEN 5.9.2026 (`postcss([tailwindcss(config)])`, Repo-Config):
+//     bg-paper-sunken/60           → background-color: color-mix(…)   REGEL
+//     bg-[var(--paper-sunken)]/60  → —                                KEINE REGEL
+//     text-[var(--brass-700)]/55   → —                                KEINE REGEL
+//     border-[var(--line)]/60      → —                                KEINE REGEL
+// Reproduziert am Wächter selbst: `bg-[var(--paper-sunken)]/60` in eine
+// Komponente gepflanzt liess `check:design-tokens` GRÜN durchlaufen (Exit 0),
+// obwohl die Klasse keine einzige CSS-Regel erzeugt. `alphaFaehig()` in
+// tailwind.config.js kann daran nichts ändern: der Wert kommt gar nicht aus dem
+// Farbbaum, sondern steht roh in der Klasse — der Fix gehört an den WÄCHTER,
+// nicht an die Config.
+// Die arbitrary ALPHA-Seite (`/[0.6]`) läuft aus demselben Grund mit: sie
+// funktioniert heute, war aber unbewacht — fiele `alphaFaehig()` weg, ginge sie
+// still mit unter. Kein Familien-Filter, keine Sonderregel: was wie eine
+// Deckkraft-Klasse aussieht, wird kompiliert, und die Kompilation urteilt.
+// Der abschliessende `\b` ist ENTFALLEN — er kann hinter `]` nicht greifen; die
+// Zahl-Alternative ist stattdessen exakt gefasst (`60`, `0.6`, nie `60.`).
+const ALPHA_FARBE = `(?:[a-z]+(?:-[a-z0-9]+)*|\\[[^\\]\\s]+\\])`;
+const ALPHA_WERT = `(?:[0-9]+(?:\\.[0-9]+)?|\\[[^\\]\\s]+\\])`;
+const ALPHA_UTIL_RE = new RegExp(`\\b(?:${PRAEFIX})-${ALPHA_FARBE}\\/${ALPHA_WERT}`, 'g');
 
 function dateien(dir: string): string[] {
   const out: string[] = [];
