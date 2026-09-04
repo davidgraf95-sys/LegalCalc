@@ -158,6 +158,36 @@ Quellen-Priorität und PDF-Extraktionsregeln im Detail:
   `review.md`-Audit («prüf das», «stimmt das?», «review»). Das ist **nicht** der
   §14.4-Pflicht-Pass, sondern ein zusätzlicher Audit — nie automatisch starten.
 
+## Optionaler Zweitblick Gemini (Diskrepanz-Finder)
+
+Zusätzlich zum Pflicht-Pass — nicht statt ihm. Vor der Gegenprüfung eines
+**neuen oder aktualisierten Bund-Erlasses** kann ein zweites Modell (Gemini,
+via `agy`) den amtlichen Fedlex-Text gegen unseren Snapshot textlich
+abgleichen — ein unabhängiger zweiter Parser sieht einen Bug nicht, den der
+eigene Extraktor sich selbst nicht zeigt.
+
+```
+bash scripts/fedlex-cache.sh                                    # Pin-Cache füllen (einmalig/aktuell halten)
+npx vite-node scripts/analyse/gemini-diskrepanz.ts bund/<ERLASS> [--artikel N-M] [--laeufe 2] [--out pfad]
+```
+
+- **Verdachtsliste, nie Beleg (§14.7).** Gemini hat nachweislich Taten
+  behauptet, die nicht stattfanden (Fahrplan-FREMDAGENTEN §4) — jeder gemeldete
+  Fund gehört von Hand oder in der Gegenprüfungs-Session gegen die amtliche
+  Quelle geprüft, bevor er "Befund" heisst. Das Skript selbst ist ein
+  Sichtwerkzeug, kein Tor: Exit 0 bei technisch gelungenem Lauf, unabhängig vom
+  Fundinhalt; nicht in CI.
+- **Zwei Läufe, nur Konsens zählt.** Ein Fund gilt nur, wenn er in **beiden**
+  `agy`-Läufen (gleicher Artikel, gleiche Klasse, überlappender Text)
+  auftaucht — reduziert Einzellauf-Rauschen.
+- **Kosten (Grundlast):** ~15–40k Tokens und ~45–140 s je Gruppe/Lauf
+  (T2-Recall-Messung, `scratchpad/t2-recall/ERGEBNIS.md`); ein Erlass mit
+  wenigen hundert Artikeln bleibt meist bei 1–3 Gruppen (Budget ≤ ~200k
+  Zeichen Quelle+Snapshot je Gruppe).
+- Voraussetzung ist ein gepinnter Fedlex-Cache (`scripts/fedlex-cache.sh`) —
+  das Skript lädt **nicht live** und bricht bei fehlendem Pin/Cache mit
+  Hinweis ab.
+
 ## Definition of Done (§14.4/§14.5 — am Produktionsabschluss abhaken)
 
 Wortlaut von §14.4/§14.5 seit 25.7.2026 im Skill `auftrag`, Ziff. 4/4a/5.

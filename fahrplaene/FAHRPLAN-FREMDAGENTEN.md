@@ -118,6 +118,29 @@ Namen (sonst greift die Prüflogik-Ausnahme). **Nicht als Tor, nicht in CI:** ei
 manueller Schritt im Skill `korpus-werkstatt` («optionaler Zweitblick bei
 neuen/aktualisierten Erlassen»).
 
+**Gebaut (4.9.2026):** `scripts/analyse/gemini-diskrepanz-text.ts` (deterministische
+Klartext-Reduktion, unit-getestet unter `src/tests/gemini-diskrepanz-text.test.ts`)
++ `scripts/analyse/gemini-diskrepanz.ts` (CLI, Gruppierung, agy-Aufruf ×2,
+Konsens, Bericht). Pilot auf zwei kürzlich aktualisierte Bund-Erlasse
+(`git log` auf `public/normtext/bund/`: Commit 5bf9dbb9a, 28.7.2026,
+bis/ter-Fix — betraf u. a. AMBV und VZV):
+
+| Erlass | Gruppen | Läufe | Tokens gesamt | Dauer gesamt | Status je Gruppe | Konsens-Funde |
+|---|---|---|---|---|---|---|
+| AMBV | 1 | 2 | 101 299 | 135.2 s | SUCCESS/SUCCESS | 0 |
+| AMBV (Zweitlauf, Bug-Reproduktion `--laeufe 0`) | 1 | 2 | 97 220 | 161.8 s | SUCCESS/ANTWORT_KEIN_JSON | 0 (Konsens korrekt leer — ein Lauf lieferte kein valides JSON, die Fallback-Wache griff) |
+| VZV | siehe unten | 2 | siehe unten | siehe unten | siehe unten | siehe unten |
+
+AMBV: keine Funde — Negativ-Kontrolle (Erlass ohne bekannten Extraktionsfehler).
+Scope V1: nur `<article id="art_N">`-Artikel (kein Anhang-Tabellenparsing) —
+sonst systematischer Scheinfund «kein Fedlex-Artikel gefunden» je
+Anhangs-Eintrag (beobachtet am ungefixten AMBV-Lauf, in
+`reduziereSnapshot`-Filter behoben). HINWEIS: der historische T2-bister-Fall
+(VZV Anhang 1bis, Fix 5bf9dbb9a) lag selbst in einem Anhang — Scope V1 kann
+ihn NICHT wiederfinden; der VZV-Pilotlauf unten prüft nur die Artikel-Ebene
+desselben Erlasses, ist also KEIN Recall-Test des bekannten Falls.
+
+
 ### Phase 3 — Zweitblick-Messung (5 Durchgänge, verteilt)
 
 Erst nach Phase 2. Nicht als Prüfer von Claude, sondern als **zweiter
