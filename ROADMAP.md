@@ -537,22 +537,24 @@ zgb-a36-anhang: Die ZGB-Gliederung zeigt 74 Artikel des Anhangs «Wortlaut der f
   die Checkliste liegt seit 29.8.2026 dort statt hier (sie war eine Merge-Konflikt-Falle: 6 Konflikte
   in EINER Zeile bei 15 PRs).
 
-- [~] **Fremde Agenten im Bau — Jules, Antigravity, Gemini** *(`QS-FREMDAGENTEN`, Freigabe David 3.9.2026)*
-  <!-- @meta id: QS-FREMDAGENTEN · status: wip · blocker: null · dep: [] · feld: betrieb · fahrplan: fahrplaene/FAHRPLAN-FREMDAGENTEN.md -->
+- [ ] **Fremde Agenten im Bau — Jules, Antigravity, Gemini** *(`QS-FREMDAGENTEN`, Freigabe David 3.9.2026)*
+  <!-- @meta id: QS-FREMDAGENTEN · status: ready · blocker: null · dep: [] · feld: betrieb · fahrplan: fahrplaene/FAHRPLAN-FREMDAGENTEN.md -->
   Ziel: neben Claude Code eine zweite Bauequipe (Jules) und einen Lese-/Sichtungsweg (Antigravity,
   Gemini) auf der grünen Spur nutzen — risikofrei, eng umrissen, Tor-geprüft. Grenzen: Risikopfade
   bleiben Claude-Unteragenten, Verdikte und Landung bleiben bei Claude, die fachliche Abnahme bei
   David; jede Phase hat eine Rückbau-Schwelle statt einer Bewachung.
   **Detail:** [FAHRPLAN-FREMDAGENTEN.md](fahrplaene/FAHRPLAN-FREMDAGENTEN.md) §2.
   - [x] Phase 0 — Testläufe T1–T6 (Jules-Pilot, agy-Recall, agy-Betrieb, NotebookLM, Prüfer-Probe, Tabu-Probe); Messwerte §5 (T4 David offen, T6: AGENTS.md hält nicht als Zaun). §2.
-  - [ ] Pilot Jules — 2–3 PRs auf der grünen Spur, Landung durch Claude. §2/§3.
-  - [ ] Diskrepanz-Finder Korpus-Werkstatt (`agy` gegen Erlass-Snapshot, manueller Schritt, kein Tor). §2/§3.
-  - [ ] Zweitblick-Messung (fünf Durchgänge, Rückbau-Schwelle). §2/§3.
+  - [x] Pilot Jules — 3/3 PRs ohne Code-Nacharbeit (#639, #647, #648), Fremd-PR-Tor in CI (#645, Muster #649). §2/§5.
+  - [x] Diskrepanz-Finder Korpus-Werkstatt (#650, deterministischer Erstfilter + Gemini-Konsens; Pilot AMBV 8/8). §2/§3.
+  - [ ] Zweitblick-Messung (fünf echte Gegenprüfungen im Alltag, Rückbau-Schwelle). §2/§3.
+  - [ ] Phase 4 Skalierung: 3–5 Jules-Issues pro Session; Jules-API mit Plan-Gegenlesen (D4); Antigravity-Claude als Bauarbeiter (D7). §2.
 
-- [ ] **Auffindbarkeits-Basis: Sitemap + Search Console (kein SEO-Ausbau)** *(`SEO-BASIS`, Entscheid David D5, 3.9.2026)*
-  <!-- @meta id: SEO-BASIS · status: ready · blocker: null · dep: [] · feld: betrieb · fahrplan: fahrplaene/FAHRPLAN-SEO-A11Y-GOVERNANCE.md -->
+- [x] **Auffindbarkeits-Basis: Sitemap + Search Console (kein SEO-Ausbau)** *(`SEO-BASIS`, Entscheid David D5, 3.9.2026)*
+  <!-- @meta id: SEO-BASIS · status: done · blocker: null · dep: [] · feld: betrieb · fahrplan: fahrplaene/FAHRPLAN-SEO-A11Y-GOVERNANCE.md -->
   Ziel: Das Repo hat heute keine Sitemap — Suchmaschinen sehen die prerenderten Seiten nur, soweit sie
-  sie zufällig finden. Ein deterministischer Generator aus dem Prerender-Manifest, dazu `robots.txt`
+  sie zufällig finden. **Nullbefund 4.9.2026: falsch — Sitemap existiert seit 11.6.2026 (`scripts/prerender.ts`,
+  8280 URLs, Drift-Check, Prod-Smoke); technisch erledigt, offen nur Search-Console-Verifikation (David).** Ein deterministischer Generator aus dem Prerender-Manifest, dazu `robots.txt`
   und die Search-Console-Verifikation durch David. Grenze: **kein SEO-Ausbau** — `SEO-A11Y` bleibt
   geparkt, hier entsteht nur die technische Basis.
   **Detail:** [FAHRPLAN-SEO-A11Y-GOVERNANCE.md](fahrplaene/FAHRPLAN-SEO-A11Y-GOVERNANCE.md) §12.
