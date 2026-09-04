@@ -66,7 +66,15 @@ function KarteInhalt({ e }: { e: BrowseErlass }) {
           nicht lesbarer. Mit dem Titel allein: 166→168 px, unverändert 6 Karten
           im Sichtfeld. */}
       <p className="mt-1.5 text-base text-ink-600 leading-snug line-clamp-2">{e.titel}</p>
-      <div className="mt-3 flex flex-wrap items-center gap-x-3 gap-y-1.5 text-xs text-ink-500">
+      {/* LM-031 (B11-Karten, 4.9.2026): `mt-auto` verankert die Metazeile am
+          Kartenfuss. Gemessen auf `/gesetze?ebene=bund` (1440 px): in einer
+          Reihe gleich hoher Karten (190 px) blieben unter dem Inhalt 43 px
+          leer, wo die bedingte Zeile «N passende Werkzeuge» fehlte, gegen 20 px
+          dort, wo sie steht — die Metazeilen einer Reihe standen also
+          verschieden hoch. Der Leerraum liegt jetzt zwischen Titel und Meta,
+          die Metazeilen einer Reihe fluchten. Die Kartenhöhe bleibt unberührt
+          (A3-Abnahme, FAHRPLAN-ARCHIV-RESTPUNKTE §20, nicht gekippt). */}
+      <div className="mt-auto pt-3 flex flex-wrap items-center gap-x-3 gap-y-1.5 text-xs text-ink-500">
         {e.sr && <span>SR <span className="num">{e.sr}</span></span>}
         {/* EIN Meta-Schema für alle Karten (Fehlerbuch-Befund 47, auf Prod
             reproduziert 29.8.2026): «SR x.y · N Artikel · [Format] · Stand».
@@ -87,8 +95,17 @@ function KarteInhalt({ e }: { e: BrowseErlass }) {
               tragen kein Tag: sie sind der Normalfall, und 1'300 Karten mit
               «Volltext» zu beschriften wäre Lärm, keine Auskunft. */}
         {e.artikelAnzahl > 0 && <span><span className="num">{e.artikelAnzahl}</span> Artikel</span>}
-        {e.status === 'pdf-embed' && <span className="lc-badge lc-badge-soft">amtliches PDF</span>}
-        {e.status === 'nur-live-link' && <span className="lc-badge lc-badge-soft">nur Live-Link</span>}
+        {/* LM-035 (B11-Karten, 4.9.2026): die beiden Format-Tags sagten nicht,
+            was sie bedeuten («Was ‹nur Live-Link› und ‹amtliches PDF› heissen,
+            steht nirgends»). Der Titel benennt es in einem Satz — der WORTLAUT
+            der Grundarten ⑦/⑧ (FAHRPLAN-GESETZES-UX §2), nicht neu erfunden.
+            Die ungleiche Zeilenstruktur derselben Karten-Reihe ist seit
+            Fehlerbuch-Befund 47 (29.8.2026) gebaut und am 4.9. nachgemessen:
+            EMRK/UNO-Pakt/CISG tragen alle metaY 99, metaH 24. */}
+        {e.status === 'pdf-embed' && <span className="lc-badge lc-badge-soft"
+          title="Kein Volltext-Snapshot — die amtliche PDF-Fassung wird in der Leseansicht eingebettet.">amtliches PDF</span>}
+        {e.status === 'nur-live-link' && <span className="lc-badge lc-badge-soft"
+          title="Kein Volltext in LexMetrik — die Karte führt direkt zur amtlichen Fassung.">nur Live-Link</span>}
         <StandChip stand={e.stand} />
         {werkzeugAnzahl > 0 && (
           <span className="text-brass-700">
@@ -166,10 +183,10 @@ export function SysZeile({ e }: { e: BrowseErlass }) {
   const altDezent = jahr != null && Number(jahr) < 1990;
   const inhalt = (
     <>
-      <span className="num text-xs text-ink-500 shrink-0 w-20 tabular-nums truncate">{e.sr}</span>
+      <span className="num text-xs text-ink-500 shrink-0 w-20 truncate">{e.sr}</span>
       <span className="text-ink-700 break-words group-hover/z:text-brass-700 min-w-0">{e.titel}</span>
       {istLesbar(e) ? (
-        <span className="shrink-0 flex items-baseline gap-2 num text-xs tabular-nums">
+        <span className="shrink-0 flex items-baseline gap-2 num text-xs">
           {e.artikelAnzahl > 0 && <span className="text-ink-500">{e.artikelAnzahl} Art.</span>}
           {/* Sehr alte Stände dezent (italic) statt blass — Kontrast (S10/WCAG) bleibt gewahrt. */}
           {jahr && <span className={`hidden sm:inline text-ink-500${altDezent ? ' italic' : ''}`}>{jahr}</span>}
@@ -204,7 +221,7 @@ export function ErlassKarte({ e }: { e: BrowseErlass }) {
         href={e.quelleUrl}
         target="_blank"
         rel="noopener noreferrer"
-        className="lc-card block p-4 no-underline"
+        className="lc-card flex h-full flex-col p-4 no-underline"
       >
         <KarteInhalt e={e} />
         <span className="mt-2 inline-flex text-xs text-brass-700">↗ amtliche Fassung</span>
@@ -216,7 +233,7 @@ export function ErlassKarte({ e }: { e: BrowseErlass }) {
     <Link
       to={basePath}
       onClick={macheOeffnenHandler(e, basePath, oeffne)}
-      className="lc-card group block p-4 no-underline"
+      className="lc-card group flex h-full flex-col p-4 no-underline"
     >
       <KarteInhalt e={e} />
       <span className="mt-2 inline-flex items-center gap-1 text-xs font-medium text-brass-700 opacity-0 transition-opacity group-hover:opacity-100">

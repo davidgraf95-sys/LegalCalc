@@ -26,7 +26,10 @@ import { describe, it, expect } from 'vitest';
 import { readFileSync } from 'node:fs';
 import { renderToStaticMarkup } from 'react-dom/server';
 import { Leerzustand } from '../components/ui/Leerzustand';
-import { alleTsx, liesOhneKommentare, pruefeAusnahmen, rel } from './appDateien';
+import { alleTsx, APP_WURZEL, liesOhneKommentare, pruefeAusnahmen, rel } from './appDateien';
+import { join } from 'node:path';
+
+const TAGERECHNER = join(APP_WURZEL, 'pages/RechnerTagerechner.tsx');
 
 /** Quelltext ohne Kommentare — die Sonden prüfen den ausführbaren Teil. Die
  *  Begründungen am Fundort benennen den Vorzustand ausdrücklich («hier stand
@@ -134,6 +137,33 @@ describe('D-7 (2) — Aufrufstellen: Aussagesatz und Weiterweg-Pflicht (App-weit
       }
     }
     expect(filterFaelle).toBeGreaterThanOrEqual(3);
+  });
+
+  // ─── R4-E (5.9.2026) · die ART folgt der LAGE, nicht dem Wortlaut ─────────
+  //
+  // GEMESSEN am Preview: derselbe Sachverhalt — «die Suche hat nichts
+  // gefunden» — trug zwei Darstellungen:
+  //   /rechner/tagerechner, Suchtext «zzzzz»  → data-leerzustand="bestand", KEIN Weiterweg
+  //   /rechtsprechung?q=zzzzzz                → data-leerzustand="filter",  Weiterweg «Filter zurücksetzen»
+  // Massgeblich ist die LAGE: läuft der Zweig nur bei nicht-leerer Suche, ist
+  // etwas VERDECKT (`filter`, Weiterweg Pflicht); läuft er über den vollen
+  // Bestand, ist nichts DA (`bestand`, kein erfundener Weiterweg — Herleitung
+  // an den beiden `Gesetze.tsx`-Fundstellen). Der WORTLAUT entscheidet nicht:
+  // «gefunden» steht in beiden Lagen, und die Zweiteilung gefunden/erfasst ist
+  // seit Runde 1 ausdrücklich kein Befund.
+  it('R4-E: die suchgefilterte Preset-Leere des Tagerechners ist eine Filter-Leere', () => {
+    const q = liesOhneKommentare(TAGERECHNER);
+    // Der Zweig hängt an einer nicht-leeren Suche — also ist etwas verdeckt.
+    expect(q, 'der Leerzustand steht hinter `presetQuery.trim() !== \'\'`')
+      .toContain("presetQuery.trim() !== ''");
+    const a = aufrufe(q);
+    expect(a, 'genau ein Leerzustand in dieser Datei').toHaveLength(1);
+    expect(a[0], 'verdeckt ⇒ art="filter"').toContain('art="filter"');
+    expect(a[0], 'Filter-Leere ⇒ Weiterweg Pflicht').toContain('weiterweg=');
+    // Der Satz selbst bleibt unangetastet (§8) — er nennt die zwei fachlichen
+    // Auswege, die der Knopf NICHT ersetzt.
+    expect(a[0]).toContain('Kein Preset gefunden');
+    expect(a[0]).toContain('Spezialrechner der Fristen-Kategorie');
   });
 
   it('die alten Bauformen sind weg, nicht bloss danebengestellt (§5/§10)', () => {
