@@ -106,8 +106,20 @@ export function RichterFilter({ aktiv, aktivName, registerGeladen, optionen, onW
           onFocus={() => setOffen(true)}
           onBlur={() => setOffen(false)}
           onKeyDown={aufTaste}
-          placeholder="Name eingeben …"
-          aria-label="Nach Richter:in filtern"
+          /* LM-095 (W2·17-UI-BEFUNDE B10, 4.9.2026): nach der Wahl fällt das
+             Feld auf `setQ('')` zurück und stand danach mit «Name eingeben …»
+             da — es sah LEER aus, obwohl gefiltert wurde, und für EINEN Wert
+             standen zwei Bedienelemente nebeneinander (Feld + Aktiv-Chip).
+             Der Chip bleibt, wo er ist: dass er IN dieser Komponente lebt, ist
+             ein dokumentierter Entscheid (EntscheidFilter, «sonst doppelte
+             Repräsentation»), und `setQ('')` ist die Voraussetzung dafür, dass
+             man direkt den nächsten Namen tippen kann. Statt dessen TRITT DAS
+             FELD ZURÜCK: solange ein Name gesetzt ist, sagt es, was es dann
+             noch ist — eine Suche nach einem ANDEREN Namen. Der gesetzte Wert
+             steht damit an genau einer Stelle, dem Chip. Reine Beschriftung,
+             keine Änderung an Auswahl-, Filter- oder Tastaturlogik (§3). */
+          placeholder={aktiv ? 'Anderen Namen suchen …' : 'Name eingeben …'}
+          aria-label={aktiv ? 'Nach anderer Richter:in filtern' : 'Nach Richter:in filtern'}
           autoComplete="off"
           role="combobox"
           aria-expanded={hatListbox}

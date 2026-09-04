@@ -389,8 +389,13 @@ export function ZustaendigkeitForm({ onRechtswegChange, rechtswegVorwahl, minima
         {/* Schritt-Navigation (Muster wie VorlagenWizardRahmen): Zurück immer,
             Weiter bis zum Fahrplan; «Weiter» bei ungültigem Streitwert gesperrt. */}
         <div className="flex items-center justify-between pt-2 border-t border-line">
+          {/* LM-094 (W2·17-UI-BEFUNDE B17, 4.9.2026): dasselbe Paar wie im
+              Vorlagen-Wizard — der Befund nennt beide Fundstellen
+              ausdrücklich. Outline statt Ghost, damit die zwei Knöpfe eines
+              Assistenten sichtbar zusammengehören; Begründung im Wortlaut bei
+              `vorlagen/wizard.tsx`. */}
           <button type="button" onClick={() => setSchritt((s) => Math.max(0, s - 1))}
-            disabled={aktiverSchritt === 0} className="lc-btn-ghost">← Zurück</button>
+            disabled={aktiverSchritt === 0} className="lc-btn-outline">← Zurück</button>
           {aktiverSchritt < maxIndex && (
             <button type="button" onClick={() => setSchritt((s) => Math.min(maxIndex, s + 1))}
               disabled={weiterAus} className="lc-btn-primary">Weiter →</button>

@@ -408,8 +408,18 @@ export function ErgebnisPlatzhalter({ was, titel = 'Ergebnis' }: { was: React.Re
  *  DIESELBE Marke benutzen statt einer Kopie (§10). Dort heisst das Ziel nicht
  *  «Ergebnis», sondern «Dokumente». Default unverändert ⇒ die 14 Rechner-Aufrufe
  *  rendern byte-gleich. */
-export function ErgebnisSprung({ zielId, label = '↓ Ergebnis' }: { zielId: string; label?: string }) {
-  const { imPane } = usePaneKontext();
+/** Ist das Sprung-ZIEL gerade im Bild? — die eine Stelle, an der die Frage
+ *  beantwortet wird (§5/§10).
+ *
+ *  Bis zum 4.9.2026 stand die Beobachtung nur hier, in `ErgebnisSprung`; der
+ *  zweite schwebende Sprung-Knopf des Hauses («Vorschau ↓» im Vorlagen-Wizard)
+ *  hatte gar keine und blieb darum auch dann stehen, wenn sein Ziel längst im
+ *  Bild war (LM-084, W2·17-UI-BEFUNDE B10 — gemessen bei 390 px auf
+ *  `/vorlagen/nda`: der Griff «Vorschau & Bausteinprotokoll» stand bei y=580,
+ *  der Knopf lag unverändert über dem Inhalt darunter). Statt die Mechanik ein
+ *  zweites Mal zu schreiben, ist sie jetzt EIN Haken; das Verhalten aus W5
+ *  (11.7.2026) bleibt Wort für Wort dasselbe, es gilt nur für beide Bauformen. */
+export function useZielSichtbar(zielId: string) {
   const [zielSichtbar, setZielSichtbar] = useState(false);
   useEffect(() => {
     if (typeof IntersectionObserver === 'undefined') return;
@@ -424,6 +434,12 @@ export function ErgebnisSprung({ zielId, label = '↓ Ergebnis' }: { zielId: str
     io.observe(el);
     return () => io.disconnect();
   }, [zielId]);
+  return zielSichtbar;
+}
+
+export function ErgebnisSprung({ zielId, label = '↓ Ergebnis' }: { zielId: string; label?: string }) {
+  const { imPane } = usePaneKontext();
+  const zielSichtbar = useZielSichtbar(zielId);
   if (zielSichtbar) return null;
   return (
     // `print:hidden` zusätzlich zur Druckregel in `src/index.css`: die Marke ist
