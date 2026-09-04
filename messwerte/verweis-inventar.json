@@ -8,13 +8,13 @@
   "korpus": {
     "erlasse": 1566,
     "eintraege": 60271,
-    "texte": 214419
+    "texte": 214420
   },
   "gesamt": {
     "stellen": 36047,
-    "self": 19652,
+    "self": 19651,
     "fremd": 11362,
-    "text": 5033,
+    "text": 5034,
     "selbstmarker": 927
   },
   "klassen": [
@@ -93,7 +93,7 @@
     {
       "klasse": "art-m12-kuerzel",
       "entscheid": "TEXT",
-      "stellen": 1005,
+      "stellen": 1006,
       "erlasse": 266,
       "selbstmarker": 0,
       "was": "«Art. N KÜRZEL» (unbekanntes Kürzel) — Self unterdrückt (M12)"
@@ -109,7 +109,7 @@
     {
       "klasse": "art-self",
       "entscheid": "SELF",
-      "stellen": 12899,
+      "stellen": 12898,
       "erlasse": 471,
       "selbstmarker": 606,
       "was": "bare «Art. N» → Sprung im eigenen Erlass"
