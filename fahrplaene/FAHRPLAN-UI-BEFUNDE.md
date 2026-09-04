@@ -218,6 +218,22 @@ reproduzieren (§0.1); nicht Reproduzierbares als «erledigt (überholt)» schli
 - [x] **LM-119** · Detail · Die Zahl «1'469 Erlasse nach Titel» ist in gesperrter Monospace gesetzt … [neu] — **reproduziert und gebaut** (B13, 4./5.9.2026). Rot vorher, gemessen (`/gesetze` @1440, Kopfzeile des A–Z-Registers; der Bestand ist inzwischen 1'577): Zahl in `.num` = Geist Mono + `tabular-nums`, Gesamtbreite **40,8 px** für fünf Zeichen — der Apostroph belegt eine volle Ziffernzelle (8,16 px), «1 ' 577». **Ursache ist die Mono-Laufweite, nicht `tabular-nums`.** Die Mono-Stimme durfte nicht weichen (DESIGN-REGLEMENT §4b(e): «Mono trägt Zahlen …»), das Trennzeichen auch nicht (SSoT `konventionen.ts`). **Gebaut:** ein geteilter Darstellungs-Baustein `zahlGruppiert()` in `components/typografie.tsx` — dieselbe Bauart wie das dort schon lebende `sansAmp()` — setzt nur den Apostroph in ein `.lc-apo`-Span, und `.lc-apo` nimmt ihn aus der **Sans**, wo er von Haus aus schmal läuft. Das ist das im Repo dokumentierte Hausmittel (`index.css`: «ein Zeichen aus der Sans mitten im Serifentext ist das Hausmittel, kein Sonderweg», Vorbild `.lc-amp`), kein Breiten-Hack: ein erster Anlauf mit `width: .3em; text-align: center` wurde am gebauten Stand SICHTBAR verworfen (der Mono-Apostroph liegt in seiner Zelle nicht mittig und rutschte nach rechts — «1 '577»). Nachher gemessen: **36,8 px**, Apostroph-Span 4,19 px, Ziffern weiter Mono/tabular (Screenshot `b13-formate-lm119-kopf.png`). Drei Konsumenten, keine vierte Kopie (§5/§10): A–Z-Kopf, Zählzeile `/rechtsprechung`, Fusssatz `BezugZeitWahl` (LM-108).
 - [x] **LM-121** · Detail · «Zuständigkeit & Rechtsmittel (ZPO) → · Streitwert (ZPO) → · Fristenrechner … [neu] — **reproduziert und gebaut** (B13, 4./5.9.2026). Rot vorher, gemessen (`/rechner/bgg-fristen` @1440): «Vor dem Weiterzug: Zuständigkeit & Rechtsmittel (ZPO) → · Streitwert (ZPO) → · Fristenrechner →». **Gebaut** im EINEN geteilten Bauteil `components/ThemenEinstieg.tsx` (DESIGN-REGLEMENT-RECHNER R10), damit alle sieben Nutzer-Seiten dieselbe Form tragen: der Mittelpunkt bleibt (er trennt wirklich), der zusätzliche «→» je Link fällt weg. Begründung im Datei-Kopf verankert: «→» ist die Plattform-Marke «führt auf eine EIGENE Fläche» (Kartenfuss «Öffnen →») und soll nicht dreimal in einer Zeile stehen; die Links bleiben über Farbe, Hover und das ankündigende Label erkennbar. Nachher gemessen: «Vor dem Weiterzug: Zuständigkeit & Rechtsmittel (ZPO) · Streitwert (ZPO) · Fristenrechner» (Screenshot `b13-formate-lm121-nachher.png`).
 
+**CI-Nachzug (5.9.2026, PR #676, Shard 2/8 rot):** `e2e/rechtsprechung-richter.e2e.ts:45/72`
+timeouteten am geteilten Helfer `trefferZahl()` (Regex `^\d+\s+Entscheide?$`). Ursache
+verifiziert per Codepunkt-Ausgabe (Playwright/Chromium, `/rechtsprechung` @dist): der
+Zähler zeigt jetzt wie mit LM-119/121 beabsichtigt tausendergruppiert — «5'093
+Entscheide» (0x35,0x27,0x30,0x39,0x33) —, der GERADE Apostroph U+0027 bricht `\d+`. Die
+Format-Änderung ist der deklarierte Fachschritt dieses Batches (LM-108/116/119,
+`zahlGruppiert()`); angepasst wurde darum nur die **Test-Infrastruktur**: die Regex
+akzeptiert jetzt Ziffern plus Gruppentrenner (`'`, `’`, U+00A0, U+202F) vor dem
+Leerzeichen, `e2e/rechtsprechung-richter.e2e.ts` (`trefferZahl()`) und
+`e2e/rechtsprechung-besetzung-links.e2e.ts` (Inline-Vorkommen, gleiche Wurzel) — keine
+Assertion geändert. Repo-weit geprüft (`grep -rn "Entscheide?\$\|Erlasse?\$" e2e/
+src/tests/`): keine weiteren Treffer. Nachher: alle 34 Tests aus
+`rechtsprechung-richter.e2e.ts` + `rechtsprechung.e2e.ts` +
+`rechtsprechung-besetzung-links.e2e.ts` grün gegen dist, `tsc -b` clean, `lint` 0 Fehler,
+`npm run gate` (voll) GRÜN.
+
 **Code-Flächen (grob, aus den Routen):** `src/components/locale.tsx`, `src/components/ErgebnisAnzeige.tsx`, `src/components/forms`.
 **Risiko-Klasse:** gemischt — Formatierung ist Darstellung, aber jede Zahl stammt aus einer Engine (§3).
 **Prod-Re-Audit-Pflicht:** ja — vor Baubeginn alle Befunde dieses Batches am Prod-Stand
