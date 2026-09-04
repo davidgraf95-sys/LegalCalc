@@ -284,6 +284,7 @@ NotebookLM), danach nur Entscheide.
 | T1 Jules-Testlauf | Nacharbeit in Minuten gegen eigenen Bau | Nacharbeit > eigener Bau ⇒ Jules nur noch Doku/Mechanik oder gestrichen |
 | T2 agy-Recall | bekannte Fälle gefunden / verpasst (n = 3–5) | **≥ 3 von 5 verpasst ⇒ Einsatz A gestrichen** |
 | Phase 1 Jules | Anteil PRs **ohne Nacharbeit** durch Gate + Landungs-Check | **< 2 von 3 ⇒ zurück auf Doku-only** |
+| Skalierung Jules (Bauleiter 4.9.2026) | **Landungsquote** = gemerged ÷ (gemerged + geschlossen), PRs mit Label `probe` ausgeschlossen · **Median Ticket→PR** in Minuten | **Landungsquote ≥ 5 von 6 UND Median Ticket→PR ≤ 45 min über n ≥ 6 ⇒ Vorschlag Ticketzahl 3–5** |
 | Phase 2 Diskrepanz-Finder | echte Funde gegen Scheinfunde über die nächsten 10 Erlasse | **Schein > echt ⇒ Rückbau** |
 | Phase 3 Zweitblick | echte gegen Scheinbefunde, n = 5 | **mehr Schein als echt ⇒ Weg zu** |
 | Gesamt | Claude-Token pro gelandetem Schritt, vorher gegen nachher | steigt er, kostet die Delegation mehr, als sie spart |
@@ -300,6 +301,25 @@ Gemini-Finder: `scripts/analyse/gemini-diskrepanz*.ts`,
 
 **Messbedingung mitschreiben:** Jede Quote nennt n, Zeitraum und Art der
 Schritte — eine Quote ohne Bedingung ist keine Zahl.
+
+**Landungsquote ist nicht Nacharbeits-Quote (4.9.2026).** Die Landungsquote der
+Zeile «Skalierung Jules» misst, was ANKOMMT (gemergt gegen abgelehnt) — sie ist
+automatisch erhebbar. Die Zeile «Phase 1 Jules» misst etwas anderes: den Anteil
+PRs **ohne Nacharbeit**; ein PR kann landen und trotzdem Nacharbeit gekostet
+haben. Diese zweite Grösse hat keine automatische Quelle und wird von Hand im
+§5-Register geführt. Wer die beiden gleichsetzt, liest eine Ablehnung als
+Nacharbeit und umgekehrt. **Proben** (Label `probe`, etwa der Erstfilter-Test
+PR #642) sind weder Landung noch Ablehnung und fallen aus beiden Seiten der
+Landungsquote heraus; `npm run selbstopt:erheben` weist sie getrennt aus.
+
+**Selbstoptimierungs-Kreislauf (QS-FREMDAGENTEN, 4.9.2026):** Der Kreislauf
+läuft automatisch: Stufe 1 erhebt, Stufe 2 schlägt vor, Autopilot legt
+wöchentlich den Entwurf vor; die Session übernimmt oder verwirft mit
+Begründung. Stufe 1 (`npm run selbstopt:erheben`) zieht die Jules-Zahlen
+dieser Tabelle über `erhebeJules()` und die drei §5-Register unten
+deterministisch aus dieser Datei; Stufe 2 (`npm run retro:17`) deutet sie
+gegen die Schwellen dieser Tabelle. Detail und Quellenlage:
+`bibliothek/fremdagenten-google-ai-pro-2026-09.md`.
 
 ## §4 · Sicherheit und Daten
 

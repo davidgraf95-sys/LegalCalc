@@ -15,6 +15,7 @@ import {
   parseEreignisse,
   parseEreignisseMitRest,
   parseFKlassen,
+  parseFremdagentenRegister,
   parseTokenMetriken,
   pruefeZeitreihe,
   quoteText,
@@ -25,7 +26,16 @@ import {
   type Zeitreihe,
 } from '../../scripts/plan/selbstoptKern';
 import { lageBlock, selbstoptZeile, vorschlagsZeile } from '../../scripts/plan/lage';
-import { MIN_SNAPSHOTS, befunde } from '../../scripts/plan/retro17Kern';
+import {
+  JULES_QUOTE_MIN_N,
+  JULES_RUECKBAU_QUOTE,
+  JULES_SKALIEREN_MEDIAN_MAX_MIN,
+  JULES_SKALIEREN_MIN_N,
+  JULES_SKALIEREN_QUOTE,
+  MIN_SNAPSHOTS,
+  ZWEITBLICK_DURCHGAENGE_SCHWELLE,
+  befunde,
+} from '../../scripts/plan/retro17Kern';
 import type { Einheit } from '../../scripts/plan/parse';
 
 // ───────────────────────────── Tor-Ereignisse ─────────────────────────────
@@ -178,6 +188,119 @@ describe('parseFKlassen', () => {
     const summe = Object.values(out).reduce((a, b) => a + b, 0);
     expect(summe).toBeGreaterThanOrEqual(3);
     for (const k of ['F2e', 'F2f', 'F6']) expect(out[k]).toBeGreaterThanOrEqual(1);
+  });
+});
+
+describe('parseFremdagentenRegister', () => {
+  const FIXTURE = [
+    '## §5 · Werkzeugstand',
+    '',
+    '**Diskrepanz-Finder-Läufe (Phase 2)** — Werte aus §2 Phase 2 übernommen:',
+    '',
+    '| Datum | Erlass | Artikel mit Diff | an Gemini | echt | Schein | Tokens |',
+    '|---|---|---|---|---|---|---|',
+    '| 4.9.2026 | AMBV | 5 | 12 | 8 | 0 | 59 528 |',
+    '| 4.9.2026 | DBG Art. 1–60 | 1 | 3 | 0 | 1 | 54 836 |',
+    '',
+    '**Phase 3 — Zweitblick-Durchgänge** (leer, entsteht im Alltag):',
+    '',
+    '| Datum | Erlass/Norm | Prüfer | echt | Schein | verpasst | Tokens |',
+    '|---|---|---|---|---|---|---|',
+    '',
+    '**Kontingent-Ereignisse** (leer, Skript …):',
+    '',
+    '| Datum | Dienst | Signal | Dauer | Folge |',
+    '|---|---|---|---|---|',
+    '| 5.9.2026 | Jules | ALARM Issue #1 ohne Annahme | 12 min | keine neuen Tickets |',
+    '',
+    '## §6 · Entscheide',
+  ].join('\n');
+
+  it('zählt Datenzeilen und summiert echt/Schein je Register', () => {
+    const out = parseFremdagentenRegister(FIXTURE);
+    expect(out.ausfaelle).toEqual([]);
+    expect(out.mess).toEqual({
+      diskrepanz_laeufe: 2,
+      diskrepanz_echt: 8,
+      diskrepanz_schein: 1,
+      zweitblick_durchgaenge: 0,
+      kontingent_ereignisse: 1,
+    });
+  });
+
+  // ROT-BEWEIS der Nachbesserung 4.9.2026: vorher lieferte ein fehlendes oder
+  // umbenanntes Register still lauter Nullen — eine Zahl, die «gemessen und
+  // nichts gefunden» behauptet, wo nichts gemessen wurde (§8). Jetzt: `null`
+  // plus ein benannter Ausfall je Register.
+  it('meldet Ausfall statt Nullen, wenn keines der Register vorkommt', () => {
+    const out = parseFremdagentenRegister('# ohne Register');
+    expect(out.mess).toBeNull();
+    expect(out.ausfaelle).toHaveLength(3);
+    expect(out.ausfaelle.join(' ')).toContain('Diskrepanz-Finder-Läufe');
+  });
+
+  it('meldet Ausfall bei abweichender Kopfzeile, statt die Spalten zu raten', () => {
+    const verdreht = FIXTURE.replace(
+      '| Datum | Erlass | Artikel mit Diff | an Gemini | echt | Schein | Tokens |',
+      '| Datum | Erlass | Artikel mit Diff | an Gemini | Schein | echt | Tokens |',
+    );
+    const out = parseFremdagentenRegister(verdreht);
+    expect(out.mess).toBeNull();
+    expect(out.ausfaelle.join(' ')).toContain('Kopfzeile');
+  });
+
+  it('meldet Ausfall, wenn die Marke da ist, aber gar keine Tabelle folgt', () => {
+    const ohneTabelle = [
+      '**Diskrepanz-Finder-Läufe (Phase 2)** — noch nichts erhoben.',
+      '',
+      '**Phase 3 — Zweitblick-Durchgänge**',
+      '',
+      '| Datum | Erlass/Norm | Prüfer | echt | Schein | verpasst | Tokens |',
+      '|---|---|---|---|---|---|---|',
+      '',
+      '**Kontingent-Ereignisse**',
+      '',
+      '| Datum | Dienst | Signal | Dauer | Folge |',
+      '|---|---|---|---|---|',
+    ].join('\n');
+    const out = parseFremdagentenRegister(ohneTabelle);
+    expect(out.mess).toBeNull();
+    expect(out.ausfaelle).toHaveLength(1);
+  });
+
+  // GRÜN-Fall der Nachbesserung: eine Leerzeile MITTEN in der Tabelle (im
+  // Markdown ein Formatierungsversehen, kein Tabellenende) darf das Zählen
+  // nicht abbrechen — vorher fielen alle Zeilen danach unter den Tisch.
+  it('überspringt eine Leerzeile INNERHALB der Tabelle und zählt danach weiter', () => {
+    const mitLuecke = FIXTURE.replace(
+      '| 4.9.2026 | AMBV | 5 | 12 | 8 | 0 | 59 528 |',
+      '| 4.9.2026 | AMBV | 5 | 12 | 8 | 0 | 59 528 |\n',
+    );
+    const out = parseFremdagentenRegister(mitLuecke);
+    expect(out.mess?.diskrepanz_laeufe).toBe(2);
+    expect(out.mess?.diskrepanz_echt).toBe(8);
+  });
+
+  it('hört bei der nächsten Nicht-Tabellenzeile auf (zählt keine Folgeabschnitte mit)', () => {
+    const nurEinRegister = FIXTURE.split('\n').slice(0, 8).join('\n'); // ohne Zweitblick/Kontingent
+    const out = parseFremdagentenRegister(nurEinRegister);
+    expect(out.mess).toBeNull(); // Zweitblick/Kontingent fehlen ganz
+    expect(out.ausfaelle).toHaveLength(2);
+  });
+
+  // §5-Bindung an die echte Quelle (Muster wie bei `parseFKlassen`): ändert
+  // sich dort die Überschrift, soll der Parser sichtbar auf 0 fallen, nicht
+  // raten. Die drei Marken müssen also im echten Fahrplan vorkommen.
+  it('findet die drei Register-Überschriften im echten Fahrplan', () => {
+    const md = readFileSync('fahrplaene/FAHRPLAN-FREMDAGENTEN.md', 'utf8');
+    expect(md).toContain('**Diskrepanz-Finder-Läufe (Phase 2)**');
+    expect(md).toContain('**Phase 3 — Zweitblick-Durchgänge**');
+    expect(md).toContain('**Kontingent-Ereignisse**');
+    const out = parseFremdagentenRegister(md);
+    expect(out.ausfaelle).toEqual([]);
+    // Stand 4.9.2026: zwei Diskrepanz-Läufe (AMBV, DBG), 8 echt / 1 Schein.
+    expect(out.mess?.diskrepanz_laeufe).toBeGreaterThanOrEqual(2);
+    expect(out.mess?.diskrepanz_echt).toBeGreaterThanOrEqual(8);
   });
 });
 
@@ -408,6 +531,7 @@ function snapshot(p: Partial<Snapshot> = {}): Snapshot {
     flaky: null,
     tokens: null,
     fKlassen: {},
+    fremdagenten: { jules: null, gemini: null, claude_token_pro_schritt: null },
     ausfaelle: [],
     ...p,
   };
@@ -481,6 +605,113 @@ describe('pruefeZeitreihe', () => {
     expect(pruefeZeitreihe(reihe([snapshot({ ci: null, rework: null, flaky: null, tokens: null })]))).toEqual([]);
   });
 
+  // QS-FREMDAGENTEN (Schema 3): dasselbe Muster wie bei ci/rework/flaky/tokens
+  // oben, nur eine Ebene tiefer — das Block-Objekt selbst ist Pflicht, seine
+  // beiden Quellen dürfen `null` sein.
+  it('meldet fehlendes "fremdagenten"', () => {
+    const ohne = { ...snapshot() } as Partial<Snapshot>;
+    delete ohne.fremdagenten;
+    expect(pruefeZeitreihe(reihe([ohne as Snapshot])).join('\n')).toContain('"fremdagenten" fehlt');
+  });
+
+  it('akzeptiert fremdagenten mit lauter null-Quellen', () => {
+    expect(
+      pruefeZeitreihe(
+        reihe([snapshot({ fremdagenten: { jules: null, gemini: null, claude_token_pro_schritt: null } })]),
+      ),
+    ).toEqual([]);
+  });
+
+  it('akzeptiert eine vollständige Jules-/Gemini-Messung', () => {
+    expect(
+      pruefeZeitreihe(
+        reihe([
+          snapshot({
+            fremdagenten: {
+              jules: {
+                prs_gemerged_7d: 3,
+                prs_geschlossen_7d: 1,
+                proben_7d: 1,
+                prs_geschlossen_nummern: [662],
+                median_dauer_min: 30,
+                tickets_24h: 2,
+                alarm: false,
+              },
+              gemini: { diskrepanz_laeufe: 2, diskrepanz_echt: 8, diskrepanz_schein: 1, zweitblick_durchgaenge: 0, kontingent_ereignisse: 0 },
+              claude_token_pro_schritt: null,
+            },
+          }),
+        ]),
+      ),
+    ).toEqual([]);
+  });
+
+  // Schema 4: `proben_7d` und `prs_geschlossen_nummern` dürfen `null` sein —
+  // das ist die Migrations-Aussage «diese Messung unterschied noch keine
+  // Proben», nicht «null Proben gemessen».
+  it('akzeptiert eine migrierte Jules-Messung ohne Proben-Unterscheidung', () => {
+    expect(
+      pruefeZeitreihe(
+        reihe([
+          snapshot({
+            fremdagenten: {
+              jules: {
+                prs_gemerged_7d: 3,
+                prs_geschlossen_7d: 1,
+                proben_7d: null,
+                prs_geschlossen_nummern: null,
+                median_dauer_min: 30,
+                tickets_24h: 2,
+                alarm: false,
+              },
+              gemini: null,
+              claude_token_pro_schritt: null,
+            },
+          }),
+        ]),
+      ),
+    ).toEqual([]);
+  });
+
+  it('meldet eine Jules-Messung, der die Schema-4-Felder ganz fehlen', () => {
+    const kaputt = snapshot({
+      fremdagenten: {
+        jules: {
+          prs_gemerged_7d: 3,
+          prs_geschlossen_7d: 1,
+          median_dauer_min: 30,
+          tickets_24h: 2,
+          alarm: false,
+        } as unknown as Snapshot['fremdagenten']['jules'],
+        gemini: null,
+        claude_token_pro_schritt: null,
+      },
+    });
+    expect(pruefeZeitreihe(reihe([kaputt])).join('\n')).toContain('fremdagenten.jules');
+  });
+
+  it('meldet ein unvollständiges "fremdagenten.jules"', () => {
+    const kaputt = snapshot({
+      fremdagenten: {
+        jules: { prs_gemerged_7d: 1 } as unknown as Snapshot['fremdagenten']['jules'],
+        gemini: null,
+        claude_token_pro_schritt: null,
+      },
+    });
+    expect(pruefeZeitreihe(reihe([kaputt])).join('\n')).toContain('fremdagenten.jules');
+  });
+
+  it('meldet claude_token_pro_schritt ungleich null', () => {
+    const kaputt = snapshot({
+      fremdagenten: {
+        jules: null,
+        gemini: null,
+        claude_token_pro_schritt: 123 as unknown as null,
+      },
+    });
+    expect(pruefeZeitreihe(reihe([kaputt])).join('\n')).toContain('claude_token_pro_schritt');
+  });
+
   // Gegenprüfung 7.8.2026 (B6): Zonen-Offsets sind verboten, weil die
   // Chronologie lexikografisch entschieden wird. `…T09:00:00Z` ist SPÄTER als
   // `…T10:30:00+02:00`, die Zeichenkette behauptet das Gegenteil.
@@ -543,6 +774,191 @@ describe('selbstoptZeile', () => {
   it('bleibt vollständig, wenn die CI-Rate fehlt', () => {
     const z: Zeitreihe = { _generiert: GENERIERT_MARKE, schema: 1, snapshots: [snapshot()] };
     expect(selbstoptZeile(z)[0]).toContain('CI-Rate nicht erhoben');
+  });
+});
+
+describe('befunde — Fremdagenten (QS-FREMDAGENTEN)', () => {
+  const jules = (p: Partial<NonNullable<Snapshot['fremdagenten']['jules']>> = {}) => ({
+    prs_gemerged_7d: 0,
+    prs_geschlossen_7d: 0,
+    proben_7d: 0,
+    prs_geschlossen_nummern: [],
+    median_dauer_min: null,
+    tickets_24h: 0,
+    alarm: false,
+    ...p,
+  });
+  const gemini = (p: Partial<NonNullable<Snapshot['fremdagenten']['gemini']>> = {}) => ({
+    diskrepanz_laeufe: 0,
+    diskrepanz_echt: 0,
+    diskrepanz_schein: 0,
+    zweitblick_durchgaenge: 0,
+    kontingent_ereignisse: 0,
+    ...p,
+  });
+  const mitFremdagenten = (jules_: ReturnType<typeof jules> | null, gemini_: ReturnType<typeof gemini> | null): Zeitreihe => ({
+    _generiert: GENERIERT_MARKE,
+    schema: 3,
+    snapshots: [snapshot({ fremdagenten: { jules: jules_, gemini: gemini_, claude_token_pro_schritt: null } })],
+  });
+  /** Mehrere Snapshots mit aufsteigenden Stempeln, je einer Jules-Messung. */
+  const reiheAus = (js: (ReturnType<typeof jules> | null)[]): Zeitreihe => ({
+    _generiert: GENERIERT_MARKE,
+    schema: 4,
+    snapshots: js.map((j, i) =>
+      snapshot({
+        erhobenAm: `2026-09-${String(i + 1).padStart(2, '0')}T10:00:00.000Z`,
+        fremdagenten: { jules: j, gemini: null, claude_token_pro_schritt: null },
+      }),
+    ),
+  });
+  const arten = (z: Zeitreihe) => befunde(z, '').map((b) => b.art);
+
+  it('schweigt ganz, wenn fremdagenten nicht erhoben ist (null/null)', () => {
+    expect(arten(mitFremdagenten(null, null))).toEqual([]);
+  });
+
+  // (a) Rückbau-Regel: Quote < 2/3 über n ≥ 3.
+  it('(a) schlägt Rückbau vor, wenn die Quote unter der Schwelle liegt', () => {
+    expect(JULES_QUOTE_MIN_N).toBe(3);
+    expect(JULES_RUECKBAU_QUOTE).toBeCloseTo(2 / 3);
+    const z = mitFremdagenten(jules({ prs_gemerged_7d: 1, prs_geschlossen_7d: 2 }), null); // 1/3 < 2/3, n=3
+    expect(arten(z)).toContain('jules-rueckbau');
+  });
+
+  it('(a) schweigt an der Schwelle selbst (2/3 ist NICHT < 2/3)', () => {
+    const z = mitFremdagenten(jules({ prs_gemerged_7d: 2, prs_geschlossen_7d: 1 }), null); // genau 2/3
+    expect(arten(z)).not.toContain('jules-rueckbau');
+  });
+
+  it('(a) schweigt unter der Mindest-Stichprobe, auch bei tiefer Quote', () => {
+    const z = mitFremdagenten(jules({ prs_gemerged_7d: 0, prs_geschlossen_7d: 1 }), null); // n=1 < 3
+    expect(arten(z)).not.toContain('jules-rueckbau');
+  });
+
+  // (b) Skalierungs-Vorschlag: Quote ≥ 5/6 UND Median ≤ 45 min.
+  it('(b) schlägt Skalierung vor, wenn Quote und Median beide die Schwelle reissen', () => {
+    expect(JULES_SKALIEREN_QUOTE).toBeCloseTo(5 / 6);
+    expect(JULES_SKALIEREN_MEDIAN_MAX_MIN).toBe(45);
+    const z = mitFremdagenten(jules({ prs_gemerged_7d: 5, prs_geschlossen_7d: 1, median_dauer_min: 45 }), null);
+    expect(arten(z)).toContain('jules-skalieren');
+  });
+
+  it('(b) schweigt, wenn der Median über der Schwelle liegt (Quote allein reicht nicht)', () => {
+    const z = mitFremdagenten(jules({ prs_gemerged_7d: 5, prs_geschlossen_7d: 1, median_dauer_min: 46 }), null);
+    expect(arten(z)).not.toContain('jules-skalieren');
+  });
+
+  it('(b) schweigt ohne auflösbare Dauer (median_dauer_min null)', () => {
+    const z = mitFremdagenten(jules({ prs_gemerged_7d: 5, prs_geschlossen_7d: 1, median_dauer_min: null }), null);
+    expect(arten(z)).not.toContain('jules-skalieren');
+  });
+
+  // (b) Mindest-Stichprobe n >= 6 (Fahrplan §3, Zeile «Skalierung Jules»).
+  it('(b) schweigt unter n = 6, auch wenn Quote und Median stimmen', () => {
+    expect(JULES_SKALIEREN_MIN_N).toBe(6);
+    // 5 gemerged / 0 geschlossen: Quote 100 %, Median gut — aber n = 5 < 6.
+    const z = mitFremdagenten(jules({ prs_gemerged_7d: 5, prs_geschlossen_7d: 0, median_dauer_min: 10 }), null);
+    expect(arten(z)).not.toContain('jules-skalieren');
+  });
+
+  // Beschriftung (Nachbesserung 4.9.2026): die Kennzahl heisst Landungsquote,
+  // nicht «Quote ohne Nacharbeit» — geschlossen misst Ablehnung, nicht Nacharbeit.
+  it('(a) nennt die Kennzahl Landungsquote und grenzt sie gegen Nacharbeit ab', () => {
+    const z = mitFremdagenten(jules({ prs_gemerged_7d: 1, prs_geschlossen_7d: 2, prs_geschlossen_nummern: [1, 2] }), null);
+    const b = befunde(z, '').find((x) => x.art === 'jules-rueckbau');
+    expect(b?.anlass).toContain('Landungsquote (gemerged ÷ (gemerged + geschlossen), Proben ausgeschlossen)');
+    expect(b?.hinweis).toContain('geschlossen ≠ Nacharbeit; handgeführte Nacharbeits-Quote steht in Fahrplan §5');
+  });
+
+  it('(b) belegt die Skalierungs-Schwelle mit Fahrplan §3, nicht §2', () => {
+    const z = mitFremdagenten(jules({ prs_gemerged_7d: 5, prs_geschlossen_7d: 1, median_dauer_min: 45, prs_geschlossen_nummern: [7] }), null);
+    const b = befunde(z, '').find((x) => x.art === 'jules-skalieren');
+    expect(b?.anlass).toContain('Fahrplan §3');
+  });
+
+  // (c) jeder NEU geschlossene Jules-PR ⇒ Lehre verankern. Je PR genau einmal.
+  it('(c) schlägt vor, sobald ein Jules-PR geschlossen wurde, und nennt die Nummer', () => {
+    const z = mitFremdagenten(jules({ prs_geschlossen_7d: 1, prs_geschlossen_nummern: [662] }), null);
+    expect(arten(z)).toContain('jules-lehre');
+    expect(befunde(z, '').find((b) => b.art === 'jules-lehre')?.anlass).toContain('#662');
+  });
+
+  it('(c) schweigt ohne geschlossenen PR', () => {
+    const z = mitFremdagenten(jules({ prs_geschlossen_7d: 0 }), null);
+    expect(arten(z)).not.toContain('jules-lehre');
+  });
+
+  // ROT-BEWEIS der Nachbesserung: derselbe abgelehnte PR steht 7 Tage lang in
+  // jedem Snapshot. Ohne Entdopplung schlägt die Regel bei jeder Erhebung
+  // dieselbe Lehre erneut vor — Muster wie bei den F-Klassen, die nur NEUE
+  // datierte Vorfälle melden.
+  it('(c) feuert je PR-Nummer nur einmal — frühere Snapshots entdoppeln', () => {
+    const z = reiheAus([
+      jules({ prs_geschlossen_7d: 1, prs_geschlossen_nummern: [662] }),
+      jules({ prs_geschlossen_7d: 1, prs_geschlossen_nummern: [662] }),
+    ]);
+    expect(arten(z)).not.toContain('jules-lehre');
+  });
+
+  it('(c) feuert wieder, sobald eine NEUE Nummer dazukommt — und nennt nur sie', () => {
+    const z = reiheAus([
+      jules({ prs_geschlossen_7d: 1, prs_geschlossen_nummern: [662] }),
+      jules({ prs_geschlossen_7d: 2, prs_geschlossen_nummern: [662, 700] }),
+    ]);
+    const b = befunde(z, '').find((x) => x.art === 'jules-lehre');
+    expect(b?.anlass).toContain('#700');
+    expect(b?.anlass).not.toContain('#662');
+  });
+
+  it('(c) ohne mitgeführte Nummern (Messung vor Schema 4) fällt auf die Zählung zurück', () => {
+    const z = mitFremdagenten(jules({ prs_geschlossen_7d: 1, prs_geschlossen_nummern: null }), null);
+    expect(arten(z)).toContain('jules-lehre');
+  });
+
+  // (d) Gemini Schein > echt.
+  it('(d) schlägt Rückbau des Diskrepanz-Finders vor, wenn Schein überwiegt', () => {
+    const z = mitFremdagenten(null, gemini({ diskrepanz_laeufe: 3, diskrepanz_echt: 1, diskrepanz_schein: 2 }));
+    expect(arten(z)).toContain('gemini-rueckbau');
+  });
+
+  it('(d) schweigt, wenn echt mindestens gleich auf ist', () => {
+    const z = mitFremdagenten(null, gemini({ diskrepanz_laeufe: 3, diskrepanz_echt: 2, diskrepanz_schein: 2 }));
+    expect(arten(z)).not.toContain('gemini-rueckbau');
+  });
+
+  // (e) Phase-3-Durchgänge ≥ Schwelle (5).
+  it('(e) schlägt vor, ab Schwelle Zweitblick-Durchgänge', () => {
+    expect(ZWEITBLICK_DURCHGAENGE_SCHWELLE).toBe(5);
+    const z = mitFremdagenten(null, gemini({ zweitblick_durchgaenge: 5 }));
+    expect(arten(z)).toContain('zweitblick-schwelle');
+  });
+
+  it('(e) schweigt knapp unter der Schwelle', () => {
+    const z = mitFremdagenten(null, gemini({ zweitblick_durchgaenge: 4 }));
+    expect(arten(z)).not.toContain('zweitblick-schwelle');
+  });
+
+  // (f) jedes Kontingent-Ereignis.
+  it('(f) schlägt vor, sobald ein Kontingent-Ereignis protokolliert ist', () => {
+    const z = mitFremdagenten(null, gemini({ kontingent_ereignisse: 1 }));
+    expect(arten(z)).toContain('kontingent-beleg');
+  });
+
+  it('(f) schweigt ohne Kontingent-Ereignis', () => {
+    const z = mitFremdagenten(null, gemini({ kontingent_ereignisse: 0 }));
+    expect(arten(z)).not.toContain('kontingent-beleg');
+  });
+
+  // (g) Alarm «Issue ohne Annahme».
+  it('(g) schlägt vor, wenn die Jules-Messung einen Alarm meldet', () => {
+    const z = mitFremdagenten(jules({ alarm: true, tickets_24h: 4 }), null);
+    expect(arten(z)).toContain('jules-alarm');
+  });
+
+  it('(g) schweigt ohne Alarm', () => {
+    const z = mitFremdagenten(jules({ alarm: false }), null);
+    expect(arten(z)).not.toContain('jules-alarm');
   });
 });
 
