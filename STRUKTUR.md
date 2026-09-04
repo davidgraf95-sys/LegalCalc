@@ -47,6 +47,18 @@ Lehre in Skill `auftrag` Ziff. 6. Korpus-Funde unter `QS-KORPUS` gebucht (AMBV S
 VZV Art. 3 Marken). `QS-FREMDAGENTEN` ⇒ `ready` (offen: Phase 3 Zweitblick-Messung, Phase 4
 Skalierung). E2E-Shards 2/8 einmal geflackert (Rerun grün).
 
+**Nachtrag, dieselbe Session weiter (4.9.2026, 17 Landungen heute, #641–#666):**
+#660 Abnahme-Lücken geschlossen (Landungs-Checkliste, Gemini-Recherche-Regel, Phase-3-Zählung),
+#658 Fedlex-Adapter dt-Marken/Namensraum-Tags (Korpus-Fix, Gegenprüfung bestanden, live
+`846e53dcc`), #664 Fremd-PR-Tor Regel 3 Kommentar-Bilanz (Beleg #662), #665 Kontingent-
+Erkennung Jules/Antigravity (`fremdagenten:messung --kontingent`, Exit 3, `agy-status.ts`),
+#659/#661/#663 Phase-4-Tickets (Test-Splits `plan-check`/`zustaendigkeit` 25/33 min landbar,
+Komponenten-Split `ArtikelBody.tsx` 59 min landbar), #666 Selbstopt-Kreislauf für Fremdagenten
+(Stufe-1-Erhebung, Retro-Regeln a–g, Lehren-Formregel) — **Kreislauf verankert**: Messung →
+Zeitreihe → `retro:17`-Deutung → Roadmap-Vorschlag, ohne Auto-Entscheid. **#662 EntscheidLeser-
+Split ABGELEHNT** (197 Kommentarzeilen gelöscht, ein Nutzer-String verstümmelt). Google-
+Recherche-Weg aktiv (agy `read_url(*)`, Gemini-Diskrepanz-Finder Phase 2/3 nutzt ihn produktiv).
+
 ## Session 3.9.2026 — QS-FREMDAGENTEN Phase 0 abgeschlossen (T1–T6), zwei Wurzel-Fixes, Opus-Gegenprüfung bestanden
 
 Gelandet: #636 Grundlagen (`AGENTS.md`, Fahrplan, Testphase, SEO-BASIS), #639

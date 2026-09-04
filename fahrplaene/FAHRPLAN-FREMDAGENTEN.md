@@ -266,13 +266,24 @@ reproduzierbar). Verdikt und Quittung bleiben bei Opus bzw. David.
 
 ### Phase 4 — Skalierung
 
+**Status 4.9.2026: läuft** (Messwerte §5 «Phase 4 — Messwerte»: Landungsquote
+5/6 = 83 %, Median 30 min, n = 6, Proben ausgeschlossen — Skalierungs-Schwelle
+§3 erreicht).
+
 Erst nach bestandenen Phasen 0–3. Ticket-Zahl pro Session: bis Phase 3
 gezählt ist, höchstens 3 Tickets; danach 3–5 (Regel entsperrt 4.9.2026 —
 seriell bleibt nur die Messung, nicht die Stückzahl). Jules-REST-API
 (`sessions.create` mit `requirePlanApproval:true`, `automationMode:AUTO_CREATE_PR`,
 Plan gegenlesen, `approvePlan`, Polling), falls das Plan-Gegenlesen messbar
 Nacharbeit spart — Schlüssel nur in der Umgebung (D4). Antigravity-Claude als
-Bauarbeiter im Worktree als Versuch (D7).
+Bauarbeiter im Worktree als Versuch — **geparkt 4.9.2026** (Bauleiter/David-
+Chat: Jules deckt die Rolle bereits ab, Claude 4.6 ohne Skills bringt keinen
+Zwischenmarkt; Wiedervorlage nur bei Kontingent-Engpass, D7).
+
+**Messregel Komponenten-Splits (Lehre 4.9.2026, #662):** ein Komponenten-Split
+(anders als ein Test-Split) braucht eine **vorgegebene Partition** — welche
+Unterkomponenten in welche Datei wandern — sonst Risiko wie bei #662
+(ABGELEHNT: 197 Kommentarzeilen gelöscht, ein Nutzer-String verstümmelt).
 
 **David-Aufwand gesamt:** Phase 0 rund 20 Minuten (Umgebung, Freigabe-Text,
 NotebookLM), danach nur Entscheide.
@@ -490,6 +501,23 @@ Davids Sache, unabhängig davon).
 | Claude-Token pro gelandetem Schritt | Bauleiter-Review eines Jules-PRs ≈ 10–20k Token (Diff-Stat, AST-Diff, eigener Testlauf, Squash); Bau durch Claude-Unteragent in dieser Session 118k (T5-Probe) bis 275k (Phase-0-PR) ⇒ Faktor ~5–10 zugunsten Jules — Messbedingung: mechanische Schritte, n = 3; Landungs-Mechanik (CI-Warten, update-branch) kommt in beiden Fällen dazu. |
 | Beobachtung | E2E-Shards 2/8 flackerten einmal auf dem aktualisierten #650 (Artikel-Anker, Richter-Facette), Rerun grün; main gleichzeitig grün. |
 
+**Phase 4 — Messwerte (4.9.2026):** Tickets #652–#655 (2 Test-Splits vorbeugend
+766/728 Z. — Ticket-Begründung «über 800» war ungenau, Rüge Opus; 2 Komponenten-
+Splits 926/1095 Z.). Werte laut `npm run fremdagenten:messung` /
+`selbstopt:erheben` (Zeitreihe `messwerte/selbstopt-zeitreihe.json`, letzter
+Snapshot vor dieser Session, 04.9.2026T18:41Z), nicht handgerechnet:
+
+| Teil | Befund |
+|---|---|
+| #659 plan-check | 25 min, landbar. |
+| #661 zustaendigkeit | 33 min, landbar. |
+| #663 ArtikelBody (Komponenten-Split) | 59 min, landbar (Opus-Gegenprüfung: byte-gleich, Schnittstelle unverändert; Nebenfund pfadgebundene Wächter, s. Kleinbefund unten). |
+| #662 EntscheidLeser (Komponenten-Split) | 57 min, **ABGELEHNT**: 197 Kommentarzeilen gelöscht, ein Nutzer-String verstümmelt ⇒ Tor-Regel 3 «Kommentar-Bilanz» (#664) verankert, dazu die Messregel oben («vorgegebene Partition»). |
+| Landungsquote gesamt seit 3.9. | **6 von 7 Jules-PRs landbar (n = 7)** — Test-Splits 5/5, Komponenten 1/2. Aus der Stufe-1-Zeitreihe (Fenster 7 Tage, Proben ausgeschlossen): 5 gemerged / 1 geschlossen = **Landungsquote 83 % (n = 6)**, Median-Dauer 30 min, 1 Probe mit Label `probe` separat ausgewiesen. |
+| Laufzeiten | Median 30 min gesamt; Test-Splits 25–33 min, Komponenten-Splits 57–59 min — Komponenten-Splits sind deutlich teurer. |
+| Fremd-PR-Tor | 5× scharf grün; 1× Eigen-Fehlalarm (#656, Muster zu breit → korrigiert durch #656/#649). |
+| E2E-Shard 2/8 | flackert wiederkehrend (Artikel-Anker OR 336c/257d, Richter-Facette; #650, #658 je Rerun grün) — s. ROADMAP-Kleinbefund «E2E-Flake Shard 2/8». |
+
 **Diskrepanz-Finder-Läufe (Phase 2)** — Werte aus §2 Phase 2 übernommen:
 
 | Datum | Erlass | Artikel mit Diff | an Gemini | echt | Schein | Tokens |
@@ -497,10 +525,11 @@ Davids Sache, unabhängig davon).
 | 4.9.2026 | AMBV | 5 | 12 | 8 | 0 | 59 528 |
 | 4.9.2026 | DBG Art. 1–60 | 1 | 3 | 0 | 1 | 54 836 |
 
-**Phase 3 — Zweitblick-Durchgänge** (leer, entsteht im Alltag):
+**Phase 3 — Zweitblick-Durchgänge** (erster Durchgang eingetragen, entsteht sonst im Alltag):
 
 | Datum | Erlass/Norm | Prüfer | echt | Schein | verpasst | Tokens |
 |---|---|---|---|---|---|---|
+| 4.9.2026 | AMBV (75 Art.) + VZV Art. 1–10 (2 Art.) | Opus, frischer Kontext (Gegenprüfung #658, `gegenpruefung-register.md`) | 1 (vorbestehend: Klasse Einheit+Hochzahl, 218×) | 7 (Zeilenversatz/`…`) | 0 | — (Zahl nicht separat im Register geführt) |
 
 **Recherche-Vergleich Sonnet vs. Gemini** (leer, Messregel Skill `auftrag` Ziff. 6b):
 
@@ -515,11 +544,16 @@ belegt sie oder korrigiert sie):
 | Datum | Dienst | Signal | Dauer | Folge |
 |---|---|---|---|---|
 
+**Offene Retro-Vorschläge, Session-Entscheid ausstehend:** Fehlerklassen F2g,
+F2h, F5, F7, F8, F9 tragen Retro-Vorschläge aus einer früheren Session
+(Register-Drift des Skills `lehren`), **nicht** aus dieser — hier nur erwähnt,
+nicht angefasst; der Entscheid darüber bleibt offen.
+
 **Stand nach dieser Session (4.9.2026):** Phase 0 ✓ · Phase 1 ✓ (3/3) · Phase 2 ✓ (#650,
-Diskrepanz-Finder mit deterministischem Erstfilter, Pilot AMBV 8/8 klassiert) · **offen:** Phase 3
-(Zweitblick-Messung, fünf echte Gegenprüfungen — entsteht im Alltag, nicht erzwingbar) und Phase 4
-(Skalierung: 3–5 Jules-Issues pro Session; Jules-API mit Plan-Gegenlesen D4; Antigravity-Claude D7).
-Schritt-Status darum `ready`, nicht `wip`.
+Diskrepanz-Finder mit deterministischem Erstfilter, Pilot AMBV 8/8 klassiert) · Phase 3 erster
+Durchgang eingetragen (1/5 Zweitblick-Durchgänge, Schwelle §3 n = 5 noch nicht erreicht) · **Phase 4
+läuft** (Landungsquote 83 %, n = 6, Median 30 min — Skalierungs-Schwelle §3 erreicht; Antigravity-
+Claude D7 geparkt, kein Zwischenmarkt zu Jules). Schritt-Status darum `ready`, nicht `wip`.
 
 ## §6 · Entscheide (David, 3.9.2026)
 
@@ -531,7 +565,7 @@ Schritt-Status darum `ready`, nicht `wip`.
 | D4 | Jules-API-Schlüssel jetzt erzeugen? | **Phase 4** | kein Geheimnis-Handling vorher |
 | D5 | Auffindbarkeits-Basis (Sitemap + Search Console) trotz SEO-Parkung entparken? | **ja**, minimal | neuer Schritt `SEO-BASIS`, kein SEO-Ausbau; Domain-Verifikation durch David |
 | D6 | NotebookLM-Abnahme-Notizbuch anlegen? | **David** (empfohlen) | kein Bau nötig |
-| D7 | Antigravity-Claude als Bauarbeiter testen? | **Phase 4** | nach der Jules-Messung |
+| D7 | Antigravity-Claude als Bauarbeiter testen? | **geparkt** (Bauleiter/David-Chat 4.9.2026) | Jules deckt die Rolle bereits ab, Claude 4.6 ohne Skills bringt keinen Zwischenmarkt; Wiedervorlage nur bei Kontingent-Engpass |
 
 **Offen — klärt nur ein Testlauf:** Jules-Laufzeiten, Branch/Autor, deutsche
 Aufträge, CI-Auto-Fix, reales Kontingent · Antigravity `read_file`-Regelform,
@@ -572,6 +606,16 @@ Repo-Ist-Stand vom 3.9.2026.
   pagefind ist der evaluierte Weg.
 - **Stitch / Opal / Google Sites** — Neubau-Werkzeuge ohne Nutzen für ein
   bestehendes Vite/React-Repo mit Design-Tokens.
+
+**Wiedervorlage: Google-Ökosystem-Sichtung** (ROADMAP-Kleinbefund, Dach
+QS-FREMDAGENTEN Phase 4, ergänzt 4.9.2026): alle 3 Monate, erste Fälligkeit
+**Dezember 2026** — Gemini-Recherche (agy, `read_url(*)`) «neue Google-KI-
+Produkte/Modelle, Jules-/Antigravity-Changelog seit \<letzte Sichtung\>»,
+Bewertung ~30 min, Ergebnis als neue Zeile in diese Tabelle. Maschinischer
+Anstoss: `retro:17` Regel (h) (`scripts/plan/retro17Kern.ts`), sobald
+`bibliothek/register/antigravity-stand.json` `letzte_sichtung` mehr als 30
+Tage zurückliegt — Register erneuern mit `npm run fremdagenten:messung --
+--kontingent --snapshot`.
 
 ## §8 · Gemini-Kritik am Plan und Antwort (3.9.2026)
 

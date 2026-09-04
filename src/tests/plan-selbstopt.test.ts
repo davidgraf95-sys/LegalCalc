@@ -27,6 +27,7 @@ import {
 } from '../../scripts/plan/selbstoptKern';
 import { lageBlock, selbstoptZeile, vorschlagsZeile } from '../../scripts/plan/lage';
 import {
+  ANTIGRAVITY_SICHTUNG_SCHWELLE_TAGE,
   JULES_QUOTE_MIN_N,
   JULES_RUECKBAU_QUOTE,
   JULES_SKALIEREN_MEDIAN_MAX_MIN,
@@ -959,6 +960,33 @@ describe('befunde — Fremdagenten (QS-FREMDAGENTEN)', () => {
   it('(g) schweigt ohne Alarm', () => {
     const z = mitFremdagenten(jules({ alarm: false }), null);
     expect(arten(z)).not.toContain('jules-alarm');
+  });
+
+  // (h) Google-Ökosystem-Sichtung: letzte Sichtung > 30 Tage vor dem letzten
+  // Snapshot-Stempel (2026-08-07T10:00 in `snapshot()`). Referenz ist der
+  // Snapshot-Stempel, nie die Wanduhr (§2) — deshalb feste Kalenderdaten statt
+  // relativer Offsets.
+  it('(h) schweigt ohne letzteSichtungAntigravity (dritter Parameter weggelassen)', () => {
+    expect(befunde(mitFremdagenten(null, null), '').map((b) => b.art)).not.toContain('antigravity-sichtung');
+  });
+
+  it('(h) schweigt an der Schwelle selbst (30 Tage ist NICHT > 30)', () => {
+    expect(ANTIGRAVITY_SICHTUNG_SCHWELLE_TAGE).toBe(30);
+    const z = mitFremdagenten(null, null);
+    expect(befunde(z, '', '2026-07-08').map((b) => b.art)).not.toContain('antigravity-sichtung');
+  });
+
+  it('(h) schlägt vor, sobald die Schwelle gerissen ist (31 Tage), und nennt Datum + Tage', () => {
+    const z = mitFremdagenten(null, null);
+    const b = befunde(z, '', '2026-07-07').find((x) => x.art === 'antigravity-sichtung');
+    expect(b).toBeDefined();
+    expect(b?.anlass).toContain('2026-07-07');
+    expect(b?.anlass).toContain('31 Tage');
+  });
+
+  it('(h) schweigt bei null explizit (kein Register gefunden)', () => {
+    const z = mitFremdagenten(null, null);
+    expect(befunde(z, '', null).map((b) => b.art)).not.toContain('antigravity-sichtung');
   });
 });
 
