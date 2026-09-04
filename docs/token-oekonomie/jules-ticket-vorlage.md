@@ -6,7 +6,9 @@ Jules»), Platzhalter ersetzen, als GitHub-Issue mit Label `jules` anlegen (`gh 
 Repo-Eigentümers (Branch mit 19-stelliger Task-ID; eigene Branches nie mit `jules-`/`jules/` beginnen). Landung: Skill `landung`
 §«Fremde PRs (Jules)» — eigener Tor-Lauf, `scripts/analyse/test-assertion-diff.ts`, Whitelist-Diff,
 Trailer beim Squash nachsetzen. Das Beispiel unten ist das reale Ticket #654 (Komponenten-Split); für
-Test-Splits siehe #643/#644 (Zählwerte describe/it/expect als Fertig-Kriterium).
+Test-Splits siehe #643/#644. Massgebliches Fertig-Kriterium bei Zählwerten ist die repo-lokale Quelle
+`npx vite-node scripts/analyse/test-assertion-diff.ts <Basis> <Head> src/tests/` = 0 Differenz — die
+Beispiel-PRs sind Beleg, nicht Massstab.
 
 ---
 
