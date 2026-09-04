@@ -10,9 +10,18 @@
 // reine Funktion, in die die Klassierung gezogen wurde, damit sie ohne
 // GitHub-Aufruf prüfbar ist. `erhebeJules()` selbst bleibt ungeprüft: es ist
 // nur noch Beschaffung (ein `gh`-Aufruf) plus der Aufruf dieser Funktion.
+// Ebenso geprüft: `parseAgyModelSlugs`/`pruefeAntigravityDrift` (Ergänzung
+// QS-FREMDAGENTEN 4.9.2026, Modell-/Versions-Drift) — beide ohne `agy`.
 import { execFileSync } from 'node:child_process';
 import { describe, expect, it } from 'vitest';
-import { JULES_FENSTER_TAGE, klassierePrs, type PrRohMitStatus } from '../../scripts/analyse/fremdagenten-messung';
+import {
+  JULES_FENSTER_TAGE,
+  klassierePrs,
+  parseAgyModelSlugs,
+  pruefeAntigravityDrift,
+  type AntigravityStand,
+  type PrRohMitStatus,
+} from '../../scripts/analyse/fremdagenten-messung';
 
 const JETZT = new Date('2026-09-04T18:00:00.000Z');
 /** Klar im 7-Tage-Fenster. */
@@ -130,6 +139,52 @@ describe('klassierePrs (Jules-Messung, Proben ausgeschlossen)', () => {
       title: 't',
     } as unknown as PrRohMitStatus;
     expect(klassierePrs([ohneLabels], JETZT).geschlossen.map((p) => p.number)).toEqual([5]);
+  });
+});
+
+describe('parseAgyModelSlugs', () => {
+  it('zieht die erste Spalte je Zeile und überspringt die Fetching-Kopfzeile', () => {
+    const roh = 'Fetching available models...\ngemini-3.8-flash-high\tGemini 3.8 Flash (High)\nclaude-sonnet-4-6\tClaude Sonnet 4.6 (Thinking)\n';
+    expect(parseAgyModelSlugs(roh)).toEqual(['gemini-3.8-flash-high', 'claude-sonnet-4-6']);
+  });
+
+  it('überspringt Leerzeilen und liefert [] für leere Ausgabe', () => {
+    expect(parseAgyModelSlugs('\n\n')).toEqual([]);
+    expect(parseAgyModelSlugs('')).toEqual([]);
+  });
+});
+
+describe('pruefeAntigravityDrift (Modell-/Versions-Drift, Ergänzung QS-FREMDAGENTEN 4.9.2026)', () => {
+  const register = (p: Partial<AntigravityStand> = {}): AntigravityStand => ({
+    version: '1.1.26',
+    models: ['gemini-3.8-flash-low', 'claude-sonnet-4-6'],
+    letzte_sichtung: '2026-09-04',
+    ...p,
+  });
+
+  it('schweigt, wenn Version und Modelle mit dem Register übereinstimmen', () => {
+    expect(pruefeAntigravityDrift(register(), '1.1.26', ['gemini-3.8-flash-low', 'claude-sonnet-4-6'])).toEqual([]);
+  });
+
+  it('meldet fehlendes Register statt zu raten', () => {
+    const hinweise = pruefeAntigravityDrift(null, '1.1.26', ['gemini-3.8-flash-low']);
+    expect(hinweise).toHaveLength(1);
+    expect(hinweise[0]).toContain('bibliothek/register/antigravity-stand.json');
+  });
+
+  it('meldet eine Versions-Drift im Format alt→neu', () => {
+    const hinweise = pruefeAntigravityDrift(register(), '1.2.0', ['gemini-3.8-flash-low', 'claude-sonnet-4-6']);
+    expect(hinweise).toContain('Antigravity-Version: agy 1.1.26→1.2.0');
+  });
+
+  it('meldet jedes neue Modell einzeln, unverändert vorhandene bleiben stumm', () => {
+    const hinweise = pruefeAntigravityDrift(register(), '1.1.26', ['gemini-3.8-flash-low', 'claude-sonnet-4-6', 'gemini-4.0-flash']);
+    expect(hinweise).toEqual(['NEU: Modell gemini-4.0-flash']);
+  });
+
+  it('meldet Versions- und Modell-Drift gemeinsam, wenn beides abweicht', () => {
+    const hinweise = pruefeAntigravityDrift(register(), '1.2.0', ['gemini-4.0-flash']);
+    expect(hinweise).toEqual(['Antigravity-Version: agy 1.1.26→1.2.0', 'NEU: Modell gemini-4.0-flash']);
   });
 });
 

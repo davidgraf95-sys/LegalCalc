@@ -49,9 +49,22 @@
 // Verdacht ODER agy gesperrt), Exit 2 = Werkzeugfehler (z. B. `gh` schlägt
 // fehl). Diese drei Ausgänge sind bewusst unterscheidbar (§14.7: ein
 // Erfolgsbericht ohne prüfbaren Exit-Code gilt als nicht erfolgt).
+//
+// Modell-/Versions-Drift (Ergänzung QS-FREMDAGENTEN, 4.9.2026): `--kontingent`
+// vergleicht zusätzlich `agy --version` und die Modell-Slugs aus `agy models`
+// gegen die Momentaufnahme in `bibliothek/register/antigravity-stand.json` und
+// druckt bei Abweichung Hinweiszeilen («Antigravity-Version: agy alt→neu» /
+// «NEU: Modell X») — KEIN Alarm, eine neue Modellversion ist kein Kontingent-
+// Vorfall. Die Vergleichslogik selbst (`pruefeAntigravityDrift`) ist rein und
+// braucht kein `agy`; nur das Ziehen des aktuellen Stands ruft den Prozess auf.
+// Das Register wird nie automatisch geschrieben (§2, Muster wie
+// `schlankheit:update`): erst `--kontingent --snapshot` aktualisiert es, nach
+// Sichtung durch die Session. Bleibt die letzte Sichtung > 30 Tage zurück,
+// schlägt `retro:17` (Regel h, `scripts/plan/retro17Kern.ts`) eine
+// Google-Ökosystem-Sichtung vor (Fahrplan §7).
 
 import { execFileSync } from 'node:child_process';
-import { existsSync } from 'node:fs';
+import { existsSync, readFileSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { klassiereAgyFehler, KONTINGENT_MELDUNG } from './agy-status.ts';
 // Der Typ ist EINMAL definiert, und zwar dort, wo das Schema der Zeitreihe
@@ -72,6 +85,8 @@ const PROBE_LABEL = 'probe';
 const ON_IT_MUSTER = /on it/i;
 const READY_MUSTER = /ready for a review/i;
 const AGY = join(process.env.HOME ?? '', '.local/bin/agy');
+/** Steuer-Register (klein, Momentaufnahme) — Schema: `AntigravityStand`. */
+const ANTIGRAVITY_REGISTER = 'bibliothek/register/antigravity-stand.json';
 
 type PrRoh = {
   number: number;
@@ -365,6 +380,79 @@ function kontingentAgy(): Teilbefund {
   };
 }
 
+/** Schema des Antigravity-Registers (`bibliothek/register/antigravity-stand.json`). */
+export interface AntigravityStand {
+  version: string;
+  /** Modell-Slugs (erste Spalte von `agy models`), nicht die Anzeigenamen. */
+  models: string[];
+  /** YYYY-MM-DD der letzten Sichtung — Grundlage für Regel (h) in `retro17Kern.ts`. */
+  letzte_sichtung: string;
+}
+
+/** Zieht die Modell-Slugs aus `agy models` (erste Spalte je Zeile; Kopfzeile «Fetching …» übersprungen). */
+export function parseAgyModelSlugs(stdout: string): string[] {
+  return stdout
+    .split('\n')
+    .map((zeile) => zeile.trim())
+    .filter((zeile) => zeile.length > 0 && !/^fetching/i.test(zeile))
+    .map((zeile) => zeile.split(/\s+/)[0])
+    .filter((slug): slug is string => Boolean(slug));
+}
+
+/**
+ * Reine Vergleichsfunktion (kein `agy`, kein Netz) — testbar ohne Werkzeug.
+ * Liefert Hinweiszeilen, KEIN Alarm (§ Kopf: eine neue Modellversion ist kein
+ * Kontingent-Vorfall). `register === null` heisst «noch nie geschnappt».
+ */
+export function pruefeAntigravityDrift(
+  register: AntigravityStand | null,
+  aktuelleVersion: string,
+  aktuelleModelle: string[],
+): string[] {
+  if (!register) {
+    return [`Antigravity-Register fehlt (${ANTIGRAVITY_REGISTER}) — mit --snapshot anlegen.`];
+  }
+  const hinweise: string[] = [];
+  if (register.version !== aktuelleVersion) {
+    hinweise.push(`Antigravity-Version: agy ${register.version}→${aktuelleVersion}`);
+  }
+  const bekannt = new Set(register.models);
+  for (const m of aktuelleModelle) {
+    if (!bekannt.has(m)) hinweise.push(`NEU: Modell ${m}`);
+  }
+  return hinweise;
+}
+
+function ladeAntigravityRegister(): AntigravityStand | null {
+  if (!existsSync(ANTIGRAVITY_REGISTER)) return null;
+  try {
+    return JSON.parse(readFileSync(ANTIGRAVITY_REGISTER, 'utf8')) as AntigravityStand;
+  } catch {
+    return null;
+  }
+}
+
+/** Zieht Version + Modell-Slugs frisch von `agy` — `null` bei fehlendem Werkzeug oder Prozessfehler. */
+function agyVersionUndModelle(): { version: string; models: string[] } | null {
+  if (!existsSync(AGY)) return null;
+  // `stdio: ['ignore', 'pipe', 'pipe']` wie `gh()` oben: `agy models` schreibt
+  // seine Fortschrittszeile («Fetching available models…») auf stderr — ohne
+  // dieses Capturing liefe sie am execFileSync-Default vorbei direkt auf die
+  // Konsole der aufrufenden Session statt kontrolliert verworfen zu werden.
+  const opts: { timeout: number; encoding: 'utf8'; stdio: ['ignore', 'pipe', 'pipe'] } = {
+    timeout: 30_000,
+    encoding: 'utf8',
+    stdio: ['ignore', 'pipe', 'pipe'],
+  };
+  try {
+    const version = execFileSync(AGY, ['--version'], { ...opts, timeout: 15_000 }).trim();
+    const modelleRoh = execFileSync(AGY, ['models'], opts);
+    return { version, models: parseAgyModelSlugs(modelleRoh) };
+  } catch {
+    return null;
+  }
+}
+
 function kontingentModus(): void {
   const jetzt = new Date();
   const jules = kontingentJules(jetzt);
@@ -372,6 +460,22 @@ function kontingentModus(): void {
   process.stdout.write('=== Kontingent-Status (fremdagenten-messung --kontingent) ===\n');
   process.stdout.write(jules.text + '\n');
   process.stdout.write(agy.text + '\n');
+
+  const aktuell = agyVersionUndModelle();
+  if (aktuell) {
+    const drift = pruefeAntigravityDrift(ladeAntigravityRegister(), aktuell.version, aktuell.models);
+    for (const zeile of drift) process.stdout.write(`Antigravity-Drift: ${zeile}\n`);
+    if (process.argv.includes('--snapshot')) {
+      const stand: AntigravityStand = {
+        version: aktuell.version,
+        models: aktuell.models,
+        letzte_sichtung: jetzt.toISOString().slice(0, 10),
+      };
+      writeFileSync(ANTIGRAVITY_REGISTER, JSON.stringify(stand, null, 2) + '\n', 'utf8');
+      process.stdout.write(`Antigravity-Register aktualisiert (${ANTIGRAVITY_REGISTER}).\n`);
+    }
+  }
+
   if (jules.alarm || agy.alarm) {
     process.stderr.write('KONTINGENT-ALARM: siehe Zeilen oben — keine neuen Jules-Tickets, Fahrplan §5 protokollieren.\n');
     process.exitCode = 3;

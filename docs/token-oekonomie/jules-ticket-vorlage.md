@@ -8,7 +8,9 @@ Repo-Eigentümers (Branch mit 19-stelliger Task-ID; eigene Branches nie mit `jul
 Trailer beim Squash nachsetzen. Das Beispiel unten ist das reale Ticket #654 (Komponenten-Split); für
 Test-Splits siehe #643/#644. Massgebliches Fertig-Kriterium bei Zählwerten ist die repo-lokale Quelle
 `npx vite-node scripts/analyse/test-assertion-diff.ts <Basis> <Head> src/tests/` = 0 Differenz — die
-Beispiel-PRs sind Beleg, nicht Massstab.
+Beispiel-PRs sind Beleg, nicht Massstab. Absichtliche Proben der Prüfstrasse (kein Bau-Auftrag)
+tragen das Label `probe` und zählen nicht in die Landungsquote (Konvention QS-FREMDAGENTEN,
+`klassierePrs()` in `scripts/analyse/fremdagenten-messung.ts`).
 
 ---
 

@@ -73,6 +73,15 @@ export const JULES_SKALIEREN_MEDIAN_MAX_MIN = 45;
 export const JULES_SKALIEREN_MIN_N = 6;
 /** Fahrplan §3 «Phase 3 Zweitblick … n = 5». */
 export const ZWEITBLICK_DURCHGAENGE_SCHWELLE = 5;
+/**
+ * Regel (h), Ergänzung QS-FREMDAGENTEN 4.9.2026: liegt die letzte Sichtung des
+ * Antigravity-Registers (`bibliothek/register/antigravity-stand.json`,
+ * gelesen von `retro-17.ts` — dieser Kern liest weiterhin nur Zeitreihe +
+ * Chronik, s. Kopf) mehr als so viele Tage zurück, schlägt `retro:17` die
+ * Google-Ökosystem-Sichtung aus Fahrplan §7 vor. Referenzzeitpunkt ist der
+ * letzte Snapshot-Stempel (`erhobenAm`), NIE die Wanduhr (§2).
+ */
+export const ANTIGRAVITY_SICHTUNG_SCHWELLE_TAGE = 30;
 
 /** Die Marke, an der jede maschinell erzeugte Vorschlagszeile erkennbar ist. */
 export const ENTWURF_MARKE = '<!-- ENTWURF retro:17 — Übernahme nur durch Session-/David-Entscheid -->';
@@ -93,7 +102,8 @@ export interface Befund {
     | 'gemini-rueckbau'
     | 'zweitblick-schwelle'
     | 'kontingent-beleg'
-    | 'jules-alarm';
+    | 'jules-alarm'
+    | 'antigravity-sichtung';
   /** Vorgeschlagener Schritt-Titel (fett im ROADMAP-Bullet). */
   titel: string;
   /** Der belegende Satz: Zahlen, Schwelle, Quelle. */
@@ -103,13 +113,16 @@ export interface Befund {
 }
 
 /**
- * Deutet die Zeitreihe. Reine Funktion über Zeitreihe + Chronik-Text.
+ * Deutet die Zeitreihe. Reine Funktion über Zeitreihe + Chronik-Text, plus
+ * optional das Datum der letzten Antigravity-Sichtung (Regel h) — dieser
+ * dritte Parameter kommt von aussen (`retro-17.ts` liest das Register), die
+ * Funktion selbst öffnet keine dritte Datei.
  *
  * Reihenfolge der Befunde ist die Reihenfolge der Regeln, innerhalb einer Regel
  * alphabetisch nach Tor-Name — nicht nach Schwere. Eine Sortierung nach Schwere
  * wäre eine Gewichtung, und Gewichten ist Deuten: das bleibt beim Menschen.
  */
-export function befunde(z: Zeitreihe, chronik: string): Befund[] {
+export function befunde(z: Zeitreihe, chronik: string, letzteSichtungAntigravity: string | null = null): Befund[] {
   const out: Befund[] = [];
   const snaps = z.snapshots;
   if (snaps.length === 0) return out;
@@ -379,6 +392,31 @@ export function befunde(z: Zeitreihe, chronik: string): Befund[] {
     });
   }
 
+  // (h) Google-Ökosystem-Sichtung fällig: letzte Sichtung im Antigravity-
+  //     Register liegt mehr als ANTIGRAVITY_SICHTUNG_SCHWELLE_TAGE Tage
+  //     zurück. Referenzzeitpunkt ist der letzte Snapshot-Stempel, nicht die
+  //     Wanduhr (§2) — `letzteSichtungAntigravity === null` (kein Register,
+  //     oder retro-17.ts fand keins) lässt die Regel schweigen statt zu raten.
+  if (letzteSichtungAntigravity) {
+    const tageSeitSichtung = Math.floor(
+      (new Date(letzter.erhobenAm).getTime() - new Date(letzteSichtungAntigravity).getTime()) / 86_400_000,
+    );
+    if (tageSeitSichtung > ANTIGRAVITY_SICHTUNG_SCHWELLE_TAGE) {
+      out.push({
+        art: 'antigravity-sichtung',
+        titel: 'Jules-/Antigravity-Changelog sichten',
+        anlass:
+          `letzte Sichtung ${letzteSichtungAntigravity.slice(0, 10)}, ${tageSeitSichtung} Tage her ` +
+          `(Schwelle ${ANTIGRAVITY_SICHTUNG_SCHWELLE_TAGE} Tage, Fahrplan §7 «Google-Ökosystem-Sichtung»)`,
+        hinweis:
+          'Gemini-Recherche (agy, read_url(*)) «neue Google-KI-Produkte/Modelle, Jules-/Antigravity-' +
+          'Changelog seit <letzte Sichtung>», Bewertung ~30 min, Eintrag in Fahrplan §7; danach ' +
+          '`npm run fremdagenten:messung -- --kontingent --snapshot` laufen lassen, um das Register-Datum ' +
+          'zu erneuern.',
+      });
+    }
+  }
+
   return out;
 }
 
@@ -418,7 +456,7 @@ function aufschluesselung(s: Snapshot): string {
  * Das Etikett vergibt die übernehmende Session bewusst, nicht dieses Werkzeug.
  * Der Block sagt das in seinem Kopf, damit niemand es durch Ausprobieren lernt.
  */
-export function bericht(z: Zeitreihe, chronik: string): string[] {
+export function bericht(z: Zeitreihe, chronik: string, letzteSichtungAntigravity: string | null = null): string[] {
   const z2: string[] = [];
   const n = z.snapshots.length;
   const letzter = n ? z.snapshots[n - 1] : null;
@@ -442,7 +480,7 @@ export function bericht(z: Zeitreihe, chronik: string): string[] {
     return z2;
   }
 
-  const gefunden = befunde(z, chronik);
+  const gefunden = befunde(z, chronik, letzteSichtungAntigravity);
   const duenn = n < MIN_SNAPSHOTS;
 
   if (duenn) {
