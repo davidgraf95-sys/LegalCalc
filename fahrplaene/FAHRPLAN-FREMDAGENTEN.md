@@ -95,7 +95,7 @@ Issue. Claude prüft nach Skill `landung` §«Fremde PRs (Jules)» und landet.
 
 **Fremd-PR-Tor in CI, Anlass T6 — gebaut 4.9.2026.** Shell-Schritt «Fremd-PR-Tor»
 im CI-Job «Tore» (`.github/workflows/ci.yml`; bewusst kein eigenes `check-*.ts`, Steuerungs-Deckel §17-Gegengewicht — Regel 1 nutzt `scripts/analyse/test-assertion-diff.ts`): für Branches im
-Jules-Muster (19-stellige Task-ID oder «jules» im Namen; Beleg 4.9.2026 PR #647: `jules-1111541331587033919-8d87826d`) automatisch (1) den Assertion-Diff
+Jules-Muster (19-stellige Task-ID oder Präfix `jules-`/`jules/`; Beleg 4.9.2026 PR #647: `jules-1111541331587033919-8d87826d`; Gegenbeleg PR #656 `docs/jules-weiche`: «jules irgendwo im Namen» war zu breit, das Tor prüfte einen Doku-PR und wurde rot — richtig rot, falsches Muster) automatisch (1) den Assertion-Diff
 (`scripts/analyse/test-assertion-diff.ts` gegen `merge-base(origin/main,
 HEAD)`) und (2) eine Datei-Allowlist `src/**` prüfen — strenger als die
 ursprüngliche Prosa («Risikopfad-/Steuer-Doku-Berührung»): eine Allowlist
@@ -248,11 +248,13 @@ das kleinere Art.-1–10-Fenster nicht in 600s durchlief (Lauf 2 nach
 Lauf-1-Timeout ungeduldig abgebrochen statt ein zweites Mal 600s abzuwarten),
 spricht dafür, dass VZVs Inhalt (dichte technische Aufzählungen,
 Fahrzeug-/Führerschein-Kategorien) bei `--effort high` grundsätzlich lange
-Denkzeit braucht — nicht nur die Zeichenzahl. Praxisfolge: bei Erlassen
-dieser Art zuerst mit `--effort medium` oder sehr kleinen `--artikel`-Fenstern
-(≤5 Artikel) prüfen, ob ein Lauf überhaupt in nützlicher Zeit durchläuft,
-bevor grössere Gruppen gefahren werden — offene Frage für David/Folge-Session,
-nicht in diesem Schritt final geklärt.
+Denkzeit braucht — nicht nur die Zeichenzahl. Praxisfolge (korrigiert
+4.9.2026: `--effort medium` existiert für `gemini-3.1-pro` nicht, `agy models`
+kennt nur `-low`/`-high`): bei Erlassen dieser Art zuerst mit sehr kleinen
+`--artikel`-Fenstern (≤5 Artikel) bei `--effort low` prüfen, ob ein Lauf
+überhaupt in nützlicher Zeit durchläuft, bevor grössere Gruppen oder
+`--effort high` gefahren werden — offene Frage für David/Folge-Session, nicht
+in diesem Schritt final geklärt.
 
 
 ### Phase 3 — Zweitblick-Messung (5 Durchgänge, verteilt)
@@ -264,7 +266,9 @@ reproduzierbar). Verdikt und Quittung bleiben bei Opus bzw. David.
 
 ### Phase 4 — Skalierung
 
-Erst nach bestandenen Phasen 0–3: 3–5 Jules-Issues pro Session; Jules-REST-API
+Erst nach bestandenen Phasen 0–3. Ticket-Zahl pro Session: bis Phase 3
+gezählt ist, höchstens 3 Tickets; danach 3–5 (Regel entsperrt 4.9.2026 —
+seriell bleibt nur die Messung, nicht die Stückzahl). Jules-REST-API
 (`sessions.create` mit `requirePlanApproval:true`, `automationMode:AUTO_CREATE_PR`,
 Plan gegenlesen, `approvePlan`, Polling), falls das Plan-Gegenlesen messbar
 Nacharbeit spart — Schlüssel nur in der Umgebung (D4). Antigravity-Claude als
@@ -287,6 +291,12 @@ NotebookLM), danach nur Entscheide.
 **Rückbau-Regel (§17-Gegengewicht):** Reisst eine Schwelle, wird der betroffene
 Teil **zurückgebaut**, nicht bewacht. Kein Werkzeug bleibt im Prozess, weil es
 einmal eingerichtet wurde; die Einrichtung ist kein Argument.
+
+**Entscheid: Bauleiter** (technische Delegation David 8.8.2026), David-Veto.
+Flächen bei Rückbau Jules: `auftrag`-Weiche, `AGENTS.md`, ci.yml-Step,
+`landung`-Absatz, Ticket-Vorlage, Label. Flächen bei Rückbau
+Gemini-Finder: `scripts/analyse/gemini-diskrepanz*.ts`,
+`korpus-werkstatt`-Absatz, `gegenpruefung`-Station.
 
 **Messbedingung mitschreiben:** Jede Quote nennt n, Zeitraum und Art der
 Schritte — eine Quote ohne Bedingung ist keine Zahl.
@@ -340,7 +350,34 @@ Schritte — eine Quote ohne Bedingung ist keine Zahl.
   `--print-timeout` mitten im Lauf ab.
 - **Jules-Autor = Repo-Eigentümer.** Jules-PRs laufen unter dem GitHub-Konto
   des Repo-Eigentümers, nicht unter einem eigenen Jules-Autor — Erkennung über
-  Branch-Muster `*-<task-id>` oder `Fixes #<issue>`, nie über den Autor.
+  Branch-Muster: 19-stellige Task-ID irgendwo im Namen ODER Präfix
+  `jules-`/`jules/` (vereinheitlicht mit §2 Phase 1 und Skill `landung`,
+  4.9.2026 — nie «jules irgendwo im Namen», Gegenbeleg PR #656), nie über den
+  Autor.
+- **Limite erkennen (Auftrag David 4.9.2026: «stelle sicher, dass wir merken,
+  wenn die Limite erreicht ist»).** Beide Zahlen oben (Jules 100/Tag·15
+  parallel, Antigravity «alle 5 h aufgefrischt bis Wochenlimit») sind
+  **unbelegt** — nur aus Zweitquellen, nie selbst beobachtet; das erste
+  tatsächlich beobachtete Ereignis belegt sie oder korrigiert sie (Tabelle
+  unten). Signale je Dienst: **Jules** antwortet auf ein `jules`-Issue
+  normalerweise binnen ~1 min mit «Jules is on it» und nach Fertigstellung
+  mit «Ready for a review! A PR …» — bleibt diese Annahme über 10 min aus,
+  ist ein Tages- oder Parallel-Stopp der wahrscheinlichste Grund (kann auch
+  ein App-Problem sein, unterscheidet das Skript nicht). **Antigravity**
+  zeigt Erschöpfung vermutlich als `status` ungleich `SUCCESS` mit einem
+  Text nach Muster `quota|rate.?limit|429|resource.?exhausted|too many|
+  exceeded|limit` (Musterherkunft: HTTP/gRPC-Standardformen plus übliche
+  Klartext-Varianten — nie beobachtet) oder als Timeout. **Skript:**
+  `npm run fremdagenten:messung -- --kontingent` prüft beides in einem
+  Lauf (Jules-Issues der letzten 24 h + ein trivialer `agy`-Ping,
+  Musterprüfung geteilt über `scripts/analyse/agy-status.ts`, auch von
+  `gemini-diskrepanz.ts` genutzt) — **Exit 3** heisst Kontingent-Alarm.
+  **Fallback bei Exit 3:** keine neuen Jules-Tickets (Skill `auftrag` Ziff. 6
+  «Grüne Spur → Jules»), Gemini-Recherche zurück an `lex-recherche`/Sonnet
+  (Skill `auftrag` Ziff. 6 «Recherche/Sichtung via Gemini»). **Protokoll:**
+  jedes real beobachtete Ereignis in die Tabelle «Kontingent-Ereignisse» in
+  §5 eintragen — nie ein Tor, CI-Schritt oder eine Landung davon abhängig
+  machen (Regel oben unverändert).
 
 ## §5 · Werkzeugstand (3.9.2026, Momentaufnahme)
 
@@ -355,6 +392,9 @@ Schritte — eine Quote ohne Bedingung ist keine Zahl.
   Selbstprüfung des finalen Diffs) ist eingebaut, aber One-Shot.
   **Unbelegt/offen:** Timeouts, Branch-/Autor-Muster, automatischer CI-Fix ohne
   Kommentar, deutsche Aufträge (offiziell nur Englisch), CH-Verfügbarkeit.
+  **Nachtrag 4.9.2026:** Jules-Umgebung (Initial Setup + Snapshot) war als
+  Davids Handgriff geplant; 5/5 PRs liefen ohne — optional, nicht
+  Vorbedingung.
 - **Antigravity CLI `agy`** — lokal 1.1.24, installiert 2.9.2026. Headless:
   `agy -p "<prompt>" --mode plan --model <slug> --output-format json
   --print-timeout 120s` (Default-Timeout 5 min). Weitere verifizierte Flags:
@@ -429,6 +469,31 @@ Davids Sache, unabhängig davon).
 | Quote ohne Nacharbeit | **3 von 3** Jules-PRs ohne Code-Nacharbeit durch Gate + Landungs-Check (n = 3, 3./4.9.2026, Art: Test-Splits). Schwelle «< 2 von 3» nicht gerissen. Einziger wiederkehrender Mangel: fehlender `Roadmap:`-Trailer (Form, beim Squash nachgesetzt). |
 | Claude-Token pro gelandetem Schritt | Bauleiter-Review eines Jules-PRs ≈ 10–20k Token (Diff-Stat, AST-Diff, eigener Testlauf, Squash); Bau durch Claude-Unteragent in dieser Session 118k (T5-Probe) bis 275k (Phase-0-PR) ⇒ Faktor ~5–10 zugunsten Jules — Messbedingung: mechanische Schritte, n = 3; Landungs-Mechanik (CI-Warten, update-branch) kommt in beiden Fällen dazu. |
 | Beobachtung | E2E-Shards 2/8 flackerten einmal auf dem aktualisierten #650 (Artikel-Anker, Richter-Facette), Rerun grün; main gleichzeitig grün. |
+
+**Diskrepanz-Finder-Läufe (Phase 2)** — Werte aus §2 Phase 2 übernommen:
+
+| Datum | Erlass | Artikel mit Diff | an Gemini | echt | Schein | Tokens |
+|---|---|---|---|---|---|---|
+| 4.9.2026 | AMBV | 5 | 12 | 8 | 0 | 59 528 |
+| 4.9.2026 | DBG Art. 1–60 | 1 | 3 | 0 | 1 | 54 836 |
+
+**Phase 3 — Zweitblick-Durchgänge** (leer, entsteht im Alltag):
+
+| Datum | Erlass/Norm | Prüfer | echt | Schein | verpasst | Tokens |
+|---|---|---|---|---|---|---|
+
+**Recherche-Vergleich Sonnet vs. Gemini** (leer, Messregel Skill `auftrag` Ziff. 6b):
+
+| Datum | Auftrag | Sonnet-Ergebnis | Gemini-Ergebnis | Abweichung |
+|---|---|---|---|---|
+
+**Kontingent-Ereignisse** (leer, Skript `npm run fremdagenten:messung --
+--kontingent`, Regel §4 «Limite erkennen» — die Zahlen 100/Tag und 15
+parallel für Jules sind unbelegt; das erste hier eingetragene Ereignis
+belegt sie oder korrigiert sie):
+
+| Datum | Dienst | Signal | Dauer | Folge |
+|---|---|---|---|---|
 
 **Stand nach dieser Session (4.9.2026):** Phase 0 ✓ · Phase 1 ✓ (3/3) · Phase 2 ✓ (#650,
 Diskrepanz-Finder mit deterministischem Erstfilter, Pilot AMBV 8/8 klassiert) · **offen:** Phase 3

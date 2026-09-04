@@ -415,3 +415,12 @@ angekündigt, neue Zahlen offen) und die unbezifferte Antigravity-Quote.
 Prozess- und Werkzeugwissen, keine Rechtsinhalte; es speist keine Engine, kein
 Stammdatum und keinen `verified`-Anker. Die Rollen-Freigabe (David, Chat
 3.9.2026) ist ein Betriebs-Entscheid, keine §7-Abnahme.
+
+**Abnahme 4.9.2026 (Opus-Prüfer, Workflow-Übertragbarkeit):** sechs Abläufe
+geprüft, Lücken geschlossen — Skill `landung` §«Fremde PRs» (Erkennungs-Mechanik,
+Assertion-Diff-Basis, zwei Ablauf-Sätze), Skill `auftrag` (Ticket-Zahl an
+Phasenlage gekoppelt, neuer Absatz Gemini-Recherche, Definition of Done
+Punkt 7), Skill `bauschritt` Station E (Verweis auf Punkt 7), Skill
+`korpus-werkstatt` (Vorbedingungszeile, Kleinbefund-Regel), Skill
+`gegenpruefung` (Station Phase-3-Zählung), `fahrplaene/FAHRPLAN-FREMDAGENTEN.md`
+(§2/§3/§5 nachgezogen). Beleg PR #660.
