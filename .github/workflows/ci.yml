@@ -383,7 +383,7 @@ jobs:
         run: npm run check:testtreue
       # Fremd-PR-Tor (T6, 3.9.2026, fahrplaene/FAHRPLAN-FREMDAGENTEN.md §2
       # Phase 1): nur Branches im Jules-Muster (19-stellige Task-ID im Namen oder
-      # «jules» im Namen) sind
+      # Präfix `jules-`/`jules/`) sind
       # zuständig — Regex-Erkennung im Shell-Step, weil `if:` keine Regex kann.
       # Bewusst KEIN eigenes check-*.ts (Steuerungs-Deckel, §17-Gegengewicht):
       # Regel 1 = bestehendes scripts/analyse/test-assertion-diff.ts (Jules darf
@@ -396,8 +396,10 @@ jobs:
           HEAD_REF: ${{ github.head_ref }}
         run: |
           # Jules-Muster (Beleg 4.9.2026, PR #647): `jules-<19 Ziffern>-<8 hex>` ODER
-          # `<slug>-<19 Ziffern>` — also: 19-Ziffern-Lauf irgendwo oder "jules" im Namen.
-          if ! [[ "$HEAD_REF" =~ [0-9]{19} || "$HEAD_REF" == *jules* ]]; then
+          # `<slug>-<19 Ziffern>` — also: 19-Ziffern-Lauf irgendwo oder Präfix `jules-`/`jules/`.
+          # NICHT «jules irgendwo im Namen»: Beleg 4.9.2026, PR #656 (`docs/jules-weiche`) wurde
+          # fälschlich als Fremd-PR geprüft und rot (Dateien ausserhalb src/**).
+          if ! [[ "$HEAD_REF" =~ [0-9]{19} || "$HEAD_REF" =~ ^jules[-/] ]]; then
             echo "Fremd-PR-Tor: nicht zuständig ($HEAD_REF)"; exit 0
           fi
           git fetch -q origin main
@@ -407,6 +409,20 @@ jobs:
           if [ -n "$ausserhalb" ]; then
             echo "Fremd-PR-Tor ROT — Jules-Branch ändert Dateien ausserhalb src/**:"; echo "$ausserhalb"; exit 1
           fi
+          # Regel 3 (Beleg PR #662, 4.9.2026): Kommentar-Bilanz — Jules erreichte die
+          # Zeilen-Grenze durch Löschen von 197 Kommentarzeilen (datierte Belege, Rot-
+          # Beweis-Verweise). Verschieben ist erlaubt (Summe bleibt), Löschen nicht.
+          vorher=0; nachher=0
+          for f in $(git diff --name-only --diff-filter=DM "$basis"..HEAD -- 'src/*.ts' 'src/*.tsx'); do
+            vorher=$((vorher + $(git show "$basis:$f" | grep -cE '^\s*(//|/\*|\*)' || true)))
+          done
+          for f in $(git diff --name-only --diff-filter=AM "$basis"..HEAD -- 'src/*.ts' 'src/*.tsx'); do
+            nachher=$((nachher + $(git show "HEAD:$f" | grep -cE '^\s*(//|/\*|\*)' || true)))
+          done
+          if [ "$nachher" -lt "$vorher" ]; then
+            echo "Fremd-PR-Tor ROT — Kommentar-Bilanz sinkt ($vorher → $nachher Kommentarzeilen): Kommentare sind Inhalt, verschieben ja, löschen nie."; exit 1
+          fi
+          echo "Kommentar-Bilanz ok ($vorher → $nachher)"
           echo "Fremd-PR-Tor grün ($HEAD_REF, Basis ${basis:0:8})"
       - name: Plan-Inventar-Konsistenz (Node-only, günstig — darum vor tsc/Build)
         run: npm run check:plan

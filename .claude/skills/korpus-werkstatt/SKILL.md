@@ -166,6 +166,11 @@ den amtlichen Fedlex-Text gegen unseren Snapshot ab. Der Wert liegt in der
 Unabhängigkeit: ein zweiter, eigenständiger Parser sieht einen Bug, den der
 eigene Extraktor sich selbst nicht zeigt.
 
+**Vorbedingung:** `agy` 1.1.24 angemeldet (`agy models`), Permissions global
+gesetzt (David), Fedlex-Pin vorhanden; Bash-Timeout ≥ `--print-timeout` + 30 s;
+`--effort low|high` (medium gibt es nicht); bei Sperre/Timeout: kleineres
+`--artikel`-Fenster, später erneut — nie `--dangerously-skip-permissions`.
+
 ```
 bash scripts/fedlex-cache.sh                            # Pin-Cache füllen (einmalig/aktuell halten)
 npx vite-node scripts/analyse/gemini-diskrepanz.ts bund/<ERLASS> --nur-diff        # Schritt 1, kostenlos
@@ -202,7 +207,9 @@ jedes Werkzeug das, worin es gut ist.
   echter Beleg: er ist nachrechenbar.
 - **Sichtwerkzeug, kein Tor.** Exit 0 bei technisch gelungenem Lauf,
   unabhängig vom Fundinhalt; nicht in CI. Exit 2 heisst falsch aufgerufen,
-  Exit 1 Abbruch vor dem ersten Lauf.
+  Exit 1 Abbruch vor dem ersten Lauf, Exit 3 heisst Kontingent gesperrt
+  (Musterprüfung `scripts/analyse/agy-status.ts`, Fahrplan §4 «Limite
+  erkennen») — dann zurück an Claude statt Fehlersuche.
 - **Mindestens zwei Läufe, nur Konsens zählt.** Ein Fund gilt nur, wenn er in
   **allen** `agy`-Läufen auftaucht (gleicher Artikel, gleiche Klasse,
   überlappender Text). `--laeufe 1` wird abgelehnt: ohne Konsens ist das
@@ -226,6 +233,9 @@ jedes Werkzeug das, worin es gut ist.
   eine Verschachtelung strukturell gar nicht ausdrückt (Aufzählung, die durch
   eine eingeschobene Formel-Grafik zerteilt wird — DBG Art. 22), meldet der
   Diff einen Versatz, den unser Snapshot korrekt aufgelöst hat.
+
+Funde als `- [ ]`-Kleinbefund unter den Korpus-Dach-Schritt (`QS-KORPUS`), nie
+ins Fehlerbuch (Risikopfad).
 
 ## Definition of Done (§14.4/§14.5 — am Produktionsabschluss abhaken)
 

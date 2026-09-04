@@ -135,6 +135,14 @@ zustaendigkeit|straf|bger`).
   Verschiebung, Regime-Wechsel (§4 regime-treu — verschiedene Rechtsregimes
   dürfen nicht kollabiert sein).
 
+### Station Phase-3-Zählung (QS-FREMDAGENTEN)
+
+Läuft eine Prüfung Norm gegen Ausgabewert/Extrakt, kann der Prüfer zusätzlich
+einen Gemini-Durchgang als Diskrepanz-Finder fahren (Aufruf: Skill
+`korpus-werkstatt`); Verdikt bleibt beim Prüfer. Jeder Durchgang wird in
+`fahrplaene/FAHRPLAN-FREMDAGENTEN.md` §5 Tabelle «Phase 3» gezählt
+(echt/Schein/verpasst); nach fünf Durchgängen Rückbau-Schwelle §3 anwenden.
+
 ## Ergebnis
 
 - **`widerlegt`** → Befunde mit Norm-Beleg zurückgeben; NICHT quittieren. Erst
