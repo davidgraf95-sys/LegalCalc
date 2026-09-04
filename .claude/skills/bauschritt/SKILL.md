@@ -7,8 +7,8 @@ description: Verwenden für einen Lagebild-Bau-Prompt oder einen einzelnen Roadm
 
 **Anlass-Kopf — Ritual-Diät 29.8.2026 (Auftrag David: «Kontrolle abbauen, wo
 sie nichts trägt»).** Der frühere «leichte Pfad» ist ab hier der NORMALFALL:
-Station A hat 3 Punkte, Station E 5 (Nachtrag 4.9.2026:
-Fremdagenten-Messwerte). Was gestrichen wurde und warum, steht
+Station A hat 3 Punkte, Station E 6 (Nachtrag 4.9.2026:
+Fremdagenten-Messwerte; Nachtrag 4.9.2026: Kontingent-Lauf). Was gestrichen wurde und warum, steht
 unten unter «Gestrichene Pflichten» — **Station C (Prüfung) ist unverändert**,
 und §9/§12/§14.7/§18 bleiben Wort für Wort in Kraft.
 
@@ -112,6 +112,9 @@ Commit mit eigenem Roadmap-Trailer).
 - [ ] **Fremdagenten-Messwerte:** war Jules oder Gemini beteiligt — Skill
       `auftrag` Ziff. 4 Punkt 7 (Fahrplan §5 nachtragen, Rückbau-Schwellen §3
       prüfen).
+- [ ] **Kontingent-Lauf:** `npm run fremdagenten:messung -- --kontingent` —
+      Ergebnis nur bei Alarm (Exit 3) in Fahrplan §5 «Kontingent-Ereignisse»
+      eintragen, sonst nichts zu tun.
 
 ### Gestrichene Pflichten (29.8.2026) — je mit Anlass
 

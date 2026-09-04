@@ -207,7 +207,9 @@ jedes Werkzeug das, worin es gut ist.
   echter Beleg: er ist nachrechenbar.
 - **Sichtwerkzeug, kein Tor.** Exit 0 bei technisch gelungenem Lauf,
   unabhängig vom Fundinhalt; nicht in CI. Exit 2 heisst falsch aufgerufen,
-  Exit 1 Abbruch vor dem ersten Lauf.
+  Exit 1 Abbruch vor dem ersten Lauf, Exit 3 heisst Kontingent gesperrt
+  (Musterprüfung `scripts/analyse/agy-status.ts`, Fahrplan §4 «Limite
+  erkennen») — dann zurück an Claude statt Fehlersuche.
 - **Mindestens zwei Läufe, nur Konsens zählt.** Ein Fund gilt nur, wenn er in
   **allen** `agy`-Läufen auftaucht (gleicher Artikel, gleiche Klasse,
   überlappender Text). `--laeufe 1` wird abgelehnt: ohne Konsens ist das

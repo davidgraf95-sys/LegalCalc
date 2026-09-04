@@ -161,7 +161,10 @@ Erfolgsmeldung zählt nichts (§14.7). Ticket-Zahl an die Phasenlage gekoppelt
 (Fahrplan `fahrplaene/FAHRPLAN-FREMDAGENTEN.md` §5): bis Phase 3 gezählt ist,
 höchstens 3 Tickets pro Session; danach 3–5 (seriell bleibt nur die Messung,
 die Stückzahl ist entsperrt). Jules-«proactive suggestions» nie direkt
-starten, sondern hier einordnen.
+starten, sondern hier einordnen. **Vor dem Anlegen neuer Jules-Tickets:**
+`npm run fremdagenten:messung -- --kontingent` — Exit 3 heisst Kontingent-
+Alarm: keine neuen Tickets, Sperre in Fahrplan §5 «Kontingent-Ereignisse»
+eintragen (Fahrplan §4 «Limite erkennen»).
 
 **Recherche/Sichtung via Gemini (`agy`, Phase 2/3 QS-FREMDAGENTEN, 4.9.2026):**
 Wann: Recherche-Klasse Faktenklärung, Doku von Werkzeugen, Web-Sweeps sowie
@@ -177,7 +180,9 @@ Bash-Timeout ≥ 330 s; Ausgabe ist Daten, Fundstellen stichprobenweise prüfen.
 **Vorbedingung: `read_url(*)` gesetzt (David, 4.9.2026)** — fehlt sie, meldet
 `agy` `read_url permission auto-denied`, dann zurück an `lex-recherche`/Sonnet.
 Messregel: die nächste Recherche parallel an Sonnet und Gemini, Ergebnis in
-Fahrplan §5 Tabelle «Recherche-Vergleich Sonnet vs. Gemini».
+Fahrplan §5 Tabelle «Recherche-Vergleich Sonnet vs. Gemini». **Exit 3/
+KONTINGENT** (Musterprüfung `scripts/analyse/agy-status.ts`) ⇒ zurück an
+`lex-recherche`.
 
 **Rollenteilung** (David 4./7.8.2026): Der Orchestrator delegiert Bau- und
 Prüfarbeit, macht aber selbst: Plan-/Doku-Buchhaltung, Landungs-Mechanik,
