@@ -178,6 +178,24 @@ function SprungNavigation({ ziele, springe, aktiv }: {
         'flex gap-2 overflow-x-auto pb-0.5 -mb-0.5 pr-5 sm:pr-0 sm:flex-wrap sm:overflow-visible [scrollbar-width:thin]',
         'flex gap-2 overflow-x-auto pb-0.5 -mb-0.5 pr-5 @xl/pane:pr-0 @xl/pane:flex-wrap @xl/pane:overflow-visible [scrollbar-width:thin]',
       )}>
+        {/* ── LM-059 (B15, 4.9.2026) · REITER SIND KEINE CHIPS ────────────────
+            GEMESSEN vor dem Bau, `/rechtsprechung/bs_sozialversicherungsgericht_AH.2025.7`
+            gegen `/rechtsprechung`, beide @1440: die drei Abschnitts-Sprungziele
+            und die Filter-Chips der Trefferliste waren in JEDEM gemessenen
+            Merkmal deckungsgleich — Mono («Geist Mono Variable»), 12 px,
+            radius 4 px, 2 px Messing-Kante links, Fläche well/brass-100. EINE
+            Gestalt für zwei Handlungen: «Filter setzen» und «Abschnitt
+            anspringen». FAHRPLAN-VERZAHNUNG-UI §1.2 reserviert `.lc-chip` für
+            Dokument-REFERENZEN — ein Sprungziel innerhalb DESSELBEN Dokuments
+            ist keine, ein Filter auch nicht; die Grammatik war deklariert, nur
+            nicht durchgesetzt. Durchgesetzt wird sie hier, wo sie am wenigsten
+            kostet: die Abschnittsleiste ist Navigation und bekommt das Bild der
+            Navigation — Grotesk statt Mono, Unterkante statt Kasten. Die
+            Filter-Chips bleiben unangetastet.
+            MITGENOMMEN, nicht verloren: `min-height: var(--tap-ziel)` kam bisher
+            aus `.lc-chip` und ist a11y-Pflicht (WCAG 2.5.8, in e2e gemessen) —
+            es steht jetzt ausdrücklich am Element. LM-005 bleibt: `aktiv === null`
+            zeichnet weiterhin NICHTS aus, die Leiste tritt zurück. */}
         {ziele.map((z) => (
           <a key={z.anker} href={`#${z.anker}`}
             aria-current={aktiv === z.anker ? 'true' : undefined}
@@ -186,7 +204,11 @@ function SprungNavigation({ ziele, springe, aktiv }: {
               e.preventDefault();
               springe(z.anker);
             }}
-            className={`lc-chip shrink-0 whitespace-nowrap no-underline hover:text-brass-700 hover:border-brass-400 ${aktiv === z.anker ? 'lc-chip-aktuell' : ''}`}>
+            className={`inline-flex items-center min-h-[var(--tap-ziel)] shrink-0 whitespace-nowrap border-b-2 px-1 text-body-s font-medium no-underline transition-colors ${
+              aktiv === z.anker
+                ? 'border-brass-500 text-brass-800'
+                : 'border-transparent text-ink-600 hover:border-brass-400 hover:text-brass-700'
+            }`}>
             {z.label}
           </a>
         ))}

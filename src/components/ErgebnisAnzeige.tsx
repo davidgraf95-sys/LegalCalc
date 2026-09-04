@@ -131,12 +131,26 @@ export function ErgebnisAnzeige({ titel, ergebnis }: Props) {
             Segmente des Quoten-Balkens statt einer Warnung und mass einen
             negativen «Abstand» (§9-Bug-Check zu PR #440, B3). Reines Test-Attribut,
             keine Darstellungswirkung. */}
+        {/* ── LM-056 (B15, 4.9.2026) · EIN AKKORDEON-BILD JE SEITE ─────────────
+            GEMESSEN vor dem Bau auf `/rechner/zpo-fristen` @1440: diese drei
+            Köpfe trugen ein Glyphen-TAUSCHENDES ▲/▼, die `<details>` derselben
+            Seite («Für die Rechtsschrift …», «Rechtlicher Hinweis …») ein
+            7.7-9.8 px kleines «▸» mitten im Textfluss. Zwei Klapp-Gestalten auf
+            einem Bildschirm. Die geteilte Regel in `index.css` trägt jetzt das
+            Bild (rechte Kante, ▸, Drehung um 90°); diese drei Köpfe sind
+            `<button>` und werden von ihr nicht erreicht — sie übernehmen
+            dieselbe Gestalt von Hand: gleiche Glyphe, gleiche Drehung, gleiche
+            Kante. `aria-hidden` ist neu und richtig: das Zeichen stand bisher IM
+            zugänglichen Namen des Knopfs («Rechenweg (6 Schritte)▼»); den
+            Zustand trägt `<details>`/der Inhalt, nicht eine Glyphe im Namen.
+            `.lc-druck-chevron` bleibt — die Druckregel blendet die reine
+            Auf/Zu-Deko weiterhin aus (LM-173). */}
         {ergebnis.warnungen.length > 0 && (
           <div data-vorbehalte={ergebnis.warnungen.length} className="rounded-md overflow-hidden" style={{ border: '1px solid var(--warn-500)' }}>
             <button type="button" onClick={() => setWarnungenOffen(!warnungenOffen)}
               className="lc-druck-kopf w-full flex items-center justify-between px-4 py-2.5 bg-warn-bg text-left transition-colors">
               <span className="lc-overline text-warn-700">Hinweise / Vorbehalte ({ergebnis.warnungen.length})</span>
-              <span className="lc-druck-chevron text-warn-700">{warnungenOffen ? '▲' : '▼'}</span>
+              <span aria-hidden className={`lc-druck-chevron shrink-0 text-warn-700 transition-transform motion-reduce:transition-none ${warnungenOffen ? 'rotate-90' : ''}`}>▸</span>
             </button>
             {(warnungenOffen || druckErzwingtOffen) && (
               <div className="bg-warn-bg px-4 pb-3 space-y-1">
@@ -155,7 +169,7 @@ export function ErgebnisAnzeige({ titel, ergebnis }: Props) {
             className="lc-druck-kopf w-full flex items-center justify-between px-4 py-3 bg-surface hover:bg-brass-100 text-left transition-colors"
           >
             <span className="text-body-s font-medium text-ink-700">Rechenweg ({ergebnis.rechenweg.length} Schritte)</span>
-            <span className="lc-druck-chevron text-ink-500">{rechenWegOffen ? '▲' : '▼'}</span>
+            <span aria-hidden className={`lc-druck-chevron shrink-0 text-ink-400 transition-transform motion-reduce:transition-none ${rechenWegOffen ? 'rotate-90' : ''}`}>▸</span>
           </button>
           {(rechenWegOffen || druckErzwingtOffen) && (
             <div className="divide-y divide-line">
@@ -194,7 +208,7 @@ export function ErgebnisAnzeige({ titel, ergebnis }: Props) {
               className="lc-druck-kopf w-full flex items-center justify-between px-4 py-3 bg-surface hover:bg-brass-100 text-left transition-colors"
             >
               <span className="text-body-s font-medium text-ink-700">Annahmen ({ergebnis.annahmen.length})</span>
-              <span className="lc-druck-chevron text-ink-500">{annahmenOffen ? '▲' : '▼'}</span>
+              <span aria-hidden className={`lc-druck-chevron shrink-0 text-ink-400 transition-transform motion-reduce:transition-none ${annahmenOffen ? 'rotate-90' : ''}`}>▸</span>
             </button>
             {(annahmenOffen || druckErzwingtOffen) && (
               <ul className="px-4 py-3 space-y-1">
