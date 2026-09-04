@@ -204,7 +204,21 @@ export { TRAILER_KEYS };
 // Regression A/B). Case-insensitive, zeilenweise (führender Leerraum
 // zugelassen), damit auch eine Erwähnung ausserhalb des finalen Absatzes
 // erkannt wird.
-const IRGENDWO_STATUS_ZEILE_RE = /^\s*roadmap-status\s*:/im;
+const STATUS_ZEILE_RE = /^roadmap-status\s*:/i;
+
+/** `Roadmap-Status:`-Zeile irgendwo im Body, aber NUR ausserhalb von
+ *  ``` -Fences und ohne Einrückung (Markdown-Code) — sonst zählt ein zitiertes
+ *  Beispiel der Trailer-Form (Skill `landung` Ziff. 9 im PR-Body) als
+ *  Buchungsabsicht (Nachprüfungs-Befund Opus 3.9.2026: Fence-Zitat machte den
+ *  wip-Body rot). Dieselbe Fence-Logik wie `extractTrailerBlock`. */
+function hatStatusZeileAusserhalbCode(body: string): boolean {
+  for (const absatz of absaetzeMitFenceStatus(body)) {
+    for (const { text, inFence } of absatz) {
+      if (!inFence && STATUS_ZEILE_RE.test(text)) return true;
+    }
+  }
+  return false;
+}
 
 /**
  * Liest die Buchungs-Trailer ersatzweise aus einem PR-Body. Gibt `null`
@@ -247,7 +261,7 @@ export function parseBuchungAusPrBody(body: string): Buchung | null {
 
   // Keine `Roadmap-Status:`-Zeile IRGENDWO im Body -> nichts zu tun, auch
   // wenn `Roadmap:` (allein) da ist oder gar kein Trailer vorkommt.
-  if (!IRGENDWO_STATUS_ZEILE_RE.test(body)) {
+  if (!hatStatusZeileAusserhalbCode(body)) {
     return null;
   }
 

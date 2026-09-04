@@ -553,6 +553,20 @@ describe('parseBuchungAusPrBody', () => {
     expect(parseBuchungAusPrBody('Text.\n\nRoadmap: QS-EFFIZIENZ')).toBeNull();
   });
 
+  // Nachprüfungs-Befund Opus 3.9.2026: ein wip-Body, der die Trailer-FORM nur
+  // ZITIERT (```-Fence oder eingerückter Codeblock — genau das Beispiel aus
+  // Skill landung Ziff. 9), trägt keine Buchungsabsicht. Zählte das Zitat, käme
+  // der #636-Rotlauf für jeden Body zurück, der die Regel erklärt.
+  it('ignoriert eine Roadmap-Status-Zeile, die nur in einem Codeblock zitiert wird', () => {
+    const fence = 'Regel:\n\n```\nRoadmap: <ID>\nRoadmap-Status: done|ready\n```\n\nRoadmap: QS-EFFIZIENZ';
+    expect(parseBuchungAusPrBody(fence)).toBeNull();
+    const eingerueckt = 'Regel:\n\n    Roadmap-Status: done\n\nRoadmap: QS-EFFIZIENZ';
+    expect(parseBuchungAusPrBody(eingerueckt)).toBeNull();
+    // Gegenprobe: dieselbe Zeile AUSSERHALB des Fences zählt weiterhin => Wurf.
+    const echt = 'Regel:\n\n```\nRoadmap: <ID>\n```\n\nRoadmap-Status: done\n\nRoadmap: QS-EFFIZIENZ';
+    expect(() => parseBuchungAusPrBody(echt)).toThrow(/unvollständiger Buchungs-Block/);
+  });
+
   // FACHLICHE ÄNDERUNG 15.8.2026 (deklariert, §6.3): ein ECHTER halber
   // Buchungs-Block verpuffte bis dahin still — Realfall PR #507: `Roadmap:`
   // und `Roadmap-Status:` durch Leerzeile getrennt, nur der letzte Absatz
