@@ -122,8 +122,11 @@ export function FristenKalender({ ereignisISO, aQuoISO, adQuemISO, kanton, still
           Zusammenfassung unten ersetzt (E9, WCAG 1.3.1/1.4.1). */}
       {/* kompakt (Startseiten-Schnellrechner): Monate zentriert + fraktional
           wachsend, damit der Kalender seine Karte ausfüllt statt links zu
-          kleben (Befund David 26.6.2026 «füllt nicht alles aus»). Nicht-kompakt
-          (sechs Fristen-Formulare) bleibt byte-gleich. */}
+          kleben (Befund David 26.6.2026 «füllt nicht alles aus»).
+          Nicht-kompakt (sechs Fristen-Formulare) wuchs damals bewusst NICHT mit;
+          seit LM-142 (4.9.2026) tut es das ebenfalls — Herleitung an der
+          Breiten-Zeile unten. Die Ausrichtung bleibt getrennt: kompakt zentriert
+          (Kachel), Formular linksbündig an der Feldkante. */}
       <div className={`flex flex-wrap items-start ${kompakt ? 'justify-center gap-x-6 gap-y-5' : 'gap-x-7 gap-y-6'}`} aria-hidden>
         {monate.map((monat, idx) => {
           const jahr = monat.getFullYear();
@@ -155,7 +158,24 @@ export function FristenKalender({ ereignisISO, aQuoISO, adQuemISO, kanton, still
                   EINZELNER (letzter) Monat darf per flex-1 die Karte füllen statt
                   gekappt-schmal zentriert zu bleiben (Auftrag David 1.7.2026 «füllt
                   die Karte» — behebt den bauartbedingten <55%-Füllgrad bei 1 Monat). */}
-              <div className={kompakt ? `flex-1 basis-[12.5rem] ${monate.length > 1 ? 'max-w-[17rem]' : ''}` : 'w-[min(15.5rem,100%)]'}>
+              {/* ── LM-142 (W2·17-UI-BEFUNDE/B16) · AUCH DER FORMULAR-KALENDER
+                  FÜLLT SEINE KARTE. Nicht-kompakt stand auf der starren Breite
+                  `w-[min(15.5rem,100%)]` (248 px). Gemessen 4.9.2026 @1440 auf
+                  /rechner/schkg-fristen (Preview von origin/main): zwei Monate bei
+                  366→614 und 642→890 in einer Karte, die von 345 bis 1351 läuft —
+                  rechts blieben rund 440 px leer (ebenso /rechner/kuendigung und
+                  /rechner/mietrecht).
+                  Das ist DERSELBE Befund, den David am 26.6./1.7.2026 für den
+                  kompakten Modus gemeldet hat («füllt nicht alles aus» / «füllt die
+                  Karte»), und die Antwort steht schon daneben: fraktional wachsen
+                  mit Mindest-Basis und Kappe. Der damalige Scope-Satz «Nicht-
+                  kompakt bleibt byte-gleich» war eine Abgrenzung des damaligen
+                  Auftrags, kein Befund gegen das Muster — er wird hier ausdrücklich
+                  und begründet aufgehoben, nicht still (§0.2). Die Kappe liegt bei
+                  22 rem statt 17 rem, weil dieser Modus die volle Tages-Matrix
+                  zeigt (keine gefilterten Wochen) und die Zellen sonst nur mit-
+                  wachsen, ohne dass eine Woche je in eine Zeile passt. */}
+              <div className={kompakt ? `flex-1 basis-[12.5rem] ${monate.length > 1 ? 'max-w-[17rem]' : ''}` : 'flex-1 basis-[15.5rem] max-w-[22rem]'}>
                 {/* Almanach-Monatskopf: Display-Name, Messing-Jahr, Haarlinie */}
                 <p className="flex items-baseline justify-between gap-2 border-b border-line pb-1.5 mb-2">
                   <span className="font-display text-body-s font-semibold tracking-[-0.01em] text-ink-900">{MONATE[m]}</span>

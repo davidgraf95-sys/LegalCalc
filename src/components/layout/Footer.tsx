@@ -36,15 +36,31 @@ export function Footer() {
           </p>
         </div>
 
-        {/* Navigation */}
-        <nav aria-label="Footer-Navigation" className="space-y-2">
+        {/* ── LM-139 / LM-145 (W2·17-UI-BEFUNDE/B16) · SPALTENHÖHEN AUSGLEICHEN ──
+            Die sechs Links standen in EINER Kolonne (`space-y-2` über je
+            `min-h-11`), also 6 × 44 px + 5 × 8 px. Gemessen 4.9.2026 @1440 auf /
+            und /materialien/ESTV-KS-DBG-5A (Preview von origin/main): rund 52 px
+            Zeilenabstand gegenüber der eng gesetzten Hinweis-Spalte daneben, und
+            unter der Marken-Spalte blieb eine grosse leere Fläche. LM-139 und
+            LM-145 sind derselbe Defekt auf zwei Routen — ein Posten.
+
+            DIE 44 PX BLEIBEN. Das weite Zeilenmass ist kein Zierrat, sondern das
+            Ergebnis des Responsive-Audit-Fixes D2 (Fuss-Tap-Ziele 44 px, WCAG
+            2.5.8 / FAHRPLAN-UI-NAVIGATION §4 R6). Zusammendrücken nähme genau den
+            zurück; der zulässige Weg ist der Ausgleich der HÖHEN ohne
+            Verkleinerung der Trefferflächen. Darum stehen die Links ab `sm` in
+            zwei Kolonnen: gleiche Tap-Fläche je Link, halbe Spaltenhöhe. Unter
+            `sm` bleibt es einspaltig — dort ist der Fuss ohnehin gestapelt. */}
+        <nav aria-label="Footer-Navigation">
           <p className="lc-overline mb-3">Navigation</p>
-          {NAVIGATION.map((n) => (
-            <Link key={n.label} to={n.to}
-              className="flex items-center min-h-11 text-body-s text-ink-600 hover:text-brass-700 no-underline transition-colors">
-              {n.label}
-            </Link>
-          ))}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6">
+            {NAVIGATION.map((n) => (
+              <Link key={n.label} to={n.to}
+                className="flex items-center min-h-11 text-body-s text-ink-600 hover:text-brass-700 no-underline transition-colors">
+                {n.label}
+              </Link>
+            ))}
+          </div>
         </nav>
 
         {/* Hinweise */}

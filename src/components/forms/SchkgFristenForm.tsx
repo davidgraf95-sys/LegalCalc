@@ -391,9 +391,22 @@ export function SchkgFristenForm({ live }: {
                     Art. 142 Abs. 1 (Tagesfrist) bzw. Abs. 2 (Monats-/Jahres-
                     frist). Deploy-Bug-Check 7.6.2026 (HOCH): war hartcodiert. */}
                 <BegruendungSlot ergebnis={e} zusatz={fristbeginnZusatz(e.diesAQuoISO, e.fristbeginnNorm)} />
+                {/* ── LM-196 (W2·17-UI-BEFUNDE/B14) · EINE FORM JE ROLLE ────────
+                    Der Kalender-Export tritt in zwei Rollen auf, und die Rolle
+                    bestimmt die Stelle: SEITEN-Aktion (genau EIN Fristende je
+                    Seite → in der Aktionszeile neben «PDF-Rechenbericht», so in
+                    Verjährung, Erbfristen, BGG, Allgemeine Frist) und FRIST-Aktion
+                    (mehrere Fristenden gleichzeitig → bei SEINER Frist, so hier und
+                    in `EreignisFristen`). Die Positionsabweichung, die LM-196
+                    beobachtet, ist damit strukturell begründet: eine gemeinsame
+                    Seiten-Aktionszeile könnte nicht sagen, WELCHE der Fristen sie
+                    exportiert. Nicht begründet war die FORM — die Frist-Aktion
+                    stand hier auf dem vollen `lc-btn-outline`, in `EreignisFristen`
+                    auf `lc-btn-outline lc-btn-sm`. Angeglichen auf die kleine
+                    Variante: dieselbe Rolle, dieselbe Form (Muster-Konsistenz). */}
                 <IcsExportButton endISO={e.diesAdQuemISO} titel={`Fristende – ${a.titel}`}
                   aktenzeichen={aktenzeichen}
-                  query={schkgQuery}
+                  query={schkgQuery} className="lc-btn-outline lc-btn-sm"
                   beschreibung={e.ergebnis} dateiName="SchKG-Frist.ics" />
               </div>
             );

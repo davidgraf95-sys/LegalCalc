@@ -84,7 +84,22 @@ export function KantonRelevanzListe({ erlasse, sys }: {
         nach der amtlichen Systematik des Kantons. Für die volle amtliche
         Gliederung «Systematisch» wählen.
       </RelevanzHinweis>
-      <div className={pk('grid grid-cols-1 sm:grid-cols-2 gap-x-5 gap-y-2', 'grid grid-cols-1 @lg/pane:grid-cols-2 gap-x-5 gap-y-2')}>
+      {/* ── LM-141 (W2·17-UI-BEFUNDE/B16) · LESERICHTUNG DER ZWEISPALTIGEN LISTE ─
+          Hier stand `grid grid-cols-1 sm:grid-cols-2 gap-x-5 gap-y-2`. Ein Grid
+          füllt ZEILENWEISE (1 links, 2 rechts, 3 wieder links …) — wer die Liste
+          liest, springt bei jedem Eintrag über die Spalte. `columns` füllt
+          SPALTENWEISE: erst links von oben nach unten, dann rechts. Gemessen
+          4.9.2026 @1440 auf /gesetze?ebene=kanton&kt=BS (859 Erlasse, Preview von
+          origin/main). Abstände und Umbruchschutz trägt `.lc-listenspalten`
+          (Herleitung dort, src/index.css).
+
+          NICHT hier gebaut: die im selben Befund genannte doppelte Systematik-
+          nummer («111.100» in der Zeile, «(11100)» nochmals im Titel). Die Nummer
+          steckt ein zweites Mal im Datenfeld `titel` des Registers — das ist
+          §5-Fläche (Korpus/Generator), nicht Darstellung; sie in der Anzeige per
+          Regex wegzuschneiden hiesse, eine zweite Wahrheit über das Datum zu
+          legen. Zurückgestellt, gehört in die Korpus-Werkstatt. */}
+      <div className={pk('lc-listenspalten columns-1 sm:columns-2', 'lc-listenspalten columns-1 @lg/pane:columns-2')}>
         {sortiert.map((e) => <SysZeile key={e.key} e={e} />)}
       </div>
     </div>
@@ -122,7 +137,7 @@ export function KantonGebietGruppen({ erlasse }: { erlasse: BrowseErlass[] }) {
               (unsuffixiertes `bg-line`, weil Tailwinds Deckkraft-Suffix auf
               dem color-mix-Token `--line` keine CSS-Regel erzeugt). */}
           <GruppenKopf titel={g.label} zahl={g.items.length} />
-          <div className={pk('grid grid-cols-1 sm:grid-cols-2 gap-x-5 gap-y-2', 'grid grid-cols-1 @lg/pane:grid-cols-2 gap-x-5 gap-y-2')}>
+          <div className={pk('lc-listenspalten columns-1 sm:columns-2', 'lc-listenspalten columns-1 @lg/pane:columns-2')}>
             {g.items.map((e) => <SysZeile key={e.key} e={e} />)}
           </div>
         </section>
