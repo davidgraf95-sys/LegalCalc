@@ -48,6 +48,31 @@ export function EntscheidFilter({
   const gerichte = einzigartig(bestand.map((e) => JSON.stringify({ id: e.gericht, name: e.gerichtName })))
     .map((s) => JSON.parse(s) as { id: string; name: string })
     .sort((a, b) => a.name.localeCompare(b.name, 'de'));
+  // ── LM-069 (B12, 4.9.2026) · ZWEI EINTRÄGE, EINE BESCHRIFTUNG ───────────────
+  // GEMESSEN am gebauten Stand (`/rechtsprechung` @1440, «Erweiterte Filter» →
+  // «Gericht»): die Liste führte «Bundesgericht (24)» UND «Bundesgericht (1259)»
+  // — zwei Werte, an ihrer Beschriftung nicht unterscheidbar. Die Zahlen sind
+  // richtig (§8), mehrdeutig ist nur der Name: der Bestand trägt für die
+  // Gerichts-IDs `bge` und `bger` denselben `gerichtName`.
+  // KEIN Sonderfall auf die IDs — die Unterscheidung wird aus dem BESTAND
+  // abgeleitet und steht darum auch dann richtig, wenn morgen zwei andere
+  // Gerichte denselben Namen tragen: nachgezählt im Artefakt
+  // `public/rechtsprechung/register.json` sind alle 1'259 `bge`-Einträge
+  // `leitcharakter: 'leitentscheid'` mit BGE-Fundstelle, alle 24 echten
+  // `bger`-Einträge `routine` ohne. Der Zusatz erscheint NUR bei mehrdeutigem
+  // Namen und benutzt die Hausformel dieser Datei («Leitentscheid == amtlicher
+  // BGE», Häkchen F4 weiter unten), erfindet also keine zweite Wahrheit (§5).
+  const nameMehrdeutig = new Set(
+    gerichte.map((g) => g.name).filter((n, i, arr) => arr.indexOf(n) !== i),
+  );
+  const nurLeitentscheide = (id: string) => {
+    const echte = bestand.filter((e) => !e.verweis && e.gericht === id);
+    return echte.length > 0 && echte.every((e) => e.leitcharakter === 'leitentscheid');
+  };
+  const gerichtLabel = (g: { id: string; name: string }) =>
+    (nameMehrdeutig.has(g.name)
+      ? `${g.name} — ${nurLeitentscheide(g.id) ? 'amtliche Sammlung (BGE)' : 'übrige Urteile'}`
+      : g.name);
   const kantone = einzigartig(bestand.map((e) => e.kanton)).sort();
   const sprachen = einzigartig(bestand.map((e) => e.sprache)).sort();
   // Verweis-Einträge (vollständige Urteile zu einem BGE) NICHT mitzählen — sonst
@@ -229,7 +254,7 @@ export function EntscheidFilter({
               <select className="lc-input h-9 py-0 text-body-s" value={werte.gericht ?? ''}
                 onChange={(e) => setze({ gericht: e.target.value || null })}>
                 <option value="">Alle</option>
-                {gerichte.map((g) => <option key={g.id} value={g.id}>{g.name} ({gerichtN(g.id)})</option>)}
+                {gerichte.map((g) => <option key={g.id} value={g.id}>{gerichtLabel(g)} ({gerichtN(g.id)})</option>)}
               </select>
             </label>
           )}
@@ -253,8 +278,25 @@ export function EntscheidFilter({
           </label>
           {/* F4: EIN zusammengeführter Filter (Leitentscheid == amtlicher BGE, deckungs-
               gleiche Menge) statt zweier redundanter Häkchen. */}
+          {/* ── LM-076 (B12, 4.9.2026) · DAS KÄSTCHEN WAR NICHT QUADRATISCH ───────────
+              GEMESSEN am gebauten Stand (`/rechtsprechung` @1440): 13.6 × 17.6 px —
+              der Befund hatte 13 × 15.8 px gesehen, der Defekt ist derselbe.
+              Die `h-4 w-4` standen längst da; sie trugen nur nicht: als Flex-Kind
+              OHNE `shrink-0` wurde die BREITE vom Umbruch der zweizeiligen
+              Beschriftung zusammengedrückt (17.6 → 13.6 px), die Höhe blieb. Darum
+              `shrink-0` statt einer grösseren Zahl — die Wurzel ist das Schrumpfen,
+              nicht das Mass; die Rüge «Browser-Standard» traf nicht zu (`accent-
+              brass-600` färbt es seit je ein).
+              NICHT geändert, weil am gebauten Stand nicht reproduzierbar: «das
+              Kästchen sitzt an der ersten [Zeile]». Gemessen sitzt es MITTIG zur
+              zweizeiligen Beschriftung (Oberkante 12.2 px in einem 46 px hohen
+              Label), und `self-end pb-1` setzt es bewusst auf die Höhe der
+              Eingabefelder der Nachbarspalten, die über sich noch eine Kopfzeile
+              tragen — diese Ausrichtung wird nicht gekippt (§0.2).
+              NICHT gebaut: die 24-px-Zielfläche aus WCAG 2.5.8 — sie sprengte die
+              36-px-Filterzeile; bedienbar ist ohnehin das ganze <label> (46 px). */}
           <label className="flex items-center gap-2 self-end pb-1 text-body-s text-ink-700">
-            <input type="checkbox" className="h-4 w-4 accent-brass-600"
+            <input type="checkbox" className="h-4 w-4 shrink-0 accent-brass-600"
               checked={!!werte.nurLeitentscheide} onChange={(e) => setze({ nurLeitentscheide: e.target.checked })} />
             Nur Leitentscheide (amtliche BGE)
           </label>
