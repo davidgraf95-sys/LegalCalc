@@ -611,24 +611,13 @@ export function KontextPanel({ typ, normKeys, zusatzGruppen, ohneNormen = false,
                           {kannOeffnen && !istOffen(ziel) && (
                             <DanebenKnopf ziel={ziel} label={r.zitierung} oeffneDaneben={oeffneDaneben} className="ml-1 align-middle" />
                           )}
-                          {/* LM-129 (W2·17-UI-BEFUNDE-B9, 4.9.2026) · DER AUSZUG IST EIN
-                              ABSATZ, KEIN LINKTEXT — UND DAS ⧉ STEHT NICHT DARIN.
-                              Gemessen @1440 auf `/materialien/ESTV-KS-DBG-5A`: der
-                              Regeste-Auszug lief als Fortsetzung DESSELBEN <a> hinter der
-                              Zitierung her, das ⧉ folgte ihm und landete dadurch mitten in
-                              der dritten Zeile (gemessen 42 px unter der Eintragsoberkante,
-                              x = 729 in einem 312–952 px breiten Eintrag) — ein
-                              Bedienelement im Fliesstext. Der Auszug steht jetzt als
-                              eigener Block darunter; das ⧉ schliesst die kurze
-                              Zitierungs-Zeile ab und steht damit am Zeilenrand.
-                              MITBEHOBEN, gleiche Wurzel: der zugängliche Name des Links
-                              war Zitierung PLUS bis zu 240 Zeichen Regeste — jetzt trägt
-                              er nur noch das, was er ansteuert. Der em-Strich entfällt: er
-                              war der Inline-Trenner, den der Zeilenumbruch ersetzt.
-                              Wortlaut unverändert (`absicherWortgrenze` wie zuvor) — die
-                              im Befund gerügte Trennung MITTEN IM WORT ist am gebauten
-                              Stand nicht mehr reproduzierbar (alle 8 Auszüge enden an
-                              einer Wortgrenze), sie steht darum nicht zur Debatte. */}
+                          {/* LM-129 (B9, 4.9.2026): der Auszug lief als Fortsetzung DESSELBEN <a>
+                              hinter der Zitierung her — das ⧉ landete dadurch mitten in der
+                              dritten Zeile. Eigener Block: das ⧉ schliesst die kurze
+                              Zitierungs-Zeile ab, und der Linkname trägt nicht mehr bis zu
+                              240 Zeichen Regeste. Wortlaut unverändert (`absicherWortgrenze`);
+                              nur der em-Strich entfällt, den der Umbruch ersetzt.
+                              Messreihe: FAHRPLAN-UI-BEFUNDE §10 LM-129. */}
                           {r.regesteKurz && (
                             <span className="mt-0.5 block text-ink-500">{absicherWortgrenze(r.regesteKurz)}</span>
                           )}
@@ -641,22 +630,11 @@ export function KontextPanel({ typ, normKeys, zusatzGruppen, ohneNormen = false,
                       Alle <span className="num">{entscheide?.length}</span> erfassten Entscheide ansehen →
                     </Link>
                   )}
-                  {/* LM-134 (W2·17-UI-BEFUNDE-B9, 4.9.2026) · DER ★ WIRD AUF DER
-                      SEITE ERKLÄRT, NICHT NUR IM TOOLTIP. Gemessen @1440 auf
-                      `/materialien/ESTV-KS-DBG-5A`: 8 Sterne in dieser Liste,
-                      aria-label und title tragen «Leitentscheid — amtlich
-                      publizierter BGE», SICHTBAR steht die Erklärung nirgends
-                      (`title` ist auf Touch tot). Das ist wortgleich die Lücke,
-                      die LM-050 in B1 geschlossen hat — und ihr Bauteil steht
-                      schon: `verzahnung/ZeichenLegende` (Toggletip, Texte aus
-                      GLYPH_LEGENDE, §5 dieselbe Quelle wie aria-label/title).
-                      Wiederverwendet statt einer zweiten Legende (§10); der
-                      Mount-Punkt ist neu, die Komponente unverändert.
-                      Die Bedingung ist §8: die Legende steht nur, wenn in DIESER
-                      Liste wirklich ein ★ zu sehen ist — eine Erklärung für ein
-                      unsichtbares Zeichen wäre eine Fehlversprechung (dieselbe
-                      Begründung, mit der ZeichenLegende ihren ⧉-Eintrag an
-                      `kannOeffnen` bindet). */}
+                  {/* LM-134 (B9, 4.9.2026): die ★ dieser Liste trugen ihre Erklärung nur
+                      in aria-label/title (auf Touch tot). Wiederverwendet statt zweiter
+                      Legende: `verzahnung/ZeichenLegende` — in B1/LM-050 für genau diese
+                      Lücke gebaut, Texte aus GLYPH_LEGENDE (§5, dieselbe Quelle). Steht nur
+                      bei sichtbarem ★ (§8), wie dort der ⧉-Eintrag an `kannOeffnen` hängt. */}
                   {sichtbareEntscheide.some((r) => r.leitcharakter === 'leitentscheid') && (
                     <ZeichenLegende />
                   )}
