@@ -251,19 +251,26 @@ export function ZpoFristenForm({ live }: {
           <DatumsFeld value={form.ereignis} onChange={(v) => set('ereignis', v)} className={inputCls} />
         </Field>
 
-        <Field label="Fristtyp & Länge">
-          <div className="flex gap-2">
+        {/* LM-078 (B19): zwei eigene Fields statt einem Field für zwei Controls —
+            `Field` verknüpft `label`/`htmlFor` nur mit EINEM nativen Kind (siehe
+            vorlagen/ui.tsx); bei einer umschliessenden <div> ging die Verknüpfung
+            ins Leere und das Zahlenfeld blieb ohne eigene Beschriftung. Muster
+            identisch zu AllgemeineFristForm.tsx (Länge/Einheit-Grid). */}
+        <div className="grid grid-cols-[7rem_1fr] gap-2">
+          <Field label="Länge">
             {/* LM-160 (B6/K-15): aria-invalid rollt das Muster aus AllgemeineFristForm
                 aus — das Feld selbst markiert den Eingabefehler, statt ihn nur ~400 px
                 weiter unten in der FehlerBox stehen zu lassen (§8). */}
             <input type="number" inputMode="decimal" min={1} step={1} value={form.laenge}
               aria-invalid={!Number.isInteger(form.laenge) || form.laenge <= 0}
-              onChange={(e) => set('laenge', Number(e.target.value))} className={inputCls + ' w-24'} />
+              onChange={(e) => set('laenge', Number(e.target.value))} className={inputCls} />
+          </Field>
+          <Field label="Einheit">
             <select value={form.einheit} onChange={(e) => set('einheit', e.target.value as ZpoEinheit)} className={inputCls}>
               {EINHEITEN.map((u) => <option key={u.code} value={u.code}>{u.label}</option>)}
             </select>
-          </div>
-        </Field>
+          </Field>
+        </div>
 
         <Field label="Verfahrensart" hint={`Fristenstillstand: ${aktVerfahren.stillstand ? 'gilt' : 'gilt nicht'} (Art. 145 Abs. 2 ZPO)`}>
           <select value={form.verfahren} onChange={(e) => set('verfahren', e.target.value as ZpoVerfahren)} className={inputCls}>
