@@ -93,8 +93,8 @@ Ziel, ≤ ~5 Dateien, ≤ ~300 Zeilen Diff, nie Risikopfade, nie Steuer-Doku. Ju
 hat kein Gedächtnis über Sessions — alles Wissen steht in `AGENTS.md` und im
 Issue. Claude prüft nach Skill `landung` §«Fremde PRs (Jules)» und landet.
 
-**Fremd-PR-Tor in CI, Anlass T6 — gebaut 4.9.2026.** `scripts/check-fremd-pr.ts`
-(`npm run check:fremd-pr`, CI-Schritt im Job «Tore»): für Branches im
+**Fremd-PR-Tor in CI, Anlass T6 — gebaut 4.9.2026.** Shell-Schritt «Fremd-PR-Tor»
+im CI-Job «Tore» (`.github/workflows/ci.yml`; bewusst kein eigenes `check-*.ts`, Steuerungs-Deckel §17-Gegengewicht — Regel 1 nutzt `scripts/analyse/test-assertion-diff.ts`): für Branches im
 Jules-Muster (`*-<19-stellige Task-ID>`) automatisch (1) den Assertion-Diff
 (`scripts/analyse/test-assertion-diff.ts` gegen `merge-base(origin/main,
 HEAD)`) und (2) eine Datei-Allowlist `src/**` prüfen — strenger als die
