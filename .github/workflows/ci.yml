@@ -382,7 +382,8 @@ jobs:
       - name: Testtreue (§6.3 — refactor-Commits ändern keine Tests)
         run: npm run check:testtreue
       # Fremd-PR-Tor (T6, 3.9.2026, fahrplaene/FAHRPLAN-FREMDAGENTEN.md §2
-      # Phase 1): nur Branches im Jules-Muster (`*-<19-stellige Task-ID>`) sind
+      # Phase 1): nur Branches im Jules-Muster (19-stellige Task-ID im Namen oder
+      # «jules» im Namen) sind
       # zuständig — Regex-Erkennung im Shell-Step, weil `if:` keine Regex kann.
       # Bewusst KEIN eigenes check-*.ts (Steuerungs-Deckel, §17-Gegengewicht):
       # Regel 1 = bestehendes scripts/analyse/test-assertion-diff.ts (Jules darf
@@ -394,7 +395,9 @@ jobs:
         env:
           HEAD_REF: ${{ github.head_ref }}
         run: |
-          if ! [[ "$HEAD_REF" =~ -[0-9]{19}$ ]]; then
+          # Jules-Muster (Beleg 4.9.2026, PR #647): `jules-<19 Ziffern>-<8 hex>` ODER
+          # `<slug>-<19 Ziffern>` — also: 19-Ziffern-Lauf irgendwo oder "jules" im Namen.
+          if ! [[ "$HEAD_REF" =~ [0-9]{19} || "$HEAD_REF" == *jules* ]]; then
             echo "Fremd-PR-Tor: nicht zuständig ($HEAD_REF)"; exit 0
           fi
           git fetch -q origin main
