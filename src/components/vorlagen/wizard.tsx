@@ -131,8 +131,16 @@ export function VorlagenWizardRahmen({
             )}
             {/* B2/D-1.5 (QS-UI 8b Teil 2): Der Speicher-Hinweis lief mit 976 px über
                 die volle Spaltenbreite — gemessen auf 24 Vorlagen-Flächen. Prosa hält
-                die Lesespalte; Kacheln und Tabellen bleiben unbegrenzt. */}
-            <p className="text-xs text-ink-500 max-w-reading">
+                die Lesespalte; Kacheln und Tabellen bleiben unbegrenzt.
+                LM-125 (W2·17-UI-BEFUNDE-B9, 4.9.2026): `max-w-reading` (40rem) ist das
+                Mass der 16-px-Prosa, nicht das der Feinschrift. Auf der 12-px-Stufe
+                mass dieser Hinweis @1440 110 ch/Zeile (2 Zeilen à 640 px) — über der
+                WCAG-Decke SC 1.4.8 (80 ch). `max-w-kleintext` ist die
+                Feinschrift-Spalte des Hauses (Herleitung am Token in
+                `tailwind.config.js`); dieselbe Messung und dasselbe Mittel wie T2
+                (`kontext/KontextGruppe`, Hinweis-Slot) und T3 (`ArtikelLeser`,
+                Fussnotenapparat), beide 29.8.2026. */}
+            <p className="text-xs text-ink-500 max-w-kleintext">
               {fussnote ?? 'Ihre Eingaben verlassen den Browser nicht, werden aber lokal auf diesem Gerät zwischengespeichert und bleiben nach dem Schliessen erhalten — auf geteilten oder fremden Rechnern bitte «Eingaben zurücksetzen».'}
             </p>
           </div>
