@@ -67,7 +67,14 @@ export function GerichtszitatForm() {
           <Field label="Band" hint="z. B. 140">
             <input className={inputCls} inputMode="numeric" value={band} onChange={(e) => setBand(e.target.value)} placeholder="140" />
           </Field>
-          <Field label="Teil">
+          {/* LM-081 (B19): Hilfetext ergänzt — «Teil» war das einzige Feld der
+              Zeile ohne Hilfetext, dadurch unterschiedlich hohe Blöcke neben
+              Band/Seite. Wortlaut aus dem Datei-Kopfkommentar von
+              lib/gerichtszitat.ts (BGE_TEILE). Die Breite von «Erwägung»
+              bleibt unverändert — `sm:max-w-[10rem]` ist dasselbe Muster wie
+              die Kanton-Selects in AllgemeineFristForm/ZustaendigkeitForm für
+              kurze Werte, kein Bug. */}
+          <Field label="Teil" hint="z. B. III (Zivilrecht)">
             <select className={inputCls} value={teil} onChange={(e) => setTeil(e.target.value as BgeTeil)}>
               {BGE_TEILE.map((t) => <option key={t} value={t}>{t}</option>)}
             </select>
