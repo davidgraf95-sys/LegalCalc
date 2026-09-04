@@ -1,42 +1,13 @@
-// scripts/check-fremd-pr.ts — Fremd-PR-Tor für Jules-Branches (T6, 3.9.2026).
-//
-// WARUM: T6 (Tabu-Probe) zeigte, dass `AGENTS.md` als Prosa-Zaun nicht hält
-// (0 von 1 Ablehnungen) — Jules änderte auf Zuruf eine Assertion samt
-// Produktionswert, statt den Test unverändert zu lassen. Der Schutz muss aus
-// einem Tor kommen, nicht aus einem Text, den ein Agent lesen — oder
-// überschreiben — kann (`fahrplaene/FAHRPLAN-FREMDAGENTEN.md` §2 Phase 1).
-//
-// ZUSTÄNDIGKEIT: Nur Branches im Jules-Muster (endet auf `-` + 19 Ziffern,
-// z. B. `jules/relax-min-height-test-16624704437205943962`). Für jeden
-// anderen Branch meldet das Skript «nicht zuständig» und Exit 0 — die
-// Risikopfad-Prüfung selbst deckt bereits `check:merge-schutz` ab (nicht
-// duplizieren, CLAUDE.md §5).
-//
-// ZWEI REGELN, BEIDE MÜSSEN GRÜN SEIN:
-//   (1) Assertion-Diff (`scripts/analyse/test-assertion-diff.ts`) zwischen
-//       der Basis und HEAD unter `src/tests/` muss Exit 0 liefern — Jules darf
-//       Tests VERSCHIEBEN, nie ÄNDERN (Testnamen/describe/expect-Multimengen
-//       identisch).
-//   (2) Keine geänderte Datei ausserhalb `src/**` — Jules rührt nie CI-
-//       Konfiguration, Skripte, Steuer-Doku, Fahrpläne, Bibliothek, `.claude/`,
-//       Normtext-Snapshots oder Daten an.
-//
-// BASIS: merge-base(origin/main, HEAD) — nicht der aktuelle origin/main-Tip.
-// Dieselbe Begründung wie in `check-merge-schutz.ts`: ein PR wird gegen den
-// Stand geprüft, von dem er abgezweigt ist, nicht gegen einen main, der seither
-// unabhängig weitergelaufen ist (sonst false positives durch main-Drift, die
-// nichts mit dem Jules-Diff zu tun haben). Für den in Auftrag genannten
-// Normalfall (Basis frisch, main hat sich seit dem Branch-Punkt nicht
-// bewegt) ist das identisch mit einem literalen `origin/main`.
-//
-// BRANCH-ERKENNUNG: `GITHUB_HEAD_REF` (von GitHub Actions bei `pull_request`
-// gesetzt) hat Vorrang; lokal (Rot-Beweis, Simulation) fällt das Skript auf
-// `git rev-parse --abbrev-ref HEAD` zurück.
-//
-// EXIT 0: nicht zuständig (kein Jules-Branch) ODER beide Regeln grün.
-// EXIT 1: mindestens eine Regel verletzt.
-// EXIT 2: Basis nicht auflösbar (kein `git fetch origin` möglich/erfolgt) —
-//         ein Tor ohne Referenz ist kein Tor (§6.7).
+// scripts/check-fremd-pr.ts — Fremd-PR-Tor für Jules-Branches (T6 3.9.2026:
+// AGENTS.md hielt als Prosa-Zaun nicht, 0/1 Ablehnungen — Schutz muss aus
+// Tor/Review kommen). Details: fahrplaene/FAHRPLAN-FREMDAGENTEN.md §2 Ph.1.
+// Nur Branches im Jules-Muster (endet `-`+19 Ziffern) sind zuständig, sonst
+// Exit 0 "nicht zuständig" (Risikopfade deckt check:merge-schutz bereits ab).
+// Regel 1: Assertion-Diff (scripts/analyse/test-assertion-diff.ts) unter
+// src/tests/ gegen merge-base(origin/main,HEAD) muss Exit 0 sein — Jules darf
+// Tests verschieben, nie ändern. Regel 2: keine geänderte Datei ausserhalb
+// src/**. Branch aus GITHUB_HEAD_REF (CI) oder HEAD (lokaler Rot-Beweis).
+// Exit 0 nicht zuständig/grün · Exit 1 Regelverstoss · Exit 2 Basis fehlt.
 import { execFileSync } from 'node:child_process';
 
 const JULES_MUSTER = /-\d{19}$/;
@@ -78,10 +49,11 @@ try {
 
 const befunde: string[] = [];
 
-// ── Regel 1: Assertion-Diff ─────────────────────────────────────────────────
-let assertionExit = 0;
-let assertionAusgabe = '';
+// Regel 1: Assertion-Diff
+let assertionExit: number;
+let assertionAusgabe: string;
 try {
+  assertionExit = 0;
   assertionAusgabe = execFileSync(
     'npx',
     ['vite-node', 'scripts/analyse/test-assertion-diff.ts', basis, 'HEAD', 'src/tests/'],
@@ -105,7 +77,7 @@ if (assertionExit !== 0) {
   );
 }
 
-// ── Regel 2: Dateigrenzen ────────────────────────────────────────────────────
+// Regel 2: Dateigrenzen
 const geaendert = git(['diff', '--name-only', `${basis}..HEAD`])
   .split('\n')
   .map((z) => z.trim())

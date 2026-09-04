@@ -93,12 +93,21 @@ Ziel, ≤ ~5 Dateien, ≤ ~300 Zeilen Diff, nie Risikopfade, nie Steuer-Doku. Ju
 hat kein Gedächtnis über Sessions — alles Wissen steht in `AGENTS.md` und im
 Issue. Claude prüft nach Skill `landung` §«Fremde PRs (Jules)» und landet.
 
-**Neuer Punkt, Anlass T6 (3.9.2026, noch nicht gebaut, nur Prosa):**
-Fremd-PR-Tor in CI — für Branches im Jules-Muster (`*-<19-stellige Task-ID>`)
-automatisch den Assertion-Diff (`scripts/analyse/test-assertion-diff.ts`
-gegen `main`) sowie Risikopfad-/Steuer-Doku-Berührung prüfen, rot bei
-Abweichung. Grund: T6 zeigt `AGENTS.md` hält als Prosa-Zaun nicht (0 von 1
-Ablehnungen) — der Schutz muss aus Tor/Review kommen, nicht aus dem Text.
+**Fremd-PR-Tor in CI, Anlass T6 — gebaut 4.9.2026.** `scripts/check-fremd-pr.ts`
+(`npm run check:fremd-pr`, CI-Schritt im Job «Tore»): für Branches im
+Jules-Muster (`*-<19-stellige Task-ID>`) automatisch (1) den Assertion-Diff
+(`scripts/analyse/test-assertion-diff.ts` gegen `merge-base(origin/main,
+HEAD)`) und (2) eine Datei-Allowlist `src/**` prüfen — strenger als die
+ursprüngliche Prosa («Risikopfad-/Steuer-Doku-Berührung»): eine Allowlist
+deckt Risikopfade, Steuer-Doku und jede weitere Fläche in einem Schritt ab,
+statt sie einzeln aufzuzählen. Für jeden anderen Branch meldet das Skript
+sofort «nicht zuständig», Exit 0 — Nicht-Required-Check (Davids
+Branch-Schutz-Einstellung bleibt unberührt). Grund: T6 zeigt `AGENTS.md` hält
+als Prosa-Zaun nicht (0 von 1 Ablehnungen) — der Schutz muss aus Tor/Review
+kommen, nicht aus dem Text. Rot-/Grün-Beweise (Wegwerf-Branch
+`probe-1234567890123456789`, lokal): abgeschwächte Assertion ⇒ Exit 1,
+`package.json` berührt ⇒ Exit 1, sauberer Test-Split (Datei verschoben) ⇒
+Exit 0, Nicht-Jules-Branch ⇒ «nicht zuständig» Exit 0.
 
 ### Phase 2 — Diskrepanz-Finder in der Korpus-Werkstatt (1 Session)
 
