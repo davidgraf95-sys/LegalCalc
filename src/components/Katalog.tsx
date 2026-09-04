@@ -276,10 +276,17 @@ function VorlagenRegister({ karten }: { karten: CalculatorCard[] }) {
                 return (
                   <div key={r.id} className="space-y-2">
                     {rVerf.length > 6 ? (
-                      <details className="group space-y-2">
-                        <summary className="cursor-pointer list-none select-none">
+                      /* LM-060-Klasse (B15, 4.9.2026): hier standen ZWEI
+                          Klappmarken — dieses vorangestellte ▸ UND das «▸» der
+                          App-weiten `details > summary::after`-Regel, das
+                          `list-none` nicht abschaltet (gemessen auf `/vorlagen`
+                          an der Schwester-Stelle «In Vorbereitung (44)»). Das
+                          eigene Zeichen fällt weg; das EINE Zeichen kommt aus
+                          der geteilten Regel, dort rechtsbündig und drehend.
+                          `group` trug nur noch dessen Drehung und geht mit. */
+                      <details className="space-y-2">
+                        <summary className="cursor-pointer select-none">
                           <h4 className="lc-overline inline">
-                            <span aria-hidden className="inline-block mr-1.5 transition-transform group-open:rotate-90">▸</span>
                             {r.titel} <span className="num text-ink-500">{rVerf.length}</span>
                           </h4>
                         </summary>
@@ -457,9 +464,11 @@ export function KategorieSektion({ kat, karten, onZurueck, ohneKopf, alleOffen }
       {geplant.length > 0 && (
         // W2·10-UI-NAV/N0d·W4: bei aktivem Übersichts-Filter aufgeklappt, damit
         // passende «In Vorbereitung»-Karten nicht hinter dem Accordion verborgen bleiben.
-        <details className="group" open={alleOffen || undefined}>
-          <summary className="cursor-pointer list-none text-body-s text-ink-500 hover:text-brass-700 transition-colors select-none">
-            <span aria-hidden className="inline-block mr-1.5 transition-transform group-open:rotate-90">▸</span>
+        /* LM-060-Klasse (B15, 4.9.2026): zweite Fundstelle derselben Doppelmarke
+            — GEMESSEN auf `/vorlagen` @1440 trug diese Summary das eigene ▸ UND
+            das «▸» der App-weiten Regel. Nur noch das geteilte Zeichen. */
+        <details open={alleOffen || undefined}>
+          <summary className="cursor-pointer text-body-s text-ink-500 hover:text-brass-700 transition-colors select-none">
             In Vorbereitung <span className="num">({geplant.length})</span>
           </summary>
           <p className="text-body-s text-ink-500 leading-relaxed pt-2 pl-4">

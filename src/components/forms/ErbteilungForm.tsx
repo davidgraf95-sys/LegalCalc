@@ -310,7 +310,15 @@ export function ErbteilungForm() {
               wert={ergebnis.rechtsstand === 'neu' ? 'Neues Recht (ab 1.1.2023)' : 'Altes Recht (bis 31.12.2022)'} />
             <EckdatenKachel akzent num label="Verfügbare Quote"
               wert={`${fmtB(ergebnis.verfuegbareQuote)}${ergebnis.verfuegbareQuoteChf != null ? ` · CHF ${fmtCHF(ergebnis.verfuegbareQuoteChf)}` : ''}`} />
-            <EckdatenKachel num label="Nachlass"
+            {/* LM-034 (B11-Karten, 4.9.2026): `num` gilt der KACHEL, nicht dem
+                Wert — der Ersatzsatz «nur Quoten (keine Beträge erfasst)» lief
+                dadurch in Geist Mono (am 4.9. auf /rechner/erbteilung gemessen)
+                und stand als dritte Schrift neben «Neues Recht (ab 1.1.2023)»
+                (Sans) und «1/2» (Mono). Die Zwei-Stimmen-Regel
+                (DESIGN-REGLEMENT §4b(e), Fassung 29.8.2026) gibt Mono an
+                Zahlen, Aktenzeichen und Struktur-Etiketten — ein Satz ist
+                keines davon. `num` hängt darum jetzt am Wert. */}
+            <EckdatenKachel num={nachlass != null} label="Nachlass"
               wert={nachlass != null ? `CHF ${fmtCHF(nachlass)}` : 'nur Quoten (keine Beträge erfasst)'} />
           </div>
 
