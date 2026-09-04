@@ -85,10 +85,16 @@ export function Materialien() {
           <div className="flex flex-wrap items-center gap-3" role="group" aria-label="Materialien filtern">
             <label className="flex flex-wrap items-center gap-2 text-body-s text-ink-600">
               <span>Behörde</span>
+              {/* LM-068 (B12, 4.9.2026): `sm:max-w-[16rem]` deckelt die Behörden-Liste.
+                  GEMESSEN @1440 stand hier ein inhaltsbreites Feld von 475 px neben
+                  einem Suchfeld von 225 px — das Suchfeld, die Hauptsache der Zeile,
+                  war halb so breit wie ein Filter. Der Deckel gibt die Breite an das
+                  `flex-1`-Suchfeld zurück; wo ein Behördenname länger ist als der
+                  Deckel, zeigt ihn jetzt die Auslassung aus `.lc-input` (LM-067). */}
               <select
                 value={behoerde}
                 onChange={(e) => setBehoerde(e.target.value as BehoerdeId | '')}
-                className="lc-select lc-input-sm w-full min-w-0 sm:w-auto sm:min-w-[12rem]"
+                className="lc-select lc-input-sm w-full min-w-0 sm:w-auto sm:min-w-[12rem] sm:max-w-[16rem]"
               >
                 <option value="">Alle</option>
                 {gruppiereNachBehoerde(materialien).map((g) => (
@@ -116,7 +122,11 @@ export function Materialien() {
                 im Layout (§15.2, kein CLS) und programmatisch mit dem Feld
                 verknüpft (aria-describedby) — dieselbe Anatomie wie das
                 Scope-Label auf /gesetze (§5). */}
-            <label className="flex flex-col gap-1.5 text-body-s text-ink-600 flex-1 min-w-[12rem]">
+            {/* LM-068 (B12, 4.9.2026): Basis 18rem statt 12rem — das Suchfeld ist damit
+                nie schmaler als die beiden Filter daneben (gemessen @1440: 439 px
+                statt 225 px), und wo die Zeile nicht mehr reicht, bricht es auf eine
+                eigene volle Zeile um, statt sich auf einen Rest zu quetschen. */}
+            <label className="flex flex-col gap-1.5 text-body-s text-ink-600 flex-1 min-w-[18rem]">
               <span className="sr-only">Suche</span>
               <input
                 type="search"

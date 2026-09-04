@@ -27,7 +27,16 @@ export function ZweiachsigerEinstieg() {
           <details key={g.id} className="lc-tile">
             <summary className="flex cursor-pointer items-baseline justify-between gap-2">
               <span className="text-body-s font-medium text-ink-900">{g.gebiet}</span>
-              <span className="text-xs text-ink-500"><span className="num">{g.anzahl}</span></span>
+              {/* LM-029 (B11-Karten, 4.9.2026): `ml-auto`. Die `<summary>` ist
+                  eine Flex-Zeile mit DREI Posten — Titel, Zähler und dem
+                  Chevron aus `details > summary::after` (index.css), das als
+                  Pseudo-Element ein vollwertiges Flex-Item ist. `justify-between`
+                  verteilte den freien Raum darum ZWISCHEN Titel und Zähler:
+                  gemessen auf `/rechner` (1440 px, linke Spalte, Kachelkante
+                  329–827 px) sass der Zähler bei x 682 / 592 / 650 statt in
+                  einer Kolonne. Mit `ml-auto` fällt der ganze freie Raum vor
+                  den Zähler, er steht bündig vor der festen Chevron-Spalte. */}
+              <span className="ml-auto text-xs text-ink-500"><span className="num">{g.anzahl}</span></span>
             </summary>
             <div className="mt-3 space-y-3">
               {g.zellen.map((z) => (
