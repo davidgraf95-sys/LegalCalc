@@ -341,7 +341,7 @@ export function ProzesskostenForm({ minimal = false }: { minimal?: boolean } = {
                 <div className="flex items-center gap-3 flex-wrap">
                   <label htmlFor="pk-quote" className="text-body-s text-ink-700">Ihre Obsiegensquote</label>
                   <input id="pk-quote" type="range" min={0} max={100} step={5} value={quote} onChange={(e) => setQuote(Number(e.target.value))} className="flex-1 min-w-[8rem]" aria-label="Obsiegensquote in Prozent" />
-                  <span className="num text-body-s font-semibold text-ink-900 w-12 text-right">{quote}%</span>
+                  <span className="num text-body-s font-semibold text-ink-900 w-12 text-right">{quote} %</span>
                 </div>
               )}
               <p className="mt-2 text-xs text-ink-500"><NormText text={ausgangInfo.hinweis} /> <span className="text-ink-500">({ausgangInfo.norm})</span></p>

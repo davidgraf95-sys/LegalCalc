@@ -1002,6 +1002,13 @@
      verschnörkelten Fraunces-Form; leicht reduziert für optischen Ausgleich. */
   .lc-amp { font-family: var(--font-sans), system-ui, sans-serif; font-weight: 500; font-size: .92em; }
 
+  /* Tausender-Apostroph in der Mono-Stimme (B13/LM-119): Mono gibt jedem
+     Glyph dieselbe Laufweite, der Apostroph bekäme sonst eine volle
+     Ziffernbreite («1 ' 577»). Er behält seine Form (gerader Apostroph,
+     SSoT konventionen.ts) und verliert nur die Sperrung. Gesetzt über
+     `zahlGruppiert()` (components/typografie.tsx). */
+  .lc-apo { display: inline-block; width: .3em; text-align: center; }
+
   .lc-overline {
     font-family: var(--font-mono), ui-monospace, monospace;
     font-size: .6875rem; line-height: 1.4; letter-spacing: var(--tracking-overline);
