@@ -474,23 +474,23 @@ export const ArtikelLeser = memo(function ArtikelLeser({ e, erlass, basisPfad, f
             {ganzAufgehoben
               ? <span className="inline-flex w-4 shrink-0" aria-hidden />
               : <button type="button" onClick={() => setArtOffen((v) => !v)} aria-expanded={artOffen}
-                  // ZURÜCKGESTELLT, nicht übersehen (QS-UI Teilpass (e), 5.9.2026).
-                  // Gemessen an /gesetze/bund/GEBV_HREG: ZWÖLF Knöpfe mit dem
-                  // wortgleichen Namen «Artikel einklappen» auf einer Seite (auf
-                  // dem OR wären es 1099) — in der Knopf-Liste eines
-                  // Screenreaders ununterscheidbar, und der Name wechselt beim
-                  // Klick, worauf Sprachsteuerung ins Leere zielt (WCAG 4.1.2).
-                  // Richtig wäre ein konstanter, den Artikel benennender Name
-                  // (Muster: der Zwilling in `SektionBaumTOC.tsx`, in dieser
-                  // Einheit umgebaut); Zustand allein in `aria-expanded`.
-                  // Der Umbau ändert den zugänglichen Namen und damit die
-                  // Bestands-Assertionen `e2e/gesetze-ux-9punkte.e2e.ts:76–89` —
-                  // Test-Änderung = fachliche Änderung (§6.3), eigener
-                  // deklarierter Schritt (Auflage der Bau-Spec: Tests des
-                  // Bestands nicht ändern).
-                  // Protokoll: fahrplaene/FAHRPLAN-UI-QUALITAET.md §2.4 Ziff. 2.
-                  // eslint-disable-next-line no-restricted-syntax
-                  aria-label={artOffen ? 'Artikel einklappen' : 'Artikel ausklappen'}
+                  // WCAG 4.1.2 · konstanter, den Artikel BENENNENDER Name
+                  // (QS-UI Folgeschritt, 5.9.2026; in Teilpass (e) noch
+                  // zurückgestellt, weil er Test-Zeilen berührt).
+                  // Vorher: `artOffen ? 'Artikel einklappen' : 'Artikel
+                  // ausklappen'`. Gemessen an /gesetze/bund/GEBV_HREG: ZWÖLF
+                  // Knöpfe mit wortgleichem Namen «Artikel einklappen» auf EINER
+                  // Seite (auf dem OR 1598 bei derselben Erhebung über alle
+                  // aria-expanded-Knöpfe der Artikel) — in der Knopf-Liste eines
+                  // Screenreaders ununterscheidbar; dazu wechselte der Name beim
+                  // Klick, worauf Sprachsteuerung ins Leere zielt. Jetzt trägt
+                  // der Name den Artikel, den er klappt, den Zustand trägt
+                  // allein `aria-expanded` — dasselbe Muster wie beim Zwilling
+                  // `SektionBaumTOC.tsx` (dort steht die ausführliche
+                  // Herleitung). Bewacht von `ARIA_ZUSTANDSNAME`
+                  // (eslint.config.js); die Ausnahme aus Teilpass (e) ist
+                  // ersatzlos weg, das Tor ist hier wieder scharf.
+                  aria-label={`«${label}» auf- und zuklappen`}
                   // F3/C5 (29.8.2026): ink-300 → ink-500 — einzige Affordanz
                   // des Klapp-Knopfes, gemessen 2.28:1 hell / 2.34:1 dunkel
                   // gegen `--paper`, unter der F2-Schwelle 3:1 für Nicht-Text.
