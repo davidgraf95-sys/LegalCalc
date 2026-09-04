@@ -134,10 +134,6 @@ const X_AUSNAHMEN: Record<string, string> = {
   'pages/Suche.tsx': '(b) «Suche leeren»',
   'pages/gesetz-leser/v3/SuchSprungFeld.tsx': '(b) «Suche leeren (Esc)»',
   'pages/gesetz-leser/parts/WeiterlesenChip.tsx': '(b) «Angebot verwerfen» — verwirft, schliesst nicht',
-  'components/layout/PaneKopf.tsx':
-    '(c) OFFEN (R3-γ): eigene Griff-Familie der Pane-Titelleiste (⠿ ◂ ▸ ⇱ ⧉ ✕, EIN Klassen-String) — '
-    + 'die Migration verlangt, diesen String in Box und Farbe zu teilen; dort liegt zudem der latente '
-    + 'Doppel-Hover `hover:text-brass-700` + `hover:text-danger-700` (gemeldet, nicht hier gefixt)',
 };
 
 describe('A3-1 · das Schliess-✕ kommt aus EINEM Baustein', () => {
@@ -167,6 +163,11 @@ describe('A3-1 · das Schliess-✕ kommt aus EINEM Baustein', () => {
       // Achte Fundstelle, im Bau dazugekommen: die zeichengleiche Kopie der
       // NormPopover-Kopfzeile in `vorlagen/NormChip.tsx` (§5).
       'components/vorlagen/NormChip.tsx',
+      // R4-A (5.9.2026): die als «(c) OFFEN (R3-γ)» ausgewiesene neunte Fläche
+      // ist eingesammelt — der Klassen-String der Pane-Titelleiste ist in BOX
+      // (`GRIFF_BOX`) und Hover-Fläche (`GRIFF_FLAECHE`) geteilt, das ✕ holt
+      // seinen Ton als `ton="destruktiv"` aus dem Baustein.
+      'components/layout/PaneKopf.tsx',
     ];
     for (const r of konsumenten) {
       expect(lies(r), `${r}: rendert <SchliessKnopf`).toContain('<SchliessKnopf');
@@ -183,6 +184,29 @@ describe('A3-1 · das Schliess-✕ kommt aus EINEM Baustein', () => {
     // Die Farbe darf nicht wieder als lose Utility neben dem Baustein stehen.
     expect(ohneKommentare(lies('components/layout/TabPanel.tsx')))
       .not.toContain('hover:text-danger-700');
+    // R4-A: dieselbe Regel für die Pane-Titelleiste — dort stand der Ton als
+    // Anhängsel an einem Klassen-String, der bereits `hover:text-brass-700`
+    // trug. GEMESSEN am Preview (5.9.2026): beide Utilities auf EINEM Knopf,
+    // gemalt wurde `rgb(122,47,35)` (danger-700) — allein wegen der Sortierung
+    // im Stylesheet. Kein Knopf der App trägt zwei Hover-Töne gleichzeitig.
+    const pk = ohneKommentare(lies('components/layout/PaneKopf.tsx'));
+    expect(pk, 'Pane-✕ = destruktiv, deklariert').toContain('ton="destruktiv"');
+    expect(pk, 'kein loser danger-Ton neben dem Baustein').not.toContain('hover:text-danger-700');
+    const doppelHover = (quelle: string): string[] =>
+      (quelle.match(/class[nN]ame=\{?[`"'][^`"']*[`"']/g) ?? [])
+        .filter((m) => m.includes('hover:text-brass-700') && m.includes('hover:text-danger-700'));
+    // NEGATIV-KONTROLLE (§6.7): der Ausdruck sieht die Vorher-Form. Wortlaut aus
+    // PaneKopf.tsx Z. 159 im Stand vom 31.8.2026 — `knopf` trug den Brass-Ton,
+    // der Fundort hängte den Danger-Ton an; Tailwind mischt beide in EINE
+    // Klassenliste. Der Beleg wird NIE nachgeführt (§2b).
+    const vorherPaneX = 'className={`${knopf} hover:text-danger-700`}';
+    const knopfString = 'className="inline-flex h-7 w-7 text-ink-500 hover:text-brass-700 hover:text-danger-700"';
+    expect(vorherPaneX).toContain('hover:text-danger-700');
+    expect(doppelHover(knopfString)).toHaveLength(1);
+    for (const r of alleTsx()) {
+      const funde = doppelHover(ohneKommentare(readFileSync(r, 'utf8')));
+      expect(funde, `${rel(r)}: zwei Hover-Töne in EINEM Klassen-String`).toEqual([]);
+    }
   });
 
   it('die Trefferfläche wächst per ::after auf das Komfort-Token (F9: kein roher Wert)', () => {
@@ -195,11 +219,20 @@ describe('A3-1 · das Schliess-✕ kommt aus EINEM Baustein', () => {
     expect(basis, 'die Pseudo-Fläche braucht einen Positionsanker').toContain('relative');
   });
 
-  it('die Komfort-Fläche ist an, ausser in den zwei begründeten dichten Zeilen', () => {
+  it('die Komfort-Fläche ist an, ausser in den drei begründeten dichten Zeilen', () => {
     // Das Pseudo-Element liegt ÜBER dem Nachbarn und nähme ihm die Klicks —
     // wer es abschaltet, tut das sichtbar und mit Grund am Fundort. Ein
-    // stiller dritter Ausstieg wird hier rot.
-    const dicht = ['components/layout/TabPanel.tsx', 'components/layout/InhaltsKopf.tsx'];
+    // stiller vierter Ausstieg wird hier rot.
+    //
+    // R4-A (5.9.2026): die Pane-Titelleiste ist die dritte solche Zeile —
+    // ⠿ ◂ ▸ ⇱ ⧉ ✕ stehen dort in einer 36 px hohen Leiste unmittelbar
+    // nebeneinander; 44 px um das ✕ lägen über ⧉ und ▸. Der Test hat die
+    // Ausnahme beim Bau selbst gefunden (rot, bevor sie deklariert war).
+    const dicht = [
+      'components/layout/TabPanel.tsx',
+      'components/layout/InhaltsKopf.tsx',
+      'components/layout/PaneKopf.tsx',
+    ];
     const funde = alleTsx()
       .filter((p) => ohneKommentare(readFileSync(p, 'utf8')).includes('komfort={false}'))
       .map(rel);
