@@ -128,6 +128,25 @@ export function migriere(z: Zeitreihe): Zeitreihe {
       if (n.fremdagenten === undefined) {
         n = { ...n, fremdagenten: { jules: null, gemini: null, claude_token_pro_schritt: null } };
       }
+      // Schema 4: eine Jules-Messung von vor dem 4.9.2026 unterschied keine
+      // Proben und führte keine PR-Nummern mit. Nachgetragen wird darum `null`
+      // (= «nicht unterschieden»), NIE 0 oder `[]` — sonst behauptete die
+      // Migration eine Messung, die es nicht gab, und Stufe 2 entdoppelte
+      // gegen eine erfundene leere Liste.
+      const j = n.fremdagenten.jules;
+      if (j && (j.proben_7d === undefined || j.prs_geschlossen_nummern === undefined)) {
+        n = {
+          ...n,
+          fremdagenten: {
+            ...n.fremdagenten,
+            jules: {
+              ...j,
+              proben_7d: j.proben_7d ?? null,
+              prs_geschlossen_nummern: j.prs_geschlossen_nummern ?? null,
+            },
+          },
+        };
+      }
       return n;
     }),
   };
@@ -303,7 +322,14 @@ export async function erhebe(): Promise<{ zeitreihe: Zeitreihe; snapshot: Snapsh
 
   const fahrplanRoh = lies(FAHRPLAN_FREMDAGENTEN);
   if (fahrplanRoh === null) ausfaelle.push(FAHRPLAN_FREMDAGENTEN);
-  const geminiMessung = fahrplanRoh === null ? null : parseFremdagentenRegister(fahrplanRoh);
+  // Der Parser meldet jedes Register, dessen Marke/Kopfzeile nicht (mehr)
+  // passt, als eigenen Ausfall — statt still 0 zu zählen (Nachbesserung
+  // 4.9.2026). Die Ausfälle wandern wörtlich in den Snapshot, damit eine
+  // umbenannte Tabelle im Fahrplan sichtbar wird, statt die Messreihe
+  // schleichend auf Nullen zu setzen.
+  const register = fahrplanRoh === null ? null : parseFremdagentenRegister(fahrplanRoh);
+  if (register) for (const a of register.ausfaelle) ausfaelle.push(`${FAHRPLAN_FREMDAGENTEN} — ${a}`);
+  const geminiMessung = register?.mess ?? null;
 
   const fremdagenten: FremdagentenBlock = {
     jules: julesMessung,
@@ -384,6 +410,7 @@ if (!process.env.VITEST) {
   console.log(
     s.fremdagenten.jules
       ? `  Jules (7 Tage): ${s.fremdagenten.jules.prs_gemerged_7d} gemerged · ${s.fremdagenten.jules.prs_geschlossen_7d} geschlossen · ` +
+        `${s.fremdagenten.jules.proben_7d ?? '—'} Proben (Label \`probe\`, aus der Landungsquote ausgeschlossen) · ` +
         `Median-Dauer ${s.fremdagenten.jules.median_dauer_min ?? '—'} min · Tickets/24h ${s.fremdagenten.jules.tickets_24h}` +
         `${s.fremdagenten.jules.alarm ? ' · ⚠️  ALARM (Issue ohne Annahme)' : ''}`
       : '  Jules: — (nicht erhoben)',

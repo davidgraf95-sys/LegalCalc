@@ -57,9 +57,20 @@ export const CI_RERUN_SCHWELLE = 0.15;
 export const JULES_QUOTE_MIN_N = 3;
 /** Fahrplan §3 «Phase 1 Jules … < 2 von 3 ⇒ zurück auf Doku-only». */
 export const JULES_RUECKBAU_QUOTE = 2 / 3;
-/** Fahrplan §2 Phase 4: Skalierungs-Kandidat ab dieser Quote UND dieser Median-Dauer. */
+/**
+ * Fahrplan §3, Zeile «Skalierung Jules»: Skalierungs-Kandidat ab dieser
+ * Landungsquote UND dieser Median-Dauer UND dieser Mindest-Stichprobe.
+ *
+ * Die drei Zahlen stehen seit 4.9.2026 WÖRTLICH im Fahrplan §3 — vorher waren
+ * sie nur hier gesetzt, und ein Befund, der «Fahrplan §2 Phase 4» zitierte,
+ * belegte damit einen Satz, den es dort nicht gab (Gegenprüfung 4.9.2026).
+ * `JULES_SKALIEREN_MIN_N` ist der Grund, warum 5/6 nicht schon bei 5/6 = n 6
+ * zufällig erreicht wird: unter sechs PRs ist «83 %» eine Handvoll Fälle, kein
+ * Verlauf.
+ */
 export const JULES_SKALIEREN_QUOTE = 5 / 6;
 export const JULES_SKALIEREN_MEDIAN_MAX_MIN = 45;
+export const JULES_SKALIEREN_MIN_N = 6;
 /** Fahrplan §3 «Phase 3 Zweitblick … n = 5». */
 export const ZWEITBLICK_DURCHGAENGE_SCHWELLE = 5;
 
@@ -224,10 +235,16 @@ export function befunde(z: Zeitreihe, chronik: string): Befund[] {
   //     jede Teilregel schweigt dann, statt mit erfundenen Zahlen zu deuten.
   const jules = letzter.fremdagenten?.jules ?? null;
   if (jules) {
-    // (a)+(b) Quote ohne Nacharbeit — Proxy gemerged/(gemerged+geschlossen),
-    //     weil die Fahrplan-Spalte «Nacharbeit» nicht automatisch erfasst ist
-    //     (s. `JulesMessung`-Docstring in `fremdagenten-messung.ts`).
+    // (a)+(b) LANDUNGSQUOTE = gemerged ÷ (gemerged + geschlossen), Proben
+    //     ausgeschlossen. Sie misst, was von Jules ANKOMMT — ausdrücklich
+    //     NICHT die Fahrplan-Spalte «Nacharbeit»: ein PR kann landen und
+    //     trotzdem Nacharbeit gekostet haben. Die Nacharbeits-Quote wird von
+    //     Hand geführt (Fahrplan §5) und hat hier keine automatische Quelle.
     const n = jules.prs_gemerged_7d + jules.prs_geschlossen_7d;
+    const probenZusatz =
+      jules.proben_7d === null
+        ? '; Proben in dieser Messung nicht unterschieden (Schema < 4)'
+        : `; ${jules.proben_7d} Probe(n) mit Label \`probe\` ausgeschlossen`;
     if (n >= JULES_QUOTE_MIN_N) {
       const quote = jules.prs_gemerged_7d / n;
       if (quote < JULES_RUECKBAU_QUOTE) {
@@ -235,14 +252,17 @@ export function befunde(z: Zeitreihe, chronik: string): Befund[] {
           art: 'jules-rueckbau',
           titel: 'Rückbau: Jules nur Doku/Mechanik',
           anlass:
-            `Quote ohne Nacharbeit (gemerged/(gemerged+geschlossen)) ${quoteText(quote)} über n=${n} PRs der ` +
-            `letzten 7 Tage (${jules.prs_gemerged_7d} gemerged, ${jules.prs_geschlossen_7d} geschlossen); ` +
+            `Landungsquote (gemerged ÷ (gemerged + geschlossen), Proben ausgeschlossen) ${quoteText(quote)} ` +
+            `über n=${n} PRs der letzten 7 Tage (${jules.prs_gemerged_7d} gemerged, ` +
+            `${jules.prs_geschlossen_7d} geschlossen${probenZusatz}); ` +
             `Schwelle ${quoteText(JULES_RUECKBAU_QUOTE)} (Fahrplan §3 «Phase 1 Jules … < 2 von 3»)`,
           hinweis:
+            'geschlossen ≠ Nacharbeit; handgeführte Nacharbeits-Quote steht in Fahrplan §5. ' +
             'Fahrplan §3 Rückbau-Regel: der betroffene Teil wird zurückgebaut, nicht bewacht. Flächen: ' +
             '`auftrag`-Weiche, `AGENTS.md`, ci.yml-Step, `landung`-Absatz, Ticket-Vorlage, Label.',
         });
       } else if (
+        n >= JULES_SKALIEREN_MIN_N &&
         quote >= JULES_SKALIEREN_QUOTE &&
         jules.median_dauer_min !== null &&
         jules.median_dauer_min <= JULES_SKALIEREN_MEDIAN_MAX_MIN
@@ -251,21 +271,46 @@ export function befunde(z: Zeitreihe, chronik: string): Befund[] {
           art: 'jules-skalieren',
           titel: 'Ticketzahl auf 3–5 anheben (Phase 4)',
           anlass:
-            `Quote ${quoteText(quote)} über n=${n} PRs · Median-Dauer ${jules.median_dauer_min} min; ` +
-            `Schwellen ${quoteText(JULES_SKALIEREN_QUOTE)} und ≤ ${JULES_SKALIEREN_MEDIAN_MAX_MIN} min (Fahrplan §2 Phase 4)`,
+            `Landungsquote (gemerged ÷ (gemerged + geschlossen), Proben ausgeschlossen) ${quoteText(quote)} ` +
+            `über n=${n} PRs · Median-Dauer ${jules.median_dauer_min} min${probenZusatz}; ` +
+            `Schwellen ${quoteText(JULES_SKALIEREN_QUOTE)}, ≤ ${JULES_SKALIEREN_MEDIAN_MAX_MIN} min und ` +
+            `n ≥ ${JULES_SKALIEREN_MIN_N} (Fahrplan §3 «Skalierung Jules»)`,
           hinweis:
-            'Erst die Fahrplan-Spalte «Nacharbeit» gegenlesen (hier nicht automatisch erfasst) — erst dann ' +
-            'seriell auf 3–5 Tickets pro Session anheben (Stückzahl entsperrt 4.9.2026, Messung bleibt Pflicht).',
+            'geschlossen ≠ Nacharbeit; handgeführte Nacharbeits-Quote steht in Fahrplan §5 — erst diese ' +
+            'Spalte gegenlesen, dann seriell auf 3–5 Tickets pro Session anheben (Stückzahl entsperrt ' +
+            '4.9.2026, Messung bleibt Pflicht).',
         });
       }
     }
 
-    // (c) Jeder geschlossene Jules-PR der letzten 7 Tage ⇒ Lehre verankern.
-    if (jules.prs_geschlossen_7d > 0) {
+    // (c) Jeder NEU geschlossene Jules-PR ⇒ Lehre verankern — je PR GENAU
+    //     EINMAL. Ohne Entdopplung steht derselbe abgelehnte PR sieben Tage
+    //     lang in jedem Snapshot und die Regel schlüge bei jeder Erhebung
+    //     dieselbe Lehre erneut vor. Dasselbe Muster wie bei den F-Klassen
+    //     oben: verglichen wird gegen das, was frühere Snapshots schon
+    //     genannt haben, und nur der Zuwachs löst aus.
+    //
+    //     `prs_geschlossen_nummern === null` heisst «diese Messung führte
+    //     keine Nummern mit» (Schema < 4). Dann kann nicht entdoppelt werden,
+    //     und die Regel fällt ehrlich auf die blosse Zählung zurück, statt
+    //     eine leere Liste als «nichts Neues» zu lesen.
+    const schonGenannt = new Set<number>();
+    for (const s of snaps.slice(0, -1)) {
+      for (const nr of s.fremdagenten?.jules?.prs_geschlossen_nummern ?? []) schonGenannt.add(nr);
+    }
+    const nummern = jules.prs_geschlossen_nummern;
+    const neue = nummern === null ? null : nummern.filter((nr) => !schonGenannt.has(nr));
+    if (neue === null ? jules.prs_geschlossen_7d > 0 : neue.length > 0) {
       out.push({
         art: 'jules-lehre',
-        titel: 'Lehre verankern: Tor-Regel oder Vorlagen-Zeile (Beleg #662 → Kommentar-Bilanz)',
-        anlass: `${jules.prs_geschlossen_7d} geschlossene(r) Jules-PR(s) in den letzten 7 Tagen (Quelle: Jules-Messung)`,
+        titel: 'Lehre verankern: Tor-Regel oder Vorlagen-Zeile je abgelehntem Jules-PR',
+        anlass:
+          neue === null
+            ? `${jules.prs_geschlossen_7d} geschlossene(r) Jules-PR(s) in den letzten 7 Tagen (Quelle: ` +
+              'Jules-Messung; Nummern in dieser Messung nicht mitgeführt — keine Entdopplung möglich)'
+            : `neu geschlossene(r) Jules-PR(s): ${neue.map((nr) => `#${nr}`).join(', ')} ` +
+              `(Quelle: Jules-Messung, letzte 7 Tage; bereits in früheren Snapshots genannte Nummern ` +
+              `lösen nicht erneut aus)`,
         hinweis:
           'Formregel Skill `lehren`, Ergänzung Fremdagenten: die Ablehnung noch in DERSELBEN Session als ' +
           'Tor-Regel (Fremd-PR-Tor/Erstfilter) oder Vorlagen-Zeile verankern — nie nur als Kommentar.',

@@ -63,8 +63,16 @@ export const GENERIERT_MARKE =
  * wie bei `tokens`: ältere Snapshots bekommen `{ jules: null, gemini: null,
  * claude_token_pro_schritt: null }` nachgetragen — «nicht gemessen» trifft
  * für sie zu, kein gemessener Wert wird angefasst.
+ *
+ * **4** seit 4.9.2026 (Nachbesserung QS-FREMDAGENTEN): `JulesMessung` bekommt
+ * `proben_7d` (PRs mit Label `probe`, aus der Landungsquote ausgeschlossen)
+ * und `prs_geschlossen_nummern` (Entdopplung der Lehre-Regel). Für ältere
+ * Jules-Messungen trägt `migriere()` beide als **`null`** nach — nicht als 0
+ * bzw. `[]`: jene Messung hat Proben schlicht nicht unterschieden, und «nicht
+ * unterschieden» ist etwas anderes als «keine gefunden» (dieselbe Linie wie
+ * bei `tokens`).
  */
-export const SCHEMA_VERSION = 3;
+export const SCHEMA_VERSION = 4;
 
 // ───────────────────────────── Tor-Ereignisse ─────────────────────────────
 
@@ -252,8 +260,33 @@ export function parseFKlassen(md: string): Record<string, number> {
 export interface JulesMessung {
   /** Jules-PRs, in den letzten 7 Tagen GEMERGED. */
   prs_gemerged_7d: number;
-  /** Jules-PRs, in den letzten 7 Tagen GESCHLOSSEN ohne Merge. */
+  /**
+   * Jules-PRs, in den letzten 7 Tagen GESCHLOSSEN ohne Merge — **ohne Proben**
+   * (s. `proben_7d`). Das ist der Nenner-Anteil der Landungsquote und misst
+   * Ablehnung, NICHT Nacharbeit: ein PR kann gemergt werden und trotzdem
+   * Nacharbeit gekostet haben. Die handgeführte Nacharbeits-Quote steht in
+   * `fahrplaene/FAHRPLAN-FREMDAGENTEN.md` §5.
+   */
   prs_geschlossen_7d: number;
+  /**
+   * Jules-PRs im selben Fenster mit Label `probe` — Werkzeug-Proben (etwa der
+   * Erstfilter-Test PR #642), die weder Bau noch Ablehnung sind und darum aus
+   * Zähler UND Nenner der Landungsquote fallen. Sie bleiben sichtbar, statt
+   * zu verschwinden: eine Quote, die still Fälle weglässt, ist nicht prüfbar.
+   *
+   * `null` = diese Messung unterschied noch keine Proben (Schema < 4), nicht
+   * «keine Proben gefunden».
+   */
+  proben_7d: number | null;
+  /**
+   * Nummern der geschlossenen (nicht-Proben-)PRs. Trägt die Entdopplung der
+   * Retro-Regel «Lehre verankern»: derselbe abgelehnte PR steht sieben Tage
+   * lang in jedem Snapshot, die Lehre ist aber einmal zu ziehen.
+   *
+   * `null` = Nummern nicht mitgeführt (Schema < 4) — dann kann Stufe 2 nicht
+   * entdoppeln und sagt das im Befund.
+   */
+  prs_geschlossen_nummern: number[] | null;
   /** Median Ticket→PR-Dauer der gemergten PRs, `null` ohne auflösbare Issue-Referenz. */
   median_dauer_min: number | null;
   /** Jules-Issues (Label `jules`), angelegt in den letzten 24 h. */
@@ -300,30 +333,89 @@ export interface FremdagentenBlock {
   claude_token_pro_schritt: null;
 }
 
-/** Register-Überschriften — WÖRTLICH aus §5 übernommen (Auftragsvorgabe). */
-const REGISTER_DISKREPANZ = '**Diskrepanz-Finder-Läufe (Phase 2)**';
-const REGISTER_ZWEITBLICK = '**Phase 3 — Zweitblick-Durchgänge**';
-const REGISTER_KONTINGENT = '**Kontingent-Ereignisse**';
+/**
+ * Die drei §5-Register: Überschrift WÖRTLICH aus dem Fahrplan (Auftragsvorgabe)
+ * und die erwartete Kopfzeile.
+ *
+ * WARUM DIE KOPFZEILE MITGEFÜHRT WIRD (Nachbesserung 4.9.2026). Der Parser
+ * liest Spalten nach POSITION (`echt` = Index 4, `Schein` = Index 5). Wer im
+ * Fahrplan zwei Spalten vertauscht oder eine einfügt, bekäme ohne diese Prüfung
+ * still vertauschte Summen — und die Retro-Regel «Schein > echt ⇒ Rückbau»
+ * entschiede auf eine Zahl, die das Gegenteil dessen misst, was ihr Name sagt.
+ * Stimmt die Kopfzeile nicht, wird darum NICHT gezählt, sondern ausgefallen.
+ */
+const REGISTER = {
+  diskrepanz: {
+    marke: '**Diskrepanz-Finder-Läufe (Phase 2)**',
+    kopf: ['Datum', 'Erlass', 'Artikel mit Diff', 'an Gemini', 'echt', 'Schein', 'Tokens'],
+  },
+  zweitblick: {
+    marke: '**Phase 3 — Zweitblick-Durchgänge**',
+    kopf: ['Datum', 'Erlass/Norm', 'Prüfer', 'echt', 'Schein', 'verpasst', 'Tokens'],
+  },
+  kontingent: {
+    marke: '**Kontingent-Ereignisse**',
+    kopf: ['Datum', 'Dienst', 'Signal', 'Dauer', 'Folge'],
+  },
+} as const;
+
+type RegisterDef = { marke: string; kopf: readonly string[] };
+
+/** Ist die Zeile eine Markdown-Trennzeile (`|---|:--:|`)? */
+function istTrennzeile(zeile: string): boolean {
+  const t = zeile.trim();
+  return t.startsWith('|') && /^[|\s:-]+$/.test(t) && t.includes('-');
+}
 
 /**
- * Zählt die Datenzeilen einer Markdown-Tabelle, die auf `marke` folgt (erste
- * Zeile mit führendem `|` ist die Kopfzeile, die zweite die Trennzeile, alles
- * Weitere bis zur ersten Nicht-Tabellenzeile ist Daten). Findet `marke`
- * nicht, ist die Zeilenzahl 0 (kein Absturz, s. `parseFKlassen`-Vorbild): ein
- * umbenannter Registertitel soll den Parser sichtbar auf 0 fallen lassen,
- * nicht raten.
+ * Zählt die Datenzeilen der Markdown-Tabelle, die auf `reg.marke` folgt.
+ *
+ * `null` — und damit ein benannter Ausfall beim Aufrufer — in DREI Fällen:
+ * Marke nicht gefunden, keine Tabelle im Abschnitt der Marke, oder eine
+ * Kopfzeile, die nicht Zelle für Zelle `reg.kopf` entspricht. Vorher lieferte
+ * jeder dieser Fälle still `0`; eine 0 behauptet aber «gemessen und nichts
+ * gefunden», und genau diese Verwechslung soll die Messreihe nie machen (§8).
+ *
+ * ABSCHNITTSGRENZE. Gelesen wird nur bis zur nächsten Registermarke (`**…`)
+ * oder Überschrift (`## `). Ohne diese Grenze fände ein Register ohne eigene
+ * Tabelle die Tabelle des NÄCHSTEN Registers und zählte fremde Zeilen.
+ *
+ * LEERZEILEN. Innerhalb der Tabelle werden sie übersprungen: im Markdown ist
+ * eine eingestreute Leerzeile ein Formatierungsversehen, kein Tabellenende —
+ * vorher fiel alles danach unter den Tisch. Beendet wird die Tabelle erst von
+ * einer echten Nicht-Tabellenzeile (oder der Abschnittsgrenze).
  */
-function zaehleRegisterZeilen(md: string, marke: string): { zeilen: number; roh: string[] } {
-  const start = md.indexOf(marke);
-  if (start < 0) return { zeilen: 0, roh: [] };
-  const rest = md.slice(start).split('\n');
-  let i = 0;
-  while (i < rest.length && !rest[i].trim().startsWith('|')) i++;
-  if (i >= rest.length) return { zeilen: 0, roh: [] };
-  i += 2; // Kopfzeile + Trennzeile überspringen
+function zaehleRegisterZeilen(md: string, reg: RegisterDef): { zeilen: number; roh: string[] } | null {
+  const start = md.indexOf(reg.marke);
+  if (start < 0) return null;
+  const alle = md.slice(start).split('\n');
+
+  let ende = alle.length;
+  for (let j = 1; j < alle.length; j++) {
+    const t = alle[j].trim();
+    if (t.startsWith('## ') || t.startsWith('**')) {
+      ende = j;
+      break;
+    }
+  }
+
+  let i = 1;
+  while (i < ende && !alle[i].trim().startsWith('|')) i++;
+  if (i >= ende) return null; // Marke da, aber keine Tabelle
+  if (zellen(alle[i]).join('|') !== reg.kopf.join('|')) return null; // Kopfzeile weicht ab
+  i++;
+  if (i >= ende || !istTrennzeile(alle[i])) return null; // Kopf ohne Trennzeile
+  i++;
+
   const roh: string[] = [];
-  while (i < rest.length && rest[i].trim().startsWith('|')) {
-    roh.push(rest[i]);
+  while (i < ende) {
+    const t = alle[i].trim();
+    if (t === '') {
+      i++;
+      continue;
+    }
+    if (!t.startsWith('|')) break;
+    roh.push(alle[i]);
     i++;
   }
   return { zeilen: roh.length, roh };
@@ -343,16 +435,43 @@ function zellZahl(zelle: string | undefined): number {
 }
 
 /**
+ * Ergebnis von `parseFremdagentenRegister`: die Messung ODER `null` plus die
+ * Namen der ausgefallenen Register. Alles-oder-nichts wie bei der
+ * Jules-Messung — eine Hälfte des Schemas mit erfundenen 0 zu füllen wäre
+ * schlimmer als ein ehrliches `null`, weil Stufe 2 die 0 deutet.
+ */
+export interface RegisterErgebnis {
+  mess: GeminiMessung | null;
+  ausfaelle: string[];
+}
+
+/**
  * Parst die drei §5-Register aus `fahrplaene/FAHRPLAN-FREMDAGENTEN.md`
  * deterministisch (Zeilen zählen, `echt`/`Schein` summieren). Kein Netz, kein
  * `gh` — reiner Text-Parser wie `parseFKlassen`.
  *
  * Spaltenreihenfolge des Diskrepanz-Registers (§5): Datum | Erlass | Artikel
  * mit Diff | an Gemini | echt | Schein | Tokens — Spalten 5 und 6 (nullbasiert
- * nach dem Split ohne Randzellen: Index 4 und 5).
+ * nach dem Split ohne Randzellen: Index 4 und 5); genau diese Reihenfolge
+ * prüft `zaehleRegisterZeilen` an der Kopfzeile nach.
  */
-export function parseFremdagentenRegister(md: string): GeminiMessung {
-  const diskrepanz = zaehleRegisterZeilen(md, REGISTER_DISKREPANZ);
+export function parseFremdagentenRegister(md: string): RegisterErgebnis {
+  const ausfaelle: string[] = [];
+  const hole = (reg: RegisterDef) => {
+    const out = zaehleRegisterZeilen(md, reg);
+    if (out === null) {
+      ausfaelle.push(`§5-Register «${reg.marke}»: Marke, Tabelle oder Kopfzeile fehlt/weicht ab (erwartet: ${reg.kopf.join(' | ')})`);
+    }
+    return out;
+  };
+
+  const diskrepanz = hole(REGISTER.diskrepanz);
+  const zweitblick = hole(REGISTER.zweitblick);
+  const kontingent = hole(REGISTER.kontingent);
+  if (diskrepanz === null || zweitblick === null || kontingent === null) {
+    return { mess: null, ausfaelle };
+  }
+
   let echt = 0;
   let schein = 0;
   for (const roh of diskrepanz.roh) {
@@ -361,11 +480,14 @@ export function parseFremdagentenRegister(md: string): GeminiMessung {
     schein += zellZahl(z[5]);
   }
   return {
-    diskrepanz_laeufe: diskrepanz.zeilen,
-    diskrepanz_echt: echt,
-    diskrepanz_schein: schein,
-    zweitblick_durchgaenge: zaehleRegisterZeilen(md, REGISTER_ZWEITBLICK).zeilen,
-    kontingent_ereignisse: zaehleRegisterZeilen(md, REGISTER_KONTINGENT).zeilen,
+    mess: {
+      diskrepanz_laeufe: diskrepanz.zeilen,
+      diskrepanz_echt: echt,
+      diskrepanz_schein: schein,
+      zweitblick_durchgaenge: zweitblick.zeilen,
+      kontingent_ereignisse: kontingent.zeilen,
+    },
+    ausfaelle,
   };
 }
 
@@ -938,6 +1060,9 @@ function istJulesMessung(a: unknown): a is JulesMessung {
     typeof o === 'object' &&
     typeof o.prs_gemerged_7d === 'number' &&
     typeof o.prs_geschlossen_7d === 'number' &&
+    (o.proben_7d === null || typeof o.proben_7d === 'number') &&
+    (o.prs_geschlossen_nummern === null ||
+      (Array.isArray(o.prs_geschlossen_nummern) && o.prs_geschlossen_nummern.every((n) => typeof n === 'number'))) &&
     (o.median_dauer_min === null || typeof o.median_dauer_min === 'number') &&
     typeof o.tickets_24h === 'number' &&
     typeof o.alarm === 'boolean'

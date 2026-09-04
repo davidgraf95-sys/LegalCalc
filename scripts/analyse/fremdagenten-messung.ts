@@ -54,8 +54,21 @@ import { execFileSync } from 'node:child_process';
 import { existsSync } from 'node:fs';
 import { join } from 'node:path';
 import { klassiereAgyFehler, KONTINGENT_MELDUNG } from './agy-status.ts';
+// Der Typ ist EINMAL definiert, und zwar dort, wo das Schema der Zeitreihe
+// lebt (§5). Diese Datei erzeugt Werte dieses Typs, sie definiert ihn nicht —
+// eine zweite Deklaration hier war bis 4.9.2026 genau der Riss, an dem die
+// beiden Fassungen auseinanderlaufen konnten. Reiner Typ-Import: zur Laufzeit
+// bleibt er weg, es entsteht also keine Modul-Abhängigkeit.
+import type { JulesMessung } from '../plan/selbstoptKern.ts';
 
 const JULES_MUSTER = /[0-9]{19}|^jules[-/]/;
+/**
+ * Label, mit dem eine Werkzeug-PROBE gekennzeichnet ist (im Repo gesetzt auf
+ * PR #642, PR #638, Issue #640). Eine Probe prüft die Prüfstrasse, nicht den
+ * Bau: sie ist weder eine Landung noch eine Ablehnung und gehört darum weder
+ * in den Zähler noch in den Nenner der Landungsquote.
+ */
+const PROBE_LABEL = 'probe';
 const ON_IT_MUSTER = /on it/i;
 const READY_MUSTER = /ready for a review/i;
 const AGY = join(process.env.HOME ?? '', '.local/bin/agy');
@@ -125,26 +138,67 @@ type IssueRoh = {
   comments: { body: string; createdAt: string }[];
 };
 
-type PrRohMitStatus = PrRoh & { state: string; closedAt: string | null };
+export type PrRohMitStatus = PrRoh & {
+  state: string;
+  closedAt: string | null;
+  /** `gh pr list --json labels`; bei älteren gh-Ausgaben abwesend — nie annehmen, dass die Liste da ist. */
+  labels?: { name: string }[];
+};
+
+/** Ergebnis von `klassierePrs` — drei disjunkte Töpfe über demselben Fenster. */
+export interface PrKlassierung {
+  /** Jules-PRs, im Fenster gemergt, ohne Proben. */
+  gemergt: PrRohMitStatus[];
+  /** Jules-PRs, im Fenster ohne Merge geschlossen, ohne Proben — das sind die Ablehnungen. */
+  geschlossen: PrRohMitStatus[];
+  /** Jules-PRs mit Label `probe`, egal ob gemergt oder geschlossen. */
+  proben: PrRohMitStatus[];
+}
+
+/**
+ * Klassiert die rohe `gh`-PR-Liste in gemergt / geschlossen / Proben —
+ * **reine Funktion**, kein Netz, keine Wanduhr (Bezugszeitpunkt wird
+ * hereingegeben). Genau deshalb ausgelagert: `erhebeJules()` selbst ist wegen
+ * seines `gh`-Aufrufs nicht prüfbar, diese Entscheidung hier ist es
+ * vollständig (`src/tests/plan-fremdagenten.test.ts`).
+ *
+ * ANLASS (4.9.2026). PR #642 (`jules/relax-min-height-test-…`) trug das Label
+ * `probe` — er war ein Test des Erstfilters, kein abgelehnter Bau. Gezählt als
+ * Ablehnung drückte er die Landungsquote unter die Rückbau-Schwelle und liess
+ * `retro:17` den Rückbau von Jules vorschlagen. Proben fallen darum aus beiden
+ * Quoten-Seiten heraus und werden getrennt ausgewiesen, statt zu verschwinden.
+ */
+export function klassierePrs(prs: PrRohMitStatus[], jetzt: Date): PrKlassierung {
+  const grenze = new Date(jetzt.getTime() - JULES_FENSTER_TAGE * 24 * 3_600_000);
+  const imFenster = (d: string | null) => d !== null && new Date(d) >= grenze;
+  const istProbe = (pr: PrRohMitStatus) => (pr.labels ?? []).some((l) => l.name === PROBE_LABEL);
+
+  const out: PrKlassierung = { gemergt: [], geschlossen: [], proben: [] };
+  for (const pr of prs) {
+    if (!JULES_MUSTER.test(pr.headRefName)) continue;
+    const gemergt = pr.state === 'MERGED' && imFenster(pr.mergedAt);
+    const geschlossen = pr.state === 'CLOSED' && imFenster(pr.closedAt);
+    if (!gemergt && !geschlossen) continue;
+    if (istProbe(pr)) out.proben.push(pr);
+    else if (gemergt) out.gemergt.push(pr);
+    else out.geschlossen.push(pr);
+  }
+  return out;
+}
 
 /** Fenster der Stufe-1-Erhebung (Fahrplan §3 «Phase 1 … Anteil PRs ohne Nacharbeit»). */
 export const JULES_FENSTER_TAGE = 7;
-
-export interface JulesMessung {
-  prs_gemerged_7d: number;
-  prs_geschlossen_7d: number;
-  median_dauer_min: number | null;
-  tickets_24h: number;
-  alarm: boolean;
-}
 
 /**
  * Stufe-1-Erhebung der Jules-Kennzahlen (QS-FREMDAGENTEN,
  * `scripts/plan/selbstopt-erheben.ts`). EIGENE Funktion statt eines Umbaus
  * von `main()`/`kontingentModus()`: jene bleiben unverändert (CLI-Vertrag),
  * diese hier ist das, was Stufe 1 braucht — dieselben Bausteine
- * (`JULES_MUSTER`, `issueNummerAusBody`, `issueErstellt`, `dauerMinuten`,
+ * (`klassierePrs`, `issueNummerAusBody`, `issueErstellt`, `dauerMinuten`,
  * `median`, `holeJulesKontingentDaten`), keine zweite Filter-/Dauer-Logik.
+ *
+ * Die Klassierung selbst steht in `klassierePrs()` — reine Funktion, damit
+ * die Entscheidung «Landung / Ablehnung / Probe» ohne `gh` prüfbar ist.
  *
  * Degradiert auf `null`, NIE werfend (§8) — Stufe 1 vermerkt den Ausfall
  * selbst in `ausfaelle` und macht die Erhebung dafür nicht rot. Scheitert nur
@@ -157,21 +211,14 @@ export function erhebeJules(jetzt: Date = new Date()): JulesMessung | null {
   try {
     const ausgabe = gh([
       'pr', 'list', '--state', 'all', '--limit', '200',
-      '--json', 'number,headRefName,createdAt,mergedAt,closedAt,state,body,title',
+      '--json', 'number,headRefName,createdAt,mergedAt,closedAt,state,body,title,labels',
     ]);
     prRoh = JSON.parse(ausgabe) as PrRohMitStatus[];
   } catch {
     return null;
   }
 
-  const grenze = new Date(jetzt.getTime() - JULES_FENSTER_TAGE * 24 * 3_600_000);
-  const julesPrs = prRoh.filter((pr) => JULES_MUSTER.test(pr.headRefName));
-  const gemergte7d = julesPrs.filter(
-    (pr) => pr.state === 'MERGED' && pr.mergedAt && new Date(pr.mergedAt) >= grenze,
-  );
-  const geschlossen7d = julesPrs.filter(
-    (pr) => pr.state === 'CLOSED' && pr.closedAt && new Date(pr.closedAt) >= grenze,
-  );
+  const { gemergt: gemergte7d, geschlossen: geschlossen7d, proben } = klassierePrs(prRoh, jetzt);
   const dauern = gemergte7d
     .map((pr) => {
       const issueNr = issueNummerAusBody(pr.body);
@@ -190,6 +237,11 @@ export function erhebeJules(jetzt: Date = new Date()): JulesMessung | null {
   return {
     prs_gemerged_7d: gemergte7d.length,
     prs_geschlossen_7d: geschlossen7d.length,
+    proben_7d: proben.length,
+    // Aufsteigend sortiert: die Liste geht in einen Vergleich über Snapshots
+    // hinweg ein, und eine Reihenfolge, die an der gh-Ausgabe hängt, machte
+    // gleiche Messungen ungleich (§2).
+    prs_geschlossen_nummern: geschlossen7d.map((pr) => pr.number).sort((a, b) => a - b),
     median_dauer_min: median(dauern),
     tickets_24h: kontingent.heutigeCount,
     alarm: kontingent.alarme.length > 0,
