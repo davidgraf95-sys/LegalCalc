@@ -562,7 +562,10 @@ function parseDefinitionsListe(
     // Marke-Tags OHNE Leerzeichen strippen: das lat. Suffix steht als <sup>bis</sup>
     // direkt am Buchstaben («c<sup>bis</sup>»); entferneTags würde es zu «c bis»
     // trennen und die Regex unten verstümmelte es zu «c» (Bug-Audit 19.6.2026).
-    const markeRoh = dekodiereEntities(dtOhneFn.replace(/<[^>]+>/g, '')).trim();
+    // Innen-Leerraum normalisieren wie in entferneTags: Fedlex trennt mehrteilige
+    // Marken mit zwei &nbsp; («B.&nbsp;&nbsp;1.», GFK Art. 1) — als Marke ist das
+    // EIN Abstand, sonst trüge der Snapshot einen Doppelabstand im Zitat.
+    const markeRoh = dekodiereEntities(dtOhneFn.replace(/<[^>]+>/g, '')).replace(/\s+/g, ' ').trim();
     // ── Die Marke wird GELESEN, nicht nachnummeriert ─────────────────────────
     // «a.» / «17.» / «a)» → nackte Marke ohne Punkt/Klammer.
     // Bug-Audit 19.6.2026: lat. Suffix bis/ter/quater/quinquies erhalten (sonst
@@ -600,9 +603,14 @@ function parseDefinitionsListe(
     const istLabel = /:\s*$/.test(markeRoh);
     // Nachgestellten Trenner abstreifen — beim Label nur den ':' (der Rest ist
     // Bestandteil des Labels: «Kolonne 1»), sonst die Ordinal-Trenner.
-    const markeKern = istLabel
-      ? markeRoh.replace(/\s*:\s*$/, '').trim()
-      : markeRoh.replace(/[\s.)]+$/, '');
+    const markeKern = (
+      istLabel ? markeRoh.replace(/\s*:\s*$/, '').trim() : markeRoh.replace(/[\s.)]+$/, '')
+    )
+      // EINE Schreibweise je Marke (§5): das lat. Suffix steht im Korpus als
+      // «cbis» (Fedlex setzt «c<sup>bis</sup>»); BankG Art. 3 schreibt dieselbe
+      // Marke als «c.<sup>bis</sup>» → «c.bis». Der Trennpunkt wird darum
+      // eingezogen, sonst fände ein Zitat «lit. cbis» seine Fundstelle nicht.
+      .replace(new RegExp(`^([a-z])\\.(${LAT_SUFFIX})$`, 'i'), '$1$2');
     const istKanonisch = !istLabel && KANONISCHE_MARKE.test(markeKern);
     let marke = istKanonisch ? markeKern.toLowerCase() : markeKern;
 
@@ -618,21 +626,25 @@ function parseDefinitionsListe(
     // alles byte-gleich (§6). Der Resttext nach der Marke wird tag-/fussnoten-
     // bereinigt übernommen.
     // Hier — und NUR hier — ist die Marke ein PRÄFIX des <dt> statt sein ganzer
-    // Inhalt. Die Aufteilung greift deshalb erst, wenn das <dd> wirklich leer
-    // ist UND das <dt> die Form «Ordinalmarke + Trenner + Text» hat (Trenner
-    // '.'/')' plus Leerraum). Ohne die Trenner-Bedingung zerschnitte sie auch
+    // Inhalt. Die Aufteilung greift deshalb nur bei leerem <dd> ohne Unterliste
+    // UND nur, wenn das <dt> die Form «kanonische Marke + optionaler Trenner +
+    // LEERRAUM + Text» hat. Ohne die Leerraum-Bedingung zerschnitte sie auch
     // marken-lose Legenden-Schlüssel («BAS» → «b» + «AS», ASYLV 2) — genau die
-    // Kürzung, die oben abgestellt wurde (§1).
-    if (!text && subDlIdx < 0 && !istKanonisch && !istLabel) {
-      const praefix = markeRoh.match(
-        new RegExp(`^([0-9]+(?:${LAT_SUFFIX})?[a-z]?|[a-z](?:${LAT_SUFFIX})?)\\s*[.)]\\s`, 'i'),
-      );
+    // Kürzung, die oben abgestellt wurde (§1). Sie greift auch bei einem
+    // Label-<dt> («4.3.1&nbsp;&nbsp;Name(n) des (der) Kläger(s):», LugÜ
+    // Anhang V/VI): dort ist der Doppelpunkt Teil des Punkt-TEXTES, nicht
+    // Marken-Trenner — ohne diesen Zweig verlöre der Anhang die Punkte stumm.
+    if (!text && subDlIdx < 0 && !istKanonisch) {
+      const KANON_QUELLE = anhang
+        ? `[0-9]+(?:\\.[0-9]+)*(?:${LAT_SUFFIX})?[a-z]?|[a-z](?:${LAT_SUFFIX})?`
+        : `[0-9]+(?:${LAT_SUFFIX})?[a-z]?|[a-z](?:${LAT_SUFFIX})?`;
+      const praefix = markeRoh.match(new RegExp(`^(${KANON_QUELLE})\\s*[.)]?\\s+(?=\\S)`, 'i'));
       if (praefix) {
         // entferneTags: identische Bereinigung wie zuvor inline, aber inkl. N1-Fix
         // (Inline-Tags leerzeichenlos) — «14<i>a</i>» im <dt>-Text bleibt «14a».
         const dtTextRoh = entferneTags(dtOhneFn);
         const nachMarke = dtTextRoh
-          .replace(new RegExp(`^(?:[0-9]+(?:${LAT_SUFFIX})?[a-z]?|[a-z](?:${LAT_SUFFIX})?)\\s*[.)]?\\s*`, 'i'), '')
+          .replace(new RegExp(`^(?:${KANON_QUELLE})\\s*[.)]?\\s*`, 'i'), '')
           .trim();
         if (nachMarke) {
           marke = praefix[1].toLowerCase();
