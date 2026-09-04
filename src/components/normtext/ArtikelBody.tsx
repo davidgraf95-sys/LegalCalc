@@ -5,8 +5,7 @@ import { absatzNorm, bestimmePassusZiel, type PassusInfo } from '../../lib/normt
 import { trenneAenderungshistorie, absatzMarke, gruppiereBetraege, istAufgehoben } from '../../lib/normtext/darstellung';
 import { NormText, type InternRefs } from '../NormText';
 import { chapeauZielFremdgesetz } from '../../lib/fedlex';
-import { BildFigur, BildKacheln, type BildDaten, type BildKachel } from './BildElemente';
-import { zitatMitAusweis, heuteIso } from '../../lib/format';
+import { BildFigur, BildKacheln } from './BildElemente';
 import { WJ } from './wortverbinder';
 import { StaffelTabelle, MehrspaltigeTabelle, TarifTabelle } from './ArtikelTabellen';
 import { staffelZeilen, normalisiereTarifText } from './tarifText';
@@ -18,112 +17,11 @@ import { staffelZeilen, normalisiereTarifText } from './tarifText';
 // ArtikelKontextGruppe) und erzeugt keinen Zyklus (check:zyklen).
 import { SUCH_META } from '../../pages/gesetz-leser/suchHighlight';
 
-// Bild-/Kachel-Felder eines Blocks (bild/bildKacheln) sind neu im Snapshot-Daten-
-// format; die Render-Schicht liest sie über diese lokale Erweiterung des
-// Snapshot-Block-Typs (wie TabSpalte — kein Import aus scripts/, §3). Additiv:
-// bestehende Blöcke ohne die Felder rendern unverändert.
-type BildBlock = NormSnapshot['bloecke'][number] & { bild?: BildDaten; bildKacheln?: BildKachel[] };
+import type { BildBlock, ZitierKontext, AusweisBasis } from './ArtikelBody.helfer';
+import { FREMD_LEER, NOOP, litZiff, stufenFuer, vglFnNr } from './ArtikelBody.helfer';
+import { ZitierMarke } from './ArtikelBody.zitier';
 
-/** Zitier-Kontext der Lesesicht: macht Absatz-/lit.-/Ziff.-Marken klickbar
- *  («Art. X Abs. Y lit. z ERLASS» kopieren). Im Popover undefiniert → unverändert.
- *  B-6 (QS-BASIS): `fassung`/`permalinkBasis` (optional) rüsten die inline-Kopie
- *  mit dem Stand-Ausweis (§7 a–d) nach; fehlen sie (z. B. Popover), bleibt die
- *  Marke bei der reinen Fundstelle — byte-gleich zu vorher. */
-interface ZitierKontext {
-  artikelLabel: string;
-  kuerzel: string;
-  /** Konsolidierungs-/Fassungsdatum ISO des Erlasses (Stand-Ausweis). */
-  fassung?: string;
-  /** Permalink-Pfad inkl. #anker OHNE origin (origin kommt zur Klick-Zeit). */
-  permalinkBasis?: string;
-}
-
-// M6-D: leere Self-Ziel-Map + No-op-Sprung für den Fremdgesetz-Chapeau-Kontext —
-// dort gibt es kein «eigenes» Sprungziel; NormText routet bare «Art. N» allein über
-// `fremdKuerzel` auf das Fremdgesetz (NormChip). Modul-konstant (keine Re-Allokation).
-const FREMD_LEER: Map<string, string> = new Map();
-const NOOP = (): void => {};
-
-/** lit. (Buchstaben, Bund) vs. Ziff. (Zahlen, Kanton) anhand der Marke. */
-function litZiff(marke: string): string {
-  return /^\d/.test(marke.trim()) ? 'Ziff.' : 'lit.';
-}
-
-/** Verschachtelungsstufe je Item. PRIMÄR aus der EXPLIZITEN `tiefe` des
- *  Snapshots (M6, §1): liefert Fedlex die Stufe mit, wird sie NICHT mehr aus
- *  dem Markentyp geraten — das Raten erzeugte falsche Zitate, wenn die
- *  Reihenfolge umgekehrt ist (Ziff. → lit. statt lit. → Ziff.).
- *  FALLBACK-Heuristik nur für Daten OHNE tiefe (Kanton-Snapshots, noch nicht
- *  re-segnete Bund-Erlasse): Bst (a,b,c) = Stufe 0; Ziff (1,2,3) NACH einem
- *  Bst = Stufe 1, sonst 0; Gedankenstrich = eine Stufe tiefer als das
- *  vorausgehende Item. EINE Stelle (§5) — genutzt für die block-lokale
- *  Darstellung UND die blockübergreifende Fortsetzungs-Kette der Bild-Blöcke. */
-function stufenFuer(items: Array<{ marke: string; tiefe?: number }>): number[] {
-  const hatTiefe = items.some((it) => typeof it.tiefe === 'number');
-  if (hatTiefe) return items.map((it) => it.tiefe ?? 0);
-  const typ = (m: string) => /^[–—-]$/.test(m.trim()) ? 'strich' : /^\d/.test(m.trim()) ? 'ziff' : 'lit';
-  const stufen: number[] = [];
-  let sahLit = false, letzteNichtStrich = 0;
-  for (const it of items) {
-    const t = typ(it.marke);
-    let lv: number;
-    if (t === 'strich') lv = letzteNichtStrich + 1;
-    else if (t === 'ziff') { lv = sahLit ? 1 : 0; letzteNichtStrich = lv; }
-    else { lv = 0; sahLit = true; letzteNichtStrich = 0; }
-    stufen.push(lv);
-  }
-  return stufen;
-}
-
-/** Stand-Ausweis-Basis (B-6): dieselbe Fassung + Permalink-Basis für alle Marken
- *  eines Artikels; der Abruf-Tag und der origin kommen zur Klick-Zeit dazu. */
-interface AusweisBasis { fassung?: string; permalinkBasis: string }
-
-// Klickbare Zitat-Marke (Absatznummer oder lit./Ziff.). Kopiert die präzise
-// Fundstelle; kurzes ✓ als Rückmeldung. Nur in der Lesesicht (zitierKontext).
-// B-6 (QS-BASIS): liegt eine `ausweis`-Basis vor, wird beim Klick der Stand-
-// Ausweis (Fassung + Abrufdatum + Permalink, §7 a–d) an die Fundstelle gehängt.
-function ZitierMarke({ zitat, ausweis, sup, klasse, children }: {
-  zitat: string; ausweis?: AusweisBasis; sup?: boolean; klasse?: string; children: React.ReactNode;
-}) {
-  const [ok, setOk] = useState(false);
-  const kopiere = () => {
-    const text = ausweis && typeof window !== 'undefined'
-      ? zitatMitAusweis(zitat, {
-          fassung: ausweis.fassung,
-          abruf: heuteIso(new Date()),
-          permalink: `${window.location.origin}${ausweis.permalinkBasis}`,
-        })
-      : zitat;
-    void navigator.clipboard?.writeText(text).then(() => {
-      setOk(true); window.setTimeout(() => setOk(false), 1200);
-    });
-  };
-  // DESIGN-D0: `text-brass-700/55` → `text-brass-700`. Die Deckkraft war seit je
-  // ein No-op (Fund B4) — ausgeliefert wurde immer das volle brass-700 (5.41:1,
-  // AA). Mit dem Wurzel-Fix hätte sie erstmals gegriffen und den Zitierknopf auf
-  // 2.2:1 gedrückt (#b9a683 auf Papier), weit unter AA. Ein gedämpfter
-  // Ruhezustand wäre eine neue Design-Entscheidung — die trifft nicht D0.
-  const knopf = (
-    <button type="button" onClick={kopiere} title={`${zitat} — kopieren`}
-      className={`num font-semibold cursor-pointer text-brass-700 hover:underline decoration-dotted underline-offset-2 ${klasse ?? ''}`}>
-      {ok ? '✓' : children}
-    </button>
-  );
-  return sup ? <sup className="mr-1">{knopf}</sup> : knopf;
-}
-
-// FN-5: numerischer Nr-Vergleich («95» < «95a» < «96») für die stabile Reihung
-// der End-Marker, wenn Rückfall-Kandidaten mit bestehenden zusammentreffen —
-// gleiche Ordnung wie die fussAnzeige-Sortierung im ArtikelLeser (A43).
-function vglFnNr(a: string, b: string): number {
-  const key = (nr: string): [number, string] => {
-    const m = /^(\d+)([a-z]*)$/i.exec(nr.trim());
-    return m ? [parseInt(m[1], 10), m[2].toLowerCase()] : [Number.POSITIVE_INFINITY, nr];
-  };
-  const ka = key(a), kb = key(b);
-  return ka[0] - kb[0] || ka[1].localeCompare(kb[1]);
-}
+export type { ZitierKontext };
 
 // Fussnoten-Verweis (hochgestellte Nummer). Klick zeigt den Fussnotentext in einem
 // Popover DIREKT an der Stelle — ohne die Leseposition zu verschieben (früher
