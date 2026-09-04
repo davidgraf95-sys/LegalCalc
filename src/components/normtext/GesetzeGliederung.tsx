@@ -28,16 +28,26 @@ export function GliederungUmschalter({ wert, onWahl }: {
   wert: Gliederung; onWahl: (g: Gliederung) => void;
 }) {
   return (
-    <div role="group" aria-label="Gliederung" className="inline-flex flex-wrap items-center gap-1.5">
+    /* LM-055 (B15, 4.9.2026): Label und Optionen teilten sich einen einzigen
+       `gap-1.5` — GEMESSEN auf `/gesetze?ebene=bund` @1440 lagen 6 px zwischen
+       «GLIEDERUNG» und der ersten Option und ebenfalls 6 px zwischen zwei
+       Optionen (`margin-right: 0px`). Ohne Rhythmus-Unterschied liest sich das
+       Label als vierte Option. Der Fix ist der Abstand, nicht ein zusätzliches
+       Bauteil: 12 px zum Label, 6 px innerhalb der Optionsreihe. Die Optionen
+       stehen dafür in einer eigenen Reihe — `role="group"` und `aria-pressed`
+       bleiben, wo sie waren (keine Zustandssemantik berührt, §3). */
+    <div role="group" aria-label="Gliederung" className="inline-flex flex-wrap items-center gap-x-3 gap-y-1.5">
       <span className="lc-overline">Gliederung</span>
-      {GLIEDERUNGEN.map((g) => (
-        <button key={g.id} type="button" onClick={() => onWahl(g.id)} aria-pressed={wert === g.id}
-          className={`rounded px-2.5 py-0.5 text-body-s font-medium transition-colors ${
-            wert === g.id ? 'bg-brass-100 text-brass-800' : 'text-ink-500 hover:bg-paper-sunken hover:text-brass-700'
-          }`}>
-          {g.label}
-        </button>
-      ))}
+      <div className="flex flex-wrap items-center gap-1.5">
+        {GLIEDERUNGEN.map((g) => (
+          <button key={g.id} type="button" onClick={() => onWahl(g.id)} aria-pressed={wert === g.id}
+            className={`rounded px-2.5 py-0.5 text-body-s font-medium transition-colors ${
+              wert === g.id ? 'bg-brass-100 text-brass-800' : 'text-ink-500 hover:bg-paper-sunken hover:text-brass-700'
+            }`}>
+            {g.label}
+          </button>
+        ))}
+      </div>
     </div>
   );
 }
