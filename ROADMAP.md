@@ -441,6 +441,13 @@ zgb-a36-anhang: Die ZGB-Gliederung zeigt 74 Artikel des Anhangs «Wortlaut der f
   (Mandat David 31.8.2026, Befunde direkt umsetzen).
   **Detail:** [FAHRPLAN-DESIGN-KONSISTENZ.md](fahrplaene/FAHRPLAN-DESIGN-KONSISTENZ.md) §1.
 
+- [ ] **Design-Identität: eigene Farb- und Schrift-Handschrift statt Creme-Gold-Standard** *(`W2·24-DESIGN-IDENTITAET`, Auftrag David 5.9.2026)*
+  <!-- @meta id: W2·24-DESIGN-IDENTITAET · status: ready · blocker: null · dep: [] · feld: design · fahrplan: fahrplaene/FAHRPLAN-DESIGN-IDENTITAET.md -->
+  Anlass: legaldeadline.ch trägt dieselben drei Signaturen (Creme+Gold, Gold-Versal-Etiketten,
+  weiche Karten). Ziel: Token-Tausch (Farbwelt, Etiketten, Radien, Text-Serife, Marken-Motiv),
+  flip-reversibel, Kontrast-Tore grün. Zuerst drei Varianten-Bilder nach Landung von W2·23,
+  David wählt, dann Umsetzung. **Detail:** [FAHRPLAN-DESIGN-IDENTITAET.md](fahrplaene/FAHRPLAN-DESIGN-IDENTITAET.md) §1.
+
 - [ ] **UI-Befundliste extern (210 Befunde, Cowork 29.7.2026)** *(`W2·17-UI-BEFUNDE`)*
   <!-- @meta id: W2·17-UI-BEFUNDE · status: ready · blocker: null · dep: [] · feld: design · fahrplan: fahrplaene/FAHRPLAN-UI-BEFUNDE.md -->
   Externe Sichtprüfung, geschnitten nach Bauteil; alles reine Darstellungsschicht, Blocker zuerst.
