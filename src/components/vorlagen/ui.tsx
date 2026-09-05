@@ -83,8 +83,17 @@ export function Checkbox({ checked, onChange, label, hint, disabled, name, class
 }) {
   return (
     <label className={`flex items-start gap-2.5 py-1.5 min-h-[2.25rem] text-body-s ${disabled ? 'text-ink-500 cursor-not-allowed' : 'text-ink-700 cursor-pointer'}${className ? ' ' + className : ''}`}>
+      {/* Grössenklasse (B12 #675, QS-UI 5.9.2026): explizit `h-[1.1rem]
+          w-[1.1rem]` statt implizit über `input[type="checkbox"]` in
+          index.css — deckt sich zahlengleich mit der globalen Regel (1.1rem,
+          Redesign E7), ändert am gebauten Stand also NICHTS (gemessen
+          `/rechner/zpo-fristen`: 17.59×17.59 px vorher/nachher), macht die
+          Grösse aber am Baustein selbst nachlesbar/testbar statt nur über
+          einen Typ-Selektor im globalen Stylesheet. Es gibt (noch) keinen
+          geteilten Radio-/Switch-Baustein zum Angleichen — beide sind app-
+          weit rohe `<input>`, ebenfalls von derselben globalen Regel erfasst. */}
       <input type="checkbox" name={name} checked={checked} disabled={disabled}
-        onChange={(e) => onChange(e.target.checked)} className="mt-0.5 shrink-0" />
+        onChange={(e) => onChange(e.target.checked)} className="mt-0.5 shrink-0 h-[1.1rem] w-[1.1rem]" />
       <span className="min-w-0">
         {label}
         {hint && <span className="block text-xs text-ink-500">{hint}</span>}

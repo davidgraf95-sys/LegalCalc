@@ -16,7 +16,7 @@ import { readFileSync } from 'node:fs';
 import { renderToString } from 'react-dom/server';
 import { DatumsFeld } from '../components/DatumsFeld';
 import { BetragsFeld } from '../components/BetragsFeld';
-import { Field, KopierButton } from '../components/vorlagen/ui';
+import { Field, KopierButton, Checkbox } from '../components/vorlagen/ui';
 import { alleQuellen, alleTsx, liesOhneKommentare, pruefeAusnahmen, rel } from './appDateien';
 
 // ─── R3-α-WURZEL (31.8.2026, §17/§6.7) ──────────────────────────────────────
@@ -248,5 +248,13 @@ describe('R2-E — der Wert-Vertrag der Bausteine bleibt unverändert', () => {
     const html = renderToString(<KopierButton text="x" gegenstand="Ergebnis" />);
     expect(html, 'der Knopf sagt, WAS kopiert wird').toContain('Ergebnis kopieren');
     expect(html, 'Kanon-Optik lc-btn-outline lc-btn-sm').toContain('class="lc-btn-outline lc-btn-sm"');
+  });
+
+  it('Checkbox: trägt eine explizite Grössenklasse am Baustein (B12 #675)', () => {
+    // Deckt sich zahlengleich mit `input[type="checkbox"]` in index.css
+    // (1.1rem, Redesign E7) — keine Layout-Änderung, nur am Baustein statt
+    // nur global nachlesbar/testbar.
+    const html = renderToString(<Checkbox checked={false} onChange={() => {}} label="X" />);
+    expect(html, 'Grössenklasse steht am input selbst').toContain('class="mt-0.5 shrink-0 h-[1.1rem] w-[1.1rem]"');
   });
 });
