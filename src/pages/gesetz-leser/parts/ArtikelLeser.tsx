@@ -6,7 +6,7 @@ import { trenneAenderungshistorie, labelMitBereich, artikelGanzAufgehoben } from
 import type { Fussnote } from '../../../lib/normtext/browse';
 import { NORM_IM_TEXT, fedlexLinkFuerArtikel } from '../../../lib/fedlex';
 import { NEUER_TAB } from '../../../lib/benennung';
-import { KOPIER_DAUER_MS } from '../../../components/useKopieren';
+import { useKopieren } from '../../../components/useKopieren';
 import { NormChip } from '../../../components/vorlagen/NormChip';
 import { KanteMitVorschau } from '../../../components/verzahnung/KanteMitVorschau';
 import { MehrKante } from '../../../components/verzahnung/MehrKante';
@@ -144,7 +144,12 @@ export const ArtikelLeser = memo(function ArtikelLeser({ e, erlass, basisPfad, f
   // Trefferliste zu ankern.
   imTreffer?: boolean; onSpringe?: (token: string) => void;
 }) {
-  const [kopiert, setKopiert] = useState<'' | 'zitat' | 'link'>('');
+  // R4-D (5.9.2026): der Zwei-Ziele-Zustand war der Grund, warum diese Fläche
+  // den geteilten Hook nicht nutzen konnte — die Zeile trägt ZWEI Kopier-Knöpfe
+  // («Zitat», «Link»), und nur der geklickte darf sein Häkchen zeigen. Der Hook
+  // kennt dafür jetzt eine MARKE; der lokale Timer entfällt samt seiner
+  // Lücken (kein Handle, kein Unmount-Aufräumen).
+  const { marke: kopiert, kopieren } = useKopieren();
   // LM-202: der Teilen-Knopf schreibt die Adresse — im SEKUNDÄREN Pane nicht
   // (Herleitung unten bei `kopiere`; massgeblich ist die Rolle, nicht `imPane`).
   // Ohne montierten Provider liefert der Kontext `rolle: 'primaer'` ⇒
@@ -341,9 +346,7 @@ export const ArtikelLeser = memo(function ArtikelLeser({ e, erlass, basisPfad, f
           abruf: heuteIso(new Date()), permalink, amtlich: amtlich ?? undefined,
         })
       : permalink;
-    void navigator.clipboard?.writeText(text).then(() => {
-      setKopiert(was); window.setTimeout(() => setKopiert(''), KOPIER_DAUER_MS);
-    });
+    kopieren({ text, marke: was });
     // ── LM-202 (W2·10-UI-NAV-URL, David-Entscheid 3.8.2026) ──────────────────
     // «Die URL ändert sich NUR bei explizitem Klick auf einen Artikel-Anker bzw.
     // bei der Teilen-Aktion.» Der «Link»-Knopf IST die Teilen-Aktion — er legte

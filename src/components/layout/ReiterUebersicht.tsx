@@ -180,7 +180,27 @@ export function ReiterUebersicht() {
                   eigener Optik. Nebenbei behoben: `hover:bg-paper-sunken/60`
                   erzeugte keine CSS-Regel (DESIGN-D0, Deckkraft-Suffix auf
                   opakem Hex-Token — Wurzel-Fix bleibt W2·11-DESIGN); der Hover
-                  wirkte dadurch bislang gar nicht. */}
+                  wirkte dadurch bislang gar nicht.
+
+                  NACHTRAG D0 (5.9.2026) — die BEOBACHTUNG stimmte, die URSACHE
+                  nicht. Der Satz oben bleibt als datierter Beleg stehen (§2b);
+                  richtiggestellt wird er hier, nicht dort. Gemessen im
+                  gebauten CSS (`dist/assets/index-*.css`) steht die Regel sehr
+                  wohl:
+                    .hover\:bg-paper-sunken\/60:hover{background-color:
+                      color-mix(in oklab, var(--paper-sunken) calc(.6*100%), transparent)}
+                  Der Wurzel-Fix (`alphaFaehig()` in tailwind.config.js) ist
+                  seit dem 8.8.2026 gelandet; ALLE 23 Deckkraft-Klassen des
+                  Repos erzeugen heute eine wirksame Regel. Unsichtbar war der
+                  Hover aus einem anderen Grund: `--paper-sunken` auf `--paper`
+                  ist von Haus aus ein winziger Schritt, und `/60` verdünnt ihn
+                  noch. Kontrast der Hover-Fläche gegen die Lesefläche,
+                  gerechnet aus den Token-Werten in index.css:
+                    hell   1.041:1   (opak wären es 1.061:1)
+                    dunkel 1.032:1
+                  Das ist eine Frage der TOKEN-WERTE (Design-Konsistenz), nicht
+                  der Deckkraft-Mechanik — darum hier nur vermerkt und NICHT
+                  im D0-PR umgefärbt (keine Design-Neuinterpretation). */}
               <button type="button"
                 onClick={() => { leereTabs(); navigate('/'); setPanelOffen(false); }}
                 className="lc-btn-outline lc-btn-sm w-full">
