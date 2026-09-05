@@ -15,7 +15,7 @@ import type { ButtonHTMLAttributes, Ref } from 'react';
 // KANON (Mehrheitsform, das Reglement schweigt zum ✕):
 //   · Glyph «✕» in `text-base leading-none`, `aria-hidden` — 5:1:1.
 //     R6-A (5.9.2026): Grösse UND Schnitt liegen seither in
-//     `.lc-schliessknopf-glyph` (index.css). Der Span schrieb nur die GRÖSSE
+//     `.lc-griff-glyph` (index.css). Der Span schrieb nur die GRÖSSE
 //     fest; die FAMILIE erbte er von der Umgebung, und im `InhaltsKopf`
 //     (`lc-leiste-griff`) ist die Mono — gemessen 9.64 px ✕-Tinte gegen
 //     12.20 px überall sonst, bei identischen 16 px. Halbe Deklaration wie
@@ -86,7 +86,7 @@ export function SchliessKnopf({ name, ton = 'ruhig', komfort = true, klasse, ref
         .filter(Boolean).join(' ')}
       {...rest}
     >
-      <span aria-hidden className="lc-schliessknopf-glyph">✕</span>
+      <span aria-hidden className="lc-griff-glyph">✕</span>
     </button>
   );
 }

@@ -1767,7 +1767,14 @@
      11 px der Leiste) — R6-A vollendet nur, was dort halb entschieden war.
      Die Deklaration steht hier statt am Span, damit ✕-Grösse und ✕-Schnitt
      nicht wieder an zwei Orten liegen (§5). */
-  .lc-schliessknopf-glyph {
+  /* R6-C (5.9.2026): der Name heisst `-griff-glyph`, nicht `-schliessknopf-glyph`.
+     Die Anatomie gilt nämlich nicht dem SCHLIESSEN, sondern dem freistehenden
+     Steuerungs-Zeichen — und die A3-1-Doktrin hält «leeren» ausdrücklich als
+     EIGENE Handlung neben «schliessen» (§1/§8: gleiche Glyphe, andere Aussage,
+     nicht zusammenziehen). Beide teilen also die GESTALT, nicht die Handlung;
+     ein Klassenname, der die Handlung nennt, wäre der Grund gewesen, die
+     Gestalt ein zweites Mal hinzuschreiben. */
+  .lc-griff-glyph {
     font-family: var(--font-sans), system-ui, sans-serif;
     font-size: 1rem; line-height: 1;
   }

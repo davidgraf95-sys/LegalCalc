@@ -158,6 +158,15 @@ export function SuchSprungFeld({
           // V3-Bestand, `.lc-input` trägt die ganze App (FL-4).
           className={`lc-input lc-v3-feld h-8 w-full min-w-0 py-0 pl-2.5 text-body-s ${wert !== '' ? 'pr-16 sm:pr-20' : 'pr-8 sm:pr-10'}`}
         />
+        {/* R6-C (5.9.2026): die Glyphe kam aus `text-body-s leading-none` und
+            stand damit als EINZIGE der drei «Suche leeren»-Flächen in 14 px —
+            GEMESSEN am Preview: Tinte 10.67 px hier gegen 12.20 px in
+            `start/UniversalSuche` und `pages/Suche` (gleiche Handlung, gleicher
+            `aria-label`, 2:1 für 16 px). Jetzt `.lc-griff-glyph`, dieselbe
+            Gestalt wie am `ui/SchliessKnopf`. Die BOX bleibt, wo sie ist
+            (24×24, rund) — sie gehört der Zeile, hier einem `h-8`-Feld mit
+            ⌘K-Nachbarn; das ist dieselbe Trennung, die der Schliess-Baustein
+            deklariert (Glyphe geteilt, Box der Umgebung). */}
         {/* ✕ — sichtbar und mit Namen. Es ist seit Ä16 (H2b) das EINZIGE: das
             native Kreuz von `type="search"` erschien je nach Browser gar nicht,
             trug keinen zugänglichen Namen und war kein 44-px-Ziel — darum trägt
@@ -171,7 +180,7 @@ export function SuchSprungFeld({
             aria-label="Suche leeren"
             title="Suche leeren (Esc)"
             className="absolute right-6 top-1/2 inline-flex h-6 w-6 -translate-y-1/2 items-center justify-center rounded-full text-ink-500 transition-colors lc-hover-flaeche hover:text-brass-700 sm:right-8">
-            <span aria-hidden className="text-body-s leading-none">✕</span>
+            <span aria-hidden className="lc-griff-glyph">✕</span>
           </button>
         )}
         {/* Das Kürzel steht sichtbar am Feld — ein Kürzel, das man kennen muss,
