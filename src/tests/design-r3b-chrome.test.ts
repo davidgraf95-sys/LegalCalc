@@ -163,8 +163,8 @@ describe('A3-1 · das Schliess-✕ kommt aus EINEM Baustein', () => {
   // Baustein trägt Grösse UND Schnitt, und zwar in der CSS-Regel, nicht am
   // Span (sonst lägen die zwei Hälften wieder an zwei Orten, §5).
   it('der Glyph-Schnitt liegt im Baustein, nicht in der Umgebung', () => {
-    const block = /\.lc-schliessknopf-glyph \{([\s\S]*?)\}/.exec(CSS)?.[1] ?? '';
-    expect(block, '.lc-schliessknopf-glyph existiert').not.toBe('');
+    const block = /\.lc-griff-glyph \{([\s\S]*?)\}/.exec(CSS)?.[1] ?? '';
+    expect(block, '.lc-griff-glyph existiert').not.toBe('');
     expect(block, 'der Schnitt steht im Baustein (sonst erbt die Glyphe die Mono der Leiste)')
       .toContain('font-family: var(--font-sans)');
     expect(block, 'die Grösse steht daneben, nicht am Span').toContain('font-size: 1rem');
@@ -174,7 +174,47 @@ describe('A3-1 · das Schliess-✕ kommt aus EINEM Baustein', () => {
       alleTsx().find((p) => rel(p) === 'components/ui/SchliessKnopf.tsx')!,
     ));
     const span = /<span aria-hidden className="([^"]*)">✕<\/span>/.exec(tsx)?.[1];
-    expect(span, 'der ✕-Span trägt genau den Baustein').toBe('lc-schliessknopf-glyph');
+    expect(span, 'der ✕-Span trägt genau den Baustein').toBe('lc-griff-glyph');
+  });
+
+  // ── R6-C (5.9.2026) · die Gestalt gilt auch dort, wo die HANDLUNG eine ────
+  //    andere ist. Die A3-1-Ausnahmeliste hält «leeren» zu Recht neben
+  //    «schliessen» (§1/§8) — sie hat aber nie gefragt, ob die (b)-Klasse mit
+  //    SICH SELBST übereinstimmt. GEMESSEN am Preview, drei Flächen mit
+  //    identischem `aria-label` «Suche leeren»:
+  //      start/UniversalSuche   16 px · Tinte 12.20 · Box 28×28 r8
+  //      pages/Suche            16 px · Tinte 12.20 · Box 28×28 r8
+  //      v3/SuchSprungFeld      14 px · Tinte 10.67 · Box 24×24 rund   ← Ausreisser
+  //    Ein freistehendes ✕ trägt darum die geteilte Gestalt, egal welche
+  //    Handlung daran hängt. Die BOX bleibt der Zeile (Baustein-Vertrag).
+  it('kein freistehendes ✕ schreibt seine Typografie selbst hin', () => {
+    const funde: string[] = [];
+    for (const p of alleTsx()) {
+      for (const m of ohneKommentare(liesRoh(p))
+        .matchAll(/<span[^>]*aria-hidden[^>]*className="([^"]*)"[^>]*>\s*✕\s*<\/span>/g)) {
+        if (m[1].trim() !== 'lc-griff-glyph') funde.push(`${rel(p)} · className="${m[1]}"`);
+      }
+    }
+    expect(
+      funde,
+      'Ein freistehendes ✕ holt Grösse UND Schnitt aus `.lc-griff-glyph`; wer nur eine '
+      + 'Hälfte hinschreibt (`text-base leading-none`), erbt die andere von der Umgebung (R6-A/R6-C).',
+    ).toEqual([]);
+  });
+
+  it('ROT-BEWEIS: beide Vorher-Formen der freistehenden ✕ fallen auf', () => {
+    const sweep = (q: string): string[] => [...q.matchAll(
+      /<span[^>]*aria-hidden[^>]*className="([^"]*)"[^>]*>\s*✕\s*<\/span>/g,
+    )].map((m) => m[1]).filter((k) => k.trim() !== 'lc-griff-glyph');
+    // Wortlaute im Stand vom 5.9.2026 vor R6-A/R6-C — Belege, nie nachgeführt (§2b).
+    expect(sweep('<span aria-hidden className="text-base leading-none">✕</span>')).toEqual(['text-base leading-none']);
+    expect(sweep('<span aria-hidden className="text-body-s leading-none">✕</span>')).toEqual(['text-body-s leading-none']);
+    // Negativ-Kontrolle 1: die migrierte Form fällt NICHT auf.
+    expect(sweep('<span aria-hidden className="lc-griff-glyph">✕</span>')).toEqual([]);
+    // Negativ-Kontrolle 2: ein BESCHRIFTETES ✕ (Klasse (a)) schreibt gar keine
+    // Typografie hin und wird von der Sonde darum nicht berührt — es soll der
+    // Type seines Wortes folgen, nicht der geteilten Gestalt.
+    expect(sweep('<span aria-hidden>✕</span><span>ausblenden</span>')).toEqual([]);
   });
 
   it('ROT-BEWEIS: die Vorher-Form des Spans fällt auf', () => {
@@ -183,7 +223,7 @@ describe('A3-1 · das Schliess-✕ kommt aus EINEM Baustein', () => {
     const vorher = '<span aria-hidden className="text-base leading-none">✕</span>';
     const klasse = /<span aria-hidden className="([^"]*)">✕<\/span>/.exec(vorher)?.[1];
     expect(klasse).toBe('text-base leading-none');
-    expect(klasse).not.toBe('lc-schliessknopf-glyph');
+    expect(klasse).not.toBe('lc-griff-glyph');
   });
 
   it('NEGATIV-KONTROLLE: der Sweep sieht das Glyph im Markup, nicht im Kommentar', () => {
