@@ -466,8 +466,8 @@ zgb-a36-anhang: Die ZGB-Gliederung zeigt 74 Artikel des Anhangs «Wortlaut der f
   Such-/Navigations-Posten zusätzlich in [FAHRPLAN-UI-NAVIGATION.md](fahrplaene/FAHRPLAN-UI-NAVIGATION.md) §7.
   - [ ] **OR-Leser-e2e-Timeouts app-weit härten · Shard-Laufzeit-Deckel** *(CI 5.9.2026)* — Fahrplan §4.
 
-- [~] **Oberflächen-Qualität app-weit** *(`QS-UI`, reines UI/Design §13, kontinuierlich)*
-  <!-- @meta id: QS-UI · status: wip · blocker: null · dep: [] · feld: design · fahrplan: fahrplaene/FAHRPLAN-UI-QUALITAET.md -->
+- [ ] **Oberflächen-Qualität app-weit** *(`QS-UI`, reines UI/Design §13, kontinuierlich)*
+  <!-- @meta id: QS-UI · status: ready · blocker: null · dep: [] · feld: design · fahrplan: fahrplaene/FAHRPLAN-UI-QUALITAET.md -->
   Kontinuierlicher Oberflächen-Pass (Fundament → Hierarchie → Politur), kein Einzel-Redesign.
   **Detail:** [FAHRPLAN-UI-QUALITAET.md](fahrplaene/FAHRPLAN-UI-QUALITAET.md) §8.
   - [x] **Marken-Präfix im Leser: «lit. BE» statt «Kategorie BE», «A.» statt «A:»** *(Gegenprüfung PR #658)* — gebaut #679 (`markenArt` in `ArtikelBody.helfer.ts`), Tests nachgezogen 5.9.2026 (VZV Art. 3: `BE:` statt `BE.`, Zitat ohne «lit.»; Golden byte-gleich).
