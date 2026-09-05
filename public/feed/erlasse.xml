@@ -2,12 +2,19 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <id>https://lexmetrik.vercel.app/feed/erlasse.xml</id>
   <title>LexMetrik — geänderte Erlasse</title>
-  <updated>2026-09-01T00:00:00Z</updated>
+  <updated>2026-09-02T00:00:00Z</updated>
   <link rel="self" type="application/atom+xml" href="https://lexmetrik.vercel.app/feed/erlasse.xml" />
   <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/" />
   <author>
     <name>LexMetrik</name>
   </author>
+  <entry>
+    <id>https://lexmetrik.vercel.app/gesetze/bund/DBG</id>
+    <title>DBG — Bundesgesetz über die direkte Bundessteuer</title>
+    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/bund/DBG" />
+    <updated>2026-09-02T00:00:00Z</updated>
+    <summary>Stand 2026-09-02 (SR 642.11).</summary>
+  </entry>
   <entry>
     <id>https://lexmetrik.vercel.app/gesetze/kanton/ZH-281</id>
     <title>Einführungsgesetz zum Bundesgesetz über Schuldbetreibung und Konkurs (EG SchKG) — Einführungsgesetz zum Bundesgesetz über Schuldbetreibung und Konkurs (EG SchKG) (LS 281)</title>
@@ -798,13 +805,6 @@
     <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/bund/BOEB" />
     <updated>2026-01-01T00:00:00Z</updated>
     <summary>Stand 2026-01-01 (SR 172.056.1).</summary>
-  </entry>
-  <entry>
-    <id>https://lexmetrik.vercel.app/gesetze/bund/DBG</id>
-    <title>DBG — Bundesgesetz über die direkte Bundessteuer</title>
-    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/bund/DBG" />
-    <updated>2026-01-01T00:00:00Z</updated>
-    <summary>Stand 2026-01-01 (SR 642.11).</summary>
   </entry>
   <entry>
     <id>https://lexmetrik.vercel.app/gesetze/bund/EBG</id>
