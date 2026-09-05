@@ -13,6 +13,17 @@
 import { test, expect, type Page } from '@playwright/test'
 import { kopfSucheOeffnen } from './helpers/kopfSuche'
 
+// ── §6.3-DEKLARATION (W2·23-STARTSEITE-V4 §6.1, 5.9.2026) ────────────────────
+// Alle Fälle dieser Datei messen die KOPF-Suche (S1-Durchreichung, S6-Fokus-
+// modus, Tastaturfalle). Sieben von ihnen starteten auf «/» — dort trägt seit
+// diesem Schritt der Hero die eine Suche, der Streifen zeigt kein zweites Feld
+// mehr. Startroute darum «/kontakt»: eine leichte statische Seite MIT Kopf-
+// Suche und ohne eigenes Suchfeld, das die Locators stören könnte. Geändert
+// ist ausschliesslich die Startroute — keine Assertion, kein Timeout, kein
+// Umfang (§6.3). Für S1 bleibt der geprüfte Kern derselbe: der Sprung führt von
+// einer FREMDEN Seite mit Remount auf /gesetze (der Nicht-Remount-Fall daneben
+// startet unverändert auf /gesetze?ebene=bund).
+
 // Der Artikel-Volltext-Index (~4 MB) lädt einmal; unter Runner-Last reicht das
 // 30-s-Standardbudget nicht (Muster norm-sprung.e2e.ts). INFRASTRUKTUR, keine
 // Assertion-Änderung (§6.3).
@@ -23,7 +34,7 @@ const listbox = (page: Page) => page.getByRole('listbox', { name: 'Suchtreffer' 
 
 test.describe('S1 · Query-Durchreichung ?q=', () => {
   test('«alle N →» führt MIT dem Begriff auf /gesetze (Feld vorgefüllt, gefiltert)', async ({ page }) => {
-    await page.goto('/')
+    await page.goto('/kontakt')
     const feld = sucheFeld(page)
     await feld.click()
     await feld.fill('recht')
@@ -88,7 +99,7 @@ test.describe('S1 · Query-Durchreichung ?q=', () => {
   // Gegenprüfungs-Befund 7.8.2026 (§8-Zählparität): Header dedupliziert die
   // Gemeinde-Doppel, die Zielseite tat es nicht — «alle 73 →» landete auf «74».
   test('«alle N →» und die Trefferzahl der Zielseite nennen dieselbe Zahl (§8)', async ({ page }) => {
-    await page.goto('/')
+    await page.goto('/kontakt')
     const feld = sucheFeld(page)
     await feld.click()
     await feld.fill('recht')
@@ -130,7 +141,7 @@ test.describe('S6 · Mobiler Such-Fokusmodus @390', () => {
   // ROT ZU BEKOMMEN: in `HeaderSuche.tsx` das `text-base` der Feld-Klasse
   // streichen ⇒ unter sm greift `text-body-s` (14 px) und der Fall reisst.
   test('Feldschrift ≥ 16 px (keine iOS-Fokus-Zoom-Falle)', async ({ page }) => {
-    await page.goto('/')
+    await page.goto('/kontakt')
     // Gemessen wird der Zustand, in dem der Nutzer @390 wirklich tippt: nach dem
     // Lupen-Tap. Der Ruhezustand trägt dort kein Feld mehr (C1/B10/L3).
     const feld = await kopfSucheOeffnen(page)
@@ -141,7 +152,7 @@ test.describe('S6 · Mobiler Such-Fokusmodus @390', () => {
   })
 
   test('getippte Query bleibt im Feld sichtbar (nicht abgeschnitten)', async ({ page }) => {
-    await page.goto('/')
+    await page.goto('/kontakt')
     const feld = await kopfSucheOeffnen(page)
     await feld.fill('arbeitsvertrag')
     // scrollWidth > clientWidth hiesse: der Anfang der Query ist aus dem Feld
@@ -161,7 +172,7 @@ test.describe('S6 · Fokusmodus im Band 480–639 px (dort trägt der Streifen d
   test.use({ viewport: { width: 500, height: 844 } })
 
   test('Fokus blendet Logo und Werkzeuge aus, ✕ holt sie zurück', async ({ page }) => {
-    await page.goto('/')
+    await page.goto('/kontakt')
     // Nur der Top-Streifen (die Fusszeile trägt dasselbe Logo-Label).
     const logo = page.getByRole('banner').getByRole('link', { name: /LexMetrik – Startseite/ })
     await expect(logo).toBeVisible()
@@ -196,7 +207,7 @@ test.describe('S6 · Fokusmodus im Band 480–639 px (dort trägt der Streifen d
 // über das steuernde Feld) — TAB verlässt das Feld wie jedes normale Kontrollelement.
 test.describe('Tastaturfalle in der globalen Suche (Cowork-Befund 38)', () => {
   test('Tab verlässt das leere Suchfeld (Verlauf/Einstiege-Fenster) in ≤3 Schritten', async ({ page }) => {
-    await page.goto('/')
+    await page.goto('/kontakt')
     const feld = sucheFeld(page)
     await feld.click()
     // Leerzustand offen (kein Text getippt) — genau der Befund-38-Auslöser.
@@ -215,7 +226,7 @@ test.describe('Tastaturfalle in der globalen Suche (Cowork-Befund 38)', () => {
   })
 
   test('Pfeiltasten navigieren die Vorschläge weiterhin (Combobox-Muster bleibt intakt)', async ({ page }) => {
-    await page.goto('/')
+    await page.goto('/kontakt')
     const feld = sucheFeld(page)
     await feld.click()
     const box = page.getByRole('listbox', { name: /Verlauf und Einstiege/ })
