@@ -466,8 +466,8 @@ zgb-a36-anhang: Die ZGB-Gliederung zeigt 74 Artikel des Anhangs «Wortlaut der f
   Such-/Navigations-Posten zusätzlich in [FAHRPLAN-UI-NAVIGATION.md](fahrplaene/FAHRPLAN-UI-NAVIGATION.md) §7.
   - [ ] **OR-Leser-e2e-Timeouts app-weit härten · Shard-Laufzeit-Deckel** *(CI 5.9.2026)* — Fahrplan §4.
 
-- [ ] **Oberflächen-Qualität app-weit** *(`QS-UI`, reines UI/Design §13, kontinuierlich)*
-  <!-- @meta id: QS-UI · status: ready · blocker: null · dep: [] · feld: design · fahrplan: fahrplaene/FAHRPLAN-UI-QUALITAET.md -->
+- [~] **Oberflächen-Qualität app-weit** *(`QS-UI`, reines UI/Design §13, kontinuierlich)*
+  <!-- @meta id: QS-UI · status: wip · blocker: null · dep: [] · feld: design · fahrplan: fahrplaene/FAHRPLAN-UI-QUALITAET.md -->
   Kontinuierlicher Oberflächen-Pass (Fundament → Hierarchie → Politur), kein Einzel-Redesign.
   **Detail:** [FAHRPLAN-UI-QUALITAET.md](fahrplaene/FAHRPLAN-UI-QUALITAET.md) §8.
   - [ ] **Marken-Präfix im Leser: «lit. BE» statt «Kategorie BE», «A.» statt «A:»** *(Gegenprüfung PR #658, 4.9.2026)* — `litZiff` in `src/components/normtext/ArtikelBody.tsx` (~Z. 48, Punkt ~Z. 434) hängt jeder Marke «lit./Ziff.» + «.» an; Label-Marken (`<dt>` mit `:`) sollen ohne Präfix und mit «:» erscheinen. Reine Darstellung (§3); Datei liegt in Jules-Ticket #654 — erst danach.
