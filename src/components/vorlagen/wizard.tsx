@@ -167,8 +167,18 @@ export function VorlagenWizardRahmen({
       <Stepper schritte={schritte} aktiv={schritt} onWechsel={setSchritt} />
 
       {/* Zweispaltig: Formular links, klebende Vorschau rechts;
-          mobil einspaltig mit einklappbarer Vorschau */}
-      <div className={`grid grid-cols-1 ${pk('md:grid-cols-[minmax(0,1fr)_minmax(0,1fr)]', '@3xl/pane:grid-cols-[minmax(0,1fr)_minmax(0,1fr)]')} gap-6 ${pk('md:gap-8', '@3xl/pane:gap-8')} items-start`}>
+          mobil einspaltig mit einklappbarer Vorschau.
+          W2·19-DESIGN-KONSISTENZ R6-D1 (5.9.2026): kein `items-start` mehr —
+          beide Spalten strecken sich (Grid-Default `stretch`) auf die Höhe
+          der jeweils längeren; die Formular-Karte wird in ihrer Zelle
+          vertikal zentriert statt oben angeschlagen. Gemessen auf
+          `/vorlagen/testament`: Schritt «Person» liess vorher 200 px, Schritt
+          «Erbeinsetzung» 336 px unregelmässige Leerfläche zwischen Karte und
+          Fusszeile (Vorschau-Spalte blieb bei 683 px konstant) — beide Werte
+          nach dem Fix 0 px, weil die Karte die Zellenhöhe füllt/zentriert
+          statt eine Lücke darunter offenzulassen. */}
+      <div className={`grid grid-cols-1 ${pk('md:grid-cols-[minmax(0,1fr)_minmax(0,1fr)]', '@3xl/pane:grid-cols-[minmax(0,1fr)_minmax(0,1fr)]')} gap-6 ${pk('md:gap-8', '@3xl/pane:gap-8')}`}>
+        <div className={`flex flex-col ${pk('md:justify-center', '@3xl/pane:justify-center')}`}>
         <div className="bg-surface-raised rounded-2xl border border-line p-5 sm:p-6 space-y-5"
           onInput={merkeEingabe} onChange={merkeEingabe}>
           {/* key={schritt}: re-mountet den Schrittinhalt → dezenter Einblende-
@@ -209,6 +219,7 @@ export function VorlagenWizardRahmen({
               </div>
             )}
           </div>
+        </div>
         </div>
 
         {/* Vorschau – mobil einklappbar, Desktop klebend; identischer Inhalt
@@ -257,7 +268,7 @@ export function VorlagenWizardRahmen({
           Utility am Element überlebt jede künftige Umformulierung des Blocks. */}
       {!vorschauImBild && (
         <button type="button" onClick={zurVorschau} data-verdikt-sprung
-          className={`${pk('md:hidden', '@3xl/pane:hidden')} print:hidden fixed bottom-4 right-4 z-30 lc-btn-primary lc-btn-sm rounded-full px-4 shadow-lg`}>
+          className={`${pk('md:hidden', '@3xl/pane:hidden')} print:hidden fixed bottom-4 right-4 z-dropdown lc-btn-primary lc-btn-sm rounded-full px-4 shadow-lg`}>
           Vorschau ↓
         </button>
       )}

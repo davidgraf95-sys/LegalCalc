@@ -161,7 +161,7 @@ export function DatumsFeld({ value, onChange, className = 'lc-input', wrapperCla
 
       {offen && (
         <div role="dialog" aria-label="Kalender"
-          className={`lc-schwebeflaeche absolute z-50 top-full ${rechtsbuendig ? 'right-0' : 'left-0'} mt-1.5 w-[min(17.5rem,calc(100vw-2rem))] p-3 lc-reveal`}>
+          className={`lc-schwebeflaeche absolute z-modal top-full ${rechtsbuendig ? 'right-0' : 'left-0'} mt-1.5 w-[min(17.5rem,calc(100vw-2rem))] p-3 lc-reveal`}>
           {/* Kopf: Jahr-/Monatsblättern, Monat als Ablese-Anzeige */}
           <div className="flex items-center justify-between mb-2">
             <div className="flex">

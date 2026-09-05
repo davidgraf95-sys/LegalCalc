@@ -41,9 +41,10 @@ import { createPortal } from 'react-dom';
 // Klick-Handler bleiben hier: sie sind die Anatomie DIESES Scrims, nicht die
 // der Rolle.
 //
-// ── WARUM PORTAL UND WARUM `z-[16]` ─────────────────────────────────────────
+// ── WARUM PORTAL UND WARUM `z-reader-scrim` (C3: benannte Rolle für den
+//    vormals rohen Wert 16, Schichtungs-Skala in index.css) ─────────────────
 // Am `<body>`, nicht im Kopf-Teilbaum, und UNTER dem klebenden Kopf (dessen
-// `z-[17]`, Herleitung der rohen Zahl in `LeserKopf.tsx`): so tritt der
+// `z-reader-kopf` = 17, Herleitung in `LeserKopf.tsx`): so tritt der
 // Lesetext zurück, während Öffner UND Menü scharf stehen. Das ist zugleich der
 // «sichtbare Bezug zum auslösenden Knopf», den LM-015 zusätzlich verlangt —
 // läge der Scrim im Kopf-Teilbaum, dimmte er den Trigger mit.
@@ -62,7 +63,7 @@ export function LeserScrim({ onSchliessen }: { onSchliessen: () => void }) {
   return createPortal(
     <div
       data-v3-ansicht-scrim
-      className="lc-scrim fixed inset-0 z-[16]"
+      className="lc-scrim fixed inset-0 z-reader-scrim"
       onClick={onSchliessen}
       aria-hidden
     />,

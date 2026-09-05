@@ -4,6 +4,7 @@ import { themaText, istSynth, istBetreff, istBge, hauptIdentitaet } from '../../
 import { GEBIET_LABEL } from '../../lib/normtext/register';
 import { NormChip } from './NormChip';
 import { datumAnzeige, DATUM_UNBEKANNT_TITEL, spracheBadgeTitel } from './format';
+import { StatusBadge } from '../verzahnung/StatusBadge';
 
 // Kompakte Listen-Zeile (Default-Dichte). Bezeichnung führt mit dem THEMA/Leitsatz
 // (Auftrag David: man soll schon sehen, worum es geht) — die BGE-Nummer steht als
@@ -58,14 +59,14 @@ export function EntscheidZeile({ e, onNorm }: {
             <span className="text-micro italic text-ink-500"
               title="Betreff/Titel aus dem amtlichen Portal — keine Regeste">amtl. Betreff</span>
           )}
-          {e.kuratierung === 'maschinell' && (
-            <span className="lc-badge lc-badge-soft" title="Automatisch erfasst, fachlich noch nicht geprüft">ungeprüft</span>
-          )}
+          {e.kuratierung === 'maschinell' && <StatusBadge praedikat="maschinell" />}
           {e.sprache !== 'de' && <span className="lc-badge lc-badge-soft uppercase" title={spracheBadgeTitel(e.sprache)}>{e.sprache}</span>}
           {/* lc-chip-zeile (LM-044/N1): Aktions-Form an der ROLLE (span[role=button]),
-              gleiche Grammatik wie in der Karten-Ansicht und der Filterleiste (§23). */}
+              gleiche Grammatik wie in der Karten-Ansicht und der Filterleiste (§23).
+              C3 (5.9.2026, R6-C): `z-10` → `z-sticky` (Schichtungs-Skala,
+              index.css), Wert unverändert (10), nur benannt. */}
           {e.normKeys.length > 0 && (
-            <span className="lc-chip-zeile relative z-10 flex flex-wrap items-center gap-x-2 gap-y-1">
+            <span className="lc-chip-zeile relative z-sticky flex flex-wrap items-center gap-x-2 gap-y-1">
               {e.normKeys.slice(0, 5).map((k) => <NormChip key={k} normKey={k} onWaehle={onNorm} />)}
               {/* LM-049 (gleiche Formensprache wie die Karte): Zähler, nicht
                   Bedienelement — «+3 weitere» statt nackter «+3». */}

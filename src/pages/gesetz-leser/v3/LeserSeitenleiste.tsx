@@ -166,7 +166,7 @@ export function LeserSeitenleiste({
             einem 10-px-Gespenst. Ihn wegzulassen hiesse, den Deckel auf seinem
             letzten Wert einfrieren zu lassen. */}
         <div ref={zoneARef} data-toc-zone-a data-v3-leiste-baumkopf
-          className={`lc-leiste-sockel sticky top-0 z-10 space-y-2 ${
+          className={`lc-leiste-sockel sticky top-0 z-sticky space-y-2 ${
             suchFeld || zeigtZeile ? '-mt-0.5 pb-2 pt-0.5' : ''}`}>
           {suchFeld && <div data-v3-leiste-feld>{suchFeld}</div>}
           {/* ── Ä32 (H2b-Nachzug) · «ALLES AUF» GEHÖRT DEM BAUM ────────────────

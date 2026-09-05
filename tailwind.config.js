@@ -70,6 +70,14 @@ export default {
           400: 'var(--brass-400)', 500: 'var(--brass-500)', 600: 'var(--brass-600)',
           700: 'var(--brass-700)', 800: 'var(--brass-800)',
         },
+        // C2 (5.9.2026): Text AUF einer Gold-/Messing-Füllung braucht eine
+        // Tinte, die NIE mit dem Thema flippt (D-1.8, `--auf-gold` speist sich
+        // aus `--ink-fixed-dark`) — `text-ink-900` kippt im Dunkelmodus auf
+        // hell und verfehlt dort die 4.5:1 (Beleg: VerzugszinsTimeline.tsx,
+        // dort bislang nur per Inline-Style erreichbar; hier als Utility).
+        // C2-Gegenstück: Text auf --ok-solid (flippt bewusst nicht) braucht die
+        // STETS helle Tinte (--auf-sage, aus --ink-fixed-light gespeist).
+        auf: { gold: 'var(--auf-gold)', sage: 'var(--auf-sage)' },
         // ── Rollen-Alias-Schicht (D-2, Radix-Muster) ──────────────────────
         // Wertidentische Rollen über den Basis-Skalen (Werte in src/index.css).
         // NEUE Komponenten greifen die Rolle (text-accent-text, bg-accent-bg,
@@ -177,6 +185,18 @@ export default {
       transitionDuration: { fast: 'var(--dur-fast)', base: 'var(--dur-base)', slow: 'var(--dur-slow)', stage: 'var(--dur-stage)' },
       transitionTimingFunction: { DEFAULT: 'var(--ease)' },
       boxShadow: { sm: 'var(--shadow-sm)', md: 'var(--shadow-md)', lg: 'var(--shadow-lg)' },
+      // Schichtungs-Skala (C3, 5.9.2026) — Rollen statt roher Zahlen, Werte
+      // unverändert aus dem Bestand migriert (Herleitung + Reihenfolge in
+      // src/index.css bei --z-base). `extend` lässt Tailwinds Default-Skala
+      // (z-0/10/20/…) technisch weiter zu — Prüfung 5 in
+      // check-design-tokens.ts verbietet ihre NEUE Verwendung im Quellbaum.
+      zIndex: {
+        base: 'var(--z-base)', sticky: 'var(--z-sticky)',
+        'entscheid-sticky': 'var(--z-entscheid-sticky)',
+        'reader-scrim': 'var(--z-reader-scrim)', 'reader-kopf': 'var(--z-reader-kopf)',
+        'inhalt-kopf': 'var(--z-inhalt-kopf)', leiste: 'var(--z-leiste)',
+        dropdown: 'var(--z-dropdown)', overlay: 'var(--z-overlay)', modal: 'var(--z-modal)',
+      },
       // `reading` (40rem ≈ 66–71 ch) = die knappe Standard-Lesespalte site-weit
       // (Verdikte, Leden). `normtext` (42rem = 672px) = die etwas grosszügigere
       // Lesespalte NUR des Gesetzes-Readers (E6/A37, David 16.7.2026: «gib dem

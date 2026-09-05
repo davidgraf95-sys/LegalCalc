@@ -102,7 +102,7 @@ export function LeserTrefferBlatt({ liste, onSchliessen }: {
       /* A3-2 (R3-β): Anatomie aus `.lc-schwebeflaeche`. FIX dabei: das Blatt
          stand auf `--paper`, also in der Grundfarbe der Seite — der Schatten
          behauptete eine Ebene, die die Fläche dementierte. */
-      className="lc-schwebeflaeche absolute left-0 top-full z-30 flex max-h-[50dvh] w-72 max-w-full flex-col">
+      className="lc-schwebeflaeche absolute left-0 top-full z-dropdown flex max-h-[50dvh] w-72 max-w-full flex-col">
       <div className="flex items-center justify-between gap-2 border-b border-line px-2 py-1">
         <h2 className="lc-overline">Treffer</h2>
         {/* Der Weg heraus ist BENANNT, nicht zu erraten — und er nimmt nur das

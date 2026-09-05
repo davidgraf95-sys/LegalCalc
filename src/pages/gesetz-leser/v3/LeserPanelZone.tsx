@@ -252,18 +252,18 @@ export function LeserPanelZone({
     : form === 'rechts' && !imPaneBlatt
     // D · rechts angeschlagen, von der Kopf-Unterkante bis zum Fensterboden.
     ? {
-      klassen: 'fixed bottom-0 right-0 z-50 w-[22rem] max-w-[calc(100vw-2rem)] p-2',
+      klassen: 'fixed bottom-0 right-0 z-modal w-[22rem] max-w-[calc(100vw-2rem)] p-2',
       stil: { top: 'var(--nt-stick)' } as CSSProperties,
     }
     : imPaneBlatt
       // Pane · unten angeschlagen in der Overlay-Schicht (die den Pane deckt).
       ? {
-        klassen: 'pointer-events-auto absolute inset-x-0 bottom-0 z-50',
+        klassen: 'pointer-events-auto absolute inset-x-0 bottom-0 z-modal',
         stil: { maxHeight: `${BLATT_ANTEIL}%` } as CSSProperties,
       }
       // H · echtes Bottom-Sheet: unten angeschlagen, gedeckelt, Artikel bleibt oben.
       : {
-        klassen: 'fixed inset-x-0 bottom-0 z-50',
+        klassen: 'fixed inset-x-0 bottom-0 z-modal',
         stil: { maxHeight: `${BLATT_ANTEIL}dvh` } as CSSProperties,
       };
 
@@ -307,7 +307,7 @@ export function LeserPanelZone({
               «angeschlagenes Blatt» steht seither an genau einer Stelle. */}
           {modal && (
             <div data-v3-panel-scrim
-              className={imPaneBlatt ? 'lc-scrim pointer-events-auto absolute inset-0 z-40' : 'lc-scrim fixed inset-0 z-40'}
+              className={imPaneBlatt ? 'lc-scrim pointer-events-auto absolute inset-0 z-overlay' : 'lc-scrim fixed inset-0 z-overlay'}
               onClick={schliesse} aria-hidden />
           )}
           <div

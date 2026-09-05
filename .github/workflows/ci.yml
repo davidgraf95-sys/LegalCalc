@@ -645,9 +645,14 @@ jobs:
       # beweist, dass jede der 8377 Dateien byte-gleich zurückprojiziert wird.
       # Auch dieses Tor lief bis dahin nur in fedlex-frische.yml (Wächter, post
       # merge). Gemessen 15.8.2026 unter CI=1: 3.4 s, kein daten/*.db nötig.
-      - name: Datenhaltungs-Manifest · Byte-Parität DB↔Projektion
+      # check:feed kam 5.9.2026 dazu (QS-VERWENDEN V5b, Nachzug zu H-2/2.9.2026):
+      # bis dahin stand es NUR in der Allowlist von check-tor-paritaet.ts, mit dem
+      # Vermerk, die Verdrahtung sei ein eigener nachgelagerter Schritt. Prüft
+      # `public/feed.xml` gegen den deterministischen Generator (`--check`,
+      # keine Netz-/DB-Abhängigkeit) — dieselbe Fehlerklasse wie das Tor daneben.
+      - name: Datenhaltungs-Manifest · Byte-Parität DB↔Projektion · Feed
         if: needs.diff.outputs.art != 'doku'
-        run: npm run check:datenhaltung && npm run check:paritaet
+        run: npm run check:datenhaltung && npm run check:paritaet && npm run check:feed
       - name: SEO-Index · Verfall-UI
         if: needs.diff.outputs.art != 'doku'
         run: npm run check:seo-index && npm run check:verfall-ui

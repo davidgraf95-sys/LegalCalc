@@ -339,7 +339,11 @@ const Zeile = memo(function Zeile({
           aria-current={istMarke ? 'location' : undefined}
           title={voll}
           aria-label={voll}
-          className={`flex-1 min-w-0 text-left rounded px-1.5 py-0.5 leading-snug transition-colors ${stimme.form} ${tinte} ${istMarke ? '' : 'hover:text-ink-900 lc-hover-flaeche'}`}>
+          // Hover-Stufe (W2·19-DESIGN-KONSISTENZ Runde 8, #692): `.lc-hover-flaeche`
+          // (--well) mass hier nur 1.055:1 auf --paper — kaum sichtbar. Übernommen
+          // statt neu erfunden: dieselbe Stufe wie die Trefferzeilen
+          // (SuchResultate.tsx `hover:bg-brass-100/40`), kein neuer Farbwert.
+          className={`flex-1 min-w-0 text-left rounded px-1.5 py-0.5 leading-snug transition-colors ${stimme.form} ${tinte} ${istMarke ? '' : 'hover:text-ink-900 hover:bg-brass-100/40'}`}>
           {/* line-clamp-2 (§3.3): Labels bis 280 Zeichen sind belegt — ohne
               Klammer wuchs eine einzige Zeile auf sechs und schob den ganzen
               Baum. Der volle Text bleibt über title/aria-label erreichbar.

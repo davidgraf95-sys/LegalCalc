@@ -129,7 +129,10 @@ export function ErbteilungForm() {
 
   const fehler: string[] = [];
   if (!todesdatum) fehler.push('Bitte das Todesdatum angeben (Recht-Schalter, Art. 15/16 SchlT ZGB).');
-  if (!Number.isInteger(kinderLebend) || kinderLebend < 0) fehler.push('Anzahl lebender Kinder: ganze Zahl ≥ 0.');
+  // LM-Fix Finder-6 A1 (5.9.2026): Obergrenze in der Fehlerpruefung nachgezogen — bisher
+  // nur >=0 geprueft, dieselbe Grenze wie die Permalink-Validierung (ET_LINK_SPEC.kinderLebend,
+  // <= 30) fehlte hier. Ohne sie rendert die Tabelle ungeprueft z. B. 5000 Zeilen (§15).
+  if (!Number.isInteger(kinderLebend) || kinderLebend < 0 || kinderLebend > 30) fehler.push('Anzahl lebender Kinder: ganze Zahl zwischen 0 und 30 (realistische Obergrenze).');
   staemme.forEach((s, i) => { if (!Number.isInteger(s.enkel) || s.enkel < 0) fehler.push(`Stamm ${i + 1}: Anzahl Nachkommen als ganze Zahl ≥ 0.`); });
 
   let ergebnis: ErbteilungErgebnis | null = null;
@@ -213,7 +216,7 @@ export function ErbteilungForm() {
                 die erwartete Eingabelänge). Die schmalen Felder der INLINE-Reihen
                 (Zahl + Einheit nebeneinander, `w-24`) bleiben, dort trägt die Breite
                 die Zusammengehörigkeit. */}
-            <input type="number" inputMode="decimal" min={0} step={1} value={kinderLebend} onChange={(e) => setKinderLebend(Number(e.target.value))} className={inputCls} />
+            <input type="number" inputMode="decimal" min={0} max={30} step={1} value={kinderLebend} onChange={(e) => setKinderLebend(Number(e.target.value))} className={inputCls} aria-invalid={!Number.isInteger(kinderLebend) || kinderLebend < 0 || kinderLebend > 30} />
           </Field>
           <Field label="Vorverstorbene Kinder mit Nachkommen (Stämme)" hint="Deren Nachkommen treten nach Stämmen ein (Art. 457 Abs. 3)">
             {/* Der Wrapper-<div> bleibt: `Field` verknüpft nur ein natives

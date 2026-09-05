@@ -344,11 +344,12 @@ export const ArtikelLeser = memo(function ArtikelLeser({ e, erlass, basisPfad, f
       // Scrim-Ersatz (F1b); es wird KEIN anderes Mittel eingesetzt.
       //
       // WAS BLEIBT: `group` (der Aktions-Slot der Kopfzeile hängt mit
-      // `group-hover:opacity-100` daran, s. u.), `relative z-0` (unveränderte
-      // Stapelordnung des Ruhezustands — nur der Hover-Sprung auf z-[5] fällt weg).
+      // `group-hover:opacity-100` daran, s. u.), `relative z-base` (unveränderte
+      // Stapelordnung des Ruhezustands — nur der Hover-Sprung auf z-[5] fällt weg;
+      // `z-base` = C3-Rolle für den Wert 0, s. index.css bei --z-base).
       // §15-Logikverlust: keiner — reine Darstellung (§3), Normtext, Anker, Ctrl+F,
       // Druck und Golden-Ausgaben sind unberührt.
-      className={`nt-art-cv group relative z-0 nt-anker border-t ${istAnhang ? 'border-rule-struktur pt-9 mt-9' : 'border-rule-artikel pt-7 mt-7'} first:border-t-0 first:mt-0 first:pt-0`}>
+      className={`nt-art-cv group relative z-base nt-anker border-t ${istAnhang ? 'border-rule-struktur pt-9 mt-9' : 'border-rule-artikel pt-7 mt-7'} first:border-t-0 first:mt-0 first:pt-0`}>
       {/* Fedlex-Stil (Auftrag David): «Art. N» + Randtitel/Sachüberschrift stehen
           IMMER OBERHALB des Absatztextes (keine seitliche Randspalte mehr), damit
           der Normtext die volle Lesespaltenbreite bekommt. Reine Darstellung (§3). */}

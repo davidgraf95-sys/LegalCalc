@@ -40,7 +40,7 @@ export function SprachUmschalter() {
       </button>
 
       {offen && (
-        <div role="group" aria-label="Sprache wählen" className="lc-schwebeflaeche absolute right-0 top-full mt-1.5 w-56 p-1 z-30">
+        <div role="group" aria-label="Sprache wählen" className="lc-schwebeflaeche absolute right-0 top-full mt-1.5 w-56 p-1 z-dropdown">
           {LOCALES.map((l) => {
             const aktiv = l.code === locale;
             return (

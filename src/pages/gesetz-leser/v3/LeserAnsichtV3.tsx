@@ -4,6 +4,7 @@ import { usePopoverAutoZu } from './usePopoverAutoZu';
 import { kopfGlypheKlassen, kopfGriffKlassen } from './kopfStufen';
 import { setzeOption, useLeserOptionen, type OptFeld } from '../leserOptionen';
 import { LeserScrim } from './LeserScrim';
+import { SchriftgroessenRegler } from '../../../components/ui/SchriftgroessenRegler';
 
 // ─── «Ansicht ▾» der V3-Kopfzeile (FAHRPLAN-LESER-V3 Kap. 4a/4f, H1) ─────────
 //
@@ -210,7 +211,7 @@ export function LeserAnsichtV3({ kompakt, fussnotenAnzahl, hatAenderungsvermerke
           role="group"
           aria-label="Ansicht"
           data-v3-ansicht-panel
-          className="lc-schwebeflaeche absolute right-0 top-full z-40 mt-1.5 flex w-[15rem] max-w-[calc(100vw-2rem)] flex-col gap-0.5 p-1.5"
+          className="lc-schwebeflaeche absolute right-0 top-full z-overlay mt-1.5 flex w-[15rem] max-w-[calc(100vw-2rem)] flex-col gap-0.5 p-1.5"
         >
           {/* Ä114: dasselbe Wort wie am Öffner und im `aria-label` — der
               Glossar-Eintrag «Menü der Darstellungsschalter → Ansicht». */}
@@ -374,17 +375,15 @@ export function LeserAnsichtV3({ kompakt, fussnotenAnzahl, hatAenderungsvermerke
               Screenreader lesbar macht (§8). */}
           <div role="group" aria-label="Grösse nur des Gesetzestexts" className="mt-1 flex items-center justify-between gap-3 border-t border-line px-2.5 pb-0.5 pt-2">
             <span className="text-body-s text-ink-700">Nur Gesetzestext</span>
-            <span className="inline-flex items-center gap-0.5 rounded-md border border-line">
-              <button type="button" onClick={schrift.kleiner} disabled={!schrift.kannKleiner}
-                aria-label="Gesetzestext verkleinern" title="Gesetzestext verkleinern — die Anwendung bleibt gleich gross"
-                data-v3-schrift="kleiner"
-                className="min-h-6 px-2 py-1 text-xs text-ink-600 lc-hover-flaeche disabled:opacity-40">A−</button>
-              <span aria-hidden className="num min-w-[2.6rem] text-center text-micro text-ink-500">{schrift.prozent} %</span>
-              <button type="button" onClick={schrift.groesser} disabled={!schrift.kannGroesser}
-                aria-label="Gesetzestext vergrössern" title="Gesetzestext vergrössern — die Anwendung bleibt gleich gross"
-                data-v3-schrift="groesser"
-                className="min-h-6 px-2 py-1 text-xs text-ink-600 lc-hover-flaeche disabled:opacity-40">A+</button>
-            </span>
+            <SchriftgroessenRegler
+              schrift={schrift}
+              kleinerLabel="Gesetzestext verkleinern"
+              kleinerTitle="Gesetzestext verkleinern — die Anwendung bleibt gleich gross"
+              kleinerAttrs={{ 'data-v3-schrift': 'kleiner' }}
+              groesserLabel="Gesetzestext vergrössern"
+              groesserTitle="Gesetzestext vergrössern — die Anwendung bleibt gleich gross"
+              groesserAttrs={{ 'data-v3-schrift': 'groesser' }}
+            />
           </div>
 
           {/* ── A2 · Der Weg zum Panel, der keine Tastatur braucht ────────────
