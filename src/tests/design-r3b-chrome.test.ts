@@ -41,6 +41,13 @@ const ARTIKELBODY_TS_NUR = readdirSync(join(WURZEL, 'components/normtext'))
   .filter((n) => /^ArtikelBody.*\.ts$/.test(n))
   .map((n) => join(WURZEL, 'components/normtext', n));
 
+// Leer-Treffer-Schutz 5.9.2026 (Gegenprüfung #719, §6.7 lit. b)
+describe('Glob-Wächter', () => {
+  it('Glob findet ArtikelBody-Dateien (.ts ohne x)', () => {
+    expect(ARTIKELBODY_TS_NUR.length).toBeGreaterThan(0);
+  });
+});
+
 /** Roh-Inhalt einer App-Datei, adressiert relativ zu `src/`. */
 function lies(pfad: string): string {
   return liesRoh(join(WURZEL, pfad));

@@ -58,6 +58,11 @@ const WORTLAUT_DATEIEN = [
 const TOKEN_ESCAPE = /text-\[length:var\(--hochgestellt\)\]/g;
 
 describe('S2 · Leser-Typografie-Tokens', () => {
+  // Leer-Treffer-Schutz 5.9.2026 (Gegenprüfung #719, §6.7 lit. b)
+  it('Glob findet ArtikelBody-Dateien', () => {
+    expect(ARTIKELBODY_DATEIEN.length).toBeGreaterThan(0);
+  });
+
   it('die drei Leser-Stufen stehen mit den Werten des Entscheids in tailwind.config.js', () => {
     const cfg = lies('../../tailwind.config.js');
     // V2-Spalte des Fahrplans Kap. 8, mit der EINEN Abweichung beim Marker

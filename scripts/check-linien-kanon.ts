@@ -48,6 +48,12 @@ const ARTIKELBODY_DATEIEN = readdirSync(resolve(wurzel, 'src/components/normtext
   .sort()
   .map((n) => `src/components/normtext/${n}`);
 
+// Leer-Treffer-Schutz 5.9.2026 (Gegenprüfung #719, §6.7 lit. b)
+if (!ARTIKELBODY_DATEIEN.length) {
+  console.error('check:linien-kanon ROT — Glob ArtikelBody.* traf keine Datei (Ordner/Name geändert?)');
+  process.exit(1);
+}
+
 // ─── Teil A · Linien-Kanon (marker-scoped) ───────────────────────────────────
 // QS-TOK/P5: parts.tsx ist ein Barrel — die markierten Struktur-Elemente
 // (data-normtext-linie) leben in den Geschwister-Dateien unter parts/. Alle
