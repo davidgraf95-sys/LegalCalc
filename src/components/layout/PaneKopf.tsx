@@ -1,5 +1,6 @@
 import type { DragEvent, ReactNode } from 'react';
 import { OrtsAngabe, StandAngabe } from './OrtsAngabe';
+import { SchliessKnopf } from '../ui/SchliessKnopf';
 
 // ─── Pane-Kopf (Split-View «Fensterkopf», Auftrag David) ────────────────────
 //
@@ -80,7 +81,28 @@ export interface PaneKopfProps {
   onDragEnd?: (e: DragEvent) => void;
 }
 
-const knopf = 'inline-flex h-7 w-7 items-center justify-center rounded-md text-ink-500 hover:text-brass-700 hover:bg-brass-100/40 disabled:opacity-30 disabled:hover:bg-transparent disabled:hover:text-ink-500 transition-colors';
+// ─── Die Griff-Familie der Titelleiste (R4-A, 5.9.2026) ─────────────────────
+//
+// Der Klassen-String stand bis hierher als EIN Block da und mischte drei Dinge:
+// die BOX (Mass, Umriss), die HOVER-FLÄCHE der Leiste und die FARBE. Genau
+// daran scheiterte die A3-1-Migration der Runde 3: das ✕ dieser Leiste war die
+// achte ✕-Form der App und blieb als «(c) OFFEN (R3-γ)» im Wächter stehen, weil
+// es den Block nicht teilen konnte, ohne die anderen fünf Griffe mitzureissen.
+//
+// GEMESSEN am Preview (5.9.2026, /gesetze/bund/OR?p=/gesetze/bund/ZGB): das ✕
+// trug BEIDE Hover-Töne gleichzeitig — `hover:text-brass-700` aus diesem Block
+// und `hover:text-danger-700` aus dem Anhängsel am Fundort. Welcher malt,
+// entschied nicht die Absicht, sondern die Reihenfolge im erzeugten Stylesheet;
+// gemessen gewann `rgb(122,47,35)` = danger-700. Ein Ton, der aus einer
+// Sortierung folgt statt aus einer Aussage, ist keine Design-Entscheidung.
+// Der Baustein `ui/SchliessKnopf` hat für diese Aussage einen NAMEN —
+// `ton="destruktiv"` — und trägt denselben Wert: die gemalte Farbe bleibt
+// unverändert, sie ist nur nicht mehr zufällig.
+const GRIFF_BOX = 'inline-flex h-7 w-7 items-center justify-center rounded-md transition-colors';
+/** Hover-Fläche der Leiste — B6-Anatomie (28.7.2026), sie gilt für ALLE Griffe
+ *  dieser Zeile und ist darum auch das, was das ✕ als `klasse` mitbekommt. */
+const GRIFF_FLAECHE = 'hover:bg-brass-100/40';
+const knopf = `${GRIFF_BOX} ${GRIFF_FLAECHE} text-ink-500 hover:text-brass-700 disabled:opacity-30 disabled:hover:bg-transparent disabled:hover:text-ink-500`;
 
 export function PaneKopf({ icon, label, stand, breadcrumb, onBreadcrumb, artikel, rolle, onSchliessen, onHauptfenster, onTeilen, onLinks, onRechts, kannLinks, kannRechts, nurSteuerung, ziehbar, onDragStart, onDragEnd }: PaneKopfProps) {
   // A-2: eine Zeile, ein Zuständiger. Trägt die Seite ihre Kopfzeile selbst,
@@ -106,7 +128,7 @@ export function PaneKopf({ icon, label, stand, breadcrumb, onBreadcrumb, artikel
             onDragEnd={onDragEnd}
             aria-hidden
             title="Zum Verschieben ziehen"
-            className="shrink-0 cursor-grab active:cursor-grabbing select-none px-0.5 text-ink-400 hover:text-brass-600"
+            className="lc-griff-glyph shrink-0 cursor-grab active:cursor-grabbing select-none px-0.5 text-ink-400 hover:text-brass-600"
           >⠿</span>
         )}
         {zeigeIdentitaet && icon && <span className="shrink-0">{icon}</span>}
@@ -138,29 +160,36 @@ export function PaneKopf({ icon, label, stand, breadcrumb, onBreadcrumb, artikel
       <div className="flex items-center">
         {onLinks && (
           <button type="button" className={knopf} disabled={!kannLinks} onClick={onLinks} aria-label={`«${label}» nach links`}>
-            <span aria-hidden className="text-body-s leading-none">◂</span>
+            <span aria-hidden className="lc-griff-glyph">◂</span>
           </button>
         )}
         {onRechts && (
           <button type="button" className={knopf} disabled={!kannRechts} onClick={onRechts} aria-label={`«${label}» nach rechts`}>
-            <span aria-hidden className="text-body-s leading-none">▸</span>
+            <span aria-hidden className="lc-griff-glyph">▸</span>
           </button>
         )}
         {onHauptfenster && (
           <button type="button" className={knopf} onClick={onHauptfenster} aria-label={`«${label}» zum Hauptfenster machen`} title="Zum Hauptfenster machen">
-            <span aria-hidden className="text-body-s leading-none">⇱</span>
+            <span aria-hidden className="lc-griff-glyph">⇱</span>
           </button>
         )}
         {onTeilen && (
           <button type="button" className={knopf} onClick={onTeilen} aria-label="Layout-Link kopieren" title="Layout-Link kopieren">
-            <span aria-hidden className="text-base leading-none">⧉</span>
+            <span aria-hidden className="lc-griff-glyph">⧉</span>
           </button>
         )}
-        <button type="button" className={`${knopf} hover:text-danger-700`} onClick={onSchliessen}
-          aria-label={rolle === 'primaer' ? 'Hauptfenster schliessen' : `«${label}» schliessen`}
-          title={rolle === 'primaer' ? 'Hauptfenster schliessen' : 'Schliessen'}>
-          <span aria-hidden className="text-body-s leading-none">✕</span>
-        </button>
+        {/* A3-1/R4-A: die achte ✕-Form ist eingesammelt. Der Klick wirft ein
+            offenes Fenster samt Leseposition weg — dieselbe Handlung wie das
+            Schliessen eines Reiters, darum derselbe deklarierte Ton. `title`
+            trägt jetzt den vollen Namen: «Schliessen» allein sagte im
+            sekundären Pane nicht, WELCHES Fenster zugeht (§8, Baustein-Kanon).
+            `komfort={false}`: 44 px lägen hier über dem ⧉- und ▸-Nachbarn
+            derselben Griff-Zeile und nähmen ihnen die Klicks — dieselbe
+            begründete Ausnahme wie in der Reiter-Liste; die AA-Untergrenze
+            (24 px) hält die Grundklasse, die sichtbare Box bleibt 28 px. */}
+        <SchliessKnopf ton="destruktiv" komfort={false}
+          name={rolle === 'primaer' ? 'Hauptfenster schliessen' : `«${label}» schliessen`}
+          onClick={onSchliessen} klasse={`h-7 w-7 ${GRIFF_FLAECHE}`} />
       </div>
     </div>
   );

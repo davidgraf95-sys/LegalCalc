@@ -116,7 +116,7 @@ export function VerlaufUebersicht() {
                     <button
                       type="button"
                       onClick={() => { navigate(e.route); setPanelOffen(false); }}
-                      className="flex w-full items-center gap-2.5 rounded px-2 py-1.5 text-left text-body-s text-ink-700 transition-colors hover:bg-paper-sunken/60 hover:text-brass-700"
+                      className="flex w-full items-center gap-2.5 rounded px-2 py-1.5 text-left text-body-s text-ink-700 transition-colors lc-hover-flaeche hover:text-brass-700"
                     >
                       <VerlaufIcon typ={e.typ} className="shrink-0 text-ink-500" />
                       <span className="min-w-0 flex-1 truncate">{e.titel}</span>
@@ -130,10 +130,19 @@ export function VerlaufUebersicht() {
           <div className="mt-1 flex items-center justify-between gap-2 border-t border-line pt-1.5">
             {/* §8: Ehrlichkeit — der Verlauf ist rein lokal. */}
             <span className="px-2 text-micro leading-snug text-ink-500">Nur auf diesem Gerät</span>
+            {/* LM-088 (W2·17-UI-BEFUNDE B17, 4.9.2026): stand als reiner Text
+                ohne Fläche und ohne Rahmen da (gemessen 105×29, border 0) und
+                war damit nicht als Aktion erkennbar. Der Zwilling im
+                Reiter-Panel («Alle schliessen», ReiterUebersicht) trägt seit
+                seinem eigenen Befund `lc-btn-outline lc-btn-sm` — dieselbe
+                Handlungsklasse («diese Liste leeren») bekommt dieselbe Form
+                (§5/§10). Nebenbei behoben: der bisherige Hover
+                `hover:bg-paper-sunken/60` erzeugte gar keine CSS-Regel
+                (Deckkraft-Suffix auf opakem Hex-Token, DESIGN-D0). */}
             <button
               type="button"
               onClick={() => { leereZuletzt(); setPanelOffen(false); }}
-              className="shrink-0 rounded px-2 py-1 text-body-s text-ink-600 transition-colors hover:bg-paper-sunken/60 hover:text-brass-700"
+              className="lc-btn-outline lc-btn-sm shrink-0"
             >
               Verlauf leeren
             </button>

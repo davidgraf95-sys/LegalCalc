@@ -133,7 +133,7 @@ export function Topbar({ onMenu, schubladeOffen, seitenleisteEingeklappt, onSeit
             </button>
             {/* Live-Wertansage des aktuellen Prozentwerts (WCAG 4.1.3), tabular für
                 ruckelfreie Breite; w-12 hält die Breite stabil (Token, keine px). */}
-            <span aria-live="polite" className="w-12 select-none text-center text-micro tabular-nums text-ink-500">{schrift.prozent} %</span>
+            <span aria-live="polite" className="w-12 select-none text-center text-micro lc-ziffern text-ink-500">{schrift.prozent} %</span>
             <button
               type="button"
               aria-label="Ganze Seite vergrössern"

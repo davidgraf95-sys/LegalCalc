@@ -121,8 +121,9 @@ export function LeserKopfGeruest({
   nachTitel?: ReactNode;
   /** Band 3 — nüchterne Identitäts-Angaben, «·»-gefügt. */
   fakten?: ReactNode[];
-  /** Band 4a — Stand/Geltung, «·»-gefügt. `tabular-nums` sitzt an der ZEILE,
-   *  damit sie auch Daten trifft, die als fertiger String hereinkommen. */
+  /** Band 4a — Stand/Geltung, «·»-gefügt. Der Ziffernsatz sitzt an der ZEILE,
+   *  damit er auch Daten trifft, die als fertiger String hereinkommen.
+   *  R6-B (5.9.2026): als `.lc-ziffern` statt roher `tabular-nums`-Utility. */
   stand?: ReactNode[];
   /**
    * §15.2 — reservierte Höhe für Band 4. NUR dort setzen, wo die Zeilen NACH
@@ -155,7 +156,7 @@ export function LeserKopfGeruest({
       {(stand.length > 0 || ehrlichkeit) && (
         <div className={`${standReserve ? 'min-h-kopf-stand sm:min-h-kopf-stand-sm md:min-h-kopf-stand-md ' : ''}space-y-1`}>
           {stand.length > 0 && (
-            <p className="text-xs leading-snug tabular-nums text-ink-500"><Segmente teile={stand} /></p>
+            <p className="text-xs leading-snug lc-ziffern text-ink-500"><Segmente teile={stand} /></p>
           )}
           {ehrlichkeit}
         </div>

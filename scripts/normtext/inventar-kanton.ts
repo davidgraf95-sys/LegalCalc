@@ -156,6 +156,43 @@ function pdfProfil(kanton: string, url: string): PdfProfilName | null {
 /** /app/(de|fr)/texts_of_law/<lawId> — Host + Sprache + lawId. */
 const LEXWORK = /^https:\/\/([^/]+)\/app\/(de|fr)\/texts_of_law\/(.+)$/;
 
+/**
+ * Kanonische Schreibweise einer LexWork-lawId (§5 eine Wahrheit, §7 amtliche
+ * Nummer). Rein.
+ *
+ * Die amtliche Systematiknummer ist EIN Pfadsegment — sie darf selbst
+ * Schrägstriche tragen (GL «GS III B/7/1»). In der quelleUrl kann derselbe
+ * Erlass darum in zwei Schreibweisen stehen, und gesetze.gl.ch beantwortet
+ * beide mit HTTP 200 (empirisch 5.9.2026):
+ *   …/texts_of_law/III%20B%2F7%2F1   (Nummer als EIN kodiertes Segment)
+ *   …/texts_of_law/III%20B/7/1       (Schrägstriche roh)
+ * Ungefiltert erzeugt das zwei Gruppen, zwei Snapshots und zwei Register-Keys
+ * für einen Erlass: der Schlüssel entsteht aus `lawIdSafe` («/»→«_»), also
+ * `GL-III%20B_7_1` NEBEN `GL-III%20B%2F7%2F1` — dieselbe Verordnung zweimal in
+ * Register, Sitemap und Kantonsliste (§5-Doppelwahrheit; Befund der
+ * Gegenprüfung zu PR #684, 5.9.2026).
+ *
+ * Kanonisch ist die vollständig kodierte Form. Begründung: nur sie dekodiert
+ * verlustfrei auf die amtliche Nummer «III B/7/1» zurück (der `_`-Ersatz in
+ * `lawIdSafe` ist von einem echten Unterstrich nicht mehr unterscheidbar), nur
+ * sie adressiert die Nummer als das eine Pfadsegment, das sie ist, und sie
+ * deckt sich mit der Schreibweise des Schwester-Erlasses
+ * `GL-III%20B%2F3%2F2` wie auch der Mehrheit der Tarif-Zitate.
+ */
+export function kanonischeLawId(lawId: string): string {
+  return lawId.replace(/\//g, '%2F');
+}
+
+/** Dekodierte Identität einer lawId — zwei Schreibweisen derselben amtlichen
+ *  Nummer fallen hier zusammen («III%20B/7/1» und «III%20B%2F7%2F1» → «III B/7/1»). */
+function lawIdIdentitaet(lawId: string): string {
+  try {
+    return decodeURIComponent(kanonischeLawId(lawId));
+  } catch {
+    return kanonischeLawId(lawId);
+  }
+}
+
 /** Strukturiert erschlossene HTML/HTM-Erlassquellen, je Profil:
  *   NE: rsn.ne.ch …/htm/*.htm        (Word-Export, latin-1)
  *   GE: silgeneve.ch …/*.htm         (Word-Export, latin-1)
@@ -248,7 +285,12 @@ export function sammleKantonInventar(): KantonInventarGruppe[] {
     // in den Tarif-Daten trägt das www. korrekt; daran halten wir uns.
     const host = m[1];
     const lang = m[2] as 'de' | 'fr';
-    const lawId = m[3];
+    // §5: die Systematiknummer wird auf ihre kanonische Schreibweise gebracht,
+    // BEVOR gruppiert wird — sonst spaltet eine zweite Schreibweise denselben
+    // Erlass in zwei Gruppen (→ zwei Register-Keys, s. kanonischeLawId).
+    const lawId = kanonischeLawId(m[3]);
+    const quelleUrl =
+      lawId === m[3] ? e.quelleUrl : `https://${host}/app/${lang}/texts_of_law/${lawId}`;
 
     const passus = parsePassus(e.artikel);
     if (!passus) continue; // kein Artikel-Token extrahierbar
@@ -263,7 +305,7 @@ export function sammleKantonInventar(): KantonInventarGruppe[] {
         lawId,
         erlassName: e.erlassName,
         erlassNr: e.erlassNr,
-        quelleUrl: e.quelleUrl,
+        quelleUrl,
         artikel: [],
       };
       gruppen.set(schluessel, gruppe);
@@ -280,7 +322,33 @@ export function sammleKantonInventar(): KantonInventarGruppe[] {
 
   // Leere Gruppen können nicht entstehen (jede Gruppe wird mit mind. einem
   // Token erzeugt); zur Sicherheit dennoch filtern.
-  return [...gruppen.values()].filter((g) => g.artikel.length > 0);
+  const fertig = [...gruppen.values()].filter((g) => g.artikel.length > 0);
+
+  // §5-Netz: `kanonischeLawId` fängt die Schrägstrich-Achse. Bleiben zwei
+  // Gruppen mit derselben dekodierten Nummer übrig (etwa rohes Leerzeichen
+  // gegen «%20»), ist das erneut ein Erlass mit zwei Schlüsseln — dann bricht
+  // der Generator ab, statt still eine Dublette in den Korpus zu schreiben.
+  const nachIdentitaet = new Map<string, KantonInventarGruppe[]>();
+  for (const g of fertig) {
+    const id = `${g.kanton}|${g.host}|${g.lang}|${lawIdIdentitaet(g.lawId)}`;
+    const liste = nachIdentitaet.get(id);
+    if (liste) liste.push(g);
+    else nachIdentitaet.set(id, [g]);
+  }
+  const kollisionen = [...nachIdentitaet.entries()].filter(([, v]) => v.length > 1);
+  if (kollisionen.length > 0) {
+    const text = kollisionen
+      .map(([id, v]) => `  ${id} ← ${v.map((g) => JSON.stringify(g.lawId)).join(' , ')}`)
+      .join('\n');
+    throw new Error(
+      'BLOCKED: dieselbe amtliche Systematiknummer steht in den Tarif-Daten in ' +
+        `mehreren Schreibweisen — das erzeugt zwei Snapshot-Schlüssel für einen Erlass (§5).\n${text}\n` +
+        'Fix: die quelleUrl in src/data/tarif/*.ts auf EINE Schreibweise bringen ' +
+        '(kanonisch: Systematiknummer als ein prozent-kodiertes Pfadsegment).',
+    );
+  }
+
+  return fertig;
 }
 
 /**

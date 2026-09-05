@@ -151,7 +151,7 @@ export function KantonAuswahl({ gruppen, alleKantone, onWaehle, ansicht, onAnsic
             <div className="flex flex-wrap items-center gap-1.5">
               {([['alpha', 'Alphabet'], ['anzahl', 'Erlass-Zahl'], ['erfassung', 'Erfassungsgrad'], ['region', 'Region']] as const).map(([id, label]) => (
                 <button key={id} type="button" onClick={() => setSortierung(id)} aria-pressed={sortierung === id}
-                  className={`rounded px-2.5 py-0.5 text-body-s font-medium transition-colors ${sortierung === id ? 'bg-brass-100 text-brass-800' : 'text-ink-500 hover:bg-paper-sunken hover:text-brass-700'}`}>
+                  className={`rounded px-2.5 py-0.5 text-body-s font-medium transition-colors ${sortierung === id ? 'bg-brass-100 text-brass-800' : 'text-ink-500 lc-hover-flaeche hover:text-brass-700'}`}>
                   {label}
                 </button>
               ))}

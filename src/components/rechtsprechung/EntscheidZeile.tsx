@@ -25,13 +25,13 @@ export function EntscheidZeile({ e, onNorm }: {
     : `/rechtsprechung/${encodeURIComponent(e.key)}`;
   const bezeichnung = verweis ? `Vollständiges Urteil zu BGE ${verweis.bgeReferenz}` : themaText(e);
   return (
-    <div className="group relative flex items-stretch gap-3 px-4 py-3 hover:bg-well transition-colors">
+    <div className="group relative flex items-stretch gap-3 px-4 py-3 lc-hover-flaeche">
       {/* Overlay-Link über der ganzen Zeile (Navigation); Name = Bezeichnung. */}
       <Link to={ziel} aria-label={bezeichnung} className="absolute inset-0 no-underline" />
 
       {/* Ganz links — Entscheiddatum (feste Spalte, scanbare Kante). Platzhalter
           datumsloser Entscheide NIE als echtes Datum (§8/BS §7.2): «JJJJ, o. D.». */}
-      <span className="num w-[5.25rem] shrink-0 pt-0.5 text-xs text-ink-500 tabular-nums"
+      <span className="num w-[5.25rem] shrink-0 pt-0.5 text-xs text-ink-500"
         title={e.datumUnbekannt ? DATUM_UNBEKANNT_TITEL : undefined}>
         {datumAnzeige(e.datum, e.datumUnbekannt)}
       </span>

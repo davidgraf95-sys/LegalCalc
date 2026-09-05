@@ -120,24 +120,40 @@ export function TabPanel({ tabs, manifeste, aktivSchluessel, onNavigate, onSchli
         </button>
         {/* ▲/▼ — Umsortieren per Tastatur/Touch (Alternative zu Drag&Drop, a11y).
             Bewegt den Reiter an die Position des Nachbarn IN DERSELBEN Gruppe. */}
+        {/* LM-090 (W2·17-UI-BEFUNDE B10, 4.9.2026). Die GRÖSSEN-Hälfte des
+            Befunds ist widerlegt: die «rund 14 px» sind die Glyphengrösse, die
+            Zielflächen messen nachgemessen 24×28 (▲▼⧉) und 28×28 (✕) — über
+            der AA-Untergrenze (WCAG 2.5.8, 24 px). Das Komfortmass 44 px ist
+            für DIESE Zeile datiert verworfen (SchliessKnopf `komfort={false}`,
+            A3-1): das Pseudo-Element läge über den Nachbarknöpfen und den
+            Zeilen darüber/darunter und nähme denen die Klicks.
+            REPRODUZIERT war die BESCHRIFTUNGS-Hälfte, aber nur halb: die drei
+            Sortier-/Öffnen-Knöpfe trugen ein sprechendes `aria-label` und
+            damit KEIN `title` — am Zeiger blieben sie stumm, während das ✕
+            daneben (via `SchliessKnopf`) seit je beides führt. Sie bekommen
+            denselben Namen als `title`; eine sichtbare Textbeschriftung
+            scheidet in einer 28-px-Zeile aus. */}
         <button type="button" disabled={!vorher}
           onClick={() => vorher && ordneTabsUm(t.path, vorher.path)}
           aria-label={`Reiter «${name}» nach oben`}
+          title={`Reiter «${name}» nach oben`}
           className="inline-flex items-center justify-center w-6 h-7 shrink-0 rounded text-ink-500 hover:text-brass-700 disabled:opacity-30 disabled:hover:text-ink-500 transition-colors">
-          <span aria-hidden className="text-micro leading-none">▲</span>
+          <span aria-hidden className="lc-griff-glyph">▲</span>
         </button>
         <button type="button" disabled={!nachher}
           onClick={() => nachher && ordneTabsUm(t.path, nachher.path)}
           aria-label={`Reiter «${name}» nach unten`}
+          title={`Reiter «${name}» nach unten`}
           className="inline-flex items-center justify-center w-6 h-7 shrink-0 rounded text-ink-500 hover:text-brass-700 disabled:opacity-30 disabled:hover:text-ink-500 transition-colors">
-          <span aria-hidden className="text-micro leading-none">▼</span>
+          <span aria-hidden className="lc-griff-glyph">▼</span>
         </button>
         {/* ⧉ — nebeneinander öffnen (Split-View): nur ab lg + freier Kapazität. */}
         {onDaneben && !paneOffen?.(t.path) && (
           <button type="button" onClick={() => onDaneben(t.path)}
             aria-label={`Reiter «${name}» nebeneinander öffnen`}
+            title={`Reiter «${name}» nebeneinander öffnen`}
             className="hidden lg:inline-flex items-center justify-center w-6 h-7 shrink-0 rounded text-ink-500 hover:text-brass-700 transition-colors">
-            <span aria-hidden className="text-body-s leading-none">⧉</span>
+            <span aria-hidden className="lc-griff-glyph">⧉</span>
           </button>
         )}
         {/* A3-1 (R3-β): EIN Schliess-✕ der App. Der danger-Hover ist keine
@@ -158,7 +174,7 @@ export function TabPanel({ tabs, manifeste, aktivSchluessel, onNavigate, onSchli
   // Klappbarer Gruppen-/Untergruppen-Kopf.
   const kopf = (id: string, label: string, anzahl: number, tief: boolean) => (
     <button type="button" onClick={() => toggle(id)} aria-expanded={offen(id)}
-      className={`flex w-full items-center gap-1.5 rounded px-1.5 py-1 text-left transition-colors hover:bg-paper-sunken/60 ${tief ? 'text-xs pl-3' : 'lc-overline'}`}>
+      className={`flex w-full items-center gap-1.5 rounded px-1.5 py-1 text-left transition-colors lc-hover-flaeche ${tief ? 'text-xs pl-3' : 'lc-overline'}`}>
       <span aria-hidden className={`text-micro text-ink-400 transition-transform ${offen(id) ? '' : '-rotate-90'}`}>▾</span>
       <span className="flex-1 truncate">{label}</span>
       <span className="num text-micro text-ink-400">{anzahl}</span>
