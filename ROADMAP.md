@@ -441,6 +441,16 @@ zgb-a36-anhang: Die ZGB-Gliederung zeigt 74 Artikel des Anhangs «Wortlaut der f
   (Mandat David 31.8.2026, Befunde direkt umsetzen).
   **Detail:** [FAHRPLAN-DESIGN-KONSISTENZ.md](fahrplaene/FAHRPLAN-DESIGN-KONSISTENZ.md) §1.
 
+- [~] **Startseite V4 «Werkbank»: Einstieg mit Gesetzes-Schwerpunkt, persönliche Begrüssung, Kopf- und Seitenleiste** *(`W2·23-STARTSEITE-V4`, Auftrag David 5.9.2026)*
+  <!-- @meta id: W2·23-STARTSEITE-V4 · status: wip · blocker: null · dep: [] · feld: design · fahrplan: fahrplaene/FAHRPLAN-STARTSEITE-V4.md -->
+  Die Startseite erklärt auf dem ersten Bildschirm «Schweizer Recht an einem Ort» (Gesetze
+  Bund + Kantone, Entscheide, Materialien — verzahnt), begrüsst persönlich (Tageszeit-Pool,
+  Wunsch David), macht Norm · Entscheid · Frist mit einem Zug erreichbar; Schnellrechner
+  schrumpft auf eine Zeile, News wird ehrlich «Jüngste Entscheide im Korpus» mit Korpus-Stand;
+  Topbar auf «/» ohne Zweitsuche, Schriftregler nach `/einstellungen`, Seitenleiste mit
+  Korpus-Stand. Council-Schalter V3 durch David geöffnet (Chat 5.9.2026). Grenzen §1/§3/§8.
+  **Detail:** [FAHRPLAN-STARTSEITE-V4.md](fahrplaene/FAHRPLAN-STARTSEITE-V4.md) §1.
+
 - [ ] **Design-Identität: eigene Farb- und Schrift-Handschrift** *(`W2·24-DESIGN-IDENTITAET`, David 5.9.2026)*
   <!-- @meta id: W2·24-DESIGN-IDENTITAET · status: ready · blocker: null · dep: [] · feld: design · fahrplan: fahrplaene/FAHRPLAN-DESIGN-IDENTITAET.md -->
   Weg von Creme+Gold, Versal-Etiketten und weichen Karten (Verwechselbarkeit mit legaldeadline.ch):
