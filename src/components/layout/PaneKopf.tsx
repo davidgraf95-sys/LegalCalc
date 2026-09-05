@@ -128,7 +128,7 @@ export function PaneKopf({ icon, label, stand, breadcrumb, onBreadcrumb, artikel
             onDragEnd={onDragEnd}
             aria-hidden
             title="Zum Verschieben ziehen"
-            className="shrink-0 cursor-grab active:cursor-grabbing select-none px-0.5 text-ink-400 hover:text-brass-600"
+            className="lc-griff-glyph shrink-0 cursor-grab active:cursor-grabbing select-none px-0.5 text-ink-400 hover:text-brass-600"
           >⠿</span>
         )}
         {zeigeIdentitaet && icon && <span className="shrink-0">{icon}</span>}
@@ -160,22 +160,22 @@ export function PaneKopf({ icon, label, stand, breadcrumb, onBreadcrumb, artikel
       <div className="flex items-center">
         {onLinks && (
           <button type="button" className={knopf} disabled={!kannLinks} onClick={onLinks} aria-label={`«${label}» nach links`}>
-            <span aria-hidden className="text-body-s leading-none">◂</span>
+            <span aria-hidden className="lc-griff-glyph">◂</span>
           </button>
         )}
         {onRechts && (
           <button type="button" className={knopf} disabled={!kannRechts} onClick={onRechts} aria-label={`«${label}» nach rechts`}>
-            <span aria-hidden className="text-body-s leading-none">▸</span>
+            <span aria-hidden className="lc-griff-glyph">▸</span>
           </button>
         )}
         {onHauptfenster && (
           <button type="button" className={knopf} onClick={onHauptfenster} aria-label={`«${label}» zum Hauptfenster machen`} title="Zum Hauptfenster machen">
-            <span aria-hidden className="text-body-s leading-none">⇱</span>
+            <span aria-hidden className="lc-griff-glyph">⇱</span>
           </button>
         )}
         {onTeilen && (
           <button type="button" className={knopf} onClick={onTeilen} aria-label="Layout-Link kopieren" title="Layout-Link kopieren">
-            <span aria-hidden className="text-base leading-none">⧉</span>
+            <span aria-hidden className="lc-griff-glyph">⧉</span>
           </button>
         )}
         {/* A3-1/R4-A: die achte ✕-Form ist eingesammelt. Der Klick wirft ein

@@ -42,7 +42,7 @@ export function ArtikelSprungFeld({ loese, onSprung }: {
           className="lc-input h-9 min-w-0 flex-1 px-2 py-0 text-body-s" />
         <button type="submit" aria-label="Zum Artikel springen" title="Zum Artikel springen"
           className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-md border border-line text-ink-600 hover:border-brass-300 hover:text-brass-700 transition-colors">
-          <span aria-hidden className="text-base leading-none">→</span>
+          <span aria-hidden className="lc-griff-glyph">→</span>
         </button>
         {/* Hinweis-Slot AUSSERHALB des Flusses (absolute): der Fehlschlag darf
             weder das Gliederungs-Sichtfenster des TOC-Kopfs verkleinern noch die

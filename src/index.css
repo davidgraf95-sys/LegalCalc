@@ -1825,6 +1825,32 @@
      nicht zusammenziehen). Beide teilen also die GESTALT, nicht die Handlung;
      ein Klassenname, der die Handlung nennt, wäre der Grund gewesen, die
      Gestalt ein zweites Mal hinzuschreiben. */
+  /* R7-A (5.9.2026): der Baustein gilt ab jetzt ALLEN freistehenden
+     Steuerungs-Glyphen, nicht nur ✕ und «leeren». R6-C hatte den Kanon nur für
+     das ✕ gestellt; die halbe Deklaration (Grösse gepinnt, Schnitt frei) stand
+     unverändert an achtzehn weiteren Glyph-Spans.
+     GEMESSEN am Preview (1600×900, echte Split-Paare `?p=%2F…` nach R6-M) in
+     EINER Zeile, der Pane-Titelleiste von `/gesetze/bund/OR?p=%2Frechtsprechung`:
+     `◂` 14 px/Tinte 6.45 · `▸` 14 px/6.45 · `⇱` 14 px/8.44 · `⧉` 16 px/12.73 ·
+     `✕` 16 px/12.20 — fünf Griffe DERSELBEN 28-px-Zeile in ZWEI Grössen, weil
+     jeder Span seine Grösse selbst hinschrieb. App-weit: 99 freistehende
+     Steuerungs-Glyphen in VIER Grössen (11/14/16/20 px).
+     KANON 16 px = die Mehrheit (72 von 99: ⧉ ×44, ✕ ×14, ◐ ×14) und der schon
+     deklarierte Wert dieses Bausteins.
+     FREISTEHEND heisst: die Glyphe IST das ganze Bedienelement. Wo sie neben
+     einem WORT steht, folgt sie dem Type ihres Wortes und bleibt unangetastet
+     (`RegestePopover` «⧉ Daneben öffnen», `A−`/`A+` der Topbar, der ▾ des
+     Sprach-Umschalters, die Pfeile in Treffer-Zeilen) — dieselbe Trennung, die
+     R6-C für die beschrifteten ✕ gezogen hat.
+     Die BOX bleibt der Zeile (Baustein-Vertrag seit R3-β): 28 px in der
+     Pane-Titelleiste, 24 px in der Reiter-Liste, 44 px in Finger-Zonen.
+     NICHT ANGETASTET, mit Grund: (a) `☰` steht in zwei Anatomien (Topbar gegen
+     Leser-Griff) — anders als beim ✕ sind das ZWEI Leisten mit je eigener
+     dokumentierter Anatomie (B6), die Frage «soll dieselbe Glyphe in zwei
+     Leisten verschieden aussehen?» ist ein offener ENTSCHEID DAVIDS, kein
+     Defekt nach heutiger Regel; (b) die Kopf-Griffe des Lesers (`⚖ · ☰ · ···`)
+     holen ihre Gestalt aus `kopfGlypheKlassen()` (kopfStufen.ts) — EINE
+     benannte Stelle, also gerade keine halbe Deklaration. */
   .lc-griff-glyph {
     font-family: var(--font-sans), system-ui, sans-serif;
     font-size: 1rem; line-height: 1;

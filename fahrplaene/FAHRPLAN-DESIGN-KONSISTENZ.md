@@ -315,6 +315,75 @@ Bestätigung und Dry (zwei Runden ohne Neufund) mit Runde 8 erreicht. Die Sonde
 selbst ist ab Runde 6 belastbar: sie misst am Glyphen-/Textknoten statt am
 Knopf und öffnet echte Split-Views (`?p=%2F…`).
 
+**Runde 7 — GEBAUT (5.9.2026, Paket R7-A + ein deklarierter Test-Schritt).**
+Arbeitsvorrat war die Runde-7-Liste. R6-N1 wurde vor dem Anfassen am Preview
+reproduziert; der eigene Wurzel-Sweep fand zum VIERTEN Mal mehr als die Liste
+(**+14 Fundstellen** über die fünf gemeldeten Griffe hinaus).
+
+| Nr | Befund (Kurz) | Messung | Ergebnis |
+|---|---|---|---|
+| R7-A | R6-N1: fünf Griffe derselben Pane-Titelleiste in zwei Grössen | REPRODUZIERT am Preview (1600×900, echtes Split-Paar `?p=%2Frechtsprechung`, PaneKöpfe 2) in EINER Zeile von `/gesetze/bund/OR`: `◂` 14 px/Tinte 6.45 · `▸` 14 px/6.45 · `⇱` 14 px/8.44 · `⧉` **16 px**/12.73 · `✕` **16 px**/12.20. Der App-Sweep über vierzehn Flächen zeigt die Streuung dahinter: **99 freistehende Steuerungs-Glyphen in VIER Grössen** (11/14/16/20 px) | WURZEL: dieselbe halbe Deklaration wie R4-C/R5-B (Ziffernsatz) und R6-A (✕) — der Span pinnt die GRÖSSE (`text-base`/`text-body-s`/`text-micro` + `leading-none`) und lässt die FAMILIE erben. R6-C hatte den Kanon nur für das ✕ gestellt; an **18 weiteren** Glyph-Spans stand er unverändert. **19 Spans in 11 Dateien** auf `.lc-griff-glyph` migriert (Kanon 16 px = Mehrheit 72/99). Die BOX bleibt der Zeile (Baustein-Vertrag seit R3-β) — 28 px Titelleiste, 24 px Reiter-Liste, 44 px Finger-Zonen, nachher unverändert gemessen. ABGRENZUNG wie bei R6-C: FREISTEHEND heisst, die Glyphe IST das ganze Bedienelement; neben einem WORT folgt sie dem Type ihres Wortes und bleibt unangetastet (`RegestePopover` «⧉ Daneben öffnen», `A−`/`A+`, Sprach-▾, Treffer-Pfeile, ErwaegungsRail-▾). BEWEIS nachher: die Titelleiste trägt `⠿ ◂ ▸ ⇱ ⧉ ✕` in EINEM Wert (16 px · Geist Variable); app-weit bleiben genau ZWEI Nicht-16-px-Anatomien, `☰` und `⚖` — exakt die zwei deklarierten Ausnahmen. Interaktions-verdeckte Flächen mitgemessen (Reiter-Panel `▲ ▼` 11 → 16 px sichtgeprüft, NormPopover `⧉` ×22). NEBENWIRKUNG deklariert: der `⠿`-Ziehgriff derselben Zeile erbte seine Typo GANZ und bekommt sie explizit — Grösse/Schnitt gemessen gleich, nur die Zeilenbox 26 → 16 px (Tinten-Mitte 83 → 82) |
+| R4-C | Streich-Entscheid, den Runde 6 nicht erben wollte | MUTATIONS-BEWEIS statt Behauptung, zwei Läufe am echten Quelltext: (1) `num tabular-nums` in `verzahnung/KanteMitVorschau.tsx` → **beide rot** (R4-C UND R5-B); (2) derselbe Konflikt in die EINZIGE R5-B-Ausnahme `vorlagen/vorschauStil.ts` → **beide grün**, denn die Ausnahme ist eine `.ts` und `alleTsx()` liest sie gar nicht. Es gibt also **keine Lücke, in der R4-C allein anschlüge** | BEFUND: von R5-B vollständig überdeckt, also redundant — aber **nicht tot** (§6.7): unter (1) wird die Sonde nachweislich rot. ENTSCHEID: **BEHALTEN**. Das §17-Gegengewicht lässt den Rückbau gewinnen, «ausser die Stelle hat einen datierten Vorfall verhindert» — und das ist hier der Fall (16 Fundstellen in 11 Dateien, der Kernbefund dieses Fahrplans). Rest-Nutzen ist die DIAGNOSE: R5-B meldet «irgendwo roher Ziffernsatz», R4-C benennt den teuren Sonderfall. Herleitung samt beider Mutationen steht am Fundort, damit eine künftige Runde neu MISST statt den Kommentar zu erben |
+
+**Deklarierte Test-Anpassung (§6.3, ein eigener `test(design):`-Commit).** Kein
+Bestands-Test wurde «passend gemacht». Der ✕-Wächter aus R6-C bleibt **wörtlich
+stehen**; daneben tritt der R7-A-Wächter, der dieselbe Frage an die SACHE stellt
+(jede freistehende Steuerungs-Glyphe statt EINES Zeichens) — dieselbe Korrektur
+wie R6-B beim Ziffernsatz, dort die Schreibweise, hier das Zeichen. ROT-BEWEIS
+am echten Quelltext (`PaneKopf` `◂` zurück auf `text-body-s leading-none` →
+Wächter rot mit Fundort-Nennung), Mutation zurückgenommen. Die Ausnahmen sind
+nach Klasse getrennt und haben einen eigenen Wächter dagegen, dass sie
+verschwimmen: `ENTSCHEID DAVIDS` (3× `☰`) gegen `BESCHRIFTET` (4×).
+
+**Dry-Sonde Runde 7 (5.9.2026, UNVERÄNDERT gegenüber Runde 6: frischer
+Browser-Kontext je Route, 1600×900, vierzehn Flächen, fünf echte Split-Paare).**
+Methoden-Beweis mitgeführt: **2 PaneKöpfe auf allen fünf Split-Routen, 0 auf
+allen fünf Einzel-Routen** — die R6-M-Korrektur trägt.
+
+**Deckungsgleich (nach dem Bau):** Ziffernsatz **ein** Wert über alle vierzehn
+Flächen (`lining-nums tabular-nums`, 47'163 Elemente) · freistehende
+Steuerungs-Glyphen **eine** Anatomie je Zeichen, einzige Ausnahme `☰` (siehe
+unten) · `✕` ein Wert (16 px · Geist Variable · Tinte 12.20, 14 Vorkommen) ·
+rohe Hover-Utilities **0** · Karten-Schatten **ein** Wert (3'168 `.lc-card`) ·
+Overline ein Wert (11 px/1.32 px/uppercase, 6'266) neben der dokumentierten
+`-soft`-Variante (6) · Chip-Radius 4 px (8'142) neben der dokumentierten
+Neutralisierung 0 px (21) · H1 32 px in den zwei Stimmen der Zwei-Stimmen-Regel,
+Startseite 36 px (eigene Klasse).
+
+**NEUFUNDE: null.**
+
+**DRY IST NOCH NICHT ERREICHT** (Stand nach Runde 7) — aber zum ersten Mal aus
+dem richtigen Grund. §2 definiert Dry als **zwei** Runden ohne neuen
+substanziellen Befund; Runde 7 ist die **erste**. Runde 8 ist damit reine
+BESTÄTIGUNG: dieselbe Sonde unverändert noch einmal, und bei erneut null
+Neufunden ist Dry mit Runde 8 erreicht — genau der Ablauf, den Runde 6
+vorgezeichnet hat. (Der Bau-Auftrag zu Runde 7 nannte als Kriterium «0 Neufunde
+⇒ Dry erreicht mit Runde 7»; das widerspricht §2 und dem Vorsatz der Runde 6.
+Hier gilt §2 — die Abweichung ist offengelegt, nicht still korrigiert, §7.)
+
+**Runde-8-Liste (Bestätigungslauf, kein Bauvorrat):**
+· Dry-Sonde UNVERÄNDERT wiederholen. Null Neufunde ⇒ Dry erreicht, Strang
+  schliessbar. Ein Neufund ⇒ er ist der Vorrat der Runde 8.
+· **wartet auf David — `☰` in zwei Anatomien.** 16 px/Geist Variable in der
+  App-Topbar gegen 11 px/«Geist Mono Variable» im Leser-Griff
+  (`lc-leiste-griff`); gemessen zusätzlich 20 px/Mono in den Kopf-Stufen des
+  Lesers. Anders als beim ✕ sind das Leisten mit je eigener dokumentierter
+  Anatomie (B6) — nach heutiger Regel **kein Defekt**. Die Frage lautet: soll
+  dieselbe Glyphe in zwei Leisten verschieden aussehen? Runde 7 hat sie NICHT
+  vorweggenommen; die drei Fundstellen stehen als benannte Ausnahme im Wächter
+  (`GRIFF_AUSNAHMEN`, Klasse `ENTSCHEID DAVIDS`), damit der Entscheid genau
+  einen Ort hat.
+· **wartet auf David — `--flaeche`** (aus R5-D, unverändert offen): falls die
+  Hover-Stufe kräftiger werden soll, gehört sie als eigenes Token neben
+  `--well`, nicht als Wert-Tausch an `--paper-sunken`.
+· **wartet auf einen Entscheid — Quittung am ⧉-Griff** (aus Runde 4,
+  reproduziert und unverändert): «Layout-Link kopieren» (`PaneKopf.tsx`) ruft
+  `onTeilen` ohne jede Quittung, während `LinkTeilenButton` für dieselbe
+  Handlung eine gibt. Eine Quittung in der 28-px-Zeile wäre sichtbar neu — also
+  ein Entscheid, kein Fix.
+· ERLEDIGT und nicht mehr offen: der R4-C-Streich-Entscheid (oben gefällt,
+  BEHALTEN mit Mutations-Beweis).
+
 **Verworfen/kein Befund:** Leerzustand-Wortlaut «gefunden» vs «erfasst» (bedeutungstragend) ·
 H1-Schriftstimmen (Zwei-Stimmen-Regel) · `rounded`=`rounded-sm` (latent, via tailwind-Default
 mitgefixt) · SachgebietKacheln lg: (ohne Sichtschaden, Runde 2 prüfen).
