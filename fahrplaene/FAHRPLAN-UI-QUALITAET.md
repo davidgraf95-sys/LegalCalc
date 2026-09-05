@@ -96,6 +96,37 @@ Umbau der Token-Schicht. Farbwärme/Atmosphäre ist und bleibt `W2·11-DESIGN`.
 >   wortgleichen Namen «‹Anhänge› auf- und zuklappen» — der Name führt nur den
 >   Knoten-Titel, nicht den Pfad. Dieselbe WCAG-4.1.2-Klasse, andere Datei; gehört in
 >   einen eigenen Schritt.
+>
+> **NACHTRAG 5.9.2026 (Nachzug 2, `feat/qs-ui-baum-namen`, Basis `feat/qs-ui-aria-folgeschritt`)
+> — der GEBV_HREG-Fund oben ist behoben.** Neuer Helfer `parts/klappNamen.ts`
+> (`berechneKlappKontext`): der Chevron-Name bleibt der blosse Titel, **ausser** derselbe
+> Titel kommt im Baum mehrfach als Chevron-Zeile vor — dann Zusatz `(nächster
+> abweichender Eltern-Titel)`, z. B. «‹II. Geltungsbereich› (A. Begriff und
+> Geltungsbereich) auf- und zuklappen». Sichtbarer Zeilentext unverändert, reine
+> Ableitung aus dem bereits vorhandenen Modell-Baum (§3), EINE Berechnung je Baum
+> (`useMemo` an `knoten`, nicht pro Scroll-Spy-Rerender).
+> **Rot-Beweis / Messung** (Playwright, `[data-toc] button[aria-expanded]` mit
+> `/auf- und zuklappen$/`, «alles auf» vorher geklickt):
+>
+> | Erlass | Chevron-Knöpfe gesamt | Dopplungs-Gruppen vorher → nachher | doppelt benannte Knöpfe vorher → nachher |
+> |---|---|---|---|
+> | GEBV_HREG | 2 | 1 → 0 | 2 → 0 |
+> | OR | 613 | 25 → 3 | 59 → 6 |
+> | ZGB | 506 | 14 → 2 | 38 → 6 |
+>
+> **Nicht auf 0 gebracht (OR/ZGB, je Rest 2–3 Gruppen):** der EINE-Eltern-Schritt löst
+> die klassische Dopplung (gleicher Titel unter verschiedenen Kapiteln), aber nicht den
+> Fall, dass auch der nächste abweichende Eltern-Titel selbst im Erlass mehrfach steht
+> (z. B. «A. Begriff und Geltungsbereich» kommt in OR selbst zweimal vor, je mit eigenem
+> «II. Geltungsbereich»-Kind). Ein zweiter Eltern-Schritt reicht nicht als Garantie
+> (Rekursion bis zur Wurzel nötig) und war ausserhalb des Auftrags-Slice — offen für einen
+> Folgeschritt.
+> **Offene Frage an die Abnahme (§0: nicht raten):** am degenerierten GEBV_HREG-Fall ist
+> die synthetische Anhang-Wurzel **selbst** namensgleich mit ihrem einzigen Kind (beide
+> «Anhänge») — kein Eltern-Titel weicht ab. Fallback dort ist ein Vorkommen-Zähler:
+> «‹Anhänge› (1. Vorkommen)» / «‹Anhänge› (2. Vorkommen)». Taugt der Wortlaut, oder soll
+> stattdessen der eigentliche Befund (Wurzel und Kind sind fachlich identisch) im Modell
+> (`gliederungsModell.ts`, ausserhalb dieser Whitelist) bereinigt werden?
 
 
 1. **`Topbar.tsx` Seitenleisten-Schalter.** Gemessen @1440: «Seitenleiste ausblenden»/`pressed=true` →
