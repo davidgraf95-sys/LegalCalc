@@ -14,6 +14,47 @@
 set -uo pipefail
 cd "$(dirname "$0")/.." || exit 1
 
+# ─── KONDENSAT 5.9.2026 (QS-EFFIZIENZ) ───────────────────────────────────────
+# Befund (gemessen, 5.9.2026): bei einem roten Tor druckte `run()` die VOLLE
+# Ausgabe (`printf '%s\n' "$log"`) in den Chat-Kontext. Bei 15 gleichartigen
+# Vitest-Fehlschlägen waren das ~800 Zeilen (kompletter Expected/Received-Diff
+# + Code-Frame je Fehler) — zweimal pro Session ~25 000 Token. Ab jetzt: die
+# volle Ausgabe geht in `.gate/<name-slug>.log` (gitignoriert, s. .gitignore),
+# in den Chat nur ein KONDENSAT (Funktion `kondensiere` unten). Kein Fehler
+# verschwindet — jeder rote Testname bleibt im Kondensat (FAIL-Zeile), nur der
+# Expected/Received-Diff und der Code-Frame entfallen; wer die Details braucht,
+# liest das Volllog (Pfad steht in der letzten Kondensat-Zeile). Exit-Codes
+# unverändert: `code=$?` des Tools bleibt massgeblich, nie der von grep/wc/sed
+# in der Kondensierung (die läuft NACH der Verdikt-Bildung, wie das
+# Ereignis-Log oben).
+mkdir -p .gate 2>/dev/null || true
+
+kondensiere() {
+  local name="$1" log="$2"
+  local slug logfile n_zeilen
+  slug="$(printf '%s' "$name" | tr 'A-Z' 'a-z' | sed -E 's/[^a-z0-9]+/-/g; s/^-+//; s/-+$//')"
+  logfile=".gate/${slug}.log"
+  printf '%s\n' "$log" > "$logfile" 2>/dev/null || true
+  n_zeilen="$(printf '%s\n' "$log" | wc -l | tr -d ' ')"
+  if [ "$name" = "vitest" ]; then
+    # Vitest-Kondensat: FAIL-Zeilen (Testname), × -Marker, Fehler-Erstzeile
+    # (AssertionError/Error:), ❯-Fundstelle (src/…:Zeile) und der Summen-Block
+    # — nie den Expected/Received-Diff oder den Code-Frame. Deckelung 80 Zeilen.
+    printf '%s\n' "$log" \
+      | grep -E 'FAIL |× |AssertionError|Error:|❯ src/|Test Files|Tests |Duration' \
+      | head -80
+  else
+    if [ "$n_zeilen" -gt 60 ]; then
+      printf '%s\n' "$log" | head -40
+      echo "  …"
+      printf '%s\n' "$log" | tail -15
+    else
+      printf '%s\n' "$log"
+    fi
+  fi
+  printf '  … Volllog: %s (%s Zeilen)\n' "$logfile" "$n_zeilen"
+}
+
 # Zeitzone BEDINGUNGSLOS festnageln (26.7.2026): die Golden-Basis ist in
 # Europe/Zurich erzeugt, auf einer UTC-Maschine meldet `golden:vergleich` sonst
 # `kuendigung:dj1`/`dj10` falsch-rot (kostete am 20.7. den Auftakt von
@@ -71,7 +112,7 @@ run() {
   else
     fail=1
     printf '  ROT  %s (exit %s)\n' "$name" "$code"
-    printf '%s\n' "$log"   # volle Ausgabe NUR für das rote Gate
+    kondensiere "$name" "$log"   # Kondensat NUR für das rote Gate, Volllog in .gate/
   fi
   # Präfix `gate:` trennt den Gate-SCHRITT vom einzelnen Tor: `npm run check`
   # erscheint hier als `gate:check`, seine 43 Sub-Tore protokolliert
