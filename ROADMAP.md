@@ -441,8 +441,8 @@ zgb-a36-anhang: Die ZGB-Gliederung zeigt 74 Artikel des Anhangs «Wortlaut der f
   (Mandat David 31.8.2026, Befunde direkt umsetzen).
   **Detail:** [FAHRPLAN-DESIGN-KONSISTENZ.md](fahrplaene/FAHRPLAN-DESIGN-KONSISTENZ.md) §1.
 
-- [~] **Startseite V4 «Werkbank»: Einstieg mit Gesetzes-Schwerpunkt, persönliche Begrüssung, Kopf- und Seitenleiste** *(`W2·23-STARTSEITE-V4`, Auftrag David 5.9.2026)*
-  <!-- @meta id: W2·23-STARTSEITE-V4 · status: wip · blocker: null · dep: [] · feld: design · fahrplan: fahrplaene/FAHRPLAN-STARTSEITE-V4.md -->
+- [x] **Startseite V4 «Werkbank»: Einstieg mit Gesetzes-Schwerpunkt, persönliche Begrüssung, Kopf- und Seitenleiste** *(`W2·23-STARTSEITE-V4`, Auftrag David 5.9.2026)*
+  <!-- @meta id: W2·23-STARTSEITE-V4 · status: done · blocker: null · dep: [] · feld: design · fahrplan: fahrplaene/FAHRPLAN-STARTSEITE-V4.md -->
   Die Startseite erklärt auf dem ersten Bildschirm «Schweizer Recht an einem Ort» (Gesetze
   Bund + Kantone, Entscheide, Materialien — verzahnt), begrüsst persönlich (Tageszeit-Pool,
   Wunsch David), macht Norm · Entscheid · Frist mit einem Zug erreichbar; Schnellrechner
