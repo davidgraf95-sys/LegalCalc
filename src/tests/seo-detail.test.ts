@@ -71,6 +71,13 @@ describe('metaFuerErlass()', () => {
     expect(m.beschreibung).toContain('Stand unbekannt,');
     expect(m.beschreibung).not.toContain('Stand ,');
   });
+  it('hängt das Kürzel nicht doppelt an, wenn der Titel es schon enthält (Fehlerbuch W2·18, EMRK)', () => {
+    const emrk = erlasse.find((e) => e.key === 'EMRK')!;
+    const m = metaFuerErlass(emrk);
+    expect(m.titel).not.toContain('(EMRK (EMRK)');
+    expect(m.titel).toContain('(EMRK)');
+    expect((m.titel.match(/EMRK/g) ?? []).length).toBe(1);
+  });
 });
 
 describe('jsonLdFuerErlass()', () => {

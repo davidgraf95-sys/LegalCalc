@@ -100,10 +100,14 @@ function materialDetailPfad(m: Pick<BrowseMaterial, 'key'>): string {
 
 export function metaFuerErlass(e: BrowseErlass): RouteMetadaten {
   const pfad = erlassDetailPfad(e);
-  const srTeil = e.sr ? `, SR ${e.sr}` : '';
+  // Fehlerbuch W2·18 (5.9.2026): Kürzel nicht zweimal in Klammern (EMRK-Titel
+  // endet bereits auf «(EMRK)») — Kürzel nur anhängen, wenn es im Titel fehlt.
+  const klammerTeile = [e.titel.includes(e.kuerzel) ? null : e.kuerzel, e.sr ? `SR ${e.sr}` : null]
+    .filter((t): t is string => t !== null);
+  const klammer = klammerTeile.length ? ` (${klammerTeile.join(', ')})` : '';
   return {
     pfad,
-    titel: `${e.titel} (${e.kuerzel}${srTeil}) — LexMetrik`,
+    titel: `${e.titel}${klammer} — LexMetrik`,
     beschreibung:
       `Volltext von ${e.kuerzel}${e.sr ? ` (SR ${e.sr})` : ''} – ${e.titel}. ` +
       // Gleiche Weiche wie im Volltext-Kopf: leerer `stand` (VD-vd-106879,
