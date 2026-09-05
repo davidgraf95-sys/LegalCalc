@@ -551,6 +551,17 @@ zgb-a36-anhang: Die ZGB-Gliederung zeigt 74 Artikel des Anhangs «Wortlaut der f
   - [ ] **`nichtKonsolidiert`-Marker bei Staatsverträgen falsch-positiv (FZA)** — Wurzel-Fix: AS-Fundstelle im Konsolidierungs-XML als Konsolidiert-Beleg werten; Gegenrechnung über alle 87 Marker.
   - [ ] **WARTET AUF DAVID (fachlich, §7):** SF-F1 (Art.-63-Verlängerung bei gehemmter Frist?) und SF-F2 (Wartefrist-Ablauf in den Betreibungsferien) — Katalog-Zeilen «fachlich vorzulegen».
 
+- [ ] **Tarif-Stammdaten: Stand maschinenlesbar + Drift-Tor** *(`W3-TARIF-STAND`, Rules-as-Code-Sichtung 5.9.2026, Entscheid David 5.9.2026)*
+  <!-- @meta id: W3-TARIF-STAND · status: ready · blocker: null · dep: [] · feld: werkzeuge -->
+  Ziel: die ~950 Tarif-Einträge in `src/data/tarif/**` werden maschinell auf Fassungs-Drift prüfbar
+  (§7 d für Tarifzahlen — heute nur für Normtext): `stand` als ISO-Datum plus Fassungskennung der
+  Quelle je Eintrag, Tor `check:tarif-drift` mit Rot-Beweis am SG-2808-Fall, Verfallsregister aus dem
+  Tor statt aus Handzeilen. **Grenzen:** verhaltensneutral (Golden byte-gleich), keine Tarifwert-
+  Änderung, keine Zeitachse und kein Stichtag in den Engines — das ist ein eigener Folgeschritt mit
+  offener Vorfrage (frühere Fassungen bei lexfind/zh.ch/belex adressierbar?). Risikopfad ⇒ Gegenprüfung.
+  **Detail:** [rules-as-code-sichtung-2026-09-05.md](bibliothek/recherche/rules-as-code-sichtung-2026-09-05.md) §6.
+  - [ ] **Folgeschritt (nicht vor dem Tor):** Wert-Zeitreihe `{ab, wert, quelle, stand}` je Tarif + UI-Eingabe «massgebender Zeitpunkt» + Zeitreihen-Golden (Muster OpenFisca `time.yaml`); Rechtsstand als Datumsbedingung neben der Regel statt `if` im Rumpf (erbteilung/gewaehrleistung). **WARTET AUF DAVID (fachlich, §7):** Verjährungsrevision 2020 als echte Weiche statt Warnung (`verjaehrung.ts:547`).
+
 ---
 
 ## Betrieb & Prüfstrasse  *(`feld: betrieb`)*
