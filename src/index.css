@@ -1002,6 +1002,16 @@
      verschnörkelten Fraunces-Form; leicht reduziert für optischen Ausgleich. */
   .lc-amp { font-family: var(--font-sans), system-ui, sans-serif; font-weight: 500; font-size: .92em; }
 
+  /* Tausender-Apostroph in der Mono-Stimme (B13/LM-119): Mono gibt jedem
+     Glyph dieselbe Laufweite, der Apostroph bekäme sonst eine volle
+     Ziffernbreite und «1'577» läse sich als «1 ' 577». Das Zeichen behält
+     seine Form (gerader Apostroph, SSoT src/lib/konventionen.ts) und wird nur
+     aus der Sans genommen, wo es von Haus aus schmal läuft — dasselbe
+     Hausmittel wie `.lc-amp` (ein Zeichen aus einer anderen Stimme mitten im
+     Satz), kein Sonderweg. Gesetzt über `zahlGruppiert()`
+     (components/typografie.tsx); die Ziffern bleiben Mono/tabular. */
+  .lc-apo { font-family: var(--font-sans), system-ui, sans-serif; }
+
   .lc-overline {
     font-family: var(--font-mono), ui-monospace, monospace;
     font-size: .6875rem; line-height: 1.4; letter-spacing: var(--tracking-overline);
