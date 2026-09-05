@@ -1,19 +1,18 @@
 // scripts/check-merge-schutz.ts — Merge-Tor für Risiko-Pfade (F1, Vorfall PR #309).
 //
-// WARUM ein eigenes Tor neben `check:gegenpruefung`:
-// `risikoDiffHash()` liest den WORKING TREE (`git status --porcelain`). Zum
-// Merge-Zeitpunkt ist der Arbeitsbaum sauber — alles ist committet und gepusht.
-// Das bestehende Tor ist dort also strukturell grün und kann #309 nicht fangen.
-// Dieses Tor prüft stattdessen den COMMITTETEN Bereich merge-base(BASIS)..KOPF.
+// Warum ein eigenes Tor: `risikoDiffHash()` liest den WORKING TREE
+// (`git status --porcelain`), der zum Merge-Zeitpunkt sauber ist — das
+// bestehende Tor ist dort strukturell grün und kann #309 nicht fangen. Dieses
+// Tor prüft stattdessen den COMMITTETEN Bereich merge-base(BASIS)..KOPF.
 //
-// Einzige Quelle der Risiko-Definition bleibt `behalten()` aus kern.ts (§5) —
-// hier wird NICHTS neu klassifiziert, nur ein anderer Diff-Bereich eingespeist.
+// Risiko-Definition bleibt allein `behalten()` aus kern.ts (§5) — hier wird
+// nichts neu klassifiziert, nur ein anderer Diff-Bereich eingespeist.
 import { execFileSync } from 'node:child_process';
 import { behalten } from './gegenpruefung/kern';
 
 const BASIS = process.env.MERGE_SCHUTZ_BASIS ?? 'origin/main';
-// KOPF = Pruef-Spitze. Default HEAD (Arbeitskopie). Der Merge-Hook setzt hier
-// den PR-Head-SHA: geprueft wird der Stand, der gemergt wird (§17, 5.9.2026).
+// KOPF = Pruef-Spitze (Default HEAD). Der Merge-Hook setzt hier den
+// PR-Head-SHA: geprueft wird der gemergte Stand (§17, 5.9.2026).
 const KOPF = process.env.MERGE_SCHUTZ_KOPF ?? 'HEAD';
 
 function git(args: string[]): string {
@@ -32,9 +31,8 @@ let basis: string;
 try {
   basis = git(['merge-base', BASIS, KOPF]).trim();
 } catch {
-  // Kein origin/main erreichbar (frischer Clone, detached CI-Checkout) — das Tor
-  // kann seine Referenz nicht bilden. Es meldet das SICHTBAR und wird rot, statt
-  // still grün zu werden (§6 Ziff. 7: kein stiller Skip).
+  // Kein origin/main erreichbar (frischer Clone, detached CI-Checkout) — das
+  // Tor wird rot statt still grün (§6 Ziff. 7: kein stiller Skip).
   raus(1, `check:merge-schutz ROT — Referenz '${BASIS}' nicht auflösbar. ` +
     `Erst 'git fetch origin', dann erneut. (Kein stiller Skip: ein Tor ohne ` +
     `Referenz ist kein Tor.)`);
@@ -52,8 +50,8 @@ if (risiko.length === 0) {
     `${basis.slice(0, 8)}..${KOPF} (${geaendert.length} Datei(en) geändert).`);
 }
 
-// Trailer im committeten Bereich suchen. `%(trailers)` liest nur echte
-// Trailer-Zeilen am Commit-Ende, nicht eine beiläufige Erwähnung im Fliesstext.
+// Trailer im committeten Bereich suchen; `%(trailers)` liest nur echte
+// Trailer-Zeilen, keine beiläufige Erwähnung im Fliesstext.
 const trailer = git(['log', '--format=%(trailers:key=Gegenpruefung,valueonly)', `${basis}..${KOPF}`])
   .split('\n')
   .map((z) => z.trim())
@@ -84,15 +82,12 @@ if (trailer.length === 0) {
 }
 
 // ── FORM DES VERDIKTS ────────────────────────────────────────────────────
-// SABOTAGE-BEFUND 20.7.2026 (adversariale Prüfung dieses PR): Der Filter hiess
-// `!/^n\/a\b/i.test(t)` — er prüfte NUR, dass der Wert nicht mit «n/a» beginnt.
-// Ein leerer Commit mit dem Trailer `Gegenpruefung: x` machte das Tor GRÜN.
-// Das Tor validierte damit gegen die eigene Ladung (F2a): jeder Reststring
-// genügte. Der einzige gedeckte Umgehungsfall war ausgerechnet der, den der
-// Bau-Bericht als Scheiterns-Beweis führte.
+// SABOTAGE-BEFUND 20.7.2026: der alte Filter `!/^n\/a\b/i.test(t)` prüfte nur,
+// dass der Wert nicht mit «n/a» beginnt — ein leerer Commit mit Trailer
+// `Gegenpruefung: x` machte das Tor GRÜN (F2a: gegen eigene Ladung validiert).
 //
-// Jetzt muss das Verdikt eine PRÜFBARE FORM tragen — Verdikt-Wort aus
-// geschlossener Menge, Zuschreibung (Modell + Linsen) und Befund-Text:
+// Jetzt braucht das Verdikt eine PRÜFBARE FORM — Verdikt-Wort aus
+// geschlossener Menge, Zuschreibung (Modell + Linsen), Befund-Text:
 //     bestanden (Opus 4.8, Extraktion/Identitaet) — 13 Stichproben …
 const VERDIKT = /^(bestanden|behoben)\b/i;
 const ZUSCHREIBUNG = /\(([^)]{5,})\)/;      // (Modell, Linsen)
@@ -132,13 +127,11 @@ if (gueltig.length === 0) {
 }
 
 // ── BINDUNG AN EIN ARTEFAKT ──────────────────────────────────────────────
-// Auch ein formal korrekter Trailer bleibt SELBST-ATTESTIERT: der bauende
-// Agent kann ihn schreiben. Ein Commit-Text ist kein Prüf-Nachweis, er ist
-// eine Behauptung über einen. Darum muss zusätzlich das committete Register
-// (bibliothek/register/gegenpruefung-register.md) im selben Bereich gewachsen
-// sein — dort steht die Prüfung mit Diff-Hash, Quelle/Stand und Befunden.
-// Das Register ist ein unabhängiges Artefakt (§6 Ziff. 7 lit. a): es entsteht
-// über `npm run gegenpruefung:ok`, das den Nachweis an genau diesen Diff bindet.
+// Ein formal korrekter Trailer bleibt SELBST-ATTESTIERT: der bauende Agent
+// kann ihn schreiben — Behauptung, kein Nachweis. Darum muss zusätzlich das
+// Register (bibliothek/register/gegenpruefung-register.md) im selben Bereich
+// gewachsen sein: unabhängiges Artefakt (§6 Ziff. 7 lit. a) via
+// `npm run gegenpruefung:ok`, das den Nachweis an genau diesen Diff bindet.
 const REGISTER = 'bibliothek/register/gegenpruefung-register.md';
 const registerDiff = git(['diff', '--numstat', `${basis}..${KOPF}`, '--', REGISTER]).trim();
 const zugewachsen = registerDiff
