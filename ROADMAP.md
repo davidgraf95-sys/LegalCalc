@@ -115,6 +115,9 @@ zgb-a36-anhang: Die ZGB-Gliederung zeigt 74 Artikel des Anhangs «Wortlaut der f
   - [ ] **S2 · Typografie + Artikel-Raster** — Variante nach Bildvergleich (**F3**), gleichmässige Abstände, CLS 0. Kap. 7/8.
   - [ ] **S4 · Kantons-Probe** — Kantonserlasse rendern unverändert (Fokus Bund, nichts bricht); der H2-Kontaktbogen deckt nur Bund ab. Kap. 7.
   - [ ] **Tor-Konflikt `erlassAnsicht.ts`-Deckel** *(§17-Wurzel-Fix, Befund 31.8.2026)* — `leser-v3-fundament` verlangt jede `.ebene`-Ableitung in `erlassAnsicht.ts` UND deckelt die Datei (421/420er-Grenze, muss unter `leserV3Modell.ts` bleiben); die nächste erzwungene Ableitung hat keinen Platz. Deckel neu kalibrieren oder Datei schneiden — Wurzel-Fix, kein Einzelfall-Umschiffen.
+  - [ ] **Nachbar-Artikel-Pfeile** (← Art. 89 · Art. 90a →) im Artikelkopf; Muster gesetze-im-internet/dejure/buzer. Reine Hülle, Kern unangetastet. Quelle: Fremdnutzen-Suchrunde 2 (6.9.2026) §3 #1.
+  - [ ] **Rohdaten-Link je Erlass** (JSON-Snapshot/AKN-Quelle, Stand, Fassungs-Token) im Leser-Kopf — §7-Transparenz, Muster legislation.gov.uk «Print Options». Quelle: Fremdnutzen-Suchrunde 2 (6.9.2026) §3 #11.
+  - [ ] **Fassungs-Diff-Tab** — UI-Anteil zu `W2·5l-NORMTEXT-B2` M16 (Fassungs-Zeitleiste), erst danach; einziges Vorbild mit echtem Diff: Légifrance «Comparer les versions». Quelle: Fremdnutzen-Suchrunde 2 (6.9.2026) §3 #9.
 
 - [ ] **Kantonale Gesetze — Darstellung & Suche** *(`W2·13-KANTONE`, Auftrag David 12.7.2026, `[OF]`)*
   <!-- @meta id: W2·13-KANTONE · status: ready · blocker: null · dep: [] · feld: leser · fahrplan: fahrplaene/FAHRPLAN-KANTONE.md -->
@@ -324,6 +327,7 @@ zgb-a36-anhang: Die ZGB-Gliederung zeigt 74 Artikel des Anhangs «Wortlaut der f
   - [ ] **`public/normtext/confidence.json` veraltet** *(Befund PR #668, 4.9.2026)* — erzeugt 23.6.2026 mit 150 Erlassen, heutiger Lauf liefert 1566 (196 Quarantäne); eigener Schritt: neu erzeugen, Quarantäne-Liste sichten, `report:confidence` als Tor oder Wächter-Zeile.
   - [ ] **Nebenfunde Nacht 5.9.2026** (7 Zeilen: Cache ohne Fassungsschlüssel, struktur-Filter, stumme Löschung, GL-Kanonik, Kanton-Drift, Fedlex-Trenner, standRechtsprechung) — Fahrplan §1.
   - [ ] **Zitat-Extraktion dreistufig trennen** — Erkennen (Tokenizer) · Auflösen (Resolver gegen Register) · Annotieren, mit Konfidenz je Treffer; Phantom-Kanten fallen dann im Resolver statt im Generator. Architektur-Muster `freelawproject/eyecite` (BSD-2), kein Code-Import (US-Stil). Nach dem Filter oben, Risikopfad. Quelle: Rules-as-Code-Sichtung 5.9.2026 §8.
+  - [ ] **Testdaten für die Zitat-Extraktion aus `rcds/*` (Hugging Face)** — swiss_leading_decisions/swiss_doc2doc_ir als Fixture-Quelle (nie Produktquelle); Lizenz je Datensatzkarte (Snippet: CC-BY-4.0) vor Übernahme einzeln belegen. Quelle: Fremdnutzen-Suchrunde 2 (6.9.2026) §2 #5.
   - [ ] **Bund-Korpus gegen legalize-ch abgleichen (nur Test/Bericht)** — `legalize-dev/legalize-ch` (5 139 SR-Erlasse DE aus Fedlex-AKN, Konsolidierungen als Git-Commits, Pipeline MIT, Daten gemeinfrei): SR-Bestand und Konsolidierungsdaten diffen; Abweichungen = Prüfauftrag, nie Quelle (§5). Fund Rules-as-Code-Sichtung 5.9.2026 §8.
 
   - [ ] **Einheit + Hochzahl zerrissen («125 cm 3» statt cm³)** *(Gegenprüfungs-Fund 4.9.2026, Phase-3-Durchgang Gemini, PR #658)* — `<sup>` an Masseinheiten wird als Leerzeichen + Ziffer gerendert; korpusweit 218 Treffer (m³ 143, m² 39, cm² 17, cm³ 13). Wurzel im Adapter (Sup-Behandlung), nie in den Daten. Risikopfad ⇒ Gegenprüfung.
@@ -423,6 +427,8 @@ zgb-a36-anhang: Die ZGB-Gliederung zeigt 74 Artikel des Anhangs «Wortlaut der f
   falsch, die Basis ist gewandert** (10.85 s → Mittel 31.4 s, Nullprobe-belegt auf `main`).
   **Wurzel-Fix, nicht Deckel-Anhebung (§17):** erst klären, WARUM die Strecke 3× teurer wurde.
   **Detail:** [FAHRPLAN-OFFENE-BEFUNDE.md](fahrplaene/FAHRPLAN-OFFENE-BEFUNDE.md) §3.
+
+- **Idee (ohne `@meta`, über der Plan-Kapazität):** DE/FR/IT-Stemming in der Korpus-Suche (`multilingual-stemmer`, MIT, Wasm, zero deps) plus TERMDAT-Synonyme — nur mit Messung gegen `suche-eval-gold`, TERMDAT erst nach Lizenzklärung. Quelle: Fremdnutzen-Suchrunde 2 (6.9.2026) §2 #1/#6.
 
 ---
 
@@ -531,6 +537,7 @@ zgb-a36-anhang: Die ZGB-Gliederung zeigt 74 Artikel des Anhangs «Wortlaut der f
   **Detail:** [FAHRPLAN-VORLAGEN-AUSBAU.md](fahrplaene/FAHRPLAN-VORLAGEN-AUSBAU.md) §1.
   - [ ] **Zitat-Export & Fussnoten-Ausgabe** — Ein-Klick-Zitat in korrekter amtlicher Form (`BGE 148 III 1 E. 2.3`); Formvorschriften bestimmen die angebotenen Exportformate (§8).
   - [ ] **Zitierstil amtlich: GTR Anhang 3 (BK, Stand 5.6.2026) + BGer-Zitierreglement**, Export RIS/BibTeX/COinS; Eigenbau statt `citeproc` (CPAL/AGPL), CSL «juristische-zitierweise-schweizer» nur als Abgleich. Quelle: Fremdquellen-Sichtung 2.9.2026 §1 #13.
+  - [ ] **Zotero-Translator fedlex.admin.ch + bger.ch (Eigenbau, klein)** — im Repo `zotero/translators` existiert keiner; PR #2752 (fedlex/lexfind) seit 11/2021 offen und gescheitert (US-Feldschema, lexfind JS-Seite). Reichweite bei Juristen; MVP-Schätzung fedlex 1–3 Tage, bger 3–5 Tage (unbelegt). Quelle: Fremdnutzen-Suchrunde 2 (6.9.2026) §3 B.
 
 - [ ] **Funktions-Inventar (Vorstufe der Bedienungsanleitung)** *(`W2·16-INVENTAR`, §14-Intake 20.7.2026)*
   <!-- @meta id: W2·16-INVENTAR · status: parked · blocker: zielbild-gesetzesleser · dep: [] · feld: werkzeuge · fahrplan: fahrplaene/FAHRPLAN-UI-QUALITAET.md -->
@@ -547,10 +554,12 @@ zgb-a36-anhang: Die ZGB-Gliederung zeigt 74 Artikel des Anhangs «Wortlaut der f
   - [ ] **Vorlagen-Breite** — Tiefe vor Stückzahl: GmbH qualifizierte Gründung (777c II) · Musterklagen · Basistypen (Kauf/Schenkung/Pacht/Darlehen/Bürgschaft). [FAHRPLAN-ARCHIV-RESTPUNKTE.md](fahrplaene/FAHRPLAN-ARCHIV-RESTPUNKTE.md) §10.
   - [ ] **Gemeinde-Validierungsliste (BFS eCH-0071)** — Build-Time-Snapshot mit gepinntem Stichtag; prüft Ortseingaben als **Hinweis**, nie als Blockade (§8).
   - [ ] **QR-Zahlteil (`swissqrbill`, MIT)** — gebunden an die Existenz einer Zahlungs-Vorlage; browser-seitig, deterministisch; §15-Bewertung vor Aufnahme.
-  - [ ] **PDF/A-2b-Export vorbereiten** *(Wiedervorlage 1.1.2027)* — BEKJ tritt 1.7.2027 in Kraft, `jspdf` erreicht PDF/A-2b nicht → Export-Schicht-Umbau mit Vorlauf.
+  - [ ] **PDF/A-2b-Export vorbereiten** *(Wiedervorlage 1.1.2027)* — BEKJ tritt 1.7.2027 in Kraft, `jspdf` erreicht PDF/A-2b nicht → Export-Schicht-Umbau mit Vorlauf. *Nachtrag 6.9.2026: BEKJ-Pflicht für berufsmässige Akteure spätestens Mitte 2032, Plattform frühestens 1.7.2028; justitia.swiss publiziert bisher keine PDF/A-Version, eCH-Nummer oder Metadaten-Vorgabe — nicht an eine Formatvorgabe binden. Quelle: Fremdnutzen-Suchrunde 2 (6.9.2026) §3 A.*
   - [ ] **Multi-Pane / Split-View** *(Fundament-Umbau, eigener Worktree §12; Auftrag David 29.6.2026)* — Restposten B3 Scroll-Positions-Wiederherstellung + Tastatur-Pane-Wechsel · Bündel S · 3 a11y-Restpunkte. [FAHRPLAN-SPLIT-VIEW.md](fahrplaene/FAHRPLAN-SPLIT-VIEW.md) §1.
   - [ ] **Amtliche APIs als Rechner-Zulieferer** — SHAB (`shab.ch/api/v1/publications`: Fristen ab Publikationsdatum — Schuldenruf, Kollokation; Nutzungsbedingungen/Art. 5 URG vorab klären) · UID-Register (SOAP `uid-wse.admin.ch`: Partei-Identifikation im Rubrum statt Freitext) · SNB-Datenportal (Zinsreihen für Verzugs-/Schadenszins). Je Quelle Build-Zeit-Snapshot mit Stand, nie Live-Abfrage im Werkzeug (§2). Quelle: Fremdquellen-Sichtung 2.9.2026 §2.
   - [ ] **Sozialversicherungs-Stammdaten** — BSV «Familienzulagen 2026» (26 Kantone) + «Beträge ab 1.1.2026» als ein Stammdatensatz für Koordinationsabzug, 3a, UVG-Grenze, EL; Risikopfad Rechnen, Zeitreihen-Form nach `W3-TARIF-STAND` Folgeschritt A. Quelle: Fremdquellen-Sichtung 2.9.2026 §1 #18.
+  - [ ] **Existenzminimum-Rechner (Karte `existenzminimum`, heute `geplant`)** — Stammdaten aus den **kantonalen** Richtlinien-Publikationen (AG/LU/SG/TG amtlich, ZG Stand 2010 = Drift, BE via Verband), nicht aus den KBK-Richtlinien des Vereins; Zeitreihen-Form nach `W3-TARIF-STAND` Folgeschritt A; Risikopfad Rechnen. Quelle: Fremdnutzen-Suchrunde 2 (6.9.2026) §1.
+  - [ ] **FR/IT-Parallelansicht im Leser** (Muster EUR-Lex «Multilingual display») — **Vorfrage zuerst:** sind Fedlex-AKN-`eId` in DE/FR/IT identisch? An einem Erlass per SPARQL/AKN belegen; dazu TERMDAT (LINDAS-SPARQL, ~400k Einträge) für Glossar/Begriffe nur nach Lizenzklärung (wartet auf David, Bibliothek §5). Quelle: Fremdnutzen-Suchrunde 2 (6.9.2026) §2/§3.
 
 - [ ] **Eigenschafts-Tests (property-based) für die Rechen-Engines** *(`QS-CODE-PROP`, Entscheid David 7.8.2026)*
   <!-- @meta id: QS-CODE-PROP · status: ready · blocker: null · dep: [] · feld: werkzeuge · fahrplan: fahrplaene/FAHRPLAN-OFFENE-BEFUNDE.md -->
@@ -574,6 +583,7 @@ zgb-a36-anhang: Die ZGB-Gliederung zeigt 74 Artikel des Anhangs «Wortlaut der f
   **Detail:** [rules-as-code-sichtung-2026-09-05.md](bibliothek/recherche/rules-as-code-sichtung-2026-09-05.md) §6.
   - [ ] **Folgeschritt A · Wert-Zeitreihe je Tarif** *(nicht vor dem Tor)* — `{ab, wert, quelle, stand}` je Eintrag, UI-Eingabe «massgebender Zeitpunkt», Zeitreihen-Golden (ein Sachverhalt über alle Rechtsstände, Muster OpenFisca `tests/rates_rebates/time.yaml`); Vorfrage: frühere Fassungen bei lexfind/zh.ch/belex stabil adressierbar? Typ-Muster bitemporal (`nicia-ai/typegraph`, MIT). Quelle: Rules-as-Code-Sichtung 5.9.2026 §5/§6.
   - [ ] **Folgeschritt B · Rechtsstand als Datumsbedingung neben der Regel** — `erbteilung.ts:200` und `gewaehrleistung.ts:71` von der `if datum >= …`-Weiche im Rumpf auf zwei nebeneinanderstehende, je mit Norm-Anker und Geltungsintervall versehene Regeln umstellen (verhaltensneutral, bestehende Mehr-Rechtsstand-Tests bleiben unverändert §6.3); Konvention dazu: nicht codierte Teilnormen als Kommentar mit Grund stehen lassen (Muster OpenFisca `CONTRIBUTING.md`). Risikopfad ⇒ Gegenprüfung. Quelle: Rules-as-Code-Sichtung 5.9.2026 §4/§5.
+  - [ ] **Amtliche Golden-Quellen ins Tor** — Kantonsgericht VS Excel «Calcul des frais de justice» (7.2.2025), Amtsnotariate SG Gebührentabelle (Stand 27.3.2026), BGer-Tarif SR 173.110.210.1; Steuerrekursgericht-ZH-Excel (2019) nur nach Normabgleich. Negativbefund: kein Kanton betreibt einen interaktiven amtlichen Rechner, private Rechner sind keine Quelle (§7). Quelle: Fremdnutzen-Suchrunde 2 (6.9.2026) §1.
   - [ ] **WARTET AUF DAVID (fachlich, §7):** Verjährungsrevision 2020 (relative Frist 1→3 J.) als echte Weiche statt Nutzerwarnung (`verjaehrung.ts:547`).
 
 ---
