@@ -547,6 +547,7 @@ Snapshot vor dieser Session, 04.9.2026T18:41Z), nicht handgerechnet:
 
 | Datum | Auftrag | Sonnet-Ergebnis | Gemini-Ergebnis | Abweichung |
 |---|---|---|---|---|
+| 5.9.2026 | Repo-Suche «bestehende Ideen/Repos für 9 LexMetrik-Lücken» (gleicher Auftrag als Datei, Ausschlussliste 2.9.); Auswertung `bibliothek/recherche/rules-as-code-sichtung-2026-09-05.md` §8 | 22 Einträge, 20 per `gh api` selbst belegt (Lizenz/Push/Stars stimmen mit Nachprüfung der Haupt-Session überein), 1 Cluster ehrlich «unklar»; Schlüsselfund legalize-ch; 199 s, ~51k Token, 23 Tool-Aufrufe | 15 Einträge, **2 existieren nicht** (`holiday-calendar/core`, `adysre/business-rules-engine`), **3 Lizenzen falsch** (bluebell GPL≠LGPL, legal-sources AGPL statt «unklar», Saldenwerk MIT statt «unklar»), 1 archiviertes Repo nicht gemeldet, 9 Felder «unklar», die `gh api` in Sekunden beantwortet; Etikett «belegt» auch an Nicht-Existentem; eigene Funde: rules-machine, zen-engine-wasm; 148 s, ~54k Token (44.8k in / 9.1k out), 1 Turn, sandbox | Überschneidung nur gorules/zen, bluebell, blawx. **Sonnet belastbar, Gemini nur mit vollständiger Nachprüfung** — Halluzinationsquote 2/15 Repos, Lizenz-Fehlerquote 3/13 existierenden. Gemini-Etikett «belegt» ist wertlos; Regel: Gemini-Repo-Listen immer per `gh api` sieben, bevor sie in die Bibliothek gehen. |
 
 **Kontingent-Ereignisse** (leer, Skript `npm run fremdagenten:messung --
 --kontingent`, Regel §4 «Limite erkennen» — die Zahlen 100/Tag und 15

@@ -88,3 +88,39 @@ Ziel: Tarif-Stammdaten werden maschinell auf Drift prüfbar, ohne Verhalten zu �
 - Verjährungsrevision 2020 als echte Rechtsstand-Weiche abbilden (fachlich §7) — heute nur Warnung.
 - Ob die Zeitachse (Altfall-Rechnen) ein Produktziel ist; ohne Stichtag-Eingabe in der UI ist sie wertlos.
 - Ob LexMetrik den Catala-Beleg-Widerspruch (Pilot vs. produktiv) irgendwo als Referenz braucht — Empfehlung: nein.
+
+## 8. Repo-Suche «bestehende Ideen, die uns helfen» (5.9.2026, Gemini und Sonnet parallel)
+
+**Auftrag David:** «suche auch nach sinnvollen ideen die bereits bestehen und uns helfen. verwende gemini für suche … vorallem repos usw». Gleicher Suchauftrag (neun Lücken A–I, Ausschlussliste der Sichtung vom 2.9.2026) parallel an Gemini (`agy`, gemini-3.1-pro-high, sandbox) und einen Sonnet-Recherche-Agenten; alle Repo-Metadaten danach von der Haupt-Session per `gh api repos/<owner>/<repo>` nachgeprüft (Abruf 5.9.2026). Messzeile: `fahrplaene/FAHRPLAN-FREMDAGENTEN.md` §5.
+
+### 8.1 Rangliste (bereinigt, nur existierende Repos, Metadaten per API belegt)
+
+| # | Fund | Lizenz · Stack · Aktivität | Lücke | Einordnung |
+|---|---|---|---|---|
+| 1 | **legalize-dev/legalize-ch** — 5 139 SR-Erlasse (DE) als Markdown, «jede Reform ein Commit» datiert auf `jolux:dateApplicability`, Quelle Fedlex-AKN-XML; Spec `legalize/SPEC.md` v0.4 (Frontmatter, `extra.history_from`) | Pipeline MIT (`legalize-pipeline`), Daten gemeinfrei · Python · Bootstrap 20.3./27.3.2026, letzter Push 23.6.2026, 7★; **unklar, ob laufend nachgeführt** | F, A (Fassungs-Zeitleiste) | **Direkt verwendbar als Vergleichsorakel, nur im Test:** Diff unseres Korpus gegen legalize-ch (fehlende SR-Nummern, abweichende Konsolidierungsdaten) — billiger Zweitblick auf §7 (d), nie als Quelle (§5: Fedlex bleibt die Wahrheit). Muster «Reform = Commit» für Schritt #17 der Sichtung 2.9. (Fassungs-Zeitleiste je Erlass). Historie erst ab ~2021, keine Kantone. |
+| 2 | **gorules/zen** + npm `@gorules/zen-engine-wasm` 0.23.1 — Decision-Tables/JDM mit **replaybarem Trace je Entscheid**, React-Editor `@gorules/jdm-editor` | MIT · Rust, Wasm-Paket 1,8 MB unpacked (Stand 17.3.2026, hinkt Engine 2.0.2 hinterher) · Push 25.8.2026, 1 965★ | D, E, I | **Nur Muster** für die Trace-Datenstruktur (Regel → Eingabe → Ausgabe → Zwischenwerte). Als Engine ein Stack-Wechsel für die Rechenlogik (§4, §6-Golden über fremden Compiler) und 1,8 MB gegen §15. |
+| 3 | **elite-libs/rules-machine** — JSON-Regeln mit Debug-Trace, TS-nativ, klein | BSD-3-Clause · TS · Push 21.4.2026, 56★, npm 1.1.4 | D, I | **Direkt einbindbar, aber nicht empfohlen:** unsere Engines sind Handcode je Rechtsgebiet; Wert liegt im Trace-Format als Vorbild für einen eigenen `rechenweg[]`-Rückgabewert. |
+| 4 | **freelawproject/eyecite** (+ TS-Port `beshkenadze/eyecite-js`) — Tokenizer → Resolver → Annotator für Zitate | BSD-2 · Python (Port TS, 3★, Push 8/2025) · eyecite Push 5.9.2026, 273★ | G | Nur Muster (US-Zitierstil). Architektur-Vorbild für `zitat-extraktion.ts` (Trennung Erkennen/Auflösen/Annotieren, Konfidenz je Treffer). |
+| 5 | **Lexpedite/blawx** — Blockly über s(CASP), defeasible Regeln mit Ausnahmen, Erklärungen, Szenario-Explorer | MIT · HTML/JS · Push 1.11.2024, 153★, laut Doku nicht produktionsreif | D, E | Nur Muster: wie Ausnahme-Hierarchien und «warum»-Erklärungen dem Nutzer gezeigt werden. |
+| 6 | **rjsf-team/react-jsonschema-form** — Formulare aus JSON-Schema | Apache-2.0 · TS · Push 4.9.2026, 15 889★ | I | Direkt verwendbar, **aber §10:** Wizard-Rahmen existiert; nur bei einem Bedarf, den der Rahmen nicht trägt. |
+| 7 | **bundestag/gesetze-tools** (LGPL-3.0, Push 4.5.2026, 135★) · **nfelger/gesetze-aus-dem-internet** (Apache-2.0, Push 15.1.2026, 23★) · **openlegaldata/oldp** (MIT, Django, Push 30.8.2026, 154★) | DE-Spiegel/Plattformen | F, H | Nur Muster (DE, Server-Stacks). gesetze-tools = Git-Pipeline-Vorbild wie legalize. |
+| 8 | **laws-africa/bluebell** (GPL-3.0, Push 13.7.2026, 23★) · **laws-africa/indigo** (Push 4.9.2026, 77★, Lizenz im API-Feld NOASSERTION — manuell prüfen) | AKN-3-Parser / Point-in-time-Konsolidierungsplattform | F | Nur Muster; wir parsen Fedlex-AKN bereits. Indigo als Vorbild für Fassungs-Navigation (Point-in-time) — Lizenz vor jeder Vertiefung klären. |
+| 9 | **MLanguage/mlang** (GPL-3.0, Push 20.1.2026, 203★) · **CatalaLang/catleg** (Apache-2.0, Push 2.6.2026, 5★) | amtlicher FR-Steueralgorithmus als Compiler / Legifrance-Werkzeug | B, H | Nur Muster: Beleg, dass eine Verwaltung ihren Rechenalgorithmus offen versioniert. |
+| 10 | **smucclaw/l4-ide** (Haskell, Lizenz NOASSERTION, Push 15.7.2026, 37★) | kontrollierte natürliche Sprache für Rechtsregeln | B, E | Ansehen, Lizenz ungeklärt, kleine Basis. |
+| 11 | **nicia-ai/typegraph** (MIT, TS, Push 5.9.2026, 79★) — bitemporale Lesesemantik («wann galt es» vs. «wann eingetragen») | I, A | Muster für die Zeitachsen-Typen des Folgeschritts zu `W3-TARIF-STAND`, mehr nicht. |
+| 12 | **worldwidelaw/legal-sources** (AGPL-3.0, Python, Push 3.8.2026, 365★) — 900+ Scraper | H | Nur nachschlagen, ob dort kantonale CH-Portale erschlossen sind (nicht geprüft); AGPL ⇒ nie Code. |
+
+**Ignorieren (mit Grund):** `PBaumfalk/Saldenwerk` (MIT, 1★, Hobby-RVG), `mlobo2012/Germany-SMB-Legal-Plugin` (keine Lizenz, LLM-Tools), `ralphhanna/dmn-engine` (Push 2020), `jurisdatum/lgu-mcp-ts` (archiviert), `BobPritchett/edtf-ts` (1★; date-fns-Intervalle reichen), `SimmonsRitchie/business-days-js` (5★, Push 2024; eigene Feiertagslogik in `src/lib/fristenEngine.ts`/`datumsUtils.ts` vorhanden), `Tochemey/business-date-checker` und `laws-africa/slaw` (archiviert), `freetrade-io/ts-business-time` (keine Lizenz, 2021), `adrianlerer/LegalGapDB` (0★, keine Lizenz), `lavis-nlp/german-legal-reference-parser` (keine Lizenz, Push 2023), `it-at-m/xjustiz` (Java-Schemas DE, 2★).
+
+### 8.2 Negativbefunde (S5)
+
+- Kein offenes Repo mit Schweizer Tarif-/Schwellen-Zeitreihe und Drift-Tor (Lücke A) — `W3-TARIF-STAND` bleibt Eigenbau.
+- Kein offener Fristenrechner CH (frist.ch, legaldeadline.ch, fristenrechner.ch sind geschlossen) und kein offener DE-RVG/GKG-Rechner mit Lizenz — Lücke C/H ohne Baustein.
+- Kein Zitat-Parser für BGE/ZPO-Zitierstil (Lücke G); eyecite ist US.
+- Rules-as-Code-Programme AU/NZ/NL/UK: nur Whitepaper und Blogposts, kein offenes Engine-Repo (NSW verweist auf OpenFisca).
+- Kein produktreifes Beweis-/Property-Werkzeug für Regel-Kollisionen ausserhalb Catala/Z3 (Lücke E) — bleibt Property-Test im eigenen Bestand (`QS-CODE-PROP`).
+
+### 8.3 Konsequenz
+
+Ein einziger Fund ist ohne Umweg nützlich: **legalize-ch als Test-Orakel** gegen unseren Bund-Korpus (Abgleich SR-Bestand und Konsolidierungsdaten; Kandidat als `- [ ]`-Zeile unter `QS-KORPUS` oder als Nebenprodukt von `W3-TARIF-STAND`, kein eigener Schritt). Alles andere sind Muster, die in §5 dieser Datei bereits stehen (Trace-Struktur, Rechtsstand neben der Regel, Zitat-Pipeline-Trennung). Kein Bau ausgelöst.
+
