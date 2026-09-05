@@ -14,7 +14,7 @@
 // Regenerieren:  node scripts/normtext/seed-grundart.mjs
 // Reine Daten (§3), kein Render — golden byte-gleich.
 
-import { existsSync, readFileSync, writeFileSync } from 'node:fs';
+import { existsSync, readFileSync, readdirSync, writeFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
 
@@ -94,6 +94,16 @@ function main() {
 
   const eintraege = [];
   const gesehen = new Set();
+  // Mindestzahl-Sperre (Nach-Verdikt 5.9.2026, PR #694): ohne sie verwarf ein
+  // fehlendes/leeres Snapshot-Verzeichnis ALLE ~1230 Kantons-Einträge lautlos
+  // (Exit 0, 238 statt 1468 Einträge). Ein Rückzug ist EIN Key, kein Verzeichnis.
+  const kantonDateien = existsSync(KANTON_SNAPSHOTS)
+    ? readdirSync(KANTON_SNAPSHOTS).filter((d) => d.endsWith('.json')).length : 0;
+  const kantonImSeed = zuordnung.filter((e) => e.ebene === 'kanton').length;
+  if (kantonDateien < Math.floor(kantonImSeed * 0.9)) {
+    throw new Error(`seed-grundart: nur ${kantonDateien} Kanton-Snapshots unter public/normtext/kanton, `
+      + `Seed kennt ${kantonImSeed} — Verzeichnis fehlt oder Teil-Checkout; kein Rückzug, Abbruch (§8).`);
+  }
   for (const e of zuordnung) {
     if (!GRUNDARTEN.has(e.grundart)) {
       throw new Error(`seed-grundart: ungültige grundart «${e.grundart}» bei ${e.key}`);
