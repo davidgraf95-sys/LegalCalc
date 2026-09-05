@@ -62,13 +62,26 @@ interface Lauf {
   stderr: string;
 }
 
-/** Führt einen der Hooks als Python-Prozess aus; Exit-Code wird nie geworfen. */
+/**
+ * Führt einen der Hooks als Python-Prozess aus; Exit-Code wird nie geworfen.
+ *
+ * Test-Hygiene 5.9.2026 (QS-EFFIZIENZ, Kondensat-Befund): `execFileSync` gibt
+ * stderr per Default an den ELTERNPROZESS weiter (Node inherited stderr bei
+ * Sync-Exec, damit ein Fehlschlag sichtbar bleibt) — hier landete so bei jedem
+ * Erfolgs-Fall (a) zweimal wörtlich der Block «SUBAGENT-WACHE (§14.7): Dein
+ * Bericht behauptet Erfolg …» in der Vitest-Ausgabe, obwohl der Hook per Design
+ * genau DAS auf stderr schreibt (kein Bug im Hook — nur unkontrolliertes
+ * Durchreichen im Test). `stdio: ['pipe','pipe','pipe']` fängt stderr wie
+ * stdout ab; Assertions unverändert, `err.stderr`/Rückgabe bleiben identisch
+ * befüllt.
+ */
 function laufe(skript: string, projektDir: string, stdinJson: string, args: string[] = []): Lauf {
   try {
     const stdout = execFileSync('python3', [skript, ...args], {
       input: stdinJson,
       env: { ...process.env, CLAUDE_PROJECT_DIR: projektDir },
       encoding: 'utf8',
+      stdio: ['pipe', 'pipe', 'pipe'],
     });
     return { status: 0, stdout, stderr: '' };
   } catch (e) {
