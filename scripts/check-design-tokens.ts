@@ -55,37 +55,36 @@ for (const [fam, val] of Object.entries(farben)) {
   }
 }
 const FAMILIEN = Object.keys(farben).join('|');
-// Utility-Präfixe, die eine Farbe tragen:
-const PRAEFIX = 'bg|text|border|ring|from|via|to|divide|outline|fill|stroke|decoration|placeholder|caret|accent|ring-offset';
+// Utility-Präfixe, die eine Farbe tragen (shadow → --tw-shadow-color, D0):
+const PRAEFIX = 'bg|text|border|ring|from|via|to|divide|outline|fill|stroke|decoration|placeholder|caret|accent|ring-offset|shadow';
 // Fängt <praefix>-<familie>[-<stufe>] (Stufe optional = DEFAULT); /<alpha> wird ignoriert.
 const FARB_RE = new RegExp(`\\b(?:${PRAEFIX})-(${FAMILIEN})(?:-([a-z0-9.]+))?(?:/[0-9.]+)?\\b`, 'g');
 
 // ── Verbot: Ad-hoc-Status-Farben aus der Tailwind-Default-Palette (§13 Pkt.1/F7) ──
 // Diese Familien sind KEINE Haus-Tokens; Tailwind generiert sie per Default
 // weiter (extend überschreibt die Default-Palette nicht). Haus-Familien
-// (slate/ink/brass/sage/well/warn/danger …) bewusst NICHT gelistet — die prüft
-// bereits FARB_RE oben.
+// (slate/ink/brass/sage/well/warn/danger …) bewusst nicht gelistet — die
+// prüft bereits FARB_RE oben.
 const DEFAULT_PALETTE = 'red|green|blue|yellow|orange|purple|pink|gray|grey|zinc|neutral|stone|amber|lime|emerald|teal|cyan|sky|indigo|violet|fuchsia|rose';
 const DEFAULT_FARB_RE = new RegExp(`\\b(?:${PRAEFIX})-(?:${DEFAULT_PALETTE})-[0-9]+(?:/[0-9.]+)?\\b`, 'g');
 // ── Verbot: Arbitrary-Color Hex/rgb/hsl in Komponenten (§13 Pkt.1). var(--…) bleibt erlaubt (Token-Escape). ──
 const ARBITRARY_FARB_RE = new RegExp(`\\b(?:${PRAEFIX})-\\[(?:#|rgb|hsl)[^\\]]*\\]`, 'g');
 // ── Verbot: eigene FARBE am Fokusring (E-1, Design-Konsistenz 31.8.2026) ────
 // Der Fokusring hat GENAU EINE Rolle: `--focus` (src/index.css) — hell
-// brass-700, dunkel brass-500, und die globale Regel `:focus-visible { outline:
-// 2px solid var(--focus); outline-offset: 2px }` (index.css) trägt sie an JEDEM
-// fokussierbaren Element. Gefunden wurden trotzdem 9 Komponenten, die daneben
-// eine eigene Kette `focus-visible:outline focus-visible:outline-2
-// focus-visible:outline-brass-600` setzten: dieselbe Zusage, zweiter Wert
-// (§5) — im Dunkelmodus sichtbar falsch, weil brass-600 dort NICHT der
-// Fokuston ist. Die bestehenden Tore griffen knapp daneben: `brass-600` steht
-// in der Config (FARB_RE grün) und ist keine Default-Palette-Farbe
-// (DEFAULT_FARB_RE grün). Darum diese Schranke (§17-Nachzug).
-// ERLAUBT bleibt alles, was NICHT die Farbe setzt: `focus-visible:outline-none`
-// (dokumentierte Eigenring-Fälle), Breiten (`outline-2`) und vor allem der
-// Offset (`focus-visible:-outline-offset-2`) — Scroll-Container und Krümel in
-// schmalen Kopfzeilen brauchen den Ring innenliegend, sonst clippt er.
-// Fasst `focus:` und `focus-visible:` sowie `outline-`/`ring-` (inkl.
-// `ring-offset-`-Farbe) und arbitrary `[…]`-Werte ausser `var(--focus)`.
+// brass-700, dunkel brass-500 — via globaler Regel `:focus-visible { outline:
+// 2px solid var(--focus); outline-offset: 2px }` an JEDEM fokussierbaren
+// Element. Gefunden: 9 Komponenten mit eigener Kette `focus-visible:outline
+// focus-visible:outline-2 focus-visible:outline-brass-600` — dieselbe Zusage,
+// zweiter Wert (§5), im Dunkelmodus sichtbar falsch (brass-600 ist dort NICHT
+// der Fokuston). Bestehende Tore griffen knapp daneben: `brass-600` steht in
+// der Config (FARB_RE grün) und ist keine Default-Palette-Farbe (DEFAULT_
+// FARB_RE grün). Darum diese Schranke (§17-Nachzug).
+// ERLAUBT: alles, was NICHT die Farbe setzt — `focus-visible:outline-none`
+// (dokumentierte Eigenring-Fälle), Breiten (`outline-2`), vor allem der Offset
+// (`focus-visible:-outline-offset-2` — Scroll-Container/schmale Kopfzeilen
+// brauchen den Ring innenliegend, sonst clippt er). Fasst `focus:` und
+// `focus-visible:` sowie `outline-`/`ring-` (inkl. `ring-offset-`-Farbe) und
+// arbitrary `[…]`-Werte ausser `var(--focus)`.
 const FOKUS_FAMILIEN = [...Object.keys(farben), ...DEFAULT_PALETTE.split('|')]
   .filter((f) => f !== 'focus')                       // die Rolle selbst bleibt erlaubt
   .join('|');
@@ -140,7 +139,12 @@ const KOMMENTAR_ZEILE_RE = /^\s*(?:\/\/|\*|\/\*|\{\/\*)/;
 // ── Deckkraft-Suffix (Prüfung 3, D0): <praefix>-<farbe>/<alpha>. Bewusst OHNE
 // Familien-Filter — auch die Tailwind-Keyword-Farben (bg-black/50) laufen mit,
 // die Kompilation entscheidet. Nur Farb-Präfixe, damit w-1/2 & Co. nicht greifen.
-const ALPHA_UTIL_RE = new RegExp(`\\b(?:${PRAEFIX})-[a-z]+(?:-[a-z0-9]+)*\\/[0-9.]+\\b`, 'g');
+//
+// Klammer-Formen laufen mit (D0 5.9.2026, Messreihe + Rot-Beweis im Commit):
+// `…-[var(--x)]/60` ist als Token-Escape erlaubt, erzeugt aber KEINE Regel und
+// lief grün durch; `/[0.6]` wirksam, doch unbewacht. Trailing `\b` greift hinter `]` nicht.
+const ALPHA_UTIL_RE = new RegExp(
+  `\\b(?:${PRAEFIX})-(?:[a-z]+(?:-[a-z0-9]+)*|\\[[^\\]\\s]+\\])\\/(?:[0-9]+(?:\\.[0-9]+)?|\\[[^\\]\\s]+\\])`, 'g');
 
 function dateien(dir: string): string[] {
   const out: string[] = [];

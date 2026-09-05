@@ -76,7 +76,7 @@ function validiere(f: LohnfortzahlungInput): string[] {
 
 const BEISPIELE: { label: string; form: Partial<LohnfortzahlungInput> }[] = [
   { label: 'Krankheit 3. DJ (BS)', form: { vertragsbeginn: '2024-01-01', verhinderungBeginn: '2026-01-01', arbeitsunfaehigkeitProzent: 100, kanton: 'BS' } },
-  { label: 'Teil-AUF 50%', form: { vertragsbeginn: '2024-01-01', verhinderungBeginn: '2026-01-01', arbeitsunfaehigkeitProzent: 50, kanton: 'BS' } },
+  { label: 'Teil-AUF 50 %', form: { vertragsbeginn: '2024-01-01', verhinderungBeginn: '2026-01-01', arbeitsunfaehigkeitProzent: 50, kanton: 'BS' } },
   { label: 'DJ-übergreifend', form: { vertragsbeginn: '2024-01-01', verhinderungBeginn: '2025-12-01', verhinderungEnde: '2026-06-01', kanton: 'BS' } },
   { label: 'KTG vorhanden', form: { ktgGleichwertigVorhanden: true, kanton: 'ZH' } },
 ];

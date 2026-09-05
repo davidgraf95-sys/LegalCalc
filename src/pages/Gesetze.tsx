@@ -559,7 +559,7 @@ export function Gesetze() {
                           <button type="button" key={k} onClick={() => setzeKanton(k)} aria-pressed={kanton === k}
                             aria-label={`${KANTON_NAMEN[k] ?? k} — ${n} ${n === 1 ? 'Erlass' : 'Erlasse'}, ${STUFE_WORT[g.stufe]}`}
                             className={`inline-flex items-baseline gap-1 rounded px-1.5 py-0.5 text-xs font-medium transition-colors ${
-                              kanton === k ? 'bg-brass-100 text-brass-800' : 'text-ink-500 hover:bg-paper-sunken hover:text-brass-700'
+                              kanton === k ? 'bg-brass-100 text-brass-800' : 'text-ink-500 lc-hover-flaeche hover:text-brass-700'
                             }`}>
                             <span className="num">{k}</span>
                             {/* Zahl erbt die (kontrast-geprüfte) Pill-Textfarbe —

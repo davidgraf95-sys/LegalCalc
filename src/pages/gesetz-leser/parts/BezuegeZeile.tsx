@@ -55,6 +55,7 @@ import type { Bezug } from '../../../lib/rechtsprechung/bezuege';
 import type { BezugStatus } from '../../../lib/verzahnung/facetten';
 import { STATUS_LABEL, STATUS_RANG } from '../../../lib/verzahnung/facetten';
 import { KLASSE_KURZ } from '../bezugAuswahl';
+import { GruppenKopf } from '../../../components/ui/GruppenKopf';
 // Die rechnende Hälfte der Linie (Portionsgrösse, Schritt, Zähler-Text) lebt in
 // `bezugPortion.ts` — reine Arithmetik, dort ohne Komponente prüfbar (§3/§6;
 // Begründung im Kopf jener Datei).
@@ -151,10 +152,15 @@ const StatusGruppe = memo(function StatusGruppe({ status, kanten, gesamtRoh, fil
           zu knappe schnitte wieder ab. So fluchten die kurzen und die langen
           nehmen, was sie brauchen. `whitespace-nowrap`, weil ein umbrechender
           Gruppenkopf die feste Zeilenhöhe (CLS 0) sprengte. */}
-      <span className="lc-overline shrink-0 whitespace-nowrap sm:min-w-[11rem]" title={kopfTitel}>
-        {KLASSE_KURZ[status]}
-        <span className="num tabular-nums ml-1 font-normal normal-case text-ink-500">{zahlZeile}</span>
-      </span>
+      {/* R4-B (5.9.2026): bis hierher die achte handgezeichnete Kopie des
+          dichten Gruppenkopfs — Wortlaut und Utilities zeichengleich mit den
+          sieben, die R3-β eingesammelt hatte; nur der App-weite Sweep fehlte,
+          um sie zu sehen. Die Zeile bringt weiter ihr eigenes LAYOUT mit
+          (`shrink-0`, `whitespace-nowrap`, `sm:min-w-[11rem]` — Herleitung
+          oben), Typo und Zähler-Anatomie kommen jetzt aus dem Baustein.
+          `als="span"`: der Kopf ist eine Zelle dieser Flex-Zeile. */}
+      <GruppenKopf dicht als="span" titel={KLASSE_KURZ[status]} zahl={zahlZeile}
+        title={kopfTitel} className="shrink-0 whitespace-nowrap sm:min-w-[11rem]" />
       <div
         data-bezug-linie={status}
         ref={linieRef}
@@ -205,7 +211,7 @@ const StatusGruppe = memo(function StatusGruppe({ status, kanten, gesamtRoh, fil
             aria-label={`${zahl(Math.min(PRO_SCHRITT, rest))} weitere laden — ${zahlZeile} gezeigt, ${STATUS_LABEL[status]}`}
             className="lc-overline shrink-0 whitespace-nowrap rounded px-1.5 py-0.5 transition-colors hover:bg-brass-100/40 hover:text-brass-700"
           >
-            weitere <span className="num tabular-nums">{Math.min(PRO_SCHRITT, rest)}</span>
+            weitere <span className="num">{Math.min(PRO_SCHRITT, rest)}</span>
           </button>
         )}
       </div>

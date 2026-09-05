@@ -194,6 +194,31 @@ export function pdfQuellenJson(map: PdfQuellenMap): string {
   return JSON.stringify(sortiert, null, 2) + '\n';
 }
 
+/**
+ * Reine Räum-Funktion (Gegenprüfungs-Befund PR #694, 5.9.2026, minimal aus
+ * main() extrahiert für Testbarkeit — keine Logikänderung). Entfernt aus
+ * `map` jene Sidecar-Einträge, die (a) nicht mehr im Register stehen UND
+ * (b) mit `<KT>-` eines der GEFAHRENEN Kantone beginnen — ein aus dem Korpus
+ * zurückgezogener Erlass steht nicht mehr im Register und überlebte sonst
+ * jeden Teillauf als Waise (§5/§8). Fremde Kantone/Register-Einträge bleiben
+ * unberührt. Mutiert `map` nicht.
+ */
+export function raeumeVerwaisteSidecarEintraege(
+  map: PdfQuellenMap,
+  imRegister: ReadonlySet<string>,
+  gefahren: ReadonlySet<string>,
+): { map: PdfQuellenMap; entfernt: string[] } {
+  const bereinigt: PdfQuellenMap = { ...map };
+  const entfernt: string[] = [];
+  for (const key of Object.keys(map)) {
+    if (imRegister.has(key)) continue;
+    if (![...gefahren].some((kt) => key.startsWith(`${kt}-`))) continue;
+    entfernt.push(key);
+    delete bereinigt[key];
+  }
+  return { map: bereinigt, entfernt };
+}
+
 // ─── CLI ─────────────────────────────────────────────────────────────────────
 
 function heute(): string {
@@ -236,6 +261,25 @@ async function main() {
   if (nur === 'kanton' || nur === 'beide') {
     const { map: km, ohne, fehler } = await kantonPdfQuellen(kanton, fetch);
     for (const e of kanton) delete map[e.key];
+    // §5-Rückzug: `delete map[e.key]` räumt nur Keys, die IM REGISTER stehen.
+    // Ein aus dem Korpus zurückgezogener Erlass steht dort nicht mehr — sein
+    // Sidecar-Eintrag überlebte darum jeden Teillauf und blieb als Waise liegen
+    // (check:pdf-quellen «verwaister PDF-Quellen-Eintrag»; real beim Rückzug der
+    // GL-Schreibweisen-Dublette, 5.9.2026). Aufgeräumt wird ausschliesslich
+    // INNERHALB der gefahrenen Kantone; fremde Einträge bleiben unberührt (§8).
+    const imRegister = new Set(erlasse.map((e) => e.key));
+    const gefahren =
+      kantonFilter ??
+      new Set(
+        erlasse
+          .filter((e) => e.ebene === 'kanton' && e.kanton !== null)
+          .map((e) => (e.kanton as string).toUpperCase()),
+      );
+    const { map: bereinigt, entfernt: zurueckgezogen } = raeumeVerwaisteSidecarEintraege(map, imRegister, gefahren);
+    map = bereinigt;
+    if (zurueckgezogen.length > 0) {
+      console.log(`Kanton: ${zurueckgezogen.length} verwaiste(r) Eintrag entfernt (nicht mehr im Register): ${zurueckgezogen.join(', ')}`);
+    }
     Object.assign(map, km);
     console.log(`Kanton: ${Object.keys(km).length}/${kanton.length} amtliche PDF-URLs; ${ohne.length} ohne/Drift; ${fehler.length} Netz-Fehler`);
     if (fehler.length) console.log(`  Fehler (Auszug): ${fehler.slice(0, 10).join(' · ')}${fehler.length > 10 ? ' …' : ''}`);

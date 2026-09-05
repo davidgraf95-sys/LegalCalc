@@ -1,4 +1,12 @@
-// @shard-gruppe: 1
+// @shard-gruppe: 2
+// Gruppe 2 statt 1 (CI-Nachzug 5.9.2026, Lauf 33937186925): Gruppe 1 trug mit
+// dieser Spec 479 s reine CI-Testzeit und war damit der schwerste der acht
+// Shards (a11y 147 s + a11y-flaeche 108 s = 53 % der Gruppe), Gruppe 2 mit
+// 222 s der leichteste. Umhängen bringt 371 s / 330 s — der Spread der acht
+// Gruppen sinkt von 222–479 s auf 256–390 s, ohne dass eine Route, ein
+// Zustand oder eine Assertion angetastet wird (§6.3: ändert NUR, welche Datei
+// auf welchem Runner läuft). Die Annotation ist die Quelle, `shard-gruppen.json`
+// die Projektion (§5) — nach dieser Zeile `npm run gen:e2e-shards`.
 // ─── QS-UI Teilpass (e) · axe von Stichprobe auf FLÄCHENDECKUNG ──────────────
 // FAHRPLAN-UI-QUALITAET §4 Ziff. 2 (archiviert) verlangt «alle Hauptrouten».
 // Der Bestand `a11y.e2e.ts` prüft SIEBEN der 62 prerenderten Routen (plus die

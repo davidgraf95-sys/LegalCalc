@@ -113,35 +113,103 @@ describe('R2-E/F1-10 — «Kopiert ✓» rendert nur der geteilte KopierButton (
 // Zahl ist eine Design-Entscheidung («wie lange bleibt eine Quittung stehen»)
 // und stand achtmal da. Kanon ist die Zahl des geteilten Hooks (1600 ms); sie
 // liegt seit R3-α als `KOPIER_DAUER_MS` genau einmal in `useKopieren.ts`.
+//
+// RÜCKBAU R5-E/R6-C (5.9.2026, §17-Gegengewicht + §6.7). Hier standen zwei
+// weitere Fälle: ein App-Sweep nach `/setKopiert\(…\)\s*,\s*(…)\)` und dessen
+// Negativ-Kontrolle. Sie hingen am NAMEN einer Zustandsvariablen, nicht an der
+// Sache — der letzte namensgebundene Wächter der App (Messung R5-E über alle
+// 422 Dateien in `src/tests/`). GEMESSEN am 5.9.2026: der Ausdruck traf **0**
+// Stellen, seit R4-D alle Kopier-Mechaniken in `useKopieren` gezogen hat.
+//
+// MUTATIONS-BEWEIS, warum das kein Verlust ist (statt einer Behauptung): eine
+// von Hand gebaute Kopier-Quittung mit eigener Dauer, aber ANDEREM
+// Variablennamen (`setQuittung(true)` … `setTimeout(() => setQuittung(false),
+// 2500)` samt `navigator.clipboard.writeText`) in `src/components/` eingesetzt
+// —
+//   · namensgebundene Sonde:  GRÜN  (sie bewacht nichts)
+//   · R4-D (`clipboard.writeText`): ROT, `components/MutationsProbeR6.tsx`
+// Die Sorge trägt also R4-D an der SACHE, und der Fall darunter hält die Zahl
+// bei genau einer Definition. Eine Sonde, die nur bei einer bestimmten
+// Schreibweise anschlägt, sieht nach geprüftem Verhalten aus und ist keines.
+//
+// VERBREITERN war die Alternative und ist verworfen: der naheliegende
+// Ausdruck (`set[A-Z]\w*\((?:false|'')\)\s*,\s*\d{3,5}`) trifft heute genau
+// eine SACHFREMDE Stelle — `v3/LeserErlassKopfZone.tsx: setReiterToast(false),
+// 3200`, ein Reiter-Hinweis, keine Kopier-Quittung. Ein Wächter, der zum
+// Grünhalten eine Ausnahmeliste für Fremdes braucht, ist kein Ersatz.
 describe('R3-α/B3-9 — die Kopier-Quittung steht überall gleich lang', () => {
-  it('kein Rücksetz-Timer einer Kopier-Quittung trägt eine eigene Zahl', () => {
-    const funde: string[] = [];
-    for (const d of alleQuellen()) {
-      if (rel(d) === 'components/useKopieren.ts') continue; // die eine Definition
-      for (const m of liesOhneKommentare(d).matchAll(/setKopiert\([^)]*\)\s*,\s*([^)]+)\)/g)) {
-        if (!/KOPIER_DAUER_MS/.test(m[1])) funde.push(`${rel(d)} · ${m[1].trim()}`);
-      }
-    }
-    expect(funde, 'Verweildauer als eigene Zahl statt KOPIER_DAUER_MS (useKopieren.ts)').toEqual([]);
-  });
-
-  it('NEGATIV-KONTROLLE: der Ausdruck findet die drei Vorher-Formen', () => {
-    for (const vorher of [
-      'setTimeout(() => setKopiert(false), 1500);',
-      'kopierTimer.current = setTimeout(() => setKopiert(false), 2000);',
-      'window.setTimeout(() => setKopiert(\'\'), 1500);',
-    ]) {
-      const m = [...vorher.matchAll(/setKopiert\([^)]*\)\s*,\s*([^)]+)\)/g)];
-      expect(m.length, vorher).toBe(1);
-      expect(/KOPIER_DAUER_MS/.test(m[0][1]), vorher).toBe(false);
-    }
-  });
-
   it('die Zahl ist genau einmal definiert', () => {
     const definitionen = alleQuellen()
       .filter((d) => /export const KOPIER_DAUER_MS/.test(quelle(d)))
       .map(rel);
     expect(definitionen).toEqual(['components/useKopieren.ts']);
+  });
+});
+
+// ─── R4-D · EINE Kopier-MECHANIK, nicht nur eine Kopier-Zahl ────────────────
+//
+// GEMESSEN (5.9.2026, Quelltext): R3-α hatte die DAUER vereinheitlicht, die
+// Mechanik lief weiter fünfmal von Hand — und auseinander:
+//
+//   Fundort                        Erfolg erst nach Promise?  Timer-Ersatz  Unmount
+//   useKopieren (Kanon)                    ja                    ja           ja
+//   vorlagen/Dokumentmappe Z.123           ja                    ja           ja
+//   vorlagen/useWizardState Z.67           ja                    ja           ja
+//   pages/EntscheidLeser Z.582             ja                    NEIN         NEIN
+//   gesetz-leser/parts/ArtikelLeser Z.344  ja                    NEIN         NEIN
+//   components/LinkTeilenButton Z.47      NEIN                   NEIN         NEIN
+//
+// Die letzte Zeile war ein §8-Defekt: `void writeText(…)` plus sofortiges
+// `setKopiert(true)` meldete «Link kopiert ✓» auch über eine unveränderte
+// Zwischenablage — genau der Fehlgriff, gegen den `useKopieren` am 6.6.2026
+// gebaut wurde. Wurzel war die Signatur: der Hook nahm den Text an der
+// HOOK-Zeile, vier der fünf Flächen kennen ihn erst beim KLICK.
+describe('R4-D — `navigator.clipboard.writeText` läuft nur im geteilten Hook', () => {
+  /**
+   * Wer selbst schreiben darf — und WARUM. Die Begründung steht AM FUNDORT und
+   * wird hier wörtlich verlangt: eine Ausnahme, die man nur im Test sieht, ist
+   * eine unsichtbare Ausnahme (Doktrin `tests/appDateien.ts`, R3-α).
+   */
+  const ERLAUBT: Record<string, string> = {
+    'components/useKopieren.ts': 'die eine Mechanik',
+    'components/rechtsprechung/EntscheidBody.tsx':
+      'R4-D-AUSNAHME',
+  };
+
+  it('keine Fläche der App schreibt selbst in die Zwischenablage', () => {
+    const funde = alleQuellen()
+      .filter((d) => /clipboard\??\.\s*writeText/.test(liesOhneKommentare(d)))
+      .map(rel)
+      .filter((r) => !(r in ERLAUBT));
+    expect(funde, 'eigene Kopier-Mechanik statt `useKopieren` (components/useKopieren.ts)').toEqual([]);
+  });
+
+  it('jede Ausnahme trägt ihre Begründung am Fundort', () => {
+    for (const [r, grund] of Object.entries(ERLAUBT)) {
+      if (r === 'components/useKopieren.ts') continue;
+      const d = alleQuellen().find((x) => rel(x) === r);
+      expect(d, `${r} existiert`).toBeDefined();
+      expect(quelle(d!), `${r}: Begründung am Fundort`).toContain(grund);
+    }
+  });
+
+  it('NEGATIV-KONTROLLE: der Ausdruck findet die Vorher-Formen', () => {
+    // Wortlaute im Stand vom 31.8.2026 — Belege, nie nachgeführt (§2b).
+    for (const vorher of [
+      'void navigator.clipboard.writeText(`${location.origin}${pathname}${q}${hash}`);',
+      'navigator.clipboard?.writeText(text).then(',
+      'void navigator.clipboard?.writeText(text).then(() => {',
+    ]) {
+      expect(/clipboard\??\.\s*writeText/.test(vorher), vorher).toBe(true);
+    }
+    expect(/clipboard\??\.\s*writeText/.test('const { kopiert, kopieren } = useKopieren();')).toBe(false);
+  });
+
+  it('der Hook nimmt den Text auch beim Klick — sonst kann ihn niemand nutzen', () => {
+    const h = quelle(alleQuellen().find((d) => rel(d) === 'components/useKopieren.ts')!);
+    expect(h, '`kopieren(text)` bzw. `kopieren({text, marke})`')
+      .toMatch(/kopieren: \(was\?: string \| KopierAuftrag\) => void/);
+    expect(h, 'MARKE für Flächen mit zwei Kopier-Zielen').toContain('marke: string;');
   });
 });
 
