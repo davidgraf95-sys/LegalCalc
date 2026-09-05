@@ -37,3 +37,4 @@ Nicht «kreativ» lösen. PR als Entwurf öffnen, Problem beschreiben, abbrechen
 
 ## PR-Form
 Titel deutsch («QS-FREMDAGENTEN Phase 4: ArtikelBody.tsx aufteilen»). Beschreibung nach `AGENTS.md` §7. Letzter Absatz der Commit-Message: `Roadmap: QS-FREMDAGENTEN`. Nicht selbst mergen.
+Commit-Betreff nie mit Typ `refactor` bei Änderungen unter `src/tests/**` — Test-Splits sind deklarierte Änderungen, Form «QS-FREMDAGENTEN … : <deutscher Titel>» (Beleg PR #709).
