@@ -19,6 +19,19 @@ import { kopfSucheOeffnen } from './helpers/kopfSuche'
 // Sprung-/CLS-Assertions unberührt, Timeout greift nur bei Überschreitung.
 test.describe.configure({ timeout: 60_000 })
 
+// NACHZUG 4.9.2026 (§17-Wurzel-Fix Shard 3/8) — DEKLARIERTE TEST-INFRASTRUKTUR,
+// KEIN Assertion-Change (§6.3): Der Datei-Kopf hob am 19.7.2026 das TEST-Budget
+// auf 60 s, liess die einzelnen `expect` aber auf dem globalen 10-s-Default
+// (`playwright.config.ts`). Die Assertions NACH dem Sprung warten auf den
+// OR-Leser — dieselbe schwere Kette (Artikel-Index-/Struktur-Load), für die das
+// Schwester-e2e `leser-suche-a35-a40-a41` seit dem 19.7. 20-s-Fristen setzt. Auf
+// dem 2-vCPU-Runner riss darum das ENGSTE Glied (10 s) innerhalb eines Budgets,
+// das 60 s erlaubt. Diese Frist gleicht die beiden an; sie greift nur bei
+// Überschreitung, verlangsamt grüne Läufe nicht und lässt innerhalb der 60 s
+// weiterhin Raum für die vorangehenden Prüfschritte. Geprüft wird unverändert
+// DASSELBE (Überschrift trägt «OR», Ziel-Artikel im DOM).
+const OR_LESER_FRIST = 30_000
+
 // Die eine, überall sichtbare Kopf-Suchleiste (ARIA-Combobox).
 const sucheFeld = (page: Page) => page.getByRole('combobox', { name: /LexMetrik durchsuchen/ })
 // Das Trefferpanel ist eine ARIA-Listbox; der Sprung ist die erste Gruppe.
@@ -42,9 +55,9 @@ test.describe('Norm-Sprung in der normalen Suchleiste (A5)', () => {
     // Enter (ohne Pfeil-Auswahl) springt auf den Direkt-Treffer.
     await feld.press('Enter')
     await expect(page).toHaveURL(/\/gesetze\/bund\/OR#art-257_d$/)
-    await expect(page.getByRole('heading', { level: 1 })).toContainText('OR')
+    await expect(page.getByRole('heading', { level: 1 })).toContainText('OR', { timeout: OR_LESER_FRIST })
     // Der Ziel-Artikel steht im DOM (Anker auflösbar, §15 Funktions-Treue).
-    await expect(page.locator('#art-257_d')).toHaveCount(1)
+    await expect(page.locator('#art-257_d')).toHaveCount(1, { timeout: OR_LESER_FRIST })
     expect(fehler).toEqual([])
   })
 
