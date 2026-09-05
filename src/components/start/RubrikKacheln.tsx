@@ -2,11 +2,16 @@ import { NAVIGATION } from '../../lib/navigation';
 import { Icon } from '../Icon';
 import { RubrikKachel } from '../ui/RubrikKachel';
 import { STARTSEITE_ZAEHLER } from '../../data/startseiteZaehler.generated';
-import { GesetzeChips } from './GesetzeChips';
 
-// ─── Rubrik-Kacheln der Startseite (Startseite V3, Modul #4) ────────────────
+// ─── Rubrik-Kacheln der Startseite (Startseite V4, Modul #4) ────────────────
 //
-// Fünf Link-Kacheln als vollständige Landkarte der Sammlung, iteriert über die
+// V4 (§3 #4): VIER Kacheln statt fünf. «Gesetze» hat mit V4 eine eigene Sektion
+// darüber (`GesetzeBlock`, der Schwerpunkt der Seite) und wird hier
+// herausgefiltert — sonst stünde derselbe Einstieg zweimal auf einer Seite (§5).
+// Die Direktzugriff-Chips sind mit umgezogen; diese Sektion heisst darum
+// «Weitere Bereiche», nicht mehr «Alle Bereiche».
+//
+// Link-Kacheln als Landkarte der übrigen Sammlung, iteriert über die
 // EINE Navigations-SSoT (navigation.ts::NAVIGATION ohne «Start») — gleiche
 // Ordnung wie die Sidebar (I1). Reine Darstellung (§3): je Kachel ein
 // monolineares Icon (≤20 px), Titel, EIN konkreter Nutzen-Satz und — nur wo
@@ -26,12 +31,10 @@ const nf = (n: number) => n.toLocaleString('de-CH');
 // Fusszeile, sondern als Zahl + Einheit im Kanon-Kopf der Kachel
 // (`ui/RubrikKachel`). Der WORTLAUT ist unverändert — er wandert nur in die
 // Einheit: «227 Erlasse im Volltext» liest sich weiterhin als ein Satz.
+// `/gesetze` steht bewusst NICHT mehr in dieser Tabelle: die Rubrik hat ihre
+// eigene Sektion (GesetzeBlock). Der Filter unten läuft über `RUBRIK[a.ziel]` —
+// die Auslassung hier IST also die Ausblendung, ohne ein zweites «if» (§5).
 const RUBRIK: Record<string, { icon: string; nutzen: string; zahl?: string; einheit?: string }> = {
-  '/gesetze': {
-    icon: 'scale',
-    nutzen: 'Bundes- und Kantonserlasse im Volltext, geltende Fassung mit Stand und Link zur amtlichen Quelle.',
-    zahl: nf(z.gesetzeVolltext), einheit: 'Erlasse im Volltext',
-  },
   '/rechtsprechung': {
     icon: 'court',
     nutzen: 'Bundesgerichts- und weitere Gerichtsentscheide, nach Sachgebiet erschlossen und mit den Normen verzahnt.',
@@ -59,10 +62,9 @@ export function RubrikKacheln() {
   // Landkarte = dieselben Rubriken wie die Sidebar, ohne «Start» (titel === null).
   const rubriken = NAVIGATION.filter((a) => a.titel !== null && a.ziel && RUBRIK[a.ziel]);
   return (
-    <div className="space-y-4">
-      {/* Mobil grid-cols-1 zwingend (bekannte Overflow-Falle @390); Desktop fünf
-          Spalten als eine Reihe (die volle Landkarte auf einen Blick). */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+    /* Mobil grid-cols-1 zwingend (bekannte Overflow-Falle @390); Desktop vier
+       Spalten als eine Reihe (die Landkarte auf einen Blick). */
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
         {rubriken.map((a) => {
           const r = RUBRIK[a.ziel!];
           return (
@@ -76,8 +78,6 @@ export function RubrikKacheln() {
               zahl={r.zahl} einheit={r.einheit} nutzen={r.nutzen} />
           );
         })}
-      </div>
-      <GesetzeChips />
     </div>
   );
 }

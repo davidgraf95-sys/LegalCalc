@@ -24,11 +24,11 @@ export const SITE_URL = 'https://lexmetrik.vercel.app';
 // Absolutum, der Status-Terminus «geprüft» ist für Inhalte reserviert (nie
 // «geprüfte Bausteine»), «Ohne KI» nie als Siegel — nur der gescopte Satz.
 
-/** H1 der Startseite (Value Proposition, §6). */
-export const HERO_TITEL = 'Schweizer Recht nachschlagen, Fristen und Kosten berechnen';
-/** Subline unter der H1 (§6). */
+/** H1 der Startseite (Value Proposition; W2·23-STARTSEITE-V4 §5). */
+export const HERO_TITEL = 'Schweizer Recht an einem Ort';
+/** Subline unter der H1 (W2·23-STARTSEITE-V4 §5). */
 export const HERO_SUBLINE =
-  'Gesetze, Bundesgerichtsentscheide und amtliche Materialien in einem Werkzeug, dazu Rechner und Vorlagen — mit Norm, Link und Stand.';
+  'Gesetze von Bund und Kantonen, Bundesgerichtsentscheide und amtliche Materialien — miteinander verzahnt, mit Stand und Link zur amtlichen Quelle. Dazu Rechner und Vorlagen für Fristen, Kosten und Eingaben.';
 /** Vertrauens-Fuss, erster Satz — gescopter Anti-KI-Satz (§6, Auflage 1). */
 export const VERTRAUENS_SATZ =
   'Kein Sprachmodell schätzt Ergebnisse: gerechnet wird nach festen Regeln, der Rechenweg ist offengelegt, Normen sind mit der amtlichen Sammlung verlinkt.';
@@ -41,13 +41,18 @@ export const SITE_KURZFORM = 'Gerechnet wird nach festen Regeln, mit offengelegt
 
 /** Globaler Titel/Description — aus dem I2-Material (§6) abgeleitet; index.html
  *  spiegelt genau diese Werte (Tor check:seo-index). */
-export const SITE_TITEL = `LexMetrik — ${HERO_TITEL}`;
+// W2·23-STARTSEITE-V4 §5: der Seitentitel ist NICHT mehr `LexMetrik — ${HERO_TITEL}`.
+// Die H1 ist mit V4 bewusst kurz («Schweizer Recht an einem Ort»); ein <title>
+// braucht daneben die drei Suchbegriffe, unter denen die Seite gefunden wird.
+// Darum hier literal — der Titel bleibt trotzdem EINE Quelle (index.html
+// spiegelt ihn, Tor check:seo-index).
+export const SITE_TITEL = 'LexMetrik — Schweizer Recht an einem Ort: Gesetze, Urteile, Rechner';
 export const SITE_DESCRIPTION =
-  'Schweizer Recht nachschlagen und berechnen: Gesetze, Bundesgerichtsentscheide und Materialien, dazu Rechner und Vorlagen — mit Norm, Link und Stand.';
+  'Schweizer Recht an einem Ort: Gesetze von Bund und Kantonen, Bundesgerichtsentscheide und amtliche Materialien — miteinander verzahnt, mit Stand und Link zur amtlichen Quelle. Dazu Rechner und Vorlagen.';
 /** Kuratierter Social-Share-Text der Startseite (og:description) — bewusst mit
  *  dem gescopten Rechen-Satz statt Marketing-Claim. */
 export const SITE_OG_DESCRIPTION =
-  'Gesetze, Bundesgerichtsentscheide und Materialien in einem Werkzeug, dazu Rechner und Vorlagen. Gerechnet wird nach festen Regeln, mit Norm, Link und Stand.';
+  'Gesetze von Bund und Kantonen, Bundesgerichtsentscheide und Materialien an einem Ort, dazu Rechner und Vorlagen. Gerechnet wird nach festen Regeln, mit Norm, Link und Stand.';
 
 export interface RouteMetadaten {
   pfad: string;          // z. B. '/rechner/verzugszins'

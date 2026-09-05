@@ -120,8 +120,20 @@ describe('C-5 · Einstiegs-Kacheln laufen über EINEN Baustein', () => {
     // «erfasst» für die bibliografischen Materialien, «im Volltext» für die
     // echten Volltexte (E6a·M5) — der Umbau darf die Aussage nicht glätten.
     expect(start).toContain('amtliche Materialien erfasst');
-    expect(start).toContain('Erlasse im Volltext');
     expect(start).toContain('Entscheide im Volltext');
+    // DEKLARIERTE ANPASSUNG (W2·23-STARTSEITE-V4 §3, 5.9.2026, §6.3): der
+    // Erlass-Zähler steht nicht mehr in der Landkarte — «Gesetze» hat mit V4
+    // eine eigene Schwerpunkt-Sektion. Geprüft wird darum dort, WO die Zahl
+    // heute steht; die §8-Aussage selbst ist unverändert scharf.
+    const gesetzeBund = lies('components/start/GesetzeChips.tsx');
+    const gesetzeBlock = lies('components/start/GesetzeBlock.tsx');
+    expect(start, 'Landkarte führt den Erlass-Zähler nicht mehr').not.toContain('Erlasse im Volltext');
+    expect(gesetzeBund, 'Bund-Zeile: Zähler mit Scope').toMatch(/erlasse im Volltext/i);
+    expect(gesetzeBlock, 'Kanton-Zeile: Zähler mit Scope').toMatch(/erlasse im Volltext/i);
+    // §8 am Kantons-Chip: Zustands-Wort im Accessible Name, nie «vollständig»
+    // aus eigener Kraft (erfassungsgrad.ts bleibt die eine Quelle).
+    expect(gesetzeBlock).toContain('STUFE_WORT');
+    expect(gesetzeBlock).toContain('erfasst');
   });
 
   it('der Baustein ist genau einmal definiert', () => {

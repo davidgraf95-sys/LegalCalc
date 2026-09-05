@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { EinfacheFristForm } from '../components/forms/EinfacheFristForm';
+import { FristKalenderKompakt, type FristMarkierung } from '../components/forms/FristKalenderKompakt';
 import type { EinfacheFristMeldung, Ferien } from '../components/forms/einfacheFristTexte';
 import { AllgemeineFristForm } from '../components/forms/AllgemeineFristForm';
 import { ZpoFristenForm } from '../components/forms/ZpoFristenForm';
@@ -16,6 +17,8 @@ import { KATALOG_KARTEN, istVerfuegbar, type CalculatorCard } from '../lib/start
 import { sucheTrifft } from '../lib/katalogSuche';
 import { FRISTEN_MATERIELL } from '../lib/fristenKategorie';
 import { sansAmp } from '../components/typografie';
+import { getStandardKanton } from '../lib/einstellungen';
+import type { Kanton } from '../types/legal';
 
 // ─── Kombinierter Fristenrechner (Free) — Auftrag 5.6.2026 ──────────────────
 //
@@ -78,6 +81,10 @@ export function RechnerTagerechner() {
   // Reload rechnete das falsche Regime mit den Werten — §1). Ein navigate je
   // Tastendruck entsteht so nicht: Werte-Meldungen navigieren nie.
   const [live, setLive] = useState<EinfacheFristMeldung | null>(null);
+  // W2·23-STARTSEITE-V4 §3 #3: der kompakte Kalender kommt von «/» hierher. Er
+  // ist reine VISUALISIERUNG des Ergebnisses, das der einfache Rechner ohnehin
+  // meldet (#7) — keine zweite Eingabe, keine zweite Rechnung (§3/§5).
+  const [fristErgebnis, setFristErgebnis] = useState<{ markierung: FristMarkierung; kanton: Kanton } | null>(null);
   const verfahrenRef = useRef(verfahren);
   useEffect(() => { verfahrenRef.current = verfahren; });
   const uebernehmeEingaben = useCallback((m: EinfacheFristMeldung) => {
@@ -149,7 +156,12 @@ export function RechnerTagerechner() {
             Rechner mit Vorauswahl darunter verwenden.
           </p>
         </div>
-        <EinfacheFristForm onEingaben={uebernehmeEingaben} />
+        <EinfacheFristForm onEingaben={uebernehmeEingaben} onErgebnis={setFristErgebnis} />
+        <div className="space-y-2 border-t border-line pt-4">
+          <span className="lc-overline">Kalender-Ansicht</span>
+          <FristKalenderKompakt markierung={fristErgebnis?.markierung ?? null}
+            kanton={fristErgebnis?.kanton ?? getStandardKanton()} />
+        </div>
       </Card>
       <Card>
         <div className="space-y-1 mb-5">

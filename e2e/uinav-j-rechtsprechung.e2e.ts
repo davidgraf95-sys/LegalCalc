@@ -195,7 +195,12 @@ test.describe('W2·10-UI-NAV-J · Rechtsprechungs-Seiten', () => {
   test('News-Karten: Rechtsgebiet-Badge, Datum einmal je Gruppe, keine Gericht-Fusszeile', async ({ page }) => {
     const fehler = fehlerSammeln(page)
     await page.goto('/')
-    const streifen = page.getByRole('region', { name: 'Neue Bundesgerichtsentscheide' })
+    // DEKLARIERTE ANPASSUNG (W2·23-STARTSEITE-V4 §3 #6, 5.9.2026, §6.3): die
+    // Sektion heisst nicht mehr «Neue Bundesgerichtsentscheide» (aria-label),
+    // sondern trägt eine echte <h2> «Jüngste Entscheide im Korpus» — ein
+    // §8-Wortlaut-Fix (der Korpus endet ggf. Monate zurück, «neu» versprach
+    // Aktualität, die die Daten nicht tragen). Geprüft wird derselbe Streifen.
+    const streifen = page.getByRole('region', { name: 'Jüngste Entscheide im Korpus' })
     await expect(streifen).toBeVisible()
     await expect(streifen.getByRole('listitem').first()).toBeVisible()
 
@@ -215,7 +220,7 @@ test.describe('W2·10-UI-NAV-J · Rechtsprechungs-Seiten', () => {
     }
 
     // (c) Die «Bundesgericht»-Fusszeile ist weg — sie wiederholte den Titel.
-    // Der Titel selbst («Neues vom Bundesgericht») steht ausserhalb der Karten.
+    // Der Titel selbst steht ausserhalb der Karten.
     for (let i = 0; i < anzahl; i++) {
       expect(await karten.nth(i).textContent()).not.toContain('Bundesgericht')
     }

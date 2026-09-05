@@ -1,10 +1,22 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useId, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import type { BrowseEntscheid } from '../../lib/rechtsprechung/register';
+import { KorpusStand } from '../ui/KorpusStand';
 
-// ─── News-Header der Startseite (Auftrag David) ─────────────────────────────
+// ─── Jüngste Entscheide im Korpus (Startseite V4, Modul #6) ─────────────────
 //
-// Zeigt die NEUESTEN Bundesgerichtsentscheide als scanbaren Streifen, gespeist
+// EHRLICHER TITEL (W2·23-STARTSEITE-V4 §3 #6, §8): der Streifen hiess «Neues
+// vom Bundesgericht». Er zeigt aber, was IM KORPUS am jüngsten ist — und der
+// endet je nach Register-Lauf Monate zurück. «Neues» versprach damit Aktualität,
+// die die Daten nicht tragen. Der Titel sagt jetzt, was wirklich gezeigt wird;
+// das Datum jedes Entscheids steht ohnehin als Gruppen-Überschrift darüber.
+//
+// Darunter EINE Korpus-Stand-Zeile über den geteilten Baustein `ui/KorpusStand`
+// (zweiter Konsument: die Seitenleiste, Paket B). §8: sie sagt «Register
+// erzeugt am …», nie «Stand der Rechtsprechung» — die `stand*`-Felder sind das
+// Datum des Build-Laufs, nicht das des jüngsten Inhalts.
+//
+// Zeigt die jüngsten Bundesgerichtsentscheide als scanbaren Streifen, gespeist
 // aus dem bestehenden Rechtsprechungs-Register (build-time, neueste zuerst —
 // §3/§5: keine eigene Logik, nur Anzeige). Bewusst erweiterbar angelegt: weitere
 // amtliche Quellen (neue Gesetze, Initiativen, …) lassen sich später als weitere
@@ -15,7 +27,10 @@ import type { BrowseEntscheid } from '../../lib/rechtsprechung/register';
 // abnahmebedürftiger Schritt offen (verifizierter API-Vertrag nötig, §1/§7) —
 // hier NICHT unverifiziert eingebaut, damit nie falsche Entscheiddaten erscheinen.
 
-const MAX = 12;
+// MAX 6 (V4 §3 #6): der Streifen ist eine Kostprobe, kein Archiv — «Alle
+// Entscheide →» führt zur Vollsicht. Zwölf Karten hiessen auf «/» zwölf lazy
+// gerenderte Kacheln in einem Scroll-Streifen, den kaum jemand zu Ende schob.
+const MAX = 6;
 
 /** ISO «YYYY-MM-DD…» → «DD.MM.YYYY» ohne Date-Objekt (deterministisch, SSR-sicher). */
 function deDatum(iso: string): string {
@@ -59,6 +74,7 @@ function nachDatumGruppiert(liste: StreifenEintrag[]): { datum: string; eintraeg
 export function NewsHeader() {
   const [news, setNews] = useState<StreifenEintrag[] | null>(null);
   const streifenRef = useRef<HTMLDivElement>(null);
+  const titelId = useId();
 
   // #9: per Klick durch die Entscheide blättern — scrollt den Streifen um EINE
   // Karte, in beide Richtungen.
@@ -135,9 +151,12 @@ export function NewsHeader() {
   // (3) GEFÜLLT: Titel + Reservierung + Streifen, alles im Modul (s. <section>).
 
   return (
-    <section aria-label="Neue Bundesgerichtsentscheide" className="space-y-2 min-h-modul-news">
+    /* A11y (§7): die Sektion trägt jetzt eine echte <h2> statt eines
+       aria-label — dieselbe Ebene wie die übrigen Startseiten-Sektionen, damit
+       das Dokument-Outline keine titellose Region mehr hat. */
+    <section aria-labelledby={titelId} className="space-y-2 min-h-modul-news">
       <div className="flex items-center justify-between gap-3">
-        <span className="lc-overline">Neues vom Bundesgericht</span>
+        <h2 id={titelId} className="lc-overline text-brass-700">Jüngste Entscheide im Korpus</h2>
         <div className="flex items-center gap-2">
           {/* Durchblättern per Klick (#9) — auf Touch/schmal ist zudem Wischen möglich. */}
           <div className="hidden sm:flex items-center gap-1" role="group" aria-label="Entscheide durchblättern">
@@ -213,6 +232,7 @@ export function NewsHeader() {
         ))}
       </ul>
       </div>
+      <KorpusStand />
     </section>
   );
 }
