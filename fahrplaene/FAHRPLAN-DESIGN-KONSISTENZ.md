@@ -100,6 +100,51 @@ LeserPanelOeffner · 12 tote num-tabular-nums · 3 stateful Kopier-Mechaniken ·
 RechnerTagerechner-Leerzustand-Doktrinfrage (filter-Weiterweg wäre sichtbar neu) ·
 Panel-Reiter-Scroll-Entdeckbarkeit (R3-A-Nebenfund).
 
+**Runde 4 — GEBAUT (5.9.2026, Pakete R4-A…E).** Arbeitsvorrat war die
+R3-γ-Restliste; jeder Punkt wurde am Preview bzw. am Quelltext reproduziert,
+bevor er angefasst wurde. Wiederkehrende Wurzel: **die Wächter der Runde 3
+prüften Listen und Namen, nicht Sachen** — jeder der drei App-weiten Sweeps
+dieser Runde fand mehr, als die Restliste nannte (+9 Fundstellen).
+
+| Nr | Befund (Kurz) | Messung | Ergebnis |
+|---|---|---|---|
+| R4-A | Pane-✕ = achte ✕-Form; Klassen-String trug `hover:text-brass-700` UND `hover:text-danger-700` | Preview `/gesetze/bund/OR?p=/gesetze/bund/ZGB`: ruhend `rgb(111,107,97)`, hover `rgb(122,47,35)` = danger-700 — entschieden durch die Stylesheet-Sortierung, nicht durch eine Aussage | `GRIFF_BOX`/`GRIFF_FLAECHE` teilen den String; ✕ aus `ui/SchliessKnopf` mit `ton="destruktiv"` (gleiche Farbe, jetzt benannt), `komfort={false}` als dritte begründete Ausnahme (vom Wächter beim Bau rot gefunden). Neue App-weite Sonde «kein Knopf trägt zwei Hover-Töne» |
+| R4-B | dichter Gruppenkopf: achte handgezeichnete Kopie in `BezuegeZeile` | Wächter zweifach zu eng — Regex verlangte `className="lc-overline"` ALLEIN, und er prüfte eine Vierer-Liste. ROT-BEWEIS mit wieder eingesetzter Vorher-Form: Sweep meldet `["pages/gesetz-leser/parts/BezuegeZeile.tsx"]`, Exit 1 | Sweep app-weit; `GruppenKopf` bekommt `als="span"` (Flex-Zelle) und einen String-`zahl` für den §8-Zähler «5 von 13 gekürzt» |
+| R4-C | «12 tote `num tabular-nums`» — die Einordnung «tot» war FALSCH | Preview, `getComputedStyle`: `.num` → `lining-nums tabular-nums`; `.num tabular-nums` → `tabular-nums`. `.num` liegt in `@layer components`, die Utility in `@layer utilities`; die spätere Schicht ersetzt die ganze Deklaration und nimmt `lining-nums` weg | 16 Fundstellen in 11 Dateien bereinigt (Sweep fand 5 mehr als die Liste). App-weiter Wächter + Negativ-Kontrolle. NACHWEIS am Preview: über alle sechs Ansichten der Dry-Sonde ist `font-variant-numeric` der 8'254/8'339/91 `.num`-Elemente EIN Wert |
+| R4-D | «3 stateful Kopier-Mechaniken» — es waren ACHT | Quelltext-Sweep über `clipboard.writeText`. `LinkTeilenButton` setzte die Quittung VOR dem Promise → «Link kopiert ✓» über unveränderter Zwischenablage (§8-Defekt). `ArtikelBody.zitier` trug mit 1'200 ms eine VIERTE Verweildauer, die der R3-α-Wächter nicht sah: er sucht `setKopiert(`, die Stelle heisst `setOk(` | Wurzel behoben — `useKopieren` nimmt den Text jetzt beim KLICK (sechs von acht Flächen kennen ihn erst dann) und trägt eine MARKE für Flächen mit zwei Kopier-Zielen. Sieben Flächen migriert; `EntscheidBody` ausgenommen, Begründung AM FUNDORT und vom Wächter wörtlich verlangt (aria-live-Ansage mit Wiederhol-Zähler ≠ ✓ mit Rückstell-Timer) |
+| R4-E | Tagerechner-Leerzustand (in R3-γ als «Doktrinfrage» offen) | Preview: `/rechner/tagerechner` mit «zzzzz» → `data-leerzustand="bestand"`, KEIN Weiterweg; `/rechtsprechung?q=zzzzzz` → `"filter"` MIT Weiterweg. Derselbe Sachverhalt, zwei Darstellungen | Massgeblich ist die LAGE, nicht der Wortlaut (Doktrin der beiden `Gesetze.tsx`-Fundstellen): der Zweig läuft nur bei nicht-leerer Suche ⇒ `art="filter"` + Weiterweg «Suche leeren». Satz Zeichen für Zeichen unverändert (§8). Die übrigen acht `art="bestand"`-Stellen geprüft: alle korrekt |
+| R3-γ-6 | Panel-Reiter-Scroll-Entdeckbarkeit | — | **überholt**: am selben Tag durch R3-B/Paket B8 gebaut; die Leiste trägt `lc-scrollrand-x lc-scrollrand-grund-raised` (`v3/LeserPanel.tsx:167`), Herleitung samt Messung 385/350 px im Dateikopf |
+
+**Dry-Sonde Runde 4 (5.9.2026, frischer Browser-Kontext je Route, 1600×900).**
+Drei Paare Split-View ↔ Einzelseite — Gesetz-Leser (`/gesetze/bund/OR`),
+Entscheid-Leser (`/rechtsprechung/ag_gerichte_HOR_2024_19`), Rechner
+(`/rechner/verjaehrung`) — verglichen über Klassenfamilien-Zählung,
+H1-Anatomie und `font-variant-numeric`. **Kein Neufund:** genau ein `h1` je
+Ansicht, gleiche Grösse (32 px), Umschaltung `sm:` ↔ `@xl/pane:` überall über
+`usePaneKlasse`; Schriftstimme folgt der Inhaltsklasse (Zwei-Stimmen-Regel,
+Runde 1 kein Befund); alle ✕ tragen den Baustein in EINER Glyphengrösse (16 px).
+
+**DRY IST NICHT ERREICHT.** Dry heisst zwei Runden ohne neuen substanziellen
+Befund; Runde 4 hat aus ihren eigenen Wurzel-Sweeps neun zusätzliche
+Fundstellen erzeugt. Die enge Paar-Sonde oben ist EIN sauberer Zähler, nicht
+zwei — Runde 5 braucht eine echte Finder-Welle.
+
+**Runde-5-Liste (aus dem Bau der Runde 4, alle belegt):**
+· `src/tests/design-r3b-chrome.test.ts` rollt eigenes `alleTsx`/`rel`/
+`ohneKommentare` statt `tests/appDateien.ts` — die §5-Dublette genau des
+Bausteins, den R3-α gegen Listen-Wächter gebaut hat.
+· `components/ErgebnisAnzeige.tsx:121` setzt
+`style={{ fontVariantNumeric: 'lining-nums tabular-nums' }}` — die Deklaration
+von `.num` roh dupliziert (§5/F9).
+· `pages/gesetze-teile/AzRegister.tsx:223`: `Leerzustand` in einem mutmasslich
+unerreichbaren Zweig (`gruppen.get(buchstabe)` ist nie leer) — §6.7-Verdacht,
+prüfen und ggf. zurückbauen.
+· Der ⧉-Griff «Layout-Link kopieren» (Pane-Titelleiste) gibt KEINE Rückmeldung,
+`LinkTeilenButton` für dieselbe Handlung schon. Eine Quittung in der 28-px-Zeile
+wäre sichtbar neu → **wartet auf einen Entscheid**, nicht auf einen Fix.
+· Generalfrage aus R4-D: welche weiteren Wächter hängen an einem VARIABLENNAMEN
+statt an der Sache? (`setKopiert(` liess `setOk(` mit 1'200 ms durch.)
+
 **Verworfen/kein Befund:** Leerzustand-Wortlaut «gefunden» vs «erfasst» (bedeutungstragend) ·
 H1-Schriftstimmen (Zwei-Stimmen-Regel) · `rounded`=`rounded-sm` (latent, via tailwind-Default
 mitgefixt) · SachgebietKacheln lg: (ohne Sichtschaden, Runde 2 prüfen).

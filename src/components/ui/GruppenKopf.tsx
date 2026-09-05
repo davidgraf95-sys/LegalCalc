@@ -68,12 +68,33 @@ import type { ReactNode } from 'react';
 //
 // §3: reine Darstellung — der Baustein zählt nichts, er zeigt eine übergebene
 // Zahl an.
+// ─── R4-B (5.9.2026) · die INLINE-Gestalt und der sprechende Zähler ────────
+//
+// Runde 4, Befund R3-γ-2. Der App-weite Sweep (der Wächter fegte bis hierher
+// nur eine Vierer-Liste, s. `design-r3b-chrome.test.ts`) fand die achte
+// handgezeichnete Kopie des dichten Rezepts: die Klassen-Zeile der
+// `BezuegeZeile` am Artikelfuss («KANTONAL 13»). Zwei Dinge hielten sie
+// draussen, beide gelöst statt umgangen:
+//
+//   (1) Sie steht INLINE in einer Flex-Zeile neben der Chip-Linie. Ein `<p>`
+//       wäre dort Inhaltsmodell-Lärm; darum `als="span"` — dritter Wert
+//       derselben Prop, keine dritte Anatomie (§5).
+//   (2) Ihr Zähler ist nicht immer eine nackte Zahl: ist die Linie gekürzt,
+//       steht «5 von 13 gekürzt». Das ist KEINE zweite Zähler-Schreibweise im
+//       Sinne von C-2 (Klammern/Mittelpunkt sind Satzzeichen ohne Aussage) —
+//       es ist eine AUSSAGE über die gezeigte Menge, die eine nackte Zahl
+//       falsch machen würde (§8: Ehrlichkeitstexte nie abschwächen). Darum
+//       nimmt `zahl` auch einen String; die C-2-Schreibweise selbst bleibt
+//       vom App-weiten Sweep bewacht, nicht vom Typ.
 export function GruppenKopf({
   titel, zahl, stufe = 3, als = 'h', dicht, id, marke, markeStellung = 'links', title, className,
 }: {
   titel: ReactNode;
-  /** Einträge der Gruppe. Weggelassen = Gruppenkopf ohne Zähler (kein `0`). */
-  zahl?: number;
+  /** Einträge der Gruppe. Weggelassen = Gruppenkopf ohne Zähler (kein `0`).
+   *  Regelfall ist die nackte ZAHL (C-2). Ein String ist nur dort zulässig, wo
+   *  der Zähler eine §8-Aussage über die gezeigte Menge trägt, die eine blosse
+   *  Zahl falsch machte («5 von 13 gekürzt», `BezuegeZeile`). */
+  zahl?: number | string;
   /** Überschriften-Ebene der Umgebung — Darstellung bleibt gleich, nur das
    *  Dokument-Outline folgt der Schachtelung (h2 Seite → h3 Sektion → h4).
    *  Ohne Wirkung bei `als="p"`. */
@@ -83,8 +104,11 @@ export function GruppenKopf({
    *  Gruppentitel der Rechner-Formulare (sie stehen INNERHALB eines Schrittes,
    *  dessen Überschrift schon steht) und die Panel-Köpfe des Lesers V3, die im
    *  Outline unter der Panel-Überschrift hingen. Die DARSTELLUNG ist in beiden
-   *  Fällen dieselbe — genau darum eine Prop und keine zweite Anatomie. */
-  als?: 'h' | 'p';
+   *  Fällen dieselbe — genau darum eine Prop und keine zweite Anatomie.
+   *  `'span'` = wie `'p'`, aber INLINE: für Köpfe, die als Zelle einer
+   *  Flex-Zeile neben ihrem Inhalt stehen (`BezuegeZeile`), wo ein
+   *  Block-Absatz das Inhaltsmodell der Zeile bräche. */
+  als?: 'h' | 'p' | 'span';
   /** Dichte Gestalt: OHNE Haarlinie, Zahl direkt am Titel, Overline in ihrer
    *  Grundfarbe. Für schmale Flächen (Panels, Kontext-Gruppen), wo die
    *  Haarlinie das Bild zerschnitte statt es zu ordnen. */
@@ -107,7 +131,7 @@ export function GruppenKopf({
    *  Layout/Kappung, nie Typo/Farbe. */
   className?: string;
 }) {
-  const El = als === 'p' ? 'p' : (`h${stufe}` as 'h2' | 'h3' | 'h4');
+  const El = als === 'h' ? (`h${stufe}` as 'h2' | 'h3' | 'h4') : als;
   if (dicht) {
     return (
       <El id={id} title={title} className={className ? `lc-overline ${className}` : 'lc-overline'}>

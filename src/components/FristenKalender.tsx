@@ -103,6 +103,43 @@ export function FristenKalender({ ereignisISO, aQuoISO, adQuemISO, kanton, still
   const istRelevant = (d: Date): boolean =>
     bandStatus(d) !== null || isSameDay(d, ereignis) || (aQuo != null && isSameDay(d, aQuo)) || isSameDay(d, adQuem);
 
+  // ── LM-190 (W2·17-UI-BEFUNDE/B18) · GLEICH HOHE MONATSBLÖCKE ───────────────
+  // Der Wochen-Filter oben rechnet je Monat für sich. Bei einem Monatsübergang
+  // stand darum ein Block mit EINER Woche neben einem mit fünf, und unter dem
+  // kurzen klaffte eine grosse Leerfläche (Befund: «Juli eine Zeile, August
+  // fünf»; nachgemessen 5.9.2026 @1440 auf `/` mit Ereignis 28.09./10 Tagen:
+  // September-Raster 57 px hoch, Oktober-Raster 91 px).
+  // Jetzt bekommen alle gezeigten Monate DIESELBE Zeilenzahl: das Fenster des
+  // kürzeren wächst auf die Spanne des längsten — erst nach unten, dann nach
+  // oben, immer innerhalb desselben Monats. Es kommen also nur echte Tage
+  // dieses Monats dazu, nie fremde; die Bedeutung einer Zelle ist unverändert.
+  // Reine Darstellung (§3) — Band, Marker und Legende rechnen weiter über den
+  // vollen Monat (`stillstandSichtbar` oben scannt ohnehin alle Tage).
+  const raster = monate.map((monat) => {
+    const jahr = monat.getFullYear();
+    const m = monat.getMonth();
+    const anzahl = new Date(jahr, m + 1, 0).getDate();
+    const offset = (new Date(jahr, m, 1).getDay() + 6) % 7; // Mo-first
+    const alle: (Date | null)[] = [...Array(offset).fill(null), ...Array.from({ length: anzahl }, (_, i) => new Date(jahr, m, i + 1))];
+    const wochen: (Date | null)[][] = [];
+    for (let i = 0; i < alle.length; i += 7) wochen.push(alle.slice(i, i + 7));
+    return wochen;
+  });
+  const fenster = raster.map((wochen) => {
+    const treffer = wochen.map((w, i) => (w.some((d) => d && istRelevant(d)) ? i : -1)).filter((i) => i >= 0);
+    return treffer.length > 0 ? { von: treffer[0], bis: treffer[treffer.length - 1] } : { von: 0, bis: wochen.length - 1 };
+  });
+  const spanne = Math.max(...fenster.map((f) => f.bis - f.von + 1));
+  // `i % 7` bleibt weiter unten die Spalte: geschnitten wird auf GANZEN Wochen,
+  // die Zellenzahl vor jedem Tag bleibt damit ein Vielfaches von 7.
+  const zellenJeMonat = raster.map((wochen, idx) => {
+    if (!kompakt) return wochen.flat();
+    let { von, bis } = fenster[idx];
+    while (bis - von + 1 < spanne && bis < wochen.length - 1) bis++;
+    while (bis - von + 1 < spanne && von > 0) von--;
+    return wochen.slice(von, bis + 1).flat();
+  });
+
   return (
     // data-ansicht (QS-UI 8b): markiert eine ABGELEITETE Ansicht im Sinne von
     // DESIGN-REGLEMENT-RECHNER R4 Ziff. 3 — sie stellt dar, was die Engine
@@ -132,18 +169,10 @@ export function FristenKalender({ ereignisISO, aQuoISO, adQuemISO, kanton, still
           const jahr = monat.getFullYear();
           const m = monat.getMonth();
           const anzahl = new Date(jahr, m + 1, 0).getDate();
-          const offset = (new Date(jahr, m, 1).getDay() + 6) % 7; // Mo-first
-          const alleZellen: (Date | null)[] = [...Array(offset).fill(null), ...Array.from({ length: anzahl }, (_, i) => new Date(jahr, m, i + 1))];
           // kompakt: nur Wochen (7er-Zeilen) mit einem relevanten Tag zeigen
-          // (Ereignis→Fristende-Band + Marker) → leere Vor-/Nachwochen entfallen.
-          // i % 7 bleibt korrekt: ganze (volle) Wochen werden gedroppt (Vielfaches 7).
-          const zellen: (Date | null)[] = kompakt
-            ? (() => {
-                const w: (Date | null)[][] = [];
-                for (let i = 0; i < alleZellen.length; i += 7) w.push(alleZellen.slice(i, i + 7));
-                return w.filter((woche) => woche.some((d) => d && istRelevant(d))).flat();
-              })()
-            : alleZellen;
+          // (Ereignis→Fristende-Band + Marker) → leere Vor-/Nachwochen entfallen,
+          // in allen gezeigten Monaten aber gleich viele (LM-190, s. oben).
+          const zellen: (Date | null)[] = zellenJeMonat[idx];
           // Nicht angrenzende Monate: ···-Trenner statt nahtlosem Anschluss
           // (die Fussnote unten bleibt als explizite Aussage bestehen).
           const trenner = idx > 0 && keys[idx] - keys[idx - 1] > 1;
@@ -220,7 +249,14 @@ export function FristenKalender({ ereignisISO, aQuoISO, adQuemISO, kanton, still
                       // ist ein ZUSTAND («Frist endet»), kein Werkstoff.
                     if (isAdQuem) { marker = 'bg-ok-solid text-paper font-semibold rounded-full lc-termin-ring'; title = L.adquem; }
                     else if (isAQuo) { marker = 'bg-brass-500 text-ink-900 font-semibold rounded-full'; title = L.aquo; }
-                    else if (isEreignis) { marker = 'border-2 border-ink-900 text-ink-900 font-semibold rounded-full bg-paper-raised'; title = L.ereignis; }
+                    // LM-190: Die Papier-Füllung des Ereignis-Rings deckte die LINKE
+                    // Rundung des Fristbands zu — das Band schien erst am Folgetag
+                    // zu beginnen, mit einer sichtbaren Kerbe davor (gemessen
+                    // 5.9.2026 @1440 auf `/`, Element-Screenshot). Liegt Band
+                    // darunter, bleibt der Ring jetzt durchsichtig und die Rundung
+                    // läuft durch; ohne Band behält er seine Füllung, damit der
+                    // Ring gegen die Kartenfläche eine geschlossene Kante hat.
+                    else if (isEreignis) { marker = `border-2 border-ink-900 text-ink-900 font-semibold rounded-full ${band ? '' : 'bg-paper-raised'}`; title = L.ereignis; }
                     else if (band === 'still') { marker = 'text-warn-700'; title = 'Gerichtsstillstand'; }
 
                     return (

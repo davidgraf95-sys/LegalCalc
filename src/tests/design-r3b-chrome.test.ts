@@ -52,8 +52,22 @@ const rel = (p: string) => p.slice(WURZEL.length + 1);
 
 // ─── B3-1/B3-2 · der dichte Gruppenkopf ─────────────────────────────────────
 
-/** Das dichte Rezept: Overline-Kopf, Zähler unmittelbar am Titel. */
-const DICHT_REZEPT = /className="lc-overline"[^>]*>[\s\S]{0,80}?<span className="num tabular-nums ml-1 font-normal normal-case/;
+/**
+ * Das dichte Rezept: Overline-Kopf, Zähler unmittelbar am Titel.
+ *
+ * ── R4-B (5.9.2026) · zweimal zu eng gefasst, beides behoben ───────────────
+ * (1) Der Ausdruck verlangte `className="lc-overline"` — die Klasse ALLEIN in
+ *     ihren Anführungszeichen. Jeder Kopf, der daneben noch Layout trug
+ *     (`className="lc-overline shrink-0 whitespace-nowrap …"`), lief durch.
+ * (2) Geprüft wurde eine Vierer-LISTE statt der App. Das ist die Vakuum-Falle,
+ *     die R3-α für vier andere Wächter aufgelöst hat (`tests/appDateien.ts`) —
+ *     hier stand sie noch.
+ * GEMESSEN am 5.9.2026: beides zusammen verdeckte die achte Kopie,
+ * `pages/gesetz-leser/parts/BezuegeZeile.tsx` Z. 154–157 («KANTONAL 13»).
+ * Der Sweep unten wird ohne deren Migration rot — das ist der Rot-Beweis
+ * (§6.7) dieses Pakets.
+ */
+const DICHT_REZEPT = /className="[^"]*\blc-overline\b[^"]*"[^>]*>[\s\S]{0,80}?<span className="num tabular-nums ml-1 font-normal normal-case/;
 
 describe('B3-1/B3-2 · dichte Gruppenköpfe laufen über `ui/GruppenKopf`', () => {
   const migriert = [
@@ -61,10 +75,14 @@ describe('B3-1/B3-2 · dichte Gruppenköpfe laufen über `ui/GruppenKopf`', () =
     'pages/gesetz-leser/v3/PanelMaterialien.tsx',
     'pages/gesetz-leser/v3/PanelEntscheide.tsx',
     'components/kontext/KontextGruppe.tsx',
+    // R4-B: vom App-weiten Sweep gefunden, nicht von der Liste.
+    'pages/gesetz-leser/parts/BezuegeZeile.tsx',
   ];
 
-  it('keine der migrierten Flächen zeichnet das dichte Rezept noch selbst', () => {
-    const rueckfaelle = migriert.filter((r) => DICHT_REZEPT.test(ohneKommentare(lies(r))));
+  it('KEINE Fläche der App zeichnet das dichte Rezept noch selbst', () => {
+    const rueckfaelle = alleTsx()
+      .filter((p) => DICHT_REZEPT.test(ohneKommentare(readFileSync(p, 'utf8'))))
+      .map(rel);
     expect(rueckfaelle).toEqual([]);
   });
 
@@ -134,10 +152,6 @@ const X_AUSNAHMEN: Record<string, string> = {
   'pages/Suche.tsx': '(b) «Suche leeren»',
   'pages/gesetz-leser/v3/SuchSprungFeld.tsx': '(b) «Suche leeren (Esc)»',
   'pages/gesetz-leser/parts/WeiterlesenChip.tsx': '(b) «Angebot verwerfen» — verwirft, schliesst nicht',
-  'components/layout/PaneKopf.tsx':
-    '(c) OFFEN (R3-γ): eigene Griff-Familie der Pane-Titelleiste (⠿ ◂ ▸ ⇱ ⧉ ✕, EIN Klassen-String) — '
-    + 'die Migration verlangt, diesen String in Box und Farbe zu teilen; dort liegt zudem der latente '
-    + 'Doppel-Hover `hover:text-brass-700` + `hover:text-danger-700` (gemeldet, nicht hier gefixt)',
 };
 
 describe('A3-1 · das Schliess-✕ kommt aus EINEM Baustein', () => {
@@ -167,6 +181,11 @@ describe('A3-1 · das Schliess-✕ kommt aus EINEM Baustein', () => {
       // Achte Fundstelle, im Bau dazugekommen: die zeichengleiche Kopie der
       // NormPopover-Kopfzeile in `vorlagen/NormChip.tsx` (§5).
       'components/vorlagen/NormChip.tsx',
+      // R4-A (5.9.2026): die als «(c) OFFEN (R3-γ)» ausgewiesene neunte Fläche
+      // ist eingesammelt — der Klassen-String der Pane-Titelleiste ist in BOX
+      // (`GRIFF_BOX`) und Hover-Fläche (`GRIFF_FLAECHE`) geteilt, das ✕ holt
+      // seinen Ton als `ton="destruktiv"` aus dem Baustein.
+      'components/layout/PaneKopf.tsx',
     ];
     for (const r of konsumenten) {
       expect(lies(r), `${r}: rendert <SchliessKnopf`).toContain('<SchliessKnopf');
@@ -183,6 +202,29 @@ describe('A3-1 · das Schliess-✕ kommt aus EINEM Baustein', () => {
     // Die Farbe darf nicht wieder als lose Utility neben dem Baustein stehen.
     expect(ohneKommentare(lies('components/layout/TabPanel.tsx')))
       .not.toContain('hover:text-danger-700');
+    // R4-A: dieselbe Regel für die Pane-Titelleiste — dort stand der Ton als
+    // Anhängsel an einem Klassen-String, der bereits `hover:text-brass-700`
+    // trug. GEMESSEN am Preview (5.9.2026): beide Utilities auf EINEM Knopf,
+    // gemalt wurde `rgb(122,47,35)` (danger-700) — allein wegen der Sortierung
+    // im Stylesheet. Kein Knopf der App trägt zwei Hover-Töne gleichzeitig.
+    const pk = ohneKommentare(lies('components/layout/PaneKopf.tsx'));
+    expect(pk, 'Pane-✕ = destruktiv, deklariert').toContain('ton="destruktiv"');
+    expect(pk, 'kein loser danger-Ton neben dem Baustein').not.toContain('hover:text-danger-700');
+    const doppelHover = (quelle: string): string[] =>
+      (quelle.match(/class[nN]ame=\{?[`"'][^`"']*[`"']/g) ?? [])
+        .filter((m) => m.includes('hover:text-brass-700') && m.includes('hover:text-danger-700'));
+    // NEGATIV-KONTROLLE (§6.7): der Ausdruck sieht die Vorher-Form. Wortlaut aus
+    // PaneKopf.tsx Z. 159 im Stand vom 31.8.2026 — `knopf` trug den Brass-Ton,
+    // der Fundort hängte den Danger-Ton an; Tailwind mischt beide in EINE
+    // Klassenliste. Der Beleg wird NIE nachgeführt (§2b).
+    const vorherPaneX = 'className={`${knopf} hover:text-danger-700`}';
+    const knopfString = 'className="inline-flex h-7 w-7 text-ink-500 hover:text-brass-700 hover:text-danger-700"';
+    expect(vorherPaneX).toContain('hover:text-danger-700');
+    expect(doppelHover(knopfString)).toHaveLength(1);
+    for (const r of alleTsx()) {
+      const funde = doppelHover(ohneKommentare(readFileSync(r, 'utf8')));
+      expect(funde, `${rel(r)}: zwei Hover-Töne in EINEM Klassen-String`).toEqual([]);
+    }
   });
 
   it('die Trefferfläche wächst per ::after auf das Komfort-Token (F9: kein roher Wert)', () => {
@@ -195,11 +237,20 @@ describe('A3-1 · das Schliess-✕ kommt aus EINEM Baustein', () => {
     expect(basis, 'die Pseudo-Fläche braucht einen Positionsanker').toContain('relative');
   });
 
-  it('die Komfort-Fläche ist an, ausser in den zwei begründeten dichten Zeilen', () => {
+  it('die Komfort-Fläche ist an, ausser in den drei begründeten dichten Zeilen', () => {
     // Das Pseudo-Element liegt ÜBER dem Nachbarn und nähme ihm die Klicks —
     // wer es abschaltet, tut das sichtbar und mit Grund am Fundort. Ein
-    // stiller dritter Ausstieg wird hier rot.
-    const dicht = ['components/layout/TabPanel.tsx', 'components/layout/InhaltsKopf.tsx'];
+    // stiller vierter Ausstieg wird hier rot.
+    //
+    // R4-A (5.9.2026): die Pane-Titelleiste ist die dritte solche Zeile —
+    // ⠿ ◂ ▸ ⇱ ⧉ ✕ stehen dort in einer 36 px hohen Leiste unmittelbar
+    // nebeneinander; 44 px um das ✕ lägen über ⧉ und ▸. Der Test hat die
+    // Ausnahme beim Bau selbst gefunden (rot, bevor sie deklariert war).
+    const dicht = [
+      'components/layout/TabPanel.tsx',
+      'components/layout/InhaltsKopf.tsx',
+      'components/layout/PaneKopf.tsx',
+    ];
     const funde = alleTsx()
       .filter((p) => ohneKommentare(readFileSync(p, 'utf8')).includes('komfort={false}'))
       .map(rel);
@@ -207,6 +258,50 @@ describe('A3-1 · das Schliess-✕ kommt aus EINEM Baustein', () => {
     for (const r of dicht) {
       expect(lies(r), `${r}: die Ausnahme ist am Fundort begründet`)
         .toMatch(/komfort=\{false\}|`komfort=\{false\}`/);
+    }
+  });
+});
+
+// ─── R4-C · `.num` UND `tabular-nums` sind kein Paar, sondern ein Konflikt ──
+
+/**
+ * GEMESSEN am Preview (5.9.2026, Chromium 1440×900, `getComputedStyle`):
+ *
+ *   `<span class="num">`                → font-variant-numeric: lining-nums tabular-nums
+ *   `<span class="num tabular-nums">`   → font-variant-numeric: tabular-nums
+ *
+ * Die Utility ist also NICHT bloss tot (so stand es in der R3-γ-Liste), sie ist
+ * SCHÄDLICH: `.num` lebt in `@layer components`, `tabular-nums` in
+ * `@layer utilities` — die spätere Schicht gewinnt und ersetzt die ganze
+ * Deklaration, `lining-nums` fällt dabei weg. Genau das, was der Kommentar an
+ * `.num` (index.css) als «ausdrücklich Versal- UND Tabellenziffern» verlangt,
+ * schaltete das vermeintlich redundante Wort ab.
+ *
+ * Betroffen waren 16 Fundstellen in 11 Dateien; Ziffern derselben Rolle liefen
+ * dadurch in zwei Rendering-Modi — der Kernbefund dieses Fahrplans.
+ *
+ * `tabular-nums` OHNE `.num` bleibt zulässig und unberührt: dort trägt die
+ * Utility die Textstimme (`ui/Datum`, Stand-Zeilen, Treffer-Zähler) und hat
+ * keinen Konflikt-Partner.
+ */
+describe('R4-C · keine Klassenliste trägt `.num` und `tabular-nums` zugleich', () => {
+  const konflikt = (quelle: string): string[] =>
+    (quelle.match(/class[nN]ame=\{?[`"][^`"]*[`"]/g) ?? [])
+      .filter((t) => /\bnum\b/.test(t.replace(/tabular-nums/g, '')) && t.includes('tabular-nums'));
+
+  it('NEGATIV-KONTROLLE: die Sonde sieht die Vorher-Form, und nur sie', () => {
+    // Wortlaut aus `verzahnung/BezugZeitWahl.tsx` Z. 212 im Stand vom
+    // 31.8.2026 — Beleg, nie nachgeführt (§2b).
+    expect(konflikt('<span className="num tabular-nums">{jahr}</span>')).toHaveLength(1);
+    // Die zwei erlaubten Nachbarschaften bleiben grün:
+    expect(konflikt('<span className="num text-ink-500">{n}</span>')).toEqual([]);
+    expect(konflikt('<p className="text-xs tabular-nums">{stand}</p>')).toEqual([]);
+  });
+
+  it('App-weit keine Fundstelle mehr', () => {
+    for (const p of alleTsx()) {
+      const funde = konflikt(ohneKommentare(readFileSync(p, 'utf8')));
+      expect(funde, `${rel(p)}: \`tabular-nums\` neben \`.num\` nimmt \`lining-nums\` weg`).toEqual([]);
     }
   });
 });
