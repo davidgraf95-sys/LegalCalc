@@ -61,7 +61,7 @@ function Zeile({ z, aktiv, onSprung }: {
           aria-current={aktiv ? 'location' : undefined}
           title={voll} aria-label={voll}
           className={`flex-1 min-w-0 text-left rounded px-1.5 py-0.5 leading-snug transition-colors text-xs ${
-            aktiv ? 'text-ink-900' : 'text-ink-700 hover:text-ink-900 hover:bg-paper-sunken/60'
+            aktiv ? 'text-ink-900' : 'text-ink-700 hover:text-ink-900 lc-hover-flaeche'
           }`}>
           {/* Zusatzpunkt David 9.8.2026: dieselbe Umbruch-Garantie wie im Baum
               (SektionBaumTOC) — kein horizontaler Overflow im [data-toc]. */}

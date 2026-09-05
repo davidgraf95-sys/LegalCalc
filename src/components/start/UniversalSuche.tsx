@@ -145,7 +145,7 @@ export function UniversalSuche() {
         {wert && (
           <button type="button" onClick={() => setze('')} aria-label="Suche leeren"
             className="absolute right-3 top-1/2 -translate-y-1/2 inline-flex h-7 w-7 items-center justify-center rounded-md text-ink-500 transition-colors hover:text-brass-700">
-            <span aria-hidden className="text-base leading-none">✕</span>
+            <span aria-hidden className="lc-griff-glyph">✕</span>
           </button>
         )}
       </div>

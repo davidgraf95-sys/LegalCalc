@@ -41,7 +41,7 @@ function LiveTrefferZeile({ t }: { t: LiveTreffer }) {
   );
   return t.quelleUrl ? (
     <a href={t.quelleUrl} target="_blank" rel="noopener noreferrer"
-      className={`${TREFFER_ZEILE_RAHMEN} px-4 py-2.5 no-underline hover:bg-well transition-colors`}
+      className={`${TREFFER_ZEILE_RAHMEN} px-4 py-2.5 no-underline lc-hover-flaeche`}
       title="Amtliches Dokument bei entscheidsuche.ch öffnen">
       {inner}
     </a>
@@ -109,7 +109,7 @@ export function LiveSuche({ initialQ = '' }: { initialQ?: string }) {
         <div className="inline-flex items-stretch overflow-hidden rounded border border-line" role="group" aria-label="Sortierung">
           {(['relevanz', 'datum'] as const).map((s) => (
             <button key={s} type="button" onClick={() => setzeSort(s)} aria-pressed={sortNach === s}
-              className={`px-2.5 py-1.5 text-xs ${sortNach === s ? 'bg-well text-brass-700' : 'text-ink-600 hover:bg-paper-sunken'} ${s === 'datum' ? 'border-l border-line' : ''}`}>
+              className={`px-2.5 py-1.5 text-xs ${sortNach === s ? 'bg-well text-brass-700' : 'text-ink-600 lc-hover-flaeche'} ${s === 'datum' ? 'border-l border-line' : ''}`}>
               {s === 'relevanz' ? 'Relevanz' : 'Neueste'}
             </button>
           ))}

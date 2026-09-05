@@ -53,7 +53,7 @@ export function ThemaUmschalter() {
       title={meta.label}
       className="inline-flex items-center justify-center h-11 w-11 rounded-lg border border-line bg-surface text-ink-600 hover:text-ink-900 hover:border-brass-400 transition-colors"
     >
-      <span aria-hidden className="text-base leading-none">{meta.icon}</span>
+      <span aria-hidden className="lc-griff-glyph">{meta.icon}</span>
     </button>
   );
 }

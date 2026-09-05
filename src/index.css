@@ -996,11 +996,29 @@
      Echte Kapitälchen (smcp) führen Geist/Geist Mono nicht → Uppercase+Tracking
      der Overlines bleibt; Mediävalziffern im Fliesstext bewusst NICHT (Daten und
      Normzitate sollen versalziffrig bleiben). */
-  .num { font-family: var(--font-mono), ui-monospace, monospace; font-variant-numeric: lining-nums tabular-nums; }
+  /* R5-B (5.9.2026) · EINE Deklaration für «Versal- und Tabellenziffern».
+     Der Ziffernsatz und die Monospace-Familie sind ZWEI Entscheide: es gibt
+     Flächen, die den ersten wollen und den zweiten nicht (Rechner-Verdikt im
+     Display-Schnitt, Vorlagen-Vorschau im Sans). Die trugen die Deklaration
+     bisher roh als `style={{ fontVariantNumeric: … }}` — dieselbe Wahrheit ein
+     zweites Mal (§5/F9). `.lc-ziffern` ist die Rolle ohne Familie, `.num`
+     bleibt Rolle + Familie und ist Zeichen für Zeichen wirkungsgleich. */
+  .num, .lc-ziffern { font-variant-numeric: lining-nums tabular-nums; }
+  .num { font-family: var(--font-mono), ui-monospace, monospace; }
 
   /* «&» in Display-Titeln: ruhige Sans-Glyphe (Geist) statt der
      verschnörkelten Fraunces-Form; leicht reduziert für optischen Ausgleich. */
   .lc-amp { font-family: var(--font-sans), system-ui, sans-serif; font-weight: 500; font-size: .92em; }
+
+  /* Tausender-Apostroph in der Mono-Stimme (B13/LM-119): Mono gibt jedem
+     Glyph dieselbe Laufweite, der Apostroph bekäme sonst eine volle
+     Ziffernbreite und «1'577» läse sich als «1 ' 577». Das Zeichen behält
+     seine Form (gerader Apostroph, SSoT src/lib/konventionen.ts) und wird nur
+     aus der Sans genommen, wo es von Haus aus schmal läuft — dasselbe
+     Hausmittel wie `.lc-amp` (ein Zeichen aus einer anderen Stimme mitten im
+     Satz), kein Sonderweg. Gesetzt über `zahlGruppiert()`
+     (components/typografie.tsx); die Ziffern bleiben Mono/tabular. */
+  .lc-apo { font-family: var(--font-sans), system-ui, sans-serif; }
 
   .lc-overline {
     font-family: var(--font-mono), ui-monospace, monospace;
@@ -1105,6 +1123,36 @@
      als Geschwister über dem Link liegen müssen). */
   :is(a, button, [role='button'], [data-aktiv]).lc-card { @apply transition-colors; }
   :is(a, button, [role='button'], [data-aktiv]).lc-card:hover { border-color: var(--brass-400); }
+
+  /* ── R5-D (5.9.2026) · EINE neutrale Hover-Fläche ─────────────────────────
+     Das Gegenstück zur Karten-Grammatik darüber: die anklickbare ZEILE
+     (Trefferliste, Inhaltsverzeichnis, Reiter, Verlauf, Buchstaben-Leiste)
+     tönt beim Überfahren ihren Grund ein.
+     GEMESSEN am Preview 5.9.2026 (`/gesetze/bund/OR`, `/gesetze`,
+     `/rechtsprechung/…`): 33 Fundstellen in 21 Dateien, FÜNF Schreibweisen für
+     EINE Aussage — `hover:bg-paper-sunken` (13×), `.../60` (15×), `.../70`
+     (1×), `hover:bg-well` (3×), `hover:bg-paper/60` (1×). Die Runde-5-Liste
+     kannte davon drei; die beiden letzten fand erst der App-weite Ausdruck,
+     weil er nach der SACHE fragt («eine Utility tönt eine neutrale Fläche beim
+     Überfahren ein») und nicht nach einem Token-Namen — dieselbe Wurzel wie
+     R4-D (`setKopiert(` liess `setOk(` durch).
+     Auf `--paper` sind das 1.055:1 bei voller Stufe gegen 1.036:1 bei 60 % —
+     der verdünnte Schritt ist zwei Drittel eines ohnehin knappen.
+     KANON ist die VOLLE Stufe, und zwar nicht wegen der Mehrheit (die läge bei
+     60 %), sondern weil DESIGN-REGLEMENT §G-j Interaktions-Zustände auf EINE
+     Regel legt: «eine Flexoki-Stufe tiefer», getragen von einer ROLLE. Eine
+     Alpha-Verdünnung ist keine Stufe, sondern eine Zwischenlage ohne Namen.
+     Die Rolle heisst hier `--well` (= `--paper-sunken`, die eingesenkte
+     Fläche) und wird schon von `.lc-leiste-griff:hover` so verwendet — die
+     Klasse zieht die 33 Stellen auf diesen bestehenden Baustein (§5/§10),
+     sie erfindet keinen neuen Ton. Der Übergang gehört zur Regel und liegt
+     darum hier, nicht 33-mal daneben.
+     WCAG-neutral: der Grund wird ausschliesslich DUNKLER; der Kontrast der
+     dunklen Schrift darauf kann dabei nur steigen, nie fallen.
+     OB die Stufe an sich kräftiger sein soll, ist eine Geschmacks- und keine
+     Konsistenzfrage — sie liegt bei David (Runde-5-Rückgabe), nicht hier. */
+  .lc-hover-flaeche { @apply transition-colors; }
+  .lc-hover-flaeche:hover { background-color: var(--well); }
   /* Ergebnis-Kachel (Hauptwerte in Ergebnisblöcken) — eine Anatomie überall */
   .lc-tile { @apply bg-surface-raised border border-line rounded-xl p-4; }
   /* Akzent-Oberkante (massgeblich) — EINE Quelle statt 6×
@@ -1750,6 +1798,62 @@
   .lc-schliessknopf {
     @apply relative inline-flex shrink-0 items-center justify-center rounded-md transition-colors;
     min-height: var(--tap-ziel); min-width: var(--tap-ziel);
+  }
+  /* Das ✕ SELBST — Grösse UND Schnitt, an EINER Stelle (R6-A, 5.9.2026).
+     GEMESSEN am Preview (1600×900, zehn Ansichten, frischer Kontext je Route):
+     die Glyphe stand überall in 16 px, aber in ZWEI SCHNITTEN — «Geist Mono
+     Variable» im `InhaltsKopf` (dessen `klasse="lc-leiste-griff"` eine
+     `font-family` mitbringt, die die Glyphe erbt) gegen «Geist Variable» in
+     allen übrigen Fundstellen. Sichtbare Folge bei gleicher Schriftgrösse:
+     die ✕-Tinte ist 9.64 px breit statt 12.20 px — dasselbe Zeichen in zwei
+     Breiten. Der Baustein hatte die Grösse festgeschrieben (`text-base
+     leading-none` am Glyph-Span) und die FAMILIE offen gelassen: dieselbe
+     halbe Deklaration, die R4-C/R5-B beim Ziffernsatz als Defekt nachgewiesen
+     haben, eine Ebene höher.
+     KANON ist der Schnitt der Mehrheit (9 von 10 gemessenen ✕) und zugleich
+     der Textschnitt der App. B6 (28.7.2026, EINE Anatomie für alle
+     Bedien-Elemente der Inhaltskopf-Leiste) wird dadurch NICHT gekippt: jene
+     Entscheidung gilt der Leiste und ihren Beschriftungen; die Glyphe war der
+     Typo-Anatomie der Leiste schon vorher in der GRÖSSE entzogen (16 px gegen
+     11 px der Leiste) — R6-A vollendet nur, was dort halb entschieden war.
+     Die Deklaration steht hier statt am Span, damit ✕-Grösse und ✕-Schnitt
+     nicht wieder an zwei Orten liegen (§5). */
+  /* R6-C (5.9.2026): der Name heisst `-griff-glyph`, nicht `-schliessknopf-glyph`.
+     Die Anatomie gilt nämlich nicht dem SCHLIESSEN, sondern dem freistehenden
+     Steuerungs-Zeichen — und die A3-1-Doktrin hält «leeren» ausdrücklich als
+     EIGENE Handlung neben «schliessen» (§1/§8: gleiche Glyphe, andere Aussage,
+     nicht zusammenziehen). Beide teilen also die GESTALT, nicht die Handlung;
+     ein Klassenname, der die Handlung nennt, wäre der Grund gewesen, die
+     Gestalt ein zweites Mal hinzuschreiben. */
+  /* R7-A (5.9.2026): der Baustein gilt ab jetzt ALLEN freistehenden
+     Steuerungs-Glyphen, nicht nur ✕ und «leeren». R6-C hatte den Kanon nur für
+     das ✕ gestellt; die halbe Deklaration (Grösse gepinnt, Schnitt frei) stand
+     unverändert an achtzehn weiteren Glyph-Spans.
+     GEMESSEN am Preview (1600×900, echte Split-Paare `?p=%2F…` nach R6-M) in
+     EINER Zeile, der Pane-Titelleiste von `/gesetze/bund/OR?p=%2Frechtsprechung`:
+     `◂` 14 px/Tinte 6.45 · `▸` 14 px/6.45 · `⇱` 14 px/8.44 · `⧉` 16 px/12.73 ·
+     `✕` 16 px/12.20 — fünf Griffe DERSELBEN 28-px-Zeile in ZWEI Grössen, weil
+     jeder Span seine Grösse selbst hinschrieb. App-weit: 99 freistehende
+     Steuerungs-Glyphen in VIER Grössen (11/14/16/20 px).
+     KANON 16 px = die Mehrheit (72 von 99: ⧉ ×44, ✕ ×14, ◐ ×14) und der schon
+     deklarierte Wert dieses Bausteins.
+     FREISTEHEND heisst: die Glyphe IST das ganze Bedienelement. Wo sie neben
+     einem WORT steht, folgt sie dem Type ihres Wortes und bleibt unangetastet
+     (`RegestePopover` «⧉ Daneben öffnen», `A−`/`A+` der Topbar, der ▾ des
+     Sprach-Umschalters, die Pfeile in Treffer-Zeilen) — dieselbe Trennung, die
+     R6-C für die beschrifteten ✕ gezogen hat.
+     Die BOX bleibt der Zeile (Baustein-Vertrag seit R3-β): 28 px in der
+     Pane-Titelleiste, 24 px in der Reiter-Liste, 44 px in Finger-Zonen.
+     NICHT ANGETASTET, mit Grund: (a) `☰` steht in zwei Anatomien (Topbar gegen
+     Leser-Griff) — anders als beim ✕ sind das ZWEI Leisten mit je eigener
+     dokumentierter Anatomie (B6), die Frage «soll dieselbe Glyphe in zwei
+     Leisten verschieden aussehen?» ist ein offener ENTSCHEID DAVIDS, kein
+     Defekt nach heutiger Regel; (b) die Kopf-Griffe des Lesers (`⚖ · ☰ · ···`)
+     holen ihre Gestalt aus `kopfGlypheKlassen()` (kopfStufen.ts) — EINE
+     benannte Stelle, also gerade keine halbe Deklaration. */
+  .lc-griff-glyph {
+    font-family: var(--font-sans), system-ui, sans-serif;
+    font-size: 1rem; line-height: 1;
   }
   .lc-schliessknopf-komfort::after {
     content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);

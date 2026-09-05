@@ -378,12 +378,12 @@ export function LeserAnsichtV3({ kompakt, fussnotenAnzahl, hatAenderungsvermerke
               <button type="button" onClick={schrift.kleiner} disabled={!schrift.kannKleiner}
                 aria-label="Gesetzestext verkleinern" title="Gesetzestext verkleinern — die Anwendung bleibt gleich gross"
                 data-v3-schrift="kleiner"
-                className="min-h-6 px-2 py-1 text-xs text-ink-600 hover:bg-paper-sunken disabled:opacity-40">A−</button>
+                className="min-h-6 px-2 py-1 text-xs text-ink-600 lc-hover-flaeche disabled:opacity-40">A−</button>
               <span aria-hidden className="num min-w-[2.6rem] text-center text-micro text-ink-500">{schrift.prozent} %</span>
               <button type="button" onClick={schrift.groesser} disabled={!schrift.kannGroesser}
                 aria-label="Gesetzestext vergrössern" title="Gesetzestext vergrössern — die Anwendung bleibt gleich gross"
                 data-v3-schrift="groesser"
-                className="min-h-6 px-2 py-1 text-xs text-ink-600 hover:bg-paper-sunken disabled:opacity-40">A+</button>
+                className="min-h-6 px-2 py-1 text-xs text-ink-600 lc-hover-flaeche disabled:opacity-40">A+</button>
             </span>
           </div>
 

@@ -31,7 +31,7 @@ const METHODEN: { code: VerzugszinsMethode; label: string }[] = [
   { code: '30E360', label: '30E/360 (kaufmännisch)' },
 ];
 const GRUENDE: { code: SatzGrund; label: string }[] = [
-  { code: 'gesetzlich', label: 'Gesetzlich – 5% (Art. 104 Abs. 1)' },
+  { code: 'gesetzlich', label: 'Gesetzlich – 5 % (Art. 104 Abs. 1)' },
   { code: 'vertraglich', label: 'Vertraglich höher (Art. 104 Abs. 2)' },
   { code: 'kaufmaennisch', label: 'Kaufmännischer Diskonto (Art. 104 Abs. 3)' },
 ];
@@ -61,9 +61,9 @@ const DEFAULTS: VerzugszinsInput = {
 type State = { form: VerzugszinsInput; rows: EreignisEingabe[]; zinsforderung: boolean };
 
 const BEISPIELE: { label: string; state: State }[] = [
-  { label: 'Rechnung offen, 5%', state: { form: { ...DEFAULTS, kapital: 5000, verzugsbeginn: '2025-03-01', stichtag: '2025-09-01' }, rows: [], zinsforderung: false } },
+  { label: 'Rechnung offen, 5 %', state: { form: { ...DEFAULTS, kapital: 5000, verzugsbeginn: '2025-03-01', stichtag: '2025-09-01' }, rows: [], zinsforderung: false } },
   { label: 'Mit Teilzahlung', state: { form: { ...DEFAULTS, kapital: 10000, verzugsbeginn: '2024-01-01', stichtag: '2025-01-01' }, rows: [{ typ: 'teilzahlung', datum: '2024-07-01', wert: 4000 }], zinsforderung: false } },
-  { label: 'Vertraglich 8%', state: { form: { ...DEFAULTS, kapital: 20000, zinssatzProzent: 8, satzGrund: 'vertraglich', verzugsbeginn: '2024-06-01', stichtag: '2025-06-01' }, rows: [], zinsforderung: false } },
+  { label: 'Vertraglich 8 %', state: { form: { ...DEFAULTS, kapital: 20000, zinssatzProzent: 8, satzGrund: 'vertraglich', verzugsbeginn: '2024-06-01', stichtag: '2025-06-01' }, rows: [], zinsforderung: false } },
   { label: 'Satzwechsel', state: { form: { ...DEFAULTS, kapital: 15000, verzugsbeginn: '2024-01-01', stichtag: '2025-06-30' }, rows: [{ typ: 'satzaenderung', datum: '2025-01-01', wert: 4 }], zinsforderung: false } },
 ];
 
@@ -165,7 +165,7 @@ export function VerzugszinsForm() {
         <Field label="Geschuldeter Betrag (CHF)" hint="Verzugszins fällt nur auf dem tatsächlich geschuldeten Betrag an">
           <BetragsFeld value={form.kapital ? String(form.kapital) : ''} onChange={(v) => set('kapital', Number(v) || 0)} className={inputNum} placeholder="z. B. 10'000" />
         </Field>
-        <Field label="Zinssatz (%)" hint="Default 5% (Art. 104 Abs. 1 OR); z.B. ATSG 5%, Steuern variabel">
+        <Field label="Zinssatz (%)" hint="Default 5 % (Art. 104 Abs. 1 OR); z. B. ATSG 5 %, Steuern variabel">
           <input type="number" inputMode="decimal" min={0} step={0.25} value={form.zinssatzProzent ?? 5} onChange={(e) => set('zinssatzProzent', Number(e.target.value))} className={inputNum} />
         </Field>
 

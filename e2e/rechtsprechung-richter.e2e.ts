@@ -25,9 +25,13 @@ function optionen(page: Page) {
   return page.getByRole('listbox', { name: 'Richter:innen' }).getByRole('option')
 }
 
-/** Trefferzahl aus dem Ergebnis-Zähler («<n> Entscheide») der Übersicht. */
+/** Trefferzahl aus dem Ergebnis-Zähler («<n> Entscheide») der Übersicht.
+ *  Test-Infrastruktur an deklarierte Format-Änderung LM-119/121 angepasst
+ *  (§6.3-Ausnahme, deklarierter Schritt, CI-Nachzug PR #676): der Zähler
+ *  zeigt ab 1000 tausendergruppiert («5'093», typografie.tsx zahlGruppiert),
+ *  der Apostroph-Trenner gehört zur Zahl — die Regex akzeptiert ihn dort. */
 async function trefferZahl(page: Page): Promise<number> {
-  const txt = await page.getByText(/^\d+\s+Entscheide?$/).first().innerText()
+  const txt = await page.getByText(/^[\d'’\u00A0\u202F]+\s+Entscheide?$/).first().innerText()
   return Number(txt.replace(/\D+/g, ''))
 }
 
