@@ -129,6 +129,10 @@ Im **letzten Absatz** der Commit-Message steht der Trailer-Block
 `Roadmap: <Schritt-ID>` — genau eine Leerzeile davor, keine Leerzeile
 innerhalb, jeder Trailer einzeilig (git liest Trailer nur im letzten Absatz).
 
+Commit-Betreff nie mit Typ `refactor`, wenn der Commit Dateien unter
+`src/tests/**` ändert — ein Test-Split ist eine deklarierte Änderung, Form
+«QS-FREMDAGENTEN … : <deutscher Titel>» (§6.3, `check:testtreue`, Beleg PR #709).
+
 **Bei rotem Tor oder unklarem Auftrag: Entwurfs-PR mit Meldung, nicht raten.**
 Ein roter Lauf wird nicht «kreativ» gelöst. Ein Entwurfs-PR mit ehrlicher
 Meldung ist ein gutes Ergebnis; ein grün gebogenes Tor ist keines.
