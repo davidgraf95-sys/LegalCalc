@@ -64,6 +64,11 @@
        Meta-/Sekundärtext, die sichtbarste Wärme-Fläche). Haarlinien erben via
        color-mix-Rezepten automatisch. Hue-Drift jetzt HART im check:farbwelt (Span 1.3°). */
     --ink-fixed-dark:#1C1A15;
+    /* C2-Gegenstück (5.9.2026): --ink-fixed-light für Text auf einer Fläche,
+       die STETS mittel-dunkel bleibt (--ok-solid/--sage-500 flippt bewusst
+       NICHT, s. Zeile ~1042-Kommentar) — Wert = helles --paper, hier nicht
+       überschrieben. Speist --auf-sage (unten). */
+    --ink-fixed-light:#FCFAF6;
     --ink-900:var(--ink-fixed-dark); --ink-800:#2B2924; --ink-700:#3C3932; --ink-600:#56534C; --ink-500:#6F6B61;
     --ink-400:#8D8A83; --ink-300:#AAA8A3;
     /* Eigener Platzhalter-Ton (Auftrag David 25.6.2026, max. Lesbarkeit):
@@ -140,6 +145,12 @@
        Solitär --ink-fixed-dark gespeist (Nicht-Flip-Absicht bleibt — das
        Token wird im Dunkel-Block NICHT überschrieben). */
     --auf-gold:var(--ink-fixed-dark);
+    /* C2 (5.9.2026): Text auf `--ok-solid` (= --sage-500, flippt bewusst NICHT
+       mit dem Thema) braucht spiegelbildlich eine STETS helle Tinte — `text-paper`
+       kippt im Dunkel auf fast-schwarz und fällt von 4.48:1 (hell) auf 3.84:1
+       (dunkel, < 4.5:1 AA). Aus dem Solitär --ink-fixed-light gespeist, im
+       Dunkel-Block NICHT überschrieben (Fund L6/Befund 2, FristenKalender.tsx). */
+    --auf-sage:var(--ink-fixed-light);
     /* Status — alle Hintergründe nach EINEM Rezept (gleiche Tönung auf
        Papier), damit die vier Familien zusammengehören.
        D-3 (Befund 36): Interpolation in OKLAB statt srgb — srgb frisst bei

@@ -75,7 +75,9 @@ export default {
         // aus `--ink-fixed-dark`) — `text-ink-900` kippt im Dunkelmodus auf
         // hell und verfehlt dort die 4.5:1 (Beleg: VerzugszinsTimeline.tsx,
         // dort bislang nur per Inline-Style erreichbar; hier als Utility).
-        auf: { gold: 'var(--auf-gold)' },
+        // C2-Gegenstück: Text auf --ok-solid (flippt bewusst nicht) braucht die
+        // STETS helle Tinte (--auf-sage, aus --ink-fixed-light gespeist).
+        auf: { gold: 'var(--auf-gold)', sage: 'var(--auf-sage)' },
         // ── Rollen-Alias-Schicht (D-2, Radix-Muster) ──────────────────────
         // Wertidentische Rollen über den Basis-Skalen (Werte in src/index.css).
         // NEUE Komponenten greifen die Rolle (text-accent-text, bg-accent-bg,

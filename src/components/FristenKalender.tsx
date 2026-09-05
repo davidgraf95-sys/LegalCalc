@@ -247,7 +247,11 @@ export function FristenKalender({ ereignisISO, aQuoISO, adQuemISO, kanton, still
                       // Zustands-Rolle (`.lc-termin-ring` → `--ok-solid`). Beide sind
                       // wertidentisch, aber nur eine ist hier gemeint: der ad-quem-Tag
                       // ist ein ZUSTAND («Frist endet»), kein Werkstoff.
-                    if (isAdQuem) { marker = 'bg-ok-solid text-paper font-semibold rounded-full lc-termin-ring'; title = L.adquem; }
+                    // C2 (5.9.2026, Fund L6/Befund 2): `text-paper` flippt im
+                    // Dunkelmodus auf fast-schwarz und mass gegen `--ok-solid`
+                    // (bewusst thema-fest) nur 3.84:1 (< 4.5:1) — `text-auf-sage`
+                    // ist die nicht flippende helle Tinte für diese Fläche.
+                    if (isAdQuem) { marker = 'bg-ok-solid text-auf-sage font-semibold rounded-full lc-termin-ring'; title = L.adquem; }
                     // C2 (5.9.2026): `text-ink-900` flippt im Dunkelmodus auf
                     // hell und mass dort nur 3.84:1 gegen `bg-brass-500`
                     // (< 4.5:1, WCAG 1.4.3/F2) — `text-auf-gold` ist die nicht
