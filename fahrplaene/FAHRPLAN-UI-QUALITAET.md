@@ -238,7 +238,7 @@ ROADMAP-Bindung mehr. Titel:
 ## §2.5 · Nebenfunde Nacht 5.9.2026 (QS-UI-Folgeschritte)
 
 - [ ] **Baum-Knopfnamen Rest** (#689) — OR 3/ZGB 2 Dopplungs-Gruppen (Eltern-Titel selbst doppelt: Rekursion bis Wurzel); GEBV_HREG Fallback «1./2. Vorkommen» — **David-Entscheid**: Wortlaut oder Modell-Fix in `gliederungsModell.ts`. OR-Übergangsbestimmungen 12× «Art. 1» (11 unsichtbar).
-- [ ] **Konventions-Linter deckt UI-Strings nicht** (B13 #676) — «5%», U+202F blieben jahrelang; Tor-Ausbau auf `src/**`. `MehrKante` unerreichbar (3 Tests, V2-Punkt) — Rückbau-Entscheid.
-- [ ] **Checkbox-Baustein ohne Grössenklasse** (B12 #675) — `vorlagen/ui.tsx` 18×17.6 px Browser-Default; Kontrollkästchen app-weit.
-- [ ] **`/einstellungen` fehlt in `STATISCHE_SEITEN`** (B14 #670) — erbt Titel/Canonical der Startseite; SEO-Entscheid.
+- [x] **Konventions-Linter deckt UI-Strings nicht** (B13 #676) — erledigt 5.9.2026: Scan-Test in `konventionen.test.ts` über `src/components/**`+`src/pages/**` (nur Prozent-Regel; alle 8 Regeln gaben 347 Falschtreffer, Geviertstrich ist legitimer Trenner), 0 Bestandsverstösse, Rot-Beweis. Offen: `MehrKante` unerreichbar (3 Tests, V2-Punkt) — Rückbau-Entscheid.
+- [x] **Checkbox-Baustein ohne Grössenklasse** (B12 #675) — erledigt 5.9.2026: Befund war überholt (globale Regel `input[type=checkbox]{1.1rem}` aus E7 macht ihn schon quadratisch 17.59 px); Baustein trägt die Grösse jetzt explizit (`h-/w-[1.1rem]`, 0 px Änderung). 34 direkte `<input type=checkbox>` ausserhalb des Bausteins bleiben (Liste im Bericht PR, kein Umbau).
+- [x] **`/einstellungen` fehlt in `STATISCHE_SEITEN`** (B14 #670) — erledigt 5.9.2026: eigener Titel/Canonical/Description, indexiert wie `/abdeckung`/`/datenschutz` (kein noindex im Register), Prerender 62→63 Routen, Sitemap enthält den Pfad.
 - [ ] **Design-Konsistenz Runde 8** (#692) — Bestätigungslauf (Dry §2); **wartet auf David:** ☰-Anatomie, Hover-Stufe (1.055:1), ⧉-Quittung. Sonde vorher gegenlesen (R6-M-Klasse).
