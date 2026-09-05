@@ -105,11 +105,15 @@ function dateien(dir: string): string[] {
   return out;
 }
 
+// Kommentare raus vor dem Scan, Strings bleiben unberührt (Fehlerbuch W2·18, 5.9.2026).
+const KOMMENTAR_ODER_STRING = /(["'`])(?:\\.|(?!\1)[\s\S])*\1|\/\/[^\n]*|\/\*[\s\S]*?\*\//g;
+const ohneKommentare = (c: string) => c.replace(KOMMENTAR_ODER_STRING, (m) => (/^["'`]/.test(m) ? m : m.replace(/[^\n]/g, ' ')));
+
 const fehler: string[] = [];
 /** Fundstellen je Deckkraft-Klasse: "bg-brass-100/70" → ["src/…:42", …] */
 const alphaFunde = new Map<string, string[]>();
 for (const datei of dateien(WURZEL)) {
-  const zeilen = readFileSync(datei, 'utf8').split('\n');
+  const zeilen = ohneKommentare(readFileSync(datei, 'utf8')).split('\n');
   zeilen.forEach((zeile, i) => {
     if (DEFAULT_GROESSE.test(zeile))
       fehler.push(`${datei}:${i + 1} — Tailwind-Default-Grösse (text-sm/lg/xl…). Stattdessen die Skala oder text-[length:var(--…)].`);
