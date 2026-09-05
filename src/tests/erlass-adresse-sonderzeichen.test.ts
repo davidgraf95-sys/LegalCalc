@@ -51,7 +51,14 @@ const ALLE: RegisterErlass[] = (registerManifest as { erlasse: RegisterErlass[] 
 
 /** Die Schlüssel, deren Adresse nicht mit ihnen selbst zusammenfällt. */
 const SONDER = ALLE.filter((e) => e.key !== encodeURIComponent(e.key));
-const PROZENT_KEYS = ['GL-III%20B_7_1', 'GL-III%20B%2F7%2F1', 'GL-III%20B%2F3%2F2'];
+// Nachtrag 5.9.2026 (deklarierte Teständerung): `GL-III%20B_7_1` ist aus dem
+// Korpus zurückgezogen. Er war die zweite Schreibweise desselben Erlasses
+// (GS III B/7/1) und stand als Dublette neben `GL-III%20B%2F7%2F1` — Befund der
+// Gegenprüfung zu diesem PR. Die Messgrundlage schrumpft dadurch um genau
+// diesen einen Schlüssel (165 → 164 Sonderzeichen-Keys, 3 → 2 «%»-Keys); die
+// 162 BS-Leerzeichen-Keys bleiben unberührt. Die Prüfsubstanz bleibt: beide
+// verbliebenen «%»-Keys durchlaufen unverändert die ganze Kette.
+const PROZENT_KEYS = ['GL-III%20B%2F7%2F1', 'GL-III%20B%2F3%2F2'];
 
 const angefordert: string[] = [];
 
@@ -88,8 +95,8 @@ function aufgeloesterPfad(url: string): string {
 }
 
 describe('Erlass-Adresse mit Sonderzeichen (§5: eine Adress-Regel)', () => {
-  it('Messgrundlage: 165 Schlüssel mit Sonderzeichen — 162 mit Leerzeichen (BS), 3 mit «%» (GL)', () => {
-    expect(SONDER.length).toBe(165);
+  it('Messgrundlage: 164 Schlüssel mit Sonderzeichen — 162 mit Leerzeichen (BS), 2 mit «%» (GL)', () => {
+    expect(SONDER.length).toBe(164);
     expect(SONDER.filter((e) => e.key.includes(' ')).length).toBe(162);
     expect(SONDER.filter((e) => e.key.includes('%')).map((e) => e.key).sort()).toEqual([...PROZENT_KEYS].sort());
   });

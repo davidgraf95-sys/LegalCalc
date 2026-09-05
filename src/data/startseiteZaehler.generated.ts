@@ -32,8 +32,8 @@ export interface StartseiteZaehler {
 
 export const STARTSEITE_ZAEHLER: StartseiteZaehler = {
   "gesetzeBundVolltext": 227,
-  "gesetzeKantonVolltext": 1339,
-  "gesetzeVolltext": 1566,
+  "gesetzeKantonVolltext": 1338,
+  "gesetzeVolltext": 1565,
   "kantonErlassZahlen": {
     "AG": 4,
     "AI": 4,
@@ -43,7 +43,7 @@ export const STARTSEITE_ZAEHLER: StartseiteZaehler = {
     "BS": 859,
     "FR": 6,
     "GE": 4,
-    "GL": 5,
+    "GL": 4,
     "GR": 6,
     "JU": 7,
     "LU": 5,
@@ -66,7 +66,7 @@ export const STARTSEITE_ZAEHLER: StartseiteZaehler = {
   "materialien": 1561,
   "rechner": 23,
   "vorlagen": 26,
-  "standGesetze": "2026-09-04",
+  "standGesetze": "2026-09-05",
   "standRechtsprechung": "2026-08-31",
   "standMaterialien": "2026-09-05"
 };
