@@ -49,10 +49,15 @@ const PROZENT_KEYS = ['GL-III%20B_7_1', 'GL-III%20B%2F7%2F1', 'GL-III%20B%2F3%2F
 const angefordert: string[] = [];
 
 /**
- * Statischer Server, wie ihn Vercel und `vite preview` fahren: die URL wird
- * EINMAL dekodiert, das Ergebnis ist der Dateipfad. Fehlt die Datei, antwortet
- * die echte Auslieferung mit dem SPA-Fallback (200 + HTML); für den Beweis ist
- * 404 gleichwertig — beides endet im Lader als `null`, und 404 benennt die
+ * Statischer Server, wie ihn ein einmal dekodierender Server (lokaler
+ * `vite preview`) ausliefert: die URL wird EINMAL dekodiert, das Ergebnis ist
+ * der Dateipfad. Vercel selbst ist gegenüber `%20`/`%2F` in Dateinamen
+ * nachsichtiger (curl-Beleg 5.9.2026: beide Kodierformen der drei Glarner
+ * Schlüssel liefern 200 auf dieselbe Datei) — dieser Prüfstand bildet
+ * bewusst den STRENGEREN Fall nach, gegen den die Kodier-Regel trotzdem
+ * halten muss. Fehlt die Datei, antwortet die echte Auslieferung mit dem
+ * SPA-Fallback (200 + HTML); für den Beweis ist 404 gleichwertig — beides
+ * endet im Lader als `null`, und 404 benennt die
  * Ursache, statt sie hinter einem JSON-Parse-Fehler zu verstecken.
  */
 function statischerServer(eingabe: string): Promise<Response> {

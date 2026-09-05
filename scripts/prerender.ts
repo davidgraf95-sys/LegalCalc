@@ -36,7 +36,8 @@ import {
   jsonLdFuerMaterial,
   materialDetailHtml,
 } from '../src/lib/seo-detail';
-import { normtextDateiUrl, routenEbene } from '../src/lib/normtext/erlassAdresse';
+import { routenEbene } from '../src/lib/normtext/erlassAdresse';
+import { normtextDateiUrl } from '../src/lib/normtext/dateiUrl';
 import type { BrowseErlass } from '../src/lib/normtext/browse-typen';
 import type { NormSnapshotDatei } from '../src/lib/normtext/typen';
 import type { BrowseEntscheid } from '../src/lib/rechtsprechung/register';

@@ -99,41 +99,19 @@ export function erlassPfadRoh(routenSegment: string, key: string): string {
  * Adresse einer DATEI unter `/normtext` — dieselbe Kodier-Regel wie für die
  * Seiten-Adresse, angewandt auf jedes Pfadsegment einzeln.
  *
- * WARUM ES DIESE FUNKTION GIBT (Live-Nachweis 5.9.2026, Nachzug F25/K-1b).
- * `erlassPfad()` regelte bisher nur die SEITE. Die Daten dazu — Snapshot und
- * Struktur-Sidecar — bauten ihre URL per Template-Literal aus dem ROHEN
- * Schlüssel (`/normtext/${datei}`, `/normtext/struktur/${ebene}/${key}.json`).
- * Für 1574 Schlüssel ist das deckungsgleich, für drei nicht: die Glarner
- * Schlüssel tragen das Prozentzeichen IN DER KANONIK (`GL-III%20B%2F7%2F1` IST
- * der Schlüssel, nicht seine Kodierung). Roh in eine URL geschrieben, liest die
- * Auslieferung `%20`/`%2F` wieder als Escape und sucht
- * `kanton/GL-III B/7/1.json`; die Datei heisst aber wörtlich
- * `kanton/GL-III%20B%2F7%2F1.json`. Der Fetch lief ins Leere, der Leser bekam
- * keinen Erlass — und zeigte «Erlass nicht gefunden» über korrekt prerendertem
- * HTML. (Die 162 Schlüssel mit Leerzeichen blieben verschont: `%20` dekodiert
- * zum Leerzeichen zurück, der Fehler hob sich auf.)
- *
- * Ab hier gilt für Dateien dasselbe wie seit Befund 45 für Seiten: WER EINE
- * NORMTEXT-URL BAUT, RUFT `normtextDateiUrl()`. Wächter:
- * `src/tests/erlass-adresse-sonderzeichen.test.ts` fährt die Kette Adresse →
- * Register → Daten-URL → Datei über alle 165 Sonderzeichen-Schlüssel.
- *
- * Zerlegt wird am `/`, weil `datei` aus dem Register ein relativer Pfad ist
- * (`<datenEbene>/<key>.json`). Das ist tragfähig, weil kein Schlüssel ein
- * echtes `/` trägt — im selben Tor geprüft, und `KEY_UNSICHER` (seo-detail)
- * hielte einen solchen Schlüssel ohnehin aus dem Prerender.
- *
- * ZWEI STELLEN RUFEN BEWUSST NICHT HIER AN: die Sidecar-Lader
- * `normtext/revisionen.ts` und `normtext/historie-laden.ts` kodieren ihren
- * einen Schlüssel selbst (`encodeURIComponent(key)`) — zeichengleiches
- * Ergebnis, denn ein einzelnes Segment ist genau das, was diese Funktion damit
- * tut. Sie bleiben register-frei, weil dieses Modul das Bundes-Register in den
- * Chunk zöge und beide ausdrücklich lazy sind (§15). Wandert der Register-Index
- * je aus diesem Modul, gehören sie hierher nachgezogen.
+ * AUSGELAGERT nach `dateiUrl.ts` (Gegenprüfung 5.9.2026, Auflage B zu
+ * PR #684): dieses Modul hier importiert `ERLASS_REGISTER` (~42 KB), das
+ * jeder Aufrufer von `normtextDateiUrl()` — u. a. den register-freien
+ * Client-Loader `laden.ts` — bisher ungefragt in seinen Import-Graphen zog.
+ * Herkunft, Begründung und die (korrigierte) Wirkung — Vercel toleriert beide
+ * Kodierformen der drei Glarner Schlüssel, der Defekt betraf nachweisbar nur
+ * einen einmal dekodierenden lokalen Server — stehen jetzt in `dateiUrl.ts`,
+ * ebenso die Sidecar-Lader, die seither dieselbe Regel für einzelne
+ * Schlüssel nutzen. Re-Export hier, damit bestehende Aufrufstellen
+ * unverändert bleiben — WER EINE NEUE NORMTEXT-DATEI-URL BAUT, IMPORTIERT
+ * DIREKT AUS `dateiUrl.ts`.
  */
-export function normtextDateiUrl(relativerPfad: string): string {
-  return `/normtext/${relativerPfad.split('/').map(encodeURIComponent).join('/')}`;
-}
+export { normtextDateiUrl } from './dateiUrl';
 
 /** Alt-Adresse desselben Erlasses (vor Befund 45), die dauerhaft weiterleitet.
  *  null, wenn der Erlass nie umgezogen ist (Bund-/Kantonserlasse). */

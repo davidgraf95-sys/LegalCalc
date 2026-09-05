@@ -15,7 +15,7 @@
 //   damit die UI ruhig auf den Fallback (direkter Live-Link) zurückfallen kann.
 
 import type { NormSnapshot, NormSnapshotDatei } from './typen';
-import { normtextDateiUrl } from './erlassAdresse';
+import { normtextDateiUrl } from './dateiUrl';
 
 const dateiCache = new Map<string, Promise<NormSnapshotDatei | null>>();
 
@@ -98,8 +98,9 @@ export async function ladeKantonSnapshotViaUrl(
 
   // Dieselbe Adress-Regel wie im Leser (§5): der Dateiname aus dem Manifest ist
   // der ROHE Schlüssel + `.json` und trägt bei drei Glarner Erlassen selbst
-  // `%20`/`%2F` — roh in die URL geschrieben, sucht die Auslieferung eine
-  // andere Datei (Live-Nachweis 5.9.2026).
+  // `%20`/`%2F` — roh in die URL geschrieben, sucht ein einmal dekodierender
+  // Server (lokaler `vite preview`) die falsche Datei; Vercel ist gegenüber
+  // beiden Formen nachsichtig (curl-Beleg 5.9.2026, Gegenprüfung zu PR #684).
   const dateiUrl = normtextDateiUrl(`kanton/${dateiname}`);
   const datei = await ladeDatei(dateiUrl);
   if (!datei || !Array.isArray(datei.eintraege)) return null;

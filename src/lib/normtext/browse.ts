@@ -6,7 +6,7 @@ import type { BrowseManifest, BrowseErlass } from './browse-typen';
 import type { NormSnapshot, NormSnapshotDatei } from './typen';
 import type { KantonSystematik } from './systematik';
 import { randtitelKnoten } from './darstellung';
-import { normtextDateiUrl } from './erlassAdresse';
+import { normtextDateiUrl } from './dateiUrl';
 
 // ── Manifest (einmal, gecacht als laufende Promise) ──────────────────────────
 let manifestPromise: Promise<BrowseManifest | null> | null = null;
