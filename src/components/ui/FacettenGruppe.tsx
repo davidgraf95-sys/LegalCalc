@@ -38,7 +38,18 @@ export function FacettenGruppe({ label, gruppenLabel, optionen }: {
   return (
     <div role="group" aria-label={gruppenLabel ?? label}
       className="lc-chip-zeile flex flex-wrap items-center gap-x-2 gap-y-1.5">
-      <span aria-hidden className="lc-overline shrink-0">{label}</span>
+      {/* LM-185 (W2·17-UI-BEFUNDE/B18): das Achsen-Etikett steht in einer festen
+          Spalte, nicht mehr inline in seiner natürlichen Breite. Gemessen
+          @1440 auf /rechtsprechung (Preview von origin/main, 5.9.2026):
+          «GEMEINWESEN» 87 px, «INSTANZ»/«SPRACHE» je 55 px — die drei Chip-
+          Reihen begannen darum bei x=655 bzw. x=623 und lasen sich nicht als
+          gleichrangige Gruppen. `sm:w-28` (7 rem = 112 px) trägt das längste
+          heute vorkommende Etikett; die Reihen starten auf EINER Linie.
+          Unter `sm` nimmt das Etikett die volle Zeile (`w-full`): dort brachen
+          die Chips ohnehin unter das Etikett, jetzt tun sie es als Block mit
+          einer gemeinsamen linken Kante statt zufällig. Reine Darstellung (§3);
+          Text, Reihenfolge und a11y-Namen unverändert. */}
+      <span aria-hidden className="lc-overline w-full shrink-0 sm:w-28">{label}</span>
       {optionen.map((o) => (
         <button key={o.id} type="button" aria-pressed={o.aktiv} onClick={o.waehle}
           aria-label={`${label}: ${o.voll ?? o.text} (${o.n})`} title={o.voll}

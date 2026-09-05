@@ -110,7 +110,21 @@ export function Schnellrechner() {
           <div className="space-y-4">
             {/* Zwei Hälften: links rechnen (Eingabe), rechts der Kalender als reine
                 Visualisierung DESSELBEN Ergebnisses (#7 — keine doppelten Eingaben). */}
-            <div className={pk('grid gap-5 lg:grid-cols-[18rem_minmax(0,1fr)] lg:items-start', 'grid gap-5 @3xl/pane:grid-cols-[18rem_minmax(0,1fr)] @3xl/pane:items-start')}>
+            {/* ── LM-074 (B12, 4.9.2026) · 18rem → 21rem: DAS DATUM MUSS GANZ INS FELD ──
+                Die erste Hälfte des Befundes («Anzeige folgt der Browsersprache,
+                07/29/2026 statt 29.07.2026») ist seit R2-E/F1-1 (31.8.2026) erledigt:
+                `EinfacheFristForm` benutzt das Haus-`DatumsFeld` mit festem TT.MM.JJJJ.
+                Die ZWEITE Hälfte war am gebauten Stand noch reproduzierbar und wird
+                hier geheilt. GEMESSEN @1440: die 18rem-Spalte trug ein `grid-cols-2`,
+                also 138 px je Feld; abzüglich 14 px Innenabstand und der 44 px Reserve
+                für den Kalenderknopf blieben 80 px für einen 87 px breiten Wert —
+                «04.09.2026» lief über (scrollWidth 145 bei clientWidth 136). 21rem gibt
+                162 px je Feld und damit 104 px Platz. Der Kalender rechts steht auf
+                `minmax(0,1fr)` und gibt die 3rem her, ohne eine Zusage zu verlieren.
+                Warum HIER und nicht im Feld: die Reserve von 44 px ist die Anatomie des
+                Kalenderknopfs (`w-8` + `right-1.5`) — sie zu kürzen hiesse, den Knopf
+                zu verkleinern; zu eng war die Spalte, nicht das Feld. */}
+            <div className={pk('grid gap-5 lg:grid-cols-[21rem_minmax(0,1fr)] lg:items-start', 'grid gap-5 @3xl/pane:grid-cols-[21rem_minmax(0,1fr)] @3xl/pane:items-start')}>
               <div className="space-y-2">
                 <EinfacheFristForm minimal onErgebnis={setFristErgebnis} />
               </div>

@@ -63,17 +63,37 @@ export function EntscheidKarte({ e, onNorm }: {
           </span>
         </div>
 
+        {/* LM-036 (B11-Karten, 4.9.2026) · `min-h-[2lh]` am Thema-Absatz.
+            Der Titel ist auf zwei Zeilen begrenzt (`line-clamp-2`), FÜLLT sie
+            aber nicht immer — die Normchip-Zeile darunter sass in Nachbarkarten
+            verschieden hoch, während der Kartenfuss fluchtete («unten
+            ausgerichtet, in der Mitte nicht»). Gemessen auf Prod (1440 px,
+            Dichte «Karten», 339 Karten / 118 Reihen): 37 Reihen mit versetzter
+            Chip-Zeile, bis 25 px. Der Absatz reserviert jetzt seine zwei Zeilen
+            (`2lh` = zwei eigene Zeilenhöhen, gilt für alle vier Thema-Varianten
+            ohne Zahlenwert, §13/B2), womit die Chip-Zeile bei gleicher Variante
+            IMMER auf derselben Höhe steht: nachgemessen 1 Reihe / 11 px, und
+            diese eine mischt Serifen-Regeste (body-l) mit Sans-Synth (body-s)
+            — verschiedene Zeilenhöhen, kein Ausrichtungsfehler.
+            Verworfen wurde die naheliegende Alternative «Chip-Zeile per
+            `mt-auto` an den Fuss des Lesebereichs»: gemessen nur 37 → 28
+            Reihen, weil sie den Versatz bloss von der Titel- auf die
+            Fusszeilen-Höhe verlagert (28 Reihen mit ungleich hohem Fuss).
+            Preis der gewählten Lösung: die Liste wächst 34'059 → 35'594 px
+            (+4,5 %) — Reihen aus lauter Einzeilern reservieren die zweite
+            Zeile mit. Die Kartenhöhe je Reihe bleibt vom Raster bestimmt
+            (A3-Abnahme, FAHRPLAN-ARCHIV-RESTPUNKTE §20, nicht gekippt). */}
         {/* THEMA — Leitelement. Verweis: klarer Bezug zum BGE; sonst echte Regeste in
             Serif (Lesebild), Synth in Sans. */}
         {verweis
-          ? <p className="mt-2 text-body-s text-ink-700 leading-snug line-clamp-2">Vollständiges Urteil zu <span className="num">BGE {verweis.bgeReferenz}</span></p>
+          ? <p className="mt-2 text-body-s text-ink-700 leading-snug line-clamp-2 min-h-[2lh]">Vollständiges Urteil zu <span className="num">BGE {verweis.bgeReferenz}</span></p>
           : synth
-            ? <p className="mt-2 text-body-s text-ink-700 leading-snug line-clamp-2">{themaText(e)}</p>
+            ? <p className="mt-2 text-body-s text-ink-700 leading-snug line-clamp-2 min-h-[2lh]">{themaText(e)}</p>
             : betreff
               /* Amtlicher Betreff: verbindlicher Text (font-medium, ink-900), aber
                  Sans statt der Serifen-Regeste-Optik — ehrlich unterscheidbar (§8). */
-              ? <p className="mt-2 text-body-s font-medium text-ink-900 leading-snug line-clamp-2">{themaText(e)}</p>
-              : <p className="mt-2 font-serif text-body-l text-ink-900 leading-snug line-clamp-2">{themaText(e)}</p>}
+              ? <p className="mt-2 text-body-s font-medium text-ink-900 leading-snug line-clamp-2 min-h-[2lh]">{themaText(e)}</p>
+              : <p className="mt-2 font-serif text-body-l text-ink-900 leading-snug line-clamp-2 min-h-[2lh]">{themaText(e)}</p>}
 
       </Link>
 
