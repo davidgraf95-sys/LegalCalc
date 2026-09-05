@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-09-01",
+  "erzeugt": "2026-09-05",
   "erlass": "MWSTV",
   "dokumente": {
     "ESTV-MWST-BRANCHEN-INFO-01": {
@@ -48,7 +48,7 @@
     },
     "ESTV-MWST-BRANCHEN-INFO-13": {
       "urlBasis": "https://www.gate.estv.admin.ch/mwst-webpublikationen/public/pages/sectorInfos/cipherDisplay.xhtml?publicationId=1000066",
-      "stand": "2025-11-05"
+      "stand": "2026-09-03"
     },
     "ESTV-MWST-BRANCHEN-INFO-14": {
       "urlBasis": "https://www.gate.estv.admin.ch/mwst-webpublikationen/public/pages/sectorInfos/cipherDisplay.xhtml?publicationId=1042831",
@@ -96,7 +96,7 @@
     },
     "ESTV-MWST-BRANCHEN-INFO-26": {
       "urlBasis": "https://www.gate.estv.admin.ch/mwst-webpublikationen/public/pages/sectorInfos/cipherDisplay.xhtml?publicationId=1022463",
-      "stand": "2026-03-06"
+      "stand": "2026-09-03"
     },
     "ESTV-MWST-BRANCHEN-INFO-27": {
       "urlBasis": "https://www.gate.estv.admin.ch/mwst-webpublikationen/public/pages/sectorInfos/cipherDisplay.xhtml?publicationId=1150270",
@@ -112,7 +112,7 @@
     },
     "ESTV-MWST-INFO-04": {
       "urlBasis": "https://www.gate.estv.admin.ch/mwst-webpublikationen/public/pages/taxInfos/cipherDisplay.xhtml?publicationId=1003047",
-      "stand": "2026-08-27"
+      "stand": "2026-09-03"
     },
     "ESTV-MWST-INFO-05": {
       "urlBasis": "https://www.gate.estv.admin.ch/mwst-webpublikationen/public/pages/taxInfos/cipherDisplay.xhtml?publicationId=1000283",
