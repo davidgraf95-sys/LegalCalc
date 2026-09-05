@@ -1,6 +1,7 @@
 import { useMemo, useState, type Dispatch, type ReactNode, type SetStateAction } from 'react';
 import { Link } from 'react-router-dom';
 import { FehlerBox, KopierButton, NormLink, Stepper } from './ui';
+import { useZielSichtbar } from './useZielSichtbar';
 import { NormChip } from './NormChip';
 import { PassendeRechner } from './PassendeRechner';
 import { NormText } from '../NormText';
@@ -75,6 +76,18 @@ export function VorlagenWizardRahmen({
     setLetzterSchritt(schritt);
     if (schritt === schritte.length - 1 && !vorschauOffen) setVorschauOffen(true);
   }
+  // LM-084 (W2·17-UI-BEFUNDE B10, 4.9.2026): dieser Knopf war der einzige
+  // schwebende Sprung-Knopf OHNE Ausblende-Regel — er blieb auch dann über dem
+  // Inhalt stehen, wenn sein Ziel schon im Bild war (gemessen 390 px,
+  // `/vorlagen/nda`: Vorschau-Griff bei y=580, Knopf unverändert sichtbar über
+  // dem Inhalt darunter). Die Schwester-Marke `ErgebnisSprung` blendet seit W5
+  // (11.7.2026) genau dafür aus; der Wizard bekommt dieselbe Regel aus
+  // demselben Haken statt einer Kopie (§5/§10). Nicht reproduzierbar waren die
+  // übrigen Teile des Befunds: der Knopf ist `fixed` (nicht absolut), hält mit
+  // `right-4` einen Sicherheitsabstand und liegt bei 390 px vollständig im
+  // Viewport (gemessen x=266..374). §3: reine Darstellung — die Sprungfunktion
+  // selbst und das `pb-20` der Boden-Polsterung bleiben unberührt.
+  const vorschauImBild = useZielSichtbar('wizard-vorschau');
   const zurVorschau = () => {
     setVorschauOffen(true);
     const rm = typeof window !== 'undefined' && window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
@@ -171,8 +184,16 @@ export function VorlagenWizardRahmen({
           {beruehrt && fehler != null && <FehlerBox fehler={fehler} />}
 
           <div className="flex items-end justify-between gap-3 pt-2 border-t border-line">
+            {/* LM-094 (W2·17-UI-BEFUNDE B17, 4.9.2026): «← Zurück» war
+                `lc-btn-ghost` — reiner Text ohne Fläche und ohne Rahmen neben
+                dem gefüllten «Weiter →». Die beiden Navigationsknöpfe EINES
+                Assistenten lasen sich dadurch nicht als Paar. Outline neben
+                Primär: gleiche Anatomie und Höhe, verschiedene Gewichtung —
+                die Rangfolge bleibt, die Zusammengehörigkeit wird sichtbar.
+                Der Deaktiviert-Zustand kommt aus dem Token (`index.css`,
+                `.lc-btn*:disabled`), nicht aus einer Utility hier. */}
             <button type="button" onClick={() => setSchritt((s) => Math.max(0, s - 1))}
-              disabled={schritt === 0} className="lc-btn-ghost">← Zurück</button>
+              disabled={schritt === 0} className="lc-btn-outline">← Zurück</button>
             {schritt < schritte.length - 1 && (
               <div className="flex flex-col items-end gap-1">
                 {/* Erklärt den ausgegrauten Weiter-Button (sonst wirkt er wie
@@ -234,10 +255,12 @@ export function VorlagenWizardRahmen({
           viewport-`fixed` und läge im Ausdruck sonst auf jeder Seite über dem Inhalt.
           Der globale Druckblock greift hier zwar (es IST ein <button>), aber die
           Utility am Element überlebt jede künftige Umformulierung des Blocks. */}
-      <button type="button" onClick={zurVorschau} data-verdikt-sprung
-        className={`${pk('md:hidden', '@3xl/pane:hidden')} print:hidden fixed bottom-4 right-4 z-30 lc-btn-primary lc-btn-sm rounded-full px-4 shadow-lg`}>
-        Vorschau ↓
-      </button>
+      {!vorschauImBild && (
+        <button type="button" onClick={zurVorschau} data-verdikt-sprung
+          className={`${pk('md:hidden', '@3xl/pane:hidden')} print:hidden fixed bottom-4 right-4 z-30 lc-btn-primary lc-btn-sm rounded-full px-4 shadow-lg`}>
+          Vorschau ↓
+        </button>
+      )}
     </div>
   );
 }

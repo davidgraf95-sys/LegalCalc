@@ -516,14 +516,28 @@ export const ArtikelLeser = memo(function ArtikelLeser({ e, erlass, basisPfad, f
               // (Bug-Check §9 vom 4.8.2026, B1).
               <span {...{ [SUCH_META]: '' }}
                 className="ml-auto flex shrink-0 gap-3 opacity-0 transition-opacity focus-within:opacity-100 group-hover:opacity-100 [@media(hover:none)]:opacity-100">
-                <button type="button" onClick={() => kopiere('zitat')} className="text-micro text-ink-500 hover:text-brass-700" aria-label={`Zitat kopieren: ${zitatVoll}`}>{kopiert === 'zitat' ? '✓ kopiert' : 'Zitat'}</button>
-                <button type="button" onClick={() => kopiere('link')} className="text-micro text-ink-500 hover:text-brass-700" aria-label="Permalink kopieren">{kopiert === 'link' ? '✓' : 'Link'}</button>
+                {/* LM-091 (W2·17-UI-BEFUNDE B10, 4.9.2026). Teilwiderlegt und
+                    teilgebaut. WIDERLEGT: die Zeile hat Abstand (`gap-3`) und
+                    erscheint nicht nur bei Mausbedienung — `focus-within` holt
+                    sie per Tastatur, `[@media(hover:none)]` auf Touch.
+                    REPRODUZIERT: «als Aktion erkennbar». Gemessen 22×13 px,
+                    border 0, Farbe ink-500 — unter der AA-Untergrenze
+                    (WCAG 2.5.8, 24 px) und optisch nicht von einem
+                    Fliesstext-Link zu unterscheiden. `.lc-btn-mini` gibt allen
+                    dreien Fläche, Haarlinie und `--tap-ziel` als Mindesthöhe.
+                    Die PLATZIERUNG (rechts oben in der Artikel-Kopfzeile)
+                    bleibt unangetastet — sie ist mit EID-2 am 25.7.2026
+                    abgenommen (FAHRPLAN-GESETZES-UX §12.5, PR #349) und wird
+                    von einem Affordanz-Fix nicht umgeworfen; ebenso bleibt die
+                    leise Stimme (`text-micro`/`ink-500`, §13). */}
+                <button type="button" onClick={() => kopiere('zitat')} className="lc-btn-mini text-micro text-ink-500 hover:text-brass-700" aria-label={`Zitat kopieren: ${zitatVoll}`}>{kopiert === 'zitat' ? '✓ kopiert' : 'Zitat'}</button>
+                <button type="button" onClick={() => kopiere('link')} className="lc-btn-mini text-micro text-ink-500 hover:text-brass-700" aria-label="Permalink kopieren">{kopiert === 'link' ? '✓' : 'Link'}</button>
                 {/* EID-2: Outbound zur amtlichen Fassung AN DIESER STELLE (ELI-Form,
                     target/rel wie die bestehenden amtlichen Links, §12.4). Stil =
                     dieselbe dezente Aktions-Stimme wie Zitat/Link daneben (§13). */}
                 {amtlich && (
                   <a href={amtlich} target="_blank" rel="noopener noreferrer"
-                    className="text-micro text-ink-500 hover:text-brass-700 no-underline whitespace-nowrap"
+                    className="lc-btn-mini text-micro text-ink-500 hover:text-brass-700 no-underline whitespace-nowrap"
                     aria-label={`Amtliche Fassung von ${zitat} auf Fedlex öffnen ${NEUER_TAB}`}
                     // Ä110 (18.8.2026): EINE Schreibung für EIN Ziel — der
                     // sichtbare Text folgt dem `aria-label` und dem `title`
