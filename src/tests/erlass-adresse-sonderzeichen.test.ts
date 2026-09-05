@@ -10,11 +10,17 @@ import { ladeErlass, ladeErlassDatei, ladeStruktur } from '../lib/normtext/brows
 // NACHZUG ZU F25/K-1b (31.8.2026). Jener Fix hat die halbe Strecke geheilt: der
 // SEITEN-Pfad `/gesetze/<ebene>/<key>` überlebt Sonderzeichen seither
 // (`zerlegeErlassPfad` statt `useParams()`), und die Tests dazu waren und sind
-// grün — die Feststellung von damals steht unverändert. Der Live-Nachweis am
-// gebauten Stand (Probe 5.9.2026, 682 Checks über 26 Kantone) blieb trotzdem
-// rot: die drei Glarner Erlasse zeigen nach der Hydration «Erlass nicht
+// grün — die Feststellung von damals steht unverändert. Die Probe am LOKALEN
+// Preview (5.9.2026, 682 Checks über 26 Kantone, `vite preview`) blieb trotzdem
+// rot: die drei Glarner Erlasse zeigen dort nach der Hydration «Erlass nicht
 // gefunden», obwohl das prerenderte HTML unter der kanonischen Adresse korrekt
 // ausgeliefert wird.
+// §2b-KORREKTUR (Gegenprüfung 5.9.2026): Das war KEIN Live-Defekt. Vercel
+// liefert die rohe UND die kodierte Daten-URL mit 200 (curl 5.9.2026,
+// `…/GL-III%20B%2F7%2F1.json` und `…/GL-III%2520B%252F7%252F1.json`, gleicher
+// Body); auf Produktion rendern die drei Erlasse korrekt. Der Defekt trifft nur
+// Server, die die URL genau einmal dekodieren (lokaler Preview, jeder
+// strikte statische Server) — der Fix macht die Daten-Adresse serverunabhängig.
 //
 // GEMESSEN am lokalen Preview (Netzwerk-Mitschnitt, 5.9.2026, origin/main
 // a50888232):
@@ -24,7 +30,7 @@ import { ladeErlass, ladeErlassDatei, ladeStruktur } from '../lib/normtext/brows
 // Die beiden Daten-URLs entstanden per Template-Literal aus dem ROHEN
 // Schlüssel. Der Schlüssel dieser drei Erlasse trägt das Prozentzeichen IN DER
 // KANONIK (`GL-III%20B%2F7%2F1` IST der Schlüssel, nicht seine Kodierung) —
-// roh in eine URL geschrieben, liest der Server sie als Escape zurück und sucht
+// roh in eine URL geschrieben, liest ein decode-once-Server sie als Escape zurück und sucht
 // `kanton/GL-III B/7/1.json`. Die Datei heisst aber wörtlich
 // `kanton/GL-III%20B%2F7%2F1.json`; der Treffer bleibt aus, der Leser bekommt
 // keinen Erlass und zeigt die Fehlseite. Für die 162 Schlüssel mit Leerzeichen
@@ -32,8 +38,9 @@ import { ladeErlass, ladeErlassDatei, ladeStruktur } from '../lib/normtext/brows
 // zu `%20`, und `%20` dekodiert wieder zum Leerzeichen.
 //
 // DIESER TEST PRÜFT DIE GANZE KETTE, nicht die Formel: Adresse → Register →
-// Daten-URL → Datei auf der Platte, mit der Semantik, die jeder statische
-// Server anwendet (URL einmal dekodieren, dann im Dateisystem nachsehen).
+// Daten-URL → Datei auf der Platte, mit der strikten Semantik eines
+// decode-once-Servers (URL einmal dekodieren, dann im Dateisystem nachsehen);
+// Vercel ist nachsichtiger (s. o.), der Test prüft die strengere Variante.
 // Bewusst ohne Bezug auf den Namen der Fix-Funktion: geprüft wird, WELCHE URL
 // der Lader anfordert, nicht wie sie zustande kommt.
 
