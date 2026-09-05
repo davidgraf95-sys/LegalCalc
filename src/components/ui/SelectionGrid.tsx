@@ -57,8 +57,20 @@ const TON_AKTIV: Record<SelectionTon, string> = {
 };
 const KANON_AKTIV = 'border-brass-500 bg-brass-100/60 text-ink-900';
 const RUHE = 'border-line bg-surface hover:border-brass-400';
-/** Gesperrte Kachel — sichtbar, aber nicht wählbar (§8, s. `disabled`). */
-const GESPERRT = 'border-line bg-surface opacity-55 cursor-not-allowed';
+/** Gesperrte Kachel — sichtbar, aber nicht wählbar (§8, s. `disabled`).
+ *
+ *  LM-093 (W2·17-UI-BEFUNDE B17, 4.9.2026): stand als `bg-surface
+ *  opacity-55`. Gemessen auf `/rechner/zustaendigkeit` (1440 px) war die
+ *  gesperrte Karte «Verwaltung» damit in Fläche, Rahmen UND Titelfarbe
+ *  identisch mit den wählbaren (bg rgb(254,252,250), Titel rgb(28,26,21)) —
+ *  der einzige Unterschied war die Deckkraft. Wie beim Knopf-Token
+ *  (`.lc-btn*:disabled`, index.css) trägt die Dämpfung jetzt die FLÄCHE: die
+ *  gesperrte Kachel sitzt versenkt (`bg-well`) statt erhaben, ihr Titel läuft
+ *  gedämpft aber lesbar (`text-ink-600`, s. u.). Eine durchscheinende Kachel
+ *  über wechselndem Untergrund ist kein Zustand, sondern ein Zufall.
+ *  §8/§3 unberührt: die «In Vorbereitung»-Marke bleibt die Aussage, die Sperre
+ *  bleibt beim Aufrufer (`disabled`). */
+const GESPERRT = 'border-line bg-well cursor-not-allowed';
 
 /**
  * Trefferfläche der PILLE (A3-5, R3-α 31.8.2026).
@@ -115,7 +127,13 @@ export function SelectionGrid<T extends string>({
           >
             {pille ? it.label : (
               <>
-                <span className="block text-body-s font-semibold text-ink-900">{it.label}</span>
+                {/* LM-093: die Titelzeile trug `text-ink-900` unabhängig vom
+                    Zustand — die gesperrte Kachel sah damit exakt so aus wie
+                    eine wählbare. `ink-600` (nicht ink-400/ink-500) hält den
+                    Text auf `bg-well` klar über AA und dämpft trotzdem
+                    sichtbar; die Unterzeile daneben läuft aus demselben Grund
+                    seit LM-176 in ink-600. */}
+                <span className={`block text-body-s font-semibold ${it.disabled ? 'text-ink-600' : 'text-ink-900'}`}>{it.label}</span>
                 {/* ink-600, NICHT ink-500 (LM-176, Fahrplan B5 §6): die
                     Unterzeile sitzt in der GEWÄHLTEN Kachel auf `bg-brass-100`
                     — dort misst ink-500 4.37:1 (unter AA), ink-600 6.3:1. Die
