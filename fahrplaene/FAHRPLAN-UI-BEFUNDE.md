@@ -144,13 +144,76 @@ reproduzieren (§0.1); nicht Reproduzierbares als «erledigt (überholt)» schli
 
 **7 Befunde** · Blocker 1 · Hoch 1 · Mittel 5 · Detail 0 · `W2·17-UI-BEFUNDE-B10`
 
-- [ ] **LM-084** · Blocker · Die Sprungmarken «↓ Ergebnis» und «Vorschau ↓» sind bei 390 px … [Verdacht → FAHRPLAN-UI-NAVIGATION.md §1 N0d/W5 («↓ Ergebnis»-FAB per IntersectionObserver ausblenden — ✅ g…]
-- [ ] **LM-086** · Hoch · Der Rücksetz-Link «zurücksetzen» erscheint nur, wenn die Richter-Auswahl gesetzt ist. Bei … [Verdacht → Code: src/components/rechtsprechung/EntscheidFilter.tsx:149–170 + :265 — Kommentar dokumentiert…]
-- [ ] **LM-090** · Mittel · Jede Zeile trägt vier Symbolknöpfe (▲ ▼ ⧉ ✕) von je … [Verdacht → FAHRPLAN-UI-NAVIGATION.md §4 R6 (Tap-Target-Pass) und §1 N0d/O3 (Reiter-Tracker); abnahme/respo…]
-- [ ] **LM-091** · Mittel · Beim Überfahren erscheint rechts oben eine Leiste «Zitat | Link | … [Verdacht → FAHRPLAN-GESETZES-UX.md §12.5 (EID-2 ✅ 25.7., PR #349 — «David-Gate Platzierung … Sichtprüfung…]
-- [ ] **LM-095** · Mittel · Der gewählte Name steht als Chip «C. Müller ×» rechts neben … [Verdacht → ROADMAP.md Z.485-489 R-RICHTER «Block B offen, reines UI (Autocomplete-Facette + ?richter-URL-A…]
-- [ ] **LM-096** · Mittel · Neben jedem Normchip steht ein eigenes, etwa 16 px grosses Kopiersymbol … [Verdacht → FAHRPLAN-VERZAHNUNG-UI.md **§0. Kritik-Einarbeitung**, Tabellenzeile 3b (Grammatik-Regel 1: «⧉ nur auf KontextPanel-Chips + NormPopover…]
-- [ ] **LM-098** · Mittel · Zwei Paare «A− A+» sind gleichzeitig sichtbar: eines links in der … [Verdacht → Reglement-Konflikt: DESIGN-REGLEMENT-RECHTSPRECHUNG.md Z.200-203 R17 (Reader-eigener A−/A+) geg…]
+**Stand 4.9.2026 (Batch `b10-b17-knoepfe`, gemeinsam mit §18/B17 gebaut):** 7/7 geschlossen —
+5 gebaut, 2 als überholt geschlossen (LM-096, LM-098). Jeder Befund vorher am Prod-Stand bzw. am
+lokalen Preview von `origin/main` reproduziert (§0.1) und nachher am Batch-Preview per Playwright
+nachgemessen; echte `mouse.wheel`-Eingaben statt programmatischem Scrollen (§0.4).
+
+- [x] **LM-084** · Blocker · Die Sprungmarken «↓ Ergebnis» und «Vorschau ↓» sind bei 390 px … [Verdacht → FAHRPLAN-UI-NAVIGATION.md §1 N0d/W5 («↓ Ergebnis»-FAB per IntersectionObserver ausblenden — ✅ g…]
+  · **gebaut** 4.9.2026 — `src/components/vorlagen/wizard.tsx` + `src/components/vorlagen/ui.tsx`.
+    Teilwiderlegt: die Marke ist `fixed` (nicht «absolut positioniert»), hält mit `right-4` einen
+    Sicherheitsabstand und liegt bei 390 px vollständig im Viewport (gemessen x=266..374 bei vw=390).
+    Echter Rest: der Wizard-FAB «Vorschau ↓» war der einzige schwebende Sprung-Knopf OHNE die
+    W5-Ausblende-Regel und stand darum auch bei sichtbarem Ziel über dem Inhalt. Beleg bei identischer
+    Scroll-Tiefe (`/vorlagen/nda`, 390 px, Ziel y=380): Prod FAB sichtbar=true, Preview sichtbar=false.
+    Die Beobachtung ist jetzt EIN geteilter Haken (`useZielSichtbar`) statt einer zweiten Kopie (§5/§10).
+- [x] **LM-086** · Hoch · Der Rücksetz-Link «zurücksetzen» erscheint nur, wenn die Richter-Auswahl gesetzt ist. Bei … [Verdacht → Code: src/components/rechtsprechung/EntscheidFilter.tsx:149–170 + :265 — Kommentar dokumentiert…]
+  · **gebaut (erste Hälfte überholt)** 4.9.2026 — `src/components/rechtsprechung/EntscheidFilter.tsx`.
+    ÜBERHOLT: dass die Zeile nur bei gesetzter Richter-Auswahl erschien — `facettenAktiv` zählt seither
+    richter|ebene|kanton|gerichtstyp|sprache mit; nachgemessen zeigen `?kanton=BS` und `?sprache=de` die
+    Zeile (count=1). GEBAUT: die Affordanz — der Knopf mass 76×17 px ohne Fläche und ohne Rahmen (unter
+    WCAG 2.5.8) und trug die Farbe eines Fliesstext-Links; jetzt `.lc-btn-mini`, gemessen 90×24, border 1px.
+- [x] **LM-090** · Mittel · Jede Zeile trägt vier Symbolknöpfe (▲ ▼ ⧉ ✕) von je … [Verdacht → FAHRPLAN-UI-NAVIGATION.md §4 R6 (Tap-Target-Pass) und §1 N0d/O3 (Reiter-Tracker); abnahme/respo…]
+  · **gebaut (Grössen-Hälfte widerlegt)** 4.9.2026 — `src/components/layout/TabPanel.tsx`.
+    WIDERLEGT: gemessen 24×28 px (▲▼⧉) und 28×28 px (✕) — ≥24 px, WCAG 2.5.8 erfüllt; die «rund 14 px»
+    sind die Glyphengrösse, nicht die Zielfläche. Das Komfortmass 44 px ist für DIESE Zeile datiert
+    verworfen (`SchliessKnopf komfort={false}`, A3-1: das Pseudo-Element nähme den Nachbarn die Klicks) —
+    Entscheid nicht gekippt (§0.2). GEBAUT: die Beschriftungs-Hälfte, halb offen — ▲▼⧉ trugen nur ein
+    `aria-label` und darum keinen Tooltip (gemessen `title=null`), das ✕ daneben führte beides; jetzt
+    tragen alle vier denselben Namen als `title`.
+- [x] **LM-091** · Mittel · Beim Überfahren erscheint rechts oben eine Leiste «Zitat | Link | … [Verdacht → FAHRPLAN-GESETZES-UX.md §12.5 (EID-2 ✅ 25.7., PR #349 — «David-Gate Platzierung … Sichtprüfung…]
+  · **gebaut (Teil widerlegt)** 4.9.2026 — `src/pages/gesetz-leser/parts/ArtikelLeser.tsx`.
+    WIDERLEGT: Abstand besteht (`gap-3`), und die Zeile erscheint nicht nur bei Mausbedienung
+    (`focus-within` für Tastatur, `[@media(hover:none)]` für Touch). GEBAUT: «als Aktion erkennbar» —
+    gemessen 22×13 px, border 0, Farbe ink-500 (unter WCAG 2.5.8); jetzt `.lc-btn-mini`, gemessen 36×24,
+    border 1px, `min-height` aus `--tap-ziel`. Die mit EID-2 am 25.7.2026 abgenommene PLATZIERUNG
+    (FAHRPLAN-GESETZES-UX §12.5, PR #349) und die leise Stimme bleiben unangetastet (§0.2).
+- [x] **LM-095** · Mittel · Der gewählte Name steht als Chip «C. Müller ×» rechts neben … [Verdacht → ROADMAP.md Z.485-489 R-RICHTER «Block B offen, reines UI (Autocomplete-Facette + ?richter-URL-A…]
+  · *Anker-Nachzug §0.2 (Altbestand-Auflage):* die blosse Zeilenangabe `ROADMAP.md Z.485-489 R-RICHTER`
+    löst nicht mehr auf — «R-RICHTER» steht dort nicht (mehr). Gültiger Anker: `ROADMAP.md` →
+    `@meta id: W3·15-RICHTER` (Spruchkörper-Analytik, status blocked) samt Blocker-Zeile
+    `richter-analytik-gate`; gesperrt sind dort Ranking/Prognose, Filtern und Facette sind frei und gebaut.
+  · **gebaut** 4.9.2026 — `src/components/rechtsprechung/RichterFilter.tsx`. Reproduziert: nach der Wahl
+    steht der Name im Aktiv-Chip, das Feld fällt auf «Name eingeben …» zurück und sieht leer aus, obwohl
+    gefiltert wird. Der Chip bleibt, wo er ist (dokumentierter Entscheid, `EntscheidFilter`: «sonst doppelte
+    Repräsentation»); stattdessen TRITT DAS FELD ZURÜCK — Platzhalter und `aria-label` sagen bei gesetztem
+    Wert «Anderen Namen suchen …» (nachgemessen). Keine Änderung an Auswahl-, Filter- oder Tastaturlogik.
+  · **CI-Nachzug** 5.9.2026 — der Bau oben wechselte MIT dem Platzhalter auch das `aria-label`
+    («Nach anderer Richter:in filtern»). Damit verlor die Combobox bei gesetztem Richter ihren
+    zugänglichen NAMEN; CI «Browser-Smoke» Shard 2/8 wurde rot. Lokal gegen `dist` reproduziert
+    (2 failed / 10 passed): `e2e/rechtsprechung-richter.e2e.ts` Zeile 149 und 176 fanden
+    `getByRole('combobox', { name: 'Nach Richter:in filtern' })` nach `?richter=<slug>` nicht mehr.
+    Der zugängliche Name ist die Identität des Bedienelements und darf nicht mit dessen Zustand
+    wechseln (WCAG 4.1.2) — `aria-label` ist wieder konstant «Nach Richter:in filtern»; das
+    Zurücktreten trägt allein der sichtbare Platzhalter, den gesetzten Wert der Aktiv-Chip.
+    Test unangetastet (§6.3). Danach 12/12 grün.
+- [x] **LM-096** · Mittel · Neben jedem Normchip steht ein eigenes, etwa 16 px grosses Kopiersymbol … [Verdacht → FAHRPLAN-VERZAHNUNG-UI.md **§0. Kritik-Einarbeitung**, Tabellenzeile 3b (Grammatik-Regel 1: «⧉ nur auf KontextPanel-Chips + NormPopover…]
+  · **erledigt (überholt)** 4.9.2026 — in der Sache nicht mehr reproduzierbar: das Symbol ist kein
+    Kopiersymbol, sondern der ⧉-«nebeneinander öffnen»-Knopf. Gemessen auf
+    `/rechtsprechung/bs_sozialversicherungsgericht_AH.2025.7`: 24×24 px (nicht ~16), eigener Rahmen,
+    `title` UND `aria-label` («ATSG nebeneinander öffnen» usw.) — beschriftet, ≥ WCAG 2.5.8, und was
+    kopiert bzw. geöffnet wird, steht dran. Der Rest-Punkt («nicht mehrfach je Zeile») steht gegen den
+    dokumentierten Entscheid FAHRPLAN-UI-NAVIGATION.md §3 V3/A6 und wird hier NICHT still gekippt (§0.2):
+    Entscheid-Frage, kein Bug. Nicht gebaut.
+- [x] **LM-098** · Mittel · Zwei Paare «A− A+» sind gleichzeitig sichtbar: eines links in der … [Verdacht → Reglement-Konflikt: DESIGN-REGLEMENT-RECHTSPRECHUNG.md Z.200-203 R17 (Reader-eigener A−/A+) geg…]
+  · *Anker-Nachzug §0.2 (Altbestand-Auflage):* `DESIGN-REGLEMENT-RECHTSPRECHUNG.md` → Überschrift
+    `## 10 · Reader-Steuerung & Personalisierung` (dort R17); Gegenstück `FAHRPLAN-GESETZES-UX.md §3.1`.
+  · **erledigt (überholt)** 4.9.2026 — der Reglement-Konflikt IST entschieden, und zwar gegen das
+    Streichen: «nicht einen Regler streichen, sondern beide beschriften» (W2·11-DESIGN, PR #569 — nach dem
+    Sichtdatum 29.7.2026). Nachgemessen bei 1440 px trägt jedes Paar ein sichtbares Bereichswort —
+    «Ganze Seite» (Topbar) und «Nur Entscheidtext» (Entscheid-Leiste) — dazu je eigenes `aria-label` und
+    `title` («Ganze Seite verkleinern» / «Entscheidtext verkleinern — die Anwendung bleibt gleich gross»).
+    Der gemeldete Defekt «welches worauf wirkt, ist nicht angegeben» besteht nicht mehr. Nicht gebaut.
 
 **Code-Flächen (grob, aus den Routen):** `src/components/ui`, `src/pages/gesetz-leser`, `src/components/rechtsprechung`.
 **Risiko-Klasse:** reines UI.
@@ -282,14 +345,77 @@ reproduzieren (§0.1); nicht Reproduzierbares als «erledigt (überholt)» schli
 
 **8 Befunde** · Blocker 0 · Hoch 1 · Mittel 6 · Detail 1 · `W2·17-UI-BEFUNDE-B17`
 
-- [ ] **LM-085** · Hoch · Drei Gewichtungen nebeneinander: «PDF-Rechenbericht» gefüllt, «In Kalender (.ics)» outline, «Link teilen» … [Verdacht → FAHRPLAN-UI-QUALITAET.md §3 (Muster-Konsistenz: Kopier-/Export-Affordanz, §13-F4-Zustandsmatrix…]
+**Stand 4.9.2026 (Batch `b10-b17-knoepfe`, gemeinsam mit §11/B10 gebaut):** 7/8 geschlossen —
+6 gebaut, 1 als überholt geschlossen (LM-097), **1 zurückgestellt** (LM-087: reproduziert, aber der
+Befund selbst bindet den Bau an eine Gate-Verschärfung ausserhalb der Bau-Fläche dieses Batches).
+Der Deaktiviert-Zustand ist als Token gebaut und ändert keine Bedienlogik (§3): `disabled` setzt
+unverändert der Aufrufer, `golden:vergleich` byte-gleich (256 Fälle).
+
+- [x] **LM-085** · Hoch · Drei Gewichtungen nebeneinander: «PDF-Rechenbericht» gefüllt, «In Kalender (.ics)» outline, «Link teilen» … [Verdacht → FAHRPLAN-UI-QUALITAET.md §3 (Muster-Konsistenz: Kopier-/Export-Affordanz, §13-F4-Zustandsmatrix…]
+  · **gebaut (Dunkelmodus-Hälfte widerlegt)** 4.9.2026 — `src/components/LinkTeilenButton.tsx`.
+    Gemessen `/rechner/zpo-fristen`, 1440 px, hell UND dunkel: «PDF-Rechenbericht» 210×44 gefüllt,
+    «In Kalender (.ics)» 164×44 outline, «Link teilen» 94×36 ohne Fläche und ohne Rahmen. WIDERLEGT ist die
+    Umkehr im Dunkelmodus — der gefüllte Knopf bleibt in beiden Modi die lauteste Form (hell
+    ink-900-Füllung mit heller Schrift, dunkel die invertierte helle Füllung mit dunkler Schrift); «grau»
+    wird er nicht. GEBAUT ist die dritte Gewichtung: «Link teilen» ist jetzt outline wie der .ics-Knopf,
+    nachher 118×44 mit border 1px in beiden Modi — eine Hauptaktion, zwei gleichrangige Nebenaktionen.
 - [ ] **LM-087** · Mittel · 34 verschiedene Button-Varianten aus Höhe · Radius · Schriftgrad · Schnitt … [Verdacht → FAHRPLAN-UI-QUALITAET.md §3 (Muster-Konsistenz) + §4 Ziff. 1/3 (Gate-Verschärfung); DESIGN-REGL…]
-- [ ] **LM-088** · Mittel · Mehrere Aktionen sind reiner Text ohne Fläche oder Rahmen und dadurch … [Verdacht → FAHRPLAN-UI-NAVIGATION.md §4 R6 (Tap-Target-Pass, Hitbox ≥24 px/Ziel 44, WCAG 2.5.8 — offen, Re…]
-- [ ] **LM-089** · Mittel · Deaktivierte Knöpfe sind allein über opacity 0.5 gekennzeichnet. Der primäre «Weiter … [Verdacht → FAHRPLAN-UI-QUALITAET.md §3 (§13-F4-Zustandsmatrix «inkl. disabled/loading/selected/empty/error…]
-- [ ] **LM-093** · Mittel · Die noch nicht verfügbare Karte «Verwaltung» unterscheidet sich von den drei … [Verdacht → DESIGN-REGLEMENT.md Z.196-201 (Zustandsmatrix inkl. disabled) + FAHRPLAN-UI-QUALITAET.md §3/§5(…]
-- [ ] **LM-094** · Mittel · Der gesperrte «Weiter →» behält die volle dunkle Füllung (rgb 28,26,21) … [Verdacht → DESIGN-REGLEMENT.md Z.196-201 (alle Zustände inkl. disabled) + FAHRPLAN-UI-QUALITAET.md §3/§5(c…]
-- [ ] **LM-097** · Mittel · Der Knopf ist die einzige nahezu schwarze Fläche der Seite und … [Verdacht → CLAUDE.md §7 Zitat-Ausnahme lit. c (im UI sichtbarer Live-Link) + Code-Entscheid src/pages/Mate…]
-- [ ] **LM-099** · Detail · «heute» ist fetter Text ohne Fläche oder Rahmen. [Verdacht → FAHRPLAN-UI-QUALITAET.md §3/§5(c) (Muster-Konsistenz, Chip-/Badge-Grammatik) + Token src/index.…]
+  · **zurückgestellt** 4.9.2026 — *reproduziert, aber nicht in diesem Batch baubar.* Nachgemessen über
+    8 Routen (1440 px): 45 Varianten aus Höhe·Radius·Schriftgrad·Schnitt, Höhen von 1 bis 81 px — die
+    Streuung des Befunds besteht. Der Befund selbst schreibt die Bedingung vor: «Bau nur zusammen mit der
+    Gate-Verschärfung, sonst wächst die Streuung nach» (E1-Schranke, FAHRPLAN-UI-QUALITAET §4 Ziff. 1/3).
+    Ein solches Tor lebt in `scripts/` + `package.json` und liegt damit ausserhalb der Bau-Fläche dieses
+    Batches (nur `src/**`, `public/**`, dieser Fahrplan). Beigetragen hat der Batch die Konvergenz von
+    sechs Fundstellen auf die geteilte Knopf-Familie (LM-085/088/094/099); die Zählung liegt danach bei 46,
+    weil `.lc-btn-mini` als benannte Familien-Variante hinzukommt — das belegt den Befund eher, als es ihn
+    entkräftet: ohne Tor gewinnt keine Aufräumrunde gegen den Nachwuchs.
+- [x] **LM-088** · Mittel · Mehrere Aktionen sind reiner Text ohne Fläche oder Rahmen und dadurch … [Verdacht → FAHRPLAN-UI-NAVIGATION.md §4 R6 (Tap-Target-Pass, Hitbox ≥24 px/Ziel 44, WCAG 2.5.8 — offen, Re…]
+  · **gebaut (zwei Drittel überholt)** 4.9.2026 — `src/components/layout/VerlaufUebersicht.tsx`
+    (+ `VerzugszinsForm.tsx`, s. LM-099). ÜBERHOLT: «Kopieren» im Ergebniskopf ist `lc-btn-outline
+    lc-btn-sm` (gemessen 146×36, border 1px), «Alle schliessen» im Reiter-Menü ebenfalls — beide tragen
+    bereits Fläche und Rahmen. GEBAUT: «Verlauf leeren» stand als reiner Text da (gemessen 105×29,
+    border 0) → `lc-btn-outline lc-btn-sm`, nachher 120×36 mit border 1px; nebenbei fiel der wirkungslose
+    Hover `hover:bg-paper-sunken/60` weg (Deckkraft-Suffix auf opakem Hex-Token, DESIGN-D0). Die
+    Grössen-Hälfte («heute» zu klein) ist widerlegt: gemessen 80×44, also auf dem Komfortmass.
+- [x] **LM-089** · Mittel · Deaktivierte Knöpfe sind allein über opacity 0.5 gekennzeichnet. Der primäre «Weiter … [Verdacht → FAHRPLAN-UI-QUALITAET.md §3 (§13-F4-Zustandsmatrix «inkl. disabled/loading/selected/empty/error…]
+  · **gebaut** 4.9.2026 — `src/index.css` (`.lc-btn*:disabled`). Reproduziert auf `/vorlagen/nda`:
+    der gesperrte «Weiter →» behielt bg rgb(28,26,21) und wurde allein über `opacity 0.5` gedämpft.
+    Der Deaktiviert-Zustand hat jetzt eine EIGENE ruhige Anatomie statt einer Abschwächung der lauten:
+    versenkte Fläche (`--well`), Haarlinie, gedämpfte aber lesbare Tinte (`--ink-600`), `opacity: 1`.
+    Nachgemessen: «Weiter →» disabled bg rgb(246,244,238), color rgb(86,83,76), border 1px, opacity 1.
+    Erster belegter Fall der Zustandsmatrix aus FAHRPLAN-UI-QUALITAET §3. §3-Prüfung: reine Darstellung —
+    welcher Knopf `disabled` ist, entscheidet unverändert der Aufrufer, keine Bedienlogik berührt.
+- [x] **LM-093** · Mittel · Die noch nicht verfügbare Karte «Verwaltung» unterscheidet sich von den drei … [Verdacht → DESIGN-REGLEMENT.md Z.196-201 (Zustandsmatrix inkl. disabled) + FAHRPLAN-UI-QUALITAET.md §3/§5(…]
+  · **gebaut** 4.9.2026 — `src/components/ui/SelectionGrid.tsx`. Reproduziert auf
+    `/rechner/zustaendigkeit`: die gesperrte Karte «Verwaltung» war in Fläche, Rahmen UND Titelfarbe
+    identisch mit den wählbaren (bg rgb(254,252,250), Titel rgb(28,26,21)), einziger Unterschied
+    `opacity 0.55`. Wie beim Knopf-Token trägt die Dämpfung jetzt die FLÄCHE: `bg-well` statt `bg-surface`,
+    Titel `ink-600`, keine Deckkraft-Kaschierung. Nachgemessen: «Verwaltung» bg rgb(246,244,238), Titel
+    rgb(86,83,76), opacity 1 — gegen «Straf» bg rgb(254,252,250), Titel rgb(28,26,21). Die
+    «In Vorbereitung»-Marke und das `disabled` des Aufrufers bleiben unverändert (§8/§3).
+- [x] **LM-094** · Mittel · Der gesperrte «Weiter →» behält die volle dunkle Füllung (rgb 28,26,21) … [Verdacht → DESIGN-REGLEMENT.md Z.196-201 (alle Zustände inkl. disabled) + FAHRPLAN-UI-QUALITAET.md §3/§5(c…]
+  · **gebaut** 4.9.2026 — `src/index.css` + `src/components/vorlagen/wizard.tsx` +
+    `src/components/forms/ZustaendigkeitForm.tsx` (der Befund nennt beide Fundstellen). Erster Teil =
+    LM-089 (Deaktiviert-Token). Zweiter Teil: «← Zurück» war `lc-btn-ghost` — reiner Text ohne Fläche und
+    ohne Rahmen neben dem gefüllten «Weiter →», die zwei Knöpfe EINES Assistenten lasen sich nicht als
+    Paar. Jetzt outline neben primär: gleiche Anatomie und Höhe, verschiedene Gewichtung. Nachgemessen
+    112×44 (border 1px) neben 109×44 — die Rangfolge bleibt, die Zusammengehörigkeit wird sichtbar.
+- [x] **LM-097** · Mittel · Der Knopf ist die einzige nahezu schwarze Fläche der Seite und … [Verdacht → CLAUDE.md §7 Zitat-Ausnahme lit. c (im UI sichtbarer Live-Link) + Code-Entscheid src/pages/Mate…]
+  · **erledigt (überholt)** 4.9.2026 — die beiden gemeldeten UI-Punkte bestehen nicht mehr. (1) Die
+    «einzige nahezu schwarze Fläche» ist weg: der Knopf war `lc-btn-primary`, ist seit B-1 (31.8.2026,
+    `ui/QuellLink`) der ruhige Chip «Amtliche Fassung ↗» — nachgemessen bg rgba(0,0,0,0), Klasse
+    `lc-chip`; die §7c-Auflage (sichtbarer Live-Link) bleibt erfüllt, ohne die Seite zu dominieren.
+    (2) Der rohe URL-Abdruck darunter ist keine Dopplung, sondern eine datierte Transparenz-Zusage
+    (§7c/§8), e2e-zugesichert (`e2e/materialien-m1…m4`) — er wird nach §0.2 nicht still gekippt.
+    OFFEN und ausdrücklich NICHT hier gebaut: dass `m.quelleUrl` auf das Kreisschreiben-VERZEICHNIS statt
+    aufs Dokument zeigt, ist ein Punkt der Korpus-Daten, kein Darstellungs-Fix — er gehört in die
+    Materialien-Datenpflege, nicht in einen UI-Batch (TABU dieses Auftrags).
+- [x] **LM-099** · Detail · «heute» ist fetter Text ohne Fläche oder Rahmen. [Verdacht → FAHRPLAN-UI-QUALITAET.md §3/§5(c) (Muster-Konsistenz, Chip-/Badge-Grammatik) + Token src/index.…]
+  · **gebaut** 4.9.2026 — `src/components/forms/VerzugszinsForm.tsx`. Reproduziert: «heute» war
+    `lc-btn-ghost`, gemessen 80×44 mit transparenter Fläche und border 0 — fetter Text neben einem
+    Eingabefeld, nicht als anklickbare Abkürzung erkennbar. Die GRÖSSE stimmte bereits (44 px);
+    gefehlt hat allein die Affordanz. Jetzt `lc-btn-outline` aus der geteilten Familie (kein Sonderstil an
+    dieser Stelle, s. LM-087), nachgemessen 82×44 mit border 1px.
 
 **Code-Flächen (grob, aus den Routen):** `src/components/ui`, `src/index.css`, `src/components/vorlagen`.
 **Risiko-Klasse:** reines UI — der Deaktiviert-Zustand darf keine Bedienlogik verändern.
@@ -311,12 +437,11 @@ reproduzieren (§0.1); nicht Reproduzierbares als «erledigt (überholt)» schli
 
 **Code-Flächen (grob, aus den Routen):** `src/pages/Gesetze.tsx`, `src/components/suche`, `src/lib/suche`.
 **Risiko-Klasse:** RISIKO — Such-/Ranking-Logik (LM-187 Substring-Treffer) ist keine reine UI: `check:gegenpruefung` + `eval:suche`.
-
 **B18-Logik (offen, Gegenprüfung Pflicht).** Aus B18 zurückgestellt, weil die Lösung nicht
 Darstellung ist, sondern Treffer-Auswahl bzw. Hervorhebungs-Logik berührt — Bau nur mit eigenem
 Nachweis (§0.3), `check:gegenpruefung` und `eval:suche` als Vorher/Nachher-Messung:
 
-- [ ] **LM-187 · Hervorhebung auf Wortteilen.** Reproduziert 5.9.2026 @1440 auf
+- [x] **LM-187 · Hervorhebung auf Wortteilen.** Reproduziert 5.9.2026 @1440 auf
   `/rechner/zpo-fristen`, «OR 257d» in die Kopfsuche: `<mark>` liegt auf «or» in «S**or**gfalt»
   (Treffer «Art. 272a OR» / «Art. 271a OR»).
   **Fundstelle-Korrektur (§7).** Die Dedup-Notiz nennt `artikelVolltext.ts:66` `lower.includes(w)`.
@@ -331,6 +456,35 @@ Nachweis (§0.3), `check:gegenpruefung` und `eval:suche` als Vorher/Nachher-Mess
   gegen `eval:suche` und mit `check:gegenpruefung`, nicht als UI-Handgriff.
   Der Rausch-Treffer-Teil desselben Befunds ist überholt (5 sinnvolle Treffer, s. oben); der
   Präfix-Recall aus IA-1 (PR #264) bleibt unangetastet.
+  — **gebaut** (Batch `B18-Logik`, 5.9.2026, PR-Zweig `feat/ui-befunde-b18-logik`): neue reine
+  Einheit `src/lib/suche/hervorhebung.ts` (`hervorhebungsStellen()`) liefert die Marker-Spannen;
+  `markiere()` in `SuchResultate.tsx` trägt nur noch die Darstellung (§3), `escapeRe` entfällt.
+  Die Semantik wird nicht nachgebaut, sondern aus den Bausteinen der Suche bezogen (§5):
+  `sucherTerme()` (artikelRanking.ts, §-Anker «Vorbereitete Termlisten einer Query») für die
+  Tokenisierung, `normalisiereBegriff()` (vokabular.ts) für die Normalisierung und dieselbe
+  Wortgrenzen-Regel wie `trifftWortgrenze()` (artikelVolltext.ts, §-Anker «UND-Verknüpfung +
+  Wortgrenzen-Schutz» — ersetzt die frühere `:226 ff.`-Zeilenangabe, §0.2). Eine zeichenweise
+  Rückwärts-Karte hält die Spanne trotz längenändernder Normalisierung (NFKD, Ligaturen)
+  zeichengenau.
+  **Nachweis Vorher/Nachher** (lokaler Preview von origin/main bzw. vom Fix, 1440 px,
+  10 Queries — «OR 257d», «Miete», «Kündigung», «über», «Ueber», «Verjährung», «Notwehr»,
+  «Art. 74 OR», «vaterschaftsurlaub lohn», «c++ (or)»): Trefferlisten **10/10 identisch**
+  (Reihenfolge und Wortlaut jeder Zeile). `eval:suche` vorher = nachher bis auf die Laufzeitzeile
+  (gesamt Recall@1 0.623 · Recall@5 0.681 · Recall@10 0.725 · MRR 0.651 · NDCG@10 0.667) — auch
+  strukturell unberührt, `scripts/suche-eval.ts` importiert weder `SuchResultate.tsx` noch
+  `hervorhebung.ts`. Entfallen sind ausschliesslich Marker im Wortinneren: «or» in
+  «S**or**gfalt» (2×), «miete» in «Ver**miete**r»/«Unter**miete**» (5×), «kündigung» in
+  «Wohnungs**kündigung**», «verjährung» in «Verfolgungs**verjährung**» (3×), «lohn» in
+  «Jahres**lohn**es»/«Natural**lohn**», «or» in «V**or**sitzende». Neu markiert wird «Or» in
+  «**Or**ganisation»/«**Or**t» bei der Query «c++ (or)» — dort markierte die alte Regex-Fassung
+  gar nichts, obwohl die Suche mit dem Term «or» getroffen hatte.
+  13 neue Unit-Tests: `src/tests/suche-markiere.test.ts` (Wortanfang, Umlaut «über»/«Ueber»,
+  NFD-Zerlegung, Bindestrich, Mehrwort, Sonderzeichen, Überlappung). Bestehende Tests
+  unverändert (§6.3).
+  **`check:gegenpruefung` meldet «keine Risiko-Datei»** — `istRisikoPfad()` deckt
+  `src/lib/suche/**` und `src/components/suche/**` nicht ab. Die RISIKO-Klasse dieses Blocks ist
+  also eine Fahrplan-Setzung, die das Tor nicht tragen kann; die Gegenprüfung bleibt als
+  MENSCHLICHER Schritt geschuldet und wird nicht vom grünen Tor quittiert (§6.7).
 
 **Prod-Re-Audit-Pflicht:** ja — vor Baubeginn alle Befunde dieses Batches am Prod-Stand
 reproduzieren (§0.1); nicht Reproduzierbares als «erledigt (überholt)» schliessen.

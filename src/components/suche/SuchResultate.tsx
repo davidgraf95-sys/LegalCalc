@@ -1,6 +1,7 @@
 import type { ReactNode } from 'react';
 import { Link } from 'react-router-dom';
 import type { SuchGruppe, SuchTreffer } from '../../lib/universalSuche';
+import { hervorhebungsStellen } from '../../lib/suche/hervorhebung';
 import type { Abdeckung } from './useUniversalSuche';
 import { suchOptionId } from './suchOptionId';
 import { MEHR_TREFFER_ID } from './trefferAuswahl';
@@ -39,24 +40,33 @@ function Marke({ text, ton, redundant }: NonNullable<SuchTreffer['marke']>) {
 // `TREFFER_ZEILE_RAHMEN` (vorher `group/z`), damit der Titel-Hover greift.
 const ZEILE_CLS = `${TREFFER_ZEILE_RAHMEN} px-4 py-2 no-underline transition-colors hover:bg-brass-100/40`;
 
-// Query-Wörter im Snippet/Untertitel deterministisch hervorheben (S3/#56). Rein:
-// Wörter ab 2 Zeichen, regex-escaped, case-insensitiv als <mark> umschlossen.
-function escapeRe(s: string): string {
-  return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-}
+// Query-Wörter im Snippet/Untertitel deterministisch hervorheben (S3/#56).
+// WELCHE Stellen das sind, entscheidet die Suche selbst: `hervorhebungsStellen`
+// verwendet ihre Tokenisierung, ihre Normalisierung und ihre Wortgrenzen-Regel
+// (§5). Bis 5.9.2026 baute diese Funktion ein eigenes Alternativ-Muster aus den
+// Query-Wörtern OHNE Wortanfangs-Anker — sie markierte «or» mitten in
+// «S·or·gfalt» und «miete» in «Ver·miete·r», obwohl der Index mit
+// `tokenize: 'forward'` (Präfix ab Wortanfang) nie so getroffen hat (LM-187,
+// Prod-Reproduktion 5.9.2026). Hier bleibt nur die DARSTELLUNG (§3): Text an den
+// gelieferten Spannen schneiden, die Trefferstücke in <mark> fassen.
 function markiere(text: string, q: string): ReactNode {
-  const worte = q.trim().split(/\s+/).filter((w) => w.length >= 2).map(escapeRe);
-  if (worte.length === 0) return text;
-  const muster = worte.join('|');
-  const teile = text.split(new RegExp(`(${muster})`, 'ig'));
-  const test = new RegExp(`^(?:${muster})$`, 'i');
+  const stellen = hervorhebungsStellen(text, q);
+  if (stellen.length === 0) return text;
   // Hervorhebung über Gewicht + dunklere Tinte statt Farbfläche: eine brass-
   // Hintergrund-Tönung drückte den ink-500-Snippet-Text unter AA (axe: 4.23:1
   // auf brass-100) — Gewicht/ink-700 ist in BEIDEN Themes kontrastsicher, weil
   // der Hintergrund die Panel-Fläche bleibt (§13/F2).
-  return teile.map((teil, i) => (test.test(teil)
-    ? <mark key={i} className="bg-transparent font-semibold text-ink-700">{teil}</mark>
-    : teil));
+  const teile: ReactNode[] = [];
+  let pos = 0;
+  stellen.forEach((s, i) => {
+    if (s.start > pos) teile.push(text.slice(pos, s.start));
+    teile.push(
+      <mark key={i} className="bg-transparent font-semibold text-ink-700">{text.slice(s.start, s.ende)}</mark>,
+    );
+    pos = s.ende;
+  });
+  if (pos < text.length) teile.push(text.slice(pos));
+  return teile;
 }
 
 function ZeileInhalt({ t, sprung, q }: { t: SuchTreffer; sprung?: boolean; q: string }) {

@@ -7,6 +7,7 @@ import { leerOptionen } from '../suche/SucheLeerzustandKontext';
 import { aktivePosition, flacheTreffer, naechsterKey, vorigerKey, gewaehlterHref } from '../suche/trefferAuswahl';
 import { useZuletzt } from './useZuletzt';
 import { SchliessKnopf } from '../ui/SchliessKnopf';
+import { suchKuerzelEmpfaengerAbmelden, suchKuerzelEmpfaengerAnmelden } from '../suche/fruehesSuchKuerzel';
 
 /** Platzhalter des Suchfelds — lang, wo er ganz hineinpasst, sonst kurz (LM-124). */
 const PLATZHALTER_LANG = 'Suchen oder Norm springen (z. B. «OR 257d») …';
@@ -216,7 +217,13 @@ export function HeaderSuche({ onFokusModus, onFokusZurueck }: {
     };
     window.addEventListener('keydown', handler);
     window.addEventListener('lm:suche-fokus', fokussiere);
+    // VORLAUF (§17-Wurzel-Fix 4.9.2026): dieser Effekt läuft erst nach dem
+    // ersten React-Commit. Ein ⌘K aus dem Fenster davor hat `main.tsx` gemerkt
+    // — hier wird es eingelöst. Ab der Anmeldung hält sich der Vorlauf heraus,
+    // die Mechanik oben (samt Vorrangregel B1) bleibt die einzige, die zählt.
+    suchKuerzelEmpfaengerAnmelden(fokussiere);
     return () => {
+      suchKuerzelEmpfaengerAbmelden(fokussiere);
       window.removeEventListener('keydown', handler);
       window.removeEventListener('lm:suche-fokus', fokussiere);
     };

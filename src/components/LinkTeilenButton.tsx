@@ -52,7 +52,20 @@ export function LinkTeilenButton({ query }: {
     kopieren(`${location.origin}${pathname}${q}${hash}`);
   };
   return (
-    <button type="button" className="lc-btn-ghost lc-btn-sm" onClick={teilen}>
+    // LM-085 (W2·17-UI-BEFUNDE B17, 4.9.2026): war `lc-btn-ghost lc-btn-sm` —
+    // in der Aktionsleiste unter dem Ergebnis (gemessen /rechner/zpo-fristen,
+    // 1440 px, hell UND dunkel) standen damit DREI Gewichtungen nebeneinander:
+    // «PDF-Rechenbericht» gefüllt 210×44, «In Kalender (.ics)» outline 164×44,
+    // «Link teilen» reiner Text ohne Fläche und ohne Rahmen 94×36. Die
+    // gemeldete Umkehr im Dunkelmodus liess sich NICHT reproduzieren (der
+    // gefüllte Knopf bleibt in beiden Modi die lauteste Form: hell
+    // ink-900-Füllung, dunkel die invertierte helle Füllung); der dritte Knopf
+    // dagegen war in beiden Modi nicht als Aktion lesbar. Er wird zur ZWEITEN
+    // Gewichtung (outline, 44 px) wie der .ics-Knopf daneben — eine
+    // Hauptaktion, zwei gleichrangige Nebenaktionen, gleiche Höhe. Kein neuer
+    // Stil: die geteilte Knopf-Familie aus `index.css` (§10/§13), nicht eine
+    // vierte Variante (LM-087).
+    <button type="button" className="lc-btn-outline" onClick={teilen}>
       {kopiert ? 'Link kopiert ✓' : 'Link teilen'}
     </button>
   );
