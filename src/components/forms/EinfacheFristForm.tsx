@@ -13,7 +13,7 @@ import { ErgebnisBlock } from '../ErgebnisBlock';
 import { DatumsFeld } from '../DatumsFeld';
 import { ErgebnisPlatzhalter, FehlerBox, Field } from '../vorlagen/ui';
 import { IcsExportButton } from '../IcsExportButton';
-import type { FristMarkierung } from '../start/FristenKalender';
+import type { FristMarkierung } from './FristKalenderKompakt';
 import { getStandardKanton } from '../../lib/einstellungen';
 import { usePaneKlasse } from '../layout/PaneKontext';
 import { EINHEITEN, FERIEN_OPTIONEN, icsTitelSchnellrechner, type EinfacheFristEingaben, type EinfacheFristMeldung, type Ferien } from './einfacheFristTexte';
@@ -69,8 +69,15 @@ function baueMarkierung(start: string, laenge: number, einheit: Einheit, ferien:
   }
 }
 
-export function EinfacheFristForm({ minimal = false, onErgebnis, onEingaben }: {
+export function EinfacheFristForm({ minimal = false, variante = 'block', onErgebnis, onEingaben }: {
   minimal?: boolean;
+  /** DARSTELLUNGS-Variante, additiv (W2·23-STARTSEITE-V4 §3 #3). `'block'`
+   *  (Default) ist die bisherige Anordnung, unverändert. `'zeile'` legt alle
+   *  fünf Eingaben in EINE Reihe und lässt den Rechenweg weg — die Startseite
+   *  hostet damit den ECHTEN Rechner (§5/§1: keine Kopie der Logik, keine
+   *  zweite Fristen-Wahrheit), nur enger gesetzt. Es ändert sich NICHTS an
+   *  Eingabe-Bedeutung, Default-Werten oder Engine-Aufruf. */
+  variante?: 'block' | 'zeile';
   /** #7: meldet die Kalender-Markierung (Ereignis + Fristende) nach oben — für
    *  ALLE Regimes (jede Engine liefert ein ISO-Enddatum); null bei Fehleingabe. */
   onErgebnis?: (e: { markierung: FristMarkierung; kanton: Kanton } | null) => void;
@@ -87,6 +94,12 @@ export function EinfacheFristForm({ minimal = false, onErgebnis, onEingaben }: {
   // standardmässig heute, auch auf der Startseite. Die App hydratisiert nicht
   // (main.tsx createRoot render-then-replace) → kein date-input-Hydration-Mismatch.
   const heute = new Date().toLocaleDateString('sv-SE');
+  // `zeile` erbt alles, was `minimal` an KNAPPHEIT bedeutet (Ferien als
+  // Dropdown statt Radiokarten, Ergebnis ohne Rechenweg-Zeilen) — es ordnet nur
+  // zusätzlich anders an. Eine eigene Knappheits-Regel wäre eine zweite
+  // Wahrheit über denselben Sachverhalt (§5).
+  const zeile = variante === 'zeile';
+  const knapp = minimal || zeile;
   // Split-View: Grids richten sich nach der Pane-Breite (Container-Query) statt
   // nach dem Viewport. Ausserhalb eines Panes liefert pk den Viewport-String.
   const pk = usePaneKlasse();
@@ -215,7 +228,12 @@ export function EinfacheFristForm({ minimal = false, onErgebnis, onEingaben }: {
     <div className="space-y-4">
       {/* items-end: bei verschieden hohen Labels (z.B. zweizeilig) bleiben die
           Eingabefelder auf gleicher Höhe (Auftrag David). */}
-      <div className={`grid grid-cols-2 ${minimal ? '' : pk('sm:grid-cols-4', '@3xl/pane:grid-cols-4')} gap-3 max-w-2xl items-end`}>
+      {/* `zeile`: fünf Eingaben in EINER Reihe (ab lg), darunter gestuft 2/3
+          Spalten — und ohne die `max-w-2xl`-Kappung, damit die Reihe die
+          Kartenbreite nutzt. */}
+      <div className={zeile
+        ? 'grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 items-end'
+        : `grid grid-cols-2 ${minimal ? '' : pk('sm:grid-cols-4', '@3xl/pane:grid-cols-4')} gap-3 max-w-2xl items-end`}>
         {/* R2-E/F1-2: dieselbe `Field`-Anatomie wie in allen übrigen Rechner-
             Formularen (ZPO, SchKG, Gewährleistung …) statt der hauseigenen
             `<label><span class="lc-overline">`-Kopie — Label und Control sind
@@ -246,9 +264,20 @@ export function EinfacheFristForm({ minimal = false, onErgebnis, onEingaben }: {
             {KANTONE.map((k) => <option key={k} value={k}>{k}</option>)}
           </select>
         </Field>
+        {/* In der Zeile-Variante ist die Ferien-/Stillstand-Wahl die FÜNFTE
+            Zelle derselben Reihe. Sie bleibt sichtbar und wählbar: sie
+            entscheidet über das Rechtsregime und darf nie stillschweigend
+            gesetzt werden (§1). */}
+        {zeile && (
+          <Field label="Ferien / Stillstand">
+            <select value={ferien} onChange={(e) => waehleFerien(e.target.value as Ferien)} className={inputCls + ' w-full'}>
+              {FERIEN_OPTIONEN.map((o) => <option key={o.code} value={o.code}>{o.label}</option>)}
+            </select>
+          </Field>
+        )}
       </div>
 
-      {minimal ? (
+      {zeile ? null : minimal ? (
         // Startseite-Schnellrechner: kompakte Verfahrens-/Ferien-Wahl als
         // Dropdown, ohne die Erläuterungstexte (Auftrag David: möglichst wenig).
         <div className="max-w-xs">
@@ -309,14 +338,14 @@ export function EinfacheFristForm({ minimal = false, onErgebnis, onEingaben }: {
             <p className="lc-overline">Fristende</p>
             <p className="text-h3 font-semibold text-ink-900 num">{ende}</p>
             {endeZusatz !== '' && <p className="text-body-s text-ink-600">{endeZusatz}</p>}
-            {/* Im Minimal-Modus (Startseite) nur das Fristende — Rechenweg-Zeilen
+            {/* Knapp (Startseite/Zeile) nur das Fristende — Rechenweg-Zeilen
                 und Verfeinern-Links bleiben dem Voll-Rechner überlassen. */}
-            {!minimal && zeilen.length > 0 && (
+            {!knapp && zeilen.length > 0 && (
               <ul className="text-body-s text-ink-500 leading-relaxed list-disc pl-5 space-y-0.5">
                 {zeilen.map((z) => <li key={z}>{z}</li>)}
               </ul>
             )}
-            {!minimal && verfeinernZiel && (
+            {!knapp && verfeinernZiel && (
               <p className="text-body-s">
                 <Link to={verfeinernZiel} className="font-medium text-brass-700 hover:text-brass-600 no-underline">
                   Im {ferien === 'zpo' ? 'ZPO' : 'SchKG'}-Rechner verfeinern (Verfahren, Zustellart, Hemmung …) →

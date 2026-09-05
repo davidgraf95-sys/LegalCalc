@@ -12,10 +12,14 @@ import { HERO_TITEL } from '../lib/seo';
 // §6 Ziff. 3): /recherche ist aufgelöst — die Rechner-/Vorlagen-Register leben
 // auf eigenen Übersichtsseiten (/rechner, /vorlagen), die die bestehende
 // KategorieSektion wiederverwenden; die Suche liegt im Header-Dropdown. Die
-// Startseite «/» ist das Suche-zuerst-Cockpit (Begrüssung, News, Schnellrechner,
-// Gesetze-Rubrik). Startseite V3 · Schritt 2 (deklarierte Änderung §6.3):
-// Favoriten gestrichen (Anweisung David 5.6.), Zeiterfassung auf /rechner
-// verschoben — beide nicht mehr auf «/».
+// Startseite «/» ist das Suche-zuerst-Cockpit. Startseite V3 · Schritt 2
+// (deklarierte Änderung §6.3): Favoriten gestrichen (Anweisung David 5.6.),
+// Zeiterfassung auf /rechner verschoben — beide nicht mehr auf «/».
+// W2·23-STARTSEITE-V4 (5.9.2026, deklarierte Änderung §6.3 — fachlich gewollter
+// Umbau, kein Refactoring): der Tab-Kasten «Schnellrechner» ist auf «/»
+// zurückgebaut (nur noch die Fristen-ZEILE + zwei Link-Karten unter
+// «Werkzeuge»), «Gesetze» hat eine eigene Schwerpunkt-Sektion, und die
+// Landkarte heisst «Weitere Bereiche».
 
 // Minimaler localStorage-Mock (Node hat keinen)
 beforeEach(() => {
@@ -169,28 +173,30 @@ describe('Globale Suche im Top-Streifen (UI-Welle: Dropdown überall, §6.3)', (
   });
 });
 
-describe('Startseite V3 — Hero + Kachel-Landkarte (Schritt 4, deklarierte Anpassung §6.3)', () => {
-  it('zeigt Hero-H1, Schnellrechner und Rubrik-Kacheln — KEIN Katalog-Deckblatt', () => {
+describe('Startseite V4 — Hero · Gesetze-Schwerpunkt · Werkzeuge (deklarierte Anpassung §6.3)', () => {
+  it('zeigt Hero-H1, Begrüssung, Gesetze-Block und die Landkarte — KEIN Katalog-Deckblatt', () => {
     const html = startHtml('/');
-    // Startseite V3 · Schritt 4 (deklarierte Änderung §6.3): der Hero ersetzt die
-    // Begrüssung — Value-Proposition-H1 (aus seo.ts) statt zufälligem Gruss, und
-    // eine ruhige Datums-Overline «Wochentag, T. Monat JJJJ» OHNE tickende Uhr
-    // (Scherzpool/Uhr gestrichen, §0). Das «Berechnung statt KI»-Badge bleibt weg.
+    // Der Hero trägt die Value-Proposition-H1 (aus seo.ts) UND — neu in V4,
+    // Auftrag David 5.9.2026 — wieder eine wechselnde Begrüssung samt Datum
+    // «Wochentag, T. Monat JJJJ», weiterhin OHNE tickende Uhr.
     expect(html).toContain(HERO_TITEL);
     expect(html).toMatch(/\d{1,2}\.\s(Januar|Februar|März|April|Mai|Juni|Juli|August|September|Oktober|November|Dezember)\s\d{4}/);
     expect(html).not.toContain('Berechnung statt KI');
-    // Sektionen des Cockpits: Schnellrechner + die neue Rubrik-Landkarte.
-    expect(html).toContain('Schnellrechner');
-    expect(html).toContain('Alle Bereiche');
-    // Direktzugriff-Chips (aus der früheren GesetzeRubrik gezogen, deren eigenes
-    // Suchfeld entfällt — §5-Doppelung zur UniversalSuche).
+    // Sektionen des Cockpits: der Gesetze-Schwerpunkt, die Werkzeuge-Zeile und
+    // die (auf vier Kacheln gekürzte) Landkarte.
+    expect(html).toContain('Gesetze — Bund und Kantone');
+    expect(html).toContain('Werkzeuge');
+    expect(html).toContain('Weitere Bereiche');
+    expect(html).not.toContain('Alle Bereiche');
+    // Direktzugriff-Chips Bund + der bezifferte Link auf die Vollsicht.
     expect(html).toContain('href="/gesetze/bund/OR"');
-    expect(html).toContain('Alle Gesetze');
+    expect(html).toContain('Bundeserlasse');
+    // Kantons-Chips mit dem Bestands-Ziel `?ebene=kanton&kt=<KT>` (nie erfunden).
+    expect(html).toContain('/gesetze?ebene=kanton&amp;kt=BS');
     // Favoriten (5.6.) + Zeiterfassung (→ /rechner) sind nicht mehr auf «/».
     expect(html).not.toContain('Favoriten');
     expect(html).not.toContain('Zeiterfassung');
-    // Schnellrechner rechnet live (der «live hergeleitet»-Badge wurde 25.6.2026
-    // als redundant entfernt — der Live-Hinweis im Ergebnisblock genügt).
+    // Die Fristen-Zeile rechnet live (echte Engine, keine Kopie).
     expect(html).toContain('Live-Berechnung');
     // Vertrauens-Fuss trägt den Pflichthinweis (§8).
     expect(html).toContain('Rechtlicher Hinweis');
@@ -198,15 +204,23 @@ describe('Startseite V3 — Hero + Kachel-Landkarte (Schritt 4, deklarierte Anpa
     expect(html).not.toContain('aria-label="Oberkategorien"');
   });
 
-  it('bietet drei Schnellrechner-Tabs; der aktive (Fristen) verlinkt in den Voll-Rechner', () => {
+  it('«Werkzeuge» ist EINE Fristen-Zeile plus zwei Link-Karten — kein Tab-Kasten mehr', () => {
     const html = startHtml('/');
-    // Tablist mit drei Tabs
-    expect(html).toContain('role="tablist"');
-    expect((html.match(/role="tab"/g) ?? []).length).toBe(3);
-    expect(html).toContain('>Gebühren<');
-    expect(html).toContain('>Zuständigkeit<');
-    // Aktiver Tab (Fristen) zeigt das echte Engine-Ergebnis-Umfeld + Voll-Rechner-Link
+    // V4-Rückbau: der dreifache Reiter (und die zweite, anders gestaltete
+    // Tab-Leiste der Gebührenart) ist von «/» verschwunden.
+    expect(html).not.toContain('role="tablist"');
+    expect(html).not.toMatch(/role="tab"/);
+    // Statt eingebetteter Zweit-Formulare zwei Einstiege in die Voll-Rechner.
     expect(html).toContain('href="/rechner/tagerechner"');
+    expect(html).toContain('href="/rechner/prozesskosten"');
+    expect(html).toContain('href="/rechner/zustaendigkeit"');
+  });
+
+  it('die Beispiel-Chips des Hero zeigen auf echte Korpus-Ziele', () => {
+    const html = startHtml('/');
+    expect(html).toContain('href="/gesetze/bund/OR#art-336_c"');
+    expect(html).toContain('href="/rechtsprechung/bge_152_V_52"');
+    expect(html).toContain('href="/vorlagen/arbeitsvertrag"');
   });
 });
 

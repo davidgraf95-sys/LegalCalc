@@ -2,7 +2,7 @@ import { Fragment } from 'react';
 import { START_MODULE } from '../lib/startseiteModule';
 import { GruppenKopf } from '../components/ui/GruppenKopf';
 
-// ─── Startseite V3 — reiner Registry-Mapper (FAHRPLAN §4/§5) ────────────────
+// ─── Startseite V4 — reiner Registry-Mapper (FAHRPLAN §4/§5) ────────────────
 //
 // Die Startseite komponiert sich aus der Modul-Registry (startseiteModule.tsx):
 // EINE Reihenfolge (§2), ein Modul = eine Zeile. Diese Seite trägt nur den Rahmen

@@ -1,15 +1,23 @@
 import { FristenKalender as FristenKalenderBasis } from '../FristenKalender';
 import type { Kanton } from '../../types/legal';
 
-// ─── Fristen-Kalender im Schnellrechner (#7, Auftrag David) ─────────────────
+// ─── Kompakter Fristen-Kalender zum einfachen Fristenrechner (#7) ───────────
 //
 // ANGLEICHUNG an den Fristenrechner-Kalender (Auftrag David 24.6.2026): Statt
-// einer eigenen Einzelmonats-Darstellung nutzt der Schnellrechner jetzt DIESELBE
-// Kalender-Komponente wie die Fristen-Formulare (src/components/FristenKalender,
-// §5/§10 — eine Quelle, dieselbe Almanach-Optik: Fristband, runde Marker,
-// Mehrmonats-Raster, Legende). Diese Hülle bildet nur die regimeneutrale
-// `FristMarkierung` (vom Formular geliefert) auf die Basis-Props ab — REINE
-// Darstellung (§3), keine eigene Rechnung.
+// einer eigenen Einzelmonats-Darstellung nutzt der einfache Fristenrechner
+// DIESELBE Kalender-Komponente wie die Voll-Formulare
+// (src/components/FristenKalender, §5/§10 — eine Quelle, dieselbe Almanach-
+// Optik: Fristband, runde Marker, Mehrmonats-Raster, Legende). Diese Hülle
+// bildet nur die regimeneutrale `FristMarkierung` (vom Formular geliefert) auf
+// die Basis-Props ab — REINE Darstellung (§3), keine eigene Rechnung.
+//
+// UMZUG (W2·23-STARTSEITE-V4 §3 #3, 5.9.2026): die Datei lag als
+// `components/start/FristenKalender.tsx` neben dem Startseiten-Schnellrechner.
+// Der ist mit V4 zurückgebaut (auf «/» steht nur noch die Fristen-ZEILE, kein
+// Tab-Kasten mit Kalender) — der Kalender WANDERT darum zum Voll-Rechner
+// `/rechner/tagerechner`, wo derselbe `EinfacheFristForm` schon oben steht,
+// statt verwaist liegen zu bleiben. Neuer Ort = neuer Name: er gehört zur
+// Formular-Familie, nicht mehr zur Startseite.
 
 /** Vom Formular gelieferte Stichtage (regimeneutral). */
 export interface FristMarkierung {
@@ -21,14 +29,14 @@ export interface FristMarkierung {
   stillstand?: { vonISO: string; bisISO: string }[]; // Gerichtsferien-/Stillstand-Perioden (ISO, inkl.)
 }
 
-export function FristenKalender({ markierung, kanton }: {
+export function FristKalenderKompakt({ markierung, kanton }: {
   markierung: FristMarkierung | null;
   kanton: Kanton;
 }) {
   if (!markierung) {
     return (
       <p className="text-body-s text-ink-500 py-6 text-center">
-        Datum und Frist links eingeben – der Kalender markiert dann Ereignis und Fristende.
+        Datum und Frist oben eingeben – der Kalender markiert dann Ereignis und Fristende.
       </p>
     );
   }
