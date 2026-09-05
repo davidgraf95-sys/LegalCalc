@@ -10,7 +10,7 @@ import { BetragsFeld } from '../components/BetragsFeld';
 import { behoerdeFuer, behoerdeAlsBlock } from '../lib/vorlagen/behoerden';
 import { KANTONE } from '../lib/kantone';
 import { DatumsFeld } from '../components/DatumsFeld';
-import { Checkbox, Field, GruppenTitel, inputCls, ListenEditor, NormLink } from '../components/vorlagen/ui';
+import { Checkbox, Field, GruppenTitel, ListenEditor, NICHT_GESPEICHERT_HINWEIS, NormLink, inputCls } from '../components/vorlagen/ui';
 import { SelectionGrid } from '../components/ui/SelectionGrid';
 import { SgAdressatKachel, SgBehoerdenWahl } from '../components/vorlagen/SgBehoerdenWahl';
 import { useWizardState } from '../components/vorlagen/useWizardState';
@@ -584,7 +584,7 @@ export function VorlageSchlichtungsgesuchBs() {
       intro="Stellt ein Schlichtungsgesuch nach Art. 202 ZPO für die Basler Schlichtungsbehörde zusammen – Parteien, Rechtsbegehren, Streitgegenstand, Anträge und Beilagen, aus festen Bausteinen ohne Sprachmodell."
       norms={card?.norms ?? []}
       badge="Papierform · eigenhändig unterzeichnen"
-      fussnote="Eingaben werden nicht gespeichert – sie bestehen nur, solange diese Seite geöffnet ist."
+      fussnote={NICHT_GESPEICHERT_HINWEIS}
       zuruecksetzen={zuruecksetzen}
       schritte={SCHRITTE} schritt={schritt} setSchritt={setSchritt}
       weiterDeaktiviert={stopp}

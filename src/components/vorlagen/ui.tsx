@@ -11,6 +11,17 @@ import { useZielSichtbar } from './useZielSichtbar';
 
 export const inputCls = 'lc-input';
 
+/** Geteilter Datenschutz-Hinweis für Vorlagen, deren Eingaben (anders als der
+ *  Wizard-Standardtext in `wizard.tsx`) NICHT lokal zwischengespeichert
+ *  werden — bisher drei Formulierungen in sechs Vorlagen (Familienrecht:
+ *  Vollversalien-"NICHT"; ZPO-Eingaben: Nebensatz), jetzt eine (W2·19-
+ *  DESIGN-KONSISTENZ R6-D, 5.9.2026). Wortlaut = die ZPO-Fassung: verstösst
+ *  nicht gegen A2 (kein ALL-CAPS-Fliesstext, DESIGN-REGLEMENT.md), die
+ *  Vollversalien-Fassung schon. AG-Gründung bleibt bewusst separat — dort
+ *  wird tatsächlich lokal zwischengespeichert, andere Tatsachenlage. */
+export const NICHT_GESPEICHERT_HINWEIS =
+  'Eingaben werden nicht gespeichert – sie bestehen nur, solange diese Seite geöffnet ist.';
+
 /** HTML-«labelable elements», soweit in Formularen dieses Hauses gebraucht.
  *  Steuert, wann `Field` `htmlFor` setzen darf (siehe dort). */
 const BESCHRIFTBAR = ['input', 'select', 'textarea'];
