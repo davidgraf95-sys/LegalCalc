@@ -21,8 +21,15 @@ import { RubrikKachel } from '../ui/RubrikKachel';
 
 export function Werkzeuge() {
   return (
-    <div className="grid gap-4 lg:grid-cols-3 lg:items-start">
-      <div className="lc-card space-y-3 p-5 lg:col-span-2">
+    /* Zweispaltig erst ab xl, und die rechte Spalte fix statt 1/3 —
+       GEMESSEN, nicht geraten (5.9.2026): bei `lg:grid-cols-3` + col-span-2 lag
+       die Fristen-Karte @1024 auf 509 px Innenbreite; die drei Feldspalten
+       massen dann je 134 px, wovon nach 14 px Innenabstand und den 44 px
+       Kalenderknopf-Reserve 76 px für einen 87 px breiten Datumswert blieben —
+       exakt die LM-074-Kappung. Unter xl steht die Karte darum ganzbreit; ab
+       xl nimmt die Kachel-Spalte 20rem, der Rest gehört der Fristen-Zeile. */
+    <div className="grid gap-4 xl:grid-cols-[minmax(0,1fr)_20rem] xl:items-start">
+      <div className="lc-card space-y-3 p-5">
         <p className="lc-overline">Frist in einer Zeile</p>
         <EinfacheFristForm variante="zeile" />
         <p className="text-body-s text-ink-500">
@@ -34,7 +41,7 @@ export function Werkzeuge() {
       </div>
       {/* Zwei Einstiege statt zweier eingebetteter Formulare — über denselben
           Kachel-Baustein wie die Landkarte (C-5, §5), ohne Zähler. */}
-      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-1">
+      <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-1">
         <RubrikKachel ziel="/rechner/prozesskosten" titel="Prozesskosten"
           nutzen="Gerichts- und Parteikosten nach kantonalem Tarif, mit Vorschuss, Kostenrisiko und offengelegtem Rechenweg." />
         <RubrikKachel ziel="/rechner/zustaendigkeit" titel="Zuständigkeit"

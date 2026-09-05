@@ -230,9 +230,25 @@ export function EinfacheFristForm({ minimal = false, variante = 'block', onErgeb
           Eingabefelder auf gleicher Höhe (Auftrag David). */}
       {/* `zeile`: fünf Eingaben in EINER Reihe (ab lg), darunter gestuft 2/3
           Spalten — und ohne die `max-w-2xl`-Kappung, damit die Reihe die
-          Kartenbreite nutzt. */}
+          Kartenbreite nutzt.
+          SPALTENBREITEN NAMENTLICH, nicht gleichverteilt (LM-074-Nachzug,
+          gemessen 5.9.2026 @1440 auf «/»): fünf gleiche Spalten gaben dem
+          Datumsfeld 150 px; abzüglich 14 px Innenabstand und der 44 px, die der
+          Kalenderknopf (`w-8` + `right-1.5`) reserviert, blieben 92 px für einen
+          87 px breiten Wert — «05.09.2026» wurde zu «05.09…» gekappt, und die
+          Ferien-Wahl zeigte «Gerichts…». Das ist genau der Befund, den
+          LM-074/B12 am Schnellrechner schon einmal geheilt hat: zu eng war die
+          SPALTE, nicht das Feld. 11.5rem geben dem Datum 126 px nutzbaren
+          Platz (87 px Wert), die fliessende letzte Spalte trägt die
+          Ferien-Wahl, deren Label das Rechtsregime nennt und darum nicht
+          ellipsiert werden darf (§1/§8).
+          BREAKPOINT xl, NICHT lg — gerechnet, nicht geraten: die fünf Spalten
+          brauchen mindestens 184+72+96+80+168 px + 4×12 px Abstand = 648 px.
+          Die Karte trägt 2/3 der Werkzeug-Reihe; das sind @1280 rund 659 px
+          und @1440 rund 765 px Innenbreite, @1024 aber nur ~509 px. Unter
+          1280 bleibt es darum bei drei bzw. zwei Spalten. */}
       <div className={zeile
-        ? 'grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 items-end'
+        ? 'grid grid-cols-2 gap-3 items-end sm:grid-cols-3 xl:grid-cols-[11.5rem_4.5rem_6rem_5rem_minmax(10.5rem,1fr)]'
         : `grid grid-cols-2 ${minimal ? '' : pk('sm:grid-cols-4', '@3xl/pane:grid-cols-4')} gap-3 max-w-2xl items-end`}>
         {/* R2-E/F1-2: dieselbe `Field`-Anatomie wie in allen übrigen Rechner-
             Formularen (ZPO, SchKG, Gewährleistung …) statt der hauseigenen
@@ -269,11 +285,18 @@ export function EinfacheFristForm({ minimal = false, variante = 'block', onErgeb
             entscheidet über das Rechtsregime und darf nie stillschweigend
             gesetzt werden (§1). */}
         {zeile && (
-          <Field label="Ferien / Stillstand">
-            <select value={ferien} onChange={(e) => waehleFerien(e.target.value as Ferien)} className={inputCls + ' w-full'}>
-              {FERIEN_OPTIONEN.map((o) => <option key={o.code} value={o.code}>{o.label}</option>)}
-            </select>
-          </Field>
+          /* Volle Reihe auf zwei Spalten (bis sm): GEMESSEN @390 px war das
+             Select 148 px breit, das gewählte Label «Gerichtsferien (ZPO)»
+             braucht 146 px + Pfeil — es wäre zu «Gerichtsferien (…» gekappt
+             worden. Welches Regime rechnet, darf nie hinter einer Ellipse
+             stehen (§1/§8). */
+          <div className="col-span-2 sm:col-span-1">
+            <Field label="Ferien / Stillstand">
+              <select value={ferien} onChange={(e) => waehleFerien(e.target.value as Ferien)} className={inputCls + ' w-full'}>
+                {FERIEN_OPTIONEN.map((o) => <option key={o.code} value={o.code}>{o.label}</option>)}
+              </select>
+            </Field>
+          </div>
         )}
       </div>
 
