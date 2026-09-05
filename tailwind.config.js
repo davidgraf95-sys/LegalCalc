@@ -70,6 +70,12 @@ export default {
           400: 'var(--brass-400)', 500: 'var(--brass-500)', 600: 'var(--brass-600)',
           700: 'var(--brass-700)', 800: 'var(--brass-800)',
         },
+        // C2 (5.9.2026): Text AUF einer Gold-/Messing-Füllung braucht eine
+        // Tinte, die NIE mit dem Thema flippt (D-1.8, `--auf-gold` speist sich
+        // aus `--ink-fixed-dark`) — `text-ink-900` kippt im Dunkelmodus auf
+        // hell und verfehlt dort die 4.5:1 (Beleg: VerzugszinsTimeline.tsx,
+        // dort bislang nur per Inline-Style erreichbar; hier als Utility).
+        auf: { gold: 'var(--auf-gold)' },
         // ── Rollen-Alias-Schicht (D-2, Radix-Muster) ──────────────────────
         // Wertidentische Rollen über den Basis-Skalen (Werte in src/index.css).
         // NEUE Komponenten greifen die Rolle (text-accent-text, bg-accent-bg,
