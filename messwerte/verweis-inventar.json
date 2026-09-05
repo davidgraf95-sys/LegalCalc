@@ -6,14 +6,14 @@
     "guards": 23
   },
   "korpus": {
-    "erlasse": 1566,
-    "eintraege": 60271,
-    "texte": 214420
+    "erlasse": 1565,
+    "eintraege": 60257,
+    "texte": 214321
   },
   "gesamt": {
-    "stellen": 36047,
+    "stellen": 36045,
     "self": 19651,
-    "fremd": 11362,
+    "fremd": 11360,
     "text": 5034,
     "selbstmarker": 927
   },
@@ -29,8 +29,8 @@
     {
       "klasse": "anker-erlass",
       "entscheid": "FREMD",
-      "stellen": 1097,
-      "erlasse": 363,
+      "stellen": 1095,
+      "erlasse": 362,
       "selbstmarker": 0,
       "was": "Blosser Erlass-Verweis OHNE Artikelnummer → Erlass-Seite (Z1, W2·22)"
     },

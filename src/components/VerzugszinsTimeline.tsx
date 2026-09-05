@@ -44,9 +44,9 @@ export function VerzugszinsTimeline({ e }: { e: VerzugszinsErgebnis }) {
     const legende = saetze.map((satz) => ({ label: `${satz} %`, farbe: farbe(satz) }));
     const abschnitte: Abschnitt[] = segmente.map((s) => ({
       tage: s.tage,
-      label: `${s.satz}%`,
+      label: `${s.satz} %`,
       farbe: farbe(s.satz),
-      title: `${s.von} – ${s.bis} · ${s.tage} Tage · Kapitalbasis CHF ${formatCHF(s.kapital)} · ${s.satz}% · Zins CHF ${formatCHF(s.zins)}`,
+      title: `${s.von} – ${s.bis} · ${s.tage} Tage · Kapitalbasis CHF ${formatCHF(s.kapital)} · ${s.satz} % · Zins CHF ${formatCHF(s.zins)}`,
     }));
 
     // Vorzeitige Kapitaltilgung: neutraler Füll-Abschnitt bis zum Stichtag,
