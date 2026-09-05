@@ -231,7 +231,9 @@ lassen.
 **Entwurfs-PR ist ein gültiges Ergebnis.** `AGENTS.md` §7 verlangt bei rotem
 Tor oder unklarem Auftrag einen Entwurf mit Meldung statt einer kreativen
 Lösung. Ein solcher PR wird nicht abgelehnt, sondern beantwortet: Auftrag
-nachschärfen oder Schritt zurückholen.
+nachschärfen oder Schritt zurückholen. Vor dem Schliessen das Label
+`entwurf-antwort` setzen (Beleg PR #707, 5.9.2026) — die Messung
+(`klassierePrs()`) zählt ihn dann weder als Landung noch als Ablehnung.
 
 ### Red Flags — STOP
 

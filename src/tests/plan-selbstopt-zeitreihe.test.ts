@@ -124,6 +124,7 @@ describe('pruefeZeitreihe', () => {
                 prs_gemerged_7d: 3,
                 prs_geschlossen_7d: 1,
                 proben_7d: 1,
+                entwurf_antworten_7d: 1,
                 prs_geschlossen_nummern: [662],
                 median_dauer_min: 30,
                 tickets_24h: 2,
@@ -151,7 +152,38 @@ describe('pruefeZeitreihe', () => {
                 prs_gemerged_7d: 3,
                 prs_geschlossen_7d: 1,
                 proben_7d: null,
+                entwurf_antworten_7d: null,
                 prs_geschlossen_nummern: null,
+                median_dauer_min: 30,
+                tickets_24h: 2,
+                alarm: false,
+              },
+              gemini: null,
+              claude_token_pro_schritt: null,
+            },
+          }),
+        ]),
+      ),
+    ).toEqual([]);
+  });
+
+  // Schema 5 (QS-EFFIZIENZ, 5.9.2026): `entwurf_antworten_7d` darf für sich
+  // allein `null` sein, auch wenn `proben_7d` in derselben Messung bereits
+  // eine echte Zahl trägt — der realistische Zwischenstand einer Messung, die
+  // Proben schon unterschied, Entwurf-Antworten aber noch nicht (Schema
+  // 4→5). Alter Snapshot ohne das Feld ⇒ `null`, nie Absturz.
+  it('akzeptiert eine migrierte Jules-Messung ohne Entwurf-Antwort-Unterscheidung', () => {
+    expect(
+      pruefeZeitreihe(
+        reihe([
+          snapshot({
+            fremdagenten: {
+              jules: {
+                prs_gemerged_7d: 3,
+                prs_geschlossen_7d: 1,
+                proben_7d: 1,
+                entwurf_antworten_7d: null,
+                prs_geschlossen_nummern: [662],
                 median_dauer_min: 30,
                 tickets_24h: 2,
                 alarm: false,

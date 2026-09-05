@@ -82,6 +82,15 @@ const JULES_MUSTER = /[0-9]{19}|^jules[-/]/;
  * in den Zähler noch in den Nenner der Landungsquote.
  */
 const PROBE_LABEL = 'probe';
+/**
+ * Label einer gültigen Entwurf-Antwort (ANLASS 5.9.2026, PR #707): der
+ * Auftrag verlangte bei Feldabweichung einen Entwurfs-PR + Abbruch statt
+ * eines fertigen Baus, Jules tat genau das. Ohne Merge geschlossen zählte er
+ * bis dahin als Ablehnung — dieselbe Schieflage wie bei `PROBE_LABEL`, nur
+ * eine andere Ursache: keine Werkzeug-Probe, sondern ein regelkonformer
+ * Abbruch. Fällt darum ebenso aus Zähler UND Nenner der Landungsquote.
+ */
+const ENTWURF_ANTWORT_LABEL = 'entwurf-antwort';
 const ON_IT_MUSTER = /on it/i;
 const READY_MUSTER = /ready for a review/i;
 const AGY = join(process.env.HOME ?? '', '.local/bin/agy');
@@ -160,41 +169,54 @@ export type PrRohMitStatus = PrRoh & {
   labels?: { name: string }[];
 };
 
-/** Ergebnis von `klassierePrs` — drei disjunkte Töpfe über demselben Fenster. */
+/** Ergebnis von `klassierePrs` — vier disjunkte Töpfe über demselben Fenster. */
 export interface PrKlassierung {
-  /** Jules-PRs, im Fenster gemergt, ohne Proben. */
+  /** Jules-PRs, im Fenster gemergt, ohne Proben/Entwurf-Antworten. */
   gemergt: PrRohMitStatus[];
-  /** Jules-PRs, im Fenster ohne Merge geschlossen, ohne Proben — das sind die Ablehnungen. */
+  /** Jules-PRs, im Fenster ohne Merge geschlossen, ohne Proben/Entwurf-Antworten — das sind die Ablehnungen. */
   geschlossen: PrRohMitStatus[];
   /** Jules-PRs mit Label `probe`, egal ob gemergt oder geschlossen. */
   proben: PrRohMitStatus[];
+  /** Jules-PRs mit Label `entwurf-antwort`, egal ob gemergt oder geschlossen (Probe hat Vorrang, s. `klassierePrs`). */
+  entwurfAntworten: PrRohMitStatus[];
 }
 
 /**
- * Klassiert die rohe `gh`-PR-Liste in gemergt / geschlossen / Proben —
- * **reine Funktion**, kein Netz, keine Wanduhr (Bezugszeitpunkt wird
- * hereingegeben). Genau deshalb ausgelagert: `erhebeJules()` selbst ist wegen
- * seines `gh`-Aufrufs nicht prüfbar, diese Entscheidung hier ist es
- * vollständig (`src/tests/plan-fremdagenten.test.ts`).
+ * Klassiert die rohe `gh`-PR-Liste in gemergt / geschlossen / Proben /
+ * Entwurf-Antworten — **reine Funktion**, kein Netz, keine Wanduhr
+ * (Bezugszeitpunkt wird hereingegeben). Genau deshalb ausgelagert:
+ * `erhebeJules()` selbst ist wegen seines `gh`-Aufrufs nicht prüfbar, diese
+ * Entscheidung hier ist es vollständig (`src/tests/plan-fremdagenten.test.ts`).
  *
  * ANLASS (4.9.2026). PR #642 (`jules/relax-min-height-test-…`) trug das Label
  * `probe` — er war ein Test des Erstfilters, kein abgelehnter Bau. Gezählt als
  * Ablehnung drückte er die Landungsquote unter die Rückbau-Schwelle und liess
  * `retro:17` den Rückbau von Jules vorschlagen. Proben fallen darum aus beiden
  * Quoten-Seiten heraus und werden getrennt ausgewiesen, statt zu verschwinden.
+ *
+ * ANLASS (5.9.2026, `fahrplaene/FAHRPLAN-FREMDAGENTEN.md` §5). PR #707 war
+ * eine gültige Entwurf-Antwort: der Auftrag verlangte bei Feldabweichung
+ * genau das — Entwurfs-PR + Abbruch —, und Jules tat es. Ohne Merge
+ * geschlossen zählte er dennoch als Ablehnung. Analog zu Proben bekommt diese
+ * Klasse darum einen eigenen, ausgewiesenen Topf statt in die Ablehnungen zu
+ * fallen. Trägt ein PR beide Label, gewinnt `probe` — eine Werkzeug-Probe
+ * bleibt auch dann eine Probe, wenn sie zusätzlich als Entwurf beschriftet ist.
  */
 export function klassierePrs(prs: PrRohMitStatus[], jetzt: Date): PrKlassierung {
   const grenze = new Date(jetzt.getTime() - JULES_FENSTER_TAGE * 24 * 3_600_000);
   const imFenster = (d: string | null) => d !== null && new Date(d) >= grenze;
   const istProbe = (pr: PrRohMitStatus) => (pr.labels ?? []).some((l) => l.name === PROBE_LABEL);
+  const istEntwurfAntwort = (pr: PrRohMitStatus) =>
+    (pr.labels ?? []).some((l) => l.name === ENTWURF_ANTWORT_LABEL);
 
-  const out: PrKlassierung = { gemergt: [], geschlossen: [], proben: [] };
+  const out: PrKlassierung = { gemergt: [], geschlossen: [], proben: [], entwurfAntworten: [] };
   for (const pr of prs) {
     if (!JULES_MUSTER.test(pr.headRefName)) continue;
     const gemergt = pr.state === 'MERGED' && imFenster(pr.mergedAt);
     const geschlossen = pr.state === 'CLOSED' && imFenster(pr.closedAt);
     if (!gemergt && !geschlossen) continue;
     if (istProbe(pr)) out.proben.push(pr);
+    else if (istEntwurfAntwort(pr)) out.entwurfAntworten.push(pr);
     else if (gemergt) out.gemergt.push(pr);
     else out.geschlossen.push(pr);
   }
@@ -233,7 +255,7 @@ export function erhebeJules(jetzt: Date = new Date()): JulesMessung | null {
     return null;
   }
 
-  const { gemergt: gemergte7d, geschlossen: geschlossen7d, proben } = klassierePrs(prRoh, jetzt);
+  const { gemergt: gemergte7d, geschlossen: geschlossen7d, proben, entwurfAntworten } = klassierePrs(prRoh, jetzt);
   const dauern = gemergte7d
     .map((pr) => {
       const issueNr = issueNummerAusBody(pr.body);
@@ -253,6 +275,7 @@ export function erhebeJules(jetzt: Date = new Date()): JulesMessung | null {
     prs_gemerged_7d: gemergte7d.length,
     prs_geschlossen_7d: geschlossen7d.length,
     proben_7d: proben.length,
+    entwurf_antworten_7d: entwurfAntworten.length,
     // Aufsteigend sortiert: die Liste geht in einen Vergleich über Snapshots
     // hinweg ein, und eine Reihenfolge, die an der gh-Ausgabe hängt, machte
     // gleiche Messungen ungleich (§2).

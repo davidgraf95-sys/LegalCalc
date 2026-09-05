@@ -71,8 +71,15 @@ export const GENERIERT_MARKE =
  * bzw. `[]`: jene Messung hat Proben schlicht nicht unterschieden, und «nicht
  * unterschieden» ist etwas anderes als «keine gefunden» (dieselbe Linie wie
  * bei `tokens`).
+ *
+ * **5** seit 5.9.2026 (QS-EFFIZIENZ, Befund `fahrplaene/FAHRPLAN-FREMDAGENTEN.md`
+ * §5, PR #707): `JulesMessung` bekommt `entwurf_antworten_7d` (PRs mit Label
+ * `entwurf-antwort` — gültige Entwurf-Antwort auf Feldabweichung, weder Bau
+ * noch Ablehnung, s. `klassierePrs`). Ältere Jules-Messungen bekommen das
+ * Feld von `migriere()` als **`null`** nachgetragen — dieselbe Linie wie bei
+ * `proben_7d` in Schema 4: «nicht unterschieden», nicht «keine gefunden».
  */
-export const SCHEMA_VERSION = 4;
+export const SCHEMA_VERSION = 5;
 
 // ───────────────────────────── Tor-Ereignisse ─────────────────────────────
 
@@ -278,6 +285,16 @@ export interface JulesMessung {
    * «keine Proben gefunden».
    */
   proben_7d: number | null;
+  /**
+   * Jules-PRs im selben Fenster mit Label `entwurf-antwort` (ANLASS 5.9.2026,
+   * PR #707: gültige Entwurf-Antwort auf Feldabweichung) — weder Bau noch
+   * Ablehnung, darum wie `proben_7d` aus Zähler UND Nenner der Landungsquote
+   * ausgeschlossen und getrennt ausgewiesen statt zu verschwinden.
+   *
+   * `null` = diese Messung unterschied noch keine Entwurf-Antworten
+   * (Schema < 5), nicht «keine gefunden».
+   */
+  entwurf_antworten_7d: number | null;
   /**
    * Nummern der geschlossenen (nicht-Proben-)PRs. Trägt die Entdopplung der
    * Retro-Regel «Lehre verankern»: derselbe abgelehnte PR steht sieben Tage
@@ -1061,6 +1078,7 @@ function istJulesMessung(a: unknown): a is JulesMessung {
     typeof o.prs_gemerged_7d === 'number' &&
     typeof o.prs_geschlossen_7d === 'number' &&
     (o.proben_7d === null || typeof o.proben_7d === 'number') &&
+    (o.entwurf_antworten_7d === null || typeof o.entwurf_antworten_7d === 'number') &&
     (o.prs_geschlossen_nummern === null ||
       (Array.isArray(o.prs_geschlossen_nummern) && o.prs_geschlossen_nummern.every((n) => typeof n === 'number'))) &&
     (o.median_dauer_min === null || typeof o.median_dauer_min === 'number') &&
