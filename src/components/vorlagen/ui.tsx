@@ -1,10 +1,11 @@
-import { cloneElement, createContext, isValidElement, useContext, useEffect, useId, useState } from 'react';
+import { cloneElement, createContext, isValidElement, useContext, useId, useState } from 'react';
 import { fedlexLinkFuerArtikel } from '../../lib/fedlex';
 import { NormText } from '../NormText';
 import { usePaneKontext } from '../layout/PaneKontext';
 import { useKopieren } from '../useKopieren';
 import { NormChip } from './NormChip';
 import { GruppenKopf } from '../ui/GruppenKopf';
+import { useZielSichtbar } from './useZielSichtbar';
 
 // Geteilte UI-Bausteine der Vorlagen-Wizards (Testament, Patientenverfügung, …).
 
@@ -424,20 +425,7 @@ export function ErgebnisPlatzhalter({ was, titel = 'Ergebnis' }: { was: React.Re
  *  rendern byte-gleich. */
 export function ErgebnisSprung({ zielId, label = '↓ Ergebnis' }: { zielId: string; label?: string }) {
   const { imPane } = usePaneKontext();
-  const [zielSichtbar, setZielSichtbar] = useState(false);
-  useEffect(() => {
-    if (typeof IntersectionObserver === 'undefined') return;
-    const el = document.getElementById(zielId);
-    if (!el) return;
-    // −45 % Boden-Marge: als «sichtbar» gilt das Ergebnis erst, wenn es spürbar
-    // in den oberen Bildbereich rückt (nicht schon beim ersten Pixel am unteren Rand).
-    const io = new IntersectionObserver(
-      ([eintrag]) => setZielSichtbar(eintrag.isIntersecting),
-      { rootMargin: '0px 0px -45% 0px' },
-    );
-    io.observe(el);
-    return () => io.disconnect();
-  }, [zielId]);
+  const zielSichtbar = useZielSichtbar(zielId);
   if (zielSichtbar) return null;
   return (
     // `print:hidden` zusätzlich zur Druckregel in `src/index.css`: die Marke ist
