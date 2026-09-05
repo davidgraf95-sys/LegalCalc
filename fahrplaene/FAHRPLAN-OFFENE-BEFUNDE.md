@@ -181,6 +181,7 @@ Die Liste steht wörtlich so, wie sie am 29.8.2026 in ROADMAP.md stand:
 ---
 
 **Nacht 5.9.2026 (CI #691/#683):**
+- [ ] **Flake-Sammlung 5.9.2026 (je 1 failed, Retry grün):** `gesetze-ia-v2-walks:65` (#691/#711), `split-erwaegungssprung.e2e.ts:47` ⧉-Pane auf Erwägung, `tastatur.e2e.ts:81` Skip-Link (#715), `leser-v3-blatt:105` ⌘K-Split — alle Hydration-/Timing-Klasse; nach der 60-s-Härtung Rate neu messen (`zaehleFlakySpecs` in der Selbstopt-Zeitreihe).
 - [ ] **OR-Leser-e2e auf 60-s-Budget härten** — `gesetze-ia-v2-walks.e2e.ts:72` 10-s-Timeout auf `#art-336_c` (2-vCPU); #682 härtete nur `norm-sprung`/`leser-suche`; alle `gesetze/bund/OR`-Specs als Infrastruktur.
 - [ ] **⌘K-Vorlauf im Split** (CI #711, `leser-v3-blatt.e2e.ts:105` flaky) — Verdacht Nebenwirkung von #682 (vor Hydration löst der Vorlauf in der Kopf-Suche aus, nicht im fokussierten Pane); bei Wiederholung `fruehesSuchKuerzel.ts`: Vorlauf nur einlösen, wenn kein Pane-Fokus.
 - [ ] **`check:e2e-shards` deckelt Laufzeit je Shard** — Balance über mehrere CI-Läufe mitteln (Streuung ≈ verschobener Betrag).
