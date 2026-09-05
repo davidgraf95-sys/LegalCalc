@@ -1,28 +1,28 @@
 {
   "normtext.db": {
     "artikel": {
-      "zeilen": 60271,
-      "sha": "cf995e194767cf202f984f3eaeb00c32a52f6e99751312c87b02afc535e8a5ea"
+      "zeilen": 60257,
+      "sha": "3074a8f74f12168972b3d180ecb6022e34e278029824e22a129ef273d6fe8fb6"
     },
     "datei": {
-      "zeilen": 1566,
-      "sha": "93608e5ba32fffde940bf300cd5fc9f6b918a1f6ca950e50b43171f0051d42ce"
+      "zeilen": 1565,
+      "sha": "053fa2919623d9f17c34f6fc1961abd1ff5a7dc2641f33e5e2b01096a526b8b8"
     },
     "dokument": {
-      "zeilen": 1764,
-      "sha": "fcd4fe9f840642b5898f55b11aa51578cfa5af3004bf794cb244040fa79125e7"
+      "zeilen": 1763,
+      "sha": "9ea11d9fe55fe306d3296938b9663a2c2d3c33abd7732ccd84397b769b1168af"
     },
     "eintrag": {
-      "zeilen": 60271,
-      "sha": "00bacdacfd0521ef222910c03b7212c9e7ab3d829eae63012f2bcd1f0effe7eb"
+      "zeilen": 60257,
+      "sha": "2bc347195d3867d505940a598520af16c92aef0736adb8f81b875c563fb37c8b"
     },
     "erlass_fassungen": {
-      "zeilen": 1566,
-      "sha": "4a41aee41cf2f27bf2a03cf2b3f84409576628fb39250120f0aa57677399cebd"
+      "zeilen": 1565,
+      "sha": "df817e6f7a846952351fd16e63a19b7c9c4b14d7196d81c2ecfb4b0779039f5c"
     },
     "erlasse": {
-      "zeilen": 1566,
-      "sha": "c0d6f9001f93b65880fc7201757b7860190db029c180c46ef721eaa8d5437f39"
+      "zeilen": 1565,
+      "sha": "930d6588cf63885f50e5f156c35f882f7845b53de8e22b5baf930c30b0b9bccf"
     },
     "norm_rangliste": {
       "zeilen": 0,
@@ -40,11 +40,11 @@
     },
     "dokument": {
       "zeilen": 161,
-      "sha": "9973f4e83118ffc12def891c514ff765f8072b1741478e0544f2d1c5000b34c9"
+      "sha": "c684a793b3bea76684cf309a97dba524ca2010f731fc12cd26d034eb830be85e"
     },
     "eintrag": {
       "zeilen": 5093,
-      "sha": "142c76d19546e50d59e3f30b2a1b0f6b93a5cd19bb8defd7a246f2e40a62756a"
+      "sha": "69d956da9be7e177c4437f459f4cd61888556a0e040651356a970845679d5a76"
     },
     "entscheide": {
       "zeilen": 0,
@@ -62,7 +62,7 @@
     },
     "dokument": {
       "zeilen": 13,
-      "sha": "5a9f2cde6333a626bf0820aee71cf4a3b9f2699c9bdb55c9fa7ccd06581984b1"
+      "sha": "f0bc1f3d011453409b082b47d2e76ede2af92971f21391c9f2e7ff54101580dc"
     },
     "eintrag": {
       "zeilen": 0,
