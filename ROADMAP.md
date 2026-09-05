@@ -441,12 +441,11 @@ zgb-a36-anhang: Die ZGB-Gliederung zeigt 74 Artikel des Anhangs «Wortlaut der f
   (Mandat David 31.8.2026, Befunde direkt umsetzen).
   **Detail:** [FAHRPLAN-DESIGN-KONSISTENZ.md](fahrplaene/FAHRPLAN-DESIGN-KONSISTENZ.md) §1.
 
-- [ ] **Design-Identität: eigene Farb- und Schrift-Handschrift statt Creme-Gold-Standard** *(`W2·24-DESIGN-IDENTITAET`, Auftrag David 5.9.2026)*
+- [ ] **Design-Identität: eigene Farb- und Schrift-Handschrift** *(`W2·24-DESIGN-IDENTITAET`, David 5.9.2026)*
   <!-- @meta id: W2·24-DESIGN-IDENTITAET · status: ready · blocker: null · dep: [] · feld: design · fahrplan: fahrplaene/FAHRPLAN-DESIGN-IDENTITAET.md -->
-  Anlass: legaldeadline.ch trägt dieselben drei Signaturen (Creme+Gold, Gold-Versal-Etiketten,
-  weiche Karten). Ziel: Token-Tausch (Farbwelt, Etiketten, Radien, Text-Serife, Marken-Motiv),
-  flip-reversibel, Kontrast-Tore grün. Zuerst drei Varianten-Bilder nach Landung von W2·23,
-  David wählt, dann Umsetzung. **Detail:** [FAHRPLAN-DESIGN-IDENTITAET.md](fahrplaene/FAHRPLAN-DESIGN-IDENTITAET.md) §1.
+  Weg von Creme+Gold, Versal-Etiketten und weichen Karten (Verwechselbarkeit mit legaldeadline.ch):
+  Token-Tausch, flip-reversibel; erst drei Varianten-Bilder nach Landung W2·23, David wählt.
+  **Detail:** [FAHRPLAN-DESIGN-IDENTITAET.md](fahrplaene/FAHRPLAN-DESIGN-IDENTITAET.md) §1.
 
 - [ ] **UI-Befundliste extern (210 Befunde, Cowork 29.7.2026)** *(`W2·17-UI-BEFUNDE`)*
   <!-- @meta id: W2·17-UI-BEFUNDE · status: ready · blocker: null · dep: [] · feld: design · fahrplan: fahrplaene/FAHRPLAN-UI-BEFUNDE.md -->
@@ -574,15 +573,6 @@ zgb-a36-anhang: Die ZGB-Gliederung zeigt 74 Artikel des Anhangs «Wortlaut der f
   - [ ] **Wiedervorlage «Google-Ökosystem-Sichtung»** *(Dach QS-FREMDAGENTEN, Phase 4)* — alle 3 Monate, erste Fälligkeit **Dezember 2026**: Gemini-Recherche (agy, `read_url(*)`) «neue Google-KI-Produkte/Modelle, Jules-/Antigravity-Changelog seit \<Datum\>», Bewertung ~30 min, Eintrag in Fahrplan §7. Maschinischer Anstoss: `retro:17` Regel (h) ab 30 Tagen seit `bibliothek/register/antigravity-stand.json`. §7.
   - [ ] **`scripts/plan/selbstoptKern.ts` über der Schlankheits-Schwelle, unregistriert gefunden** *(Nebenfund Abschluss-Session 4.9.2026)* — 1094 Z. (Schwelle 800), vermutlich durch #666 gewachsen, ohne dass jemand `npm run schlankheit:update` fuhr; diese Session hat die Datei nur ins Baseline-Register aufgenommen (kein Split, Doku-Auftrag), Split bleibt offen. `src/tests/plan-selbstopt.test.ts` (1087 Z., ebenfalls jetzt registriert statt gesplittet) — *seit PR #699 (Jules 8, 5.9.2026) gesplittet: 500/236/382 Z., Baseline-Eintrag entfernt* hängt dran — beide teilen sich denselben Wächter-Blick.
 
-- [x] **Auffindbarkeits-Basis: Sitemap + Search Console (kein SEO-Ausbau)** *(`SEO-BASIS`, Entscheid David D5, 3.9.2026)*
-  <!-- @meta id: SEO-BASIS · status: done · blocker: null · dep: [] · feld: betrieb · fahrplan: fahrplaene/FAHRPLAN-SEO-A11Y-GOVERNANCE.md -->
-  Ziel: Das Repo hat heute keine Sitemap — Suchmaschinen sehen die prerenderten Seiten nur, soweit sie
-  sie zufällig finden. **Nullbefund 4.9.2026: falsch — Sitemap existiert seit 11.6.2026 (`scripts/prerender.ts`,
-  8280 URLs, Drift-Check, Prod-Smoke); technisch erledigt, offen nur Search-Console-Verifikation (David).** Ein deterministischer Generator aus dem Prerender-Manifest, dazu `robots.txt`
-  und die Search-Console-Verifikation durch David. Grenze: **kein SEO-Ausbau** — `SEO-A11Y` bleibt
-  geparkt, hier entsteht nur die technische Basis.
-  **Detail:** [FAHRPLAN-SEO-A11Y-GOVERNANCE.md](fahrplaene/FAHRPLAN-SEO-A11Y-GOVERNANCE.md) §12.
-
 - [ ] **Automatik-Gesundheit** *(`QS-AUTOMATIK`, `[OF]`)*
   <!-- @meta id: QS-AUTOMATIK · status: parked · blocker: zielbild-gesetzesleser · dep: [] · feld: betrieb · fahrplan: fahrplaene/FAHRPLAN-BASIS-AUSBAU.md -->
   Läuft unsere Automatik wirklich, und würde sie scheitern können? Offen: Turso-Wächter-Abdeckung +
@@ -657,12 +647,6 @@ zgb-a36-anhang: Die ZGB-Gliederung zeigt 74 Artikel des Anhangs «Wortlaut der f
   Betriebs-/Tor-/Bau-Optimierungen ohne Rechtsinhalt (O-Reihe); keine Massnahme kürzt Beweis, Tor
   oder Prüfung.
   **Detail:** [FAHRPLAN-OPTIMIERUNG-2026-07.md](fahrplaene/FAHRPLAN-OPTIMIERUNG-2026-07.md) §1.
-
-- [x] **Vorschlags-Autopilot (Entwurfs-PRs aus der Messreihe)** *(`QS-AUTOPILOT-STUFE1`)*
-  <!-- @meta id: QS-AUTOPILOT-STUFE1 · status: done · blocker: null · dep: [] · feld: betrieb · fahrplan: fahrplaene/FAHRPLAN-PLAN-STEUERUNG.md -->
-  David: «stufe 1 ja», gebunden an ≥ 5 Snapshots; Stufe 2/3 NICHT freigegeben. Cron fährt `retro:17`,
-  eröffnet Entwurfs-PR, kein Auto-Merge.
-  **Detail:** [FAHRPLAN-PLAN-STEUERUNG.md](fahrplaene/FAHRPLAN-PLAN-STEUERUNG.md) § «Selbstoptimierender Bau».
 
 - [ ] **Verwenden statt bauen — risikoarme Fertigteile aus der Fremdquellen-Sichtung 2.9.2026** *(`QS-VERWENDEN`)*
   <!-- @meta id: QS-VERWENDEN · status: ready · blocker: null · dep: [] · feld: betrieb -->

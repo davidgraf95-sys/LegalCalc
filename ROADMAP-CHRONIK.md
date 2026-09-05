@@ -2860,3 +2860,25 @@ gezogen), und sie zu kürzen hätte genau das eingespart, was zu erhalten war. C
 der Umbau erwartungsgemäss nicht: die 19 Dateien liefen zusammen unter 1 s (Dossier §1 —
 alle 5661 Unit-Fälle kosten 138 s, der Kostenhebel ist e2e). Der Gewinn liegt allein in der
 Regelfläche: wer künftig ein Plan-Werkzeug ändert, öffnet eine Datei statt vier.
+
+# Umschichtung 5.9.2026 — erledigte Schritte aus dem Steuerungsplan (Deckel-Rotation, W2·23/W2·24)
+
+## SEO-BASIS *(done, verschoben 5.9.2026)*
+
+- [x] **Auffindbarkeits-Basis: Sitemap + Search Console (kein SEO-Ausbau)** *(`SEO-BASIS`, Entscheid David D5, 3.9.2026)*
+  <!-- @meta id: SEO-BASIS · status: done · blocker: null · dep: [] · feld: betrieb · fahrplan: fahrplaene/FAHRPLAN-SEO-A11Y-GOVERNANCE.md -->
+  Ziel: Das Repo hat heute keine Sitemap — Suchmaschinen sehen die prerenderten Seiten nur, soweit sie
+  sie zufällig finden. **Nullbefund 4.9.2026: falsch — Sitemap existiert seit 11.6.2026 (`scripts/prerender.ts`,
+  8280 URLs, Drift-Check, Prod-Smoke); technisch erledigt, offen nur Search-Console-Verifikation (David).** Ein deterministischer Generator aus dem Prerender-Manifest, dazu `robots.txt`
+  und die Search-Console-Verifikation durch David. Grenze: **kein SEO-Ausbau** — `SEO-A11Y` bleibt
+  geparkt, hier entsteht nur die technische Basis.
+  **Detail:** [FAHRPLAN-SEO-A11Y-GOVERNANCE.md](fahrplaene/FAHRPLAN-SEO-A11Y-GOVERNANCE.md) §12.
+
+## QS-AUTOPILOT-STUFE1 *(done, verschoben 5.9.2026)*
+
+- [x] **Vorschlags-Autopilot (Entwurfs-PRs aus der Messreihe)** *(`QS-AUTOPILOT-STUFE1`)*
+  <!-- @meta id: QS-AUTOPILOT-STUFE1 · status: done · blocker: null · dep: [] · feld: betrieb · fahrplan: fahrplaene/FAHRPLAN-PLAN-STEUERUNG.md -->
+  David: «stufe 1 ja», gebunden an ≥ 5 Snapshots; Stufe 2/3 NICHT freigegeben. Cron fährt `retro:17`,
+  eröffnet Entwurfs-PR, kein Auto-Merge.
+  **Detail:** [FAHRPLAN-PLAN-STEUERUNG.md](fahrplaene/FAHRPLAN-PLAN-STEUERUNG.md) § «Selbstoptimierender Bau».
+
