@@ -711,9 +711,43 @@ jobs:
         with:
           path: ~/.cache/ms-playwright
           key: playwright-${{ runner.os }}-${{ hashFiles('package-lock.json') }}
+      # Ein Mirror-Stall im apt-Teil von `--with-deps` hat am 5.9.2026 den
+      # Shard 5 gekippt: `Fetched 21.1 MB in 22min 56s (15.3 kB/s)` —
+      # xfonts-scalable tröpfelte von azure.archive.ubuntu.com, während die
+      # sieben übrigen Shards DESSELBEN Laufs dieselben Pakete in 0–8 s holten
+      # (Lauf 33937186925, Job 101227653560). Der Playwright-Lauf startete
+      # darum erst 02:14:11 — 24 min nach Job-Start — und wurde 50 s später
+      # vom 25-min-Deckel gekappt: «cancelled», kein einziger Test bewertet.
+      # Die Ursache ist NICHT der Spec-Inhalt; es ist genau die
+      # Runner-Stall-Klasse, die `e2e/shard-gruppen.json` am 15.8.2026 als
+      # offenen §17-Punkt notiert hat («Indiz für Runner-Queueing/Kontention,
+      # nicht für eine Spec-Schieflage») — hier zum ersten Mal mit Log-Beleg.
+      #
+      # WURZEL-FIX statt Deckel-Erhöhung: je Versuch ein hartes 5-min-Limit,
+      # zwei Versuche. Ein hängender Spiegel kostet damit 10 statt 23 min, und
+      # der Retry ist billig — apt hat die bereits geholten .debs im Cache.
+      # Rechnung gegen den 25-min-Job-Deckel: 10 min Install (worst case)
+      # + ~8 min langsamster Shard + ~2 min Rüstzeit = 20 min, der Deckel
+      # bleibt also scharf. ROT BLEIBT ROT (§6.7): scheitern beide Versuche,
+      # endet der Schritt rot mit ::error — die Schriftart-Pakete werden NICHT
+      # übersprungen, weil fehlende Fonts die Pixel-Vergleiche still verschöben.
       - name: Playwright-Browser (Chromium)
         if: needs.diff.outputs.art == 'code'
-        run: npx playwright install --with-deps chromium
+        run: |
+          # apt geduldig, aber nicht endlos: Retries und Socket-Timeout greifen
+          # bei STILLE. Gegen das Schneckentempo oben (15.3 kB/s bei fliessenden
+          # Daten) kennt apt keine Option — dagegen hilft nur das `timeout`.
+          echo 'Acquire::Retries "3"; Acquire::http::Timeout "30"; Acquire::https::Timeout "30";' \
+            | sudo tee /etc/apt/apt.conf.d/99-lexmetrik-geduld > /dev/null
+          for versuch in 1 2; do
+            if timeout 300 npx playwright install --with-deps chromium; then
+              echo "playwright install --with-deps: Versuch ${versuch}/2 durch."
+              exit 0
+            fi
+            echo "::warning::playwright install --with-deps: Versuch ${versuch}/2 nach spätestens 5 min abgebrochen (Mirror-Stall?) — Wiederholung."
+          done
+          echo "::error::playwright install --with-deps kam in zwei Versuchen à 5 min nicht durch — Paketspiegel gestört, Shard rot (nicht still übersprungen)."
+          exit 1
       # `npm run preview` serviert das heruntergeladene dist/ (kein Rebuild);
       # jeder Job fährt nur die Specs SEINER dauer-gepackten Gruppe seriell
       # (workers:1 bleibt, damit die Contention NICHT in EINEN Runner zurückkehrt)

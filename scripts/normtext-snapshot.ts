@@ -1234,7 +1234,17 @@ async function main(): Promise<void> {
     }
     // Merge-Regel: scripts/normtext/golden-kanton-merge.ts (eine Quelle, isoliert
     // getestet in src/tests/golden-kanton-merge.test.ts).
-    const merge = mischeGoldenKanton(bestand, goldenIndex, kantone);
+    // existsSync als Datei-Sonde: ein Erlass der Ziel-Kantone ohne frische
+    // Knoten wird nur dann aus dem Golden entfernt, wenn auch seine
+    // Snapshot-Datei fort ist (= aus dem Korpus zurückgezogen). Ausfall bleibt
+    // bewahrt (§8) — dieselbe Regel wie im Voll-Lauf.
+    const merge = mischeGoldenKanton(bestand, goldenIndex, kantone, existsSync);
+    if (merge.verworfen.length > 0) {
+      console.log(
+        `\nℹ️  §5: ${merge.verworfen.length} Erlass(e) der Ziel-Kantone ohne Snapshot-Datei — ` +
+          `Golden-Knoten verworfen (aus dem Korpus zurückgezogen): ${merge.verworfen.join(', ')}`,
+      );
+    }
     if (merge.fehlgeschlageneKantone.length > 0) {
       console.log(
         `\n⚠️  WARN (§8): Ziel-Kantone OHNE neue Snapshots (Fetch-Fehler?): ${merge.fehlgeschlageneKantone.join(', ')} — ` +

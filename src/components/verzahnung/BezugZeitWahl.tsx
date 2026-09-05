@@ -34,6 +34,7 @@
 // Kenntnis des Menüs. Wer sie mountet, hält den Zustand.
 
 import { useRef, useState } from 'react';
+import { zahlGruppiert } from '../typografie';
 import {
   bereichAusJahren, bereichLabel, istBereichOffen, jahrImBereich,
   type Histogramm, type Zeitbereich,
@@ -242,9 +243,13 @@ export function BezugZeitWahl({ bereich, histogramm, onBereich }: {
       <p className="pt-1 pb-0.5 text-micro leading-snug text-ink-500">
         {gesamt > 0 && (
           <>
-            <span className="num">{gesamt}</span>
+            {/* B13/LM-108: vierstellige Zählwerte tausendergruppiert wie überall
+                sonst («1'465 Verknüpfungen», nicht «1465»); SSoT für das
+                Trennzeichen ist src/lib/konventionen.ts. Klasse `num` ohne
+                `tabular-nums` (R4-C, 5.9.2026: die Utility nahm lining-nums weg). */}
+            <span className="num">{zahlGruppiert(gesamt)}</span>
             {gesamt === 1 ? ' Verknüpfung' : ' Verknüpfungen'} in diesem Erlass
-            {ohneJahr > 0 && <> · <span className="num">{ohneJahr}</span> ohne Datum (bleiben immer sichtbar)</>}
+            {ohneJahr > 0 && <> · <span className="num">{zahlGruppiert(ohneJahr)}</span> ohne Datum (bleiben immer sichtbar)</>}
             {'. '}
           </>
         )}

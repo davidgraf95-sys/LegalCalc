@@ -318,6 +318,7 @@ zgb-a36-anhang: Die ZGB-Gliederung zeigt 74 Artikel des Anhangs «Wortlaut der f
   - [x] **AMBV: fünf Snapshot-Defekte aus zerrissenen Wörtern und loser Interpunktion** *(Befund Diskrepanz-Finder 4.9.2026, PR #650)* — `public/normtext/bund/AMBV.json` gegen den gepinnten Fedlex-Text: Art. 6 «Zwischen produkten», «Erfah rung», «natur wissenschaftliche», «Hochschul aus bildung», «Fütterungs arznei mitteln»; Art. 12 «Qualifika tionen»; Art. 14 «GMP-Kon trollsysteme»; Art. 11/12 «werden ;» bzw. «ausreicht ;»; Art. 21 «werden .». Klasse: Silbentrennung des Quell-Layouts nicht zusammengezogen bzw. Leerzeichen vor Satzzeichen. Deterministisch reproduzierbar mit `npx vite-node scripts/analyse/gemini-diskrepanz.ts bund/AMBV --nur-diff`; Sweep über den Bund-Bestand vor dem Fix, die Klasse ist mit hoher Wahrscheinlichkeit nicht auf AMBV beschränkt. Risikopfad ⇒ Gegenprüfung. — **erledigt (PR #658)**: Weder Silbentrennung noch `&shy;`, sondern leere Namensraum-Marker der Fedlex-Word-Konversion (`<tmp:inl …></tmp:inl>`) MITTEN im Wort; `entferneTags` las den Tagnamen ohne Namensraum («tmp») und ersetzte den Marker durch ein Leerzeichen. Neu ist ein Tagname mit `:` inline. Breite: 8 Erlasse, 16 Artikel (AMBV, BETMKV, LugÜ, BBV, EPV, FAMZV, NBV, **AHVV** — dort korrigiert der Fix einen Frankenbetrag «10.—», Gegenprüfung 4.9.2026); im Cache gemessen: `tmp:inl` 680, `w:smartTag` 64, `w:moveFromRange*` 4.
   - [ ] **Golden-Token blind für Randtitel** *(Befund PR #668, 4.9.2026)* — `sha256Bloecke` (`scripts/normtext/sha-bloecke.ts`) hasht weder `titel` noch `absatz` (Gegenprüfung 4.9.2026: `sha-bloecke.ts:50`); eine reine Randtitel-Revision (BE 154.21 Art. 31) bewegt den Golden-Index nicht. Wurzel-Fix korpusweit (~60k Hashes) als eigener Schritt mit Gegenprüfung.
   - [ ] **`public/normtext/confidence.json` veraltet** *(Befund PR #668, 4.9.2026)* — erzeugt 23.6.2026 mit 150 Erlassen, heutiger Lauf liefert 1566 (196 Quarantäne); eigener Schritt: neu erzeugen, Quarantäne-Liste sichten, `report:confidence` als Tor oder Wächter-Zeile.
+  - [ ] **Nebenfunde Nacht 5.9.2026** (7 Zeilen: Cache ohne Fassungsschlüssel, struktur-Filter, stumme Löschung, GL-Kanonik, Kanton-Drift, Fedlex-Trenner, standRechtsprechung) — Fahrplan §1.
 
   - [ ] **Einheit + Hochzahl zerrissen («125 cm 3» statt cm³)** *(Gegenprüfungs-Fund 4.9.2026, Phase-3-Durchgang Gemini, PR #658)* — `<sup>` an Masseinheiten wird als Leerzeichen + Ziffer gerendert; korpusweit 218 Treffer (m³ 143, m² 39, cm² 17, cm³ 13). Wurzel im Adapter (Sup-Behandlung), nie in den Daten. Risikopfad ⇒ Gegenprüfung.
   - [ ] **Führende Klammer/Guillemet in `<dt>`-Marken verstümmelt** *(Gegenprüfungs-Fund 4.9.2026, PR #658)* — `(i`, `(ii` (GFK Art. 24), `«5.4` (AVO Anh. 7), `(2) a` (UNO-Pakt I Art. 16): vorbestehend, vom Marken-Fix nicht erfasst. Wurzel `parseDefinitionsListe`; Risikopfad ⇒ Gegenprüfung.
@@ -355,6 +356,7 @@ zgb-a36-anhang: Die ZGB-Gliederung zeigt 74 Artikel des Anhangs «Wortlaut der f
   - [ ] **Pflegetermin 1.10.2026:** 14 «Künftige Fassung»-Einträge (OR/StGB/BankG/GwG u. a., SR-Tabellen) werden fällig — Register `parameter-verfall.md`, vorher nachführen (Hinweis Referenzzins-Agent 2.9.2026).
   - [ ] **§17 Reparatur-Arm deckt Kanton-Drift nicht** *(Anlass 4.9.2026, #597/#600: BE 154.21 driftete 3 Läufe lang rot, Nachführung von Hand in PR #668)* — Reparatur-Arm um enge Kanton-Regeneration erweitern (`normtext -- --nur=kanton --kanton=XX` + `gen:pdf-quellen -- --kanton=XX`, neu in #668), Gegenprüfung bleibt Pflicht (Risikopfad, kein Auto-Merge).
   - [ ] **`gate` flaky parallel zu `check-drift.ts --netz`** *(Nullprobe 4.9.2026, PR #668)* — Netz-Lauf schreibt `daten/pdf-cache-zh/`, während der Offline-Teil liest (73× «Roh-PDF-Cache leer»); Wurzel-Fix: Netz-Modus in Temp-Verzeichnis schreiben und atomar tauschen, oder Tor-Lock.
+  - [ ] **Nacht 5.9.2026:** Finding 7 ohne Reparaturweg · Register-sha rotiert mit stand · Arm-Tor wanduhrabhängig — Fahrplan §2.
 
 ---
 
@@ -462,6 +464,7 @@ zgb-a36-anhang: Die ZGB-Gliederung zeigt 74 Artikel des Anhangs «Wortlaut der f
   **Detail:** [FAHRPLAN-OFFENE-BEFUNDE.md](fahrplaene/FAHRPLAN-OFFENE-BEFUNDE.md) §4 — dort die
   vollständige, wörtlich übernommene Befundliste (33 offene Positionen mit ihren Belegen);
   Such-/Navigations-Posten zusätzlich in [FAHRPLAN-UI-NAVIGATION.md](fahrplaene/FAHRPLAN-UI-NAVIGATION.md) §7.
+  - [ ] **OR-Leser-e2e-Timeouts app-weit härten · Shard-Laufzeit-Deckel** *(CI 5.9.2026)* — Fahrplan §4.
 
 - [ ] **Oberflächen-Qualität app-weit** *(`QS-UI`, reines UI/Design §13, kontinuierlich)*
   <!-- @meta id: QS-UI · status: ready · blocker: null · dep: [] · feld: design · fahrplan: fahrplaene/FAHRPLAN-UI-QUALITAET.md -->
@@ -470,6 +473,7 @@ zgb-a36-anhang: Die ZGB-Gliederung zeigt 74 Artikel des Anhangs «Wortlaut der f
   - [ ] **Marken-Präfix im Leser: «lit. BE» statt «Kategorie BE», «A.» statt «A:»** *(Gegenprüfung PR #658, 4.9.2026)* — `litZiff` in `src/components/normtext/ArtikelBody.tsx` (~Z. 48, Punkt ~Z. 434) hängt jeder Marke «lit./Ziff.» + «.» an; Label-Marken (`<dt>` mit `:`) sollen ohne Präfix und mit «:» erscheinen. Reine Darstellung (§3); Datei liegt in Jules-Ticket #654 — erst danach.
   - [ ] **Pfadgebundene Wächter zeigen nur auf `ArtikelBody.tsx`** *(Nebenfund #663-Split, QS-FREMDAGENTEN 4.9.2026, §6.7)* — `src/tests/leser-typo-tokens.test.ts`, `src/tests/design-r3b-chrome.test.ts` und `scripts/check-linien-kanon.ts` prüfen weiterhin nur die Ursprungsdatei; nach dem Komponenten-Split (#663) fehlen die ausgelagerten Dateien (`ArtikelBody.zitier.tsx`, `.helfer.ts`) im Prüfbereich — ein Tor, das nicht auf den ausgelagerten Teil scheitern kann, ist gefährlicher als keines. Analog `src/pages/EntscheidLeser.tsx`-Wächter (11 Tests prüfen den Quelltext direkt) — Hinweis, falls dort später gesplittet wird.
   - [ ] Teilpass (e) Rest: Farbwelt-Baseline enger, axe von Stichprobe auf Flächendeckung; Restliste §2.3 Ziff. 6.
+  - [ ] **Nebenfunde Nacht 5.9.2026** (Baum-Namen Rest + David-Frage, UI-String-Linter, Checkbox-Grösse, /einstellungen-Meta, Design R8) — [FAHRPLAN-UI-QUALITAET.md](fahrplaene/FAHRPLAN-UI-QUALITAET.md) §2.5.
 
 - [ ] **Aufräum-Item — zwei Restpunkte** *(`W2·9`)*
   <!-- @meta id: W2·9 · status: ready · blocker: null · dep: [] · feld: design · fahrplan: fahrplaene/FAHRPLAN-ARCHIV-RESTPUNKTE.md -->
@@ -546,6 +550,7 @@ zgb-a36-anhang: Die ZGB-Gliederung zeigt 74 Artikel des Anhangs «Wortlaut der f
   **Detail:** [FAHRPLAN-EFFIZIENZ-CHECKLISTE.md](fahrplaene/FAHRPLAN-EFFIZIENZ-CHECKLISTE.md) §1 —
   die Checkliste liegt seit 29.8.2026 dort statt hier (sie war eine Merge-Konflikt-Falle: 6 Konflikte
   in EINER Zeile bei 15 PRs).
+  - [ ] **Steuerdeckel-Entscheid (Hooks 221 B, check-*.ts ~180 B Luft — wartet auf David)** · **Projektionskette nach main-Merge** (`npm run projektionen`: Zähler/Feed/Historie/Manifest + `gen:e2e-shards`; 5 CI-Läufe verloren #694/#695/#689; Prüf-Worktrees `npm ci`) · **`src/lib/suche/**` nicht im Risiko-Prädikat** (#681, §6.7).
 
 - [ ] **Fremde Agenten im Bau — Jules, Antigravity, Gemini** *(`QS-FREMDAGENTEN`, Freigabe David 3.9.2026)*
   <!-- @meta id: QS-FREMDAGENTEN · status: ready · blocker: null · dep: [] · feld: betrieb · fahrplan: fahrplaene/FAHRPLAN-FREMDAGENTEN.md -->
@@ -560,7 +565,7 @@ zgb-a36-anhang: Die ZGB-Gliederung zeigt 74 Artikel des Anhangs «Wortlaut der f
   - [ ] Zweitblick-Messung — erster Durchgang eingetragen (#658, VZV/AMBV: 1 echt vorbestehend, 7 Schein, 0 verpasst; 1/5, Schwelle §3 noch nicht erreicht), weitere vier im Alltag. §2/§3.
   - [ ] Phase 4 Skalierung läuft — Landungsquote 83 % (n=6), Median 30 min ⇒ Ticketzahl 3–5 offen; Jules-API mit Plan-Gegenlesen (D4) noch offen; Antigravity-Claude als Bauarbeiter (D7) **geparkt** (Bauleiter/David-Chat 4.9.2026, kein Zwischenmarkt zu Jules — Wiedervorlage nur bei Kontingent-Engpass). §2.
   - [ ] **Wiedervorlage «Google-Ökosystem-Sichtung»** *(Dach QS-FREMDAGENTEN, Phase 4)* — alle 3 Monate, erste Fälligkeit **Dezember 2026**: Gemini-Recherche (agy, `read_url(*)`) «neue Google-KI-Produkte/Modelle, Jules-/Antigravity-Changelog seit \<Datum\>», Bewertung ~30 min, Eintrag in Fahrplan §7. Maschinischer Anstoss: `retro:17` Regel (h) ab 30 Tagen seit `bibliothek/register/antigravity-stand.json`. §7.
-  - [ ] **`scripts/plan/selbstoptKern.ts` über der Schlankheits-Schwelle, unregistriert gefunden** *(Nebenfund Abschluss-Session 4.9.2026)* — 1094 Z. (Schwelle 800), vermutlich durch #666 gewachsen, ohne dass jemand `npm run schlankheit:update` fuhr; diese Session hat die Datei nur ins Baseline-Register aufgenommen (kein Split, Doku-Auftrag), Split bleibt offen. `src/tests/plan-selbstopt.test.ts` (1087 Z., ebenfalls jetzt registriert statt gesplittet) hängt dran — beide teilen sich denselben Wächter-Blick.
+  - [ ] **`scripts/plan/selbstoptKern.ts` über der Schlankheits-Schwelle, unregistriert gefunden** *(Nebenfund Abschluss-Session 4.9.2026)* — 1094 Z. (Schwelle 800), vermutlich durch #666 gewachsen, ohne dass jemand `npm run schlankheit:update` fuhr; diese Session hat die Datei nur ins Baseline-Register aufgenommen (kein Split, Doku-Auftrag), Split bleibt offen. `src/tests/plan-selbstopt.test.ts` (1087 Z., ebenfalls jetzt registriert statt gesplittet) — *seit PR #699 (Jules 8, 5.9.2026) gesplittet: 500/236/382 Z., Baseline-Eintrag entfernt* hängt dran — beide teilen sich denselben Wächter-Blick.
 
 - [x] **Auffindbarkeits-Basis: Sitemap + Search Console (kein SEO-Ausbau)** *(`SEO-BASIS`, Entscheid David D5, 3.9.2026)*
   <!-- @meta id: SEO-BASIS · status: done · blocker: null · dep: [] · feld: betrieb · fahrplan: fahrplaene/FAHRPLAN-SEO-A11Y-GOVERNANCE.md -->

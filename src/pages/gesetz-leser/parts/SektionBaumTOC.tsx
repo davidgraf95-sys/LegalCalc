@@ -1,7 +1,8 @@
-import { memo, type ReactNode } from 'react';
+import { memo, useMemo, type ReactNode } from 'react';
 import { romanFrei, margLabel } from '../helpers';
 import { merkeRuecksprungVonDom } from '../scrollAnker';
 import { zeileIstOffen, artikelKinderOffen, findeMarke, type GliederungsKnoten } from '../gliederungsModell';
+import { vollText, berechneKlappKontext } from './klappNamen';
 
 // ═══ Gliederungsbaum der Seitenleiste (Zone B) ═══════════════════════════════
 //
@@ -141,6 +142,9 @@ interface ZeilenProps {
   aktivPfad: string[];
   /** Id der EINEN Zeile mit der Positionsmarke (s. findeMarke). */
   markeId: string | null;
+  /** QS-UI-Nachzug (5.9.2026): Kontext-Zusatz je Zeilen-Id, NUR gesetzt, wenn
+   *  derselbe Titel im Baum mehrfach als Chevron-Zeile vorkommt (s. klappNamen.ts). */
+  klappKontext: Map<string, string>;
   offen: Record<string, boolean>;
   startOffeneTiefe: number;
   /** B3: EINE Zeile, EIN Zielwert — alle Ids der Zeile plus ihr sichtbarer Zustand. */
@@ -172,7 +176,7 @@ interface ZeilenProps {
 // (~250 statt 11 075 Knoten). Beides zusammen ist F3; einzeln trüge keines —
 // darum steht hier ausdrücklich nur die Hälfte, und der Unmount folgt in S5.
 const Zeile = memo(function Zeile({
-  k, erster, aktivPfad, markeId, offen, startOffeneTiefe, onToggle, onSprung, onSprungArtikel,
+  k, erster, aktivPfad, markeId, klappKontext, offen, startOffeneTiefe, onToggle, onSprung, onSprungArtikel,
   titelKlapptAuf = false, stimmeGedaempft = false,
 }: ZeilenProps): ReactNode {
   // F1 (§9-Bug-Check 13.8.2026): An einem gemischten Knoten (T8) hängen
@@ -219,7 +223,11 @@ const Zeile = memo(function Zeile({
   // zwei Zeilen geklammert (Labels bis 280 Zeichen sind belegt) — ohne diesen
   // Vollwert wäre der Rest still verloren (§8). Er nennt genau das, was die Zeile
   // auch zeigt: Etikett und, wenn zutreffend, das Aufgehoben-Signal.
-  const voll = [k.label, k.aufgehoben ? 'aufgehoben' : ''].filter(Boolean).join(' — ');
+  const voll = vollText(k);
+  // QS-UI-Nachzug (5.9.2026, Klasse PR #685): NUR gesetzt, wenn `voll` im
+  // Baum mehrfach als Chevron-Titel vorkommt (klappNamen.ts) — sonst bleibt
+  // der Name unverändert, wie im Auftrag verlangt.
+  const klappNamenKontext = klappKontext.get(k.id);
 
   return (
     // data-sektion-id nur an echten Sektionszeilen: der Auto-Zuklapp-Pfad
@@ -254,7 +262,21 @@ const Zeile = memo(function Zeile({
               // meldet die Zeile darum `true` (die Sektionen stehen offen), und
               // der erste Klick schliesst sie. Der zweite öffnet beides.
               onClick={() => onToggle(k.ids, auf)}
-              aria-expanded={auf} aria-label={auf ? 'Einklappen' : 'Aufklappen'}
+              // KONSTANTER, EINDEUTIGER Name (QS-UI Teilpass (e), 5.9.2026).
+              // Vorher: `auf ? 'Einklappen' : 'Aufklappen'` — zwei Fehler in
+              // einem, gemessen an /gesetze/bund/GEBV_HREG (11 Artikel):
+              // (1) der Zustand stand DOPPELT — `aria-expanded` sagt ihn schon,
+              //     der Name sagte ihn ein zweites Mal («Einklappen, erweitert»),
+              //     und er WECHSELTE beim Klick: Sprachsteuerung zielt danach auf
+              //     einen Namen, den es nicht mehr gibt;
+              // (2) der Name benannte nicht, WAS er klappt — mehrere Knöpfe der
+              //     Gliederung hiessen wortgleich «Aufklappen» und waren in der
+              //     Knopf-Liste eines Screenreaders ununterscheidbar (WCAG 4.1.2).
+              // Jetzt trägt der Name die Zeile, die er klappt; den Zustand trägt
+              // allein `aria-expanded`. Bewacht von `ARIA_ZUSTANDSNAME`
+              // (eslint.config.js).
+              aria-expanded={auf}
+              aria-label={`«${voll}»${klappNamenKontext ? ` (${klappNamenKontext})` : ''} auf- und zuklappen`}
               // F3/C5 (Design-Qualitäts-Pass 29.8.2026): ink-300 → ink-500.
               // Das Dreieck ist die EINZIGE Affordanz dieses Knopfes (kein
               // Rahmen, keine Fläche, 11 px). Gemessen gegen `--paper`:
@@ -317,7 +339,7 @@ const Zeile = memo(function Zeile({
           aria-current={istMarke ? 'location' : undefined}
           title={voll}
           aria-label={voll}
-          className={`flex-1 min-w-0 text-left rounded px-1.5 py-0.5 leading-snug transition-colors ${stimme.form} ${tinte} ${istMarke ? '' : 'hover:text-ink-900 hover:bg-paper-sunken/60'}`}>
+          className={`flex-1 min-w-0 text-left rounded px-1.5 py-0.5 leading-snug transition-colors ${stimme.form} ${tinte} ${istMarke ? '' : 'hover:text-ink-900 lc-hover-flaeche'}`}>
           {/* line-clamp-2 (§3.3): Labels bis 280 Zeichen sind belegt — ohne
               Klammer wuchs eine einzige Zeile auf sechs und schob den ganzen
               Baum. Der volle Text bleibt über title/aria-label erreichbar.
@@ -383,7 +405,7 @@ const Zeile = memo(function Zeile({
             <ul className="space-y-0.5 mt-0.5">
               {sichtbareKinder.map((kind, i) => (
                 <Zeile key={kind.id} k={kind} erster={i === 0}
-                  aktivPfad={aktivPfad} markeId={markeId} offen={offen}
+                  aktivPfad={aktivPfad} markeId={markeId} klappKontext={klappKontext} offen={offen}
                   startOffeneTiefe={startOffeneTiefe}
                   onToggle={onToggle} onSprung={onSprung} onSprungArtikel={onSprungArtikel}
                   titelKlapptAuf={titelKlapptAuf} stimmeGedaempft={stimmeGedaempft} />
@@ -429,11 +451,15 @@ export const SektionBaumTOC = memo(function SektionBaumTOC({
   // stützen: nie mehr als eine, und solange der Spy überhaupt einen Pfad im
   // Baum meldet, auch nie weniger (s. findeMarke).
   const markeId = findeMarke(knoten, aktivPfad, offen, startOffeneTiefe, aktivToken);
+  // QS-UI-Nachzug (5.9.2026): EINE Berechnung je Baum, an `knoten` (der
+  // referenzstabilen Modell-Liste, s. Kommentar oben) gebunden — nicht bei
+  // jedem Scroll-Spy-Rerender, nur wenn sich der Baum selbst ändert.
+  const klappKontext = useMemo(() => berechneKlappKontext(knoten), [knoten]);
   return (
     <ul className="space-y-0.5">
       {knoten.map((k, i) => (
         <Zeile key={k.id} k={k} erster={i === 0}
-          aktivPfad={aktivPfad} markeId={markeId} offen={offen}
+          aktivPfad={aktivPfad} markeId={markeId} klappKontext={klappKontext} offen={offen}
           startOffeneTiefe={startOffeneTiefe}
           onToggle={onToggle} onSprung={onSprung} onSprungArtikel={onSprungArtikel}
           titelKlapptAuf={titelKlapptAuf} stimmeGedaempft={stimmeGedaempft} />

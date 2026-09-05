@@ -116,7 +116,7 @@ export function VerlaufUebersicht() {
                     <button
                       type="button"
                       onClick={() => { navigate(e.route); setPanelOffen(false); }}
-                      className="flex w-full items-center gap-2.5 rounded px-2 py-1.5 text-left text-body-s text-ink-700 transition-colors hover:bg-paper-sunken/60 hover:text-brass-700"
+                      className="flex w-full items-center gap-2.5 rounded px-2 py-1.5 text-left text-body-s text-ink-700 transition-colors lc-hover-flaeche hover:text-brass-700"
                     >
                       <VerlaufIcon typ={e.typ} className="shrink-0 text-ink-500" />
                       <span className="min-w-0 flex-1 truncate">{e.titel}</span>

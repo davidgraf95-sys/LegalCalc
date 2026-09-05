@@ -72,7 +72,21 @@ export function Topbar({ onMenu, schubladeOffen, seitenleisteEingeklappt, onSeit
         <button
           type="button"
           className="lc-btn lc-btn-ghost lc-btn-sm hidden lg:inline-flex shrink-0 min-h-11 min-w-11"
-          aria-label={seitenleisteEingeklappt ? 'Seitenleiste einblenden' : 'Seitenleiste ausblenden'}
+          // WCAG 4.1.2 · konstanter zugänglicher Name (QS-UI Folgeschritt, 5.9.2026;
+          // in Teilpass (e) noch zurückgestellt, weil er eine Test-Zeile berührt).
+          // Vorher: `seitenleisteEingeklappt ? 'Seitenleiste einblenden' :
+          // 'Seitenleiste ausblenden'` neben `aria-pressed`. Gemessen @1440:
+          // «Seitenleiste einblenden»/pressed=false im Leser, nach Klick
+          // «Seitenleiste ausblenden»/pressed=true — der Zustand stand doppelt und
+          // in ENTGEGENGESETZTER Leserichtung («ausblenden, gedrückt», während die
+          // Leiste eingeblendet IST), und der Name WECHSELTE beim Klick:
+          // Sprachsteuerung («klicke Seitenleiste einblenden») zielt danach auf
+          // einen Namen, den es nicht mehr gibt. Jetzt benennt der Name konstant
+          // das bediente Ding, den Zustand trägt allein `aria-pressed`
+          // (gedrückt = Leiste ist eingeblendet). Bewacht von `ARIA_ZUSTANDSNAME`
+          // (eslint.config.js) — die Ausnahme von Teilpass (e) ist ersatzlos weg,
+          // das Tor ist hier wieder scharf.
+          aria-label="Seitenleiste ein- und ausblenden"
           aria-pressed={!seitenleisteEingeklappt}
           onClick={onSeitenleisteUmschalten}
         >
@@ -119,7 +133,7 @@ export function Topbar({ onMenu, schubladeOffen, seitenleisteEingeklappt, onSeit
             </button>
             {/* Live-Wertansage des aktuellen Prozentwerts (WCAG 4.1.3), tabular für
                 ruckelfreie Breite; w-12 hält die Breite stabil (Token, keine px). */}
-            <span aria-live="polite" className="w-12 select-none text-center text-micro tabular-nums text-ink-500">{schrift.prozent} %</span>
+            <span aria-live="polite" className="w-12 select-none text-center text-micro lc-ziffern text-ink-500">{schrift.prozent} %</span>
             <button
               type="button"
               aria-label="Ganze Seite vergrössern"

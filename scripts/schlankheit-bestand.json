@@ -13,6 +13,5 @@
   "scripts/plan/bildSeiten.ts": 843,
   "scripts/plan/selbstoptKern.ts": 1094,
   "src/lib/rechtsprechung/zitat-extraktion.ts": 844,
-  "src/pages/EntscheidLeser.tsx": 1095,
-  "src/tests/plan-selbstopt.test.ts": 1087
+  "src/pages/EntscheidLeser.tsx": 1095
 }

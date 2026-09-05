@@ -118,8 +118,20 @@ export function dispatchText(klasse: string, md: string): string {
   if (!(klasse in KLASSEN)) {
     throw new Error(`Unbekannte Auftragsklasse '${klasse}'. Bekannt: ${Object.keys(KLASSEN).join(' | ')}`);
   }
-  return `${pflichtKlausel(md, varianteVon(klasse))}\n\n${KLASSEN[klasse]}`;
+  const kern = `${pflichtKlausel(md, varianteVon(klasse))}\n\n${KLASSEN[klasse]}`;
+  return klasse === 'bau' ? `${kern}\n\n${WEICHE_BAU}` : kern;
 }
+
+/** Grüne-Spur-Weiche vor jedem Bau-Dispatch (Skill auftrag Ziff. 6). Lehre 5.9.2026:
+ *  als Prosa im Skill feuerte sie in einer Nacht mit 12 Bau-Dispatches kein einziges Mal —
+ *  darum hier im Generator-Output, wo der Orchestrator sie beim Dispatch liest. */
+export const WEICHE_BAU = [
+  'GRÜNE-SPUR-WEICHE (vor dem Dispatch beantworten, Skill auftrag Ziff. 6):',
+  '  (a) nur src/**, kein Risikopfad?  (b) Fertig-Kriterium maschinell, kein Sichtentscheid?',
+  '  (c) ein Ziel, ≤ ~5 Dateien, Whitelist benennbar?  (d) keine offene David-Frage?',
+  '  4× ja ⇒ Jules-Ticket (docs/token-oekonomie/jules-ticket-vorlage.md, Kontingent messen),',
+  '  ein Nein ⇒ Claude-Agent, das Nein als Begründung in den Auftrag.',
+].join('\n');
 
 export function templateLesen(): string {
   return readFileSync(TEMPLATE, 'utf8');

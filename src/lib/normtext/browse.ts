@@ -6,6 +6,7 @@ import type { BrowseManifest, BrowseErlass } from './browse-typen';
 import type { NormSnapshot, NormSnapshotDatei } from './typen';
 import type { KantonSystematik } from './systematik';
 import { randtitelKnoten } from './darstellung';
+import { normtextDateiUrl } from './dateiUrl';
 
 // ── Manifest (einmal, gecacht als laufende Promise) ──────────────────────────
 let manifestPromise: Promise<BrowseManifest | null> | null = null;
@@ -119,10 +120,11 @@ const dateiCache = new Map<string, Promise<NormSnapshotDatei | null>>();
 export function ladeErlassDatei(datei: string): Promise<NormSnapshotDatei | null> {
   let p = dateiCache.get(datei);
   if (!p) {
+    const url = normtextDateiUrl(datei);
     p = (async () => {
-      const res = await fetch(`/normtext/${datei}`);
+      const res = await fetch(url);
       if (res.status === 404) return null;
-      if (!res.ok) throw new Error(`HTTP ${res.status} für /normtext/${datei}`);
+      if (!res.ok) throw new Error(`HTTP ${res.status} für ${url}`);
       const d = (await res.json()) as NormSnapshotDatei;
       return Array.isArray(d.eintraege) ? d : null;
     })();
@@ -237,7 +239,7 @@ const strukturCache = new Map<string, Promise<StrukturDoc | null>>();
  *  Transiente Fehler werden NICHT gecacht (O-1.7): Cache-Eintrag bei Fehlschlag
  *  verworfen (nächster Zugriff neu); nur echte 404 bleibt als null gecacht. */
 function ladeStrukturDoc(ebene: string, key: string): Promise<StrukturDoc | null> {
-  const url = `/normtext/struktur/${ebene}/${key}.json`;
+  const url = normtextDateiUrl(`struktur/${ebene}/${key}.json`);
   let p = strukturCache.get(url);
   if (!p) {
     p = (async () => {

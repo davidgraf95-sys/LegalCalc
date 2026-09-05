@@ -103,7 +103,7 @@ function DanebenKnopf({ ziel, label, oeffneDaneben, className = 'ml-1' }: {
     <button type="button" onClick={() => oeffneDaneben(ziel)}
       title={`${label} nebeneinander öffnen`} aria-label={`${label} nebeneinander öffnen`}
       className={`${className} inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-md border border-line text-ink-500 hover:text-brass-700 hover:border-brass-400 transition-colors`}>
-      <span aria-hidden className="text-base leading-none">⧉</span>
+      <span aria-hidden className="lc-griff-glyph">⧉</span>
     </button>
   );
 }
