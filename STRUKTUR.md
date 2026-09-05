@@ -33,6 +33,9 @@ falsch — korrigiert 30.8.2026). Karten abgeschlossener Sessions (älter als
 werden direkt unter dem KARTEN-Anker eingefügt (jüngste zuoberst).
 
 <!-- KARTEN -->
+## Session 5.9.2026 (Mittag) — QS-EFFIZIENZ: sechs Checklisten-Positionen, PR #717 (a647b7a62)
+**Gebaut (Sonnet-Bauer, Opus-Gegenprüfung «bestanden mit Auflagen», Auflagen im PR behoben):** `npm run projektionen` (Zähler/Feed/Historie/E2E-Shards; Manifest bewusst draussen — Pin vor Drift-Prüfung) + Landungs-Skill Nachkontrolle 8/9 · `schlankheit:update` gezielt (unbekannte Pfade Exit 1, Rot-Beweis, #699) · Paritäts-Tor Gegenrichtung ci.yml→lokal inkl. npx-Pfadform, `ALLOWLIST_NUR_CI` (Rot-Beweis, #712) · Messung Klasse `entwurf-antwort` (Label auf #707, Schema 5, Zeitreihe migriert) · `src/lib/suche/` bleibt ausserhalb des Risiko-Prädikats (§17-Gegengewicht, Recherche #681) · ZhStueckFixture per #715 gebucht. Steuerdeckel `check-*.ts` gerissen (+10 KB) ⇒ Prosa-Diät in vier Toren (−14.8 KB, Code byte-gleich) statt Deckel-Hebung; Hook-Edit vom Auto-Mode-Klassifizierer geblockt (Memory-Eintrag). Jules nicht einsetzbar (alle Positionen ausserhalb `src/**`). Offen: Steuerdeckel-Streichentscheid (David). Kontingent-Lauf ohne Alarm.
+
 
 ## Session 4./5.9.2026 (Nacht) — Nachtmandat «UI wirksam bis stop»: 12 UI-Befund-Batches, Design-Konsistenz R4–R7, Monitor-Rot behoben, 27 PRs
 
