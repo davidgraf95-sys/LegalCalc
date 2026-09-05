@@ -83,12 +83,13 @@ export function Shell({ children }: { children: ReactNode }) {
   const navigate = useNavigate();
   // R4-D (5.9.2026): der ⧉-Griff der Pane-Titelleiste schrieb den Layout-Link
   // mit eigener `writeText`-Zeile in die Zwischenablage — dieselbe Handlung wie
-  // «Link teilen» (`LinkTeilenButton`), nur mit eigener Mechanik. Der Griff
-  // zeigt bewusst KEINE sichtbare Quittung (die 28-px-Zeile hat keinen Platz
-  // dafür, und eine dazuzuerfinden wäre eine neue Design-Entscheidung, kein
-  // Konsistenz-Fix); `kopiert` bleibt darum ungelesen. Vereinheitlicht wird die
-  // MECHANIK, nicht die Rückmeldung (§5/§10).
-  const { kopieren: kopiereLayoutLink } = useKopieren();
+  // «Link teilen» (`LinkTeilenButton`), nur mit eigener Mechanik.
+  // David-Entscheid 5.9.2026 (W2·19-DESIGN-KONSISTENZ Runde 8, #692-Nachzug):
+  // die frühere Begründung («keine Quittung, das wäre ein neuer Entscheid»)
+  // ist überholt — jetzt Quittung, per `PaneKopfProps.teilenKopiert`, Muster
+  // wie `KopierButton` (Glyphen-Swap statt Text, die Zeile hat keinen Platz für
+  // Text). `kopiert` wird darum jetzt gelesen und durchgereicht.
+  const { kopiert: layoutLinkKopiert, kopieren: kopiereLayoutLink } = useKopieren();
   const [schubladeOffen, setSchubladeOffen] = useState(false);
   const schubladeRef = useRef<HTMLDivElement>(null);
   const primaerWurzel = useRef<HTMLElement>(null); // Scroll-/Query-Wurzel des primären Panes (B-2.5)
@@ -364,7 +365,7 @@ export function Shell({ children }: { children: ReactNode }) {
     <div className="min-h-screen bg-paper">
       {/* Skip-Link (WCAG 2.4.1): erstes fokussierbares Element, springt in den Inhalt. */}
       <a href="#inhalt"
-        className="lc-btn lc-btn-primary sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-50">
+        className="lc-btn lc-btn-primary sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-modal">
         Zum Inhalt springen
       </a>
 
@@ -498,12 +499,12 @@ export function Shell({ children }: { children: ReactNode }) {
                        darauf keine Alpha-Variante bauen; Wurzel-Fix bleibt
                        W2·11-DESIGN, tailwind.config.js ist hier TABU) — der Hover
                        wirkte dadurch bislang gar nicht. */
-                    className="hidden lg:block shrink-0 w-1.5 -mx-0.5 z-10 cursor-col-resize bg-line-strong transition-colors hover:bg-brass-300 focus-visible:bg-brass-400" />
+                    className="hidden lg:block shrink-0 w-1.5 -mx-0.5 z-sticky cursor-col-resize bg-line-strong transition-colors hover:bg-brass-300 focus-visible:bg-brass-400" />
                   <SekundaerPane pfad={pfad} {...titelVon(livePfad(i))} style={wachstum(i + 1)}
                     onNavigiert={meldeLive}
                     onSchliessen={() => schliesseUndFokus(i)}
                     onHauptfenster={() => zumHauptfenster(i)}
-                    onTeilen={() => kopiereLayoutLink(layoutPermalink(liveSek))}
+                    onTeilen={() => kopiereLayoutLink(layoutPermalink(liveSek))} teilenKopiert={layoutLinkKopiert}
                     onLinks={() => verschiebePane(i + 1, i)} onRechts={() => verschiebePane(i + 1, i + 2)}
                     kannLinks kannRechts={i < pane.sekundaer.length - 1}
                     ziehbar={multipane} {...dnd.griff(i + 1)} {...dnd.spalte(i + 1)} />
@@ -529,10 +530,14 @@ export function Shell({ children }: { children: ReactNode }) {
               ist die Rolle «Vollflächen-Schublade», Deckung unverändert 50 %.
               Ohne diese eine Zeile trüge der neue Wächter (Prüfung 5 in
               `scripts/check-design-tokens.ts`) eine Ausnahme für genau das
-              Muster, das er verbietet (§6.7). */}
-          <div className="lc-scrim-voll fixed inset-0 z-30" onClick={() => setSchubladeOffen(false)} aria-hidden />
+              Muster, das er verbietet (§6.7).
+              C3 (5.9.2026, R6-C): `z-30`/`z-40`/`z-50` → `z-dropdown`/
+              `z-overlay`/`z-modal` (Schichtungs-Skala, index.css bei
+              --z-base), Werte unverändert, nur benannt — s. Prüfung 6 im
+              selben Wächter. */}
+          <div className="lc-scrim-voll fixed inset-0 z-dropdown" onClick={() => setSchubladeOffen(false)} aria-hidden />
           <div id="seitenleisten-schublade" ref={schubladeRef} tabIndex={-1} role="dialog" aria-modal="true" aria-label="Navigation"
-            className="fixed top-0 left-0 z-40 h-full w-4/5 max-w-xs bg-paper-raised border-r border-line shadow-lg overflow-y-auto focus:outline-none [&_nav_a]:py-3 [&_nav_summary]:py-3">
+            className="fixed top-0 left-0 z-overlay h-full w-4/5 max-w-xs bg-paper-raised border-r border-line shadow-lg overflow-y-auto focus:outline-none [&_nav_a]:py-3 [&_nav_summary]:py-3">
             <div className="flex items-center justify-between px-4 py-3 border-b border-line sticky top-0 bg-paper-raised">
               <span className="lc-overline">Navigation</span>
               {/* A3-1 (R3-β): EIN Schliess-✕ der App (`lc-btn-ghost` fällt weg,

@@ -10,7 +10,7 @@ import { ParteiEditor } from './VorlageKlageVereinfacht';
 import type { PdfBanner } from '../lib/vorlagen/banner';
 import { BetragsFeld } from '../components/BetragsFeld';
 import { DatumsFeld } from '../components/DatumsFeld';
-import { Checkbox, Field, GruppenTitel, inputCls, ListenEditor } from '../components/vorlagen/ui';
+import { Checkbox, Field, GruppenTitel, ListenEditor, NICHT_GESPEICHERT_HINWEIS, inputCls } from '../components/vorlagen/ui';
 import { SelectionGrid } from '../components/ui/SelectionGrid';
 import { GerichtsWahlBlock } from '../components/vorlagen/GerichtsWahlBlock';
 import { useWizardState } from '../components/vorlagen/useWizardState';
@@ -386,7 +386,7 @@ export function VorlageKlageOrdentlich() {
       intro="Erstellt die Klageschrift nach Art. 221 ZPO aus festen Bausteinen: Rechtsbegehren, Streitwertangabe, Tatsachenbehauptungen mit Beweisofferte je Ziffer (Pflicht), fakultative rechtliche Begründung, Beweismittel- und Beilagenverzeichnis — Gerichts-Adressat für alle Kantone, Klagefrist-Berechnung mit Gerichtsferien. Ohne Sprachmodell."
       norms={card?.norms ?? []}
       badge="Papierform · unterschreiben · im Doppel"
-      fussnote="Eingaben werden nicht gespeichert – sie bestehen nur, solange diese Seite geöffnet ist."
+      fussnote={NICHT_GESPEICHERT_HINWEIS}
       zuruecksetzen={zuruecksetzen}
       schritte={SCHRITTE} schritt={schritt} setSchritt={setSchritt}
       fehler={fehler}

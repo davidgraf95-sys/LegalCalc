@@ -18,6 +18,8 @@
 // LM-044/N1 (Chip-Grammatik: <button> = geschlossener Hairline-Rahmen).
 // Reine Anzeige (§3) — Zählen und Filtern bleiben beim Aufrufer.
 
+import { zahlGruppiert } from '../typografie';
+
 export type FacettenOption = {
   id: string;
   text: string;
@@ -65,7 +67,7 @@ export function FacettenGruppe({ label, gruppenLabel, optionen }: {
               ink-600 (nicht ink-500): 12px-Ziffer auf --well ≥4.5:1 (R4/WCAG
               1.4.3, Werte nicht runden — ink-500 lag bei 4.47:1). Aktiv erbt
               brass-700. */}
-          {o.text}{' '}<span className={`num ml-1.5 ${o.aktiv ? '' : 'text-ink-600'}`}>{o.n}</span>
+          {o.text}{' '}<span className={`num ml-1.5 ${o.aktiv ? '' : 'text-ink-600'}`}>{zahlGruppiert(o.n)}</span>
         </button>
       ))}
     </div>

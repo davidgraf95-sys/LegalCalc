@@ -11,6 +11,17 @@ import { useZielSichtbar } from './useZielSichtbar';
 
 export const inputCls = 'lc-input';
 
+/** Geteilter Datenschutz-Hinweis für Vorlagen, deren Eingaben (anders als der
+ *  Wizard-Standardtext in `wizard.tsx`) NICHT lokal zwischengespeichert
+ *  werden — bisher drei Formulierungen in sechs Vorlagen (Familienrecht:
+ *  Vollversalien-"NICHT"; ZPO-Eingaben: Nebensatz), jetzt eine (W2·19-
+ *  DESIGN-KONSISTENZ R6-D, 5.9.2026). Wortlaut = die ZPO-Fassung: verstösst
+ *  nicht gegen A2 (kein ALL-CAPS-Fliesstext, DESIGN-REGLEMENT.md), die
+ *  Vollversalien-Fassung schon. AG-Gründung bleibt bewusst separat — dort
+ *  wird tatsächlich lokal zwischengespeichert, andere Tatsachenlage. */
+export const NICHT_GESPEICHERT_HINWEIS =
+  'Eingaben werden nicht gespeichert – sie bestehen nur, solange diese Seite geöffnet ist.';
+
 /** HTML-«labelable elements», soweit in Formularen dieses Hauses gebraucht.
  *  Steuert, wann `Field` `htmlFor` setzen darf (siehe dort). */
 const BESCHRIFTBAR = ['input', 'select', 'textarea'];
@@ -463,7 +474,7 @@ export function ErgebnisSprung({ zielId, label = '↓ Ergebnis' }: { zielId: str
     // darum das schlimmste (sie läge auf JEDER Seite über dem Inhalt). Die
     // Utility hängt am Element und überlebt jede künftige Umformulierung des
     // globalen Druckblocks. §9-Bug-Check zu PR #440, B1.
-    <a href={`#${zielId}`} data-verdikt-sprung className={`${imPane ? 'sm:hidden ' : ''}print:hidden fixed bottom-4 right-4 z-40 lc-btn-outline lc-btn-sm shadow-md bg-surface`}
+    <a href={`#${zielId}`} data-verdikt-sprung className={`${imPane ? 'sm:hidden ' : ''}print:hidden fixed bottom-4 right-4 z-overlay lc-btn-outline lc-btn-sm shadow-md bg-surface`}
       onClick={(e) => { e.preventDefault(); document.getElementById(zielId)?.scrollIntoView({ behavior: 'smooth', block: 'start' }); }}>
       {label}
     </a>

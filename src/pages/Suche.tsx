@@ -156,6 +156,7 @@ export function Suche() {
             vorschlag={vorschlag}
             abdeckung={abdeckung}
             onVorschlag={(b) => setze(b)}
+            onLeeren={() => setze('')}
             onNavigate={(href) => navigate(href)}
             sektionsRollen
           />

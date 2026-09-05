@@ -4,6 +4,7 @@ import { themaText, istSynth, istBetreff, istBge, hauptIdentitaet } from '../../
 import { GEBIET_LABEL } from '../../lib/normtext/register';
 import { NormChip } from './NormChip';
 import { datumAnzeige, DATUM_UNBEKANNT_TITEL, spracheBadgeTitel } from './format';
+import { StatusBadge } from '../verzahnung/StatusBadge';
 
 // Karte eines Entscheids (Dichte 'karten'). Hierarchie-Umkehr ggü. der alten
 // Karte: das THEMA führt (Scent), das Aktenzeichen wandert in die gedämpfte
@@ -57,9 +58,7 @@ export function EntscheidKarte({ e, onNorm }: {
               <span className="text-ink-500 italic"
                 title="Betreff/Titel aus dem amtlichen Portal — keine Regeste">amtl. Betreff</span>
             )}
-            {e.kuratierung === 'maschinell' && (
-              <span className="lc-badge lc-badge-soft" title="Automatisch erfasst, fachlich noch nicht geprüft">ungeprüft</span>
-            )}
+            {e.kuratierung === 'maschinell' && <StatusBadge praedikat="maschinell" />}
           </span>
         </div>
 

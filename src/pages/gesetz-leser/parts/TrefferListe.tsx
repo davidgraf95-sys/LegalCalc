@@ -130,7 +130,7 @@ export function TrefferListe({
           Vorzustand, falls die Marke einmal fehlt. */}
       <div data-treffer-leiste
         style={{ top: 'var(--toc-deckel, 0px)' }}
-        className="sticky z-10 bg-paper pb-1 pt-0.5 text-body-s text-ink-500">
+        className="sticky z-sticky bg-paper pb-1 pt-0.5 text-body-s text-ink-500">
         <p className="min-h-5 truncate">
           <span className="num">{treffer.length}</span> Artikel
           <span aria-hidden className="mx-1 text-ink-300">·</span>
