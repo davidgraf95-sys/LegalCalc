@@ -101,7 +101,7 @@ export function FilterSheet({ anzahl, children }: {
               Kasten im Kasten. ink-600 statt ink-500, weil die 12px-Ziffer auf
               der `--well`-Fläche des Chips ≥4.5:1 braucht (R4; ink-500 lag bei
               4.47:1). LM-051: Trenner als eigener Textknoten, sonst «Filter3». */}
-          {anzahl > 0 && <>{' '}<span className="num tabular-nums text-ink-600">{anzahl}</span></>}
+          {anzahl > 0 && <>{' '}<span className="num text-ink-600">{anzahl}</span></>}
         </button>
       </div>
 

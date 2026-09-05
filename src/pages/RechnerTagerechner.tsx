@@ -170,9 +170,24 @@ export function RechnerTagerechner() {
               <div className="max-w-reading">
                 {/* D-7 (R3-α, 31.8.2026): Wortlaut UNVERÄNDERT (§8) — er nennt
                     die beiden Auswege selbst; nur die Anatomie kommt jetzt aus
-                    dem Baustein. */}
-                <Leerzustand art="bestand"
-                  text="Kein Preset gefunden – Frist manuell eingeben oder die Spezialrechner der Fristen-Kategorie prüfen (Verjährung, Arbeits-/Mietkündigung, …)." />
+                    dem Baustein.
+
+                    R4-E (5.9.2026): die ART war falsch deklariert. GEMESSEN am
+                    Preview: `/rechner/tagerechner` mit Suchtext «zzzzz» rendert
+                    `data-leerzustand="bestand"` ohne Weiterweg —
+                    `/rechtsprechung?q=zzzzzz` im selben Zustand
+                    `data-leerzustand="filter"` MIT Weiterweg. Derselbe Sachverhalt,
+                    zwei Darstellungen. Massgeblich ist die Lage, nicht der
+                    Wortlaut (Doktrin an den beiden `Gesetze.tsx`-Fundstellen):
+                    dieser Zweig läuft NUR bei `presetQuery.trim() !== ''` — es
+                    GÄBE also Presets, die Suche verdeckt sie. Das ist
+                    `art="filter"`, und dort ist der Weiterweg Pflicht («nie eine
+                    Sackgasse»); anders als in `Gesetze.tsx` existiert er hier
+                    auch wirklich: das Feld leeren bringt die Liste zurück.
+                    Der Satz selbst bleibt Zeichen für Zeichen stehen (§8). */}
+                <Leerzustand art="filter"
+                  text="Kein Preset gefunden – Frist manuell eingeben oder die Spezialrechner der Fristen-Kategorie prüfen (Verjährung, Arbeits-/Mietkündigung, …)."
+                  weiterweg={{ text: 'Suche leeren', onKlick: () => setPresetQuery('') }} />
               </div>
             ) : (
               <div className="space-y-2 max-w-xl">
