@@ -280,6 +280,50 @@ if (alphaFunde.size > 0) {
   }
 }
 
+// ── Prüfung 6: Schichtungs-Skala — keine rohe z-Index-Utility mehr (C3) ─────
+// (Prüfung 5 = der Ad-hoc-Scrim-Ausdruck, SCRIM_RE oben im Hauptlauf — der
+// Name ist an zwei Stellen bereits verankert: `layout/Shell.tsx` und
+// `src/tests/design-r2d-mobil-zustaende.test.ts`.)
+// GEMESSEN (Design-Review C3, 5.9.2026): 65 Fundstellen in ~30 Dateien trugen
+// `z-<Zahl>`/`z-[<Zahl>]` ohne Skala — Reihenfolgen liessen sich nur durch
+// Ausprobieren rekonstruieren (Beleg: die geschachtelten Kommentare an
+// `v3/LeserKopf.tsx`/`v3/LeserScrim.tsx`/`layout/InhaltsKopf.tsx`, je «ANLASS
+// der Zahl» erklärend). Migriert auf `--z-*`/`zIndex`-Rollen (index.css bei
+// --z-base, tailwind.config.js), Werte unverändert (1:1 benannt, keine Zahl
+// geändert — Stapelreihenfolge bewiesen identisch). Diese Prüfung verbietet
+// KÜNFTIGE rohe z-Utilities; Tailwinds eingebaute Zahlen-Skala bleibt technisch
+// erreichbar (`extend` entfernt sie nicht), hier ist sie trotzdem verboten.
+{
+  // KEIN `\b` nach `\]`: «]» ist selbst ein Nicht-Wortzeichen, ein
+  // nachfolgendes Nicht-Wortzeichen (Anführungszeichen, Leerzeichen) böte
+  // darum NIE eine Wortgrenze — `\bz-\[[0-9]+\]` bräuchte sie auch nicht,
+  // die schliessende Klammer ist Grenze genug (Rot-Beweis 5.9.2026:
+  // `z-[99]` blieb mit `\b` am Ende unentdeckt).
+  const Z_ROH_RE = /\bz-\[[0-9]+\]|\bz-[0-9]+\b/g;
+  /** Befristete Ausnahme (Kollisions-Vorsicht, paralleler Bauer auf demselben
+   *  Branch, C3/5.9.2026): Datei → Satz, der dort stehen MUSS. Fällt weg,
+   *  sobald die Datei in einer eigenen, kollisionsfreien Runde migriert ist. */
+  const Z_ROH_AUSNAHMEN: Record<string, string> = {
+    'src/components/layout/Shell.tsx': 'C3-AUSNAHME (5.9.2026): unmigriert, Kollisions-Vorsicht',
+    'src/components/layout/HeaderSuche.tsx': 'C3-AUSNAHME (5.9.2026): unmigriert, Kollisions-Vorsicht',
+    'src/components/rechtsprechung/EntscheidZeile.tsx': 'C3-AUSNAHME (5.9.2026): unmigriert, Kollisions-Vorsicht',
+  };
+  for (const datei of dateien(WURZEL)) {
+    const begruendung = Z_ROH_AUSNAHMEN[datei];
+    if (begruendung !== undefined) {
+      if (!readFileSync(datei, 'utf8').includes(begruendung))
+        fehler.push(`${datei} — C3-Ausnahme ohne Begründung am Fundort: der Satz «${begruendung}» steht dort nicht (mehr). Entweder die Begründung zurückschreiben oder die Datei auf die Schichtungs-Skala migrieren und die Ausnahme hier streichen.`);
+      continue;
+    }
+    ohneKommentare(readFileSync(datei, 'utf8')).split('\n').forEach((zeile, i) => {
+      let zm: RegExpExecArray | null;
+      Z_ROH_RE.lastIndex = 0;
+      while ((zm = Z_ROH_RE.exec(zeile)) !== null)
+        fehler.push(`${datei}:${i + 1} — rohe z-Index-Utility «${zm[0]}» (C3, Schichtungs-Skala). Eine der Rollen aus tailwind.config.js nutzen (z-base/-sticky/-entscheid-sticky/-reader-scrim/-reader-kopf/-inhalt-kopf/-leiste/-dropdown/-overlay/-modal) oder — falls wirklich neu — Wert + Rolle in src/index.css bei --z-base ergänzen.`);
+    });
+  }
+}
+
 if (fehler.length > 0) {
   console.error(`Token-Schranke ROT — ${fehler.length} Verstoss/Verstösse (DESIGN-REGLEMENT B2/F7/§13):`);
   for (const f of fehler) console.error('  ' + f);

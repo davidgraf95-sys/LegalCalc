@@ -211,7 +211,7 @@ export function LeserAnsichtV3({ kompakt, fussnotenAnzahl, hatAenderungsvermerke
           role="group"
           aria-label="Ansicht"
           data-v3-ansicht-panel
-          className="lc-schwebeflaeche absolute right-0 top-full z-40 mt-1.5 flex w-[15rem] max-w-[calc(100vw-2rem)] flex-col gap-0.5 p-1.5"
+          className="lc-schwebeflaeche absolute right-0 top-full z-overlay mt-1.5 flex w-[15rem] max-w-[calc(100vw-2rem)] flex-col gap-0.5 p-1.5"
         >
           {/* Ä114: dasselbe Wort wie am Öffner und im `aria-label` — der
               Glossar-Eintrag «Menü der Darstellungsschalter → Ansicht». */}

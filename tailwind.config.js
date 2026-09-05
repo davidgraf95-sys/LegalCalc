@@ -185,6 +185,18 @@ export default {
       transitionDuration: { fast: 'var(--dur-fast)', base: 'var(--dur-base)', slow: 'var(--dur-slow)', stage: 'var(--dur-stage)' },
       transitionTimingFunction: { DEFAULT: 'var(--ease)' },
       boxShadow: { sm: 'var(--shadow-sm)', md: 'var(--shadow-md)', lg: 'var(--shadow-lg)' },
+      // Schichtungs-Skala (C3, 5.9.2026) — Rollen statt roher Zahlen, Werte
+      // unverändert aus dem Bestand migriert (Herleitung + Reihenfolge in
+      // src/index.css bei --z-base). `extend` lässt Tailwinds Default-Skala
+      // (z-0/10/20/…) technisch weiter zu — Prüfung 5 in
+      // check-design-tokens.ts verbietet ihre NEUE Verwendung im Quellbaum.
+      zIndex: {
+        base: 'var(--z-base)', sticky: 'var(--z-sticky)',
+        'entscheid-sticky': 'var(--z-entscheid-sticky)',
+        'reader-scrim': 'var(--z-reader-scrim)', 'reader-kopf': 'var(--z-reader-kopf)',
+        'inhalt-kopf': 'var(--z-inhalt-kopf)', leiste: 'var(--z-leiste)',
+        dropdown: 'var(--z-dropdown)', overlay: 'var(--z-overlay)', modal: 'var(--z-modal)',
+      },
       // `reading` (40rem ≈ 66–71 ch) = die knappe Standard-Lesespalte site-weit
       // (Verdikte, Leden). `normtext` (42rem = 672px) = die etwas grosszügigere
       // Lesespalte NUR des Gesetzes-Readers (E6/A37, David 16.7.2026: «gib dem

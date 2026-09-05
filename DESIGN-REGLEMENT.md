@@ -240,6 +240,19 @@ kleiner ist als der 4px-Token selbst — eine Rundung aus der Skala würde den
 Balken zum Punkt verformen. Die Legenden-Farbfläche in `SchweizKarte.tsx`
 (12×12px) trägt seither `rounded-sm` (Token), da dort keine solche Enge gilt.
 
+**F7c — Schichtung aus der Skala, nie aus einer Zahl (C3, 5.9.2026).**
+Stapelreihenfolge kommt aus `--z-*`/`zIndex`-Rollen (index.css bei --z-base,
+tailwind.config.js) — kein rohes `z-<Zahl>`/`z-[<Zahl>]`. Rollen (aufsteigend):
+`z-base` · `z-sticky` · `z-entscheid-sticky` · `z-reader-scrim` ·
+`z-reader-kopf` · `z-inhalt-kopf` · `z-leiste` · `z-dropdown` · `z-overlay` ·
+`z-modal`. Befund: 65 Fundstellen ohne Skala liessen Überlagerungs-Reihenfolgen
+nur durch Ausprobieren rekonstruieren. Migriert 1:1 auf denselben Wert (keine
+Zahl geändert). Wächter: Prüfung 6 in `scripts/check-design-tokens.ts` (Rot-
+Beweis 5.9.2026: `z-[99]` wurde erkannt). Drei Dateien (`layout/Shell.tsx`,
+`layout/HeaderSuche.tsx`, `rechtsprechung/EntscheidZeile.tsx`) trugen eine
+befristete, benannte Ausnahme (Kollisions-Vorsicht, paralleler Bauer) —
+Folgeschritt: migrieren, Ausnahme streichen.
+
 **F8 — Motion zurückhaltend.** Mechanisch-präzise, kein Overshoot (Token-
 Kurven/-Dauern); `prefers-reduced-motion` wird respektiert (Base-Reset).
 

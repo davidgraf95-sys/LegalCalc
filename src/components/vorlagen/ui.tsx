@@ -474,7 +474,7 @@ export function ErgebnisSprung({ zielId, label = '↓ Ergebnis' }: { zielId: str
     // darum das schlimmste (sie läge auf JEDER Seite über dem Inhalt). Die
     // Utility hängt am Element und überlebt jede künftige Umformulierung des
     // globalen Druckblocks. §9-Bug-Check zu PR #440, B1.
-    <a href={`#${zielId}`} data-verdikt-sprung className={`${imPane ? 'sm:hidden ' : ''}print:hidden fixed bottom-4 right-4 z-40 lc-btn-outline lc-btn-sm shadow-md bg-surface`}
+    <a href={`#${zielId}`} data-verdikt-sprung className={`${imPane ? 'sm:hidden ' : ''}print:hidden fixed bottom-4 right-4 z-overlay lc-btn-outline lc-btn-sm shadow-md bg-surface`}
       onClick={(e) => { e.preventDefault(); document.getElementById(zielId)?.scrollIntoView({ behavior: 'smooth', block: 'start' }); }}>
       {label}
     </a>

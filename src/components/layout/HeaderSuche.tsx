@@ -407,6 +407,10 @@ export function HeaderSuche({ onFokusModus, onFokusZurueck }: {
         // dieser durch die transparente Zeile hindurch. `bg-paper` schliesst NUR
         // diesen Fundort, ohne SuchResultate selbst (und damit Hero/`/suche`)
         // anzufassen.
+        // C3-AUSNAHME (5.9.2026): unmigriert, Kollisions-Vorsicht — diese Datei
+        // stand im selben Moment bei einem parallelen Bauer auf demselben Branch
+        // unter Bearbeitung; `z-30` bleibt roh, bis eine kollisionsfreie Runde sie
+        // auf `z-dropdown` (Schichtungs-Skala, index.css) zieht.
         <div className="absolute left-0 right-0 top-full mt-2 z-30 max-h-[70vh] overflow-y-auto overscroll-contain rounded-lg bg-paper max-[1400px]:fixed max-[1400px]:inset-x-2 max-[1400px]:left-2 max-[1400px]:right-2 max-[1400px]:top-[3.75rem] max-[1400px]:mt-0">
           {zeigtLeer
             // UI-NAV O1: Leerzustand (⌘K/Fokus ohne Eingabe) — Verlauf + Einstiege.

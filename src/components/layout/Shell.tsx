@@ -530,7 +530,12 @@ export function Shell({ children }: { children: ReactNode }) {
               ist die Rolle «Vollflächen-Schublade», Deckung unverändert 50 %.
               Ohne diese eine Zeile trüge der neue Wächter (Prüfung 5 in
               `scripts/check-design-tokens.ts`) eine Ausnahme für genau das
-              Muster, das er verbietet (§6.7). */}
+              Muster, das er verbietet (§6.7).
+              C3-AUSNAHME (5.9.2026): unmigriert, Kollisions-Vorsicht — diese
+              Datei stand im selben Moment bei einem parallelen Bauer auf
+              demselben Branch unter Bearbeitung; `z-30`/`z-40`/`z-50` bleiben
+              roh, bis eine kollisionsfreie Runde sie auf die Schichtungs-Skala
+              (index.css bei --z-base) zieht — s. Prüfung 6 im selben Wächter. */}
           <div className="lc-scrim-voll fixed inset-0 z-30" onClick={() => setSchubladeOffen(false)} aria-hidden />
           <div id="seitenleisten-schublade" ref={schubladeRef} tabIndex={-1} role="dialog" aria-modal="true" aria-label="Navigation"
             className="fixed top-0 left-0 z-40 h-full w-4/5 max-w-xs bg-paper-raised border-r border-line shadow-lg overflow-y-auto focus:outline-none [&_nav_a]:py-3 [&_nav_summary]:py-3">

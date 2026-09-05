@@ -290,6 +290,36 @@
     /* Radien – zurückhaltend; xl/2xl nur für grosse Container (Sektionen, Dialoge) */
     --radius-sm:4px; --radius-md:8px; --radius-lg:12px;
     --radius-xl:16px; --radius-2xl:24px;
+    /* ── Schichtungs-Skala (C3, 5.9.2026, Design-Review R6) ────────────────
+       VORHER: 65 Fundstellen in ~30 Dateien trugen rohe `z-<Zahl>`/`z-[<Zahl>]`
+       ohne Skala — Reihenfolgen liessen sich nur durch Ausprobieren rekon-
+       struieren. Migriert 1:1 auf denselben resolvierten Wert (keine Zahl
+       geändert, nur benannt) — die Stapelreihenfolge ist damit BEWEISBAR
+       identisch zum Vorher-Stand. Reihenfolge, aufsteigend, mit den Dateien,
+       die sie tragen:
+         0  --z-base           ArtikelLeser.tsx (Ruhezustand des Artikel-Blocks)
+         10 --z-sticky         app-weit: klebende Kopf-/Werkzeugleisten
+         15 --z-entscheid-sticky  EntscheidLeser.tsx (zweite Sticky-Ebene dort)
+         16 --z-reader-scrim   v3/LeserScrim.tsx (Ansicht-Menü-Scrim)
+         17 --z-reader-kopf    v3/LeserKopf.tsx (klebt ÜBER seinem eigenen Scrim)
+         19 --z-inhalt-kopf    layout/InhaltsKopf.tsx (ÜBER allen Reader-Sticky-
+                                Leisten 15/16, UNTER der App-Leiste 20/30)
+         20 --z-leiste         layout/Topbar.tsx (App-Kopfzeile)
+         30 --z-dropdown       Popover/Tooltips/Menüs (HeaderSuche-Dropdown,
+                                RichterFilter, SprachUmschalter, Begriff, …)
+         40 --z-overlay        abdunkelnde Scrim-Flächen hinter Sheets/Panels
+         50 --z-modal          Dialog-/Sheet-/Panel-Inhalt über seinem Scrim
+       Bewusst NICHT verändert: die Reihenfolge selbst — nur ihr Ausdruck.
+       Wächter: Prüfung 5 in `scripts/check-design-tokens.ts` verbietet neue
+       rohe `z-[…]`/Tailwind-Zahlen-Utilities ausserhalb dieser Skala. Drei
+       Dateien blieben unmigriert (Kollisions-Vorsicht, paralleler Bauer
+       «Entscheide-Batch» auf demselben Branch): `layout/Shell.tsx`,
+       `layout/HeaderSuche.tsx`, `rechtsprechung/EntscheidZeile.tsx` — dafür
+       eine befristete, benannte Ausnahme im Wächter (Folgeschritt: migrieren,
+       Ausnahme entfernen). */
+    --z-base:0; --z-sticky:10; --z-entscheid-sticky:15;
+    --z-reader-scrim:16; --z-reader-kopf:17; --z-inhalt-kopf:19;
+    --z-leiste:20; --z-dropdown:30; --z-overlay:40; --z-modal:50;
     /* Schatten – sehr weich, niedrig; sm/md differenziert (Design-Review
        6.6.2026: vorher identische Tokens) */
     --shadow-sm:0 1px 2px rgba(26,26,23,.04);
@@ -1895,8 +1925,9 @@
      Nur die FARBE/DECKUNG, bewusst NICHT Position, z-Index und
      `pointer-events`: wo der Scrim liegt und in welcher Ebene, entscheidet die
      Overlay-Anatomie des Aufrufers (`fixed` in der Einzelansicht, `absolute` in
-     der Overlay-Schicht eines Panes; z-[16] unter dem klebenden Leser-Kopf,
-     z-40 unter einem Blatt). Eine Klasse, die das mitbrächte, wäre an genau
+     der Overlay-Schicht eines Panes; z-reader-scrim unter dem klebenden
+     Leser-Kopf, z-overlay unter einem Blatt — Schichtungs-Skala oben bei
+     --z-base). Eine Klasse, die das mitbrächte, wäre an genau
      einer der sieben Fundstellen richtig. Rollen und Herleitung der drei
      Deckungen: bei den Tokens oben. */
   .lc-scrim { background-color: var(--scrim); }

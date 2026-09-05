@@ -268,7 +268,7 @@ export function VorlagenWizardRahmen({
           Utility am Element überlebt jede künftige Umformulierung des Blocks. */}
       {!vorschauImBild && (
         <button type="button" onClick={zurVorschau} data-verdikt-sprung
-          className={`${pk('md:hidden', '@3xl/pane:hidden')} print:hidden fixed bottom-4 right-4 z-30 lc-btn-primary lc-btn-sm rounded-full px-4 shadow-lg`}>
+          className={`${pk('md:hidden', '@3xl/pane:hidden')} print:hidden fixed bottom-4 right-4 z-dropdown lc-btn-primary lc-btn-sm rounded-full px-4 shadow-lg`}>
           Vorschau ↓
         </button>
       )}

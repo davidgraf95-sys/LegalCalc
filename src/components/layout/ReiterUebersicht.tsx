@@ -161,7 +161,7 @@ export function ReiterUebersicht() {
           role="dialog"
           aria-label="Alle geöffneten Reiter"
           style={{ top: pos.top, left: pos.left }}
-          className="lc-schwebeflaeche fixed z-40 w-[20rem] max-w-[calc(100vw-1rem)] p-2 max-h-[70vh] overflow-y-auto focus:outline-none"
+          className="lc-schwebeflaeche fixed z-overlay w-[20rem] max-w-[calc(100vw-1rem)] p-2 max-h-[70vh] overflow-y-auto focus:outline-none"
         >
           <TabPanel
             tabs={tabs}

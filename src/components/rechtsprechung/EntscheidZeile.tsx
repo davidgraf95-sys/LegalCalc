@@ -62,7 +62,11 @@ export function EntscheidZeile({ e, onNorm }: {
           {e.kuratierung === 'maschinell' && <StatusBadge praedikat="maschinell" />}
           {e.sprache !== 'de' && <span className="lc-badge lc-badge-soft uppercase" title={spracheBadgeTitel(e.sprache)}>{e.sprache}</span>}
           {/* lc-chip-zeile (LM-044/N1): Aktions-Form an der ROLLE (span[role=button]),
-              gleiche Grammatik wie in der Karten-Ansicht und der Filterleiste (§23). */}
+              gleiche Grammatik wie in der Karten-Ansicht und der Filterleiste (§23).
+              C3-AUSNAHME (5.9.2026): unmigriert, Kollisions-Vorsicht — diese Datei
+              stand im selben Moment bei einem parallelen Bauer auf demselben
+              Branch unter Bearbeitung; `z-10` bleibt roh, bis eine kollisionsfreie
+              Runde sie auf `z-sticky` (Schichtungs-Skala, index.css) zieht. */}
           {e.normKeys.length > 0 && (
             <span className="lc-chip-zeile relative z-10 flex flex-wrap items-center gap-x-2 gap-y-1">
               {e.normKeys.slice(0, 5).map((k) => <NormChip key={k} normKey={k} onWaehle={onNorm} />)}

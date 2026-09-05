@@ -105,7 +105,7 @@ export function VerlaufUebersicht() {
           role="dialog"
           aria-label="Verlauf – zuletzt geöffnet"
           style={{ top: pos.top, left: pos.left }}
-          className="lc-schwebeflaeche fixed z-40 w-[20rem] max-w-[calc(100vw-1rem)] p-2 max-h-[70vh] overflow-y-auto focus:outline-none"
+          className="lc-schwebeflaeche fixed z-overlay w-[20rem] max-w-[calc(100vw-1rem)] p-2 max-h-[70vh] overflow-y-auto focus:outline-none"
         >
           {gruppen.map((g) => (
             <div key={g.id} className="mb-1 last:mb-0">

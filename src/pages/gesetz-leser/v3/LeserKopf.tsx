@@ -104,17 +104,15 @@ export function LeserKopf({
     // `--nt-stick`, also den Sprung-Offset — eine Quelle für «wie hoch klebt
     // es» (Risiko R1). Höhe aus `--leser-v3-kopf-h` (ebenfalls Rahmen).
     //
-    // `z-[17]` ist eine rohe Zahl, weil das Repo (Stand 16.8.2026) KEINE
-    // z-Index-Token führt — weder in `src/index.css` noch in der Tailwind-
-    // Konfiguration; erfunden würde hier also eine Skala von einem einzigen
-    // Aufrufer aus (§17: Rahmen zuerst, dann Feature). ANLASS der Zahl: die
-    // Such-Leiste der Ist-Volltextansicht klebt auf `z-[16]`
-    // (`inhalt-volltext.tsx:424`) — der V3-Kopf muss darüber liegen, aber unter
-    // den Overlays (`z-40`/`z-50`: Ansicht-Panel, Sheet, Toast). Eine echte
-    // Token-Skala ist ein eigener Design-Schritt (W-3), nicht Beiwerk von H1.
+    // `z-reader-kopf` (C3, 5.9.2026: benannte Rolle für den vormals rohen
+    // Wert 17, Schichtungs-Skala in index.css — vorher gab das Repo (Stand
+    // 16.8.2026) keine z-Index-Token her, s. Chronik dort). ANLASS der Zahl:
+    // der V3-Kopf muss über seinem eigenen Scrim (`z-reader-scrim` = 16,
+    // `LeserScrim.tsx`) liegen, aber unter den Overlays (`z-overlay`/
+    // `z-modal`: Ansicht-Panel, Sheet, Toast).
     <div
       data-v3-kopf
-      className="sticky z-[17] -mx-1 mb-4 border-b border-line bg-paper px-1"
+      className="sticky z-reader-kopf -mx-1 mb-4 border-b border-line bg-paper px-1"
       // ── Ä1 (H2b) · KEINE LEERZONE UNTER DER KRUMEN-LEISTE ──────────────────
       // Gemessen 17.8.2026 @1440: die Krumen-Leiste endet bei y = 102, der
       // V3-Kopf begann bei y = 150 — 48 px Leerzone im Ruhezustand, die beim

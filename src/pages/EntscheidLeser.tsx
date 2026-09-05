@@ -851,7 +851,8 @@ function EntscheidLeserInhalt({ schluessel, ansichtParam, normParam, leseParam }
       {/* Gemeinsamer sticky Kopf-Block (§13-Bug-Fix: EIN sticky-Element statt zweier
           sich überlagernder). Oben — beim BGE mit Volltext — der Fassungs-Umschalter
           (§8: «Amtlicher BGE-Auszug» ⟷ «Vollständiges Urteil»), darunter die Sprung-Chips.
-          Die App-Topbar liegt mit z-20 darüber, dieser Block mit z-[15] darunter.
+          Die App-Topbar liegt mit z-leiste (20) darüber, dieser Block mit
+          z-entscheid-sticky (15) darunter (Schichtungs-Skala, C3, index.css).
           LM-007 (W2·17-UI-BEFUNDE-B3, K-01, Mittel): Topbar + dieser Block belegten
           beim BGE-Volltext (Umschalter sichtbar) rund 190 px dauerhaft sichtbare
           Höhe. B6 (FAHRPLAN-VERZAHNUNG-UI.md §9, «minimalistischer») als Muster
@@ -876,7 +877,7 @@ function EntscheidLeserInhalt({ schluessel, ansichtParam, normParam, leseParam }
         //    als ein alter — der Nachzug gehört an den Pane-Wrapper und ist als
         //    Nebenfund gemeldet, nicht hier.
         <div ref={stickLeisteRef} style={{ top: imPane ? '0.5rem' : 'calc(4rem + 2.25rem)' }}
-          className="sticky z-[15] -mx-5 sm:-mx-6 px-5 sm:px-6 py-1.5 bg-paper border-b border-line space-y-1.5">
+          className="sticky z-entscheid-sticky -mx-5 sm:-mx-6 px-5 sm:px-6 py-1.5 bg-paper border-b border-line space-y-1.5">
           {switcherSichtbar && (
             <Tabs
               items={[

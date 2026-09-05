@@ -50,7 +50,7 @@ export function Topbar({ onMenu, schubladeOffen, seitenleisteEingeklappt, onSeit
   }, [sucheBreit]);
   return (
     <header
-      className="sticky top-0 z-20 border-b border-line lc-glass"
+      className="sticky top-0 z-leiste border-b border-line lc-glass"
     >
       <div className="px-4 sm:px-6 h-16 flex items-center gap-3 sm:gap-5">
         {/* Mobil: Schublade öffnen — auf Desktop trägt die persistente Leiste. */}
