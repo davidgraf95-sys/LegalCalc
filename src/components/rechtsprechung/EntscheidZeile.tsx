@@ -4,6 +4,7 @@ import { themaText, istSynth, istBetreff, istBge, hauptIdentitaet } from '../../
 import { GEBIET_LABEL } from '../../lib/normtext/register';
 import { NormChip } from './NormChip';
 import { datumAnzeige, DATUM_UNBEKANNT_TITEL, spracheBadgeTitel } from './format';
+import { StatusBadge } from '../verzahnung/StatusBadge';
 
 // Kompakte Listen-Zeile (Default-Dichte). Bezeichnung führt mit dem THEMA/Leitsatz
 // (Auftrag David: man soll schon sehen, worum es geht) — die BGE-Nummer steht als
@@ -58,9 +59,7 @@ export function EntscheidZeile({ e, onNorm }: {
             <span className="text-micro italic text-ink-500"
               title="Betreff/Titel aus dem amtlichen Portal — keine Regeste">amtl. Betreff</span>
           )}
-          {e.kuratierung === 'maschinell' && (
-            <span className="lc-badge lc-badge-soft" title="Automatisch erfasst, fachlich noch nicht geprüft">ungeprüft</span>
-          )}
+          {e.kuratierung === 'maschinell' && <StatusBadge praedikat="maschinell" />}
           {e.sprache !== 'de' && <span className="lc-badge lc-badge-soft uppercase" title={spracheBadgeTitel(e.sprache)}>{e.sprache}</span>}
           {/* lc-chip-zeile (LM-044/N1): Aktions-Form an der ROLLE (span[role=button]),
               gleiche Grammatik wie in der Karten-Ansicht und der Filterleiste (§23). */}
