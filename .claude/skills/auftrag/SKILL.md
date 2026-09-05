@@ -156,7 +156,7 @@ keine fachliche Wertung; (c) ein Ziel, ≤ ~5 Dateien, Whitelist benennbar; (d)
 keine offene David-Frage. Typische Fälle: Datei-Splits (Schlankheit §6.6),
 Verschiebungen, Typ-Härtungen ohne Verhaltensänderung. Nie: Tests ändern, neue
 Tests, Rechenlogik, Extraktion, Steuer-Doku. Landung nach Skill `landung`
-§«Fremde PRs» durch einen Opus-Prüfer plus Bauleiter-Mechanik; Jules' eigene
+§«Fremde PRs» (`referenz-jules.md`) durch einen Opus-Prüfer plus Bauleiter-Mechanik; Jules' eigene
 Erfolgsmeldung zählt nichts (§14.7). Ticket-Zahl an die Phasenlage gekoppelt
 (Fahrplan `fahrplaene/FAHRPLAN-FREMDAGENTEN.md` §5): bis Phase 3 gezählt ist,
 höchstens 3 Tickets pro Session; danach 3–5 (seriell bleibt nur die Messung,
