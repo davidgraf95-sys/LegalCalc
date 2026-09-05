@@ -1,5 +1,5 @@
 import { KANTONE } from '../../lib/kantone';
-import { BeruehrtRahmen, EckdatenKachel, FehlerBox, Field, GruppenTitel, inputCls } from '../vorlagen/ui';
+import { BeruehrtRahmen, Checkbox, EckdatenKachel, FehlerBox, Field, GruppenTitel, inputCls } from '../vorlagen/ui';
 import { ErgebnisBlock } from '../ErgebnisBlock';
 import { Tabs } from '../ui/Tabs';
 import { useState } from 'react';
@@ -280,11 +280,12 @@ export function ZpoFristenForm({ live }: {
 
         {!aktVerfahren.stillstand && (
           <Field label="Hinweis des Gerichts auf Nichtgeltung des Stillstands?" hint="Art. 145 Abs. 3 ZPO – Gültigkeitsvorschrift (BGE 139 III 78)">
-            <label className="flex items-center gap-2.5 py-1.5 text-body-s cursor-pointer pt-2 text-ink-700">
-              <input type="checkbox" checked={form.gerichtshinweisStillstand ?? true}
-                onChange={(e) => set('gerichtshinweisStillstand', e.target.checked)} />
-              Gericht hat hingewiesen (sonst gilt der Stillstand gleichwohl)
-            </label>
+            <Checkbox
+              checked={form.gerichtshinweisStillstand ?? true}
+              onChange={(v) => set('gerichtshinweisStillstand', v)}
+              label="Gericht hat hingewiesen (sonst gilt der Stillstand gleichwohl)"
+              className="pt-2"
+            />
           </Field>
         )}
 
@@ -328,10 +329,11 @@ export function ZpoFristenForm({ live }: {
 
             {form.fristnatur === 'gerichtlich' && (
               <div className="space-y-2">
-                <label className="flex items-center gap-2.5 py-1.5 text-body-s cursor-pointer">
-                  <input type="checkbox" checked={erstreckungAn} onChange={(e) => setErstreckungAn(e.target.checked)} />
-                  Erstreckung berechnen (Art. 144 Abs. 2 ZPO)
-                </label>
+                <Checkbox
+                  checked={erstreckungAn}
+                  onChange={setErstreckungAn}
+                  label="Erstreckung berechnen (Art. 144 Abs. 2 ZPO)"
+                />
                 {erstreckungAn && (
                   <div className="flex gap-2 items-center">
                     <input type="number" inputMode="decimal" min={1} value={erstreckung.laenge}
