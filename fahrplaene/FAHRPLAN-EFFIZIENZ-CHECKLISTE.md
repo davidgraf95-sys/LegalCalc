@@ -43,3 +43,15 @@ Geschlossen 5.9.2026 (Belege):
 - [x] **Auto-Buchungs-Push** — PAT-Weg steht: Lauf «Plan-Buchung» 33966105395 zu PR #717 endete
   `success` MIT Push (`01f6431c3` «QS-EFFIZIENZ -> ready (automatisch aus Merge-Trailer)»).
 - [x] **QS-EFFIZIENZ-Zeile als Merge-Konflikt-Falle** — seit 29.8.2026 durch diese Datei gelöst.
+
+Runde 2 (5.9.2026, Token-Messung dieser Session als Anlass — je Punkt ein Commit):
+
+- [x] **Gate-Rot-Kondensat** — `scripts/gate.sh` schreibt bei Rot das Volllog nach `.gate/<tor>.log`
+  und druckt nur Testnamen/Assertion/Ort/Summe (Messung: Vitest-Rot 800 Zeilen ≈ 25 000 Token, zweimal
+  je Session über den Stop-Hook; Rot-Beweis 76 → 17 Zeilen). hooks-wache-Test fängt stderr (kein
+  «SUBAGENT-WACHE»-Echo mehr in jeder Test-Ausgabe).
+- [x] **check-parallel leise bei Grün** — Kopf + Summe mit drei langsamsten Toren statt 48 Zeilen
+  (~600 Token je grünem Lauf); volle Liste bei `CI=1`/`--verbose`, Rot unverändert.
+- [x] **Fahrplan-§1-Kopie zurückgebaut** (9 KB → 3 KB, ~2 500 Token je Slice).
+- [x] **Landungs-Skill −3.5 KB** — Jules-Checkliste byte-treu nach `referenz-jules.md`, lädt nur bei
+  offenem Jules-PR.
