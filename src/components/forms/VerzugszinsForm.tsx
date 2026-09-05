@@ -181,7 +181,15 @@ export function VerzugszinsForm() {
         <Field label="Stichtag (Berechnung bis)" hint="Zahlung / Urteilstag / heute">
           <div className="flex gap-2">
             <DatumsFeld value={form.stichtag} onChange={(v) => set('stichtag', v)} className="lc-input" />
-            <button type="button" onClick={() => set('stichtag', heuteISO())} className="lc-btn-ghost whitespace-nowrap">heute</button>
+            {/* LM-099/LM-088 (W2·17-UI-BEFUNDE B17, 4.9.2026): war
+                `lc-btn-ghost` — gemessen 80×44 mit transparenter Fläche und
+                border 0, also fetter Text neben einem Eingabefeld und nicht
+                als anklickbare Abkürzung erkennbar. Die GRÖSSE stimmte schon
+                (44 px = Komfortmass, die Hälfte des Befunds ist damit
+                widerlegt); gefehlt hat allein die Affordanz. Sie kommt aus der
+                geteilten Knopf-Familie (`lc-btn-outline`, §13), nicht aus
+                einem Sonderstil an dieser Stelle (LM-087). */}
+            <button type="button" onClick={() => set('stichtag', heuteISO())} className="lc-btn-outline whitespace-nowrap">heute</button>
           </div>
         </Field>
         <Field label="Grundlage des Zinssatzes">
