@@ -11,6 +11,10 @@ import { useZielSichtbar } from './useZielSichtbar';
 
 export const inputCls = 'lc-input';
 
+/** HTML-«labelable elements», soweit in Formularen dieses Hauses gebraucht.
+ *  Steuert, wann `Field` `htmlFor` setzen darf (siehe dort). */
+const BESCHRIFTBAR = ['input', 'select', 'textarea'];
+
 export function Field({ label, children, hint, optional }: {
   /** Beschriftung. `ReactNode` (R2-E/F1-2), weil einzelne Felder dem Namen eine
    *  leise Präzisierung nachstellen («Zugang Kündigung (Stichtag B/C)») — die
@@ -25,7 +29,16 @@ export function Field({ label, children, hint, optional }: {
   // 10.6.2026) — ein Label-Wrap wäre dort riskant (Klick-Redispatch ins
   // Kalender-Popover). Eigenes aria-label des Kindes hat Vorrang.
   const id = useId();
+  // NUR beschriftbare Elemente (QS-UI Teilpass (e), 5.9.2026): «type ist ein
+  // String» hielt auch ein `<div>`-Wrapper für ein natives Control — `htmlFor`
+  // zeigte dann auf ein DIV, das keine Beschriftung annehmen kann, und die
+  // echten Controls darin blieben NAMENLOS. Gemessen am neuen Flächen-Tor:
+  // `/rechner/schkg-fristen` meldete `label` (critical) UND `select-name`
+  // (critical) für das Paar Zahl+Einheit in EINEM `<Field>`. `BESCHRIFTBAR` ist
+  // die HTML-Menge der «labelable elements», soweit hier gebraucht; alles andere
+  // fällt in den aria-labelledby-Zweig bzw. bleibt unangetastet.
   const nativ = isValidElement(children) && typeof children.type === 'string'
+    && BESCHRIFTBAR.includes(children.type)
     && !(children.props as { id?: string }).id;
   const komposit = isValidElement(children) && typeof children.type !== 'string'
     && (children.props as Record<string, unknown>)['aria-label'] === undefined
@@ -41,7 +54,15 @@ export function Field({ label, children, hint, optional }: {
         {label}{optional && <span className="text-ink-500 font-normal"> · optional</span>}
       </label>
       {control}
-      {hint && <p className="text-xs text-ink-500"><NormText text={hint} /></p>}
+      {/* ink-500 → ink-600 (QS-UI Teilpass (e), 5.9.2026 — dieselbe Richtung wie
+          `lc-overline`/`lc-fineprint` auf Auftrag David 25.6.2026): der Hinweis
+          ist 12-px-Kleintext und lag mit ink-500 nur knapp über AA. Auf einer
+          getönten Fläche riss er: gemessen am neuen Flächen-Tor
+          `/rechner/schkg-fristen`, Hinweis im brass-Vorlagenkasten
+          #6F6B61 auf #F1E8D6 = 4.36:1 (AA verlangt 4.5). ink-600 (#56534C)
+          liefert dort 6.35:1 und auf `--paper` 7.4:1 — AA auf JEDER Fläche des
+          Hauses, statt einer Ausnahme je Kasten. */}
+      {hint && <p className="text-xs text-ink-600"><NormText text={hint} /></p>}
     </div>
   );
 }
