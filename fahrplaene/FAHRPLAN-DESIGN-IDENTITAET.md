@@ -55,3 +55,43 @@ Golden byte-gleich (Token-Schicht berührt keine Ausgaben); Schrift-Lizenzen off
 inhaltlich abgelöst; bei Umsetzung Fahrplan-Wärme prüfen und Doppelungen in die Chronik.
 `W2·19-DESIGN-KONSISTENZ` (gelandet 5.9.2026) hat `--z-*`/`--auf-sage` in `index.css` — additiv
 respektieren.
+
+## §5 · Freigabe David 6.9.2026 — Zielbild «Sammlung» (bindend für den Bau)
+
+**Wortlaut David (6.9.2026):** «ja bau das, run till dry. achte darauf, dass alles sinn macht. bevor du
+baust recherchiere nochmals was du dafür alles ändern musst damit es konsistent ist und dann lass
+zwischen den runden einen ästhetikprüfer darüber schauen. es soll immer noch alles sinn machen mit
+split screen usw. also überlege genau wie du es baust bevor du rein schiesst.»
+
+**Referenzbild (massgeblich, statt Prosa):** `abnahme/design-identitaet/vorschlag-freigegeben.html`
+(zwei Seiten: Startseite als Inhaltsverzeichnis, Gesetzesleser mit Bezügen am Rand). Bauen heisst:
+die App auf dieses Bild bringen, nicht das Bild nachmalen — bestehende Bausteine, Engines, Daten,
+Split-View-Mechanik bleiben; es ändert sich Darstellung (§3).
+
+**System (aus dem Referenzbild):**
+- Schrift: **Literata** (alles Gelesene: Normtext, Entscheide, Titel, Begrüssung) + **Archivo**
+  (Bedienung, Marginalien, Meta) — beide OFL, self-hosted wie Geist heute (`@font-face`, kein
+  Google-Fonts-Request zur Laufzeit; Budget `check:perf-budget` messen, Subsets latin/latin-ext).
+  Geist/Geist Mono raus; Mono nur, wo es heute fachlich trägt (Rechenweg/Code), sonst Tabellenziffern.
+- Farbe: Papier Weiss/Tinte fast Schwarz (hell) bzw. invertiert (dunkel); **vier stumpfe
+  Registerfarben** als einzige Farbe: Gesetze `#1F3A5F`, Rechtsprechung `#7A1F2B`, Materialien
+  `#4E6B3A`, Werkzeuge `#8A6A1F` (dunkel: aufgehellte Pendants). Brass verschwindet aus der
+  Rollen-Schicht (`--accent-*` → Tinte bzw. Registerfarbe nach Domäne); Sage/Warn/Danger
+  (Status-Semantik) bleiben. Kontrast AA nachweisen (`check:farbwelt`, axe).
+- Form: Radien 0, keine Schatten ausser schwebende Ebenen (Menü, Dialog), kein `lc-glass`,
+  Trennung über Linien (1 px `--rule-soft`, 2 px `--rule` für Kopfzeilen). Links unterstrichen.
+  Overlines/Versal-Etiketten → normale kleine Grotesk-Zeilen (`.lc-overline` umdefinieren, nicht
+  jeden Konsumenten anfassen; Versalien/Tracking weg).
+- Layout: Satzspiegel mit **Marginalienspalte links** (150 px) auf Startseite und im Leser; im
+  Split-View/Pane fällt die Marginalie unter `@3xl/pane` in die Textspalte (Zeilenform), damit
+  zwei Panes nebeneinander weiter Sinn ergeben. Titelblatt-Zeile (Marke · Bereichs-Reiter ·
+  Ausgabe-Zeile) ersetzt die Glas-Topbar; Seitenleiste bleibt als Inhaltsverzeichnis im Leser und
+  in den Bereichsübersichten, auf «/» entfällt sie (Reiter tragen die Bereiche).
+- Sprache: keine Slogans, keine Nutzenversprechen («an einem Ort», «verzahnt» als Behauptung);
+  Bezeichnungen, Zahlen mit Scope, Verben. Wikipedia «Signs of AI writing» als Negativliste.
+- Bezüge im Leser als Randnotizen rechts (Entscheide · Materialien · Verweise · Rechnen) — aus
+  der bestehenden Verzahnungs-Datenquelle, keine neue Logik.
+
+**Runden (jede Runde: Bau → Ästhetik-Prüfer (read-only, Screens aus dem Worktree-Preview, hell +
+dunkel, 1440 + 390, Split-View mit zwei Panes) → Nachbesserung; Landung EINE PR am Schluss):**
+Die konkrete Rundenliste mit Dateien steht in §6 (Inventur-Ergebnis).
