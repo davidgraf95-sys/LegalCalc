@@ -285,11 +285,16 @@ export function SuchResultate({ gruppen, allesGeladen, q, onAuswahl, onNavigate,
               // B2 (W2·19-DESIGN-KONSISTENZ R6-B): der kanonische Leerzustand
               // (ui/Leerzustand, §5/§10) statt einer eigenen Kopie — mit
               // Rücksetz-Knopf wie die übrigen Null-Treffer-Fälle (Materialien,
-              // Gesetze, RechnerUebersicht, Rechtsprechung, Katalog).
+              // Gesetze, RechnerUebersicht, Rechtsprechung, Katalog). Die
+              // Hero-Suche (UniversalSuche, ohne lokalen Rücksetzer) übergibt
+              // `onLeeren` nicht — dort ist der einzig ehrliche Ausweg ein
+              // LINK auf die volle Suchseite mit derselben Query (R6-B).
               ? <div className="px-4 py-4">
                   <Leerzustand art="filter"
                     text={`Keine Treffer zu «${q}». Versuchen Sie einen Erlass, eine Norm oder ein Stichwort.`}
-                    weiterweg={{ text: 'Suche zurücksetzen', onKlick: () => onLeeren?.() }} />
+                    weiterweg={onLeeren
+                      ? { text: 'Suche zurücksetzen', onKlick: onLeeren }
+                      : { text: 'Alle Bereiche durchsuchen', href: `/suche?q=${encodeURIComponent(q)}` }} />
                 </div>
               : <p className="px-4 py-4 text-body-s text-ink-500">wird durchsucht …</p>)
           : gruppen.map((g, i) => <Gruppe key={g.id} g={g} index={i} onAuswahl={onAuswahl} onNavigate={onNavigate} listboxId={listboxId} aktivId={aktivId} q={q} sektionsRollen={sektionsRollen} />)}
