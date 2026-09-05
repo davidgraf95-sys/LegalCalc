@@ -403,7 +403,21 @@ describe('Formulierungskonvention – Linter über die echte Textausgabe', () =>
     const prozentRegel = REGELN.find((r) => r.regel.startsWith('Prozent'));
     if (!prozentRegel) throw new Error('Prozent-Regel fehlt in REGELN — SSoT verschoben?');
     const prozentMuster = prozentRegel.muster;
-    const CSS_HINWEIS = /style\s*=|className\s*=|width\s*:|Width\s*:|height\s*:|Height\s*:|top\s*:|bottom\s*:|left\s*:|right\s*:|transform\s*:|translateX|translateY|scale\(|calc\(|minmax\(|grid-template|rootMargin|opacity\s*:/;
+    const CSS_HINWEIS = /style\s*=|width\s*:|Width\s*:|height\s*:|Height\s*:|top\s*:|bottom\s*:|left\s*:|right\s*:|transform\s*:|translateX|translateY|scale\(|calc\(|minmax\(|grid-template|rootMargin|opacity\s*:/;
+    // className-Attributwerte und Tailwind-Arbiträrwerte werden aus der Zeile
+    // ENTFERNT statt die ganze Zeile zu überspringen — sonst bleibt echter
+    // UI-Text im selben Tag unentdeckt, z. B. `<span className="text-sm">5%
+    // Rabatt</span>` (Auflage Gegenprüfung #720, 5.9.2026).
+    const CLASSNAME_ATTR = /className\s*=\s*(?:"[^"]*"|'[^']*'|\{`[^`]*`\}|\{'[^']*'\}|\{"[^"]*"\})/g;
+    const TAILWIND_ARBITRAER = /[a-zA-Z][a-zA-Z0-9-]*\[[^\]]*\]/g;
+
+    function zeileIstVerstoss(zeile: string): boolean {
+      const t = zeile.trim();
+      if (t.startsWith('//') || t.startsWith('*')) return false;
+      const bereinigt = zeile.replace(CLASSNAME_ATTR, '').replace(TAILWIND_ARBITRAER, '');
+      if (CSS_HINWEIS.test(bereinigt)) return false;
+      return prozentMuster.test(bereinigt);
+    }
 
     function dateienUnter(dir: string): string[] {
       const out: string[] = [];
@@ -419,10 +433,7 @@ describe('Formulierungskonvention – Linter über die echte Textausgabe', () =>
       const roh = readFileSync(pfad, 'utf8').replace(/\/\*[\s\S]*?\*\//g, '');
       const treffer: string[] = [];
       roh.split('\n').forEach((zeile, i) => {
-        const t = zeile.trim();
-        if (t.startsWith('//') || t.startsWith('*')) return;
-        if (CSS_HINWEIS.test(zeile)) return;
-        if (prozentMuster.test(zeile)) treffer.push(`${pfad}:${i + 1}: «${t.slice(0, 100)}»`);
+        if (zeileIstVerstoss(zeile)) treffer.push(`${pfad}:${i + 1}: «${zeile.trim().slice(0, 100)}»`);
       });
       return treffer;
     }
@@ -433,8 +444,18 @@ describe('Formulierungskonvention – Linter über die echte Textausgabe', () =>
         ...dateienUnter(join(wurzel, 'src', 'components')),
         ...dateienUnter(join(wurzel, 'src', 'pages')),
       ];
+      // Leer-Treffer-Schutz 5.9.2026 (Gegenprüfung #720)
+      expect(dateien.length).toBeGreaterThan(0);
       const treffer = dateien.flatMap(verstoesseInDatei);
       expect(treffer, treffer.join('\n')).toEqual([]);
+    });
+
+    it('findet «5%» in echtem UI-Text trotz className im selben Tag (Gegenprüfung #720)', () => {
+      expect(zeileIstVerstoss('<span className="text-sm">5% Rabatt</span>')).toBe(true);
+    });
+
+    it('schlägt bei Tailwind-Arbiträrwerten in className nicht fälschlich an (Gegenprüfung #720)', () => {
+      expect(zeileIstVerstoss('<div className="w-[5%]" />')).toBe(false);
     });
   });
 });
