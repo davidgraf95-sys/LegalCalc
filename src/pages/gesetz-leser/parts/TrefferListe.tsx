@@ -140,7 +140,7 @@ export function TrefferListe({
         {hatSprung && (
           <div className="flex items-center justify-end gap-1">
             <span data-treffer-position role="status" aria-live="polite"
-              className="text-micro tabular-nums text-ink-500">
+              className="text-micro lc-ziffern text-ink-500">
               <span className="num">{anzeige}</span>/<span className="num">{fundstellen}</span>
             </span>
             {/* A9-DoD: 44×44-px-Tap-Ziele, echte <button> (Tastatur), aria-label. */}
@@ -199,7 +199,7 @@ export function TrefferListe({
                     {t.randtitel && (
                       <span className="min-w-0 flex-1 truncate font-serif text-xs text-ink-600" title={t.randtitel}>{t.randtitel}</span>
                     )}
-                    <span className="ml-auto shrink-0 text-micro tabular-nums text-ink-500">{t.fundstellen}</span>
+                    <span className="ml-auto shrink-0 text-micro lc-ziffern text-ink-500">{t.fundstellen}</span>
                   </span>
                   <Ausschnitt t={t} />
                   {badges.length > 0 && (

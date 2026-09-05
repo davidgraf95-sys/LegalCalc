@@ -255,7 +255,7 @@ export function LeserTrefferListe({
                     {t.randtitel && (
                       <span data-treffer-randtitel className="line-clamp-2 min-w-0 flex-1 font-serif text-xs text-ink-600" title={t.randtitel}>{t.randtitel}</span>
                     )}
-                    <span className="ml-auto shrink-0 text-micro tabular-nums text-ink-500">{t.fundstellen}</span>
+                    <span className="ml-auto shrink-0 text-micro lc-ziffern text-ink-500">{t.fundstellen}</span>
                   </span>
                   {/* ── Ä17 (H2b) · DER SCHNIPSEL IST ZURÜCK ────────────────────
                       Gemessen 17.8.2026: im Ruhezustand zeigte die Liste NULL
@@ -304,7 +304,7 @@ export function LeserTrefferListe({
                             aria-current={stelleAktiv ? 'location' : undefined}
                             className={`flex w-full items-baseline gap-1.5 rounded px-1.5 py-1 text-left transition-colors ${
                               stelleAktiv ? 'bg-brass-100/60' : 'lc-hover-flaeche'}`}>
-                            <span aria-hidden className="shrink-0 text-micro tabular-nums text-ink-400">{f.rang + 1}</span>
+                            <span aria-hidden className="shrink-0 text-micro lc-ziffern text-ink-400">{f.rang + 1}</span>
                             <Schnipsel a={f.ausschnitt} />
                           </button>
                         </li>
