@@ -113,30 +113,31 @@ describe('R2-E/F1-10 — «Kopiert ✓» rendert nur der geteilte KopierButton (
 // Zahl ist eine Design-Entscheidung («wie lange bleibt eine Quittung stehen»)
 // und stand achtmal da. Kanon ist die Zahl des geteilten Hooks (1600 ms); sie
 // liegt seit R3-α als `KOPIER_DAUER_MS` genau einmal in `useKopieren.ts`.
+//
+// RÜCKBAU R5-E/R6-C (5.9.2026, §17-Gegengewicht + §6.7). Hier standen zwei
+// weitere Fälle: ein App-Sweep nach `/setKopiert\(…\)\s*,\s*(…)\)` und dessen
+// Negativ-Kontrolle. Sie hingen am NAMEN einer Zustandsvariablen, nicht an der
+// Sache — der letzte namensgebundene Wächter der App (Messung R5-E über alle
+// 422 Dateien in `src/tests/`). GEMESSEN am 5.9.2026: der Ausdruck traf **0**
+// Stellen, seit R4-D alle Kopier-Mechaniken in `useKopieren` gezogen hat.
+//
+// MUTATIONS-BEWEIS, warum das kein Verlust ist (statt einer Behauptung): eine
+// von Hand gebaute Kopier-Quittung mit eigener Dauer, aber ANDEREM
+// Variablennamen (`setQuittung(true)` … `setTimeout(() => setQuittung(false),
+// 2500)` samt `navigator.clipboard.writeText`) in `src/components/` eingesetzt
+// —
+//   · namensgebundene Sonde:  GRÜN  (sie bewacht nichts)
+//   · R4-D (`clipboard.writeText`): ROT, `components/MutationsProbeR6.tsx`
+// Die Sorge trägt also R4-D an der SACHE, und der Fall darunter hält die Zahl
+// bei genau einer Definition. Eine Sonde, die nur bei einer bestimmten
+// Schreibweise anschlägt, sieht nach geprüftem Verhalten aus und ist keines.
+//
+// VERBREITERN war die Alternative und ist verworfen: der naheliegende
+// Ausdruck (`set[A-Z]\w*\((?:false|'')\)\s*,\s*\d{3,5}`) trifft heute genau
+// eine SACHFREMDE Stelle — `v3/LeserErlassKopfZone.tsx: setReiterToast(false),
+// 3200`, ein Reiter-Hinweis, keine Kopier-Quittung. Ein Wächter, der zum
+// Grünhalten eine Ausnahmeliste für Fremdes braucht, ist kein Ersatz.
 describe('R3-α/B3-9 — die Kopier-Quittung steht überall gleich lang', () => {
-  it('kein Rücksetz-Timer einer Kopier-Quittung trägt eine eigene Zahl', () => {
-    const funde: string[] = [];
-    for (const d of alleQuellen()) {
-      if (rel(d) === 'components/useKopieren.ts') continue; // die eine Definition
-      for (const m of liesOhneKommentare(d).matchAll(/setKopiert\([^)]*\)\s*,\s*([^)]+)\)/g)) {
-        if (!/KOPIER_DAUER_MS/.test(m[1])) funde.push(`${rel(d)} · ${m[1].trim()}`);
-      }
-    }
-    expect(funde, 'Verweildauer als eigene Zahl statt KOPIER_DAUER_MS (useKopieren.ts)').toEqual([]);
-  });
-
-  it('NEGATIV-KONTROLLE: der Ausdruck findet die drei Vorher-Formen', () => {
-    for (const vorher of [
-      'setTimeout(() => setKopiert(false), 1500);',
-      'kopierTimer.current = setTimeout(() => setKopiert(false), 2000);',
-      'window.setTimeout(() => setKopiert(\'\'), 1500);',
-    ]) {
-      const m = [...vorher.matchAll(/setKopiert\([^)]*\)\s*,\s*([^)]+)\)/g)];
-      expect(m.length, vorher).toBe(1);
-      expect(/KOPIER_DAUER_MS/.test(m[0][1]), vorher).toBe(false);
-    }
-  });
-
   it('die Zahl ist genau einmal definiert', () => {
     const definitionen = alleQuellen()
       .filter((d) => /export const KOPIER_DAUER_MS/.test(quelle(d)))

@@ -148,6 +148,44 @@ describe('A3-1 · das Schliess-✕ kommt aus EINEM Baustein', () => {
     expect(funde).toEqual([]);
   });
 
+  // ── R6-A (5.9.2026) · das ✕ hat auch EINEN Schnitt, nicht nur EINE Quelle ──
+  //
+  // GEMESSEN am Preview (1600×900, frischer Kontext je Route, zehn Ansichten,
+  // vierzehn ✕): die Glyphe stand überall in 16 px, aber in ZWEI Schnitten —
+  // «Geist Mono Variable» im `InhaltsKopf` gegen «Geist Variable» sonst, weil
+  // der Baustein am Glyph-Span nur die GRÖSSE festschrieb (`text-base
+  // leading-none`) und die FAMILIE erben liess; genau ein Aufrufer bringt eine
+  // mit (`klasse="lc-leiste-griff"`). Sichtbare Folge bei identischer
+  // Schriftgrösse: 9.64 px ✕-Tinte gegen 12.20 px.
+  //
+  // Die halbe Deklaration ist dieselbe Bauart, die R4-C/R5-B beim Ziffernsatz
+  // als Defekt nachgewiesen haben — darum wird hier BEIDES verlangt: der
+  // Baustein trägt Grösse UND Schnitt, und zwar in der CSS-Regel, nicht am
+  // Span (sonst lägen die zwei Hälften wieder an zwei Orten, §5).
+  it('der Glyph-Schnitt liegt im Baustein, nicht in der Umgebung', () => {
+    const block = /\.lc-schliessknopf-glyph \{([\s\S]*?)\}/.exec(CSS)?.[1] ?? '';
+    expect(block, '.lc-schliessknopf-glyph existiert').not.toBe('');
+    expect(block, 'der Schnitt steht im Baustein (sonst erbt die Glyphe die Mono der Leiste)')
+      .toContain('font-family: var(--font-sans)');
+    expect(block, 'die Grösse steht daneben, nicht am Span').toContain('font-size: 1rem');
+
+    // Der Span holt seine Typografie NUR von dort — keine zweite Hälfte im TSX.
+    const tsx = ohneKommentare(liesRoh(
+      alleTsx().find((p) => rel(p) === 'components/ui/SchliessKnopf.tsx')!,
+    ));
+    const span = /<span aria-hidden className="([^"]*)">✕<\/span>/.exec(tsx)?.[1];
+    expect(span, 'der ✕-Span trägt genau den Baustein').toBe('lc-schliessknopf-glyph');
+  });
+
+  it('ROT-BEWEIS: die Vorher-Form des Spans fällt auf', () => {
+    // Wortlaut aus `ui/SchliessKnopf.tsx` im Stand vom 5.9.2026 vor R6-A —
+    // Beleg, nie nachgeführt (§2b). Er nannte die Grösse und schwieg zum Schnitt.
+    const vorher = '<span aria-hidden className="text-base leading-none">✕</span>';
+    const klasse = /<span aria-hidden className="([^"]*)">✕<\/span>/.exec(vorher)?.[1];
+    expect(klasse).toBe('text-base leading-none');
+    expect(klasse).not.toBe('lc-schliessknopf-glyph');
+  });
+
   it('NEGATIV-KONTROLLE: der Sweep sieht das Glyph im Markup, nicht im Kommentar', () => {
     const vorher = `<button aria-label="Navigation schliessen"><span aria-hidden>✕</span></button>`;
     expect(ohneKommentare(vorher)).toContain('✕');

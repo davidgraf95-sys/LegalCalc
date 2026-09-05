@@ -123,6 +123,25 @@ const ZIFFERN_AUSNAHMEN = [
   },
 ] as const;
 
+/**
+ * Der Ziffernsatz, roh geschrieben — in JEDER Schreibweise, die ihn erzeugt.
+ *
+ * R6-B (5.9.2026, §17/§6.7): bis hierher fragte der Wächter nur nach der
+ * LANGFORM (`fontVariantNumeric` / `font-variant-numeric`). Genau daran lief
+ * die Tailwind-Utility `tabular-nums` vorbei, die dieselbe CSS-Eigenschaft
+ * setzt — und zwar HALB (ohne `lining-nums`), also in der Form, die R4-C als
+ * Defekt nachgewiesen und R5-B in zwei Flächen behoben hatte. GEMESSEN am
+ * Preview (1600×900): auf `/gesetze/bund/OR` standen 12 Elemente mit
+ * `tabular-nums` neben 8'254 mit `lining-nums tabular-nums` — EINE Rolle,
+ * zwei Werte, Wächter grün. Quelltext-Sweep: 11 Fundstellen in 7 Dateien.
+ *
+ * Der Ausdruck fragt jetzt nach der SACHE: jede Schreibweise, die den
+ * Ziffernsatz setzt. Das ist dieselbe Korrektur wie R3-α bei den Datei-Listen,
+ * eine Ebene tiefer — dort war es die Liste, hier die Schreibweise.
+ */
+const ZIFFERNSATZ_ROH =
+  /fontVariantNumeric|font-variant-numeric|\b(?:tabular|lining|proportional|oldstyle)-nums\b|\bslashed-zero\b/;
+
 describe('R5-B · der Ziffernsatz hat EINE Deklaration', () => {
   it('index.css führt die Rolle ohne Familie und die Rolle mit Familie getrennt', () => {
     expect(CSS, '`.lc-ziffern` ist die Rolle ohne Monospace-Familie')
@@ -135,20 +154,32 @@ describe('R5-B · der Ziffernsatz hat EINE Deklaration', () => {
     const erlaubt = pruefeAusnahmen(ZIFFERN_AUSNAHMEN);
     const funde = alleQuellen()
       .filter((p) => !erlaubt.has(rel(p)))
-      .filter((p) => /fontVariantNumeric|font-variant-numeric/.test(ohneKommentare(liesRoh(p))))
+      .filter((p) => ZIFFERNSATZ_ROH.test(ohneKommentare(liesRoh(p))))
       .map(rel);
     expect(
       funde,
       'Der Ziffernsatz gehört in `.num` (mit Mono) oder `.lc-ziffern` (ohne) — eine rohe '
-      + '`fontVariantNumeric`-Zeile ist dieselbe Wahrheit ein zweites Mal (§5/F9).',
+      + '`fontVariantNumeric`-Zeile ODER eine rohe `tabular-nums`-Utility ist dieselbe '
+      + 'Wahrheit ein zweites Mal (§5/F9).',
     ).toEqual([]);
   });
 
-  it('ROT-BEWEIS: der Ausdruck erkennt die Zeile, die in ErgebnisAnzeige stand', () => {
-    const vorher = "<p className={`font-display`} style={{ fontVariantNumeric: 'lining-nums tabular-nums' }}>";
-    expect(/fontVariantNumeric|font-variant-numeric/.test(ohneKommentare(vorher))).toBe(true);
-    // Negativ-Kontrolle: ein Kommentar, der die Alt-Form ZITIERT, ist kein Verstoss.
-    expect(/fontVariantNumeric/.test(ohneKommentare('// vorher: fontVariantNumeric roh\nconst x = 1;'))).toBe(false);
+  it('ROT-BEWEIS: der Ausdruck erkennt beide Vorher-Formen', () => {
+    // (a) die Langform, die R5-B in `ErgebnisAnzeige` gefunden hat.
+    expect(ZIFFERNSATZ_ROH.test(ohneKommentare(
+      "<p className={`font-display`} style={{ fontVariantNumeric: 'lining-nums tabular-nums' }}>",
+    ))).toBe(true);
+    // (b) die UTILITY-Form, die R6-B gefunden hat — an ihr lief der Wächter der
+    //     Runde 5 vorbei, weil er nach der SCHREIBWEISE fragte statt nach der Sache.
+    expect(ZIFFERNSATZ_ROH.test(ohneKommentare(
+      '<span className="w-12 text-center text-micro tabular-nums text-ink-500">{p} %</span>',
+    ))).toBe(true);
+    // Negativ-Kontrolle 1: ein Kommentar, der die Alt-Form ZITIERT, ist kein Verstoss.
+    expect(ZIFFERNSATZ_ROH.test(ohneKommentare('// vorher: fontVariantNumeric roh\nconst x = 1;'))).toBe(false);
+    // Negativ-Kontrolle 2: die migrierte Form fällt NICHT auf.
+    expect(ZIFFERNSATZ_ROH.test(ohneKommentare(
+      '<span className="w-12 text-center text-micro lc-ziffern text-ink-500">{p} %</span>',
+    ))).toBe(false);
   });
 });
 
