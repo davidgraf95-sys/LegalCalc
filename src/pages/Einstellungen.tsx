@@ -8,6 +8,8 @@ import { DETAILGRAD_OPTIONEN } from '../lib/vorlagen/detailgrad';
 import { speichereThema, wendeThemaAn, systemThema, useThemaWahl, type ThemaWahl } from '../components/thema';
 import { useAusgabeStil, setAusgabeStil } from '../components/vorlagen/ausgabeStil';
 import { SelectionGrid } from '../components/ui/SelectionGrid';
+import { SchriftgroessenRegler } from '../components/ui/SchriftgroessenRegler';
+import { useSchriftskala } from '../components/layout/useSchriftskala';
 
 // ─── Rubrik «Einstellungen» (Auftrag David) ─────────────────────────────────
 //
@@ -63,6 +65,10 @@ function schreibeKey(key: string, wert: string): void {
 export function Einstellungen() {
   const e = useEinstellungen();
   const stil = useAusgabeStil();
+  // W2·23-STARTSEITE-V4 §6.2: der Regler «Ganze Seite» stand bis hierher im
+  // Top-Streifen. Er gehört zu den Dauer-Vorgaben, die diese Seite pflegt —
+  // derselbe Hook, derselbe Speicher-Schlüssel, nur ein anderer Ort.
+  const schrift = useSchriftskala();
   // Theme aus dem geteilten Store (synchron mit dem Topbar-Umschalter); Rechtsprechungs-
   // Ansicht lokal (clientseitig, opt-in).
   const themaWahl: ThemaWahl = useThemaWahl() ?? 'auto';
@@ -131,6 +137,17 @@ export function Einstellungen() {
       </section>
 
       <section className="lc-card p-5 sm:p-6 space-y-5">
+        <Zeile titel="Schriftgrösse — ganze Seite"
+          hinweis="Vergrössert Schrift und Abstände der ganzen Anwendung (der Gesetzestext hat im Leser-Menü «Ansicht» zusätzlich einen eigenen Regler). Die Wahl gilt sofort und bleibt in diesem Browser gespeichert.">
+          <SchriftgroessenRegler
+            schrift={schrift}
+            kleinerLabel="Ganze Seite verkleinern"
+            kleinerTitle="Verkleinert die ganze Anwendung — der Gesetzestext hat im Menü «Ansicht» einen eigenen Regler"
+            groesserLabel="Ganze Seite vergrössern"
+            groesserTitle="Vergrössert die ganze Anwendung — der Gesetzestext hat im Menü «Ansicht» einen eigenen Regler"
+          />
+        </Zeile>
+
         <Zeile titel="Farbschema">
           <Segment label="Farbschema" wert={themaWahl} onWahl={themaSetzen}
             optionen={[

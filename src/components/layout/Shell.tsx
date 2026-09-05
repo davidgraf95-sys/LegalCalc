@@ -8,7 +8,6 @@ import { Sidebar } from './Sidebar';
 import { Footer } from './Footer';
 import { useLocale } from '../locale';
 import { useSeitenleiste, BREITE_MIN, BREITE_MAX, BREITE_SCHRITT } from './useSeitenleiste';
-import { useSchriftskala } from './useSchriftskala';
 import { usePaneLayout, PaneSteuerungProvider, MAX_SEKUNDAER, layoutPermalink } from './usePaneLayout';
 import { SekundaerPane } from './Pane';
 import { PaneKopf } from './PaneKopf';
@@ -106,12 +105,13 @@ export function Shell({ children }: { children: ReactNode }) {
   // V3-Flags — die Vorgabe gilt für beide Hüllen, der Befund ist in beiden derselbe
   // (FL-1: das Flag hat genau einen Schaltpunkt, und der ist nicht hier).
   const seitenleiste = useSeitenleiste({ vorgabeEingeklappt: istGesetzLeserPfad(pathname) });
-  // R3 (Auftrag David 30.6.2026): globale Schriftskala (A−/A+) statt
-  // Inhaltsbreite-Umschalter. Der Hook skaliert die Wurzel-rem (Effekt) und
-  // liefert die Steuer-API für die Topbar. Die zentrale Inhaltsspalte läuft nun
-  // fest auf `max-w-content` (= die frühere Default-Breite «kompakt», Golden
-  // byte-gleich); die «breit»-Option (max-w-screen-2xl) entfällt mit dem Umschalter.
-  const schriftskala = useSchriftskala();
+  // R3 (Auftrag David 30.6.2026): die globale Schriftskala (A−/A+) ersetzte den
+  // Inhaltsbreite-Umschalter; die zentrale Inhaltsspalte läuft seither fest auf
+  // `max-w-content` (= die frühere Default-Breite «kompakt», Golden byte-gleich).
+  // Der Steller selbst sitzt seit W2·23-STARTSEITE-V4 (§6.2) auf
+  // `/einstellungen` und hält dort seinen eigenen `useSchriftskala`; die Shell
+  // braucht die Steuer-API nicht mehr. Angewendet wird die gespeicherte Wahl
+  // unverändert vor dem ersten Render in `main.tsx` (`wendeSchriftskalaAn`).
   const inhaltsbreiteKlasse = 'max-w-content';
 
   // Split-View (B-1): sekundäre Panes nur ab lg nebeneinander; mobil + Prerender
@@ -400,7 +400,6 @@ export function Shell({ children }: { children: ReactNode }) {
             schubladeOffen={schubladeOffen}
             seitenleisteEingeklappt={seitenleiste.eingeklappt}
             onSeitenleisteUmschalten={seitenleiste.umschalten}
-            schrift={schriftskala}
           />
 
           {/* Persistenter Hinweis bei Nicht-DE-Locale: Inhalte fallen auf Deutsch zurück. */}

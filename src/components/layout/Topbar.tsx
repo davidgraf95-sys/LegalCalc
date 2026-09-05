@@ -1,30 +1,35 @@
 import { useEffect, useRef, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { LexMetrikSiegel, LexMetrikWortmarke } from './Logo';
 import { HeaderSuche } from './HeaderSuche';
 import { SprachUmschalter } from '../SprachUmschalter';
 import { ThemaUmschalter } from './ThemaUmschalter';
 import { ReiterUebersicht } from './ReiterUebersicht';
 import { VerlaufUebersicht } from './VerlaufUebersicht';
-import type { Schriftskala } from './useSchriftskala';
-import { SchriftgroessenRegler } from '../ui/SchriftgroessenRegler';
+import { istSuchKuerzel, suchKuerzelEmpfaengerAbmelden, suchKuerzelEmpfaengerAnmelden } from '../suche/fruehesSuchKuerzel';
 
 // ─── Top-Streifen der App-Shell (Build-Plan App-Shell, Phase 3) ─────────────
 //
 // NUR Werkzeuge, KEINE Navigationsziele (die liegen in der Seitenleiste):
-// Logo/Wortmarke · globale Katalog-Suche · Schriftgrösse · Sprachumschalter. Auf
+// Logo/Wortmarke · globale Katalog-Suche · Verlauf/Reiter · Thema ·
+// Sprachumschalter. Die Schriftgrösse der ganzen Seite steht seit
+// W2·23-STARTSEITE-V4 (§6.2) auf `/einstellungen` (Baustein
+// `ui/SchriftgroessenRegler.tsx`) — der Streifen wird dadurch ruhiger. Auf
 // Mobil zusätzlich der ☰-Schalter, der die Seitenleisten-Schublade öffnet
 // (onMenu, von Shell); auf Desktop ein Schalter, der die persistente
 // Seitenleiste ein-/ausklappt.
-export function Topbar({ onMenu, schubladeOffen, seitenleisteEingeklappt, onSeitenleisteUmschalten, schrift }: {
+export function Topbar({ onMenu, schubladeOffen, seitenleisteEingeklappt, onSeitenleisteUmschalten }: {
   onMenu: () => void;
   /** Ob die Off-Canvas-Schublade offen ist — nur dann existiert ihr DOM-Ziel. */
   schubladeOffen: boolean;
   seitenleisteEingeklappt: boolean;
   onSeitenleisteUmschalten: () => void;
-  /** Globale Schriftskala (A−/A+), R3 — ersetzt den früheren Breiten-Umschalter. */
-  schrift: Schriftskala;
 }) {
+  // W2·23-STARTSEITE-V4 §6.1: auf «/» trägt der Hero die EINE Suche — der
+  // Streifen zeigt dort kein zweites Feld (zwei sichtbar gleiche Suchen auf
+  // einem Bildschirm sind eine Dopplung, kein Angebot). Auf allen anderen
+  // Routen unverändert.
+  const aufStartseite = useLocation().pathname === '/';
   // S6 — mobiler Such-Fokusmodus: solange die Suche auf schmalem Schirm offen
   // ist, weichen Menü-Schalter, Logo und die Werkzeug-Knöpfe, damit das Feld die
   // volle Streifenbreite bekommt (getippte Query bleibt lesbar). HeaderSuche
@@ -48,6 +53,9 @@ export function Topbar({ onMenu, schubladeOffen, seitenleisteEingeklappt, onSeit
     fokusWunsch.current = false;
     menuKnopf.current?.focus();
   }, [sucheBreit]);
+  // Solange der Streifen kein Feld trägt (auf «/»), übernimmt er die globalen
+  // Such-Kürzel für die Suche der Seite — sonst drückte «/» dort ins Leere.
+  useSuchKuerzelUmleitung(aufStartseite);
   return (
     <header
       className="sticky top-0 z-leiste border-b border-line lc-glass"
@@ -98,38 +106,6 @@ export function Topbar({ onMenu, schubladeOffen, seitenleisteEingeklappt, onSeit
           </svg>
         </button>
 
-        {/* Desktop: globale Schriftgrösse A−/A+ (R3 — ersetzt den Kompakt/Breit-
-            Schalter). Skaliert die Wurzel-rem (useSchriftskala) → trifft alle
-            Seiten; Wert persistent. Eigenständiger Name je Knopf (role="group"-
-            Name wird von Screenreadern nicht zuverlässig vorgelesen); disabled an
-            den Anschlägen (§13/F4); Tastatur + sichtbarer Fokus über die globale
-            :focus-visible-Outline. Ab lg, mobil aus (knapper Topbar-Platz). */}
-        {/* ── C4 · ENTSCHEID DAVID 5B (29.8.2026) · BEIDE REGLER SAGEN, WAS SIE STELLEN
-            BEFUND (Design-Review C4, gemessen 17.8. und erneut 29.8.2026 @1440
-            im Leser): zwei sichtbar gleich aussehende «A− 100 % A+»-Regler
-            standen gleichzeitig auf 120 % und 118 % — dieser hier skaliert die
-            ganze Anwendung über die Wurzel-rem (`useSchriftskala`, WCAG 1.4.4),
-            der im «Ansicht»-Menü nur den Normtext (`leserSchrift.ts`). Der
-            Unterschied stand ausschliesslich im `aria-label`; wer sieht, sah
-            zweimal dasselbe Bedienelement (= Fehlerbuch-18, dort als «Kern:
-            Scope nur im aria-label» präzisiert).
-            ENTSCHEID: nicht einen Regler streichen, sondern beide beschriften —
-            der Scope steht sichtbar davor, in derselben Anordnung wie im Menü
-            (Wort links, Steller rechts), damit die zwei als ZWEI Werkzeuge
-            lesbar sind statt als Dopplung. Gegenstück: «Nur Gesetzestext» in
-            `v3/LeserAnsichtV3.tsx`; das Wort «Nur» dort trägt die Abgrenzung.
-            Der Regler bleibt ab lg sichtbar und mobil aus (Streifen-Platz, C2). */}
-        <div role="group" aria-label="Schriftgrösse der ganzen Seite" className="hidden lg:inline-flex shrink-0 items-center gap-1.5">
-          <span aria-hidden className="select-none whitespace-nowrap text-micro text-ink-500">Ganze Seite</span>
-          <SchriftgroessenRegler
-            schrift={schrift}
-            kleinerLabel="Ganze Seite verkleinern"
-            kleinerTitle="Verkleinert die ganze Anwendung — der Gesetzestext hat im Menü «Ansicht» einen eigenen Regler"
-            groesserLabel="Ganze Seite vergrössern"
-            groesserTitle="Vergrössert die ganze Anwendung — der Gesetzestext hat im Menü «Ansicht» einen eigenen Regler"
-          />
-        </div>
-
         {/* Logo nur unterhalb lg — ab lg trägt die Seitenleiste die Marke.
             ── C2 (Design-Review 29.8.2026) · UNTER 480 px TRÄGT DIE SCHUBLADE DIE MARKE
             Gemessen @320 im warmen Zustand (Verlauf + ein offener Reiter): der
@@ -160,8 +136,14 @@ export function Topbar({ onMenu, schubladeOffen, seitenleisteEingeklappt, onSeit
             Lupe stand dabei nie über der Hüllenkante, sondern 28 px darin. Die
             Untergrenze ist darum gestrichen statt bewacht (§17): sie trug keine
             Wirkung, aber die Behauptung einer. */}
+        {/* Die Hülle bleibt IMMER stehen, auch ohne Feld: sie ist der `flex-1`-
+            Dehnungsraum des Streifens. Würde sie auf «/» entfallen, rückten die
+            Werkzeug-Knöpfe nach links und der Streifen spränge beim Wechsel
+            «/» ↔ andere Route (§6.1: «Layout darf nicht springen»). */}
         <div className="flex-1 min-w-0 max-w-xl">
-          <HeaderSuche onFokusModus={setSucheBreit} onFokusZurueck={() => { fokusWunsch.current = true; }} />
+          {!aufStartseite && (
+            <HeaderSuche onFokusModus={setSucheBreit} onFokusZurueck={() => { fokusWunsch.current = true; }} />
+          )}
         </div>
 
         <div className={`shrink-0 flex items-center gap-1.5 sm:gap-2 ${weicht}`}>
@@ -198,4 +180,56 @@ export function Topbar({ onMenu, schubladeOffen, seitenleisteEingeklappt, onSeit
       </div>
     </header>
   );
+}
+
+// ─── «/» und ⌘K, wenn der Streifen kein Feld trägt (W2·23-STARTSEITE-V4 §6.1) ─
+//
+// Auf «/» rendert der Streifen keine `HeaderSuche` — und mit ihr keinen Zuhörer
+// für die globalen Such-Kürzel. Statt eines zweiten Handlers neben dem der
+// HeaderSuche (der dort gar nicht existiert) leitet dieser hier UM: er läuft
+// ausschliesslich, solange das Streifen-Feld weg ist, und fokussiert das erste
+// Suchfeld der Seite ausserhalb des Kopfes.
+//
+// BEWUSST OHNE KOPPLUNG an die Startseiten-Interna (Arbeitspaket A baut sie
+// parallel): das Ziel ist über den ARIA-Kontrakt gesucht — `[role="search"]`
+// mit einem `input` darin, nicht über eine Komponente, eine ID oder ein
+// aria-label. Was den Kontrakt erfüllt, wird gefunden; ändert die Startseite
+// ihren Aufbau, bleibt die Umleitung heil.
+//
+// Die ENTSCHEIDUNG, ob ein Tastendruck das Such-Kürzel ist, kommt aus
+// `suche/fruehesSuchKuerzel.ts` (§5 — dieselbe Regel wie HeaderSuche und der
+// Vorlauf aus `main.tsx`, keine zweite Kopie der Tastenlogik). Über denselben
+// Weg wird auch ein Kürzel eingelöst, das VOR dem ersten React-Commit gedrückt
+// wurde, und `lm:suche-fokus` (der CTA-Weg) bleibt bedient.
+function useSuchKuerzelUmleitung(aktiv: boolean): void {
+  useEffect(() => {
+    if (!aktiv) return;
+    const fokussiere = () => {
+      // Erstes Suchfeld AUSSERHALB des Kopfes — im Kopf steht auf anderen Routen
+      // die HeaderSuche, die sich dann selbst kümmert.
+      const felder = document.querySelectorAll<HTMLInputElement>('[role="search"] input');
+      for (const f of felder) {
+        if (f.closest('header')) continue;
+        f.focus();
+        f.select();
+        return;
+      }
+    };
+    const handler = (e: KeyboardEvent) => {
+      // Vorrangregel B1 (16.8.2026): wer in der Capture-Phase schon
+      // beansprucht hat, gewinnt.
+      if (e.defaultPrevented) return;
+      if (!istSuchKuerzel(e)) return;
+      e.preventDefault();
+      fokussiere();
+    };
+    window.addEventListener('keydown', handler);
+    window.addEventListener('lm:suche-fokus', fokussiere);
+    suchKuerzelEmpfaengerAnmelden(fokussiere);
+    return () => {
+      suchKuerzelEmpfaengerAbmelden(fokussiere);
+      window.removeEventListener('keydown', handler);
+      window.removeEventListener('lm:suche-fokus', fokussiere);
+    };
+  }, [aktiv]);
 }

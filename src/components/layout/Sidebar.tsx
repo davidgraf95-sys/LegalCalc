@@ -5,6 +5,7 @@ import {
 } from '../../lib/navigation';
 import { STUFE_WORT } from '../../lib/normtext/erfassungsgrad';
 import { LexMetrikSiegel, LexMetrikWortmarke } from './Logo';
+import { KorpusStand } from '../ui/KorpusStand';
 
 // Alle Nav-Ziele inkl. #Anker (statisch) — zum Erkennen, ob ein aktiver Hash
 // überhaupt einem Geschwister-Eintrag entspricht (Bug-Fix 26.6.: sonst verlieren
@@ -276,6 +277,13 @@ export function Sidebar({ onNavigate, markeZeigen = true }: { onNavigate?: () =>
         {NAVIGATION_META.map((k, i) => (
           <Blatt key={i} k={k} loc={loc} onNavigate={onNavigate} klein />
         ))}
+        {/* W2·23-STARTSEITE-V4 §6.3 · Fuss «Stand des Korpus». Dieselbe Wahrheit
+            wie die Korpus-Stand-Zeile auf «/» — EIN Baustein, zwei Konsumenten
+            (§5), kein zweiter Datumssatz in der Leiste. Auf Mobil trägt die
+            Schublade dieselbe Komponente und damit denselben Fuss.
+            §8: der Baustein sagt «Register erzeugt», nicht «Stand der
+            Rechtsprechung» — die Felder datieren den Build-Lauf. */}
+        <KorpusStand className="px-2.5 pt-2.5" />
       </div>
     </nav>
   );
