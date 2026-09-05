@@ -302,16 +302,12 @@ export function LohnfortzahlungForm() {
                 onChange={(e) => set('anrechenbareVordienstzeitMonate', e.target.value ? Number(e.target.value) : undefined)} />
             </Field>
             <div className="flex flex-col justify-end gap-2">
-              <label className="flex items-center gap-2.5 py-1.5 text-body-s cursor-pointer">
-                <input type="checkbox" checked={form.befristetFest ?? false}
-                  onChange={(e) => set('befristetFest', e.target.checked)} />
-                Befristeter Vertrag fester Dauer &gt; 3 Monate
-              </label>
-              <label className="flex items-center gap-2.5 py-1.5 text-body-s cursor-pointer">
-                <input type="checkbox" checked={form.dreizehnterMonatslohn ?? false}
-                  onChange={(e) => set('dreizehnterMonatslohn', e.target.checked)} />
-                13. Monatslohn (anteilig) berücksichtigen
-              </label>
+              <Checkbox checked={form.befristetFest ?? false}
+                onChange={(v) => set('befristetFest', v)}
+                label="Befristeter Vertrag fester Dauer > 3 Monate" />
+              <Checkbox checked={form.dreizehnterMonatslohn ?? false}
+                onChange={(v) => set('dreizehnterMonatslohn', v)}
+                label="13. Monatslohn (anteilig) berücksichtigen" />
             </div>
           </div>
         )}

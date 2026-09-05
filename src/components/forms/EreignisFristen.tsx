@@ -271,11 +271,7 @@ function EreignisFristen({ ereignisse, zustellungVorgabe }: {
               <div className="space-y-2">
                 <BetragsFeld value={streitwertRoh} onChange={setStreitwertRoh} className={inputCls}
                   placeholder="z. B. 12'000" aria-label="Streitwert in Franken" />
-                <label className="flex items-center gap-2.5 py-1.5 text-body-s cursor-pointer text-ink-700">
-                  <input type="checkbox" checked={!vermoegensrechtlich}
-                    onChange={(e) => setVermoegensrechtlich(!e.target.checked)} />
-                  nicht vermögensrechtliche Streitigkeit
-                </label>
+                <Checkbox checked={!vermoegensrechtlich} onChange={(v) => setVermoegensrechtlich(!v)} label="nicht vermögensrechtliche Streitigkeit" />
               </div>
             </Field>
             <Field label="Kanton" hint="Gerichtsort — Feiertage für die Endnormalisierung (Art. 142 Abs. 3 ZPO)">
@@ -305,10 +301,7 @@ function EreignisFristen({ ereignisse, zustellungVorgabe }: {
             </Field>
             {ereignis === 'klagebewilligung' && (
               <Field label="Streitsache">
-                <label className="flex items-center gap-2.5 py-1.5 text-body-s cursor-pointer text-ink-700 mt-2">
-                  <input type="checkbox" checked={mietOderPacht} onChange={(e) => setMietOderPacht(e.target.checked)} />
-                  Miete/Pacht von Wohn- und Geschäftsräumen bzw. landw. Pacht (30 Tage, Art. 209 Abs. 4 ZPO)
-                </label>
+                <Checkbox checked={mietOderPacht} onChange={setMietOderPacht} label="Miete/Pacht von Wohn- und Geschäftsräumen bzw. landw. Pacht (30 Tage, Art. 209 Abs. 4 ZPO)" className="mt-2" />
               </Field>
             )}
             {ereignis === 'erbgang' && (
