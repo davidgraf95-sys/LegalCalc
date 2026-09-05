@@ -194,6 +194,31 @@ export function pdfQuellenJson(map: PdfQuellenMap): string {
   return JSON.stringify(sortiert, null, 2) + '\n';
 }
 
+/**
+ * Reine Räum-Funktion (Gegenprüfungs-Befund PR #694, 5.9.2026, minimal aus
+ * main() extrahiert für Testbarkeit — keine Logikänderung). Entfernt aus
+ * `map` jene Sidecar-Einträge, die (a) nicht mehr im Register stehen UND
+ * (b) mit `<KT>-` eines der GEFAHRENEN Kantone beginnen — ein aus dem Korpus
+ * zurückgezogener Erlass steht nicht mehr im Register und überlebte sonst
+ * jeden Teillauf als Waise (§5/§8). Fremde Kantone/Register-Einträge bleiben
+ * unberührt. Mutiert `map` nicht.
+ */
+export function raeumeVerwaisteSidecarEintraege(
+  map: PdfQuellenMap,
+  imRegister: ReadonlySet<string>,
+  gefahren: ReadonlySet<string>,
+): { map: PdfQuellenMap; entfernt: string[] } {
+  const bereinigt: PdfQuellenMap = { ...map };
+  const entfernt: string[] = [];
+  for (const key of Object.keys(map)) {
+    if (imRegister.has(key)) continue;
+    if (![...gefahren].some((kt) => key.startsWith(`${kt}-`))) continue;
+    entfernt.push(key);
+    delete bereinigt[key];
+  }
+  return { map: bereinigt, entfernt };
+}
+
 // ─── CLI ─────────────────────────────────────────────────────────────────────
 
 function heute(): string {
@@ -250,13 +275,8 @@ async function main() {
           .filter((e) => e.ebene === 'kanton' && e.kanton !== null)
           .map((e) => (e.kanton as string).toUpperCase()),
       );
-    const zurueckgezogen: string[] = [];
-    for (const key of Object.keys(map)) {
-      if (imRegister.has(key)) continue;
-      if (![...gefahren].some((kt) => key.startsWith(`${kt}-`))) continue;
-      zurueckgezogen.push(key);
-      delete map[key];
-    }
+    const { map: bereinigt, entfernt: zurueckgezogen } = raeumeVerwaisteSidecarEintraege(map, imRegister, gefahren);
+    map = bereinigt;
     if (zurueckgezogen.length > 0) {
       console.log(`Kanton: ${zurueckgezogen.length} verwaiste(r) Eintrag entfernt (nicht mehr im Register): ${zurueckgezogen.join(', ')}`);
     }

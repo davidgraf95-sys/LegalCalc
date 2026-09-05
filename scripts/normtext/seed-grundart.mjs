@@ -101,6 +101,19 @@ function main() {
     if (gesehen.has(e.key)) throw new Error(`seed-grundart: doppelter key «${e.key}»`);
     gesehen.add(e.key);
 
+    // Kanton-Waisen-Sonde (Gegenprüfungs-Befund PR #694, 5.9.2026): der
+    // statische Audit-Snapshot erlass-klassifikation.json kennt einen später
+    // aus dem Korpus zurückgezogenen Key (§5/§8) nicht — ohne Sonde blieb
+    // GL-III%20B_7_1 nach seinem Rückzug als Geist im Seed. Sonde = Datei-
+    // Existenz (dieselbe Art wie golden-kanton-merge.ts), NICHT das Register:
+    // register.ts importiert GRUNDART_SEED selbst, ein Import davon zurück
+    // wäre ein Zyklus. Nur Kanton — Bund-Stubs/PDF-Embed/Live-Link haben
+    // ohnehin nie eine Snapshot-Datei und dürfen das auch nicht werden.
+    if (e.ebene === 'kanton' && !existsSync(join(KANTON_SNAPSHOTS, `${e.key}.json`))) {
+      console.log(`  Rückzug (kein Snapshot mehr): ${e.key} — aus dem Seed entfernt`);
+      continue;
+    }
+
     // Grenzfall-Wächter: garantiert die KODIFIKATION-Zuordnung (Drift bräche hier).
     if (GRENZFALL_KODIFIKATION.has(e.key) && e.grundart !== 'KODIFIKATION') {
       throw new Error(`seed-grundart: Grenzfall ${e.key} erwartet KODIFIKATION, ist «${e.grundart}»`);
