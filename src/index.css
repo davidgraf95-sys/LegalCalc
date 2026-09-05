@@ -311,12 +311,8 @@
          50 --z-modal          Dialog-/Sheet-/Panel-Inhalt über seinem Scrim
        Bewusst NICHT verändert: die Reihenfolge selbst — nur ihr Ausdruck.
        Wächter: Prüfung 5 in `scripts/check-design-tokens.ts` verbietet neue
-       rohe `z-[…]`/Tailwind-Zahlen-Utilities ausserhalb dieser Skala. Drei
-       Dateien blieben unmigriert (Kollisions-Vorsicht, paralleler Bauer
-       «Entscheide-Batch» auf demselben Branch): `layout/Shell.tsx`,
-       `layout/HeaderSuche.tsx`, `rechtsprechung/EntscheidZeile.tsx` — dafür
-       eine befristete, benannte Ausnahme im Wächter (Folgeschritt: migrieren,
-       Ausnahme entfernen). */
+       rohe `z-[…]`/Tailwind-Zahlen-Utilities ausserhalb dieser Skala —
+       vollständig migriert (5.9.2026, Runde 6), keine Ausnahmen. */
     --z-base:0; --z-sticky:10; --z-entscheid-sticky:15;
     --z-reader-scrim:16; --z-reader-kopf:17; --z-inhalt-kopf:19;
     --z-leiste:20; --z-dropdown:30; --z-overlay:40; --z-modal:50;
