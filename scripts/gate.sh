@@ -88,6 +88,11 @@ run "golden:vergleich"  npm run golden:vergleich
 if [ "$mode" = "voll" ]; then
   run "lint"   npm run lint
   run "check"  npm run check
+  # §17-Wurzelfix (Beleg 5.9.2026, Jules-PR #709): `check:testtreue` lief in
+  # ci.yml, aber NICHT hier — ein als 'refactor' deklarierter Commit, der
+  # Tests ändert (§6.3), war lokal unsichtbar grün und erst in CI rot. Basis
+  # ist `origin/main` (Skript-Default), wie im CI-Schritt «Testtreue (§6.3)».
+  run "testtreue" npm run check:testtreue
   # ── ZH-Vollständigkeit (ZH-Fix-Runde 3, B7) ────────────────────────────────
   # Das Tor hält die ZH-Snapshots gegen das amtliche PDF. Zwei Teile:
   #  · ARTEFAKT — braucht kein PDF (Trennstrich-Enden, Gliederungstitel im
