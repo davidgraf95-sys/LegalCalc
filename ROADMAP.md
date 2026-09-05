@@ -466,12 +466,12 @@ zgb-a36-anhang: Die ZGB-Gliederung zeigt 74 Artikel des Anhangs «Wortlaut der f
   Such-/Navigations-Posten zusätzlich in [FAHRPLAN-UI-NAVIGATION.md](fahrplaene/FAHRPLAN-UI-NAVIGATION.md) §7.
   - [ ] **OR-Leser-e2e-Timeouts app-weit härten · Shard-Laufzeit-Deckel** *(CI 5.9.2026)* — Fahrplan §4.
 
-- [ ] **Oberflächen-Qualität app-weit** *(`QS-UI`, reines UI/Design §13, kontinuierlich)*
-  <!-- @meta id: QS-UI · status: ready · blocker: null · dep: [] · feld: design · fahrplan: fahrplaene/FAHRPLAN-UI-QUALITAET.md -->
+- [~] **Oberflächen-Qualität app-weit** *(`QS-UI`, reines UI/Design §13, kontinuierlich)*
+  <!-- @meta id: QS-UI · status: wip · blocker: null · dep: [] · feld: design · fahrplan: fahrplaene/FAHRPLAN-UI-QUALITAET.md -->
   Kontinuierlicher Oberflächen-Pass (Fundament → Hierarchie → Politur), kein Einzel-Redesign.
   **Detail:** [FAHRPLAN-UI-QUALITAET.md](fahrplaene/FAHRPLAN-UI-QUALITAET.md) §8.
-  - [ ] **Marken-Präfix im Leser: «lit. BE» statt «Kategorie BE», «A.» statt «A:»** *(Gegenprüfung PR #658, 4.9.2026)* — `litZiff` in `src/components/normtext/ArtikelBody.tsx` (~Z. 48, Punkt ~Z. 434) hängt jeder Marke «lit./Ziff.» + «.» an; Label-Marken (`<dt>` mit `:`) sollen ohne Präfix und mit «:» erscheinen. Reine Darstellung (§3); Datei liegt in Jules-Ticket #654 — erst danach.
-  - [ ] **Pfadgebundene Wächter zeigen nur auf `ArtikelBody.tsx`** *(Nebenfund #663-Split, QS-FREMDAGENTEN 4.9.2026, §6.7)* — `src/tests/leser-typo-tokens.test.ts`, `src/tests/design-r3b-chrome.test.ts` und `scripts/check-linien-kanon.ts` prüfen weiterhin nur die Ursprungsdatei; nach dem Komponenten-Split (#663) fehlen die ausgelagerten Dateien (`ArtikelBody.zitier.tsx`, `.helfer.ts`) im Prüfbereich — ein Tor, das nicht auf den ausgelagerten Teil scheitern kann, ist gefährlicher als keines. Analog `src/pages/EntscheidLeser.tsx`-Wächter (11 Tests prüfen den Quelltext direkt) — Hinweis, falls dort später gesplittet wird.
+  - [x] **Marken-Präfix im Leser: «lit. BE» statt «Kategorie BE», «A.» statt «A:»** *(Gegenprüfung PR #658)* — gebaut #679 (`markenArt` in `ArtikelBody.helfer.ts`), Tests nachgezogen 5.9.2026 (VZV Art. 3: `BE:` statt `BE.`, Zitat ohne «lit.»; Golden byte-gleich).
+  - [x] **Pfadgebundene Wächter zeigen nur auf `ArtikelBody.tsx`** *(Nebenfund #663-Split, §6.7)* — erledigt 5.9.2026: drei Wächter (leser-typo-tokens, design-r3b-chrome, check-linien-kanon) auf Glob `ArtikelBody.*` umgestellt, je Rot-Beweis in `ArtikelBody.helfer.ts`. Hinweis bleibt: `EntscheidLeser.tsx`-Wächter (11 Tests) analog anpassen, falls dort gesplittet wird.
   - [ ] Teilpass (e) Rest: Farbwelt-Baseline enger, axe von Stichprobe auf Flächendeckung; Restliste §2.3 Ziff. 6.
   - [ ] **Nebenfunde Nacht 5.9.2026** (Baum-Namen Rest + David-Frage, UI-String-Linter, Checkbox-Grösse, /einstellungen-Meta, Design R8) — [FAHRPLAN-UI-QUALITAET.md](fahrplaene/FAHRPLAN-UI-QUALITAET.md) §2.5.
 

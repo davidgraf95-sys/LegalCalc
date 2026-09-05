@@ -19,6 +19,7 @@
  */
 import { describe, it, expect } from 'vitest';
 import { join } from 'node:path';
+import { readdirSync } from 'node:fs';
 // R5-A (5.9.2026) · §5: die Verzeichnis-Wanderung, das Kommentar-Sieb und die
 // Pfad-Kürzung kamen bis hierher als EIGENE Kopie mit — Wort für Wort
 // `appDateien.ts`, also genau der Baustein, den R3-α gegen Listen-Wächter
@@ -29,6 +30,23 @@ import { APP_WURZEL, alleTsx, rel, ohneKommentare, liesRoh } from './appDateien'
 
 const WURZEL = APP_WURZEL;
 const CSS = liesRoh(join(WURZEL, 'index.css'));
+
+// QS-UI (5.9.2026, Nebenfund #663-Split, §6.7): `alleTsx()` fegt nur `.tsx` —
+// die nach dem ArtikelBody-Split (PR #663) ausgelagerte `ArtikelBody.helfer.ts`
+// (reine Funktionen, kein JSX, darum `.ts` ohne `x`) blieb damit unbewacht: ein
+// `shadow-lg` dort ohne `.lc-schwebeflaeche` daneben wäre nicht aufgefallen.
+// Glob statt fester Pfad — ergänzt jedes `ArtikelBody*.ts` (nicht `.tsx`, das
+// deckt `alleTsx()` bereits ab) im Verzeichnis zum Sweep unten.
+const ARTIKELBODY_TS_NUR = readdirSync(join(WURZEL, 'components/normtext'))
+  .filter((n) => /^ArtikelBody.*\.ts$/.test(n))
+  .map((n) => join(WURZEL, 'components/normtext', n));
+
+// Leer-Treffer-Schutz 5.9.2026 (Gegenprüfung #719, §6.7 lit. b)
+describe('Glob-Wächter', () => {
+  it('Glob findet ArtikelBody-Dateien (.ts ohne x)', () => {
+    expect(ARTIKELBODY_TS_NUR.length).toBeGreaterThan(0);
+  });
+});
 
 /** Roh-Inhalt einer App-Datei, adressiert relativ zu `src/`. */
 function lies(pfad: string): string {
@@ -528,7 +546,7 @@ describe('A3-2 · schwebende Flächen teilen EINE Anatomie', () => {
 
   it('keine Fläche baut die Kette noch selbst', () => {
     const funde: string[] = [];
-    for (const p of alleTsx()) {
+    for (const p of [...alleTsx(), ...ARTIKELBODY_TS_NUR]) {
       if (rel(p) in SCHWEBE_AUSNAHMEN) continue;
       for (const zeile of ohneKommentare(liesRoh(p)).split('\n')) {
         if (zeile.includes('shadow-lg') && !zeile.includes('lc-schwebeflaeche')) {

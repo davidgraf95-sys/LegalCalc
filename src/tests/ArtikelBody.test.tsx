@@ -257,6 +257,46 @@ describe('Lesesicht H/I/J — Pop pro Element, kleinere Marken, feste Rinne', ()
   });
 });
 
+// QS-UI (Gegenprüfung PR #658, gebaut PR #679, 4./5.9.2026): Fedlex setzt
+// echte Aufzählungsmarken («<dt>a. </dt>») UND Label-Listen («<dt>BE: </dt>»)
+// in dieselbe items[].marke-Struktur (extrahiere-fedlex.ts §Aufzählung).
+// Label-Marken sind KEINE lit.-Position — Beschriftung ohne «lit.»-Präfix,
+// mit «:» statt «.» wie im amtlichen <dt>. Real belegt: VZV Art. 3 Abs. 1,
+// marke "BE" (public/normtext/bund/VZV.json) — «Der Führerausweis wird für
+// folgende Kategorien erteilt: … BE Fahrzeugkombinationen …»; vorher zeigte
+// der Leser «BE.» und das Zitat «Art. 3 Abs. 1 lit. BE VZV» (fachlich falsch,
+// eine «lit. BE» gibt es in der VZV nicht).
+describe('QS-UI Marken-Präfix — Label-Marken ohne lit., mit «:» (VZV Art. 3 Abs. 1)', () => {
+  const vzvArt3Abs1: NormSnapshot['bloecke'] = [
+    {
+      absatz: '1', text: 'Der Führerausweis wird für folgende Kategorien erteilt:',
+      items: [
+        { marke: 'a', text: 'echte Aufzählungsposition;' },
+        { marke: 'BE', text: 'Fahrzeugkombinationen aus einem Zugfahrzeug der Kategorie B und einem Anhänger …' },
+      ],
+    },
+  ];
+  it('Anzeige: echte Aufzählungsmarke «a.» unverändert, Label-Marke «BE:» statt «BE.»', () => {
+    const out = renderToString(
+      <ArtikelBody bloecke={vzvArt3Abs1} artikel="3" passus={{ absatz: null }} />,
+    );
+    expect(out).toContain('>a.<');
+    expect(out).toContain('>BE:<');
+    expect(out).not.toContain('>BE.<');
+  });
+  it('Zitat (Lesesicht): echte Marke «Art. 3 Abs. 1 lit. a VZV», Label-Marke OHNE «lit.» («Art. 3 Abs. 1 BE VZV»)', () => {
+    const out = renderToString(
+      <ArtikelBody
+        bloecke={vzvArt3Abs1} artikel="3" passus={{ absatz: null }}
+        zitierKontext={{ artikelLabel: 'Art. 3', kuerzel: 'VZV' }}
+      />,
+    );
+    expect(out).toContain('Art. 3 Abs. 1 lit. a VZV — kopieren');
+    expect(out).toContain('Art. 3 Abs. 1 BE VZV — kopieren');
+    expect(out).not.toContain('Art. 3 Abs. 1 lit. BE VZV');
+  });
+});
+
 describe('trenneAenderungshistorie (§3 — Extraktions-Artefakt-Trennung)', () => {
   it('in-Kraft-Artikel mit angehängter Fussnote: Wortlaut bleibt, Historie abgetrennt, doppelte Nr weg', () => {
     const t = 'Artikel 20 Absatz 3 ist sinngemäss anwendbar. 53 53 Fassung gemäss Ziff. I des BG vom 20. März 1998 (AS 2000 1569).';
