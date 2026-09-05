@@ -139,13 +139,20 @@ export function Einstellungen() {
       <section className="lc-card p-5 sm:p-6 space-y-5">
         <Zeile titel="Schriftgrösse — ganze Seite"
           hinweis="Vergrössert Schrift und Abstände der ganzen Anwendung (der Gesetzestext hat im Leser-Menü «Ansicht» zusätzlich einen eigenen Regler). Die Wahl gilt sofort und bleibt in diesem Browser gespeichert.">
-          <SchriftgroessenRegler
-            schrift={schrift}
-            kleinerLabel="Ganze Seite verkleinern"
-            kleinerTitle="Verkleinert die ganze Anwendung — der Gesetzestext hat im Menü «Ansicht» einen eigenen Regler"
-            groesserLabel="Ganze Seite vergrössern"
-            groesserTitle="Vergrössert die ganze Anwendung — der Gesetzestext hat im Menü «Ansicht» einen eigenen Regler"
-          />
+          {/* role="group" + sichtbares Scope-Wort bleiben am Aufrufer (Baustein
+              trägt nur das Knopf-Paar) — derselbe Umschluss wie
+              `v3/LeserAnsichtV3.tsx` («Nur Gesetzestext»), hier mit dem
+              Gegenstück «Ganze Seite» (C4, Entscheid David 5B 29.8.2026). */}
+          <div role="group" aria-label="Schriftgrösse der ganzen Seite" className="inline-flex items-center gap-1.5">
+            <span aria-hidden className="select-none whitespace-nowrap text-micro text-ink-500">Ganze Seite</span>
+            <SchriftgroessenRegler
+              schrift={schrift}
+              kleinerLabel="Ganze Seite verkleinern"
+              kleinerTitle="Verkleinert die ganze Anwendung — der Gesetzestext hat im Menü «Ansicht» einen eigenen Regler"
+              groesserLabel="Ganze Seite vergrössern"
+              groesserTitle="Vergrössert die ganze Anwendung — der Gesetzestext hat im Menü «Ansicht» einen eigenen Regler"
+            />
+          </div>
         </Zeile>
 
         <Zeile titel="Farbschema">
