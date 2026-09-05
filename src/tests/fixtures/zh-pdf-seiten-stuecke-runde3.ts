@@ -30,12 +30,9 @@
  *   Prosa in den Blocktext («… zuständige Behörde: 1. 2. 3. 4. 5. für die …»).
  */
 
-export interface ZhStueckFixture {
-  x: number;
-  y: number;
-  h: number;
-  w: number;
-  s: string;
+import type { ZhStueckFixture as ZhStueckFixtureBasis } from './zh-pdf-seiten-stuecke.typen';
+
+export interface ZhStueckFixture extends ZhStueckFixtureBasis {
   /** pdfjs-Schriftkennung (dokument-lokal) — trägt den Titel-Diskriminator. */
   f: string;
 }
