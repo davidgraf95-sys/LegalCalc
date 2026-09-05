@@ -147,6 +147,19 @@ export function migriere(z: Zeitreihe): Zeitreihe {
           },
         };
       }
+      // Schema 5: dieselbe Linie für `entwurf_antworten_7d` (ANLASS 5.9.2026,
+      // PR #707) — eine Jules-Messung von vor dem 5.9.2026 unterschied noch
+      // keine Entwurf-Antworten, nachgetragen wird darum `null`, nie 0.
+      const j2 = n.fremdagenten.jules;
+      if (j2 && j2.entwurf_antworten_7d === undefined) {
+        n = {
+          ...n,
+          fremdagenten: {
+            ...n.fremdagenten,
+            jules: { ...j2, entwurf_antworten_7d: j2.entwurf_antworten_7d ?? null },
+          },
+        };
+      }
       return n;
     }),
   };
@@ -411,6 +424,7 @@ if (!process.env.VITEST) {
     s.fremdagenten.jules
       ? `  Jules (7 Tage): ${s.fremdagenten.jules.prs_gemerged_7d} gemerged · ${s.fremdagenten.jules.prs_geschlossen_7d} geschlossen · ` +
         `${s.fremdagenten.jules.proben_7d ?? '—'} Proben (Label \`probe\`, aus der Landungsquote ausgeschlossen) · ` +
+        `${s.fremdagenten.jules.entwurf_antworten_7d ?? '—'} Entwurf-Antworten (Label \`entwurf-antwort\`, aus der Landungsquote ausgeschlossen) · ` +
         `Median-Dauer ${s.fremdagenten.jules.median_dauer_min ?? '—'} min · Tickets/24h ${s.fremdagenten.jules.tickets_24h}` +
         `${s.fremdagenten.jules.alarm ? ' · ⚠️  ALARM (Issue ohne Annahme)' : ''}`
       : '  Jules: — (nicht erhoben)',

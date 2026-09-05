@@ -104,6 +104,44 @@ describe('klassierePrs (Jules-Messung, Proben ausgeschlossen)', () => {
     expect(out.proben.map((p) => p.number)).toEqual([643]);
   });
 
+  // ANLASS (5.9.2026, Fahrplan §5): PR #707 war eine gültige Entwurf-Antwort
+  // — der Auftrag verlangte bei Feldabweichung Entwurfs-PR + Abbruch, Jules
+  // tat genau das. Ohne Merge geschlossen zählte er dennoch als Ablehnung.
+  it('zählt einen geschlossenen Jules-PR mit Label `entwurf-antwort` als Entwurf-Antwort, nicht als Ablehnung', () => {
+    const out = klassierePrs(
+      [
+        pr({
+          number: 707,
+          headRefName: 'jules-1111541331587033919-entwurf',
+          state: 'CLOSED',
+          closedAt: IM_FENSTER,
+          labels: [{ name: 'entwurf-antwort' }],
+        }),
+      ],
+      JETZT,
+    );
+    expect(out.geschlossen).toEqual([]);
+    expect(out.entwurfAntworten.map((p) => p.number)).toEqual([707]);
+  });
+
+  it('trägt beide Label `probe` und `entwurf-antwort` in die Probe ein — Probe hat Vorrang', () => {
+    const out = klassierePrs(
+      [
+        pr({
+          number: 708,
+          headRefName: 'jules-1111541331587033919-beide',
+          state: 'CLOSED',
+          closedAt: IM_FENSTER,
+          labels: [{ name: 'probe' }, { name: 'entwurf-antwort' }],
+        }),
+      ],
+      JETZT,
+    );
+    expect(out.proben.map((p) => p.number)).toEqual([708]);
+    expect(out.entwurfAntworten).toEqual([]);
+    expect(out.geschlossen).toEqual([]);
+  });
+
   it('trennt gemergt und geschlossen und lässt offene PRs ganz aus', () => {
     const out = klassierePrs(
       [

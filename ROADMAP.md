@@ -542,15 +542,15 @@ zgb-a36-anhang: Die ZGB-Gliederung zeigt 74 Artikel des Anhangs «Wortlaut der f
 > Dieses Feld steht bewusst zuletzt: ohne `@queue`-Eintrag entscheidet die Dokumentreihenfolge,
 > und dann soll ein Produkt-Schritt gewinnen, nicht ein Prozess-Schritt.
 
-- [ ] **Effizienz-Dauerauftrag (Token/Prozess)** *(`QS-EFFIZIENZ`, stehender Auftrag David 14.8.2026)*
-  <!-- @meta id: QS-EFFIZIENZ · status: ready · blocker: null · dep: [] · feld: betrieb · fahrplan: fahrplaene/FAHRPLAN-EFFIZIENZ-CHECKLISTE.md -->
+- [~] **Effizienz-Dauerauftrag (Token/Prozess)** *(`QS-EFFIZIENZ`, stehender Auftrag David 14.8.2026)*
+  <!-- @meta id: QS-EFFIZIENZ · status: wip · blocker: null · dep: [] · feld: betrieb · fahrplan: fahrplaene/FAHRPLAN-EFFIZIENZ-CHECKLISTE.md -->
   «bau immer weiter an dingen die bei zukünftigem bau token sparen … bis ich stop sage»: fortlaufende,
   serielle Kleinschritte an Skills/Hooks/Toren/Steuer-Doku; je Punkt eigener Commit/PR, Grenzen
   unverändert (§1, Abnahme, Risiko-Gegenprüfung).
   **Detail:** [FAHRPLAN-EFFIZIENZ-CHECKLISTE.md](fahrplaene/FAHRPLAN-EFFIZIENZ-CHECKLISTE.md) §1 —
   die Checkliste liegt seit 29.8.2026 dort statt hier (sie war eine Merge-Konflikt-Falle: 6 Konflikte
   in EINER Zeile bei 15 PRs).
-  - [ ] **Steuerdeckel-Entscheid (Hooks 221 B, check-*.ts ~180 B Luft — wartet auf David)** · **Projektionskette nach main-Merge** (`npm run projektionen`: Zähler/Feed/Historie/Manifest + `gen:e2e-shards`; 5 CI-Läufe verloren #694/#695/#689; Prüf-Worktrees `npm ci`) · **`src/lib/suche/**` nicht im Risiko-Prädikat** (#681, §6.7). · **`schlankheit:update` nur gezielt** (setzt alle Baseline-Zahlen still neu, registriert neue Rot-Dateien; #699) · `ZhStueckFixture` auch in `-runde2/-runde3`-Fixtures dupliziert (§5, #702). · **Paritäts-Tor kennt nur die `check:seriell`-Kette** (`check:testtreue` lag ausserhalb, #712) — auf alle ci.yml-Steps ausdehnen · **Messung: Klasse «Entwurf-Antwort»** (Label analog `probe`, #707) in `fremdagenten-messung.ts`.
+  - [ ] **Steuerdeckel-Entscheid — wartet auf David:** Streichkandidat unter `scripts/check-*.ts` (5.9.2026 Prosa-Diät statt Deckel-Hebung; Hooks ~0 B Luft) · ~~**Projektionskette nach main-Merge**~~ erledigt 5.9.2026: `npm run projektionen` + Landungs-Skill Nachkontrolle 8/9; kein neues Tor (Drift-Tore bestehen) · ~~**`src/lib/suche/**` nicht im Risiko-Prädikat** (#681, §6.7)~~ Entscheid 5.9.2026 (§17-Gegengewicht): kein Zuwachs — Suche ist Darstellung/Ranking, kein datierter Vorfall; Wiedervorlage nur bei Vorfall an `bgeQuery.ts`/`normQuery.ts`, dann als Teilmenge. · ~~**`schlankheit:update` nur gezielt**~~ erledigt 5.9.2026 (`--update <pfad…>`, ohne Pfad nur Aufräumen + Exit 1 bei Neuzugängen; Rot-Beweis, #699) · ~~`ZhStueckFixture` auch in `-runde2/-runde3`-Fixtures dupliziert (§5, #702)~~ erledigt 5.9.2026 (Jules 13b, #715: Basistyp importiert, runde3 per `extends`). · ~~**Paritäts-Tor kennt nur die `check:seriell`-Kette**~~ erledigt 5.9.2026: Gegenrichtung ci.yml → lokal, `ALLOWLIST_NUR_CI` (3 Einträge), Rot-Beweis (#712) · ~~**Messung: Klasse «Entwurf-Antwort»**~~ erledigt 5.9.2026: Label `entwurf-antwort` (auf #707), `entwurf_antworten_7d` (Schema 5), Skill/Vorlage/Fahrplan §5 nachgezogen.
 
 - [ ] **Fremde Agenten im Bau — Jules, Antigravity, Gemini** *(`QS-FREMDAGENTEN`, Freigabe David 3.9.2026)*
   <!-- @meta id: QS-FREMDAGENTEN · status: ready · blocker: null · dep: [] · feld: betrieb · fahrplan: fahrplaene/FAHRPLAN-FREMDAGENTEN.md -->

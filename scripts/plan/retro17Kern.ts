@@ -255,9 +255,12 @@ export function befunde(z: Zeitreihe, chronik: string, letzteSichtungAntigravity
     //     Hand geführt (Fahrplan §5) und hat hier keine automatische Quelle.
     const n = jules.prs_gemerged_7d + jules.prs_geschlossen_7d;
     const probenZusatz =
-      jules.proben_7d === null
+      (jules.proben_7d === null
         ? '; Proben in dieser Messung nicht unterschieden (Schema < 4)'
-        : `; ${jules.proben_7d} Probe(n) mit Label \`probe\` ausgeschlossen`;
+        : `; ${jules.proben_7d} Probe(n) mit Label \`probe\` ausgeschlossen`) +
+      (jules.entwurf_antworten_7d === null
+        ? '; Entwurf-Antworten in dieser Messung nicht unterschieden (Schema < 5)'
+        : `; ${jules.entwurf_antworten_7d} Entwurf-Antwort(en) mit Label \`entwurf-antwort\` ausgeschlossen`);
     if (n >= JULES_QUOTE_MIN_N) {
       const quote = jules.prs_gemerged_7d / n;
       if (quote < JULES_RUECKBAU_QUOTE) {

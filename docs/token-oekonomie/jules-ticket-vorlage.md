@@ -10,7 +10,10 @@ Test-Splits siehe #643/#644. Massgebliches Fertig-Kriterium bei Zählwerten ist 
 `npx vite-node scripts/analyse/test-assertion-diff.ts <Basis> <Head> src/tests/` = 0 Differenz — die
 Beispiel-PRs sind Beleg, nicht Massstab. Absichtliche Proben der Prüfstrasse (kein Bau-Auftrag)
 tragen das Label `probe` und zählen nicht in die Landungsquote (Konvention QS-FREMDAGENTEN,
-`klassierePrs()` in `scripts/analyse/fremdagenten-messung.ts`).
+`klassierePrs()` in `scripts/analyse/fremdagenten-messung.ts`). Eine gültige Entwurf-Antwort
+(Auftrag verlangte bei Feldabweichung Entwurfs-PR + Abbruch statt fertigem Bau) trägt vor dem
+Schliessen das Label `entwurf-antwort` und zählt ebenso weder als Landung noch als Ablehnung
+(Klasse `entwurf-antwort`, QS-EFFIZIENZ 5.9.2026).
 
 ---
 

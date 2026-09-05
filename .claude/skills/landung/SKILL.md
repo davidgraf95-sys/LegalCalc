@@ -231,7 +231,9 @@ lassen.
 **Entwurfs-PR ist ein gültiges Ergebnis.** `AGENTS.md` §7 verlangt bei rotem
 Tor oder unklarem Auftrag einen Entwurf mit Meldung statt einer kreativen
 Lösung. Ein solcher PR wird nicht abgelehnt, sondern beantwortet: Auftrag
-nachschärfen oder Schritt zurückholen.
+nachschärfen oder Schritt zurückholen. Vor dem Schliessen das Label
+`entwurf-antwort` setzen (Beleg PR #707, 5.9.2026) — die Messung
+(`klassierePrs()`) zählt ihn dann weder als Landung noch als Ablehnung.
 
 ### Red Flags — STOP
 
@@ -271,6 +273,16 @@ nachschärfen oder Schritt zurückholen.
    `npm test` in jedem neuen Worktree rot).
 7. Karten-ZEILE in `STRUKTUR.md` (deployter Stand, Commit-Hash) — Form:
    Skill `bauschritt` Station E.
+8. **Projektionen nachziehen:** `npm run projektionen` (Zähler/Feed/Historie +
+   `gen:e2e-shards`, seriell) — vor dem Öffnen eines PR, der Quelldaten
+   ändert, und nach einer Landekette mit mehreren Daten-PRs. Beleg: 5 CI-Läufe
+   verloren #694/#695/#689, 5.9.2026. Das Datenhaltungs-Manifest ist bewusst
+   NICHT dabei: `datenhaltung:manifest` pinnt den Ist-Zustand vor der
+   Drift-Prüfung — nur nach rotem `check:datenhaltung`, mit Begründung im
+   Commit (Gegenprüfung #717, §6.7).
+9. Prüf-Worktrees: nach `git worktree add` immer `npm ci` (frischer Checkout
+   trägt noch kein `node_modules`) — sonst laufen Tore/Tests dort nicht an
+   (Beleg gleiche Session, 5.9.2026).
 
 ## Trailer- und PR-Formregeln (CI-Rot-Lehren 31.8./1.9.2026, §17)
 

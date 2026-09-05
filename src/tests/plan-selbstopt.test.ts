@@ -78,6 +78,7 @@ describe('befunde — Fremdagenten (QS-FREMDAGENTEN)', () => {
     prs_gemerged_7d: 0,
     prs_geschlossen_7d: 0,
     proben_7d: 0,
+    entwurf_antworten_7d: 0,
     prs_geschlossen_nummern: [],
     median_dauer_min: null,
     tickets_24h: 0,
