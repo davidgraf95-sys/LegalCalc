@@ -20,7 +20,7 @@ export function MaterialKarte({ m }: { m: BrowseMaterial }) {
   return (
     <Link
       to={`/materialien/${encodeURIComponent(m.key)}`}
-      className="lc-card group block p-4 no-underline"
+      className="lc-card group flex h-full flex-col p-4 no-underline"
     >
       <div className="flex items-baseline justify-between gap-3">
         <span className="lc-overline">{overline}</span>
@@ -32,20 +32,15 @@ export function MaterialKarte({ m }: { m: BrowseMaterial }) {
           Genau das war der Befund: «Stand 01.02.2022» war formal nicht von einem
           Normverweis «ZGB» zu unterscheiden. Die Opt-in-Klasse macht die
           Flachheit zur ERKLÄRTEN Aussage statt zum Zufall (§23). */}
-      {/* ── LM-195 (W2·17-UI-BEFUNDE/B14) · KEINE WIEDERHOLUNG DER ÜBERSCHRIFT ──
-          Hier stand zusätzlich `<span>{m.behoerdeKuerzel}</span>`. Gemessen
-          4.9.2026 @1440 auf /materialien (Preview von origin/main): die Karten
-          liegen ausnahmslos IN der Behörden-Gruppe, deren Kopf dasselbe Kürzel
-          schon trägt — «ESTV» als Abschnittsüberschrift, darunter jede Karte
-          nochmals «ESTV». Der einzige Produktions-Aufrufer ist
-          `pages/Materialien.tsx` (`gruppen.map` → GruppenKopf `g.kuerzel`,
-          darunter `g.materialien.map`), die Angabe ist dort also IMMER redundant.
-          Bewusst KEINE Prop `ohneBehoerde`: eine Option für einen Fall, den es
-          nicht gibt, ist genau die spekulative Abstraktion, die das
-          Minimalismus-Prinzip ausschliesst (.claude/rules/schichtentrennung.md).
-          Die `lc-chip-zeile` bleibt — sie trägt weiter den Stand-Chip und dessen
-          erklärte Flachheit (§23/N1). */}
-      <div className="lc-chip-zeile mt-3 flex flex-wrap items-center gap-x-3 gap-y-1.5 text-xs text-ink-500">
+      {/* LM-028 (B11-Karten, 4.9.2026): `mt-auto` hängt die Metazeile an den
+          Kartenfuss statt an den Titel (gemessen /materialien @1440: drei- gegen
+          zweizeiliger Titel setzte «Stand …» 19 px auseinander). Die Karte ist
+          dafür eine Flex-Spalte (`flex h-full flex-col`); Kartenhöhe unverändert.
+          LM-195 (B14, 4.9.2026): kein `behoerdeKuerzel` mehr in der Zeile — die
+          Karten liegen immer in der Behörden-Gruppe, deren Kopf das Kürzel trägt
+          (einziger Aufrufer `pages/Materialien.tsx`); bewusst keine Prop dafür.
+          Die `lc-chip-zeile` trägt weiter den Stand-Chip (§23/N1). */}
+      <div className="lc-chip-zeile mt-auto pt-3 flex flex-wrap items-center gap-x-3 gap-y-1.5 text-xs text-ink-500">
         <StandChip stand={m.stand} />
       </div>
       {/* ── LM-195, zweiter Teil · DIE KLICKBARKEIT IST SICHTBAR ────────────────

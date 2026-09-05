@@ -1,7 +1,7 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { planeLiveSync } from '../lib/liveUrlSync';
-import { KOPIER_DAUER_MS } from './useKopieren';
+import { useKopieren } from './useKopieren';
 
 // ─── «Link teilen»-Button — geteilter Baustein (FAHRPLAN-PRAXIS 1.3) ────────
 // Schreibt den kodierten Fall in die URL (replace, keine History-Flut) und
@@ -25,7 +25,7 @@ export function LinkTeilenButton({ query }: {
 }) {
   const navigate = useNavigate();
   const { pathname, hash, search } = useLocation();
-  const [kopiert, setKopiert] = useState(false);
+  const { kopiert, kopieren } = useKopieren();
   const q = query();
 
   // Live-Sync: q ändert sich mit jeder Eingabe (query() ist ein neuer
@@ -43,10 +43,13 @@ export function LinkTeilenButton({ query }: {
     // #schkg, #straf) — ohne ihn landete der Empfänger auf dem falschen
     // Teilrechner und sah die geteilten Parameter nie.
     navigate({ search: q, hash }, { replace: true });
-    try {
-      void navigator.clipboard.writeText(`${location.origin}${pathname}${q}${hash}`);
-      setKopiert(true); setTimeout(() => setKopiert(false), KOPIER_DAUER_MS);
-    } catch { /* Clipboard nicht verfügbar */ }
+    // R4-D (5.9.2026): hier stand `void writeText(…)` gefolgt von einem
+    // SOFORTIGEN `setKopiert(true)` — die einzige der fünf Kopier-Flächen, die
+    // den Erfolg nicht abwartete. Bei verweigerter Berechtigung meldete der
+    // Knopf «Link kopiert ✓» über eine unveränderte Zwischenablage (§8). Der
+    // geteilte Hook quittiert erst nach dem Schreiben; den Link kennt er erst
+    // beim Klick, darum als Argument (nicht an der Hook-Zeile).
+    kopieren(`${location.origin}${pathname}${q}${hash}`);
   };
   return (
     // LM-085 (W2·17-UI-BEFUNDE B17, 4.9.2026): war `lc-btn-ghost lc-btn-sm` —
