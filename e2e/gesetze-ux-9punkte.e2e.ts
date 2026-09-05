@@ -18,7 +18,7 @@ test.describe('Gesetze-UX 9 Punkte', () => {
   // OR.json ~1.9 MB → ~1700 Artikel). Die Detailseite liefert nur PRERENDERTES
   // Volltext-HTML (erlassVolltextHtml: <article> OHNE id="art-1", OHNE Klapp-Knopf);
   // React ersetzt es clientseitig NACH dem Fetch+Parse (render-then-replace, §15.5,
-  // kein hydrateRoot). #art-1, der «Artikel einklappen»-Knopf und die Reiter-
+  // kein hydrateRoot). #art-1, der Artikel-Klappknopf und die Reiter-
   // Registrierung entstehen also erst nach dem Client-Takeover. Die auto-wartenden
   // Locators (locator.click ohne actionTimeout → an das TEST-Timeout gebunden)
   // warten korrekt genau darauf. Auf dem 1-Kern-CI-Runner (workers:1) übersteigt die
@@ -73,11 +73,24 @@ test.describe('Gesetze-UX 9 Punkte', () => {
     await page.goto('/gesetze/bund/OR');
     const art = page.locator('#art-1');
     await expect(art).toContainText('Willensäusserung'); // Body sichtbar
-    await art.getByRole('button', { name: 'Artikel einklappen' }).click();
-    // Erst auf das deterministische Umschalt-Signal warten (Knopf trägt jetzt
-    // «Artikel ausklappen»), DANN den Body prüfen — sonst rennt die Assertion auf
-    // langsamen CI-Runnern gegen die noch laufende Einklapp-Umschaltung (Flake).
-    await expect(art.getByRole('button', { name: 'Artikel ausklappen' })).toBeVisible();
+    // §6.3-ANPASSUNG 5.9.2026 (deklarierte fachliche Änderung, QS-UI
+    // Folgeschritt): der Klapp-Knopf hiess zustandsabhängig «Artikel
+    // einklappen» / «Artikel ausklappen» — zwölf wortgleiche Namen auf
+    // /gesetze/bund/GEBV_HREG, 1598 auf dem OR, und der Name wechselte beim
+    // Klick (WCAG 4.1.2, Tor ARIA_ZUSTANDSNAME). Er heisst jetzt konstant
+    // «‹Art. N› auf- und zuklappen»; den Zustand trägt `aria-expanded`.
+    // Das deterministische Umschalt-Signal, auf das diese Spec wartet, ist
+    // damit NICHT verloren, sondern präziser: statt auf einen Namenswechsel
+    // wartet sie auf `expanded` — dieselbe Wartebedingung, an der richtigen
+    // Stelle. Die Sache der Spec (Body klappt zu, Nummer bleibt, Randtitel
+    // bleibt) ist unverändert.
+    const klapp = art.getByRole('button', { name: '«Art. 1» auf- und zuklappen' });
+    await expect(klapp, 'Vorbedingung: Artikel ist aufgeklappt').toHaveAttribute('aria-expanded', 'true');
+    await klapp.click();
+    // Erst auf das Umschalt-Signal warten (`aria-expanded=false`), DANN den Body
+    // prüfen — sonst rennt die Assertion auf langsamen CI-Runnern gegen die noch
+    // laufende Einklapp-Umschaltung (Flake).
+    await expect(klapp).toHaveAttribute('aria-expanded', 'false');
     // Body weg, Artikelnummer bleibt. §6.3-Anpassung 29.6.2026: Der Randtitel
     // «Im Allgemeinen» ist seit B1 ein eigener Sektionskopf AUSSERHALB des Artikels
     // (immer sichtbar) — daher auf Seitenebene geprüft, nicht mehr innerhalb #art-1.
@@ -85,8 +98,8 @@ test.describe('Gesetze-UX 9 Punkte', () => {
     await expect(art.getByText('Art. 1')).toBeVisible();
     await expect(page.getByText('Im Allgemeinen', { exact: false }).first()).toBeVisible();
     // Wieder aufklappen — ebenso erst auf das Umschalt-Signal warten.
-    await art.getByRole('button', { name: 'Artikel ausklappen' }).click();
-    await expect(art.getByRole('button', { name: 'Artikel einklappen' })).toBeVisible();
+    await klapp.click();
+    await expect(klapp).toHaveAttribute('aria-expanded', 'true');
     await expect(art).toContainText('Willensäusserung');
   });
 
