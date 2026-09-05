@@ -1,71 +1,39 @@
 /**
  * check:schlankheit — Zeilen-Wächter gegen Churn-Regrowth (§6.6 mechanisiert).
  *
- * ANLASS (belegt): `src/pages/gesetz-leser/inhalt.tsx` wuchs nach dem
- * §6.6-Split vom 24.7.2026 (781 Z.) binnen 12 Tagen auf 1090 Z. (+40 %)
- * zurück — niemand merkte es, bis eine Session zufällig nachmass. Die
- * §6.6-Schwelle (~800 Z., Skill `refactoring` → «Datei-Schlankheit») existierte
- * bis hierhin nur als Prosa-Regel ohne mechanischen Wächter: CLAUDE.md §6.7
- * («ein Tor, das nicht scheitern kann, ist gefährlicher als keines») traf
- * exakt zu — es gab hier gar kein Tor.
+ * 24.7.2026 · ANLASS · gesetz-leser/inhalt.tsx wuchs nach dem §6.6-Split
+ * (781 Z.) binnen 12 Tagen unbemerkt auf 1090 Z. (+40 %) zurück — die
+ * §6.6-Schwelle (~800 Z.) existierte bis dahin nur als Prosa ohne
+ * mechanischen Wächter (§6.7). Tor eingeführt.
  *
- * WAS GEMESSEN WIRD. Zeilenzahlen (`wc -l`-Äquivalent: Anzahl `\n`) aller
- * `*.ts`/`*.tsx` unter `src/` und `scripts/`, MIT drei Ausschlüssen:
+ * Misst Zeilen (Anzahl `\n`) aller `*.ts`/`*.tsx` unter `src/` und `scripts/`,
+ * mit drei Ausschlüssen: (1) `*.generated.ts(x)` — Zeilenzahl folgt den
+ * Quelldaten, kein Wartbarkeits-Signal; (2) jedes `linguist-generated`-Muster
+ * aus `.gitattributes` — generische statt hartkodierte Bindung an das, was
+ * GitHub schon als generiert einklappt; (3) `src/tests/fixtures/**` — grosse
+ * Snapshot-Inputs, kein editierter Code (`*.test.ts` selbst wird weiter
+ * gemessen).
  *
- *   1. `*.generated.ts` / `*.generated.tsx` — regenerierbare Projektionen
- *      (Banner + eigenes `npm run gen:*`/`check:*` decken deren Drift ab,
- *      §5). Ihre Zeilenzahl ist eine Funktion der Quelldaten, kein
- *      Wartbarkeits-Signal.
- *   2. Jedes Muster aus `.gitattributes`, das `linguist-generated` trägt
- *      (z. B. `src/lib/pdf/fonts/fontData.ts`) — dieselbe Begründung,
- *      generisch statt hartkodiert: was GitHub schon als generiert einklappt,
- *      soll dieses Tor nicht als Handschrift werten.
- *   3. `src/tests/fixtures/**` — Test-Fixtures sind oft grosse, wörtlich
- *      übernommene Beispieldaten (Snapshot-Inputs), kein editierter Code.
- *      Stand heute (5.8.2026) ist keine Fixture > 800 Z. (grösste 595 Z.,
- *      `lexwork-bs-audit.ts`) — der Ausschluss ist trotzdem generell gesetzt,
- *      damit ein künftiger grosser Fixture-Import nicht unnötig rot wird;
- *      *.test.ts-Dateien SELBST (nicht unter fixtures/) werden weiter
- *      gemessen — sie sind Handschrift wie jeder andere Code.
+ * Bestand wird GRANDFATHERED (`scripts/schlankheit-bestand.json`, 18 Dateien
+ * bei Einführung bereits > 800 Z.) — das Tor fängt NEUEN Zuwachs, nicht
+ * historische Schuld auf einen Schlag.
  *
- * BESTAND WIRD GRANDFATHERED (`scripts/schlankheit-bestand.json`). Am
- * Einführungstag lagen 18 Dateien bereits über 800 Z. (u. a. die
- * Fedlex-Adapter unter `scripts/normtext/`, die Snapshot-Pipeline). Diese
- * rückwirkend alle zu zwingen wäre eine andere, deutlich grössere Bau-Einheit
- * (§4-Verschmelzung wäre für einige davon vermutlich der richtige Weg) — das
- * Tor soll NEUEN Zuwachs fangen, nicht historische Schuld auf einen Schlag
- * einfordern.
+ * ROT nur bei (a) neuer Datei > 800 Z. (nicht in Baseline) oder (b)
+ * Bestands-Datei > Baseline-Zahl × 1.1 (die Fehlerklasse aus dem Anlass wäre
+ * bei ~859 Z. gestoppt worden). Unter 800 Z. gefallen ist kein Rot, nur ein
+ * Hinweis. Baseline wird nie automatisch geschrieben (Determinismus, §2) —
+ * dafür `--update` (`npm run schlankheit:update`), analog `npm run golden`.
  *
- * ROT wird das Tor nur, wenn:
- *   (a) eine NEUE Datei > 800 Z. auftaucht (nicht in der Baseline), oder
- *   (b) eine Bestands-Datei ihre Baseline-Zahl um > 10 % überschreitet
- *       (die Fehlerklasse aus dem Anlass: 781 → 1090 Z. ist +39.6 %, hätte
- *       dieses Tor schon bei ~859 Z. gestoppt).
- * Eine Bestands-Datei, die unter 800 Z. fällt, ist KEIN Rot — nur ein
- * Hinweis («kann aus der Baseline entfernt werden»). Das Tor schreibt die
- * Baseline nie von sich aus (Determinismus, §2): dafür gibt es das explizite
- * `--update`-Flag (`npm run schlankheit:update`), das die Baseline bewusst
- * schreibt — Muster wie `npm run golden` (schreiben ist ein eigener,
- * deklarierter Schritt, nie ein Nebeneffekt des Lesens).
+ * Seit e24b97b80 Teil von `check:seriell`, aber BEWUSST NICHT CI-Required
+ * (Allowlist-Eintrag in `scripts/check-tor-paritaet.ts`) — lokal-warnend,
+ * damit Bestands-Regrowth fremde PRs nicht blockiert. Eskalation:
+ * `npm run schlankheit:update -- <pfad>` mit Commit-Begründung.
  *
- * Lauf: `npm run check:schlankheit` (reines fs+Zeilenzählen, kein Build,
- * keine Netz-Zugriffe — Laufzeit < 1 s). Seit e24b97b80 Teil von
- * `check:seriell` (package.json) und damit von `npm run check`/`npm run gate`
- * — BEWUSST NICHT CI-Required: ein begründeter Allowlist-Eintrag in
- * `scripts/check-tor-paritaet.ts` hält es lokal-warnend, damit ein
- * Bestands-Regrowth fremde PRs nicht blockiert (Eskalationsweg dort:
- * `npm run schlankheit:update -- <pfad>` mit Commit-Begründung).
- *
- * GEZIELT 5.9.2026 (QS-EFFIZIENZ, Beleg #699): `--update` schrieb bisher
- * still die GANZE Baseline neu — jede neue Datei über der Schwelle wurde
- * dabei stillschweigend als «bewusst akzeptiert» registriert, auch wenn der
- * Aufrufer nur eine einzelne Datei meinte (§6.7: ein Tor, das nicht
- * scheitern kann). Jetzt: `--update <pfad> …` setzt/aktualisiert/entfernt
- * NUR die genannten Pfade, alle anderen Einträge bleiben byte-gleich;
- * `--update` OHNE Pfade räumt nur auf (entfernen/nachziehen bestehender
- * Einträge) und nimmt NIE neue Dateien auf — findet es welche, listet es sie
- * mit Aufnahme-Hinweis und beendet sich mit Exit 1. Jede Änderung wird
- * ausgegeben, nichts still.
+ * 5.9.2026 · GEZIELT (QS-EFFIZIENZ, #699) · `--update` schrieb bisher still
+ * die GANZE Baseline neu, auch wenn nur eine Datei gemeint war (§6.7). Jetzt:
+ * `--update <pfad>…` setzt/entfernt NUR die genannten Pfade; ohne Pfade räumt
+ * es nur bestehende Einträge auf und nimmt NIE neue Dateien auf (Fund → Exit
+ * 1 mit Aufnahme-Hinweis). Jede Änderung wird ausgegeben, nichts still.
  */
 import { readFileSync, readdirSync, statSync, existsSync, writeFileSync } from 'node:fs';
 import { join, relative, resolve, sep } from 'node:path';
