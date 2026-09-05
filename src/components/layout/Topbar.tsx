@@ -7,6 +7,7 @@ import { ThemaUmschalter } from './ThemaUmschalter';
 import { ReiterUebersicht } from './ReiterUebersicht';
 import { VerlaufUebersicht } from './VerlaufUebersicht';
 import type { Schriftskala } from './useSchriftskala';
+import { SchriftgroessenRegler } from '../ui/SchriftgroessenRegler';
 
 // ─── Top-Streifen der App-Shell (Build-Plan App-Shell, Phase 3) ─────────────
 //
@@ -120,31 +121,13 @@ export function Topbar({ onMenu, schubladeOffen, seitenleisteEingeklappt, onSeit
             Der Regler bleibt ab lg sichtbar und mobil aus (Streifen-Platz, C2). */}
         <div role="group" aria-label="Schriftgrösse der ganzen Seite" className="hidden lg:inline-flex shrink-0 items-center gap-1.5">
           <span aria-hidden className="select-none whitespace-nowrap text-micro text-ink-500">Ganze Seite</span>
-          <span className="inline-flex items-center gap-0.5 rounded-lg border border-line bg-surface p-0.5">
-            <button
-              type="button"
-              aria-label="Ganze Seite verkleinern"
-              title="Verkleinert die ganze Anwendung — der Gesetzestext hat im Menü «Ansicht» einen eigenen Regler"
-              disabled={!schrift.kannKleiner}
-              onClick={schrift.kleiner}
-              className="rounded-md px-2.5 py-1 text-body-s font-medium text-ink-600 transition-colors hover:text-ink-900 disabled:pointer-events-none disabled:opacity-40"
-            >
-              A<span aria-hidden>−</span>
-            </button>
-            {/* Live-Wertansage des aktuellen Prozentwerts (WCAG 4.1.3), tabular für
-                ruckelfreie Breite; w-12 hält die Breite stabil (Token, keine px). */}
-            <span aria-live="polite" className="w-12 select-none text-center text-micro lc-ziffern text-ink-500">{schrift.prozent} %</span>
-            <button
-              type="button"
-              aria-label="Ganze Seite vergrössern"
-              title="Vergrössert die ganze Anwendung — der Gesetzestext hat im Menü «Ansicht» einen eigenen Regler"
-              disabled={!schrift.kannGroesser}
-              onClick={schrift.groesser}
-              className="rounded-md px-2.5 py-1 text-body-s font-medium text-ink-600 transition-colors hover:text-ink-900 disabled:pointer-events-none disabled:opacity-40"
-            >
-              A<span aria-hidden>+</span>
-            </button>
-          </span>
+          <SchriftgroessenRegler
+            schrift={schrift}
+            kleinerLabel="Ganze Seite verkleinern"
+            kleinerTitle="Verkleinert die ganze Anwendung — der Gesetzestext hat im Menü «Ansicht» einen eigenen Regler"
+            groesserLabel="Ganze Seite vergrössern"
+            groesserTitle="Vergrössert die ganze Anwendung — der Gesetzestext hat im Menü «Ansicht» einen eigenen Regler"
+          />
         </div>
 
         {/* Logo nur unterhalb lg — ab lg trägt die Seitenleiste die Marke.
