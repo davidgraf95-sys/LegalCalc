@@ -1,10 +1,4 @@
-export interface ZhStueckFixture {
-  x: number;
-  y: number;
-  h: number;
-  w: number;
-  s: string;
-}
+import type { ZhStueckFixture } from './zh-pdf-seiten-stuecke.typen';
 
 export const ZH_2111_SEITE24: ZhStueckFixture[] = [
   {

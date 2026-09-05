@@ -34,6 +34,7 @@ const WORTLAUT_DATEIEN = [
   '../pages/gesetz-leser/parts/SektionKopf.tsx',
   '../pages/gesetz-leser/helpers.tsx',
   '../components/normtext/ArtikelBody.tsx',
+  '../components/normtext/ArtikelBody.zitier.tsx',
 ] as const;
 
 // Der EINE zugelassene Arbitrary-Wert, und zwar als Token-Escape, nicht als Wert:

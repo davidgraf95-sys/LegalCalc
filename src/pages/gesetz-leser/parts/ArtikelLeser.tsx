@@ -20,7 +20,6 @@ import { SUCH_META } from '../suchHighlight';
 import { zitatMitAusweis, heuteIso } from '../../../lib/format';
 import { schaetzeArtikelHoehe, fnNrSortKey } from '../berechnungen';
 import { LeitfallZeile } from './ArtikelLeser.leitfaelle';
-export { LEITFAELLE_SICHTBAR } from './ArtikelLeser.leitfaelle';
 import { BezuegeZeile } from './BezuegeZeile';
 import type { ArtikelBezuege } from '../bezuegeLaden';
 import { urlMitHash } from '../../../lib/liveUrlSync';
