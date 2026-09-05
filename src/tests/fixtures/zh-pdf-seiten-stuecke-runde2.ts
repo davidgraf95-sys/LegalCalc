@@ -31,13 +31,9 @@
  *   als eigene Zeile in BODY-Schrift (h 9.18) am linken Body-Rand — vom
  *   Schriftbild nicht von Fliesstext zu trennen, nur am Muster.
  */
-export interface ZhStueckFixture {
-  x: number;
-  y: number;
-  h: number;
-  w: number;
-  s: string;
-}
+import type { ZhStueckFixture } from './zh-pdf-seiten-stuecke.typen';
+
+export type { ZhStueckFixture };
 
 export const ZH_230_SEITE8: ZhStueckFixture[] = [
   { x: 87.84, y: 518.3, h: 9.18, w: 7.65, s: "A" },
