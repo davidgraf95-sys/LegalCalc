@@ -236,6 +236,30 @@ async function main() {
   if (nur === 'kanton' || nur === 'beide') {
     const { map: km, ohne, fehler } = await kantonPdfQuellen(kanton, fetch);
     for (const e of kanton) delete map[e.key];
+    // §5-Rückzug: `delete map[e.key]` räumt nur Keys, die IM REGISTER stehen.
+    // Ein aus dem Korpus zurückgezogener Erlass steht dort nicht mehr — sein
+    // Sidecar-Eintrag überlebte darum jeden Teillauf und blieb als Waise liegen
+    // (check:pdf-quellen «verwaister PDF-Quellen-Eintrag»; real beim Rückzug der
+    // GL-Schreibweisen-Dublette, 5.9.2026). Aufgeräumt wird ausschliesslich
+    // INNERHALB der gefahrenen Kantone; fremde Einträge bleiben unberührt (§8).
+    const imRegister = new Set(erlasse.map((e) => e.key));
+    const gefahren =
+      kantonFilter ??
+      new Set(
+        erlasse
+          .filter((e) => e.ebene === 'kanton' && e.kanton !== null)
+          .map((e) => (e.kanton as string).toUpperCase()),
+      );
+    const zurueckgezogen: string[] = [];
+    for (const key of Object.keys(map)) {
+      if (imRegister.has(key)) continue;
+      if (![...gefahren].some((kt) => key.startsWith(`${kt}-`))) continue;
+      zurueckgezogen.push(key);
+      delete map[key];
+    }
+    if (zurueckgezogen.length > 0) {
+      console.log(`Kanton: ${zurueckgezogen.length} verwaiste(r) Eintrag entfernt (nicht mehr im Register): ${zurueckgezogen.join(', ')}`);
+    }
     Object.assign(map, km);
     console.log(`Kanton: ${Object.keys(km).length}/${kanton.length} amtliche PDF-URLs; ${ohne.length} ohne/Drift; ${fehler.length} Netz-Fehler`);
     if (fehler.length) console.log(`  Fehler (Auszug): ${fehler.slice(0, 10).join(' · ')}${fehler.length > 10 ? ' …' : ''}`);
