@@ -4,7 +4,7 @@
 // `risikoDiffHash()` liest den WORKING TREE (`git status --porcelain`). Zum
 // Merge-Zeitpunkt ist der Arbeitsbaum sauber — alles ist committet und gepusht.
 // Das bestehende Tor ist dort also strukturell grün und kann #309 nicht fangen.
-// Dieses Tor prüft stattdessen den COMMITTETEN Bereich merge-base(origin/main)..HEAD.
+// Dieses Tor prüft stattdessen den COMMITTETEN Bereich merge-base(BASIS)..KOPF.
 //
 // Einzige Quelle der Risiko-Definition bleibt `behalten()` aus kern.ts (§5) —
 // hier wird NICHTS neu klassifiziert, nur ein anderer Diff-Bereich eingespeist.
@@ -12,6 +12,9 @@ import { execFileSync } from 'node:child_process';
 import { behalten } from './gegenpruefung/kern';
 
 const BASIS = process.env.MERGE_SCHUTZ_BASIS ?? 'origin/main';
+// KOPF = Pruef-Spitze. Default HEAD (Arbeitskopie). Der Merge-Hook setzt hier
+// den PR-Head-SHA: geprueft wird der Stand, der gemergt wird (§17, 5.9.2026).
+const KOPF = process.env.MERGE_SCHUTZ_KOPF ?? 'HEAD';
 
 function git(args: string[]): string {
   return execFileSync('git', args, {
@@ -27,7 +30,7 @@ function raus(code: number, text: string): never {
 
 let basis: string;
 try {
-  basis = git(['merge-base', BASIS, 'HEAD']).trim();
+  basis = git(['merge-base', BASIS, KOPF]).trim();
 } catch {
   // Kein origin/main erreichbar (frischer Clone, detached CI-Checkout) — das Tor
   // kann seine Referenz nicht bilden. Es meldet das SICHTBAR und wird rot, statt
@@ -37,7 +40,7 @@ try {
     `Referenz ist kein Tor.)`);
 }
 
-const geaendert = git(['diff', '--name-only', `${basis}..HEAD`])
+const geaendert = git(['diff', '--name-only', `${basis}..${KOPF}`])
   .split('\n')
   .map((z) => z.trim())
   .filter(Boolean);
@@ -46,12 +49,12 @@ const risiko = geaendert.filter(behalten);
 
 if (risiko.length === 0) {
   raus(0, `check:merge-schutz grün — kein Risiko-Pfad im committeten Bereich ` +
-    `${basis.slice(0, 8)}..HEAD (${geaendert.length} Datei(en) geändert).`);
+    `${basis.slice(0, 8)}..${KOPF} (${geaendert.length} Datei(en) geändert).`);
 }
 
 // Trailer im committeten Bereich suchen. `%(trailers)` liest nur echte
 // Trailer-Zeilen am Commit-Ende, nicht eine beiläufige Erwähnung im Fliesstext.
-const trailer = git(['log', '--format=%(trailers:key=Gegenpruefung,valueonly)', `${basis}..HEAD`])
+const trailer = git(['log', '--format=%(trailers:key=Gegenpruefung,valueonly)', `${basis}..${KOPF}`])
   .split('\n')
   .map((z) => z.trim())
   .filter(Boolean);
@@ -137,7 +140,7 @@ if (gueltig.length === 0) {
 // Das Register ist ein unabhängiges Artefakt (§6 Ziff. 7 lit. a): es entsteht
 // über `npm run gegenpruefung:ok`, das den Nachweis an genau diesen Diff bindet.
 const REGISTER = 'bibliothek/register/gegenpruefung-register.md';
-const registerDiff = git(['diff', '--numstat', `${basis}..HEAD`, '--', REGISTER]).trim();
+const registerDiff = git(['diff', '--numstat', `${basis}..${KOPF}`, '--', REGISTER]).trim();
 const zugewachsen = registerDiff
   ? Number(registerDiff.split('\n')[0].split('\t')[0] || 0)
   : 0;
@@ -145,7 +148,7 @@ const zugewachsen = registerDiff
 if (zugewachsen === 0) {
   raus(1,
     `check:merge-schutz ROT — Verdikt-Trailer vorhanden, aber ${REGISTER} ` +
-    `ist im Bereich ${basis.slice(0, 8)}..HEAD NICHT gewachsen.\n\n` +
+    `ist im Bereich ${basis.slice(0, 8)}..${KOPF} NICHT gewachsen.\n\n` +
     `  ${risiko.length} Risiko-Datei(en):\n${liste}\n\n` +
     `  Ein Trailer ist eine BEHAUPTUNG über eine Prüfung, kein Nachweis — der\n` +
     `  bauende Agent kann ihn selbst schreiben (belegt: ein leerer Commit mit\n` +
