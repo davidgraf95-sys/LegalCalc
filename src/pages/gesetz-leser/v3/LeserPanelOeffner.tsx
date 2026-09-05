@@ -123,7 +123,7 @@ export function PanelZaehler({ anzahl, artikelLabel, offen, panelId, form, onKli
           H4-II: auf `mini` kann der Text leer sein (keine Zahl bekannt) — dann
           entfällt das `span` ganz, statt eine 0 zu behaupten oder eine leere
           Box mit `gap` stehen zu lassen (§8). */}
-      {text && <span className="num tabular-nums whitespace-nowrap">{text}</span>}
+      {text && <span className="num whitespace-nowrap">{text}</span>}
     </button>
   );
 }

@@ -31,7 +31,7 @@ export function EntscheidZeile({ e, onNorm }: {
 
       {/* Ganz links — Entscheiddatum (feste Spalte, scanbare Kante). Platzhalter
           datumsloser Entscheide NIE als echtes Datum (§8/BS §7.2): «JJJJ, o. D.». */}
-      <span className="num w-[5.25rem] shrink-0 pt-0.5 text-xs text-ink-500 tabular-nums"
+      <span className="num w-[5.25rem] shrink-0 pt-0.5 text-xs text-ink-500"
         title={e.datumUnbekannt ? DATUM_UNBEKANNT_TITEL : undefined}>
         {datumAnzeige(e.datum, e.datumUnbekannt)}
       </span>

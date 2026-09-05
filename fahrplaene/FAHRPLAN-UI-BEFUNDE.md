@@ -316,17 +316,38 @@ reproduzieren (§0.1); nicht Reproduzierbares als «erledigt (überholt)» schli
 
 **8 Befunde** · Blocker 0 · Hoch 1 · Mittel 7 · Detail 0 · `W2·17-UI-BEFUNDE-B18`
 
-- [ ] **LM-182** · Hoch · Rund 110 px Zeilenabstand pro Eintrag — sichtbar sind etwa 6 … [Verdacht → FAHRPLAN-UI-NAVIGATION.md §6/O2 (Z. 429–433, Sidebar-Konsistenz) · §4/R6 (Z. 321–328, Chevron-H…]
-- [ ] **LM-185** · Mittel · Die Zeilenlabels stehen inline und sind unterschiedlich lang — die drei … [Verdacht → FAHRPLAN-UI-NAVIGATION.md §6/J2 (Z. 397–402, Filterblock/Bottom-Sheet mobil) · FAHRPLAN-UI-QUAL…]
-- [ ] **LM-186** · Mittel · Drei Suchfelder mit drei Bedeutungen, drei Gestaltungen und zwei Ausrichtungen: «Suchen … [Verdacht → FAHRPLAN-GESETZES-UX.md §11.5/IA-4 (gebaut+gemergt 25.7.2026, PR #350) · FAHRPLAN-UI-NAVIGATION…]
-- [ ] **LM-187** · Mittel · Die Suche liefert Art. 74 OR, Art. 581a OR, Art. 699b … [Verdacht → FAHRPLAN-GESETZES-UX.md §11.5/IA-1 (gebaut 16.7.2026, PR #264 — «OR 257d» Zielartikel oben, e2e…]
-- [ ] **LM-189** · Mittel · Die Kantonsflächen sind rosa, violett, hellblau, mintgrün — ausserhalb der warmen … [Verdacht → FAHRPLAN-GESETZES-UX.md §11.5/IA-2 + §11.9 Ziff. 14 (O4-Korrektur: «Kartenrest nur nach Prod-Re…]
-- [ ] **LM-190** · Mittel · Am Monatsübergang stossen zwei separat abgerundete Pillen aneinander — sichtbare Kerbe … [neu]
-- [ ] **LM-191** · Mittel · Die Spalte ist linksbündig gesetzt; dadurch steht «Jahre» bei «10 Jahre» … [neu]
-- [ ] **LM-192** · Mittel · Internationale Erlasse liegen unter «/gesetze/bund/EMRK», «/gesetze/bund/CISG», «/gesetze/bund/LUGUE» — die Adresse führt … [Verdacht → FAHRPLAN-GESETZES-UX.md §11.4 Ziff. 3 + §11.10/IA-6 (gebaut+gemergt 25.7.2026, PR #353) sowie §…]
+- [x] **LM-182** · Hoch · Rund 110 px Zeilenabstand pro Eintrag — sichtbar sind etwa 6 … [Verdacht → FAHRPLAN-UI-NAVIGATION.md §6/O2 (Z. 429–433, Sidebar-Konsistenz) · §4/R6 (Z. 321–328, Chevron-H…] — **erledigt (überholt)** — nachgemessen 5.9.2026 @490 am Preview von origin/main: Zeilenabstand 51–78 px (nicht ~110), 25 von 42 Positionen bei 844 px sichtbar, alle Chevrons einheitlich 14 px, und `lc-scrim-voll` (`fixed inset-0 z-30`) dimmt den `sticky z-20`-Header mit (Element-Screenshot desselben Ausschnitts zu/offen).
+- [x] **LM-185** · Mittel · Die Zeilenlabels stehen inline und sind unterschiedlich lang — die drei … [Verdacht → FAHRPLAN-UI-NAVIGATION.md §6/J2 (Z. 397–402, Filterblock/Bottom-Sheet mobil) · FAHRPLAN-UI-QUAL…] — **gebaut** (Commit `13cf1259f`): Achsen-Etikett in `components/ui/FacettenGruppe.tsx` in einer festen Spalte (`sm:w-28`, unter `sm` volle Zeile). Vorher Chip-Start x=655/623/623 bei Etikett-Breiten 87/55/55 px, nachher alle drei bei x=680 (gemessen @1440). Chip-Text und aria-Namen unverändert (e2e-Namen sind wörtlich geprüft).
+- [x] **LM-186** · Mittel · Drei Suchfelder mit drei Bedeutungen, drei Gestaltungen und zwei Ausrichtungen: «Suchen … [Verdacht → FAHRPLAN-GESETZES-UX.md §11.5/IA-4 (gebaut+gemergt 25.7.2026, PR #350) · FAHRPLAN-UI-NAVIGATION…] — **erledigt (überholt)** — von den drei genannten Flächen existiert «Im Register filtern …» nicht mehr (kein Vorkommen in `src/`). Die verbliebenen zwei Eingabefelder sind gestalt-identisch (je 44 px hoch, 8 px Radius, gleiche Rahmen-/Flächen-Tokens, computed styles @1440) und laufen auf dieselbe rechte Kante; das «welches Feld wofür» trägt seit IA-4 das Scope-Label («Filtert: alle Ebenen …»). Keine vierte Suchfläche gebaut (§11.9 Ziff. 3).
+- [ ] **LM-187** · Mittel · Die Suche liefert Art. 74 OR, Art. 581a OR, Art. 699b … [Verdacht → FAHRPLAN-GESETZES-UX.md §11.5/IA-1 (gebaut 16.7.2026, PR #264 — «OR 257d» Zielartikel oben, e2e…] — **zurückgestellt: Such-Logik — eigener Nachweis (§0.3).** Teil 1 (Rausch-Treffer) ist überholt: «OR 257d» in der Kopfsuche auf `/rechner/zpo-fristen` liefert 5 Treffer (Norm-Sprung 257d + Art. 257d/272a/266n/271a OR, alle mit Bezug), kein Art. 74/581a/699b OR. Teil 2 (Hervorhebung auf Wortteilen) ist reproduziert: `<mark>` liegt auf «or» in «S**or**gfalt». Ursache ist NICHT `artikelVolltext.ts` `lower.includes(w)` wie in der Dedup-Notiz vermutet — die Snippet-Funktion dort verlangt `w.length > 2` und kann «or» gar nicht wählen —, sondern `src/components/suche/SuchResultate.tsx` `markiere()`: das Muster steht ohne Wortanfangs-Anker. Gehört in `B18-Logik` unten.
+- [x] **LM-189** · Mittel · Die Kantonsflächen sind rosa, violett, hellblau, mintgrün — ausserhalb der warmen … [Verdacht → FAHRPLAN-GESETZES-UX.md §11.5/IA-2 + §11.9 Ziff. 14 (O4-Korrektur: «Kartenrest nur nach Prod-Re…] — **erledigt (überholt)** — die Goldwinkel-Pastelltöne sind seit 29.8.2026 («2B», Befund F1) durch Erfassungsgrad-Tokens (`--karte-voll/-auswahl/-duenn/-leer` + Schraffur) mit sichtbarer Legende ersetzt; die Füllung trägt jetzt Information und liegt in der Papier/Messing-Achse. Rest-Beobachtung «Kartenrahmen 1070 px, Karte schmaler»: die Kappe `max-w-[40rem]` ist gewollt, Bildunterschrift, Karte und Legende laufen als EIN zentrierter Block darin — nicht gebaut, weil das «Erwartet» (Zugehörigkeit + Farbbedeutung) erfüllt ist.
+- [x] **LM-190** · Mittel · Am Monatsübergang stossen zwei separat abgerundete Pillen aneinander — sichtbare Kerbe … [neu] — **gebaut** (Commit `768b84e8e`): (a) Ereignis-Ring über Band durchsichtig — die deckende Papier-Füllung verdeckte die linke Rundung des Fristbands; (b) alle gezeigten Monate bekommen im kompakten Modus dieselbe Zeilenzahl (vorher September-Raster 57 px neben Oktober 91 px, nachher beide 91 px; gemessen @1440 auf `/`, Ereignis 28.09.2026 / 10 Tage). NICHT gebaut: (c) die seitenabhängig bestückte Legende — dokumentierter Entscheid (§8/§0.2: sie erklärt nur, was in den gezeigten Monaten wirklich gezeichnet wird, Befund David 25.6.2026); (d) «zwei Pillen stossen aneinander» nicht reproduzierbar — die Monatsblöcke stehen mit `gap-x-6` (24 px) getrennt nebeneinander, es gibt keine berührenden Pillen.
+- [x] **LM-191** · Mittel · Die Spalte ist linksbündig gesetzt; dadurch steht «Jahre» bei «10 Jahre» … [neu] — **gebaut** (Commit `d3e4480bc`): «Relative/Absolute Frist» in `RechnerVerjaehrungBoard.tsx` `text-right` + `whitespace-nowrap` (Kopf und Zellen). Vorher computed `textAlign: start`, nachher `right` — «Jahre» steht bei 10/5/3 Jahre auf einer Linie (gemessen @1440).
+- [x] **LM-192** · Mittel · Internationale Erlasse liegen unter «/gesetze/bund/EMRK», «/gesetze/bund/CISG», «/gesetze/bund/LUGUE» — die Adresse führt … [Verdacht → FAHRPLAN-GESETZES-UX.md §11.4 Ziff. 3 + §11.10/IA-6 (gebaut+gemergt 25.7.2026, PR #353) sowie §…] — **erledigt (überholt)** — die Reader-Routen lauten am Preview von origin/main `/gesetze/international/EMRK`, `/gesetze/international/CISG`, `/gesetze/international/LUGUE` (aus den `href`-Attributen auf `/gesetze?ebene=international` gelesen, 5.9.2026). Adresse und Oberfläche benennen dieselbe Ebene.
 
 **Code-Flächen (grob, aus den Routen):** `src/pages/Gesetze.tsx`, `src/components/suche`, `src/lib/suche`.
 **Risiko-Klasse:** RISIKO — Such-/Ranking-Logik (LM-187 Substring-Treffer) ist keine reine UI: `check:gegenpruefung` + `eval:suche`.
+
+**B18-Logik (offen, Gegenprüfung Pflicht).** Aus B18 zurückgestellt, weil die Lösung nicht
+Darstellung ist, sondern Treffer-Auswahl bzw. Hervorhebungs-Logik berührt — Bau nur mit eigenem
+Nachweis (§0.3), `check:gegenpruefung` und `eval:suche` als Vorher/Nachher-Messung:
+
+- [ ] **LM-187 · Hervorhebung auf Wortteilen.** Reproduziert 5.9.2026 @1440 auf
+  `/rechner/zpo-fristen`, «OR 257d» in die Kopfsuche: `<mark>` liegt auf «or» in «S**or**gfalt»
+  (Treffer «Art. 272a OR» / «Art. 271a OR»).
+  **Fundstelle-Korrektur (§7).** Die Dedup-Notiz nennt `artikelVolltext.ts:66` `lower.includes(w)`.
+  Das kann es nicht sein: die `snippet()`-Funktion dort filtert `w.length > 2`, «or» kommt nie durch.
+  Der Marker entsteht in der Darstellungsschicht, in `src/components/suche/SuchResultate.tsx`
+  (`markiere()`, Kommentar «Wörter ab 2 Zeichen … case-insensitiv als `<mark>` umschlossen»): das
+  aus den Query-Wörtern gebaute Muster hat keinen Wortanfangs-Anker und trifft darum jedes
+  Vorkommen mitten im Wort.
+  **Warum trotzdem zurückgestellt:** die Hervorhebung soll die TREFFER-Semantik spiegeln, und die
+  ist `tokenize: 'forward'` (Präfix ab Wortanfang, `artikelVolltext.ts:226 ff.`) — wer den Marker
+  ändert, entscheidet mit, was als Treffer-Begründung gilt. Bau darum mit Vorher/Nachher-Messung
+  gegen `eval:suche` und mit `check:gegenpruefung`, nicht als UI-Handgriff.
+  Der Rausch-Treffer-Teil desselben Befunds ist überholt (5 sinnvolle Treffer, s. oben); der
+  Präfix-Recall aus IA-1 (PR #264) bleibt unangetastet.
+
 **Prod-Re-Audit-Pflicht:** ja — vor Baubeginn alle Befunde dieses Batches am Prod-Stand
 reproduzieren (§0.1); nicht Reproduzierbares als «erledigt (überholt)» schliessen.
 
