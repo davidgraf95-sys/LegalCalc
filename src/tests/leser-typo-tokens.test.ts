@@ -1,6 +1,6 @@
 // @vitest-environment node
 import { describe, it, expect } from 'vitest';
-import { readFileSync } from 'node:fs';
+import { readFileSync, readdirSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 
 // ─── LESER-TYPOGRAFIE: die Grösse ist ein TOKEN, nie ein roher Wert ──────────
@@ -27,14 +27,26 @@ function lies(rel: string): string {
   return readFileSync(fileURLToPath(new URL(rel, import.meta.url)), 'utf8');
 }
 
+// QS-UI (5.9.2026, Nebenfund #663-Split, §6.7): der Wächter zeigte nach dem
+// Aufteilen von ArtikelBody.tsx (PR #663: ArtikelBody.zitier.tsx +
+// ArtikelBody.helfer.ts) nur auf die Ursprungsdatei plus den einen bereits
+// nachgetragenen Split-Teil — `ArtikelBody.helfer.ts` fehlte im Prüfbereich,
+// ein rohes `text-[…]`/`leading-[…]` dort wäre unbemerkt geblieben. Glob statt
+// fester Pfad: JEDE `ArtikelBody*.ts(x)` im Verzeichnis, damit ein künftiger
+// weiterer Split (oder eine neue Datei) automatisch mitgeprüft wird.
+const NORMTEXT_DIR = fileURLToPath(new URL('../components/normtext/', import.meta.url));
+const ARTIKELBODY_DATEIEN = readdirSync(NORMTEXT_DIR)
+  .filter((n) => /^ArtikelBody.*\.tsx?$/.test(n))
+  .sort()
+  .map((n) => `../components/normtext/${n}`);
+
 /** Die Dateien, die den Leser-WORTLAUT setzen (Fliesstext, Ingress, Apparat). */
 const WORTLAUT_DATEIEN = [
   '../pages/gesetz-leser/parts/ArtikelLeser.tsx',
   '../pages/gesetz-leser/parts/ErlassKopfBlock.tsx',
   '../pages/gesetz-leser/parts/SektionKopf.tsx',
   '../pages/gesetz-leser/helpers.tsx',
-  '../components/normtext/ArtikelBody.tsx',
-  '../components/normtext/ArtikelBody.zitier.tsx',
+  ...ARTIKELBODY_DATEIEN,
 ] as const;
 
 // Der EINE zugelassene Arbitrary-Wert, und zwar als Token-Escape, nicht als Wert:
