@@ -303,11 +303,7 @@ if (alphaFunde.size > 0) {
   /** Befristete Ausnahme (Kollisions-Vorsicht, paralleler Bauer auf demselben
    *  Branch, C3/5.9.2026): Datei → Satz, der dort stehen MUSS. Fällt weg,
    *  sobald die Datei in einer eigenen, kollisionsfreien Runde migriert ist. */
-  const Z_ROH_AUSNAHMEN: Record<string, string> = {
-    'src/components/layout/Shell.tsx': 'C3-AUSNAHME (5.9.2026): unmigriert, Kollisions-Vorsicht',
-    'src/components/layout/HeaderSuche.tsx': 'C3-AUSNAHME (5.9.2026): unmigriert, Kollisions-Vorsicht',
-    'src/components/rechtsprechung/EntscheidZeile.tsx': 'C3-AUSNAHME (5.9.2026): unmigriert, Kollisions-Vorsicht',
-  };
+  const Z_ROH_AUSNAHMEN: Record<string, string> = {};
   for (const datei of dateien(WURZEL)) {
     const begruendung = Z_ROH_AUSNAHMEN[datei];
     if (begruendung !== undefined) {
