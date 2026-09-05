@@ -48,6 +48,8 @@ werden direkt unter dem KARTEN-Anker eingefügt (jüngste zuoberst).
 
 **Wartet auf David:** Prototype Fund (6.9. Mitternacht!) · Steuerdeckel (Hooks 221 B, check-*.ts ~180 B Luft) · Design: ☰-Anatomie, Hover-Stufe, ⧉-Quittung · Baum-Namen-Fallback «1./2. Vorkommen» · A3-Abnahme · LM-133 · Lizenz-Ausnahmen, Näfelser Fahrt (aus 2.9.).
 
+**Morgen 5.9. (David wach, Auftrag «leg die drei Jules-Tickets an»):** #696–#698 → PRs #699–#701 in 33/40/52 min, alle landbar (Test-Split, Komponenten-Split mit expliziter Partition, Fixture-Split); Landungsquote seit 3.9. 9/10. §17: Grüne-Spur-Weiche jetzt im Dispatch-Generator (`npm run dispatch -- bau`), weil die Skill-Prosa in der Nacht kein einziges Mal feuerte. Claude-Nachzug offen: Wächter-Listen um Split-Geschwister, toter Re-Export, dupliziertes Fixture-Interface. `schlankheit:update` setzt alle Baseline-Zahlen still neu — nur gezielt nutzen (QS-EFFIZIENZ-Zeile).
+
 **Messung:** ~27 PRs in ~11 h, 0 Rollbacks; CI-Rot fast ausschliesslich Nachzug-Klassen (Projektionen, Test-Helfer, Runner-Stall), 1 echter Regressionsfang durch e2e (#674 aria-label).
 
 ## Session 4.9.2026 — QS-FREMDAGENTEN Phase 1 + 2 gelandet, SEO-BASIS Nullbefund, Landungskette 645–650
