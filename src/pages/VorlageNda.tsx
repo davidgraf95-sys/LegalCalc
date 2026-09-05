@@ -67,7 +67,11 @@ function eingabeInhalt({ a, set }: SeiteCtx<NdaAntworten>, schritt: number) {
       </div>
     );
 
-    case 'inhalt': return (
+    case 'inhalt': {
+      // Wert für die Nachwirkungs-Beschriftung (LM-115): nur wenn die Option
+      // an ist UND eine gültige Jahreszahl darin steht.
+      const nachwirkJahre = a.dauerErfassen && (zahl(a.dauerJahre) ?? 0) > 0 ? zahl(a.dauerJahre)! : null;
+      return (
       <div className="space-y-4">
         {/* LM-165 (B6/K-15): aria-invalid rollt dieselbe Feld-Markierung wie in den
             Fristen-Rechnern aus (§8) — sicher pristine, weil dieser Schritt nur nach
@@ -81,10 +85,16 @@ function eingabeInhalt({ a, set }: SeiteCtx<NdaAntworten>, schritt: number) {
         <Field label="Konkretisierung der vertraulichen Informationen" optional hint="zusätzlich zur allgemeinen Definition">
           <input className={inputCls} value={a.infoBeschrieb} onChange={(e) => set('infoBeschrieb', e.target.value)} placeholder="z. B. Quellcode, Kundenlisten, Preiskalkulationen" />
         </Field>
+        {/* B13/LM-115: die Beschriftung kündigt einen Wert an — also zeigt sie
+            den EINGESTELLTEN, nicht den Platzhalter «N». Solange nichts (oder
+            nichts Gültiges) gesetzt ist, verspricht sie keine Zahl, statt eine
+            zu behaupten (§8). Reine Darstellung: gerechnet wird nichts. */}
         <Checkbox
           checked={a.dauerErfassen}
           onChange={(v) => set('dauerErfassen', v)}
-          label={<><span><strong>Nachwirkungsfrist</strong> vereinbaren (Geheimhaltung gilt N Jahre über das Vorhaben hinaus)</span></>} />
+          label={<><span><strong>Nachwirkungsfrist</strong> vereinbaren {nachwirkJahre !== null
+            ? `(Geheimhaltung gilt ${nachwirkJahre} ${nachwirkJahre === 1 ? 'Jahr' : 'Jahre'} über das Vorhaben hinaus)`
+            : '(Geheimhaltung gilt über das Vorhaben hinaus — Dauer im Feld darunter)'}</span></>} />
         {a.dauerErfassen && (
           <Field label="Dauer nach Beendigung (Jahre)">
             <input className={inputCls + ' sm:max-w-[8rem]'} inputMode="numeric" value={a.dauerJahre}
@@ -108,7 +118,8 @@ function eingabeInhalt({ a, set }: SeiteCtx<NdaAntworten>, schritt: number) {
           </Field>
         )}
       </div>
-    );
+      );
+    }
 
     default: return null;
   }

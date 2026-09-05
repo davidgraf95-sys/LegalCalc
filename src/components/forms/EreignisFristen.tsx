@@ -288,7 +288,7 @@ function EreignisFristen({ ereignisse, zustellungVorgabe }: {
                 {verfahren === 'summarisch' && (
                   <Checkbox checked={familienSummarsache} onChange={setFamilienSummarsache} label="familienrechtliche Summarsache (Art. 271/276/302/305 ZPO — 30 Tage, Art. 314 Abs. 2)" />
                 )}
-                <Checkbox checked={mietOderArbeit} onChange={setMietOderArbeit} label="arbeits- oder mietrechtlicher Fall (BGer-Grenze CHF 15&#8239;000, Art. 74 Abs. 1 lit. a BGG)" />
+                <Checkbox checked={mietOderArbeit} onChange={setMietOderArbeit} label="arbeits- oder mietrechtlicher Fall (BGer-Grenze CHF 15'000, Art. 74 Abs. 1 lit. a BGG)" />
                 <Checkbox checked={nurDispositiv} onChange={setNurDispositiv} label="nur das Dispositiv wurde eröffnet (Art. 239 ZPO — zuerst Begründung verlangen)" />
               </div>
             </Field>

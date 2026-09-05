@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-09-04",
+  "erzeugt": "2026-09-05",
   "erlasse": [
     {
       "key": "ZGB",
@@ -3484,12 +3484,12 @@
       "status": "snapshot",
       "datei": "bund/DBG.json",
       "artikelAnzahl": 240,
-      "stand": "2026-01-01",
+      "stand": "2026-09-02",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1991/1184_1184_1184/de",
-      "fassungsToken": "20260101",
+      "fassungsToken": "20260902",
       "pdfPfad": null,
-      "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/1991/1184_1184_1184/20260101/de/pdf-a/fedlex-data-admin-ch-eli-cc-1991-1184_1184_1184-20260101-de-pdf-a-2.pdf",
-      "pdfStand": "2026-01-01",
+      "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/1991/1184_1184_1184/20260902/de/pdf-a/fedlex-data-admin-ch-eli-cc-1991-1184_1184_1184-20260902-de-pdf-a.pdf",
+      "pdfStand": "2026-09-02",
       "inkraftSeit": "1995-01-01"
     },
     {
@@ -39523,26 +39523,6 @@
       "pdfPfad": null,
       "pdfUrl": "https://gesetze.gl.ch/api/de/versions/2283/pdf_file",
       "pdfStand": "2022-07-01"
-    },
-    {
-      "key": "GL-III%20B_7_1",
-      "ebene": "kanton",
-      "kanton": "GL",
-      "kuerzel": "GebT ZGB",
-      "titel": "Verordnung über die Gebühren im Zivilrecht, Gebührentarif ZGB",
-      "sr": "GS III B/7/1",
-      "rechtsgebiet": "oeffentlich",
-      "sprache": "de",
-      "rang": 0,
-      "status": "snapshot",
-      "datei": "kanton/GL-III%20B_7_1.json",
-      "artikelAnzahl": 14,
-      "stand": "2026-01-01",
-      "quelleUrl": "https://gesetze.gl.ch/app/de/texts_of_law/III%20B/7/1",
-      "fassungsToken": "3211018abb5bc64942db2d9391a7a3d9",
-      "pdfPfad": null,
-      "pdfUrl": "https://gesetze.gl.ch/api/de/versions/2628/pdf_file",
-      "pdfStand": "2026-01-01"
     },
     {
       "key": "GL-III%20B%2F7%2F1",
