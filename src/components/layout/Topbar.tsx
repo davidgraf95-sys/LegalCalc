@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { LexMetrikSiegel, LexMetrikWortmarke } from './Logo';
 import { HeaderSuche } from './HeaderSuche';
@@ -185,10 +185,8 @@ export function Topbar({ onMenu, schubladeOffen, seitenleisteEingeklappt, onSeit
 // ─── «/» und ⌘K, wenn der Streifen kein Feld trägt (W2·23-STARTSEITE-V4 §6.1) ─
 //
 // Auf «/» rendert der Streifen keine `HeaderSuche` — und mit ihr keinen Zuhörer
-// für die globalen Such-Kürzel. Statt eines zweiten Handlers neben dem der
-// HeaderSuche (der dort gar nicht existiert) leitet dieser hier UM: er läuft
-// ausschliesslich, solange das Streifen-Feld weg ist, und fokussiert das erste
-// Suchfeld der Seite ausserhalb des Kopfes.
+// für die globalen Such-Kürzel. Dieser Hook leitet sie dorthin um, wo die Suche
+// der Seite steht.
 //
 // BEWUSST OHNE KOPPLUNG an die Startseiten-Interna (Arbeitspaket A baut sie
 // parallel): das Ziel ist über den ARIA-Kontrakt gesucht — `[role="search"]`
@@ -196,40 +194,96 @@ export function Topbar({ onMenu, schubladeOffen, seitenleisteEingeklappt, onSeit
 // aria-label. Was den Kontrakt erfüllt, wird gefunden; ändert die Startseite
 // ihren Aufbau, bleibt die Umleitung heil.
 //
+// DER LISTENER HÄNGT AN KEINER ROUTE, sondern entscheidet zur Ereigniszeit, ob
+// der Kopf ein eigenes Feld trägt. Gemessen 5.9.2026 (Preview, SPA-Klick
+// «Gesetze» → «Start»): mit einem routen-abhängigen Effekt (`[aufStartseite]`)
+// lief zwischen dem History-Wechsel und dem Effekt-Lauf ein Fenster OHNE
+// Zuhörer — der erste «/»-Druck nach dem Klick verpuffte (activeElement blieb
+// der Link, auch 1.5 s später), erst der zweite fokussierte das Feld. Der
+// Alltagsweg auf «/» ist genau dieser Klick, nicht das Neuladen. Registriert
+// ist der Handler jetzt einmal beim Mount des Streifens; solange die
+// HeaderSuche im Kopf steht, hält er sich vollständig heraus (sie hat ihre
+// eigene, eingespielte Mechanik samt Vorrangregel B1 und Mobil-Lupe).
+//
 // Die ENTSCHEIDUNG, ob ein Tastendruck das Such-Kürzel ist, kommt aus
 // `suche/fruehesSuchKuerzel.ts` (§5 — dieselbe Regel wie HeaderSuche und der
-// Vorlauf aus `main.tsx`, keine zweite Kopie der Tastenlogik). Über denselben
-// Weg wird auch ein Kürzel eingelöst, das VOR dem ersten React-Commit gedrückt
-// wurde, und `lm:suche-fokus` (der CTA-Weg) bleibt bedient.
-function useSuchKuerzelUmleitung(aktiv: boolean): void {
-  useEffect(() => {
-    if (!aktiv) return;
-    const fokussiere = () => {
-      // Erstes Suchfeld AUSSERHALB des Kopfes — im Kopf steht auf anderen Routen
-      // die HeaderSuche, die sich dann selbst kümmert.
-      const felder = document.querySelectorAll<HTMLInputElement>('[role="search"] input');
-      for (const f of felder) {
-        if (f.closest('header')) continue;
-        f.focus();
-        f.select();
-        return;
-      }
+// Vorlauf aus `main.tsx`, keine zweite Kopie der Tastenlogik). Als Empfänger
+// des Vorlaufs meldet sich der Hook nur an, wenn beim Mount kein Kopf-Feld da
+// ist (der Erstlade-Fall auf «/»); sonst gehört diese Rolle der HeaderSuche.
+function useSuchKuerzelUmleitung(aufStartseite: boolean): void {
+  /** Das Suchfeld des KOPFES — steht es da, kümmert sie sich selbst. */
+  const kopfFeld = () => document.querySelector('header [role="search"] input');
+  /** Erstes Suchfeld der Seite ausserhalb des Kopfes. */
+  const seitenFeld = () => {
+    for (const f of document.querySelectorAll<HTMLInputElement>('[role="search"] input')) {
+      if (!f.closest('header')) return f;
+    }
+    return null;
+  };
+
+  // DER WUNSCH ÜBERLEBT EIN PAAR FRAMES — dasselbe Muster, das `HeaderSuche`
+  // für ihr Lupen-Feld führt (`fokusWunschFeld`), hier gegen eine andere
+  // Ursache: GEMESSEN 5.9.2026 (Preview, SPA-Klick «Gesetze» → «Start», Sonde
+  // im Seiten-Kontext) stand im Moment des ersten «/»-Drucks noch KEIN
+  // `[role="search"] input` im Dokument — die Startseite hatte ihre Module
+  // noch nicht gerendert; sie erschienen ~200 ms später. `focus()` auf ein
+  // Element, das es nicht gibt, verpufft still. Darum wird bis zu 2 s lang je
+  // Frame nachgesehen. Abbruch, sobald der Kopf wieder ein Feld trägt (Route
+  // gewechselt — dann gehört die Sache der HeaderSuche) oder der Nutzer selbst
+  // in einem Eingabefeld steht: ein verspäteter Fokus darf ihm nicht in die
+  // Tastatur greifen.
+  const fokussiere = useCallback(() => {
+    const bis = performance.now() + 2000;
+    const versuch = () => {
+      if (kopfFeld()) return;
+      const aktiv = document.activeElement as HTMLElement | null;
+      if (aktiv && (/^(INPUT|TEXTAREA|SELECT)$/.test(aktiv.tagName) || aktiv.isContentEditable)) return;
+      const f = seitenFeld();
+      if (f && f.offsetParent !== null) { f.focus(); f.select(); return; }
+      if (performance.now() < bis) requestAnimationFrame(versuch);
     };
+    versuch();
+  }, []);
+
+  // (a) Der Tasten-Zuhörer hängt an KEINER Route, sondern entscheidet zur
+  //     Ereigniszeit, ob der Kopf ein eigenes Feld trägt — so gibt es beim
+  //     Routenwechsel kein Fenster ohne Zuhörer. Solange die HeaderSuche im
+  //     Kopf steht, hält er sich vollständig heraus (sie hat ihre eigene,
+  //     eingespielte Mechanik samt Vorrangregel B1 und Mobil-Lupe).
+  useEffect(() => {
     const handler = (e: KeyboardEvent) => {
       // Vorrangregel B1 (16.8.2026): wer in der Capture-Phase schon
       // beansprucht hat, gewinnt.
       if (e.defaultPrevented) return;
+      if (kopfFeld()) return;
       if (!istSuchKuerzel(e)) return;
       e.preventDefault();
       fokussiere();
     };
     window.addEventListener('keydown', handler);
     window.addEventListener('lm:suche-fokus', fokussiere);
-    suchKuerzelEmpfaengerAnmelden(fokussiere);
     return () => {
-      suchKuerzelEmpfaengerAbmelden(fokussiere);
       window.removeEventListener('keydown', handler);
       window.removeEventListener('lm:suche-fokus', fokussiere);
     };
-  }, [aktiv]);
+  }, [fokussiere]);
+
+  // (b) EMPFÄNGER-ROLLE, und warum sie an der Route hängen MUSS.
+  //     `fruehesSuchKuerzel.ts` fängt jeden Kürzel-Druck ab, solange KEIN
+  //     Empfänger angemeldet ist — es ruft dabei `preventDefault()` und merkt
+  //     den Wunsch. GEMESSEN 5.9.2026 (Sonde im Seiten-Kontext nach dem
+  //     SPA-Klick auf «Start»): genau das geschah hier. Die HeaderSuche hatte
+  //     sich beim Unmount abgemeldet, diese Umleitung war nicht angemeldet —
+  //     der Vorlauf beanspruchte den Druck, und der Zuhörer aus (a) stieg
+  //     korrekt bei `defaultPrevented` aus. Der Druck war damit nicht verloren,
+  //     sondern GEMERKT; er brauchte nur einen Empfänger. Diese Anmeldung ist
+  //     er: sie löst den gemerkten Wunsch beim Wechsel auf «/» sofort ein und
+  //     hält den Vorlauf danach heraus. Auf anderen Routen gehört die Rolle der
+  //     HeaderSuche — darum hier nur auf «/», und abgemeldet wird
+  //     identitätsgeprüft (eine fremde Anmeldung wird nie abgeräumt).
+  useEffect(() => {
+    if (!aufStartseite) return;
+    suchKuerzelEmpfaengerAnmelden(fokussiere);
+    return () => suchKuerzelEmpfaengerAbmelden(fokussiere);
+  }, [aufStartseite, fokussiere]);
 }
