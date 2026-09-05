@@ -34,6 +34,17 @@
 //                 Schranke — und begründet höchstens einen ALLOWLIST-Eintrag
 //                 mit dem Wächter als benanntem Ersatz-Arbiter (Regel 3 bindet
 //                 den Workflow-Verweis bereits maschinell).
+//
+// SCHÄRFUNG 5.9.2026 (QS-EFFIZIENZ, Beleg #712): Bisher prüfte dieses Tor nur
+// eine Richtung (seriell → CI). Beleg: `check:testtreue` lief in ci.yml, aber
+// NICHT in `check:seriell`/`scripts/gate.sh` — lokal grün sagte nichts über
+// CI. Ab hier gilt zusätzlich die GEGENRICHTUNG: jedes `check:*`-Tor, das
+// ci.yml (PR-Pfad) aufruft, muss auch LOKAL laufen — in `check:seriell` ODER
+// in `scripts/gate.sh` (dessen `run "<name>" …`-Zeilen, `voll`-Modus zählt;
+// gebunden über den npm-Alias ODER, wo gate.sh das Skript direkt statt über
+// den Alias aufruft (zh-vollstaendigkeit/zh-randtitel), über den Skript-Pfad
+// aus package.json). Fehlt beides, ist das Tor ROT — Eskalation: Tor lokal
+// verdrahten oder mit ehrlichem Grund in `ALLOWLIST_NUR_CI` eintragen.
 import { readFileSync, readdirSync } from 'node:fs';
 
 const pkg = JSON.parse(readFileSync('package.json', 'utf8')) as {
@@ -86,6 +97,45 @@ function ereignisse(inhalt: string): Set<string> | null {
     if (m) namen.add(m[1]);
   }
   return namen;
+}
+
+/**
+ * Tore, die `scripts/gate.sh` im `voll`-Modus tatsächlich AUSFÜHRT (nicht nur
+ * in einem Kommentar erwähnt) — zwei Bindungsformen:
+ *   (a) der npm-Alias steht wörtlich da: `npm run check:<name>` (z. B.
+ *       `run "testtreue" npm run check:testtreue`).
+ *   (b) gate.sh ruft das zugrundeliegende Skript DIREKT auf, ohne den Alias zu
+ *       nennen (Beleg: `check:zh-vollstaendigkeit`/`check:zh-randtitel` laufen
+ *       dort als `npx vite-node scripts/normtext/check-zh-…ts -- --artefakt`).
+ *       Gebunden über den Skript-PFAD aus package.json — dieselbe Artefakt-
+ *       statt-Namens-Bindung wie Regel (3) unten.
+ * Kommentarzeilen (`#…`) zählen nie als Ausführung — sonst meldete eine
+ * Kopf-Doku über ein Tor bereits dessen Deckung (dieselbe Falle wie in
+ * `ereignisse()`/`ciTore()` oben).
+ */
+function gateShAbgedeckt(): Set<string> {
+  const inhalt = readFileSync('scripts/gate.sh', 'utf8')
+    .split('\n')
+    .filter((z) => !/^\s*#/.test(z))
+    .join('\n');
+  const abgedeckt = new Set<string>();
+  for (const m of inhalt.matchAll(/npm run (check:[a-z0-9:-]+)/g)) abgedeckt.add(m[1]);
+  for (const [name, cmd] of Object.entries(pkg.scripts)) {
+    if (!name.startsWith('check:') || abgedeckt.has(name)) continue;
+    const pfad = /(scripts\/\S+\.(?:ts|tsx|mjs|sh))\b/.exec(cmd)?.[1];
+    if (pfad && inhalt.includes(pfad)) abgedeckt.add(name);
+  }
+  return abgedeckt;
+}
+
+/** Zeilennummern (1-basiert) in ci.yml, an denen `npm run <tor>` vorkommt —
+ *  die «Fundstelle» für die Fehlermeldung von Regel (4). */
+function ciYmlFundstellen(tor: string): number[] {
+  const zeilen = readFileSync('.github/workflows/ci.yml', 'utf8').split('\n');
+  const treffer: number[] = [];
+  const muster = new RegExp(`npm run ${tor.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\b`);
+  zeilen.forEach((z, i) => { if (muster.test(z)) treffer.push(i + 1); });
+  return treffer;
 }
 
 type Deckung = { pr: string[]; waechter: string[] };
@@ -154,10 +204,30 @@ const ALLOWLIST: Record<string, string> = {
   'check:feed': 'neu (Gegenprüfung QS-VERWENDEN V5/V6, 2.9.2026, H-2) — ci.yml war für diesen Bau-Auftrag TABU (baut eine andere Einheit, parallele PRs); Verdrahtung in den PR-Pfad ist ein eigener, nachgelagerter Schritt (Folge-PR verdrahtet check:feed im Tore-Job von ci.yml, analog check:datenhaltung). Bis dahin lokal in check:seriell/gate vor jedem Deploy.',
 };
 
+/**
+ * GEGENRICHTUNG (SCHÄRFUNG 5.9.2026, s. Kopf): Tore, die ci.yml im PR-Pfad
+ * aufruft, aber die bewusst NICHT lokal (in `check:seriell`/`gate.sh`) laufen.
+ * Jeder Eintrag braucht einen wahren, kurzen Grund — sonst gehört das Tor
+ * lieber lokal verdrahtet.
+ */
+const ALLOWLIST_NUR_CI: Record<string, string> = {
+  'check:merge-schutz':
+    'vergleicht den GANZEN Feature-Branch (origin/main..HEAD) auf Gegenprüfungs-Verdikt + Register-Wachstum — während eines laufenden Risikopfad-Baus (vor Abschluss der Gegenprüfung) wäre es bei jedem WIP-Commit zwangsläufig rot. Das lokale Pendant ist die Gegenprüfung selbst (Skill `gegenpruefung`, dokumentiert per `gegenpruefung:ok`), nicht dieses Tor. Arbiter bleibt ci.yml (PR-Pfad).',
+  'check:perf-budget':
+    'braucht `dist/assets/` (Build-Artefakt aus `npm run build`) — kein Gate-Schritt baut vor jedem Lauf. Lokal bei Bedarf: `npm run build && npm run check:perf-budget`.',
+  'check:perf-lighthouse':
+    'braucht `dist/` (Build-Artefakt) und eine echte Chrome/Lighthouse-Messung über mehrere Läufe für den Median (mehrere Minuten) — ungeeignet für einen Gate-Lauf bei jedem WIP-Commit. Arbiter bleibt ci.yml (Job Perf, PR-Pfad).',
+};
+
 const seriell = seriellTore();
 const { deckung, ohneOn } = ciTore();
 const prGedeckt = (t: string): string[] => deckung.get(t)?.pr ?? [];
 const waechterGedeckt = (t: string): string[] => deckung.get(t)?.waechter ?? [];
+const gateSh = gateShAbgedeckt();
+// Jedes check:*-Tor, das mindestens ein PR-getriggerter Workflow aufruft —
+// heute nur ci.yml (s. Kopf). Das ist die Grundmenge für die Gegenrichtung.
+const alleCiPrTore = [...deckung.entries()].filter(([, d]) => d.pr.length > 0).map(([t]) => t).sort();
+const lokalGedeckt = (t: string): boolean => seriell.includes(t) || gateSh.has(t);
 const fehler: string[] = [];
 
 // (0) Ein Workflow ohne lesbaren `on:`-Block kann nicht als PR-Deckung gewertet
@@ -219,8 +289,35 @@ for (const [t, grund] of Object.entries(ALLOWLIST)) {
   }
 }
 
+// (4) GEGENRICHTUNG (SCHÄRFUNG 5.9.2026): jedes Tor, das ci.yml im PR-Pfad
+//     aufruft, läuft auch LOKAL (check:seriell ODER gate.sh) oder steht
+//     begründet auf ALLOWLIST_NUR_CI. Beleg #712: check:testtreue lief in
+//     ci.yml, aber nirgends lokal — lokal grün war keine Aussage über CI.
+for (const t of alleCiPrTore) {
+  if (lokalGedeckt(t) || t in ALLOWLIST_NUR_CI) continue;
+  const zeilen = ciYmlFundstellen(t).join(', ') || '?';
+  fehler.push(
+    `  ${t}: läuft in ci.yml (Zeile ${zeilen}), aber in KEINER lokalen Kette ` +
+    `(check:seriell/gate.sh) — lokal grün sagt nichts über CI (Beleg #712).\n` +
+    `      → in check:seriell oder gate.sh verdrahten, oder mit GRUND in ` +
+    `ALLOWLIST_NUR_CI (scripts/check-tor-paritaet.ts) eintragen.`);
+}
+
+// (5) Verrottete ALLOWLIST_NUR_CI: ein Eintrag, dessen Tor inzwischen doch
+//     lokal läuft oder ci.yml gar nicht mehr aufruft, ist tote Regel.
+for (const [t, grund] of Object.entries(ALLOWLIST_NUR_CI)) {
+  if (!alleCiPrTore.includes(t)) {
+    fehler.push(`  ${t}: steht auf ALLOWLIST_NUR_CI, ruft aber keinen PR-Workflow (ci.yml) mehr auf — Eintrag streichen.`);
+  } else if (lokalGedeckt(t)) {
+    fehler.push(
+      `  ${t}: läuft inzwischen lokal (check:seriell/gate.sh) — ALLOWLIST_NUR_CI-Eintrag ist überholt, streichen.\n` +
+      `      (alter Grund: ${grund})`);
+  }
+}
+
 const imPrPfad = seriell.filter((t) => prGedeckt(t).length);
 const nurWaechter = seriell.filter((t) => !prGedeckt(t).length && waechterGedeckt(t).length);
+const nurCi = alleCiPrTore.filter((t) => !lokalGedeckt(t) && t in ALLOWLIST_NUR_CI);
 
 if (fehler.length) {
   console.log(`check:tor-paritaet ROT — ${fehler.length} Abweichung(en):\n${fehler.join('\n')}`);
@@ -232,4 +329,8 @@ console.log(
   `${imPrPfad.length} laufen im PR-Pfad (vor dem Merge), ` +
   `${seriell.length - imPrPfad.length} begründet auf der Allowlist ` +
   `(davon ${nurWaechter.length} mit Wächter als Ersatz-Arbiter). ` +
-  `Kein Tor nur wächter-gedeckt ohne Eintrag.`);
+  `Kein Tor nur wächter-gedeckt ohne Eintrag. ` +
+  `Gegenrichtung: ${alleCiPrTore.length} Tore ruft ci.yml im PR-Pfad auf, ` +
+  `${alleCiPrTore.length - nurCi.length} davon laufen auch lokal ` +
+  `(check:seriell/gate.sh), ${nurCi.length} begründet auf ALLOWLIST_NUR_CI. ` +
+  `Kein Tor nur-CI ohne Eintrag.`);
