@@ -367,12 +367,27 @@ export function istFehlerSeite(urlEffective: string, html: string): boolean {
   return /<title>\s*Error\s*<\/title>|Seite nicht gefunden/i.test(html) && !/cipherDisplay|tableOfContent/i.test(urlEffective);
 }
 
+/**
+ * Timeout je Versuch für die Ziffern-/ToC-Seiten dieser Quelle. Der netz-retry-Default
+ * (25 s) ist für `gate.estv.admin.ch` zu knapp: die Ziffern-Seiten der grossen
+ * Publikationen rendern serverseitig langsam. GEMESSEN 5.9.2026 an
+ * `publicationId=1004706` (MWST-Branchen-Info 19 Gemeinwesen), nackt per curl:
+ * componentId=1004936 → 30,8 s · componentId=1757690 → 24,9 s (beide HTTP 200,
+ * ~44 kB). Beide Werte liegen an oder über dem 25-s-Default, also brachen ZWEI
+ * vollständige Snapshot-Läufe (je ~80 min Crawl) reproduzierbar an genau dieser
+ * Publikation mit «4 Versuche erschöpft — operation was aborted due to timeout» ab
+ * und schrieben nichts — der Monitor-Befund `check:materialien-netz` war damit auf
+ * main nicht heilbar. 60 s lässt der Quelle Luft, ohne die Wiederhol-Logik zu
+ * ändern (Versuche/Backoff unverändert) und ohne den Höflichkeits-Delay anzutasten.
+ */
+const ESTV_MWST_TIMEOUT_MS = 60_000;
+
 /** Höflicher GET; Content-Type-Arbiter + Mindestlänge (Soft-404, §Skill). */
 export async function ladeSeite(url: string, fetchImpl?: typeof fetch): Promise<string> {
   const res = await fetchMitWiederholung(
     url,
     { headers: { 'User-Agent': ESTV_MWST_USER_AGENT, Accept: 'text/html' } },
-    { fetchImpl },
+    { fetchImpl, timeoutMs: ESTV_MWST_TIMEOUT_MS },
   );
   const ct = res.headers.get('content-type') ?? '';
   if (!res.ok) {

@@ -209,14 +209,14 @@
       "sprache": "de",
       "status": "nur-live-link",
       "quelleUrl": "https://www.gate.estv.admin.ch/mwst-webpublikationen/public/MI/04",
-      "stand": "2026-08-27",
+      "stand": "2026-09-03",
       "rang": 104,
       "normKeys": [
         "MWSTG",
         "MWSTV"
       ],
       "hinweis": "Amtliche ESTV-MWST-Webpublikation (Verwaltungsverordnung), kein Gesetzesrang; Inhalt laufend versioniert.",
-      "sha": "ebe5df4dd9a7443f1e52bd1712ead1adc071c73888bdd924e62dd23775fdb072"
+      "sha": "3154d399867c189ac4d7fa9622a2d9e12545f7c3bac36664af9522f1d29efe7b"
     },
     {
       "key": "ESTV-MWST-INFO-05",
@@ -867,14 +867,14 @@
       "sprache": "de",
       "status": "nur-live-link",
       "quelleUrl": "https://www.gate.estv.admin.ch/mwst-webpublikationen/public/MBI/13",
-      "stand": "2025-11-05",
+      "stand": "2026-09-03",
       "rang": 213,
       "normKeys": [
         "MWSTG",
         "MWSTV"
       ],
       "hinweis": "Amtliche ESTV-MWST-Webpublikation (Verwaltungsverordnung), kein Gesetzesrang; Inhalt laufend versioniert.",
-      "sha": "55535d74e15ae5097b53198ff8d4ee5676785b6c1a1b6eaf4490f47e3c0f7f8a"
+      "sha": "93559ace4f1edc2cc30bf7f20544fac285f349f0daea5a8132aac51d1dcc0681"
     },
     {
       "key": "ESTV-MWST-BRANCHEN-INFO-14",
@@ -1152,14 +1152,14 @@
       "sprache": "de",
       "status": "nur-live-link",
       "quelleUrl": "https://www.gate.estv.admin.ch/mwst-webpublikationen/public/MBI/26",
-      "stand": "2026-03-06",
+      "stand": "2026-09-03",
       "rang": 226,
       "normKeys": [
         "MWSTG",
         "MWSTV"
       ],
       "hinweis": "Amtliche ESTV-MWST-Webpublikation (Verwaltungsverordnung), kein Gesetzesrang; Inhalt laufend versioniert.",
-      "sha": "d38f773cda220f0a90070517dd1e4bd83611d6d86a8f39836a595a59427b51a7"
+      "sha": "cfb4378925b04c99443c679a367a824c06bede189dd9d2baa6c5340708c90300"
     },
     {
       "key": "ESTV-MWST-BRANCHEN-INFO-27",
