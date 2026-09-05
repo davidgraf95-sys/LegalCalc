@@ -271,6 +271,13 @@ nachschärfen oder Schritt zurückholen.
    `npm test` in jedem neuen Worktree rot).
 7. Karten-ZEILE in `STRUKTUR.md` (deployter Stand, Commit-Hash) — Form:
    Skill `bauschritt` Station E.
+8. **Projektionen nachziehen:** `npm run projektionen` (Zähler/Feed/Historie/
+   Datenhaltungs-Manifest + `gen:e2e-shards`, seriell) — vor dem Öffnen eines
+   PR, der Quelldaten ändert, und nach einer Landekette mit mehreren
+   Daten-PRs. Beleg: 5 CI-Läufe verloren #694/#695/#689, 5.9.2026.
+9. Prüf-Worktrees: nach `git worktree add` immer `npm ci` (frischer Checkout
+   trägt noch kein `node_modules`) — sonst laufen Tore/Tests dort nicht an
+   (Beleg gleiche Session, 5.9.2026).
 
 ## Trailer- und PR-Formregeln (CI-Rot-Lehren 31.8./1.9.2026, §17)
 
