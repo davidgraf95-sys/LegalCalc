@@ -1,5 +1,5 @@
 import { useMemo, useState } from 'react';
-import { BeruehrtRahmen, ErgebnisPlatzhalter, Field, inputCls } from '../vorlagen/ui';
+import { BeruehrtRahmen, Checkbox, ErgebnisPlatzhalter, Field, inputCls } from '../vorlagen/ui';
 import { zahlBeliebig as zahl } from './eingabe';
 import { NormText } from '../NormText';
 import { KantonArtikelTrigger } from '../KantonQuelleLink';
@@ -263,10 +263,7 @@ export function ProzesskostenForm({ minimal = false }: { minimal?: boolean } = {
 
           {/* MwSt auf die Parteientschädigung (Art. 95 III lit. b ZPO i.V.m. MWSTG) — fallabhängig. */}
           {!ergebnis.parteientschaedigung.kostenlos && (
-            <label className="mt-3 flex items-start gap-2 text-body-s text-ink-700">
-              <input type="checkbox" checked={mwst} onChange={(e) => setMwst(e.target.checked)} className="mt-0.5" />
-              <span>Berechtigte Partei nicht vorsteuerabzugsberechtigt (z.&nbsp;B. Privatperson) — MwSt auf die Parteientschädigung hinzurechnen</span>
-            </label>
+            <Checkbox checked={mwst} onChange={setMwst} className="mt-3" label="Berechtigte Partei nicht vorsteuerabzugsberechtigt (z. B. Privatperson) — MwSt auf die Parteientschädigung hinzurechnen" />
           )}
           {mwstAufschlag && (
             <div className="mt-2 lc-tile lc-akzent-brass">
@@ -345,10 +342,7 @@ export function ProzesskostenForm({ minimal = false }: { minimal?: boolean } = {
                 </div>
               )}
               <p className="mt-2 text-xs text-ink-500"><NormText text={ausgangInfo.hinweis} /> <span className="text-ink-500">({ausgangInfo.norm})</span></p>
-              <label className="mt-2 flex items-start gap-2 text-body-s text-ink-700">
-                <input type="checkbox" checked={ur} onChange={(e) => setUr(e.target.checked)} className="mt-0.5" />
-                <span>Unentgeltliche Rechtspflege bewilligt (Art. 117 ff. ZPO) — befreit von Vorschuss/Gerichtskosten, aber nicht von der gegnerischen Parteientschädigung</span>
-              </label>
+              <Checkbox checked={ur} onChange={setUr} className="mt-2" label="Unentgeltliche Rechtspflege bewilligt (Art. 117 ff. ZPO) — befreit von Vorschuss/Gerichtskosten, aber nicht von der gegnerischen Parteientschädigung" />
               {!kostenrisiko ? (
                 <p className="mt-3 text-body-s text-ink-600">Ermessensverteilung — kein bezifferter Wert; massgebend ist die richterliche Würdigung.</p>
               ) : kostenrisiko.berechenbar ? (
