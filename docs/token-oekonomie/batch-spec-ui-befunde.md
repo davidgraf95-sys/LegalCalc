@@ -1,5 +1,10 @@
 # Batch-Spec — UI-Befund-Batches (Vorlage aus der Nacht 4./5.9.2026; als Datei-Zeiger an Bau-Agenten geben, Skill auftrag Ziff. 6 «Spec als Datei-Zeiger»)
 
+> **Grüne-Spur-Weiche (vor JEDEM Bau-Dispatch beantworten, Skill auftrag Ziff. 6; Lehre 5.9.2026: Prosa feuerte nachts nicht):**
+> (a) nur `src/**`, kein Risikopfad? · (b) Fertig-Kriterium maschinell (Tore, gleiche Tests, Golden), kein Sichtentscheid? · (c) ein Ziel, ≤ ~5 Dateien, Whitelist benennbar? · (d) keine offene David-Frage?
+> **4× ja ⇒ Jules-Ticket (Vorlage `jules-ticket-vorlage.md`, Kontingent vorher messen), nicht Claude-Agent.** Ein Nein ⇒ Claude, mit dem Nein als Begründung im Dispatch.
+
+
 Rolle: UI-Bauer für EINEN Batch der externen UI-Befundliste. Steuerung: `fahrplaene/FAHRPLAN-UI-BEFUNDE.md`
 (§0 Quer-Lektionen VOR dem Batch vollständig lesen, dann NUR den §-Block deines Batches). Wortlaut der Befunde:
 `docs/ui-befunde-2026-07/BEFUNDLISTE-COWORK-2026-07-29.md` (nur die Zeilen deiner LM-Nummern per grep).
