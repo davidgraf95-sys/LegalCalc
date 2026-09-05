@@ -1,33 +1,16 @@
 // ─── Token-Schranke (DESIGN-REGLEMENT B2/D2/F7/E1, §13) ─────────────────────
-// Macht die Token-Disziplin aus «Konvention» zu «erzwungen». Zwei Prüfungen:
-//
-//  1) TYPO (B2): keine Tailwind-Default-Grössen (text-sm/lg/xl…) und keine ROHEN
-//     absoluten Arbitrary-Grössen (text-[12px] / text-[1.1rem]). Erlaubt: die
-//     hauseigene Skala, token-/var-basierte Grössen text-[length:var(--…)] und
-//     relative em/% (kontextrelativ).
-//
-//  2) FARBE (F7): jede genutzte Farb-Utility (bg-/text-/border-/ring-… einer
-//     hauseigenen Farbfamilie) muss in tailwind.config.js existieren — sonst
-//     generiert Tailwind die Klasse STILL nicht (No-op). Genau diese Bug-Klasse
-//     (bg-brass-50 / border-brass-300) erscheint sonst gar nicht im UI (F6/F7).
-//
-//  3) DECKKRAFT (DESIGN-D0, Infrastruktur-Fund B4 vom 8.8.2026): dieselbe
-//     No-op-Klasse eine Ebene tiefer. `bg-brass-100/70` & Co. erzeugten am
-//     Stand vom 16.8.2026 KEINE CSS-Regel — Tailwind 3 kann den `/<alpha>`-
-//     Modifier nur anwenden, wenn der Farbwert entweder parsebar (`#F1E8D6`)
-//     oder eine Funktion/`<alpha-value>`-Vorlage ist. Reine `var(--token)`-
-//     Werte sind beides nicht: `withAlphaValue()` liefert `undefined`, die
-//     Deklaration entfällt, die Regel wird verworfen — die Fläche rendert
-//     unsichtbar (belegt LM-156, unsichtbare Aktiv-Zeile der Gesetzes-
-//     Gliederung, PR #472). Prüfung 2 fängt das NICHT: die Stufe existiert ja,
-//     nur der Modifier verpufft. Der Wächter kompiliert darum die im Repo
-//     tatsächlich verwendeten `/<alpha>`-Klassen mit echtem Tailwind und
-//     verlangt (a) eine Regel und (b) einen anderen Deklarations-Rumpf als die
-//     opake Schwesterklasse — sonst wäre eine Regel ohne Deckkraft-Wirkung
-//     grün. Implementierungs-neutral: greift auch bei einer künftigen
-//     Tailwind-4-/color-mix-Lösung.
-//
-// Lauf:  npm run check:design-tokens   (Teil von `npm run check` → gate voll).
+// 1) TYPO (B2): keine Tailwind-Default-Grössen (text-sm/lg/xl…), keine rohen
+//    absoluten Arbitrary-Grössen (text-[12px]/[1.1rem]). Erlaubt: Haus-Skala,
+//    text-[length:var(--…)], relative em/%.
+// 2) FARBE (F7): jede Farb-Utility (bg-/text-/border-/ring-… Haus-Familie)
+//    muss in tailwind.config.js existieren — sonst generiert Tailwind die
+//    Klasse still nicht (No-op).
+// 3) DECKKRAFT (D0, 8.8.2026): `bg-brass-100/70` & Co. erzeugten am Stand
+//    16.8.2026 KEINE CSS-Regel — var(--token)-Farbwerte sind nicht alpha-
+//    fähig (LM-156, PR #472). Wächter kompiliert die genutzten /<alpha>-
+//    Klassen mit echtem Tailwind, verlangt Regel + abweichenden Rumpf ggü.
+//    der opaken Schwesterklasse.
+// Lauf: npm run check:design-tokens (Teil von npm run check).
 import { readdirSync, readFileSync, statSync } from 'node:fs';
 import { join } from 'node:path';
 import postcss, { type Declaration } from 'postcss';
@@ -60,89 +43,55 @@ const PRAEFIX = 'bg|text|border|ring|from|via|to|divide|outline|fill|stroke|deco
 // Fängt <praefix>-<familie>[-<stufe>] (Stufe optional = DEFAULT); /<alpha> wird ignoriert.
 const FARB_RE = new RegExp(`\\b(?:${PRAEFIX})-(${FAMILIEN})(?:-([a-z0-9.]+))?(?:/[0-9.]+)?\\b`, 'g');
 
-// ── Verbot: Ad-hoc-Status-Farben aus der Tailwind-Default-Palette (§13 Pkt.1/F7) ──
-// Diese Familien sind KEINE Haus-Tokens; Tailwind generiert sie per Default
-// weiter (extend überschreibt die Default-Palette nicht). Haus-Familien
-// (slate/ink/brass/sage/well/warn/danger …) bewusst nicht gelistet — die
-// prüft bereits FARB_RE oben.
+// ── Verbot: Ad-hoc-Status-Farben aus Tailwind-Default-Palette (§13 Pkt.1/F7) ──
+// Keine Haus-Tokens; Tailwind generiert sie trotz extend weiter.
 const DEFAULT_PALETTE = 'red|green|blue|yellow|orange|purple|pink|gray|grey|zinc|neutral|stone|amber|lime|emerald|teal|cyan|sky|indigo|violet|fuchsia|rose';
 const DEFAULT_FARB_RE = new RegExp(`\\b(?:${PRAEFIX})-(?:${DEFAULT_PALETTE})-[0-9]+(?:/[0-9.]+)?\\b`, 'g');
 // ── Verbot: Arbitrary-Color Hex/rgb/hsl in Komponenten (§13 Pkt.1). var(--…) bleibt erlaubt (Token-Escape). ──
 const ARBITRARY_FARB_RE = new RegExp(`\\b(?:${PRAEFIX})-\\[(?:#|rgb|hsl)[^\\]]*\\]`, 'g');
-// ── Verbot: eigene FARBE am Fokusring (E-1, Design-Konsistenz 31.8.2026) ────
-// Der Fokusring hat GENAU EINE Rolle: `--focus` (src/index.css) — hell
-// brass-700, dunkel brass-500 — via globaler Regel `:focus-visible { outline:
-// 2px solid var(--focus); outline-offset: 2px }` an JEDEM fokussierbaren
-// Element. Gefunden: 9 Komponenten mit eigener Kette `focus-visible:outline
-// focus-visible:outline-2 focus-visible:outline-brass-600` — dieselbe Zusage,
-// zweiter Wert (§5), im Dunkelmodus sichtbar falsch (brass-600 ist dort NICHT
-// der Fokuston). Bestehende Tore griffen knapp daneben: `brass-600` steht in
-// der Config (FARB_RE grün) und ist keine Default-Palette-Farbe (DEFAULT_
-// FARB_RE grün). Darum diese Schranke (§17-Nachzug).
-// ERLAUBT: alles, was NICHT die Farbe setzt — `focus-visible:outline-none`
-// (dokumentierte Eigenring-Fälle), Breiten (`outline-2`), vor allem der Offset
-// (`focus-visible:-outline-offset-2` — Scroll-Container/schmale Kopfzeilen
-// brauchen den Ring innenliegend, sonst clippt er). Fasst `focus:` und
-// `focus-visible:` sowie `outline-`/`ring-` (inkl. `ring-offset-`-Farbe) und
-// arbitrary `[…]`-Werte ausser `var(--focus)`.
+// ── Verbot: eigene FARBE am Fokusring (E-1, 31.8.2026) ──────────────────────
+// Fokusring hat GENAU EINE Rolle: --focus (src/index.css), global via
+// :focus-visible. Fund: 9 Komponenten mit eigener Kette (z. B. outline-
+// brass-600), im Dunkelmodus falsch — von FARB_RE/DEFAULT_FARB_RE nicht
+// erfasst (§17-Nachzug). ERLAUBT: outline-none, Breiten, Offset
+// (-outline-offset-2, für Scroll-Container). Fasst focus(-visible): +
+// outline-/ring-/ring-offset- + arbitrary […] ausser var(--focus).
 const FOKUS_FAMILIEN = [...Object.keys(farben), ...DEFAULT_PALETTE.split('|')]
   .filter((f) => f !== 'focus')                       // die Rolle selbst bleibt erlaubt
   .join('|');
 const FOKUS_FARB_RE = new RegExp(
   `\\bfocus(?:-visible)?:-?(?:outline|ring|ring-offset)-(?:${FOKUS_FAMILIEN})(?:-[a-z0-9.]+)?(?:/[0-9.]+)?\\b`, 'g');
 const FOKUS_ARB_RE = /\bfocus(?:-visible)?:-?(?:outline|ring|ring-offset)-\[(?!var\(--focus\))[^\]]+\]/g;
-// ── Verbot: lc-overline mit ink-Dimm-Override (D-1.2, Befund 18 / E1-Schranke) ──
-// lc-overline ist auf ink-600 kalibriert (≥4.5:1 auch auf getönten Flächen);
-// text-ink-500/400/300 daneben degradiert die 11px-Overline unter AA (gemessen
-// ink-500 4.05:1 auf sage-/warn-bg) — axe-e2e war trotz Verstoss grün, dieses
-// Regex ist der einzige Wächter. brass-Pairings (text-brass-*) bleiben erlaubt.
-// Beide Reihenfolgen, nur innerhalb DESSELBEN className-Strings (kein Treffer
-// über Quote-Grenzen hinweg — verschachtelte eigenständige Spans sind aus Scope).
+// ── Verbot: lc-overline mit ink-Dimm-Override (D-1.2, Befund 18) ───────────
+// lc-overline ist auf ink-600 kalibriert (≥4.5:1); text-ink-500/400/300
+// degradiert die 11px-Overline unter AA (ink-500 4.05:1, gemessen). axe-e2e
+// blieb grün — einziger Wächter hier. brass-Pairings bleiben erlaubt; Treffer
+// nur innerhalb desselben className-Strings.
 const OVERLINE_DIM_RE = /\blc-overline\b[^"'`]*\btext-ink-(?:500|400|300)\b|\btext-ink-(?:500|400|300)\b[^"'`]*\blc-overline\b/;
-// ── Verbot: Reinweiss als Fläche (§13-Nachtrag d / Befund 41, Reinweiss-Invariante) ──
-// Lese-/Arbeitsflächen tragen --paper*/--surface* (warmes Papier), nie #FFFFFF;
-// --paper-raised deckt kleine erhabene Flächen ab. Kein bg-white/text-white/…-white
-// (Tailwind-Keyword) und kein #fff/#ffffff im Inline-Style. Arbitrary-Hex-White
-// (bg-[#fff]) fängt bereits ARBITRARY_FARB_RE. Dokumentierte Ausnahmen (@media
-// print body #fff, text-paper auf ink-Buttons) leben in index.css, ausserhalb
-// dieses Komponenten-Scopes. Heute 0 Treffer = billige Versicherung (F6/F7).
+// ── Verbot: Reinweiss als Fläche (§13-Nachtrag d / Befund 41) ──────────────
+// Lese-/Arbeitsflächen tragen --paper*/--surface*, nie #FFFFFF. Kein
+// bg-white/text-white/…-white und kein #fff/#ffffff im Inline-Style
+// (Arbitrary-Hex fängt ARBITRARY_FARB_RE). Ausnahmen (print, ink-Buttons)
+// leben in index.css, ausserhalb dieses Scopes.
 const WHITE_UTIL_RE = new RegExp(`\\b(?:${PRAEFIX})-white\\b`, 'g');
 const INLINE_WHITE_RE = /(?:background|backgroundColor|color)\s*:\s*['"]#(?:fff|ffffff)['"]/i;
-// ── Verbot: Ad-hoc-Scrim (F2-1, Design-Konsistenz Runde 2, 31.8.2026) ───────
-// Die abdunkelnde Fläche hinter einem Overlay hat DREI Rollen mit je EINER
-// Deckung (`--scrim` 30 % Blatt/Menü · `--scrim-dialog` 40 % zentrierter Dialog ·
-// `--scrim-voll` 50 % Vollflächen-Schublade, src/index.css) und trägt sie über
-// `.lc-scrim*`. Gefunden wurden SIEBEN Fundstellen als Utility-Kette, davon DREI
-// mit `bg-ink-900/<alpha>` — und das ist kein Geschmack, sondern ein Fehler:
-// `--ink-900` flippt mit dem Thema (hell #201E16, dunkel #E9E7E2), ein
-// `bg-ink-900/30` HELLT im Dunkelmodus also auf, statt abzudunkeln (gemessene
-// Leuchtdichte im Lesefeld, `v3/LeserScrim.tsx`: hell 237.5 → 166.1, dunkel
-// 32.7 → 23.0 nur mit der schwarzen Fassung). Die bestehenden Schranken griffen
-// knapp daneben: `ink-900` steht in der Config (FARB_RE grün), ist keine
-// Default-Palette-Farbe (DEFAULT_FARB_RE grün) und erzeugt eine wirksame
-// Deckkraft-Regel (Prüfung 3 grün).
-// GELTUNG eng: nur wo die Klassen-Kette WIRKLICH ein Scrim aufspannt, also
-// zusammen mit `inset-0`. Ein gedimmtes Element im Fluss ist nicht gemeint.
-// `bg-black/<alpha>` fällt mit darunter, obwohl die FARBE dort richtig ist: die
-// Deckung stünde sonst wieder als freie Zahl im JSX — und ein Wächter, der die
-// letzte verbliebene Fundstelle ausnimmt, ist keiner (§6.7). Darum ist mit F2-1
-// auch `layout/Shell.tsx` (50 %) mitgezogen worden.
-// KOMMENTARZEILEN BLEIBEN FREI: die Herleitungen im Haus nennen den Vorzustand
-// beim Namen («Gebaut war ein Vollflächen-Scrim (`fixed inset-0 bg-ink-900/30`)
-// …», LeserPanelZone:48) — ein datierter Beleg altert nicht und wird nicht
-// nachgeführt (§2b). Dieselbe Trennung fährt `src/tests/design-r2c-bausteine.test.ts`.
-// Die übrigen Prüfungen oben messen bewusst die ganze Zeile: dort geht es um
-// Klassen, die im Bestand nicht als Beleg zitiert werden.
+// ── Verbot: Ad-hoc-Scrim (F2-1, 31.8.2026) ──────────────────────────────────
+// Scrim hat DREI Rollen mit je EINER Deckung (--scrim 30 %/--scrim-dialog
+// 40 %/--scrim-voll 50 %, src/index.css) über .lc-scrim*. Fund: 7 Fundstellen
+// als Utility-Kette, 3 mit bg-ink-900/<alpha> — Fehler, da --ink-900 mit dem
+// Thema flippt (hell #201E16, dunkel #E9E7E2): bg-ink-900/30 hellt im
+// Dunkelmodus auf statt abzudunkeln (Leuchtdichte v3/LeserScrim.tsx: hell
+// 237.5→166.1, dunkel 32.7→23.0). FARB_RE/DEFAULT_FARB_RE/Prüfung 3 fingen das
+// nicht. GELTUNG: nur mit inset-0 (echter Scrim); bg-black/<alpha> fällt mit
+// darunter (§6.7, keine Ausnahme für letzte Fundstelle). Kommentarzeilen
+// bleiben frei — datierte Belege im Code altern nicht (§2b).
 const SCRIM_RE = /\bbg-(?:black|ink-\d{3})\/[0-9.]+\b/;
 const SCRIM_TRAEGER_RE = /\binset-0\b/;
 const KOMMENTAR_ZEILE_RE = /^\s*(?:\/\/|\*|\/\*|\{\/\*)/;
-// ── Deckkraft-Suffix (Prüfung 3, D0): <praefix>-<farbe>/<alpha>. Bewusst OHNE
-// Familien-Filter — auch die Tailwind-Keyword-Farben (bg-black/50) laufen mit,
-// die Kompilation entscheidet. Nur Farb-Präfixe, damit w-1/2 & Co. nicht greifen.
-//
-// Klammer-Formen laufen mit (D0 5.9.2026, Messreihe + Rot-Beweis im Commit):
-// `…-[var(--x)]/60` ist als Token-Escape erlaubt, erzeugt aber KEINE Regel und
-// lief grün durch; `/[0.6]` wirksam, doch unbewacht. Trailing `\b` greift hinter `]` nicht.
+// ── Deckkraft-Suffix (Prüfung 3, D0): <praefix>-<farbe>/<alpha>. Ohne Familien-
+// Filter — Kompilation entscheidet; nur Farb-Präfixe (w-1/2 bleibt aussen vor).
+// Klammer-Formen laufen mit (D0 5.9.2026): …-[var(--x)]/60 lief bisher grün
+// durch ohne Regel zu erzeugen; /[0.6] wirksam, aber unbewacht.
 const ALPHA_UTIL_RE = new RegExp(
   `\\b(?:${PRAEFIX})-(?:[a-z]+(?:-[a-z0-9]+)*|\\[[^\\]\\s]+\\])\\/(?:[0-9]+(?:\\.[0-9]+)?|\\[[^\\]\\s]+\\])`, 'g');
 
@@ -219,9 +168,8 @@ if (alphaFunde.size > 0) {
   const config = { ...(tw as Record<string, unknown>), content: [{ raw: klassen.join(' '), extension: 'html' }] };
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const ergebnis = await postcss([tailwindcss(config as any)]).process('@tailwind utilities;', { from: undefined });
-  // Selektor → Deklarations-Rumpf. `--tw-*-opacity` fliegt raus: Tailwind
-  // emittiert die Zeile nur bei der opaken Variante und sie ist wirkungslos,
-  // würde den Vergleich aber immer «unterschiedlich» machen.
+  // Selektor → Deklarations-Rumpf. --tw-*-opacity fliegt raus (nur bei opaker
+  // Variante emittiert, würde den Vergleich sonst immer "unterschiedlich" machen).
   const rumpf = new Map<string, string>();
   ergebnis.root.walkRules((regel) => {
     const treffer = /^\.((?:[^\s.:>~+[\\]|\\.)+)/.exec(regel.selector);
@@ -245,27 +193,16 @@ if (alphaFunde.size > 0) {
   }
 }
 
-// ── Prüfung 3b: `sage` ist die Materialien-Kennfarbe, nicht die ok-Rolle ─────
-//
-// GEMESSEN (Design-Konsistenz R3-α/A3-6, 31.8.2026): neun Flächen färbten einen
-// ZUSTAND («Frist endet» · «Gültig» · «nicht verjährt» · «zustimmen» · «Summe
-// stimmt») mit `sage-*` ein — der WERKSTOFF-Kennfarbe der Materialien. Die
-// Zustands-Rolle `--ok-*` existiert seit F1 (§4b-B-i) und ist wertidentisch;
-// genau deshalb fiel die Vermischung nie auf, und genau deshalb ist sie
-// gefährlich: verschiebt sich eines der beiden Konzepte, verschieben sich
-// stillschweigend beide (Befunde 7+37). `FristenKalender` mischte sogar BEIDE
-// Familien in EINER Zelle (Füllung sage, Ring `--ok-solid`).
-//
-// REGEL: `sage-*`-Utilities und `var(--sage-*)` sind ausserhalb von
-// `src/index.css` (wo die Rolle definiert wird) nur mit einer Begründung AM
-// FUNDORT zulässig. Der Wächter zitiert sie wörtlich — verschwindet sie, fällt
-// die Ausnahme mit ihr.
+// ── Prüfung 3b: `sage` ist Materialien-Kennfarbe, nicht die ok-Rolle ────────
+// GEMESSEN (R3-α/A3-6, 31.8.2026): neun Flächen färbten einen ZUSTAND mit
+// sage-* statt der wertidentischen Rolle --ok-* (seit F1, §4b-B-i) — gefährlich,
+// weil beide Konzepte sich sonst stillschweigend mitverschieben (Befunde 7+37).
+// REGEL: sage-*/var(--sage-*) ausserhalb src/index.css nur mit Begründung AM
+// FUNDORT; Wächter zitiert sie wörtlich.
 {
   /** Fundort-Ausnahmen: Datei → Satz, der dort stehen MUSS. */
   const SAGE_AUSNAHMEN: Record<string, string> = {
-    // Bandfarben eines Diagramms, keine Status-Aussage: die sechs Werte sind
-    // eine KATEGORIALE Reihe (Zinssatz-Abschnitte), in der sage neben brass,
-    // slate und warn nur eine unterscheidbare Fläche ist.
+    // Bandfarben eines Diagramms (kategoriale Reihe), keine Status-Aussage.
     'src/components/VerzugszinsTimeline.tsx': 'A3-6-AUSNAHME (R3-α, 31.8.2026): kategoriale Bandfarbe, kein Zustand',
   };
   const SAGE_RE = /(?:^|[\s"'`:])(?:bg|text|border|ring|fill|stroke|from|via|to|divide|outline|decoration|shadow|accent|caret)-sage-[a-z0-9]+|var\(--sage-[a-z0-9-]+\)/;
@@ -286,20 +223,12 @@ if (alphaFunde.size > 0) {
   }
 }
 
-// ── Prüfung 4: `theme-color` ist eine Projektion von --paper (E-3) ───────────
-// Die Browser-Chrome-Farbe steht an ZWEI Stellen als Literal: statisch in
-// `index.html` (die beiden media-Tags decken den Moment vor dem JS ab) und
-// dynamisch in `src/components/thema.ts` (das media-lose Tag, das die Wahl
-// gegen die Systemvorgabe abbildet). Beide MÜSSEN die Seitenfläche `--paper`
-// aus `src/index.css` treffen — sonst sitzt neben der Papierfläche ein
-// andersfarbiger Browser-Rahmen. Genau das war der Ist-Stand: hell stand
-// überall `#F7F4EC`, `--paper` ist aber `#FCFAF6` (ΔE 2.23, sichtbarer
-// Kantensprung auf iOS/Android).
-// WARUM WÄCHTER STATT GENERATOR: `index.html` wird vor jedem JS geparst, kann
-// also keine TS-Konstante konsumieren — das Literal MUSS dort stehen. Ein
-// Generator schriebe es hinein und bräuchte dafür ein zweites Werkzeug plus
-// npm-Skript; der Wächter macht dieselbe Zusage («eine Quelle, alles andere
-// ist Projektion») ohne neue Erzeugungs-Maschinerie (§17-Gegengewicht).
+// ── Prüfung 4: `theme-color` ist eine Projektion von --paper (E-3) ─────────
+// Browser-Chrome-Farbe steht als Literal in index.html (media-Tags) und
+// src/components/thema.ts (media-los) — beide MÜSSEN --paper (src/index.css)
+// treffen. Ist-Stand war hell überall #F7F4EC ≠ --paper #FCFAF6 (ΔE 2.23,
+// sichtbarer Kantensprung iOS/Android). Wächter statt Generator: index.html
+// wird vor jedem JS geparst, kann keine TS-Konstante konsumieren (§17-Gegengewicht).
 {
   const css = readFileSync('src/index.css', 'utf8');
   /** Inhalt von `<selektor> { … }` (Klammer-Zählung, Idiom aus check-farbwelt.ts). */
