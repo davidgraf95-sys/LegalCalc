@@ -217,6 +217,7 @@ gh pr list --state open --json number,headRefName \
    kein Risikopfad` nur eintragen, wenn `npm run check:gegenpruefung` das
    bestätigt. Golden byte-gleich, wo berührt.
 7. **Nie Auto-Merge**, auch nicht ausserhalb der Risiko-Pfade.
+7a. **Nie `gh pr update-branch` auf einem Jules-PR** (Beleg #710, 5.9.2026: Jules pushte danach seinen Snapshot neu und drehte den Tree auf den Stand vor #711 zurück). Landung eines geprüften Jules-Heads immer als Cherry-Pick auf einen eigenen Branch (`git cherry-pick -n <head>` + eigener Commit mit deutschem Betreff und Trailer, Muster #711/#704-Landung); der Jules-PR wird mit Kommentar geschlossen, zählt in der Messung als landbar.
 8. Danach normale Landung (Schritte 0–3) und STRUKTUR-Karte wie bei eigener
    Arbeit — der fremde PR ist kein Grund, die Karte auszulassen. Seit 4.9.2026 fährt CI dieselben zwei Regeln automatisch (Step «Fremd-PR-Tor» im Job «Tore», Branches mit 19-stelliger Task-ID oder Präfix `jules-`/`jules/` — nie «jules» irgendwo im Namen, Beleg PR #656): Assertion-Diff + keine Datei ausserhalb `src/**` — der lokale Lauf bleibt Pflicht (§14.7, nie die CI-Ausgabe eines Fremden als eigene Prüfung zählen).
 

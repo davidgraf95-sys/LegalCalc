@@ -50,6 +50,8 @@ werden direkt unter dem KARTEN-Anker eingefügt (jüngste zuoberst).
 
 **Morgen 5.9. (David wach, Auftrag «leg die drei Jules-Tickets an»):** #696–#698 → PRs #699–#701 in 33/40/52 min, alle landbar (Test-Split, Komponenten-Split mit expliziter Partition, Fixture-Split); Landungsquote seit 3.9. 9/10. §17: Grüne-Spur-Weiche jetzt im Dispatch-Generator (`npm run dispatch -- bau`), weil die Skill-Prosa in der Nacht kein einziges Mal feuerte. Claude-Nachzug offen: Wächter-Listen um Split-Geschwister, toter Re-Export, dupliziertes Fixture-Interface. `schlankheit:update` setzt alle Baseline-Zahlen still neu — nur gezielt nutzen (QS-EFFIZIENZ-Zeile).
 
+**Vormittag 5.9. (Jules 11–13b, David: «leg noch drei an»):** #710 Wizard-Split landbar (47 min), #709 Test-Split inhaltlich sauber, aber Betreff «refactor» ⇒ `check:testtreue` rot ⇒ Landung als #711 + Wurzelfix #712 (Testtreue im lokalen gate, Betreffregel in AGENTS.md/Vorlage), #707 gültige Entwurf-Antwort ⇒ Jules 13b (#708). Nachzug #702 (Wächter-Listen, Re-Export, Fixture-Typ). Monitor grün, #600 zu. Neue §17-Zeilen: Paritäts-Tor kennt nur die check:seriell-Kette; `schlankheit:update` nur gezielt.
+
 **Messung:** ~27 PRs in ~11 h, 0 Rollbacks; CI-Rot fast ausschliesslich Nachzug-Klassen (Projektionen, Test-Helfer, Runner-Stall), 1 echter Regressionsfang durch e2e (#674 aria-label).
 
 ## Session 4.9.2026 — QS-FREMDAGENTEN Phase 1 + 2 gelandet, SEO-BASIS Nullbefund, Landungskette 645–650
