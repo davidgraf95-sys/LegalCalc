@@ -7,6 +7,7 @@ import { suchOptionId } from './suchOptionId';
 import { MEHR_TREFFER_ID } from './trefferAuswahl';
 import { StatusBadge } from '../verzahnung/StatusBadge';
 import { TrefferZeile, TREFFER_ZEILE_RAHMEN } from '../ui/TrefferZeile';
+import { Leerzustand } from '../ui/Leerzustand';
 
 // ─── Trefferpanel der Universal-Suche (geteilt: Header-Dropdown + Hero, §5) ──
 //
@@ -191,7 +192,7 @@ function Gruppe({ g, index, onAuswahl, onNavigate, listboxId, aktivId, q, sektio
   );
 }
 
-export function SuchResultate({ gruppen, allesGeladen, q, onAuswahl, onNavigate, listboxId, aktivId, vorschlag, abdeckung, onVorschlag, sektionsRollen }: {
+export function SuchResultate({ gruppen, allesGeladen, q, onAuswahl, onNavigate, listboxId, aktivId, vorschlag, abdeckung, onVorschlag, sektionsRollen, onLeeren }: {
   gruppen: SuchGruppe[];
   allesGeladen: boolean;
   q: string;
@@ -210,6 +211,8 @@ export function SuchResultate({ gruppen, allesGeladen, q, onAuswahl, onNavigate,
   onVorschlag?: (begriff: string) => void;
   /** /suche-Seite (S5): jede Gruppe als role=group-Landmarke (ohne Listbox). */
   sektionsRollen?: boolean;
+  /** Setzt die Suche zurück (Weiterweg aus dem Null-Treffer-Leerzustand, B2). */
+  onLeeren?: () => void;
 }) {
   if (q === '') return null;
 
@@ -278,11 +281,17 @@ export function SuchResultate({ gruppen, allesGeladen, q, onAuswahl, onNavigate,
         role={listboxId ? 'listbox' : undefined} id={listboxId}
         aria-label={listboxId ? 'Suchtreffer' : undefined}>
         {gruppen.length === 0
-          ? <p className="px-4 py-4 text-body-s text-ink-500">
-              {allesGeladen
-                ? <>Keine Treffer zu «{q}». Versuchen Sie einen Erlass, eine Norm oder ein Stichwort.</>
-                : <>wird durchsucht …</>}
-            </p>
+          ? (allesGeladen
+              // B2 (W2·19-DESIGN-KONSISTENZ R6-B): der kanonische Leerzustand
+              // (ui/Leerzustand, §5/§10) statt einer eigenen Kopie — mit
+              // Rücksetz-Knopf wie die übrigen Null-Treffer-Fälle (Materialien,
+              // Gesetze, RechnerUebersicht, Rechtsprechung, Katalog).
+              ? <div className="px-4 py-4">
+                  <Leerzustand art="filter"
+                    text={`Keine Treffer zu «${q}». Versuchen Sie einen Erlass, eine Norm oder ein Stichwort.`}
+                    weiterweg={{ text: 'Suche zurücksetzen', onKlick: () => onLeeren?.() }} />
+                </div>
+              : <p className="px-4 py-4 text-body-s text-ink-500">wird durchsucht …</p>)
           : gruppen.map((g, i) => <Gruppe key={g.id} g={g} index={i} onAuswahl={onAuswahl} onNavigate={onNavigate} listboxId={listboxId} aktivId={aktivId} q={q} sektionsRollen={sektionsRollen} />)}
       </div>
       {/* §8-Korpus-Offenlegung (S3/E1): was die Suche wirklich durchsucht, ausserhalb

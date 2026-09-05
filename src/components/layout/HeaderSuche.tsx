@@ -416,6 +416,7 @@ export function HeaderSuche({ onFokusModus, onFokusZurueck }: {
                 onNavigate={(href) => { navigate(href); auswahl(); }} />
             : <SuchResultate gruppen={gruppen} allesGeladen={allesGeladen} q={q} onAuswahl={auswahl} listboxId={listboxId} aktivId={aktivId}
                 vorschlag={vorschlag} abdeckung={abdeckung} onVorschlag={uebernehmeVorschlag}
+                onLeeren={() => { setWert(''); setQ(''); }}
                 onNavigate={(href) => navigate(href)} />}
         </div>
       )}
