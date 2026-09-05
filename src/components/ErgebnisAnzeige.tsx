@@ -117,8 +117,12 @@ export function ErgebnisAnzeige({ titel, ergebnis }: Props) {
           {/* D-1.5 (Befund 21): Verdikt-/Prosa-Zeilen auf die Lesespalte begrenzt
               (vorher ~135 CPL auf breiten Rechner-Layouts, B2-Verstoss) —
               NUR Prosa-<p>; Kacheln/lc-tile/Tabellen bleiben unbegrenzt. */}
-          <p className={`font-display font-semibold text-h3 leading-snug max-w-reading ${cfg.verdikt}`}
-            style={{ fontVariantNumeric: 'lining-nums tabular-nums' }}>
+          {/* R5-B (5.9.2026): der Ziffernsatz kam bis hierher als rohes
+              `style={{ fontVariantNumeric: 'lining-nums tabular-nums' }}` —
+              Wort für Wort die Deklaration von `.num` aus index.css, nur ohne
+              deren Monospace-Familie (die den Display-Peak brechen würde).
+              `.lc-ziffern` ist genau diese Rolle ohne Familie (§5). */}
+          <p className={`lc-ziffern font-display font-semibold text-h3 leading-snug max-w-reading ${cfg.verdikt}`}>
             {ergebnis.ergebnis}
           </p>
         </div>

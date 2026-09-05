@@ -145,6 +145,72 @@ wäre sichtbar neu → **wartet auf einen Entscheid**, nicht auf einen Fix.
 · Generalfrage aus R4-D: welche weiteren Wächter hängen an einem VARIABLENNAMEN
 statt an der Sache? (`setKopiert(` liess `setOk(` mit 1'200 ms durch.)
 
+**Runde 5 — GEBAUT (5.9.2026, Pakete R5-A…E).** Arbeitsvorrat war die
+Runde-5-Liste; jeder Punkt wurde am Preview bzw. am Quelltext reproduziert,
+bevor er angefasst wurde. Die Wurzel der Runde 4 hat sich WIEDERHOLT: jeder
+App-weite Ausdruck fand mehr, als die Liste nannte (**+9 Fundstellen**).
+
+| Nr | Befund (Kurz) | Messung | Ergebnis |
+|---|---|---|---|
+| R5-A | §5-Dublette der Sweep-Bausteine; die Liste nannte `design-r3b-chrome.test.ts` | Sweep über `src/tests/` nach der SACHE («wandert selbst durch src und überspringt dabei `tests`»), nicht nach dem Namen: **fünf** Sonden bauen `appDateien.ts` nach — r3b, `design-r2c-bausteine`, `design-r2d-mobil-zustaende`, `listen-editor-r2f`, `erlass-adresse` | Drei migriert. Zwei bleiben als BEGRÜNDETE Ausnahme mit Beleg am Fundort, weil sie eine andere Frage stellen: `listen-editor-r2f` fegt bewusst nur Handgeschriebenes (acht `.generated.ts` liegen unter `src/`), `erlass-adresse` braucht ein Kommentar-Sieb, das `://` schützt. Neuer Wächter hält die Grenze |
+| R5-B | `ErgebnisAnzeige.tsx:121` schreibt die `.num`-Deklaration roh als `style` | Ursache benannt: `.num` trug Rolle UND Monospace-Familie in EINER Zeile — wer den Ziffernsatz ohne die Familie wollte, musste ihn nachbauen. Der App-weite Ausdruck fand eine zweite Stelle, die keine Liste kannte: `ArtikelTabellen.tsx`, 4× `[font-variant-numeric:tabular-nums]` — dieselbe halbe Deklaration, die R4-C als Defekt nachgewiesen hat | `.lc-ziffern` = Rolle ohne Familie, `.num` = Rolle + Familie (wirkungsgleich). Beide Flächen migriert. `vorschauStil.ts` ist die eine begründete Ausnahme (geschlossenes Stil-Objekt, das den PDF-/DOCX-Satz spiegelt). PIXEL-BEWEIS am Preview, dass die Tabellen-Migration nichts ändert: dieselben zehn Ziffern mit `tabular-nums` und mit `lining-nums tabular-nums` in Geist Variable aufs Canvas gezeichnet ergeben BYTE-GLEICHE Daten-URL |
+| R5-C | `AzRegister.tsx:223`: `Leerzustand` in mutmasslich unerreichbarem Zweig | Der Verdacht der Liste BESTÄTIGT, und zwar empirisch statt nur gelesen: Preview `/gesetze`, 27 Buchstaben-Knöpfe, 4 davon `disabled`, alle 23 übrigen durchgeklickt — der Leerzustand erschien **null Mal**. Quelltext-Grund: `gruppiereAZ` legt einen Map-Eintrag erst beim ERSTEN Erlass einer Klasse an (leere Gruppen entstehen nicht), und `n === 0` setzt `disabled` | Zurückgebaut (§6.7: ein Zweig, der nicht scheitern kann, sieht nach geprüftem Verhalten aus und ist keines). `?? []` → `?? null`, die eine bestehende Bedingung trägt jetzt beide unerreichbaren Fälle; Herleitung samt Messung am Fundort |
+| R5-D | Hover-Flächen: Token-Wert-Frage aus PR #680 (`--paper-sunken` auf `--paper` = 1.04:1) | GEMESSEN am Preview: **33 Fundstellen in 21 Dateien, FÜNF Schreibweisen** für EINE Aussage — `hover:bg-paper-sunken` (13×), `.../60` (15×), `.../70` (1×), `hover:bg-well` (3×), `hover:bg-paper/60` (1×). Die letzten beiden fand erst der Ausdruck, der nach der Sache fragt. Kontrast auf `--paper`: 1.055:1 voll, 1.036:1 bei 60 % | `.lc-hover-flaeche` nimmt `var(--well)` — die Rolle, die `.lc-leiste-griff:hover` schon verwendet; kein neuer Ton, kein neues Token. Kanon ist NICHT die häufigste Form (die läge bei 60 %), sondern die reglementskonforme: §G-j legt Interaktions-Zustände auf EINE Regel, getragen von einer Rolle — eine Alpha-Verdünnung ist keine Stufe. WCAG-neutral: der Grund wird nur dunkler, der Kontrast der Schrift darauf kann nur steigen. BEWEIS am Preview: die Zeile ruht auf `rgba(0,0,0,0)` und wird beim Überfahren `rgb(246,244,238)` = Zeichen für Zeichen der alte Wert. **Ob die Stufe an sich kräftiger sein soll, ist Geschmack, nicht Konsistenz → wartet auf David** |
+| R5-E | Generalfrage aus R4-D: welche Wächter hängen an einem VARIABLENNAMEN statt an der Sache? | Beantwortet durch Messung über alle 422 Dateien in `src/tests/`: **genau einer** ist übrig — `eingabe-bausteine-r2e.test.tsx:121`, `/setKopiert\([^)]*\)\s*,\s*([^)]+)\)/`. Und er ist inzwischen ein Vakuum-Tor: der Ausdruck trifft heute **0** Stellen, weil R4-D alle Kopier-Mechaniken in `useKopieren` gezogen hat | **NICHT gebaut, Runde 6**: die naheliegende Verbreiterung (Timer, der eine Quittung zurücksetzt, mit Rohzahl) trifft 1 sachfremde Stelle (`inhalt-hooks.tsx: anwenden(false), 200`) und ist damit kein sauberer Ersatz. Der richtige Zug ist wahrscheinlich RÜCKBAU statt Verbreiterung (§17-Gegengewicht): die Schwester-Sonde derselben Datei bewacht `clipboard.writeText` an der Sache und trägt die Sorge bereits allein. Test-Änderung ⇒ eigener deklarierter Schritt (§6.3) |
+
+**Deklarierte Test-Anpassung (§6.3, eigener Commit `test(design):`).** Zwei
+Bestands-Fälle prüften ihre Aussage über eine SCHREIBWEISE, die der geteilte
+Baustein ersetzt hat — `ArtikelBody.test.tsx` («Ae8») zitierte
+`hover:bg-paper-sunken`, `mehrspaltige-tabelle-render.test.tsx` zitierte
+`tabular-nums`. Beide Aussagen sind unverändert wahr, die Wirkung ist gemessen
+gleich (Hover-Farbe byte-gleich; Ziffern pixel-gleich). Der Fall in
+`ArtikelBody` prüft seither SCHÄRFER als vorher: keine einzige eigene
+`hover:bg-`-Stufe darf übrig bleiben (vorher war genau eine erlaubt).
+
+**Dry-Sonde Runde 5 (5.9.2026, frischer Browser-Kontext je Route, 1600×900).**
+Vier geforderte Paare plus eines: Gesetz-Leser Bund (`/gesetze/bund/OR`),
+Gesetz-Leser Kanton (`/gesetze/kanton/ZH/LS-101`), Entscheid-Leser
+(`/rechtsprechung/ag_gerichte_HOR_2024_19`), Rechner (`/rechner/verjaehrung`)
+und Vorlagen (`/vorlagen`) — je Einzelseite gegen `?p=`-Split-View, verglichen
+über `font-variant-numeric`, H1-Anatomie, ✕-Glyphengrösse, Hover-Grammatik,
+Leerzustands-Arten, Overline- und Chip-Anatomie.
+**Deckungsgleich:** `font-variant-numeric` ist über alle zehn Ansichten EIN
+Wert (`lining-nums tabular-nums`, 3 bis 14'635 Elemente je Ansicht); genau ein
+`h1` je Pane, immer 32 px, Schriftstimme folgt der Inhaltsklasse
+(Zwei-Stimmen-Regel); rohe Hover-Utilities: **0** in allen zehn Ansichten,
+alle 4'762–7'997 Flächen tragen den Baustein; Karten-Schatten ein Wert.
+**EIN Neufund (R5-N1):** das ✕ trägt zwar überall `lc-schliessknopf`, aber in
+ZWEI Glyphengrössen — 11 px in 24×24 (`lc-leiste-griff`, «Schliessen (zur
+Startseite)») gegen 16 px in 28×28 (`h-7 w-7`, «Hauptfenster schliessen»).
+Die Grösse liegt AUSSERHALB des Bausteins. Das ERGÄNZT die Runde-4-Aussage
+«alle ✕ in EINER Glyphengrösse (16 px)», es widerspricht ihr nicht (§2b): jene
+Messung lief nur über Split-View-Routen, und dort stimmt sie weiterhin.
+**Kein Befund:** `.lc-chip` mit `border-radius: 0` — das ist die dokumentierte
+Neutralisierung `.lc-kopf-aktionen .lc-chip` (LM-045-Familie), Begründung am
+Fundort.
+
+**DRY IST NICHT ERREICHT** (Stand nach Runde 5). Dry heisst zwei Runden ohne
+neuen substanziellen Befund; Runde 5 hat **+9 Fundstellen** aus den eigenen
+Wurzel-Sweeps und **1 Neufund** aus der Dry-Sonde erzeugt. Damit ist auch die
+Runde-4-Diagnose bestätigt: der Vorrat sitzt nicht in den Listen, sondern in
+den Ausdrücken, mit denen man sucht.
+
+**Runde-6-Liste (aus dem Bau der Runde 5, alle belegt):**
+· R5-N1 — ✕-Glyphengrösse 11 px vs. 16 px (oben gemessen). Entweder EINE
+Grösse, oder zwei DOKUMENTIERTE Rollen (Schienen-Griff vs. Titelleisten-
+Steuerung) — heute ist es weder noch, weil die Grösse ausserhalb des Bausteins
+gesetzt wird.
+· R5-E — `setKopiert`-Sonde in `eingabe-bausteine-r2e.test.tsx:121`: trifft 0
+Stellen, hängt am Namen. Vermutlich Rückbau statt Verbreiterung; braucht einen
+deklarierten Schritt (§6.3).
+· `--flaeche`-Frage aus R5-D, falls David die Hover-Stufe kräftiger will: dann
+gehört sie als eigenes Token neben `--well`, nicht als Wert-Tausch an
+`--paper-sunken` (das trägt auch Wells, `--karte-leer` und die Chip-Fläche).
+· Offen aus Runde 4, unverändert: der ⧉-Griff «Layout-Link kopieren» in der
+Pane-Titelleiste gibt keine Rückmeldung, `LinkTeilenButton` für dieselbe
+Handlung schon. Eine Quittung in der 28-px-Zeile wäre sichtbar neu →
+**wartet auf einen Entscheid**, nicht auf einen Fix.
+
 **Verworfen/kein Befund:** Leerzustand-Wortlaut «gefunden» vs «erfasst» (bedeutungstragend) ·
 H1-Schriftstimmen (Zwei-Stimmen-Regel) · `rounded`=`rounded-sm` (latent, via tailwind-Default
 mitgefixt) · SachgebietKacheln lg: (ohne Sichtschaden, Runde 2 prüfen).

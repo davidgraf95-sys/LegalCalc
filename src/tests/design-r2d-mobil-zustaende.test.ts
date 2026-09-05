@@ -27,34 +27,22 @@
  * Reine Darstellung (§3) — keine Rechtslogik berührt.
  */
 import { describe, it, expect } from 'vitest';
-import { readFileSync, readdirSync, statSync } from 'node:fs';
+// R5-A (5.9.2026) · §5: Verzeichnis-Wanderung und Kommentar-Sieb standen hier
+// als eigene Kopie von `appDateien.ts`. Ein Wächter, der seinen Sweep selbst
+// nachbaut, ist ab der ersten Abweichung ein anderer Wächter als sein
+// Nachbar — beide hängen jetzt an der einen Quelle.
 import { join } from 'node:path';
+import { APP_WURZEL, alleQuellen, ohneKommentare, liesRoh } from './appDateien';
 
-const WURZEL = join(__dirname, '..');
+const WURZEL = APP_WURZEL;
 
-const rohLies = (rel: string) => readFileSync(join(WURZEL, rel), 'utf8');
+const rohLies = (pfad: string) => liesRoh(join(WURZEL, pfad));
 
 /** Quelltext OHNE Kommentare — die Herleitungen dürfen den Vorzustand beim
  *  Namen nennen (§2b), ohne die Sonde für immer rot zu färben. */
-const ohneKommentare = (roh: string) => roh
-  .replace(/\/\*[\s\S]*?\*\//g, '')
-  .split('\n').filter((z) => !/^\s*(\/\/|\*)/.test(z)).join('\n');
 
 const lies = (rel: string) => ohneKommentare(rohLies(rel));
 
-/** Alle .tsx/.ts unter src/, ohne Tests und Fixtures. */
-function alleQuellen(dir = WURZEL, treffer: string[] = []): string[] {
-  for (const name of readdirSync(dir)) {
-    const p = join(dir, name);
-    if (statSync(p).isDirectory()) {
-      if (name === 'tests' || name === 'fixtures') continue;
-      alleQuellen(p, treffer);
-    } else if (name.endsWith('.tsx') || name.endsWith('.ts')) {
-      treffer.push(p);
-    }
-  }
-  return treffer;
-}
 
 const CSS = rohLies('index.css');
 
@@ -89,7 +77,7 @@ describe('F2-1 · die abdunkelnde Fläche hinter einem Overlay hat EINE Quelle',
   it('kein Ad-hoc-Scrim mehr im Baum', () => {
     const funde: string[] = [];
     for (const datei of alleQuellen()) {
-      ohneKommentare(readFileSync(datei, 'utf8')).split('\n').forEach((z, i) => {
+      ohneKommentare(liesRoh(datei)).split('\n').forEach((z, i) => {
         if (ADHOC_SCRIM(z)) funde.push(`${datei.slice(WURZEL.length + 1)}:${i + 1}`);
       });
     }
@@ -215,7 +203,7 @@ describe('F2-4 · «… konnte nicht geladen werden» läuft über EINEN Baustei
     const funde: string[] = [];
     for (const datei of alleQuellen()) {
       if (datei.endsWith('AbrufFehler.tsx')) continue;   // dort steht der Kanon
-      if (HANDGEBAUT.test(ohneKommentare(readFileSync(datei, 'utf8')))) {
+      if (HANDGEBAUT.test(ohneKommentare(liesRoh(datei)))) {
         funde.push(datei.slice(WURZEL.length + 1));
       }
     }

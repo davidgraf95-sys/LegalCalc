@@ -387,7 +387,7 @@ export function ArtikelBody({ bloecke, artikel, passus, passusRef, className, au
               // BEIDEN Hüllen (der Befund ist in beiden derselbe, er ist heute
               // live). Golden ist unberührt (Engines/Vorlagen), der
               // Pixelvergleich PX misst den RUHEZUSTAND und sieht keinen Hover.
-              className={`flex items-baseline gap-2 rounded-md px-2 py-1 ${zk ? 'transition-colors hover:bg-paper-sunken' : ''} ${
+              className={`flex items-baseline gap-2 rounded-md px-2 py-1 ${zk ? 'transition-colors lc-hover-flaeche' : ''} ${
                 istItemZitiert
                   ? 'border-l-4 border-brass-500 bg-brass-100 text-ink-900'
                   : 'text-ink-700'
@@ -624,7 +624,7 @@ export function ArtikelBody({ bloecke, artikel, passus, passusRef, className, au
             {/* Ä8 (LESER-V3 H2b): derselbe leise Hover wie an der lit.-Zeile
                 oben — Herleitung dort. Ein Absatz und eine Aufzählungszeile sind
                 dieselbe Geste und dürfen nicht zwei Farben tragen (§5). */}
-            <p className={zk ? `[overflow-wrap:anywhere] hyphens-manual pl-9 rounded transition-colors hover:bg-paper-sunken ${absMarke != null ? '-indent-9' : '[text-indent:0]'}` : undefined}>
+            <p className={zk ? `[overflow-wrap:anywhere] hyphens-manual pl-9 rounded transition-colors lc-hover-flaeche ${absMarke != null ? '-indent-9' : '[text-indent:0]'}` : undefined}>
               {absMarke != null && (
                 zk
                   ? <ZitierMarke klasse="text-body-s inline-block w-9 text-left !font-medium !text-ink-500" zitat={`${zk.artikelLabel} Abs. ${absMarke} ${zk.kuerzel}`} ausweis={ausweisBasis}>{absMarke}</ZitierMarke>

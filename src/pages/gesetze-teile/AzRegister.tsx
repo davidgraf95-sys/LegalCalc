@@ -64,7 +64,6 @@ import { Link } from 'react-router-dom';
 import { istLesbar, type BrowseErlass } from '../../lib/normtext/browse-typen';
 import { AZ_KLASSEN, gruppiereAZ, ebeneLabel } from './az-register';
 import { erlassPfad } from '../../lib/normtext/erlassAdresse';
-import { Leerzustand } from '../../components/ui/Leerzustand';
 import { zahlGruppiert } from '../../components/typografie';
 
 function AzZeile({ e }: { e: BrowseErlass }) {
@@ -113,7 +112,19 @@ export function AzRegister({ erlasse }: { erlasse: BrowseErlass[] }) {
   const gruppen = useMemo(() => gruppiereAZ(erlasse), [erlasse]);
   // Sichtbare Liste: die gewählte Buchstaben-Klasse (Lazy-je-Buchstabe — nie
   // alle 1469 auf einmal); null = noch nichts gewählt.
-  const liste = buchstabe ? gruppen.get(buchstabe) ?? [] : null;
+  //
+  // R5-C (5.9.2026) · WARUM HIER KEIN LEERZUSTAND STEHT: eine gewählte Klasse
+  // ist nie leer. `gruppiereAZ` legt einen Map-Eintrag ausschliesslich beim
+  // ERSTEN Erlass einer Klasse an (leere Gruppen entstehen gar nicht), und die
+  // Buchstaben-Leiste unten setzt `disabled` bei `n === 0` — ein Buchstabe ohne
+  // Titel ist also nicht wählbar. Bis Runde 4 hing unter dieser Zeile ein
+  // `liste.length > 0 ? <ul> : <Leerzustand …>`; GEMESSEN am Preview
+  // (`/gesetze`, 5.9.2026): 27 Knöpfe, 4 davon disabled, alle 23 übrigen
+  // durchgeklickt — der Leerzustand erschien null Mal. Ein Zweig, der nicht
+  // scheitern kann, ist gefährlicher als keiner (§6.7): er sieht nach
+  // geprüftem Verhalten aus und ist keines. Darum `?? null` statt `?? []` —
+  // die eine Bedingung unten trägt jetzt beide unerreichbaren Fälle.
+  const liste = buchstabe ? gruppen.get(buchstabe) ?? null : null;
 
   return (
     <section aria-labelledby="az-register-kopf" className="lc-card p-5 space-y-4">
@@ -161,7 +172,7 @@ export function AzRegister({ erlasse }: { erlasse: BrowseErlass[] }) {
                           ? 'bg-brass-100 text-brass-800'
                           : n === 0
                             ? 'cursor-default text-ink-300'
-                            : 'text-ink-700 hover:bg-paper-sunken hover:text-brass-700'
+                            : 'text-ink-700 lc-hover-flaeche hover:text-brass-700'
                       }`}
                     >
                       {k}
@@ -210,22 +221,18 @@ export function AzRegister({ erlasse }: { erlasse: BrowseErlass[] }) {
                 tabIndex={0}
                 className="max-h-96 overflow-y-auto overscroll-contain rounded border border-line/70 p-2"
               >
-                {liste.length > 0 ? (
-                  <ul
-                    /* Remount je Klasse (CI-Befund PR #347, Rest-Shift): OHNE den
-                       key reusen React-Keys (e.key) LI-Knoten über den Klassen-
-                       Wechsel hinweg — überlebende Knoten WANDERN dann im
-                       Scroll-Container (layout-shift), und auf langsamer
-                       Hardware landet der Commit nach der 500-ms-Input-Gnade.
-                       Frische Knoten je Klasse shiften nie. */
-                    key={`b:${buchstabe}`}
-                    className="m-0 list-none space-y-0.5 p-0"
-                  >
-                    {liste.map((e) => <li key={e.key}><AzZeile e={e} /></li>)}
-                  </ul>
-                ) : (
-                  <div className="px-2 py-1"><Leerzustand art="bestand" text="Kein Titel im Register gefunden." /></div>
-                )}
+                <ul
+                  /* Remount je Klasse (CI-Befund PR #347, Rest-Shift): OHNE den
+                     key reusen React-Keys (e.key) LI-Knoten über den Klassen-
+                     Wechsel hinweg — überlebende Knoten WANDERN dann im
+                     Scroll-Container (layout-shift), und auf langsamer
+                     Hardware landet der Commit nach der 500-ms-Input-Gnade.
+                     Frische Knoten je Klasse shiften nie. */
+                  key={`b:${buchstabe}`}
+                  className="m-0 list-none space-y-0.5 p-0"
+                >
+                  {liste.map((e) => <li key={e.key}><AzZeile e={e} /></li>)}
+                </ul>
               </div>
             </div>
           )}

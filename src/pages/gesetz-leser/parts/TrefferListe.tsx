@@ -146,12 +146,12 @@ export function TrefferListe({
             {/* A9-DoD: 44×44-px-Tap-Ziele, echte <button> (Tastatur), aria-label. */}
             <button type="button" onClick={onZurueck} data-treffer-zurueck
               aria-label="Vorherige Fundstelle" title="Vorherige Fundstelle"
-              className="inline-flex h-11 w-11 items-center justify-center rounded-md text-ink-600 transition-colors hover:bg-paper-sunken/60 hover:text-brass-700">
+              className="inline-flex h-11 w-11 items-center justify-center rounded-md text-ink-600 transition-colors lc-hover-flaeche hover:text-brass-700">
               <span aria-hidden className="text-base leading-none">↑</span>
             </button>
             <button type="button" onClick={onVor} data-treffer-vor
               aria-label="Nächste Fundstelle" title="Nächste Fundstelle"
-              className="inline-flex h-11 w-11 items-center justify-center rounded-md text-ink-600 transition-colors hover:bg-paper-sunken/60 hover:text-brass-700">
+              className="inline-flex h-11 w-11 items-center justify-center rounded-md text-ink-600 transition-colors lc-hover-flaeche hover:text-brass-700">
               <span aria-hidden className="text-base leading-none">↓</span>
             </button>
           </div>
@@ -193,7 +193,7 @@ export function TrefferListe({
                 <button type="button" onClick={() => onSprung(t.token)}
                   data-treffer-aktiv={aktiv ? '1' : undefined}
                   aria-current={aktiv ? 'location' : undefined}
-                  className={`w-full rounded px-1.5 py-1.5 text-left transition-colors ${aktiv ? 'bg-paper-sunken/70' : 'hover:bg-paper-sunken/60'}`}>
+                  className={`w-full rounded px-1.5 py-1.5 text-left transition-colors ${aktiv ? 'bg-paper-sunken/70' : 'lc-hover-flaeche'}`}>
                   <span className="flex items-baseline gap-2">
                     <span className="num shrink-0 text-body-s font-semibold text-ink-800">{t.label}</span>
                     {t.randtitel && (
@@ -224,7 +224,7 @@ export function TrefferListe({
         // §8: die Zahl steht dran — der Leser weiss, dass da noch etwas ist,
         // und wie viel. 44-px-Tap-Ziel wie die Navigationsknöpfe (A9-DoD).
         <button type="button" data-treffer-mehr onClick={() => setGemerkt({ begriff, n: deckel + TREFFER_DECKEL })}
-          className="mt-2 flex min-h-11 w-full items-center justify-center rounded-md px-2 text-body-s text-ink-600 transition-colors hover:bg-paper-sunken/60 hover:text-brass-700">
+          className="mt-2 flex min-h-11 w-full items-center justify-center rounded-md px-2 text-body-s text-ink-600 transition-colors lc-hover-flaeche hover:text-brass-700">
           {rest} weitere anzeigen
         </button>
       )}

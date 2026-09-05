@@ -49,7 +49,7 @@ export function SachgebietKacheln({ zaehler, gesamt, aktiv, onWaehle }: {
                 className={`flex w-full items-center justify-between gap-2 whitespace-nowrap lg:whitespace-normal rounded-md border-l-2 px-3 py-2 text-left text-body-s transition-colors ${
                   an
                     ? 'border-brass-500 bg-brass-100 font-medium text-brass-800'
-                    : 'border-transparent text-ink-700 hover:bg-well'
+                    : 'border-transparent text-ink-700 lc-hover-flaeche'
                 }`}
               >
                 {/* lg (vertikale Leiste): Label voll umbrechen statt abschneiden

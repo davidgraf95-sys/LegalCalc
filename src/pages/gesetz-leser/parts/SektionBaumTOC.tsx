@@ -317,7 +317,7 @@ const Zeile = memo(function Zeile({
           aria-current={istMarke ? 'location' : undefined}
           title={voll}
           aria-label={voll}
-          className={`flex-1 min-w-0 text-left rounded px-1.5 py-0.5 leading-snug transition-colors ${stimme.form} ${tinte} ${istMarke ? '' : 'hover:text-ink-900 hover:bg-paper-sunken/60'}`}>
+          className={`flex-1 min-w-0 text-left rounded px-1.5 py-0.5 leading-snug transition-colors ${stimme.form} ${tinte} ${istMarke ? '' : 'hover:text-ink-900 lc-hover-flaeche'}`}>
           {/* line-clamp-2 (§3.3): Labels bis 280 Zeichen sind belegt — ohne
               Klammer wuchs eine einzige Zeile auf sechs und schob den ganzen
               Baum. Der volle Text bleibt über title/aria-label erreichbar.

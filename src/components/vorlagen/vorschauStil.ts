@@ -25,6 +25,13 @@ export const VORSCHAU = {
   // Sans + font-variant-numeric, NICHT die Monospace-.num-Klasse (die den
   // juristischen Fliesstext brechen würde). Word/Arial ist ohnehin tabellarisch;
   // im PDF/Helvetica gibt es kein tnum (de-facto schon nahezu gleich breit).
+  //
+  // R5-B (5.9.2026) · begruendete Ausnahme von `.lc-ziffern`: VORSCHAU ist ein
+  // GESCHLOSSENES Stil-Objekt — alle rund zwanzig Rollen dieses «Papiers»
+  // reisen als `style={…}` durch den Wizard, damit die Bildschirm-Vorschau
+  // Zeichen fuer Zeichen dasselbe Rezept traegt wie der PDF-/DOCX-Satz, der
+  // kein Stylesheet kennt. Eine einzelne Rolle auf eine CSS-Klasse zu heben
+  // zerrisse genau diese Deckungsgleichheit.
   papier: { fontVariantNumeric: 'tabular-nums lining-nums' } as CSSProperties,
 
   adressat: { marginBottom: r(1.25), lineHeight: 1.4 } as CSSProperties,

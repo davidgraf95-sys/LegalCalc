@@ -170,7 +170,7 @@ export function SuchSprungFeld({
             onClick={() => { setzeWert(''); ref.current?.focus(); }}
             aria-label="Suche leeren"
             title="Suche leeren (Esc)"
-            className="absolute right-6 top-1/2 inline-flex h-6 w-6 -translate-y-1/2 items-center justify-center rounded-full text-ink-500 transition-colors hover:bg-paper-sunken/70 hover:text-brass-700 sm:right-8">
+            className="absolute right-6 top-1/2 inline-flex h-6 w-6 -translate-y-1/2 items-center justify-center rounded-full text-ink-500 transition-colors lc-hover-flaeche hover:text-brass-700 sm:right-8">
             <span aria-hidden className="text-body-s leading-none">✕</span>
           </button>
         )}

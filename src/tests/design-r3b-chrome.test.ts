@@ -18,37 +18,22 @@
  * Läuft die Kontrolle grün, prüft der Ausdruck nichts und der Fall ist wertlos.
  */
 import { describe, it, expect } from 'vitest';
-import { readFileSync, readdirSync, statSync } from 'node:fs';
 import { join } from 'node:path';
+// R5-A (5.9.2026) · §5: die Verzeichnis-Wanderung, das Kommentar-Sieb und die
+// Pfad-Kürzung kamen bis hierher als EIGENE Kopie mit — Wort für Wort
+// `appDateien.ts`, also genau der Baustein, den R3-α gegen Listen-Wächter
+// gebaut hat, ein zweites Mal. Wer die Regel «die Sonde fegt die App, nicht
+// ihre Liste» in zwei Kopien führt, hat sie ab der ersten Abweichung nicht
+// mehr. Jetzt hängen beide an der einen Quelle.
+import { APP_WURZEL, alleTsx, rel, ohneKommentare, liesRoh } from './appDateien';
 
-const WURZEL = join(__dirname, '..');
-const CSS = readFileSync(join(WURZEL, 'index.css'), 'utf8');
+const WURZEL = APP_WURZEL;
+const CSS = liesRoh(join(WURZEL, 'index.css'));
 
-function lies(rel: string): string {
-  return readFileSync(join(WURZEL, rel), 'utf8');
+/** Roh-Inhalt einer App-Datei, adressiert relativ zu `src/`. */
+function lies(pfad: string): string {
+  return liesRoh(join(WURZEL, pfad));
 }
-
-/** Alle .tsx unter src/, ohne Tests und Fixtures. */
-function alleTsx(dir = WURZEL, treffer: string[] = []): string[] {
-  for (const name of readdirSync(dir)) {
-    const p = join(dir, name);
-    if (statSync(p).isDirectory()) {
-      if (name === 'tests' || name === 'fixtures') continue;
-      alleTsx(p, treffer);
-    } else if (name.endsWith('.tsx')) {
-      treffer.push(p);
-    }
-  }
-  return treffer;
-}
-
-/** Kommentare weg: sie ZITIEREN die alten Formen legitim (Herleitung, §7) —
- *  verboten ist die Form im gerenderten Markup. */
-function ohneKommentare(quelle: string): string {
-  return quelle.replace(/\/\*[\s\S]*?\*\//g, '').replace(/^\s*\/\/.*$/gm, '');
-}
-
-const rel = (p: string) => p.slice(WURZEL.length + 1);
 
 // ─── B3-1/B3-2 · der dichte Gruppenkopf ─────────────────────────────────────
 
@@ -81,7 +66,7 @@ describe('B3-1/B3-2 · dichte Gruppenköpfe laufen über `ui/GruppenKopf`', () =
 
   it('KEINE Fläche der App zeichnet das dichte Rezept noch selbst', () => {
     const rueckfaelle = alleTsx()
-      .filter((p) => DICHT_REZEPT.test(ohneKommentare(readFileSync(p, 'utf8'))))
+      .filter((p) => DICHT_REZEPT.test(ohneKommentare(liesRoh(p))))
       .map(rel);
     expect(rueckfaelle).toEqual([]);
   });
@@ -157,7 +142,7 @@ const X_AUSNAHMEN: Record<string, string> = {
 describe('A3-1 · das Schliess-✕ kommt aus EINEM Baustein', () => {
   it('keine weitere Fläche zeichnet das Glyph noch selbst', () => {
     const funde = alleTsx()
-      .filter((p) => ohneKommentare(readFileSync(p, 'utf8')).includes('✕'))
+      .filter((p) => ohneKommentare(liesRoh(p)).includes('✕'))
       .map(rel)
       .filter((r) => !(r in X_AUSNAHMEN));
     expect(funde).toEqual([]);
@@ -222,7 +207,7 @@ describe('A3-1 · das Schliess-✕ kommt aus EINEM Baustein', () => {
     expect(vorherPaneX).toContain('hover:text-danger-700');
     expect(doppelHover(knopfString)).toHaveLength(1);
     for (const r of alleTsx()) {
-      const funde = doppelHover(ohneKommentare(readFileSync(r, 'utf8')));
+      const funde = doppelHover(ohneKommentare(liesRoh(r)));
       expect(funde, `${rel(r)}: zwei Hover-Töne in EINEM Klassen-String`).toEqual([]);
     }
   });
@@ -252,7 +237,7 @@ describe('A3-1 · das Schliess-✕ kommt aus EINEM Baustein', () => {
       'components/layout/PaneKopf.tsx',
     ];
     const funde = alleTsx()
-      .filter((p) => ohneKommentare(readFileSync(p, 'utf8')).includes('komfort={false}'))
+      .filter((p) => ohneKommentare(liesRoh(p)).includes('komfort={false}'))
       .map(rel);
     expect(funde.sort()).toEqual([...dicht].sort());
     for (const r of dicht) {
@@ -300,7 +285,7 @@ describe('R4-C · keine Klassenliste trägt `.num` und `tabular-nums` zugleich',
 
   it('App-weit keine Fundstelle mehr', () => {
     for (const p of alleTsx()) {
-      const funde = konflikt(ohneKommentare(readFileSync(p, 'utf8')));
+      const funde = konflikt(ohneKommentare(liesRoh(p)));
       expect(funde, `${rel(p)}: \`tabular-nums\` neben \`.num\` nimmt \`lining-nums\` weg`).toEqual([]);
     }
   });
@@ -331,7 +316,7 @@ describe('A3-2 · schwebende Flächen teilen EINE Anatomie', () => {
     const funde: string[] = [];
     for (const p of alleTsx()) {
       if (rel(p) in SCHWEBE_AUSNAHMEN) continue;
-      for (const zeile of ohneKommentare(readFileSync(p, 'utf8')).split('\n')) {
+      for (const zeile of ohneKommentare(liesRoh(p)).split('\n')) {
         if (zeile.includes('shadow-lg') && !zeile.includes('lc-schwebeflaeche')) {
           funde.push(`${rel(p)} · ${zeile.trim().slice(0, 80)}`);
         }
@@ -385,7 +370,7 @@ describe('A3-3 · die Live-Suche konsumiert `ui/TrefferZeile`', () => {
     // `export function TrefferZeile(` und ging an der Live-Suche vorbei, weil
     // deren Kopie modul-lokal war. Vakuum-Lücke geschlossen (§6.7).
     const funde = alleTsx()
-      .filter((p) => /function TrefferZeile\(/.test(readFileSync(p, 'utf8')))
+      .filter((p) => /function TrefferZeile\(/.test(liesRoh(p)))
       .map(rel);
     expect(funde).toEqual(['components/ui/TrefferZeile.tsx']);
   });
