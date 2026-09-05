@@ -550,7 +550,7 @@ zgb-a36-anhang: Die ZGB-Gliederung zeigt 74 Artikel des Anhangs «Wortlaut der f
   **Detail:** [FAHRPLAN-EFFIZIENZ-CHECKLISTE.md](fahrplaene/FAHRPLAN-EFFIZIENZ-CHECKLISTE.md) §1 —
   die Checkliste liegt seit 29.8.2026 dort statt hier (sie war eine Merge-Konflikt-Falle: 6 Konflikte
   in EINER Zeile bei 15 PRs).
-  - [ ] **Steuerdeckel-Entscheid (Hooks 221 B, check-*.ts ~180 B Luft — wartet auf David)** · **Projektionskette nach main-Merge** (`npm run projektionen`: Zähler/Feed/Historie/Manifest + `gen:e2e-shards`; 5 CI-Läufe verloren #694/#695/#689; Prüf-Worktrees `npm ci`) · **`src/lib/suche/**` nicht im Risiko-Prädikat** (#681, §6.7).
+  - [ ] **Steuerdeckel-Entscheid (Hooks 221 B, check-*.ts ~180 B Luft — wartet auf David)** · **Projektionskette nach main-Merge** (`npm run projektionen`: Zähler/Feed/Historie/Manifest + `gen:e2e-shards`; 5 CI-Läufe verloren #694/#695/#689; Prüf-Worktrees `npm ci`) · **`src/lib/suche/**` nicht im Risiko-Prädikat** (#681, §6.7). · **`schlankheit:update` nur gezielt** (setzt alle Baseline-Zahlen still neu, registriert neue Rot-Dateien; #699) · `ZhStueckFixture` auch in `-runde2/-runde3`-Fixtures dupliziert (§5, #702).
 
 - [ ] **Fremde Agenten im Bau — Jules, Antigravity, Gemini** *(`QS-FREMDAGENTEN`, Freigabe David 3.9.2026)*
   <!-- @meta id: QS-FREMDAGENTEN · status: ready · blocker: null · dep: [] · feld: betrieb · fahrplan: fahrplaene/FAHRPLAN-FREMDAGENTEN.md -->
