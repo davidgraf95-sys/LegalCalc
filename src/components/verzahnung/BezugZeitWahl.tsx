@@ -209,9 +209,9 @@ export function BezugZeitWahl({ bereich, histogramm, onBereich }: {
               und sie zu kippen wäre eine Entscheid-Änderung, kein Bugfix
               (§0.2 des Fahrplans). */}
           <div className="flex items-baseline justify-between gap-2 pt-0.5 text-micro text-ink-500">
-            <span className="num tabular-nums">{balken[0].jahr}</span>
+            <span className="num">{balken[0].jahr}</span>
             <span className="min-w-0 truncate">Ziehen wählt einen Bereich</span>
-            <span className="num tabular-nums">{balken[balken.length - 1].jahr}</span>
+            <span className="num">{balken[balken.length - 1].jahr}</span>
           </div>
         </>
       )}
@@ -242,9 +242,9 @@ export function BezugZeitWahl({ bereich, histogramm, onBereich }: {
       <p className="pt-1 pb-0.5 text-micro leading-snug text-ink-500">
         {gesamt > 0 && (
           <>
-            <span className="num tabular-nums">{gesamt}</span>
+            <span className="num">{gesamt}</span>
             {gesamt === 1 ? ' Verknüpfung' : ' Verknüpfungen'} in diesem Erlass
-            {ohneJahr > 0 && <> · <span className="num tabular-nums">{ohneJahr}</span> ohne Datum (bleiben immer sichtbar)</>}
+            {ohneJahr > 0 && <> · <span className="num">{ohneJahr}</span> ohne Datum (bleiben immer sichtbar)</>}
             {'. '}
           </>
         )}

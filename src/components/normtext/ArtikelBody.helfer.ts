@@ -27,9 +27,66 @@ export interface ZitierKontext {
 export const FREMD_LEER: Map<string, string> = new Map();
 export const NOOP = (): void => {};
 
-/** lit. (Buchstaben, Bund) vs. Ziff. (Zahlen, Kanton) anhand der Marke. */
+// ─── QS-UI · MARKEN-PRÄFIX (Gegenprüfung PR #658, 4.9.2026) ─────────────────
+// Fedlex setzt ZWEI verschiedene Dinge in dieselbe <dl><dt>-Struktur, und die
+// Extraktion legt beide als `items[].marke` ab (extrahiere-fedlex.ts §Aufzählung):
+//   (1) ECHTE Aufzählungen — «<dt>a. </dt>», «<dt>1. </dt>» → lit. a / Ziff. 1.
+//   (2) LABEL-LISTEN (Legenden, Kategorien-Tafeln) — «<dt>A: </dt>»,
+//       «<dt>BE: </dt>», «<dt>BAS </dt>». Das sind KEINE Aufzählungspositionen,
+//       sondern definierte Begriffe: VZV Art. 3 zählt die Ausweiskategorien
+//       A/B/BE/C1E/M auf, AsylV 2 Art. 23 die Formelgrössen BAS/BVA/EQCH.
+// Gemessen am Preview von origin/main (4./5.9.2026, VZV Art. 3): sichtbar «BE.»,
+// kopiertes Zitat «Art. 3 Abs. 1 lit. BE VZV». Beides ist fachlich falsch —
+// «lit. BE» gibt es in der VZV nicht, und der Punkt ersetzt den amtlichen
+// Doppelpunkt des <dt>. Die Marke selbst («BE») bleibt unverändert; geändert
+// wird nur ihre BESCHRIFTUNG (§3: reine Darstellung, kein Zitat-Wortlaut).
+//
+// UNTERSCHEIDUNG (deterministisch, §2): der amtliche Trenner («a. » vs. «A: »)
+// überlebt die Extraktion nicht — die Darstellungsschicht unterscheidet daher
+// an der Marke selbst. Schweizer Aufzählungsmarken sind KLEINgeschrieben
+// (a, abis, cquinquies) oder ziffernbeginnend (1, 1bis, 2.3); eine Marke, die
+// mit einem GROSSbuchstaben beginnt, ist im Korpus ausnahmslos ein Label.
+// Gemessen über den ganzen Korpus (public/normtext/**, 73 689 Item-Marken):
+// 550 Vorkommen (0.75 %) beginnen gross — VZV-Kategorien, AsylV-Formelgrössen,
+// AVO-Versicherungszweige (A1/B1/C1), VTS-«Klasse 3», LSV-Formelsymbole.
+// Marken mit anderem Anfang (Symbole «+», «./», «– I») bleiben bewusst
+// unangetastet: dort ist die Extraktion selbst mangelhaft, das ist ein eigener
+// Befund und keine Beschriftungsfrage.
+export type MarkenArt = 'strich' | 'ziff' | 'lit' | 'label';
+
+/** Art einer Item-Marke — EINE Stelle (§5) für Präfix und Anzeige. */
+export function markenArt(marke: string): MarkenArt {
+  const m = marke.trim();
+  if (/^[–—-]$/.test(m)) return 'strich';
+  if (/^\d/.test(m)) return 'ziff';
+  if (/^\p{Lu}/u.test(m)) return 'label';
+  return 'lit';
+}
+
+/** lit. (Buchstaben, Bund) vs. Ziff. (Zahlen, Kanton) anhand der Marke.
+ *  Label-Marken tragen KEIN Präfix (leerer String) — s. Block oben. */
 export function litZiff(marke: string): string {
-  return /^\d/.test(marke.trim()) ? 'Ziff.' : 'lit.';
+  const art = markenArt(marke);
+  if (art === 'label') return '';
+  return art === 'ziff' ? 'Ziff.' : 'lit.';
+}
+
+/** Zitat-Segment einer Marke («lit. a», «Ziff. 1», Label: nur «BE»).
+ *  Der Nicht-Label-Zweig ist byte-gleich zum bisherigen `${litZiff(m)} ${m}`. */
+export function markenZitat(marke: string): string {
+  const p = litZiff(marke);
+  return p === '' ? marke.trim() : `${p} ${marke}`;
+}
+
+/** Sichtbare Beschriftung der Marken-Spalte. Gedankenstrich ohne Punkt,
+ *  Aufzählungsmarke mit «.», Label-Marke mit «:» wie im amtlichen <dt>.
+ *  Trägt das Label schon ein Satzzeichen, wird keines verdoppelt. */
+export function markenAnzeige(marke: string): string {
+  const art = markenArt(marke);
+  if (art === 'strich') return '–';
+  if (art !== 'label') return `${marke}.`;
+  const m = marke.trimEnd();
+  return /[:.;,]$/.test(m) ? m : `${m}:`;
 }
 
 /** Verschachtelungsstufe je Item. PRIMÄR aus der EXPLIZITEN `tiefe` des
