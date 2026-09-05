@@ -91,7 +91,7 @@ Pilot-Kandidat, dann zwei weitere Mechanik-Schritte (Test-Splits sind nach D2
 zulässig; sonst Komponenten-Splits nach Ende `W2·19`). Task-Grösse strikt: ein
 Ziel, ≤ ~5 Dateien, ≤ ~300 Zeilen Diff, nie Risikopfade, nie Steuer-Doku. Jules
 hat kein Gedächtnis über Sessions — alles Wissen steht in `AGENTS.md` und im
-Issue. Claude prüft nach Skill `landung` §«Fremde PRs (Jules)» und landet.
+Issue. Claude prüft nach Skill `landung` §«Fremde PRs (Jules)» (`referenz-jules.md`) und landet.
 
 **Fremd-PR-Tor in CI, Anlass T6 — gebaut 4.9.2026.** Shell-Schritt «Fremd-PR-Tor»
 im CI-Job «Tore» (`.github/workflows/ci.yml`; bewusst kein eigenes `check-*.ts`, Steuerungs-Deckel §17-Gegengewicht — Regel 1 nutzt `scripts/analyse/test-assertion-diff.ts`): für Branches im
@@ -479,7 +479,7 @@ unten; nicht geschätzt):
 
 **Folgerungen aus T6 (in den Prozess übernommen, nicht nur notiert):**
 1. Jede Fremd-PR-Prüfung MUSS `scripts/analyse/test-assertion-diff.ts` und
-   den Whitelist-Diff fahren — kein Ermessen (Skill `landung` §«Fremde PRs»).
+   den Whitelist-Diff fahren — kein Ermessen (Skill `landung` §«Fremde PRs», `referenz-jules.md`).
 2. Auftrags-Vorlage: Die Whitelist bleibt Pflicht, aber der Schutz kommt aus
    dem Review, nicht aus dem Text von `AGENTS.md`.
 3. **Phase-1-Punkt — gebaut 4.9.2026 (#645, Branch-Muster #649):** Fremd-PR-Tor in CI —

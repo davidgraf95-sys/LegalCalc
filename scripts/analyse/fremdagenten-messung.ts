@@ -13,7 +13,7 @@
 // Ablauf: `gh pr list --state merged --limit 200 --json
 // number,headRefName,createdAt,mergedAt,body,title` liefert die gemergten
 // PRs; Jules-Branches per Muster (identisch mit Skill `landung`
-// §«Fremde PRs» und CI-Step «Fremd-PR-Tor», 4.9.2026): 19-stellige Task-ID
+// §«Fremde PRs» (`referenz-jules.md`) und CI-Step «Fremd-PR-Tor», 4.9.2026): 19-stellige Task-ID
 // irgendwo im Branch-Namen ODER Präfix `jules-`/`jules/`. Aus dem PR-Body
 // wird die referenzierte Issue-Nummer gelesen (`Fixes #N` / `Closes #N` /
 // nackte `#N`), `gh issue view N --json createdAt` liefert den
