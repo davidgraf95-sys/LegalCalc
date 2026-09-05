@@ -176,6 +176,36 @@ describe('berechneUpdate — GEZIELT 5.9.2026 (QS-EFFIZIENZ, Beleg #699): fachli
     expect(geaendert).toHaveLength(0);
     expect(uebersehen).toHaveLength(0);
   });
+
+  it('Fall 4 — gezielter Zielpfad weder im Bestand noch in der Baseline: landet in `unbekannt`, Baseline unverändert', () => {
+    const baseline = { 'a.ts': 900 };
+    const aktuell = new Map([['a.ts', 900]]);
+    const { neueBaseline, hinzu, entfernt, geaendert, unbekannt } = berechneUpdate(aktuell, baseline, ['nie-existiert.ts']);
+    expect(unbekannt).toEqual(['nie-existiert.ts']);
+    expect(neueBaseline).toEqual(baseline); // keine Baseline-Änderung für den unbekannten Pfad
+    expect(hinzu).toHaveLength(0);
+    expect(entfernt).toHaveLength(0);
+    expect(geaendert).toHaveLength(0);
+  });
+
+  it('Fall 5 — Grenzwert-Symmetrie: Bestands-Datei exakt an der Schwelle (800 Z.) bleibt in der Baseline (Tor selbst ist bei genau 800 nicht rot)', () => {
+    const baseline = { 'genau.ts': 750 };
+    const aktuell = new Map([['genau.ts', 800]]);
+    const { neueBaseline, entfernt, geaendert, unbekannt } = berechneUpdate(aktuell, baseline, ['genau.ts']);
+    expect(unbekannt).toHaveLength(0);
+    expect(entfernt).toHaveLength(0); // vorher fälschlich entfernt (zeilen > schwelle war falsch für den Erhalt)
+    expect(geaendert).toEqual([{ pfad: 'genau.ts', alt: 750, neu: 800 }]); // Zahl wird nachgezogen, Eintrag bleibt
+    expect(neueBaseline).toEqual({ 'genau.ts': 800 });
+  });
+
+  it('Fall 5b — genau an der Schwelle (800 Z.), noch nicht in der Baseline: keine Aufnahme (nur > schwelle rechtfertigt eine NEUE Aufnahme)', () => {
+    const baseline = {};
+    const aktuell = new Map([['neu-genau.ts', 800]]);
+    const { neueBaseline, hinzu, unbekannt } = berechneUpdate(aktuell, baseline, ['neu-genau.ts']);
+    expect(unbekannt).toHaveLength(0);
+    expect(hinzu).toHaveLength(0);
+    expect(neueBaseline).toEqual({});
+  });
 });
 
 describe('generiertMusterAusGitattributes — Review-Befund 3 (5.8.2026): linguist-generated=true gleichwertig zum nackten Token', () => {

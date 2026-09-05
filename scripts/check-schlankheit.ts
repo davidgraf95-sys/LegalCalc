@@ -283,6 +283,8 @@ export interface UpdateErgebnis {
   /** NUR im Aufräum-Modus (keine Zielpfade): neue Dateien > Schwelle, bewusst
    *  NICHT aufgenommen — der Aufrufer meldet sie und beendet mit Exit 1. */
   uebersehen: string[];
+  /** Pfad unbekannt → Exit 1, kein Schreiben. */
+  unbekannt: string[];
 }
 
 /**
@@ -297,7 +299,7 @@ export interface UpdateErgebnis {
  * (aktuell > Schwelle) oder entfernt (aktuell fehlt oder ≤ Schwelle). Jeder
  * andere Baseline-Eintrag bleibt byte-gleich, auch wenn seine aktuelle
  * Zeilenzahl inzwischen abweicht (das holt ein eigener gezielter Aufruf nach,
- * kein impliziter Nebeneffekt).
+ * kein impliziter Nebeneffekt). Unbekannt → `unbekannt`, kein Schreiben.
  */
 export function berechneUpdate(
   aktuell: ReadonlyMap<string, number>,
@@ -310,15 +312,24 @@ export function berechneUpdate(
   const entfernt: string[] = [];
   const geaendert: Array<{ pfad: string; alt: number; neu: number }> = [];
   const uebersehen: string[] = [];
+  const unbekannt: string[] = [];
 
   if (zielPfade && zielPfade.length > 0) {
     for (const pfad of zielPfade) {
       const zeilen = aktuell.get(pfad);
       const altWert = baseline[pfad];
-      if (zeilen !== undefined && zeilen > schwelle) {
+      if (zeilen === undefined && altWert === undefined) {
+        // bisher still (Exit 0), jetzt gemeldet (§6.7).
+        unbekannt.push(pfad);
+        continue;
+      }
+      // Symmetrie: bei `schwelle` bleibt der Eintrag.
+      if (zeilen !== undefined && zeilen >= schwelle) {
         if (altWert === undefined) {
-          neueBaseline[pfad] = zeilen;
-          hinzu.push(pfad);
+          if (zeilen > schwelle) {
+            neueBaseline[pfad] = zeilen;
+            hinzu.push(pfad);
+          }
         } else if (altWert !== zeilen) {
           neueBaseline[pfad] = zeilen;
           geaendert.push({ pfad, alt: altWert, neu: zeilen });
@@ -328,7 +339,7 @@ export function berechneUpdate(
         entfernt.push(pfad);
       }
     }
-    return { neueBaseline, hinzu, entfernt, geaendert, uebersehen };
+    return { neueBaseline, hinzu, entfernt, geaendert, uebersehen, unbekannt };
   }
 
   for (const pfad of Object.keys(baseline)) {
@@ -344,7 +355,7 @@ export function berechneUpdate(
   for (const [pfad, zeilen] of aktuell) {
     if (baseline[pfad] === undefined && zeilen > schwelle) uebersehen.push(pfad);
   }
-  return { neueBaseline, hinzu, entfernt, geaendert, uebersehen };
+  return { neueBaseline, hinzu, entfernt, geaendert, uebersehen, unbekannt };
 }
 
 // ─── CLI ────────────────────────────────────────────────────────────────────
@@ -396,7 +407,13 @@ function main(): void {
   if (update) {
     const baseline = ladeBaseline();
     const zielPfade = zielPfadeRoh.length > 0 ? zielPfadeRoh.map(normalisierePfad) : undefined;
-    const { neueBaseline, hinzu, entfernt, geaendert, uebersehen } = berechneUpdate(bestand, baseline, zielPfade);
+    const { neueBaseline, hinzu, entfernt, geaendert, uebersehen, unbekannt } = berechneUpdate(bestand, baseline, zielPfade);
+
+    if (unbekannt.length) {
+      console.error(`schlankheit:update ROT — ${unbekannt.length} unbekannte(r) Zielpfad(e), keine Baseline-Änderung:`);
+      for (const p of unbekannt) console.error(`  ✗ Zielpfad unbekannt/nicht im Scan: ${p}`);
+      process.exit(1);
+    }
 
     schreibeBaselineDatei(neueBaseline);
 

@@ -92,11 +92,23 @@ function ciYmlFundstellen(tor: string): number[] {
 
 type Deckung = { pr: string[]; waechter: string[] };
 
+/** Skript-Pfad → Tor-Name (CI-Pfad-Fallback zu gateShAbgedeckt). */
+function pfadZuTor(): Map<string, string> {
+  const abbildung = new Map<string, string>();
+  for (const [name, cmd] of Object.entries(pkg.scripts)) {
+    if (!name.startsWith('check:')) continue;
+    const pfad = /(scripts\/\S+\.(?:ts|tsx|mjs|sh))\b/.exec(cmd)?.[1];
+    if (pfad) abbildung.set(pfad, name);
+  }
+  return abbildung;
+}
+
 /** Tore, die ein Workflow aufruft — getrennt nach PR- und Wächter-Deckung (s. Kopf). */
 function ciTore(): { deckung: Map<string, Deckung>; ohneOn: string[] } {
   const deckung = new Map<string, Deckung>();
   const ohneOn: string[] = [];
   const dir = '.github/workflows';
+  const pfadAbbildung = pfadZuTor();
   for (const datei of readdirSync(dir)) {
     if (!/\.ya?ml$/.test(datei)) continue;
     const inhalt = readFileSync(`${dir}/${datei}`, 'utf8');
@@ -107,12 +119,17 @@ function ciTore(): { deckung: Map<string, Deckung>; ohneOn: string[] } {
     // wird, läuft nicht (und hat genau diesen Irrtum schon einmal erzeugt).
     for (const zeile of inhalt.split('\n')) {
       const ohneKommentar = zeile.replace(/^\s*#.*$/, '');
-      for (const m of ohneKommentar.matchAll(/npm run (check:[a-z0-9:-]+)/g)) {
-        const d = deckung.get(m[1]) ?? { pr: [], waechter: [] };
+      const vermerken = (tor: string) => {
+        const d = deckung.get(tor) ?? { pr: [], waechter: [] };
         const liste = istPr ? d.pr : d.waechter;
         if (!liste.includes(datei)) liste.push(datei);
-        deckung.set(m[1], d);
-      }
+        deckung.set(tor, d);
+      };
+      for (const m of ohneKommentar.matchAll(/npm run (check:[a-z0-9:-]+)/g)) vermerken(m[1]);
+      // Pfad-Fallback: `vite-node`/`node scripts/x.*` zählt als Tor mit diesem Pfad.
+      const pfad = /(?:npx vite-node|node)\s+(scripts\/\S+\.(?:ts|tsx|mjs|sh))\b/.exec(ohneKommentar)?.[1];
+      const tor = pfad && pfadAbbildung.get(pfad);
+      if (tor) vermerken(tor);
     }
   }
   return { deckung, ohneOn };
@@ -125,7 +142,7 @@ function ciTore(): { deckung: Map<string, Deckung>; ohneOn: string[] } {
 const ALLOWLIST: Record<string, string> = {
   // 20.7.2026: check:entscheide/bs-entscheide/besetzung entfielen ersatzlos — DB-Begründung war falsch, sie lesen committete Projektionen (jetzt in ci.yml).
   // 21.7.2026: 18 weitere Einträge entfielen mit der R1-Verdrahtung (Audit #318).
-  // 15.8.2026 (#425): check:verfall bleibt einziges wächter-only-Tor — wanduhr- statt diff-abhängig (K7, Lauf 30764225649).
+  // 15.8.2026 (#425): check:verfall bleibt einziges wächter-only-Tor — wanduhr- statt diff-abhängig (K7, 3.8.2026, Lauf 30764225649).
   'check:verfall':
     'wanduhr-abhängig statt diff-abhängig — ein ablaufender Registertermin färbt sonst alle offenen PRs rot (K7, Lauf 30764225649). Ersatz-Arbiter: normen-monitor.yml (wöchentlich, mit Vorlauf-Warnung) und fedlex-frische.yml (vor jedem Reparatur-PR); zusätzlich lokal in check:seriell vor jedem Deploy',
   'check:materialien': 'braucht daten/*.db für die Byte-Reprojektion (CI-Zweig prüft committete Shards)',
