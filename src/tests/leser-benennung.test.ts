@@ -56,6 +56,7 @@ const V3_DIR = `${WURZEL}/v3`;
 const GETEILTE_BAUSTEINE = [
   'parts/ErlassLeserKopf.tsx',
   'parts/ArtikelLeser.tsx',
+  'parts/ArtikelLeser.leitfaelle.tsx',
   'parts/SektionKopf.tsx',
   'parts/ErlassKopfBlock.tsx',
 ];

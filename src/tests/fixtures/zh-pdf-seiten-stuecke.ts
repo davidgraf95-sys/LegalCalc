@@ -32,13 +32,7 @@
  *   (4.32/4.62/4.92). Eine Apparat-Kante allein aus der Ziffernhöhe kappte die
  *   Seite ab y 170 und verschluckte § 105 Abs. 2 samt dem ganzen § 106.
  */
-export interface ZhStueckFixture {
-  x: number;
-  y: number;
-  h: number;
-  w: number;
-  s: string;
-}
+export type { ZhStueckFixture } from './zh-pdf-seiten-stuecke.typen';
 
 export { ZH_212812_SEITE2 } from './zh-pdf-seiten-stuecke.212812';
 export { ZH_1752_SEITE1 } from './zh-pdf-seiten-stuecke.1752';
