@@ -1748,6 +1748,29 @@
     @apply relative inline-flex shrink-0 items-center justify-center rounded-md transition-colors;
     min-height: var(--tap-ziel); min-width: var(--tap-ziel);
   }
+  /* Das ✕ SELBST — Grösse UND Schnitt, an EINER Stelle (R6-A, 5.9.2026).
+     GEMESSEN am Preview (1600×900, zehn Ansichten, frischer Kontext je Route):
+     die Glyphe stand überall in 16 px, aber in ZWEI SCHNITTEN — «Geist Mono
+     Variable» im `InhaltsKopf` (dessen `klasse="lc-leiste-griff"` eine
+     `font-family` mitbringt, die die Glyphe erbt) gegen «Geist Variable» in
+     allen übrigen Fundstellen. Sichtbare Folge bei gleicher Schriftgrösse:
+     die ✕-Tinte ist 9.64 px breit statt 12.20 px — dasselbe Zeichen in zwei
+     Breiten. Der Baustein hatte die Grösse festgeschrieben (`text-base
+     leading-none` am Glyph-Span) und die FAMILIE offen gelassen: dieselbe
+     halbe Deklaration, die R4-C/R5-B beim Ziffernsatz als Defekt nachgewiesen
+     haben, eine Ebene höher.
+     KANON ist der Schnitt der Mehrheit (9 von 10 gemessenen ✕) und zugleich
+     der Textschnitt der App. B6 (28.7.2026, EINE Anatomie für alle
+     Bedien-Elemente der Inhaltskopf-Leiste) wird dadurch NICHT gekippt: jene
+     Entscheidung gilt der Leiste und ihren Beschriftungen; die Glyphe war der
+     Typo-Anatomie der Leiste schon vorher in der GRÖSSE entzogen (16 px gegen
+     11 px der Leiste) — R6-A vollendet nur, was dort halb entschieden war.
+     Die Deklaration steht hier statt am Span, damit ✕-Grösse und ✕-Schnitt
+     nicht wieder an zwei Orten liegen (§5). */
+  .lc-schliessknopf-glyph {
+    font-family: var(--font-sans), system-ui, sans-serif;
+    font-size: 1rem; line-height: 1;
+  }
   .lc-schliessknopf-komfort::after {
     content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
     width: 100%; height: 100%;
