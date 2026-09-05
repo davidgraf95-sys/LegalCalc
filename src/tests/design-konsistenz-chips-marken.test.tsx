@@ -153,7 +153,13 @@ describe('D-8 — der Filterzähler ist eine Zählung, kein Status', () => {
   });
 
   it('Kanon der Zählung: nackte Zahl in der num-Stimme', () => {
-    expect(quelle).toContain('<span className="num tabular-nums text-ink-600">{anzahl}</span>');
+    // R4-C (5.9.2026): der Wortlaut trug bis hierher zusätzlich `tabular-nums`.
+    // GEMESSEN am Preview: die Utility überschreibt `.num` aus der späteren
+    // CSS-Schicht und nimmt dabei `lining-nums` weg — sie war nicht redundant,
+    // sondern schädlich (Herleitung und App-weiter Wächter in
+    // `design-r3b-chrome.test.ts`, Abschnitt R4-C). Die geprüfte AUSSAGE ist
+    // unverändert: nackte Zahl, `num`-Stimme, Zähler-Farbe ink-600 (§6.3).
+    expect(quelle).toContain('<span className="num text-ink-600">{anzahl}</span>');
   });
 });
 

@@ -206,7 +206,14 @@ export function ErbteilungForm() {
         <GruppenTitel><NormText text={`1. Parentel – Nachkommen (Art. 457 ZGB)`} /></GruppenTitel>
         <div className={pk('grid grid-cols-1 sm:grid-cols-2 gap-4', 'grid grid-cols-1 @lg/pane:grid-cols-2 gap-4')}>
           <Field label="Lebende Kinder (Anzahl)">
-            <input type="number" inputMode="decimal" min={0} step={1} value={kinderLebend} onChange={(e) => setKinderLebend(Number(e.target.value))} className={inputCls + ' w-28'} />
+            {/* LM-072 (B12, 4.9.2026): die feste Feldbreite ist weg — das Feld folgt jetzt
+                seiner Rasterzelle wie jedes andere `Field` derselben Reihe. GEMESSEN
+                @1440 stand es als 112 px neben Feldern von 495 px, ohne dass die
+                schmalere Breite etwas aussagte (§8: eine Breite ist eine Zusage über
+                die erwartete Eingabelänge). Die schmalen Felder der INLINE-Reihen
+                (Zahl + Einheit nebeneinander, `w-24`) bleiben, dort trägt die Breite
+                die Zusammengehörigkeit. */}
+            <input type="number" inputMode="decimal" min={0} step={1} value={kinderLebend} onChange={(e) => setKinderLebend(Number(e.target.value))} className={inputCls} />
           </Field>
           <Field label="Vorverstorbene Kinder mit Nachkommen (Stämme)" hint="Deren Nachkommen treten nach Stämmen ein (Art. 457 Abs. 3)">
             {/* Der Wrapper-<div> bleibt: `Field` verknüpft nur ein natives
@@ -303,7 +310,15 @@ export function ErbteilungForm() {
               wert={ergebnis.rechtsstand === 'neu' ? 'Neues Recht (ab 1.1.2023)' : 'Altes Recht (bis 31.12.2022)'} />
             <EckdatenKachel akzent num label="Verfügbare Quote"
               wert={`${fmtB(ergebnis.verfuegbareQuote)}${ergebnis.verfuegbareQuoteChf != null ? ` · CHF ${fmtCHF(ergebnis.verfuegbareQuoteChf)}` : ''}`} />
-            <EckdatenKachel num label="Nachlass"
+            {/* LM-034 (B11-Karten, 4.9.2026): `num` gilt der KACHEL, nicht dem
+                Wert — der Ersatzsatz «nur Quoten (keine Beträge erfasst)» lief
+                dadurch in Geist Mono (am 4.9. auf /rechner/erbteilung gemessen)
+                und stand als dritte Schrift neben «Neues Recht (ab 1.1.2023)»
+                (Sans) und «1/2» (Mono). Die Zwei-Stimmen-Regel
+                (DESIGN-REGLEMENT §4b(e), Fassung 29.8.2026) gibt Mono an
+                Zahlen, Aktenzeichen und Struktur-Etiketten — ein Satz ist
+                keines davon. `num` hängt darum jetzt am Wert. */}
+            <EckdatenKachel num={nachlass != null} label="Nachlass"
               wert={nachlass != null ? `CHF ${fmtCHF(nachlass)}` : 'nur Quoten (keine Beträge erfasst)'} />
           </div>
 

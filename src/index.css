@@ -1109,7 +1109,15 @@
   .lc-tile { @apply bg-surface-raised border border-line rounded-xl p-4; }
   /* Akzent-Oberkante (massgeblich) — EINE Quelle statt 6×
      inline border-t-[3px]; die Bedeutung trägt die Farbe, nicht die Stelle. */
-  .lc-akzent-brass { border-top: 3px solid var(--brass-line); }
+  /* LM-033 (B11-Karten, 4.9.2026): die Akzent-Oberkante ist 3 px stark, der
+     Rahmen von `.lc-tile` 1 px — die 2 px Differenz schoben den Inhalt der
+     hervorgehobenen Kachel nach unten. Gemessen auf `/rechner/mietrecht`
+     (1440 px): Beschriftung y 19 gegen 17 px, Wert y 40 gegen 38 px bei sonst
+     gleich hohen Kacheln (86 px); dasselbe auf erbteilung/verjaehrung. Die
+     2 px werden am Innenabstand zurückgenommen (`.lc-tile` = p-4 = 1rem, und
+     beide Klassen liegen ausschliesslich auf `.lc-tile`) — Oberkante und
+     Kachelhöhe bleiben unverändert, die Grundlinien fluchten wieder. */
+  .lc-akzent-brass { border-top: 3px solid var(--brass-line); padding-top: calc(1rem - 2px); }
   /* Danger-Variante derselben Oberkante (Design-Konsistenz R2-F/F1-5,
      31.8.2026). Sie markiert nicht «massgeblich», sondern «Sperre/kein
      statthaftes Rechtsmittel» — gemessen waren dafür drei handgebaute
@@ -1117,7 +1125,7 @@
      StrafZustaendigkeitTeil, VorlageKuendigungArbeitgeber). Die Farbe trägt
      die Bedeutung, die Anatomie ist dieselbe wie bei Messing; `--danger-line`
      hält den Kontrast im Dunkelmodus (index.css:461). */
-  .lc-akzent-danger { border-top: 3px solid var(--danger-line); }
+  .lc-akzent-danger { border-top: 3px solid var(--danger-line); padding-top: calc(1rem - 2px); }
 
   /* FristenKalender (Überarbeitung 7.6.2026, Auftrag David) — zwei Rezepte:
 
@@ -1146,6 +1154,21 @@
   .lc-input {
     @apply w-full bg-well border border-line rounded-md text-base text-ink-900 transition-colors;
     padding: 12px 14px;
+    /* ── LM-067/LM-068 (B12, 4.9.2026) · WO GEKÜRZT WIRD, IST DIE KÜRZUNG SICHTBAR ──
+       GEMESSEN am gebauten Stand: `/rechner/zpo-fristen` @720 kappte drei
+       Select-Werte hart im Wort — «– Vorlage wählen (oder manuell u» (Textbreite
+       294 px auf 243 px Platz), «Zustellart» 366/243, «Ereignis» 360/243; die
+       Kopf-Suche auf `/rechtsprechung` @490 kappte ihren Platzhalter «Suche ·
+       OR 257d …» (134 px auf 116 px). Ein hart abgeschnittenes Wort liest sich
+       wie ein Datenfehler, eine Auslassung sagt «hier steht mehr» (§8).
+       `text-overflow` greift in Chromium AUCH am nativen <select> (Vorher/Nachher
+       am selben Feld belegt) und am Platzhalter eines <input> — `overflow:hidden`
+       und `white-space:nowrap` bringen beide Elementarten von Haus aus mit, es
+       braucht also nur diese eine Zeile. Beim FOKUSSIERTEN Feld ignoriert der
+       Browser sie und scrollt den Text wie bisher — Eingeben bleibt unverändert.
+       Die Wurzel statt der Call-Site: die Kappung entsteht überall dort, wo ein
+       Feld schmaler ist als sein Inhalt, nicht nur an den zwei gemessenen Orten. */
+    text-overflow: ellipsis;
   }
   .lc-input::placeholder { color: var(--placeholder); }
   .lc-input:focus, .lc-input:focus-visible {

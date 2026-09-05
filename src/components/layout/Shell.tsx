@@ -1,4 +1,5 @@
 import { Fragment, useCallback, useEffect, useRef, useState, type KeyboardEvent as ReactKeyboardEvent, type PointerEvent as ReactPointerEvent, type ReactNode } from 'react';
+import { useKopieren } from '../useKopieren';
 import { createPortal } from 'react-dom';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { Topbar } from './Topbar';
@@ -80,6 +81,14 @@ export function Shell({ children }: { children: ReactNode }) {
   const { locale, setLocale } = useLocale();
   const { pathname, search } = useLocation();
   const navigate = useNavigate();
+  // R4-D (5.9.2026): der ⧉-Griff der Pane-Titelleiste schrieb den Layout-Link
+  // mit eigener `writeText`-Zeile in die Zwischenablage — dieselbe Handlung wie
+  // «Link teilen» (`LinkTeilenButton`), nur mit eigener Mechanik. Der Griff
+  // zeigt bewusst KEINE sichtbare Quittung (die 28-px-Zeile hat keinen Platz
+  // dafür, und eine dazuzuerfinden wäre eine neue Design-Entscheidung, kein
+  // Konsistenz-Fix); `kopiert` bleibt darum ungelesen. Vereinheitlicht wird die
+  // MECHANIK, nicht die Rückmeldung (§5/§10).
+  const { kopieren: kopiereLayoutLink } = useKopieren();
   const [schubladeOffen, setSchubladeOffen] = useState(false);
   const schubladeRef = useRef<HTMLDivElement>(null);
   const primaerWurzel = useRef<HTMLElement>(null); // Scroll-/Query-Wurzel des primären Panes (B-2.5)
@@ -494,7 +503,7 @@ export function Shell({ children }: { children: ReactNode }) {
                     onNavigiert={meldeLive}
                     onSchliessen={() => schliesseUndFokus(i)}
                     onHauptfenster={() => zumHauptfenster(i)}
-                    onTeilen={() => navigator.clipboard?.writeText(layoutPermalink(liveSek))?.catch(() => {})}
+                    onTeilen={() => kopiereLayoutLink(layoutPermalink(liveSek))}
                     onLinks={() => verschiebePane(i + 1, i)} onRechts={() => verschiebePane(i + 1, i + 2)}
                     kannLinks kannRechts={i < pane.sekundaer.length - 1}
                     ziehbar={multipane} {...dnd.griff(i + 1)} {...dnd.spalte(i + 1)} />

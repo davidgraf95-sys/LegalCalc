@@ -1,7 +1,7 @@
-import { useEffect, useId, useRef, useState } from 'react';
+import { useId, useState } from 'react';
 import { VorschauPanel, ExportLeiste } from './wizard';
 import { ErgebnisPlatzhalter } from './ui';
-import { KOPIER_DAUER_MS } from '../useKopieren';
+import { useKopieren } from '../useKopieren';
 import { NormText } from '../NormText';
 import { BANNER_MAPPE_FERTIG, type PdfBanner } from '../../lib/vorlagen/banner';
 import type { AssembleErgebnis } from '../../lib/vorlagen/engine';
@@ -86,14 +86,9 @@ export function MappenAnsicht({ dokumente, bannerEntwurf, bannerFertig = BANNER_
   zielId?: string;
 }) {
   const [aktivesDok, setAktivesDok] = useState<string>(startDokId ?? dokumente[0]?.id ?? '');
-  const [kopiert, setKopiert] = useState(false);
+  const { kopiert, kopieren } = useKopieren();
   const basisId = useId();
   const dok = dokumente.find((d) => d.id === aktivesDok) ?? dokumente[0];
-
-  // Rücksetz-Timer des «Kopiert ✓»-Häkchens aufräumen (kein vorzeitiges
-  // Verschwinden bei Doppel-Kopie, kein setState nach Unmount) — wie useWizardState.
-  const kopierTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
-  useEffect(() => () => { if (kopierTimer.current) clearTimeout(kopierTimer.current); }, []);
 
   // QS-UI 8b Teil 2 (§8 · R13-Analogie): Bisher `return null`. Auf
   // `/vorlagen/gmbh-gruendung` und `/vorlagen/kapitalerhoehung` entsteht im
@@ -116,19 +111,11 @@ export function MappenAnsicht({ dokumente, bannerEntwurf, bannerFertig = BANNER_
   const tabId = (id: string) => `${basisId}-tab-${id}`;
   const panelId = `${basisId}-panel`;
 
-  // Clipboard wie useWizardState absichern: Optional-Chaining + then(ok, fail),
-  // damit unsicherer Kontext / verweigerte Berechtigung kein Unhandled-Rejection
-  // wirft und «Kopiert ✓» nur im Erfolgsfall erscheint (§13/F4).
-  const kopieren = (text: string) => {
-    navigator.clipboard?.writeText(text).then(
-      () => {
-        setKopiert(true);
-        if (kopierTimer.current) clearTimeout(kopierTimer.current);
-        kopierTimer.current = setTimeout(() => setKopiert(false), KOPIER_DAUER_MS);
-      },
-      () => {},
-    );
-  };
+  // R4-D (5.9.2026): Optional-Chaining, `then(ok, fail)`, Timer-Handle und
+  // Unmount-Aufräumen standen hier zeichengleich zum geteilten Hook — und der
+  // Kommentar sagte es selbst («wie useWizardState»). Der Hook nimmt den Text
+  // jetzt beim KLICK entgegen (das gewählte Dokument steht erst dann fest);
+  // genau daran scheiterte die Migration bisher (§5/§10).
 
   // APG-Tabs: roving tabindex + Pfeiltasten/Home/End (vgl. ui/Tabs.tsx). Vorher
   // versprach role=tab das Tastaturmodell, ohne es zu liefern.
