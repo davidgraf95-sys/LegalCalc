@@ -147,12 +147,12 @@ export function TrefferListe({
             <button type="button" onClick={onZurueck} data-treffer-zurueck
               aria-label="Vorherige Fundstelle" title="Vorherige Fundstelle"
               className="inline-flex h-11 w-11 items-center justify-center rounded-md text-ink-600 transition-colors lc-hover-flaeche hover:text-brass-700">
-              <span aria-hidden className="text-base leading-none">↑</span>
+              <span aria-hidden className="lc-griff-glyph">↑</span>
             </button>
             <button type="button" onClick={onVor} data-treffer-vor
               aria-label="Nächste Fundstelle" title="Nächste Fundstelle"
               className="inline-flex h-11 w-11 items-center justify-center rounded-md text-ink-600 transition-colors lc-hover-flaeche hover:text-brass-700">
-              <span aria-hidden className="text-base leading-none">↓</span>
+              <span aria-hidden className="lc-griff-glyph">↓</span>
             </button>
           </div>
         )}

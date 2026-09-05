@@ -124,20 +124,20 @@ export function TabPanel({ tabs, manifeste, aktivSchluessel, onNavigate, onSchli
           onClick={() => vorher && ordneTabsUm(t.path, vorher.path)}
           aria-label={`Reiter «${name}» nach oben`}
           className="inline-flex items-center justify-center w-6 h-7 shrink-0 rounded text-ink-500 hover:text-brass-700 disabled:opacity-30 disabled:hover:text-ink-500 transition-colors">
-          <span aria-hidden className="text-micro leading-none">▲</span>
+          <span aria-hidden className="lc-griff-glyph">▲</span>
         </button>
         <button type="button" disabled={!nachher}
           onClick={() => nachher && ordneTabsUm(t.path, nachher.path)}
           aria-label={`Reiter «${name}» nach unten`}
           className="inline-flex items-center justify-center w-6 h-7 shrink-0 rounded text-ink-500 hover:text-brass-700 disabled:opacity-30 disabled:hover:text-ink-500 transition-colors">
-          <span aria-hidden className="text-micro leading-none">▼</span>
+          <span aria-hidden className="lc-griff-glyph">▼</span>
         </button>
         {/* ⧉ — nebeneinander öffnen (Split-View): nur ab lg + freier Kapazität. */}
         {onDaneben && !paneOffen?.(t.path) && (
           <button type="button" onClick={() => onDaneben(t.path)}
             aria-label={`Reiter «${name}» nebeneinander öffnen`}
             className="hidden lg:inline-flex items-center justify-center w-6 h-7 shrink-0 rounded text-ink-500 hover:text-brass-700 transition-colors">
-            <span aria-hidden className="text-body-s leading-none">⧉</span>
+            <span aria-hidden className="lc-griff-glyph">⧉</span>
           </button>
         )}
         {/* A3-1 (R3-β): EIN Schliess-✕ der App. Der danger-Hover ist keine

@@ -182,7 +182,7 @@ export function NormPopover({ snapshot, passus, sachtitel, alsDialog = true, onC
               onClick={() => { oeffneDaneben(readerLink); onClose(); }}
               title={`${titel} nebeneinander öffnen`} aria-label={`${titel} nebeneinander öffnen`}
               className="inline-flex h-6 w-6 items-center justify-center rounded-md border border-line text-ink-500 hover:text-brass-700 hover:border-brass-400 transition-colors">
-              <span aria-hidden className="text-base leading-none">⧉</span>
+              <span aria-hidden className="lc-griff-glyph">⧉</span>
             </button>
           )}
         </span>
