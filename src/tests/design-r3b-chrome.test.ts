@@ -139,6 +139,44 @@ const X_AUSNAHMEN: Record<string, string> = {
   'pages/gesetz-leser/parts/WeiterlesenChip.tsx': '(b) «Angebot verwerfen» — verwirft, schliesst nicht',
 };
 
+/**
+ * R7-A · die freistehende Steuerungs-Glyphe.
+ *
+ * FREISTEHEND heisst: die Glyphe IST das ganze Bedienelement. Steht sie neben
+ * einem WORT, folgt sie dem Type ihres Wortes — dieselbe Trennung, die R6-C für
+ * die beschrifteten ✕ gezogen hat, und der Grund, warum die zweite Klasse unten
+ * als Ausnahme geführt wird statt angeglichen zu werden.
+ */
+const GRIFF_GLYPH_SPAN = /<span[^>]*aria-hidden[^>]*className="([^"]*)"[^>]*>\s*([^\s<{])\s*<\/span>/g;
+
+/** Jede Utility, die Schriftgrösse oder Zeilenhöhe des Spans festschreibt. */
+const TYPO_UTILITY = /\b(?:text-(?:xs|sm|base|lg|xl|micro|body-s|body|h1|h2|h3)|leading-none)\b/;
+
+/**
+ * Die Glyphen, die ihre Typografie behalten — nach Klasse getrennt, mit Grund.
+ *
+ * (a) ENTSCHEID DAVIDS · das `☰` steht in ZWEI Anatomien: 16 px/Geist Variable
+ *     in der App-Topbar gegen 11 px/«Geist Mono Variable» im Leser-Griff
+ *     (`lc-leiste-griff`). Anders als beim ✕ sind das zwei LEISTEN mit je
+ *     eigener dokumentierter Anatomie (B6, 28.7.2026) — nach heutiger Regel
+ *     also kein Defekt. Die Frage «soll dieselbe Glyphe in zwei Leisten
+ *     verschieden aussehen?» ist nie entschieden worden; Runde 7 legt sie vor
+ *     und nimmt sie NICHT vorweg (Fahrplan §3, Runde-7-Liste).
+ *
+ * (b) BESCHRIFTET · die Glyphe steht neben einem Wort und folgt dessen Type.
+ *     Sie an die geteilte Gestalt zu binden hiesse, sie aus ihrer eigenen Zeile
+ *     zu heben — genau der Fehler, den R6-C für die beschrifteten ✕ vermieden hat.
+ */
+const GRIFF_AUSNAHMEN: Record<string, string> = {
+  'components/layout/Topbar.tsx · ☰': 'ENTSCHEID DAVIDS — Topbar-Anatomie gegen Leser-Griff',
+  'components/layout/ReiterUebersicht.tsx · ☰': 'ENTSCHEID DAVIDS — dieselbe offene Frage',
+  'pages/gesetz-leser/v3/LeserGliederungSchiene.tsx · ☰': 'ENTSCHEID DAVIDS — dieselbe offene Frage',
+  'components/Katalog.tsx · →': 'BESCHRIFTET — Affordanz-Pfeil neben dem Karten-Titel',
+  'components/normtext/ErlassKarte.tsx · ↗': 'BESCHRIFTET — Aussenlink-Pfeil neben dem Linktext',
+  'components/suche/SuchResultate.tsx · →': 'BESCHRIFTET — Affordanz-Pfeil neben dem Treffer-Titel',
+  'components/verzahnung/RegestePopover.tsx · ⧉': 'BESCHRIFTET — «⧉ Daneben öffnen» trägt sein Wort',
+};
+
 describe('A3-1 · das Schliess-✕ kommt aus EINEM Baustein', () => {
   it('keine weitere Fläche zeichnet das Glyph noch selbst', () => {
     const funde = alleTsx()
@@ -200,6 +238,74 @@ describe('A3-1 · das Schliess-✕ kommt aus EINEM Baustein', () => {
       'Ein freistehendes ✕ holt Grösse UND Schnitt aus `.lc-griff-glyph`; wer nur eine '
       + 'Hälfte hinschreibt (`text-base leading-none`), erbt die andere von der Umgebung (R6-A/R6-C).',
     ).toEqual([]);
+  });
+
+  // ── R7-A (5.9.2026) · DIESELBE FRAGE, AN DIE SACHE GESTELLT ──────────────
+  //    Der Wächter darüber fragt nach EINEM Zeichen. Genau daran lief die halbe
+  //    Deklaration an achtzehn weiteren Glyph-Spans vorbei — dieselbe Korrektur
+  //    wie R6-B beim Ziffernsatz (dort die Schreibweise, hier das Zeichen).
+  //    GEMESSEN am Preview (1600×900, echtes Split-Paar `?p=%2F…` nach R6-M) in
+  //    EINER Zeile, der Pane-Titelleiste von `/gesetze/bund/OR?p=%2Frechtsprechung`:
+  //      ◂ 14 px/Tinte 6.45 · ▸ 14 px/6.45 · ⇱ 14 px/8.44
+  //      ⧉ 16 px/12.73    · ✕ 16 px/12.20
+  //    Fünf Griffe derselben 28-px-Zeile in ZWEI Grössen. App-weit: 99
+  //    freistehende Steuerungs-Glyphen in VIER Grössen (11/14/16/20 px).
+  it('keine freistehende Steuerungs-Glyphe schreibt ihre Typografie selbst hin', () => {
+    const funde: string[] = [];
+    for (const p of alleTsx()) {
+      for (const m of ohneKommentare(liesRoh(p)).matchAll(GRIFF_GLYPH_SPAN)) {
+        const [, klasse, glyph] = m;
+        if (klasse.trim() === 'lc-griff-glyph') continue;
+        if (!TYPO_UTILITY.test(klasse)) continue;
+        if (GRIFF_AUSNAHMEN[`${rel(p)} · ${glyph}`]) continue;
+        funde.push(`${rel(p)} · «${glyph}» · className="${klasse}"`);
+      }
+    }
+    expect(
+      funde,
+      'Eine freistehende Steuerungs-Glyphe holt Grösse UND Schnitt aus `.lc-griff-glyph`. '
+      + 'Wer nur die Grösse hinschreibt (`text-base`/`text-body-s`/`text-micro` + `leading-none`), '
+      + 'erbt den Schnitt von der Umgebung — dieselbe halbe Deklaration wie R4-C/R5-B beim '
+      + 'Ziffernsatz und R6-A/R6-C beim ✕. Steht die Glyphe neben einem WORT, folgt sie dem Type '
+      + 'ihres Wortes und gehört in GRIFF_AUSNAHMEN.',
+    ).toEqual([]);
+  });
+
+  it('ROT-BEWEIS: die vier Vorher-Formen der Runde 7 fallen auf, die Ausnahmen nicht', () => {
+    const sonde = (q: string): string[] => [...q.matchAll(GRIFF_GLYPH_SPAN)]
+      .filter((m) => m[1].trim() !== 'lc-griff-glyph' && TYPO_UTILITY.test(m[1]))
+      .map((m) => `${m[2]}:${m[1]}`);
+    // Wortlaute im Stand vom 5.9.2026 VOR R7-A — Belege, nie nachgeführt (§2b).
+    expect(sonde('<span aria-hidden className="text-body-s leading-none">◂</span>'))
+      .toEqual(['◂:text-body-s leading-none']);          // PaneKopf, 14 px
+    expect(sonde('<span aria-hidden className="text-base leading-none">⧉</span>'))
+      .toEqual(['⧉:text-base leading-none']);            // PaneKopf, 16 px — dieselbe Zeile
+    expect(sonde('<span aria-hidden className="text-micro leading-none">▲</span>'))
+      .toEqual(['▲:text-micro leading-none']);           // TabPanel, 11 px
+    expect(sonde('<span aria-hidden className="text-base leading-none">↓</span>'))
+      .toEqual(['↓:text-base leading-none']);            // TrefferLeiste
+    // Negativ-Kontrolle 1: die migrierte Form fällt NICHT auf.
+    expect(sonde('<span aria-hidden className="lc-griff-glyph">◂</span>')).toEqual([]);
+    // Negativ-Kontrolle 2: eine Glyphe OHNE Typo-Utility schreibt nichts hin und
+    // erbt darum auch nichts Halbes — der Breadcrumb-Trenner, die Farbe allein.
+    expect(sonde('<span aria-hidden className="mr-0.5 text-ink-400">‹</span>')).toEqual([]);
+    // Negativ-Kontrolle 3: die Kopf-Griffe des Lesers holen ihre Gestalt aus
+    // `kopfGlypheKlassen()` — ein Ausdruck, kein String-Literal, also EINE
+    // benannte Stelle statt einer halben Deklaration.
+    expect(sonde('<span aria-hidden className={kopfGlypheKlassen(kompakt)}>⚖</span>')).toEqual([]);
+  });
+
+  it('die Ausnahmen sind nach Klasse getrennt — ein offener Entscheid ist kein Defekt', () => {
+    // Zwei Klassen, zwei Gründe. Sie dürfen nicht verschwimmen: die eine wartet
+    // auf David, die andere ist bereits entschieden (Glyphe folgt ihrem Wort).
+    const davids = Object.entries(GRIFF_AUSNAHMEN).filter(([, g]) => g.startsWith('ENTSCHEID DAVIDS'));
+    const beschriftet = Object.entries(GRIFF_AUSNAHMEN).filter(([, g]) => g.startsWith('BESCHRIFTET'));
+    expect(davids.length + beschriftet.length, 'jede Ausnahme trägt genau einen der zwei Gründe')
+      .toBe(Object.keys(GRIFF_AUSNAHMEN).length);
+    // Der offene Entscheid betrifft AUSSCHLIESSLICH das ☰ (Fahrplan §3, Runde-7-Liste).
+    expect(davids.map(([k]) => k.split(' · ')[1]).every((g) => g === '☰'), 'nur das ☰ wartet auf David')
+      .toBe(true);
+    expect(davids.length, 'drei ☰-Fundstellen: Topbar, Reiter-Übersicht, Gliederungs-Schiene').toBe(3);
   });
 
   it('ROT-BEWEIS: beide Vorher-Formen der freistehenden ✕ fallen auf', () => {
@@ -346,6 +452,36 @@ describe('A3-1 · das Schliess-✕ kommt aus EINEM Baustein', () => {
  * `tabular-nums` OHNE `.num` bleibt zulässig und unberührt: dort trägt die
  * Utility die Textstimme (`ui/Datum`, Stand-Zeilen, Treffer-Zähler) und hat
  * keinen Konflikt-Partner.
+ */
+/**
+ * STREICH-ENTSCHEID RUNDE 7 (5.9.2026, §17-Gegengewicht): GEPRÜFT, BEHALTEN.
+ *
+ * Runde 6 hatte diese Sonde als Rückbau-Kandidaten notiert — seit R6-B verbietet
+ * der verbreiterte R5-B-Wächter (`ZIFFERNSATZ_ROH`) die Zutat `tabular-nums`
+ * app-weit, also kann hier nichts mehr ankommen, was dort nicht schon aufgefallen
+ * wäre. Runde 7 hat das GEMESSEN statt geerbt, mit zwei Mutationen am echten
+ * Quelltext:
+ *
+ *   (1) `<span className="num tabular-nums">{2024}</span>` in eine echte .tsx
+ *       (`verzahnung/KanteMitVorschau.tsx`) eingesetzt
+ *       → BEIDE rot: R4-C «App-weit keine Fundstelle mehr» UND R5-B «keine
+ *         App-Datei schreibt den Ziffernsatz noch roh hin».
+ *   (2) derselbe Konflikt in die EINZIGE R5-B-Ausnahme
+ *       (`vorlagen/vorschauStil.ts`) eingesetzt
+ *       → BEIDE grün: die Ausnahme ist eine `.ts`-Datei, und `alleTsx()` liest
+ *         sie gar nicht. Es gibt also keine Lücke, in der R4-C allein anschlüge.
+ *
+ * BEFUND: die Sonde kann nicht mehr allein scheitern; sie ist von R5-B
+ * vollständig überdeckt. Sie ist damit REDUNDANT, aber nicht TOT (§6.7): unter
+ * Mutation (1) wird sie nachweislich rot.
+ *
+ * ENTSCHEID: BEHALTEN. Das §17-Gegengewicht lässt den Rückbau gewinnen, «ausser
+ * die Stelle hat einen datierten Vorfall verhindert» — und genau das ist hier
+ * der Fall: 16 Fundstellen in 11 Dateien, der Kernbefund dieses Fahrplans. Der
+ * Rest-Nutzen ist die DIAGNOSE: R5-B meldet «irgendwo roher Ziffernsatz», diese
+ * Sonde benennt den teuren Sonderfall («`tabular-nums` neben `.num` nimmt
+ * `lining-nums` weg»). Wer sie künftig streichen will, misst zuerst neu — die
+ * zwei Mutationen oben sind der Weg, nicht dieser Kommentar.
  */
 describe('R4-C · keine Klassenliste trägt `.num` und `tabular-nums` zugleich', () => {
   const konflikt = (quelle: string): string[] =>
