@@ -6,7 +6,7 @@
 // rot, (3) eine stabile Bestands-Datei bleibt grün. Zusätzlich die Rand- und
 // Hinweis-Fälle (Toleranz-Grenze, Unterschreitung, gelöschte Baseline-Datei).
 import { describe, it, expect } from 'vitest';
-import { pruefeSchlankheit, globZuRegex, generiertMusterAusGitattributes } from '../../scripts/check-schlankheit';
+import { pruefeSchlankheit, globZuRegex, generiertMusterAusGitattributes, berechneUpdate } from '../../scripts/check-schlankheit';
 
 describe('pruefeSchlankheit — Kernlogik (§6.6 mechanisiert)', () => {
   it('neue Datei über der Schwelle, nicht in der Baseline → rot', () => {
@@ -114,6 +114,67 @@ describe('globZuRegex — Review-Befund 2 (5.8.2026): slash-lose Muster matchen 
     expect(re.test('ab.ts')).toBe(true);
     expect(re.test('a.ts')).toBe(false); // "?" verlangt GENAU ein Zeichen, nicht "kein oder eins"
     expect(re.test('a/x.ts')).toBe(false); // "?" darf keine Verzeichnisgrenze verschlucken
+  });
+});
+
+describe('berechneUpdate — GEZIELT 5.9.2026 (QS-EFFIZIENZ, Beleg #699): fachliche Änderung des Tors, kein Refactoring', () => {
+  it('Fall 1 — --update <pfad>: NUR der genannte Pfad wird gesetzt, alle anderen Baseline-Einträge bleiben byte-gleich (auch bei abweichender aktueller Zeilenzahl)', () => {
+    const baseline = { 'a.ts': 900, 'b.ts': 1000 };
+    // b.ts ist im Bestand auf 1200 gewachsen, wird aber NICHT als Zielpfad genannt.
+    const aktuell = new Map([
+      ['a.ts', 905],
+      ['b.ts', 1200],
+      ['c.ts', 850], // neue Datei, WIRD als Zielpfad genannt
+    ]);
+    const { neueBaseline, hinzu, entfernt, geaendert, uebersehen } = berechneUpdate(aktuell, baseline, ['c.ts']);
+    expect(neueBaseline).toEqual({ 'a.ts': 900, 'b.ts': 1000, 'c.ts': 850 }); // b.ts byte-gleich trotz 1200 Z. im Bestand
+    expect(hinzu).toEqual(['c.ts']);
+    expect(entfernt).toHaveLength(0);
+    expect(geaendert).toHaveLength(0);
+    expect(uebersehen).toHaveLength(0);
+  });
+
+  it('Fall 1b — --update <pfad>: genannter Pfad jetzt unter der Schwelle → aus der Baseline entfernt, andere Einträge unberührt', () => {
+    const baseline = { 'a.ts': 900, 'geschrumpft.ts': 850 };
+    const aktuell = new Map([['a.ts', 905], ['geschrumpft.ts', 600]]);
+    const { neueBaseline, entfernt } = berechneUpdate(aktuell, baseline, ['geschrumpft.ts']);
+    expect(neueBaseline).toEqual({ 'a.ts': 900 });
+    expect(entfernt).toEqual(['geschrumpft.ts']);
+  });
+
+  it('Fall 2 — --update ohne Pfade: NUR Aufräumen (nachziehen bestehender Zahlen, Entfernen unter Schwelle/fehlender Datei), NIEMALS neue Dateien aufnehmen', () => {
+    const baseline = { 'a.ts': 900, 'weg.ts': 950, 'geschrumpft.ts': 850 };
+    const aktuell = new Map([
+      ['a.ts', 920],           // Bestands-Eintrag, Zahl wird nachgezogen (auch ohne Schwellen-Überschreitung — Aufräumen zieht nach)
+      ['geschrumpft.ts', 600], // unter Schwelle → entfernt
+      // 'weg.ts' fehlt im Bestand → entfernt
+      ['neu.ts', 810],         // NEUE Datei über Schwelle → darf NICHT aufgenommen werden
+    ]);
+    const { neueBaseline, hinzu, entfernt, geaendert, uebersehen } = berechneUpdate(aktuell, baseline, undefined);
+    expect(neueBaseline).toEqual({ 'a.ts': 920 });
+    expect(hinzu).toHaveLength(0); // Aufräumen nimmt nie neue Dateien auf
+    expect(entfernt.sort()).toEqual(['geschrumpft.ts', 'weg.ts']);
+    expect(geaendert).toEqual([{ pfad: 'a.ts', alt: 900, neu: 920 }]);
+    expect(uebersehen).toEqual(['neu.ts']); // Aufrufer meldet & beendet mit Exit 1
+  });
+
+  it('Fall 3 — leere Zielpfad-Liste verhält sich wie kein Zielpfad (Aufräum-Modus)', () => {
+    const baseline = { 'a.ts': 900 };
+    const aktuell = new Map([['a.ts', 900], ['neu.ts', 900]]);
+    const { neueBaseline, uebersehen } = berechneUpdate(aktuell, baseline, []);
+    expect(neueBaseline).toEqual({ 'a.ts': 900 });
+    expect(uebersehen).toEqual(['neu.ts']);
+  });
+
+  it('Aufräumen ohne Änderungsbedarf: Baseline bleibt inhaltlich identisch, keine Einträge in hinzu/entfernt/geaendert', () => {
+    const baseline = { 'a.ts': 900 };
+    const aktuell = new Map([['a.ts', 900]]);
+    const { neueBaseline, hinzu, entfernt, geaendert, uebersehen } = berechneUpdate(aktuell, baseline, undefined);
+    expect(neueBaseline).toEqual(baseline);
+    expect(hinzu).toHaveLength(0);
+    expect(entfernt).toHaveLength(0);
+    expect(geaendert).toHaveLength(0);
+    expect(uebersehen).toHaveLength(0);
   });
 });
 

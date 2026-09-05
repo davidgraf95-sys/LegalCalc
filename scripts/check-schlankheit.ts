@@ -45,9 +45,8 @@
  * Hinweis («kann aus der Baseline entfernt werden»). Das Tor schreibt die
  * Baseline nie von sich aus (Determinismus, §2): dafür gibt es das explizite
  * `--update`-Flag (`npm run schlankheit:update`), das die Baseline bewusst
- * NEU aus dem aktuellen Bestand schreibt — Muster wie `npm run golden`
- * (schreiben ist ein eigener, deklarierter Schritt, nie ein Nebeneffekt des
- * Lesens).
+ * schreibt — Muster wie `npm run golden` (schreiben ist ein eigener,
+ * deklarierter Schritt, nie ein Nebeneffekt des Lesens).
  *
  * Lauf: `npm run check:schlankheit` (reines fs+Zeilenzählen, kein Build,
  * keine Netz-Zugriffe — Laufzeit < 1 s). Seit e24b97b80 Teil von
@@ -55,10 +54,21 @@
  * — BEWUSST NICHT CI-Required: ein begründeter Allowlist-Eintrag in
  * `scripts/check-tor-paritaet.ts` hält es lokal-warnend, damit ein
  * Bestands-Regrowth fremde PRs nicht blockiert (Eskalationsweg dort:
- * `npm run schlankheit:update` mit Commit-Begründung).
+ * `npm run schlankheit:update -- <pfad>` mit Commit-Begründung).
+ *
+ * GEZIELT 5.9.2026 (QS-EFFIZIENZ, Beleg #699): `--update` schrieb bisher
+ * still die GANZE Baseline neu — jede neue Datei über der Schwelle wurde
+ * dabei stillschweigend als «bewusst akzeptiert» registriert, auch wenn der
+ * Aufrufer nur eine einzelne Datei meinte (§6.7: ein Tor, das nicht
+ * scheitern kann). Jetzt: `--update <pfad> …` setzt/aktualisiert/entfernt
+ * NUR die genannten Pfade, alle anderen Einträge bleiben byte-gleich;
+ * `--update` OHNE Pfade räumt nur auf (entfernen/nachziehen bestehender
+ * Einträge) und nimmt NIE neue Dateien auf — findet es welche, listet es sie
+ * mit Aufnahme-Hinweis und beendet sich mit Exit 1. Jede Änderung wird
+ * ausgegeben, nichts still.
  */
 import { readFileSync, readdirSync, statSync, existsSync, writeFileSync } from 'node:fs';
-import { join, relative, sep } from 'node:path';
+import { join, relative, resolve, sep } from 'node:path';
 
 const WURZEL = process.cwd();
 const SCHWELLE = 800;
@@ -266,7 +276,7 @@ export function pruefeSchlankheit(
       if (zeilen > schwelle) {
         rot.push(
           `${pfad}: NEU über der Schwelle — ${zeilen} Z. (Schwelle ${schwelle}). ` +
-          `Entweder splitten (§6.6) oder bewusst in die Baseline aufnehmen (\`npm run schlankheit:update\`, ` +
+          `Entweder splitten (§6.6) oder bewusst in die Baseline aufnehmen (\`npm run schlankheit:update -- ${pfad}\`, ` +
           `mit Begründung im Commit).`);
       }
       continue;
@@ -291,6 +301,84 @@ export function pruefeSchlankheit(
   return { rot, hinweise };
 }
 
+// ─── Update-Berechnung (rein, testbar ohne fs) ─────────────────────────────
+
+export interface UpdateErgebnis {
+  /** Neuer Baseline-Inhalt (unsortiert; der Schreiber sortiert vor dem Schreiben). */
+  neueBaseline: Record<string, number>;
+  /** Pfade, die neu in die Baseline aufgenommen wurden (nur mit Zielpfaden möglich). */
+  hinzu: string[];
+  /** Pfade, die aus der Baseline entfernt wurden (unter Schwelle oder Datei fehlt). */
+  entfernt: string[];
+  /** Bestehende Einträge, deren Zahl nachgezogen wurde. */
+  geaendert: Array<{ pfad: string; alt: number; neu: number }>;
+  /** NUR im Aufräum-Modus (keine Zielpfade): neue Dateien > Schwelle, bewusst
+   *  NICHT aufgenommen — der Aufrufer meldet sie und beendet mit Exit 1. */
+  uebersehen: string[];
+}
+
+/**
+ * Reine Update-Berechnung — GEZIELT 5.9.2026 (QS-EFFIZIENZ, Beleg #699).
+ *
+ * `zielPfade` undefined/leer → NUR Aufräumen: bestehende Baseline-Einträge
+ * werden nachgezogen (Zahl an `aktuell` angepasst) oder entfernt (Datei fehlt
+ * oder liegt jetzt unter `schwelle`). Neue Dateien über der Schwelle werden
+ * NIE automatisch aufgenommen — sie landen in `uebersehen`.
+ *
+ * `zielPfade` mit Einträgen → NUR diese Pfade werden gesetzt/aktualisiert
+ * (aktuell > Schwelle) oder entfernt (aktuell fehlt oder ≤ Schwelle). Jeder
+ * andere Baseline-Eintrag bleibt byte-gleich, auch wenn seine aktuelle
+ * Zeilenzahl inzwischen abweicht (das holt ein eigener gezielter Aufruf nach,
+ * kein impliziter Nebeneffekt).
+ */
+export function berechneUpdate(
+  aktuell: ReadonlyMap<string, number>,
+  baseline: Readonly<Record<string, number>>,
+  zielPfade: readonly string[] | undefined,
+  schwelle = SCHWELLE,
+): UpdateErgebnis {
+  const neueBaseline: Record<string, number> = { ...baseline };
+  const hinzu: string[] = [];
+  const entfernt: string[] = [];
+  const geaendert: Array<{ pfad: string; alt: number; neu: number }> = [];
+  const uebersehen: string[] = [];
+
+  if (zielPfade && zielPfade.length > 0) {
+    for (const pfad of zielPfade) {
+      const zeilen = aktuell.get(pfad);
+      const altWert = baseline[pfad];
+      if (zeilen !== undefined && zeilen > schwelle) {
+        if (altWert === undefined) {
+          neueBaseline[pfad] = zeilen;
+          hinzu.push(pfad);
+        } else if (altWert !== zeilen) {
+          neueBaseline[pfad] = zeilen;
+          geaendert.push({ pfad, alt: altWert, neu: zeilen });
+        }
+      } else if (altWert !== undefined) {
+        delete neueBaseline[pfad];
+        entfernt.push(pfad);
+      }
+    }
+    return { neueBaseline, hinzu, entfernt, geaendert, uebersehen };
+  }
+
+  for (const pfad of Object.keys(baseline)) {
+    const zeilen = aktuell.get(pfad);
+    if (zeilen === undefined || zeilen < schwelle) {
+      delete neueBaseline[pfad];
+      entfernt.push(pfad);
+    } else if (zeilen !== baseline[pfad]) {
+      neueBaseline[pfad] = zeilen;
+      geaendert.push({ pfad, alt: baseline[pfad], neu: zeilen });
+    }
+  }
+  for (const [pfad, zeilen] of aktuell) {
+    if (baseline[pfad] === undefined && zeilen > schwelle) uebersehen.push(pfad);
+  }
+  return { neueBaseline, hinzu, entfernt, geaendert, uebersehen };
+}
+
 // ─── CLI ────────────────────────────────────────────────────────────────────
 
 function ladeBaseline(): Record<string, number> {
@@ -298,17 +386,23 @@ function ladeBaseline(): Record<string, number> {
   return JSON.parse(readFileSync(BASELINE_PFAD, 'utf8')) as Record<string, number>;
 }
 
-function schreibeBaseline(bestand: ReadonlyMap<string, number>): void {
-  const neu: Record<string, number> = {};
-  for (const [pfad, zeilen] of bestand) {
-    if (zeilen > SCHWELLE) neu[pfad] = zeilen;
-  }
-  const sortiert = Object.fromEntries(Object.entries(neu).sort(([a], [b]) => a.localeCompare(b)));
+function schreibeBaselineDatei(baseline: Readonly<Record<string, number>>): void {
+  const sortiert = Object.fromEntries(Object.entries(baseline).sort(([a], [b]) => a.localeCompare(b)));
   writeFileSync(BASELINE_PFAD, JSON.stringify(sortiert, null, 2) + '\n', 'utf8');
 }
 
+/** CLI-Pfad (roh, ggf. relativ zum aktuellen `cwd` oder absolut) auf die
+ *  posix-relative Form normiert, die Baseline und Bestand als Schlüssel nutzen. */
+function normalisierePfad(roh: string): string {
+  const absolut = resolve(process.cwd(), roh);
+  return relative(WURZEL, absolut).split(sep).join('/');
+}
+
 function main(): void {
-  const update = process.argv.includes('--update');
+  const argv = process.argv.slice(2);
+  const updateIdx = argv.indexOf('--update');
+  const update = updateIdx !== -1;
+  const zielPfadeRoh = update ? argv.slice(updateIdx + 1).filter((a) => a.length > 0) : [];
 
   let bestand: Map<string, number>;
   try {
@@ -332,17 +426,27 @@ function main(): void {
   }
 
   if (update) {
-    const vorher = ladeBaseline();
-    schreibeBaseline(bestand);
-    const nachher = ladeBaseline();
-    const hinzu = Object.keys(nachher).filter((p) => !(p in vorher));
-    const weg = Object.keys(vorher).filter((p) => !(p in nachher));
-    const geaendert = Object.keys(nachher).filter((p) => p in vorher && vorher[p] !== nachher[p]);
-    console.log(`schlankheit:update — Baseline neu geschrieben (${Object.keys(nachher).length} Einträge).`);
-    if (hinzu.length) console.log(`  + neu:      ${hinzu.join(', ')}`);
-    if (weg.length) console.log(`  − entfernt: ${weg.join(', ')}`);
-    for (const p of geaendert) console.log(`  ~ ${p}: ${vorher[p]} → ${nachher[p]} Z.`);
-    if (!hinzu.length && !weg.length && !geaendert.length) console.log('  (keine Änderung gegenüber der bestehenden Baseline)');
+    const baseline = ladeBaseline();
+    const zielPfade = zielPfadeRoh.length > 0 ? zielPfadeRoh.map(normalisierePfad) : undefined;
+    const { neueBaseline, hinzu, entfernt, geaendert, uebersehen } = berechneUpdate(bestand, baseline, zielPfade);
+
+    schreibeBaselineDatei(neueBaseline);
+
+    if (zielPfade) {
+      console.log(`schlankheit:update — ${zielPfade.length} Zielpfad(e) verarbeitet, alle anderen Einträge byte-gleich.`);
+    } else {
+      console.log('schlankheit:update — Aufräumen (keine Zielpfade): nur bestehende Einträge nachgezogen/entfernt, keine neuen Dateien aufgenommen.');
+    }
+    for (const p of hinzu) console.log(`  + neu aufgenommen: ${p}: ${neueBaseline[p]} Z.`);
+    for (const { pfad, alt, neu } of geaendert) console.log(`  ~ ${pfad}: ${alt} → ${neu} Z.`);
+    for (const p of entfernt) console.log(`  − entfernt: ${p}`);
+    if (!hinzu.length && !entfernt.length && !geaendert.length) console.log('  (keine Änderung gegenüber der bestehenden Baseline)');
+
+    if (uebersehen.length) {
+      console.error(`\nschlankheit:update ROT — ${uebersehen.length} neue Datei(en) über der Schwelle, NICHT automatisch aufgenommen (§6.7 — «--update» ohne Pfad nimmt nie neue Dateien auf):`);
+      for (const p of uebersehen) console.error(`  ✗ ${p}: bewusst aufnehmen: npm run schlankheit:update -- ${p}`);
+      process.exit(1);
+    }
     return;
   }
 
