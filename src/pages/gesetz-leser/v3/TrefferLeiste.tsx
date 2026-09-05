@@ -137,7 +137,7 @@ export function TrefferLeiste({
             // damit die Live-Ansage für sich allein verständlich bleibt (wer
             // sie hört, sieht die Zählzeile darüber nicht).
             <p data-treffer-position role="status" aria-live="polite"
-              className="min-h-4 whitespace-nowrap text-micro tabular-nums text-ink-500">
+              className="min-h-4 whitespace-nowrap text-micro lc-ziffern text-ink-500">
               {laufend > 0
                 ? <>Fundstelle <span className="num">{laufend}</span> von <span className="num">{fundstellen}</span></>
                 : <>keine gewählt <span aria-hidden className="text-ink-300">·</span> <span className="num">{fundstellen}</span> {fundstellen === 1 ? 'Fundstelle' : 'Fundstellen'}</>}
