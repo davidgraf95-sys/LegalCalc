@@ -316,8 +316,18 @@ export function EntscheidFilter({
               {c.label}<span aria-hidden>×</span>
             </button>
           ))}
+          {/* LM-086 (W2·17-UI-BEFUNDE B10, 4.9.2026). Die ERSTE Hälfte des
+              Befunds ist überholt: dass die Zeile nur bei gesetzter
+              Richter-Auswahl erschien, hat `facettenAktiv` oben behoben —
+              nachgemessen an `?kanton=BS` und `?sprache=de`, beide zeigen die
+              Zeile. Die ZWEITE Hälfte war offen: der Knopf mass 76×17 px, ohne
+              Fläche und ohne Rahmen, in derselben Farbe wie ein Fliesstext-Link
+              — also unter der AA-Untergrenze (WCAG 2.5.8, 24 px) und ohne
+              Knopf-Anmutung. `.lc-btn-mini` gibt ihm Fläche, Haarlinie und
+              `--tap-ziel` als Mindesthöhe, ohne die Chip-Zeile zu sprengen;
+              die leise Stimme (text-xs, Messing) bleibt. */}
           <button type="button" onClick={zuruecksetzen}
-            className="text-xs font-medium text-brass-700 hover:text-brass-600">
+            className="lc-btn-mini text-xs font-medium text-brass-700 hover:text-brass-600">
             zurücksetzen
           </button>
         </div>

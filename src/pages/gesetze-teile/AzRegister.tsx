@@ -64,17 +64,21 @@ import { Link } from 'react-router-dom';
 import { istLesbar, type BrowseErlass } from '../../lib/normtext/browse-typen';
 import { AZ_KLASSEN, gruppiereAZ, ebeneLabel } from './az-register';
 import { erlassPfad } from '../../lib/normtext/erlassAdresse';
+import { zahlGruppiert } from '../../components/typografie';
 
 function AzZeile({ e }: { e: BrowseErlass }) {
   const basePath = erlassPfad(e);
   // Kürzel dezent daneben, wenn es echten Mehrwert trägt (nicht schon im Titel —
   // kantonale «kuerzel» sind oft der ganze Titel, vgl. SysZeile).
+  // B13/LM-118: IN KLAMMERN wie in den Bundes-Titeln («Medizinprodukteverordnung
+  // (MepV)»); freistehend las es sich als Teil des Titels («… Basel-Stadt,
+  // Mietreglement MR»). Eine Kürzel-Schreibweise auf der ganzen Liste.
   const zeigeKuerzel = e.kuerzel && e.kuerzel !== e.titel && !e.titel.includes(e.kuerzel);
   const inhalt = (
     <>
       <span className="min-w-0 break-words text-ink-700 group-hover/az:text-brass-700 transition-colors">
         {e.titel}
-        {zeigeKuerzel && <span className="ml-2 text-xs text-ink-500">{e.kuerzel}</span>}
+        {zeigeKuerzel && <span className="ml-2 text-xs text-ink-500">({e.kuerzel})</span>}
       </span>
       <span className="shrink-0 flex items-baseline gap-2 text-xs text-ink-500">
         <span>{ebeneLabel(e)}</span>
@@ -139,7 +143,7 @@ export function AzRegister({ erlasse }: { erlasse: BrowseErlass[] }) {
               kollidierten (strict mode) mit den Accessible Names der drei
               Einstiegskacheln — die Ebenen-Erklärung steht unten im Panel. */}
           <span className="text-body-s text-ink-500">
-            <span className="num">{erlasse.length.toLocaleString('de-CH')}</span> Erlasse nach Titel
+            <span className="num">{zahlGruppiert(erlasse.length)}</span> Erlasse nach Titel
           </span>
           <span aria-hidden className={`ml-auto text-ink-500 transition-transform ${offen ? 'rotate-90' : ''}`}>›</span>
         </button>

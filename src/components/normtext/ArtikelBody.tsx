@@ -18,7 +18,7 @@ import { staffelZeilen, normalisiereTarifText } from './tarifText';
 import { SUCH_META } from '../../pages/gesetz-leser/suchHighlight';
 
 import type { BildBlock, ZitierKontext, AusweisBasis } from './ArtikelBody.helfer';
-import { FREMD_LEER, NOOP, litZiff, stufenFuer, vglFnNr } from './ArtikelBody.helfer';
+import { FREMD_LEER, NOOP, markenAnzeige, markenZitat, stufenFuer, vglFnNr } from './ArtikelBody.helfer';
 import { ZitierMarke } from './ArtikelBody.zitier';
 
 export type { ZitierKontext };
@@ -329,7 +329,10 @@ export function ArtikelBody({ bloecke, artikel, passus, passusRef, className, au
           // inline gesetzte Marker doppelt. Bei einer Umsortierung der
           // <span>-Kinder diese Kopplung zuerst auflösen.
           const itemInlineGesetzt = new Set<string>();
-          const markeAnzeige = istStrich ? '–' : `${it.marke}.`;
+          // QS-UI (Gegenprüfung PR #658): Beschriftung über markenAnzeige —
+          // Aufzählungsmarke «a.»/«1.» unverändert, Label-Marke «BE:» statt
+          // «BE.» (amtlicher <dt>-Doppelpunkt). Die Marke selbst bleibt «BE».
+          const markeAnzeige = markenAnzeige(it.marke);
           // Präzises Zitat inkl. Verschachtelung: eine Ziff. unter einer
           // Bst. wird «… lit. X Ziff. Y …». Eltern-Kette über die Stufen
           // rückwärts aufbauen (nächster Vorfahre je flacherer Stufe).
@@ -349,7 +352,9 @@ export function ArtikelBody({ bloecke, artikel, passus, passusRef, className, au
             for (let k = jK; k >= 0 && lvl >= 0; k--) {
               if (kStufen[k] === lvl && !/^[–—-]$/.test(kette[k].marke.trim())) {
                 const m2 = kette[k].marke;
-                seg.unshift(`${litZiff(m2)} ${m2}`);
+                // QS-UI: Label-Marken ohne «lit.»-Präfix (markenZitat) — «lit. BE»
+                // ist in der VZV kein Zitat, die Kategorie heisst schlicht «BE».
+                seg.unshift(markenZitat(m2));
                 lvl--;
               }
             }

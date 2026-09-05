@@ -9,6 +9,7 @@ import { SachgebietKacheln } from '../components/rechtsprechung/SachgebietKachel
 import { LiveSuche } from '../components/rechtsprechung/LiveSuche';
 import { Leerzustand } from '../components/ui/Leerzustand';
 import { GruppenKopf } from '../components/ui/GruppenKopf';
+import { zahlGruppiert } from '../components/typografie';
 import {
   ladeEntscheidManifest, ladeRichterRegister, filterEntscheide, sortiere, gruppiereNachLeit,
   gruppiereNachInstanz, zaehleSachgebiete, normLabel,
@@ -409,10 +410,16 @@ export function Rechtsprechung() {
             {/* Treffer-Zähler. Die Bund↔Kanton-Trennung (früher ein eigenes Ebene-
                 Segment, Auftrag David) liegt jetzt in der «Gemeinwesen»-Facetten-
                 Leiste der Filterzeile — eine kohärente Achse statt zweier Controls. */}
+            {/* B13/LM-116: die Zeile behält ihre drei Bestandteile und zeigt für
+                jeden den Wert der AKTUELLEN Menge — auch die 0. Vorher fielen
+                «Leitentscheide» und «Volltext-Verweise» beim Filtern ganz weg:
+                die Zeile wurde kürzer, der Inhalt darunter rutschte hoch
+                (§15.2), und «0 Leitentscheide in dieser Auswahl» blieb als
+                Auskunft ungesagt (§8). Zahlen tausendergruppiert (LM-108). */}
             <div className="flex flex-wrap items-center gap-x-3 gap-y-2 text-xs text-ink-500">
-              <span><span className="num text-ink-700">{echtAnzahl}</span> {echtAnzahl === 1 ? 'Entscheid' : 'Entscheide'}</span>
-              {leitAnzahl > 0 && <span>· <span className="num">{leitAnzahl}</span> Leitentscheide</span>}
-              {volltextAnzahl > 0 && <span>· <span className="num">{volltextAnzahl}</span> Volltext-Verweise</span>}
+              <span><span className="num text-ink-700">{zahlGruppiert(echtAnzahl)}</span> {echtAnzahl === 1 ? 'Entscheid' : 'Entscheide'}</span>
+              <span>· <span className="num">{zahlGruppiert(leitAnzahl)}</span> Leitentscheide</span>
+              <span>· <span className="num">{zahlGruppiert(volltextAnzahl)}</span> Volltext-Verweise</span>
             </div>
 
             {gefiltert.length === 0 ? (

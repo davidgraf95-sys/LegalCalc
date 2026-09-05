@@ -1010,6 +1010,16 @@
      verschnörkelten Fraunces-Form; leicht reduziert für optischen Ausgleich. */
   .lc-amp { font-family: var(--font-sans), system-ui, sans-serif; font-weight: 500; font-size: .92em; }
 
+  /* Tausender-Apostroph in der Mono-Stimme (B13/LM-119): Mono gibt jedem
+     Glyph dieselbe Laufweite, der Apostroph bekäme sonst eine volle
+     Ziffernbreite und «1'577» läse sich als «1 ' 577». Das Zeichen behält
+     seine Form (gerader Apostroph, SSoT src/lib/konventionen.ts) und wird nur
+     aus der Sans genommen, wo es von Haus aus schmal läuft — dasselbe
+     Hausmittel wie `.lc-amp` (ein Zeichen aus einer anderen Stimme mitten im
+     Satz), kein Sonderweg. Gesetzt über `zahlGruppiert()`
+     (components/typografie.tsx); die Ziffern bleiben Mono/tabular. */
+  .lc-apo { font-family: var(--font-sans), system-ui, sans-serif; }
+
   .lc-overline {
     font-family: var(--font-mono), ui-monospace, monospace;
     font-size: .6875rem; line-height: 1.4; letter-spacing: var(--tracking-overline);
@@ -1352,13 +1362,54 @@
   /* Kleine Variante für Buttons in Zeilen/Toolbars (statt Inline-Höhen) */
   .lc-btn-sm { height: 36px; padding: 0 12px; font-size: .875rem; }
   /* Disabled einheitlich (Hover wirkt nicht mehr): @apply kopiert keine
-     Pseudo-Klassen, darum je Variante ausbuchstabiert */
+     Pseudo-Klassen, darum je Variante ausbuchstabiert.
+     ── W2·17-UI-BEFUNDE B17 (LM-089/LM-094, 4.9.2026) ──────────────────────
+     Bis hierher war `opacity: .5` der EINZIGE Deaktiviert-Marker, und der
+     primäre Knopf behielt seine volle dunkle Füllung (`--ink-900`): gemessen
+     am gesperrten «Weiter →» von `/vorlagen/nda` (bg rgb(28,26,21),
+     opacity 0.5) sah er weiterhin wie die Hauptaktion aus — genau der
+     gemeldete Defekt. Der gesperrte Zustand bekommt darum eine EIGENE, ruhige
+     Anatomie statt einer Abschwächung der lauten: versenkte Fläche
+     (`--well`), Haarlinie, gedämpfte aber lesbare Tinte (`--ink-600`, nicht
+     ink-400) — die Zustandsmatrix-Auflage aus FAHRPLAN-UI-QUALITAET §3
+     («inkl. disabled»), erster belegter Fall.
+     `opacity: 1`: die Dämpfung trägt jetzt die Fläche, nicht die Deckkraft —
+     eine durchscheinende Fläche über wechselndem Untergrund ist kein Zustand,
+     sondern ein Zufall. §3: reine Darstellung, KEINE Bedienlogik — welcher
+     Knopf `disabled` ist, entscheidet unverändert der Aufrufer. */
   .lc-btn:disabled, .lc-btn-primary:disabled, .lc-btn-outline:disabled, .lc-btn-ghost:disabled {
-    opacity: .5; cursor: not-allowed;
+    opacity: 1; cursor: not-allowed;
+    background: var(--well); color: var(--ink-600);
+    border: 1px solid var(--line);
   }
-  .lc-btn-primary:disabled { background: var(--ink-900); }
-  .lc-btn-outline:disabled { background: var(--surface); }
-  .lc-btn-ghost:disabled { background: transparent; }
+  .lc-btn-primary:disabled { background: var(--well); }
+  .lc-btn-outline:disabled { background: var(--well); border-color: var(--line); }
+  .lc-btn-ghost:disabled { background: var(--well); }
+
+  /* ── Mini-Aktion in DICHTEN Zeilen (W2·17-UI-BEFUNDE, LM-091/LM-086) ──────
+     Eine Aktion, die als Aktion erkennbar sein muss, ohne die Zeile zu
+     sprengen, in der sie steht. Gemessen am Stand vor diesem Batch:
+     «Zitat | Link | Amtliche Fassung» in der Artikel-Kopfzeile misst 22×13 px
+     und trägt weder Fläche noch Rahmen (LM-091), «zurücksetzen» unter dem
+     Filterkasten 76×17 px (LM-086) — beide unter der AA-Untergrenze
+     WCAG 2.5.8 und optisch nicht von Fliesstext-Links unterscheidbar.
+     ANATOMIE = die des `.lc-btn-outline` (Hairline, Radius, Fläche), HÖHE
+     aber `--tap-ziel` (24 px) statt der 44 px des Komfortmasses: 44 px lägen
+     in der Artikel-Kopfzeile über dem Normtext und in der Chip-Zeile über den
+     Nachbar-Chips und nähmen denen die Klicks — dieselbe datierte Abwägung
+     wie bei `SchliessKnopf komfort={false}` in der Reiter-Liste (A3-1).
+     Der Wert kommt aus dem Token, nie als Zahl (F9, tap-ziel-token.test.ts).
+     Die STIMME (Schriftgrad, Tintenstufe) bleibt beim Aufrufer — die Klasse
+     macht die Aktion greifbar, nicht laut.
+     Namensteil `lc-btn`: damit die Mini-Aktion vom Druckblock
+     (`[class*='lc-btn']`, s. o.) mit erfasst wird — eine Hover-Aktionszeile
+     hat auf Papier nichts verloren. */
+  .lc-btn-mini {
+    @apply inline-flex shrink-0 items-center justify-center rounded border bg-surface no-underline transition-colors;
+    border-color: var(--line);
+    min-height: var(--tap-ziel); padding: 0 6px;
+  }
+  .lc-btn-mini:hover { border-color: var(--brass-400); background: var(--brass-100); }
 
   .lc-chip {
     @apply inline-flex items-center rounded-sm bg-well text-ink-700; /* Tinte: 4.5:1 auf Well; Akzent traegt der Tick */
