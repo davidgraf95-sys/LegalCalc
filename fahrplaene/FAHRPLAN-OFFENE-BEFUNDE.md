@@ -29,6 +29,15 @@ Wörtlich aus ROADMAP.md (Stand 29.8.2026):
 
 ---
 
+**Nebenfunde Nacht 5.9.2026 (Gegenprüfungen #679/#691/#694/#695):**
+- [ ] **§17 /tmp-HTML-Cache invalidiert nicht bei Re-Pin** — `struktur-run.ts:61` refetcht nur bei Abwesenheit, `normtext-snapshot.ts:387` nur bei <20 KB; Generator stempelt neuen `fassungsToken` auf alten Text (Beleg DBG #695). Wurzel: Cache-Schlüssel um fassungsToken/html-N. Dazu (§6.7): `check-struktur-konsistenz.ts` vergleicht nur Artikel-Keys, nicht `stand`/`fassungsToken`.
+- [ ] **`normtext:struktur` ohne Erlass-Filter** — je Lauf 227 `erzeugt`-Felder (Churn); `--nur=<key>` analog `--nur=bund`.
+- [ ] **Offline-Refresh löscht bei fehlendem Shard stumm** (#691) — `entscheide-schreiben.ts:577` `continue` + `:239` `rmSync`, Guard nur `basis.length>0`; Bestandszahl-Sperre vor `schreibeKorpus`, Mindestzahl in `check:entscheide`. Analog `snapshotDateiPfad()` relativ ⇒ Datei-Sonde fail-open bei falschem cwd (#694).
+- [ ] **GL-Schlüssel auf amtliche `canonical_link`-Form (`III-B.7.1`)** (#694) — 2 Erlasse `%`-Kanonik, 2 Punkt-Form; entscheiden, sonst zweite 301-Kette. Gleiche Dubletten-Klasse: FR-261.16↔FR-8428, JU-…-34172↔…-dl (PDF-Zweitweg).
+- [ ] **Kanton-Fremd-Drift 19 Struktur-Sidecars** (#694) — BS Bürgerrechtsgesetz Stand 1.7.2026, AR/BS-PDF-Versionen; Drift-PR. `confidence.json` seit 23.6. stale (150/1565).
+- [ ] **Fedlex-Trenner `a. ` vs `A: ` mitführen** (#679) — `extrahiere-fedlex.ts` verwirft ihn; ~90 Marken mit Sonderzeichen-Anfang falsch beschriftet. Extraktion + Neuerzeugung, Gegenprüfung.
+- [ ] **`standRechtsprechung` = Erzeugungs- statt Abrufdatum** (#691, latent, nirgends gerendert) — Stand aus max(abgerufen) (§8).
+
 ## §2 — `QS-MONITOR-ROT` · Normen-Monitor seit ≥5 Wochen rot
 
 Wörtlich aus ROADMAP.md (Stand 29.8.2026) — Aktivierungs-Audit 14.8.2026 und die daraus
@@ -78,6 +87,11 @@ Erledigt und hier als Beleg belassen:
   - [x] 1.9.2026 Befund (a): bereits behoben vorgefunden (Projektion ohne Harvest-Kanten löscht nichts).
 
 ---
+
+**Nacht 5.9.2026 (#687/#695, Läufe 33936281247/33937353756):**
+- [ ] **Finding 7 ohne Reparaturweg** — bleibt Fedlex nach Fristablauf bei `laufend`, verlangt das Tor etwas, das der Generator verweigert; abgeleiteter Status `frist-abgelaufen` (amtlicher Status als Feld). `materialien:vernehmlassungen` in `materialien:kaskade` hängen (Zähler/Manifest fielen einzeln rot).
+- [ ] **Register-`sha` rotiert mit `stand`** — `material-manifest.ts:45` hasht `r.stand`; stand-freie `shaVernehmlassung()` nur im Test (§5/§6.7).
+- [ ] **Reparatur-Arm scheitert an wanduhr-abhängigem `check:materialien`** — Tor im Arm entschärfen (Kommentar in `fedlex-frische.yml`); Arm re-pinnte DBG korrekt, kam ohne PR durch (Feed/pdf-quellen-Reihenfolge behoben in #695).
 
 ## §3 — `QS-DATA-INGEST-DRIFT` · Ingest-Strecke 3× langsamer
 
@@ -161,6 +175,10 @@ Die Liste steht wörtlich so, wie sie am 29.8.2026 in ROADMAP.md stand:
   - [ ] **Kantonale Gliederung ZH-211.11 nur «§ 1…§ 23» ohne Überschriften** — **Verdikt (Datenklärung 21.8.2026, lex-recherche): Extraktions-Lücke, keine Quell-Lücke.** `scripts/normtext/struktur-kanton-run.ts` überspringt bewusst Nicht-LexWork-Quellen (PDF/lexfind/zhlex); die Quelle (zhlex GebV OG) HAT eine Buchstaben-Gliederung («A. Allgemein» …). Systematisch: 38 von 1'231 kantonalen Erlassen ohne Struktur-Sidecar (ZH 3/3, JU 7, VD 7, TI 5, GE 4, NE 4, SZ 4, SG 3, AR 1, BS 0). Wurzel-Fix wäre ein PDF-Struktur-Adapter je Quellsystem — Priorisierungsentscheid, kein Quick-Fix. *(Cowork-Befund 42, 18.8.2026, unverifiziert am UI — vor Bau reproduzieren.)*
 
 ---
+
+**Nacht 5.9.2026 (CI #691/#683):**
+- [ ] **OR-Leser-e2e auf 60-s-Budget härten** — `gesetze-ia-v2-walks.e2e.ts:72` 10-s-Timeout auf `#art-336_c` (2-vCPU); #682 härtete nur `norm-sprung`/`leser-suche`; alle `gesetze/bund/OR`-Specs als Infrastruktur.
+- [ ] **`check:e2e-shards` deckelt Laufzeit je Shard** — Balance über mehrere CI-Läufe mitteln (Streuung ≈ verschobener Betrag).
 
 ## §5 — `QS-CODE-PROP` · Eigenschafts-Tests (property-based) für die Rechen-Engines
 

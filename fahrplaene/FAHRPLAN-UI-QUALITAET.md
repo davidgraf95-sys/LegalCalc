@@ -234,3 +234,11 @@ ROADMAP-Bindung mehr. Titel:
 - §6 · Definition of Done je Teil-Schritt
 - §7 · Funktions-Inventar und Bedienungsanleitung (`W2·16-INVENTAR` / `W2·16-ANLEITUNG`)
 - §11 · `QS-UI-WARNLINE` — `--warn-line`-Kontrast robust machen
+
+## §2.5 · Nebenfunde Nacht 5.9.2026 (QS-UI-Folgeschritte)
+
+- [ ] **Baum-Knopfnamen Rest** (#689) — OR 3/ZGB 2 Dopplungs-Gruppen (Eltern-Titel selbst doppelt: Rekursion bis Wurzel); GEBV_HREG Fallback «1./2. Vorkommen» — **David-Entscheid**: Wortlaut oder Modell-Fix in `gliederungsModell.ts`. OR-Übergangsbestimmungen 12× «Art. 1» (11 unsichtbar).
+- [ ] **Konventions-Linter deckt UI-Strings nicht** (B13 #676) — «5%», U+202F blieben jahrelang; Tor-Ausbau auf `src/**`. `MehrKante` unerreichbar (3 Tests, V2-Punkt) — Rückbau-Entscheid.
+- [ ] **Checkbox-Baustein ohne Grössenklasse** (B12 #675) — `vorlagen/ui.tsx` 18×17.6 px Browser-Default; Kontrollkästchen app-weit.
+- [ ] **`/einstellungen` fehlt in `STATISCHE_SEITEN`** (B14 #670) — erbt Titel/Canonical der Startseite; SEO-Entscheid.
+- [ ] **Design-Konsistenz Runde 8** (#692) — Bestätigungslauf (Dry §2); **wartet auf David:** ☰-Anatomie, Hover-Stufe (1.055:1), ⧉-Quittung. Sonde vorher gegenlesen (R6-M-Klasse).
