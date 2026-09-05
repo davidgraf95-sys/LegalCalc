@@ -231,6 +231,15 @@ Folge für den Bau: Halbtransparenz wird wieder über das Suffix ausgedrückt,
 (z. B. `bg-line` statt `bg-line/70` in `GesetzeGliederung.tsx`) sind seither
 freiwillig, nicht erzwungen.
 
+**F7b — Radius aus der Skala, begründete Unter-Token-Ausnahme möglich (C4,
+5.9.2026).** Rundungen kommen aus `--radius-sm…2xl` (kleinster Token 4px);
+kein rohes `rounded-[Npx]` ohne Begründung. Ausnahme dokumentiert: die
+Zeitstrahl-Balken in `BezugZeitWahl.tsx` (`rounded-[1px]`) bleiben unter dem
+Token, weil ihre Mindesthöhe (`MIN_ANTEIL` = 8 % einer ~32px-Spur, ≈ 2–3px)
+kleiner ist als der 4px-Token selbst — eine Rundung aus der Skala würde den
+Balken zum Punkt verformen. Die Legenden-Farbfläche in `SchweizKarte.tsx`
+(12×12px) trägt seither `rounded-sm` (Token), da dort keine solche Enge gilt.
+
 **F8 — Motion zurückhaltend.** Mechanisch-präzise, kein Overshoot (Token-
 Kurven/-Dauern); `prefers-reduced-motion` wird respektiert (Base-Reset).
 
