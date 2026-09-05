@@ -181,6 +181,7 @@ Die Liste steht wörtlich so, wie sie am 29.8.2026 in ROADMAP.md stand:
 ---
 
 **Nacht 5.9.2026 (CI #691/#683):**
+- [ ] **Kontention (5.9.2026, Nachmittag):** bei ≥ 4 parallelen Bau-Agenten + Stop-Hook-Gate auf einer Maschine reissen `scripts/datenhaltung/suche.test.ts`/`suche-rang.test.ts` ihr 95-s-Setup-Limit (Vollsuite 224 s statt 40 s) und E2E-Latten (`international-kanonik-ia6` toBeInViewport, `leser-kopf-cls-s3` CLS, `a11y` dunkel BS-640.100) — isoliert stets grün (belegt 4×). Kein Code-Fix; Regel: Tore seriell fahren, wenn Bauer laufen; Stop-Hook-Gate unter Last als Hinweis lesen, nicht als Rot.
 - [ ] **Flake-Sammlung 5.9.2026 (je 1 failed, Retry grün):** `gesetze-ia-v2-walks:65` (#691/#711), `split-erwaegungssprung.e2e.ts:47` ⧉-Pane auf Erwägung, `tastatur.e2e.ts:81` Skip-Link (#715), `leser-v3-blatt:105` ⌘K-Split — alle Hydration-/Timing-Klasse; nach der 60-s-Härtung Rate neu messen (`zaehleFlakySpecs` in der Selbstopt-Zeitreihe).
 - [ ] **OR-Leser-e2e auf 60-s-Budget härten** — `gesetze-ia-v2-walks.e2e.ts:72` 10-s-Timeout auf `#art-336_c` (2-vCPU); #682 härtete nur `norm-sprung`/`leser-suche`; alle `gesetze/bund/OR`-Specs als Infrastruktur.
 - [ ] **⌘K-Vorlauf im Split** (CI #711, `leser-v3-blatt.e2e.ts:105` flaky) — Verdacht Nebenwirkung von #682 (vor Hydration löst der Vorlauf in der Kopf-Suche aus, nicht im fokussierten Pane); bei Wiederholung `fruehesSuchKuerzel.ts`: Vorlauf nur einlösen, wenn kein Pane-Fokus.
