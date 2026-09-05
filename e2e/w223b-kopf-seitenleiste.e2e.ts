@@ -50,6 +50,21 @@ test.describe('§6.1 · Der Streifen trägt auf «/» keine zweite Suche', () =>
     await expect(feld).toBeFocused()
   })
 
+  // Der Alltagsweg ist der SPA-Wechsel (Klick auf «Start»), nicht das Neuladen:
+  // dabei meldet sich die HeaderSuche als Kürzel-Empfänger AB und die Umleitung
+  // AN. Die Reihenfolge steht nirgends geschrieben — darum wird sie gemessen.
+  // ROT ZU BEKOMMEN: in `Topbar.tsx` den Aufruf `useSuchKuerzelUmleitung(...)`
+  // entfernen ⇒ «/» drückt nach dem Wechsel ins Leere.
+  test('Auch nach dem SPA-Wechsel auf «/» greift die Umleitung', async ({ page }) => {
+    await page.goto('/gesetze')
+    await expect(kopfFeld(page)).toHaveCount(1)
+    await page.locator('aside[data-app-seitenleiste]').getByRole('link', { name: 'Start', exact: true }).click()
+    await expect(page).toHaveURL(/\/$/)
+    await expect(kopfFeld(page)).toHaveCount(0)
+    await page.keyboard.press('/')
+    await expect(seitenFeld(page)).toBeFocused()
+  })
+
   // §6.1 «Layout darf nicht springen»: die Hülle des Feldes bleibt als
   // flex-1-Dehnungsraum stehen, also endet die Werkzeug-Gruppe rechts auf «/»
   // an derselben Kante wie auf /gesetze.
