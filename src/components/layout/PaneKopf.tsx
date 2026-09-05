@@ -60,6 +60,14 @@ export interface PaneKopfProps {
   onHauptfenster?: () => void;
   /** Sekundär: Layout-Link kopieren. */
   onTeilen?: () => void;
+  /** Quittungs-Muster von `KopierButton`/`useKopieren` übernommen (W2·19-
+   *  DESIGN-KONSISTENZ Runde 8, #692-Nachzug): `onTeilen` kopierte bis hierher
+   *  ohne jede Rückmeldung — der Klick war ununterscheidbar von einem, der
+   *  nichts tat. Der Aufrufer hält den `kopiert`-Zustand (derselbe geteilte
+   *  Hook wie überall sonst) und reicht ihn hier durch; icon-only Slot, darum
+   *  swap statt Text («⧉» → «✓», wie `KopierButton` «… kopieren» → «Kopiert ✓»
+   *  tauscht). */
+  teilenKopiert?: boolean;
   /** Umsortieren (Tastatur/Touch). disabled an den Enden. */
   onLinks?: () => void;
   onRechts?: () => void;
@@ -104,7 +112,7 @@ const GRIFF_BOX = 'inline-flex h-7 w-7 items-center justify-center rounded-md tr
 const GRIFF_FLAECHE = 'hover:bg-brass-100/40';
 const knopf = `${GRIFF_BOX} ${GRIFF_FLAECHE} text-ink-500 hover:text-brass-700 disabled:opacity-30 disabled:hover:bg-transparent disabled:hover:text-ink-500`;
 
-export function PaneKopf({ icon, label, stand, breadcrumb, onBreadcrumb, artikel, rolle, onSchliessen, onHauptfenster, onTeilen, onLinks, onRechts, kannLinks, kannRechts, nurSteuerung, ziehbar, onDragStart, onDragEnd }: PaneKopfProps) {
+export function PaneKopf({ icon, label, stand, breadcrumb, onBreadcrumb, artikel, rolle, onSchliessen, onHauptfenster, onTeilen, teilenKopiert, onLinks, onRechts, kannLinks, kannRechts, nurSteuerung, ziehbar, onDragStart, onDragEnd }: PaneKopfProps) {
   // A-2: eine Zeile, ein Zuständiger. Trägt die Seite ihre Kopfzeile selbst,
   // zeigt diese Leiste NICHTS von der Identität — sonst stünde derselbe Ort
   // zweimal in zwei Zentimetern (§5, Ä45 «Doppelkrume»).
@@ -174,8 +182,10 @@ export function PaneKopf({ icon, label, stand, breadcrumb, onBreadcrumb, artikel
           </button>
         )}
         {onTeilen && (
-          <button type="button" className={knopf} onClick={onTeilen} aria-label="Layout-Link kopieren" title="Layout-Link kopieren">
-            <span aria-hidden className="lc-griff-glyph">⧉</span>
+          <button type="button" className={knopf} onClick={onTeilen}
+            aria-label={teilenKopiert ? 'Layout-Link kopiert' : 'Layout-Link kopieren'}
+            title={teilenKopiert ? 'Layout-Link kopiert' : 'Layout-Link kopieren'}>
+            <span aria-hidden className="lc-griff-glyph">{teilenKopiert ? '✓' : '⧉'}</span>
           </button>
         )}
         {/* A3-1/R4-A: die achte ✕-Form ist eingesammelt. Der Klick wirft ein

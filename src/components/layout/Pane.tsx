@@ -37,6 +37,8 @@ export interface SekundaerPaneProps {
   onSchliessen: () => void;
   onHauptfenster: () => void;
   onTeilen?: () => void;
+  /** Quittungs-Zustand von `onTeilen`, durchgereicht an `PaneKopf` (Runde 8, #692-Nachzug). */
+  teilenKopiert?: boolean;
   onLinks?: () => void;
   onRechts?: () => void;
   kannLinks?: boolean;
@@ -57,7 +59,7 @@ export interface SekundaerPaneProps {
 }
 
 export function SekundaerPane(props: SekundaerPaneProps) {
-  const { pfad, label, stand, onSchliessen, onHauptfenster, onTeilen, onLinks, onRechts,
+  const { pfad, label, stand, onSchliessen, onHauptfenster, onTeilen, teilenKopiert, onLinks, onRechts,
     kannLinks, kannRechts, ziehbar, style, onNavigiert, onDragStart, onDragEnd, onDragOver, onDrop, ueber } = props;
   const wurzel = useRef<HTMLElement>(null);
   const overlayWurzel = useRef<HTMLDivElement>(null);
@@ -110,7 +112,7 @@ export function SekundaerPane(props: SekundaerPaneProps) {
           // A-2: trägt der Pane-Inhalt seine Kopfzeile selbst, bleibt hier die
           // reine Fenster-Steuerung (Vertrag `KopfDaten.kopfzeileSelbst`).
           nurSteuerung={kopf?.kopfzeileSelbst}
-          onSchliessen={onSchliessen} onHauptfenster={onHauptfenster} onTeilen={onTeilen}
+          onSchliessen={onSchliessen} onHauptfenster={onHauptfenster} onTeilen={onTeilen} teilenKopiert={teilenKopiert}
           onLinks={onLinks} onRechts={onRechts} kannLinks={kannLinks} kannRechts={kannRechts}
           ziehbar={ziehbar} onDragStart={onDragStart} onDragEnd={onDragEnd}
         />

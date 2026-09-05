@@ -384,6 +384,18 @@ Hier gilt §2 — die Abweichung ist offengelegt, nicht still korrigiert, §7.)
 · ERLEDIGT und nicht mehr offen: der R4-C-Streich-Entscheid (oben gefällt,
   BEHALTEN mit Mutations-Beweis).
 
+**Runde 8 — Entscheide gefällt (David, 5.9.2026), zwei der drei Punkte gebaut.**
+
+| Nr | Punkt | Ergebnis | Beleg |
+|---|---|---|---|
+| a | Hover-Stufe Leser-Zeilen (SektionBaumTOC-Titelknopf) | **GEBAUT**: `.lc-hover-flaeche` (`--well`) → `hover:bg-brass-100/40`, derselbe Wert wie die Trefferzeilen (`components/suche/SuchResultate.tsx`). Kein neuer Farbwert | Computed-Style-Messung (Playwright, isolierter Vite-Dev-Server, `/gesetze/bund/OR`, Hover-Hintergrund über `--paper` komponiert): **vorher 1.055:1 (`rgb(246,244,238)`) → nachher 1.063:1 (`rgb(247,243,233)`)**. Die WCAG-Luminanz-Ratio bewegt sich kaum — der sichtbare Gewinn ist CHROMATISCH (warmer Brass-Ton gegen neutrales Well-Grau), nicht Luminanz; ehrlich offengelegt statt die Zahl zu überhöhen (§7/§8). `design-r5-konsistenz.test.ts` (R5-D) bleibt grün, weil sein Ausdruck nur `hover:bg-(paper-sunken\|paper-raised\|paper\|well\|surface)` bewacht, nicht `brass-100` |
+| b | Quittung am ⧉-Griff (`PaneKopf.tsx` «Layout-Link kopieren») | **GEBAUT**: neue Prop `teilenKopiert` (Muster von `KopierButton`/`useKopieren` übernommen, Glyphen-Swap `⧉`→`✓` statt Text — die 28-px-Zeile hat keinen Platz für Text). `Shell.tsx` liest jetzt `kopiert` aus dem ohnehin vorhandenen `useKopieren()`-Aufruf (vorher bewusst verworfen) und reicht ihn über `Pane.tsx` (`SekundaerPaneProps.teilenKopiert`) durch | Vorher: Klick kopierte den Link, aber KEIN sichtbares Zeichen unterschied ihn von einem Klick ohne Wirkung (Code-Beleg: `const { kopieren: kopiereLayoutLink } = useKopieren()` — `kopiert` stand unbenutzt da). Nachher: Glyph wechselt für die Dauer der Quittung auf `✓`, `aria-label`/`title` auf «Layout-Link kopiert». `kopfzeile-selbst.test.tsx` (Default-Zustand «Layout-Link kopieren») bleibt grün |
+| c | `☰`-Anatomie | **UNVERÄNDERT gelassen** (David-Entscheid) | kein Code berührt — bleibt benannte Ausnahme `ENTSCHEID DAVIDS` im R7-A-Wächter |
+
+Tore (dieser Strang, isoliert): `npx tsc -b` grün · `npm run lint` 0 Fehler ·
+`design-r5-konsistenz.test.ts`/`design-r3b-chrome.test.ts`/`kopfzeile-selbst.test.tsx`
+44/44 grün · `golden:vergleich` 256 Fälle byte-gleich.
+
 **Verworfen/kein Befund:** Leerzustand-Wortlaut «gefunden» vs «erfasst» (bedeutungstragend) ·
 H1-Schriftstimmen (Zwei-Stimmen-Regel) · `rounded`=`rounded-sm` (latent, via tailwind-Default
 mitgefixt) · SachgebietKacheln lg: (ohne Sichtschaden, Runde 2 prüfen).

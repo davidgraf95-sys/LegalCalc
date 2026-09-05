@@ -83,12 +83,13 @@ export function Shell({ children }: { children: ReactNode }) {
   const navigate = useNavigate();
   // R4-D (5.9.2026): der ⧉-Griff der Pane-Titelleiste schrieb den Layout-Link
   // mit eigener `writeText`-Zeile in die Zwischenablage — dieselbe Handlung wie
-  // «Link teilen» (`LinkTeilenButton`), nur mit eigener Mechanik. Der Griff
-  // zeigt bewusst KEINE sichtbare Quittung (die 28-px-Zeile hat keinen Platz
-  // dafür, und eine dazuzuerfinden wäre eine neue Design-Entscheidung, kein
-  // Konsistenz-Fix); `kopiert` bleibt darum ungelesen. Vereinheitlicht wird die
-  // MECHANIK, nicht die Rückmeldung (§5/§10).
-  const { kopieren: kopiereLayoutLink } = useKopieren();
+  // «Link teilen» (`LinkTeilenButton`), nur mit eigener Mechanik.
+  // David-Entscheid 5.9.2026 (W2·19-DESIGN-KONSISTENZ Runde 8, #692-Nachzug):
+  // die frühere Begründung («keine Quittung, das wäre ein neuer Entscheid»)
+  // ist überholt — jetzt Quittung, per `PaneKopfProps.teilenKopiert`, Muster
+  // wie `KopierButton` (Glyphen-Swap statt Text, die Zeile hat keinen Platz für
+  // Text). `kopiert` wird darum jetzt gelesen und durchgereicht.
+  const { kopiert: layoutLinkKopiert, kopieren: kopiereLayoutLink } = useKopieren();
   const [schubladeOffen, setSchubladeOffen] = useState(false);
   const schubladeRef = useRef<HTMLDivElement>(null);
   const primaerWurzel = useRef<HTMLElement>(null); // Scroll-/Query-Wurzel des primären Panes (B-2.5)
@@ -503,7 +504,7 @@ export function Shell({ children }: { children: ReactNode }) {
                     onNavigiert={meldeLive}
                     onSchliessen={() => schliesseUndFokus(i)}
                     onHauptfenster={() => zumHauptfenster(i)}
-                    onTeilen={() => kopiereLayoutLink(layoutPermalink(liveSek))}
+                    onTeilen={() => kopiereLayoutLink(layoutPermalink(liveSek))} teilenKopiert={layoutLinkKopiert}
                     onLinks={() => verschiebePane(i + 1, i)} onRechts={() => verschiebePane(i + 1, i + 2)}
                     kannLinks kannRechts={i < pane.sekundaer.length - 1}
                     ziehbar={multipane} {...dnd.griff(i + 1)} {...dnd.spalte(i + 1)} />
