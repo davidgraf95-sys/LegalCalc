@@ -402,6 +402,7 @@ describe('Formulierungskonvention – Linter über die echte Textausgabe', () =>
   describe('UI-Strings (Darstellungsschicht) tragen keine «5%»-Schreibweise', () => {
     const prozentRegel = REGELN.find((r) => r.regel.startsWith('Prozent'));
     if (!prozentRegel) throw new Error('Prozent-Regel fehlt in REGELN — SSoT verschoben?');
+    const prozentMuster = prozentRegel.muster;
     const CSS_HINWEIS = /style\s*=|className\s*=|width\s*:|Width\s*:|height\s*:|Height\s*:|top\s*:|bottom\s*:|left\s*:|right\s*:|transform\s*:|translateX|translateY|scale\(|calc\(|minmax\(|grid-template|rootMargin|opacity\s*:/;
 
     function dateienUnter(dir: string): string[] {
@@ -421,7 +422,7 @@ describe('Formulierungskonvention – Linter über die echte Textausgabe', () =>
         const t = zeile.trim();
         if (t.startsWith('//') || t.startsWith('*')) return;
         if (CSS_HINWEIS.test(zeile)) return;
-        if (prozentRegel.muster.test(zeile)) treffer.push(`${pfad}:${i + 1}: «${t.slice(0, 100)}»`);
+        if (prozentMuster.test(zeile)) treffer.push(`${pfad}:${i + 1}: «${t.slice(0, 100)}»`);
       });
       return treffer;
     }
