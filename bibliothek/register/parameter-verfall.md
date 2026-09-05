@@ -58,7 +58,7 @@ Laufdatum) je Bund-Volltext-Erlass geerntet — Fedlex führt künftige Fassunge
 bereits im Triplestore. Jede Zeile ist eine angekündigte künftige Fassung; am
 genannten Tag `scripts/fedlex-cache.sh` neu pinnen + §7-Verifikation. Massgeblich
 bleibt stets die amtliche Quelle. NICHT von Hand editieren — Block wird von
-`npm run gen:fedlex-wiedervorlage` regeneriert. Stand des Laufs: 2026-08-29.
+`npm run gen:fedlex-wiedervorlage` regeneriert. Stand des Laufs: 2026-09-05.
 
 | Erlass (künftige Fassung) | Fundstelle | Aktuell gepinnt | Rhythmus | Nächste Prüfung |
 |---|---|---|---|---|
@@ -90,7 +90,7 @@ bleibt stets die amtliche Quelle. NICHT von Hand editieren — Block wird von
 | Künftige Fassung PatG (SR 232.14) | `scripts/fedlex-cache.sh` (PATG) | gepinnt 1.7.2025 | einmalig — Fedlex-Konsolidierung, dann re-pinnen (§7) | 1.1.2027 |
 | Künftige Fassung MWSTV (SR 641.201) | `scripts/fedlex-cache.sh` (MWSTV) | gepinnt 1.1.2025 | einmalig — Fedlex-Konsolidierung, dann re-pinnen (§7) | 1.1.2027 |
 | Künftige Fassung CO2-Gesetz (SR 641.71) | `scripts/fedlex-cache.sh` (CO2_GESETZ) | gepinnt 1.1.2025 | einmalig — Fedlex-Konsolidierung, dann re-pinnen (§7) | 1.1.2027 |
-| Künftige Fassung DBG (SR 642.11) | `scripts/fedlex-cache.sh` (DBG) | gepinnt 1.1.2026 | einmalig — Fedlex-Konsolidierung, dann re-pinnen (§7) | 1.1.2027 |
+| Künftige Fassung DBG (SR 642.11) | `scripts/fedlex-cache.sh` (DBG) | gepinnt 2.9.2026 | einmalig — Fedlex-Konsolidierung, dann re-pinnen (§7) | 1.1.2027 |
 | Künftige Fassung EnG (SR 730.0) | `scripts/fedlex-cache.sh` (ENG) | gepinnt 1.4.2026 | einmalig — Fedlex-Konsolidierung, dann re-pinnen (§7) | 1.1.2027 |
 | Künftige Fassung VZV (SR 741.51) | `scripts/fedlex-cache.sh` (VZV) | gepinnt 1.1.2026 | einmalig — Fedlex-Konsolidierung, dann re-pinnen (§7) | 1.1.2027 |
 | Künftige Fassung EBG (SR 742.101) | `scripts/fedlex-cache.sh` (EBG) | gepinnt 1.1.2026 | einmalig — Fedlex-Konsolidierung, dann re-pinnen (§7) | 1.1.2027 |

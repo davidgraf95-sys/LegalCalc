@@ -301,7 +301,7 @@ export const VERFALL_TERMINE: VerfallTermin[] = [
     "datum": "2027-01-01",
     "quelle": "Tabelle",
     "fundstelle": "`scripts/fedlex-cache.sh` (DBG)",
-    "wert": "gepinnt 1.1.2026",
+    "wert": "gepinnt 2.9.2026",
     "rhythmus": "einmalig — Fedlex-Konsolidierung, dann re-pinnen (§7)"
   },
   {

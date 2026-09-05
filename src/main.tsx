@@ -15,6 +15,7 @@ import { effektivesThema, wendeThemaAn } from './components/thema'
 import { wendeSchriftskalaAn } from './components/layout/useSchriftskala'
 import { wendeLeserOptionenAn } from './pages/gesetz-leser/leserOptionen'
 import { meldeFehler } from './components/fehlermeldung'
+import { fruehesSuchKuerzelStarten } from './components/suche/fruehesSuchKuerzel'
 
 // Thema so früh wie möglich anwenden (vor dem ersten App-Render) — ohne
 // CSP-verbotenes Inline-Script bleibt für Dunkel-Nutzer ein kurzes Aufblitzen
@@ -28,6 +29,16 @@ wendeSchriftskalaAn()
 // als data-*-Attribute ans <html> — CSP-konform ohne Inline-Script, analog
 // Thema/Schriftskala. Default 'an' ⇒ CSS-No-op ⇒ heutige Darstellung byte-gleich.
 wendeLeserOptionenAn()
+// ⌘K/«/» AB DEM ERSTEN PAINT (§17-Wurzel-Fix 4.9.2026, CI-Shard 3/8): die
+// Kürzel-Bindung von `HeaderSuche` hängt an einem React-Effekt und existiert
+// erst nach dem ersten Commit — bis dahin ging der Tastendruck verloren
+// (gemessen am origin/main-Stand: 0/20 unmittelbar nach `domcontentloaded`).
+// Dieser Aufruf registriert einen Vorlauf, der ihn auffängt und merkt; das
+// Suchfeld löst ihn beim Mount ein. Hier auf Modul-Ebene, weil ein
+// `type="module"`-Script implizit `defer` ist und damit VOR `DOMContentLoaded`
+// läuft — die früheste Stelle, die die CSP (`script-src 'self'`, kein
+// Inline-Script) überhaupt zulässt.
+fruehesSuchKuerzelStarten()
 
 // Veralteter Chunk nach einem Deploy: Vite feuert 'vite:preloadError', wenn ein
 // vorab geladener Modul-Chunk fehlt (offener Tab zeigt auf alte Hashes). Einmal
