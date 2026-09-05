@@ -55,8 +55,8 @@ for (const [fam, val] of Object.entries(farben)) {
   }
 }
 const FAMILIEN = Object.keys(farben).join('|');
-// Utility-Präfixe, die eine Farbe tragen:
-const PRAEFIX = 'bg|text|border|ring|from|via|to|divide|outline|fill|stroke|decoration|placeholder|caret|accent|ring-offset';
+// Utility-Präfixe, die eine Farbe tragen (shadow → --tw-shadow-color, D0):
+const PRAEFIX = 'bg|text|border|ring|from|via|to|divide|outline|fill|stroke|decoration|placeholder|caret|accent|ring-offset|shadow';
 // Fängt <praefix>-<familie>[-<stufe>] (Stufe optional = DEFAULT); /<alpha> wird ignoriert.
 const FARB_RE = new RegExp(`\\b(?:${PRAEFIX})-(${FAMILIEN})(?:-([a-z0-9.]+))?(?:/[0-9.]+)?\\b`, 'g');
 
@@ -140,7 +140,12 @@ const KOMMENTAR_ZEILE_RE = /^\s*(?:\/\/|\*|\/\*|\{\/\*)/;
 // ── Deckkraft-Suffix (Prüfung 3, D0): <praefix>-<farbe>/<alpha>. Bewusst OHNE
 // Familien-Filter — auch die Tailwind-Keyword-Farben (bg-black/50) laufen mit,
 // die Kompilation entscheidet. Nur Farb-Präfixe, damit w-1/2 & Co. nicht greifen.
-const ALPHA_UTIL_RE = new RegExp(`\\b(?:${PRAEFIX})-[a-z]+(?:-[a-z0-9]+)*\\/[0-9.]+\\b`, 'g');
+//
+// Klammer-Formen laufen mit (D0 5.9.2026, Messreihe + Rot-Beweis im Commit):
+// `…-[var(--x)]/60` ist als Token-Escape erlaubt, erzeugt aber KEINE Regel und
+// lief grün durch; `/[0.6]` wirksam, doch unbewacht. Trailing `\b` greift hinter `]` nicht.
+const ALPHA_UTIL_RE = new RegExp(
+  `\\b(?:${PRAEFIX})-(?:[a-z]+(?:-[a-z0-9]+)*|\\[[^\\]\\s]+\\])\\/(?:[0-9]+(?:\\.[0-9]+)?|\\[[^\\]\\s]+\\])`, 'g');
 
 function dateien(dir: string): string[] {
   const out: string[] = [];
