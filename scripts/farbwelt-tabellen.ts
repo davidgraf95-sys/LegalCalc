@@ -151,6 +151,23 @@ export const PFLICHT: Paar[] = [
   NICHT('sage-line', 'surface', 'D-1.3 border-sage-line (Patientenverfügung u. a.)'),
   NICHT('slate-line', 'surface', 'D-1.3 --slate-line-Alias'),
   NICHT('danger-line', 'paper', 'D-1.3 border-t-danger-line/SperrtageZaehler-Balken'),
+  // ── W2·24 · L5 (6.9.2026) · DIE BADGE-UMRISSE SIND NEUE NICHT-TEXT-KANTEN ─
+  // `.lc-badge` traegt seit L5 statt einer Fuellung eine 1-px-Kante in der
+  // Farbe seiner Rolle (`--badge-linie`). Badges stehen im Katalog auf dem
+  // PAPIER, in Karten auf `--surface`, auf der schwebenden Ebene und in
+  // Chip-Zeilen ueber `--well` — vier Gruende, alle vier Flaechen zu binden.
+  // Bis hier war je Ton NUR das Paar gegen `--surface` gefuehrt; eine Kante,
+  // die neu auf drei weiteren Flaechen steht, waere sonst ungemessen (§6.7).
+  NICHT('sage-line', 'paper', 'L5 lc-badge-ok Umriss auf Papier (Katalog)'),
+  NICHT('sage-line', 'well', 'L5 lc-badge-ok Umriss in der Chip-/Feldzeile'),
+  NICHT('sage-line', 'paper-raised', 'L5 lc-badge-ok Umriss auf schwebender Ebene'),
+  NICHT('slate-line', 'paper', 'L5 lc-badge-geplant/-soft Umriss auf Papier'),
+  NICHT('slate-line', 'well', 'L5 lc-badge-geplant/-soft Umriss in der Chip-/Feldzeile'),
+  NICHT('slate-line', 'paper-raised', 'L5 lc-badge-geplant/-soft auf schwebender Ebene'),
+  NICHT('warn-line', 'paper', 'L5 lc-badge-entwurf Umriss auf Papier (Katalog)'),
+  NICHT('warn-line', 'paper-raised', 'L5 lc-badge-entwurf auf schwebender Ebene'),
+  NICHT('brass-line', 'paper', 'L5 lc-badge-massgeblich Umriss auf Papier'),
+  NICHT('brass-line', 'paper-raised', 'L5 lc-badge-massgeblich auf schwebender Ebene'),
   // ── W2·24-DESIGN-IDENTITAET R1 (6.9.2026) · DIE VIER REGISTERFARBEN ────────
   // Sie sind ab jetzt die EINZIGE Farbe im Bild (Fahrplan §5) und tragen
   // Register-Zugehörigkeit als Strich, Reiter-Unterkante, Randmarke und — ab
