@@ -198,15 +198,27 @@ tracking-wide text-ink-500`, dazwischen `text-ink-600`; mehrzeilige Randtitel mi
 **Hänge-Einzug-Schutz** (`text-indent:-1em` + `pl-[1em]`) gegen den Fedlex-AVOID
 «1. Im / Allgemeinen».
 
-**Satzspiegel des Lesers (W2·24-R4, 6.9.2026).** Der Gesetzesleser setzt den
-Normtext in einen dreispaltigen Satzspiegel, sobald die LESE-ZELLE ihn trägt:
-Marginalie 150 px · Rinne 36 px · Normtext · Rinne 36 px · Randnotizen 210 px.
-Drei Ausbaustufen, gerechnet in `pages/gesetz-leser/v3/satzspiegel.ts` und am
-DOM als `data-lr-spiegel` ablesbar: `zeile` (Ist-Form — Pane, schmale Fenster,
-V1, Trefferliste, Druck), `marg` ab 45.625 rem Zelle, `voll` ab 61 rem.
-Die Marginalie trägt Registerfarben-Strich (`--reg-g`, nur wenn sie Inhalt hat),
-Randtitel und Fassungs-Zeile; die Randnotizen zeigen dieselben Bezüge, die sonst
-am Artikelfuss stehen — nie beide zugleich (§5).
+**Artikelform im Leser (W2·24-R6b, 6.9.2026 — löst den dreispaltigen Satzspiegel
+aus R4/R6 ab).** Auftrag David, wörtlich: «der platz rechts und links neben dem
+gesetz für bspw. rechner oder fassung nimmt viel platz vom gesetzestext weg.»
+Die beiden Randspuren (Marginalie 150 px links, Randnotizen 210 px rechts, dazu
+zwei Rinnen à 36 px = **432 px**) sind **ersatzlos gefallen**. Es bleiben ZWEI
+Formen, gerechnet in `pages/gesetz-leser/v3/satzspiegel.ts` und am DOM als
+`data-lr-spiegel` ablesbar:
+
+* `zeile` — Ist-Form: Randtitel als Zeile über der Artikelnummer, Beiwerk unter
+  dem Wortlaut. Gilt im Pane (beide Hälften des Split-Views tragen dieselbe
+  Form), auf schmalen Flächen, in der Trefferliste und ohne Rahmen-Provider.
+* `breit` — ab **28 rem** Lese-Zelle in Spalten-Lage: der Randtitel steht als
+  kursive Literata-Zeile IM ARTIKELKOPF über der Artikelnummer, das Fassungs-
+  datum klein daneben (`.lr7-kopf`); die Bezüge stehen als EINE aufklappbare
+  Zeile darunter (`.lr7-bez`, `<details>` mit Registerfarben-Marken, Zustand in
+  `localStorage` gemerkt). Aufgeklappt erscheinen dieselben Blöcke, die sonst am
+  Artikelfuss stehen — nie beide zugleich (§5).
+
+Das Gewicht des Randtitel-Blatts bleibt die Ä7-Stufe (13 px semibold ink-800);
+kursiv und Serife kommen aus der Form, das Gewicht aus dem Entscheid. Im DRUCK
+trägt der Kopf den Randtitel, die Bezüge-Zeile ist ausgeblendet (`print:hidden`).
 
 **Zeilenhöhe des Fliesstexts: 1.62** (`leser-text` in `tailwind.config.js`, seit
 6.9.2026; davor 1.55). Massgeblich ist das freigegebene Referenzbild

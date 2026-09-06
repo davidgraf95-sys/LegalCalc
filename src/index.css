@@ -2945,7 +2945,11 @@ html[data-lr6-anker-warten] footer { visibility: hidden; }
 .lr7-kopf-titel .lr-blatt {
   font-family: var(--font-serif), Georgia, serif;
   font-style: italic;
-  font-weight: 500;
+  /* KEIN eigenes `font-weight`. Das Referenzbild setzt die 150-px-Marginalie auf
+     500; im Artikelkopf steht dieselbe Sachüberschrift aber auf voller Breite und
+     unter der Ä7-Stufe (13 px semibold ink-800, `e2e/gesetze-marginalie`). Zwei
+     Gewichte für EINE Rolle wären eine zweite Wahrheit (§5) — Familie und Schnitt
+     kommen von hier, das Gewicht bleibt, wo es abgenommen ist. */
 }
 /* Das Fassungsdatum: klein, leise, rechts an der Textkante — «Archivo 12,
    ink-500» (Auftrag (a)). Der Slot behält seine 24-px-Reserve (`min-h-beiwerk`);
