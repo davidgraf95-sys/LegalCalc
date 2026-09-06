@@ -352,8 +352,28 @@ export function Rechtsprechung() {
         </div>
       )}
 
+      {/* ── D21-NEBENFUND (David 6.9.2026): «Fusszeile flackert beim Routenwechsel» ──
+          GEMESSEN 6.9.2026 @1440, gebautes dist/, Chromium mit 400 kbit/s + 150 ms
+          Latenz (Nullprobe 3×, Weg /gesetze → /rechtsprechung per Sidebar-Klick):
+            t≈2.8 s  Suspense-Fallback  → Dokumenthöhe 1524, Fuss bei y=1189 (unter der Falz)
+            t≈3.2 s  DIESER Ladezustand → Dokumenthöhe  900, Fuss bei y= 564 (IM Bild)
+            t≈5.4 s  Daten da           → Dokumenthöhe 27208
+          Der einzige gezählte Layout-Shift war `<footer>` von y=564 nach unten,
+          CLS 0.307. Über eine schnelle Leitung ist dasselbe Fenster ~100 ms lang —
+          genau das «Flackern», das David gesehen hat. Auf «/» → /rechner trat es
+          nicht auf: dort lädt die Seite keine zweite Datei nach.
+          URSACHE: `RouteHuelle` reserviert die Routenhöhe NUR bis zum Auflösen des
+          lazy-Chunks. Danach hängt die Seite an ihrem eigenen `register.json`
+          (Fetch in der useEffect oben) und rendert bis dahin diesen ~200 px hohen
+          Block — die Inhaltsspalte fällt unter die Fensterhöhe, der Fuss rutscht
+          ins Bild und beim Eintreffen der Daten wieder hinaus.
+          FIX: der Ladezustand reserviert dieselbe Höhe wie der Fallback der
+          Routen-Hülle (`components/layout/RouteHuelle.tsx`, dort die Herleitung,
+          warum es im Pane ein fester Block statt 100 vh ist). Nichts wird
+          verzögert oder versteckt: es steht dieselbe Anzeige, nur ohne dass der
+          Seitenfuss dafür nach oben rückt. */}
       {!alle && !fehler && (
-        <div className="space-y-3 py-12 text-center">
+        <div className={`${pk('min-h-screen', 'min-h-[24rem]')} space-y-3 py-12 text-center`}>
           <div className="scale-rule mx-auto max-w-[200px]" aria-hidden />
           <p className="text-body-s text-ink-500">Die Sammlung wird abgerufen …</p>
         </div>

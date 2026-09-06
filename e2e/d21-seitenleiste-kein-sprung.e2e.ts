@@ -106,6 +106,64 @@ test.describe('D21 · Kein Layoutsprung beim Routenwechsel', () => {
     expect(fehler, fehler.join('\n')).toEqual([])
   })
 
+  // ── D21-NEBENFUND · «Fusszeile flackert beim Routenwechsel» ────────────────
+  //
+  // David 6.9.2026. Der Fuss folgt der Inhaltsspalte im Fluss; solange eine Route
+  // ihre eigenen Daten nachlädt und dabei nur einen kurzen Ladeblock rendert,
+  // rutscht er ins Bild und beim Eintreffen der Daten wieder hinaus. Über eine
+  // schnelle Leitung dauert das ~100 ms — sichtbar, aber zu kurz, um es ohne
+  // Drosselung messen zu können. Darum wird hier GEDROSSELT gemessen (400 kbit/s,
+  // 150 ms): dieselbe Mechanik, nur langsam genug für eine belastbare Zahl.
+  //
+  // ROT ZU BEKOMMEN (§6.7 — einmal gezeigt, 6.9.2026): in
+  // `src/pages/Rechtsprechung.tsx` die Höhenreservierung des Ladezustands
+  // (`pk('min-h-screen', 'min-h-[24rem]')`) wieder entfernen. GEMESSEN mit genau
+  // diesem Rückbau: CLS 0.3070 / 0.3070 / 0.3070 (3 Läufe), einziger Shift die
+  // Quelle FOOTER von y=564 nach unten. Mit Reservierung: 0.0000 in 3 Läufen.
+  test('D21-Nebenfund · der Seitenfuss flackert beim Routenwechsel nicht', async ({ page }) => {
+    test.slow()
+    await page.setViewportSize({ width: 1440, height: 900 })
+    const cdp = await page.context().newCDPSession(page)
+    await cdp.send('Network.enable')
+    await cdp.send('Network.emulateNetworkConditions', {
+      offline: false, latency: 150, downloadThroughput: 400 * 1024, uploadThroughput: 400 * 1024,
+    })
+    await page.goto('/gesetze')
+    await seitenleisteOeffnen(page)
+    // Messfenster erst JETZT öffnen: der Aufbau von /gesetze ist nicht das
+    // Prüfobjekt, der Wechsel ist es.
+    await page.evaluate(() => {
+      const w = window as unknown as { __cls: number; __quellen: string[] }
+      w.__cls = 0
+      w.__quellen = []
+      new PerformanceObserver((l) => {
+        for (const e of l.getEntries() as unknown as {
+          value: number; hadRecentInput: boolean; startTime: number
+          sources?: { node?: { tagName?: string } | null }[]
+        }[]) {
+          if (e.hadRecentInput) continue
+          w.__cls += e.value
+          w.__quellen.push(`${e.value.toFixed(4)}@${Math.round(e.startTime)}ms ${(e.sources ?? []).map((s) => s.node?.tagName ?? '?').join(',')}`)
+        }
+      }).observe({ type: 'layout-shift', buffered: false })
+    })
+    await page.locator('a[href="/rechtsprechung"]').first().click()
+    await expect(page).toHaveURL(/\/rechtsprechung$/)
+    // Warten, bis die Sammlung wirklich da ist — sonst misst der Fall den
+    // Ladezustand statt den Übergang.
+    await expect(page.locator('[data-erw-rail], main a[href^="/rechtsprechung/"]').first())
+      .toBeVisible({ timeout: 30_000 })
+    await page.waitForTimeout(1500)
+    const { cls, quellen } = await page.evaluate(() => {
+      const w = window as unknown as { __cls: number; __quellen: string[] }
+      return { cls: w.__cls, quellen: w.__quellen }
+    })
+    // Latte 0.01: der reparierte Fall misst 0.0000, der defekte 0.3070 — die
+    // Latte liegt dazwischen und lässt Subpixel-Rauschen durch, nicht den Sprung
+    // einer ganzen Fusszeile.
+    expect(cls, `Fuss-Sprung beim Routenwechsel: CLS ${cls} — ${quellen.join(' | ')}`).toBeLessThanOrEqual(0.01)
+  })
+
   test('D25 · Prerender liefert die volle Breite ab dem ersten Frame (kein Nachrutschen)', async ({ page }) => {
     // Die Vorgabe «eingeklappt» muss schon im ausgelieferten HTML stehen, sonst
     // rutscht die Inhaltsspalte nach der Hydration auf die volle Breite — ein
