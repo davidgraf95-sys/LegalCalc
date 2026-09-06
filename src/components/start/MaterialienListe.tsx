@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { STARTSEITE_ZAEHLER } from '../../data/startseiteZaehler.generated';
 import { usePaneKlasse } from '../layout/PaneKontext';
-import { StartZeile, StartFuss } from './Satzspiegel';
+import { ModulFuss } from './PultModul';
 
 // ─── Amtliche Materialien nach Behörde (W2·24-R3) ───────────────────────────
 //
@@ -15,6 +15,12 @@ import { StartZeile, StartFuss } from './Satzspiegel';
 // (nur-live-link, E6a·M5). Behörden ohne Eintrag erscheinen gar nicht; eine
 // 0-Zeile würde einen Bestand behaupten, den es nicht gibt.
 // Reine Darstellung (§3).
+// W2·24-R10 (Referenzbild `pult-freigegeben.html`): das Modul rendert nur noch
+// seinen INHALT. Kopfzeile, Registerstrich und der Schalter «Anzeigen/Ausblenden»
+// kommen aus dem EINEN Rahmen `start/PultModul`, Titel und Register aus dem
+// Registry (`lib/startseiteModule`) — die frühere Marginalie mit Bereich und
+// Bestandszahl ist gestrichen, die Zahl steht einmal in der Bereichs-Reihe.
+
 
 const z = STARTSEITE_ZAEHLER;
 const nf = (n: number) => n.toLocaleString('de-CH');
@@ -22,9 +28,7 @@ const nf = (n: number) => n.toLocaleString('de-CH');
 export function MaterialienListe() {
   const pk = usePaneKlasse();
   return (
-    <StartZeile reg="m" ueber="Behörden"
-      rand={<>{nf(z.materialien)} amtliche<br />Materialien erfasst</>}
-      titel="Amtliche Materialien nach Behörde">
+    <>
       <div className={`grid gap-x-6 font-sans text-body-s ${pk(
         'sm:grid-cols-2 lg:grid-cols-3', '@lg/pane:grid-cols-2 @3xl/pane:grid-cols-3',
       )}`}>
@@ -41,10 +45,11 @@ export function MaterialienListe() {
           Alle Behörden <span aria-hidden className="text-ink-500">→</span>
         </Link>
       </div>
-      <StartFuss>
-        Bibliografische Verweise mit Link zur amtlichen Fassung — massgeblich bleibt die
-        Quelle. Fachlich abgenommen ist der Bestand noch nicht.
-      </StartFuss>
-    </StartZeile>
+      <ModulFuss>
+        {nf(z.materialien)} amtliche Materialien erfasst: bibliografische Verweise mit Link
+        zur amtlichen Fassung — massgeblich bleibt die Quelle. Fachlich abgenommen ist der
+        Bestand noch nicht.
+      </ModulFuss>
+    </>
   );
 }

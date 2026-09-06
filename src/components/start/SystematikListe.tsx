@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { INTERNATIONAL_SAEULE } from '../../lib/navigation';
 import { STARTSEITE_ZAEHLER } from '../../data/startseiteZaehler.generated';
-import { StartZeile, StartFuss } from './Satzspiegel';
+import { ModulFuss } from './PultModul';
 
 // ─── Systematische Ordnung des Bundesrechts (W2·24-R3) ──────────────────────
 //
@@ -21,6 +21,12 @@ import { StartZeile, StartFuss } from './Satzspiegel';
 // gelisteter Erlass ohne Snapshot zählt nicht mit. Die Summe der Zeilen ergibt
 // darum genau `gesetzeBundVolltext` — die Fusszeile sagt den Scope dazu.
 // Reine Darstellung (§3).
+// W2·24-R10 (Referenzbild `pult-freigegeben.html`): das Modul rendert nur noch
+// seinen INHALT. Kopfzeile, Registerstrich und der Schalter «Anzeigen/Ausblenden»
+// kommen aus dem EINEN Rahmen `start/PultModul`, Titel und Register aus dem
+// Registry (`lib/startseiteModule`) — die frühere Marginalie mit Bereich und
+// Bestandszahl ist gestrichen, die Zahl steht einmal in der Bereichs-Reihe.
+
 
 const z = STARTSEITE_ZAEHLER;
 const nf = (n: number) => n.toLocaleString('de-CH');
@@ -43,9 +49,7 @@ function Zeile({ nr, titel, kuerzel, anzahl, ziel }: {
 
 export function SystematikListe() {
   return (
-    <StartZeile reg="g" ueber="Bundesrecht"
-      rand={<>{nf(z.gesetzeBundVolltext)} Erlasse<br />im Volltext</>}
-      titel="Systematische Ordnung">
+    <>
       {/* Zwei Spalten erst, wenn beide Spalten eine Zeile tragen können — im
           schmalen Pane und auf dem Telefon bleibt es eine Liste. */}
       <div className="grid gap-x-9 sm:grid-cols-2">
@@ -70,10 +74,11 @@ export function SystematikListe() {
           kuerzel={z.internationalKuerzel} anzahl={z.gesetzeInternationalVolltext}
           ziel={INTERNATIONAL_SAEULE} />
       </div>
-      <StartFuss>
+      <ModulFuss>
         Die Ordnung ist die der Gesetzes-Übersicht. Die Zahl je Zeile ist der bei uns
-        erfasste Volltext, nicht der Umfang der Systematischen Rechtssammlung des Bundes.
-      </StartFuss>
-    </StartZeile>
+        erfasste Volltext ({nf(z.gesetzeBundVolltext)} Erlasse), nicht der Umfang der
+        Systematischen Rechtssammlung des Bundes.
+      </ModulFuss>
+    </>
   );
 }
