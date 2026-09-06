@@ -361,6 +361,30 @@
        Wächter: Prüfung 5 in `scripts/check-design-tokens.ts` verbietet neue
        rohe `z-[…]`/Tailwind-Zahlen-Utilities ausserhalb dieser Skala —
        vollständig migriert (5.9.2026, Runde 6), keine Ausnahmen. */
+    /* ── W2·24-R4 · DIE APP-KRONE ALS EINE ZAHL ────────────────────────────
+       R2 hat die Arbeitsleiste (`layout/Reiterleiste.tsx`) BEWUSST nicht kleben
+       lassen: die Kopfhöhe stand als Konstante `APP_TOPBAR_H = '4rem'` in
+       `pages/gesetz-leser/v3/leserGeometrie.ts` (R4-Fläche, in R2 TABU), und
+       eine höhere klebende Krone ohne Nachzug dort hätte jeden `#art-…`-Anker
+       um die Differenz zu hoch abgesetzt (R2-Protokoll §2).
+       Hier steht die Krone jetzt EINMAL, in zwei Stücken:
+         --app-krone-h  Höhe der Titelblatt-Zeile (`layout/Topbar.tsx`, h-16 mit
+                        der 2-px-Kante am inneren Träger, also INNERHALB — in R2
+                        auf exakt 64 px gemessen).
+         --app-reiter-h Höhe der klebenden Arbeitsleiste. Fester Wert, weil ein
+                        klebender Streifen eine Höhe HABEN muss, bevor etwas
+                        unter ihm rechnet; `Reiterleiste.tsx` trägt ihn als
+                        `h-[…]`, damit Soll und Ist nicht auseinanderlaufen
+                        können. 2.125rem = 34 px = die in R2 gemessene Zeile
+                        (Reiter-Knopf `py-1.5 text-body-s`) samt Unterkante.
+         --app-kopf-h   die Summe — der Anschlag, unter dem der Leser-Kopf klebt
+                        und aus dem `--nt-stick` folgt (`leserGeometrie.ts`).
+       Die Ausgabe-Zeile (`Topbar.tsx` AusgabeZeile) liegt DAZWISCHEN und läuft
+       weiter im Fluss mit: sie trägt eine Angabe (Korpus-Stand), keine
+       Bedienung, und scrollt darum weg wie Fliesstext. */
+    --app-krone-h:4rem;
+    --app-reiter-h:2.125rem;
+    --app-kopf-h:calc(var(--app-krone-h) + var(--app-reiter-h));
     --z-base:0; --z-sticky:10; --z-entscheid-sticky:15;
     --z-reader-scrim:16; --z-reader-kopf:17; --z-inhalt-kopf:19;
     --z-leiste:20; --z-dropdown:30; --z-overlay:40; --z-modal:50;
