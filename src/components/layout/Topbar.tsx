@@ -78,10 +78,27 @@ export function Topbar({ onMenu, schubladeOffen, seitenleisteEingeklappt, onSeit
     fokusWunsch.current = false;
     menuKnopf.current?.focus();
   }, [sucheBreit]);
+  // ── D23-NACHZUG (David 6.9.2026) · DAS TITELBLATT TRÄGT DAS SUCH-PANEL ──
+  // GEMESSEN am Stand vor diesem Fix (Preview @1440, `/gesetze`, offener
+  // Leerzustand): das Etikett «Zuletzt geöffnet» war UNSICHTBAR — die
+  // Reiterleiste malte über die obersten ~45 px des Panels. Ursache ist
+  // kein Fehler am Panel: die Kopfzeile und `nav[aria-label="Offene Reiter"]`
+  // tragen BEIDE `z-leiste` (20) und sind Geschwister; bei gleichem
+  // z-index gewinnt das spätere DOM-Element, und weil der Header mit
+  // seinem z-index einen eigenen Stapelkontext aufmacht, kommt sein Kind
+  // (`z-dropdown` = 30) daran nicht vorbei — 30 gilt nur INNERHALB des
+  // Headers.
+  // `z-dropdown` am Header hebt den ganzen Kontext eine Stufe an. Das ist
+  // geometrisch folgenlos: der Header überlappt in Ruhe NICHTS (die
+  // Reiterleiste klebt bei `top: var(--app-krone-h)`, also exakt unter
+  // ihm, Inhaltskopf und Leser-Sticky liegen bei 19 und darunter). Die
+  // EINZIGE Änderung ist die gewollte: was aus dem Header herausragt —
+  // das Such-Panel, das Sprach- und das Thema-Menü — liegt jetzt über der
+  // Reiterleiste statt darunter. Die Reiterleiste selbst bleibt
+  // unangetastet (sie gehört R11).
+  // Schichtungs-Skala und Werte: `index.css`, Block `--z-*`.
   return (
-    <header
-      className="sticky top-0 z-leiste lc-glass"
-    >
+    <header className="sticky top-0 z-dropdown lc-glass">
       {/* Die 2-px-Kante sitzt AM INNEREN Träger, nicht am <header>: mit
           `box-sizing: border-box` liegt sie damit INNERHALB der `h-16` und die
           klebende Krone misst exakt 4 rem = 64 px. Gemessen 6.9.2026 im
@@ -164,7 +181,20 @@ export function Topbar({ onMenu, schubladeOffen, seitenleisteEingeklappt, onSeit
             teilt sich das Feld die Zeile nur noch mit Marke und Werkzeugen —
             der Boden bleibt trotzdem stehen, er ist die Untergrenze für ein
             Feld, das man als Feld erkennt. */}
-        <div className="flex-1 min-w-0 min-[481px]:min-w-[9rem] max-w-xs xl:max-w-sm">
+        {/* ── D23-NACHZUG (David 6.9.2026) · UNTER 640 px KEIN DECKEL ────────
+            D23 verlangt «@390 Feld und Panel volle Breite» — und seit D23 ist
+            die Panelbreite die FELDbreite (`HeaderSuche`, `inset-x-0`), also
+            entscheidet dieser Deckel beide zugleich. GEMESSEN @390 (Preview,
+            gebauter Stand): das Feld war 320 px breit in einem 390-px-Streifen,
+            weil `max-w-xs` auch dort griff — der mobile Fokusmodus (S6) hatte
+            damit nie die «volle Streifenbreite», die er zusagt, und der
+            Platzhalter brauchte 282 px auf 276 px Platz (gekappt).
+            `sm:max-w-xs`: ab 640 px bleibt alles, wie es war (Deckel 20 rem,
+            ab xl 24 rem — der Streifen soll oberhalb nicht zur Suchleiste
+            werden); darunter nimmt das Feld den Platz, den der Streifen ihm
+            ohnehin lässt. `min-w-0` bleibt der Schutz gegen Überlauf @320
+            (`e2e/topbar-kein-ueberlauf-320.e2e.ts`). */}
+        <div className="flex-1 min-w-0 min-[481px]:min-w-[9rem] sm:max-w-xs xl:max-w-sm">
           <HeaderSuche onFokusModus={setSucheBreit} onFokusZurueck={() => { fokusWunsch.current = true; }} />
         </div>
 
