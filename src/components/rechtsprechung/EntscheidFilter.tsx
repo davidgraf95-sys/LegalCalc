@@ -241,9 +241,12 @@ export function EntscheidFilter({
 
       {/* Facetten-Leiste — die primären Achsen sichtbar (Auftrag 4 «Gemeinwesen»,
           Auftrag 8 «Sprache»), statt im <details> vergraben. Trefferzahl je Chip (R15). */}
-      {hatKantonal && gemeinwesenOpt.length > 1 && <FacettenGruppe label="Gemeinwesen" optionen={gemeinwesenOpt} />}
-      {hatMehrereInstanzen && instanzOpt.length > 1 && <FacettenGruppe label="Instanz" optionen={instanzOpt} />}
-      {hatMehrsprachig && spracheOpt.length > 1 && <FacettenGruppe label="Sprache" optionen={spracheOpt} />}
+      {/* register="r": Registerfarbe «Rechtsprechung» am gewählten Text-Schalter
+          (D24-Nachzug, `ui/FacettenGruppe`) — dieselbe Marke wie die Seitenleiste
+          für diese Domäne führt. */}
+      {hatKantonal && gemeinwesenOpt.length > 1 && <FacettenGruppe label="Gemeinwesen" optionen={gemeinwesenOpt} register="r" />}
+      {hatMehrereInstanzen && instanzOpt.length > 1 && <FacettenGruppe label="Instanz" optionen={instanzOpt} register="r" />}
+      {hatMehrsprachig && spracheOpt.length > 1 && <FacettenGruppe label="Sprache" optionen={spracheOpt} register="r" />}
       {/* Spruchkörper: Autocomplete statt Chip-Leiste (~180 Namen, s. RichterFilter).
           Die Achse erscheint nur, wenn der Ausschnitt überhaupt erfasste Besetzungen
           trägt — ein leeres Suchfeld über nichts wäre eine Fehlversprechung (§8).

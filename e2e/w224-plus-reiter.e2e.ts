@@ -19,6 +19,7 @@
 //       füllen — der zweite Fall unten («Suche füllt DENSELBEN Reiter») wird
 //       rot (2 Reiter statt 1).
 import { test, expect, type Page } from '@playwright/test'
+import { warteAufSuchindex } from './helpers/warteAufSuchindex'
 
 const REITER = 'nav[aria-label="Offene Reiter"]'
 const aktiv = (page: Page) => page.locator(`${REITER} [data-reiter-aktiv="true"]`)
@@ -59,6 +60,11 @@ test('Suche füllt DENSELBEN Reiter — kein zweiter, die Zahl bleibt', async ({
   await expect(feld).toBeFocused()
   await feld.fill('OR 257d')
   await expect(page.getByRole('listbox', { name: 'Suchtreffer' })).toBeVisible()
+  // §17-Wurzelfix (Fixer 1h, offener Punkt «Aus Fixer 1e»): `aufTaste` in
+  // HeaderSuche.tsx navigiert auf Enter erst, wenn `allesGeladen` true ist —
+  // vorher wartete dieser Test dafür auf die Playwright-Standarduhr (10 s),
+  // nicht auf den Index-Zustand selbst. Auf den Index warten, DANN Enter.
+  await warteAufSuchindex(page)
   await feld.press('Enter')
   await expect(page).toHaveURL(/\/gesetze\/bund\/OR#art-257_d$/)
   // Genau EIN Reiter — der leere ist gefüllt, nicht verdoppelt.
