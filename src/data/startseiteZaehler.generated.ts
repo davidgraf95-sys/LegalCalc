@@ -24,6 +24,13 @@ export interface StartseiteZaehler {
   internationalKuerzel: string[];
   /** Gerichtsentscheide im Volltext (Nicht-Verweise). */
   rechtsprechungVolltext: number;
+  /** W2·24-D26: Entscheide je Sachgebiet (Ordnung/Label aus `GEBIETE`),
+   *  Zählregel identisch zu `zaehleSachgebiete` (Verweise raus); Sachgebiete
+   *  ohne Entscheid fehlen (§8). Ziel je Zeile: `/rechtsprechung?rg=<id>`. */
+  rechtsprechungSachgebiete: Array<{ id: string; label: string; anzahl: number }>;
+  /** W2·24-D26: amtliche Leitentscheide (Nicht-Verweise, leitcharakter
+   *  `leitentscheid`) — Ziel `/rechtsprechung?leit=1`. */
+  rechtsprechungLeitentscheide: number;
   /** Erfasste amtliche Materialien (Behördenpublikationen, nur-live-link). */
   materialien: number;
   /** W2·24-R3: erfasste Materialien je Behörde, Reihenfolge BEHOERDEN (rang);
@@ -151,6 +158,39 @@ export const STARTSEITE_ZAEHLER: StartseiteZaehler = {
     "HBewÜ"
   ],
   "rechtsprechungVolltext": 5093,
+  "rechtsprechungSachgebiete": [
+    {
+      "id": "privat",
+      "label": "Privatrecht",
+      "anzahl": 992
+    },
+    {
+      "id": "straf",
+      "label": "Strafrecht",
+      "anzahl": 1419
+    },
+    {
+      "id": "prozess",
+      "label": "Verfahrensrecht",
+      "anzahl": 86
+    },
+    {
+      "id": "oeffentlich",
+      "label": "Öffentliches Recht",
+      "anzahl": 1330
+    },
+    {
+      "id": "steuern",
+      "label": "Steuern & Abgaben",
+      "anzahl": 116
+    },
+    {
+      "id": "sozialversicherung",
+      "label": "Sozialversicherung",
+      "anzahl": 1150
+    }
+  ],
+  "rechtsprechungLeitentscheide": 1259,
   "materialien": 1561,
   "materialienBehoerden": [
     {

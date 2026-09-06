@@ -27,6 +27,12 @@ import { istVorlage } from '../src/lib/vorlagenKategorie.ts';
 // nicht in den Startseiten-Chunk (§15, `check:perf-budget`).
 import { SYSTEMATIK } from '../src/lib/normtext/systematik.ts';
 import { BEHOERDEN } from '../src/lib/materialien/register.ts';
+// W2·24-D26: die Seitenleiste zeigt die Sachgebiete der Rechtsprechung mit Zahl.
+// Ordnung + Beschriftung bleiben `GEBIETE` (SSoT der Sach-Achse); gezählt wird
+// hier gegen das Entscheid-Register, nach DERSELBEN Regel wie `zaehleSachgebiete`
+// in `src/lib/rechtsprechung/browse.ts` (Verweise raus) — die Zahl in der Leiste
+// ist damit exakt die Zahl auf der Sachgebiets-Kachel der Übersicht (§5/§8).
+import { GEBIETE } from '../src/lib/normtext/register.ts';
 
 const wurzel = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const GESETZE_REGISTER = resolve(wurzel, 'public/normtext/register.json');
@@ -44,6 +50,10 @@ interface EntscheidEintrag {
   verweis?: unknown;
   /** Entscheiddatum (ISO) — D8. */
   datum?: string | null;
+  /** Sach-Achse (GEBIETE-id) — D26. */
+  sachgebiet?: string;
+  /** 'leitentscheid' | 'routine' … — D26. */
+  leitcharakter?: string;
 }
 interface MaterialEintrag {
   key: string; behoerde: string;
@@ -129,7 +139,20 @@ function zaehle() {
   // Rechtsprechung: Nicht-Verweis-Entscheide = echte Volltext-Snapshots (Verweise
   // sind Redirect-Stubs auf ein anderes Urteil, s. NewsHeader/Rechtsprechung.tsx).
   const r = JSON.parse(readFileSync(RSPR_REGISTER, 'utf8')) as { erzeugt: string; entscheide: EntscheidEintrag[] };
-  const entscheide = r.entscheide.filter((e) => !e.verweis).length;
+  const echteEntscheide = r.entscheide.filter((e) => !e.verweis);
+  const entscheide = echteEntscheide.length;
+  // D26 · je Sachgebiet + Leitentscheide. Sachgebiete ohne Entscheid fallen weg
+  // (nie eine 0-Zeile behaupten, §8 — dieselbe Regel wie bei den Behörden und
+  // wie in `zaehleSachgebiete`, das die Kacheln der Übersicht speist).
+  const proGebiet: Record<string, number> = {};
+  for (const e of echteEntscheide) {
+    if (e.sachgebiet) proGebiet[e.sachgebiet] = (proGebiet[e.sachgebiet] ?? 0) + 1;
+  }
+  const rechtsprechungSachgebiete = GEBIETE
+    .filter((gb) => (proGebiet[gb.id] ?? 0) > 0)
+    .map((gb) => ({ id: gb.id, label: gb.label, anzahl: proGebiet[gb.id] }));
+  const rechtsprechungLeitentscheide = echteEntscheide
+    .filter((e) => e.leitcharakter === 'leitentscheid').length;
 
   // Rechner/Vorlagen: verfügbare Katalog-Karten MIT eigener Seite (aus dem Katalog
   // abgeleitet, §5 — nicht zweitgepflegt).
@@ -172,6 +195,8 @@ function zaehle() {
     gesetzeInternationalVolltext: international.length,
     internationalKuerzel: international.slice(0, KUERZEL_PRO_ZEILE).map((e) => e.kuerzel),
     rechtsprechungVolltext: entscheide,
+    rechtsprechungSachgebiete,
+    rechtsprechungLeitentscheide,
     materialien,
     materialienBehoerden,
     rechner,
@@ -213,6 +238,13 @@ function baue(): string {
     '  internationalKuerzel: string[];\n' +
     '  /** Gerichtsentscheide im Volltext (Nicht-Verweise). */\n' +
     '  rechtsprechungVolltext: number;\n' +
+    '  /** W2·24-D26: Entscheide je Sachgebiet (Ordnung/Label aus `GEBIETE`),\n' +
+    '   *  Zählregel identisch zu `zaehleSachgebiete` (Verweise raus); Sachgebiete\n' +
+    '   *  ohne Entscheid fehlen (§8). Ziel je Zeile: `/rechtsprechung?rg=<id>`. */\n' +
+    '  rechtsprechungSachgebiete: Array<{ id: string; label: string; anzahl: number }>;\n' +
+    '  /** W2·24-D26: amtliche Leitentscheide (Nicht-Verweise, leitcharakter\n' +
+    '   *  `leitentscheid`) — Ziel `/rechtsprechung?leit=1`. */\n' +
+    '  rechtsprechungLeitentscheide: number;\n' +
     '  /** Erfasste amtliche Materialien (Behördenpublikationen, nur-live-link). */\n' +
     '  materialien: number;\n' +
     '  /** W2·24-R3: erfasste Materialien je Behörde, Reihenfolge BEHOERDEN (rang);\n' +
