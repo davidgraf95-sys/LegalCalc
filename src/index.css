@@ -2910,3 +2910,94 @@
    Millisekunden aktiv und hat drei Klammern gegen ein Steckenbleiben. */
 html[data-lr6-anker-warten] #lc-lesespalte,
 html[data-lr6-anker-warten] footer { visibility: hidden; }
+
+/* ═══ W2·24-R6b · ZUSATZ AM DATEIENDE (Bau-Fläche R6-Nachzug, Präfix `.lr7-`) ══
+   Auftrag David 6.9.2026, wörtlich: «der platz rechts und links neben dem gesetz
+   für bspw. rechner oder fassung nimmt viel platz vom gesetzestext weg. kannst du
+   das besser gestalten.»
+
+   Die beiden Randspuren des Satzspiegels (Marginalie 150 px links, Randnotizen
+   210 px rechts) sind gefallen; ihr Inhalt steht jetzt im Artikelkopf. Diese
+   Regeln geben ihm dort seine Form. Additiv und ohne Berührung des Bestands: an
+   `index.css` bauen in derselben Runde mehrere Agenten, und ein `.lr7-`-Präfix am
+   Dateiende kollidiert mit keinem von ihnen.
+
+   HINWEIS FÜR DEN NÄCHSTEN, DER DIESE DATEI AUFRÄUMT: der Block «W2·24-R4 ·
+   SATZSPIEGEL» weiter oben (Regeln auf `[data-lr-spiegel="marg"|"voll"]`, samt
+   den `@media print`-Regeln dazu und `.lr-notiz*`) ist seit diesem Nachzug TOT —
+   `rahmenSpalten.ts` kennt die Werte `marg`/`voll` nicht mehr, kein Selektor kann
+   je greifen. Er steht nur deshalb noch da, weil `index.css`-Bestand in diesem
+   Auftrag TABU war (Parallel-Bau). Ersatzloser Rückbau = §17-Gegengewicht.
+
+   ── (a) DER ARTIKELKOPF: RANDTITEL LINKS, FASSUNG KLEIN DANEBEN ────────────── */
+.lr7-kopf {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.125rem;
+}
+.lr7-kopf-titel { min-width: 0; }
+/* Der Randtitel des Artikels (die Sachüberschrift) in der Lese-Serife und
+   kursiv — dieselbe Auszeichnung, die bis R6 die Marginalie trug (Referenzbild
+   `.artikel .rand .rt`). Die Vorfahren-Stufen bleiben in der Grotesk: zwei
+   Stimmen, wie bisher (Design-Grundlage Kap. 2.1). */
+.lr7-kopf-titel .lr-blatt {
+  font-family: var(--font-serif), Georgia, serif;
+  font-style: italic;
+  font-weight: 500;
+}
+/* Das Fassungsdatum: klein, leise, rechts an der Textkante — «Archivo 12,
+   ink-500» (Auftrag (a)). Der Slot behält seine 24-px-Reserve (`min-h-beiwerk`);
+   `flex-shrink:0` hält ihn auf EINER Zeile, damit die Reserve stimmt. */
+.lr7-fassung {
+  flex: 0 0 auto;
+  font-size: 0.75rem;
+  line-height: 1.35;
+  color: var(--ink-500);
+  text-align: right;
+}
+
+/* ── (b) DIE BEZÜGE-ZEILE: EINGEKLAPPT EINE ZEILE ─────────────────────────── */
+.lr7-bez { margin: 0.25rem 0 0; }
+.lr7-bez-zeile {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  list-style: none; /* Firefox: das Dreieck der <summary> */
+  font-family: var(--font-sans), system-ui, sans-serif;
+  font-size: 0.75rem;
+  line-height: 1.5rem; /* = min-h-beiwerk: die Zeile ist so hoch wie eine Chip-Zeile */
+  color: var(--ink-500);
+}
+.lr7-bez-zeile::-webkit-details-marker { display: none; }
+.lr7-bez-zeile:hover { color: var(--brass-700); }
+/* Sichtbarer Fokus (WCAG 2.4.7) — dieselbe Ringfarbe wie im Haus. */
+.lr7-bez-zeile:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+.lr7-bez-wort { font-weight: 500; color: var(--ink-600); }
+/* Registerfarben-Marke je Rubrik: derselbe 3-px-Strich, der bis R6 am
+   `.lr-notiz-titel` stand — die einzige Farbe am Artikel. */
+.lr7-bez-marke {
+  padding-left: 0.5rem;
+  border-left: 3px solid var(--ink-900);
+  white-space: nowrap;
+}
+.lr7-bez-marke[data-reg="r"] { border-left-color: var(--reg-r); }
+.lr7-bez-marke[data-reg="g"] { border-left-color: var(--reg-g); }
+.lr7-bez-marke[data-reg="w"] { border-left-color: var(--reg-w); }
+.lr7-bez-pfeil { margin-left: auto; }
+.lr7-bez[open] .lr7-bez-pfeil { transform: rotate(90deg); }
+.lr7-bez-inhalt {
+  display: grid;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+  padding-left: 0.5rem;
+  border-left: 3px solid var(--rule-artikel);
+}
+.lr7-bez-block[data-reg] { min-width: 0; }
