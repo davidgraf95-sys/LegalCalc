@@ -18,7 +18,10 @@ import { Kategorie } from './geteilt';
 // öffnet eine; «Alle auf-/zuklappen». Im Inneren je Untergruppe ein Zwischen-
 // titel, darunter nach SR-Nr sortierte Zeilen. Die Seiten-Suche liefert die
 // flache Trefferliste — diese gegliederte Ansicht zeigt sich nur ohne Suche.
-export function KantonSystematik({ erlasse, sys }: { erlasse: BrowseErlass[]; sys?: KantonSystematik }) {
+export function KantonSystematik(
+  { erlasse, sys, sysGeladen = true }:
+  { erlasse: BrowseErlass[]; sys?: KantonSystematik; sysGeladen?: boolean },
+) {
   const gruppen = useMemo(() => {
     const rangTop = sachgebietRang(sys);
     const tops = new Map<string, Map<string, BrowseErlass[]>>();
@@ -87,7 +90,16 @@ export function KantonSystematik({ erlasse, sys }: { erlasse: BrowseErlass[]; sy
   // Die Weiche fragt den BAUM, nicht die Gruppen: ein Kanton kann einen Baum
   // haben und trotzdem einen Fallback-Block führen (einzelne Erlasse ohne
   // amtliche Nummer). Dort ist nichts offen, und der Hinweis wäre falsch.
-  const ohneAmtlichenBaum = (sys?.roots.length ?? 0) === 0;
+  // ── NACHZUG 6.9.2026 (§15.2/§8, CI-Flake `gesetze-footer-cls`) ────────────
+  // Die Weiche fragt den Baum — aber erst, wenn er ÜBERHAUPT SCHON DA IST.
+  // Solange die Bäume laden, ist «kein Baum» keine Auskunft, sondern eine
+  // Vermutung; sie stand 19 von 26 Kantonen für einen Moment fälschlich an
+  // (Messung und Herleitung: `pages/Gesetze.tsx` beim `systematik`-Zustand).
+  // ROT ZU BEKOMMEN (§6.7): `sysGeladen` aus der Bedingung streichen ⇒ auf
+  // `/gesetze?ebene=kanton&kt=ZH` springt die Zeile «Alle aufklappen» unter
+  // Drossel wieder um 54 px, und der Hinweis blitzt für einen Kanton auf, der
+  // sehr wohl einen amtlichen Baum hat.
+  const ohneAmtlichenBaum = sysGeladen && (sys?.roots.length ?? 0) === 0;
 
   const alleIds = gruppen.map((g) => g.top);
   const [offen, setOffen] = useState<Set<string>>(() => new Set());

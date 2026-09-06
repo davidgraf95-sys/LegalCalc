@@ -9,7 +9,7 @@
 import { test, expect, type Page } from '@playwright/test'
 import { fehlerSammeln } from './helpers/fehlerSammeln'
 import { clsBeobachtenInstallieren, clsAuslesen } from './helpers/cls'
-import { kopfSucheOeffnen } from './helpers/kopfSuche'
+import { kopfSucheOeffnen, sprungZeile } from './helpers/kopfSuche'
 
 // CI-Härtung 19.7.2026 (BEFUND 3b): die Sprung-Tests warten per 20-s-Latch auf den
 // EINMAL-Load des ~4-MB-Artikel-Index (P3 u. a.). Auf dem 2-vCPU-Runner unter
@@ -32,6 +32,16 @@ test.describe.configure({ timeout: 60_000 })
 // DASSELBE (Überschrift trägt «OR», Ziel-Artikel im DOM).
 const OR_LESER_FRIST = 30_000
 
+// ── §6.3-DEKLARATION 6.9.2026 (W2·24-DESIGN-IDENTITAET, Treffer-Anatomie D23) ─
+// Die Sprung-Zeile trug bis hierher ein gerahmtes Etikett mit dem Wort «Sprung»
+// bzw. «Direkt öffnen»; F1/F4 dieser Runde haben die AKTIONS-Etiketten aus der
+// Trefferliste gestrichen (`src/components/suche/trefferAnatomie.ts`) — an ihre
+// Stelle ist der Griff «↵» der Zeile getreten. Die Wächter unten prüfen darum
+// dieselbe Zusage an ihrer neuen Stelle: `sprungZeile(page)` (Herleitung und
+// Rot-Rezept an EINER Stelle, `helpers/kopfSuche.ts`). Die Gruppen-Überschrift
+// «Norm-Sprung»/«Entscheid-Sprung» bleibt unverändert mitgeprüft, ebenso die
+// Reihenfolge (oberster Treffer) und der Sprung selbst (Enter → URL).
+
 // Die eine, überall sichtbare Kopf-Suchleiste (ARIA-Combobox).
 const sucheFeld = (page: Page) => page.getByRole('combobox', { name: /LexMetrik durchsuchen/ })
 // Das Trefferpanel ist eine ARIA-Listbox; der Sprung ist die erste Gruppe.
@@ -48,7 +58,7 @@ test.describe('Norm-Sprung in der normalen Suchleiste (A5)', () => {
     const box = listbox(page)
     await expect(box).toBeVisible()
     await expect(box.getByText('Norm-Sprung', { exact: true })).toBeVisible()
-    await expect(box.getByText('Sprung', { exact: true })).toBeVisible()
+    await expect(sprungZeile(page)).toBeVisible()
     // Der Sprung ist die ERSTE Option (oberster Treffer, A5).
     await expect(box.getByRole('option').first()).toContainText('OR')
     await expect(box.getByRole('option').first()).toContainText('257d')
@@ -66,7 +76,7 @@ test.describe('Norm-Sprung in der normalen Suchleiste (A5)', () => {
     const feld = sucheFeld(page)
     await feld.click()
     await feld.fill('ABRG 3')
-    await expect(listbox(page).getByText('Sprung', { exact: true })).toBeVisible()
+    await expect(sprungZeile(page)).toBeVisible()
     await feld.press('Enter')
     await expect(page).toHaveURL(/\/gesetze\/kanton\/AR-621\.12#art-3$/)
   })
@@ -80,7 +90,7 @@ test.describe('Norm-Sprung in der normalen Suchleiste (A5)', () => {
     const box = listbox(page)
     await expect(box).toBeVisible()
     await expect(box.getByText('Entscheid-Sprung', { exact: true })).toBeVisible()
-    await expect(box.getByText('Direkt öffnen', { exact: true })).toBeVisible()
+    await expect(sprungZeile(page)).toBeVisible()
     await expect(box.getByRole('option').first()).toContainText('BGE 152 II 19')
     await feld.press('Enter')
     await expect(page).toHaveURL(/\/rechtsprechung\/bge_152_II_19$/)
@@ -92,7 +102,7 @@ test.describe('Norm-Sprung in der normalen Suchleiste (A5)', () => {
     const feld = sucheFeld(page)
     await feld.click()
     await feld.fill('152 II 19')
-    await expect(listbox(page).getByText('Direkt öffnen', { exact: true })).toBeVisible()
+    await expect(sprungZeile(page)).toBeVisible()
     await feld.press('Enter')
     await expect(page).toHaveURL(/\/rechtsprechung\/bge_152_II_19$/)
   })
@@ -122,7 +132,7 @@ test.describe('Norm-Sprung in der normalen Suchleiste (A5)', () => {
     await expect(box).toBeVisible()
     // Kein Sprung-Vorschlag (kein Fehl-Sprung) …
     await expect(box.getByText('Norm-Sprung', { exact: true })).toHaveCount(0)
-    await expect(box.getByText('Sprung', { exact: true })).toHaveCount(0)
+    await expect(sprungZeile(page)).toHaveCount(0)
     // … aber die Universal-Suche liefert Treffer.
     await expect(box.getByRole('option').first()).toBeVisible()
   })
@@ -167,8 +177,7 @@ test.describe('Norm-Sprung in der normalen Suchleiste (A5)', () => {
     await expect(feld).toBeVisible({ timeout: 20000 })
     await feld.click()
     await feld.fill('OR 257d')
-    const box = listbox(page)
-    await expect(box.getByText('Sprung', { exact: true })).toBeVisible({ timeout: 20000 })
+    await expect(sprungZeile(page)).toBeVisible({ timeout: 20000 })
     await page.keyboard.press('Enter')
     await expect(page).toHaveURL(/\/gesetze\/bund\/OR#art-257_d$/, { timeout: 20000 })
     await expect(page.getByRole('heading', { level: 1 })).toContainText('OR', { timeout: 20000 })
@@ -221,7 +230,7 @@ test.describe('Norm-Sprung in der normalen Suchleiste (A5)', () => {
     // Ladezeitpunkt, KEIN Interaktions-Lag). Wir laden ihn vor der Messung, damit die
     // A9-Messung die reine Interaktion (Parser + Render) misst, nicht diesen Einmal-Load.
     await feld.fill('OR 257d')
-    await expect(box.getByText('Sprung', { exact: true })).toBeVisible({ timeout: 20000 })
+    await expect(sprungZeile(page)).toBeVisible({ timeout: 20000 })
     // ── WARMLAUF-LATTE korrigiert (26.7.2026, Ursachen-Fix) ──────────────────────
     // Der «Sprung»-Treffer beweist den warmen Index NICHT: er ist der
     // DETERMINISTISCHE Norm-Sprung aus dem Register/Parser und steht schon, während
@@ -286,7 +295,7 @@ test.describe('Norm-Sprung in der normalen Suchleiste (A5)', () => {
     // wäre auf einem ausgelasteten Host unzuverlässig und misst Host-Contention
     // statt Interaktions-Lag — deshalb ist die gebundene Auflösung selbst der Beweis.
     await feld.fill('OR 257d')
-    await expect(box.getByText('Sprung', { exact: true })).toBeVisible({ timeout: 12000 })
+    await expect(sprungZeile(page)).toBeVisible({ timeout: 12000 })
     // Über die Gruppen navigieren (Pfeil runter/hoch) — bleibt reaktiv; die aktive
     // Option wandert (aria-activedescendant gesetzt).
     await feld.press('ArrowDown')
@@ -313,7 +322,7 @@ test.describe('Norm-Sprung in der normalen Suchleiste (A5)', () => {
     await feld.fill('')
     await expect(box).toBeHidden()
     await feld.fill('OR 257d')
-    await expect(box.getByText('Sprung', { exact: true })).toBeVisible({ timeout: 12000 })
+    await expect(sprungZeile(page)).toBeVisible({ timeout: 12000 })
     await feld.press('Enter')
     await expect(page).toHaveURL(/\/gesetze\/bund\/OR#art-257_d$/, { timeout: 15000 })
     await client.send('Emulation.setCPUThrottlingRate', { rate: 1 })
@@ -341,7 +350,7 @@ test.describe('Norm-Sprung in der normalen Suchleiste (A5)', () => {
     await page.goto('/gesetze')
     const feld = await kopfSucheOeffnen(page)
     await feld.fill('OR 257d')
-    await expect(listbox(page).getByText('Sprung', { exact: true })).toBeVisible()
+    await expect(sprungZeile(page)).toBeVisible()
     // Kein horizontaler Overflow bei offenem Panel auf 390px.
     const b = await page.evaluate(() => ({ scroll: document.documentElement.scrollWidth, client: document.documentElement.clientWidth }))
     expect(b.scroll, `scrollWidth ${b.scroll} > ${b.client}`).toBeLessThanOrEqual(b.client + 1)

@@ -166,7 +166,19 @@ function Einstieg({ bund, bundArtikel, kantone, kantonErlasse, international, on
 
 export function Gesetze() {
   const [erlasse, setErlasse] = useState<BrowseErlass[] | null>(null);
-  const [systematik, setSystematik] = useState<Record<string, KantonSystematikBaum>>({});
+  // ── §15.2/§8-BEFUND 6.9.2026 (CI-Flake `gesetze-footer-cls`) · «NOCH NICHT
+  //    GELADEN» IST NICHT «KEIN BAUM» ────────────────────────────────────────
+  // GEMESSEN @1440×900 unter CPU-Drossel 6× auf `/gesetze?ebene=kanton&kt=ZH`:
+  // die Zeile «Alle aufklappen» stand erst bei y=828, dann bei y=774 — ein
+  // input-freier Sprung um 54 px, weil ÜBER ihr der Hinweis «Die amtliche
+  // Systematik dieses Kantons ist noch nicht hinterlegt» erschien und wieder
+  // verschwand. Ursache war der Startwert `{}`: bis die Bäume da waren, sah
+  // jeder Kanton wie einer OHNE Baum aus. Das ist zweimal falsch — ein
+  // Layout-Shift (§15.2) UND eine unwahre Auskunft über den Bestand (§8), die
+  // 19 der 26 Kantone für einen Moment traf.
+  // `null` = noch nicht geladen, `{}` = geladen und leer. Der Unterschied ist
+  // die ganze Korrektur; sie kostet nichts und macht die Aussage ehrlich.
+  const [systematik, setSystematik] = useState<Record<string, KantonSystematikBaum> | null>(null);
   const [fehler, setFehler] = useState(false);
   // ?q= (Startseiten-Rubrik «Gesetze» #6, «alle N →» aus der Universal-Suche
   // UI-NAV S1) füllt die Suche vor. Über useSucheAusUrl statt Lazy-Init: der
@@ -667,12 +679,12 @@ export function Gesetze() {
                     </div>
                     {(() => {
                       const eig = kantGefiltert.filter((e) => e.kanton === kanton);
-                      const sys = systematik[kanton];
+                      const sys = systematik?.[kanton];
                       return gliederung === 'relevanz'
                         ? <KantonRelevanzListe erlasse={eig} sys={sys} />
                         : gliederung === 'rechtsgebiet'
                           ? <KantonGebietGruppen erlasse={eig} />
-                          : <KantonSystematik erlasse={eig} sys={sys} />;
+                          : <KantonSystematik erlasse={eig} sys={sys} sysGeladen={systematik !== null} />;
                     })()}
                   </section>
                 </>
