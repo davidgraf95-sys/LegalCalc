@@ -6,7 +6,7 @@ import { SprachUmschalter } from '../SprachUmschalter';
 import { ThemaUmschalter } from './ThemaUmschalter';
 import { VerlaufUebersicht } from './VerlaufUebersicht';
 import { KorpusStand } from '../ui/KorpusStand';
-import { BEREICHE, REG_RAND, REG_RAND_HOVER, bereichVonPfad } from './bereiche';
+import { BEREICHE, REG_RAND, REG_RAND_HOVER, bereichVonPfad, START_REITER } from './bereiche';
 import { istSuchKuerzel, suchKuerzelEmpfaengerAbmelden, suchKuerzelEmpfaengerAnmelden } from '../suche/fruehesSuchKuerzel';
 
 // ─── Titelblatt-Zeile der Sammlung (W2·24-DESIGN-IDENTITAET R2) ─────────────
@@ -156,6 +156,20 @@ export function Topbar({ onMenu, schubladeOffen, seitenleisteEingeklappt, onSeit
             überlaufen (dieselbe Regel wie im Referenzbild, `.masthead nav`).
             Unter `md` trägt die Schublade die Bereichs-Navigation. */}
         <nav aria-label="Bereiche" className={`hidden md:flex min-w-0 shrink items-stretch gap-4 lg:gap-5 self-stretch overflow-x-auto lc-reiter-scroll ${weicht}`}>
+          {/* R3-F8 (6.9.2026): «Sammlung» steht als erster Reiter und ist auf «/»
+              die Aktivmarke, die dort bis hierher fehlte — der Kopf sagt jetzt
+              auf JEDER Route, wo man ist. Ihr Strich ist die Tinte (`--rule`,
+              `border-ink-900`), nicht eine Registerfarbe: die Startseite ist
+              das Titelblatt der Sammlung und kein sechstes Register
+              (Begründung an `START_REITER`, `./bereiche`). */}
+          <NavLink to={START_REITER.ziel} end aria-current={aufStartseite ? 'page' : undefined}
+            className={`inline-flex shrink-0 items-center border-b-2 pt-0.5 text-body-s no-underline transition-colors ${
+              aufStartseite
+                ? 'border-ink-900 font-medium text-ink-900'
+                : 'border-transparent text-ink-600 hover:border-ink-900/40 hover:text-ink-900'
+            }`}>
+            {START_REITER.label}
+          </NavLink>
           {BEREICHE.map((b) => {
             const aktiv = aktiverBereich?.ziel === b.ziel;
             return (

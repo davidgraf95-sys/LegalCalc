@@ -2134,8 +2134,19 @@
     min-height: var(--tap-ziel); min-width: var(--tap-ziel); padding: 0 4px;
   }
   .lc-leiste-griff:hover { background: var(--well); color: var(--brass-700); }
-  .lc-leiste-griff-fest { background: var(--well); color: var(--ink-700); padding: 0 6px; }
-  .lc-leiste-griff-fest:hover { background: var(--surface); color: var(--brass-700); }
+  /* ── D5 (David 6.9.2026, Bild Leser-Kopf) · TEXTKNOPF, KEIN CHIP ──────────
+     «Knöpfe ‹⌂ 8 Entscheide› und ‹◧ Ansicht› als Chips mit Kasten» — Soll:
+     «Leser-Kopf-Knöpfe als Textknöpfe mit Unterstrich, nicht als Chips».
+     Der einzige Konsument dieser Klasse ist `KOPF_GRIFF` (v3/kopfStufen.ts),
+     also genau die drei Griffe der Leser-Kopfzeile (⚖ · ☰ · «Ansicht») —
+     die Änderung trifft sie alle drei gemeinsam und nichts sonst.
+     Die Füllung `--well` fällt weg (sie war der Kasten); an ihre Stelle tritt
+     die 1-px-Unterkante, die im Referenzbild jeden Textknopf trägt. Der
+     Ruhezustand ist damit eine Linie statt einer Fläche; der HOVER behält seine
+     eingespielte Grammatik (Fläche `--well` + wärmere Tinte, §G-j) — dort ist
+     die Fläche eine Zustandsauskunft und keine Dauer-Anatomie. */
+  .lc-leiste-griff-fest { color: var(--ink-700); padding: 0 6px; border-bottom: 1px solid var(--rule-soft); border-radius: 0; }
+  .lc-leiste-griff-fest:hover { background: var(--well); color: var(--brass-700); border-bottom-color: var(--brass-500); }
   /* KOMFORT-Stufe des Griffs (F2-6): auf dem Handy-Zuschnitt, wo der Finger das
      einzige Werkzeug ist, hebt sie die Untergrenze vom WCAG-2.5.8-Minimum
      (`--tap-ziel`, 24 px) auf das AAA-Komfortmass `--tap-ziel-komfort` (44 px).
@@ -2392,6 +2403,52 @@
      schwebenden `.lc-schwebeflaeche`, im Fluss der Papierfläche der Seite. Damit
      ist das Panel an beiden Orten dasselbe Ding, wie §5 es verlangt. */
   .lc-suchpanel { background: transparent; border: 0; }
+
+  /* ═══ D5 (David 6.9.2026, Bild Leser-«Ansicht»-Menü) · MENÜ-ANATOMIE ═══════
+     Davids Befund am Bild, Punkt für Punkt: «Einträge mit ‹✓ an› rechts, erster
+     Eintrag mit hartem 2-px-Fokusrahmen als Kasten, letzter Eintrag zweizeilig
+     umgebrochen mit eingequetschtem Schriftregler, Knöpfe als Chips mit
+     Kasten.» Soll: «ruhige Liste mit Linien, Zustandswort links oder als
+     Schalter, kein ‹✓ an›-Doppel, Fokus als Unterstrich/Strich statt Kasten,
+     Regler in eigener Zeile mit Label in Archivo, keine Umbrüche in
+     Menüzeilen» — und ausdrücklich «Gilt als Muster für ALLE Menüs/Popover
+     (Verlauf, Reiter-Blatt, Sprache, Thema)».
+     Darum steht die Anatomie HIER und nicht im Leser: die Konsumenten sind
+     `components/ui/Menue.tsx` (das Gerüst) und über ihn das Ansicht-Menü, der
+     Verlauf und das Reiter-Blatt. Die schwebende HÜLLE bleibt
+     `.lc-schwebeflaeche` — wo ein Menü liegt, entscheidet sein Anker, nicht
+     seine Anatomie. */
+
+  /* Die Zeile: volle Breite, EINE Höhe, Trennung nach unten über eine
+     Haarlinie (die letzte Zeile trägt keine). Kein Radius — ein abgerundeter
+     Hover-Kasten ist genau das Kissen, das Fahrplan §5 abschafft. */
+  .lc-menu-zeile {
+    @apply flex w-full items-center gap-2.5 px-3 py-2 text-left text-body-s text-ink-700 transition-colors;
+    border-bottom: 1px solid var(--rule-soft);
+    border-radius: 0;
+    /* «keine Umbrüche in Menüzeilen»: die Beschriftung bleibt einzeilig und
+       wird notfalls mit Auslassung gekappt — die volle Aussage steht im
+       `title`, wie an jeder anderen gekappten Stelle der App (LM-067). */
+    white-space: nowrap;
+  }
+  .lc-menu-zeile:last-child { border-bottom: 0; }
+  .lc-menu-zeile:hover { background: var(--well); color: var(--ink-900); }
+  /* FOKUS ALS STRICH, NICHT ALS KASTEN. Die globale `:focus-visible`-Regel legt
+     einen 2-px-Rahmen um das Element — an einer Menüzeile, die die volle Breite
+     einnimmt, ist das der «harte Kasten» aus Davids Befund. Hier tritt an seine
+     Stelle ein 2-px-Strich an der Unterkante in derselben Rolle `--focus`
+     (dieselbe Form, die `.lc-input:focus` seit R3-F3 trägt — EIN Fokus-Bild für
+     die ganze App). `inset`, damit er die Zeilenhöhe nicht ändert. */
+  .lc-menu-zeile:focus-visible { outline: none; box-shadow: inset 0 -2px 0 0 var(--focus); }
+  /* Die Beschriftung kappt, die Zustands-Marke links tut es nie. */
+  .lc-menu-label { @apply min-w-0 flex-1 overflow-hidden text-ellipsis; }
+  /* Zustands-Marke LINKS (Häkchen/Leerstelle) — feste Breite, damit die
+     Beschriftungen aller Zeilen fluchten, ob geschaltet oder nicht. Sie ersetzt
+     das «✓ an»-Doppel rechts: EIN Zeichen für EINEN Zustand. */
+  .lc-menu-marke { @apply inline-flex w-4 shrink-0 items-center justify-center leading-none; color: var(--brass-700); }
+  /* Der Regler bekommt seine eigene Zeile mit Label — er wird nicht mehr neben
+     eine zweizeilig umbrechende Beschriftung gequetscht. */
+  .lc-menu-regler { @apply flex w-full items-center justify-between gap-3 px-3 py-2; border-top: 1px solid var(--rule-soft); }
 
   /* Referenzwerk-Liste: Messing-Gedankenstrich als Marker (FAHRPLAN-DESIGN
      5.5) — für Hinweis-Listen der Vorlagen (Preflight nimmt Browser-Bullets
