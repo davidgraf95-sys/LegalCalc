@@ -2882,3 +2882,127 @@ Regelfläche: wer künftig ein Plan-Werkzeug ändert, öffnet eine Datei statt v
   eröffnet Entwurfs-PR, kein Auto-Merge.
   **Detail:** [FAHRPLAN-PLAN-STEUERUNG.md](fahrplaene/FAHRPLAN-PLAN-STEUERUNG.md) § «Selbstoptimierender Bau».
 
+
+# Umschichtung 6.9.2026 — erledigte Zeilen aus dem Steuerungsplan
+
+## W2·13-KANTONE — Kantonale Gesetze — Darstellung & Suche *(verschoben 6.9.2026)*
+
+  - [x] **K-1 · Reader-Treue P0** *(F24/F25/F28/F33/F29-Display/F5)* — ✅ 31.8.2026: F24 dokumentlinear (4 Erlasse inkl. Bund/KKV), F25 pathname-Decode (3 GL-Schlüssel geheilt), F5 fr/it (+38 Erlasse); F28/F33 waren seit 18.8. gebaut, F29 gegenstandslos (0 `*`-Vorkommen). §1-A + Ist-Stand-Block Fahrplan §2.
+
+  - [x] **K-2 · §8-Ehrlichkeit UI** *(F26-UI/F37/F44/F27-Rest)* — ✅ 31.8.2026: «Geltung ungeprüft» (interaktiv + prerendert, lebt-Gate), «Stand unbekannt», Kanton-Leerzustände der Panels, Systematik-Hinweis; F44 war seit K-2c gebaut. §1-A.
+
+  - [x] **K-3 · Suche: Kanton-Treffer auf die richtige Ebene** *(F35/F36)* — ✅ 31.8.2026: Edge-DTO additiv um ebene/kanton, Href + Kanton-Marke, Ebenen-Routing via Kantonskürzel-Regel (heilt auch chipZiel & Co.); Betriebs-Vorbehalt: Live-Turso braucht Spalten aus PR #313 (nach Merge geprüft). §1-A.
+
+  - [x] **K-5 · NormText-Verweise Kanton** *(F41 → F40 → F42)* — ✅ 31.8.2026: F41 (199 falsche Self-Links gesperrt, 0 nachher), F40 (3267 §-Links in 464 Erlassen), Bund byte-unverändert; F42 entfällt nach Messung (<1 % Ertrag, Falschlink-Risiko). §1-A.
+
+  - [x] **K-11 · Kanton-Reader-Performance profilieren** *(F32)* — ✅ 31.8.2026 NUR gemessen: 50-s-Symptom nicht reproduzierbar, Blocker beziffert (753-KB-Register je Leserseite u. a.), Wächter-Route im Lighthouse-Tor, Dossier `bibliothek/seo/kanton-reader-profil-2026-08-31.md`; Fixes = eigener Schritt mit §15-Bewertung. §1-A.
+
+
+## W2·7-VZUI — Verzahnung sichtbar machen *(verschoben 6.9.2026)*
+
+  - [x] **«Grundzustand ohne Zusatz-Fetch» ehrlich gemacht** *(31.8.2026; §13-Weg 2, Weg 1 gegenstandslos)* — nachgemessen: das §15-Versprechen ist am Ist-Stand **strenger** eingelöst als der Kommentar behauptete, nur an anderer Stelle. Die Ladeweiche ist das Panel-Gate (`usePanelBezuege`/`jeGeoeffnet`), nicht `istErweitert` (deren einziger Konsument ist der Hinweistext in `BezugFacettenWahl.tsx:106`); der schlanke `norm-index`-Shard wird im Gesetz-Leser seit H3/H4 gar nicht mehr geholt — der §13-Befund «beide Shards unterwegs» ist mit der V3-Hülle entfallen. Korrigiert: vier falsche Zusagen, darunter **ein sichtbarer Nutzertext** («steht am Artikel als eigene Linie … gezeigt werden fünf, ein Klick lädt die nächsten fünf» / «Weitere Instanzen laden zusätzliche Daten nach» — es gibt weder Artikel-Linie noch Fünferportion noch Nachladen). Tor statt Prosa: `e2e/leser-v3-prerender-bezuege.e2e.ts` bewacht jetzt **beide** Shard-Familien (rot gesehen 31.8.).
+
+  - [x] **Ankunfts-Sprung `?norm=` nutzt beide Fundstellen-Regeln** *(Auftrag David 30.8.2026)* — `ankunftsAnker` (`src/pages/entscheidLeserRegeln.ts`): Fedlex-Fundstelle, sonst erste wörtliche Nennung; e2e-Deckung des SPLIT-Wegs neu (`e2e/split-erwaegungssprung.e2e.ts`). Gemessen über alle 75 365 Kanten: 46.6 % → 48.8 % (Bund 54.3 → 55.3 %, **Kanton 0.0 → 9.1 %**).
+
+  - [x] **Panel-Reiter fachlich sauber geschnitten — vierter Reiter «Anwendung»** *(31.8.2026)* — die Behörden-Ressourcen (`kontextSoftLaw`) und die «Passenden Werkzeuge» hatten seit H3 keinen Ort mehr: sie gehören nicht in «Materialien» (dort steht die Entstehung), waren im V3-Panel aber ersatzlos entfallen. Neu `v3/PanelAnwendung.tsx` mit zwei Abschnitten (Behörden-Praxis · Werkzeuge) hinter demselben Panel-Gate wie die anderen Reiter. Bestand gemessen statt geraten: ARG = beide Abschnitte · DBG = nur Behörden-Praxis (Werkzeug-Karten geplant ⇒ §8-ausgeblendet) · OR = 15 artikelscharfe Gruppen, kein Kanten-Shard. Reiter-Leiste @1440 nachgemessen: 385 px in 350 px ⇒ 35 px Scrollweg (der Fall, für den H4-II sie scrollbar gemacht hat); @390 passt sie ganz. e2e `leser-v3-panel-anwendung.e2e.ts` (5 Fälle, 4× rot gesehen).
+
+
+## W2·22-VERWEIS-FEDLEX — Amtlicher Fedlex-Zitatgraph: Erlass-Verweise ohne Artikelnummer + Warn-Bericht + «zitiert von» (Bund) *(verschoben 6.9.2026)*
+
+  - [x] **Z1 Erlass-Verweis ohne Artikelnummer verlinken** («richten sich nach der ZPO», «des
+    Datenschutzgesetzes vom 25. September 2020», «Bucheffektengesetzes vom 3. Oktober 2008 (BEG)»)
+    in `src/lib/fedlex/erkennung.ts`/`positivliste.ts`/`parser.ts`; Erlassdatums-Prüfung wie Form B;
+    Inventar `messwerte/verweis-inventar.json` neu messen; Gegenprüfung Pflicht. (#628)
+
+  - [x] **Z2 Build-Zeit-Artefakt `messwerte/fedlex-zitatgraph.json`** — je gepinnter Consolidation
+    `jolux:Citation` mit gebundenem `citationToRs` (Sprache DEU, Count-Gate, Content-Type-Prüfung
+    am SPARQL-Endpoint wegen Soft-200), Skript `scripts/fedlex-zitatgraph.ts`. (#627)
+
+  - [x] **Z3 Warn-Bericht** «Fedlex kennt Erlass-Verweis, Leser verlinkt nicht» (kein hartes Tor;
+    Fussnoten-Rauschen dokumentiert). (#627)
+
+  - [x] **Z5 Ausgeschriebene Artikelverweise («Artikel N Absatz M KÜRZEL») verlinken** — Anlass
+    Z3-Klasse A (824 amtlich belegte Kanten): das Ziel war erkannt (N2 Form A), der Link aber nur
+    unterdrückt. Neue reine Funktion `ausgeschriebeneVerweiseImText` (`src/lib/fedlex/spannen.ts`),
+    additiv in `normVerweiseImText`; Guards Self · Form B · A10-Plural · Zeit-Kante ·
+    `KUERZEL_NUR_BUND` (kantonale Doppelbedeutung «StG»). +4166 Links, Klasse A 824 → 0,
+    Stichprobe 15/15. Gegenprüfung Pflicht.
+
+
+## W2·13-KANTONE-DATEN — Kantonale Gesetze — Daten & Extraktion *(verschoben 6.9.2026)*
+
+  - [x] **ZH-Tranche Stufe 2 · Fix-Runde nach Gegenprüfung** *(Fahrplan §4)* — ✅ 31.8.2026: Die adversariale Gegenprüfung hat die Kern-Tranche **widerlegt** (stiller Textverlust in fünf Klassen). Alle Wurzeln an der Roh-Geometrie der 24 amtlichen PDF diagnostiziert und behoben: B-2 (Fussnoten-Ziffer als Absatznummer), B-3 (ein «§» im Fliesstext beendete den Artikel — 26 Stellen), B-4 (Wortverschmelzung), B-5 (60 aufgehobene eIds gerettet), B-6 (Änderungsapparat im letzten §), B-9 (erfundenes Kürzel «AnwG»), E1 (leerer Einleitungssatz vor Tarif-Tabellen), E2-H1 (Art.-Zählweise), E2-H4 (`stand` aus dem Publikationsdatum). **B-1 falsifiziert** (der Bestand trug 1771 lit.-Positionen; der Befund zählte im falschen Feld). **Neuer Fund**, in der Gegenprüfung nicht enthalten: der hochgestellte lat. Suffix ging verloren — ZH-230 §§ 174bis/183bis/183ter/183quater fehlten ganz. Korpus 2371 → 2573 Einträge; abgeschnittene Blöcke 13 → 0, fehlende Leerzeichen 826 → 0, Apparat-Blöcke 43 → 0. Neues Tor `check:zh-vollstaendigkeit` (unabhängige Zweitlesung derselben PDF; Rot-Beweis 14/23 rot, danach 24/24 grün). Rückbau: `entglueZhTarif()` gestrichen (zerschnitt 60+ amtliche Abkürzungen). **Re-Bless** der drei Bestands-Erlasse 211.11/215.3/243 deklariert — fachliche Abnahme steht aus.
+
+  - [x] **ZH-Tranche Stufe 2b · Fix-Runde 2 nach der zweiten Gegenprüfung** *(Fahrplan §4)* — ✅ 31.8.2026: Die zweite adversariale Gegenprüfung hat den Stand der Fix-Runde 1 erneut **widerlegt**; die Befundnummern B-1…B-6 dieser Runde sind eine EIGENE Zählung (nicht die der Runde 1). Behoben, jede Wurzel an der Roh-Geometrie aller 24 amtlichen PDF gemessen: **B-1** Absätze mit lat. Suffix («2bis») kommen aus pdfjs als EIN Fragment und wurden als Fliesstext in den Vorgänger-Absatz geschoben — 0 → **6 Blöcke** (ZH-101 Art. 104, ZH-631.1 § 7 + §§ 30/35/47); **B-2** Sammel-Aufhebungsköpfe «§§ 66–69.» klebten am Vorgänger-§ und die genannten §§ fehlten ersatzlos — Erkennung jetzt GEOMETRISCH am hängenden Kopf-Einzug von 14.2 pt (gemessen an 2376 Kopfzeilen), 38 Köpfe, **215 «Aufgehoben»-Platzhalter**, ZH-230 172 → 313 Einträge; **B-3** Gliederungstitel im Normtext 103 → 0 Blöcke; **B-4** das Tor teilte die blinden Flecken des Geprüften (Common Mode) — vier neue Prüfungen (§§-Sammelköpfe · Suffix-Absätze je § · Gliederungstitel · **Werte-Wächter inkl. `mehrspaltig`-Zellen**), jede einmal rot gezeigt, u. a. gegen die Mutation «Grundgebühr 1 050 → 1 060»; **B-5** erste Staffelzeile ohne Spaltentrennung (ZH-211.11 § 4 **und** ZH-215.3 § 4); **B-6** die bewusste Auslassung (Übergangs-/Schlussapparat, PBG-Anhang) ist jetzt maschinenlesbar ausgewiesen — neues Artefakt `public/normtext/kanton-luecken.json`, 15 Erlasse (ZH-700.1: 11 % der Textzeilen). Korpus **2573 → 2788 Einträge** (215 neu, 0 entfallen, 163 geändert, je Erlass im Commit-Body deklariert). `lexmetrik-golden.json` byte-gleich, `src/data/tarif/**` unberührt; `check:zh-vollstaendigkeit` 24/24 grün, `check:normtext-netz` ZH-Drift 0. Neues Modul `scripts/normtext/zh-sammelkopf.ts` (§6.6: splitten statt Baseline mitwachsen lassen). **Fachliche Abnahme steht aus.**
+
+  - [x] **ZH-Tranche Stufe 2c · Fix-Runde 3 nach der dritten Gegenprüfung (zwei Linsen)** *(Fahrplan §4-R3)* — ✅ 31.8.2026: Beide Linsen (Extraktion + Tor-Härte) lauteten «noch nicht bestanden»; der gebündelte Restkatalog ist gebaut. **A1** Die Wurzel der arabisch nummerierten Gliederungstitel ist die **Schrift**, nicht die Position: von 504 Zeilen der Form «N. Text» im Gesamtbestand stehen 34 in reiner Titel-Schrift (ausnahmslos Überschriften), 470 tragen Body-Schrift (ausnahmslos Aufzählungen) — der Einzug trennt die Klassen nicht. Gegenprobe: alle 524 Zeilen der bereits bewährten Gliederungs-Muster stehen ebenfalls in Titel-Schrift, 0 Ausreisser. **33 Leck-Blöcke → 0**, 0 Einträge entfallen (Wort-Multimengen je § geprüft). **A2** Die Synthese «(vgl. Ziff. …)» steht in KEINEM amtlichen PDF — jetzt eigenes Feld `verweis {etikett, ziffern}` mit am Spaltenkopf GELESENEM Etikett; 32 → 0, und die zwei zuvor kollabierten Quell-Spalten bleiben unterscheidbar. Zweite geprüfte Synthese: der Spaltentitel «Zuschlag» steht nicht im PDF (jetzt leer). **A3** Ziffern-Aufzählungen werden `items` (drei Wächter gegen Fehltreffer), aufgehobene Ziffern als Platzhalter statt «1. 2. 3. 4.»-Prosa. **A4** Lücken-Index deklariert ALLE Schnitte (ZH-700.1: Übergangsapparat 110 + Anhang 381 Zeilen) und weist ZH-243 nicht länger fälschlich als Lücke aus. **A5** «7 von 24» war eine Fehlzählung — gemessen 11 von 24. **B (Tor-Härtung 2):** die elf Mutationen der Zweitlinse sind jetzt **alle rot** — neue Prüfungen: Zahlenfolge je §-Region positionsgebunden und beidseitig (fängt Wertetausch, den keine Multimenge sieht), Zeichen-Deckungsgrad je § (Schranke 90 %, gemessener Bestands-Tiefstwert 95.9 %), Anhang-Punkt-Ziffern beidseitig (118 von 150 ZH-243-Einträgen waren von KEINER Kopf-Prüfung erfasst), Erfindungs-Klasse, vier Trennstrich-Codepoints, lit.-Deckung EXAKT je § (0 Abweichungen in 2656 §§, keine Ausnahme) — dabei zwei echte Defekte gefunden: die nackte, aufgehobene lit.-Marke klebte am Vorgänger-item. **C:** Roh-PDF-Cache `daten/pdf-cache-zh/` (O1) und `fassungsToken` = sha256 der **Quell-Bytes** statt der Extraktion (vorher blind für Quell-Änderungen in verworfenen Teilen — bei ZH-700.1 14 % der Textzeilen); deklarierter Token-Reset aller 24, `check:normtext-netz` danach Drift 0. Korpus 2788 → 2788 Einträge, 99 sha geändert (alle ZH, 0 Nicht-ZH), `lexmetrik-golden.json` byte-gleich, `src/data/tarif/**` unberührt. Rückbau: Geometrie-Schicht als `zh-seitenmontage.ts` herausgelöst (§6.6, Adapter 1918 → 1372 Z.). **Fachliche Abnahme steht aus; die adversariale Gegenprüfung dieser Runde ist der nächste Auftrag.**
+
+  - [x] **ZH-Tranche Stufe 2 · Kern-Erlasse** *(ZH-4a/4b/4c, Fahrplan §4)* — ✅ 31.8.2026: 20 Kern-Erlasse importiert (23 ZH-Erlasse, 2371 Snapshots), deklarative Quellenliste `scripts/normtext/zh-quellen.ts` + Auflöse-Werkzeug, `holeZhPdf` mit Retry/Drossel und sichtbarem Abbruch bei Fehl-Erlassen (Rot-Beweis geführt). `check:normtext-netz` prüft 23 statt 3 ZH-Gruppen ⇒ §7-d-Lücke geschlossen. Zurückgestellt: LS 101 (KV, «Art.» statt «§») und LS 131.11 (VGG, Anhang-Kontenrahmen). `lexmetrik-golden.json` byte-gleich, `normtext-snapshot.json` rein additiv.
+
+  - [x] **ZH-4e · Art.-Marker-Zweig im ZH-PDF-Adapter** *(Befund 31.8.2026)* — ✅ 31.8.2026 in der Fix-Runde: `erkenneZhMarker()` erhebt die Zählweise je Erlass aus der Textbasis (Mehrheit der zeilenanfangs-verankerten Köpfe), Label folgt («Art. N» statt «§ N»). **LS 101 KV aufgenommen: 147 Artikel.** §1-A.
+
+  - [x] **K-14 · Kantonales Zitat-Vokabular — POC** *(F39)* — nur exakte Sammlungsnummer-Matches; Prämisse «Entscheid-`normKeys` sind Bund-only» vor dem Bau nachmessen. §1-A.
+        *Teil-eingelöst 31.8.2026 (N0a). Prämisse nachgemessen und **bestätigt**: 0 von 6341 Register-Einträgen trugen einen kantonalen key. Geliefert als eigene Projektion `public/rechtsprechung/normkeys-kanton.json` (3191 Entscheide, 6990 Paare, 147 Erlasse, Kanton BS), Tor `check:normkeys-kanton`. **Nicht** ins Rechtsprechungs-Register geladen: das steht bei 97.0 % seines gzip-Deckels. **Offen bleibt** die Ausweitung über BS hinaus — sie hängt an `SYSTEMATIK_PRAEFIX` (kanton-norm-resolver.ts), das nur BS deklariert; die übrigen fünf Entscheid-Kantone (AG/BE/GR/SG/ZH) haben zusammen 30 Entscheide und keinen Erlass-Bestand, gegen den aufzulösen wäre.*
+
+  - [x] **`inkraftSeit` für Kantone — GEPRÜFT UND ABGELEHNT** *(Befund N0b 31.8.2026, §7-Abweichung)* — ein Auftrag verlangte, das Feld für alle 1231 kantonalen Erlasse aus dem vorhandenen `stand` zu füllen («Bund 227, Kanton 0/1231»). **Nicht gebaut, und zwar nicht aus Aufwand, sondern weil es fachlich falsch wäre.** `inkraftSeit` bedeutet im bestehenden Vertrag das **Ur-Inkrafttreten des Erlasses** (Fedlex `jolux:dateEntryInForce` am Abstract-ELI, Sidecar `inkrafttreten.json`), und die UI beschriftet es «in Kraft seit». Der kantonale `stand` ist das In-Kraft-Datum der **aktuellen Fassung** — eine andere Tatsache. Empirischer Abstand am Bund: von 227 Erlassen mit beiden Werten sind sie bei **genau einem** gleich (ZGB: stand 2026-07-01 vs. inkraftSeit 1912-01-01). Der Nachtrag hätte für AG-291.150 behauptet, das Anwaltsdekret gelte seit 2024. Die Auslassung ist ausserdem **dokumentiert und begründet**, nicht vergessen: `inkrafttreten-generieren.ts` («LexWork trägt strukturell KEIN unterscheidbares Ur-Inkrafttreten … darum §8: Kanton ehrlich WEGLASSEN») und der Feld-Kommentar in `browse-typen.ts`. **Voraussetzung für eine spätere Umsetzung:** eine amtliche Quelle je Kanton, die das Ur-Inkrafttreten trägt — offline nicht vorhanden. Wer den Punkt wieder aufmacht, liest zuerst diese Zeile.
+
+
+## QS-KORPUS — Korpus-Pflege: fehlende und fehlerhafte amtliche Substanz *(verschoben 6.9.2026)*
+
+  - [x] **VZV Art. 3/4: amtliche Ausweiskategorien durch generische lit.-Marken ersetzt** *(Befund Diskrepanz-Finder 4.9.2026, PR #650)* — Fedlex führt `<dt>A: </dt>`, `<dt>BE: </dt>` (Führerausweis-Kategorien); `public/normtext/bund/VZV.json` Art. 3 Abs. 1 trägt stattdessen `marke: a,b,c,d,b,c,d` — die amtliche Bezeichnung ist weg und die Marken sind doppelt. Aus «Kategorie BE» wird «lit. b»: fachlich falsch zitierbar (§1). Wurzel im Fedlex-Adapter (`<dl>`-Marken werden offenbar nachnummeriert statt gelesen), nie in den Daten flicken; Breite messen (alle Erlasse mit nicht-alphabetischen `<dt>`-Marken). Risikopfad ⇒ Gegenprüfung. — **erledigt (PR #658)**: Wurzel im Fedlex-Adapter (`parseDefinitionsListe`, Präfix-Match kürzte jede nicht-kanonische Marke auf ihr erstes Token). Neu wird die Marke gelesen: `<dt>` mit `:` = Label verbatim (51 Vorkommen in genau 3 Erlassen gemessen, keine davon lit.-Aufzählung), sonst nur normalisieren, wenn die GANZE Marke kanonisch ist. Breite: 35 Erlasse, 62 Artikel, 193 Einzelmarken — nebst VZV auch die römischen Ziffern der Staatsverträge (`ii)`→`i`), ASYLV-2-Legenden, VBB-Kolonnen, UVG-Rentenlabels, lat. Suffixe bis `decies`. Messung: `bibliothek/normtext/dt-marken-inventar-2026-09-04.md`.
+
+  - [x] **AMBV: fünf Snapshot-Defekte aus zerrissenen Wörtern und loser Interpunktion** *(Befund Diskrepanz-Finder 4.9.2026, PR #650)* — `public/normtext/bund/AMBV.json` gegen den gepinnten Fedlex-Text: Art. 6 «Zwischen produkten», «Erfah rung», «natur wissenschaftliche», «Hochschul aus bildung», «Fütterungs arznei mitteln»; Art. 12 «Qualifika tionen»; Art. 14 «GMP-Kon trollsysteme»; Art. 11/12 «werden ;» bzw. «ausreicht ;»; Art. 21 «werden .». Klasse: Silbentrennung des Quell-Layouts nicht zusammengezogen bzw. Leerzeichen vor Satzzeichen. Deterministisch reproduzierbar mit `npx vite-node scripts/analyse/gemini-diskrepanz.ts bund/AMBV --nur-diff`; Sweep über den Bund-Bestand vor dem Fix, die Klasse ist mit hoher Wahrscheinlichkeit nicht auf AMBV beschränkt. Risikopfad ⇒ Gegenprüfung. — **erledigt (PR #658)**: Weder Silbentrennung noch `&shy;`, sondern leere Namensraum-Marker der Fedlex-Word-Konversion (`<tmp:inl …></tmp:inl>`) MITTEN im Wort; `entferneTags` las den Tagnamen ohne Namensraum («tmp») und ersetzte den Marker durch ein Leerzeichen. Neu ist ein Tagname mit `:` inline. Breite: 8 Erlasse, 16 Artikel (AMBV, BETMKV, LugÜ, BBV, EPV, FAMZV, NBV, **AHVV** — dort korrigiert der Fix einen Frankenbetrag «10.—», Gegenprüfung 4.9.2026); im Cache gemessen: `tmp:inl` 680, `w:smartTag` 64, `w:moveFromRange*` 4.
+
+
+## QS-MONITOR-ROT — Normen-Monitor seit ≥5 Wochen rot — Wurzel-Fix *(verschoben 6.9.2026)*
+
+  - [x] LIK-Reihe 2026-05→2026-07 nachziehen (amtliche Werte ⇒ Gegenprüfung). *(#499 14.8., bestätigt #581 30.8.: 30/30 Identitätstreffer BFS cc-d-05.02.08; Häkchen 1.9.2026)*
+
+  - [x] 10 ESTV-MWST-Snapshot-Drifts aktualisieren · AIG-Botschaft BOTSCHAFT-2025-3067 nachführen · VRV-Vernehmlassung VERN-2026-79 bereinigen. *(#524 15.8. + #581 30.8., Gegenprüfung bestanden; Häkchen 1.9.2026)*
+
+  - [x] Verfahrens-Gap Reparatur-Arm vs. Detektions-Arm — ✅ 2.9.2026 (PR #623): Monitor-Cron 07:17 UTC nach dem Reparatur-Arm, Reparatur-PR ohne Kanton-Churn, Tafel aller 12 Verdikte statt &&-Kette.
+
+
+## W2·17-UI-BEFUNDE — UI-Befundliste extern (210 Befunde, Cowork 29.7.2026) *(verschoben 6.9.2026)*
+
+  - [x] **B6-N1 · LM-162: Ergebniskasten wächst mit dem Inhalt** — Entscheid David 8.8.2026; CLS-Budget trotzdem halten. §7.
+
+  - [x] **B6-N2 · LM-164: «nicht erfasst» wird ausgewiesen** — **erledigt (überholt)** 30.8.2026: am gebauten Stand nicht mehr reproduzierbar (V1-Hülle gelöscht, kein Artikel trägt eine Rechtsprechungs-Zeile), §8-Substanz im V3-Reiter «Entscheide» bereits gebaut (drei Zustände, drei Sätze). Rest-Punkt am Panel-Öffner wartet auf David. §7.
+
+  - [x] **B7-N1 · Scrim hinter Overlays (LM-010/LM-015)** — gebaut 30.8.2026 am «Ansicht ▾»-Menü (Regel: der Scrim folgt der Fokus-Falle, Ä52 bleibt); LM-010 erledigt (überholt) — das Rechtsprechungs-Panel ist seit Ä60 eine Spur neben dem Text, kein Overlay. Dunkelmodus-Fehler des Blatt-Scrims mitbehoben. §8.
+
+
+## QS-UI — Oberflächen-Qualität app-weit *(verschoben 6.9.2026)*
+
+  - [x] **Marken-Präfix im Leser: «lit. BE» statt «Kategorie BE», «A.» statt «A:»** *(Gegenprüfung PR #658)* — gebaut #679 (`markenArt` in `ArtikelBody.helfer.ts`), Tests nachgezogen 5.9.2026 (VZV Art. 3: `BE:` statt `BE.`, Zitat ohne «lit.»; Golden byte-gleich).
+
+  - [x] **Pfadgebundene Wächter zeigen nur auf `ArtikelBody.tsx`** *(Nebenfund #663-Split, §6.7)* — erledigt 5.9.2026: drei Wächter (leser-typo-tokens, design-r3b-chrome, check-linien-kanon) auf Glob `ArtikelBody.*` umgestellt, je Rot-Beweis in `ArtikelBody.helfer.ts`. Hinweis bleibt: `EntscheidLeser.tsx`-Wächter (11 Tests) analog anpassen, falls dort gesplittet wird.
+
+
+## QS-FREMDAGENTEN — Fremde Agenten im Bau — Jules, Antigravity, Gemini *(verschoben 6.9.2026)*
+
+  - [x] Phase 0 — Testläufe T1–T6 (Jules-Pilot, agy-Recall, agy-Betrieb, NotebookLM, Prüfer-Probe, Tabu-Probe); Messwerte §5 (T4 David offen, T6: AGENTS.md hält nicht als Zaun). §2.
+
+  - [x] Pilot Jules — 3/3 PRs ohne Code-Nacharbeit (#639, #647, #648), Fremd-PR-Tor in CI (#645, Muster #649). §2/§5.
+
+  - [x] Diskrepanz-Finder Korpus-Werkstatt (#650, deterministischer Erstfilter + Gemini-Konsens; Pilot AMBV 8/8). §2/§3.
+
+
+## QS-VERWENDEN — Verwenden statt bauen — risikoarme Fertigteile aus der Fremdquellen-Sichtung 2.9.2026 *(verschoben 6.9.2026)*
+
+  - [x] **V1 Lizenz-Tor** — `check:lizenzen` mit Allowlist (MIT/Apache-2.0/BSD/ISC/0BSD/CC0/Unlicense/Python-2.0/BlueOak; MPL-2.0 nur gekennzeichnet) über `npm ls --all --json`/Paket-`license`-Felder, LGPL/GPL/AGPL/CPAL/NOASSERTION = rot; SBOM via cyclonedx-node-npm optional; einmal rot zeigen (§6.7); ins `gate` einhängen. Beleg: Rangliste #3.
+
+  - [x] **V1b check:lizenzen in ci.yml Tore-Job verdrahten** (Paritäts-Allowlist danach entfernen) — Folgeschritt aus Bug-Check-Nachzug PR #622 (Absprache 2.9.2026).
+
+  - [x] **V2 Cache für `daten/*.db`** im Turso-Sync-Workflow (`turso-sync.yml`, Job sync; ci.yml baut keine DBs, Tore bauen in-memory aus JSON) mit Schlüssel = `daten-manifest.json` + `scripts/datenhaltung/**` + `scripts/suche-felder.ts` + `package-lock.json` (`actions/cache@v4`, kein restore-key). Nutzen: wiederholte sync-Läufe ohne Datenänderung (der Cron-Job frische baut nichts). Beleg: Rangliste #10, PR #621.
+
+  - [x] **V3 Raw-Store Fedlex** — `scripts/fedlex-cache.sh`-Rohfassungen je Korpus-Stand als GitHub-Release-Asset (Tag `korpus-raw-<datum>`), plus `actions/attest-build-provenance`; Prüfung «Raw für jeden Pin vorhanden» via `check:raw-store`. Beleg: Rangliste #9.
+
+  - [x] **V4 JSON-LD vervollständigen** — `legislationDateVersion`/`legislationLegalForce` in `src/lib/seo-detail.ts` aus Konsolidierungsdatum/`inForceStatus` füllen (Geltungsaussage nur, wo der Pin sie kennt; sonst Feld weglassen; Bug-Check #630: Feldname korrekt `legislationDateVersion`, nicht `legislationDate`). Beleg: Rangliste #12.
+
+  - [x] **V5 Atom-Feed «geänderte Erlasse»** aus `public/normtext/register.json` (`status==='snapshot'`, Feld `stand`) statisch nach `public/feed/erlasse.xml`, deterministisch (keine Bauzeit-Stempel, sha256 zweier Läufe identisch); handgebautes XML statt Paket `feed` (§17 Rückbau-Gegengewicht). Beleg: Rangliste #14, PR (QS-VERWENDEN V5+V6).
+
+  - [x] **V6 valibot-Formprüfung** an den Datei-Grenzen für Manifeste/generierte JSON (nur Grenzen, nie Engines): `daten-manifest.json` (turso-sync.ts Quell-Riegel) + `public/normtext/register.json` (ingest.ts ladeRegister()). Beleg: Rangliste #16, PR (QS-VERWENDEN V5+V6).
+
+  - [x] **V8 pagefind-Spike** gegen `suche-eval-gold` (Messung, kein Umbau) — Spike gemessen 2.9.2026: nicht ersetzen (Notiz [bibliothek/recherche/pagefind-spike-2026-09-02.md](bibliothek/recherche/pagefind-spike-2026-09-02.md)). Beleg: Rangliste #11.
+
