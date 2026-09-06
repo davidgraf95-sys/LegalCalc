@@ -3,6 +3,7 @@ import { systematikZeilen, kuerzelZiel, kantonZiel, behoerdeZiel } from '../comp
 import { KANTONE } from '../data/tarif/typen';
 import { STARTSEITE_ZAEHLER } from '../data/startseiteZaehler.generated';
 import { ERLASS_REGISTER } from '../lib/normtext/register';
+import { SYSTEMATIK } from '../lib/normtext/systematik';
 import { NAVIGATION } from '../lib/navigation';
 
 // ─── D29-Wächter: Startseiten-Modul-Links (R10-Nachzug-3) ───────────────────
@@ -34,7 +35,17 @@ function alleZiele(knoten: readonly unknown[]): string[] {
   }
   return out;
 }
-const navZiele = new Set(alleZiele(NAVIGATION));
+// NACHZUG Fixer 1f/D26 (6.9.2026): die Seitenleiste listet die Bund-Kategorien
+// nicht mehr als Blätter (sie trägt jetzt Kernerlasse + «Alle Bundeserlasse»),
+// darum ist der Nav-Baum allein kein Bestand mehr für `#sys-<id>`-Ziele. Die
+// Anker-Quelle ist `SYSTEMATIK` (`lib/normtext/systematik.ts`), die
+// `pages/Gesetze.tsx` als `#sys-<id>` auflöst (Z. ~197) — derselbe Bestand,
+// den die Startseiten-Zeilen verlinken (§5). Nav-Baum bleibt als zweite
+// Quelle (International-Säule, Kantone, Behörden).
+const navZiele = new Set([
+  ...alleZiele(NAVIGATION),
+  ...SYSTEMATIK.map((k) => `/gesetze?ebene=bund#sys-${k.id}`),
+]);
 
 describe('D29 — Systematik-Modul: Zeilen-Ziele', () => {
   const zeilen = systematikZeilen();
