@@ -124,20 +124,28 @@ test('Tagerechner', async ({ page }, testInfo) => {
   await axePruefen(page, testInfo, 'tagerechner')
 })
 
-// In-App-Reiter-Übersicht (Gesetze-UX Batch 2 ersetzte den horizontalen
-// TabStreifen durch einen Topbar-Trigger ☰ + Dialog-Panel). 2 Reiter vorab
-// seeden, sonst ist der Trigger unsichtbar (tabs.length < 1). Geprüft wird der
-// sichtbare Trigger UND das geöffnete Dialog-Panel (die reiche interaktive Fläche).
-test('Reiter-Übersicht mit zwei offenen Reitern', async ({ page }, testInfo) => {
+// In-App-Reiter (W2·24-DESIGN-IDENTITAET R2, 6.9.2026): der Topbar-Trigger ☰ +
+// Dialog-Panel ist der sichtbaren ARBEITSLEISTE gewichen (`Reiterleiste.tsx`,
+// §5a — Wunsch David «analog zum browser die offenen tabs oben»). Geprüft wird
+// unverändert BEIDES, nur an seinem neuen Ort: die sichtbare Reiter-Zeile UND
+// das geöffnete Blatt (die reiche interaktive Fläche). 10 Reiter vorab seeden
+// statt 2 — erst über der Überlauf-Schwelle (8) trägt die Leiste den
+// «+N»-Knopf, der auf Desktop-Breite ins Blatt führt; die kleinere Saat prüfte
+// den Überlauf gar nicht mit.
+test('Arbeitsleiste mit Überlauf-Blatt', async ({ page }, testInfo) => {
   await page.addInitScript(() => {
     try {
       localStorage.setItem('lexmetrik-tabs', JSON.stringify([
         { path: '/rechner/tagerechner' }, { path: '/rechner/verzugszins' },
+        { path: '/rechner/streitwert' }, { path: '/rechner/erbteilung' },
+        { path: '/rechner/teuerung' }, { path: '/rechner/prozesskosten' },
+        { path: '/vorlagen/testament' }, { path: '/vorlagen/vollmacht' },
+        { path: '/vorlagen/mahnung' }, { path: '/vorlagen/nda' },
       ]))
     } catch { /* privater Modus */ }
   })
   await oeffnen(page, '/rechner/tagerechner')
-  const trigger = page.getByRole('button', { name: 'Alle geöffneten Reiter' })
+  const trigger = page.getByRole('button', { name: /Alle \d+ offenen Reiter/ })
   await trigger.waitFor({ state: 'visible' })
   await trigger.click()
   await page.getByRole('dialog', { name: 'Alle geöffneten Reiter' }).waitFor({ state: 'visible' })
@@ -298,18 +306,22 @@ const DUNKEL_PUNKTE: Array<{
     },
   },
   {
-    titel: 'Reiter-Übersicht mit zwei offenen Reitern', punkt: 'tab-streifen', url: '/rechner/tagerechner',
+    titel: 'Arbeitsleiste mit Überlauf-Blatt', punkt: 'tab-streifen', url: '/rechner/tagerechner',
     seeden: async (page) => {
       await page.addInitScript(() => {
         try {
           localStorage.setItem('lexmetrik-tabs', JSON.stringify([
             { path: '/rechner/tagerechner' }, { path: '/rechner/verzugszins' },
+            { path: '/rechner/streitwert' }, { path: '/rechner/erbteilung' },
+            { path: '/rechner/teuerung' }, { path: '/rechner/prozesskosten' },
+            { path: '/vorlagen/testament' }, { path: '/vorlagen/vollmacht' },
+            { path: '/vorlagen/mahnung' }, { path: '/vorlagen/nda' },
           ]))
         } catch { /* privater Modus */ }
       })
     },
     herstellen: async (page) => {
-      const trigger = page.getByRole('button', { name: 'Alle geöffneten Reiter' })
+      const trigger = page.getByRole('button', { name: /Alle \d+ offenen Reiter/ })
       await trigger.waitFor({ state: 'visible' })
       await trigger.click()
       await page.getByRole('dialog', { name: 'Alle geöffneten Reiter' }).waitFor({ state: 'visible' })

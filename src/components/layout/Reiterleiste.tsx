@@ -159,9 +159,25 @@ export function Reiterleiste({ paneSchluessel = [] }: {
   });
 
   // Aktiven Reiter ins Bild scrollen (§5a Ziff. 8, mobile Leiste).
+  //
+  // BEWUSST NICHT `scrollIntoView`: GEMESSEN 6.9.2026 (Preview, Chromium,
+  // `/gesetze/bund/GEBV_HREG`) setzte der Aufruf den Startpunkt der
+  // Tab-Reihenfolge des Dokuments auf den Reiter — der erste Tab-Druck landete
+  // danach auf dem Reiter statt auf dem Skip-Link, und `e2e/a11y.e2e.ts` (E4)
+  // wurde rot. Der Skip-Link ist die erste Zusage der Tastaturbedienung; ein
+  // Komfort-Scroll darf sie nicht kosten. Hier wird darum NUR die waagrechte
+  // Scroll-Position des Streifens selbst gesetzt: kein Dokument-Scroll, kein
+  // Eingriff in die Fokus-Reihenfolge, gleiche Wirkung.
   useEffect(() => {
-    const el = leisteRef.current?.querySelector<HTMLElement>('[data-reiter-aktiv="true"]');
-    el?.scrollIntoView({ block: 'nearest', inline: 'nearest' });
+    const streifen = leisteRef.current?.querySelector<HTMLElement>('[data-reiter-streifen]');
+    const el = streifen?.querySelector<HTMLElement>('[data-reiter-aktiv="true"]');
+    if (!streifen || !el) return;
+    const links = el.offsetLeft;
+    const rechts = links + el.offsetWidth;
+    if (links < streifen.scrollLeft) streifen.scrollLeft = links;
+    else if (rechts > streifen.scrollLeft + streifen.clientWidth) {
+      streifen.scrollLeft = rechts - streifen.clientWidth;
+    }
   }, [aktivSchluessel, sichtbar.length]);
 
   // Blatt schliessen bei Klick ausserhalb (Trigger + portaliertes Blatt).
@@ -273,7 +289,7 @@ export function Reiterleiste({ paneSchluessel = [] }: {
     <nav aria-label="Offene Reiter" ref={leisteRef}
       className="print:hidden shrink-0 border-b border-rule-soft bg-paper">
       <div className="flex items-stretch px-4 sm:px-6">
-        <div className="flex min-w-0 flex-1 items-stretch overflow-x-auto lc-reiter-scroll border-l border-rule-soft">
+        <div data-reiter-streifen className="relative flex min-w-0 flex-1 items-stretch overflow-x-auto lc-reiter-scroll border-l border-rule-soft">
           {sichtbar.map(reiter)}
         </div>
         {/* «+N» bzw. «N offen» — EIN Blatt für Überlauf (Desktop) und die

@@ -79,9 +79,15 @@ export function Topbar({ onMenu, schubladeOffen, seitenleisteEingeklappt, onSeit
   const aktiverBereich = bereichVonPfad(pathname);
   return (
     <header
-      className="sticky top-0 z-leiste border-b-2 border-rule lc-glass"
+      className="sticky top-0 z-leiste lc-glass"
     >
-      <div className="px-4 sm:px-6 h-16 flex items-center gap-3 sm:gap-5">
+      {/* Die 2-px-Kante sitzt AM INNEREN Träger, nicht am <header>: mit
+          `box-sizing: border-box` liegt sie damit INNERHALB der `h-16` und die
+          klebende Krone misst exakt 4 rem = 64 px. Gemessen 6.9.2026 im
+          Preview: mit `border-b-2` am <header> waren es 66 px — zwei Pixel mehr
+          als `APP_TOPBAR_H` in `leserGeometrie.ts` annimmt, und der klebende
+          Leser-Kopf sässe um genau diese zwei Pixel falsch. */}
+      <div className="px-4 sm:px-6 h-16 border-b-2 border-rule flex items-center gap-3 sm:gap-5">
         {/* Mobil: Schublade öffnen — auf Desktop trägt die persistente Leiste. */}
         <button
           type="button"
@@ -172,7 +178,14 @@ export function Topbar({ onMenu, schubladeOffen, seitenleisteEingeklappt, onSeit
           )}
         </div>
 
-        <div className={`shrink-0 flex items-center gap-1.5 sm:gap-2 ${weicht}`}>
+        {/* `ml-auto`: die Werkzeuge stehen IMMER an der rechten Kante. Ohne sie
+            sammelt sich der Restplatz hinter ihnen, sobald der `max-w-xs`-Deckel
+            des Suchfeldes greift — GEMESSEN 6.9.2026 @1280: der Farbschema-Knopf
+            stand auf «/» 93 px weiter links als auf `/gesetze` (die Startseite
+            trägt weder Feld noch Seitenleisten-Schalter). Genau diesen Sprung
+            verbietet §6.1 («Layout darf nicht springen»), bewacht von
+            `e2e/w223b-kopf-seitenleiste.e2e.ts`. */}
+        <div className={`ml-auto shrink-0 flex items-center gap-1.5 sm:gap-2 ${weicht}`}>
           {/* A5 (David 5.7.2026): kein eigener Palette-Knopf mehr — die
               HeaderSuche trägt den Norm-Sprung selbst.
               R2: der frühere ☰-Reiter-Trigger (`ReiterUebersicht`) ist ersatzlos
@@ -205,7 +218,11 @@ export function Topbar({ onMenu, schubladeOffen, seitenleisteEingeklappt, onSeit
 // gehörte dort nicht hin.
 export function AusgabeZeile() {
   return (
-    <div className="print:hidden shrink-0 border-b border-rule-soft bg-paper">
+    // Unter `sm` weggelassen: die Zeile braucht dort zwei Zeilen Höhe für eine
+    // Angabe, die auf dem Telefon niemand sucht — und sie ist nicht verloren,
+    // die Schublade führt DENSELBEN Baustein in ihrem Fuss (bewacht von
+    // `e2e/w223b-kopf-seitenleiste.e2e.ts` §6.3 @390).
+    <div className="hidden sm:block print:hidden shrink-0 border-b border-rule-soft bg-paper">
       <div className="px-4 sm:px-6 py-1.5 flex justify-end">
         <KorpusStand />
       </div>
