@@ -3232,3 +3232,46 @@ html[data-lr6-anker-warten] footer { visibility: hidden; }
     column-gap: 2rem;
   }
 }
+
+/* ═══ Facetten-Text-Schalter (Präfix `.fc-`, additiv am Dateiende) ═══════════
+   Fixer 1h, 6.9.2026 — Prüfbefund «Aus D24 (offen)»: `ui/FacettenGruppe`
+   (bedient /rechtsprechung UND /suche) trug die Achsen weiterhin als
+   `.lc-chip`-Kästen, obwohl D22 die Kasten-Optik an der Filterzeile schon
+   abgeräumt hatte («keine Kästen»). Vorbild ist die dortige Text-Schalter-
+   Sprache (`.ub-schalter`, EntscheidFilter.tsx «Liste/Karten») — EIGENES
+   Präfix statt Wiederverwendung, weil `.ub-schalter` den Registerstrich fest
+   auf `--reg-g` verdrahtet (er entstand nur für /gesetze). Die Facetten-Achse
+   braucht ihn JE DOMÄNE — `data-reg` am `role=group`-Wrapper, dasselbe Muster
+   wie `ui/ListenTabelle`/`tb-raster[data-reg]` weiter oben in dieser Datei.
+
+   RUHEZUSTAND: ink-500 (bereits PFLICHT-Paar auf --paper, farbwelt-tabellen.ts),
+   ein UNSICHTBARER 2-px-Platzhalter unten — die Zeile springt beim Umschalten
+   nicht (wie `.ub-schalter`). GEWÄHLT: ink-900 + der 2-px-Registerstrich unten
+   + ✓-Präfix (Form-Signal, kein reiner Farbvergleich — F2/F4, Vorbild
+   `.lc-chip-selected::before`; der Tick erbt die Textfarbe wie dort, KEINE
+   zweite Registerfarbe am Glyphen). Kein Rahmen, keine Fläche (D22).
+   `min-height: var(--tap-ziel)` bleibt trotzdem stehen — WCAG 2.5.8 gilt auch
+   ausserhalb der heute gemessenen a11y-Sweep-Liste (e2e/a11y.e2e.ts TAP_FLAECHEN
+   deckt `.fc-schalter` bewusst noch nicht ab: die Sweeps laufen nur auf den
+   Leser-Seiten, nicht auf /rechtsprechung oder /suche — kein Regressions-Loch,
+   weil vorher `.lc-chip-zeile button` dort ebenfalls nie gemessen wurde). */
+.fc-schalter {
+  appearance: none; background: none; border: 0; border-radius: 0;
+  display: inline-flex; align-items: baseline; gap: 0.25rem;
+  min-height: var(--tap-ziel);
+  padding: 0.25rem 0;
+  cursor: pointer;
+  font-family: var(--font-sans), system-ui, sans-serif;
+  font-size: 0.8125rem; line-height: 1.5; font-weight: 500;
+  color: var(--ink-500);
+  border-bottom: 2px solid transparent;
+  transition: color .15s, border-color .15s;
+}
+.fc-schalter:hover { color: var(--ink-900); }
+.fc-schalter:focus-visible { outline: none; color: var(--ink-900); border-bottom-color: var(--focus); }
+.fc-schalter[aria-pressed="true"] { color: var(--ink-900); }
+.fc-schalter[aria-pressed="true"]::before { content: '✓'; font-weight: 600; }
+.fc-zeile[data-reg="g"] .fc-schalter[aria-pressed="true"] { border-bottom-color: var(--reg-g); }
+.fc-zeile[data-reg="r"] .fc-schalter[aria-pressed="true"] { border-bottom-color: var(--reg-r); }
+.fc-zeile[data-reg="m"] .fc-schalter[aria-pressed="true"] { border-bottom-color: var(--reg-m); }
+.fc-zeile[data-reg="w"] .fc-schalter[aria-pressed="true"] { border-bottom-color: var(--reg-w); }
