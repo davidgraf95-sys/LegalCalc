@@ -8,18 +8,34 @@ import { routenEbene } from './normtext/erlassAdresse';
 
 export type TabKat = 'gesetze' | 'rechtsprechung' | 'materialien' | 'vorlagen' | 'rechner' | 'sonstiges';
 
-// Kategorie rein aus dem Pfad-Präfix ableiten: die Tool-Routen sind /rechner/*
-// bzw. /vorlagen/*, die Reader /gesetze/:e/:k bzw. /rechtsprechung/:k.
+/** Die fünf Bereiche als Pfad-Präfix. Bewusst hier und nicht aus
+ *  `components/layout/bereiche.ts` importiert: das ist die Darstellungsschicht
+ *  (§3), und sie fasst Rechner und Vorlagen zu EINEM Register «Werkzeuge»
+ *  zusammen — die Reiter-Gruppierung hält sie getrennt. Zwei Achsen, zwei
+ *  Tabellen; die Reihenfolge ist die von `KAT_ORDER`/`BEREICHS_UEBERSICHTEN`. */
+const BEREICHS_KAT = ['gesetze', 'rechtsprechung', 'materialien', 'vorlagen', 'rechner'] as const;
+
+// Kategorie rein aus dem BEREICHS-PRÄFIX ableiten: die Tool-Routen sind
+// /rechner/* bzw. /vorlagen/*, die Reader /gesetze/:e/:k bzw.
+// /rechtsprechung/:k — und die Übersicht des Bereichs selbst.
+//
+// ── Aus Fixer 1i (Prüfbefund 6.9.2026) · DIE ÜBERSICHT GEHÖRT IN IHRE GRUPPE
+// GEMESSEN: der Reiter `/gesetze` stand im Überlauf-Blatt unter «Weitere»
+// statt unter «Gesetze» — die Prüfungen verlangten alle einen Schrägstrich
+// NACH dem Bereich (`/gesetze/…`), und genau den trägt die Übersicht nicht.
+// Seit D7 ist sie aber ein Reiter wie jedes andere Dokument
+// (`lib/tabs.BEREICHS_UEBERSICHTEN`); ein Bereich, dessen eigene Übersicht
+// nicht in seiner Gruppe steht, ist keine Gruppierung, sondern ein Loch.
+// (M2, 6.9.2026, gilt unverändert mit: ohne die `materialien`-Zeile landete
+// jede Material-Detailseite unter «Weitere».)
+//
+// ROT ZU BEKOMMEN (§6.7): das `p === \`/${kat}\``-Glied streichen ⇒ der Fall
+// «die Bereichs-Übersicht steht in ihrer Gruppe» misst wieder «sonstiges».
 export function reiterKategorie(path: string): TabKat {
   const p = pfadTeil(path);
-  if (p.startsWith('/gesetze/')) return 'gesetze';
-  if (p.startsWith('/rechtsprechung/')) return 'rechtsprechung';
-  // M2 (6.9.2026): ohne diese Zeile landete jede Material-Detailseite unter
-  // «Weitere» — die Rubrik hatte im ganzen Modul null Treffer für
-  // «materialien», obwohl sie eine der fünf Bereichs-Übersichten ist (D7).
-  if (p.startsWith('/materialien/')) return 'materialien';
-  if (p.startsWith('/vorlagen/')) return 'vorlagen';
-  if (p.startsWith('/rechner/')) return 'rechner';
+  for (const kat of BEREICHS_KAT) {
+    if (p === `/${kat}` || p.startsWith(`/${kat}/`)) return kat;
+  }
   return 'sonstiges';
 }
 

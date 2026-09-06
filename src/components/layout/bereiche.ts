@@ -103,11 +103,14 @@ export const REG_HOVER_FLAECHE_BLATT: Record<Register, string> = {
   g: 'group-hover/blatt:bg-reg-g', r: 'group-hover/blatt:bg-reg-r',
   m: 'group-hover/blatt:bg-reg-m', w: 'group-hover/blatt:bg-reg-w',
 };
-/** Hover-Strich eines inaktiven Reiters der Arbeitsleiste (Gruppe `reiter`). */
-export const REG_HOVER_FLAECHE_REITER: Record<Register, string> = {
-  g: 'group-hover/reiter:bg-reg-g', r: 'group-hover/reiter:bg-reg-r',
-  m: 'group-hover/reiter:bg-reg-m', w: 'group-hover/reiter:bg-reg-w',
-};
+// ── Aus Fixer 1i (Prüfbefund 6.9.2026) · RÜCKBAU `REG_HOVER_FLAECHE_REITER`
+// Die Tabelle («Hover-Strich eines inaktiven Reiters der Arbeitsleiste») hatte
+// nach R11-R1 keinen Konsumenten mehr: seither trägt JEDER Reiter seine
+// Registerfarbe dauerhaft (inaktiv auf 60 % Deckkraft, `REG_FLAECHE` +
+// `group-hover/reiter:opacity-100` in `Reiterleiste.tsx`) — der Hover hebt die
+// Deckkraft, er färbt nicht mehr ein. Vier Tailwind-Klassennamen, die nur noch
+// dafür da waren, im Purge zu überleben. §17-Gegengewicht: gestrichen statt
+// bewacht.
 /** Leichte Tönung der Fläche in der Registerfarbe — der aktive Reiter. */
 export const REG_TON: Record<Register, string> = {
   g: 'bg-reg-g/10', r: 'bg-reg-r/10', m: 'bg-reg-m/10', w: 'bg-reg-w/10',

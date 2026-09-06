@@ -12,8 +12,17 @@
 // stand im Reiter `/gesetze/bund/ZGB#art-3`, in der Adresse weiter
 // `/gesetze/bund/ZGB` — dieselbe Adresse trug zwei Beschriftungen («ZGB» kalt,
 // «Art. 3 ZGB» nach dem Scrollen), ohne dass jemand einen Artikel gewählt
-// hätte. Die Beschriftung kommt jetzt aus `TabEintrag.wahl` (dem Anker der
-// ADRESSE), die Lesestellung bleibt in `path`.
+// hätte. Die Beschriftung kam daraufhin aus `TabEintrag.wahl` (dem Anker der
+// ADRESSE), die Lesestellung blieb in `path`.
+//
+// ── D27 (David 6.9.2026) · DIE REGEL IST UMGEDREHT ──────────────────────────
+// «diese funktion, dass es anzeigt in welchem artikel wir sind, soll der tab
+// bekommen. es kann dann direkt im gesetz raus.» Der Reiter FOLGT der
+// Lesestellung — und Determinismus (§2) heisst seither «gleiche Lesestellung ⇒
+// gleiche Beschriftung» statt «gleiche Adresse ⇒ gleiche Beschriftung». Fall
+// (e) unten misst darum das Gegenteil von dem, was er beim R2-Nachzug mass;
+// die ZUSAGE ist dieselbe geblieben (die Beschriftung ist reproduzierbar,
+// nicht beliebig), nur ihr Bezugspunkt ist ein anderer.
 //
 // ROT ZU BEKOMMEN (§6.7), je Fall einer:
 //   (a)/(b) in `TabTracker.tsx` `ersetzeTab(...)` wieder durch `merkeTab(...)`
@@ -22,8 +31,9 @@
 //       legt keinen Reiter an (bzw. der Browser öffnet ein eigenes Fenster).
 //   (d) in `layout/HeaderSuche.tsx` den `lmNeuerReiter`-Zweig streichen ⇒ der
 //       Treffer verbraucht den Reiter, aus dem er kommt.
-//   (e) in `layout/Reiterleiste.tsx` `kurzform` wieder aus `t.path` statt
-//       `t.wahl` lesen ⇒ die Beschriftung wechselt beim Scrollen.
+//   (e) in `lib/tabs.basisKurzform` `hashVon(t.path) ?? t.wahl` wieder durch
+//       `t.wahl` ersetzen ⇒ die Beschriftung bleibt beim Scrollen stehen (die
+//       alte F5-Regel), und (e) misst «ZGB» statt «Art. N ZGB».
 import { test, expect, type Page } from '@playwright/test'
 import { kopfSucheOeffnen } from './helpers/kopfSuche'
 
@@ -39,10 +49,17 @@ const identitaeten = async (page: Page) => (await pfade(page)).map((p) => p.spli
 
 /** Sichtbare Beschriftungen der Arbeitsleiste (erster Knopf je Reiter = der
  *  Name; die Griffe ✕/⧉ dahinter zählen nicht mit, ohne die sr-only-Ordnungszahl). */
+// ── DEKLARIERTE TEST-ÄNDERUNG (§6.3, D27, 6.9.2026) ─────────────────────────
+// `.filter(Boolean)` vor dem Zusammenfügen: seit D27 trägt jeder Gesetzes-
+// Reiter eine Spanne für die Lesestellung (`.rl-stelle`), die die BREITE des
+// Artikels reserviert und darum auch dann im DOM steht, wenn der Scroll-Spy
+// noch nichts gemeldet hat — dann leer. Ohne den Filter ergäbe das Zusammen-
+// fügen ein führendes Leerzeichen (« ZGB»). Gemessen wird unverändert die
+// SICHTBARE Beschriftung.
 const beschriftungen = (page: Page) => page.evaluate(() =>
   [...document.querySelectorAll('nav[aria-label="Offene Reiter"] [data-reiter-aktiv]')]
     .map((d) => [...(d.querySelector('button')?.querySelectorAll('span:not(.sr-only)') ?? [])]
-      .map((s) => s.textContent?.trim()).join(' ')))
+      .map((s) => s.textContent?.trim()).filter(Boolean).join(' ')))
 
 async function leserBereit(page: Page): Promise<void> {
   await expect(page.locator('article[id^="art-"]').first()).toBeAttached({ timeout: 20_000 })
@@ -214,25 +231,73 @@ test.describe('Arbeitsleiste — eine Navigation, ein Reiter', () => {
     expect(nach[0], 'der Reiter, aus dem der Treffer kam, ist verbraucht').toBe('/gesetze/bund/ZGB')
   })
 
-  test('(e) die Beschriftung folgt der Adresse, nicht dem Scrollen (F5)', async ({ page }) => {
+  // ── (e) · D27 · DER REITER FOLGT DER LESESTELLUNG ────────────────────────
+  // Bis zum R2-Nachzug prüfte dieser Fall das GEGENTEIL («die Beschriftung
+  // folgt der Adresse, nicht dem Scrollen», F5). David hat die Regel am
+  // 6.9.2026 umgedreht; die Zusage bleibt die Reproduzierbarkeit — sie hängt
+  // jetzt an der Lesestellung statt an der Adresse. Herleitung im Kopf.
+  test('(e) die Beschriftung folgt der Lesestellung — live beim Scrollen (D27)', async ({ page }) => {
     await page.goto('/gesetze/bund/ZGB')
     await leserBereit(page)
-    const kalt = await beschriftungen(page)
-    expect(kalt).toEqual(['ZGB'])
+    // Erst die Stelle abwarten, die der Leser von sich aus meldet (Dokument-
+    // anfang) — danach wird gescrollt, und DIESER Wechsel ist die Zusage.
+    await expect.poll(() => beschriftungen(page), { timeout: 20_000 })
+      .toEqual([expect.stringMatching(/^Art\. \S+ ZGB$/)])
+    const vorher = (await beschriftungen(page))[0]
     await page.mouse.wheel(0, 1500)
-    await page.waitForTimeout(1200)
-    expect(await beschriftungen(page), 'die Beschriftung wanderte beim Scrollen').toEqual(kalt)
-    // Die Lesestellung ist NICHT verloren: sie steht im gespeicherten Pfad
-    // (Neustart) und im `title` des Reiters.
-    expect((await pfade(page))[0]).toMatch(/#art-/)
+    // ZUSAGE 1: der Text WECHSELT (die Rot-Probe der alten Regel).
+    await expect.poll(() => beschriftungen(page).then((b) => b[0]), { timeout: 20_000 })
+      .not.toBe(vorher)
+    const nachher = (await beschriftungen(page))[0]
+    expect(nachher, `Beschriftung nach dem Scrollen: «${nachher}»`).toMatch(/^Art\. \S+ ZGB$/)
+    // Die Stellung steht auch im gespeicherten Pfad — sie überlebt den Neustart.
+    const stelle = (await pfade(page))[0]
+    expect(stelle).toMatch(/#art-/)
 
-    // Gegenprobe SPA: derselbe Weg über einen Klick ergibt dieselbe Kurzform.
+    // ZUSAGE 2 (Determinismus, §2): gleiche Stellung ⇒ gleiche Beschriftung.
+    // RELOAD an derselben Stelle.
+    await page.reload()
+    await leserBereit(page)
+    await expect.poll(() => beschriftungen(page).then((b) => b[0]), { timeout: 20_000 })
+      .toBe(nachher)
+
+    // ZUSAGE 3: KALTSTART == SPA. Beide Wege auf denselben Erlass, beide bei
+    // der Stellung «Dokumentanfang» — dieselbe Zeichenkette.
+    await page.goto('/gesetze')
+    await page.evaluate(() => localStorage.removeItem('lexmetrik-tabs'))
+    await page.goto('/gesetze/bund/ZGB')
+    await leserBereit(page)
+    await expect.poll(() => beschriftungen(page), { timeout: 20_000 })
+      .toEqual([expect.stringMatching(/^Art\. \S+ ZGB$/)])
+    const kalt = (await beschriftungen(page))[0]
     await page.goto('/gesetze')
     await page.evaluate(() => localStorage.removeItem('lexmetrik-tabs'))
     await page.goto('/gesetze')
     await page.locator('a[href="/gesetze/bund/ZGB"]').first().click()
     await leserBereit(page)
-    expect(await beschriftungen(page)).toEqual(kalt)
+    await expect.poll(() => beschriftungen(page).then((b) => b[0]), { timeout: 20_000 }).toBe(kalt)
+  })
+
+  // ── (g) · D27 · IM SPLIT FOLGT JEDES FENSTER SEINER EIGENEN STELLUNG ──────
+  test('(g) beide Pane-Reiter tragen je ihre eigene Stellung (D27, Split)', async ({ page }) => {
+    await page.goto('/gesetze/bund/OR')
+    await leserBereit(page)
+    await page.getByRole('button', { name: /daneben öffnen/i }).first().click()
+    await expect(page.locator('[data-pane="sekundaer"]')).toHaveCount(1, { timeout: 20_000 })
+    // Zwei Reiter auf denselben Erlass (`?r=2` ist die zweite Instanz).
+    await expect.poll(() => identitaeten(page), { timeout: 20_000 }).toHaveLength(2)
+    // Im SEKUNDÄREN Fenster scrollen — nur dessen Reiter darf wandern.
+    const vorher = await beschriftungen(page)
+    const pane = page.locator('[data-pane="sekundaer"]')
+    const kasten = await pane.boundingBox()
+    if (!kasten) throw new Error('Pane ohne Kasten')
+    await page.mouse.move(kasten.x + kasten.width / 2, kasten.y + kasten.height / 2)
+    await page.mouse.wheel(0, 2500)
+    await expect.poll(() => beschriftungen(page), { timeout: 20_000 }).not.toEqual(vorher)
+    const nachher = await beschriftungen(page)
+    // Genau EINE Beschriftung hat sich geändert — nicht beide zusammen.
+    const geaendert = nachher.filter((b, i) => b !== vorher[i])
+    expect(geaendert.length, `vorher: ${vorher.join(' | ')} · nachher: ${nachher.join(' | ')}`).toBe(1)
   })
 
   test('(f) der Neustart ändert nichts an der Liste', async ({ page }) => {

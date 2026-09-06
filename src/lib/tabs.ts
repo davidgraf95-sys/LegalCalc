@@ -20,18 +20,26 @@ import { metaFuerPfad } from './seo';
 export interface TabEintrag {
   path: string;
   label?: string;
-  /** ── W2·24 R2-NACHZUG (F5) · DER GEWÄHLTE ANKER, GETRENNT VOM GELESENEN ───
+  /** ── D27 (David 6.9.2026) · DER GEWÄHLTE ANKER — SEIT D27 NUR NOCH RÜCKFALL
    *  `path` trägt die LESESTELLUNG: der Scroll-Spy des Lesers schiebt dort
    *  laufend `#art-…` hinein (`aktualisiereTabArtikel`), damit ein Neustart an
    *  derselben Stelle aufsetzt (§5a Ziff. 6) und die Reiter-Liste die Position
-   *  zeigt. GEMESSEN 6.9.2026 (Preview 4335, `/gesetze/bund/ZGB`): nach 1500 px
-   *  Scrollen stand im Reiter `…/ZGB#art-3`, in der ADRESSE weiter `…/ZGB` —
-   *  dieselbe Adresse trug damit zwei Beschriftungen («ZGB» kalt, «Art. 3 ZGB»
-   *  nach dem Scrollen), obwohl niemand einen Artikel gewählt hatte (Befund F5).
-   *  `wahl` hält darum den Anker, den die ADRESSE trug (Deep-Link, Trefferklick,
-   *  Sprungziel) — daraus, und NUR daraus, wird die Beschriftung gebaut
-   *  (§5a Ziff. 2 «Art. 336c OR»). Ohne Hash in der Adresse bleibt der zuletzt
-   *  gewählte Anker stehen; er wird nie aus der Lesestellung nachgezogen. */
+   *  zeigt.
+   *
+   *  Der R2-Nachzug (F5) baute die Beschriftung ausdrücklich NICHT daraus,
+   *  sondern aus diesem Feld — dem Anker, den die ADRESSE trug —, weil dieselbe
+   *  Adresse sonst zwei Beschriftungen trug («ZGB» kalt, «Art. 3 ZGB» nach dem
+   *  Scrollen). David 6.9.2026 hat die Regel UMGEDREHT: «diese funktion, dass
+   *  es anzeigt in welchem artikel wir sind, soll der tab bekommen. es kann
+   *  dann direkt im gesetz raus.» Determinismus (§2) heisst seither «gleiche
+   *  LESESTELLUNG ⇒ gleiche Beschriftung» statt «gleiche Adresse ⇒ gleiche
+   *  Beschriftung» — und die Lesestellung ist der gespeicherte `path`, der den
+   *  Neustart überlebt (Kaltstart == SPA == Reload bei gleicher Stellung).
+   *
+   *  `wahl` bleibt der RÜCKFALL für das Fenster VOR dem ersten Spy-Lauf: ein
+   *  Deep-Link `…#art-336_c`, der über `merkeTab` ohne Hash im `path`
+   *  nachaktualisiert wird, verlöre sonst seinen Artikel, bis der Leser das
+   *  erste Mal gescrollt hat. Er wird nie aus der Lesestellung nachgezogen. */
   wahl?: string;
   /** ── D19 (David 6.9.2026: «mit plus einen neuen reiter erzeugen können») ──
    *  Markiert den EINEN Browser-artigen «+»-Reiter: Pfad `/`, aber — anders
@@ -167,54 +175,65 @@ function zerlege(zitierung: string): { kopf: string; kern: string } {
 /** Kanonische Kurzform eines Reiters (§5a Ziff. 2): «Art. 336c OR», «BGE 152
  *  V 52», «Fristenrechner».
  *
- *  DETERMINISTISCH AUS DER ADRESSE (F5): der Artikel kommt aus `t.wahl` — dem
- *  Anker, den die ADRESSE trug —, NICHT aus `t.path`, in den der Scroll-Spy des
- *  Lesers laufend die Lesestellung schreibt. GEMESSEN 6.9.2026 (Preview 4335):
- *  mit `t.path` hiess derselbe Reiter auf derselben Adresse `/gesetze/bund/ZGB`
- *  einmal «ZGB» (kalt) und nach 1500 px Scrollen «Art. 3 ZGB» — eine
- *  Beschriftung, die sich unter dem Zeiger ändert, ist keine Kurzform.
- *  Die Lesestellung bleibt sichtbar: im `title` des Reiters und in der
- *  Reiter-Liste (`TabPanel`), und sie überlebt den Neustart wie bisher. */
-function basisKurzform(t: TabEintrag, m: VerlaufManifeste): { kopf: string; kern: string } {
+ *  ── D27 (David 6.9.2026) · DER REITER SAGT, WO MAN STEHT ──────────────────
+ *  «diese funktion, dass es anzeigt in welchem artikel wir sind, soll der tab
+ *  bekommen. es kann dann direkt im gesetz raus.» Der Artikel kommt darum aus
+ *  der LESESTELLUNG (`t.path`, vom Scroll-Spy geführt), nicht mehr aus dem
+ *  Anker der Adresse (`t.wahl`, seit D27 nur noch Rückfall vor dem ersten
+ *  Spy-Lauf). Determinismus (§2) ist damit nicht aufgegeben, sondern
+ *  umformuliert: gleiche Lesestellung ⇒ gleiche Beschriftung — Kaltstart, SPA
+ *  und Reload liefern bei gleicher Stellung dieselbe Zeichenkette, und jedes
+ *  Pane folgt seiner eigenen Stellung (`aktualisiereTabArtikel` schreibt je
+ *  Reiter-Identität).
+ *
+ *  DRITTER TEIL `stelle`, getrennt vom Kern — die Arbeitsleiste braucht die
+ *  Trennung, um dem wandernden Artikel eine feste Breite zu reservieren
+ *  (`.rl-stelle`, index.css); ohne sie schöbe jeder Artikelwechsel die ganze
+ *  Leiste. Drei Werte, drei Bedeutungen:
+ *    `null` → kein Gesetzes-Reiter, hier kann nie eine Stellung stehen;
+ *    `''`   → Gesetzes-Reiter, Stellung noch unbekannt (Breite trotzdem
+ *             reserviert, sonst ruckte der Reiter beim ersten Spy-Lauf);
+ *    `'Art. 43a'` → die gelesene Stelle.
+ *  Der Einzeiler (`reiterKurzformText`) bleibt Wort für Wort derselbe wie vor
+ *  der Trennung — «Art. 336c OR», «Art. 266g OR (2)». */
+function basisKurzform(t: TabEintrag, m: VerlaufManifeste): KurzformTeile {
   // D19: der leere Reiter zeigt '/', ist aber KEINE Startseite, sondern ein
   // eigenes, noch ungefülltes Dokument — er bekommt NICHT `reiterKurzform('/')`
   // («Sammlung»), sondern seinen eigenen Namen. Erste Prüfung, vor jeder
   // Pfad-Auflösung.
-  if (t.leer) return { kopf: '', kern: NEUER_REITER_NAME };
+  if (t.leer) return { kopf: '', kern: NEUER_REITER_NAME, stelle: null };
   // R3-F7 (Prüfbefund 6.9.2026): Übersichts- und Startseiten-Routen tragen ihre
   // Kurzform aus `lib/tabs` («Gesetze», «Sammlung») statt des SEO-Titels, den
   // `labelAusMeta` liefert («Schweizer Recht an einem Ort: …»). Erst seit D7
   // können solche Routen überhaupt Reiter sein — die Kurzform ist die
   // Voraussetzung dafür, nicht eine Verzierung.
   const fest = reiterKurzform(t.path);
-  if (fest) return { kopf: '', kern: fest };
+  if (fest) return { kopf: '', kern: fest, stelle: null };
   const kat = reiterKategorie(t.path);
   const kuerzel = kat === 'gesetze' ? erlassVonPfad(t.path, m)?.kuerzel : null;
   if (kuerzel) {
     // Gesetze: EIN kurzer Block («Art. 336c OR») — hier gibt es nichts, was
     // gegen die Kürzung geschützt werden müsste, der ganze Text ist die Marke.
-    // ── R5 (Prüfbefund R11, 6.9.2026) · ZWEITE INSTANZ, ZWEITE STELLE ─────
-    // GEMESSEN: zwei offene Instanzen desselben Erlasses hiessen beide «OR».
-    // Der ANKER kommt weiterhin aus `t.wahl` (F5: die Beschriftung folgt der
-    // Adresse, nicht dem Scroll-Spy). Für eine ausdrücklich DUPLIZIERTE
-    // Instanz (`?r=n`, n ≥ 2) darf zusätzlich der im Pfad gespeicherte Anker
-    // einspringen: sie ist genau deshalb angelegt worden, um eine andere
-    // Stelle desselben Erlasses offen zu halten («Art. 266g OR» aus dem
-    // gespeicherten Pfad, D27-Vorarbeit). Die ERSTE Instanz bleibt
-    // unangetastet — dort wäre es die F5-Regression, die 6.9.2026 gemessen
-    // wurde. Das Live-Folgen beim Scrollen ist ein eigener Schritt.
-    const anker = t.wahl ?? (instanzNr(t.path) > 1 ? hashVon(t.path) : undefined);
+    // ── R5 (Prüfbefund R11) · ZWEITE INSTANZ, ZWEITE STELLE ───────────────
+    // GEMESSEN 6.9.2026: zwei offene Instanzen desselben Erlasses hiessen
+    // beide «OR». Seit D27 trennt sie schon die Lesestellung selbst — die
+    // Instanz-Nummer (unten, `reiterKurzformTeile`) bleibt als Unterscheidung
+    // für den Fall, dass beide zufällig an derselben Stelle stehen.
+    // REIHENFOLGE (D27): erst der gespeicherte Pfad — das ist die Stellung,
+    // die der Spy führt und die den Neustart überlebt —, dann `t.wahl` als
+    // Rückfall für das Fenster vor dem ersten Spy-Lauf.
+    const anker = hashVon(t.path) ?? t.wahl;
     const art = anker ? artikelLabelVonPfad(anker) : null;
-    return { kopf: '', kern: art ? `${art} ${kuerzel}` : kuerzel };
+    return { kopf: '', kern: kuerzel, stelle: art ?? '' };
   }
   const voll = verlaufLabel(t.path, m);
-  if (kat === 'rechtsprechung') return zerlege(voll);
+  if (kat === 'rechtsprechung') return { ...zerlege(voll), stelle: null };
   // M7 (Prüfbefund R11 #21): der Katalog führt für die Karten, deren `title`
   // eine BESCHREIBUNG ist, eine ausdrückliche Kurzform (`kurz`) — GEMESSEN war
   // «Verfahrens- & Rechtsmittelfristen» mit 268 px der breiteste Reiter der
   // ganzen Leiste. Die Quelle bleibt der Katalog (§5); fehlt das Feld, steht
   // wie bisher der volle Titel da, nichts wird geraten (§7).
-  return { kopf: '', kern: katalogKurzform(t.path) ?? ohneUntertitel(voll) };
+  return { kopf: '', kern: katalogKurzform(t.path) ?? ohneUntertitel(voll), stelle: null };
 }
 
 /** ── V4/F5-Rest (§5a Ziff. 2) · DER REITER TRÄGT DEN NAMEN, NICHT DEN UNTERTITEL
@@ -245,6 +264,9 @@ function instanzNr(path: string): number {
   return Number.isFinite(n) && n > 1 ? n : 1;
 }
 
+/** Die drei Teile einer Reiter-Kurzform. `stelle` s. `basisKurzform` (D27). */
+export interface KurzformTeile { kopf: string; kern: string; stelle: string | null }
+
 /** Kanonische Kurzform eines Reiters (§5a Ziff. 2), zerlegt in kürzbaren Kopf
  *  und ungekürzten Kern — die Arbeitsleiste braucht die Trennung, die
  *  Reiter-Liste und die Menü-Titel nur den Einzeiler darunter.
@@ -254,16 +276,19 @@ function instanzNr(path: string): number {
  *  unterscheidbar — der Anker allein trennt sie nur, wenn sie auseinander
  *  liegen. Die Nummer ist deterministisch aus dem Pfad (`?r=n`) und steht am
  *  Kern, weil der Kopf (das gekürzte Gericht) wegfallen kann. */
-export function reiterKurzformTeile(t: TabEintrag, m: VerlaufManifeste): { kopf: string; kern: string } {
-  const { kopf, kern } = basisKurzform(t, m);
+export function reiterKurzformTeile(t: TabEintrag, m: VerlaufManifeste): KurzformTeile {
+  const { kopf, kern, stelle } = basisKurzform(t, m);
   const nr = instanzNr(t.path);
-  return { kopf, kern: nr > 1 ? `${kern} (${nr})` : kern };
+  return { kopf, kern: nr > 1 ? `${kern} (${nr})` : kern, stelle };
 }
 
-/** Einzeiler für Suchfeld, Accessible Names und Titel. */
+/** Einzeiler für Suchfeld, Accessible Names und Titel. Reihenfolge = die
+ *  Lesereihenfolge der Zitierung: Kopf (gekürztes Gericht) · Stelle («Art.
+ *  43a») · Kern (Kürzel/Nummer). Leere Teile fallen weg — der Text ist damit
+ *  vor und nach der D27-Trennung derselbe. */
 export function reiterKurzformText(t: TabEintrag, m: VerlaufManifeste): string {
-  const { kopf, kern } = reiterKurzformTeile(t, m);
-  return kopf ? `${kopf} ${kern}` : kern;
+  const { kopf, kern, stelle } = reiterKurzformTeile(t, m);
+  return [kopf, stelle, kern].filter((x) => !!x).join(' ');
 }
 
 /** ── R8 (Prüfbefund R11, 6.9.2026) · WAS DER `title` EINES REITERS SAGT ─────
@@ -303,8 +328,10 @@ export function reiterTitel(t: TabEintrag, m: VerlaufManifeste): string {
   const beschreibung = metaFuerPfad(pfadTeil(t.path))?.karte?.description ?? null;
   if (beschreibung) teile.push(beschreibung);
 
-  // Die LESESTELLUNG (F5: sie steht hier und in der Reiter-Liste, nicht in der
-  // Beschriftung — verloren ist sie damit nicht, sie wackelt nur nicht mehr).
+  // Die LESESTELLUNG. Seit D27 steht sie AUCH in der Beschriftung; hier bleibt
+  // sie, weil der Tooltip die einzige Stelle ist, die sie ausspricht («gelesen
+  // bis Art. 336c») statt sie nur zu nennen — und weil Kurzform und Tooltip aus
+  // DERSELBEN Quelle kommen müssen (§5), sonst driften sie auseinander.
   const gelesen = reiterKategorie(t.path) === 'gesetze' ? artikelLabelVonPfad(t.path) : null;
   if (gelesen) teile.push(`gelesen bis ${gelesen}`);
 

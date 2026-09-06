@@ -131,6 +131,51 @@ test('Startseite mit offener Kopf-Suche', async ({ page }, testInfo) => {
   await axePruefen(page, testInfo, 'startseite-suche')
 })
 
+// ── W2·24-R5-F1G · DER POPUP, AUF DEN DAS FELD ZEIGT, MUSS ES GEBEN ─────────
+//
+// GEMESSENER ANLASS (6.9.2026, `e2e-pre-landung.log`): der Fall darüber war
+// 6/10 rot mit
+//   aria-valid-attr-value (critical) — Invalid ARIA attribute value:
+//   aria-controls="_r_0_"  · 1 Knoten, `input`
+// In den 120 ms Entprellung zwischen Tastendruck und übernommener Query
+// rendert `suche/SuchResultate` ein WARTE-Panel; das trug bis zum Wurzel-Fix
+// weder `id` noch `role`, während das Feld bereits `aria-expanded=true` +
+// `aria-controls` meldete. Der Fall darüber traf das nur, wenn axe zufällig in
+// dieses Fenster fiel — daher die Flatterhaftigkeit.
+//
+// Dieser Fall misst die INVARIANTE statt des Zufalls: solange das Feld ein
+// Popup ankündigt, muss das angekündigte Element existieren — und zwar in
+// BEIDEN Zuständen, die es gibt (Warte-Panel und fertige Trefferliste).
+//
+// ROT ZU BEKOMMEN (§6.7, einmal gefahren): in `suche/SuchResultate` im
+// `q === ''`-Zweig `id={listboxId}` streichen ⇒ die erste Messung findet 0
+// Knoten mit dieser id.
+test('E5 — aria-controls der Kopf-Suche zeigt nie ins Leere (Warte- wie Treffer-Panel)', async ({ page }) => {
+  await oeffnen(page, '/')
+  const feld = page.locator('header [role="search"] input[type="search"]')
+  const ziel = async () => page.evaluate(() => {
+    const i = document.querySelector('header [role="search"] input[type="search"]')
+    const id = i?.getAttribute('aria-controls')
+    if (!id) return { id: null, gefunden: 0, rolle: null as string | null }
+    const els = [...document.querySelectorAll(`[id="${CSS.escape(id)}"]`)]
+    return { id, gefunden: els.length, rolle: els[0]?.getAttribute('role') ?? null }
+  })
+  // (1) Das Entprellungs-Fenster: getippt ist schon, die Query noch nicht
+  // übernommen — genau der Zustand, der 6/10 rot war. Ohne Warten gemessen.
+  await feld.pressSequentially('kündigung', { delay: 0 })
+  const sofort = await ziel()
+  if (sofort.id !== null) {
+    expect(sofort.gefunden, `aria-controls=«${sofort.id}» zeigt auf ${sofort.gefunden} Elemente`).toBe(1)
+    expect(sofort.rolle).toBe('listbox')
+  }
+  // (2) Die fertige Trefferliste.
+  await page.locator('header [role="search"] [role="listbox"]').first().waitFor({ state: 'visible' })
+  const fertig = await ziel()
+  expect(fertig.id, 'das Feld kündigt kein Popup an, obwohl eines offen steht').not.toBeNull()
+  expect(fertig.gefunden, `aria-controls=«${fertig.id}» zeigt auf ${fertig.gefunden} Elemente`).toBe(1)
+  expect(fertig.rolle).toBe('listbox')
+})
+
 test('Tagerechner', async ({ page }, testInfo) => {
   await oeffnen(page, '/rechner/tagerechner')
   await expect(page.locator('h1').first()).toBeVisible()
