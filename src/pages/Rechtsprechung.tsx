@@ -337,12 +337,13 @@ export function Rechtsprechung() {
 
   return (
     <div className="space-y-6">
-      {/* D11 (David 6.9.2026) — Kopf-Regel für ALLE fünf Übersichten, Herleitung
-          in `pages/Gesetze.tsx`: H1 = Bereichsname wie im Reiter, darüber EINE
-          Ausgabe-Zeile aus dem Register, kein Erklär-Absatz. */}
+      {/* D11/D22 (David 6.9.2026) — Kopf-Regel für ALLE fünf Übersichten,
+          Herleitung in `components/layout/SeitenKopf.tsx`: H1 = Bereichsname
+          wie im Reiter, DARUNTER die Ausgabe-Zeile aus dem Register — keine
+          Overline, keine halbe Haarlinie, kein Erklär-Absatz. */}
       <SeitenKopf
-        overline={`${nf(STARTSEITE_ZAEHLER.rechtsprechungVolltext)} Entscheide des Bundesgerichts und kantonaler Gerichte im Volltext`}
         titel="Rechtsprechung"
+        ausgabe={`${nf(STARTSEITE_ZAEHLER.rechtsprechungVolltext)} Entscheide des Bundesgerichts und kantonaler Gerichte im Volltext`}
       />
 
       {fehler && (

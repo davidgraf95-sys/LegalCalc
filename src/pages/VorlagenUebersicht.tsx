@@ -20,12 +20,13 @@ const VORLAGEN_KATEGORIE = OBERKATEGORIEN.find((k) => k.id === 'vorlagen')!;
 export function VorlagenUebersicht() {
   return (
     <div className="space-y-8">
-      {/* D11 (David 6.9.2026) — Kopf-Regel für ALLE fünf Übersichten, Herleitung
-          in `pages/Gesetze.tsx`: H1 = Bereichsname wie im Reiter, darüber EINE
-          Ausgabe-Zeile aus dem Register, kein Erklär-Absatz. */}
+      {/* D11/D22 (David 6.9.2026) — Kopf-Regel für ALLE fünf Übersichten,
+          Herleitung in `components/layout/SeitenKopf.tsx`: H1 = Bereichsname
+          wie im Reiter, DARUNTER die Ausgabe-Zeile aus dem Register — keine
+          Overline, keine halbe Haarlinie, kein Erklär-Absatz. */}
       <SeitenKopf
-        overline={`${STARTSEITE_ZAEHLER.vorlagen} Vorlagen, nach Rechtsgebiet filterbar`}
         titel="Vorlagen"
+        ausgabe={`${STARTSEITE_ZAEHLER.vorlagen} Vorlagen, nach Rechtsgebiet filterbar`}
       />
 
       <EntwurfLegende />
