@@ -110,18 +110,19 @@ async function messen(page: Page): Promise<Probe> {
     // Der Pfadteil wird EXAKT verglichen: im Split trägt der Reiter des primären
     // Panes die Adresse des zweiten im Query mit, ein `includes` träfe den
     // falschen (gemessen 6.9.2026 in `leser-v3-ortsangabe`).
-    let ist: string | null = null
-    try {
-      const roh = localStorage.getItem('lexmetrik-tabs')
-      const arr = roh ? JSON.parse(roh) : []
-      const hier = location.pathname.toLowerCase()
-      const treffer = Array.isArray(arr)
-        ? arr.find((e: { path?: string }) => typeof e?.path === 'string'
-          && e.path.split('?')[0].split('#')[0].toLowerCase() === hier)
-        : null
-      const anker = treffer ? /#art-(.+)$/.exec(treffer.path) : null
-      ist = anker ? decodeURIComponent(anker[1]) : null
-    } catch { ist = null }
+    const ist: string | null = (() => {
+      try {
+        const roh = localStorage.getItem('lexmetrik-tabs')
+        const arr = roh ? JSON.parse(roh) : []
+        const hier = location.pathname.toLowerCase()
+        const treffer = Array.isArray(arr)
+          ? arr.find((e: { path?: string }) => typeof e?.path === 'string'
+            && e.path.split('?')[0].split('#')[0].toLowerCase() === hier)
+          : null
+        const anker = treffer ? /#art-(.+)$/.exec(treffer.path) : null
+        return anker ? decodeURIComponent(anker[1]) : null
+      } catch { return null }
+    })()
     const sollR = rects.find((r) => r.token === soll)
     return {
       y: Math.round(window.scrollY), bezug, soll, ist,
