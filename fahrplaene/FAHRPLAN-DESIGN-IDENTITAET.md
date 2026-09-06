@@ -82,7 +82,16 @@ Split-View-Mechanik bleiben; es ändert sich Darstellung (§3).
   Trennung über Linien (1 px `--rule-soft`, 2 px `--rule` für Kopfzeilen). Links unterstrichen.
   Overlines/Versal-Etiketten → normale kleine Grotesk-Zeilen (`.lc-overline` umdefinieren, nicht
   jeden Konsumenten anfassen; Versalien/Tracking weg).
-- Layout: Satzspiegel mit **Marginalienspalte links** (150 px) auf Startseite und im Leser; im
+- **Nachträge David 6.9.2026 (bindend, überschreiben Widersprechendes in diesem §):** Startseite
+  nach dem Referenzbild «Pult» (`abnahme/design-identitaet/pult-freigegeben.html`: grosse
+  Begrüssung, fünf Bereiche in einer Reihe, Zuletzt, schaltbare Module, kein eigenes Suchfeld —
+  «nur oben reicht»); **Seitenleiste bleibt überall, auch auf «/»**, die Bereichs-Reiter im
+  Titelblatt entfallen; Reiter in der Arbeitsleiste frei per Ziehen ordnen «analog Browser»;
+  Registerfarben eine Stufe kräftiger, Rot dezent; Lesekomfort-Tokens nach Recherche (D12:
+  warm getöntes Papier, Tinte ~14:1, Literata opsz + Gewicht 450); Übersichts-Köpfe ohne
+  Erklärtext (D11). Vollständige Befund- und Entscheidliste: `abnahme/design-identitaet/`
+  (Protokolle je Runde).
+- Layout: Satzspiegel mit **Marginalienspalte links** (150 px) im Leser (auf «/» durch das Pult abgelöst); im
   Split-View/Pane fällt die Marginalie unter `@3xl/pane` in die Textspalte (Zeilenform), damit
   zwei Panes nebeneinander weiter Sinn ergeben. Titelblatt-Zeile (Marke · Bereichs-Reiter ·
   Ausgabe-Zeile) ersetzt die Glas-Topbar; Seitenleiste bleibt als Inhaltsverzeichnis im Leser und
