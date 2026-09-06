@@ -354,7 +354,7 @@ export function LeserRahmenV3({ ebene, schluessel }: LeserRahmenV3Props) {
               EINGEKLAPPTE Spalte statt des angekündigten Rand-Falls, und der ist
               unerreichbar. Herleitung samt Messreihe steht am Bauteil, das sie
               betrifft (`./LeserLesespalte`, `./LeserTrefferBlatt`). */}
-          <LeserLesespalte m={m} />
+          <LeserLesespalte m={m} bezuege={bezuege} weckeBezuege={rohPanel.weckeDaten} bezuegeGeweckt={rohPanel.jeGeoeffnet} />
         </>}
         // H3 · Panel/Lasche. EIN Aufrufpunkt für beide Modi: im Spalten-Modus
         // füllt die Zone die dritte Grid-Spur, im Blatt-Modus hat sie keine Box

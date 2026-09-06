@@ -8,6 +8,7 @@ import { NEUER_TAB } from '../../../lib/benennung';
 import { useKopieren } from '../../../components/useKopieren';
 import { NormChip } from '../../../components/vorlagen/NormChip';
 import type { LeitfallRef } from '../../../lib/rechtsprechung/norm-index';
+import type { MaterialBezug } from '../../../lib/normtext/werkzeuge';
 import type { ArtikelRevision } from '../../../lib/verzahnung/artikel-revisionen';
 import type { BrowseErlass } from '../../../lib/normtext/browse-typen';
 import type { NormSnapshot } from '../../../lib/normtext/typen';
@@ -37,7 +38,7 @@ import type { Werkzeug } from '../../../lib/normtext/werkzeuge';
 /** Geteilte leere Liste — spart je Artikel ohne Werkzeug-Kante eine Allokation. */
 const LEERE_WERKZEUGE: readonly Werkzeug[] = [];
 
-export const ArtikelLeser = memo(function ArtikelLeser({ e, erlass, basisPfad, fussnoten, intern, marg, margBasis, imTreffer, onSpringe, leitfaelle, bezuege, revision, historie, zaehler, istAnhang = false }: {
+export const ArtikelLeser = memo(function ArtikelLeser({ e, erlass, basisPfad, fussnoten, intern, marg, margBasis, imTreffer, onSpringe, leitfaelle, bezuege, materialien, onBezuegeOeffnen, bezuegeLaedt, revision, historie, zaehler, istAnhang = false }: {
   e: NormSnapshot; erlass: BrowseErlass; basisPfad: string; fussnoten?: Fussnote[]; intern?: InternRefs;
   marg?: string[];
   /** G-HIST-UI: Fassungshistorie dieses Artikels aus dem erlass-lokalen Shard
@@ -77,6 +78,17 @@ export const ArtikelLeser = memo(function ArtikelLeser({ e, erlass, basisPfad, f
    *  der `LeitfallZeile` (der Bezugs-Shard ist deren Obermenge, §5 — nie beide
    *  nebeneinander, das wären zwei Wahrheiten am selben Artikel). */
   bezuege?: ArtikelBezuege;
+  /** D30 (David 6.9.2026) · die Materialien DIESES Artikels, sobald der Leser
+   *  die Bezüge-Zeile einmal aufgeklappt hat (`../artikelMaterialienLaden`).
+   *  Bis dahin `undefined` — die Rubrik zeigt dann ihre gezählte Zahl aus der
+   *  Zähl-Datei und noch keine Liste. Gleiche Quelle wie die Zahl (§5). */
+  materialien?: MaterialBezug[];
+  /** D30 · wird beim Aufklappen der Bezüge-Zeile gerufen und armiert den
+   *  bestehenden Ladepfad (`v3/panelModell.ts` → `weckeDaten`). Ohne die Prop
+   *  bleibt die Zeile, was sie war (Ist-Hülle, Tests, Druck). */
+  onBezuegeOeffnen?: () => void;
+  /** D30 · der Apparat ist unterwegs ⇒ Skelett-Zeile «lädt …» statt Leere. */
+  bezuegeLaedt?: boolean;
   /** Revision r(a) dieses Artikels (§V1c) — an die LeitfallZeile durchgereicht. */
   revision?: ArtikelRevision | null;
   // Absolute Tiefe der ERSTEN gezeigten Randtitel-Stufe (Delta-Offset). Damit
@@ -304,16 +316,29 @@ export const ArtikelLeser = memo(function ArtikelLeser({ e, erlass, basisPfad, f
   // des Shards (die Zeile springt nicht mehr um, sobald der Apparat eintrifft).
   // Ohne Datei bleibt die frühere Reihenfolge unverändert bestehen: gefilterte
   // Kanten, sonst Leitfälle.
+  // ── D30 (David 6.9.2026) · DER ZÄHLER FOLGT DER LISTE, SOBALD SIE DA IST ──
+  // Wortlaut: «Zähler in der Zeile = Listenlänge nach dem Laden.»
+  //
+  // R6c hatte die Reihenfolge umgekehrt (Zähl-Datei VOR den Kanten), damit die
+  // Zahl nicht umspringt, wenn der Shard eintrifft. Dieser Grund gilt weiter für
+  // die Zeit, in der die Zeile ZU ist — dort steht die Zahl allein, und sie soll
+  // ruhig stehen. Er kehrt sich um, sobald die Liste OFFEN daneben steht: eine
+  // Kopfzahl, die etwas anderes sagt als die Liste unter ihr, ist an genau dieser
+  // Stelle die falsche Auskunft (§8). Die Zähl-Datei zählt ohne UI-Filter, die
+  // Liste zeigt gefiltert — der Unterschied ist real und gehört dorthin, wo er
+  // ihn erklärt: die Gruppenköpfe der Liste sagen «5 von 11 gezeigt» und
+  // nennen die Bezugsgrösse.
   const bezugsMarken: BezugsMarke[] = [
     {
       reg: 'r',
-      anzahl: zaehler ? zaehler.entscheide : (bezuege ? bezuege.kanten.length : (leitfaelle?.length ?? 0)),
+      anzahl: bezuege ? bezuege.kanten.length : (zaehler ? zaehler.entscheide : (leitfaelle?.length ?? 0)),
       wort: ['Entscheid', 'Entscheide'],
     },
     // Die Rubrik erscheint NUR mit echter Zahl (`anzahl > 0` filtert sie sonst
     // in `BezuegeKopf` heraus) — ohne Zähl-Datei steht sie also gar nicht da,
-    // statt eine Null zu behaupten (§8).
-    { reg: 'm', anzahl: zaehler?.materialien ?? 0, wort: ['Materialie', 'Materialien'] },
+    // statt eine Null zu behaupten (§8). Dieselbe Umkehr wie oben: liegt die
+    // Liste vor, gilt ihre Länge.
+    { reg: 'm', anzahl: materialien ? materialien.length : (zaehler?.materialien ?? 0), wort: ['Materialie', 'Materialien'] },
     { reg: 'g', anzahl: verweise.length, wort: ['Verweis', 'Verweise'] },
     { reg: 'w', anzahl: werkzeuge.length, wort: ['Rechner', 'Rechner'] },
   ];
@@ -520,14 +545,46 @@ export const ArtikelLeser = memo(function ArtikelLeser({ e, erlass, basisPfad, f
             Apparat gehört zum Artikel, nicht zu seinem entfalteten Wortlaut. */}
         {kopfForm && (
           <div {...{ [SUCH_META]: '' }}>
-            <BezuegeKopf marken={bezugsMarken} zitat={zitat}>
+            <BezuegeKopf marken={bezugsMarken} zitat={zitat}
+              onOeffnen={onBezuegeOeffnen} laedt={bezuegeLaedt && !bezuege}>
+              {/* ── D30 · DIE ENTSCHEIDE, DIE DER ZÄHLER VERSPRICHT ─────────
+                  `form="rand"`: senkrecht gestapelte Zeilen mit Zitierung und
+                  Regeste, Leitentscheide zuerst (die Gruppen laufen nach
+                  `STATUS_RANG`, BGE vor allem anderen). Das ist DIESELBE
+                  Komponente und dieselbe Portionierung wie überall sonst — nur
+                  die Gestalt, die R4 für die schmale Randspalte gebaut hat und
+                  die hier aus demselben Grund richtig ist: in einer aufgeklappten
+                  Liste unter dem Artikelkopf sucht niemand eine waagrechte
+                  Scrollachse. Der Klick öffnet daneben (Split-Regel M3) — das
+                  bringt `KanteMitVorschau` mit, nicht diese Stelle. */}
               {(bezuege || (leitfaelle && leitfaelle.length > 0)) && (
                 <div className="lr7-bez-block" data-reg="r">
                   {bezuege
                     ? <BezuegeZeile kanten={bezuege.kanten} gesamt={bezuege.gesamt}
                         zeitAktiv={bezuege.zeitAktiv} kantonAktiv={bezuege.kantonAktiv}
-                        normZitat={zitat} revision={revision} />
+                        normZitat={zitat} revision={revision} form="rand" />
                     : <LeitfallZeile refs={leitfaelle} normZitat={zitat} revision={revision} />}
+                </div>
+              )}
+              {/* ── D30 · MATERIALIEN, dieselbe Anatomie wie «Rechnen» ───────
+                  Ein Titel je Dokument, daneben die Art (Behörde + Doktyp) —
+                  dieselbe Zeilenform wie der Rechnen-Block unten (§5), damit die
+                  drei Rubriken der aufgeklappten Zeile EINE Liste sind und nicht
+                  drei Gestalten. `sublabel` ist die amtliche Fundstelle-Ziffer
+                  im Dokument; sie steht nur, wenn der Kanten-Shard sie führt. */}
+              {materialien && materialien.length > 0 && (
+                <div className="lr7-bez-block" data-reg="m">
+                  <span className="lc-overline mr-1"><span className="lc-punkt" aria-hidden />Materialien</span>
+                  <ul className="lr6-notiz-liste">
+                    {materialien.map((mat) => (
+                      <li key={mat.key} data-bez-material>
+                        <Link to={mat.pfad}>{mat.titel}</Link>
+                        <span className="lr6-notiz-art">
+                          {mat.behoerdeKuerzel} {mat.doktypLabel}{mat.sublabel ? ` · ${mat.sublabel}` : ''}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               )}
               {verweise.length > 0 && (

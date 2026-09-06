@@ -2543,6 +2543,55 @@
     box-shadow: none;
   }
 
+  /* ── D31 (David 6.9.2026) · DAS EINE POPOVER-REZEPT ───────────────────────
+     BEFUND, wörtlich: «Hover-Popover über einem Artikel-/Norm-Verweis ist nicht
+     lesbar — hebt sich nicht vom Hintergrund ab, überlappt mit dem Text
+     dahinter.»
+
+     WURZEL, gemessen: alle Vorschau-Flächen des Hauses trugen `.lc-card` —
+     NormPopover (V2-Hover + Klick-Dialog), NormPopoverHuelle, RegestePopover
+     (Entscheid-Vorschau am Bezugs-Chip), Begriff, ZeichenLegende,
+     EntwurfLegende. `.lc-card` ist im «Kästen zu Linien»-Umbau (Zeile 1399)
+     auf `background: transparent; border: 0` gestellt worden — richtig für
+     eine Karte IM FLUSS der Seite, tödlich für eine Fläche, die ÜBER dem
+     Lesetext liegt: sie hatte danach keinen eigenen Grund mehr, der Artikel
+     stand durch die Vorschau hindurch.
+
+     WARUM EINE EIGENE KLASSE UND NICHT `.lc-schwebeflaeche`: das sind zwei
+     Rollen mit verschiedenem Grund DAHINTER. Die Schwebefläche hängt an einer
+     Kante (Kopf-Menü, Reiter-Blatt) und liegt über der Papierfläche der Seite —
+     `--paper` plus 1-px-`--rule` trennt sie dort sichtbar. Das Popover liegt
+     über LAUFENDEM TEXT; dieselbe Tönung wie der Grund liesse die Zeilen
+     dahinter mitlesen, und genau das ist der Befund. Es bekommt darum die eine
+     Stufe darüber (`--paper-raised`, Token-Kette Zeile 135/588) — Davids
+     Wortlaut. Der Rahmen bleibt `--rule` (stärkste Kante des Hauses), der
+     Radius 0 und der Schatten aus: die R6/R7-Entscheidung «Rahmen statt
+     Schatten» gilt hier unverändert weiter.
+
+     ABWEICHUNG, offengelegt (§7): der Auftrag nennt ein Token `--z-popover`.
+     Die Schichtungs-Skala führt die Ebene bereits als `--z-dropdown` («Popover/
+     Tooltips/Menüs», Zeile 366) — ein zweiter Name für dieselbe Ebene wäre eine
+     zweite Wahrheit (§5). Das Rezept setzt darum `--z-dropdown`; wer eine
+     andere Ebene braucht (Dialog über Scrim), überschreibt sie wie bisher am
+     Aufrufer, weil Utilities über der Komponenten-Schicht liegen.
+
+     `isolation: isolate` ist der Grund, aus dem die Fläche DECKT und nicht nur
+     obenauf behauptet: sie bildet einen eigenen Stapelkontext, in dem kein
+     Nachbar-Element des Lesetexts mehr nach vorne treten kann.
+     Position, Breite und Innenabstand bleiben beim Aufrufer (dieselbe Trennung
+     wie oben) — nur ein `max-width`-Deckel steht hier, damit kein Konsument
+     eine Vorschau über die ganze Fensterbreite aufziehen kann. */
+  .lc-popover {
+    background: var(--paper-raised);
+    border: 1px solid var(--rule);
+    border-radius: 0;
+    box-shadow: none;
+    position: relative;
+    z-index: var(--z-dropdown);
+    isolation: isolate;
+    max-width: min(36rem, calc(100vw - 1rem));
+  }
+
   /* ── D9 (David 6.9.2026) · DIE EINE ANATOMIE DES SUCH-PANELS ──────────────
      Das Trefferpanel und der Leerzustand erscheinen an ZWEI Orten: im Titelblatt
      (schwebend unter dem Kopf-Suchfeld) und auf der Startseite unter der
