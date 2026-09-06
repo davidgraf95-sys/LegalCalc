@@ -2712,6 +2712,58 @@
      eine zweizeilig umbrechende Beschriftung gequetscht. */
   .lc-menu-regler { @apply flex w-full items-center justify-between gap-2 px-3 py-2; border-top: 1px solid var(--rule-soft); }
 
+  /* ═══ B-R1 (R9-1, 6.9.2026) · DAS EINE REITER-REZEPT ═════════════════════════
+     BEFUND (r9-befunde-b.md B-R1, gemessen 6.9.2026): `ui/Tabs.tsx` trug den
+     aktiven Reiter als BOX-CHIP — `bg-surface-raised text-brass-700 shadow-sm
+     border border-line`, dazu am Container `bg-surface border border-line
+     rounded-lg`. Die Arbeitsleiste desselben Hauses zeigt denselben Zustand
+     dagegen als UNTERSTRICH. Zwei Anatomien für dieselbe Sache — und die
+     Box-Variante verletzte gleich drei F0-Regeln auf einmal: Kissen statt
+     Kante (F0.5), Fläche statt Linie (F0.6) und `brass-700` als Akzentfarbe,
+     obwohl der Akzent seit F0.3 die TINTE ist.
+
+     DIE REGEL STEHT HIER, NICHT AN DEN 9 KONSUMENTEN (§5/§10). `ui/Tabs.tsx`
+     setzt nur noch `.lc-tab` plus die Grössen-Utilities; wer den Reiter
+     umfärben will, ändert diese drei Regeln.
+
+     ANATOMIE (F0.9 «Reiterleiste», F0.6 «Linien statt Flächen»):
+       · Ruhe   — ink-600, ein UNSICHTBARER 2-px-Platzhalter unten. Der
+                  Platzhalter ist kein Zierrat: ohne ihn springt die Zeile
+                  beim Umschalten um 2 px (dieselbe Bauform wie `.fc-schalter`
+                  und `.ub-schalter`).
+       · Hover  — Strich in `--rule-soft`, Text ink-900.
+       · Aktiv  — Strich in `--ink-900` (Tinte, F0.3) + `font-weight: 500`.
+                  Das Gewicht ist der zweite, farbfreie Träger des Zustands
+                  (F2/F4: eine Auswahl darf nie NUR über Farbe sprechen);
+                  `aria-selected`/`aria-pressed` tragen ihn für Hilfsmittel.
+     KEIN Rahmen, KEINE Fläche, KEIN Schatten, Radius 0 — bewacht von
+     `design-r5-konsistenz.test.ts` («R5-E · der Reiter trägt keinen Kasten»).
+
+     WARUM `[aria-selected]` UND `[aria-pressed]`: der Baustein führt zwei
+     Modi (ARIA-Tabs vs. Toggle-Gruppe, `mode`-Prop) — beide meinen denselben
+     sichtbaren Zustand, also trägt ihn dieselbe Regel.
+
+     KEINE Registerfarbe am Strich: der Baustein kennt seine Domäne nicht (kein
+     `data-reg` an einer Aufrufstelle), und eine Regel, die nie feuert, wird
+     nicht gebaut (§17-Gegengewicht). Kommt die Prop, gehört sie hierher —
+     Vorbild `.fc-zeile[data-reg]`. */
+  .lc-tab {
+    background: none;
+    border: 0;
+    border-bottom: 2px solid transparent;
+    border-radius: 0;
+    box-shadow: none;
+    color: var(--ink-600);
+    font-family: var(--font-sans), system-ui, sans-serif;
+    transition: color .15s, border-color .15s;
+  }
+  .lc-tab:hover { color: var(--ink-900); border-bottom-color: var(--rule-soft); }
+  /* Fokus als Strich, nicht als Kasten — dasselbe Bild wie `.lc-menu-zeile`
+     und `.lc-input` (EIN Fokus-Bild für die ganze App, R3-F3). */
+  .lc-tab:focus-visible { outline: none; color: var(--ink-900); border-bottom-color: var(--focus); }
+  .lc-tab[aria-selected="true"],
+  .lc-tab[aria-pressed="true"] { color: var(--ink-900); font-weight: 500; border-bottom-color: var(--ink-900); }
+
   /* Referenzwerk-Liste: Messing-Gedankenstrich als Marker (FAHRPLAN-DESIGN
      5.5) — für Hinweis-Listen der Vorlagen (Preflight nimmt Browser-Bullets
      weg; diese Klasse gibt der Liste ihr Zeichen zurück, im Haus-Akzent). */
