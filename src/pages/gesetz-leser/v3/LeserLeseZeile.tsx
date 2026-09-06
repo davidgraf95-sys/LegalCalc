@@ -1,6 +1,7 @@
 import type { ReactNode } from 'react';
 import { LeserGliederungSchiene } from './LeserGliederungSchiene';
 import type { RahmenBild } from './rahmenSpalten';
+import { SatzspiegelKontext } from './satzspiegel';
 
 // ─── Die Lese-Zeile: Gliederung/Schiene · Text · Beiwerk-Spur ────────────────
 //
@@ -130,7 +131,14 @@ export function LeserLeseZeile({
           `EntscheidLeser.tsx` `bg-paper/95`, `SuchBereichWahl.tsx`
           `bg-paper/60`). `-mt-4` zieht mit der neuen Höhe mit, sonst
           verschöbe sich der untere Streifen vom Viewport-Rand weg. */}
-      <div className="relative min-w-0">
+      {/* W2·24-R4 · der Satzspiegel-Anker sitzt AN DER LESE-ZELLE, nicht am
+          Leser-Wurzelelement: die Ausbaustufe ist eine Aussage über DIESE
+          Fläche (`bild.satzspiegel` ist aus ihrer Breite gerechnet), und der
+          Kontext daneben reicht sie an `parts/ArtikelLeser` weiter. Beides
+          zusammen an einem Ort — `index.css` (Block «SATZSPIEGEL») und
+          `ArtikelLeser` lesen dieselbe Quelle. */}
+      <SatzspiegelKontext.Provider value={bild.satzspiegel}>
+      <div className="relative min-w-0" data-lr-spiegel={bild.satzspiegel}>
         <div aria-hidden data-v3-blur="oben" className="pointer-events-none sticky z-sticky h-0 overflow-visible print:hidden"
           style={{ top: 'var(--nt-stick)' }}>
           <div className="h-4 bg-gradient-to-b from-paper/70 to-transparent" />
@@ -140,6 +148,7 @@ export function LeserLeseZeile({
           <div className="-mt-4 h-4 bg-gradient-to-t from-paper/70 to-transparent" />
         </div>
       </div>
+      </SatzspiegelKontext.Provider>
 
       {panelZone}
     </div>

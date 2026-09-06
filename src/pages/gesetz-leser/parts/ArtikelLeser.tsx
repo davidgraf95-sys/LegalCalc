@@ -21,7 +21,7 @@ import { zitatMitAusweis, heuteIso } from '../../../lib/format';
 import { schaetzeArtikelHoehe, fnNrSortKey } from '../berechnungen';
 import { LeitfallZeile } from './ArtikelLeser.leitfaelle';
 import { BezuegeZeile } from './BezuegeZeile';
-import { useSatzspiegel } from '../v3/rahmenSpalten';
+import { useSatzspiegel } from '../v3/satzspiegel';
 import type { ArtikelBezuege } from '../bezuegeLaden';
 import { urlMitHash } from '../../../lib/liveUrlSync';
 import { usePaneKontext } from '../../../components/layout/PaneKontext';
