@@ -143,6 +143,47 @@ Detailplan: `archiv/FAHRPLAN-GESETZESDARSTELLUNG-BUND.md` (M4/M5/M7/M8/M10).
   ARIA-Tabellensemantik vollständig (Kopf↔Zelle), Kontrast/Fokus über Tokens (§13/F).
   Tausender-Apostroph/Währung sind **Anzeige**, nie im Snapshot (§7).
 
+### §4a-D28 · Die Erlass-Suche steht oben am Gesetz (David 6.9.2026)
+
+**Der Ort ist Regel, nicht Geschmack.** Bis zum 6.9.2026 hatte das Such-/Sprungfeld
+zwei Wohnorte — die Gliederungs-Spalte, solange sie stand, und den klebenden
+Kopf-Block, sobald man sie einklappte. David dazu, wörtlich: «die suchleiste im
+gesetz, welche sich oben an der gliederung befindet, will ich oben am gesetz —
+dann verschiebt sie sich auch nicht, wenn gliederung eingeklappt ist; achte
+darauf, dass dann das gleiche gilt.»
+
+1. **Ein Feld, ein Ort.** Die Erlass-interne Suche liegt in JEDER Lage im
+   klebenden Kopf-Block des Lesers (`v3/SuchZone.tsx`) — Desktop, Pane, Handy,
+   Gliederung offen oder zu. Die Gliederungs-Seitenleiste trägt nur die
+   Gliederung. Einzige Ausnahme: im modalen Gliederungs-Sheet steht das Feld in
+   dessen Kopf, weil der Fokus den Dialog nicht verlassen darf (WCAG 2.4.3) —
+   die Zone gibt es solange her, es bleibt bei **einem** Feld im DOM.
+2. **Beim Klappen verschiebt sich im Kopf nichts.** Δx = Δy = 0 für Erlass-Suche,
+   Kopf-Zone, Kopf-Griffe und Ansicht-Menü, wenn die Gliederung ein- oder
+   ausklappt; nur die Textspalte ändert Lage und Breite. Der Kopf-Block liegt
+   über der ganzen Rahmenbreite — die Zusage ist damit strukturell erfüllt und
+   zusätzlich gemessen (`e2e/leser-klapp-sonde.e2e.ts`). Beim Ein-/Ausblenden der
+   APP-Seitenleiste rückt der ganze Inhalt mit; dort gilt die Zusage **relativ
+   zum Leser-Rahmen**, nicht absolut.
+3. **Das Feld ist ein Feld, keine Wand.** Es wird auf `max-w-reading` (40 rem)
+   gedeckelt — dieselbe Token-Breite wie die Lesespalte. Ohne Deckel erbt es die
+   Rahmenbreite (gemessen 1072 px @1440).
+4. **Zähler und Treffer-Schritt stehen in einer Zeile.** «N Artikel · M
+   Fundstellen» und die Griffe ‹ › bedienen dieselbe Fundstellen-Folge wie ↑↓ im
+   Feld und die Pfeile im Kopf der Trefferliste. Steht die Trefferliste bereits
+   als Spalte daneben, **schweigt die Zone** — Zahlen und Schritt stehen dort,
+   und zwei gleiche Listen übereinander sind ein §5-Bruch.
+5. **Der Druck kennt keine Suchleiste.** Die ganze Zone fällt im Ausdruck, nicht
+   nur ihre Knöpfe.
+
+**Und die Ortsangabe steht genau einmal (D27).** Die Kopfzeile des Lesers trägt
+keine Brotkrume und keinen laufenden Artikel mehr: der Ort steht im Reiter, den
+der Scroll-Spy über `aktualisiereTabArtikel` (`lib/tabs.ts`) live führt; der
+Erlass-Kontext steht im Titelblatt und als Kennung im Kopf; der Rücksprung steht
+in der Hauptnavigation. Wer eine dieser Angaben ein zweites Mal in den Kopf
+zurückholt, baut die Doppelkrume wieder auf, die der Entscheid vom 17.8.2026
+abgeschafft hat. Protokoll mit Messreihen: `abnahme/design-identitaet/R6D.md`.
+
 ### §4b · Linien-Kanon & Lese-Typografie (W2·5d G1, 4.7.2026)
 
 Leitprinzip (aus Fedlex-Messung + SotA doppelt belegt): **Ruhe durch Reduktion.
