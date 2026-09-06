@@ -162,6 +162,29 @@ describe('tabs.ts — offene Reiter', () => {
     expect(ladeTabs().map((t) => t.path)).toEqual(['/a', '/b', '/c', '/d']);
   });
 
+  // ── D15/D16 (David 6.9.2026) · DIE SEITE KOMMT VOM ZEIGER ────────────────
+  // «per drag and drop soll man register verschieben können … analog browser».
+  // Der dritte Parameter sagt, ob der Reiter DAVOR oder DAHINTER einrastet;
+  // ohne ihn liesse sich kein Reiter ans ENDE ziehen (hinter dem letzten gibt
+  // es kein weiteres Ziel). Der Default bleibt die frühere, richtungsabhängige
+  // Regel — der Fall darüber prüft sie unverändert weiter.
+  it('ordneTabsUm mit ausdrücklicher Seite: davor / dahinter', () => {
+    merkeTab('/a'); merkeTab('/b'); merkeTab('/c');
+    // /a DAHINTER /c → ans Ende (mit dem Default wäre es ebenfalls dahinter,
+    // hier steht es ausdrücklich).
+    ordneTabsUm('/a', '/c', false);
+    expect(ladeTabs().map((t) => t.path)).toEqual(['/b', '/c', '/a']);
+    // /a DAVOR /c — dieselbe Richtung wie eben, aber die andere Seite: der
+    // Default (von > nach ⇒ davor … hier von < nach) läge falsch.
+    leereTabs(); merkeTab('/a'); merkeTab('/b'); merkeTab('/c');
+    ordneTabsUm('/a', '/c', true);
+    expect(ladeTabs().map((t) => t.path)).toEqual(['/b', '/a', '/c']);
+    // Rückwärts, ausdrücklich dahinter.
+    leereTabs(); merkeTab('/a'); merkeTab('/b'); merkeTab('/c');
+    ordneTabsUm('/c', '/a', false);
+    expect(ladeTabs().map((t) => t.path)).toEqual(['/a', '/c', '/b']);
+  });
+
   it('ordneTabsUm: unbekannter Pfad oder gleiche Position → unverändert', () => {
     merkeTab('/a'); merkeTab('/b');
     ordneTabsUm('/x', '/a');   // /x existiert nicht

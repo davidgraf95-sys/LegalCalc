@@ -106,13 +106,13 @@ export function Shell({ children }: { children: ReactNode }) {
   // V3-Flags — die Vorgabe gilt für beide Hüllen, der Befund ist in beiden derselbe
   // (FL-1: das Flag hat genau einen Schaltpunkt, und der ist nicht hier).
   const seitenleiste = useSeitenleiste({ vorgabeEingeklappt: istGesetzLeserPfad(pathname) });
-  // ── §6 (d) des Fahrplans W2·24 · AUF «/» ENTFÄLLT DIE PERSISTENTE LEISTE ──
-  // Die Bereiche stehen seit R2 als Reiter im Titelblatt; auf der Startseite,
-  // die selbst das Inhaltsverzeichnis der Sammlung ist, stünde die Leiste
-  // daneben und sagte dasselbe ein drittes Mal. Sie entfällt darum ab `lg`
-  // NUR dort — die mobile ☰-Schublade bleibt auf JEDER Route die
-  // Bereichs-Navigation (sonst verlöre Mobil die Navigation ganz).
-  const ohneSeitenleiste = pathname === '/';
+  // ── D17 (David 6.9.2026) · DIE SEITENLEISTE STEHT ÜBERALL, AUCH AUF «/» ────
+  // «ich mochte die seitenleiste. können wir die behalten. und das oben
+  // entfernen?» Die R2-Regel «auf / entfällt sie» (§6 (d) des Fahrplans) ist
+  // damit zurückgenommen — sie hatte ihren Grund allein darin, dass die
+  // Bereiche zusätzlich als Reiter im Titelblatt standen; die sind mit D17
+  // weg (`layout/Topbar.tsx`). Es bleibt EINE Landkarte, und die ist auf jeder
+  // Route dieselbe. Kein Sonderfall mehr, darum keine Bedingung mehr.
   // R3 (Auftrag David 30.6.2026): die globale Schriftskala (A−/A+) ersetzte den
   // Inhaltsbreite-Umschalter; die zentrale Inhaltsspalte läuft seither fest auf
   // `max-w-content` (= die frühere Default-Breite «kompakt», Golden byte-gleich).
@@ -388,7 +388,7 @@ export function Shell({ children }: { children: ReactNode }) {
       <div className="lg:flex">
         {/* Persistente Desktop-Seitenleiste: sticky, eigene Scrollachse, Breite
             per Ziehgriff verstellbar, per Topbar-Schalter einklappbar. */}
-        {!seitenleiste.eingeklappt && !ohneSeitenleiste && (
+        {!seitenleiste.eingeklappt && (
           <>
             <aside
               // A1 (H2b-Nachzug): Testanker. Der Wächter der Ä1c-Vorgabe muss die
@@ -416,7 +416,6 @@ export function Shell({ children }: { children: ReactNode }) {
             schubladeOffen={schubladeOffen}
             seitenleisteEingeklappt={seitenleiste.eingeklappt}
             onSeitenleisteUmschalten={seitenleiste.umschalten}
-            ohneSeitenleiste={ohneSeitenleiste}
           />
           {/* Arbeitsleiste + Ausgabe-Zeile (W2·24 R2, §5a). Beide laufen im
               normalen Fluss — nicht klebend; die Herleitung steht am Kopf von
@@ -474,7 +473,7 @@ export function Shell({ children }: { children: ReactNode }) {
                   (nicht Vorfahren von {children}). */}
               <div {...(multipane ? { onDragOver: dnd.spalte(0).onDragOver, onDrop: dnd.spalte(0).onDrop } : {})}
                 style={multipane ? wachstum(0) : undefined}
-                className={multipane ? `flex flex-col flex-1 min-w-0 border-l-2 ${dnd.spalte(0).ueber ? 'border-l-brass-700' : 'border-l-transparent'} max-lg:flex-none max-lg:w-full max-lg:snap-start` : 'contents'}>
+                className={multipane ? `flex flex-col flex-1 min-w-0 border-l-2 ${dnd.spalte(0).ueber ? 'border-l-ink-900' : 'border-l-transparent'} max-lg:flex-none max-lg:w-full max-lg:snap-start` : 'contents'}>
                 {multipane && (
                   <PaneKopf {...titelVon(pathname)} breadcrumb={kopfDaten?.breadcrumb} onBreadcrumb={(to) => navigate(to)} artikel={kopfDaten?.artikel}
                     nurSteuerung={kopfDaten?.kopfzeileSelbst}

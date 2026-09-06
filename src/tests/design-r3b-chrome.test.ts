@@ -151,7 +151,6 @@ const X_AUSNAHMEN: Record<string, string> = {
   'components/ui/SchliessKnopf.tsx': 'der Baustein selbst',
   'components/rechtsprechung/LesemodusOverlay.tsx': '(a) beschrifteter Chip «✕ schliessen»',
   'pages/gesetz-leser/v3/LeserTrefferBlatt.tsx': '(a) beschrifteter Griff «✕ ausblenden»',
-  'components/start/UniversalSuche.tsx': '(b) «Suche leeren» — leert das Feld, schliesst nichts',
   'pages/Suche.tsx': '(b) «Suche leeren»',
   'pages/gesetz-leser/v3/SuchSprungFeld.tsx': '(b) «Suche leeren (Esc)»',
   'pages/gesetz-leser/parts/WeiterlesenChip.tsx': '(b) «Angebot verwerfen» — verwirft, schliesst nicht',
@@ -237,7 +236,9 @@ describe('A3-1 · das Schliess-✕ kommt aus EINEM Baustein', () => {
   //    «schliessen» (§1/§8) — sie hat aber nie gefragt, ob die (b)-Klasse mit
   //    SICH SELBST übereinstimmt. GEMESSEN am Preview, drei Flächen mit
   //    identischem `aria-label` «Suche leeren»:
-  //      start/UniversalSuche   16 px · Tinte 12.20 · Box 28×28 r8
+  //      start/UniversalSuche   16 px · Tinte 12.20 · Box 28×28 r8   ← Datei
+  //                             entfallen mit D18 (6.9.2026), Messwert bleibt
+  //                             als Beleg der damaligen Lage stehen (§0 Ziff. 2b)
   //      pages/Suche            16 px · Tinte 12.20 · Box 28×28 r8
   //      v3/SuchSprungFeld      14 px · Tinte 10.67 · Box 24×24 rund   ← Ausreisser
   //    Ein freistehendes ✕ trägt darum die geteilte Gestalt, egal welche

@@ -51,6 +51,20 @@ async function leserBereit(page: Page): Promise<void> {
 test.describe('Arbeitsleiste — eine Navigation, ein Reiter', () => {
   test.beforeEach(async ({ page }) => {
     await page.setViewportSize({ width: 1440, height: 900 })
+    // ── DEKLARIERTE TEST-ÄNDERUNG (§6.3, W2·24-R5-F1C, David-Befund D17,
+    // 6.9.2026) · WO DER RÜCKWEG AUF DIE ÜBERSICHT KLICKBAR IST ──────────────
+    // Vier Fälle klickten «zurück auf /gesetze» am Bereichs-Reiter im
+    // Titelblatt (`header.sticky a[href="/gesetze"]`). Den gibt es nicht mehr:
+    // «ich mochte die seitenleiste. können wir die behalten. und das oben
+    // entfernen?» — die Bereichs-Navigation lebt seither ausschliesslich in der
+    // Seitenleiste. Geklickt wird darum dort. Damit die Leiste auch IM LESER
+    // offen steht (dort startet sie per Ä1c-Vorgabe eingeklappt, und eine
+    // einmal getroffene Nutzerwahl gewinnt), wird die Wahl vorab gesetzt — das
+    // ist Testaufbau, keine Assertion: Umfang, Zusagen und Erwartungen der
+    // Fälle bleiben Wort für Wort dieselben.
+    await page.addInitScript(() => {
+      try { localStorage.setItem('lexmetrik-seitenleiste-eingeklappt.v2', '0') } catch { /* privater Modus */ }
+    })
     await page.goto('/gesetze')
     await page.evaluate(() => localStorage.removeItem('lexmetrik-tabs'))
   })
@@ -73,7 +87,7 @@ test.describe('Arbeitsleiste — eine Navigation, ein Reiter', () => {
       await leserBereit(page)
       // Zwischenstand: der Erlass hat den Reiter der Übersicht übernommen.
       expect(await identitaeten(page)).toEqual([`/gesetze/bund/${key}`])
-      await page.locator('header.sticky a[href="/gesetze"]').first().click()
+      await page.locator('aside[data-app-seitenleiste] a[href="/gesetze"]').first().click()
       await expect(page).toHaveURL(/\/gesetze$/, { timeout: 20_000 })
     }
     expect(await identitaeten(page)).toEqual(['/gesetze'])
@@ -122,11 +136,11 @@ test.describe('Arbeitsleiste — eine Navigation, ein Reiter', () => {
     await page.locator('a[href="/gesetze/bund/ZGB"]').first().click()
     await leserBereit(page)
     expect(await identitaeten(page)).toEqual(['/gesetze/bund/ZGB'])
-    await page.locator('header.sticky a[href="/gesetze"]').first().click()
+    await page.locator('aside[data-app-seitenleiste] a[href="/gesetze"]').first().click()
     await page.locator('a[href="/gesetze/bund/OR"]').first().click()
     await leserBereit(page)
     expect(await identitaeten(page), 'der Wechsel hat einen zweiten Reiter angelegt').toEqual(['/gesetze/bund/OR'])
-    await page.locator('header.sticky a[href="/gesetze"]').first().click()
+    await page.locator('aside[data-app-seitenleiste] a[href="/gesetze"]').first().click()
     await page.locator('a[href="/gesetze/bund/ZPO"]').first().click({ modifiers: ['ControlOrMeta'] })
     await expect.poll(() => identitaeten(page), { timeout: 10_000 })
       .toEqual(['/gesetze', '/gesetze/bund/ZPO'])
@@ -150,10 +164,20 @@ test.describe('Arbeitsleiste — eine Navigation, ein Reiter', () => {
     await page.locator('a[href="/gesetze/bund/ZGB"]').first().click()
     await leserBereit(page)
     // zweiter Reiter per Geste, dann zurück auf den ersten — beide müssen bleiben
-    await page.locator('header.sticky a[href="/gesetze"]').first().click()
+    await page.locator('aside[data-app-seitenleiste] a[href="/gesetze"]').first().click()
     await page.locator('a[href="/gesetze/bund/OR"]').first().click({ modifiers: ['ControlOrMeta'] })
     await expect.poll(() => pfade(page), { timeout: 10_000 }).toHaveLength(2)
-    await page.locator(`${REITER} button[aria-current="page"], ${REITER} [data-reiter-aktiv] > button`).first().click()
+    // ── DEKLARIERTE TEST-ÄNDERUNG (§6.3, W2·24-R5-F1C, D16, 6.9.2026) ────────
+    // Hier stand ein Sammel-Selektor mit `.first()`, der den anzuklickenden
+    // Reiter aus der DOM-REIHENFOLGE griff. Die war bis D16 eine andere: die
+    // Leiste bündelte nach Kategorie/Herkunft und stellte darum den
+    // OR-Erlass vor die Übersicht. Seit D16 zeigt sie die Speicherreihenfolge
+    // (der Bug war genau dieses Bündeln, `e2e/w224-reiter-umordnen-d16`), also
+    // steht die Übersicht vorn — und `.first()` träfe sie statt des Lesers.
+    // Der Reiter wird deshalb BENANNT statt gezählt; die geprüfte Zusage
+    // («ein Klick in der Leiste kostet keinen Reiter») ist unverändert.
+    await page.locator(`${REITER} [data-reiter-schluessel="/gesetze/bund/OR"]`)
+      .getByRole('button', { name: /^Reiter \d+: / }).click()
     await leserBereit(page)
     expect((await pfade(page)).length, 'ein Klick in der Leiste kostete einen Reiter').toBe(2)
   })
@@ -162,7 +186,7 @@ test.describe('Arbeitsleiste — eine Navigation, ein Reiter', () => {
     await page.goto('/gesetze')
     await page.locator('a[href="/gesetze/bund/ZGB"]').first().click()
     await leserBereit(page)
-    await page.locator('header.sticky a[href="/gesetze"]').first().click()
+    await page.locator('aside[data-app-seitenleiste] a[href="/gesetze"]').first().click()
     await expect(page).toHaveURL(/\/gesetze$/, { timeout: 20_000 })
     await page.locator('a[href="/gesetze/bund/OR"]').first().click({ modifiers: ['ControlOrMeta'] })
     // §6.3/D7: der Rückweg auf die Übersicht ersetzt den ZGB-Reiter durch den

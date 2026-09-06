@@ -1,23 +1,37 @@
-import { useCallback, useEffect, useRef, useState } from 'react';
-import { Link, NavLink, useLocation } from 'react-router-dom';
+import { useEffect, useRef, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { LexMetrikSiegel, LexMetrikWortmarke } from './Logo';
 import { HeaderSuche } from './HeaderSuche';
 import { SprachUmschalter } from '../SprachUmschalter';
 import { ThemaUmschalter } from './ThemaUmschalter';
 import { VerlaufUebersicht } from './VerlaufUebersicht';
 import { KorpusStand } from '../ui/KorpusStand';
-import { BEREICHE, REG_RAND, REG_RAND_HOVER, bereichVonPfad, START_REITER } from './bereiche';
-import { istSuchKuerzel, suchKuerzelEmpfaengerAbmelden, suchKuerzelEmpfaengerAnmelden } from '../suche/fruehesSuchKuerzel';
 
 // ─── Titelblatt-Zeile der Sammlung (W2·24-DESIGN-IDENTITAET R2) ─────────────
 //
-// Vorher ein Werkzeug-Streifen mit Glas-Optik, der ausdrücklich KEINE
-// Navigationsziele trug («die liegen in der Seitenleiste»). Jetzt der Kopf
-// eines gedruckten Bandes: Marke links, BEREICHS-REITER daneben (Gesetze ·
-// Rechtsprechung · Materialien · Rechner · Vorlagen, der aktive mit dem Strich
-// seiner Registerfarbe), Werkzeuge rechts. Darunter — als eigene, NICHT
-// klebende Zeilen in der Shell — die Ausgabe-Zeile (`AusgabeZeile`, unten) und
-// die Arbeitsleiste mit den offenen Reitern (`Reiterleiste`).
+// Der Kopf eines gedruckten Bandes: Marke links, Suche in der Mitte, Werkzeuge
+// rechts. Darunter die Arbeitsleiste mit den offenen Reitern (`Reiterleiste`)
+// und die Ausgabe-Zeile (`AusgabeZeile`, unten).
+//
+// ── D17 (David 6.9.2026) · DIE BEREICHE STEHEN IN DER SEITENLEISTE, NICHT HIER ─
+// Wortlaut: «ich mochte die seitenleiste. können wir die behalten. und das oben
+// entfernen?» R2 hatte die fünf Bereiche zusätzlich als Reiter ins Titelblatt
+// gestellt und die Seitenleiste dafür auf «/» weggenommen — beides ist mit
+// diesem Schritt zurückgenommen. EINE Landkarte (§5): die Seitenleiste. Sie
+// steht seither auf JEDER Route, auch auf «/», und trägt allein die Aktivmarke
+// der Domäne (Registerfarbe am Eintrag, `Sidebar.tsx`). Das Titelblatt trägt
+// nur noch, was keine Navigationsliste ist: Marke (Startseiten-Link) · Suche ·
+// Werkzeuge.
+//
+// ── D18 (David 6.9.2026) · EINE SUCHE, UND ZWAR DIESE ─────────────────────────
+// Wortlaut: «insgesamt braucht es auf der startseite keine suche. nur oben
+// reicht». Bis hierher trug «/» eine eigene, grosse Hero-Suche und der Streifen
+// dort KEIN Feld (`!aufStartseite`-Guard, W2·23 §6.1). Der Guard ist weg: die
+// Kopf-Suche steht auf jeder Route, auch auf «/». Damit gibt es genau ein
+// Suchfeld in der App, «/» und ⌘K zielen immer darauf, und die Umleitung, die
+// die Kürzel auf ein Seitenfeld schob (`useSuchKuerzelUmleitung`), ist ersatzlos
+// entfallen — sie hatte nur einen Fall zu bedienen, und den gibt es nicht mehr
+// (§17-Gegengewicht: was nicht scheitern kann, wird gestrichen).
 //
 // ── WARUM NUR DIESE ZEILE KLEBT (gemessen, nicht gewählt) ──────────────────
 // `pages/gesetz-leser/v3/leserGeometrie.ts` führt die Höhe dieses Kopfes als
@@ -34,22 +48,13 @@ import { istSuchKuerzel, suchKuerzelEmpfaengerAbmelden, suchKuerzelEmpfaengerAnm
 // `lc-glass` bleibt am header-Element: die Druckregel hängt an `header.lc-glass`
 // (`src/index.css` @media print, `src/tests/druck-fundstellen.test.ts`), und
 // die Klasse ist seit R1 leer bis auf `background: var(--paper)`.
-export function Topbar({ onMenu, schubladeOffen, seitenleisteEingeklappt, onSeitenleisteUmschalten, ohneSeitenleiste }: {
+export function Topbar({ onMenu, schubladeOffen, seitenleisteEingeklappt, onSeitenleisteUmschalten }: {
   onMenu: () => void;
   /** Ob die Off-Canvas-Schublade offen ist — nur dann existiert ihr DOM-Ziel. */
   schubladeOffen: boolean;
   seitenleisteEingeklappt: boolean;
   onSeitenleisteUmschalten: () => void;
-  /** Route ohne persistente Seitenleiste («/», §6 (d) des Fahrplans) → der
-   *  Einklapp-Schalter hätte dort nichts zu schalten und entfällt. */
-  ohneSeitenleiste?: boolean;
 }) {
-  // W2·23-STARTSEITE-V4 §6.1: auf «/» trägt der Hero die EINE Suche — der
-  // Streifen zeigt dort kein zweites Feld (zwei sichtbar gleiche Suchen auf
-  // einem Bildschirm sind eine Dopplung, kein Angebot). Auf allen anderen
-  // Routen unverändert.
-  const { pathname } = useLocation();
-  const aufStartseite = pathname === '/';
   // S6 — mobiler Such-Fokusmodus: solange die Suche auf schmalem Schirm offen
   // ist, weichen Menü-Schalter, Logo und die Werkzeug-Knöpfe, damit das Feld die
   // volle Streifenbreite bekommt (getippte Query bleibt lesbar). HeaderSuche
@@ -73,10 +78,6 @@ export function Topbar({ onMenu, schubladeOffen, seitenleisteEingeklappt, onSeit
     fokusWunsch.current = false;
     menuKnopf.current?.focus();
   }, [sucheBreit]);
-  // Solange der Streifen kein Feld trägt (auf «/»), übernimmt er die globalen
-  // Such-Kürzel für die Suche der Seite — sonst drückte «/» dort ins Leere.
-  useSuchKuerzelUmleitung(aufStartseite);
-  const aktiverBereich = bereichVonPfad(pathname);
   return (
     <header
       className="sticky top-0 z-leiste lc-glass"
@@ -104,28 +105,27 @@ export function Topbar({ onMenu, schubladeOffen, seitenleisteEingeklappt, onSeit
           <span aria-hidden className="text-base leading-none">☰</span>
         </button>
 
-        {/* Desktop: persistente Seitenleiste ein-/ausklappen. Auf «/» gibt es
-            keine (§6 (d)) — ein Schalter ohne Schaltbares wäre ein Tor, das
-            nicht scheitern kann (§6.7), darum entfällt er dort ganz. */}
-        {!ohneSeitenleiste && (
-          <button
-            type="button"
-            className="lc-btn lc-btn-ghost lc-btn-sm hidden lg:inline-flex shrink-0 min-h-11 min-w-11"
-            // WCAG 4.1.2 · konstanter zugänglicher Name (QS-UI Folgeschritt, 5.9.2026):
-            // der Name benennt konstant das bediente Ding, den Zustand trägt allein
-            // `aria-pressed` (gedrückt = Leiste ist eingeblendet). Bewacht von
-            // `ARIA_ZUSTANDSNAME` (eslint.config.js).
-            aria-label="Seitenleiste ein- und ausblenden"
-            aria-pressed={!seitenleisteEingeklappt}
-            onClick={onSeitenleisteUmschalten}
-          >
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden>
-              <rect x="3" y="4" width="18" height="16" stroke="currentColor" strokeWidth="1.7" />
-              <line x1="9" y1="4" x2="9" y2="20" stroke="currentColor" strokeWidth="1.7" />
-              {seitenleisteEingeklappt && <line x1="5.5" y1="9" x2="6.5" y2="9" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" />}
-            </svg>
-          </button>
-        )}
+        {/* Desktop: persistente Seitenleiste ein-/ausklappen. D17: sie steht
+            jetzt auf JEDER Route (auch auf «/»), also gibt es hier auch überall
+            etwas zu schalten — die frühere `ohneSeitenleiste`-Ausnahme ist mit
+            der Ausnahme selbst entfallen. */}
+        <button
+          type="button"
+          className="lc-btn lc-btn-ghost lc-btn-sm hidden lg:inline-flex shrink-0 min-h-11 min-w-11"
+          // WCAG 4.1.2 · konstanter zugänglicher Name (QS-UI Folgeschritt, 5.9.2026):
+          // der Name benennt konstant das bediente Ding, den Zustand trägt allein
+          // `aria-pressed` (gedrückt = Leiste ist eingeblendet). Bewacht von
+          // `ARIA_ZUSTANDSNAME` (eslint.config.js).
+          aria-label="Seitenleiste ein- und ausblenden"
+          aria-pressed={!seitenleisteEingeklappt}
+          onClick={onSeitenleisteUmschalten}
+        >
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden>
+            <rect x="3" y="4" width="18" height="16" stroke="currentColor" strokeWidth="1.7" />
+            <line x1="9" y1="4" x2="9" y2="20" stroke="currentColor" strokeWidth="1.7" />
+            {seitenleisteEingeklappt && <line x1="5.5" y1="9" x2="6.5" y2="9" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" />}
+          </svg>
+        </button>
 
         {/* Marke. Anders als vor R2 steht sie AUF JEDER BREITE im Titelblatt —
             der Kopf ist jetzt das Titelblatt der Sammlung, und ein Titelblatt
@@ -147,56 +147,10 @@ export function Topbar({ onMenu, schubladeOffen, seitenleisteEingeklappt, onSeit
           <LexMetrikWortmarke className="hidden sm:block text-h3" />
         </Link>
 
-        {/* ── Bereichs-Reiter (§5a Ziff. 1: Navigation, NICHT offene Dokumente) ─
-            Unterstrichener Text ohne Fläche und ohne ✕ — optisch bewusst etwas
-            anderes als die Arbeitsleiste darunter. Der aktive Bereich trägt den
-            2-px-Strich SEINER Registerfarbe (`./bereiche`); inaktive tragen den
-            Platz transparent, damit beim Wechsel nichts springt.
-            `overflow-x-auto` + `min-w-0`: die Reiter dürfen den Kopf nie
-            überlaufen (dieselbe Regel wie im Referenzbild, `.masthead nav`).
-            Unter `md` trägt die Schublade die Bereichs-Navigation. */}
-        <nav aria-label="Bereiche" className={`hidden md:flex min-w-0 shrink items-stretch gap-4 lg:gap-5 self-stretch overflow-x-auto lc-reiter-scroll ${weicht}`}>
-          {/* R3-F8 (6.9.2026): «Sammlung» steht als erster Reiter und ist auf «/»
-              die Aktivmarke, die dort bis hierher fehlte — der Kopf sagt jetzt
-              auf JEDER Route, wo man ist. Ihr Strich ist die Tinte (`--rule`,
-              `border-ink-900`), nicht eine Registerfarbe: die Startseite ist
-              das Titelblatt der Sammlung und kein sechstes Register
-              (Begründung an `START_REITER`, `./bereiche`). */}
-          <NavLink to={START_REITER.ziel} end aria-current={aufStartseite ? 'page' : undefined}
-            className={`inline-flex shrink-0 items-center border-b-2 pt-0.5 text-body-s no-underline transition-colors ${
-              aufStartseite
-                ? 'border-ink-900 font-medium text-ink-900'
-                : 'border-transparent text-ink-600 hover:border-ink-900/40 hover:text-ink-900'
-            }`}>
-            {START_REITER.label}
-          </NavLink>
-          {BEREICHE.map((b) => {
-            const aktiv = aktiverBereich?.ziel === b.ziel;
-            return (
-              <NavLink key={b.ziel} to={b.ziel} aria-current={aktiv ? 'page' : undefined}
-                className={`inline-flex shrink-0 items-center border-b-2 pt-0.5 text-body-s no-underline transition-colors ${
-                  aktiv
-                    ? `${REG_RAND[b.register]} font-medium text-ink-900`
-                    // F2 (Prüfbefund 6.9.2026): der Hover-Strich war `rule-soft`,
-                    // also grau — die Registerfarbe zeigte sich erst NACH dem
-                    // Klick. Jetzt kündigt der Hover die Farbe des Ziels an
-                    // (auf 40 %, damit «hier bin ich» und «hier käme ich hin»
-                    // unterscheidbar bleiben).
-                    : `border-transparent text-ink-600 hover:text-ink-900 ${REG_RAND_HOVER[b.register]}`
-                }`}>
-                {b.label}
-              </NavLink>
-            );
-          })}
-        </nav>
-
-        {/* Die Hülle bleibt IMMER stehen, auch ohne Feld: sie ist der `flex-1`-
-            Dehnungsraum des Streifens. Würde sie auf «/» entfallen, rückten die
-            Werkzeug-Knöpfe nach links und der Streifen spränge beim Wechsel
-            «/» ↔ andere Route (§6.1: «Layout darf nicht springen»).
-            Der Deckel ist seit R2 enger (`max-w-xs`, ab `xl` `max-w-sm`): die
-            Bereichs-Reiter teilen sich die Zeile jetzt mit dem Feld, und ein
-            576-px-Feld nähme ihnen bei 1280 px Fensterbreite den Platz. */}
+        {/* Die Suche des Hauses — auf JEDER Route dieselbe (D18). Die Hülle ist
+            der `flex-1`-Dehnungsraum des Streifens; sie bleibt auch dann
+            stehen, wenn das Feld unter 480 px zur Lupe zusammenklappt, damit
+            die Werkzeuge rechts nie springen (§6.1). */}
         {/* ── D9-NACHZUG (6.9.2026) · DAS FELD HAT EINEN BODEN ────────────────
             GEMESSEN am Stand `0834cbd7b` (`/gesetze`, Preview): das Feld war
             @1024 genau 56 px breit und @1280 200 px — es ist `flex-1 min-w-0`
@@ -206,12 +160,12 @@ export function Topbar({ onMenu, schubladeOffen, seitenleisteEingeklappt, onSeit
             480 px). Der Boden von 9 rem gilt erst AB 481 px: darunter weicht
             das Feld ohnehin der Lupe, und ein Mindestmass an der Hülle hätte
             @320 den Streifen überlaufen lassen (`e2e/topbar-kein-ueberlauf-320`).
-            Den Platz nehmen die Bereichs-Reiter, die dafür seit R2 ihre eigene
-            Scroll-Achse haben (`overflow-x-auto lc-reiter-scroll`). */}
+            Den Platz nahmen bis D17 die Bereichs-Reiter; seit sie entfallen sind,
+            teilt sich das Feld die Zeile nur noch mit Marke und Werkzeugen —
+            der Boden bleibt trotzdem stehen, er ist die Untergrenze für ein
+            Feld, das man als Feld erkennt. */}
         <div className="flex-1 min-w-0 min-[481px]:min-w-[9rem] max-w-xs xl:max-w-sm">
-          {!aufStartseite && (
-            <HeaderSuche onFokusModus={setSucheBreit} onFokusZurueck={() => { fokusWunsch.current = true; }} />
-          )}
+          <HeaderSuche onFokusModus={setSucheBreit} onFokusZurueck={() => { fokusWunsch.current = true; }} />
         </div>
 
         {/* `ml-auto`: die Werkzeuge stehen IMMER an der rechten Kante. Ohne sie
@@ -264,110 +218,4 @@ export function AusgabeZeile() {
       </div>
     </div>
   );
-}
-
-// ─── «/» und ⌘K, wenn der Streifen kein Feld trägt (W2·23-STARTSEITE-V4 §6.1) ─
-//
-// Auf «/» rendert der Streifen keine `HeaderSuche` — und mit ihr keinen Zuhörer
-// für die globalen Such-Kürzel. Dieser Hook leitet sie dorthin um, wo die Suche
-// der Seite steht.
-//
-// BEWUSST OHNE KOPPLUNG an die Startseiten-Interna (Arbeitspaket A baut sie
-// parallel): das Ziel ist über den ARIA-Kontrakt gesucht — `[role="search"]`
-// mit einem `input` darin, nicht über eine Komponente, eine ID oder ein
-// aria-label. Was den Kontrakt erfüllt, wird gefunden; ändert die Startseite
-// ihren Aufbau, bleibt die Umleitung heil.
-//
-// DER LISTENER HÄNGT AN KEINER ROUTE, sondern entscheidet zur Ereigniszeit, ob
-// der Kopf ein eigenes Feld trägt. Gemessen 5.9.2026 (Preview, SPA-Klick
-// «Gesetze» → «Start»): mit einem routen-abhängigen Effekt (`[aufStartseite]`)
-// lief zwischen dem History-Wechsel und dem Effekt-Lauf ein Fenster OHNE
-// Zuhörer — der erste «/»-Druck nach dem Klick verpuffte (activeElement blieb
-// der Link, auch 1.5 s später), erst der zweite fokussierte das Feld. Der
-// Alltagsweg auf «/» ist genau dieser Klick, nicht das Neuladen. Registriert
-// ist der Handler jetzt einmal beim Mount des Streifens; solange die
-// HeaderSuche im Kopf steht, hält er sich vollständig heraus (sie hat ihre
-// eigene, eingespielte Mechanik samt Vorrangregel B1 und Mobil-Lupe).
-//
-// Die ENTSCHEIDUNG, ob ein Tastendruck das Such-Kürzel ist, kommt aus
-// `suche/fruehesSuchKuerzel.ts` (§5 — dieselbe Regel wie HeaderSuche und der
-// Vorlauf aus `main.tsx`, keine zweite Kopie der Tastenlogik). Als Empfänger
-// des Vorlaufs meldet sich der Hook nur an, wenn beim Mount kein Kopf-Feld da
-// ist (der Erstlade-Fall auf «/»); sonst gehört diese Rolle der HeaderSuche.
-function useSuchKuerzelUmleitung(aufStartseite: boolean): void {
-  /** Das Suchfeld des KOPFES — steht es da, kümmert sie sich selbst. */
-  const kopfFeld = () => document.querySelector('header [role="search"] input');
-  /** Erstes Suchfeld der Seite ausserhalb des Kopfes. */
-  const seitenFeld = () => {
-    for (const f of document.querySelectorAll<HTMLInputElement>('[role="search"] input')) {
-      if (!f.closest('header')) return f;
-    }
-    return null;
-  };
-
-  // DER WUNSCH ÜBERLEBT EIN PAAR FRAMES — dasselbe Muster, das `HeaderSuche`
-  // für ihr Lupen-Feld führt (`fokusWunschFeld`), hier gegen eine andere
-  // Ursache: GEMESSEN 5.9.2026 (Preview, SPA-Klick «Gesetze» → «Start», Sonde
-  // im Seiten-Kontext) stand im Moment des ersten «/»-Drucks noch KEIN
-  // `[role="search"] input` im Dokument — die Startseite hatte ihre Module
-  // noch nicht gerendert; sie erschienen ~200 ms später. `focus()` auf ein
-  // Element, das es nicht gibt, verpufft still. Darum wird bis zu 2 s lang je
-  // Frame nachgesehen. Abbruch, sobald der Kopf wieder ein Feld trägt (Route
-  // gewechselt — dann gehört die Sache der HeaderSuche) oder der Nutzer selbst
-  // in einem Eingabefeld steht: ein verspäteter Fokus darf ihm nicht in die
-  // Tastatur greifen.
-  const fokussiere = useCallback(() => {
-    const bis = performance.now() + 2000;
-    const versuch = () => {
-      if (kopfFeld()) return;
-      const aktiv = document.activeElement as HTMLElement | null;
-      if (aktiv && (/^(INPUT|TEXTAREA|SELECT)$/.test(aktiv.tagName) || aktiv.isContentEditable)) return;
-      const f = seitenFeld();
-      if (f && f.offsetParent !== null) { f.focus(); f.select(); return; }
-      if (performance.now() < bis) requestAnimationFrame(versuch);
-    };
-    versuch();
-  }, []);
-
-  // (a) Der Tasten-Zuhörer hängt an KEINER Route, sondern entscheidet zur
-  //     Ereigniszeit, ob der Kopf ein eigenes Feld trägt — so gibt es beim
-  //     Routenwechsel kein Fenster ohne Zuhörer. Solange die HeaderSuche im
-  //     Kopf steht, hält er sich vollständig heraus (sie hat ihre eigene,
-  //     eingespielte Mechanik samt Vorrangregel B1 und Mobil-Lupe).
-  useEffect(() => {
-    const handler = (e: KeyboardEvent) => {
-      // Vorrangregel B1 (16.8.2026): wer in der Capture-Phase schon
-      // beansprucht hat, gewinnt.
-      if (e.defaultPrevented) return;
-      if (kopfFeld()) return;
-      if (!istSuchKuerzel(e)) return;
-      e.preventDefault();
-      fokussiere();
-    };
-    window.addEventListener('keydown', handler);
-    window.addEventListener('lm:suche-fokus', fokussiere);
-    return () => {
-      window.removeEventListener('keydown', handler);
-      window.removeEventListener('lm:suche-fokus', fokussiere);
-    };
-  }, [fokussiere]);
-
-  // (b) EMPFÄNGER-ROLLE, und warum sie an der Route hängen MUSS.
-  //     `fruehesSuchKuerzel.ts` fängt jeden Kürzel-Druck ab, solange KEIN
-  //     Empfänger angemeldet ist — es ruft dabei `preventDefault()` und merkt
-  //     den Wunsch. GEMESSEN 5.9.2026 (Sonde im Seiten-Kontext nach dem
-  //     SPA-Klick auf «Start»): genau das geschah hier. Die HeaderSuche hatte
-  //     sich beim Unmount abgemeldet, diese Umleitung war nicht angemeldet —
-  //     der Vorlauf beanspruchte den Druck, und der Zuhörer aus (a) stieg
-  //     korrekt bei `defaultPrevented` aus. Der Druck war damit nicht verloren,
-  //     sondern GEMERKT; er brauchte nur einen Empfänger. Diese Anmeldung ist
-  //     er: sie löst den gemerkten Wunsch beim Wechsel auf «/» sofort ein und
-  //     hält den Vorlauf danach heraus. Auf anderen Routen gehört die Rolle der
-  //     HeaderSuche — darum hier nur auf «/», und abgemeldet wird
-  //     identitätsgeprüft (eine fremde Anmeldung wird nie abgeräumt).
-  useEffect(() => {
-    if (!aufStartseite) return;
-    suchKuerzelEmpfaengerAnmelden(fokussiere);
-    return () => suchKuerzelEmpfaengerAbmelden(fokussiere);
-  }, [aufStartseite, fokussiere]);
 }

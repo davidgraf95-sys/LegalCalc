@@ -3,9 +3,9 @@ import { NAVIGATION } from '../../lib/navigation';
 // ─── Die fünf Bereiche der Sammlung + ihre Registerfarbe (W2·24 R2) ─────────
 //
 // EIN Ort für die Frage «welchem Register gehört dieser Pfad?» (§5). Konsumenten:
-// die Bereichs-Reiter der Titelblatt-Zeile (`Topbar`), der Registerfarben-Strich
-// der Arbeitsleiste (`Reiterleiste`), die Aktiv-Marke der Seitenleiste
-// (`Sidebar`). Vor R2 färbte jede dieser Stellen mit `brass-*`, also mit der
+// die Aktiv-Marke der Seitenleiste (`Sidebar`), der Registerfarben-Strich der
+// Arbeitsleiste (`Reiterleiste`), die Register-Striche des Siegels (`Logo`).
+// (Bis D17 auch die Bereichs-Reiter des Titelblatts — die gibt es nicht mehr.) Vor R2 färbte jede dieser Stellen mit `brass-*`, also mit der
 // GLEICHEN Farbe für alles — die Registerfarbe ist die erste Unterscheidung,
 // und sie darf nicht dreimal verschieden hergeleitet werden.
 //
@@ -51,19 +51,17 @@ export const BEREICHE: Bereich[] = NAVIGATION.flatMap((a) => {
   return [{ label: a.titel, ziel: a.ziel, praefix: a.ziel, register }];
 });
 
-// ─── R3-F8 (Prüfbefund 6.9.2026) · DIE SAMMLUNG IST AUCH EIN REITER ─────────
+// ─── D17 (6.9.2026) · KEIN BEREICHS-REITER IM TITELBLATT MEHR ──────────────
 //
-// Auf «/» trug das Titelblatt keine Aktivmarke: die fünf Bereichs-Reiter
-// beschreiben allesamt Unterbereiche, und die Startseite gehört zu keinem.
-// Das Referenzbild (`abnahme/design-identitaet/vorschlag-freigegeben.html`)
-// markiert dort «Sammlung» — der Kopf sagt also auf JEDER Route, wo man ist.
-//
-// BEWUSST NICHT IN `BEREICHE`: dessen Einträge tragen ein Pfad-PRÄFIX, und das
-// Präfix «/» würde in `bereichVonPfad` auf jeden Pfad passen und die vier
-// Registerfarben überschreiben. Die Startseite ist auch kein Register, sondern
-// das Titelblatt — sie trägt darum die Tinte (`--rule`) als Aktivmarke, keine
-// Registerfarbe.
-export const START_REITER = { label: 'Sammlung', ziel: '/' } as const;
+// Bis hierher führte die Titelblatt-Zeile die fünf Bereiche plus einen sechsten
+// Reiter «Sammlung» als Navigation. David 6.9.2026: «ich mochte die
+// seitenleiste. können wir die behalten. und das oben entfernen?» — die
+// Bereichs-Navigation lebt seither ausschliesslich in der Seitenleiste. Damit
+// sind `START_REITER` (die Aktivmarke für «/») und die beiden RAND-Tabellen
+// (`REG_RAND`, `REG_RAND_HOVER`, die Striche jener Reiter) ersatzlos gestrichen
+// statt bewacht (§17-Gegengewicht). `BEREICHE` selbst bleibt: die Registerfarbe
+// eines Pfades braucht der Seitenleisten-Eintrag, der Reiter der Arbeitsleiste
+// und das Siegel (`Logo.tsx`) unverändert.
 
 /** Bereich eines Pfades — oder null (Start, Meta-Seiten, Unbekanntes). */
 export function bereichVonPfad(pfad: string): Bereich | null {
@@ -80,10 +78,6 @@ export function registerVonPfad(pfad: string): Register | null {
   return bereichVonPfad(pfad)?.register ?? null;
 }
 
-/** Tailwind-Klasse für den Registerfarben-Strich (Unterkante/Randmarke). */
-export const REG_RAND: Record<Register, string> = {
-  g: 'border-reg-g', r: 'border-reg-r', m: 'border-reg-m', w: 'border-reg-w',
-};
 /** Tailwind-Klasse für die Registerfarben-Fläche (2-px-Marke, nie unter Text). */
 export const REG_FLAECHE: Record<Register, string> = {
   g: 'bg-reg-g', r: 'bg-reg-r', m: 'bg-reg-m', w: 'bg-reg-w',
@@ -104,12 +98,6 @@ export const REG_FLAECHE: Record<Register, string> = {
 // — sie tragen keine Information allein (Position/Beschriftung tun das) und
 // unterliegen darum nicht 1.4.3. Der Text darauf bleibt `ink-*` auf Papier.
 
-/** Hover-Strich in der Registerfarbe des ZIELS (Bereichs-Reiter der
- *  Titelblatt-Zeile). Abgesetzt vom aktiven Zustand durch die Deckkraft. */
-export const REG_RAND_HOVER: Record<Register, string> = {
-  g: 'hover:border-reg-g/40', r: 'hover:border-reg-r/40',
-  m: 'hover:border-reg-m/40', w: 'hover:border-reg-w/40',
-};
 /** Hover-Marke eines Seitenleisten-Blattes (Gruppe `blatt`). */
 export const REG_HOVER_FLAECHE_BLATT: Record<Register, string> = {
   g: 'group-hover/blatt:bg-reg-g', r: 'group-hover/blatt:bg-reg-r',

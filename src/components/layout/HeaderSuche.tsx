@@ -459,7 +459,20 @@ export function HeaderSuche({ onFokusModus, onFokusZurueck }: {
         // LM-018/§8 B7 bleibt gewahrt: die Trefferzahl-Zeile sitzt weiter
         // AUSSERHALB des Panel-Inhalts; ihren Grund gibt jetzt die schwebende
         // Hülle (`.lc-schwebeflaeche`) statt eines eigenen `bg-paper`.
-        <div className="lc-schwebeflaeche absolute right-0 top-full mt-1.5 z-dropdown w-full min-w-[22rem] max-w-[calc(100vw-1rem)] max-h-[70vh] overflow-y-auto overscroll-contain p-1 max-[639px]:fixed max-[639px]:inset-x-2 max-[639px]:top-[3.75rem] max-[639px]:mt-0 max-[639px]:w-auto max-[639px]:min-w-0 max-[639px]:max-w-none">
+        // ── a11y (Fund 6.9.2026, `e2e/a11y.e2e.ts` «offene Kopf-Suche») ────────
+        // axe `scrollable-region-focusable` (serious): die Hülle scrollt
+        // (`overflow-y-auto`), enthält aber keinen einzigen fokussierbaren
+        // Knoten — die Treffer sind `role="option"` und bewusst KEINE
+        // Tab-Stationen (Cowork-Befund 38: sonst hängt der Fokus bis zu neunmal
+        // Tab im Widget). Ein `tabIndex={0}` hier hiesse, genau diesen Befund
+        // zurückzuholen. `tabIndex={-1}` löst beides: die Region ist
+        // programmatisch fokussierbar (axe zufrieden), erzeugt aber keine
+        // Tab-Station — dieselbe Lösung, die das Reiter-Blatt trägt
+        // (`layout/Reiterleiste.tsx`). Der Tastaturweg durch die Treffer ist
+        // unverändert ↑/↓ am Feld, das die aktive Option ins Bild scrollt.
+        // Der Fall war bis D18 unentdeckt, weil axe die offene Suche nur auf
+        // «/» prüfte — und dort stand bis 6.9.2026 die Hero-Suche.
+        <div tabIndex={-1} className="lc-schwebeflaeche absolute right-0 top-full mt-1.5 z-dropdown w-full min-w-[22rem] max-w-[calc(100vw-1rem)] max-h-[70vh] overflow-y-auto overscroll-contain p-1 max-[639px]:fixed max-[639px]:inset-x-2 max-[639px]:top-[3.75rem] max-[639px]:mt-0 max-[639px]:w-auto max-[639px]:min-w-0 max-[639px]:max-w-none">
           {zeigtLeer
             // UI-NAV O1: Leerzustand (⌘K/Fokus ohne Eingabe) — Verlauf + Einstiege.
             // Listbox-Modus (Befund 38): Maus-Klick navigiert UND schliesst/leert

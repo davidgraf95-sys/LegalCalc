@@ -153,8 +153,13 @@ test.describe('R10 · eigener Zustand', () => {
       await expect(inhalt(page, titel), `${titel}: zu`).toBeHidden()
       await expect(schalter(page, titel), `${titel}: wieder einschaltbar`).toBeVisible()
     }
-    // Suche, Bereiche und Fuss stehen weiter — sie sind nicht abschaltbar.
-    await expect(page.getByRole('search', { name: 'Universal-Suche' })).toBeVisible()
+    // Begrüssung, Bereiche und Fuss stehen weiter — sie sind nicht abschaltbar.
+    // ── DEKLARIERTE TEST-ÄNDERUNG (§6.3, W2·24-R5-F1C, David D18, 6.9.2026):
+    // «insgesamt braucht es auf der startseite keine suche. nur oben reicht» —
+    // das Pult trägt keine eigene Suche mehr. Die Sonde prüft darum das erste
+    // unabschaltbare Element, das geblieben ist (die Begrüssungs-/Titelzeile);
+    // Umfang und Aussage des Falls (was ist NICHT abschaltbar) unverändert.
+    await expect(page.locator('main h1').first()).toBeVisible()
     await expect(bereiche(page)).toBeVisible()
     await expect(page.getByRole('button', { name: 'Startseite anpassen' })).toBeVisible()
   })

@@ -38,8 +38,21 @@ const html = (eintraege: { path: string; label?: string }[], url = '/') => {
 };
 
 describe('Reiterleiste — sichtbare Reiter + client-only Überlauf-Blatt', () => {
-  it('rendert NICHTS bei 0 Reitern; AB dem 1. Reiter die Leiste mit dem Reiter', () => {
-    expect(html([])).toBe('');
+  // ── DEKLARIERTE ANPASSUNG (§6.3, W2·24-R5-F1C, R10-Befund, 6.9.2026) ──────
+  // Hier stand `expect(html([])).toBe('')` — «keine Reiter, kein Markup». Genau
+  // das war die CLS-Ursache: der Prerender kennt keinen Speicher, lieferte also
+  // keine Leiste, und nach der Hydration wuchs sie um 34 px in die Seite hinein
+  // (gemessen auf /rechner/tagerechner, CLS 0.025, `ics-export-z1` A9). Die
+  // Leiste reserviert ihre Höhe jetzt immer. Die geprüfte EIGENSCHAFT ist
+  // dieselbe geblieben und wird sogar schärfer: ohne Reiter gibt es keine
+  // Navigations-Landmark und keinen Reiter im Markup — nur einen stummen,
+  // `aria-hidden`-Platzhalter in genau der Höhe, die die Leiste später einnimmt.
+  it('reserviert bei 0 Reitern nur die Höhe; AB dem 1. Reiter die Leiste mit dem Reiter', () => {
+    const leer = html([]);
+    expect(leer).toContain('h-[var(--app-reiter-h)]');
+    expect(leer).toContain('aria-hidden');
+    expect(leer).not.toContain('aria-label="Offene Reiter"');
+    expect(leer).not.toContain('aria-label="Reiter «');
     const eins = html([{ path: '/rechner/tagerechner' }], '/rechner/tagerechner');
     expect(eins).toContain('aria-label="Offene Reiter"');
     // Der Reiter steht im Markup — genau das ist die Ablösung des ☰-Flyouts.
