@@ -13,7 +13,16 @@ import { BrowserRouter } from 'react-router-dom'
 // `font-stretch: 87.5%`.
 import '@fontsource-variable/archivo/wght.css'
 import '@fontsource-variable/archivo/wght-italic.css'
-import '@fontsource-variable/literata/wght.css'
+// D12 «Lesekomfort» (6.9.2026): Literata AUFRECHT laeuft neu auf der
+// `opsz`-Achse (optische Groesse). Serifen am Bildschirm brauchen sie — der
+// Browser stellt mit `font-optical-sizing: auto` (index.css) den Schnitt auf die
+// tatsaechliche Schriftgroesse ein, statt eine Textgroesse hochzuskalieren.
+// Gemessen im latin-Subset: 110 080 B statt 52 496 B, also +57.6 KB. Das ist
+// die eine bewusst gekaufte Erstlast dieser Runde.
+// Die KURSIVE bleibt auf `wght`: sie traegt Randtitel und Gruss, nie
+// Langlese-Fliesstext, und die opsz-Kursive kostete noch einmal +58.2 KB —
+// das waere Budget fuer eine Achse, die an keiner Lesestelle wirkt (§15).
+import '@fontsource-variable/literata/opsz.css'
 import '@fontsource-variable/literata/wght-italic.css'
 import './index.css'
 import App from './App.tsx'

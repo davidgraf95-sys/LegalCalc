@@ -66,12 +66,17 @@
        Chroma = flache Glocke (C≈0.008 Enden, ~0.012–0.015 Mitten 600–400 — dort sitzt
        Meta-/Sekundärtext, die sichtbarste Wärme-Fläche). Haarlinien erben via
        color-mix-Rezepten automatisch. Hue-Drift jetzt HART im check:farbwelt (Span 1.3°). */
-    --ink-fixed-dark:#151515;
+    /* D12 «Lesekomfort» (6.9.2026): der Solitär wandert von #151515 (17.65:1 auf
+       Papier) auf #25231F — warmes Dunkelgrau, 14.68:1. Grund gemessen, nicht
+       geschmacklich: Maximalkontrast erzeugt am Bildschirm Halation (heller
+       Grund «blutet» in die Buchstabenkanten), Zielband für Langlese-Fliesstext
+       ~12–15:1. Der Wert speist weiterhin ink-900 hell UND --auf-gold. */
+    --ink-fixed-dark:#25231F;
     /* C2-Gegenstück (5.9.2026): --ink-fixed-light für Text auf einer Fläche,
        die STETS mittel-dunkel bleibt (--ok-solid/--sage-500 flippt bewusst
        NICHT, s. Zeile ~1042-Kommentar) — Wert = helles --paper, hier nicht
        überschrieben. Speist --auf-sage (unten). */
-    --ink-fixed-light:#FAFAFA;
+    --ink-fixed-light:#FAF7F2;
     /* W2·24-DESIGN-IDENTITAET R1 (6.9.2026): die Rampe ist CHROMAFREI (C = 0,
        reines Neutralgrau) — die frühere Wärme (Hue 88°) WAR die halbe
        Creme-Gold-Signatur. Der Hue-Drift-Wächter (check:farbwelt (b), HART für
@@ -79,8 +84,8 @@
        L-Monotonie bleibt geprüft. ink-500 ist mit #696969 bewusst dunkler als
        die Referenz-Tinte #767676 (die läge auf --well bei 4.44:1) — gemessen
        4.85:1 auf --well, 5.34:1 auf --paper. */
-    --ink-900:var(--ink-fixed-dark); --ink-800:#262626; --ink-700:#383838; --ink-600:#4A4A4A; --ink-500:#696969;
-    --ink-400:#8C8C8C; --ink-300:#B0B0B0;
+    --ink-900:var(--ink-fixed-dark); --ink-800:#32302C; --ink-700:#3B3832; --ink-600:#5C564A; --ink-500:#6A665E;
+    --ink-400:#8D887E; --ink-300:#B0ADA7;
     /* Eigener Platzhalter-Ton (Auftrag David 25.6.2026, max. Lesbarkeit):
        ink-300 war auf dem Well nur ~2:1 → quasi unsichtbar. Eigenes Token
        4.75:1 auf --well (WCAG 1.4.3 AA erfüllt), ohne den Haarlinien-/Deko-Ton
@@ -91,7 +96,7 @@
        ≥4.5:1 auf --well bleibt erfüllt (4.76:1, vorher 4.75:1).
        D-5/A38 (16.7.2026): --well wurde heller/weisser (#F2EFE6→#F6F4EE) →
        --placeholder/well steigt 4.76→4.98:1 (Ton unverändert, Kontrast-Gewinn). */
-    --placeholder:#676767;
+    --placeholder:#69655D;
     /* Papier – Flächen. Token-Landkarte (Regel, ohne Wertänderung):
        --paper*   = SEITENHINTERGRUND (Body, grosse Flächen)
        --surface* = KARTEN/Panels (lc-card, lc-tile, lc-panel)
@@ -127,8 +132,8 @@
        nur eben chromafrei und mit fast unsichtbaren Stufen: das neue Bild trennt
        über LINIEN, nicht über Flächen-Tönung. paper-raised ist das Reinweiss der
        schwebenden Ebene (Menü/Dialog), das Blatt selbst liegt eine Spur darunter. */
-    --paper:#FBFBFB; --paper-raised:#FFFFFF; --paper-sunken:#F0F0F0;
-    --surface:#FDFDFD; --surface-raised:var(--paper-raised);
+    --paper:#FAF7F2; --paper-raised:#FFFFFF; --paper-sunken:#F3F0EA;
+    --surface:#FCFAF6; --surface-raised:var(--paper-raised);
     --well:var(--paper-sunken);
     /* Haarlinien */
     --line:color-mix(in oklab, var(--ink-900) 10%, transparent);
@@ -139,7 +144,7 @@
        1-px-Zeilentrennung im Satzspiegel, --rule die 2-px-Kante unter der
        Titelblatt-Zeile. Hier als Grundschicht definiert; Konsumenten ab R2. */
     --rule:var(--ink-900);
-    --rule-soft:#DADADA;
+    --rule-soft:#DDDAD4;
     /* Gesetzes-Reader — EINE Linien-Sprache (W2·5d G1, DESIGN-REGLEMENT-NORMTEXT
        §Linien-Kanon): benannte Rollen statt frei gewählter Ad-hoc-Opazitäten von
        --line (Artikel /70, Sektion voll|/50, Tabellenzeile/Fussnoten). Werte am
@@ -159,14 +164,19 @@
        die Werte hier sind die Wahrheit. Rollen: 800 = stärkster Akzenttext /
        Hover, 700 = Link/Akzent (= Tinte, im Bild unterstrichen statt farbig),
        600 = Punkt/Decor, 500 = Linie & --focus, 400–100 = Flächen. */
-    --brass-800:#0D0D0D; /* a11y: ≥4.5 Kontrast auf brass-100 (12px) */
+    --brass-800:#1D1B17; /* a11y: ≥4.5 Kontrast auf brass-100 (12px) — D12: 15.39:1 */
     /* brass-700 a11y-kalibriert (Entscheid David 26.6.2026): WCAG 4.5:1 für
        Kleintext auf ALLEN hellen Flächen — min 4.63:1 auch auf brass-100/
        paper-sunken (vorher #8A6A2F = 4.37 auf paper-sunken → axe serious).
        Marke praktisch unverändert. Dunkel-brass-700 ist separat (s. html.dark). */
-    --brass-700:#151515; --brass-500:#767676; --brass-300:#C7C7C7;
-    --brass-600:#4A4A4A; --brass-400:#A3A3A3;
-    --brass-200:#E4E4E4; --brass-100:#F1F1F1;
+    /* D12: brass-700 IST die Tinte (Rolle «Link/Akzent»); seit hier per var()
+       aus demselben Solitär gespeist, statt den Wert ein zweites Mal zu
+       schreiben (§5) — vorher standen #151515 hier und dort, D12 hätte sie
+       auseinanderlaufen lassen. Die übrigen Stufen halten ihre Helligkeit und
+       tragen nur die Wärme nach (Hue 84.6°, L unverändert ±0.001). */
+    --brass-700:var(--ink-fixed-dark); --brass-500:#7A766E; --brass-300:#CAC7C1;
+    --brass-600:#4D4A44; --brass-400:#A6A39D;
+    --brass-200:#E6E4E0; --brass-100:#F3F1ED;
     /* ── REGISTERFARBEN (W2·24-DESIGN-IDENTITAET R1, Referenzbild §5) ───────
        Die EINZIGE Farbe im neuen Bild: vier stumpfe Töne, je einer pro Register
        der Sammlung — Gesetze · Rechtsprechung · Materialien · Werkzeuge. Sie
@@ -529,6 +539,10 @@
     --font-mono:ui-monospace,'SFMono-Regular','SF Mono','Menlo','Consolas','Liberation Mono';
     /* Lese-Serif: Normtext, Entscheide und Titel (Rubrik V und, ab R3/R4, mehr). */
     --font-serif:'Literata Variable','Literata Fallback','Literata Times Fallback','Charter','Georgia';
+    /* D12 (6.9.2026): das Gewicht des Lesetexts als EIN Token — Konsument ist
+       die `:where`-Regel unten in @layer base; `src/tests/leser-typo-tokens.
+       test.ts` bindet den Wert, damit er nicht still zurueckwandert. */
+    --lese-gewicht:450;
     /* Fein-Typo der Leser/Chrome (25.6.2026, DESIGN-REGLEMENT B2): die zuvor
        12 rohen text-[…rem]-Sonderwerte sind auf die bestehende Skala
        (micro/xs/body-s/base/body-l/h3) verdichtet — keine Sondertokens mehr,
@@ -550,15 +564,15 @@
        normalisiert (vorher 84–90° gestreut), L gehalten, Chroma-Glocke wie hell.
        Alle Kontraste F2-gemessen: ink-500 ≥5.2:1 auf paper/surface/well. */
     /* W2·24-R1: dunkle Rampe ebenfalls chromafrei (C = 0). */
-    --ink-900:#EDEDED; --ink-800:#DCDCDC; --ink-700:#C9C9C9; --ink-600:#B0B0B0; --ink-500:#909090;
-    --ink-400:#6E6E6E; --ink-300:#4F4F4F;
-    --placeholder:#8A8A8A; /* Platzhalter dunkel: gemessen 5.55:1 auf --well (#0E0E0E), KONTRAST-R1.md */
+    --ink-900:#E2E0DC; --ink-800:#D2CEC6; --ink-700:#BFBAB0; --ink-600:#A59E90; --ink-500:#938D81;
+    --ink-400:#6F6B63; --ink-300:#534F47;
+    --placeholder:#8A857B; /* Platzhalter dunkel: gemessen 5.10:1 auf --well (#131211), KONTRAST-R1.md §D12 */
     /* Papier → neutrales Dunkel (W2·24-R1: die Wärme ist raus, kein Reinschwarz
        — #151515 ist der Referenzbild-Wert; die Flächen-Leiter bleibt gültig). */
-    --paper:#151515; --paper-raised:#212121; --paper-sunken:#0E0E0E;
-    --surface:#1A1A1A; --surface-raised:var(--paper-raised);
-    --well:#0E0E0E;
-    --rule-soft:#333333;
+    --paper:#1B1917; --paper-raised:#282521; --paper-sunken:#131211;
+    --surface:#201E1B; --surface-raised:var(--paper-raised);
+    --well:#131211;
+    --rule-soft:#35332F;
     /* Haarlinien etwas kräftiger (helle Tinte auf Dunkel wirkt sonst zu fein) */
     --line:color-mix(in oklab, var(--ink-900) 14%, transparent);
     --line-strong:color-mix(in oklab, var(--ink-900) 24%, transparent);
@@ -572,13 +586,21 @@
        Rolle, dieselbe Reihenfolge, für die dunkle Fläche kalibriert. */
     --reg-g:#8FB8F0; --reg-r:#E39AA6; --reg-m:#9AD489; --reg-w:#E6B95A; /* dunkel: kräftiger, Rot dezent (David 6.9.) */
     /* W2·24-R1: dieselbe Rollenlogik, neutral — Text-Töne hell, Flächen dunkel. */
-    --brass-800:#F5F5F5; --brass-700:#EDEDED; --brass-600:#C9C9C9;
-    --brass-500:#909090; --brass-400:#6E6E6E;
-    --brass-300:#4F4F4F; --brass-200:#2E2E2E; --brass-100:#232323;
+    --brass-800:#F6F4F0; --brass-700:var(--ink-900); --brass-600:#CDC9C1;
+    --brass-500:#949088; --brass-400:#716E68;
+    --brass-300:#514F4B; --brass-200:#302E2A; --brass-100:#242321;
     /* Status: Text-Töne (-700) hell; -bg folgt aus Papier+Tönung; -500 bleibt.
        Tönung etwas stärker, damit die Flächen auf Dunkel lesbar bleiben. */
     --status-tint:18%;
     --sage-700:#AEC6A2; --slate-700:#A9B8BF; --warn-700:#E3AC5E; --danger-700:#E29280;
+    /* D12 (6.9.2026), §17-Wurzelfix statt Baseline-Absenkung: das dunkle Papier
+       wird von #151515 auf #1B1917 gehoben — dadurch faellt das ALTBEKANNTE
+       Riss-Paar danger-500/paper dunkel von 2.72:1 auf 2.61:1. Ein bekannter
+       Riss darf nicht tiefer sinken (Baseline-Guard). Statt die Baseline
+       nachzuziehen, wird der Ton im DUNKELMODUS um dieselbe Stufe mitgehoben
+       (L 0.488 -> 0.504, Hue/Chroma unveraendert): gemessen 2.80:1, also BESSER
+       als vor D12. Hell bleibt #9A3F30 unangetastet. */
+    --danger-500:#9F4434;
     /* Fokus im Dunkel: brass-500 (#B89653) ist hier hell genug für ≥3:1 auf
        dem dunklen Papier; brass-700 wäre als Outline zu hell/grell. */
     --focus:var(--brass-500);
@@ -623,7 +645,19 @@
     font-size: 1rem;
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
+    /* D12 «Lesekomfort» (6.9.2026): Literata traegt seit hier die opsz-Achse
+       (main.tsx). `auto` ist zwar der CSS-Vorgabewert, steht aber ausdruecklich
+       da, weil er den Zweck der +57.6 KB Nutzlast benennt — ohne die Achse
+       waere die Zeile wirkungslos, ohne die Zeile die Achse unbelegt. */
+    font-optical-sizing: auto;
   }
+  /* D12: LESETEXT-GEWICHT. Serifen wirken am Bildschirm bei 400 duenner als im
+     Druck; die Recherche (6.9.2026) nennt 450–500 fuer Bildschirm-Langlesetext.
+     `:where()` haelt die Spezifitaet auf NULL — jede Tailwind-Gewichts-Utility
+     (`font-semibold` an Titeln, `font-normal`, `font-medium`) gewinnt weiterhin,
+     nur der Fliesstext ohne eigene Gewichtsangabe erbt die 450. Darum steht hier
+     eine Regel und kein Eingriff an ~40 Aufrufstellen (§5/§10). */
+  :where([class~="font-serif"]) { font-weight: var(--lese-gewicht); }
   h1, h2, h3 { font-family: var(--font-display), system-ui, sans-serif; font-weight: 600; letter-spacing: -0.015em; color: var(--ink-900); }
   a { color: var(--brass-700); text-underline-offset: 2px; }
   /* Hover DUNKELT den Link (brass-800) statt ihn aufzuhellen (brass-600 war

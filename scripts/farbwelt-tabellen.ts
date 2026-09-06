@@ -195,10 +195,16 @@ export const REF_TOL = 0.06;
 // Messing (#826225/#D8BD78) auf Tinte (#151515/#EDEDED). Alle drei Zeilen sind
 // darum NEU GEMESSEN, nicht «nachgeführt» — die alten Zahlen bleiben als
 // Herkunft stehen (§2b: ein datierter Beleg altert nicht, er wird ergänzt).
+// W2·24 D12 «Lesekomfort» (6.9.2026): --well wandert von #F0F0F0/#0E0E0E auf
+// die warm getoenten #F3F0EA/#131211 und --brass-700 mit der Tinte von #151515
+// auf #25231F (Halations-Daempfung, s. index.css). Alle drei Zeilen sind darum
+// NEU GEMESSEN (scripts/farbwelt-messung, culori). Die R1-Zahlen bleiben als
+// Herkunft in dieser Quelle-Spalte stehen — ein datierter Beleg altert nicht,
+// er wird ergaenzt (§2b).
 export const REFERENZ: Ref[] = [
-  { fg: 'slate-500', bg: 'well', hell: 4.86, dunkel: 3.47, quelle: 'C-1 lc-chip-entscheid Tick (§4b-B; D-5 war 5.03 → W2·24-R1 hellerer well 4.86)' },
-  { fg: 'warn-700', bg: 'well', hell: 5.29, dunkel: 9.49, quelle: 'C-2 Currency-Chip warn (§4b-B; D-5 war 5.48/9.43 → W2·24-R1 5.29/9.49)' },
-  { fg: 'brass-700', bg: 'well', hell: 16.02, dunkel: 16.49, quelle: 'C-3 Akzent-Tick — seit W2·24-R1 TINTE statt Messing (D-5 war 5.13/10.48)' },
+  { fg: 'slate-500', bg: 'well', hell: 4.86, dunkel: 3.38, quelle: 'C-1 lc-chip-entscheid Tick (§4b-B; D-5 war 5.03 → R1 4.86/3.47 → D12 4.86/3.38)' },
+  { fg: 'warn-700', bg: 'well', hell: 5.30, dunkel: 9.20, quelle: 'C-2 Currency-Chip warn (§4b-B; D-5 war 5.48/9.43 → R1 5.29/9.49 → D12 5.30/9.20)' },
+  { fg: 'brass-700', bg: 'well', hell: 13.79, dunkel: 14.19, quelle: 'C-3 Akzent-Tick = Tinte (D-5 war 5.13/10.48 Messing → R1 16.02/16.49 → D12 13.79/14.19)' },
 ];
 
 // (Fixpunkt) --paper hell/dunkel sind unantastbare Anker (Fixpunkt 1).
@@ -213,9 +219,15 @@ export const REFERENZ: Ref[] = [
 // Flächen-L-Leiter well<paper<surface<paper-raised (FAIL-Regel in
 // check-farbwelt.ts) über dem Papier noch zwei hellere Flächen braucht;
 // #FFFFFF ist jetzt --paper-raised, die schwebende Ebene.
+// W2·24 D12 «Lesekomfort» (6.9.2026): beide Anker sind DEKLARIERT versetzt —
+// #FBFBFB/#151515 waren die R1-Werte (Referenzbild, chromafrei). D12 toent das
+// Papier warm (Piepenbrock/Buchner: leichte Toenung senkt die Blendung ohne
+// Verlust der positiven Polaritaet) und hebt das dunkle Papier vom Fast-Schwarz
+// weg. Die R1-Zahlen bleiben als Herkunft im Kommentar stehen (§2b), sie sind
+// nicht falsch geworden, sondern abgeloest.
 export const FIXPUNKT: { token: string; mode: Mode; soll: string }[] = [
-  { token: 'paper', mode: 'hell', soll: '#FBFBFB' },
-  { token: 'paper', mode: 'dunkel', soll: '#151515' },
+  { token: 'paper', mode: 'hell', soll: '#FAF7F2' },
+  { token: 'paper', mode: 'dunkel', soll: '#1B1917' },
 ];
 
 // (Baseline) BEKANNTE RISSE (D-1-Input): heute unter Schwelle → WARNUNG, FAIL nur
