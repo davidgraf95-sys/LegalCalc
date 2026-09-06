@@ -217,6 +217,14 @@ test.describe('Arbeitsleiste — eine Navigation, ein Reiter', () => {
   })
 
   test('(d) ⌘/Ctrl+Enter in der Kopfsuche öffnet einen NEUEN Reiter', async ({ page }) => {
+    // Wie (e)/(g): der Fall lädt ZWEI schwere Leser (ZGB, dann OR über den
+    // Treffer-Sprung) und wartet dazwischen bis zu 20 s auf die Trefferliste.
+    // GEMESSEN 6.9.2026 (gebautes `dist/`, --workers=2, --repeat-each=3): 2/3
+    // rot mit «Test timeout of 30000ms exceeded» — die Uhr lief beim `press`
+    // ab, nicht die Bedienung: derselbe Griff braucht ohne Parallel-Last
+    // 46–152 ms (Einzelmessung, 3/3). `test.slow()` verdreifacht das Mass;
+    // Zusagen, Erwartungen und Umfang bleiben Wort für Wort dieselben (§6.3).
+    test.slow()
     await page.goto('/gesetze/bund/ZGB')
     await leserBereit(page)
     expect(await identitaeten(page)).toEqual(['/gesetze/bund/ZGB'])
@@ -243,10 +251,24 @@ test.describe('Arbeitsleiste — eine Navigation, ein Reiter', () => {
     test.slow()
     await page.goto('/gesetze/bund/ZGB')
     await leserBereit(page)
-    // Erst die Stelle abwarten, die der Leser von sich aus meldet (Dokument-
-    // anfang) — danach wird gescrollt, und DIESER Wechsel ist die Zusage.
+    // ── DEKLARIERTE TEST-ÄNDERUNG (§6.3, W2·24-R5-F1E/C, 6.9.2026) · WAS AM
+    //    DOKUMENTANFANG ÜBERHAUPT ZU MELDEN IST ────────────────────────────
+    // Hier stand `.toEqual([stringMatching(/^Art\. \S+ ZGB$/)])`: der Fall
+    // setzte voraus, dass der Leser schon BEI scrollY 0 einen Artikel meldet.
+    // Das war nie eine Produkt-Zusage, sondern ein Randwert der Fensterhöhe.
+    // GEMESSEN (Nullprobe 6.9.2026, beide Stände im gebauten `dist/`, Chromium
+    // @1440×900, frischer Reiter):
+    //   F1G-Stand bbd7100bf : `art-1`.top = 877 px ⇒ Spy meldet ⇒ «Art. 1 ZGB»
+    //   Integrationszweig   : `art-1`.top = 921 px ⇒ Spy meldet nichts ⇒ «ZGB»
+    // Die 44 px sind der D28-Kopf aus R6d («Erlass-Suche im Leser-Kopf») samt
+    // R6d-Nachzug — bei 900 px Fensterhöhe fällt `art-1` damit unter die
+    // Bezugslinie des Scroll-Spys. Das F1G-Protokoll bleibt für SEINEN Stand
+    // richtig (§0 Ziff. 2b: ergänzt, nicht nachgeführt); die Zusage von D27
+    // ist davon unberührt — am Dokumentanfang steht KEIN Artikel an der Linie,
+    // und der Reiter erfindet dort auch keinen. Geprüft wird darum der
+    // WECHSEL, nicht ein bestimmter Startwert.
     await expect.poll(() => beschriftungen(page), { timeout: 20_000 })
-      .toEqual([expect.stringMatching(/^Art\. \S+ ZGB$/)])
+      .toEqual([expect.stringMatching(/ZGB$/)])
     const anfang = (await beschriftungen(page))[0]
     const vorher = anfang
     // GEMESSEN 6.9.2026: `page.mouse.wheel` ohne vorheriges `move` liefert sein
@@ -257,6 +279,11 @@ test.describe('Arbeitsleiste — eine Navigation, ein Reiter', () => {
     // fällt sie nicht auf, weil das Nichts-Ereignis auch ohne Scrollen eintritt.)
     await page.mouse.move(720, 500)
     await page.mouse.wheel(0, 1500)
+    // Und der Rad-Wurf wird BELEGT, bevor auf seine Wirkung gewartet wird:
+    // sonst meldet ein misslungenes Scrollen dasselbe Bild wie eine stehen
+    // gebliebene Beschriftung, und die Diagnose beginnt an der falschen Stelle
+    // (genau das kostete am 6.9.2026 einen Durchgang).
+    await page.waitForFunction(() => window.scrollY > 0, undefined, { timeout: 10_000 })
     // ZUSAGE 1: der Text WECHSELT (die Rot-Probe der alten Regel).
     await expect.poll(() => beschriftungen(page).then((b) => b[0]), { timeout: 20_000 })
       .not.toBe(vorher)
@@ -267,19 +294,28 @@ test.describe('Arbeitsleiste — eine Navigation, ein Reiter', () => {
     expect(stelle).toMatch(/#art-/)
 
     // ── ZUSAGE 2 (Determinismus, §2) · GLEICHE STELLUNG ⇒ GLEICHE BESCHRIFTUNG
-    // GEMESSEN 6.9.2026 (Preview 4373, ZGB, 1500 px gescrollt): der Reload
-    // setzt den Leser bewusst NICHT an die alte Stelle zurueck — W2·10-UI-NAV/R4
-    // hat das entschieden («beim erneuten Oeffnen KEIN Auto-Sprung, sondern ein
-    // unaufdringlicher Chip», `gesetz-leser/lesePosition.ts`). Nach dem Reload
-    // steht man also am Dokumentanfang, und der Reiter sagt genau das. Das ist
-    // die Zusage, nicht ihr Gegenteil — geprueft wird darum, dass DIESELBE
-    // STELLE dieselbe Beschriftung ergibt, ueber den Neustart hinweg.
+    // Der Reload setzt den Leser bewusst NICHT an die alte Stelle zurueck —
+    // W2·10-UI-NAV/R4 hat das entschieden («beim erneuten Oeffnen KEIN
+    // Auto-Sprung, sondern ein unaufdringlicher Chip», `lesePosition.ts`).
+    // ── DEKLARIERTE TEST-ÄNDERUNG (§6.3, 6.9.2026) · WAS DER NEUSTART TRÄGT ──
+    // Hier stand `.toBe(anfang)`: der Fall erwartete nach dem Reload wieder den
+    // Dokumentanfang. GEMESSEN (Integrationszweig, gebautes `dist/`, ZGB,
+    // 1500 px, dann Reload): der Reiter zeigt weiter «Art. 3 ZGB», sein
+    // gespeicherter Pfad weiter `#art-3` — die LESESTELLUNG ist genau das, was
+    // den Neustart ueberlebt (`lib/tabs`, dieselbe Quelle wie der `title`
+    // «gelesen bis …», §5). Am F1G-Stand fiel das nicht auf, weil der Spy dort
+    // schon bei scrollY 0 wieder meldete und den gespeicherten Wert
+    // ueberschrieb (Messung oben). Die geprueste Zusage ist unveraendert
+    // «gleiche Stellung ⇒ gleiche Beschriftung» — nur wird sie jetzt an der
+    // Stellung gemessen, die wirklich gespeichert ist.
     await page.reload()
     await leserBereit(page)
     await expect.poll(() => beschriftungen(page).then((b) => b[0]), { timeout: 20_000 })
-      .toBe(anfang)
+      .toBe(nachher)
+    expect((await pfade(page))[0], 'die Lesestellung ueberlebt den Neustart').toBe(stelle)
     await page.mouse.move(720, 500)
     await page.mouse.wheel(0, 1500)
+    await page.waitForFunction(() => window.scrollY > 0, undefined, { timeout: 10_000 })
     await expect.poll(() => beschriftungen(page).then((b) => b[0]), { timeout: 20_000 })
       .toBe(nachher)
 
