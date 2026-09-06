@@ -287,7 +287,14 @@ export function Reiterleiste({ paneSchluessel = [] }: {
 
   return (
     <nav aria-label="Offene Reiter" ref={leisteRef}
-      className="print:hidden shrink-0 border-b border-rule-soft bg-paper">
+      // W2·24-R4: die Arbeitsleiste KLEBT jetzt — unter der Titelblatt-Zeile
+      // (`--app-krone-h`) und mit ihrer eigenen, festen Höhe (`--app-reiter-h`).
+      // Beide Zahlen stehen in `src/index.css`; dieselbe Summe (`--app-kopf-h`)
+      // liest `pages/gesetz-leser/v3/leserGeometrie.ts` für den Kopf-Anschlag
+      // und `--nt-stick`. R2 hatte die Leiste bewusst im Fluss gelassen, weil
+      // diese eine Quelle fehlte (R2-Protokoll §2) — ohne sie landete jeder
+      // `#art-…`-Sprung um die Leistenhöhe zu hoch.
+      className="print:hidden shrink-0 sticky top-[var(--app-krone-h)] z-leiste h-[var(--app-reiter-h)] border-b border-rule-soft bg-paper">
       <div className="flex items-stretch px-4 sm:px-6">
         <div data-reiter-streifen className="relative flex min-w-0 flex-1 items-stretch overflow-x-auto lc-reiter-scroll border-l border-rule-soft">
           {sichtbar.map(reiter)}

@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useState, type CSSProperties } from 'react';
+import { satzspiegelFuer, type Satzspiegel } from './satzspiegel';
 
 // ═══ Ä60 (c) · WIE BREIT DER LESER IST UND WELCHE SPUREN ER TRÄGT ════════════
 //
@@ -243,6 +244,7 @@ export interface RahmenBild {
    * ersten Render derselbe wie nach jedem Klick auf den Panel-Zähler.
    */
   lesemassMaxRem: number;
+  satzspiegel: Satzspiegel; // Ausbaustufe (W2·24-R4) — Herleitung in `./satzspiegel`
 }
 
 /**
@@ -280,6 +282,8 @@ export function rahmenBild(lage: RahmenLage): RahmenBild {
     ? Math.min(LESEMASS_MAX, rootWennOffenPx / rem - seiteWennOffenRem - 2 * SPUR_ABSTAND - SPUR_BLATT)
     : LESEMASS_MAX;
 
+  const spurenPx = spaltenLage ? ((gliederungSpalte ? SPUR_GLIEDERUNG : SPUR_SCHIENE) + SPUR_ABSTAND + (blattSpur ? SPUR_BLATT + SPUR_ABSTAND : 0)) * rem : 0;
+  const satzspiegel = satzspiegelFuer(raum == null ? null : (blattSpur ? rootWennOffenPx ?? raum.ruhePx : raum.ruhePx) - spurenPx, rem);
   return {
     blattForm: blattSpur ? 'spalte' : ruheForm,
     gliederungSpalte,
@@ -293,6 +297,7 @@ export function rahmenBild(lage: RahmenLage): RahmenBild {
       : undefined,
     breite: blattSpur && raum ? aufweitung(raum, LESER_MAX_REM * rem) : undefined,
     lesemassMaxRem,
+    satzspiegel,
   };
 }
 
