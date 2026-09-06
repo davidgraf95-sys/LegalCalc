@@ -3,13 +3,19 @@ import { createPortal } from 'react-dom';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { useTabs } from './useTabs';
 import {
-  schliesseTab, leereTabs, ordneTabsUm, tabSchluessel, type TabEintrag, reiterKurzform,
-  neuerLeererReiter, NEUER_REITER_NAME, schliesseAndere, schliesseRechtsVon,
+  schliesseTab, leereTabs, ordneTabsUm, tabSchluessel, type TabEintrag,
+  neuerLeererReiter, schliesseAndere, schliesseRechtsVon,
   stelleLetztenWiederHer, letzterGeschlossener, naechsteInstanz, merkeTab,
+  // ── R3 (Prüfbefund R11, 6.9.2026) · EINE KURZFORM, EIN TITEL (§5) ────────
+  // Beide Ableitungen wohnten bis hierher IN dieser Datei — das Überlauf-Blatt
+  // (`TabPanel`) baute daneben seine eigene Beschriftung aus `verlaufLabel`
+  // und trug darum den Volltitel, wo die Leiste die Kurzform zeigte. Jetzt
+  // stehen sie in `lib/tabs` und beide Flächen lesen dieselbe Quelle.
+  reiterKurzformTeile, reiterKurzformText, reiterTitel,
 } from '../../lib/tabs';
-import { erlassVonPfad, verlaufLabel, katalogKurzform, type VerlaufManifeste } from '../../lib/verlaufLabel';
-import { reiterKategorie, artikelLabelVonPfad } from '../../lib/tabGruppen';
-import { registerVonPfad, REG_FLAECHE, REG_TON, REG_HOVER_FLAECHE_REITER } from './bereiche';
+import { verlaufLabel, type VerlaufManifeste } from '../../lib/verlaufLabel';
+import { reiterKategorie } from '../../lib/tabGruppen';
+import { registerVonPfad, REG_FLAECHE, REG_TON } from './bereiche';
 import { SchliessKnopf } from '../ui/SchliessKnopf';
 import { Leerzustand } from '../ui/Leerzustand';
 // ── §15 · AUCH DAS ÜBERLAUF-BLATT ERST BEIM ÖFFNEN ─────────────────────────
@@ -63,122 +69,6 @@ const MOBIL_BLATT_AB = 3;
  *  `dragover` darf die Nutzlast nicht lesen, nur die Typen — darum ein eigener
  *  Typ statt einer Inhaltsprüfung auf `text/plain`. */
 export const REITER_MIME = 'application/x-lexmetrik-reiter';
-
-/** ── Gerichts-Kurzformen (F6) ───────────────────────────────────────────────
- *  Die Zitierung eines Entscheids ist «Gericht + Geschäftsnummer». GEMESSEN
- *  6.9.2026: «Obergericht AG HOR.2024.19» lief in `max-w-[13rem]` auf und wurde
- *  als «Obergericht AG HOR.2024.1…» abgeschnitten — die Nummer ist aber das
- *  EINZIGE, was den Entscheid identifiziert (§8: lieber das Gericht kürzen als
- *  die Nummer verstümmeln).
- *  Die Tabelle ist BEWUSST geschlossen und trägt nur die im schweizerischen
- *  Gebrauch etablierten Kürzel (BGer, OGer, KGer …). Ein unbekanntes Gericht
- *  wird NICHT geraten (§7), sondern bleibt ausgeschrieben — dann trägt es die
- *  Kürzung, nicht die Nummer. */
-const GERICHT_KURZ: Record<string, string> = {
-  Bundesgericht: 'BGer',
-  Bundesverwaltungsgericht: 'BVGer',
-  Bundesstrafgericht: 'BStGer',
-  Bundespatentgericht: 'BPatGer',
-  Obergericht: 'OGer',
-  Kantonsgericht: 'KGer',
-  Verwaltungsgericht: 'VGer',
-  Appellationsgericht: 'AppGer',
-  Handelsgericht: 'HGer',
-  Bezirksgericht: 'BezGer',
-  Zivilgericht: 'ZGer',
-  Strafgericht: 'StGer',
-  Sozialversicherungsgericht: 'SVGer',
-  Versicherungsgericht: 'VersGer',
-  Arbeitsgericht: 'ArbGer',
-  Mietgericht: 'MGer',
-  Kassationsgericht: 'KassGer',
-  Steuerrekursgericht: 'StRG',
-  Baurekursgericht: 'BRG',
-};
-
-/** Zerlegung einer Zitierung in «Kopf» (kürzbar) und «Kern» (nie kürzbar).
- *  Kern = alles ab dem ersten Wort mit einer Ziffer, also die Geschäftsnummer
- *  bzw. bei einer BGE-Zitierung die Fundstelle («BGE» + «152 V 52»). Das
- *  angehängte Urteilsdatum («… vom 14.01.2026») fällt weg — es identifiziert
- *  nichts, was die Nummer nicht schon identifiziert, und der `title` des
- *  Reiters trägt die vollständige Zitierung weiter. Ohne Ziffern-Wort gibt es
- *  keinen Kern; dann kürzt wie bisher der ganze Text. */
-function zerlege(zitierung: string): { kopf: string; kern: string } {
-  const ohneDatum = zitierung.replace(/\s+vom\s+\d{1,2}\.\d{1,2}\.\d{2,4}\s*$/, '');
-  const worte = ohneDatum.split(/\s+/).filter(Boolean);
-  const i = worte.findIndex((w) => /\d/.test(w));
-  if (i <= 0) return { kopf: '', kern: ohneDatum };
-  const kopf = worte.slice(0, i).map((w) => GERICHT_KURZ[w] ?? w).join(' ');
-  return { kopf, kern: worte.slice(i).join(' ') };
-}
-
-/** Kanonische Kurzform eines Reiters (§5a Ziff. 2): «Art. 336c OR», «BGE 152
- *  V 52», «Fristenrechner».
- *
- *  DETERMINISTISCH AUS DER ADRESSE (F5): der Artikel kommt aus `t.wahl` — dem
- *  Anker, den die ADRESSE trug —, NICHT aus `t.path`, in den der Scroll-Spy des
- *  Lesers laufend die Lesestellung schreibt. GEMESSEN 6.9.2026 (Preview 4335):
- *  mit `t.path` hiess derselbe Reiter auf derselben Adresse `/gesetze/bund/ZGB`
- *  einmal «ZGB» (kalt) und nach 1500 px Scrollen «Art. 3 ZGB» — eine
- *  Beschriftung, die sich unter dem Zeiger ändert, ist keine Kurzform.
- *  Die Lesestellung bleibt sichtbar: im `title` des Reiters und in der
- *  Reiter-Liste (`TabPanel`), und sie überlebt den Neustart wie bisher. */
-function kurzform(t: TabEintrag, m: VerlaufManifeste): { kopf: string; kern: string } {
-  // D19: der leere Reiter zeigt '/', ist aber KEINE Startseite, sondern ein
-  // eigenes, noch ungefülltes Dokument — er bekommt NICHT `reiterKurzform('/')`
-  // («Sammlung»), sondern seinen eigenen Namen. Erste Prüfung, vor jeder
-  // Pfad-Auflösung.
-  if (t.leer) return { kopf: '', kern: NEUER_REITER_NAME };
-  // R3-F7 (Prüfbefund 6.9.2026): Übersichts- und Startseiten-Routen tragen ihre
-  // Kurzform aus `lib/tabs` («Gesetze», «Sammlung») statt des SEO-Titels, den
-  // `labelAusMeta` liefert («Schweizer Recht an einem Ort: …»). Erst seit D7
-  // können solche Routen überhaupt Reiter sein — die Kurzform ist die
-  // Voraussetzung dafür, nicht eine Verzierung.
-  const fest = reiterKurzform(t.path);
-  if (fest) return { kopf: '', kern: fest };
-  const kat = reiterKategorie(t.path);
-  const kuerzel = kat === 'gesetze' ? erlassVonPfad(t.path, m)?.kuerzel : null;
-  if (kuerzel) {
-    // Gesetze: EIN kurzer Block («Art. 336c OR») — hier gibt es nichts, was
-    // gegen die Kürzung geschützt werden müsste, der ganze Text ist die Marke.
-    const art = t.wahl ? artikelLabelVonPfad(t.wahl) : null;
-    return { kopf: '', kern: art ? `${art} ${kuerzel}` : kuerzel };
-  }
-  const voll = verlaufLabel(t.path, m);
-  if (kat === 'rechtsprechung') return zerlege(voll);
-  // M7 (Prüfbefund R11 #21): der Katalog führt für die Karten, deren `title`
-  // eine BESCHREIBUNG ist, eine ausdrückliche Kurzform (`kurz`) — GEMESSEN war
-  // «Verfahrens- & Rechtsmittelfristen» mit 268 px der breiteste Reiter der
-  // ganzen Leiste. Die Quelle bleibt der Katalog (§5); fehlt das Feld, steht
-  // wie bisher der volle Titel da, nichts wird geraten (§7).
-  return { kopf: '', kern: katalogKurzform(t.path) ?? ohneUntertitel(voll) };
-}
-
-/** ── V4/F5-Rest (§5a Ziff. 2) · DER REITER TRÄGT DEN NAMEN, NICHT DEN UNTERTITEL
- *
- *  GEMESSEN 6.9.2026 (Preview 4352, vier Reiter): der Rechner-Reiter hiess
- *  «Fristenrechner (Tage · ZPO · SchKG)» — 34 Zeichen für eine Zeile, die
- *  «Fristenrechner» sagen soll, und im Streifen der breiteste von allen. Die
- *  Klammer ist der UNTERTITEL des Katalogs (was der Rechner alles kann), nicht
- *  der Name des Dokuments; §5a Ziff. 2 verlangt die kanonische Kurzform.
- *
- *  Deterministisch (§2) und bewusst eng: gestrichen wird NUR eine Klammer AM
- *  ENDE, und nur, wenn davor noch etwas steht. Ein Titel, der ganz in Klammern
- *  steht, bleibt unangetastet — dann ist die Klammer der Name. Die vollständige
- *  Bezeichnung geht nicht verloren: sie steht im `title` des Reiters und in der
- *  Reiter-Liste (§8). Gesetze und Entscheide gehen diesen Weg NICHT — dort ist
- *  eine Klammer Teil der Zitierung (§1: lieber zwei Wege als eine Abstraktion,
- *  die zwei verschiedene Fälle gleich behandelt). */
-function ohneUntertitel(titel: string): string {
-  const gekuerzt = titel.replace(/\s*\([^()]*\)\s*$/, '').trim();
-  return gekuerzt.length > 0 ? gekuerzt : titel;
-}
-
-/** Einzeiler für Suchfeld, Accessible Names und Titel. */
-function kurzformText(t: TabEintrag, m: VerlaufManifeste): string {
-  const { kopf, kern } = kurzform(t, m);
-  return kopf ? `${kopf} ${kern}` : kern;
-}
 
 export function Reiterleiste({ paneSchluessel = [] }: {
   /** Reiter-Schlüssel der offenen Panes in Fenster-Ordnung (0 = links/Haupt).
@@ -468,7 +358,7 @@ export function Reiterleiste({ paneSchluessel = [] }: {
   // schlicht leer und rendern keinen Reiter, keinen Überlauf-Knopf.
 
   const gefiltert = suche.trim()
-    ? tabs.filter((t) => `${kurzformText(t, manifeste)} ${verlaufLabel(t.path, manifeste)} ${t.path}`
+    ? tabs.filter((t) => `${reiterKurzformText(t, manifeste)} ${verlaufLabel(t.path, manifeste)} ${t.path}`
         .toLowerCase().includes(suche.trim().toLowerCase()))
     : tabs;
 
@@ -525,37 +415,34 @@ export function Reiterleiste({ paneSchluessel = [] }: {
       // ZGB» brach im Menü hinter dem Doppelpunkt ab — der Name, also gerade
       // das Nützliche, fiel weg. «Wieder öffnen: ZGB» stellt die Tätigkeit
       // nach vorn und trägt den Namen ganz.
-      e.push({ id: 'wieder', label: `Wieder öffnen: ${kurzformText(wieder, manifeste)}`,
+      e.push({ id: 'wieder', label: `Wieder öffnen: ${reiterKurzformText(wieder, manifeste)}`,
         rechts: 'Alt+⇧+T', onKlick: stelleWiederHer });
     }
     return e;
   };
 
+  /** R2: kein Reiter offen — die Leiste hält ihre Höhe, aber weder Unterstrich
+   *  noch Trennkante, und das «+» rückt an den Inhaltsrand. */
+  const leer = tabs.length === 0;
+
+  /** Der Browser-«+» (D19). `solo` = die Fassung ohne Reiter: keine linke
+   *  Trennkante, weil links von ihm nichts steht, das zu trennen wäre. */
+  const plusKnopf = (solo: boolean) => (
+    <button type="button" onClick={neuerReiter}
+      aria-label="Neuer Reiter" title="Neuer Reiter (Alt+T)"
+      className={`rl-plus${solo ? ' rl-plus-solo' : ''}`}>
+      <span aria-hidden className="lc-griff-glyph">+</span>
+    </button>
+  );
+
   const reiter = (t: TabEintrag, i: number) => {
     const schluessel = tabSchluessel(t.path);
     const aktiv = schluessel === aktivSchluessel;
-    const { kopf, kern } = kurzform(t, manifeste);
+    const { kopf, kern } = reiterKurzformTeile(t, manifeste);
     const name = kopf ? `${kopf} ${kern}` : kern;
-    // D19: kein SEO-Titel der Startseite als Tooltip für ein noch leeres Dokument.
-    const voll = t.leer ? NEUER_REITER_NAME : verlaufLabel(t.path, manifeste);
-    // Die LESESTELLUNG steht seit dem R2-Nachzug (F5) nicht mehr in der
-    // Beschriftung, sondern hier und in der Reiter-Liste — verloren ist sie
-    // damit nicht, sie wackelt nur nicht mehr unter dem Zeiger.
-    const gelesen = reiterKategorie(t.path) === 'gesetze' ? artikelLabelVonPfad(t.path) : null;
-    // ── M7 · DER REITER SAGT AUCH DEN STAND (Prüfbefund R11 #41, §7/D1) ─────
-    // GEMESSEN: der `title` trug «OR — gelesen bis Art. 336c» und nirgends
-    // einen Stand, obwohl die Ausgabe-Zeile darunter «Gesetze Stand
-    // 02.09.2026» zeigt. Der Reiter ist die Stelle, an der man ihn sucht.
-    // AUS DEM MANIFEST, SONST GAR NICHT (§7): führt der Erlass kein
-    // `stand`-Feld — oder ist das Manifest noch nicht geladen —, bleibt der
-    // `title` ohne Stand. Kein Platzhalter, keine Schätzung. Entscheide tragen
-    // ihr Datum bereits in der Zitierung («… vom 12.12.2025»), Rechner und
-    // Vorlagen haben keinen Stand im Sinne von D1 — dort bleibt alles wie es war.
-    const roh = erlassVonPfad(t.path, manifeste)?.stand ?? null;
-    const iso = roh ? /^(\d{4})-(\d{2})-(\d{2})/.exec(roh) : null;
-    const stand = iso ? `${iso[3]}.${iso[2]}.${iso[1]}` : roh;
-    const titel = [voll, stand ? `Stand ${stand}` : null, gelesen && gelesen !== kopf ? `gelesen bis ${gelesen}` : null]
-      .filter(Boolean).join(' — ');
+    // R8 · Volltitel, Stand/Datum/Kurzbeschreibung und Lesestellung stehen in
+    // EINER Ableitung (`lib/tabs.reiterTitel`) — Herleitung dort.
+    const titel = reiterTitel(t, manifeste);
     const reg = registerVonPfad(t.path);
     // F10 · EINE REGEL FÜR BEIDE GRIFFE (✕ und ⧉): der aktive Reiter zeigt sie
     // immer, inaktive bei Hover ODER Tastatur-Fokus irgendwo im Reiter. Vorher
@@ -648,14 +535,24 @@ export function Reiterleiste({ paneSchluessel = [] }: {
             className={`pointer-events-none absolute inset-y-0 w-0.5 ${ueber.davor ? '-left-px' : '-right-px'} ${
               zieht && registerVonPfad(zieht) ? REG_FLAECHE[registerVonPfad(zieht)!] : 'bg-ink-900'}`} />
         )}
-        {/* Registerfarben-Strich — die einzige Farbe des Reiters (§5). Inaktiv
-            Tinte auf 30 % (kein blasses Register-Echo, das mit dem aktiven
-            verwechselbar wäre); beim Hover zeigt er die Registerfarbe des
-            Ziels, damit die Domäne auch im Ruhezustand erreichbar bleibt. */}
+        {/* ── R1 (Prüfbefund R11, 6.9.2026) · DIE LEISTE IST NICHT TRIST ─────
+            GEMESSEN: alle inaktiven Reiter trugen `bg-ink-400 opacity-30` —
+            eine graue Leiste, in der die Registerfarbe erst beim Überfahren
+            erschien. Der Streifen ist aber die EINE Stelle, an der man ohne
+            Lesen sieht, was offen ist (Gesetz, Entscheid, Werkzeug …).
+            ENTSCHEID (David «nicht trist»): jeder Reiter trägt seine eigene
+            Registerfarbe, der inaktive auf 60 % Deckkraft, der aktive voll
+            plus Flächen-Tönung (`REG_TON`, oben). 60 % ist die Stufe, die
+            RUHIG bleibt und den aktiven Reiter trotzdem eindeutig lässt: er
+            unterscheidet sich in ZWEI Merkmalen (volle Farbe UND Tönung),
+            nicht nur in der Deckkraft. Der Hover hebt auf 100 % — dieselbe
+            Auskunft wie vorher, nur nicht mehr die einzige.
+            Ohne Register (Meta-Route) bleibt es bei Tinte: geraten wird keine
+            Farbe (§8). */}
         <span aria-hidden className={`absolute inset-x-0 bottom-0 h-0.5 ${
           aktiv
             ? (reg ? REG_FLAECHE[reg] : 'bg-ink-900')
-            : `bg-ink-400 opacity-30 ${reg ? REG_HOVER_FLAECHE_REITER[reg] : ''} group-hover/reiter:opacity-70`}`} />
+            : `${reg ? REG_FLAECHE[reg] : 'bg-ink-400'} opacity-60 group-hover/reiter:opacity-100`}`} />
         <button type="button" aria-current={aktiv ? 'page' : undefined}
           onClick={() => navigate(t.path)}
           onAuxClick={(ev) => {
@@ -725,8 +622,23 @@ export function Reiterleiste({ paneSchluessel = [] }: {
       // und `--nt-stick`. R2 hatte die Leiste bewusst im Fluss gelassen, weil
       // diese eine Quelle fehlte (R2-Protokoll §2) — ohne sie landete jeder
       // `#art-…`-Sprung um die Leistenhöhe zu hoch.
-      className="print:hidden shrink-0 sticky top-[var(--app-krone-h)] z-leiste h-[var(--app-reiter-h)] border-b border-rule-soft bg-paper">
+      // ── R2 (Prüfbefund R11, 6.9.2026) · KEIN STRICH UNTER DEM NICHTS ──────
+      // GEMESSEN auf «/» (Startseite, die nach D7 bewusst keinen Reiter
+      // erzeugt): ein 34 px hoher, leerer Streifen mit einem durchgehenden
+      // Unterstrich über die volle Breite — eine Trennlinie, die nichts trennt.
+      // Der Unterstrich fällt weg, solange kein Reiter da ist; die HÖHE bleibt
+      // reserviert (`h-[var(--app-reiter-h)]`, box-border: der 1-px-Rahmen
+      // liegt INNEN), damit der Inhalt beim ersten Reiter nicht springt —
+      // CLS 0, bewacht in `e2e/w224-r11-reiterleiste.e2e.ts`.
+      data-reiter-leer={leer ? '' : undefined}
+      className={`print:hidden shrink-0 sticky top-[var(--app-krone-h)] z-leiste h-[var(--app-reiter-h)] bg-paper${
+        leer ? '' : ' border-b border-rule-soft'}`}>
       <div className="flex items-stretch px-4 sm:px-6">
+        {/* R2 · OHNE REITER STEHT DAS «+» LINKS, AM INHALTSRAND. Im Browser
+            beginnt die Leiste dort, wo der Inhalt beginnt — ein «+», das ganz
+            rechts im Leeren klebt, findet niemand. Mit Reitern bleibt es am
+            Ende des Streifens (unten), wo es dem letzten Reiter folgt. */}
+        {leer && plusKnopf(true)}
         {/* M6 · DOPPELKLICK AUF DEN LEERRAUM = NEUER REITER (Befund #34).
             GEMESSEN 6.9.2026: 457 px ungenutzte Fläche rechts des letzten
             Reiters — im Browser genau die Stelle, auf die man doppelklickt.
@@ -735,7 +647,8 @@ export function Reiterleiste({ paneSchluessel = [] }: {
             zweiten Reiter erzeugen (Risiko aus dem Plan). */}
         <div ref={streifenRef} data-reiter-streifen
           onDoubleClick={(ev) => { if (ev.target === ev.currentTarget) neuerReiter(); }}
-          className="relative flex min-w-0 flex-1 items-stretch overflow-x-auto lc-reiter-scroll border-l border-rule-soft">
+          className={`relative flex min-w-0 flex-1 items-stretch overflow-x-auto lc-reiter-scroll${
+            leer ? '' : ' border-l border-rule-soft'}`}>
           {sichtbar.map(reiter)}
         </div>
         {/* D19 · BROWSER-«+» AM ENDE DES STREIFENS — fest, nicht Teil der
@@ -743,10 +656,7 @@ export function Reiterleiste({ paneSchluessel = [] }: {
             Reiter nicht mit weg). `.rl-plus` trägt nur Breite/Zentrierung/
             Hover (index.css); die 34-px-Höhe kommt aus `items-stretch` des
             Elternflusses, ohne eigene Höhen-Angabe. */}
-        <button type="button" onClick={neuerReiter}
-          aria-label="Neuer Reiter" title="Neuer Reiter (Alt+T)" className="rl-plus">
-          <span aria-hidden className="lc-griff-glyph">+</span>
-        </button>
+        {!leer && plusKnopf(false)}
         {/* «+N» bzw. «N offen» — EIN Blatt für Überlauf (Desktop) und die
             schmale Ansicht (§5a Ziff. 5 + 8). Inhalt ist die gruppierte Liste
             `TabPanel`, also genau das, was das abgelöste ☰-Flyout zeigte,
@@ -772,7 +682,7 @@ export function Reiterleiste({ paneSchluessel = [] }: {
         if (!t) return null;
         return (
           <Suspense fallback={null}>
-            <ReiterMenue x={menue.x} y={menue.y} name={kurzformText(t, manifeste)}
+            <ReiterMenue x={menue.x} y={menue.y} name={reiterKurzformText(t, manifeste)}
               eintraege={menueEintraege(t)} onSchliessen={() => setMenue(null)} />
           </Suspense>
         );
@@ -832,7 +742,7 @@ export function Reiterleiste({ paneSchluessel = [] }: {
                     title="Zuletzt geschlossenen Reiter wiederherstellen (Alt+Shift+T)"
                     className="lc-btn-outline lc-btn-sm w-full">
                     <span aria-hidden className="lc-griff-glyph mr-1">↩</span>
-                    Wieder öffnen: {kurzformText(wieder, manifeste)}
+                    Wieder öffnen: {reiterKurzformText(wieder, manifeste)}
                   </button>
                 </div>
               );
