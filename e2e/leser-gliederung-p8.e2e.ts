@@ -78,7 +78,18 @@ test.describe('P8 · Gliederungszeilen sind Links', () => {
     const neuerReiter = context.waitForEvent('page', { timeout: 10000 });
     await zeile.click({ modifiers: [process.platform === 'darwin' ? 'Meta' : 'Control'] });
     const seite2 = await neuerReiter;
-    await seite2.waitForLoadState('domcontentloaded');
+    // ── §6.3-DEKLARATION (W2·24-CI, 6.9.2026) · AUF DIE ADRESSE WARTEN ──────
+    // `waitForLoadState('domcontentloaded')` beantwortet die falsche Frage: ein
+    // im HINTERGRUND geöffneter Reiter existiert zuerst als `about:blank` und
+    // bekommt seine Adresse erst, wenn die Navigation festgeschrieben ist —
+    // das leere Dokument ist zu diesem Zeitpunkt bereits «domcontentloaded».
+    // Lokal (macOS/Meta) gewann das Rennen die Navigation, auf dem CI-Runner
+    // (Linux/Control, Lauf 34054880415 Shard 4/8) das leere Dokument: gemeldet
+    // wurde «about:blank». Geprüft wird unverändert DASSELBE — dass der neue
+    // Reiter den Anker der Zeile trägt —, nur wartet der Fall jetzt auf genau
+    // dieses Ereignis statt auf ein früheres, das nichts darüber aussagt.
+    await seite2.waitForURL((u) => u.hash === href, { timeout: 15_000 })
+      .catch(() => { /* die Prüfung unten meldet die Ist-Adresse verständlich */ });
     expect(seite2.url(), 'der neue Reiter zeigt nicht den Anker der Zeile').toContain(href!);
     // Und die ERSTE Seite ist stehengeblieben — der Modifikator-Klick darf nicht
     // ZUSÄTZLICH springen (sonst verliert der Leser seine Stelle).
