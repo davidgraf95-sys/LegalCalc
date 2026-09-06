@@ -2304,6 +2304,9 @@
   .rl-plus {
     @apply flex w-9 shrink-0 items-center justify-center border-l border-rule-soft text-ink-500 transition-colors hover:bg-well hover:text-ink-900;
   }
+  /* R2 (Prüfbefund R11, 6.9.2026): ohne Reiter steht das «+» LINKS am
+     Inhaltsrand — dort trennt seine linke Kante nichts von nichts. */
+  .rl-plus-solo { border-left: 0; }
 
   /* ─── W2·24 · AUSWAHL-KACHEL (SelectionGrid) · KANTIG, LINIE, HAEKCHEN ─────
      Prueferbefund Fixer 2 (6.9.2026): die Kacheln standen als abgerundete
@@ -2451,7 +2454,34 @@
      Position, z-Index und Breite bleiben beim Aufrufer: WO die Fläche liegt,
      entscheidet ihr Anker, nicht ihre Anatomie (dieselbe Trennung wie beim
      `.lc-scrim`). */
-  .lc-schwebeflaeche { @apply bg-paper-raised border border-line rounded-lg shadow-lg; }
+  /* ── R6/R7 (Prüfer D23/R11, 6.9.2026) · DIE SCHWEBEFLÄCHE IST EIN BLATT ────
+     GEMESSEN am Stand `c91541617`: die Klasse trug `bg-paper-raised` (im Dunkel
+     eine WEISSE Tafel gegen `--paper`), `rounded-lg` und `shadow-lg` — also
+     Kissen, Radius und Schlagschatten, genau die drei Mittel, die §5 dieser
+     Runde für die ganze Oberfläche abgeschafft hat. Konsumenten sind alle
+     Menüs/Popover der App (Verlauf, Reiter-Kontextmenü, Ansicht-Menü,
+     Überlauf-Blatt, Sprache, Datumsfeld, Leser-Panels): ein Grund mehr, dass
+     die Anatomie hier EINMAL steht und nicht je Fläche.
+     JETZT: Papier, 1 px `--rule` rundum, Radius 0, kein Schatten — dieselbe
+     Anatomie wie `.lc-suchpanel-huelle` (unten), die D23 für das Such-Panel
+     bereits gewählt hat. Zwei schwebende Anatomien wären die Inkonsistenz, die
+     David am Dropdown gerügt hat («dropdown menu nochmals optisch überarbeiten
+     … in welcher ebene»).
+     WARUM PAPIER TRÄGT, WO FRÜHER `--paper-raised` NÖTIG WAR: die A3-2-Regel
+     («eine schwebende Fläche nie in der Grundfarbe der Seite») war die Antwort
+     auf einen SCHATTEN, der eine Ebene behauptete, die die Fläche dementierte.
+     Ohne Schatten trägt die Trennung die 1-px-Kante in `--rule` (= `--ink-900`,
+     der stärkste Linienton des Hauses) — sie ist in beiden Themes die
+     kontraststärkste Kante überhaupt und braucht keine zweite Flächenstufe.
+     ENTSCHEID zur Ausnahme «schwebende Ebenen dürfen einen sehr flachen
+     Schatten tragen»: keiner. Der Rahmen reicht (Auftrag, 6.9.2026).
+     Position, z-Index und Breite bleiben unverändert beim Aufrufer. */
+  .lc-schwebeflaeche {
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    border-radius: 0;
+    box-shadow: none;
+  }
 
   /* ── D9 (David 6.9.2026) · DIE EINE ANATOMIE DES SUCH-PANELS ──────────────
      Das Trefferpanel und der Leerzustand erscheinen an ZWEI Orten: im Titelblatt
@@ -2491,6 +2521,32 @@
     border-top: 0;
     border-radius: 0;
     box-shadow: none;
+  }
+
+  /* ── F5 (Prüfer D23, 6.9.2026) · DIE NAHT ZWISCHEN FELD UND PANEL ─────────
+     GEMESSEN im Dunkelmodus am Stand `c91541617`: der Unterstrich des
+     Kopf-Suchfeldes stand auf rgb(148,144,136), der Rahmen des Panels
+     unmittelbar darunter auf rgb(226,224,220) — zwei verschiedene Linien, die
+     sich an derselben Kante treffen. D23 verlangt aber, dass Feld und Panel EIN
+     Objekt sind; eine Naht in zwei Farben dementiert genau das.
+     URSACHE: das Feld ist immer FOKUSSIERT, wenn das Panel offen ist, und
+     `.lc-input:focus` färbt den Unterstrich in `--focus` (dunkel `--brass-500`
+     = #949088). Der Panel-Rahmen führt `--rule` (= `--ink-900`).
+     FIX: solange das Panel offen ist (`aria-expanded="true"` am Combobox-Feld —
+     dieselbe Bedingung, die das Panel rendert), trägt der Unterstrich `--rule`.
+     Beide Kanten sind dann dieselbe Linie.
+     FOKUS BLEIBT SICHTBAR (WCAG 2.4.7): der Indikator ist unverändert die
+     VERDOPPELUNG des Unterstrichs (1 px Rahmen + 1 px `box-shadow` = 2 px),
+     nur in `--rule` statt in `--focus` — und `--rule` ist in beiden Themes der
+     kontraststärkere Ton (hell `--ink-900` auf Papier, dunkel `--ink-900` auf
+     dunklem Papier), der Indikator verliert also keinen Kontrast, sondern
+     gewinnt. Dazu kommt das geöffnete Panel selbst als Zustandsauskunft.
+     Ohne offenes Panel (Feld fokussiert, Panel zu) bleibt `--focus` unberührt —
+     dort gibt es keine Naht, die zusammenpassen müsste. */
+  .lc-suchpanel-feld[aria-expanded="true"]:focus,
+  .lc-suchpanel-feld[aria-expanded="true"]:focus-visible {
+    border-bottom-color: var(--rule);
+    box-shadow: 0 1px 0 0 var(--rule);
   }
 
   /* Tastaturauswahl im Such-Panel: eine FLÄCHE (`--well`, die eingesenkte

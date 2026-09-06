@@ -1,4 +1,9 @@
-import { pfadTeil } from './verlaufLabel';
+import {
+  pfadTeil, entscheidPfad, erlassVonPfad, verlaufLabel, katalogKurzform,
+  type VerlaufManifeste,
+} from './verlaufLabel';
+import { reiterKategorie, artikelLabelVonPfad } from './tabGruppen';
+import { metaFuerPfad } from './seo';
 
 // ─── Offene In-App-Reiter (Tab-Streifen, Auftrag David) ─────────────────────
 //
@@ -109,6 +114,201 @@ const KURZFORM: Record<string, string> = {
  *  die Beschriftung aus dem Inhalt selbst kommt (Erlass, Entscheid, Vorlage). */
 export function reiterKurzform(path: string): string | null {
   return KURZFORM[path.split('#')[0].split('?')[0]] ?? null;
+}
+
+/** ── Gerichts-Kurzformen (F6) ───────────────────────────────────────────────
+ *  Die Zitierung eines Entscheids ist «Gericht + Geschäftsnummer». GEMESSEN
+ *  6.9.2026: «Obergericht AG HOR.2024.19» lief in `max-w-[13rem]` auf und wurde
+ *  als «Obergericht AG HOR.2024.1…» abgeschnitten — die Nummer ist aber das
+ *  EINZIGE, was den Entscheid identifiziert (§8: lieber das Gericht kürzen als
+ *  die Nummer verstümmeln).
+ *  Die Tabelle ist BEWUSST geschlossen und trägt nur die im schweizerischen
+ *  Gebrauch etablierten Kürzel (BGer, OGer, KGer …). Ein unbekanntes Gericht
+ *  wird NICHT geraten (§7), sondern bleibt ausgeschrieben — dann trägt es die
+ *  Kürzung, nicht die Nummer. */
+const GERICHT_KURZ: Record<string, string> = {
+  Bundesgericht: 'BGer',
+  Bundesverwaltungsgericht: 'BVGer',
+  Bundesstrafgericht: 'BStGer',
+  Bundespatentgericht: 'BPatGer',
+  Obergericht: 'OGer',
+  Kantonsgericht: 'KGer',
+  Verwaltungsgericht: 'VGer',
+  Appellationsgericht: 'AppGer',
+  Handelsgericht: 'HGer',
+  Bezirksgericht: 'BezGer',
+  Zivilgericht: 'ZGer',
+  Strafgericht: 'StGer',
+  Sozialversicherungsgericht: 'SVGer',
+  Versicherungsgericht: 'VersGer',
+  Arbeitsgericht: 'ArbGer',
+  Mietgericht: 'MGer',
+  Kassationsgericht: 'KassGer',
+  Steuerrekursgericht: 'StRG',
+  Baurekursgericht: 'BRG',
+};
+
+/** Zerlegung einer Zitierung in «Kopf» (kürzbar) und «Kern» (nie kürzbar).
+ *  Kern = alles ab dem ersten Wort mit einer Ziffer, also die Geschäftsnummer
+ *  bzw. bei einer BGE-Zitierung die Fundstelle («BGE» + «152 V 52»). Das
+ *  angehängte Urteilsdatum («… vom 14.01.2026») fällt weg — es identifiziert
+ *  nichts, was die Nummer nicht schon identifiziert, und der `title` des
+ *  Reiters trägt die vollständige Zitierung weiter. Ohne Ziffern-Wort gibt es
+ *  keinen Kern; dann kürzt wie bisher der ganze Text. */
+function zerlege(zitierung: string): { kopf: string; kern: string } {
+  const ohneDatum = zitierung.replace(/\s+vom\s+\d{1,2}\.\d{1,2}\.\d{2,4}\s*$/, '');
+  const worte = ohneDatum.split(/\s+/).filter(Boolean);
+  const i = worte.findIndex((w) => /\d/.test(w));
+  if (i <= 0) return { kopf: '', kern: ohneDatum };
+  const kopf = worte.slice(0, i).map((w) => GERICHT_KURZ[w] ?? w).join(' ');
+  return { kopf, kern: worte.slice(i).join(' ') };
+}
+
+/** Kanonische Kurzform eines Reiters (§5a Ziff. 2): «Art. 336c OR», «BGE 152
+ *  V 52», «Fristenrechner».
+ *
+ *  DETERMINISTISCH AUS DER ADRESSE (F5): der Artikel kommt aus `t.wahl` — dem
+ *  Anker, den die ADRESSE trug —, NICHT aus `t.path`, in den der Scroll-Spy des
+ *  Lesers laufend die Lesestellung schreibt. GEMESSEN 6.9.2026 (Preview 4335):
+ *  mit `t.path` hiess derselbe Reiter auf derselben Adresse `/gesetze/bund/ZGB`
+ *  einmal «ZGB» (kalt) und nach 1500 px Scrollen «Art. 3 ZGB» — eine
+ *  Beschriftung, die sich unter dem Zeiger ändert, ist keine Kurzform.
+ *  Die Lesestellung bleibt sichtbar: im `title` des Reiters und in der
+ *  Reiter-Liste (`TabPanel`), und sie überlebt den Neustart wie bisher. */
+function basisKurzform(t: TabEintrag, m: VerlaufManifeste): { kopf: string; kern: string } {
+  // D19: der leere Reiter zeigt '/', ist aber KEINE Startseite, sondern ein
+  // eigenes, noch ungefülltes Dokument — er bekommt NICHT `reiterKurzform('/')`
+  // («Sammlung»), sondern seinen eigenen Namen. Erste Prüfung, vor jeder
+  // Pfad-Auflösung.
+  if (t.leer) return { kopf: '', kern: NEUER_REITER_NAME };
+  // R3-F7 (Prüfbefund 6.9.2026): Übersichts- und Startseiten-Routen tragen ihre
+  // Kurzform aus `lib/tabs` («Gesetze», «Sammlung») statt des SEO-Titels, den
+  // `labelAusMeta` liefert («Schweizer Recht an einem Ort: …»). Erst seit D7
+  // können solche Routen überhaupt Reiter sein — die Kurzform ist die
+  // Voraussetzung dafür, nicht eine Verzierung.
+  const fest = reiterKurzform(t.path);
+  if (fest) return { kopf: '', kern: fest };
+  const kat = reiterKategorie(t.path);
+  const kuerzel = kat === 'gesetze' ? erlassVonPfad(t.path, m)?.kuerzel : null;
+  if (kuerzel) {
+    // Gesetze: EIN kurzer Block («Art. 336c OR») — hier gibt es nichts, was
+    // gegen die Kürzung geschützt werden müsste, der ganze Text ist die Marke.
+    // ── R5 (Prüfbefund R11, 6.9.2026) · ZWEITE INSTANZ, ZWEITE STELLE ─────
+    // GEMESSEN: zwei offene Instanzen desselben Erlasses hiessen beide «OR».
+    // Der ANKER kommt weiterhin aus `t.wahl` (F5: die Beschriftung folgt der
+    // Adresse, nicht dem Scroll-Spy). Für eine ausdrücklich DUPLIZIERTE
+    // Instanz (`?r=n`, n ≥ 2) darf zusätzlich der im Pfad gespeicherte Anker
+    // einspringen: sie ist genau deshalb angelegt worden, um eine andere
+    // Stelle desselben Erlasses offen zu halten («Art. 266g OR» aus dem
+    // gespeicherten Pfad, D27-Vorarbeit). Die ERSTE Instanz bleibt
+    // unangetastet — dort wäre es die F5-Regression, die 6.9.2026 gemessen
+    // wurde. Das Live-Folgen beim Scrollen ist ein eigener Schritt.
+    const anker = t.wahl ?? (instanzNr(t.path) > 1 ? hashVon(t.path) : undefined);
+    const art = anker ? artikelLabelVonPfad(anker) : null;
+    return { kopf: '', kern: art ? `${art} ${kuerzel}` : kuerzel };
+  }
+  const voll = verlaufLabel(t.path, m);
+  if (kat === 'rechtsprechung') return zerlege(voll);
+  // M7 (Prüfbefund R11 #21): der Katalog führt für die Karten, deren `title`
+  // eine BESCHREIBUNG ist, eine ausdrückliche Kurzform (`kurz`) — GEMESSEN war
+  // «Verfahrens- & Rechtsmittelfristen» mit 268 px der breiteste Reiter der
+  // ganzen Leiste. Die Quelle bleibt der Katalog (§5); fehlt das Feld, steht
+  // wie bisher der volle Titel da, nichts wird geraten (§7).
+  return { kopf: '', kern: katalogKurzform(t.path) ?? ohneUntertitel(voll) };
+}
+
+/** ── V4/F5-Rest (§5a Ziff. 2) · DER REITER TRÄGT DEN NAMEN, NICHT DEN UNTERTITEL
+ *
+ *  GEMESSEN 6.9.2026 (Preview 4352, vier Reiter): der Rechner-Reiter hiess
+ *  «Fristenrechner (Tage · ZPO · SchKG)» — 34 Zeichen für eine Zeile, die
+ *  «Fristenrechner» sagen soll, und im Streifen der breiteste von allen. Die
+ *  Klammer ist der UNTERTITEL des Katalogs (was der Rechner alles kann), nicht
+ *  der Name des Dokuments; §5a Ziff. 2 verlangt die kanonische Kurzform.
+ *
+ *  Deterministisch (§2) und bewusst eng: gestrichen wird NUR eine Klammer AM
+ *  ENDE, und nur, wenn davor noch etwas steht. Ein Titel, der ganz in Klammern
+ *  steht, bleibt unangetastet — dann ist die Klammer der Name. Die vollständige
+ *  Bezeichnung geht nicht verloren: sie steht im `title` des Reiters und in der
+ *  Reiter-Liste (§8). Gesetze und Entscheide gehen diesen Weg NICHT — dort ist
+ *  eine Klammer Teil der Zitierung (§1: lieber zwei Wege als eine Abstraktion,
+ *  die zwei verschiedene Fälle gleich behandelt). */
+function ohneUntertitel(titel: string): string {
+  const gekuerzt = titel.replace(/\s*\([^()]*\)\s*$/, '').trim();
+  return gekuerzt.length > 0 ? gekuerzt : titel;
+}
+
+/** Instanz-Nummer eines Reiterpfads: 1 = die erste (kein `?r`), sonst der
+ *  Wert des Diskriminators (`tabSchluessel`). Rein, ohne DOM (§2). */
+function instanzNr(path: string): number {
+  const qs = path.split('#')[0].split('?')[1];
+  const n = Number(new URLSearchParams(qs ?? '').get('r'));
+  return Number.isFinite(n) && n > 1 ? n : 1;
+}
+
+/** Kanonische Kurzform eines Reiters (§5a Ziff. 2), zerlegt in kürzbaren Kopf
+ *  und ungekürzten Kern — die Arbeitsleiste braucht die Trennung, die
+ *  Reiter-Liste und die Menü-Titel nur den Einzeiler darunter.
+ *
+ *  ── R5 · DIE INSTANZ STEHT IM NAMEN ────────────────────────────────────────
+ *  Zwei Instanzen desselben Dokuments an DERSELBEN Stelle sind sonst nicht
+ *  unterscheidbar — der Anker allein trennt sie nur, wenn sie auseinander
+ *  liegen. Die Nummer ist deterministisch aus dem Pfad (`?r=n`) und steht am
+ *  Kern, weil der Kopf (das gekürzte Gericht) wegfallen kann. */
+export function reiterKurzformTeile(t: TabEintrag, m: VerlaufManifeste): { kopf: string; kern: string } {
+  const { kopf, kern } = basisKurzform(t, m);
+  const nr = instanzNr(t.path);
+  return { kopf, kern: nr > 1 ? `${kern} (${nr})` : kern };
+}
+
+/** Einzeiler für Suchfeld, Accessible Names und Titel. */
+export function reiterKurzformText(t: TabEintrag, m: VerlaufManifeste): string {
+  const { kopf, kern } = reiterKurzformTeile(t, m);
+  return kopf ? `${kopf} ${kern}` : kern;
+}
+
+/** ── R8 (Prüfbefund R11, 6.9.2026) · WAS DER `title` EINES REITERS SAGT ─────
+ *
+ *  GEMESSEN am Stand `c91541617`: der Tooltip trug den Stand NUR bei Gesetzen
+ *  («OR — Stand 02.09.2026 — gelesen bis Art. 336c»); ein Entscheid-Reiter
+ *  nannte kein Urteilsdatum und ein Rechner-Reiter nichts ausser seinem Namen.
+ *  Gerade dort ist der Tooltip aber der Ort, an dem die Kurzform ihre Auskunft
+ *  zurückgibt (§8): die Kurzform kürzt «Obergericht AG HOR.2024.19 vom
+ *  14.01.2026» auf «OGer AG HOR.2024.19», und «Fristenrechner (Tage · ZPO ·
+ *  SchKG)» auf «Fristenrechner».
+ *
+ *  AUS DER QUELLE, SONST GAR NICHT (§7): Stand und Urteilsdatum kommen aus den
+ *  Manifesten, die Kurzbeschreibung aus dem Katalog (`karte.description`,
+ *  SSoT §5). Fehlt ein Feld — oder ist das Manifest noch nicht geladen —,
+ *  bleibt der Teil weg. Kein Platzhalter, keine Schätzung. Ein Entscheid mit
+ *  `datumUnbekannt` (Quelle ohne Entscheiddatum) bekommt darum kein Datum.
+ */
+export function reiterTitel(t: TabEintrag, m: VerlaufManifeste): string {
+  if (t.leer) return NEUER_REITER_NAME;
+  const voll = verlaufLabel(t.path, m);
+  const teile: (string | null)[] = [voll];
+
+  const erlass = erlassVonPfad(t.path, m);
+  const roh = erlass?.stand ?? null;
+  const iso = roh ? /^(\d{4})-(\d{2})-(\d{2})/.exec(roh) : null;
+  if (roh) teile.push(`Stand ${iso ? `${iso[3]}.${iso[2]}.${iso[1]}` : roh}`);
+
+  const ent = entscheidPfad(t.path);
+  if (ent) {
+    const e = m.entscheide?.entscheide.find((x) => x.key === ent.key);
+    const d = e && !e.datumUnbekannt ? /^(\d{4})-(\d{2})-(\d{2})/.exec(e.datum) : null;
+    // Nur, wenn die Zitierung das Datum nicht ohnehin schon trägt («… vom …»).
+    if (d && !/\svom\s\d/.test(voll)) teile.push(`vom ${d[3]}.${d[2]}.${d[1]}`);
+  }
+
+  const beschreibung = metaFuerPfad(pfadTeil(t.path))?.karte?.description ?? null;
+  if (beschreibung) teile.push(beschreibung);
+
+  // Die LESESTELLUNG (F5: sie steht hier und in der Reiter-Liste, nicht in der
+  // Beschriftung — verloren ist sie damit nicht, sie wackelt nur nicht mehr).
+  const gelesen = reiterKategorie(t.path) === 'gesetze' ? artikelLabelVonPfad(t.path) : null;
+  if (gelesen) teile.push(`gelesen bis ${gelesen}`);
+
+  return teile.filter(Boolean).join(' — ');
 }
 
 const KEY = 'lexmetrik-tabs';

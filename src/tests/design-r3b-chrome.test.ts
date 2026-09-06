@@ -549,10 +549,23 @@ const SCHWEBE_AUSNAHMEN: Record<string, string> = {
 };
 
 describe('A3-2 · schwebende Flächen teilen EINE Anatomie', () => {
+  // ── R6/R7 (Prüfer D23/R11, 6.9.2026) · DEKLARIERTE TEST-ÄNDERUNG (§6.3) ────
+  // Der WÄCHTER bleibt derselbe — «alle schwebenden Flächen teilen EINE
+  // Anatomie, und die steht in EINER Klasse». Was sich geändert hat, ist die
+  // Anatomie selbst: Kissen (`bg-paper-raised`), Radius (`rounded-lg`) und
+  // Schlagschatten (`shadow-lg`) sind mit dem Menü-Nachzug gefallen; die Fläche
+  // trägt jetzt Papier + 1 px `--rule`, kantig und schattenlos (Herleitung an
+  // der Klasse in `index.css`). Die Liste zieht darum mit, der Fall selbst
+  // nicht: er zählt weiterhin die Glieder der EINEN Kette ab.
   it('die Klasse führt alle vier Glieder der gemessenen Kette', () => {
     const block = /\.lc-schwebeflaeche \{([\s\S]*?)\}/.exec(CSS)?.[1] ?? '';
-    for (const glied of ['bg-paper-raised', 'border', 'border-line', 'rounded-lg', 'shadow-lg']) {
+    for (const glied of ['var(--paper)', '1px solid var(--rule)', 'border-radius: 0', 'box-shadow: none']) {
       expect(block, `.lc-schwebeflaeche führt ${glied}`).toContain(glied);
+    }
+    // Und die drei gefallenen Glieder stehen nicht mehr da (Rot-Probe gegen ein
+    // stilles Zurückrutschen auf die Kissen-Anatomie).
+    for (const weg of ['bg-paper-raised', 'rounded-lg', 'shadow-lg']) {
+      expect(block, `.lc-schwebeflaeche führt ${weg} NICHT mehr`).not.toContain(weg);
     }
   });
 

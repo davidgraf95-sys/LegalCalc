@@ -30,9 +30,18 @@ export function MenueTitel({ children }: { children: ReactNode }) {
  * Gewöhnliche Menüzeile (Knopf). Trägt links optional dieselbe Marken-Spalte
  * wie der Schalter, damit Beschriftungen über alle Zeilen hinweg fluchten.
  */
-export function MenueZeile({ label, marke, titel, onKlick, rechts, attrs }: {
+export function MenueZeile({ label, titel, onKlick, rechts, attrs }: {
   label: ReactNode;
-  /** Zeichen in der Marken-Spalte links (oder nichts — der Platz bleibt). */
+  /** ── R6/R7 (Prüfer D23/R11, 6.9.2026) · DIE MARKEN-SPALTE TRÄGT KEIN BILD MEHR
+   *  Davids Soll für die Menü-Anatomie: «Icons in Menüs weg (alle)» — entweder
+   *  jede Zeile trägt eines oder keine, und der Entscheid ist «keine». Die
+   *  Zeichen waren ohnehin ungleich verteilt (⧉ ↩ ⚖ neben Zeilen ganz ohne),
+   *  also gerade das Bild, das ein Menü unruhig macht.
+   *  Der SLOT bleibt im Typ, solange ein Aufrufer ihn noch übergibt
+   *  (`pages/gesetz-leser/v3/LeserAnsichtV3.tsx`, eigener Bauschritt) — der
+   *  Wert wird NICHT mehr gerendert. Die SPALTE selbst bleibt, leer: sie hält
+   *  die Beschriftungen in der Flucht der Schalter-Zeilen, die links weiterhin
+   *  ihren Zustand (✓) führen. Ein Zustand ist kein Icon. */
   marke?: ReactNode;
   titel?: string;
   onKlick: () => void;
@@ -42,7 +51,7 @@ export function MenueZeile({ label, marke, titel, onKlick, rechts, attrs }: {
 }) {
   return (
     <button type="button" onClick={onKlick} title={titel} className="lc-menu-zeile" {...attrs}>
-      <span aria-hidden className="lc-menu-marke">{marke}</span>
+      <span aria-hidden className="lc-menu-marke" />
       <span className="lc-menu-label">{label}</span>
       {rechts !== undefined && <span className="shrink-0 text-xs text-ink-500">{rechts}</span>}
     </button>

@@ -307,3 +307,115 @@ test.describe('M8 — der Erlass-Kopf öffnet wirklich das Fenster', () => {
     await expect(page.locator(`${REITER} span[title="Fenster rechts"]`)).toHaveText('◨')
   })
 })
+
+// ═══ R1/R2/R5 (Prüfer R11, 6.9.2026) · DIE LEISTE SELBST ════════════════════
+
+test.describe('R2 — die Leiste ohne Reiter', () => {
+  test('kein durchgehender Unterstrich, «+» am linken Inhaltsrand, Höhe reserviert', async ({ page }) => {
+    // GEMESSEN am Stand `c91541617`: auf «/» stand ein leerer 34-px-Streifen
+    // mit `border-b` über die volle Breite — eine Trennlinie, die nichts trennt.
+    await page.setViewportSize({ width: 1440, height: 900 })
+    await page.goto('/')
+    const leiste = page.locator(REITER)
+    await expect(leiste).toHaveAttribute('data-reiter-leer', '')
+    const leer = await leiste.evaluate((e) => ({
+      unterstrich: getComputedStyle(e).borderBottomWidth,
+      hoehe: Math.round(e.getBoundingClientRect().height),
+    }))
+    expect(leer.unterstrich, 'ohne Reiter kein Unterstrich').toBe('0px')
+
+    // «+» steht links: seine linke Kante fällt mit dem Inhaltsrand zusammen
+    // (px-4/sm:px-6 des Streifens), nicht am rechten Fensterrand.
+    const plus = page.locator(`${REITER} button[aria-label="Neuer Reiter"]`)
+    const x = await plus.evaluate((e) => Math.round(e.getBoundingClientRect().left))
+    const rand = await leiste.evaluate((e) => Math.round(e.getBoundingClientRect().left))
+    expect(x - rand, `«+»-Abstand vom Leisten-Rand: ${x - rand} px`).toBeLessThan(40)
+
+    // CLS 0: der erste Reiter darf die Leistenhöhe nicht ändern (die Höhe ist
+    // fest, der 1-px-Rahmen liegt border-box INNEN).
+    await page.goto(OR)
+    await expect(page.locator(`${STREIFEN} [data-reiter-schluessel]`).first()).toBeVisible()
+    const voll = await leiste.evaluate((e) => Math.round(e.getBoundingClientRect().height))
+    expect(voll, `leer ${leer.hoehe} px · mit Reiter ${voll} px`).toBe(leer.hoehe)
+    await expect(leiste).toHaveAttribute('data-reiter-leer', /^$/ , { timeout: 1 }).catch(() => {})
+  })
+})
+
+test.describe('R1 — die Leiste ist nicht trist', () => {
+  test('auch inaktive Reiter tragen ihre Registerfarbe (60 %), nicht Grau', async ({ page }) => {
+    // GEMESSEN: alle inaktiven Reiter standen auf `bg-ink-400 opacity-30` —
+    // die Registerfarbe erschien erst beim Überfahren.
+    await page.setViewportSize({ width: 1440, height: 900 })
+    await page.goto(OR)
+    await page.goto(BGE)
+    await page.goto(RECHNER)
+    const striche = await page.$$eval(
+      `${STREIFEN} [data-reiter-schluessel]`,
+      (els) => els.map((e) => {
+        const s = e.querySelector('span[aria-hidden][class*="absolute"]') as HTMLElement | null
+        const c = s ? getComputedStyle(s) : null
+        return {
+          aktiv: e.getAttribute('data-reiter-aktiv') === 'true',
+          farbe: c?.backgroundColor ?? '',
+          deckkraft: c?.opacity ?? '',
+        }
+      }),
+    )
+    expect(striche.length, 'Vorbedingung: drei Reiter aus drei Registern').toBeGreaterThanOrEqual(3)
+    const inaktiv = striche.filter((s) => !s.aktiv)
+    expect(inaktiv.length, 'Vorbedingung: es gibt inaktive Reiter').toBeGreaterThan(0)
+    // Verschiedene Register → verschiedene Farben. Eine graue Leiste hätte für
+    // alle DENSELBEN Wert (das war der Befund).
+    expect(new Set(striche.map((s) => s.farbe)).size,
+      `Strich-Farben: ${striche.map((s) => s.farbe).join(' | ')}`).toBeGreaterThan(1)
+    for (const s of inaktiv) {
+      expect(Number(s.deckkraft), `inaktive Deckkraft ${s.deckkraft}`).toBeCloseTo(0.6, 2)
+    }
+  })
+})
+
+test.describe('R5 — zwei Instanzen sind unterscheidbar', () => {
+  test('«Duplizieren» beschriftet die zweite Instanz eigenständig', async ({ page }) => {
+    // GEMESSEN: zwei Instanzen desselben Erlasses hiessen beide «OR».
+    await page.setViewportSize({ width: 1440, height: 900 })
+    await page.goto(OR)
+    const reiter = page.locator(`${STREIFEN} [data-reiter-schluessel]`)
+    await expect(reiter).toHaveCount(1)
+    await reiter.first().click({ button: 'right' })
+    await page.locator('[data-reiter-menue="duplizieren"]').click()
+    await expect(reiter).toHaveCount(2)
+    // Die sr-only Positionsansage («Reiter 1: ») gehört NICHT zur Beschriftung —
+    // sie unterscheidet jeden Reiter von jedem, auch zwei gleichnamige. Gemessen
+    // wird die SICHTBARE Kurzform.
+    const sichtbar = (t: string) => t.replace(/\s+/g, ' ').replace(/^Reiter \d+:\s*/, '').trim()
+    const namen = await reiter.evaluateAll((els) => els.map((e) => e.textContent ?? ''))
+    const kurz = namen.map(sichtbar)
+    expect(new Set(kurz).size, `Beschriftungen: ${kurz.join(' | ')}`).toBe(2)
+    // ROT-BEWEIS (§6.7): der gemessene Vorher-Zustand (beide «OR») fällt durch.
+    expect(new Set(['Reiter 1: OR', 'Reiter 2: OR'].map(sichtbar)).size).toBe(1)
+  })
+})
+
+test.describe('R3/R4 — das Überlauf-Blatt', () => {
+  test('Kurzform in der Zeile, Volltitel im title, keine Wappen/Piktogramme', async ({ page }) => {
+    // GEMESSEN @390: das Blatt baute seine Namen selbst und zeigte den
+    // Volltitel; die erste Spalte trug Kantonswappen bzw. ⚖ ✎ ∑.
+    await page.setViewportSize({ width: 390, height: 844 })
+    await page.goto(OR)
+    await page.goto(RECHNER)
+    await page.goto(VORLAGE)
+    await page.locator(`${REITER} button[aria-label*="offenen Reiter"]`).click()
+    const blatt = page.getByRole('dialog', { name: 'Alle geöffneten Reiter' })
+    await expect(blatt).toBeVisible()
+    // `TabPanel` wird lazy geladen — auf die erste Zeile warten, nicht nur auf
+    // die Fläche (sonst misst der Fall den Suspense-Fallback).
+    const zeilen = blatt.locator('li button:not([aria-label])')
+    await expect(zeilen.first()).toBeVisible({ timeout: 15_000 })
+    // R4 · kein <img> (Wappen) im Blatt.
+    await expect(blatt.locator('img')).toHaveCount(0)
+    // R3 · jede Reiter-Zeile trägt einen `title` mit Inhalt.
+    const titel = await zeilen.evaluateAll((els) => els.map((e) => e.getAttribute('title') ?? ''))
+    expect(titel.length, 'Vorbedingung: das Blatt zeigt Zeilen').toBeGreaterThan(0)
+    for (const t of titel) expect(t, `Zeile ohne title (${titel.join(' | ')})`).toMatch(/\S/)
+  })
+})

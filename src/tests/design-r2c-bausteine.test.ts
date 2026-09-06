@@ -46,11 +46,31 @@ describe('C-4 · Treffer-Zeilen laufen über EINEN Baustein', () => {
   const katalog = lies('components/Katalog.tsx');
   const suche = lies('components/suche/SuchResultate.tsx');
 
-  it('beide Flächen konsumieren `ui/TrefferZeile` samt gemeinsamem Rahmen', () => {
-    for (const [name, q] of [['Katalog', katalog], ['SuchResultate', suche]] as const) {
-      expect(q, `${name}: rendert den Baustein`).toContain('<TrefferZeile');
-      expect(q, `${name}: teilt die Flex-Geometrie/den Gruppen-Namen`).toContain('TREFFER_ZEILE_RAHMEN');
+  // ── F1 (Prüfer D23, 6.9.2026) · DEKLARIERTE TEST-ÄNDERUNG (§6.3) ──────────
+  // C-4 hatte Katalog UND Suche auf EINEN Baustein gezogen, weil beide
+  // «anklickbare Zeile mit Titel, zweiter Zeile, Marke und Pfeil» zeigten. Mit
+  // D23 zeigen sie das NICHT mehr beide: das Such-Panel trägt seit F1 die
+  // Anatomie seines eigenen Leerzustands (Registerstrich · Kurzform · Art als
+  // Text) — eine Streifen-Zeile fester Höhe, keine Karten-Zeile. Gemessen war
+  // genau die Vermischung der Befund: Volltitel, mehrzeiliges Snippet und
+  // gerahmtes Etikett ergaben Zeilenhöhen von 37 bis 266 px in EINER Liste.
+  // §1 gilt hier gegen die Abstraktion: zwei verschiedene Fälle dürfen nicht
+  // stillschweigend gleich behandelt werden, nur weil sie einmal gleich aussahen.
+  // Der Wächter behält seine Zähne — er prüft jetzt je Fläche, dass sie DIE
+  // EINE für sie kanonische Anatomie konsumiert und keine dritte erfindet.
+  it('der Katalog konsumiert `ui/TrefferZeile` samt gemeinsamem Rahmen', () => {
+    expect(katalog, 'Katalog: rendert den Baustein').toContain('<TrefferZeile');
+    expect(katalog, 'Katalog: teilt die Flex-Geometrie/den Gruppen-Namen').toContain('TREFFER_ZEILE_RAHMEN');
+  });
+
+  it('das Such-Panel trägt die D23-Anatomie seines Leerzustands', () => {
+    // Dieselben drei Glieder wie `SucheLeerzustand.tsx`, aus denselben Quellen:
+    // Registerstrich (`RegisterMarke`, §5), Kurzform, Art rechts als Text.
+    for (const glied of ['<RegisterMarke', 'trefferKurzform', 'trefferArt']) {
+      expect(suche, `SuchResultate: führt ${glied}`).toContain(glied);
     }
+    // Und KEINE Karten-Anatomie mehr — weder der Baustein noch eine Kopie.
+    expect(ohneKommentare(suche), 'SuchResultate: keine Karten-Zeile mehr').not.toContain('<TrefferZeile');
   });
 
   it('keine der beiden zeichnet Titel/Untertitel/Pfeil noch selbst', () => {
