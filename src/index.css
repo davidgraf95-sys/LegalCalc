@@ -2340,6 +2340,25 @@
      gemeldet) hält denselben Platz: die Leiste steht schon vor dem ersten
      Spy-Lauf da, wo sie danach steht. */
   .rl-stelle { display: inline-block; min-width: var(--app-reiter-stelle-b); flex-shrink: 0; }
+  /* ── W2·24-CI · DIE HÖHE IST DER ZWILLING DER BREITE ──────────────────────
+     BEFUND 6.9.2026 (Repro `scratchpad/diag6.cjs` gegen `dist`, StPO
+     Art. 429, @1280): die Reservierung oben deckte die BREITE, nicht die
+     HÖHE. Solange die Stellung leer ist (`stelle === ''`), hat der
+     inline-block keine Zeilenbox — computed height 0 px. Mit dem ersten
+     Spy-Lauf springt sie auf 21 px, und dieser Höhenwechsel ist nach
+     css-scroll-anchoring-1 §3.2 ein SUPPRESSION TRIGGER: der Browser setzt
+     das Scroll-Anchoring des DOKUMENT-Scrollers für diesen Frame aus.
+     Genau in diesem Frame materialisieren die `content-visibility`-Artikel
+     über der Lesestelle und schrumpfen (gemessen StPO 427/428: −70 px) —
+     ohne Anker wandert die gelesene Stelle um diesen Betrag nach oben und
+     verschwindet hinter dem klebenden Kopf.
+     GEGENPROBE auf origin/main (Port 4377, gleiche Sonde): dort schrumpfen
+     dieselben Artikel sogar um 196 px, `scrollY` zieht aber mit
+     (247'536 → 247'340) und die Lesestelle bleibt — die einzige Differenz
+     der beiden Messreihen war diese `height: 0px → 21px`-Zeile.
+     `1lh` = genau eine Zeilenbox, also dasselbe Mass, das der gefüllte Fall
+     ohnehin hat: die Höhe ändert sich nie mehr, das Bild bleibt gleich. */
+  .rl-stelle { min-height: 1lh; }
 
   /* ─── W2·24 · AUSWAHL-KACHEL (SelectionGrid) · KANTIG, LINIE, HAEKCHEN ─────
      Prueferbefund Fixer 2 (6.9.2026): die Kacheln standen als abgerundete
@@ -3014,6 +3033,32 @@ html[data-lr6-anker-warten] footer { visibility: hidden; }
   line-height: 1.35;
   color: var(--ink-500);
   text-align: right;
+}
+/* ── W2·24-CI · DIE RESERVE DARF NICHT GRÖSSER SEIN ALS IHR INHALT ──────────
+   BEFUND 6.9.2026 (Repro `scratchpad/diag15.cjs`, BGBM Art. 2, Historie-Shard
+   angehalten und dann freigegeben — dieselbe Bedingung wie
+   `e2e/gesetze-historie-badge`): der reservierte, aber noch LEERE Slot machte
+   den Artikelkopf HÖHER als der gefüllte. Gemessen `.lr7-kopf`
+   31.55 px leer → 24.00 px gefüllt, Artikel 3 sprang dabei 3'077 → 3'069 px.
+   Ursache ist die Baseline-Ausrichtung dieser Zeile (`.lr7-kopf`,
+   `align-items: baseline`): ein leerer Block hat keine Zeilenbox, seine
+   Baseline ist die Unterkante — mit `min-h-beiwerk` (24 px) sitzt sie also
+   24 px unter der Oberkante und schiebt die Zeile auf 31.55 px auseinander.
+   Der Slot wanderte mit R6b aus dem Artikelfuss (dort war der Kasten NICHT
+   baseline-ausgerichtet, darum trug die Reserve) in diesen Kopf; die
+   Reservierung ist mitgewandert, ihre Voraussetzung nicht.
+   Das nicht-brechende Leerzeichen gibt dem leeren Slot genau EINE Zeilenbox
+   von der Höhe, die der gefüllte ohnehin hat — reservierte und gefüllte Höhe
+   fallen wieder exakt zusammen (§15.2). Es greift NUR im leeren Zustand
+   (`:empty`), das gefüllte Bild ist byte-gleich (§6); gemessen 24.00 px vorher
+   wie nachher, Artikel 3 unverändert 3'069 px.
+   NICHT `align-self: flex-start` am Slot (misst sich gleich): das hätte die
+   Baseline-Ausrichtung des GEFÜLLTEN Falls mit erledigt — Fassungsdatum und
+   Randtitel stünden nicht mehr auf einer Linie (index.css oben, Auftrag (a)). */
+.lr7-fassung [data-hist-slot]:empty::before {
+  content: "\a0";
+  display: inline-block;
+  line-height: 1.5rem; /* = min-h-beiwerk */
 }
 
 /* ── (b) DIE BEZÜGE-ZEILE: EINGEKLAPPT EINE ZEILE ─────────────────────────── */
