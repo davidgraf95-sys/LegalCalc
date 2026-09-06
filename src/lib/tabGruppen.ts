@@ -6,7 +6,7 @@
 import { pfadTeil, erlassVonPfad, type VerlaufManifeste } from './verlaufLabel';
 import { routenEbene } from './normtext/erlassAdresse';
 
-export type TabKat = 'gesetze' | 'rechtsprechung' | 'vorlagen' | 'rechner' | 'sonstiges';
+export type TabKat = 'gesetze' | 'rechtsprechung' | 'materialien' | 'vorlagen' | 'rechner' | 'sonstiges';
 
 // Kategorie rein aus dem Pfad-Präfix ableiten: die Tool-Routen sind /rechner/*
 // bzw. /vorlagen/*, die Reader /gesetze/:e/:k bzw. /rechtsprechung/:k.
@@ -14,6 +14,10 @@ export function reiterKategorie(path: string): TabKat {
   const p = pfadTeil(path);
   if (p.startsWith('/gesetze/')) return 'gesetze';
   if (p.startsWith('/rechtsprechung/')) return 'rechtsprechung';
+  // M2 (6.9.2026): ohne diese Zeile landete jede Material-Detailseite unter
+  // «Weitere» — die Rubrik hatte im ganzen Modul null Treffer für
+  // «materialien», obwohl sie eine der fünf Bereichs-Übersichten ist (D7).
+  if (p.startsWith('/materialien/')) return 'materialien';
   if (p.startsWith('/vorlagen/')) return 'vorlagen';
   if (p.startsWith('/rechner/')) return 'rechner';
   return 'sonstiges';
@@ -23,12 +27,15 @@ export function reiterKategorie(path: string): TabKat {
 export const KAT_META: Record<TabKat, { label: string; pikto: string }> = {
   gesetze: { label: 'Gesetze', pikto: '§' },
   rechtsprechung: { label: 'Rechtsprechung', pikto: '⚖' },
+  materialien: { label: 'Materialien', pikto: '❑' },
   vorlagen: { label: 'Vorlagen', pikto: '✎' },
   rechner: { label: 'Rechner', pikto: '∑' },
   sonstiges: { label: 'Weitere', pikto: '◦' },
 };
 // Feste Reihenfolge der Sammel-Reiter (stabil, unabhängig von Öffnungs-Reihenfolge).
-export const KAT_ORDER: TabKat[] = ['gesetze', 'rechtsprechung', 'vorlagen', 'rechner', 'sonstiges'];
+// Reihenfolge = die der Bereichs-Übersichten (`lib/tabs.BEREICHS_UEBERSICHTEN`),
+// damit Blatt und Navigation dieselbe Ordnung sprechen.
+export const KAT_ORDER: TabKat[] = ['gesetze', 'rechtsprechung', 'materialien', 'vorlagen', 'rechner', 'sonstiges'];
 
 export type Herkunft = 'bund' | 'kanton' | 'international';
 export const HERKUNFT_ORDER: Herkunft[] = ['bund', 'kanton', 'international'];

@@ -2,6 +2,8 @@ import { describe, it, expect, beforeEach } from 'vitest';
 import {
   ladeTabs, merkeTab, ersetzeTab, schliesseTab, leereTabs, ordneTabsUm, naechsteInstanz,
   aktualisiereTabArtikel, neuerLeererReiter, hatLeerenReiter,
+  schliesseAndere, schliesseRechtsVon, stelleLetztenWiederHer, letzterGeschlossener,
+  istReiterPfad,
 } from '../lib/tabs';
 
 // In-App-Reiter (lib/tabs.ts): Persistenz, stabile Reihenfolge, Dublette per
@@ -250,6 +252,131 @@ describe('tabs.ts — offene Reiter', () => {
       const t = ladeTabs();
       expect(t.map((x) => x.path)).toEqual(['/gesetze/bund/OR', '/']);
       expect(t[1].leer).toBe(true);
+    });
+  });
+  // ═══ M2 · MATERIALIEN TRAGEN EINEN REITER (Prüfbefund R11 #23) ════════════
+  //
+  // ROT ZU BEKOMMEN (§6.7): in `lib/tabs.istReiterPfad` das Wort `materialien`
+  // aus dem Regex streichen ⇒ der erste Fall unten misst `false`.
+  describe('M2 — Materialien sind reiterfähig', () => {
+    it('eine Material-Detailseite trägt einen Reiter', () => {
+      expect(istReiterPfad('/materialien/BJ-EHRA-PM-2025-01')).toBe(true);
+    });
+
+    it('die Rubrik-Übersicht /materialien trägt weiterhin einen Reiter (D7), die Startseite weiterhin keinen', () => {
+      expect(istReiterPfad('/materialien')).toBe(true);
+      expect(istReiterPfad('/')).toBe(false);
+    });
+
+    it('Meta-Seiten bleiben ohne Reiter — der Regex öffnet nur die fünf Rubriken', () => {
+      expect(istReiterPfad('/ueber')).toBe(false);
+      expect(istReiterPfad('/materialienxyz/abc')).toBe(false);
+    });
+  });
+
+  // ═══ M3 · «ZULETZT GESCHLOSSEN» (Prüfbefund R11 #37) ══════════════════════
+  //
+  // ROT ZU BEKOMMEN (§6.7): den `merkeGeschlossen`-Aufruf in `schliesseTab`
+  // entfernen ⇒ `stelleLetztenWiederHer` gibt null zurück, alle Fälle unten
+  // werden rot. Die POSITION ist der eigentliche Prüfgegenstand: ein
+  // Wiederherstellen ans Ende der Leiste wäre kein Wiederherstellen.
+  describe('M3 — zuletzt geschlossen', () => {
+    it('Schliessen an Position 2 ⇒ Wiederherstellung an Position 2, nicht am Ende', () => {
+      merkeTab('/gesetze/bund/OR');
+      merkeTab('/rechtsprechung/bge_146_III_1');
+      merkeTab('/rechner/zpo-fristen');
+      schliesseTab('/rechtsprechung/bge_146_III_1');
+      expect(ladeTabs().map((t) => t.path)).toEqual(['/gesetze/bund/OR', '/rechner/zpo-fristen']);
+      expect(stelleLetztenWiederHer()?.path).toBe('/rechtsprechung/bge_146_III_1');
+      expect(ladeTabs().map((t) => t.path))
+        .toEqual(['/gesetze/bund/OR', '/rechtsprechung/bge_146_III_1', '/rechner/zpo-fristen']);
+    });
+
+    it('Label und gewählter Anker kommen mit zurück', () => {
+      merkeTab('/gesetze/bund/OR#art-336_c', 'OR');
+      schliesseTab('/gesetze/bund/OR');
+      const wieder = stelleLetztenWiederHer();
+      expect(wieder?.label).toBe('OR');
+      expect(wieder?.wahl).toBe('#art-336_c');
+      expect(ladeTabs()[0].wahl).toBe('#art-336_c');
+    });
+
+    it('auch ein ERSETZTER Reiter (§5a Ziff. 3) landet im Ring — dort ist der Verlust der Normalfall', () => {
+      merkeTab('/gesetze/bund/OR');
+      ersetzeTab('/gesetze/bund/OR', '/gesetze/bund/ZGB');
+      expect(ladeTabs().map((t) => t.path)).toEqual(['/gesetze/bund/ZGB']);
+      expect(stelleLetztenWiederHer()?.path).toBe('/gesetze/bund/OR');
+      expect(ladeTabs().map((t) => t.path)).toEqual(['/gesetze/bund/OR', '/gesetze/bund/ZGB']);
+    });
+
+    it('leerer Ring: kein Fehler, kein Reiter — die Aktion wird gar nicht erst angeboten', () => {
+      expect(letzterGeschlossener()).toBeNull();
+      expect(stelleLetztenWiederHer()).toBeNull();
+      expect(ladeTabs()).toEqual([]);
+    });
+
+    it('der leere «+»-Reiter kommt NICHT in den Ring — er trägt kein Dokument', () => {
+      neuerLeererReiter();
+      schliesseTab('/');
+      expect(letzterGeschlossener()).toBeNull();
+    });
+
+    it('«Alle schliessen» füllt den Ring; Wiederherstellen holt von hinten nach vorn zurück', () => {
+      merkeTab('/gesetze/bund/OR');
+      merkeTab('/gesetze/bund/ZGB');
+      leereTabs();
+      expect(ladeTabs()).toEqual([]);
+      expect(stelleLetztenWiederHer()?.path).toBe('/gesetze/bund/ZGB');
+      expect(stelleLetztenWiederHer()?.path).toBe('/gesetze/bund/OR');
+      expect(ladeTabs().map((t) => t.path)).toEqual(['/gesetze/bund/OR', '/gesetze/bund/ZGB']);
+    });
+
+    it('ist derselbe Reiter inzwischen wieder offen, wird der Ring-Eintrag verbraucht statt verdoppelt', () => {
+      merkeTab('/gesetze/bund/OR');
+      schliesseTab('/gesetze/bund/OR');
+      merkeTab('/gesetze/bund/OR');
+      expect(stelleLetztenWiederHer()?.path).toBe('/gesetze/bund/OR');
+      expect(ladeTabs().map((t) => t.path)).toEqual(['/gesetze/bund/OR']);
+      expect(letzterGeschlossener()).toBeNull();
+    });
+  });
+
+  // ═══ M4 · DIE SAMMEL-SCHLIESSER DES KONTEXTMENÜS ══════════════════════════
+  //
+  // ROT ZU BEKOMMEN (§6.7): in `schliesseRechtsVon` `slice(0, idx + 1)` durch
+  // `slice(0, idx)` ersetzen ⇒ der genannte Reiter fiele mit weg und der erste
+  // Fall unten wird rot.
+  describe('M4 — Alle anderen / rechts davon schliessen', () => {
+    beforeEach(() => {
+      merkeTab('/gesetze/bund/OR');
+      merkeTab('/rechtsprechung/bge_146_III_1');
+      merkeTab('/rechner/zpo-fristen');
+      merkeTab('/vorlagen/arbeitsvertrag');
+    });
+
+    it('rechts davon: der genannte Reiter und alles links bleibt', () => {
+      schliesseRechtsVon('/rechtsprechung/bge_146_III_1');
+      expect(ladeTabs().map((t) => t.path)).toEqual(['/gesetze/bund/OR', '/rechtsprechung/bge_146_III_1']);
+    });
+
+    it('rechts davon am letzten Reiter: nichts geschieht, nichts landet im Ring', () => {
+      schliesseRechtsVon('/vorlagen/arbeitsvertrag');
+      expect(ladeTabs().length).toBe(4);
+      expect(letzterGeschlossener()).toBeNull();
+    });
+
+    it('alle anderen: genau einer bleibt, die drei anderen sind wiederherstellbar', () => {
+      schliesseAndere('/rechner/zpo-fristen');
+      expect(ladeTabs().map((t) => t.path)).toEqual(['/rechner/zpo-fristen']);
+      expect(letzterGeschlossener()?.path).toBe('/vorlagen/arbeitsvertrag');
+      expect(stelleLetztenWiederHer()?.path).toBe('/vorlagen/arbeitsvertrag');
+      expect(ladeTabs().map((t) => t.path)).toEqual(['/rechner/zpo-fristen', '/vorlagen/arbeitsvertrag']);
+    });
+
+    it('ein unbekannter Pfad lässt beide Listen unangetastet (nie stilles Schliessen)', () => {
+      schliesseAndere('/gesetze/bund/UNBEKANNT');
+      schliesseRechtsVon('/gesetze/bund/UNBEKANNT');
+      expect(ladeTabs().length).toBe(4);
     });
   });
 });
