@@ -21,6 +21,13 @@ export interface QuellFassung {
   standIso: string | null;
   /** Zusatz für die Tabelle (z. B. «Version 3863, in Vollzug seit 01.07.2026»). */
   anzeige: string;
+  /** true, wenn die Quelle den Erlass als aufgehoben führt (LexWork `abrogated`).
+   *  Optional: Adapter, die das Feld nicht kennen (z. B. ZH), lassen es weg —
+   *  dann gilt es als nicht-aufgehoben. Befund M2 (W3-TARIF-STAND Nachzug
+   *  6.9.2026): wurde bisher nur ANGEZEIGT («AUFGEHOBEN» in `anzeige`), trug
+   *  aber kein Verdikt — ein aufgehobener Erlass konnte «aktuell» erscheinen,
+   *  solange Fassungskennung/Datum zufällig übereinstimmten. */
+  abrogated?: boolean;
 }
 
 /** Was in den Tarif-Daten hinterlegt ist. */
@@ -48,10 +55,12 @@ function jahrVon(iso: string): number {
  *
  * Reihenfolge der Prüfungen (die erste, die greift, entscheidet):
  *   1. Quelle nicht abgefragt/erreichbar        → unerreichbar bzw. unklar
- *   2. Beide Seiten tragen eine Fassungskennung → exakter Vergleich (schlägt
+ *   2. Quelle führt den Erlass als aufgehoben   → DRIFT (Befund M2, schlägt
+ *      auch eine übereinstimmende Fassungskennung — aufgehoben ist aufgehoben)
+ *   3. Beide Seiten tragen eine Fassungskennung → exakter Vergleich (schlägt
  *      jeden Datumsvergleich: die Kennung IST die Fassung, ein Datum ist nur
  *      ihre Beschreibung)
- *   3. sonst Datumsvergleich, mit Granularität:
+ *   4. sonst Datumsvergleich, mit Granularität:
  *        - hinterlegt taggenau : Quelle später    → DRIFT, sonst aktuell
  *        - hinterlegt jahrgenau: Quelljahr grösser → DRIFT
  *                                Quelljahr kleiner → aktuell
@@ -68,6 +77,10 @@ export function beurteile(
       verdikt: 'unklar',
       begruendung: 'kein Adapter für dieses Portal — Fassung nicht maschinell adressierbar',
     };
+  }
+
+  if (quelle.abrogated === true) {
+    return { verdikt: 'DRIFT', begruendung: 'amtliche Quelle führt den Erlass als aufgehoben' };
   }
 
   if (hinterlegt.kennung !== null && quelle.kennung !== null) {

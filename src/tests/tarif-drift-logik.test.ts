@@ -35,6 +35,18 @@ describe('beurteile — Verdikt je Tarif-Eintrag', () => {
     expect(b.verdikt).toBe('DRIFT');
   });
 
+  it('3b. abrogated:true → immer DRIFT, auch bei sonst fassungsgleichem Stand (Befund M2, 6.9.2026)', () => {
+    // Fassungsgleicher Stand — unter der alten Regel (kein Verdikt hing an
+    // `abrogated`) wäre das über den Fassungskennungs-Vergleich «aktuell».
+    const b = beurteile(
+      hinterlegt('1.3.2012', '3863'),
+      { kennung: '3863', standIso: '2026-07-01', anzeige: 'Version 3863, seit 2026-07-01, AUFGEHOBEN', abrogated: true },
+      null,
+    );
+    expect(b.verdikt).toBe('DRIFT');
+    expect(b.begruendung).toContain('aufgehoben');
+  });
+
   it('4. taggenauer Stand: Quelle später → DRIFT, sonst aktuell', () => {
     expect(beurteile(hinterlegt('1.1.2019'), quelle(null, '2025-01-01'), null).verdikt).toBe('DRIFT');
     expect(beurteile(hinterlegt('1.1.2026'), quelle(null, '2020-06-01'), null).verdikt).toBe('aktuell');

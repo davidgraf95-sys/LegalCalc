@@ -323,7 +323,7 @@ function alsQuellFassung(r: LexWorkAntwort): QuellFassung {
     r.inKraftIso ? `seit ${r.inKraftIso}` : null,
     r.aufgehoben ? 'AUFGEHOBEN' : null,
   ].filter(Boolean);
-  return { kennung: r.versionsId, standIso: r.inKraftIso, anzeige: teile.join(', ') || '—' };
+  return { kennung: r.versionsId, standIso: r.inKraftIso, anzeige: teile.join(', ') || '—', abrogated: r.aufgehoben };
 }
 
 // ─── Ausgabe ─────────────────────────────────────────────────────────────────
