@@ -74,13 +74,17 @@ const GERICHT_KURZ: Record<string, string> = {
 };
 
 /** Zerlegung einer Zitierung in «Kopf» (kürzbar) und «Kern» (nie kürzbar).
- *  Kern = das letzte Wort mit Ziffern, also die Geschäftsnummer bzw. bei einer
- *  BGE-/BGer-Zitierung die Fundstelle selbst. Ohne Ziffern-Wort gibt es keinen
- *  Kern — dann kürzt wie bisher der ganze Text. */
+ *  Kern = alles ab dem ersten Wort mit einer Ziffer, also die Geschäftsnummer
+ *  bzw. bei einer BGE-Zitierung die Fundstelle («BGE» + «152 V 52»). Das
+ *  angehängte Urteilsdatum («… vom 14.01.2026») fällt weg — es identifiziert
+ *  nichts, was die Nummer nicht schon identifiziert, und der `title` des
+ *  Reiters trägt die vollständige Zitierung weiter. Ohne Ziffern-Wort gibt es
+ *  keinen Kern; dann kürzt wie bisher der ganze Text. */
 function zerlege(zitierung: string): { kopf: string; kern: string } {
-  const worte = zitierung.split(/\s+/).filter(Boolean);
+  const ohneDatum = zitierung.replace(/\s+vom\s+\d{1,2}\.\d{1,2}\.\d{2,4}\s*$/, '');
+  const worte = ohneDatum.split(/\s+/).filter(Boolean);
   const i = worte.findIndex((w) => /\d/.test(w));
-  if (i <= 0) return { kopf: '', kern: zitierung };
+  if (i <= 0) return { kopf: '', kern: ohneDatum };
   const kopf = worte.slice(0, i).map((w) => GERICHT_KURZ[w] ?? w).join(' ');
   return { kopf, kern: worte.slice(i).join(' ') };
 }
@@ -338,15 +342,18 @@ export function Reiterleiste({ paneSchluessel = [] }: {
             // Mittelklick schliesst — das Browser-Idiom, das David meint.
             if (ev.button === 1) { ev.preventDefault(); schliessen(t.path); }
           }}
-          className={`flex min-w-0 max-w-[15rem] items-baseline gap-1 py-1.5 pl-2.5 pr-1 text-body-s ${
+          className={`flex min-w-0 items-baseline gap-1 py-1.5 pl-2.5 pr-1 text-body-s ${
             aktiv ? 'font-medium text-ink-900' : 'text-ink-600 hover:text-ink-900'}`}>
           <span className="sr-only">{`Reiter ${i + 1}: `}</span>
           {/* F6 · DIE GESCHÄFTSNUMMER WIRD NIE GEKÜRZT. Gekürzt wird der Kopf
-              (das Gericht, ohnehin schon abgekürzt); der Kern trägt die
-              Nummer und steht `shrink-0`. Ohne Kopf kürzt der Kern selbst —
-              dann ist er der ganze Name (Gesetz, Rechner, Vorlage). */}
-          {kopf && <span className="truncate">{kopf}</span>}
-          <span className={kopf ? 'shrink-0' : 'truncate'}>{kern}</span>
+              (das Gericht, ohnehin schon abgekürzt); der Kern trägt die Nummer
+              und steht `shrink-0`. Der Deckel sitzt darum AM KOPF, nicht am
+              Knopf: läge er am Knopf, ragte ein langer Kern als `shrink-0`-Kind
+              über dessen Kasten und legte sich über die ⧉/✕-Griffe daneben.
+              Ohne Kopf kürzt der Kern selbst — dann ist er der ganze Name
+              (Gesetz, Rechner, Vorlage) und nichts daran ist geschützt. */}
+          {kopf && <span className="truncate max-w-[9rem]">{kopf}</span>}
+          <span className={kopf ? 'shrink-0' : 'truncate max-w-[15rem]'}>{kern}</span>
           {paneWort && <span className="sr-only">{` (Fenster ${paneWort})`}</span>}
         </button>
         {/* Fenster-Marke: zeigt, welcher Reiter links bzw. rechts steht. */}
