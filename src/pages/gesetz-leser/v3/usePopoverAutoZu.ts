@@ -71,10 +71,14 @@ import { useDialogFokus } from '../../../components/layout/useDialogFokus';
 // Browser gleicht per Scroll-Anchoring aus und feuerte `scroll` ohne Geste; das
 // eben geöffnete Panel schloss sich von selbst.
 
-export type AutoZuModus = 'popover' | 'blatt' | 'beiwerk' | 'spalte';
+// D33 (7.9.2026): `'spalte'` ist gestrichen — die Gestalt, die ihn brauchte
+// (das Panel als eigene Rahmen-Spur, Ä60 (c)), gibt es nicht mehr. Er war der
+// einzige Modus ohne Aussenklick-Schliessen; `'beiwerk'` trägt seither jede
+// Desktop-Lage (Herleitung in `./LeserPanelZone`).
+export type AutoZuModus = 'popover' | 'blatt' | 'beiwerk';
 
 /** Die zwei Modi OHNE Fokus-Falle: das Panel ist dort Beiwerk, kein Dialog. */
-const OHNE_FALLE: AutoZuModus[] = ['beiwerk', 'spalte'];
+const OHNE_FALLE: AutoZuModus[] = ['beiwerk'];
 
 export function usePopoverAutoZu({ offen, schliesse, wrapRef, panelRef, modus, aussenAusnahme }: {
   offen: boolean;
@@ -124,7 +128,7 @@ export function usePopoverAutoZu({ offen, schliesse, wrapRef, panelRef, modus, a
 
   // ── Aussenklick — in JEDEM Modus ausser `spalte` (Herleitung im Kopf) ─────
   useEffect(() => {
-    if (!offen || !wrapRef || modus === 'spalte') return;
+    if (!offen || !wrapRef) return;
     const klick = (e: PointerEvent) => {
       const wurzel = wrapRef.current;
       if (!wurzel) return;

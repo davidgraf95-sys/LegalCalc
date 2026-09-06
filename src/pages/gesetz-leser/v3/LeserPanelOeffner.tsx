@@ -1,4 +1,4 @@
-import { oeffnerLabel, oeffnerLabelKompakt, oeffnerName, zaehlerAttribut } from './panelModell';
+import { OEFFNER_WORT, oeffnerLabelKompakt, oeffnerName, zaehlerAttribut } from './panelModell';
 import { kopfGlypheKlassen, kopfGriffKlassen, type KopfElemente } from './kopfStufen';
 
 // ─── Der Öffner des Panels — EINER je Zuschnitt (H3, F8; Nachzug Ä53/Ä56) ─────
@@ -95,7 +95,7 @@ export function PanelZaehler({ anzahl, artikelLabel, offen, panelId, form, onKli
   onKlick: () => void;
 }) {
   const kompakt = form === 'kompakt';
-  const text = kompakt ? oeffnerLabelKompakt(anzahl) : oeffnerLabel(anzahl);
+  const marke = oeffnerLabelKompakt(anzahl);
   return (
     <button
       type="button"
@@ -116,14 +116,26 @@ export function PanelZaehler({ anzahl, artikelLabel, offen, panelId, form, onKli
       className={`${kopfGriffKlassen(kompakt)} ${kompakt ? 'gap-0.5 px-1' : 'gap-1 px-1.5'}`}
     >
       <span aria-hidden className={kopfGlypheKlassen(kompakt)}>⚖</span>
-      {/* `tabular-nums` + `whitespace-nowrap`: die Zahl wechselt mit der
+      {/* N1 (7.9.2026): DAS WORT steht fest, die Zahl ist eine Marke daneben —
+          Herleitung in `./panelModell` (`OEFFNER_WORT`). Auf `mini` bleibt es
+          bei Ikone + Zahl (H4-II: die Kopfzeile misst dort innen 350 px). */}
+      {!kompakt && <span className="whitespace-nowrap">{OEFFNER_WORT}</span>}
+      {/* `tabular-nums` (`num`) + `whitespace-nowrap`: die Zahl wechselt mit der
           Leseposition (Scroll-Spy). Proportionale Ziffern liessen den Knopf bei
           jedem Artikelwechsel um Bruchteile atmen und schöben die Nachbarn —
           eine Bewegung in der klebenden Kopfzeile, die niemand angefordert hat.
-          H4-II: auf `mini` kann der Text leer sein (keine Zahl bekannt) — dann
-          entfällt das `span` ganz, statt eine 0 zu behaupten oder eine leere
-          Box mit `gap` stehen zu lassen (§8). */}
-      {text && <span className="num whitespace-nowrap">{text}</span>}
+          RESERVIERTER PLATZ statt Auf- und Zuklappen: die Marke kommt aus der
+          Zähl-Datei und trifft im Leerlauf ein, also NACH dem ersten Bild. Ein
+          `span`, das dann erst entsteht, verbreiterte den Knopf und schöbe die
+          ganze Griff-Gruppe nach links — ein Layout-Shift ohne Eingabe (§15.2,
+          `leser-kopf-cls-s3`). Dieselbe Bauform wie die leere Fassungs-Angabe
+          im Artikelkopf (`index.css`, `.lr7-fassung [data-hist-slot]:empty`):
+          der Platz steht, der Inhalt darf fehlen — eine 0 behauptet er nie (§8).
+          Auf `mini` gibt es keine Reserve: dort trägt der Chip nur die Zahl, und
+          eine leere Box mit `gap` wäre die halbe Breite des Knopfes. */}
+      {kompakt
+        ? marke && <span className="num whitespace-nowrap">{marke}</span>
+        : <span aria-hidden className="num inline-block min-w-[1.25rem] whitespace-nowrap text-right">{marke}</span>}
     </button>
   );
 }
