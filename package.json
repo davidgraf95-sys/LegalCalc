@@ -185,9 +185,8 @@
     "zh:cache": "vite-node scripts/normtext/zh-cache-fuellen.ts --"
   },
   "dependencies": {
-    "@fontsource-variable/geist": "^5.2.9",
-    "@fontsource-variable/geist-mono": "^5.3.0",
-    "@fontsource-variable/source-serif-4": "^5.2.9",
+    "@fontsource-variable/archivo": "^5.3.0",
+    "@fontsource-variable/literata": "^5.3.0",
     "date-fns": "^4.4.0",
     "docx": "^9.7.1",
     "fflate": "^0.8.3",

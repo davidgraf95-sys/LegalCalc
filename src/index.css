@@ -3,48 +3,51 @@
 @tailwind utilities;
 
 /* Rank 11 (QS-PERF, §15/2): metrik-angepasste Fallback-Fonts. Solange der Webfont
-   (Geist / Source Serif 4) via font-display:swap lädt, rendert der System-Fallback
+   (Archivo / Literata) via font-display:swap lädt, rendert der System-Fallback
    (Arial / Georgia) mit exakt angepasstem Zeilenkasten — size-adjust/ascent-/descent-/
    line-gap-override sind aus den ECHTEN fontsource-woff2 GEMESSEN (nicht geraten):
    scripts/gen-font-fallbacks.ts (@capsizecss). Damit erzeugt der Swap keinen
    Reflow-Sprung mehr (CLS). Webfont-Version wechselt → Script neu laufen lassen.
-   Reine Darstellung, kein Inhaltseffekt (§3). */
+   Reine Darstellung, kein Inhaltseffekt (§3).
+   W2·24-DESIGN-IDENTITAET R1 (6.9.2026): Geist → Archivo (Bedienung),
+   Source Serif 4 → Literata (Lesetext); Werte am 6.9.2026 aus
+   archivo-latin-wght-normal.woff2 / literata-latin-wght-normal.woff2 gemessen. */
 @font-face {
-  font-family: 'Geist Fallback';
-  /* Linux-Härtung (A9-Forensik 19.7.2026): Arial fehlt auf dem CI-Image → ohne
-     Arimo/Liberation Sans (metrik-identische Arial-Klone) fiele der metrik-
-     angepasste Fallback aus und der Sans-Swap könnte umbrechen. Die Arial-
-     getunten Overrides gelten für Arimo/Liberation Sans 1:1 (gleiche Laufweite). */
+  font-family: 'Archivo Fallback';
+  /* Linux-Härtung (A9-Forensik 19.7.2026, für Archivo unverändert gültig): Arial
+     fehlt auf dem CI-Image → ohne Arimo/Liberation Sans (metrik-identische
+     Arial-Klone) fiele der metrik-angepasste Fallback aus und der Sans-Swap
+     könnte umbrechen. Die Arial-getunten Overrides gelten für Arimo/Liberation
+     Sans 1:1 (gleiche Laufweite). */
   src: local('Arial'), local('ArialMT'), local('Arimo'), local('Liberation Sans');
-  ascent-override: 95.9379%;
-  descent-override: 28.1609%;
+  ascent-override: 85.8362%;
+  descent-override: 20.5303%;
   line-gap-override: 0%;
-  size-adjust: 104.7553%;
+  size-adjust: 102.2878%;
 }
 @font-face {
-  font-family: 'Source Serif 4 Fallback';
+  font-family: 'Literata Fallback';
   src: local('Georgia');
-  ascent-override: 96.4195%;
-  descent-override: 31.1781%;
-  size-adjust: 107.4471%;
+  ascent-override: 109.3141%;
+  descent-override: 28.6056%;
+  size-adjust: 107.6714%;
 }
 @font-face {
-  font-family: 'Source Serif Times Fallback';
+  font-family: 'Literata Times Fallback';
   /* Linux-Härtung (R5-Forensik 19.7.2026): das CI-Image hat KEIN Georgia/Charter →
-     die Georgia-getunte 'Source Serif 4 Fallback' greift dort nicht, generic
-     `serif` = Liberation Serif (Times-Metrik, SCHMAL) trug die Lesespalte untuned →
-     77 statt ≤75 ch. Liberation Serif / Tinos sind metrik-IDENTISCH zu Times New
+     die Georgia-getunte 'Literata Fallback' greift dort nicht, generic `serif` =
+     Liberation Serif (Times-Metrik, SCHMAL) trüge die Lesespalte untuned → zu viele
+     Zeichen pro Zeile. Liberation Serif / Tinos sind metrik-IDENTISCH zu Times New
      Roman (wie Arimo/Liberation Sans zu Arial) → dieselben Times-getunten Overrides
-     gelten 1:1 (gleiche Laufweite); size-adjust hebt die horizontale Advance auf
-     Source Serif 4. Overrides GEMESSEN, nicht geraten: scripts/gen-font-fallbacks.ts
-     (@capsizecss, timesNewRoman-Metrik). macOS erreicht diese Familie nie (Georgia
-     löst davor) → dort unverändert. */
+     gelten 1:1; size-adjust hebt die horizontale Advance auf Literata. Overrides
+     GEMESSEN, nicht geraten: scripts/gen-font-fallbacks.ts (@capsizecss,
+     timesNewRoman-Metrik). macOS erreicht diese Familie nie (Georgia löst davor). */
   src: local('Liberation Serif'), local('Tinos'), local('Times New Roman'),
        local('TimesNewRomanPSMT'), local('Times'), local('Nimbus Roman');
-  ascent-override: 87.8653%;
-  descent-override: 28.4121%;
+  ascent-override: 99.6159%;
+  descent-override: 26.0677%;
   line-gap-override: 0%;
-  size-adjust: 117.9077%;
+  size-adjust: 118.1538%;
 }
 
 @layer base {
@@ -63,14 +66,21 @@
        Chroma = flache Glocke (C≈0.008 Enden, ~0.012–0.015 Mitten 600–400 — dort sitzt
        Meta-/Sekundärtext, die sichtbarste Wärme-Fläche). Haarlinien erben via
        color-mix-Rezepten automatisch. Hue-Drift jetzt HART im check:farbwelt (Span 1.3°). */
-    --ink-fixed-dark:#1C1A15;
+    --ink-fixed-dark:#151515;
     /* C2-Gegenstück (5.9.2026): --ink-fixed-light für Text auf einer Fläche,
        die STETS mittel-dunkel bleibt (--ok-solid/--sage-500 flippt bewusst
        NICHT, s. Zeile ~1042-Kommentar) — Wert = helles --paper, hier nicht
        überschrieben. Speist --auf-sage (unten). */
-    --ink-fixed-light:#FCFAF6;
-    --ink-900:var(--ink-fixed-dark); --ink-800:#2B2924; --ink-700:#3C3932; --ink-600:#56534C; --ink-500:#6F6B61;
-    --ink-400:#8D8A83; --ink-300:#AAA8A3;
+    --ink-fixed-light:#FAFAFA;
+    /* W2·24-DESIGN-IDENTITAET R1 (6.9.2026): die Rampe ist CHROMAFREI (C = 0,
+       reines Neutralgrau) — die frühere Wärme (Hue 88°) WAR die halbe
+       Creme-Gold-Signatur. Der Hue-Drift-Wächter (check:farbwelt (b), HART für
+       ink) greift bei C = 0 nicht mehr, weil OKLCH dort keinen Hue kennt; die
+       L-Monotonie bleibt geprüft. ink-500 ist mit #696969 bewusst dunkler als
+       die Referenz-Tinte #767676 (die läge auf --well bei 4.44:1) — gemessen
+       4.85:1 auf --well, 5.34:1 auf --paper. */
+    --ink-900:var(--ink-fixed-dark); --ink-800:#262626; --ink-700:#383838; --ink-600:#4A4A4A; --ink-500:#696969;
+    --ink-400:#8C8C8C; --ink-300:#B0B0B0;
     /* Eigener Platzhalter-Ton (Auftrag David 25.6.2026, max. Lesbarkeit):
        ink-300 war auf dem Well nur ~2:1 → quasi unsichtbar. Eigenes Token
        4.75:1 auf --well (WCAG 1.4.3 AA erfüllt), ohne den Haarlinien-/Deko-Ton
@@ -81,7 +91,7 @@
        ≥4.5:1 auf --well bleibt erfüllt (4.76:1, vorher 4.75:1).
        D-5/A38 (16.7.2026): --well wurde heller/weisser (#F2EFE6→#F6F4EE) →
        --placeholder/well steigt 4.76→4.98:1 (Ton unverändert, Kontrast-Gewinn). */
-    --placeholder:#6D695F;
+    --placeholder:#676767;
     /* Papier – Flächen. Token-Landkarte (Regel, ohne Wertänderung):
        --paper*   = SEITENHINTERGRUND (Body, grosse Flächen)
        --surface* = KARTEN/Panels (lc-card, lc-tile, lc-panel)
@@ -112,12 +122,24 @@
        Richtung) — alle WCAG-Pflichtpaare hell steigen (s. §F2b-Nachtrag D-5). Fixpunkt
        im Tor auf #FCFAF6 nachgezogen (scharf, nicht entkernt). DUNKEL bleibt
        UNBERÜHRT (A38 betrifft nur die helle Fläche; D-6 kommt separat). */
-    --paper:#FCFAF6; --paper-raised:#FFFEFC; --paper-sunken:#F6F4EE;
-    --surface:#FEFCFA; --surface-raised:var(--paper-raised);
+    /* W2·24-R1: Papier ist WEISS statt creme — die Flächen-Leiter
+       well < paper < surface < paper-raised bleibt (check:farbwelt FAIL-Regel),
+       nur eben chromafrei und mit fast unsichtbaren Stufen: das neue Bild trennt
+       über LINIEN, nicht über Flächen-Tönung. paper-raised ist das Reinweiss der
+       schwebenden Ebene (Menü/Dialog), das Blatt selbst liegt eine Spur darunter. */
+    --paper:#FBFBFB; --paper-raised:#FFFFFF; --paper-sunken:#F0F0F0;
+    --surface:#FDFDFD; --surface-raised:var(--paper-raised);
     --well:var(--paper-sunken);
     /* Haarlinien */
     --line:color-mix(in oklab, var(--ink-900) 10%, transparent);
     --line-strong:color-mix(in oklab, var(--ink-900) 18%, transparent);
+    /* W2·24-DESIGN-IDENTITAET R1 · DIE ZWEI TRENNLINIEN DES NEUEN BILDES.
+       Anders als --line/--line-strong (transparente Mischungen, die sich der
+       Fläche darunter anpassen) sind das zwei SOLIDE Töne: --rule-soft ist die
+       1-px-Zeilentrennung im Satzspiegel, --rule die 2-px-Kante unter der
+       Titelblatt-Zeile. Hier als Grundschicht definiert; Konsumenten ab R2. */
+    --rule:var(--ink-900);
+    --rule-soft:#DADADA;
     /* Gesetzes-Reader — EINE Linien-Sprache (W2·5d G1, DESIGN-REGLEMENT-NORMTEXT
        §Linien-Kanon): benannte Rollen statt frei gewählter Ad-hoc-Opazitäten von
        --line (Artikel /70, Sektion voll|/50, Tabellenzeile/Fussnoten). Werte am
@@ -130,14 +152,32 @@
     --rule-artikel:color-mix(in oklab, var(--ink-900) 10%, transparent);
     --rule-struktur:color-mix(in oklab, var(--ink-900) 14%, transparent);
     /* Messing – der eine Akzent (= gravierte Skala) */
-    --brass-800:#654C1E; /* a11y: ≥4.5 Kontrast auf brass-100 (12px) */
+    /* W2·24-DESIGN-IDENTITAET R1 (6.9.2026): DIE MESSING-SKALA IST NEUTRAL
+       GEWORDEN. Die 202 `*-brass-*`-Konsumenten bleiben unangetastet (§6 (b) des
+       Fahrplans) — sie färben über diese acht Werte um. Der Klassenname lügt
+       damit bewusst bis zum R5-Sweep (Umbenennung in die Rollen-/Registernamen);
+       die Werte hier sind die Wahrheit. Rollen: 800 = stärkster Akzenttext /
+       Hover, 700 = Link/Akzent (= Tinte, im Bild unterstrichen statt farbig),
+       600 = Punkt/Decor, 500 = Linie & --focus, 400–100 = Flächen. */
+    --brass-800:#0D0D0D; /* a11y: ≥4.5 Kontrast auf brass-100 (12px) */
     /* brass-700 a11y-kalibriert (Entscheid David 26.6.2026): WCAG 4.5:1 für
        Kleintext auf ALLEN hellen Flächen — min 4.63:1 auch auf brass-100/
        paper-sunken (vorher #8A6A2F = 4.37 auf paper-sunken → axe serious).
        Marke praktisch unverändert. Dunkel-brass-700 ist separat (s. html.dark). */
-    --brass-700:#826225; --brass-500:#B08D4A; --brass-300:#DDC9A0;
-    --brass-600:#9D7B3C; --brass-400:#C7AB75;
-    --brass-200:#E6D7B8; --brass-100:#F1E8D6;
+    --brass-700:#151515; --brass-500:#767676; --brass-300:#C7C7C7;
+    --brass-600:#4A4A4A; --brass-400:#A3A3A3;
+    --brass-200:#E4E4E4; --brass-100:#F1F1F1;
+    /* ── REGISTERFARBEN (W2·24-DESIGN-IDENTITAET R1, Referenzbild §5) ───────
+       Die EINZIGE Farbe im neuen Bild: vier stumpfe Töne, je einer pro Register
+       der Sammlung — Gesetze · Rechtsprechung · Materialien · Werkzeuge. Sie
+       stehen als Strich, Reiter-Unterkante und Randmarke, nie als Fläche unter
+       Fliesstext. Werte aus dem freigegebenen Referenzbild
+       (abnahme/design-identitaet/vorschlag-freigegeben.html), Kontraste gemessen
+       in abnahme/design-identitaet/KONTRAST-R1.md. Konsumenten kommen ab R2. */
+    --reg-g:#1F3A5F;  /* Gesetze */
+    --reg-r:#7A1F2B;  /* Rechtsprechung */
+    --reg-m:#4E6B3A;  /* Materialien */
+    --reg-w:#8A6A1F;  /* Werkzeuge */
     /* Fixe dunkle Tinte für Text auf STETS hellen Gold-Flächen (brass-300 ist
        in BEIDEN Modi hell). Flippt bewusst NICHT mit dem Thema — sonst kippt
        z. B. das Timeline-Label im Dunkel auf hell und wird unlesbar (~1.3:1).
@@ -266,9 +306,13 @@
        nennen Zahl und Zustands-Wort (§11.6.8). Kein neuer Farbwert — ein Ton,
        drei Helligkeiten (§13/B3). Die Zuordnung Stufe→Token liegt EINMAL in
        SchweizKarte.tsx, die Stufe selbst in lib/normtext/erfassungsgrad.ts (§5). */
-    --karte-duenn:hsl(39 34% 87%);
-    --karte-auswahl:hsl(39 50% 71%);
-    --karte-voll:hsl(39 60% 52%);
+    /* W2·24-R1: der Erfassungsgrad kodiert kantonale GESETZE → die Füllungen
+       tragen jetzt die Registerfarbe «Gesetze» (--reg-g, Hue ≈ 215) statt Gold.
+       Die drei Helligkeitsstufen und ihre Bedeutung sind unverändert; die
+       Kanten-Trennung gegen --karte-kante bleibt Pflichtpaar (check:farbwelt). */
+    --karte-duenn:hsl(215 32% 88%);
+    --karte-auswahl:hsl(215 38% 74%);
+    --karte-voll:hsl(215 42% 60%);
     /* Kantone ohne erfasste Erlasse: neutral (chromafrei) UND schraffiert — die
        Schraffur trägt den Unterschied auch ohne Farbwahrnehmung (§11.6.8
        «nie nur Farbe»); die Luminanz allein täte es nicht (gemessen 1.18:1
@@ -286,10 +330,14 @@
        Strichstärke (3–6 statt 1 viewBox-Punkt). Gemessen Kern gegen Gehäuse:
        3.70:1 hell, 1.74:1 dunkel — dunkel trägt darum die Strichstärke die
        Unterscheidung, nicht die Luminanz. Kein Dunkel-Override nötig. */
-    --karte-marke:var(--brass-line);
-    /* Radien – zurückhaltend; xl/2xl nur für grosse Container (Sektionen, Dialoge) */
-    --radius-sm:4px; --radius-md:8px; --radius-lg:12px;
-    --radius-xl:16px; --radius-2xl:24px;
+    --karte-marke:var(--reg-g);
+    /* Radien – W2·24-R1: KANTEN STATT KISSEN. Alle fünf Stufen sind 0; die
+       Skala bleibt als EIN Ort bestehen (tailwind borderRadius mappt sm…2xl
+       darauf, 89 Dateien färben ohne Edit um). AUSGENOMMEN ist `rounded-full`
+       (Tailwind-Default 9999px, 46 Fundstellen) — runde Marken, Punkte und
+       Avatare bleiben rund; ihr Aufräumen ist R5. */
+    --radius-sm:0px; --radius-md:0px; --radius-lg:0px;
+    --radius-xl:0px; --radius-2xl:0px;
     /* ── Schichtungs-Skala (C3, 5.9.2026, Design-Review R6) ────────────────
        VORHER: 65 Fundstellen in ~30 Dateien trugen rohe `z-<Zahl>`/`z-[<Zahl>]`
        ohne Skala — Reihenfolgen liessen sich nur durch Ausprobieren rekon-
@@ -316,11 +364,16 @@
     --z-base:0; --z-sticky:10; --z-entscheid-sticky:15;
     --z-reader-scrim:16; --z-reader-kopf:17; --z-inhalt-kopf:19;
     --z-leiste:20; --z-dropdown:30; --z-overlay:40; --z-modal:50;
-    /* Schatten – sehr weich, niedrig; sm/md differenziert (Design-Review
+    /* Schatten – W2·24-R1: NUR NOCH SCHWEBENDE EBENEN. Karten und Kacheln
+       tragen keinen Schatten mehr (sm/md = none, die Utilities bleiben als
+       No-op stehen, damit die 18 `shadow-*`-Fundstellen ohne Edit verstummen
+       — ihr Aufräumen ist R5); --shadow-lg trägt weiterhin Menü, Popover und
+       Dialog, weil dort die Ebene über dem Blatt ABLESBAR sein muss.
+       Historie (Design-Review
        6.6.2026: vorher identische Tokens) */
-    --shadow-sm:0 1px 2px rgba(26,26,23,.04);
-    --shadow-md:0 1px 2px rgba(26,26,23,.04), 0 2px 8px rgba(26,26,23,.05);
-    --shadow-lg:0 2px 4px rgba(26,26,23,.05), 0 8px 24px rgba(26,26,23,.06);
+    --shadow-sm:none;
+    --shadow-md:none;
+    --shadow-lg:0 8px 24px rgb(0 0 0 / .12);
     /* Motion – mechanisch-präzise, kein Overshoot */
     --dur-fast:120ms; --dur-base:160ms; --dur-slow:220ms; --dur-stage:420ms;
     --ease:cubic-bezier(.2,.6,.2,1);
@@ -385,7 +438,7 @@
        eine Messung statt einer Annahme. */
     --sheet-anschlag:calc(4rem + 2.25rem);
     /* Typografie */
-    --tracking-overline:.12em;
+    --tracking-overline:0em;  /* W2·24-R1: Versal-Etiketten sind weg (siehe .lc-overline) */
     /* Off-Skala-Schriftgrössen, die bewusst nicht aus der Typo-Skala stammen,
        als Token geführt statt roh im Inline-Style (§13/B2): Stoppuhr-Anzeige
        (Zeiterfassung) und Wizard-Vorschau-Papier. */
@@ -435,16 +488,23 @@
        dort nicht vom Schriftregler: `rem` hängt an der Wurzel-Schriftgrösse,
        und genau die verstellt der A−/A+-Regler der Topbar (R3). */
     --hochgestellt:max(.72em,.6875rem);
-    /* Display = Geist (Wunsch David 6.6.2026): die Serife Fraunces ist aus
-       der UI entfernt; PDF-Berichte behalten ihre eingebetteten Schriften. */
-    /* Rank 11: 'Geist Fallback'/'Source Serif 4 Fallback' (metrik-angepasstes
+    /* W2·24-DESIGN-IDENTITAET R1 (6.9.2026) · ZWEI STIMMEN STATT EINER:
+       Archivo (Grotesk) trägt die BEDIENUNG — Reiter, Knöpfe, Marginalien,
+       Meta-Zeilen; Literata (Serife) trägt alles GELESENE — Normtext, Entscheide,
+       Titel. Beide OFL, beide self-hosted über @fontsource-variable (kein
+       Google-Fonts-Request zur Laufzeit), Import in src/main.tsx.
+       Rank 11: 'Archivo Fallback'/'Literata Fallback' (metrik-angepasstes
        Arial/Georgia, @font-face oben) direkt HINTER dem Webfont — sie tragen den
-       Zeilenkasten während font-display:swap CLS-frei, bis der Webfont da ist. */
-    --font-display:'Geist Variable','Geist Fallback','Hanken Grotesk';
-    --font-sans:'Geist Variable','Geist Fallback','Hanken Grotesk';
-    --font-mono:'Geist Mono Variable','IBM Plex Mono';
-    /* Lese-Serif NUR für den Gesetzes-Volltext (Rubrik V). */
-    --font-serif:'Source Serif 4 Variable','Source Serif 4 Fallback','Source Serif Times Fallback','Charter','Georgia';
+       Zeilenkasten während font-display:swap CLS-frei, bis der Webfont da ist.
+       --font-mono trägt NUR noch, was fachlich Monospace braucht (Rechenweg,
+       Code, Tausender-Gruppen): eine SYSTEM-Kette ohne eigenes Paket — Geist
+       Mono ist mit Geist gegangen, und eine dritte Webfont-Ladung für
+       Ziffernkolonnen wäre Geräte-Last ohne Gegenwert (§15). */
+    --font-display:'Archivo Variable','Archivo Fallback','Arimo';
+    --font-sans:'Archivo Variable','Archivo Fallback','Arimo';
+    --font-mono:ui-monospace,'SFMono-Regular','SF Mono','Menlo','Consolas','Liberation Mono';
+    /* Lese-Serif: Normtext, Entscheide und Titel (Rubrik V und, ab R3/R4, mehr). */
+    --font-serif:'Literata Variable','Literata Fallback','Literata Times Fallback','Charter','Georgia';
     /* Fein-Typo der Leser/Chrome (25.6.2026, DESIGN-REGLEMENT B2): die zuvor
        12 rohen text-[…rem]-Sonderwerte sind auf die bestehende Skala
        (micro/xs/body-s/base/body-l/h3) verdichtet — keine Sondertokens mehr,
@@ -465,13 +525,16 @@
     /* D-4 (Ink-Wärme, 13.7.2026): Dunkel-Rampe auf denselben Ziel-Hue 88°
        normalisiert (vorher 84–90° gestreut), L gehalten, Chroma-Glocke wie hell.
        Alle Kontraste F2-gemessen: ink-500 ≥5.2:1 auf paper/surface/well. */
-    --ink-900:#E9E7E2; --ink-800:#DCD9D2; --ink-700:#CFCCC5; --ink-600:#B2AEA4; --ink-500:#918D83;
-    --ink-400:#726F68; --ink-300:#54524D;
-    --placeholder:#89857B; /* Platzhalter dunkel: ≥4.4:1 auf --well (#100F0A) — D-4: 5.2:1 */
-    /* Papier → warmes Dunkel (kein Reinschwarz — die Papier-Wärme bleibt) */
-    --paper:#16150F; --paper-raised:#201E16; --paper-sunken:#100F0A;
-    --surface:#1D1B14; --surface-raised:var(--paper-raised);
-    --well:#100F0A;
+    /* W2·24-R1: dunkle Rampe ebenfalls chromafrei (C = 0). */
+    --ink-900:#EDEDED; --ink-800:#DCDCDC; --ink-700:#C9C9C9; --ink-600:#B0B0B0; --ink-500:#909090;
+    --ink-400:#6E6E6E; --ink-300:#4F4F4F;
+    --placeholder:#8A8A8A; /* Platzhalter dunkel: gemessen 5.55:1 auf --well (#0E0E0E), KONTRAST-R1.md */
+    /* Papier → neutrales Dunkel (W2·24-R1: die Wärme ist raus, kein Reinschwarz
+       — #151515 ist der Referenzbild-Wert; die Flächen-Leiter bleibt gültig). */
+    --paper:#151515; --paper-raised:#212121; --paper-sunken:#0E0E0E;
+    --surface:#1A1A1A; --surface-raised:var(--paper-raised);
+    --well:#0E0E0E;
+    --rule-soft:#333333;
     /* Haarlinien etwas kräftiger (helle Tinte auf Dunkel wirkt sonst zu fein) */
     --line:color-mix(in oklab, var(--ink-900) 14%, transparent);
     --line-strong:color-mix(in oklab, var(--ink-900) 24%, transparent);
@@ -481,9 +544,13 @@
     --rule-struktur:color-mix(in oklab, var(--ink-900) 20%, transparent);
     /* Messing: Text-Töne (800–600) hell, Flächen-Töne (100/200) dunkel,
        Linien/Skala (500/400/300) bleiben Gold. */
-    --brass-800:#EAD6A4; --brass-700:#D8BD78; --brass-600:#E6CD8C;
-    --brass-500:#B89653; --brass-400:#9C7C3C;
-    --brass-300:#CBB17B; --brass-200:#574A2C; --brass-100:#2C2616;
+    /* Registerfarben dunkel: aufgehellte Pendants (Referenzbild §5) — dieselbe
+       Rolle, dieselbe Reihenfolge, für die dunkle Fläche kalibriert. */
+    --reg-g:#8FB0DC; --reg-r:#E39AA6; --reg-m:#A4C48C; --reg-w:#D2B46A;
+    /* W2·24-R1: dieselbe Rollenlogik, neutral — Text-Töne hell, Flächen dunkel. */
+    --brass-800:#F5F5F5; --brass-700:#EDEDED; --brass-600:#C9C9C9;
+    --brass-500:#909090; --brass-400:#6E6E6E;
+    --brass-300:#4F4F4F; --brass-200:#2E2E2E; --brass-100:#232323;
     /* Status: Text-Töne (-700) hell; -bg folgt aus Papier+Tönung; -500 bleibt.
        Tönung etwas stärker, damit die Flächen auf Dunkel lesbar bleiben. */
     --status-tint:18%;
@@ -513,13 +580,14 @@
        Kante gegen Füllung 3.06 / 4.34 / 6.61 / 11.96:1, Stufen untereinander
        1.42–1.52:1. «vollständig» steht auf 36 %, nicht höher — ab 37 % fällt die
        Kante auf 2.92:1 und reisst die F2-Schwelle. */
-    --karte-duenn:hsl(39 30% 22%);
-    --karte-auswahl:hsl(39 42% 30%);
-    --karte-voll:hsl(39 55% 36%);
-    /* Schatten tiefer für Dunkel-Tiefe (Karten heben sich sonst nicht ab) */
-    --shadow-sm:0 1px 2px rgba(0,0,0,.30);
-    --shadow-md:0 1px 2px rgba(0,0,0,.30), 0 2px 8px rgba(0,0,0,.36);
-    --shadow-lg:0 2px 4px rgba(0,0,0,.34), 0 8px 24px rgba(0,0,0,.44);
+    --karte-duenn:hsl(215 28% 20%);
+    --karte-auswahl:hsl(215 34% 27%);
+    --karte-voll:hsl(215 40% 34%);
+    /* W2·24-R1: sm/md bleiben auch dunkel leer (Karten tragen Linien, keine
+       Tiefe); nur die schwebende Ebene behält ihren Schatten, dunkel tiefer. */
+    --shadow-sm:none;
+    --shadow-md:none;
+    --shadow-lg:0 8px 24px rgb(0 0 0 / .55);
   }
 
   html { color-scheme: light; }
@@ -1057,10 +1125,20 @@
      (components/typografie.tsx); die Ziffern bleiben Mono/tabular. */
   .lc-apo { font-family: var(--font-sans), system-ui, sans-serif; }
 
+  /* W2·24-DESIGN-IDENTITAET R1 (6.9.2026) · DAS ETIKETT VERLIERT DIE VERSALIEN.
+     Gold-Versal-Overlines mit weitem Tracking waren die dritte der drei
+     Signaturen, die LexMetrik mit jeder anderen KI-gebauten Juristenseite teilte
+     (Fahrplan §1). Neu: eine kleine, ruhige Grotesk-Zeile — gemischtschriftlich,
+     Tracking normal, 12 px statt 11 px (die Versalien trugen die Lesbarkeit der
+     11 px mit; ohne sie braucht die Zeile den Punkt zurück). EINE Regel, 141
+     Konsumenten ohne Edit. Farbe: ink-500 (Referenzbild --ink-3) — bei 12 px
+     gemischtschriftlich gemessen 5.34:1 auf --paper, 4.85:1 auf --well, AA
+     überall (KONTRAST-R1.md). Der frühere ink-600-Boden gehörte zur 11-px-Versal-
+     Anatomie; check-design-tokens verbietet weiterhin ein Dimmen unter ink-500. */
   .lc-overline {
-    font-family: var(--font-mono), ui-monospace, monospace;
-    font-size: .6875rem; line-height: 1.4; letter-spacing: var(--tracking-overline);
-    text-transform: uppercase; color: var(--ink-600); /* ink-500→ink-600 (Auftrag David 25.6.2026): 11px-Overline auf well 4.48:1→6.65:1, AA überall */
+    font-family: var(--font-sans), system-ui, sans-serif;
+    font-size: .75rem; line-height: 1.4; letter-spacing: var(--tracking-overline);
+    text-transform: none; color: var(--ink-500);
   }
   /* Gemischtschriftliche Overline (Mono-Label, aber nicht VERSAL) — ersetzt das
      zuvor 3× kopierte `lc-overline normal-case` + Inline letterSpacing:0.04em.
