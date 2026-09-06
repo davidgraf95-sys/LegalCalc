@@ -4,22 +4,30 @@ import { MemoryRouter } from 'react-router-dom';
 import { ZuletztVerwendet } from '../components/start/ZuletztVerwendet';
 import { merkeBesuch } from '../lib/zuletztVerwendet';
 
-// «Zuletzt geöffnet» — Overflow-Invariante @390 px.
+// «Zuletzt» — Overflow-Invariante @390 px und Marken-Zuordnung.
 //
-// DEKLARIERTE ANPASSUNG (W2·24-DESIGN-IDENTITAET R3, 6.9.2026, §6.3): der
-// waagrecht scrollende Chip-Streifen unter dem Hero ist die TEXTZEILE des
-// Referenzbildes geworden («Zuletzt geöffnet: Art. 257d OR · …», Marke
-// `.unter` in `abnahme/design-identitaet/vorschlag-freigegeben.html`). Die
-// Invariante, um die es hier geht, ist DIESELBE und wird weiter geprüft: die
-// Zeile darf die Seite auf 390 px nicht aufblasen. Nur ist der Weg dorthin ein
-// anderer — nicht mehr «scrollt in sich», sondern «bricht um»; die tragenden
-// Klassen des Scroll-Streifens (overflow-x-auto/min-w-0/flex-nowrap/w-max)
-// gibt es darum nicht mehr, und ein Wächter, der sie verlangt, prüfte eine
-// Form, die die Seite nicht mehr hat (§6.7).
+// DEKLARIERTE ANPASSUNG (W2·24-DESIGN-IDENTITAET R10, 6.9.2026, §6.3): aus der
+// Fliesstext-Zeile «Zuletzt geöffnet: A · B · C» (R3) ist die MARKEN-ZEILE des
+// Referenzbildes geworden (`abnahme/design-identitaet/pult-freigegeben.html`,
+// Marke `.zuletzt`): kleines Etikett «Zuletzt», dann je Eintrag ein
+// 3-px-Registerstrich vor dem Namen. Zwei Prüfpunkte ändern sich damit im
+// WORTLAUT, keiner im GEHALT:
+//   · das sichtbare Etikett heisst «Zuletzt» statt «Zuletzt geöffnet» (der
+//     ACCESSIBLE Name der Region bleibt «Zuletzt geöffnet» — er soll ohne den
+//     sichtbaren Zusammenhang verständlich sein);
+//   · geprüft wird zusätzlich der Registerstrich je Eintrag, weil er die neue
+//     Aussage der Zeile trägt (aus welchem Bestand der Eintrag stammt) und aus
+//     dem `typ` der EINEN Verlauf-Quelle abgeleitet ist (§5, keine zweite
+//     Zuordnung).
+// Die tragende Invariante ist unverändert: die Zeile bricht um, statt eine
+// waagrechte Scroll-Achse aufzumachen (die Klassen des früheren Chip-Streifens
+// — overflow-x-auto/flex-nowrap/w-max — dürfen nicht wiederkehren, §6.7).
 //
-// jsdom/SSR kennt kein Layout — geprüft wird darum, was am Markup messbar ist:
-// der Vollkollaps bei leerem Speicher (kein Etikett über Leerraum, §8), die
-// Verweise selbst, und dass keine Scroll-Achse mehr aufgemacht wird.
+// NEU GEPRÜFT (R10): die HÜLLE steht immer und hält Platz frei
+// (`min-h-beiwerk`). Beim Prerender gibt es kein localStorage; ohne Reservierung
+// schöbe die Zeile beim ersten Client-Render alles darunter nach unten (§15).
+//
+// jsdom/SSR kennt kein Layout — geprüft wird darum, was am Markup messbar ist.
 beforeEach(() => {
   const speicher = new Map<string, string>();
   globalThis.localStorage = {
@@ -39,14 +47,17 @@ const render = () =>
     </MemoryRouter>,
   );
 
-describe('ZuletztVerwendet — Textzeile statt Chip-Streifen', () => {
-  it('leerer Speicher → kein Etikett, kein Verweis (§8)', () => {
+describe('ZuletztVerwendet — Marken-Zeile des Pults', () => {
+  it('leerer Speicher → kein Etikett, kein Verweis, aber reservierte Höhe (§8/§15)', () => {
     const html = render();
-    expect(html).not.toContain('Zuletzt geöffnet');
+    expect(html).not.toContain('>Zuletzt<');
     expect(html).not.toContain('<a ');
+    // Die Hülle steht trotzdem und hält Platz frei — sonst springt die Seite,
+    // sobald der Client den Verlauf nachliest.
+    expect(html).toContain('min-h-beiwerk');
   });
 
-  it('gefüllt: Etikett + je ein Verweis, ohne waagrechte Scroll-Achse', () => {
+  it('gefüllt: Etikett + je ein Verweis mit Registerstrich, ohne waagrechte Scroll-Achse', () => {
     // Mehr Einträge mit langen Titeln als in 390 px passen — die Zeile bricht
     // um, statt die Seite zu weiten.
     for (let i = 0; i < 6; i++) {
@@ -54,18 +65,29 @@ describe('ZuletztVerwendet — Textzeile statt Chip-Streifen', () => {
     }
     const html = render();
 
-    expect(html).toContain('Zuletzt geöffnet');
+    expect(html).toContain('>Zuletzt<');
     const verweise = html.match(/<a /g) ?? [];
     expect(verweise.length, 'ein Verweis je Eintrag').toBe(6);
     for (let i = 0; i < 6; i++) {
-      expect(html).toContain(`/rechner/langer-titel-nummer-${i}`);
+      expect(html, `Eintrag ${i} verlinkt`).toContain(`/rechner/langer-titel-nummer-${i}`);
     }
+    // Registerstrich: Rechner-Routen tragen das Werkzeug-Register (`--reg-w`).
+    expect((html.match(/bg-reg-w/g) ?? []).length, 'je Eintrag ein Registerstrich').toBe(6);
 
-    // Keine Scroll-Achse mehr: weder der Container-Trick (overflow-x-auto +
-    // min-w-0 + w-max) noch die 1-Zeilen-Kappung (flex-nowrap/whitespace-nowrap)
-    // stehen noch da — sonst wäre die alte Form nur umbenannt.
-    for (const klasse of ['overflow-x-auto', 'flex-nowrap', 'w-max', 'whitespace-nowrap', 'lc-scrollrand-x', 'lc-chip']) {
-      expect(html, `${klasse} gehört zum Streifen, nicht zur Zeile`).not.toContain(klasse);
+    // Keine Scroll-Achse: die Zeile umbricht (flex-wrap), sie scrollt nicht.
+    expect(html).toContain('flex-wrap');
+    for (const klasse of ['overflow-x-auto', 'flex-nowrap', 'w-max']) {
+      expect(html, `Scroll-Streifen-Klasse «${klasse}» ist zurück`).not.toContain(klasse);
     }
+  });
+
+  it('der Registerstrich folgt dem Inhalts-Typ der Route (§5, eine Zuordnung)', () => {
+    merkeBesuch({ route: '/gesetze/bund/OR', titel: 'OR' });
+    merkeBesuch({ route: '/rechtsprechung/bge_152_V_52', titel: 'BGE 152 V 52' });
+    merkeBesuch({ route: '/materialien#b-ESTV', titel: 'ESTV' });
+    const html = render();
+    expect(html, 'Gesetz → Register g').toContain('bg-reg-g');
+    expect(html, 'Entscheid → Register r').toContain('bg-reg-r');
+    expect(html, 'Material → Register m').toContain('bg-reg-m');
   });
 });

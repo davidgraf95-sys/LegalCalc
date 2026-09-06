@@ -6,7 +6,7 @@ import { Startseite } from '../pages/Startseite';
 import { RechnerUebersicht } from '../pages/RechnerUebersicht';
 import { VorlagenUebersicht } from '../pages/VorlagenUebersicht';
 import { HeaderSuche } from '../components/layout/HeaderSuche';
-import { SAMMLUNG_TITEL, SAMMLUNG_BESTAND } from '../lib/seo';
+import { SAMMLUNG_TITEL } from '../lib/seo';
 
 // Akzeptanztests Katalog/Rubriken. Stand UI-Welle (deklarierte Anpassung
 // §6 Ziff. 3): /recherche ist aufgelöst — die Rechner-/Vorlagen-Register leben
@@ -188,7 +188,20 @@ describe('Startseite R3 — Inhaltsverzeichnis der Sammlung (deklarierte Anpassu
     // ist — eine sr-only-H1 wäre dort rot.
     expect(html.match(/<h1[\s>]/g) ?? []).toHaveLength(1);
     expect(html).toContain(SAMMLUNG_TITEL);
-    expect(html).toContain(SAMMLUNG_BESTAND);
+    // DEKLARIERTE ANPASSUNG (W2·24-DESIGN-IDENTITAET R10, 6.9.2026, §6.3): hier
+    // stand zusätzlich `toContain(SAMMLUNG_BESTAND)` — «Gesetze, Entscheide,
+    // Materialien, Rechner, Vorlagen.». Genau diese fünf stehen seit R10 als
+    // BEREICHS-REIHE mit ihren gemessenen Zahlen unmittelbar unter der Suche
+    // (Referenzbild `pult-freigegeben.html`, Marke `.bereiche`); der Satz war
+    // dieselbe Auskunft ein zweites Mal und ist Teil dessen, was David am
+    // 6.9.2026 als «zu viel text» gesehen hat. Die AUSSAGE geht nicht verloren,
+    // sie wird nur einmal statt zweimal gemacht — die fünf Bereiche werden
+    // unten geprüft, und die Konstante selbst trägt unverändert der Seitenfuss
+    // (`layout/Footer`, auf jeder Seite).
+    for (const bereich of ['Gesetze', 'Rechtsprechung', 'Materialien', 'Rechner', 'Vorlagen']) {
+      expect(html, `Bereichs-Reihe: ${bereich}`).toContain(`>${bereich}</span>`);
+    }
+    expect(html, 'Bereichs-Reihe trägt die Navigations-Ziele').toContain('href="/rechtsprechung"');
     // Sprach-Diät (§6 (h)): die beiden getilgten Wendungen stehen nirgends mehr.
     expect(html).not.toContain('an einem Ort');
     expect(html).not.toContain('miteinander verzahnt');

@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { EinfacheFristForm } from '../forms/EinfacheFristForm';
-import { StartZeile, StartFuss } from './Satzspiegel';
+import { ModulFuss } from './PultModul';
 
 // ─── Werkzeuge: Frist in einer Zeile (Startseite, Modul «Rechner») ──────────
 //
@@ -20,14 +20,18 @@ import { StartZeile, StartFuss } from './Satzspiegel';
 // Register. Der Kachel-Baustein `ui/RubrikKachel` bleibt unverändert im
 // Bestand — er trägt weiterhin den /gesetze-Einstieg.
 // Reine Darstellung (§3).
+// W2·24-R10 (Referenzbild `pult-freigegeben.html`): das Modul rendert nur noch
+// seinen INHALT. Kopfzeile, Registerstrich und der Schalter «Anzeigen/Ausblenden»
+// kommen aus dem EINEN Rahmen `start/PultModul`, Titel und Register aus dem
+// Registry (`lib/startseiteModule`) — die frühere Marginalie mit Bereich und
+// Bestandszahl ist gestrichen, die Zahl steht einmal in der Bereichs-Reihe.
+
 
 export function Werkzeuge() {
   return (
-    <StartZeile reg="w" ueber="Rechner"
-      rand={<>Frist nach ZPO<br />und SchKG</>}
-      titel="Frist berechnen">
+    <>
       <EinfacheFristForm variante="zeile" />
-      <StartFuss>
+      <ModulFuss>
         Rückwärtsrechnung, Zustellart, Hemmung und Kalender im{' '}
         <Link to="/rechner/tagerechner" className="underline hover:text-reg-w">Fristenrechner</Link>.
         Weitere Rechner:{' '}
@@ -37,7 +41,7 @@ export function Werkzeuge() {
         Vorlagen:{' '}
         <Link to="/vorlagen/arbeitsvertrag" className="underline hover:text-reg-w">Arbeitsvertrag</Link>,{' '}
         <Link to="/vorlagen" className="underline hover:text-reg-w">alle Vorlagen</Link>.
-      </StartFuss>
-    </StartZeile>
+      </ModulFuss>
+    </>
   );
 }

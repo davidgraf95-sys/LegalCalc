@@ -133,14 +133,32 @@ describe('C-5 · Einstiegs-Kacheln laufen über EINEN Baustein', () => {
   it('§8: der Zähler-Wortlaut ist gewandert, nicht abgeschwächt', () => {
     // «erfasst» für die bibliografischen Materialien, «im Volltext» für die
     // echten Volltexte (E6a·M5) — jeder Umbau darf die Aussage nur an einen
-    // anderen Ort tragen, nie glätten. R3-Orte:
+    // anderen Ort tragen, nie glätten.
+    //
+    // DEKLARIERTE ANPASSUNG (W2·24-DESIGN-IDENTITAET R10, 6.9.2026, §6.3): die
+    // Zähler standen bis R3 in der MARGINALIE jeder Modulzeile («1'565
+    // Erlasse<br/>im Volltext»). Die Marginalienspalte gibt es auf dem Pult
+    // nicht mehr; die Bestandszahl steht jetzt EINMAL in der Bereichs-Reihe
+    // (`start/BereichsReihe`) und, wo das Modul sie zusätzlich braucht, in
+    // seiner Fuss-Zeile. Der PRÜFPUNKT ist unverändert derselbe — Zahl NIE ohne
+    // Scope-Wort, «erfasst» nie zu «Volltext» geglättet —, er wird nur am neuen
+    // Ort geprüft. Die Ausdrücke bleiben scharf: die Negativ-Kontrolle darüber
+    // und `not.toContain('im Volltext')` unten fallen weiterhin auf jede
+    // Abschwächung.
+    const bereiche = lies('components/start/BereichsReihe.tsx');
     const bund = lies('components/start/SystematikListe.tsx');
     const kantone = lies('components/start/KantoneRaster.tsx');
     const entscheide = lies('components/start/EntscheideListe.tsx');
     const materialien = lies('components/start/MaterialienListe.tsx');
-    expect(bund, 'Bund-Zeile: Zähler mit Scope').toMatch(/Erlasse<br \/>im Volltext/);
-    expect(kantone, 'Kanton-Zeile: Zähler mit Scope').toMatch(/Erlasse<br \/>im Volltext/);
-    expect(entscheide, 'Entscheide: Zähler mit Scope').toMatch(/Entscheide<br \/>im Volltext/);
+    expect(bereiche, 'Bereich Gesetze: Zähler mit Scope')
+      .toMatch(/Erlasse im Volltext, Bund und Kantone/);
+    expect(bereiche, 'Bereich Rechtsprechung: Zähler mit Scope')
+      .toMatch(/Entscheide im Volltext/);
+    expect(bereiche, 'Bereich Materialien: «erfasst», nie «Volltext»')
+      .toMatch(/amtliche Materialien erfasst/);
+    expect(bund, 'Bund-Modul: Zähler mit Scope').toMatch(/erfasste Volltext \({nf\(z\.gesetzeBundVolltext\)} Erlasse\)/);
+    expect(kantone, 'Kanton-Modul: Zähler mit Scope').toMatch(/Erlasse im Volltext/);
+    expect(entscheide, 'Entscheide-Modul: Zähler mit Scope').toMatch(/Entscheide im Volltext/);
     expect(materialien, 'Materialien: «erfasst», nie «Volltext»').toMatch(/Materialien erfasst/);
     expect(materialien, 'Materialien behaupten keinen Volltext').not.toContain('im Volltext');
     // §8 am Kantons-Eintrag: Zustands-Wort im Accessible Name, nie
