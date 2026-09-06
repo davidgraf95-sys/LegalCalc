@@ -158,7 +158,8 @@ export default {
         // zu vergrössern hätte David am Bogen nicht gesehen (Ä7 wird über die
         // Randtitel-Seite gelöst, s. `helpers.tsx` margStufeStil).
         //
-        //  · `leser-text` 17 px / lh 1.55 — Normtext-Fliesstext. Ersetzt das
+        //  · `leser-text` 18 px / lh 1.62 (bis R6c 17 px / 1.55) — Normtext-
+        //    Fliesstext. Ersetzt das
         //    Paar `text-body-l leading-[1.65]` (18 px / 1.65) am Artikel-Körper:
         //    der rohe `leading-[…]`-Override fällt damit weg, die Zeilenhöhe
         //    gehört zur Stufe (Grundlage Kap. 8 Nr. 4 «kein fixer Leading-Wert
@@ -192,7 +193,18 @@ export default {
         // WCAG 1.4.8 unverändert eingehalten: 1.62 ≥ 1.5 (Zusage von
         // `e2e/leser-lesemass.e2e.ts`), das Zeilenmass rechnet nicht mit der
         // Zeilenhöhe und bleibt Zeichen für Zeichen, was es war.
-        'leser-text': ['1.0625rem', { lineHeight: '1.62' }],
+        // W2·24-R6c · GRÖSSE 17 → 18 px (deklarierte Typo-Änderung, kein
+        // Refactoring). D20 (c) verlangt «Lesetext 18 px»; R6b konnte die Zahl
+        // nicht setzen, weil `src/index.css` dort TABU war und ein Alleingang an
+        // der Basis den Schriftregler zerbrochen hätte (die Stufe «mittel» wäre
+        // von 108 % auf 102 % kollabiert — Herleitung in `abnahme/design-
+        // identitaet/R6-NACHZUG.md` §4). R6c setzt die Basis UND die drei
+        // Reglerstufen in EINEM Zug: `index.css` (Block LESER-SCHRIFTSKALA) und
+        // `pages/gesetz-leser/leserSchrift.ts` (`SCHRIFT_REM`) tragen dieselben
+        // Faktoren 1.08 / 1.18 / 1.30 über der neuen Basis, die Anzeigewerte
+        // bleiben 100 · 108 · 118 · 130 %. `src/tests/leser-schriftskala.test.ts`
+        // hält die drei Orte gegeneinander.
+        'leser-text': ['1.125rem', { lineHeight: '1.62' }],
         'leser-rand': ['0.8125rem', { lineHeight: '1.35' }],
         'leser-fn': ['0.6875rem', { lineHeight: '1.45' }],
       },

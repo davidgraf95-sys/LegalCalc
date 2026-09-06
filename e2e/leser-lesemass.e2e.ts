@@ -69,7 +69,19 @@ import { ANSICHT_PANEL, VERMERKE_SCHALTER_NAME } from './helpers/leserBeschriftu
 // Boden liegt mit 1 ch Reserve darunter. Nicht auf 33 gesetzt (der frühere
 // Schlechtfall OR): dieser Wert existiert nicht mehr, und ein Boden unter dem
 // erreichten Schlechtfall bewacht nichts (§6.7).
-const MOBIL_MIN_CH = 34;
+// ── §6.3-DEKLARATION (W2·24-R6c, 6.9.2026): 34 → 31 ─────────────────────────
+// KEINE Aufweichung, sondern die rechnerische Folge von D20 (c): die
+// Fliesstext-Stufe steigt 17 → 18 px, die Textkörperbreite @390 bleibt bei
+// physikalisch unveränderten 350 px. Grössere Buchstaben auf derselben Spalte
+// heissen zwangsläufig WENIGER Zeichen je Zeile — und genau das ist der
+// Lesekomfort, den David bestellt hat (D12/D20), nicht ein Verlust.
+// GEMESSEN am Preview-Build dieses Nachzugs @390 (Methode dieser Datei):
+//   ERLASSE:  ZGB 37 → 37 · OR 35 → 35 · VMWG 35 → 32 ch
+//   ausserhalb der Torliste: StGB 41 · StPO 34 · BS-640.100 33 ch
+// Massgeblich bleibt der Schlechtfall der GEGATETEN Liste (VMWG 32), der Boden
+// liegt mit 1 ch Reserve darunter — dieselbe Regel, nach der 34 entstanden ist.
+// Die eigentliche Mobil-Zusage (KEIN horizontaler Überlauf) ist unberührt.
+const MOBIL_MIN_CH = 31;
 
 const ERLASSE = ['ZGB', 'OR', 'VMWG'] as const;
 
@@ -138,8 +150,13 @@ test.describe('S2 · WCAG 1.4.8 am Fliesstext (≤ 80 ch, lh ≥ 1.5)', () => {
       const quotient = typo!.lh / typo!.fs;
       expect(quotient, `@${width}: lh ${typo!.lh}px / fs ${typo!.fs}px = ${quotient.toFixed(3)} muss ≥ 1.5 sein (SC 1.4.8)`)
         .toBeGreaterThanOrEqual(1.5);
-      // Und die Stufe selbst: 1.0625 rem = 17 px bei 16-px-Wurzel.
-      expect(typo!.fs, `@${width}: Fliesstext-Grösse (F3 = V2: 17 px)`).toBeCloseTo(17, 1);
+      // ── §6.3-DEKLARATION (W2·24-R6c, 6.9.2026) ──────────────────────────
+      // 17 → 18 px. D20 (c) «Lesetext 18 px» hebt die Stufe `leser-text` in
+      // `tailwind.config.js` auf 1.125 rem; die Zusage dieses Falls ist
+      // unverändert «die Grösse kommt AUS DER STUFE, nicht aus einem Override»
+      // und bleibt exakt so streng — nur die Zahl ist entschieden worden.
+      // Und die Stufe selbst: 1.125 rem = 18 px bei 16-px-Wurzel.
+      expect(typo!.fs, `@${width}: Fliesstext-Grösse (D20 (c): 18 px)`).toBeCloseTo(18, 1);
     });
   }
 
@@ -148,7 +165,7 @@ test.describe('S2 · WCAG 1.4.8 am Fliesstext (≤ 80 ch, lh ≥ 1.5)', () => {
   // verspricht die V2-Stufe aber für den LESER, und die neue Hülle ist sein
   // Zielzustand — also wird sie hier ausdrücklich gemessen, statt sie aus der
   // Kern-Zugehörigkeit zu folgern. Erwartung sind DIESELBEN Werte wie in V1
-  // (17.00 px / 27.54 px = lh 1.62, s. Deklaration unten): V3 gated nur den Schriftregler, nicht die
+  // (18.00 px / 29.16 px = lh 1.62, s. Deklaration unten): V3 gated nur den Schriftregler, nicht die
   // Grundstufe. Genau das macht den Fall wertvoll — er würde rot, sobald die neue
   // Hülle die Stufe eigenmächtig verstellt oder ein V3-Override sie überschreibt.
   //
@@ -156,7 +173,8 @@ test.describe('S2 · WCAG 1.4.8 am Fliesstext (≤ 80 ch, lh ≥ 1.5)', () => {
   // ohne `:not([data-leserschrift="normal"])` legen (V3 bekäme eine andere
   // Grundgrösse als V1) oder in `LeserRahmenV3` eine eigene Textstufe setzen.
   // ── §6.3-DEKLARATION (Nachzug W2·24-R4, gebucht in R6 am 6.9.2026) ────────
-  // Die erwartete Zeilenhöhe ist 27.54 px (= 17 × 1.62), nicht 26.35 (1.55).
+  // Die erwartete Zeilenhöhe ist 29.16 px (= 18 × 1.62); bis R6c 27.54 (17 × 1.62),
+  // bis R4 26.35 (17 × 1.55).
   // Die Stufe `leser-text` steht seit R4 auf **1.62** (`tailwind.config.js`,
   // Wert aus dem freigegebenen Referenzbild); R4 hat den Unit-Wächter
   // `leser-typo-tokens.test.ts` deklariert nachgezogen, diesen Fall aber nicht —
@@ -169,7 +187,7 @@ test.describe('S2 · WCAG 1.4.8 am Fliesstext (≤ 80 ch, lh ≥ 1.5)', () => {
   // Typo-Stufe, nicht aus einem Override in der V3-Hülle; die SC-1.4.8-Zusage
   // (lh-Quotient ≥ 1.5) steht unverändert darunter und wird durch 1.62 sogar
   // komfortabler erfüllt.
-  test('StPO @1440 unter ?leser=v3: dieselbe Stufe wie in der Ist-Hülle (17.00 / 27.54 px)', async ({ page }) => {
+  test('StPO @1440 unter ?leser=v3: dieselbe Stufe wie in der Ist-Hülle (18.00 / 29.16 px)', async ({ page }) => {
     await page.setViewportSize({ width: 1440, height: 900 });
     await page.goto('/gesetze/bund/STPO');
     await expect(page.locator('#art-1')).toBeVisible();
@@ -187,8 +205,13 @@ test.describe('S2 · WCAG 1.4.8 am Fliesstext (≤ 80 ch, lh ≥ 1.5)', () => {
       return { fs: parseFloat(s.fontSize), lh: parseFloat(s.lineHeight) };
     });
     expect(typo, 'Fliesstext-Absatz im V3-Lese-Container gefunden').not.toBeNull();
-    expect(typo!.fs, 'V3: Fliesstext-Grösse 17 px (F3 = V2)').toBeCloseTo(17, 1);
-    expect(typo!.lh, 'V3: Zeilenhöhe 27.54 px = lh 1.62 (R4-Stufe)').toBeCloseTo(27.54, 1);
+    // §6.3-DEKLARATION (R6c): 17.00/27.54 → 18.00/29.16 px. Dieselbe Stufe,
+    // dieselbe Zeilenhöhe 1.62 — nur die Basis ist von 1.0625 auf 1.125 rem
+    // gehoben (D20 (c)). Die ABSICHT «V3 setzt keine eigene Grundgrösse» ist
+    // unberührt: der Fall stünde weiter rot, sobald die Hülle eigenmächtig
+    // verstellt.
+    expect(typo!.fs, 'V3: Fliesstext-Grösse 18 px (D20 (c))').toBeCloseTo(18, 1);
+    expect(typo!.lh, 'V3: Zeilenhöhe 29.16 px = lh 1.62 (R4-Stufe)').toBeCloseTo(29.16, 1);
     expect(typo!.lh / typo!.fs, 'V3: lh-Quotient ≥ 1.5 (SC 1.4.8)').toBeGreaterThanOrEqual(1.5);
   });
 });
@@ -444,16 +467,51 @@ test.describe('R5 · Lesemass Desktop (≤ 80 ch @ 1440)', () => {
 // `pl-einzug-mobil sm:pl-einzug` an der `section` wiederherstellen (Fall a und,
 // über die verengten Spalten, auch die Breiten-Aussage), oder in `index.css`
 // `--leser-zeichen` auf 80 setzen bzw. die `min()`-Klammer entfernen (Fall b).
-const T1C_MAX_CH = 70;
+// ── §6.3-DEKLARATION (W2·24-R6c, 6.9.2026): AUS DEM DECKEL WIRD EINE SPANNE ──
+//
+// D20 (c) verlangt «65–72 CPL». Bis hierher stand nur die OBERE Kante (≤ 70) —
+// eine zu SCHMALE Spalte konnte das Tor nie melden, und genau das war der
+// Zustand nach R6b (gemessen 63–66 ch, also unter der Spanne). Der Fall wird
+// damit STRENGER, nicht weicher: die obere Kante wandert 70 → 72 (die Zahl des
+// Entscheids), und darunter kommt eine zweite Kante bei 65.
+//
+// GEMESSEN am Preview-Build dieses Nachzugs (`--leser-zeichen: 70`, Basis
+// 1.125 rem), Methode dieser Datei:
+//   @1440  ZGB 67 · OR 67 · StGB 68 · StPO 68 · VMWG 68 · BS-640.100 56 ch
+//   @1280  ZGB 67 · OR 67 · StGB 68 · StPO 68 · VMWG 68 · BS-640.100 56 ch
+// Die Textkörperbreite ist in ALLEN sechs Fällen dieselbe (640 px @1440,
+// 641 px @1280) — die Spalte ist also bei allen sechs gleich gesetzt.
+//
+// WARUM BS-640.100 KEINE UNTERGRENZE TRÄGT (offengelegt, §8). Seine 56 ch sind
+// keine Aussage über die Spalte, sondern über die ABSATZFORM: die Methode
+// rechnet `Textlänge / Zeilenkästen`, und kantonale §-Absätze enden häufig mit
+// einer halb gefüllten Zeile, die voll in den Nenner zählt. Bei gleicher
+// Spaltenbreite (oben gemessen) liefert derselbe Erlass darum systematisch
+// weniger. Eine Untergrenze gegen ihn würde die Absatzform bewachen, nicht den
+// Satzspiegel — und wäre entweder wirkungslos (bei 50) oder dauerhaft rot (bei
+// 65). Stattdessen prüft der Fall bei ihm, dass seine Breite mit der der übrigen
+// übereinstimmt: die Zusage «alle sechs stehen auf derselben Spalte» ist damit
+// ohne Umweg über die Zeichenzahl gedeckt.
+//
+// ROT ZU BEKOMMEN (§6.7): `--leser-zeichen` in `index.css` auf 60 senken (alle
+// fünf Untergrenzen reissen, Spalte 555 statt 640 px) oder auf 90 heben bzw. die
+// `min()`-Klammer entfernen (Obergrenzen reissen) — beides einzeilig.
+const T1C_MAX_CH = 72;
+const T1C_MIN_CH = 65;
+/** Erwartete Textkörperbreite je Fenster (px) — s. Messreihe oben. */
+const T1C_BREITE: Readonly<Record<number, number>> = { 1440: 640, 1280: 641 };
 const T1C_ERLASSE = [
-  ['ZGB', 'bund/ZGB'], ['OR', 'bund/OR'], ['StGB', 'bund/STGB'],
-  ['StPO', 'bund/STPO'], ['VMWG', 'bund/VMWG'], ['BS-640.100', 'kanton/BS-640.100'],
+  ['ZGB', 'bund/ZGB', true], ['OR', 'bund/OR', true], ['StGB', 'bund/STGB', true],
+  ['StPO', 'bund/STPO', true], ['VMWG', 'bund/VMWG', true],
+  // `false` = keine Untergrenze, s. Herleitung oben.
+  ['BS-640.100', 'kanton/BS-640.100', false],
 ] as const;
 
-test.describe(`T-1C · Zeilenmass-Deckel (≤ ${T1C_MAX_CH} ch) und EINE Textkante @1440`, () => {
-  test.use({ viewport: { width: 1440, height: 900 } });
-  for (const [name, pfad] of T1C_ERLASSE) {
-    test(`${name}: eine linke Textkante, eine Breite, ≤ ${T1C_MAX_CH} ch`, async ({ page }) => {
+for (const fenster of [1440, 1280] as const) {
+test.describe(`T-1C · Zeilenmass ${T1C_MIN_CH}–${T1C_MAX_CH} ch und EINE Textkante @${fenster}`, () => {
+  test.use({ viewport: { width: fenster, height: 900 } });
+  for (const [name, pfad, untergrenze] of T1C_ERLASSE) {
+    test(`${name} @${fenster}: eine linke Textkante, eine Breite, ${untergrenze ? `${T1C_MIN_CH}–${T1C_MAX_CH}` : `≤ ${T1C_MAX_CH}`} ch`, async ({ page }) => {
       await page.goto(`/gesetze/${pfad}`);
       await expect(page.locator('#art-1')).toBeVisible({ timeout: 20000 });
       await page.evaluate(() => document.fonts?.ready);
@@ -479,11 +537,24 @@ test.describe(`T-1C · Zeilenmass-Deckel (≤ ${T1C_MAX_CH} ch) und EINE Textkan
 
       const m = await messeMaxCharsPerLine(page);
       expect(m, `${name}: mehrzeiliger Fliesstext-Absatz gefunden`).not.toBeNull();
-      expect(m!.ch, `${name} @1440: ${m!.ch} ch (${m!.px}px) muss ≤ ${T1C_MAX_CH} sein (Haus-Deckel 1C)`)
+      expect(m!.ch, `${name} @${fenster}: ${m!.ch} ch (${m!.px}px) muss ≤ ${T1C_MAX_CH} sein (D20 (c))`)
         .toBeLessThanOrEqual(T1C_MAX_CH);
+      if (untergrenze) {
+        expect(m!.ch, `${name} @${fenster}: ${m!.ch} ch (${m!.px}px) muss ≥ ${T1C_MIN_CH} sein (D20 (c)) — die Lesespalte ist zu schmal`)
+          .toBeGreaterThanOrEqual(T1C_MIN_CH);
+      }
+
+      // Die Spalte selbst — die Zusage, die für ALLE sechs gilt (auch dort, wo
+      // die Zeichenzahl von der Absatzform verwässert wird). Steht bewusst NACH
+      // den Zeichen-Kanten: die Zeichenzahl ist die Zusage des Entscheids, die
+      // Breite ihre Erklärung. Reisst der Deckel, soll das Protokoll zuerst die
+      // Zahl nennen, über die entschieden wurde.
+      expect(geo.breiten[0], `${name} @${fenster}: Textkörperbreite ${geo.breiten[0]}px statt ${T1C_BREITE[fenster]}px`)
+        .toBeCloseTo(T1C_BREITE[fenster], -0.5);
     });
   }
 });
+}
 
 test.describe(`R5 · Lesemass Mobil (≥ ${MOBIL_MIN_CH} ch @ 390, kein H-Overflow)`, () => {
   test.use({ viewport: { width: 390, height: 844 } });
