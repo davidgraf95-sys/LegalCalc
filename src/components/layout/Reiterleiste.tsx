@@ -4,9 +4,10 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import { useTabs } from './useTabs';
 import {
   schliesseTab, leereTabs, ordneTabsUm, tabSchluessel, type TabEintrag, reiterKurzform,
-  neuerLeererReiter, NEUER_REITER_NAME,
+  neuerLeererReiter, NEUER_REITER_NAME, schliesseAndere, schliesseRechtsVon,
+  stelleLetztenWiederHer, letzterGeschlossener, naechsteInstanz, merkeTab,
 } from '../../lib/tabs';
-import { erlassVonPfad, verlaufLabel, type VerlaufManifeste } from '../../lib/verlaufLabel';
+import { erlassVonPfad, verlaufLabel, katalogKurzform, type VerlaufManifeste } from '../../lib/verlaufLabel';
 import { reiterKategorie, artikelLabelVonPfad } from '../../lib/tabGruppen';
 import { registerVonPfad, REG_FLAECHE, REG_TON, REG_HOVER_FLAECHE_REITER } from './bereiche';
 import { SchliessKnopf } from '../ui/SchliessKnopf';
@@ -14,6 +15,7 @@ import { Leerzustand } from '../ui/Leerzustand';
 import { TabPanel } from './TabPanel';
 import { useDialogFokus } from './useDialogFokus';
 import { usePaneSteuerung } from './usePaneLayout';
+import { ReiterMenue, type ReiterMenueEintrag } from './ReiterMenue';
 
 // ─── Arbeitsleiste: die offenen Reiter, sichtbar (W2·24 §5a, Wunsch David) ───
 //
@@ -126,7 +128,12 @@ function kurzform(t: TabEintrag, m: VerlaufManifeste): { kopf: string; kern: str
   }
   const voll = verlaufLabel(t.path, m);
   if (kat === 'rechtsprechung') return zerlege(voll);
-  return { kopf: '', kern: ohneUntertitel(voll) };
+  // M7 (Prüfbefund R11 #21): der Katalog führt für die Karten, deren `title`
+  // eine BESCHREIBUNG ist, eine ausdrückliche Kurzform (`kurz`) — GEMESSEN war
+  // «Verfahrens- & Rechtsmittelfristen» mit 268 px der breiteste Reiter der
+  // ganzen Leiste. Die Quelle bleibt der Katalog (§5); fehlt das Feld, steht
+  // wie bisher der volle Titel da, nichts wird geraten (§7).
+  return { kopf: '', kern: katalogKurzform(t.path) ?? ohneUntertitel(voll) };
 }
 
 /** ── V4/F5-Rest (§5a Ziff. 2) · DER REITER TRÄGT DEN NAMEN, NICHT DEN UNTERTITEL
@@ -163,13 +170,18 @@ export function Reiterleiste({ paneSchluessel = [] }: {
   const tabs = useTabs();
   const { pathname, search } = useLocation();
   const navigate = useNavigate();
-  const { oeffneDaneben, kannOeffnen, istOffen } = usePaneSteuerung();
+  const { oeffneDaneben, kannOeffnen, istOffen, schliessePane } = usePaneSteuerung();
   const [manifeste, setManifeste] = useState<VerlaufManifeste>({});
   const [blattOffen, setBlattOffen] = useState(false);
   const [suche, setSuche] = useState('');
   const triggerRef = useRef<HTMLButtonElement>(null);
   const blattRef = useRef<HTMLDivElement>(null);
   const leisteRef = useRef<HTMLDivElement>(null);
+  /** Die scrollende Reiter-Fläche selbst — Ziel des Mausrads (M6) und Anker
+   *  für den Doppelklick auf den Leerraum. */
+  const streifenRef = useRef<HTMLDivElement>(null);
+  /** Offenes Reiter-Kontextmenü (M4): welcher Reiter, an welcher Stelle. */
+  const [menue, setMenue] = useState<{ path: string; x: number; y: number } | null>(null);
   const gezogen = useRef<string | null>(null);
   /** Gezogener Reiter als STATE (nicht nur Ref): der Reiter unter dem Zeiger
    *  soll sich während des Zugs sichtbar zurücknehmen — dafür braucht es ein
@@ -182,17 +194,31 @@ export function Reiterleiste({ paneSchluessel = [] }: {
 
   // Reader-Labels (Gesetz/Entscheid) aus den ohnehin lazy ladbaren Manifesten —
   // Muster und Bedingung wörtlich aus der abgelösten `ReiterUebersicht`.
+  //
+  // M2 (6.9.2026): dasselbe Muster jetzt DREIMAL — Materialien tragen seit
+  // `lib/tabs.istReiterPfad` einen eigenen Reiter, und ohne ihr Manifest hiesse
+  // er «Material öffnen», also eine Aufforderung statt eines Namens
+  // (Prüfbefund R11 #24). Die `brauchtX`-Bedingung bleibt die Eintrittskarte:
+  // `/materialien/register.json` wird NUR geladen, wenn wirklich ein
+  // Material-Reiter offen ist — kein dritter Download in der Kopfzone auf
+  // Vorrat (§15; `check:perf-budget` misst es).
   useEffect(() => {
     const brauchtG = tabs.some((t) => reiterKategorie(t.path) === 'gesetze');
     const brauchtE = tabs.some((t) => reiterKategorie(t.path) === 'rechtsprechung');
-    if (!brauchtG && !brauchtE) return;
+    const brauchtM = tabs.some((t) => reiterKategorie(t.path) === 'materialien');
+    if (!brauchtG && !brauchtE && !brauchtM) return;
     let lebt = true;
     void (async () => {
-      const [g, ent] = await Promise.all([
+      const [g, ent, mat] = await Promise.all([
         brauchtG ? import('../../lib/normtext/browse').then((m) => m.ladeBrowseManifest()).catch(() => null) : Promise.resolve(null),
         brauchtE ? import('../../lib/rechtsprechung/browse').then((m) => m.ladeEntscheidManifest()).catch(() => null) : Promise.resolve(null),
+        brauchtM ? import('../../lib/materialien/browse').then((m) => m.ladeMaterialManifest()).catch(() => null) : Promise.resolve(null),
       ]);
-      if (lebt) setManifeste((alt) => ({ gesetze: g ?? alt.gesetze ?? null, entscheide: ent ?? alt.entscheide ?? null }));
+      if (lebt) setManifeste((alt) => ({
+        gesetze: g ?? alt.gesetze ?? null,
+        entscheide: ent ?? alt.entscheide ?? null,
+        materialien: mat ?? alt.materialien ?? null,
+      }));
     })();
     return () => { lebt = false; };
   }, [tabs]);
@@ -235,6 +261,10 @@ export function Reiterleiste({ paneSchluessel = [] }: {
   }, [ordnung, aktivSchluessel]);
 
   const schliessen = (path: string) => {
+    // M1: steht dieser Reiter gerade in einem zweiten Fenster, geht das Fenster
+    // mit — sonst zeigte es weiter ein Dokument, das die Leiste nicht mehr
+    // führt (der gemessene P4-Zustand, nur rückwärts).
+    schliessePane(path);
     const teil = tabSchluessel(path);
     if (aktivSchluessel === teil) {
       const idx = ordnung.findIndex((t) => tabSchluessel(t.path) === teil);
@@ -254,6 +284,16 @@ export function Reiterleiste({ paneSchluessel = [] }: {
     neuerLeererReiter();
     navigate('/');
     window.dispatchEvent(new CustomEvent('lm:suche-fokus'));
+  };
+
+  // ── M3 · «ZULETZT GESCHLOSSEN» (Prüfbefund R11 #37) ───────────────────────
+  // EIN Weg, drei Zugänge: Alt+Shift+T, der Eintrag im Reiter-Kontextmenü und
+  // die Zeile im Überlauf-Blatt rufen alle diese Funktion. Sie stellt den
+  // Reiter an seiner alten Position wieder her (`lib/tabs`) und geht dorthin —
+  // wer wiederherstellt, will das Dokument sehen, nicht nur seinen Reiter.
+  const stelleWiederHer = () => {
+    const wieder = stelleLetztenWiederHer();
+    if (wieder) navigate(wieder.path);
   };
 
   // ── Tastatur (§5a Ziff. 7) ────────────────────────────────────────────────
@@ -283,6 +323,15 @@ export function Reiterleiste({ paneSchluessel = [] }: {
         if (!ziel) { e.preventDefault(); return; }
         e.preventDefault();
         ordneTabsUm(ordnung[idx].path, ziel.path, links);
+        return;
+      }
+      // ── M3 · ALT+SHIFT+T STELLT WIEDER HER ─────────────────────────────────
+      // Browser-Idiom (dort Ctrl/⌘+Shift+T); Ctrl/⌘ fängt der Browser selbst
+      // ab und stellt SEINEN Tab wieder her — dieselbe Lage wie bei Alt+W und
+      // Alt+T, darum dieselbe Antwort: Alt statt Ctrl/⌘.
+      if (e.shiftKey && e.key.toLowerCase() === 't') {
+        e.preventDefault();
+        stelleWiederHer();
         return;
       }
       if (e.shiftKey) return;
@@ -335,6 +384,36 @@ export function Reiterleiste({ paneSchluessel = [] }: {
     }
   }, [aktivSchluessel, sichtbar.length]);
 
+  // ── M6 · DAS MAUSRAD ROLLT DIE LEISTE (Prüfbefund R11 #33) ────────────────
+  //
+  // GEMESSEN 6.9.2026 @390 mit echtem Überlauf (`scrollWidth 818 /
+  // clientWidth 253`): senkrechtes Rad über der Leiste liess `scrollLeft` bei
+  // 0 — nur ein waagrechtes Rad bewegte sie. Eine gewöhnliche Maus ohne
+  // Querrad erreichte die hinteren Reiter durch Rollen also nie.
+  //
+  // NATIVER LAUSCHER STATT `onWheel`: React hängt `wheel` PASSIV an die
+  // Wurzel; ein `preventDefault()` im React-Handler wirkte nicht und würde nur
+  // eine Konsolen-Warnung erzeugen. `{ passive: false }` ist die einzige Art,
+  // das Seiten-Scrollen an dieser Stelle wirklich zu ersetzen.
+  //
+  // NUR BEI ECHTEM ÜBERLAUF (Risiko aus dem Plan): läuft die Leiste nicht
+  // über, bleibt das Rad beim Dokument — GEMESSEN scrollt die Seite heute
+  // unter dem Zeiger auf der klebenden Leiste (`scrollY 400`), und diese
+  // Funktion darf nicht verlorengehen. Und nur, wenn die senkrechte Bewegung
+  // die stärkere ist: wer ein Querrad hat, behält seinen eigenen Weg.
+  useEffect(() => {
+    const el = streifenRef.current;
+    if (!el) return;
+    const onWheel = (e: WheelEvent) => {
+      if (el.scrollWidth <= el.clientWidth) return;
+      if (Math.abs(e.deltaY) <= Math.abs(e.deltaX)) return;
+      e.preventDefault();
+      el.scrollLeft += e.deltaY;
+    };
+    el.addEventListener('wheel', onWheel, { passive: false });
+    return () => el.removeEventListener('wheel', onWheel);
+  }, []);
+
   // Blatt schliessen bei Klick ausserhalb (Trigger + portaliertes Blatt).
   useEffect(() => {
     if (!blattOffen) return;
@@ -378,6 +457,56 @@ export function Reiterleiste({ paneSchluessel = [] }: {
   const ueberlaufZahl = versteckt.length;
   const blattTitel = ueberlaufZahl > 0 ? `+${ueberlaufZahl}` : `${tabs.length} offen`;
 
+  // ── M4 · WAS IM KONTEXTMENÜ EINES REITERS STEHT ───────────────────────────
+  //
+  // Die Fläche zeichnet `ReiterMenue`; WELCHE Einträge es gibt und was sie tun,
+  // steht hier — und rechnen tut es `lib/tabs` (§3). Jeder Eintrag erscheint
+  // nur, wenn er auch etwas bewirkt: kein «Daneben öffnen» ohne freies
+  // Fenster, kein «Rechts davon schliessen» am letzten Reiter, kein «Zuletzt
+  // geschlossen» bei leerem Ring. Ein Menüeintrag, der nichts tut, ist eine
+  // Zusage, die nicht gilt (§8).
+  const menueEintraege = (t: TabEintrag): ReiterMenueEintrag[] => {
+    const idx = ordnung.findIndex((x) => tabSchluessel(x.path) === tabSchluessel(t.path));
+    const rechts = idx >= 0 ? ordnung.slice(idx + 1) : [];
+    const wieder = letzterGeschlossener();
+    const e: ReiterMenueEintrag[] = [];
+    if (kannOeffnen && !istOffen(t.path)) {
+      e.push({ id: 'daneben', label: 'Daneben öffnen', marke: '⧉', onKlick: () => oeffneDaneben(t.path) });
+    }
+    // «Duplizieren» ist der Klick-Weg zur ZWEITEN INSTANZ desselben Dokuments
+    // (`?r=<n>`) — dieselbe Buchführung, die der Leser-Knopf bis M8 benutzt
+    // hat. Die Funktion geht damit nicht verloren, sie steht jetzt an jedem
+    // Reiter statt nur im Erlass-Kopf.
+    e.push({ id: 'duplizieren', label: 'Duplizieren', marke: '⧉', onKlick: () => {
+      const ziel = naechsteInstanz(t.path);
+      merkeTab(ziel, t.label);
+      navigate(ziel);
+    } });
+    if (ordnung.length > 1) {
+      e.push({ id: 'andere', label: 'Alle anderen schliessen', onKlick: () => {
+        for (const x of ordnung) if (tabSchluessel(x.path) !== tabSchluessel(t.path)) schliessePane(x.path);
+        schliesseAndere(t.path);
+        navigate(t.path);
+      } });
+    }
+    if (rechts.length > 0) {
+      e.push({ id: 'rechts', label: 'Rechts davon schliessen', rechts: String(rechts.length), onKlick: () => {
+        for (const x of rechts) schliessePane(x.path);
+        schliesseRechtsVon(t.path);
+        if (rechts.some((x) => tabSchluessel(x.path) === aktivSchluessel)) navigate(t.path);
+      } });
+    }
+    // KEINE ✕-Marke: das Schliess-Glyph kommt in dieser App aus genau EINEM
+    // Baustein (`ui/SchliessKnopf`, A3-1) — eine Menüzeile, die es selbst
+    // zeichnet, wäre die zweite Stelle (Wächter `design-r3b-chrome`).
+    e.push({ id: 'schliessen', label: 'Schliessen', rechts: 'Alt+W', onKlick: () => schliessen(t.path) });
+    if (wieder) {
+      e.push({ id: 'wieder', label: `Zuletzt geschlossen: ${kurzformText(wieder, manifeste)}`,
+        marke: '↩', rechts: 'Alt+⇧+T', onKlick: stelleWiederHer });
+    }
+    return e;
+  };
+
   const reiter = (t: TabEintrag, i: number) => {
     const schluessel = tabSchluessel(t.path);
     const aktiv = schluessel === aktivSchluessel;
@@ -389,7 +518,20 @@ export function Reiterleiste({ paneSchluessel = [] }: {
     // Beschriftung, sondern hier und in der Reiter-Liste — verloren ist sie
     // damit nicht, sie wackelt nur nicht mehr unter dem Zeiger.
     const gelesen = reiterKategorie(t.path) === 'gesetze' ? artikelLabelVonPfad(t.path) : null;
-    const titel = gelesen && gelesen !== kopf ? `${voll} — gelesen bis ${gelesen}` : voll;
+    // ── M7 · DER REITER SAGT AUCH DEN STAND (Prüfbefund R11 #41, §7/D1) ─────
+    // GEMESSEN: der `title` trug «OR — gelesen bis Art. 336c» und nirgends
+    // einen Stand, obwohl die Ausgabe-Zeile darunter «Gesetze Stand
+    // 02.09.2026» zeigt. Der Reiter ist die Stelle, an der man ihn sucht.
+    // AUS DEM MANIFEST, SONST GAR NICHT (§7): führt der Erlass kein
+    // `stand`-Feld — oder ist das Manifest noch nicht geladen —, bleibt der
+    // `title` ohne Stand. Kein Platzhalter, keine Schätzung. Entscheide tragen
+    // ihr Datum bereits in der Zitierung («… vom 12.12.2025»), Rechner und
+    // Vorlagen haben keinen Stand im Sinne von D1 — dort bleibt alles wie es war.
+    const roh = erlassVonPfad(t.path, manifeste)?.stand ?? null;
+    const iso = roh ? /^(\d{4})-(\d{2})-(\d{2})/.exec(roh) : null;
+    const stand = iso ? `${iso[3]}.${iso[2]}.${iso[1]}` : roh;
+    const titel = [voll, stand ? `Stand ${stand}` : null, gelesen && gelesen !== kopf ? `gelesen bis ${gelesen}` : null]
+      .filter(Boolean).join(' — ');
     const reg = registerVonPfad(t.path);
     // F10 · EINE REGEL FÜR BEIDE GRIFFE (✕ und ⧉): der aktive Reiter zeigt sie
     // immer, inaktive bei Hover ODER Tastatur-Fokus irgendwo im Reiter. Vorher
@@ -449,6 +591,14 @@ export function Reiterleiste({ paneSchluessel = [] }: {
           gezogen.current = null; setZieht(null); setUeber(null);
         }}
         onDragEnd={() => { gezogen.current = null; setZieht(null); setUeber(null); }}
+        // M4 · RECHTSKLICK ÖFFNET DAS REITER-MENÜ. Unterdrückt wird das
+        // Browser-Kontextmenü NUR über einem Reiter — über der Leiste
+        // daneben, über dem «+» und über der ganzen übrigen Seite bleibt es
+        // erreichbar (Risiko aus dem Plan).
+        onContextMenu={(ev) => {
+          ev.preventDefault();
+          setMenue({ path: t.path, x: ev.clientX, y: ev.clientY });
+        }}
         title={titel}
         // F9 · DER AKTIVE REITER IST EINE FLÄCHE, KEIN 4-EINHEITEN-UNTERSCHIED.
         // GEMESSEN 6.9.2026: aktiv `paper-raised` (255) gegen inaktiv `paper`
@@ -487,6 +637,17 @@ export function Reiterleiste({ paneSchluessel = [] }: {
           onAuxClick={(ev) => {
             // Mittelklick schliesst — das Browser-Idiom, das David meint.
             if (ev.button === 1) { ev.preventDefault(); schliessen(t.path); }
+          }}
+          // M4 · DASSELBE MENÜ OHNE MAUS: Shift+F10 und die Menü-Taste sind
+          // die beiden Wege, die Windows/Linux-Tastaturen dafür kennen
+          // (WCAG 2.1.1 — eine Zeigergeste allein wäre keine Bedienung).
+          // Verankert wird es an der linken unteren Ecke des Reiters, nicht am
+          // Zeiger, den es hier nicht gibt.
+          onKeyDown={(ev) => {
+            if (ev.key !== 'ContextMenu' && !(ev.key === 'F10' && ev.shiftKey)) return;
+            ev.preventDefault();
+            const k = ev.currentTarget.getBoundingClientRect();
+            setMenue({ path: t.path, x: k.left, y: k.bottom });
           }}
           className={`flex min-w-0 items-baseline gap-1 py-1.5 pl-2.5 pr-1 text-body-s ${
             aktiv ? 'font-medium text-ink-900' : 'text-ink-600 hover:text-ink-900'}`}>
@@ -542,7 +703,15 @@ export function Reiterleiste({ paneSchluessel = [] }: {
       // `#art-…`-Sprung um die Leistenhöhe zu hoch.
       className="print:hidden shrink-0 sticky top-[var(--app-krone-h)] z-leiste h-[var(--app-reiter-h)] border-b border-rule-soft bg-paper">
       <div className="flex items-stretch px-4 sm:px-6">
-        <div data-reiter-streifen className="relative flex min-w-0 flex-1 items-stretch overflow-x-auto lc-reiter-scroll border-l border-rule-soft">
+        {/* M6 · DOPPELKLICK AUF DEN LEERRAUM = NEUER REITER (Befund #34).
+            GEMESSEN 6.9.2026: 457 px ungenutzte Fläche rechts des letzten
+            Reiters — im Browser genau die Stelle, auf die man doppelklickt.
+            `ev.target === ev.currentTarget` ist die ganze Bedingung: ein
+            Doppelklick AUF einem Reiter steigt hierher auf und darf keinen
+            zweiten Reiter erzeugen (Risiko aus dem Plan). */}
+        <div ref={streifenRef} data-reiter-streifen
+          onDoubleClick={(ev) => { if (ev.target === ev.currentTarget) neuerReiter(); }}
+          className="relative flex min-w-0 flex-1 items-stretch overflow-x-auto lc-reiter-scroll border-l border-rule-soft">
           {sichtbar.map(reiter)}
         </div>
         {/* D19 · BROWSER-«+» AM ENDE DES STREIFENS — fest, nicht Teil der
@@ -570,6 +739,18 @@ export function Reiterleiste({ paneSchluessel = [] }: {
           </button>
         )}
       </div>
+
+      {/* M4 · das Kontextmenü des angeklickten Reiters. Ein Menü zur Zeit —
+          `menue` hält den Reiter, nicht der Reiter das Menü (sonst stünden bei
+          zwölf Reitern zwölf Portale bereit). */}
+      {menue && (() => {
+        const t = tabs.find((x) => tabSchluessel(x.path) === tabSchluessel(menue.path));
+        if (!t) return null;
+        return (
+          <ReiterMenue x={menue.x} y={menue.y} name={kurzformText(t, manifeste)}
+            eintraege={menueEintraege(t)} onSchliessen={() => setMenue(null)} />
+        );
+      })()}
 
       {blattOffen && createPortal(
         <div className="fixed inset-0 z-overlay">
@@ -609,6 +790,25 @@ export function Reiterleiste({ paneSchluessel = [] }: {
                   weiterweg={{ text: 'Filter leeren', onKlick: () => setSuche('') }} />
               </div>
             )}
+            {/* M3 · DIE RÜCKFAHRKARTE, SICHTBAR. Alt+Shift+T kennt niemand,
+                der es nicht gesagt bekommt — und «Alle schliessen» direkt
+                darunter ist genau die Geste, nach der man sie am dringendsten
+                braucht. Steht nur da, wenn der Ring etwas hergibt. */}
+            {(() => {
+              const wieder = letzterGeschlossener();
+              if (!wieder) return null;
+              return (
+                <div className="mt-1 border-t border-rule-soft pt-1">
+                  <button type="button"
+                    onClick={() => { stelleWiederHer(); setBlattOffen(false); }}
+                    title="Zuletzt geschlossenen Reiter wiederherstellen (Alt+Shift+T)"
+                    className="lc-btn-outline lc-btn-sm w-full">
+                    <span aria-hidden className="lc-griff-glyph mr-1">↩</span>
+                    Zuletzt geschlossen: {kurzformText(wieder, manifeste)}
+                  </button>
+                </div>
+              );
+            })()}
             {tabs.length > 1 && (
               <div className="mt-1 border-t border-rule-soft pt-1">
                 <button type="button"
