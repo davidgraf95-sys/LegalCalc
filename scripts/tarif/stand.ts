@@ -138,7 +138,35 @@ export function standDatum(stand: string): StandDatum {
     return { iso: null, genauigkeit: 'unbekannt', grund: `«${roh}» nennt kein Datum` };
   }
 
-  // Spätestes gewinnt; bei gleichem Sortierschlüssel gewinnt die taggenaue Lesart.
+  // Befund M1 (W3-TARIF-STAND Nachzug 6.9.2026, konservativ nach §7): tragen
+  // die Kandidaten UNTERSCHIEDLICHE JAHRE, ist offen, welcher davon die
+  // Fassung meint — «spätestes gewinnt» hat das bisher geraten und lag
+  // nachweislich falsch: «1.1.2017 (Punktwert 1.1.2025)» (notariat-grundbuch.ts,
+  // RSJU 176.331) ist Stand 2017, das zweite Datum nennt nur den Stichtag eines
+  // indexierten Punktwerts, keine neue Fassung; ebenso «2025/2020» (AG) und
+  // «2019/2025» (ZG) — welcher der beiden Werte die Fassung trägt, steht im
+  // String nicht. Ein rein struktureller Parser kann das nicht von echten
+  // Folgefassungen unterscheiden (geprüft: der heutige Code kennt keinen
+  // Zusatz, der ein zweites belegtes Datum ignoriert — «Nachtrag 087» etc.
+  // sind bereits vorher unwirksam, weil sie GAR KEIN Datum sind, nicht weil
+  // ein erkanntes Datum verworfen würde). Darum: im Zweifel unbekannt, nicht
+  // raten — keine Ausnahme, bis ein solcher Zusatz belegt ist.
+  //
+  // Dasselbe Jahr in mehreren Granularitäten («2026» und «1.3.2026») ist KEINE
+  // Mehrdeutigkeit — beide belegen dasselbe Jahr, die taggenaue Lesart ist nur
+  // die präzisere (unverändert gegenüber der bisherigen Regel, Fall 5b unten).
+  const jahre = new Set(kandidaten.map((k) => k.iso.slice(0, 4)));
+  if (jahre.size > 1) {
+    const namen = kandidaten.map((k) => k.iso).join(', ');
+    return {
+      iso: null,
+      genauigkeit: 'unbekannt',
+      grund: `«${roh}» mehrdeutig: ${jahre.size} unterschiedliche Jahre belegt (${namen})`,
+    };
+  }
+
+  // Innerhalb desselben Jahres: taggenau schlägt Jahres-Granularität; bei
+  // mehreren taggenauen Daten im selben Jahr gewinnt weiterhin das spätere.
   kandidaten.sort((a, b) =>
     a.sort === b.sort
       ? (a.genauigkeit === 'tag' ? -1 : 1)
@@ -146,6 +174,6 @@ export function standDatum(stand: string): StandDatum {
   const sieger = kandidaten[0];
   const grund = kandidaten.length === 1
     ? `«${roh}» → ${sieger.iso}`
-    : `«${roh}» → spätestes von ${kandidaten.length} Daten: ${sieger.iso}`;
+    : `«${roh}» → ${sieger.iso} (${kandidaten.length} Angaben, dasselbe Jahr)`;
   return { iso: sieger.iso, genauigkeit: sieger.genauigkeit, grund };
 }

@@ -62,6 +62,29 @@ describe('standDatum — Schreibweisen aus den Tarif-Daten', () => {
     expect(standDatum('2024-02-30').iso).toBe('2024');
   });
 
+  it('11. Mehrere unterschiedliche Daten/Jahre sind mehrdeutig — kein Raten (Befund M1, 6.9.2026)', () => {
+    // notariat-grundbuch.ts (JU, RSJU 176.331): Stand 2017, das zweite Datum
+    // nennt nur den Stichtag eines indexierten Punktwerts — keine Fassung.
+    const a = standDatum('1.1.2017 (Punktwert 1.1.2025)');
+    expect(a.iso).toBeNull();
+    expect(a.genauigkeit).toBe('unbekannt');
+    expect(a.grund).toContain('mehrdeutig');
+    // AG (Notariatstarif/GBAG): zwei blosse Jahre ohne erkennbaren Vorrang.
+    const b = standDatum('2025/2020');
+    expect(b.iso).toBeNull();
+    expect(b.genauigkeit).toBe('unbekannt');
+    expect(b.grund).toContain('mehrdeutig');
+    // ZG (Verwaltungs-/Grundbuchgebührentarif): dieselbe Lage.
+    const c = standDatum('2019/2025');
+    expect(c.iso).toBeNull();
+    expect(c.genauigkeit).toBe('unbekannt');
+    expect(c.grund).toContain('mehrdeutig');
+  });
+
+  it('12. dieselbe Angabe wiederholt ist NICHT mehrdeutig', () => {
+    expect(standDatum('1.1.2024, Stand 1.1.2024')).toMatchObject({ iso: '2024-01-01', genauigkeit: 'tag' });
+  });
+
   it('10. rein/deterministisch: gleiche Eingabe, gleiche Ausgabe (§2)', () => {
     const a = standDatum('1.7.2025');
     const b = standDatum('1.7.2025');
