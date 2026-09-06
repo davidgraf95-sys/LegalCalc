@@ -6,7 +6,7 @@ import {
 import { STUFE_WORT } from '../../lib/normtext/erfassungsgrad';
 import { LexMetrikSiegel, LexMetrikWortmarke } from './Logo';
 import { KorpusStand } from '../ui/KorpusStand';
-import { registerVonPfad, REG_FLAECHE } from './bereiche';
+import { registerVonPfad, REG_FLAECHE, REG_HOVER_FLAECHE_BLATT } from './bereiche';
 
 // Alle Nav-Ziele inkl. #Anker (statisch) — zum Erkennen, ob ein aktiver Hash
 // überhaupt einem Geschwister-Eintrag entspricht (Bug-Fix 26.6.: sonst verlieren
@@ -61,6 +61,7 @@ function Blatt({ k, loc, onNavigate, klein }: {
   k: NavLinkT; loc: Location; onNavigate?: () => void; klein?: boolean;
 }) {
   const aktiv = istAktiv(k.ziel, loc);
+  const reg = registerVonPfad(k.ziel);
   return (
     <Link
       to={k.ziel}
@@ -79,11 +80,17 @@ function Blatt({ k, loc, onNavigate, klein }: {
       }`}
     >
       {/* Registerfarben-Strich als Aktiv-Marke; transparent reserviert den
-          Platz → kein Layout-Sprung beim Wechsel. */}
+          Platz → kein Layout-Sprung beim Wechsel.
+          F2 (Prüfbefund 6.9.2026): die HOVER-Marke war `rule-soft`, also grau —
+          auf den Übersichtsrouten blieb die Leiste damit farblos, obwohl jeder
+          Eintrag einem Register angehört. Der Hover zeigt jetzt die Farbe des
+          Ziels; unterschieden bleiben die Zustände über die Schrift (aktiv
+          `ink-900`/`font-medium`) und `aria-current`, nicht über die Farbe
+          allein (§11.6.8). */}
       <span aria-hidden className={`h-4 w-0.5 shrink-0 transition-colors ${
         aktiv
-          ? (registerVonPfad(k.ziel) ? REG_FLAECHE[registerVonPfad(k.ziel)!] : 'bg-ink-900')
-          : 'bg-transparent group-hover/blatt:bg-rule-soft'
+          ? (reg ? REG_FLAECHE[reg] : 'bg-ink-900')
+          : `bg-transparent ${reg ? REG_HOVER_FLAECHE_BLATT[reg] : 'group-hover/blatt:bg-rule-soft'}`
       }`} />
       <span className="leading-snug" title={k.label}>{k.label}</span>
       {/* IA-7 (§11.5): Erlass-Zahl-Badge (Kantonslinks) — rechtsbündig, von
@@ -227,9 +234,15 @@ function Abschnitt({ a, loc, onNavigate }: { a: typeof NAVIGATION[number]; loc: 
     );
   }
   const aktiv = a.ziel != null && (loc.pathname + loc.search === a.ziel || (a.ziel === '/gesetze' && loc.pathname.startsWith('/gesetze')));
+  // F2 · DER GRUPPENKOPF TRÄGT SEINE REGISTERFARBE DAUERHAFT (David 6.9.2026:
+  // «nicht trist»). Der Strich sitzt auf derselben Achse wie die Aktiv-Marken
+  // der Blätter darunter (px-2.5 · 2 px · 10 px Abstand) — die Leiste bekommt
+  // damit eine durchgehende Registerspalte statt vier grauer Überschriften.
+  const reg = a.ziel ? registerVonPfad(a.ziel) : null;
   return (
     <div className="flex flex-col">
       <div className="flex items-center gap-1 px-2.5 pt-1 pb-1.5 border-b border-rule-soft">
+        <span aria-hidden className={`h-3.5 w-0.5 shrink-0 mr-2.5 ${reg ? REG_FLAECHE[reg] : 'bg-rule-soft'}`} />
         {a.ziel ? (
           <Link to={a.ziel} onClick={() => { onNavigate?.(); setZuklappGen((g) => g + 1); }} aria-current={aktiv ? 'page' : undefined}
             className={`lc-overline flex-1 no-underline transition-colors ${aktiv ? 'text-ink-900' : ' hover:text-ink-900'}`}>

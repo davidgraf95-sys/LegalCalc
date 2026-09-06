@@ -15,6 +15,19 @@ import { pfadTeil } from './verlaufLabel';
 export interface TabEintrag {
   path: string;
   label?: string;
+  /** ── W2·24 R2-NACHZUG (F5) · DER GEWÄHLTE ANKER, GETRENNT VOM GELESENEN ───
+   *  `path` trägt die LESESTELLUNG: der Scroll-Spy des Lesers schiebt dort
+   *  laufend `#art-…` hinein (`aktualisiereTabArtikel`), damit ein Neustart an
+   *  derselben Stelle aufsetzt (§5a Ziff. 6) und die Reiter-Liste die Position
+   *  zeigt. GEMESSEN 6.9.2026 (Preview 4335, `/gesetze/bund/ZGB`): nach 1500 px
+   *  Scrollen stand im Reiter `…/ZGB#art-3`, in der ADRESSE weiter `…/ZGB` —
+   *  dieselbe Adresse trug damit zwei Beschriftungen («ZGB» kalt, «Art. 3 ZGB»
+   *  nach dem Scrollen), obwohl niemand einen Artikel gewählt hatte (Befund F5).
+   *  `wahl` hält darum den Anker, den die ADRESSE trug (Deep-Link, Trefferklick,
+   *  Sprungziel) — daraus, und NUR daraus, wird die Beschriftung gebaut
+   *  (§5a Ziff. 2 «Art. 336c OR»). Ohne Hash in der Adresse bleibt der zuletzt
+   *  gewählte Anker stehen; er wird nie aus der Lesestellung nachgezogen. */
+  wahl?: string;
 }
 
 const KEY = 'lexmetrik-tabs';
@@ -44,7 +57,8 @@ export function ladeTabs(): TabEintrag[] {
     return arr
       .filter((e): e is TabEintrag =>
         e && typeof e.path === 'string' &&
-        (e.label === undefined || typeof e.label === 'string'))
+        (e.label === undefined || typeof e.label === 'string') &&
+        (e.wahl === undefined || typeof e.wahl === 'string'))
       .slice(0, MAX);
   } catch {
     return [];
@@ -56,31 +70,86 @@ function schreibe(tabs: TabEintrag[]): void {
   try { window.dispatchEvent(new Event(TABS_EVENT)); } catch { /* SSR/kein window */ }
 }
 
-/** Öffnet/aktualisiert einen Reiter. Dublette (per pathname) behält ihre
- *  Position (stabile Reihenfolge) und übernimmt nur ein neu aufgelöstes Label;
- *  ein neuer Reiter wird HINTEN angehängt, gekappt auf die jüngsten MAX. */
+/** Anker der ADRESSE («#art-…») oder undefined. Quelle des `wahl`-Feldes. */
+function hashVon(path: string): string | undefined {
+  const i = path.indexOf('#');
+  return i === -1 ? undefined : path.slice(i);
+}
+
+/** Eintrag aus einer Adresse bauen — mit `alt` als Vorzustand desselben Reiters
+ *  (Label, Lesestellung und gewählter Anker überleben ein hash-/labelloses
+ *  Update). EINE Stelle für diese Regel: `merkeTab` und `ersetzeTab` bauen
+ *  denselben Eintrag, sonst driften «anhängen» und «ersetzen» auseinander. */
+function eintragAus(path: string, label?: string, alt?: TabEintrag): TabEintrag {
+  // Ein Update OHNE Artikel-Anker (z.B. vom TabTracker mit pathname+?r) darf den
+  // vom Reader gepflegten Anker NICHT löschen — sonst verlöre die zweite Instanz
+  // ihr Live-Label «Kürzel – Art. X» (Auftrag David).
+  const neuPath = (!path.includes('#') && alt?.path.includes('#'))
+    ? `${path}#${alt.path.split('#')[1]}`
+    : path;
+  const neuLabel = label ?? alt?.label;
+  const neuWahl = hashVon(path) ?? alt?.wahl;
+  return {
+    path: neuPath,
+    ...(neuLabel ? { label: neuLabel } : {}),
+    ...(neuWahl ? { wahl: neuWahl } : {}),
+  };
+}
+
+const gleich = (a: TabEintrag, b: TabEintrag): boolean =>
+  a.path === b.path && a.label === b.label && a.wahl === b.wahl;
+
+/** Öffnet/aktualisiert einen Reiter und hängt einen NEUEN hinten an (gekappt auf
+ *  die jüngsten MAX). Dublette (per `tabSchluessel`) behält ihre Position
+ *  (stabile Reihenfolge) und übernimmt nur ein neu aufgelöstes Label.
+ *
+ *  ── Seit dem R2-Nachzug ist das der Weg für einen AUSDRÜCKLICH neuen Reiter
+ *  (Mittelklick, Ctrl/⌘-Klick, ⌘/Ctrl+Enter in der Suche, «zweite Instanz»).
+ *  Die gewöhnliche Navigation geht über `ersetzeTab` (§5a Ziff. 3). */
 export function merkeTab(path: string, label?: string): void {
   const teil = tabSchluessel(path);
   const bisher = ladeTabs();
   const idx = bisher.findIndex((t) => tabSchluessel(t.path) === teil);
   if (idx !== -1) {
     const alt = bisher[idx];
-    // Ein Update OHNE Artikel-Anker (z.B. vom TabTracker mit pathname+?r) darf den
-    // vom Reader gepflegten Anker NICHT löschen — sonst verlöre die zweite Instanz
-    // ihr Live-Label «Kürzel – Art. X» (Auftrag David).
-    const neuPath = (!path.includes('#') && alt.path.includes('#'))
-      ? `${path}#${alt.path.split('#')[1]}`
-      : path;
-    const neuLabel = label ?? alt.label;
-    const neu: TabEintrag = { path: neuPath, ...(neuLabel ? { label: neuLabel } : {}) };
+    const neu = eintragAus(path, label, alt);
     // nur schreiben, wenn sich etwas ändert (idempotent gegen Mehrfach-Aufruf)
-    if (alt.path === neu.path && alt.label === neu.label) return;
+    if (gleich(alt, neu)) return;
     const naechste = [...bisher];
     naechste[idx] = neu;
     schreibe(naechste);
     return;
   }
-  schreibe([...bisher, { path, ...(label ? { label } : {}) }].slice(-MAX));
+  schreibe([...bisher, eintragAus(path, label)].slice(-MAX));
+}
+
+/** ── §5a Ziff. 3 · EINE NAVIGATION ERSETZT DEN AKTIVEN REITER ───────────────
+ *
+ *  Wie im Browser: wer einem Link folgt, bekommt KEINEN neuen Reiter, sondern
+ *  denselben Reiter mit neuem Inhalt («kein Reiter-Wildwuchs», David 6.9.2026).
+ *  Drei Fälle, in dieser Reihenfolge — die Reihenfolge ist die ganze Regel:
+ *
+ *  1. **Das Ziel ist schon offen** → nur aktualisieren (`merkeTab`-Semantik).
+ *     Der Wechsel auf einen bestehenden Reiter darf den vorher aktiven NICHT
+ *     wegwerfen; sonst kostete jeder Klick in der Arbeitsleiste einen Reiter.
+ *  2. **Der aktive Reiter existiert** → er wird an SEINER Position ersetzt
+ *     (Reihenfolge bleibt stabil, der Reiter «wandert» nicht ans Ende).
+ *  3. **Kein aktiver Reiter** (Kaltstart, Start-/Übersichtsseite als Herkunft)
+ *     → anhängen wie bisher.
+ *
+ *  `altPath` ist die Adresse, aus der die Navigation kam; `null` heisst «es gab
+ *  keinen». Rein deterministisch (§2), kein Zeitstempel, kein DOM. */
+export function ersetzeTab(altPath: string | null | undefined, neuPath: string, label?: string): void {
+  const teilNeu = tabSchluessel(neuPath);
+  const bisher = ladeTabs();
+  if (bisher.some((t) => tabSchluessel(t.path) === teilNeu)) { merkeTab(neuPath, label); return; }
+  const idxAlt = altPath ? bisher.findIndex((t) => tabSchluessel(t.path) === tabSchluessel(altPath)) : -1;
+  if (idxAlt === -1) { merkeTab(neuPath, label); return; }
+  const naechste = [...bisher];
+  // KEIN `alt`-Vorzustand: der Reiter zeigt jetzt ein ANDERES Dokument — Label,
+  // Lesestellung und gewählter Anker des alten gehören nicht dorthin.
+  naechste[idxAlt] = eintragAus(neuPath, label);
+  schreibe(naechste);
 }
 
 /** #12: Reiter per Drag-and-Drop umsortieren — verschiebt den gezogenen Reiter
@@ -123,8 +192,10 @@ export function naechsteInstanz(path: string): string {
 }
 
 /** Aktualisiert NUR den Artikel-Anker (#) eines bereits offenen Reiters mit
- *  dieser Identität — für das Live-Label «Kürzel – Art. X» (Auftrag David).
- *  Legt KEINEN neuen Reiter an und ändert die Reihenfolge nicht. */
+ *  dieser Identität — die LESESTELLUNG (Neustart, Reiter-Liste, Auftrag David).
+ *  Legt KEINEN neuen Reiter an und ändert die Reihenfolge nicht.
+ *  Rührt `wahl` NICHT an: die Beschriftung folgt der Adresse, nicht dem
+ *  Scroll-Spy (F5, Herleitung an `TabEintrag.wahl`). */
 export function aktualisiereTabArtikel(path: string): void {
   const teil = tabSchluessel(path);
   const bisher = ladeTabs();

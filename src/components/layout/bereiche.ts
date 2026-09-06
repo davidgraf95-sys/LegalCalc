@@ -74,3 +74,39 @@ export const REG_RAND: Record<Register, string> = {
 export const REG_FLAECHE: Record<Register, string> = {
   g: 'bg-reg-g', r: 'bg-reg-r', m: 'bg-reg-m', w: 'bg-reg-w',
 };
+
+// ─── R2-NACHZUG (Befunde F2/F9, 6.9.2026) · die Farbe darf ANFASSBAR sein ────
+//
+// Bis hierher trug die Registerfarbe nur den AKTIVEN Zustand: der Hover-Strich
+// der Bereichs-Reiter war `rule-soft`, die Hover-Marke der Seitenleisten-Blätter
+// ebenso, und der aktive Reiter der Arbeitsleiste unterschied sich um vier
+// Helligkeitseinheiten (`paper-raised` 255 gegen `paper` 251). David 6.9.2026:
+// «nicht trist» — die Registerfarben sollen an Reitern, beim Hover und an den
+// Gruppenköpfen SICHTBAR sein. Die vier Tabellen unten sind je EIN Ort dafür
+// (§5); Tailwind braucht die Klassennamen literal, darum Tabellen statt
+// Zeichenkettenbau.
+//
+// Kontrast: alle vier Werte sind NICHT-TEXT-Flächen (2-px-Striche, 10-%-Tönung)
+// — sie tragen keine Information allein (Position/Beschriftung tun das) und
+// unterliegen darum nicht 1.4.3. Der Text darauf bleibt `ink-*` auf Papier.
+
+/** Hover-Strich in der Registerfarbe des ZIELS (Bereichs-Reiter der
+ *  Titelblatt-Zeile). Abgesetzt vom aktiven Zustand durch die Deckkraft. */
+export const REG_RAND_HOVER: Record<Register, string> = {
+  g: 'hover:border-reg-g/40', r: 'hover:border-reg-r/40',
+  m: 'hover:border-reg-m/40', w: 'hover:border-reg-w/40',
+};
+/** Hover-Marke eines Seitenleisten-Blattes (Gruppe `blatt`). */
+export const REG_HOVER_FLAECHE_BLATT: Record<Register, string> = {
+  g: 'group-hover/blatt:bg-reg-g', r: 'group-hover/blatt:bg-reg-r',
+  m: 'group-hover/blatt:bg-reg-m', w: 'group-hover/blatt:bg-reg-w',
+};
+/** Hover-Strich eines inaktiven Reiters der Arbeitsleiste (Gruppe `reiter`). */
+export const REG_HOVER_FLAECHE_REITER: Record<Register, string> = {
+  g: 'group-hover/reiter:bg-reg-g', r: 'group-hover/reiter:bg-reg-r',
+  m: 'group-hover/reiter:bg-reg-m', w: 'group-hover/reiter:bg-reg-w',
+};
+/** Leichte Tönung der Fläche in der Registerfarbe — der aktive Reiter. */
+export const REG_TON: Record<Register, string> = {
+  g: 'bg-reg-g/10', r: 'bg-reg-r/10', m: 'bg-reg-m/10', w: 'bg-reg-w/10',
+};

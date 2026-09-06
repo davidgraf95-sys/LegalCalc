@@ -1,5 +1,5 @@
 import { describe, it, expect, beforeEach } from 'vitest';
-import { ladeTabs, merkeTab, schliesseTab, leereTabs, ordneTabsUm, naechsteInstanz, aktualisiereTabArtikel } from '../lib/tabs';
+import { ladeTabs, merkeTab, ersetzeTab, schliesseTab, leereTabs, ordneTabsUm, naechsteInstanz, aktualisiereTabArtikel } from '../lib/tabs';
 
 // In-App-Reiter (lib/tabs.ts): Persistenz, stabile Reihenfolge, Dublette per
 // pathname, MAX-Kappung, korruptes localStorage. Reines Speicher-Werkzeug.
@@ -68,6 +68,77 @@ describe('tabs.ts — offene Reiter', () => {
     // kein passender Reiter → keine Änderung, kein Crash
     aktualisiereTabArtikel('/gesetze/bund/ZGB#art-1');
     expect(ladeTabs().length).toBe(1);
+  });
+
+  // ── W2·24 §5a Ziff. 3 (R2-Nachzug 6.9.2026) · ERSETZEN STATT ANHÄUFEN ─────
+  // VERHALTENSÄNDERUNG, deklariert: bis hierher legte JEDE Navigation einen
+  // Reiter an (gemessen im Preview: drei Klicks OR → ZGB → ZPO = drei Reiter).
+  // `merkeTab` behält seine anhängende Bedeutung — sie ist jetzt der Weg für den
+  // AUSDRÜCKLICH neuen Reiter (Mittelklick, ⌘/Ctrl+Enter, zweite Instanz);
+  // die gewöhnliche Navigation läuft über `ersetzeTab`.
+  describe('ersetzeTab — die Navigation verbraucht den aktiven Reiter', () => {
+    it('ersetzt an Ort und Stelle; die Reihenfolge bleibt', () => {
+      merkeTab('/gesetze/bund/OR');
+      merkeTab('/rechner/tagerechner');
+      ersetzeTab('/gesetze/bund/OR', '/gesetze/bund/ZGB');
+      expect(ladeTabs().map((t) => t.path)).toEqual(['/gesetze/bund/ZGB', '/rechner/tagerechner']);
+    });
+
+    it('drei Navigationen hintereinander = EIN Reiter (kein Wildwuchs)', () => {
+      ersetzeTab(null, '/gesetze/bund/OR');
+      ersetzeTab('/gesetze/bund/OR', '/gesetze/bund/ZGB');
+      ersetzeTab('/gesetze/bund/ZGB', '/gesetze/bund/ZPO');
+      expect(ladeTabs().map((t) => t.path)).toEqual(['/gesetze/bund/ZPO']);
+    });
+
+    it('Ziel schon offen → nur wechseln, der aktive Reiter bleibt stehen', () => {
+      merkeTab('/gesetze/bund/OR');
+      merkeTab('/gesetze/bund/ZGB');
+      ersetzeTab('/gesetze/bund/ZGB', '/gesetze/bund/OR', 'Obligationenrecht');
+      expect(ladeTabs().map((t) => t.path)).toEqual(['/gesetze/bund/OR', '/gesetze/bund/ZGB']);
+      expect(ladeTabs()[0].label).toBe('Obligationenrecht');
+    });
+
+    it('kein aktiver Reiter (Kaltstart, Übersichtsseite) → anhängen wie bisher', () => {
+      merkeTab('/gesetze/bund/OR');
+      ersetzeTab(null, '/rechner/tagerechner');
+      ersetzeTab('/gesetze/bund/UNBEKANNT', '/vorlagen/kuendigung');
+      expect(ladeTabs().map((t) => t.path))
+        .toEqual(['/gesetze/bund/OR', '/rechner/tagerechner', '/vorlagen/kuendigung']);
+    });
+
+    it('der ersetzte Reiter erbt NICHTS vom alten (Label, Lesestellung, Wahl)', () => {
+      merkeTab('/gesetze/bund/OR#art-336_c', 'Obligationenrecht');
+      aktualisiereTabArtikel('/gesetze/bund/OR#art-97');
+      ersetzeTab('/gesetze/bund/OR', '/gesetze/bund/ZGB');
+      expect(ladeTabs()).toEqual([{ path: '/gesetze/bund/ZGB' }]);
+    });
+  });
+
+  // ── F5 (Prüfbefund 6.9.2026) · BESCHRIFTUNG AUS DER ADRESSE, NICHT AUS DEM
+  // SCROLL. Rot zu bekommen: in `eintragAus` den `wahl`-Zweig streichen, oder
+  // in `aktualisiereTabArtikel` `wahl` mitschreiben.
+  describe('wahl — der gewählte Anker neben der Lesestellung', () => {
+    it('die Adresse setzt `wahl`; der Scroll-Spy rührt sie nicht an', () => {
+      merkeTab('/gesetze/bund/OR#art-336_c');
+      expect(ladeTabs()[0].wahl).toBe('#art-336_c');
+      aktualisiereTabArtikel('/gesetze/bund/OR#art-97');
+      const t = ladeTabs()[0];
+      expect(t.path, 'die Lesestellung folgt dem Scroll').toBe('/gesetze/bund/OR#art-97');
+      expect(t.wahl, 'die Beschriftung folgt der Adresse').toBe('#art-336_c');
+    });
+
+    it('ein Update OHNE Anker löscht die Wahl nicht (Tracker schickt pathname+search)', () => {
+      merkeTab('/gesetze/bund/OR#art-336_c');
+      merkeTab('/gesetze/bund/OR');
+      expect(ladeTabs()[0].wahl).toBe('#art-336_c');
+    });
+
+    it('ohne Anker in der Adresse gibt es keine Wahl (kein geratener Artikel)', () => {
+      merkeTab('/gesetze/bund/ZGB');
+      aktualisiereTabArtikel('/gesetze/bund/ZGB#art-3');
+      expect(ladeTabs()[0].wahl).toBeUndefined();
+    });
   });
 
   it('schliesseTab entfernt per pathname', () => {

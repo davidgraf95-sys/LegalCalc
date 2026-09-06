@@ -418,12 +418,22 @@ export function Shell({ children }: { children: ReactNode }) {
             onSeitenleisteUmschalten={seitenleiste.umschalten}
             ohneSeitenleiste={ohneSeitenleiste}
           />
-          {/* Ausgabe-Zeile + Arbeitsleiste (W2·24 R2, §5a). Beide laufen im
+          {/* Arbeitsleiste + Ausgabe-Zeile (W2·24 R2, §5a). Beide laufen im
               normalen Fluss — nicht klebend; die Herleitung steht am Kopf von
               `Topbar.tsx` (die Sprung-Offsets des Lesers rechnen mit einer
-              4-rem-Krone, und ihre Quelle gehört R4). */}
-          <AusgabeZeile />
+              4-rem-Krone, und ihre Quelle gehört R4).
+              ── F8 (Prüfbefund 6.9.2026) · REIHENFOLGE GETAUSCHT. Bis hierher
+              stand die Ausgabe-Zeile (0–64 · 64–95) ZWISCHEN Titelblatt und
+              Arbeitsleiste (95–129) — §5a Ziff. 1 verlangt aber zwei Zeilen,
+              die zusammengehören: Bereiche oben, offene Dokumente DIREKT
+              darunter. Das Referenzbild zeichnet die Ausgabe-Zeile zwar unter
+              dem Titelblatt, kennt die Arbeitsleiste aber gar nicht; wo beides
+              nicht zugleich geht, hat die gebaute Ziffer Vorrang. Die
+              Ausgabe-Zeile verliert dabei nichts: sie ist dieselbe Angabe wie
+              im Fuss der Seitenleiste (`ui/KorpusStand`, §5) und steht jetzt
+              als Abschluss der Kopfzone. */}
           <Reiterleiste paneSchluessel={[tabSchluessel(pathname + search), ...liveSek.map(tabSchluessel)]} />
+          <AusgabeZeile />
 
           {/* Persistenter Hinweis bei Nicht-DE-Locale: Inhalte fallen auf Deutsch zurück. */}
           {locale !== 'de' && (

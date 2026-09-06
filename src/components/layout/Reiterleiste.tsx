@@ -5,7 +5,7 @@ import { useTabs } from './useTabs';
 import { schliesseTab, leereTabs, ordneTabsUm, tabSchluessel, type TabEintrag } from '../../lib/tabs';
 import { erlassVonPfad, verlaufLabel, type VerlaufManifeste } from '../../lib/verlaufLabel';
 import { reiterKategorie, herkunftVon, artikelLabelVonPfad, KAT_ORDER, HERKUNFT_ORDER } from '../../lib/tabGruppen';
-import { registerVonPfad, REG_FLAECHE } from './bereiche';
+import { registerVonPfad, REG_FLAECHE, REG_TON, REG_HOVER_FLAECHE_REITER } from './bereiche';
 import { SchliessKnopf } from '../ui/SchliessKnopf';
 import { Leerzustand } from '../ui/Leerzustand';
 import { TabPanel } from './TabPanel';
@@ -41,13 +41,82 @@ const MOBIL_BLATT_AB = 3;
  *  Typ statt einer Inhaltsprüfung auf `text/plain`. */
 export const REITER_MIME = 'application/x-lexmetrik-reiter';
 
+/** ── Gerichts-Kurzformen (F6) ───────────────────────────────────────────────
+ *  Die Zitierung eines Entscheids ist «Gericht + Geschäftsnummer». GEMESSEN
+ *  6.9.2026: «Obergericht AG HOR.2024.19» lief in `max-w-[13rem]` auf und wurde
+ *  als «Obergericht AG HOR.2024.1…» abgeschnitten — die Nummer ist aber das
+ *  EINZIGE, was den Entscheid identifiziert (§8: lieber das Gericht kürzen als
+ *  die Nummer verstümmeln).
+ *  Die Tabelle ist BEWUSST geschlossen und trägt nur die im schweizerischen
+ *  Gebrauch etablierten Kürzel (BGer, OGer, KGer …). Ein unbekanntes Gericht
+ *  wird NICHT geraten (§7), sondern bleibt ausgeschrieben — dann trägt es die
+ *  Kürzung, nicht die Nummer. */
+const GERICHT_KURZ: Record<string, string> = {
+  Bundesgericht: 'BGer',
+  Bundesverwaltungsgericht: 'BVGer',
+  Bundesstrafgericht: 'BStGer',
+  Bundespatentgericht: 'BPatGer',
+  Obergericht: 'OGer',
+  Kantonsgericht: 'KGer',
+  Verwaltungsgericht: 'VGer',
+  Appellationsgericht: 'AppGer',
+  Handelsgericht: 'HGer',
+  Bezirksgericht: 'BezGer',
+  Zivilgericht: 'ZGer',
+  Strafgericht: 'StGer',
+  Sozialversicherungsgericht: 'SVGer',
+  Versicherungsgericht: 'VersGer',
+  Arbeitsgericht: 'ArbGer',
+  Mietgericht: 'MGer',
+  Kassationsgericht: 'KassGer',
+  Steuerrekursgericht: 'StRG',
+  Baurekursgericht: 'BRG',
+};
+
+/** Zerlegung einer Zitierung in «Kopf» (kürzbar) und «Kern» (nie kürzbar).
+ *  Kern = alles ab dem ersten Wort mit einer Ziffer, also die Geschäftsnummer
+ *  bzw. bei einer BGE-Zitierung die Fundstelle («BGE» + «152 V 52»). Das
+ *  angehängte Urteilsdatum («… vom 14.01.2026») fällt weg — es identifiziert
+ *  nichts, was die Nummer nicht schon identifiziert, und der `title` des
+ *  Reiters trägt die vollständige Zitierung weiter. Ohne Ziffern-Wort gibt es
+ *  keinen Kern; dann kürzt wie bisher der ganze Text. */
+function zerlege(zitierung: string): { kopf: string; kern: string } {
+  const ohneDatum = zitierung.replace(/\s+vom\s+\d{1,2}\.\d{1,2}\.\d{2,4}\s*$/, '');
+  const worte = ohneDatum.split(/\s+/).filter(Boolean);
+  const i = worte.findIndex((w) => /\d/.test(w));
+  if (i <= 0) return { kopf: '', kern: ohneDatum };
+  const kopf = worte.slice(0, i).map((w) => GERICHT_KURZ[w] ?? w).join(' ');
+  return { kopf, kern: worte.slice(i).join(' ') };
+}
+
 /** Kanonische Kurzform eines Reiters (§5a Ziff. 2): «Art. 336c OR», «BGE 152
- *  V 52», «Fristenrechner». Deterministisch aus Pfad + Manifest. */
-function kurzform(t: TabEintrag, m: VerlaufManifeste): string {
-  const kuerzel = reiterKategorie(t.path) === 'gesetze' ? erlassVonPfad(t.path, m)?.kuerzel : null;
-  if (!kuerzel) return verlaufLabel(t.path, m);
-  const art = artikelLabelVonPfad(t.path);
-  return art ? `${art} ${kuerzel}` : kuerzel;
+ *  V 52», «Fristenrechner».
+ *
+ *  DETERMINISTISCH AUS DER ADRESSE (F5): der Artikel kommt aus `t.wahl` — dem
+ *  Anker, den die ADRESSE trug —, NICHT aus `t.path`, in den der Scroll-Spy des
+ *  Lesers laufend die Lesestellung schreibt. GEMESSEN 6.9.2026 (Preview 4335):
+ *  mit `t.path` hiess derselbe Reiter auf derselben Adresse `/gesetze/bund/ZGB`
+ *  einmal «ZGB» (kalt) und nach 1500 px Scrollen «Art. 3 ZGB» — eine
+ *  Beschriftung, die sich unter dem Zeiger ändert, ist keine Kurzform.
+ *  Die Lesestellung bleibt sichtbar: im `title` des Reiters und in der
+ *  Reiter-Liste (`TabPanel`), und sie überlebt den Neustart wie bisher. */
+function kurzform(t: TabEintrag, m: VerlaufManifeste): { kopf: string; kern: string } {
+  const kat = reiterKategorie(t.path);
+  const kuerzel = kat === 'gesetze' ? erlassVonPfad(t.path, m)?.kuerzel : null;
+  if (kuerzel) {
+    // Gesetze: EIN kurzer Block («Art. 336c OR») — hier gibt es nichts, was
+    // gegen die Kürzung geschützt werden müsste, der ganze Text ist die Marke.
+    const art = t.wahl ? artikelLabelVonPfad(t.wahl) : null;
+    return { kopf: '', kern: art ? `${art} ${kuerzel}` : kuerzel };
+  }
+  const voll = verlaufLabel(t.path, m);
+  return kat === 'rechtsprechung' ? zerlege(voll) : { kopf: '', kern: voll };
+}
+
+/** Einzeiler für Suchfeld, Accessible Names und Titel. */
+function kurzformText(t: TabEintrag, m: VerlaufManifeste): string {
+  const { kopf, kern } = kurzform(t, m);
+  return kopf ? `${kopf} ${kern}` : kern;
 }
 
 export function Reiterleiste({ paneSchluessel = [] }: {
@@ -198,7 +267,7 @@ export function Reiterleiste({ paneSchluessel = [] }: {
   if (tabs.length < 1) return null;
 
   const gefiltert = suche.trim()
-    ? tabs.filter((t) => `${kurzform(t, manifeste)} ${verlaufLabel(t.path, manifeste)} ${t.path}`
+    ? tabs.filter((t) => `${kurzformText(t, manifeste)} ${verlaufLabel(t.path, manifeste)} ${t.path}`
         .toLowerCase().includes(suche.trim().toLowerCase()))
     : tabs;
 
@@ -208,9 +277,22 @@ export function Reiterleiste({ paneSchluessel = [] }: {
   const reiter = (t: TabEintrag, i: number) => {
     const schluessel = tabSchluessel(t.path);
     const aktiv = schluessel === aktivSchluessel;
-    const name = kurzform(t, manifeste);
+    const { kopf, kern } = kurzform(t, manifeste);
+    const name = kopf ? `${kopf} ${kern}` : kern;
     const voll = verlaufLabel(t.path, manifeste);
+    // Die LESESTELLUNG steht seit dem R2-Nachzug (F5) nicht mehr in der
+    // Beschriftung, sondern hier und in der Reiter-Liste — verloren ist sie
+    // damit nicht, sie wackelt nur nicht mehr unter dem Zeiger.
+    const gelesen = reiterKategorie(t.path) === 'gesetze' ? artikelLabelVonPfad(t.path) : null;
+    const titel = gelesen && gelesen !== kopf ? `${voll} — gelesen bis ${gelesen}` : voll;
     const reg = registerVonPfad(t.path);
+    // F10 · EINE REGEL FÜR BEIDE GRIFFE (✕ und ⧉): der aktive Reiter zeigt sie
+    // immer, inaktive bei Hover ODER Tastatur-Fokus irgendwo im Reiter. Vorher
+    // war das ✕ dauernd sichtbar und das ⧉ nur bei Hover — zwei Regeln für
+    // dieselbe Zeile, und die Tastatur erreichte das ⧉ nur unsichtbar.
+    const griffSicht = aktiv
+      ? ''
+      : 'opacity-0 transition-opacity group-hover/reiter:opacity-100 group-focus-within/reiter:opacity-100';
     // Aktiv-Marken der Panes: welcher Reiter steht in welchem Fenster (§5a
     // Ziff. 4). Bei einem einzigen Pane trägt der aktive Reiter keine Marke —
     // «links» ohne ein «rechts» sagt nichts.
@@ -237,23 +319,41 @@ export function Reiterleiste({ paneSchluessel = [] }: {
           gezogen.current = null; setUeber(null);
         }}
         onDragEnd={() => { gezogen.current = null; setUeber(null); }}
-        title={voll}
+        title={titel}
+        // F9 · DER AKTIVE REITER IST EINE FLÄCHE, KEIN 4-EINHEITEN-UNTERSCHIED.
+        // GEMESSEN 6.9.2026: aktiv `paper-raised` (255) gegen inaktiv `paper`
+        // (251) — der Unterschied trug allein der 2-px-Strich. Jetzt trägt der
+        // aktive Reiter die REGISTERFARBE seiner Domäne als leichte Tönung
+        // (Papier bleibt Papier, die Farbe sagt zugleich, WELCHES Register).
         className={`group/reiter relative flex shrink-0 items-center border-r border-rule-soft ${
           ueber === t.path ? 'border-l-2 border-l-rule' : ''
-        } ${aktiv ? 'bg-paper-raised' : ''}`}>
+        } ${aktiv ? (reg ? REG_TON[reg] : 'bg-paper-raised') : ''}`}>
         {/* Registerfarben-Strich — die einzige Farbe des Reiters (§5). Inaktiv
-            blass, damit die Domäne auch im Ruhezustand ablesbar bleibt. */}
+            Tinte auf 30 % (kein blasses Register-Echo, das mit dem aktiven
+            verwechselbar wäre); beim Hover zeigt er die Registerfarbe des
+            Ziels, damit die Domäne auch im Ruhezustand erreichbar bleibt. */}
         <span aria-hidden className={`absolute inset-x-0 bottom-0 h-0.5 ${
-          reg ? REG_FLAECHE[reg] : 'bg-ink-400'} ${aktiv ? '' : 'opacity-30 group-hover/reiter:opacity-60'}`} />
+          aktiv
+            ? (reg ? REG_FLAECHE[reg] : 'bg-ink-900')
+            : `bg-ink-400 opacity-30 ${reg ? REG_HOVER_FLAECHE_REITER[reg] : ''} group-hover/reiter:opacity-70`}`} />
         <button type="button" aria-current={aktiv ? 'page' : undefined}
           onClick={() => navigate(t.path)}
           onAuxClick={(ev) => {
             // Mittelklick schliesst — das Browser-Idiom, das David meint.
             if (ev.button === 1) { ev.preventDefault(); schliessen(t.path); }
           }}
-          className={`max-w-[13rem] truncate py-1.5 pl-2.5 pr-1 text-body-s ${
+          className={`flex min-w-0 items-baseline gap-1 py-1.5 pl-2.5 pr-1 text-body-s ${
             aktiv ? 'font-medium text-ink-900' : 'text-ink-600 hover:text-ink-900'}`}>
-          <span className="sr-only">{`Reiter ${i + 1}: `}</span>{name}
+          <span className="sr-only">{`Reiter ${i + 1}: `}</span>
+          {/* F6 · DIE GESCHÄFTSNUMMER WIRD NIE GEKÜRZT. Gekürzt wird der Kopf
+              (das Gericht, ohnehin schon abgekürzt); der Kern trägt die Nummer
+              und steht `shrink-0`. Der Deckel sitzt darum AM KOPF, nicht am
+              Knopf: läge er am Knopf, ragte ein langer Kern als `shrink-0`-Kind
+              über dessen Kasten und legte sich über die ⧉/✕-Griffe daneben.
+              Ohne Kopf kürzt der Kern selbst — dann ist er der ganze Name
+              (Gesetz, Rechner, Vorlage) und nichts daran ist geschützt. */}
+          {kopf && <span className="truncate max-w-[9rem]">{kopf}</span>}
+          <span className={kopf ? 'shrink-0' : 'truncate max-w-[15rem]'}>{kern}</span>
           {paneWort && <span className="sr-only">{` (Fenster ${paneWort})`}</span>}
         </button>
         {/* Fenster-Marke: zeigt, welcher Reiter links bzw. rechts steht. */}
@@ -268,7 +368,7 @@ export function Reiterleiste({ paneSchluessel = [] }: {
         {kannOeffnen && !istOffen(t.path) && (
           <button type="button" onClick={() => oeffneDaneben(t.path)}
             aria-label={`«${name}» daneben öffnen`} title="Daneben öffnen"
-            className="hidden lg:inline-flex h-6 w-5 shrink-0 items-center justify-center text-ink-400 opacity-0 transition-opacity hover:text-ink-900 focus-visible:opacity-100 group-hover/reiter:opacity-100">
+            className={`hidden lg:inline-flex h-6 w-5 shrink-0 items-center justify-center text-ink-400 hover:text-ink-900 ${griffSicht}`}>
             <span aria-hidden className="lc-griff-glyph">⧉</span>
           </button>
         )}
@@ -280,7 +380,7 @@ export function Reiterleiste({ paneSchluessel = [] }: {
             Reiter — dieselbe begründete Ausnahme wie dort; die AA-Untergrenze
             (24 px, WCAG 2.5.8) hält die Grundklasse. */}
         <SchliessKnopf name={`Reiter «${name}» schliessen`} ton="destruktiv" komfort={false}
-          onClick={() => schliessen(t.path)} klasse="h-6 w-6 mr-1 shrink-0" />
+          onClick={() => schliessen(t.path)} klasse={`h-6 w-6 mr-1 shrink-0 ${griffSicht}`} />
       </div>
     );
   };
