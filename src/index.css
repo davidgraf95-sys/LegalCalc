@@ -174,10 +174,10 @@
        Fliesstext. Werte aus dem freigegebenen Referenzbild
        (abnahme/design-identitaet/vorschlag-freigegeben.html), Kontraste gemessen
        in abnahme/design-identitaet/KONTRAST-R1.md. Konsumenten kommen ab R2. */
-    --reg-g:#1F3A5F;  /* Gesetze */
-    --reg-r:#7A1F2B;  /* Rechtsprechung */
-    --reg-m:#4E6B3A;  /* Materialien */
-    --reg-w:#8A6A1F;  /* Werkzeuge */
+    --reg-g:#1D4E89;  /* Gesetze — David 6.9.: eine Stufe kräftiger (8.1:1 auf Papier) */
+    --reg-r:#7A1F2B;  /* Rechtsprechung — bewusst dezent (David 6.9.: «dezenter rot einsetzen») */
+    --reg-m:#2F7A3E;  /* Materialien — kräftiger (5.1:1 auf Papier) */
+    --reg-w:#8F5E0E;  /* Werkzeuge — kräftiger, bleibt ≥ 4.5 auf Well (4.97) */
     /* Fixe dunkle Tinte für Text auf STETS hellen Gold-Flächen (brass-300 ist
        in BEIDEN Modi hell). Flippt bewusst NICHT mit dem Thema — sonst kippt
        z. B. das Timeline-Label im Dunkel auf hell und wird unlesbar (~1.3:1).
@@ -546,7 +546,7 @@
        Linien/Skala (500/400/300) bleiben Gold. */
     /* Registerfarben dunkel: aufgehellte Pendants (Referenzbild §5) — dieselbe
        Rolle, dieselbe Reihenfolge, für die dunkle Fläche kalibriert. */
-    --reg-g:#8FB0DC; --reg-r:#E39AA6; --reg-m:#A4C48C; --reg-w:#D2B46A;
+    --reg-g:#8FB8F0; --reg-r:#E39AA6; --reg-m:#9AD489; --reg-w:#E6B95A; /* dunkel: kräftiger, Rot dezent (David 6.9.) */
     /* W2·24-R1: dieselbe Rollenlogik, neutral — Text-Töne hell, Flächen dunkel. */
     --brass-800:#F5F5F5; --brass-700:#EDEDED; --brass-600:#C9C9C9;
     --brass-500:#909090; --brass-400:#6E6E6E;
