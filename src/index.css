@@ -399,10 +399,17 @@
        hier und nicht als Zahl in der Klasse, weil sie dieselbe Sorge trägt wie
        `--app-reiter-h`: ein Mass, das die Arbeitsleiste RESERVIERT, damit sich
        beim Nachführen nichts verschiebt (D2 «keine Magic-Numbers», §5).
-       4.25rem = 68 px deckt die im Korpus vorkommenden Stellen ab; längere
-       wachsen darüber hinaus (`min-width`, nie `width` — die Stelle darf nicht
-       verstümmeln, §8), dann aber EINMAL statt bei jedem Artikelwechsel. */
-    --app-reiter-stelle-b:4.25rem;
+       GEMESSEN 6.9.2026 (Preview 4373, Chromium @1440, Reiter-Schriftgrad
+       `text-body-s`, Archivo): «Art. 1» 33.8 px · «Art. 97» 41.8 · «Art. 28g»
+       49.8 · «Art. 336c» 57.3 · «Art. 1013» 57.9 · «Art. 31–32» 64.9.
+       3.75rem = 60 px deckt damit jede EINZEL-Stelle ab — nur die selteneren
+       Bereichs-Labels («Art. 31–32») wachsen darüber hinaus, und dann wächst
+       der Reiter EINMAL statt bei jedem Artikelwechsel. Grösser wäre ehrlicher
+       gegen den Ausreisser, aber jedes zusätzliche Pixel steht als Leerraum in
+       JEDEM Gesetzes-Reiter — 60 px ist die Stelle, an der beides zusammen am
+       kleinsten wird. `min-width`, nie `width`: die Stelle darf nicht
+       verstümmeln (§8). */
+    --app-reiter-stelle-b:3.75rem;
     --app-kopf-h:calc(var(--app-krone-h) + var(--app-reiter-h));
     --z-base:0; --z-sticky:10; --z-entscheid-sticky:15;
     --z-reader-scrim:16; --z-reader-kopf:17; --z-inhalt-kopf:19;
@@ -2324,9 +2331,8 @@
      «Art. 1 ZGB» ist ein Sprung von rund 55 px, «Art. 9» → «Art. 336c» noch
      einer von rund 20 px.
      Das Mass steht als Token `--app-reiter-stelle-b` bei den übrigen
-     Arbeitsleisten-Massen (oben, D2/§5); nur die seltenen vierstelligen
-     Stellen wachsen darüber hinaus, und dann wächst der Reiter EINMAL statt
-     bei jedem Schritt.
+     Arbeitsleisten-Massen (oben, D2/§5) — dort auch die Messreihe, aus der
+     es stammt.
      `min-width` statt `width`, damit nichts abgeschnitten wird (§8: die
      Stelle ist die Auskunft, sie darf nicht verstümmeln) — die Ziffern stehen
      via `.num` ohnehin auf tabellarischer Breite, also ruckt es auch
