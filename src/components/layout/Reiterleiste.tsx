@@ -18,6 +18,7 @@ import { Reiter } from './reiterleiste/Reiter';
 import { ReiterBlatt } from './reiterleiste/ReiterBlatt';
 import { useReiterFenster } from './reiterleiste/useReiterFenster';
 import { useDialogFokus } from './useDialogFokus';
+import { useKopieren } from '../useKopieren';
 import { usePaneSteuerung } from './usePaneLayout';
 // ── §15 · DAS KONTEXTMENÜ GEHÖRT NICHT IN DEN START-CHUNK ──────────────────
 // GEMESSEN 6.9.2026 (`npm run check:perf-budget`, gebautes dist/): mit einem
@@ -66,6 +67,7 @@ export function Reiterleiste({ paneSchluessel = [] }: {
   const { oeffneDaneben, kannOeffnen, istOffen, schliessePane } = usePaneSteuerung();
   const [manifeste, setManifeste] = useState<VerlaufManifeste>({});
   const [blattOffen, setBlattOffen] = useState(false);
+  const { kopieren } = useKopieren();
   const [suche, setSuche] = useState('');
   const triggerRef = useRef<HTMLButtonElement>(null);
   const blattRef = useRef<HTMLDivElement>(null);
@@ -432,10 +434,12 @@ export function Reiterleiste({ paneSchluessel = [] }: {
     // sie nicht an. EIN Klick, kein neuer Zustand. Der Eintrag erscheint nur,
     // wo die Zwischenablage überhaupt zu haben ist (§8: kein toter Eintrag) —
     // `navigator.clipboard` fehlt in unsicheren Kontexten.
+    // EINE KOPIER-MECHANIK (R4-D): geschrieben wird über `useKopieren`, nicht
+    // von Hand — der Hook quittiert erst NACH erfolgreichem Schreiben und
+    // schluckt weder verweigerte Berechtigung noch fehlende API als Erfolg.
     if (typeof navigator !== 'undefined' && navigator.clipboard) {
-      e.push({ id: 'adresse', label: 'Adresse kopieren', onKlick: () => {
-        void navigator.clipboard.writeText(new URL(t.path, window.location.origin).href);
-      } });
+      e.push({ id: 'adresse', label: 'Adresse kopieren',
+        onKlick: () => kopieren(new URL(t.path, window.location.origin).href) });
     }
     if (ordnung.length > 1) {
       e.push({ id: 'andere', label: 'Alle anderen schliessen', onKlick: () => {
