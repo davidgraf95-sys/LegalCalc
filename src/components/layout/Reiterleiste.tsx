@@ -489,13 +489,13 @@ export function Reiterleiste({ paneSchluessel = [] }: {
     const wieder = letzterGeschlossener();
     const e: ReiterMenueEintrag[] = [];
     if (kannOeffnen && !istOffen(t.path)) {
-      e.push({ id: 'daneben', label: 'Daneben öffnen', marke: '⧉', onKlick: () => oeffneDaneben(t.path) });
+      e.push({ id: 'daneben', label: 'Daneben öffnen', onKlick: () => oeffneDaneben(t.path) });
     }
     // «Duplizieren» ist der Klick-Weg zur ZWEITEN INSTANZ desselben Dokuments
     // (`?r=<n>`) — dieselbe Buchführung, die der Leser-Knopf bis M8 benutzt
     // hat. Die Funktion geht damit nicht verloren, sie steht jetzt an jedem
     // Reiter statt nur im Erlass-Kopf.
-    e.push({ id: 'duplizieren', label: 'Duplizieren', marke: '⧉', onKlick: () => {
+    e.push({ id: 'duplizieren', label: 'Duplizieren', onKlick: () => {
       const ziel = naechsteInstanz(t.path);
       merkeTab(ziel, t.label);
       navigate(ziel);
@@ -526,7 +526,7 @@ export function Reiterleiste({ paneSchluessel = [] }: {
       // das Nützliche, fiel weg. «Wieder öffnen: ZGB» stellt die Tätigkeit
       // nach vorn und trägt den Namen ganz.
       e.push({ id: 'wieder', label: `Wieder öffnen: ${kurzformText(wieder, manifeste)}`,
-        marke: '↩', rechts: 'Alt+⇧+T', onKlick: stelleWiederHer });
+        rechts: 'Alt+⇧+T', onKlick: stelleWiederHer });
     }
     return e;
   };

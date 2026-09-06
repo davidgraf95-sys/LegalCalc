@@ -26,8 +26,6 @@ import { useDialogFokus } from './useDialogFokus';
 export interface ReiterMenueEintrag {
   id: string;
   label: string;
-  /** Zeichen in der Marken-Spalte (leer lassen heisst: Spalte bleibt frei). */
-  marke?: string;
   /** Kleine Zusatzangabe am Zeilenende (Kürzel wie «Alt+Shift+T»). */
   rechts?: string;
   onKlick: () => void;
@@ -100,7 +98,7 @@ export function ReiterMenue({ x, y, name, eintraege, onSchliessen }: {
       className="lc-schwebeflaeche fixed z-overlay w-64 max-w-[calc(100vw-1rem)] p-1 focus:outline-none">
       <MenueTitel>{name}</MenueTitel>
       {eintraege.map((e) => (
-        <MenueZeile key={e.id} label={e.label} marke={e.marke} rechts={e.rechts}
+        <MenueZeile key={e.id} label={e.label} rechts={e.rechts}
           attrs={{ role: 'menuitem', 'data-reiter-menue': e.id }}
           onKlick={() => { e.onKlick(); onSchliessen(); }} />
       ))}

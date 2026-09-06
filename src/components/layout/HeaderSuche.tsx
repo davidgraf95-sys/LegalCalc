@@ -303,7 +303,11 @@ export function HeaderSuche({ onFokusModus, onFokusZurueck }: {
         // herausfinden muss (S6). Ab sm bleibt die kompakte Streifen-Grösse.
         // C1/B10/L3: unter 480 px weicht das FELD im Ruhezustand der Lupe (s.
         // unten) — geöffnet (`breit`) steht es dort über die volle Streifenbreite.
-        className={`lc-input h-11 py-0 text-base sm:text-body-s w-full lg:pr-9 ${breit ? 'pr-11' : 'pr-0 max-[480px]:hidden'}`}
+        // `lc-suchpanel-feld` (F5, index.css): solange das Panel offen ist, trägt
+        // der Unterstrich des Feldes DIESELBE Linie wie der Panel-Rahmen darunter
+        // (`--rule`) — im Dunkel standen dort zwei verschiedene Farben an einer
+        // Kante. Herleitung samt Fokus-Nachweis an der Klasse selbst.
+        className={`lc-input lc-suchpanel-feld h-11 py-0 text-base sm:text-body-s w-full lg:pr-9 ${breit ? 'pr-11' : 'pr-0 max-[480px]:hidden'}`}
         aria-label="LexMetrik durchsuchen oder zur Norm springen"
         aria-keyshortcuts="/ Meta+K Control+K"
         autoComplete="off"
