@@ -46,6 +46,21 @@ export function useReiterFenster(
   const zuViel = useRef(Number.POSITIVE_INFINITY);
   const breite = useRef(-1);
   const bestand = useRef(gesamt);
+  /** Notbremse: wie oft in DIESER Breiten-/Bestands-Epoche schon nachgezogen
+   *  wurde. Der Kreis «Knopf ändert Breite → Breite ändert Zahl» ist mit dem
+   *  festen Knopf-Platz (`Reiterleiste.tsx`) gebrochen; diese Zählung ist das
+   *  Netz darunter — lieber ein Reiter zu wenig im Bild als ein React-Fehler
+   *  #185, der die ganze Leiste kostet (GEMESSEN 7.9.2026 @1024). */
+  const laeufe = useRef(0);
+  /** Letzte Messung (Zahl der gezeigten Reiter → rechte Kante des letzten).
+   *  Ändert sich die Kante bei GLEICHER Zahl, sind nicht wir schuld, sondern
+   *  der Inhalt: die Beschriftungen kommen aus lazy geladenen Manifesten nach,
+   *  und die Lesestellung (D27) wächst dem Reiter erst beim ersten Spy-Lauf zu.
+   *  GEMESSEN 7.9.2026 @390: mit den Platzhalter-Namen («Gesetz öffnen», 130 px)
+   *  passte nur EIN Reiter; als die echten Namen kamen (URG 74 px), hätten zwei
+   *  gepasst — die Schranke `zuViel` stammte aber noch aus der Messung davor und
+   *  verbot das Wachsen für immer. Darum: neue Kante = neue Lage = Schranke weg. */
+  const letzte = useRef({ anzahl: -1, kante: -1 });
 
   useEffect(() => {
     const el = streifenRef.current;
@@ -72,17 +87,26 @@ export function useReiterFenster(
       breite.current = w;
       bestand.current = gesamt;
       zuViel.current = Number.POSITIVE_INFINITY;
+      laeufe.current = 0;
       // eslint-disable-next-line react-hooks/set-state-in-effect -- s. Herleitung oben
       if (anzahl !== gesamt) { setAnzahl(gesamt); return; }
     }
     const kinder = Array.from(el.querySelectorAll<HTMLElement>('[data-reiter-schluessel]'));
-    if (kinder.length > 0) {
+    const letzterReiter = kinder[kinder.length - 1];
+    const kante = letzterReiter ? Math.round(letzterReiter.offsetLeft + letzterReiter.offsetWidth) : -1;
+    if (kinder.length === letzte.current.anzahl && kante !== letzte.current.kante) {
+      zuViel.current = Number.POSITIVE_INFINITY;
+      laeufe.current = 0;
+    }
+    letzte.current = { anzahl: kinder.length, kante };
+    if (kinder.length > 0 && laeufe.current < 24) {
       const ueber = ersterUeberlauf(kinder.map((k) => k.offsetLeft + k.offsetWidth), w);
       if (ueber >= 0) {
         zuViel.current = Math.min(zuViel.current, kinder.length);
         const neu = Math.max(1, Math.min(ueber, kinder.length - 1));
-        if (neu !== anzahl) { setAnzahl(neu); return; }
+        if (neu !== anzahl) { laeufe.current += 1; setAnzahl(neu); return; }
       } else if (anzahl < gesamt && anzahl + 1 < zuViel.current) {
+        laeufe.current += 1;
         setAnzahl(anzahl + 1);
         return;
       }

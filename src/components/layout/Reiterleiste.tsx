@@ -50,9 +50,6 @@ import type { ReiterMenueEintrag } from './ReiterMenue';
 // (localStorage `lexmetrik-tabs`, Pfad INKLUSIVE `#art-…`-Anker — die
 // Lesestellung überlebt den Neustart also schon heute, §5a Ziff. 6).
 
-/** Ab dieser Zahl bietet die schmale Ansicht zusätzlich den «N offen»-Knopf
- *  an (§5a Ziff. 8). */
-const MOBIL_BLATT_AB = 3;
 /** Der MIME-Typ des Reiter-Zugs wohnt seit R13 bei der Überlauf-Rechnung
  *  (`reiterleiste/ueberlauf`) — hier steht nur noch die Durchreiche, damit
  *  `Shell.tsx` seinen bisherigen Import behält (§5: eine Quelle). */
@@ -543,6 +540,10 @@ export function Reiterleiste({ paneSchluessel = [] }: {
             Doppelklick AUF einem Reiter steigt hierher auf und darf keinen
             zweiten Reiter erzeugen (Risiko aus dem Plan). */}
         <div ref={streifenRef} data-reiter-streifen
+          // Mess-Anker für die Sonden (R13): «ab welchem Reiter / wie viele /
+          // von wie vielen». Die Zahlen sind das, was `useReiterFenster`
+          // ausgerechnet hat — im DOM nachlesbar, statt aus Breiten erraten.
+          data-reiter-fenster={`${start}/${anzahl}/${ordnung.length}`}
           onDoubleClick={(ev) => { if (ev.target === ev.currentTarget) neuerReiter(); }}
           // R13-5 · Rechtsklick NUR auf der freien Fläche (dieselbe Bedingung
           // wie beim Doppelklick daneben): über einem Reiter gilt dessen
@@ -578,14 +579,29 @@ export function Reiterleiste({ paneSchluessel = [] }: {
             schmale Ansicht (§5a Ziff. 5 + 8). Inhalt ist die gruppierte Liste
             `TabPanel`, also genau das, was das abgelöste ☰-Flyout zeigte,
             zusätzlich mit Suchfeld. */}
-        {(ueberlaufZahl > 0 || tabs.length >= MOBIL_BLATT_AB) && (
+        {/* ── R13-1 · DER KNOPF STEHT IMMER, UND IMMER GLEICH BREIT ────────
+            Er erschien bis R13 erst BEI Überlauf (und ab md nur dann). Genau
+            das war die Ursache des R13-1-Befundes: der Knopf verschmälerte den
+            Streifen um ~58 px, NACHDEM die Leiste gerechnet hatte — der aktive
+            Reiter stand danach angeschnitten am Rand.
+            Und es ist zugleich eine RÜCKKOPPLUNG: die gemessene Überlauf-Zahl
+            (R13-2) entscheidet über den Knopf, der Knopf über die Breite, die
+            Breite wieder über die Zahl. GEMESSEN 7.9.2026 @1024 mit 8 Reitern:
+            React-Fehler #185 («Maximum update depth exceeded»), die Leiste
+            verschwand ganz. Ein fester Platz bricht den Kreis: die Breite des
+            Streifens hängt nicht mehr davon ab, wie viele Reiter hineinpassen.
+            FESTE Breite, nicht nur eine Mindestbreite: die Aufschrift wechselt
+            zwischen «8 offen» und «+2», und GEMESSEN 7.9.2026 reichte allein
+            dieser Textwechsel, um den Kreis am Leben zu halten (React #185
+            blieb). Ein Kasten mit fester Breite hat keine Meinung zu seinem
+            Inhalt — erst damit ist der Streifen wirklich unabhängig. */}
+        {!leer && (
           <button ref={triggerRef} type="button"
             aria-haspopup="dialog" aria-expanded={blattOffen}
             aria-label={`Alle ${tabs.length} offenen Reiter`}
             title="Alle offenen Reiter"
             onClick={() => setBlattOffen((v) => !v)}
-            className={`shrink-0 self-center ml-2 border border-rule-soft px-2 py-1 text-body-s text-ink-600 hover:text-ink-900 ${
-              ueberlaufZahl > 0 ? '' : 'md:hidden'}`}>
+            className="shrink-0 self-center ml-2 w-[4.5rem] overflow-hidden whitespace-nowrap border border-rule-soft px-1 py-1 text-center text-body-s text-ink-600 hover:text-ink-900">
             <span className="num">{blattTitel}</span>
           </button>
         )}
