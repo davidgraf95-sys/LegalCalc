@@ -68,7 +68,7 @@ export const SUCH_H_AKTIV = '4.25rem';
 
 export function SuchZone({
   suchFeld, sucheAktiv, bestimmungen, fundstellen, bestimmungsWort, onListe, blattOffen, blatt,
-  onVor, onZurueck,
+  onVor, onZurueck, listeSteht,
 }: {
   /** Das Such-/Sprungfeld. Oberstes Element — das ist die ganze Zusage (Ä19).
    *
@@ -126,6 +126,18 @@ export function SuchZone({
    *  gibt es nichts zu treffen, stehen die Griffe gar nicht erst da. */
   onVor?: () => void;
   onZurueck?: () => void;
+  /** ── D28-NACHZUG (6.9.2026) · STEHT DIE LISTE SCHON DANEBEN? ───────────────
+   *  GEMESSEN am ersten gebauten Stand @1440 (STPO, «Kosten», Screen
+   *  `r6d-leser-1440-suche-aktiv`, erster Lauf): weil die Zone seit D28 auch bei
+   *  STEHENDER Gliederungs-Spalte da ist, erschien das Treffer-Blatt (Ä76) am
+   *  Feld — und legte sich über die Spalte, die dieselbe Trefferliste samt
+   *  demselben Kopf «49 Artikel · 110 Fundstellen» bereits zeigte. Zwei gleiche
+   *  Listen übereinander, die obere verdeckte die untere (§5).
+   *  Steht die Liste in der Spalte, schweigt diese Zone also: kein Blatt, keine
+   *  Zähler-Zeile, kein «Treffer anzeigen →» — die Zahlen und der Schritt durch
+   *  die Fundstellen stehen zwei Zentimeter links, aus derselben Quelle. Übrig
+   *  bleibt das FELD, und genau darum ging es David («oben am gesetz»). */
+  listeSteht?: boolean;
 }) {
   return (
     // `relative`: der Bezugsrahmen des Blattes (`absolute top-full`). Es nimmt
@@ -156,7 +168,7 @@ export function SuchZone({
           Darunter (Pane · Handy) greift der Deckel nie, dort bleibt `w-full` in
           Kraft — kein Breakpoint, ein `max-width`. */}
       <div className="w-full max-w-reading">{suchFeld}</div>
-      {sucheAktiv && !blattOffen && (
+      {sucheAktiv && !blattOffen && !listeSteht && (
         // §8: die Zahl steht dran, und der Weg zur Liste ist BENANNT statt als ☰
         // zu erraten — genau das war der zweite Teil des Ä19-Befunds («das
         // geöffnete Blatt verdeckt das Pane»): der Leser soll selbst entscheiden,

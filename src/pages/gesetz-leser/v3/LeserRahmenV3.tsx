@@ -203,13 +203,11 @@ export function LeserRahmenV3({ ebene, schluessel }: LeserRahmenV3Props) {
   // D28 (6.9.2026): der Kopf-Block trägt das Feld IMMER — bis hierher stand
   // `&& !zweiSpalten`, und dieses Hin-und-Her war der Mangel (`./SuchZone`).
   const suchZoneKlebt = hatLeiste;
-  // Zusammensetzung in `./suchZoneAufbau` (§6.6-Auslagerung 17.8.2026). Der
-  // Rahmen sagt, OB die Zone klebt und WAS darin steht; `useTrefferBlatt` bleibt
-  // oben, damit der Offen-Zustand keinen Lagewechsel verliert.
+  // Zusammensetzung in `./suchZoneAufbau` (§6.6-Auslagerung 17.8.2026); der
+  // Rahmen sagt, OB die Zone klebt und WAS darin steht.
   const suchZone = suchZoneAufbau({
     klebt: suchZoneKlebt, istXl: umgebung.istXl, sucheAktiv: m.sucheAktiv,
-    // `blattOffen` ist der PROP-Name von `suchZoneAufbau` (Fläche des
-    // Übersicht-/Blatt-Auftrags) — hier steht die umbenannte Quelle davor.
+    // `blattOffen` = Prop-Name von `suchZoneAufbau`; Quelle davor umbenannt.
     blattOffen: gliederungsSheetOffen, suchFeld, bestimmungsWort,
     liste: <LeserGliederung m={m} bestimmungsWort={bestimmungsWort} />,
     bestimmungen: m.treffer.length, fundstellen: m.fundstellen,
@@ -217,6 +215,7 @@ export function LeserRahmenV3({ ebene, schluessel }: LeserRahmenV3Props) {
     // D28 · ‹ ›: dieselben Callbacks wie ↑↓ im Feld (§5, eine Folge).
     onVor: () => m.springeZuFundstelle?.(1),
     onZurueck: () => m.springeZuFundstelle?.(-1),
+    listeSteht: zweiSpalten, // D28-Nachzug, Herleitung in `./SuchZone`
   });
 
   // ── H3 · Panel: WO es steht, WAS am Öffner steht ──────────────────────────
@@ -287,7 +286,9 @@ export function LeserRahmenV3({ ebene, schluessel }: LeserRahmenV3Props) {
       // samt LM-003. Der Rahmen sagt nur noch, WELCHE Lage gilt (C5a, §6.6).
       style={{
         ...leserCssVariablen({
-          stufe, vollflaechig: !umgebung.imPane, suchZoneKlebt, sucheAktiv: m.sucheAktiv,
+          stufe, vollflaechig: !umgebung.imPane, suchZoneKlebt,
+          // D28-Nachzug: hoch nur, wenn die Zähler-Zeile wirklich steht.
+          sucheAktiv: m.sucheAktiv && !zweiSpalten,
         }),
         // FIX PR #559 (Herleitung `rahmenSpalten.RahmenBild.lesemassMaxRem`): löst den 45rem-Fallback ab, reserviert die Blatt-Spur statisch.
         ...({ '--leser-lesemass-max': `${bild.lesemassMaxRem}rem` } as CSSProperties),

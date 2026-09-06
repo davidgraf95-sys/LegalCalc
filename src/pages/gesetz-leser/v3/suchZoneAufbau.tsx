@@ -58,13 +58,19 @@ export function suchZoneAufbau(a: {
   /** D28 · Schritt durch die Fundstellen, sichtbar neben dem Zähler (`./SuchZone`). */
   onVor?: () => void;
   onZurueck?: () => void;
+  /** D28-Nachzug: steht die Gliederungs-SPALTE (und damit während einer Suche
+   *  die Trefferliste samt Zahlen)? Dann schweigt die Zone — Herleitung samt
+   *  Messung am gleichnamigen Prop in `./SuchZone`. */
+  listeSteht?: boolean;
 }): ReactNode | undefined {
   if (!a.klebt) return undefined;
   // Ä76: Fehlt die Spalte, ist aber Platz neben dem Text (Desktop mit
   // eingeklappter Gliederung), liegt die Trefferliste als Blatt AM FELD; darunter
   // (Handy · schmales Pane) bleibt das Bottom-Sheet der Weg. Herleitung und die
   // Messung, die «Spalte aufziehen» ausschloss: `./LeserTrefferBlatt`.
-  const blattAmFeld = a.istXl && a.sucheAktiv;
+  // D28-Nachzug: `!listeSteht` — mit stehender Spalte liegt die Liste dort, ein
+  // Blatt am Feld wäre die zweite (gemessen: es verdeckte die erste).
+  const blattAmFeld = a.istXl && a.sucheAktiv && !a.listeSteht;
   // Ä78/V5 (Nachzug 17.8.2026): EIN Ausdruck entscheidet, ob die Liste unter dem
   // Feld hängt — er speist das Blatt UND das Schweigen der Zähler-Zeile darüber
   // (Herleitung am Prop `blattOffen` in `./SuchZone`). Zwei getrennte Bedingungen
@@ -77,7 +83,7 @@ export function suchZoneAufbau(a: {
       bestimmungsWort={a.bestimmungsWort}
       // Die eine Geste «zeig mir die Treffer»: Blatt am Feld @≥1024 px, sonst Sheet.
       onListe={() => { if (a.istXl) a.trefferBlatt.oeffne(); else a.onSheet(); }}
-      onVor={a.onVor} onZurueck={a.onZurueck}
+      onVor={a.onVor} onZurueck={a.onZurueck} listeSteht={a.listeSteht}
       blattOffen={trefferBlattOffen}
       blatt={trefferBlattOffen
         ? <LeserTrefferBlatt onSchliessen={a.trefferBlatt.schliesse} liste={a.liste} />

@@ -392,8 +392,22 @@ test.describe('H4-II — ein Weg je Handlung aus der V3-Kopfzeile', () => {
     // nicht mehr je Pane doppelt.
     await expect(page.locator('[data-v3-kopf-krume-kurz]'),
       'die Kopfzeile trägt wieder eine Brotkrume (D27)').toHaveCount(0)
+    // ── D27 · WO DER WEG ZURÜCK JETZT STEHT (gemessen 6.9.2026) ─────────────
+    // Die Hauptnavigation ist auf einer Leser-Seite EINGEKLAPPT (Vorgabe
+    // `useSeitenleiste({ vorgabeEingeklappt: istGesetzLeserPfad })`) — gemessen
+    // @1440 auf `/gesetze/bund/STPO`: `nav[aria-label="Hauptnavigation"]` count
+    // **0**, der Umschalter in der Topbar count **1**, und nach einem Klick
+    // darauf steht der Link `/gesetze` (count 1). Der Weg zurück ist also da und
+    // ist einen Klick entfernt; die Krume war es auf `mini` faktisch auch (dort
+    // stand nur noch «‹ Gesetze»). Geprüft wird beides, damit der Fall nicht
+    // stumm grün wird, wenn eine Seite den Umschalter verliert.
+    const umschalter = page.getByRole('button', { name: 'Seitenleiste ein- und ausblenden' }).first()
+    await expect(umschalter, 'ohne Umschalter gibt es keinen Weg in die Hauptnavigation').toHaveCount(1)
+    await umschalter.click()
     await expect(page.locator('nav[aria-label="Hauptnavigation"] a[href="/gesetze"]').first(),
-      'der Weg zurück zur Gesetzes-Übersicht fehlt in der Hauptnavigation').toHaveCount(1)
+      'der Weg zurück zur Gesetzes-Übersicht fehlt in der Hauptnavigation').toBeVisible({ timeout: 15_000 })
+    await umschalter.click()
+
     expect(fehler, fehler.join(' | ')).toEqual([])
   })
 
@@ -453,8 +467,22 @@ test.describe('H4-II — ein Weg je Handlung aus der V3-Kopfzeile', () => {
     await expect(page.locator('[data-v3-kopf-schliessen]')).toHaveCount(0)
     await expect(page.locator('[data-v3-kopf]').getByRole('link', { name: 'Gesetze' }))
       .toHaveCount(0)
-    await expect(page.locator('nav[aria-label="Hauptnavigation"] a[href="/gesetze"]').first())
-      .toHaveCount(1)
+    // ── D27 · WO DER WEG ZURÜCK JETZT STEHT (gemessen 6.9.2026) ─────────────
+    // Die Hauptnavigation ist auf einer Leser-Seite EINGEKLAPPT (Vorgabe
+    // `useSeitenleiste({ vorgabeEingeklappt: istGesetzLeserPfad })`) — gemessen
+    // @1440 auf `/gesetze/bund/STPO`: `nav[aria-label="Hauptnavigation"]` count
+    // **0**, der Umschalter in der Topbar count **1**, und nach einem Klick
+    // darauf steht der Link `/gesetze` (count 1). Der Weg zurück ist also da und
+    // ist einen Klick entfernt; die Krume war es auf `mini` faktisch auch (dort
+    // stand nur noch «‹ Gesetze»). Geprüft wird beides, damit der Fall nicht
+    // stumm grün wird, wenn eine Seite den Umschalter verliert.
+    const umschalter = page.getByRole('button', { name: 'Seitenleiste ein- und ausblenden' }).first()
+    await expect(umschalter, 'ohne Umschalter gibt es keinen Weg in die Hauptnavigation').toHaveCount(1)
+    await umschalter.click()
+    await expect(page.locator('nav[aria-label="Hauptnavigation"] a[href="/gesetze"]').first(),
+      'der Weg zurück zur Gesetzes-Übersicht fehlt in der Hauptnavigation').toBeVisible({ timeout: 15_000 })
+    await umschalter.click()
+
 
     await page.locator('[data-v3-panel-zaehler]').click()
     await expect(page.locator('[data-v3-panel]')).toBeVisible({ timeout: 20_000 })
@@ -769,8 +797,11 @@ test('H1 — beide Split-View-Panes tragen denselben V3-Kopf (Kürzel, Ansicht-�
     // Und der V3-Kopf trägt hier kein ✕ mehr — sonst stünden wieder zwei.
     await expect(kopf.locator('[data-v3-kopf-schliessen]')).toHaveCount(0)
   }
-  await expect(page.locator('nav[aria-label="Hauptnavigation"] a[href="/gesetze"]').first(),
-    'der Weg zurück zur Gesetzes-Übersicht fehlt in der Hauptnavigation').toHaveCount(1)
+  // D27: der Weg zurück steht in der Hauptnavigation, die auf Leser-Seiten
+  // eingeklappt startet — der Umschalter in der Topbar ist der eine Griff dahin
+  // (Messung im Fall (b) dieser Datei).
+  await expect(page.getByRole('button', { name: 'Seitenleiste ein- und ausblenden' }).first())
+    .toHaveCount(1)
   // Und die Kürzel unterscheiden sich inhaltlich (zwei verschiedene Gesetze,
   // keine zufällige Doppelung, die den Vergleich entwerten würde).
   const kuerzelPrimaer = (await primaer.locator('[data-v3-kopf-kuerzel]').textContent())?.trim()

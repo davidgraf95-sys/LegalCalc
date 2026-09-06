@@ -177,8 +177,21 @@ const APP_LEISTE_H = 36
 const TOPBAR_H = 64
 /** Was der LESER selbst an Chrome mitbringen darf — «vorher minus Leiste minus
  *  Topbar». Gemessen am Bau-Stand von R6c: 57 px @1440, 93 px @390; die
- *  Schranken (59 / 95) behalten damit ihre Bissigkeit von 2 px. */
-const EIGEN_D = VORHER_D - APP_LEISTE_H - TOPBAR_H
+ *  Schranken (59 / 95) behielten damit ihre Bissigkeit von 2 px.
+ *
+ *  ── §6.3-DEKLARATION D28 (David 6.9.2026) · @1440 KOSTET DIE SUCHE 44 px ───
+ *  «die suchleiste im gesetz … will ich oben am gesetz.» Bis 6.9. lag das Feld
+ *  @1440 in der Gliederungs-SPALTE und kostete den klebenden Kopf nichts; seit
+ *  D28 trägt der Kopf-Block es auf jeder Breite. GEMESSEN am gebauten Stand
+ *  (STPO, Preview 4372): Kopfhöhe @1440 **57 → 101 px** (+44 = `SUCH_H_RUHE`,
+ *  2.75 rem), @390 unverändert **93 px** — dort stand das Feld schon vorher im
+ *  Kopf. Die Schranke @1440 wird darum auf 103 gehoben und behält ihre
+ *  Bissigkeit von 2 px; @390 bleibt sie unberührt bei 95.
+ *  DER PREIS IST BENANNT, nicht wegdefiniert: der Ausdruck unten ist deshalb um
+ *  eine EIGENE Zeile ergänzt statt die Vorher-Werte umzuschreiben — `VORHER_D`
+ *  ist ein Messwert vom 17.8.2026 und bleibt, was er war. */
+const SUCH_ZONE_H = 44
+const EIGEN_D = VORHER_D - APP_LEISTE_H - TOPBAR_H + SUCH_ZONE_H
 const EIGEN_H = VORHER_H - APP_LEISTE_H - TOPBAR_H
 
 test.describe('A-2 — unter ?leser=v3 trägt der Leser die eine Kopfzeile', () => {
@@ -227,8 +240,21 @@ test.describe('A-2 — unter ?leser=v3 trägt der Leser die eine Kopfzeile', () 
     await expect(page.locator('[data-v3-kopf] [data-v3-such-zone] input')).toBeVisible()
     await expect(page.locator('[data-v3-kopf-schliessen]'),
       'Ä87: das Kopf-✕ ist gestrichen — der Rücksprung steht in der Hauptnavigation').toHaveCount(0)
-    await expect(page.locator('nav[aria-label="Hauptnavigation"] a[href="/gesetze"]').first())
-      .toHaveCount(1)
+    // ── D27 · WO DER WEG ZURÜCK JETZT STEHT (gemessen 6.9.2026) ─────────────
+    // Die Hauptnavigation ist auf einer Leser-Seite EINGEKLAPPT (Vorgabe
+    // `useSeitenleiste({ vorgabeEingeklappt: istGesetzLeserPfad })`) — gemessen
+    // @1440 auf `/gesetze/bund/STPO`: `nav[aria-label="Hauptnavigation"]` count
+    // **0**, der Umschalter in der Topbar count **1**, und nach einem Klick
+    // darauf steht der Link `/gesetze` (count 1). Der Weg zurück ist also da und
+    // ist einen Klick entfernt; die Krume war es auf `mini` faktisch auch (dort
+    // stand nur noch «‹ Gesetze»). Geprüft wird beides, damit der Fall nicht
+    // stumm grün wird, wenn eine Seite den Umschalter verliert.
+    const umschalter = page.getByRole('button', { name: 'Seitenleiste ein- und ausblenden' }).first()
+    await expect(umschalter, 'ohne Umschalter gibt es keinen Weg in die Hauptnavigation').toHaveCount(1)
+    await umschalter.click()
+    await expect(page.locator('nav[aria-label="Hauptnavigation"] a[href="/gesetze"]').first(),
+      'der Weg zurück zur Gesetzes-Übersicht fehlt in der Hauptnavigation').toBeVisible({ timeout: 15_000 })
+    await umschalter.click()
     const ortText = (await ort.innerText()).replace(/\s+/g, ' ').trim()
     expect(ortText, `Ortszone lautet «${ortText}»`).toBe('StPO')
 
@@ -475,7 +501,9 @@ test.describe('A-2 — unter ?leser=v3 trägt der Leser die eine Kopfzeile', () 
       // D28: statt ihrer trägt jeder Pane-Kopf die Erlass-Suche.
       await expect(kopf.locator('[data-v3-such-zone] input')).toBeVisible()
     }
-    await expect(page.locator('nav[aria-label="Hauptnavigation"] a[href="/gesetze"]').first())
+    // D27: der Weg zurück steht in der Hauptnavigation, die auf Leser-Seiten
+    // eingeklappt startet — der Umschalter ist der eine Griff dahin (Fall (b)).
+    await expect(page.getByRole('button', { name: 'Seitenleiste ein- und ausblenden' }).first())
       .toHaveCount(1)
 
     expect(fehler, `Konsolen-/Seitenfehler: ${fehler.join(' | ')}`).toEqual([])
@@ -859,13 +887,25 @@ test.describe('Ä1 — der V3-Kopf sitzt bündig an der Leiste über ihm', () =>
       .toBeGreaterThanOrEqual(vorher.kopfUnten - 2)
     expect(vorher.artOben, 'Vorbedingung: #art-429 liegt nicht im Bild').toBeLessThan(900)
 
-    // ZUKLAPPEN — der Kopf wächst um die Such-Zone.
+    // ── §6.3-DEKLARATION D28 (David 6.9.2026) · DIE URSACHE IST WEG ─────────
+    // Hier stand als Vorbedingung «der Kopf ist GEWACHSEN» — der Ä19-Zustand:
+    // beim Einklappen übernahm der Kopf-Block die Such-Zone und wuchs von 121
+    // auf 164 px, worauf `useStickAusgleich` den Scroll nachziehen musste.
+    // Seit D28 trägt der Kopf die Zone IMMER; gemessen 6.9.2026 @1440 (STPO):
+    // Kopfhöhe vor und nach dem Einklappen **101 → 101 px**. Die Zusage dieses
+    // Falls — «der Artikel, an dem ich lese, steht danach immer noch unter dem
+    // Kopf» — ist damit nicht schwächer, sondern auf dem kürzeren Weg erfüllt:
+    // es gibt nichts mehr auszugleichen. Die Vorbedingung wird darum
+    // UMGEDREHT, nicht gestrichen; sie meldet ab hier jede Rückkehr der
+    // lagen-abhängigen Kopfhöhe. `useStickAusgleich` bleibt in Kraft und
+    // notwendig — der zweite Auslöser, das Beiwerk-Blatt (`rohPanel.offen`),
+    // ist unberührt.
     await page.locator('[data-v3-gliederung-zu]').click()
     await expect(page.locator('[data-v3-aside]')).toHaveCount(0)
     await page.waitForTimeout(400)
     const zu = await lage()
-    expect(zu.kopfHoehe, `Vorbedingung: der Kopf ist nicht gewachsen (${vorher.kopfHoehe} → ${zu.kopfHoehe})`)
-      .toBeGreaterThan(vorher.kopfHoehe + 1)
+    expect(zu.kopfHoehe, `D28: der Kopf ändert beim Klappen seine Höhe (${vorher.kopfHoehe} → ${zu.kopfHoehe})`)
+      .toBe(vorher.kopfHoehe)
     expect(zu.artOben, `#art-429 liegt nach dem Zuklappen bei ${zu.artOben}, der Kopf endet bei ${zu.kopfUnten}`)
       .toBeGreaterThanOrEqual(zu.kopfUnten - 2)
 

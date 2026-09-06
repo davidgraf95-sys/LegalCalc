@@ -79,7 +79,15 @@ async function sichtbare(wurzel: Locator): Promise<string[]> {
 
 /**
  * Die Lesestellung, wie sie im Reiter-Signal steht — für den Reiter, dessen
- * Pfad `teil` enthält (der Erlass-Schlüssel, z. B. `/gesetze/bund/STPO`).
+ * PFADTEIL (alles vor `?`) genau `teil` ist, z. B. `/gesetze/bund/stpo`.
+ *
+ * GENAU der Pfadteil, kein `includes`: im Split trägt der Reiter des primären
+ * Panes die Adresse des zweiten im Query mit
+ * (`/gesetze/bund/STPO?leser=v3&p=/gesetze/bund/BGFA…`). Eine Teilstring-Suche
+ * nach «bgfa» trifft darum ZUERST den STPO-Reiter und liefert dessen Artikel —
+ * gemessen 6.9.2026: «Art. 8» statt «Art. 2», und der Fall wurde rot, ohne dass
+ * am Produkt etwas fehlte (beide Signale standen korrekt:
+ * `…STPO?…#art-8` und `…BGFA?leser=v3#art-2`).
  *
  * Gelesen wird der ROHE Speicher statt des gerenderten Reiters: dies ist die
  * Naht, an der die Lesestellung den Leser verlässt. Was die Reiterleiste daraus
@@ -93,7 +101,8 @@ async function signal(page: Page, teil: string): Promise<string | null> {
       const arr = roh ? JSON.parse(roh) : []
       if (!Array.isArray(arr)) return null
       const treffer = arr.find((e: { path?: string }) =>
-        typeof e?.path === 'string' && e.path.toLowerCase().includes(t.toLowerCase()))
+        typeof e?.path === 'string'
+        && e.path.split('?')[0].split('#')[0].toLowerCase() === t.toLowerCase())
       return treffer?.path ?? null
     } catch { return null }
   }, teil)
