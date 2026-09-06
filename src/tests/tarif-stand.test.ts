@@ -1,0 +1,70 @@
+// W3-TARIF-STAND — Projektion des `stand`-Anzeige-Strings auf ein Datum.
+//
+// Die Fälle sind KEINE erfundenen Muster: jeder Eingabe-String unten steht so
+// in `src/data/tarif/**` (Erhebung 6.9.2026, 137 distinkte Schreibweisen).
+import { describe, it, expect } from 'vitest';
+import { standDatum } from '../../scripts/tarif/stand';
+
+describe('standDatum — Schreibweisen aus den Tarif-Daten', () => {
+  it('1. taggenaue Formen (DMY, führende Null, ISO, ausgeschriebener Monat)', () => {
+    expect(standDatum('1.1.2024')).toMatchObject({ iso: '2024-01-01', genauigkeit: 'tag' });
+    expect(standDatum('01.01.2024')).toMatchObject({ iso: '2024-01-01', genauigkeit: 'tag' });
+    expect(standDatum('2024-01-01')).toMatchObject({ iso: '2024-01-01', genauigkeit: 'tag' });
+    expect(standDatum('1. Januar 2024')).toMatchObject({ iso: '2024-01-01', genauigkeit: 'tag' });
+    expect(standDatum('7.10.1986')).toMatchObject({ iso: '1986-10-07', genauigkeit: 'tag' });
+    expect(standDatum('État au 13 mai 2015 (FO 2015 N')).toMatchObject({ iso: '2015-05-13', genauigkeit: 'tag' });
+  });
+
+  it('2. Zusatz in Klammern ändert das Datum nicht, solange er keines nennt', () => {
+    expect(standDatum('1.1.2015 (Nachtrag 087)')).toMatchObject({ iso: '2015-01-01', genauigkeit: 'tag' });
+    expect(standDatum('28.9.2010 (geltende Fassung)')).toMatchObject({ iso: '2010-09-28', genauigkeit: 'tag' });
+  });
+
+  it('3. Spätestes belegtes Datum gewinnt (mehrere Daten im String)', () => {
+    expect(standDatum('1.1.2024 (Punktwert 1.1.2025)').iso).toBe('2025-01-01');
+    expect(standDatum('1.3.2012 (Folgefassung 1.7.2026 wortgleich)').iso).toBe('2026-07-01');
+    expect(standDatum('25.3.2014/17.3.2015').iso).toBe('2015-03-17');
+  });
+
+  it('4. Blosse Jahresangaben ergeben Jahres-Granularität, nicht 1. Januar', () => {
+    expect(standDatum('2012/2013')).toMatchObject({ iso: '2013', genauigkeit: 'jahr' });
+    expect(standDatum('2005/2017/2024')).toMatchObject({ iso: '2024', genauigkeit: 'jahr' });
+    expect(standDatum('konsolidierte Fassung 2026')).toMatchObject({ iso: '2026', genauigkeit: 'jahr' });
+    expect(standDatum('2026 (konsolidiert)')).toMatchObject({ iso: '2026', genauigkeit: 'jahr' });
+  });
+
+  it('5. Jahr schlägt ein älteres Tagesdatum, Tagesdatum schlägt dasselbe Jahr', () => {
+    // «Etat au 2015» ist jünger als «13 juin 2012» → Jahr 2015 gewinnt.
+    expect(standDatum('Etat au 2015 (Arrete du 13 juin 2012)')).toMatchObject({ iso: '2015', genauigkeit: 'jahr' });
+    // Umgekehrt: taggenau im selben Jahr ist die präzisere (und spätere) Lesart.
+    expect(standDatum('2026, in Kraft 1.3.2026')).toMatchObject({ iso: '2026-03-01', genauigkeit: 'tag' });
+  });
+
+  it('6. Ohne belegtes Datum: unbekannt statt Raten (§7)', () => {
+    expect(standDatum('geltende Fassung')).toMatchObject({ iso: null, genauigkeit: 'unbekannt' });
+    expect(standDatum('')).toMatchObject({ iso: null, genauigkeit: 'unbekannt' });
+  });
+
+  it('7. «bis TT.MM.JJJJ» ist ein Enddatum — nie ein Fassungsdatum (falsches Grün)', () => {
+    const d = standDatum('bis 31.12.2026');
+    expect(d.iso).toBeNull();
+    expect(d.genauigkeit).toBe('unbekannt');
+    expect(d.grund).toContain('Enddatum');
+  });
+
+  it('8. Nachtrags-/Betragszahlen werden nie als Jahr gelesen', () => {
+    expect(standDatum('Nachtrag 087').iso).toBeNull();
+    expect(standDatum('Tarif 1850').iso).toBeNull(); // 1850 < 1900 → kein Jahresfenster
+  });
+
+  it('9. Unmögliche Kalendertage werden verworfen, nicht gerundet', () => {
+    expect(standDatum('31.2.2024').iso).toBe('2024'); // Tag verworfen, Jahr bleibt belegt
+    expect(standDatum('2024-02-30').iso).toBe('2024');
+  });
+
+  it('10. rein/deterministisch: gleiche Eingabe, gleiche Ausgabe (§2)', () => {
+    const a = standDatum('1.7.2025');
+    const b = standDatum('1.7.2025');
+    expect(a).toEqual(b);
+  });
+});
