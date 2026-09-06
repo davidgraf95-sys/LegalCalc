@@ -2593,21 +2593,14 @@
   .lc-list > li { position: relative; padding-left: 1.25rem; }
   .lc-list > li::before { content: '–'; position: absolute; left: 0; color: var(--brass-600); }
 
-  /* ── LM-141 (W2·17-UI-BEFUNDE/B16) · ZWEISPALTIGE LISTE, DIE VON OBEN NACH
-     UNTEN LIEST ─────────────────────────────────────────────────────────────
-     Lange Erlasslisten standen in einem `grid … sm:grid-cols-2`. Ein Grid füllt
-     ZEILENWEISE: Eintrag 1 links, Eintrag 2 rechts, Eintrag 3 wieder links —
-     wer die Liste liest, springt bei jedem Eintrag über die Spalte. Gemessen
-     4.9.2026 @1440 auf /gesetze?ebene=kanton&kt=BS (859 Erlasse, Preview von
-     origin/main). Mehrspaltensatz (`columns`) füllt dagegen SPALTENWEISE: erst
-     die linke Spalte von oben nach unten, dann die rechte — dieselbe Platz-
-     ausnutzung, aber eine Liste, der man folgen kann.
-     Die Klasse liegt hier und nicht als Utility-Kette am Aufrufer, weil
-     `break-inside` je KIND gesetzt sein muss (sonst reisst ein zweizeiliger
-     Titel am Spaltenende auseinander) und der Bestand keine `[&>*]:`-Variants
-     kennt — eine benannte Klasse statt eines neuen Utility-Musters. */
-  .lc-listenspalten { column-gap: 1.25rem; }
-  .lc-listenspalten > * { break-inside: avoid; margin-bottom: .5rem; }
+  /* ── LM-141 · `.lc-listenspalten` ENTFERNT (D24, 6.9.2026) ────────────────
+     Die Klasse trug den Mehrspaltensatz (`columns`) der Erlasslisten samt
+     `break-inside: avoid`. Sie hat ihre Aufgabe — spaltenweise Leserichtung —
+     an `.tb-raster` abgegeben (Block am Dateiende), das dieselbe Leserichtung
+     über EIN Raster erreicht und dabei zusätzlich die Zeilenhöhen der beiden
+     Spalten koppelt (D24: «beide spalten jeweils zeile auf selber höhe»). Kein
+     Aufrufer verwendet sie mehr; sie wird gelöscht statt bewacht (§17-Rückbau).
+     Der LM-141-BEFUND selbst bleibt gültig und ist im neuen Block zitiert. */
 
   /* Live-Berechnung: dezentes Einblenden des Ergebnisses */
   .lc-reveal { animation: lc-fade var(--dur-slow) var(--ease); }
@@ -3087,3 +3080,121 @@ html[data-lr6-anker-warten] footer { visibility: hidden; }
   text-decoration: underline; text-decoration-color: var(--rule-soft); text-underline-offset: 3px;
 }
 .ub-kern a:hover { text-decoration-color: var(--reg-g); }
+
+/* ═══ W2·24-R12B · LISTEN-TABELLE (Präfix `.tb-`, additiv am Dateiende) ═══════
+   D24 (David 6.9.2026, Bild Kantons-Erlassliste BS «Relevanz»): «das hier soll
+   tabellarisch aufgebaut sein sodass beide spalten jeweils zeile auf selber
+   höhe haben».
+   GEMESSEN vorher (Preview `dist`, /gesetze?ebene=kanton&kt=BS&gliederung=
+   relevanz, 859 Erlasse): zwei unabhängige CSS-`columns`-Fragmente, Zeile i
+   links gegen Zeile i rechts @1440 bis 105 px versetzt, @1280 bis 126 px.
+   Der Ersatz ist EIN Raster über beide Spalten: die Zeile ist eine GRID-Zeile,
+   links und rechts also dieselbe — gleich hoch by construction. Gefüllt wird
+   spaltenweise (`grid-auto-flow: column` + explizite Zeilenzahl), damit die
+   Leserichtung aus LM-141 (erst links ganz hinunter, dann rechts) bleibt.
+   Die Umschaltung ein-/zweispaltig hängt an einer CONTAINER-Abfrage, nicht an
+   der Fensterbreite: dieselbe Liste steht auch in der halben Pane-Breite
+   (`PaneKontext`), und dort ist die Fensterbreite die falsche Auskunft.
+   Additiv am Dateiende — an `index.css` bauen in dieser Runde mehrere Agenten
+   (dieselbe Begründung wie beim `.ub-`-Block darüber). Fällt der Block weg,
+   steht dieselbe Liste ungestylt, aber vollständig da. */
+
+.tb-huelle { container-type: inline-size; }
+
+.tb-raster {
+  display: grid;
+  grid-auto-flow: row;
+  grid-template-columns: minmax(0, 1fr);
+  margin: 0;
+  padding: 0 0 0 0.75rem;
+  list-style: none;
+  /* Registerfarbe der Domäne als linke Kante des Listenblocks — dieselbe
+     Marke, die die Seitenleiste führt. Innerhalb der Liste bleiben die
+     Haarlinien waagrecht (Referenzbild `.syst`/`.liste`). */
+  border-left: 2px solid var(--reg-g);
+  border-top: 1px solid var(--rule-soft);
+}
+.tb-raster[data-reg="r"] { border-left-color: var(--reg-r); }
+.tb-raster[data-reg="m"] { border-left-color: var(--reg-m); }
+.tb-raster[data-reg="w"] { border-left-color: var(--reg-w); }
+
+/* Die Zeile ist das Grid-Kind: sie füllt die Rasterzeile (Default `stretch`),
+   darum sitzt ihre Haarlinie auf der Unterkante der ZEILE, nicht auf der
+   Unterkante ihres Inhalts — links und rechts also auf derselben Linie. */
+.tb-zeile {
+  display: grid;
+  min-width: 0;
+  border-bottom: 1px solid var(--rule-soft);
+}
+
+.tb-link {
+  display: grid;
+  align-content: start;
+  gap: 0 0.75rem;
+  padding: 0.375rem 0.5rem;
+  /* Schmal: Nummer und Meta teilen die erste Zeile, der Titel steht darunter —
+     kein H-Overflow @390, keine Quetschspalte von 7 rem. */
+  grid-template-columns: minmax(0, 1fr) auto;
+  grid-template-areas: "nr meta" "titel titel";
+  color: var(--ink-700);
+  text-decoration: none;
+  transition: background-color .15s, color .15s;
+}
+.tb-link:hover { background-color: var(--well); color: var(--brass-700); }
+.tb-link:focus-visible { outline: 2px solid var(--focus); outline-offset: -2px; }
+
+.tb-nr {
+  grid-area: nr;
+  font-size: 0.75rem;
+  line-height: 1.5;
+  color: var(--ink-500);
+  overflow-wrap: anywhere;
+}
+.tb-titel {
+  grid-area: titel;
+  min-width: 0;
+  font-size: 0.875rem;
+  line-height: 1.45;
+  /* Zwei Zeilen: der volle Wortlaut bleibt über `title` erreichbar (§8), aber
+     ein einzelner 276-Zeichen-Titel diktiert nicht mehr die Zeilenhöhe. */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  overflow: hidden;
+  overflow-wrap: anywhere;
+}
+.tb-meta {
+  grid-area: meta;
+  justify-self: end;
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0 0.5rem;
+  white-space: nowrap;
+  font-size: 0.75rem;
+  line-height: 1.5;
+  color: var(--ink-500);
+}
+/* «↗» = führt aus der App hinaus (amtliche Fremdquelle) — dieselbe Glyphe und
+   dieselbe Farbe wie an den Quell-Links (§8). */
+.tb-extern { color: var(--brass-700); }
+
+/* Ab dieser CONTAINER-Breite trägt die Zeile alle drei Spuren nebeneinander. */
+@container (width >= 30rem) {
+  .tb-link {
+    grid-template-columns: var(--tb-nr, 5.5rem) minmax(0, 1fr) auto;
+    grid-template-areas: "nr titel meta";
+  }
+}
+
+/* Zwei Spalten erst, wenn beide Spalten je ~29 rem tragen (≈ Fenster 1280 px
+   auf der Übersichtsbreite). Darunter bleibt die Liste einspaltig in voller
+   Breite — Lesbarkeit vor Dichte (D24). */
+@container (width >= 60rem) {
+  .tb-raster-2 {
+    grid-auto-flow: column;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    grid-template-rows: repeat(var(--tb-zeilen), auto);
+    column-gap: 2rem;
+  }
+}

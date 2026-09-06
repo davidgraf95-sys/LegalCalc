@@ -1,8 +1,7 @@
 // H-10 (§6.6 billig, B27): reiner Move aus Gesetze.tsx — Props/Verhalten unverändert.
 import { useMemo, useState } from 'react';
-import { usePaneKlasse } from '../../components/layout/PaneKontext';
 import { GruppenKopf } from '../../components/ui/GruppenKopf';
-import { SysZeile } from '../../components/normtext/ErlassKarte';
+import { ErlassTabelle } from '../../components/normtext/ErlassKarte';
 import { type BrowseErlass } from '../../lib/normtext/browse-typen';
 import {
   sachgruppe, topTitel, subTitel, sachgebietRang, untergruppeRang, srVergleich, type KantonSystematik,
@@ -20,7 +19,6 @@ import { Kategorie } from './geteilt';
 // titel, darunter nach SR-Nr sortierte Zeilen. Die Seiten-Suche liefert die
 // flache Trefferliste — diese gegliederte Ansicht zeigt sich nur ohne Suche.
 export function KantonSystematik({ erlasse, sys }: { erlasse: BrowseErlass[]; sys?: KantonSystematik }) {
-  const pk = usePaneKlasse();
   const gruppen = useMemo(() => {
     const rangTop = sachgebietRang(sys);
     const tops = new Map<string, Map<string, BrowseErlass[]>>();
@@ -144,18 +142,16 @@ export function KantonSystematik({ erlasse, sys }: { erlasse: BrowseErlass[]; sy
                   <GruppenKopf stufe={4} titel={u.titel} zahl={u.items.length}
                     marke={<span aria-hidden className="num text-xs text-brass-700 shrink-0">{u.sub}</span>} />
                 )}
-                {/* ── LM-141 (W2·17-UI-BEFUNDE/B16) · LESERICHTUNG ───────────────
-                    Hier stand `grid grid-cols-1 sm:grid-cols-2 gap-x-5 gap-y-2`.
-                    Ein Grid füllt ZEILENWEISE, also springt man beim Lesen bei
-                    jedem Eintrag über die Spalte; `columns` füllt SPALTENWEISE.
-                    Dies ist die DEFAULT-Sicht der im Befund genannten Route
-                    (/gesetze?ebene=kanton&kt=BS mit `gliederung=systematisch`) —
-                    dieselbe Umstellung wie in `GesetzeGliederung` für die beiden
-                    anderen Kanton-Sichten. Abstände und Umbruchschutz trägt
-                    `.lc-listenspalten` (src/index.css). */}
-                <div className={pk('lc-listenspalten columns-1 sm:columns-2', 'lc-listenspalten columns-1 @lg/pane:columns-2')}>
-                  {u.items.map((e) => <SysZeile key={e.key} e={e} />)}
-                </div>
+                {/* ── D24 (David 6.9.2026) · EINE TABELLE STATT `columns` ────────
+                    Hier stand `lc-listenspalten columns-1 sm:columns-2` mit je
+                    einer `SysZeile`. Zwei CSS-`columns`-Fragmente heissen zwei
+                    unabhängige Zeilenfolgen — GEMESSEN am 6.9.2026 auf
+                    /gesetze?ebene=kanton&kt=BS bis 105 px Versatz @1440 und
+                    126 px @1280 zwischen Zeile i links und Zeile i rechts.
+                    `ui/ListenTabelle` legt EIN Raster über beide Spalten und
+                    füllt es weiter spaltenweise (Leserichtung LM-141 bleibt). */}
+                <ErlassTabelle erlasse={u.items} art="kanton"
+                  beschriftung={`${u.titel || g.titel} — Nummer, Titel, Umfang`} />
               </section>
             ))}
           </div>
