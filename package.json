@@ -182,7 +182,8 @@
     "dispatch:agents": "vite-node scripts/dispatch-agents-cli.ts",
     "check:dispatch-klausel": "vite-node scripts/check-dispatch-klausel.ts",
     "fremdagenten:messung": "FREMDAGENTEN_CLI=1 vite-node scripts/analyse/fremdagenten-messung.ts --",
-    "zh:cache": "vite-node scripts/normtext/zh-cache-fuellen.ts --"
+    "zh:cache": "vite-node scripts/normtext/zh-cache-fuellen.ts --",
+    "perf:leser-lcp": "vite-node scripts/perf/leser-lcp.ts --"
   },
   "dependencies": {
     "@fontsource-variable/archivo": "^5.3.0",
