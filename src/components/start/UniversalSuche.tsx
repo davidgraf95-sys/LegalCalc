@@ -37,6 +37,22 @@ import { aktivePosition, flacheTreffer, naechsterKey, vorigerKey, gewaehlterHref
 // Der PLATZHALTER ist gekürzt (Prüfbefund R3-F6): «… · Kündigungsfrist» wurde
 // @390 mitten im Wort gekappt. Zwei Beispiele reichen, und `.st-frage-feld`
 // setzt zusätzlich `text-overflow: ellipsis` (index.css).
+//
+// R10-NACHZUG (David 6.9.2026, D14: «begrüssung prominenter und suche
+// kleiner»): die Zeile trug bis hierhin dieselbe Grösse wie die Begrüssung
+// (bis `text-h1`, 32 px) — GENAU das Bild, das David als «liest sich wie eine
+// Überschrift» sah (R3-F1). Jetzt ist die Begrüssung (`SuchBlock.tsx`) die
+// grosse Zeile, und das Feld eine Stufe darunter: `text-body-l` (18 px, ein
+// Skalenwert der Typo-Skala) @390, ab `lg` die Token-Variable
+// `--pult-suche-gross` (22 px, `index.css`) über `text-[length:var(--…)]`
+// (B2: `check:design-tokens` verbietet rohe `text-[…rem]`). 22 px ist auf der
+// Skala frei (h3=20, h2=25.6) — ein eigener Wert statt Zwischenrundung, weil
+// beide Nachbarwerte hier sichtbar daneben liegen (20 zu nah an body-l, 25.6
+// kaum kleiner als die Begrüssungs-Stufe h2). Feldhöhe ~48 px kommt aus
+// `.pult-suche-feld` (additiv, index.css) — die BESTEHENDE Regel `.st-frage-
+// feld` bleibt unverändert (Parallel-Bau, `index.css` ist hier nur additiv),
+// die neue Klasse überschreibt nur `padding`, weil sie später im Stylesheet
+// steht (gleiche Spezifität, spätere Kaskaden-Position gewinnt).
 
 export function UniversalSuche() {
   const navigate = useNavigate();
@@ -164,7 +180,7 @@ export function UniversalSuche() {
              Platzhalter wird beschnitten. Die grosse Stufe steht darum erst,
              wenn die Spalte sie trägt, und im PANE entscheidet die
              Container-Breite, nicht der Viewport (A-2-Wurzel). */
-          className={`st-frage-feld pr-9 ${pk('text-h3 lg:text-h2 xl:text-h1', 'text-h3 @3xl/pane:text-h2 @5xl/pane:text-h1')}`}
+          className={`st-frage-feld pult-suche-feld pr-9 leading-[1.3] ${pk('text-body-l lg:text-[length:var(--pult-suche-gross)]', 'text-body-l @3xl/pane:text-[length:var(--pult-suche-gross)]')}`}
           enterKeyHint="search"
           role="combobox"
           aria-expanded={q !== ''}

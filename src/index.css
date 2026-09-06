@@ -2743,3 +2743,23 @@
      Wortende liest sich wie ein Datenfehler (§8, Prüfbefund R3-F6). */
   text-overflow: ellipsis;
 }
+
+/* ── R10-NACHZUG (David 6.9.2026, D14 «begrüssung prominenter und suche
+   kleiner») · Token statt roher Arbitrary-Grösse (B2, `check:design-tokens`
+   verbietet `text-[…rem]`): 22 px liegt zwischen h3 (20) und h2 (25.6),
+   keiner der beiden trägt die Stufe glaubwürdig — eigener Wert, als Variable
+   geführt (eigener :root-Block, additiv, fasst den grossen :root oben nicht an). */
+:root { --pult-suche-gross: 1.375rem; }
+
+/* ADDITIV, `.st-frage-feld` bleibt unverändert (Parallel-Bau in
+   dieser Datei, R10-Nachzug-Whitelist erlaubt hier nur `.pult-*`-Zusätze).
+   `.st-frage-feld` setzt `padding: .25rem 0 .5rem` für die vorherige, grosse
+   Stufe (bis 32 px); bei 22 px liest sich dasselbe Polster als zu knapp
+   (Feldhöhe fiele unter die Ziel-Höhe ~48 px). Diese Klasse trägt NUR das
+   Polster nach — Kante, Fokus-Schatten, Ellipsis, Platzhalterfarbe bleiben an
+   `.st-frage`/`.st-frage-feld`. Beide Klassen haben dieselbe Spezifität
+   (0,1,0); da diese Regel WEITER UNTEN im Stylesheet steht, gewinnt sie für
+   `padding` unabhängig von der Reihenfolge der Klassen im `className`.
+   GEMESSEN (Textzeile 22 px, `leading-[1.3]` ⇒ Zeilenbox 28.6 px): 28.6 +
+   Polster 18 px + 2-px-Kante (`.st-frage`) ≈ 48.6 px. */
+.pult-suche-feld { padding: .5rem 0 .625rem; }
