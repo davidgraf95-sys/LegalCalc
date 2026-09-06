@@ -31,10 +31,14 @@ export interface TrefferBlattZustand {
 
 /**
  * Baut die klebende Such-Zone des Kopf-Blocks — oder gibt `undefined` zurück,
- * wo die Gliederung als Spalte steht und den klebenden Block selbst trägt.
+ * wo der Erlass gar keine Gliederung und damit keine Suche hat.
+ *
+ * D28 (David 6.9.2026): `klebt` sagt seither NICHT mehr «die Gliederung steht
+ * nicht als Spalte», sondern nur noch «dieser Erlass hat überhaupt eine
+ * Gliederung» — das Feld sitzt in JEDER Lage hier (Herleitung in `./SuchZone`).
  */
 export function suchZoneAufbau(a: {
-  /** Ä19: Trägt der Kopf-Block das Feld? (Nur ohne Gliederungs-Spalte.) */
+  /** Hat der Erlass eine Gliederung? Ohne sie gibt es nichts zu durchsuchen. */
   klebt: boolean;
   /** ≥ 1024 px im eigenen Pane — entscheidet Blatt am Feld vs. Bottom-Sheet. */
   istXl: boolean;
@@ -51,6 +55,9 @@ export function suchZoneAufbau(a: {
   trefferBlatt: TrefferBlattZustand;
   /** Der Weg zur Liste unterhalb von `istXl`: das Bottom-Sheet aufziehen. */
   onSheet: () => void;
+  /** D28 · Schritt durch die Fundstellen, sichtbar neben dem Zähler (`./SuchZone`). */
+  onVor?: () => void;
+  onZurueck?: () => void;
 }): ReactNode | undefined {
   if (!a.klebt) return undefined;
   // Ä76: Fehlt die Spalte, ist aber Platz neben dem Text (Desktop mit
@@ -70,6 +77,7 @@ export function suchZoneAufbau(a: {
       bestimmungsWort={a.bestimmungsWort}
       // Die eine Geste «zeig mir die Treffer»: Blatt am Feld @≥1024 px, sonst Sheet.
       onListe={() => { if (a.istXl) a.trefferBlatt.oeffne(); else a.onSheet(); }}
+      onVor={a.onVor} onZurueck={a.onZurueck}
       blattOffen={trefferBlattOffen}
       blatt={trefferBlattOffen
         ? <LeserTrefferBlatt onSchliessen={a.trefferBlatt.schliesse} liste={a.liste} />

@@ -3162,3 +3162,41 @@ html[data-lr6-anker-warten] footer { visibility: hidden; }
     column-gap: 2rem;
   }
 }
+
+/* ═══ R6d/D28 · DIE ERLASS-SUCHE IM LESER-KOPF ═══════════════════════════════
+   David 6.9.2026: «die suchleiste im gesetz … will ich oben am gesetz». Das
+   Feld selbst ist unverändert `.lc-input .lc-v3-feld` (Unterstrich-Anatomie
+   R3-F3) — hier stehen nur die zwei Griffe, die D28 zusätzlich verlangt
+   («Treffer-Navigation ‹ › und Zähler in derselben Zeile»).
+
+   REGISTERFARBE GESETZE (`--reg-g`), nicht Messing: die Zone gehört sichtbar
+   zum Register, in dem man liest — dieselbe Zuordnung, die die Reiter und die
+   Bezugs-Marken tragen (`.lr7-bez-marke[data-reg="g"]`, `.tb-raster`). Die
+   Ruhefarbe bleibt `--ink-500`: eine Navigations-Hilfe, die im Ruhezustand
+   farbig leuchtet, zöge den Blick vom Gesetzestext ab (Design-Grundlage Kap. 8).
+   20 px hoch wie die Zähler-Zeile daneben (`min-h-5`) — die Zeile wächst durch
+   die Griffe NICHT, `--leser-v3-such-h` bleibt Zeichen für Zeichen dieselbe. */
+.lr8-erlasssuche-schritt {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.25rem;
+  height: 1.25rem;
+  border-radius: 9999px;
+  color: var(--ink-500);
+  line-height: 1;
+  transition: color 120ms ease, background-color 120ms ease;
+}
+.lr8-erlasssuche-schritt:hover { color: var(--reg-g); background: var(--well); }
+.lr8-erlasssuche-schritt:focus-visible { color: var(--reg-g); }
+
+/* D28 · «Druck ohne Feld». Eine Suchleiste auf Papier ist ein Bedienelement
+   ohne Bedienung — dieselbe Begründung, mit der der Druck-Block oben
+   `nav`/`button`/`.lc-btn*` fallen lässt. Die Zone fällt GANZ (Feld, Zähler,
+   Schritt-Griffe), nicht nur ihre Knöpfe: der Pauschal-Selektor `button` hätte
+   das Eingabefeld und die Trefferzahlen stehen gelassen.
+   Ungeschichtet am Dateiende und darum stärker als jede Layer-Regel — hier ist
+   das erwünscht, es gibt genau eine Aussage über diese Zone im Druck. */
+@media print {
+  .lr8-erlasssuche { display: none !important; }
+}
