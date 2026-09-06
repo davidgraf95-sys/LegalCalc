@@ -21,6 +21,7 @@ import { zitatMitAusweis, heuteIso } from '../../../lib/format';
 import { schaetzeArtikelHoehe, fnNrSortKey } from '../berechnungen';
 import { LeitfallZeile } from './ArtikelLeser.leitfaelle';
 import { BezuegeZeile } from './BezuegeZeile';
+import { useSatzspiegel } from '../v3/rahmenSpalten';
 import type { ArtikelBezuege } from '../bezuegeLaden';
 import { urlMitHash } from '../../../lib/liveUrlSync';
 import { usePaneKontext } from '../../../components/layout/PaneKontext';
@@ -313,6 +314,45 @@ export const ArtikelLeser = memo(function ArtikelLeser({ e, erlass, basisPfad, f
   const aufhebungNotiz: Fussnote[] = ganzAufgehoben
     ? fussAnzeige.filter((f) => f.absatz == null && f.item == null)
     : [];
+  // ═══ W2·24-R4 · SATZSPIEGEL ═════════════════════════════════════════════
+  // Der Rahmen (`v3/rahmenSpalten.ts`) hat gerechnet, wie viel die Lese-Zelle
+  // trägt; hier wird daraus Markup. DREI Formen, EIN Baum:
+  //   'zeile' — Ist-Form: Randtitel als Zeile über dem Artikel, Bezüge als
+  //             Zeile darunter. Ohne Provider (V1) gilt sie immer.
+  //   'marg'  — Marginalie links (CSS-Grid, s. `index.css` «SATZSPIEGEL»);
+  //             das Markup ist dasselbe, nur die Randtitel liegen in einem
+  //             eigenen Grid-Kind.
+  //   'voll'  — zusätzlich die Bezüge als Randnotizen rechts.
+  // Die Randnotiz ist der EINZIGE Fall, der das Markup wirklich umstellt: die
+  // Blöcke wandern aus der Beiwerk-Zone in die dritte Spalte. Dieselben
+  // Komponenten, dieselben Daten, kein zweiter Ladepfad (§6 (e) des Fahrplans).
+  const spiegel = useSatzspiegel();
+  // In der TREFFERLISTE bleibt jeder Artikel in Zeilenform: sie steht in einer
+  // eigenen, schmalen Fläche ausserhalb von `#lc-lesespalte`, auf die die
+  // Grid-Regel bewusst nicht gescoped ist — ein Satzspiegel dort ragte über
+  // seinen Kasten hinaus.
+  const randNotiz = spiegel === 'voll' && !imTreffer;
+  // Fassungsdatum in die Marginalie — das Referenzbild führt es dort
+  // («Fassung seit / 1. Januar 1989»), und es ist die einzige Angabe, die die
+  // Marginalie in Erlassen ohne eigenen Artikel-Randtitel überhaupt füllt.
+  // GEMESSEN 6.9.2026 am gebauten Stand: von 1686 OR-Artikeln tragen 10 einen
+  // Randtitel, aber 469 eine Fassungs-Zeile; in der ZPO ist es umgekehrt
+  // (403 von 430 Randtitel). Ohne diese Verlagerung stünde die Marginalie im
+  // Referenz-Erlass des Bildes praktisch immer leer.
+  // Verlagert wird der SLOT samt `data-hist-slot`, nicht sein Inhalt — der
+  // Schalter «Änderungsvermerke» (`index.css`, `html[data-histansicht="aus"]`)
+  // greift unverändert, und die 24-px-Reserve (`min-h-beiwerk`, CLS) steht
+  // weiter am selben Element. In der Marginalie kann sie sogar nicht mehr
+  // schieben: die Artikelhöhe kommt aus der Textspalte.
+  const histInRand = spiegel !== 'zeile' && !imTreffer;
+  const histSlot = (
+    <div {...{ [SUCH_META]: '' }} data-hist-slot
+      className={fussAnzeige.length > 0 || historie
+        ? `min-h-beiwerk${histInRand ? '' : ' mt-4'}`
+        : undefined}>
+      <ArtikelHistorieZeile historie={historie} artikel={e.artikel} />
+    </div>
+  );
   // W2·5d G3b (③/⑤): Anhang/Protokoll tragen einen kräftigeren Struktur-Trenner
   // (rule-struktur statt rule-artikel) + mehr Weissraum — so hebt sich jeder
   // Anhang-Block klar vom Normtext und vom Vor-Anhang ab (Linien-Kanon-Rolle
@@ -349,47 +389,83 @@ export const ArtikelLeser = memo(function ArtikelLeser({ e, erlass, basisPfad, f
       // `z-base` = C3-Rolle für den Wert 0, s. index.css bei --z-base).
       // §15-Logikverlust: keiner — reine Darstellung (§3), Normtext, Anker, Ctrl+F,
       // Druck und Golden-Ausgaben sind unberührt.
-      className={`nt-art-cv group relative z-base nt-anker border-t ${istAnhang ? 'border-rule-struktur pt-9 mt-9' : 'border-rule-artikel pt-7 mt-7'} first:border-t-0 first:mt-0 first:pt-0`}>
-      {/* Fedlex-Stil (Auftrag David): «Art. N» + Randtitel/Sachüberschrift stehen
-          IMMER OBERHALB des Absatztextes (keine seitliche Randspalte mehr), damit
-          der Normtext die volle Lesespaltenbreite bekommt. Reine Darstellung (§3). */}
-      <div>
-        {/* Kopfzeile des Artikels: «Art. N» als Anker, darunter die Randtitel
-            (linksbündig, Sachüberschrift zuunterst) — über dem Fliesstext. */}
+      // R4: `lr-satz` ist der Haken für das Satzspiegel-Grid; `data-lr-notiz`
+      // sagt, ob die dritte Spalte da ist (ein Grid mit leerer dritter Spalte
+      // wäre eine Rinne ohne Inhalt). Beide sind ohne die Regel in `index.css`
+      // wirkungslos — die Klasse allein ändert nichts.
+      data-lr-notiz={randNotiz ? '' : undefined}
+      className={`lr-satz nt-art-cv group relative z-base nt-anker border-t ${istAnhang ? 'border-rule-struktur pt-9 mt-9' : 'border-rule-artikel pt-7 mt-7'} first:border-t-0 first:mt-0 first:pt-0`}>
+      {/* ═══ W2·24-R4 · SATZSPIEGEL: MARGINALIE · NORMTEXT · RANDNOTIZEN ══════
+          Referenzbild `abnahme/design-identitaet/vorschlag-freigegeben.html`,
+          Seite «Gesetzesleser». Die drei Kinder dieses `<article>` sind die drei
+          Spalten des Grids (`index.css`, Block «SATZSPIEGEL»); ohne Grid — also
+          in der Zeilenform, in V1 und in der Trefferliste — stehen sie
+          untereinander und ergeben GENAU die Ist-Reihenfolge: Randtitel,
+          Artikelnummer, Wortlaut, Beiwerk. Das ist der Grund für diesen Zuschnitt
+          und nicht ein anderer: der Umbau darf im Schmalfall NICHTS ändern.
+
+          KEIN `position:absolute` für die Marginalie, obwohl das der kürzere Weg
+          wäre: `.nt-art-cv` trägt `content-visibility:auto`, und das impliziert
+          `contain: paint` — ein Kind, das aus dem Kasten ragt, wäre am
+          off-screen-Artikel weggeschnitten. Das Grid hält alles INNERHALB des
+          Kastens; der Kasten selbst greift über negative Aussenränder in die
+          Rinnen, die `#lc-lesespalte` dafür freihält. */}
+      {/* Marginalie: Randtitel/Sachüberschrift, im Grid links, sonst wie bisher
+          als Zeile über der Artikelnummer (Auftrag David 26.6.2026 — Fedlex-Stil;
+          bleibt auch bei eingeklapptem/aufgehobenem Artikel sichtbar). */}
+      <div className="lr-rand">
+        {/* Registerfarben-Strich (§5 «nicht zu trist», David 6.9.2026): die
+            einzige Farbe des Satzspiegels. Im Gesetzesleser ist das die
+            Registerfarbe «Gesetze»; ausserhalb des Spiegels ist der Strich
+            unsichtbar (0 px hoch, `index.css`) — er soll die Ist-Form nicht
+            um eine Zeile verschieben. */}
+        <span aria-hidden className="lr-reg" />
+        {/* Randtitel zuerst, Fassungsdatum darunter — die Reihenfolge des
+            Referenzbildes. */}
+        {/* Fedlex-Reihenfolge (Auftrag David 26.6.2026): Gliederungs-/Randtitel
+            stehen ÜBER der Artikelnummer (nicht darunter) — und bleiben auch bei
+            eingeklapptem/aufgehobenem Artikel sichtbar (Fedlex-treu). Die unterste
+            Stufe (Sachüberschrift) zuunterst, font-medium. Reine Darstellung (§3).
+            N1 (BS-Audit 23.6.2026): amtlicher Randtitel (article_title) nur, wenn
+            KEINE feinere struktur-Marginalie (marg) vorliegt. */}
+        {marg && marg.length > 0 ? (
+          <div className="mb-1 space-y-0.5 font-serif leading-snug">
+            {marg.map((m, i) => (
+              // R4: `lr-blatt` markiert die unterste Stufe (die Sachüberschrift
+              // des Artikels). Nur sie wird im Satzspiegel zur kursiven
+              // Serifen-Marginalie des Referenzbildes; die Vorfahren-Stufen
+              // bleiben Grotesk. Ausserhalb des Spiegels ist die Klasse ein
+              // No-op — `margStufeStil` bleibt unangetastet (§5: die Stufen-
+              // Stimme hat genau eine Quelle, und die liegt in `helpers.tsx`).
+              <div key={i} className={`${margStufeStil((margBasis ?? 0) + i, i === marg.length - 1)}${i === marg.length - 1 ? ' lr-blatt' : ''}`}>
+                {/* A30: bis/ter-Suffix des Enumerators hochgestellt (margLabel). */}
+                {margLabel(m)}
+                {/* G11: section-heading-Fussnoten-Marker an der passenden Randtitel-
+                    Zeile (blatt im Volltext, ganze Kette in der Suchsicht). G2b:
+                    immer (an artOffen gebunden), Prominenz via data-fussnoten-CSS.
+                    A31: Wort-Verbinder (U+2060) klebt den Marker DIREKT an die
+                    Marginalie (kein Abstand, kein Umbruch auf eine eigene Zeile). */}
+                {artOffen && fnProSektion[m]?.map((nr, j) => (
+                  <span key={nr} data-fn-marker data-fn-klasse={fnKlasse[nr]}>{WJ}{j > 0 && <span className="align-super text-[length:var(--hochgestellt)] text-ink-500">,</span>}<FnRef artikel={e.artikel} nr={nr} /></span>
+                ))}
+              </div>
+            ))}
+          </div>
+        ) : e.titel ? (
+          /* S2 · Ä7: derselbe Stil wie das Randtitel-BLATT in `margStufeStil`
+             (dort steht die Herleitung) — es ist dieselbe Rolle, nur aus der
+             anderen Quelle (`article_title` statt `marg`). Beide müssen gleich
+             aussehen, sonst wechselt die Sachüberschrift zwischen Artikeln ihre
+             Stimme (§5). */
+          <div className="lr-blatt mb-1 font-sans text-leser-rand font-semibold text-ink-800">
+            {e.titel}
+          </div>
+        ) : null}
+        {histInRand && histSlot}
+      </div>
+      <div className="lr-text">
+        {/* Kopfzeile des Artikels: «Art. N» als Anker über dem Fliesstext. */}
         <div className="mb-1.5">
-          {/* Fedlex-Reihenfolge (Auftrag David 26.6.2026): Gliederungs-/Randtitel
-              stehen ÜBER der Artikelnummer (nicht darunter) — und bleiben auch bei
-              eingeklapptem/aufgehobenem Artikel sichtbar (Fedlex-treu). Die unterste
-              Stufe (Sachüberschrift) zuunterst, font-medium. Reine Darstellung (§3).
-              N1 (BS-Audit 23.6.2026): amtlicher Randtitel (article_title) nur, wenn
-              KEINE feinere struktur-Marginalie (marg) vorliegt. */}
-          {marg && marg.length > 0 ? (
-            <div className="mb-1 space-y-0.5 font-serif leading-snug">
-              {marg.map((m, i) => (
-                <div key={i} className={margStufeStil((margBasis ?? 0) + i, i === marg.length - 1)}>
-                  {/* A30: bis/ter-Suffix des Enumerators hochgestellt (margLabel). */}
-                  {margLabel(m)}
-                  {/* G11: section-heading-Fussnoten-Marker an der passenden Randtitel-
-                      Zeile (blatt im Volltext, ganze Kette in der Suchsicht). G2b:
-                      immer (an artOffen gebunden), Prominenz via data-fussnoten-CSS.
-                      A31: Wort-Verbinder (U+2060) klebt den Marker DIREKT an die
-                      Marginalie (kein Abstand, kein Umbruch auf eine eigene Zeile). */}
-                  {artOffen && fnProSektion[m]?.map((nr, j) => (
-                    <span key={nr} data-fn-marker data-fn-klasse={fnKlasse[nr]}>{WJ}{j > 0 && <span className="align-super text-[length:var(--hochgestellt)] text-ink-500">,</span>}<FnRef artikel={e.artikel} nr={nr} /></span>
-                  ))}
-                </div>
-              ))}
-            </div>
-          ) : e.titel ? (
-            /* S2 · Ä7: derselbe Stil wie das Randtitel-BLATT in `margStufeStil`
-               (dort steht die Herleitung) — es ist dieselbe Rolle, nur aus der
-               anderen Quelle (`article_title` statt `marg`). Beide müssen gleich
-               aussehen, sonst wechselt die Sachüberschrift zwischen Artikeln ihre
-               Stimme (§5). */
-            <div className="mb-1 font-sans text-leser-rand font-semibold text-ink-800">
-              {e.titel}
-            </div>
-          ) : null}
           {/* Artikelnummer-Zeile: «Art. N» als Anker; Zitat/Link rechtsbündig INLINE
               (ml-auto) statt als eigene Zeile darunter — schliesst den Abstand zum
               ersten Absatz (Auftrag David 26.6.2026, P8). */}
@@ -576,11 +652,14 @@ export const ArtikelLeser = memo(function ArtikelLeser({ e, erlass, basisPfad, f
               klick-getrieben, liegt binnen 500 ms nach der Eingabe und ist damit per
               Definition kein unerwarteter Sprung. Zahlen im Vollzugsvermerk S2. */}
           <div data-beiwerk>
-          {/* VERWEISE: auflösbare Normverweise des Artikels als Chips (Referenz David). */}
+          {/* VERWEISE: auflösbare Normverweise des Artikels als Chips (Referenz David).
+              R4: im vollen Satzspiegel steht dieser Block in der Randnotiz-Spalte
+              (`randNotiz`, unten am Artikel-Ende) — NIE an beiden Orten; das
+              wären zwei Wahrheiten am selben Artikel (§5). */}
           {/* S8: Verweis-Chips sind Wegweiser, kein Wortlaut — `data-such-meta`,
               damit die Suche nach «Verweise» oder einer Chip-Beschriftung nicht
               eine Fundstelle malt, die es im Gesetzestext nicht gibt (§4.4). */}
-          {verweise.length > 0 && (
+          {!randNotiz && verweise.length > 0 && (
             <div {...{ [SUCH_META]: '' }} className="mt-4 flex flex-wrap items-center gap-2">
               <span className="lc-overline mr-1"><span className="lc-punkt" aria-hidden />Verweise</span>
               {verweise.map((v) => <NormChip key={v} artikel={v} />)}
@@ -599,6 +678,7 @@ export const ArtikelLeser = memo(function ArtikelLeser({ e, erlass, basisPfad, f
           {/* S8: die Rechtsprechungs-Zeile am Artikelfuss ist Referenzschicht,
               kein Normtext (§4.4) — sie zählt nicht zu den Fundstellen und
               wird darum auch nicht markiert. */}
+          {!randNotiz && (
           <div {...{ [SUCH_META]: '' }}>
             {bezuege
               ? <BezuegeZeile kanten={bezuege.kanten} gesamt={bezuege.gesamt}
@@ -606,6 +686,7 @@ export const ArtikelLeser = memo(function ArtikelLeser({ e, erlass, basisPfad, f
                   normZitat={zitat} revision={revision} />
               : <LeitfallZeile refs={leitfaelle} normZitat={zitat} revision={revision} />}
           </div>
+          )}
           {/* G-HIST-UI: «Gilt seit»-Badge + aufklappbare Fassungs-Timeline dieses
               Artikels (aus dem erlass-lokalen Historie-Shard, idle geladen). Am
               Artikel-Fuss wie Verweise/Leitfälle. §15.2: der Slot steht ab dem
@@ -686,10 +767,7 @@ export const ArtikelLeser = memo(function ArtikelLeser({ e, erlass, basisPfad, f
               Der Token heisst seit S2 `min-h-beiwerk` (Wert unverändert 1.5 rem = die
               gemessenen 24 px der einen Chip-Zeile): er reserviert den Boden der
               Beiwerk-Zone, nicht «eine Historie-Zeile». */}
-          <div {...{ [SUCH_META]: '' }} data-hist-slot
-            className={fussAnzeige.length > 0 || historie ? 'mt-4 min-h-beiwerk' : undefined}>
-            <ArtikelHistorieZeile historie={historie} artikel={e.artikel} />
-          </div>
+          {!histInRand && histSlot}
           {/* Fussnoten (Änderungs-/Quellenhistorie, AS/BBl klickbar). W2·5d G2b:
               der Apparat liegt IMMER im DOM (Ctrl+F/Print/Screenreader, R9/§8);
               der data-fussnoten-CSS-Toggle dämpft ihn bei «AUS» (data-fn-apparat),
@@ -732,6 +810,43 @@ export const ArtikelLeser = memo(function ArtikelLeser({ e, erlass, basisPfad, f
         </div>
         )}
       </div>
+      {/* ═══ RANDNOTIZEN (R4, Referenzbild: «Entscheide · Materialien · Verweise ·
+          Rechnen» rechts am Satzspiegel) ══════════════════════════════════════
+          DIESELBEN Blöcke wie im Beiwerk, nur an einem anderen Ort im Grid —
+          `randNotiz` schaltet zwischen beiden, nie sind beide da (§5). Die
+          Komponenten, die Daten und der Ladepfad sind unverändert (§6 (e)).
+
+          ZWEI RUBRIKEN DES REFERENZBILDES FEHLEN, und das ist kein Versehen:
+          «Materialien» und «Rechnen» sind Panel-Daten (`v3/PanelMaterialien`,
+          `v3/PanelAnwendung`) — der ARTIKEL führt sie nicht. Sie hier zu zeigen
+          hiesse, einen zweiten Ladepfad am Artikel zu eröffnen, und genau das
+          verbietet der Fahrplan (§6 (e), TABU «keine neue Bezüge-Logik»). Ein
+          leerer Kopf ohne Inhalt wäre ausserdem eine Zusage ohne Deckung (§8).
+          Beide Rubriken bleiben im Beiwerk-Blatt erreichbar, wo ihre Daten
+          leben; ihre Aufnahme in die Randspalte ist ein eigener, deklarierter
+          Schritt (Notiz für R5). */}
+      {randNotiz && (verweise.length > 0 || bezuege || (leitfaelle && leitfaelle.length > 0)) && (
+        <aside {...{ [SUCH_META]: '' }} className="lr-notiz" aria-label={`Bezüge zu ${zitat}`}>
+          {(bezuege || (leitfaelle && leitfaelle.length > 0)) && (
+            <div className="lr-notiz-block" data-reg="r">
+              <h4 className="lr-notiz-titel">Entscheide</h4>
+              {bezuege
+                ? <BezuegeZeile kanten={bezuege.kanten} gesamt={bezuege.gesamt}
+                    zeitAktiv={bezuege.zeitAktiv} kantonAktiv={bezuege.kantonAktiv}
+                    normZitat={zitat} revision={revision} form="rand" />
+                : <LeitfallZeile refs={leitfaelle} normZitat={zitat} revision={revision} />}
+            </div>
+          )}
+          {verweise.length > 0 && (
+            <div className="lr-notiz-block" data-reg="g">
+              <h4 className="lr-notiz-titel">Verweise</h4>
+              <div className="flex flex-wrap items-center gap-1.5">
+                {verweise.map((v) => <NormChip key={v} artikel={v} />)}
+              </div>
+            </div>
+          )}
+        </aside>
+      )}
     </article>
   );
 });

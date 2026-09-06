@@ -27,7 +27,7 @@ import { useTrefferBlatt } from './useTrefferBlatt';
 import { useKopfAnspruch } from './useKopfAnspruch';
 import { useStickAusgleich } from './useStickAusgleich';
 import { leserCssVariablen } from './leserGeometrie';
-import { rahmenBild, useRahmenRaum } from './rahmenSpalten';
+import { rahmenBild, useRahmenRaum, SatzspiegelKontext } from './rahmenSpalten';
 import { kopfElemente, kopfGlypheKlassen, kopfGriffKlassen, panelForm, useKopfStufe } from './kopfStufen';
 import { useSuchSprungKuerzel } from './suchKuerzel';
 import { bestimmungsWort as bestimmungsWortVon, panelEbene, suchFeldName, suchPlatzhalter } from './erlassAnsicht';
@@ -282,6 +282,12 @@ export function LeserRahmenV3({ ebene, schluessel }: LeserRahmenV3Props) {
     <div
       ref={(el) => { kopfRef(el); wurzelRef.current = el; raumRef(el); }}
       data-leser-v3="rahmen"
+      // W2·24-R4 · Satzspiegel: die eine Stelle, an der die Ausbaustufe am DOM
+      // ablesbar wird. `index.css` (Block «SATZSPIEGEL») hängt daran; der
+      // gleichnamige Kontext unten trägt sie zu `ArtikelLeser`, der für die
+      // Randnotizen sein Markup umstellt (CSS allein könnte das nicht — die
+      // Bezüge liegen tief im Beiwerk-Baum).
+      data-lr-spiegel={bild.satzspiegel}
       className="lc-leser space-y-5"
       data-grundart={meta.grundart ?? undefined}
       // Die Geometrie (sechs voneinander abhängige CSS-Variablen, Risiko R1) ist
@@ -341,6 +347,7 @@ export function LeserRahmenV3({ ebene, schluessel }: LeserRahmenV3Props) {
           Auslagerung H4-Nachzug 18.8.2026, §6.6). Der Rahmen entscheidet ihre
           Gestalt (`bild` aus `./rahmenSpalten`) und füllt ihre Slots; WIE die
           Spuren stehen, steht dort. */}
+      <SatzspiegelKontext.Provider value={bild.satzspiegel}>
       <LeserLeseZeile bild={bild} vollflaechig={!umgebung.imPane} tocOffen={m.tocOffen}
         onSchieneAuf={schieneAuf} onGliederungZu={() => setzeTocOffen(false)}
         leiste={leiste(false)}
@@ -370,6 +377,7 @@ export function LeserRahmenV3({ ebene, schluessel }: LeserRahmenV3Props) {
               steckbrief={leisteSteht ? null : <LeserUebersicht m={m} bestimmungsWort={bestimmungsWort} />} />
           )
           : null} />
+      </SatzspiegelKontext.Provider>
 
       {/* R4 «Weiterlesen» + R8 Tastatur — dieselben BAUSTEINE wie die Ist-Hülle
           (Kap. 4h: KEINE zweite Tastaturebene), direkt aus `parts/` statt über

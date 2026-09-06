@@ -180,7 +180,19 @@ export default {
         //    Fliesstext) für Blocktext verlangt — knapp darunter, weil der
         //    Apparat Referenz-, kein Lesetext ist. Die GRÖSSE bleibt
         //    unangetastet (0.6875 rem, Entscheid David 17.8.2026 am Bildbogen).
-        'leser-text': ['1.0625rem', { lineHeight: '1.55' }],
+        // W2·24-R4 · ZEILENHÖHE 1.55 → 1.62 (deklarierte Typo-Änderung, kein
+        // Refactoring). Das freigegebene Referenzbild (`abnahme/design-
+        // identitaet/vorschlag-freigegeben.html`, `.norm { font-size:17px;
+        // line-height:1.62 }`) setzt den Normtext im Satzspiegel auf 1.62; die
+        // Grösse (17 px) bleibt unangetastet. Die Zahl muss HIER stehen und
+        // kann nirgends sonst gesetzt werden: `src/tests/leser-typo-tokens.
+        // test.ts` verbietet jedes `leading-…` am Fliesstext-Markup, weil die
+        // Zeilenhöhe zur Stufe gehört (Grundlage Kap. 8 Nr. 4) — die Tabelle
+        // dort ist mit derselben Änderung nachgezogen.
+        // WCAG 1.4.8 unverändert eingehalten: 1.62 ≥ 1.5 (Zusage von
+        // `e2e/leser-lesemass.e2e.ts`), das Zeilenmass rechnet nicht mit der
+        // Zeilenhöhe und bleibt Zeichen für Zeichen, was es war.
+        'leser-text': ['1.0625rem', { lineHeight: '1.62' }],
         'leser-rand': ['0.8125rem', { lineHeight: '1.35' }],
         'leser-fn': ['0.6875rem', { lineHeight: '1.45' }],
       },

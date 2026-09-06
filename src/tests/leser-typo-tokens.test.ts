@@ -8,7 +8,7 @@ import { fileURLToPath } from 'node:url';
 // W2·5m-LESER-V3 · S2 (Pos. 19), Entscheid David 17.8.2026 am Bildbogen
 // (`docs/ux-audit-2026-07/reader/leser-v3-s2/bogen.html`): F3 = V2 «amtsnah
 // kompakt», Fussnotenmarke hochgestellt. Der Leser-Fliesstext läuft seither auf
-// der Stufe `leser-text` (1.0625 rem / lh 1.55) statt auf `text-body-l` plus einem
+// der Stufe `leser-text` (1.0625 rem / lh 1.62 seit W2·24-R4, davor 1.55) statt auf `text-body-l` plus einem
 // rohen `leading-[1.65]`-Override.
 //
 // WAS DIESER WÄCHTER HÄLT — und warum er nicht schon durch `check:design-tokens`
@@ -68,7 +68,12 @@ describe('S2 · Leser-Typografie-Tokens', () => {
     // V2-Spalte des Fahrplans Kap. 8, mit der EINEN Abweichung beim Marker
     // (hochgestellt statt in Klammern — die betrifft `--hochgestellt`, nicht diese Stufen).
     const erwartet: Array<[string, string, string]> = [
-      ['leser-text', '1.0625rem', '1.55'],   // Fliesstext 17 px
+      // W2·24-R4 (6.9.2026): lh 1.55 → 1.62 — das freigegebene Referenzbild
+      // setzt den Normtext im Satzspiegel auf 1.62 (`abnahme/design-identitaet/
+      // vorschlag-freigegeben.html`, `.norm`). Die ABSICHT dieses Tors ist
+      // unberührt: es prüft weiterhin, dass Grösse UND Zeilenhöhe aus der Stufe
+      // kommen und nicht aus einem rohen Override im Markup.
+      ['leser-text', '1.0625rem', '1.62'],   // Fliesstext 17 px
       ['leser-rand', '0.8125rem', '1.35'],   // Marginalie/Randtitel 13 px, Sans
       // Fussnoten-Apparat 11 px. ZEILENHÖHE 1.3 → 1.45 NACHGEFÜHRT (T3,
       // Design-Qualitäts-Pass 29.8.2026): deklarierte fachliche Änderung
