@@ -180,8 +180,17 @@ describe('C-5 · Einstiegs-Kacheln laufen über EINEN Baustein', () => {
 describe('D-3 · Auswahl-Pillen laufen über SelectionGrid', () => {
   /** Die invertierte Füllung, mit der vier Wizard-Stellen die Auswahl zeigten. */
   const INVERS = 'bg-ink-900 border-ink-900 text-paper';
-  /** Die Pillen-Anatomie — sie darf nur noch im Baustein stehen. */
-  const PILLE = /px-3 py-1\.5 rounded-full text-body-s font-medium border transition-colors/;
+  /** Die Pillen-Anatomie — sie darf nur noch im Baustein stehen.
+   *
+   *  W2·24 (6.9.2026) NACHGEFUEHRT, deklarierte Design-Aenderung (§6.3): die
+   *  Pille ist nicht mehr `rounded-full`, sondern kantig wie `.lc-chip`
+   *  (Klasse `lc-wahl-pille`, index.css) — «Kanten statt Pille» ist seit R1-3
+   *  die Hausform. Die ABSICHT dieses Waechters ist unberuehrt: er prueft
+   *  weiterhin, dass die Anatomie genau EINMAL steht, naemlich im Baustein.
+   *  Nur der Ausdruck folgt der neuen Form; die Vorher-Form steht in der
+   *  Negativ-Kontrolle unten weiter als Zitat (§2b).
+   */
+  const PILLE = /lc-wahl-pille [^`]*px-3 py-1\.5 text-body-s font-medium border transition-colors/;
 
   it('die invertierte ink-900-Füllung als Auswahl-Signal ist nirgends mehr', () => {
     const funde = alleQuellen()
@@ -197,11 +206,17 @@ describe('D-3 · Auswahl-Pillen laufen über SelectionGrid', () => {
     expect(funde).toEqual(['components/ui/SelectionGrid.tsx']);
   });
 
-  it('NEGATIV-KONTROLLE: die Ausdrücke finden die Vorher-Form', () => {
+  it('NEGATIV-KONTROLLE: die Ausdrücke finden die Form, gegen die sie gebaut sind', () => {
+    // Die INVERS-Kontrolle zitiert unveraendert die Vorher-Form von D-3
+    // (31.8.2026) — ein datierter Beleg wird nicht nachgefuehrt (§2b).
     const vorher = 'className={`px-3 py-1.5 rounded-full text-body-s font-medium border transition-colors ${'
       + "a.entschaedigung === code ? 'bg-ink-900 border-ink-900 text-paper' : 'bg-surface border-line text-ink-600 hover:border-brass-400'}`}";
     expect(vorher).toContain(INVERS);
-    expect(PILLE.test(vorher)).toBe(true);
+    // Die PILLE-Kontrolle prueft die HEUTIGE Anatomie: ein Ausdruck, der nichts
+    // mehr findet, ist ein Tor, das nicht scheitern kann (§6.7).
+    const heute = 'className={`lc-wahl-pille ${PILLE_HITBOX} px-3 py-1.5 text-body-s font-medium border transition-colors ${';
+    expect(PILLE.test(heute)).toBe(true);
+    expect(PILLE.test(vorher), 'die alte Pillenform darf NICHT mehr matchen').toBe(false);
   });
 
   it('die vier Fundstellen konsumieren die Pillen-Variante', () => {

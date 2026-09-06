@@ -150,6 +150,30 @@ describe('S2 · Leser-Typografie-Tokens', () => {
       .toEqual([]);
   });
 
+  // ── D12 «Lesekomfort» (6.9.2026), DEKLARIERTE Erweiterung ─────────────────
+  // Die Runde entscheidet das Lesetext-GEWICHT (450 statt 400): Serifen wirken
+  // am Bildschirm duenner als im Druck. Bisher band dieses Tor Groesse und
+  // Zeilenhoehe der Stufe — das Gewicht war ungeschuetzt und konnte still auf
+  // 400 zurueckfallen, sobald jemand die `:where`-Regel oder das Token anfasst.
+  // Der Fall bindet beides, wie die drei Stufen oben.
+  // ROT ZU BEKOMMEN (§6.7): `--lese-gewicht:400` in index.css setzen (erste
+  // Zusicherung rot), oder die `:where([class~="font-serif"])`-Regel loeschen
+  // (zweite Zusicherung rot).
+  it('das Lesetext-Gewicht ist EIN Token (450) mit genau einem Konsumenten', () => {
+    const css = lies('../index.css');
+    const defs = [...css.matchAll(/--lese-gewicht\s*:\s*([^;]+);/g)].map((m) => m[1].trim());
+    expect(defs, 'Lesetext-Gewicht ist nicht genau einmal definiert (§5)').toHaveLength(1);
+    expect(defs[0], 'Lesetext-Gewicht abgewichen — D12 entschied 450 (Bildschirm-Serife)')
+      .toBe('450');
+    // Die Regel, die das Token ueberhaupt wirksam macht. Ohne sie ist das Token
+    // ein Wert ohne Verbraucher, und das Tor bewachte eine tote Zeile (§6.7).
+    // Auf einen BOOLEAN geprueft, nicht auf den CSS-Text: `toMatch` gegen eine
+    // 90-KB-Datei druckt im Fehlerfall das halbe Stylesheet in die Konsole und
+    // begraebt die eigentliche Aussage (einmal gesehen, 6.9.2026).
+    const regelDa = /:where\(\[class~="font-serif"\]\)\s*\{\s*font-weight:\s*var\(--lese-gewicht\)/.test(css);
+    expect(regelDa, 'die :where-Regel, die das Lesetext-Gewicht anwendet, fehlt in src/index.css').toBe(true);
+  });
+
   it('--hochgestellt ist genau EINMAL definiert (§5) und em-relativ', () => {
     const css = lies('../index.css');
     const defs = [...css.matchAll(/--hochgestellt\s*:\s*([^;]+);/g)].map((m) => m[1].trim());
