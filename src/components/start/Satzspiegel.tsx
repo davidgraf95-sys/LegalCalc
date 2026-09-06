@@ -27,6 +27,21 @@ import { usePaneKlasse } from '../layout/PaneKontext';
 /** Die vier Register der Sammlung (index.css `--reg-*`, R1). */
 export type Register = 'g' | 'r' | 'm' | 'w';
 
+/**
+ * Was oben in der Marginalie stehen darf: eine Domäne — oder `titel` für die
+ * Titelblatt-Zeile.
+ *
+ * R3-NACHZUG (David-Befund D3, 6.9.2026): «Marginalie ‹Sammlung / Sonntag /
+ * 6. September 2026› hängt ohne Bezug … mit Registerstrich wie die anderen
+ * Abschnitte». Sie hatte als einzige keinen — und stand damit in der Spalte,
+ * ohne an ihr zu hängen. Die Titelblatt-Zeile gehört keinem Register an, ihr
+ * Strich ist darum TINTE, nicht eine der vier Domänenfarben; die Farbe bleibt
+ * so das, was sie in diesem System ist: die Auskunft, in welchem Register man
+ * steht. (Das Referenzbild lässt den Strich dort weg — David hat ihn
+ * ausdrücklich verlangt, und seine Weisung vom 6.9.2026 ist die jüngere.)
+ */
+export type Randstrich = Register | 'titel';
+
 // Hover und Zähler-Akzent stehen als LITERALE Utility-Klassen am Fundort
 // (`hover:text-reg-g`, `text-reg-r`, …) und nicht als Abbildung hier: Tailwind
 // sieht nur ganze Klassennamen im Quelltext, eine Tabelle mit zusammengesetzten
@@ -35,13 +50,13 @@ export type Register = 'g' | 'r' | 'm' | 'w';
 // meidet. Der Strich unten braucht die Tabelle, weil er als PROP kommt.
 
 /** Randstrich der Marginalie — die einzige Farbfläche der Startseite. */
-const STRICH: Record<Register, string> = {
-  g: 'bg-reg-g', r: 'bg-reg-r', m: 'bg-reg-m', w: 'bg-reg-w',
+const STRICH: Record<Randstrich, string> = {
+  g: 'bg-reg-g', r: 'bg-reg-r', m: 'bg-reg-m', w: 'bg-reg-w', titel: 'bg-ink-900',
 };
 
-export function StartZeile({ reg, ueber, rand, titel, kopfZusatz, children }: {
-  /** Registerfarbe der Domäne; ohne = kein Strich (Titelblatt-Zeile). */
-  reg?: Register;
+export function StartZeile({ reg, ueber, rand, titel, kopfZusatz, ohneVorlauf, children }: {
+  /** Registerfarbe der Domäne bzw. `titel` für die Tinte; ohne = kein Strich. */
+  reg?: Randstrich;
   /** Kleine Zeile über der Randangabe (Bereich bzw. Wochentag). */
   ueber?: ReactNode;
   /** Die Randangabe selbst — Zahl MIT Scope oder Datum. */
@@ -50,15 +65,33 @@ export function StartZeile({ reg, ueber, rand, titel, kopfZusatz, children }: {
   titel?: string;
   /** Rechts neben dem Titel (z. B. «Alle Entscheide →»). */
   kopfZusatz?: ReactNode;
+  /**
+   * Erste Zeile der Seite: kein eigener Vorlauf oben.
+   *
+   * R3-NACHZUG (David-Befund D3, 6.9.2026): «Viel Leerraum über dem Block …
+   * Kopf und erster Abschnitt dichter setzen». GEMESSEN am gebauten Stand
+   * (Preview @1440, hell): über der Titelzeile standen 72 px — 48 px Polster
+   * des Route-Wrappers (`Shell.tsx` `py-8 sm:py-12`) plus 24/30 px Vorlauf
+   * dieser Zeile. Die 24/30 px fallen hier weg; die restlichen 48 px kürzt die
+   * Startseite selbst (`pages/Startseite.tsx`), weil `layout/Shell` in dieser
+   * Runde nicht angefasst wird.
+   */
+  ohneVorlauf?: boolean;
   children: ReactNode;
 }) {
   const pk = usePaneKlasse();
   const titelId = useId();
-  const randKlasse = pk(
+  const randKlasse = ohneVorlauf ? pk(
+    'pb-1 lg:pb-6 lg:text-right lg:border-b lg:border-rule-soft',
+    'pb-1 @3xl/pane:pb-6 @3xl/pane:text-right @3xl/pane:border-b @3xl/pane:border-rule-soft',
+  ) : pk(
     'pt-6 pb-1 lg:pt-[1.9rem] lg:pb-6 lg:text-right lg:border-b lg:border-rule-soft',
     'pt-6 pb-1 @3xl/pane:pt-[1.9rem] @3xl/pane:pb-6 @3xl/pane:text-right @3xl/pane:border-b @3xl/pane:border-rule-soft',
   );
-  const inhaltKlasse = pk(
+  const inhaltKlasse = ohneVorlauf ? pk(
+    'min-w-0 pb-6 lg:pb-7 border-b border-rule-soft',
+    'min-w-0 pb-6 @3xl/pane:pb-7 border-b border-rule-soft',
+  ) : pk(
     'min-w-0 pt-2 pb-6 lg:pt-6 lg:pb-7 border-b border-rule-soft',
     'min-w-0 pt-2 pb-6 @3xl/pane:pt-6 @3xl/pane:pb-7 border-b border-rule-soft',
   );

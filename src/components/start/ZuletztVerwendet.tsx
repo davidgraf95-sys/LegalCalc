@@ -23,21 +23,29 @@ import { holeZuletzt } from '../../lib/zuletztVerwendet';
 // Mount synchron nach. Die HÜLLE wird darum immer gerendert (auch leer) und
 // trägt `suppressHydrationWarning`: so gibt es auf beiden Seiten dasselbe
 // Element, und nur sein Inhalt darf abweichen.
+// R3-NACHZUG (David-Befund D2 / Prüfbefund R3-F5, 6.9.2026): die Zeile war ein
+// <span> IM Absatz der Beispiele und lief mit ihm zusammen. Sie ist jetzt ihre
+// eigene Zeile — ein <p>, das die Hülle selbst mitbringt. `empty:hidden` löst
+// dabei genau das Problem, das den Umzug bisher verhindert hat: die Hülle MUSS
+// auf Server und Client dieselbe sein (kein localStorage beim Prerender), ein
+// leeres <p> nähme aber eine Zeilenhöhe Platz weg. CSS entscheidet über die
+// Sichtbarkeit, nicht der Render — damit gibt es weiterhin nur EINEN Baum.
+// Verweise unterstrichen (R3-F1, §5 «Links unterstrichen»).
 export function ZuletztVerwendet() {
   const [eintraege] = useState(holeZuletzt); // lazy, synchron — kein Effect-Nachwachsen
   return (
-    <span suppressHydrationWarning>
+    <p suppressHydrationWarning className="mt-1 font-sans text-xs leading-relaxed text-ink-500 empty:hidden">
       {eintraege.length > 0 && (
         <>
-          {' '}Zuletzt geöffnet:{' '}
+          Zuletzt geöffnet:{' '}
           {eintraege.map((e, i) => (
             <span key={e.route}>
               {i > 0 && <span aria-hidden> · </span>}
-              <Link to={e.route} className="hover:text-ink-900">{e.titel}</Link>
+              <Link to={e.route} className="underline hover:text-ink-900">{e.titel}</Link>
             </span>
           ))}
         </>
       )}
-    </span>
+    </p>
   );
 }

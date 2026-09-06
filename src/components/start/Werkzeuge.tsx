@@ -29,14 +29,14 @@ export function Werkzeuge() {
       <EinfacheFristForm variante="zeile" />
       <StartFuss>
         Rückwärtsrechnung, Zustellart, Hemmung und Kalender im{' '}
-        <Link to="/rechner/tagerechner" className="hover:text-reg-w">Fristenrechner</Link>.
+        <Link to="/rechner/tagerechner" className="underline hover:text-reg-w">Fristenrechner</Link>.
         Weitere Rechner:{' '}
-        <Link to="/rechner/prozesskosten" className="hover:text-reg-w">Prozesskosten</Link>,{' '}
-        <Link to="/rechner/zustaendigkeit" className="hover:text-reg-w">Zuständigkeit</Link>,{' '}
-        <Link to="/rechner" className="hover:text-reg-w">alle Rechner</Link>.
+        <Link to="/rechner/prozesskosten" className="underline hover:text-reg-w">Prozesskosten</Link>,{' '}
+        <Link to="/rechner/zustaendigkeit" className="underline hover:text-reg-w">Zuständigkeit</Link>,{' '}
+        <Link to="/rechner" className="underline hover:text-reg-w">alle Rechner</Link>.
         Vorlagen:{' '}
-        <Link to="/vorlagen/arbeitsvertrag" className="hover:text-reg-w">Arbeitsvertrag</Link>,{' '}
-        <Link to="/vorlagen" className="hover:text-reg-w">alle Vorlagen</Link>.
+        <Link to="/vorlagen/arbeitsvertrag" className="underline hover:text-reg-w">Arbeitsvertrag</Link>,{' '}
+        <Link to="/vorlagen" className="underline hover:text-reg-w">alle Vorlagen</Link>.
       </StartFuss>
     </StartZeile>
   );

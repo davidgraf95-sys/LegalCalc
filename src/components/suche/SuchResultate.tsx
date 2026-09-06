@@ -333,7 +333,14 @@ export function SuchResultate({ gruppen, allesGeladen, q, onAuswahl, onNavigate,
               die Zeile nennt darum beides (§8). */}
           Durchsucht: {abdeckung.volltext} Erlasse im Volltext (Bund + International) · {abdeckung.bge} BGE ·
           {' '}kantonale Erlasse ({abdeckung.kantonTitel}): nach Titel — im Volltext nur online.{' '}
-          <Link to="/abdeckung" onClick={onAuswahl} className="text-brass-700 no-underline hover:text-brass-600">Was ist drin? →</Link>
+          {/* R3-NACHZUG 6.9.2026 (W2·24, Befund R3-F1): `no-underline` → `underline`.
+              Der Verweis steht MITTEN in dieser Scope-Zeile und war allein durch
+              die Farbe unterschieden — gemessen von axe 2.06:1 (hell) bzw. 1.85:1
+              (dunkel) gegen den Fliesstext, beides unter der 3:1-Schranke für
+              «Unterscheidung ohne Farbe» (WCAG 1.4.1). Seit dem Token-Tausch R1
+              ist `brass-700` reine Tinte, die Farbe unterscheidet also gar nichts
+              mehr. §5 des Fahrplans: Links unterstrichen. */}
+          <Link to="/abdeckung" onClick={onAuswahl} className="text-brass-700 underline hover:text-brass-600">Was ist drin? →</Link>
         </p>
       )}
     </>

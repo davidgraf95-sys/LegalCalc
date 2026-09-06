@@ -4,6 +4,7 @@ import type { BrowseEntscheid } from '../../lib/rechtsprechung/register';
 import { STARTSEITE_ZAEHLER } from '../../data/startseiteZaehler.generated';
 import { usePaneKlasse } from '../layout/PaneKontext';
 import { StartZeile, StartFuss } from './Satzspiegel';
+import { ohneDatumsSuffix } from './entscheidZitierung';
 
 // ─── Jüngste Entscheide im Korpus (W2·24-R3, vormals NewsHeader) ────────────
 //
@@ -140,13 +141,18 @@ export function EntscheideListe() {
                    @1440): die kanonische Zitierung lautet «BGer 1C_733/2025 vom
                    17. Juni 2026» und misst 14 px Grotesk rund 250 px. Bei
                    9.5 rem brach jede Zeile um. Gekürzt wird die Zitierung NICHT
-                   (§8 — sie ist die Fundstelle), die Spalte wird breit. */
+                   (§8 — sie ist die Fundstelle), die Spalte wird breit.
+                   NACHTRAG R3-Nachzug (6.9.2026, Befund R3-F4): das
+                   DATUMS-SUFFIX fällt jetzt weg — es stand doppelt (Spalte +
+                   Zitierung), s. `ohneDatumsSuffix` oben. Die Messung darüber
+                   bleibt als Beleg stehen; die 16-rem-Spalte behält damit
+                   Reserve für längere Geschäftsnummern (§2b). */
                 <p key={e.key} className={`grid items-baseline gap-x-4 ${pk(
                   'sm:grid-cols-[16rem_minmax(0,1fr)]', '@2xl/pane:grid-cols-[16rem_minmax(0,1fr)]',
                 )}`}>
                   <Link to={`/rechtsprechung/${encodeURIComponent(e.key)}`}
                     className="font-sans font-medium text-body-s text-ink-900 no-underline hover:text-reg-r hover:underline">
-                    {e.zitierung}
+                    {ohneDatumsSuffix(e.zitierung)}
                   </Link>
                   {/* Beschreibung: amtliche Kurz-Regeste, sonst die im Entscheid
                       angewandten Kernnormen aus dem Korpus (§8: belegte Angabe,

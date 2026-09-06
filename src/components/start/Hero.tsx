@@ -45,6 +45,8 @@ export function Hero() {
   const { gruss, wochentag, datum } = useHeute();
   return (
     <StartZeile
+      reg="titel"
+      ohneVorlauf
       rand={(
         <>
           <h1 className="font-sans font-medium text-body-s text-ink-900">{SAMMLUNG_TITEL}</h1>
@@ -55,16 +57,26 @@ export function Hero() {
     >
       <p suppressHydrationWarning className="font-serif italic text-h3 text-ink-900">{gruss}</p>
       <UniversalSuche />
-      <p className="mt-2.5 font-sans text-xs leading-relaxed text-ink-500">
-        {SAMMLUNG_BESTAND} Beispiele:{' '}
+      {/* DREI ZEILEN STATT EINER (David-Befund D2 / Prüfbefund R3-F5, 6.9.2026):
+          Bestand, Beispiele und «Zuletzt geöffnet» standen in EINEM Absatz und
+          liefen ineinander («… Vorlagen. Beispiele: … Arbeitsvertrag Zuletzt
+          geöffnet: …») — drei Aussagen verschiedener Art (Scope · feste
+          Einstiege · eigener Verlauf) ohne Fuge dazwischen. Jetzt trägt jede
+          ihre eigene Zeile; die Reihenfolge bleibt.
+          Die Verweise sind UNTERSTRICHEN (R3-F1): §5 dieses Fahrplans schreibt
+          «Links unterstrichen», und im Dunkel war die Farbunterscheidung allein
+          mit 2.72:1 unter der 3:1-Schranke (axe `link-in-text-block`). */}
+      <p className="mt-2.5 font-sans text-xs leading-relaxed text-ink-500">{SAMMLUNG_BESTAND}</p>
+      <p className="mt-1 font-sans text-xs leading-relaxed text-ink-500">
+        Beispiele:{' '}
         {BEISPIELE.map((b, i) => (
           <span key={b.ziel}>
             {i > 0 && <span aria-hidden> · </span>}
-            <Link to={b.ziel} className="hover:text-reg-g">{b.label}</Link>
+            <Link to={b.ziel} className="underline hover:text-reg-g">{b.label}</Link>
           </span>
         ))}
-        <ZuletztVerwendet />
       </p>
+      <ZuletztVerwendet />
     </StartZeile>
   );
 }

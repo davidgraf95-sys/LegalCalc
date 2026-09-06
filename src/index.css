@@ -1315,9 +1315,28 @@
      @supports-Block am Dateiende — die frühere lc-sektion-Sonderregel war
      ein Duplikat (Design-Review 6.6.2026, verhaltensneutral entfernt). */
 
+  /* ── W2·24-DESIGN-IDENTITAET R3-Nachzug (6.9.2026, Prüfbefund R3-F3) ────────
+     UNTERSTRICH STATT KASTEN. `.lc-input` WAR die Kissen-Anatomie, die §5 dieses
+     Fahrplans ablöst: getönte Fläche (`bg-well`), umlaufender Rahmen, Radius.
+     Das Referenzbild kennt keine Feldfläche — `abnahme/design-identitaet/
+     vorschlag-freigegeben.html`, Marke `.werk input`: `border:0; border-bottom:
+     1px solid var(--ink); background:transparent; padding:5px 0`.
+     ZENTRAL, nicht in `start/`: die Anatomie gilt für alle 27 Konsumenten
+     (Rechner-Formulare, Vorlagen-Assistenten, Filterzeilen). Ein Sonderweg nur
+     für die Startseite wäre die zweite Feld-Anatomie neben der ersten (§5).
+     METRIK-NEUTRAL, mit Absicht: die Feldhöhe bleibt Pixel für Pixel dieselbe —
+     vorher 12 + 12 Polster + 2 × 1 px Rahmen, jetzt 12 + 13 Polster + 1 px
+     Unterstrich. Kein Formular springt, kein CLS-Wächter und keine
+     Leser-Geometrie (`leserGeometrie.ts`, `SUCH_H_*`) zieht mit. Waagrecht
+     fällt das Polster auf 0: der Wert steht damit unter seinem Label, wie im
+     Referenzbild (`.werk label` = Grid aus Label über Feld).
+     Der FOKUS ist unten definiert (2-px-Unterstrich statt Doppelring). */
   .lc-input {
-    @apply w-full bg-well border border-line rounded-md text-base text-ink-900 transition-colors;
-    padding: 12px 14px;
+    @apply w-full bg-transparent text-base text-ink-900 transition-colors;
+    border: 0;
+    border-bottom: 1px solid var(--rule);
+    border-radius: 0;
+    padding: 12px 0 13px;
     /* ── LM-067/LM-068 (B12, 4.9.2026) · WO GEKÜRZT WIRD, IST DIE KÜRZUNG SICHTBAR ──
        GEMESSEN am gebauten Stand: `/rechner/zpo-fristen` @720 kappte drei
        Select-Werte hart im Wort — «– Vorlage wählen (oder manuell u» (Textbreite
@@ -1335,9 +1354,19 @@
     text-overflow: ellipsis;
   }
   .lc-input::placeholder { color: var(--placeholder); }
+  /* Fokus = der Unterstrich verdoppelt sich und wechselt in die Fokus-Rolle
+     (Referenzbild `.frage input:focus-visible{box-shadow:0 2px 0 0 var(--ink)}`).
+     Der zweite Pixel kommt als `box-shadow` UNTER die Kante, nicht als zweite
+     Rahmenbreite: ein `border-bottom: 2px` würde das Feld um 1 px stauchen (und
+     bei `.lc-input-sm` mit fester Höhe den Text verschieben). Schatten nehmen
+     keinen Platz ein — die Feldhöhe bleibt in beiden Zuständen gleich.
+     Der frühere Doppelring (`--ring`) entfällt: er war die Fokus-Form des
+     Kastens und legte einen abgesetzten Saum um eine Fläche, die es nicht mehr
+     gibt. `--ring` bleibt für seine übrigen Konsumenten unangetastet. */
   .lc-input:focus, .lc-input:focus-visible {
-    outline: none; border-color: var(--brass-600);
-    box-shadow: var(--ring); /* abgesetzter Doppelring — klar sichtbar auf Papier */
+    outline: none;
+    border-bottom-color: var(--focus);
+    box-shadow: 0 1px 0 0 var(--focus);
   }
   /* ── Ä14 (LESER-V3 H2b) · EIN Fokusring statt drei Kanten ───────────────────
      `.lc-input:focus` setzt drei Dinge zugleich: Rahmenfarbe, 2-px-Papier-Saum
@@ -1405,10 +1434,18 @@
      — die Fehlermeldung stand dadurch beziehungslos irgendwo auf der Seite. EINE
      Regel für ALLE lc-input (§5), Danger-Linie theme-fest über --danger-line. Gilt
      nur, wenn ein Aufrufer das Attribut tatsächlich setzt (opt-in je Feld) — ein
-     leeres Pristine-Formular bleibt unmarkiert (C2, DESIGN-REGLEMENT). */
-  .lc-input[aria-invalid="true"] { border-color: var(--danger-line); }
+     leeres Pristine-Formular bleibt unmarkiert (C2, DESIGN-REGLEMENT).
+     R3-Nachzug 6.9.2026: aus der Rahmenfarbe ist der DANGER-UNTERSTRICH
+     geworden — dieselbe Rolle, an der einzigen Kante, die das Feld noch hat,
+     und in derselben doppelten Stärke wie der Fokus (die Markierung darf nicht
+     schwächer sein als der Zustand «hier steht der Cursor»). */
+  .lc-input[aria-invalid="true"] {
+    border-bottom-color: var(--danger-line);
+    box-shadow: 0 1px 0 0 var(--danger-line);
+  }
   .lc-input[aria-invalid="true"]:focus, .lc-input[aria-invalid="true"]:focus-visible {
-    border-color: var(--danger-line);
+    border-bottom-color: var(--danger-line);
+    box-shadow: 0 1px 0 0 var(--danger-line);
   }
   /* Windows High Contrast / forced-colors: box-shadow wird vom UA neutralisiert
      → der Doppelring verschwindet. Ein gegateter Outline-Fallback hält den Fokus
@@ -1418,7 +1455,10 @@
   }
   /* Kompakte Eingabe-Variante (Zeilen/Toolbars) — analog .lc-btn-sm; löst die
      ad-hoc h-10/rounded-lg/ring-Inseln (EinfacheFrist/Tagerechner) ab. */
-  .lc-input-sm { height: 36px; padding: 0 12px; font-size: .875rem; }
+  /* R3-Nachzug: waagrechtes Polster 12 → 0, wie bei `.lc-input` (der Kasten,
+     den es polsterte, ist weg). Die feste Höhe 36 px bleibt — sie ist die
+     Anatomie der Zeile, nicht die des Rahmens (`tap-ziel-token.test.ts`). */
+  .lc-input-sm { height: 36px; padding: 0; font-size: .875rem; }
   /* Select-Chevron (Redesign): JEDER <select> mit lc-input (= alle Selects der
      App) bekommt den Messing-Chevron statt des nativen OS-Pfeils — ein Rollout
      über den Element-Selektor, ohne ~150 Call-Sites anzufassen. .lc-select
@@ -1426,18 +1466,33 @@
   select.lc-input, .lc-select {
     appearance: none; -webkit-appearance: none;
     padding-right: 38px;
-    /* Chevron-Hex = --brass-700 (#826225, a11y-Kalibrierung 26.6.2026) — bei
-       Rekalibrierung MITZIEHEN (D-1.6: data-URI kann kein var() tragen; die
-       CSS-mask-Variante ist am nackten <select> nicht machbar, weil background
-       bereits die Well-Füllung trägt — verworfen, s. FAHRPLAN §3). */
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16' fill='none' stroke='%23826225' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4 6l4 4 4-4'/%3E%3C/svg%3E");
-    background-repeat: no-repeat; background-position: right 12px center; background-size: 16px;
+    /* ── R3-F2 (6.9.2026) · DER LETZTE GOLDREST ─────────────────────────────
+       Der Chevron lag zweimal als data-URI mit HARTEM Gold-Hex im Blatt
+       (hell `stroke='%23826225'`, dunkel `%23D8BD78`) — nach dem Token-Tausch
+       R1 die einzige Stelle der Farbwelt, die noch Messing malte, und zugleich
+       eine zweite Wahrheit neben den Tokens (§5): eine Rekalibrierung hätte sie
+       stumm zurückgelassen. Die alte Notiz nannte beide Auswege als verbaut —
+       eine data-URI kann `currentColor` nicht auflösen (eigenes SVG-Dokument
+       ohne Vererbung), und eine CSS-`mask` maskiert am nackten <select> auch
+       Text und Unterstrich weg. Der dritte Weg trägt: ein FARBVERLAUF liegt im
+       Dokument des Elements, also gilt dort `currentColor`. Zwei gekreuzte
+       Verläufe von je 6 × 6 px, Kante an Kante gesetzt, ergeben das «v» —
+       in der Tinte des Feldes, mit EINER Regel für beide Themen. Die
+       html.dark-Kopie darunter entfällt damit ersatzlos (§17-Gegengewicht).
+       Geometrie wie zuvor: 12 px breit, 6 px hoch, rechter Rand 12 px.
+       Wächter: `check:farbwelt` verbietet seit diesem Nachzug jeden
+       `%23`-Hexwert in `src/index.css` (Rot-Probe im Commit). */
+    background-image:
+      linear-gradient(45deg, transparent 0 42%, currentColor 42% 58%, transparent 58% 100%),
+      linear-gradient(-45deg, transparent 0 42%, currentColor 42% 58%, transparent 58% 100%);
+    background-repeat: no-repeat;
+    background-position: right 18px center, right 12px center;
+    background-size: 6px 6px;
   }
-  /* Dunkelmodus: heller Messing-Chevron (der Light-SVG ist auf Dunkel blind).
-     Hex = dunkles --brass-700 (#D8BD78) — bei Rekalibrierung mitziehen. */
-  html.dark select.lc-input, html.dark .lc-select {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16' fill='none' stroke='%23D8BD78' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4 6l4 4 4-4'/%3E%3C/svg%3E");
-  }
+  /* Die frühere `html.dark`-Kopie des Chevrons ist ERSATZLOS gestrichen
+     (R3-F2): sie existierte nur, weil die data-URI ihre Farbe nicht erben
+     konnte. Der Verlaufs-Chevron erbt `currentColor` und ist damit im Dunkel
+     von sich aus richtig — eine Regel weniger, kein Wächter nötig. */
   .lc-select { @apply lc-input; }
   /* Kompaktes Select (lc-select + lc-input-sm): .lc-select bringt via @apply die
      12px-Vertikal-Polsterung von .lc-input mit und steht in der Quelle NACH
@@ -2337,3 +2392,29 @@
    E-1) — hier wird KEINE eigene Farbe gesetzt, nur der Abstand zur Kante
    zurückgenommen, damit der Ring die 2-px-Linie nicht doppelt. */
 .st-frage-feld:focus-visible { outline-offset: 1px; }
+
+/* ── R3-NACHZUG (David-Befund D1, 6.9.2026) · DIE ZEILE MUSS SICH ALS SUCHE ──
+   ZU ERKENNEN GEBEN. Wortlaut David zum Bild vom 6.9.2026: die grosse Zeile
+   «liest sich als Überschrift, nicht als Eingabefeld». Sie trug nur einen
+   Platzhalter in grosser Literata — dieselbe Schrift und Grösse, in der
+   daneben die Begrüssung steht. Zwei Zeichen holen sie zurück, beide leise:
+   eine LUPE in der Zeile (SVG in `currentColor`, `start/UniversalSuche.tsx`)
+   und ein LABEL «Suchen» in Archivo darüber (12 px, Meta-Ton) — dieselbe
+   Anordnung «kleines Label über dem Feld», die das Referenzbild für seine
+   Werkzeug-Felder benutzt (`.werk label{display:grid;gap:3px}`).
+   NACHTRAG zur Notiz oben (§2b — die dortige Messung bleibt, wie sie war):
+   seit dem R3-F3-Nachzug ist `.lc-input` selbst ein Unterstrich-Feld. `.st-frage`
+   bleibt trotzdem eine eigene Regel: sie trägt die 2-px-Kante der Kopfzeile,
+   Literata statt Archivo und die Titelgrösse — das ist die Suchzeile des
+   Titelblatts, nicht das Formularfeld. */
+.st-frage { display: flex; align-items: center; gap: .5rem; }
+.st-frage-lupe { flex: none; width: 1.375rem; height: 1.375rem; color: var(--ink-500); }
+.st-frage-feld {
+  flex: 1 1 auto;
+  min-width: 0;
+  /* Wie `.lc-input` (LM-067/LM-068): wo gekürzt wird, ist die Kürzung sichtbar.
+     GEMESSEN 6.9.2026 @390: der Platzhalter brach mitten im Wort ab
+     («Kündigungsfri») — eine Auslassung sagt «hier steht mehr», ein hartes
+     Wortende liest sich wie ein Datenfehler (§8, Prüfbefund R3-F6). */
+  text-overflow: ellipsis;
+}

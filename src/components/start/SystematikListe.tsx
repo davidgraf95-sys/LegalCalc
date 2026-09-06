@@ -54,9 +54,19 @@ export function SystematikListe() {
             ziel={`/gesetze?ebene=bund#sys-${k.id}`} />
         ))}
         {/* «International» ist seit IA-6 Stufe 2 eine eigene Säule, keine
-            Systematik-Kategorie — darum ohne Ordnungsnummer und mit der
-            kanonischen Ziel-Adresse (nie dem Alt-Alias /international). */}
-        <Zeile titel="Internationales Recht"
+            Systematik-Kategorie — sie führt darum die kanonische Ziel-Adresse
+            (nie den Alt-Alias /international).
+            ORDNUNGSZIFFER (Prüfbefund R3-F9, 6.9.2026): die Zeile stand als
+            einzige ohne Zahl und riss die Zahlenspalte auf. Die Zahl ist «0»,
+            EINSTELLIG und mit Bedacht: «01»…«05» sind LexMetriks eigene
+            funktionale Ordnung (`lib/normtext/systematik.ts`), zu der das
+            internationale Recht gerade nicht gehört — eine «06» würde dort eine
+            Kategorie behaupten, die es nicht gibt (§5). «0» ist dagegen die
+            AMTLICHE Gruppenziffer: die Systematische Rechtssammlung führt das
+            internationale Recht als Gruppe 0 (SR 0.1 … 0.9,
+            fedlex.admin.ch/de/cc, abgerufen 6.9.2026). Die eine Stelle weniger
+            sagt zugleich, dass sie aus einer anderen Ordnung stammt. */}
+        <Zeile nr="0" titel="Internationales Recht"
           kuerzel={z.internationalKuerzel} anzahl={z.gesetzeInternationalVolltext}
           ziel={INTERNATIONAL_SAEULE} />
       </div>

@@ -18,6 +18,17 @@ import { usePaneKlasse } from '../components/layout/PaneKontext';
 // Marginalie als Zeile über ihrem Inhalt. `usePaneKlasse` wählt den Zweig — im
 // Pane darf keine Viewport-Media-Query entscheiden (A-2-Wurzel, Pane.tsx).
 //
+// LEERRAUM ÜBER DEM TITELBLATT (David-Befund D3, 6.9.2026): GEMESSEN am
+// gebauten Stand (Preview @1440, hell) standen über der Titelzeile 72 px —
+// 48 px Polster des Route-Wrappers (`layout/Shell.tsx`: `py-8 sm:py-12`) plus
+// 24/30 px Vorlauf der ersten Satzspiegel-Zeile. Der Vorlauf entfällt
+// (`ohneVorlauf`), und ab `sm` nimmt die Seite 24 px des Wrapper-Polsters
+// zurück: die Titelzeile beginnt damit 24 px unter der Ausgabe-Zeile, wie im
+// Referenzbild (`.blatt` polstert 22 px). NUR ab `sm` und NUR im Vollfenster:
+// im Pane polstert `Pane.tsx` mit `py-6` (24 px), dort wäre der Abzug der ganze
+// Abstand. Die Wurzel — eine je Routentyp gesetzte Wrapper-Polsterung — liegt
+// in `layout/`, das diese Runde nicht anfasst (Notiz für R5).
+//
 // A11y (§8): genau EINE <h1> (Titelblatt-Wort in der Marginalie der ersten
 // Zeile, `start/Hero`), je betitelter Zeile eine <h2> mit
 // `<section aria-labelledby>` an der INHALTS-Zelle — keine Heading-Sprünge.
@@ -25,7 +36,7 @@ export function Startseite() {
   const pk = usePaneKlasse();
   return (
     <div className={`grid grid-cols-1 gap-x-9 ${pk(
-      'lg:grid-cols-[150px_minmax(0,1fr)]', '@3xl/pane:grid-cols-[150px_minmax(0,1fr)]',
+      'sm:-mt-6 lg:grid-cols-[150px_minmax(0,1fr)]', '@3xl/pane:grid-cols-[150px_minmax(0,1fr)]',
     )}`}>
       {START_MODULE.map((modul) => {
         const Komponente = modul.Komponente;

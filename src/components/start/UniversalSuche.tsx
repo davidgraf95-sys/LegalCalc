@@ -22,11 +22,27 @@ import { aktivePosition, flacheTreffer, naechsterKey, vorigerKey, gewaehlterHref
 // `role="search"`, `type="search"` und ihren Beispiel-Platzhalter aus. Der
 // PLATZHALTER nennt jetzt konkrete Eingaben statt Gattungswörter — dieselbe
 // Aussage, an einem Beispiel statt an einer Aufzählung.
+//
+// R3-NACHZUG 6.9.2026 — DIESE ANNAHME IST WIDERLEGT (David am Bild, Befund D1):
+// «Die grosse Suchzeile liest sich als Überschrift, nicht als Eingabefeld.»
+// `role`/`type`/Platzhalter sind Auszeichnung, kein Bild — was man sah, war eine
+// Zeile Literata in derselben Grösse wie die Begrüssung darüber. Die Lupe kommt
+// darum zurück, aber IN die Zeile (SVG, `currentColor`, nicht in einem Kasten),
+// und über der Zeile steht ein Label «Suchen» in Archivo — dieselbe Anordnung,
+// die das Referenzbild seinen Werkzeug-Feldern gibt («.werk label»).
+// Das Label ist ein echtes <label>: es benennt das Feld (Klick fokussiert) und
+// trägt den vollen Scope-Satz als sr-only-Fortsetzung, damit der zugängliche
+// Name den sichtbaren Text ENTHÄLT (WCAG 2.5.3) — das frühere `aria-label`
+// hätte ihn ersetzt.
+// Der PLATZHALTER ist gekürzt (Prüfbefund R3-F6): «… · Kündigungsfrist» wurde
+// @390 mitten im Wort gekappt. Zwei Beispiele reichen, und `.st-frage-feld`
+// setzt zusätzlich `text-overflow: ellipsis` (index.css).
 
 export function UniversalSuche() {
   const navigate = useNavigate();
   const pk = usePaneKlasse();
   const listboxId = useId();
+  const feldId = useId();
   const [params, setParams] = useSearchParams();
   const initialQ = params.get('q') ?? '';
   const [wert, setWert] = useState(initialQ);
@@ -124,21 +140,31 @@ export function UniversalSuche() {
   };
 
   return (
-    <section role="search" aria-label="Universal-Suche" className="mt-2 space-y-3">
+    <section role="search" aria-label="Universal-Suche" className="mt-2 space-y-2">
+      <label htmlFor={feldId} className="block font-sans text-xs text-ink-500">
+        Suchen<span className="sr-only"> — über Rechner, Vorlagen, Gesetze und Rechtsprechung</span>
+      </label>
       <div className="st-frage relative">
+        {/* Lupe: 22 px, 1.5 px Strich, `currentColor` — sie erbt die Meta-Tinte
+            aus `.st-frage-lupe` und ist rein dekorativ (das Feld ist benannt). */}
+        <svg aria-hidden viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"
+          strokeLinecap="round" className="st-frage-lupe">
+          <circle cx="10.5" cy="10.5" r="6.5" />
+          <path d="M15.5 15.5L21 21" />
+        </svg>
         <input
+          id={feldId}
           type="search"
           value={wert}
           onChange={(e) => setze(e.target.value)}
           onKeyDown={aufTaste}
-          placeholder="Art. 336c OR · BGE 152 V 52 · Kündigungsfrist"
-          aria-label="Über Rechner, Vorlagen, Gesetze und Rechtsprechung suchen"
+          placeholder="Art. 336c OR · BGE 152 V 52"
           /* GEMESSEN 6.9.2026 (Preview @1440 und im Pane): 32 px Literata füllen
              die Textspalte des Satzspiegels bei ~890 px Breite nicht mehr — der
              Platzhalter wird beschnitten. Die grosse Stufe steht darum erst,
              wenn die Spalte sie trägt, und im PANE entscheidet die
              Container-Breite, nicht der Viewport (A-2-Wurzel). */
-          className={`st-frage-feld w-full pr-9 ${pk('text-h3 lg:text-h2 xl:text-h1', 'text-h3 @3xl/pane:text-h2 @5xl/pane:text-h1')}`}
+          className={`st-frage-feld pr-9 ${pk('text-h3 lg:text-h2 xl:text-h1', 'text-h3 @3xl/pane:text-h2 @5xl/pane:text-h1')}`}
           enterKeyHint="search"
           role="combobox"
           aria-expanded={q !== ''}

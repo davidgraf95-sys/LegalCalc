@@ -44,8 +44,14 @@ async function oeffnen(page: Page, url: string, thema: 'hell' | 'dunkel' = 'hell
 //   «Abschwächung ist Gestaltungsabsicht; Info zusätzlich in title+Legende»);
 //   Hebung = Entscheid David (BERICHT.md B-1).
 const BEKANNTE_BEFUNDE: Record<string, string[]> = {
-  'startseite': ['link-in-text-block'],
-  'startseite-suche': ['link-in-text-block'],
+  // R3-NACHZUG 6.9.2026 (W2·24, Befund R3-F1): 'startseite' und
+  // 'startseite-suche' standen hier mit 'link-in-text-block' — dem
+  // B-2-Markenentscheid «Inline-Links ohne Unterstreichung». Dieser Entscheid
+  // ist mit dem Design-Identitäts-Umbau AUFGEHOBEN (§5 des Fahrplans: «Links
+  // unterstrichen»), die Startseiten-Verweise sind unterstrichen — der Freibrief
+  // ist damit gegenstandslos und GESTRICHEN, nicht umgeschrieben. Ab jetzt gatet
+  // die Regel auf «/» wieder (verifiziert: mit Freibrief grün, ohne Freibrief
+  // grün — der Befund ist behoben, nicht versteckt).
   'tagerechner': ['link-in-text-block'],
   'tagerechner-kalender': ['link-in-text-block'],
   'vorlage-arbeitsvertrag': ['link-in-text-block'],
