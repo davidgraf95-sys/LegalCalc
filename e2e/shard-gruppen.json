@@ -34,7 +34,9 @@
    "w224-reiter-umordnen-d16.e2e.ts",
    "w224-plus-reiter.e2e.ts",
    "w224-r11-reiterleiste.e2e.ts",
-   "w224-kopfsuche-d23.e2e.ts"
+   "w224-kopfsuche-d23.e2e.ts",
+   "leser-bezuege-zaehler.e2e.ts",
+   "leser-links-p3.e2e.ts"
   ],
   "3": [
    "a31a-fussnote-inline.e2e.ts",
@@ -72,7 +74,8 @@
    "leser-v3-panel-erwaegungssprung.e2e.ts",
    "leser-v3-panel-kurztext.e2e.ts",
    "leser-v3-panel-revision-badge.e2e.ts",
-   "split-erwaegungssprung.e2e.ts"
+   "split-erwaegungssprung.e2e.ts",
+   "leser-gliederung-p8.e2e.ts"
   ],
   "5": [
    "plz-wahl.e2e.ts",
