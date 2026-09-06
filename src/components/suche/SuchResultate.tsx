@@ -250,7 +250,7 @@ function Gruppe({ g, index, onAuswahl, onNavigate, listboxId, aktivId, q, sektio
   );
 }
 
-export function SuchResultate({ gruppen, allesGeladen, q, onAuswahl, onNavigate, listboxId, aktivId, vorschlag, abdeckung, onVorschlag, sektionsRollen, onLeeren, panelKlasse }: {
+export function SuchResultate({ gruppen, allesGeladen, q, onAuswahl, onNavigate, listboxId, aktivId, vorschlag, abdeckung, onVorschlag, sektionsRollen, onLeeren, panelKlasse, wartet }: {
   gruppen: SuchGruppe[];
   allesGeladen: boolean;
   q: string;
@@ -284,8 +284,24 @@ export function SuchResultate({ gruppen, allesGeladen, q, onAuswahl, onNavigate,
    *  gar nicht erst, und ein Tab-Stopp im Widget (Cowork-Befund 38) entsteht
    *  trotzdem nicht. */
   panelKlasse?: string;
+  /** F6 · true, solange der Nutzer bereits getippt hat, die Query aber noch
+   *  nicht übernommen ist (120 ms Entprellung in `HeaderSuche`). GEMESSEN
+   *  6.9.2026: in genau diesem Fenster stand das Kopf-Panel als 1-px-Streifen
+   *  da — zwei Rahmen ohne Inhalt — und sprang danach auf 660 px. Ohne diese
+   *  Auskunft KANN das Panel den Fall nicht kennen: es sieht nur `q`, und `q`
+   *  ist in diesem Fenster leer. Die Hero-/`/suche`-Flächen übergeben sie
+   *  nicht; dort heisst ein leeres `q` unverändert «es gibt keine Query». */
+  wartet?: boolean;
 }) {
-  if (q === '') return null;
+  if (q === '') {
+    if (!wartet) return null;
+    return (
+      <div className={`lc-suchpanel${panelKlasse ? ` ${panelKlasse}` : ' overflow-hidden'}`}>
+        <p className="px-4 pt-3 pb-1 text-micro leading-snug text-ink-500">wird durchsucht …</p>
+        <SkelettListe />
+      </div>
+    );
+  }
 
   // §8-ehrlicher Zähler (S3/#5): solange Sektionen laden, ist die Zahl nicht final
   // → «N+ … wird noch durchsucht»; erst wenn alles geladen ist, die feste Zahl.

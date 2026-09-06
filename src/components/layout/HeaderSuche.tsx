@@ -493,6 +493,10 @@ export function HeaderSuche({ onFokusModus, onFokusZurueck }: {
             ? <SucheLeerzustand verlauf={verlauf} listboxId={listboxId} aktivId={aktivId} panelKlasse={SCROLL_KAPPUNG}
                 onNavigate={(href) => { navigate(href); auswahl(); }} />
             : <SuchResultate gruppen={gruppen} allesGeladen={allesGeladen} q={q} onAuswahl={auswahl} listboxId={listboxId} aktivId={aktivId} panelKlasse={SCROLL_KAPPUNG}
+                /* F6 · das Entprellungs-Fenster (120 ms, oben): getippt ist
+                   schon, übernommen noch nicht — sonst stünde das Panel hier
+                   als 1-px-Streifen. */
+                wartet={q !== wert.trim()}
                 vorschlag={vorschlag} abdeckung={abdeckung} onVorschlag={uebernehmeVorschlag}
                 onLeeren={() => { setWert(''); setQ(''); }}
                 onNavigate={(href) => navigate(href)} />}
