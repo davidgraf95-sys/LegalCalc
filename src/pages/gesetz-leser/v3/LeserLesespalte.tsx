@@ -8,6 +8,7 @@ import { erlassPfad } from './erlassAnsicht';
 import type { LeserV3Modell } from './leserV3Modell';
 import { usePaneSteuerung } from '../../../components/layout/usePaneLayout';
 import { randNotizZiel } from '../randNotizOeffnen';
+import { useBezuegeZaehler } from '../bezuegeZaehler';
 
 // ─── Die Lesespalte (FAHRPLAN-LESER-V3 Kap. 1.3 «Kern-Grenze») ──────────────
 //
@@ -53,6 +54,11 @@ export function LeserLesespalte({ m }: {
   // Refs einzeln herausgezogen: die Lint-Regel `react-hooks/refs` erkennt einen
   // Ref am Namen, und `refs.leseRef` ist für sie ein Member-Zugriff im Render.
   const { leseRef, sekRef } = m.refs;
+  // W2·24-R6c: die ZAHLEN der Bezüge-Zeile aus der Zähl-Datei (ø 289 B) statt
+  // aus dem 2.2-MB-Bezugs-Shard — Herleitung in `../bezuegeZaehler`. Der Hook
+  // steht HIER und nicht im Modell: die Lesespalte ist sein einziger Konsument,
+  // und das Modell hält damit seine §6.6-Schwelle (`leser-v3-fundament`).
+  const bezuegeZaehler = useBezuegeZaehler(erlass?.key);
   // Split-Regel der Randnotiz (s. `onClickCapture` unten): EIN Abo je Spalte.
   // VOR dem Lade-Guard, weil Hooks nicht bedingt laufen dürfen.
   const { oeffneDaneben, kannOeffnen, istOffen: paneOffen } = usePaneSteuerung();
@@ -89,6 +95,10 @@ export function LeserLesespalte({ m }: {
     <ArtikelLeser key={e.id} e={e} erlass={erlass} basisPfad={basisPfad} fussnoten={fn(e.artikel)}
       intern={m.internRefs} marg={m.margAnzeige.get(e.artikel)?.teile} margBasis={m.margAnzeige.get(e.artikel)?.ab}
       revision={m.revisionFuer(e.artikel)} historie={m.historieFuer(e.artikel)}
+      // W2·24-R6c: die ZAHLEN der Bezüge-Zeile aus der Zähl-Datei (289 B im
+      // Mittel) statt aus dem 2.2-MB-Shard — Herleitung in `../bezuegeZaehler`.
+      // Der Kern rendert wie bisher; das Öffnen der Zeile lädt weiterhin lazy.
+      zaehler={bezuegeZaehler(e.artikel)}
       istAnhang={istAnhangToken(e.artikel)} />
   );
 

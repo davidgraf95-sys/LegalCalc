@@ -37,12 +37,24 @@ import type { Werkzeug } from '../../../lib/normtext/werkzeuge';
 /** Geteilte leere Liste — spart je Artikel ohne Werkzeug-Kante eine Allokation. */
 const LEERE_WERKZEUGE: readonly Werkzeug[] = [];
 
-export const ArtikelLeser = memo(function ArtikelLeser({ e, erlass, basisPfad, fussnoten, intern, marg, margBasis, imTreffer, onSpringe, leitfaelle, bezuege, revision, historie, istAnhang = false }: {
+export const ArtikelLeser = memo(function ArtikelLeser({ e, erlass, basisPfad, fussnoten, intern, marg, margBasis, imTreffer, onSpringe, leitfaelle, bezuege, revision, historie, zaehler, istAnhang = false }: {
   e: NormSnapshot; erlass: BrowseErlass; basisPfad: string; fussnoten?: Fussnote[]; intern?: InternRefs;
   marg?: string[];
   /** G-HIST-UI: Fassungshistorie dieses Artikels aus dem erlass-lokalen Shard
    *  (Reader lädt ihn einmal idle). undefined = kein Eintrag ⇒ kein Badge (§8). */
   historie?: ArtikelHistorie;
+  /**
+   * W2·24-R6c · die ZAHLEN der Bezüge-Zeile, buildseitig gezählt
+   * (`../bezuegeZaehler`, Zähl-Datei je Erlass, ø 289 B). Sie sagen, WIE VIELE
+   * Entscheide und Materialien an diesem Artikel hängen — nicht WELCHE. Damit
+   * steht die Zeile vollständig da, bevor irgendein Shard geladen ist, und die
+   * Rubrik «Materialie» wird überhaupt erst möglich: ihr Shard kommt im Leser
+   * sonst gar nicht vor (§8 — bis hierher fehlte die Rubrik lieber ganz, als
+   * eine Zusage ohne Deckung zu machen).
+   * `undefined` = keine Datei oder noch nicht geladen ⇒ die Zeile fällt auf
+   * das zurück, was der Artikel ohnehin führt.
+   */
+  zaehler?: { entscheide: number; materialien: number };
   /** W2·5d G3b (③/⑤): der Eintrag ist ein Anhang (`annex_*`) bzw. Staatsvertrags-
    *  Protokoll (`lvl_*`) — als eigenständig erkennbarer, klar abgesetzter Block
    *  rendern (Struktur-Trenner statt Artikel-Trenner, «Anhang N»/«Protokoll N» als
@@ -399,8 +411,21 @@ export const ArtikelLeser = memo(function ArtikelLeser({ e, erlass, basisPfad, f
   ) : null;
   /** Die Zahlen der Bezüge-Zeile — ausschliesslich aus Daten, die der Artikel
    *  ohnehin führt (§8: keine Rubrik ohne echte Zahl, keine neue Ladelogik). */
+  // W2·24-R6c: die Zähl-Datei schlägt beide bisherigen Quellen — sie ist
+  // GEZÄHLT, nicht gefiltert, und deshalb dieselbe Zahl vor und nach dem Laden
+  // des Shards (die Zeile springt nicht mehr um, sobald der Apparat eintrifft).
+  // Ohne Datei bleibt die frühere Reihenfolge unverändert bestehen: gefilterte
+  // Kanten, sonst Leitfälle.
   const bezugsMarken: BezugsMarke[] = [
-    { reg: 'r', anzahl: bezuege ? bezuege.kanten.length : (leitfaelle?.length ?? 0), wort: ['Entscheid', 'Entscheide'] },
+    {
+      reg: 'r',
+      anzahl: zaehler ? zaehler.entscheide : (bezuege ? bezuege.kanten.length : (leitfaelle?.length ?? 0)),
+      wort: ['Entscheid', 'Entscheide'],
+    },
+    // Die Rubrik erscheint NUR mit echter Zahl (`anzahl > 0` filtert sie sonst
+    // in `BezuegeKopf` heraus) — ohne Zähl-Datei steht sie also gar nicht da,
+    // statt eine Null zu behaupten (§8).
+    { reg: 'm', anzahl: zaehler?.materialien ?? 0, wort: ['Materialie', 'Materialien'] },
     { reg: 'g', anzahl: verweise.length, wort: ['Verweis', 'Verweise'] },
     { reg: 'w', anzahl: werkzeuge.length, wort: ['Rechner', 'Rechner'] },
   ];

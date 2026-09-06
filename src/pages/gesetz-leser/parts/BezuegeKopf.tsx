@@ -17,11 +17,14 @@ import { type ReactNode } from 'react';
 // `verweise` aus der Struktur, `werkzeuge` aus der statischen Kantentabelle).
 //
 // ── WAS NICHT DASTEHT, WIRD NICHT ERFUNDEN (§8) ────────────────────────────
-// Die Rubrik «Materialien» fehlt, und das ist kein Versehen: sie käme aus einem
-// Shard, den der Leser heute nicht lädt (für das OR allein 419 KB, gemessen im
-// R6-Protokoll §2). Eine Rubrik ohne Zahl wäre eine Zusage ohne Deckung. Wer
-// sie will, braucht eine ZÄHL-Datei je Erlass — ein eigener, gemessener Schritt
-// (§15), keine Nebenwirkung einer Darstellungsrunde.
+// R6b: «Die Rubrik Materialien fehlt, und das ist kein Versehen: sie käme aus
+// einem Shard, den der Leser heute nicht lädt (für das OR allein 419 KB). Eine
+// Rubrik ohne Zahl wäre eine Zusage ohne Deckung. Wer sie will, braucht eine
+// ZÄHL-Datei je Erlass — ein eigener, gemessener Schritt (§15).»
+// ERLEDIGT IN W2·24-R6c: die Zähl-Datei steht (`scripts/gen-bezuege-zaehler.ts`
+// → `public/verzahnung/bezuege-zaehler/<KEY>.json`, ø 289 B, grösste 5.8 KB),
+// und mit ihr die Rubrik. Der Grundsatz bleibt: eine Rubrik ohne echte Zahl
+// erscheint nicht — ohne Datei fällt `anzahl` auf 0 und die Rubrik weg.
 //
 // ── WARUM `<details>` UND NICHT EIN EIGENER KNOPF ──────────────────────────
 // `<summary>` trägt die Auf-/Zu-Semantik (und damit `aria-expanded`) von sich
@@ -62,8 +65,12 @@ function merkeZustand(offen: boolean): void {
 
 /** Eine Rubrik der Zeile: Zahl, Wort und Registerfarbe. */
 export interface BezugsMarke {
-  /** Registerbuchstabe für die Farbe: r = Rechtsprechung, g = Gesetze, w = Werkzeuge. */
-  reg: 'r' | 'g' | 'w';
+  /** Registerbuchstabe für die Farbe: r = Rechtsprechung, m = Materialien,
+   *  g = Gesetze, w = Werkzeuge. `m` seit W2·24-R6c — die Rubrik «Materialien»
+   *  hat mit der buildseitigen Zähl-Datei (`../bezuegeZaehler`) endlich eine
+   *  echte Zahl; der Kommentar unten, der ihr Fehlen begründete, ist damit
+   *  eingelöst. */
+  reg: 'r' | 'm' | 'g' | 'w';
   /** Anzahl — nur echte, gezählte Werte (§8: nie geschätzt, nie erfunden). */
   anzahl: number;
   /** Einzahl/Mehrzahl des Rubriknamens. */

@@ -33,7 +33,8 @@
    "w224-reiterverhalten.e2e.ts",
    "w224-reiter-umordnen-d16.e2e.ts",
    "w224-plus-reiter.e2e.ts",
-   "leser-links-p3.e2e.ts"
+   "leser-links-p3.e2e.ts",
+   "leser-bezuege-zaehler.e2e.ts"
   ],
   "3": [
    "a31a-fussnote-inline.e2e.ts",

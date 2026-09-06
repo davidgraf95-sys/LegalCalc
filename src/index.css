@@ -2931,6 +2931,10 @@ html[data-lr6-anker-warten] footer { visibility: hidden; }
   white-space: nowrap;
 }
 .lr7-bez-marke[data-reg="r"] { border-left-color: var(--reg-r); }
+/* W2·24-R6c: die Rubrik «Materialien» hat mit der Zähl-Datei eine echte Zahl
+   bekommen und darum auch ihre Registerfarbe (dieselbe Farbe wie überall sonst;
+   die Vierer-Leiter r/m/g/w ist die eine Landkarte, §5). */
+.lr7-bez-marke[data-reg="m"] { border-left-color: var(--reg-m); }
 .lr7-bez-marke[data-reg="g"] { border-left-color: var(--reg-g); }
 .lr7-bez-marke[data-reg="w"] { border-left-color: var(--reg-w); }
 /* Der Pfeil steht direkt hinter der letzten Marke, nicht am Zeilenende: er
