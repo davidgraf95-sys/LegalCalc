@@ -213,17 +213,31 @@ export function ersetzeTab(altPath: string | null | undefined, neuPath: string, 
   schreibe(naechste);
 }
 
-/** #12: Reiter per Drag-and-Drop umsortieren — verschiebt den gezogenen Reiter
- *  (vonPath) an die Position des Ziel-Reiters (nachPath). Identifikation über
- *  pfadTeil (stabile Reiter-Identität); deterministisch, kein Zeitstempel. */
-export function ordneTabsUm(vonPath: string, nachPath: string): void {
+/** #12: Reiter umsortieren — verschiebt den gezogenen Reiter (vonPath) an die
+ *  Position des Ziel-Reiters (nachPath). Identifikation über `tabSchluessel`
+ *  (stabile Reiter-Identität); deterministisch, kein Zeitstempel.
+ *
+ *  ── D15/D16 (David 6.9.2026) · WOHIN GENAU, SAGT DER ZEIGER ────────────────
+ *  «per drag and drop soll man register verschieben können … analog browser».
+ *  Im Browser entscheidet die ZEIGERPOSITION über dem Ziel, ob der Reiter davor
+ *  oder dahinter einrastet — darum der dritte Parameter. Er ist optional, und
+ *  sein Default reproduziert die frühere, richtungsabhängige Regel BIT-GLEICH:
+ *  wer nach links zieht, landet vor dem Ziel; wer nach rechts zieht, dahinter.
+ *  Genau davon leben die ▲/▼-Knöpfe der Reiter-Liste (`layout/TabPanel.tsx`),
+ *  die kein Zeiger-X haben — sie bleiben unangetastet (§6.3).
+ *
+ *  Der Zielindex wird NACH dem Herausnehmen neu bestimmt: sonst verschiebt der
+ *  entnommene Reiter das Ziel um eins, und «davor» landete dahinter. */
+export function ordneTabsUm(vonPath: string, nachPath: string, davor?: boolean): void {
   const bisher = ladeTabs();
   const von = bisher.findIndex((t) => tabSchluessel(t.path) === tabSchluessel(vonPath));
   const nach = bisher.findIndex((t) => tabSchluessel(t.path) === tabSchluessel(nachPath));
   if (von === -1 || nach === -1 || von === nach) return;
+  const seite = davor ?? von > nach;
   const naechste = [...bisher];
   const [bewegt] = naechste.splice(von, 1);
-  naechste.splice(nach, 0, bewegt);
+  const nachNeu = naechste.findIndex((t) => tabSchluessel(t.path) === tabSchluessel(nachPath));
+  naechste.splice(seite ? nachNeu : nachNeu + 1, 0, bewegt);
   schreibe(naechste);
 }
 

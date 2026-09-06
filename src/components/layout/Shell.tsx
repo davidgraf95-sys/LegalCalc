@@ -473,7 +473,7 @@ export function Shell({ children }: { children: ReactNode }) {
                   (nicht Vorfahren von {children}). */}
               <div {...(multipane ? { onDragOver: dnd.spalte(0).onDragOver, onDrop: dnd.spalte(0).onDrop } : {})}
                 style={multipane ? wachstum(0) : undefined}
-                className={multipane ? `flex flex-col flex-1 min-w-0 border-l-2 ${dnd.spalte(0).ueber ? 'border-l-brass-700' : 'border-l-transparent'} max-lg:flex-none max-lg:w-full max-lg:snap-start` : 'contents'}>
+                className={multipane ? `flex flex-col flex-1 min-w-0 border-l-2 ${dnd.spalte(0).ueber ? 'border-l-ink-900' : 'border-l-transparent'} max-lg:flex-none max-lg:w-full max-lg:snap-start` : 'contents'}>
                 {multipane && (
                   <PaneKopf {...titelVon(pathname)} breadcrumb={kopfDaten?.breadcrumb} onBreadcrumb={(to) => navigate(to)} artikel={kopfDaten?.artikel}
                     nurSteuerung={kopfDaten?.kopfzeileSelbst}

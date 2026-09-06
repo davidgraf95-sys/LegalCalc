@@ -4,7 +4,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import { useTabs } from './useTabs';
 import { schliesseTab, leereTabs, ordneTabsUm, tabSchluessel, type TabEintrag, reiterKurzform } from '../../lib/tabs';
 import { erlassVonPfad, verlaufLabel, type VerlaufManifeste } from '../../lib/verlaufLabel';
-import { reiterKategorie, herkunftVon, artikelLabelVonPfad, KAT_ORDER, HERKUNFT_ORDER } from '../../lib/tabGruppen';
+import { reiterKategorie, artikelLabelVonPfad } from '../../lib/tabGruppen';
 import { registerVonPfad, REG_FLAECHE, REG_TON, REG_HOVER_FLAECHE_REITER } from './bereiche';
 import { SchliessKnopf } from '../ui/SchliessKnopf';
 import { Leerzustand } from '../ui/Leerzustand';
@@ -142,7 +142,14 @@ export function Reiterleiste({ paneSchluessel = [] }: {
   const blattRef = useRef<HTMLDivElement>(null);
   const leisteRef = useRef<HTMLDivElement>(null);
   const gezogen = useRef<string | null>(null);
-  const [ueber, setUeber] = useState<string | null>(null);
+  /** Gezogener Reiter als STATE (nicht nur Ref): der Reiter unter dem Zeiger
+   *  soll sich während des Zugs sichtbar zurücknehmen — dafür braucht es ein
+   *  Re-Render. Die Ref bleibt daneben, weil `dragover`/`drop` sie SYNCHRON
+   *  lesen müssen (ein State-Wert wäre im selben Ereignis noch der alte). */
+  const [zieht, setZieht] = useState<string | null>(null);
+  /** Wo die Einfügemarke steht: an welchem Reiter, und auf welcher Seite.
+   *  Die Seite kommt aus dem Zeiger-X über der Ziel-Hälfte (D15). */
+  const [ueber, setUeber] = useState<{ path: string; davor: boolean } | null>(null);
 
   // Reader-Labels (Gesetz/Entscheid) aus den ohnehin lazy ladbaren Manifesten —
   // Muster und Bedingung wörtlich aus der abgelösten `ReiterUebersicht`.
@@ -163,21 +170,24 @@ export function Reiterleiste({ paneSchluessel = [] }: {
 
   const aktivSchluessel = tabSchluessel(pathname + search);
 
-  // Visuelle Reihenfolge — EXAKT die des `TabPanel` im Überlauf-Blatt (nach
-  // Kategorie, innerhalb «gesetze» nach Herkunft). Sonst zeigte dieselbe App
-  // dieselben Reiter in zwei Ordnungen, und der Nachbar beim Schliessen wäre
-  // ein anderer als der sichtbare.
-  const ordnung = useMemo((): TabEintrag[] => {
-    const out: TabEintrag[] = [];
-    for (const kat of KAT_ORDER) {
-      const inKat = tabs.filter((t) => reiterKategorie(t.path) === kat);
-      if (kat === 'gesetze') {
-        for (const h of HERKUNFT_ORDER) out.push(...inKat.filter((t) => herkunftVon(t.path, manifeste) === h));
-        out.push(...inKat.filter((t) => herkunftVon(t.path, manifeste) === null));
-      } else out.push(...inKat);
-    }
-    return out;
-  }, [tabs, manifeste]);
+  // ── D16 (David 6.9.2026) · DIE LEISTE ZEIGT DEN SPEICHER, SONST NICHTS ────
+  //
+  // Hier stand bis zum Fixer 1c eine ZWEITE Ordnung: die Reiter wurden nach
+  // `KAT_ORDER` gebündelt und innerhalb «gesetze» nach `HERKUNFT_ORDER` —
+  // dieselbe Gruppierung wie im Überlauf-Blatt (`TabPanel`). Der Gedanke war
+  // «eine App, eine Ordnung». Gemessen war die Folge das Gegenteil:
+  // `lib/tabs.ordneTabsUm` verschiebt den FLACHEN Speicher, und jede
+  // Verschiebung über eine Kategoriegrenze sammelte das Bucketing sofort wieder
+  // ein. David 6.9.2026: «es geht nur wenn nur gesetze offen sind — bug»
+  // (nachgestellt über acht Kombinationen, `e2e/w224-reiter-umordnen-d16`).
+  //
+  // ENTSCHEID (analog Browser): man ordnet, was man SIEHT. Die Arbeitsleiste
+  // zeigt darum die reine Speicherreihenfolge. Die Gruppierung nach Art bleibt
+  // dort, wo sie eine LISTE ordnet und niemand zieht — im Überlauf-Blatt.
+  // Dass die beiden damit verschieden sortieren, ist kein Widerspruch, sondern
+  // die Aufgabenteilung: die Leiste ist eine Arbeitsfläche, das Blatt ein
+  // Verzeichnis.
+  const ordnung = tabs;
 
   // ── Überlauf (§5a Ziff. 5) · NIE STILLES SCHLIESSEN ────────────────────────
   // Gekappt wird nur die SICHTBARKEIT, nie die Liste. Der aktive Reiter ist von
@@ -211,11 +221,30 @@ export function Reiterleiste({ paneSchluessel = [] }: {
   // schliesst sein eigenes Fenster — eine Belegung, die man nicht bekommen
   // kann, wäre eine Zusage, die nicht gilt (§8). §5a Ziff. 7 sieht genau diesen
   // Rückfall vor. Kein Eingriff, solange der Fokus in einem Eingabefeld steht.
+  //
+  // ── D15 · UMORDNEN OHNE MAUS: Alt+Shift+←/→ ───────────────────────────────
+  // Ziehen ist eine Zeigergeste; sie allein zu bauen hiesse, das Umordnen für
+  // Tastatur und Screenreader gar nicht anzubieten (WCAG 2.1.1). Alt+Shift ist
+  // frei — Alt+Ziffer und Alt+W belegen die Leiste schon, Alt+←/→ OHNE Shift
+  // gehört dem Browser (Verlauf zurück/vorwärts). KEIN UMLAUF am Rand: ein
+  // Reiter, der am linken Ende gedrückt plötzlich rechts steht, ist verloren
+  // statt verschoben.
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
       if (!e.altKey || e.ctrlKey || e.metaKey || e.defaultPrevented) return;
       const a = document.activeElement as HTMLElement | null;
       if (a && (/^(INPUT|TEXTAREA|SELECT)$/.test(a.tagName) || a.isContentEditable)) return;
+      if (e.shiftKey && (e.key === 'ArrowLeft' || e.key === 'ArrowRight')) {
+        const idx = ordnung.findIndex((t) => tabSchluessel(t.path) === aktivSchluessel);
+        if (idx === -1) return;
+        const links = e.key === 'ArrowLeft';
+        const ziel = ordnung[idx + (links ? -1 : 1)];
+        if (!ziel) { e.preventDefault(); return; }
+        e.preventDefault();
+        ordneTabsUm(ordnung[idx].path, ziel.path, links);
+        return;
+      }
+      if (e.shiftKey) return;
       if (/^[1-9]$/.test(e.key)) {
         const ziel = ordnung[Number(e.key) - 1];
         if (!ziel) return;
@@ -269,9 +298,30 @@ export function Reiterleiste({ paneSchluessel = [] }: {
   }, [blattOffen]);
   useDialogFokus(blattOffen, blattRef, () => setBlattOffen(false));
 
-  // Kein offener Reiter → keine Leiste (die Zeile verschwindet ganz, statt als
-  // leeres Band zu stehen).
-  if (tabs.length < 1) return null;
+  // ── R10-BEFUND (Nullprobe 6.9.2026) · DIE HÖHE STEHT VOR DEN REITERN ──────
+  //
+  // Hier stand `if (tabs.length < 1) return null` — «keine Reiter, keine
+  // Zeile». GEMESSEN am Stand `0093fad28` (Preview, `/rechner/tagerechner`,
+  // ganzer Spec-Lauf `ics-export-z1` A9): der Prerender kennt keinen Speicher,
+  // lieferte also KEINE Leiste; unmittelbar nach der Hydration las `useTabs`
+  // den `localStorage`, die Leiste erschien, und `main#inhalt` rutschte von
+  // 132 px auf 166 px — 34 px = genau `--app-reiter-h`, CLS 0.025 auf einer
+  // Seite, die sonst 0 misst (§15).
+  //
+  // WURZEL-FIX: die Zeile ist ab jetzt IMMER da und immer gleich hoch. Ohne
+  // offene Reiter ist sie ein ruhiger, leerer Streifen — kein Text, kein
+  // Leerzustands-Satz («keine Reiter offen» wäre eine Auskunft über nichts und
+  // stünde auf jeder Kaltstart-Seite). Kein `<nav>` in diesem Fall: eine
+  // Navigations-Landmark ohne ein einziges Ziel ist für den Screenreader ein
+  // leeres Versprechen. Beides — Platzhalter und Leiste — trägt dieselbe
+  // Geometrie (`sticky top-[--app-krone-h]`, `h-[--app-reiter-h]`, dieselbe
+  // Unterlinie), darum verschiebt der Wechsel nichts.
+  if (tabs.length < 1) {
+    return (
+      <div aria-hidden
+        className="print:hidden shrink-0 sticky top-[var(--app-krone-h)] z-leiste h-[var(--app-reiter-h)] border-b border-rule-soft bg-paper" />
+    );
+  }
 
   const gefiltert = suche.trim()
     ? tabs.filter((t) => `${kurzformText(t, manifeste)} ${verlaufLabel(t.path, manifeste)} ${t.path}`
@@ -308,33 +358,74 @@ export function Reiterleiste({ paneSchluessel = [] }: {
     return (
       <div key={schluessel}
         data-reiter-aktiv={aktiv}
+        // Test-Anker: die Reiter-IDENTITÄT im DOM (`lib/tabs.tabSchluessel`).
+        // Die Beschriftung taugt dafür nicht — sie hängt an lazy geladenen
+        // Manifesten und ist genau das, was hier NICHT gemessen werden soll.
+        data-reiter-schluessel={schluessel}
         draggable
         onDragStart={(ev) => {
           gezogen.current = t.path;
+          setZieht(t.path);
           ev.dataTransfer.setData('text/plain', t.path);
           ev.dataTransfer.setData(REITER_MIME, t.path);
           ev.dataTransfer.effectAllowed = 'copyMove';
+          // GHOST: der Reiter selbst hängt am Zeiger, gefasst dort, wo man ihn
+          // angepackt hat. Chromium nimmt zwar von sich aus das gezogene
+          // Element — aber erst NACH dem Handler und ohne Griffpunkt; ein
+          // explizites `setDragImage` mit dem Zeiger-Offset ist der Unterschied
+          // zwischen «etwas fliegt» und «ich halte diesen Reiter» (D15: die
+          // Funktion war da, nur nicht als Funktion erkennbar).
+          const kasten = ev.currentTarget.getBoundingClientRect();
+          try { ev.dataTransfer.setDragImage(ev.currentTarget, ev.clientX - kasten.left, ev.clientY - kasten.top); }
+          catch { /* ältere Engines ohne setDragImage — der Default-Ghost tut es auch */ }
         }}
         onDragOver={(ev) => {
           const von = gezogen.current;
-          if (von && von !== t.path) { ev.preventDefault(); if (ueber !== t.path) setUeber(t.path); }
+          if (!von || von === t.path) return;
+          ev.preventDefault();
+          // SEITE AUS DEM ZEIGER-X (D15, «analog browser»): linke Hälfte des
+          // Ziels = davor, rechte Hälfte = dahinter. Ohne diese Unterscheidung
+          // liesse sich ein Reiter nie ans ENDE der Leiste ziehen — hinter dem
+          // letzten gibt es kein weiteres Ziel.
+          const kasten = ev.currentTarget.getBoundingClientRect();
+          const davor = ev.clientX < kasten.left + kasten.width / 2;
+          if (ueber?.path !== t.path || ueber.davor !== davor) setUeber({ path: t.path, davor });
         }}
         onDrop={(ev) => {
           ev.preventDefault();
           const von = gezogen.current ?? ev.dataTransfer.getData(REITER_MIME);
-          if (von && von !== t.path) ordneTabsUm(von, t.path);
-          gezogen.current = null; setUeber(null);
+          if (von && von !== t.path) {
+            const kasten = ev.currentTarget.getBoundingClientRect();
+            ordneTabsUm(von, t.path, ev.clientX < kasten.left + kasten.width / 2);
+          }
+          gezogen.current = null; setZieht(null); setUeber(null);
         }}
-        onDragEnd={() => { gezogen.current = null; setUeber(null); }}
+        onDragEnd={() => { gezogen.current = null; setZieht(null); setUeber(null); }}
         title={titel}
         // F9 · DER AKTIVE REITER IST EINE FLÄCHE, KEIN 4-EINHEITEN-UNTERSCHIED.
         // GEMESSEN 6.9.2026: aktiv `paper-raised` (255) gegen inaktiv `paper`
         // (251) — der Unterschied trug allein der 2-px-Strich. Jetzt trägt der
         // aktive Reiter die REGISTERFARBE seiner Domäne als leichte Tönung
         // (Papier bleibt Papier, die Farbe sagt zugleich, WELCHES Register).
-        className={`group/reiter relative flex shrink-0 items-center border-r border-rule-soft ${
-          ueber === t.path ? 'border-l-2 border-l-rule' : ''
+        // `cursor-grab` / `active:cursor-grabbing` an der HÜLLE: die Affordanz
+        // war der ganze D15-Befund — das Ziehen funktionierte, sah aber nach
+        // nichts aus. Der Zeiger sagt jetzt schon vor dem Anfassen, dass hier
+        // etwas zu greifen ist; die Griffe ✕/⧉ setzen ihren eigenen Zeiger.
+        // Der gezogene Reiter nimmt sich zurück (`opacity-40`) — was am Zeiger
+        // hängt, soll nicht zugleich an seinem alten Platz stehen.
+        className={`group/reiter relative flex shrink-0 cursor-grab items-center border-r border-rule-soft active:cursor-grabbing ${
+          zieht === t.path ? 'opacity-40' : ''
         } ${aktiv ? (reg ? REG_TON[reg] : 'bg-paper-raised') : ''}`}>
+        {/* EINFÜGEMARKE (D15): 2 px in der Registerfarbe des GEZOGENEN Reiters,
+            über die volle Reiterhöhe, auf der Seite, auf der er landen wird.
+            Sie ersetzt den früheren, immer linken `border-l-2` — der konnte
+            nicht sagen, ob der Reiter davor oder dahinter einrastet, und ans
+            Ende der Leiste kam man mit ihm gar nicht. */}
+        {ueber?.path === t.path && (
+          <span aria-hidden data-reiter-marke={ueber.davor ? 'davor' : 'dahinter'}
+            className={`pointer-events-none absolute inset-y-0 w-0.5 ${ueber.davor ? '-left-px' : '-right-px'} ${
+              zieht && registerVonPfad(zieht) ? REG_FLAECHE[registerVonPfad(zieht)!] : 'bg-ink-900'}`} />
+        )}
         {/* Registerfarben-Strich — die einzige Farbe des Reiters (§5). Inaktiv
             Tinte auf 30 % (kein blasses Register-Echo, das mit dem aktiven
             verwechselbar wäre); beim Hover zeigt er die Registerfarbe des
