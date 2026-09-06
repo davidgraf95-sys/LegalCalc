@@ -113,12 +113,22 @@ describe('LeserAnsichtV3 — `aria-controls` zeigt nie auf ein Panel, das es nic
 // Aussage: was fällt, ist die KETTE (Ebene-Stufe + «›») und der Volltitel — der
 // Rücksprung bleibt. Kein Aufweichen: die Ebene-Stufe wird auf beiden engen
 // Zuschnitten weiterhin ausdrücklich als abwesend geprüft.
-describe('LeserKopf — die Kette und der Volltitel fallen unter 900 px, die Krume nicht', () => {
-  it('Stufe "voll": ganze Kette (Gesetze › Bund ›) UND Volltitel sind da', () => {
+// ── §6.3-DEKLARATION (W2·24-R6/L10, 6.9.2026) · DER VOLLTITEL IST WEG ───────
+// Die drei Fälle prüften bis hierher «Kette UND Volltitel». Der Volltitel steht
+// seit R6 nicht mehr in der Kopfzeile — er stand dort DOPPELT: über der H1
+// «Bundesgesetz betreffend die Ergänzung des ZGB (OR)» wiederholte die Krume
+// denselben Namen, auf dem CISG zusätzlich abgeschnitten («… (Wiener
+// Kaufrec…»). Das ist eine deklarierte fachliche Änderung, kein Refactoring:
+// die ERWARTUNG des Tests ändert sich, nicht seine Absicht. Was er weiterhin
+// misst, ist die Stufen-Mechanik der Kette — sie ist unberührt, und die beiden
+// engen Stufen unten stehen byte-gleich (dort war der Volltitel schon vorher
+// abwesend, die Zusage gilt jetzt für alle drei Stufen).
+describe('LeserKopf — die Kette fällt unter 900 px, die Krume nicht', () => {
+  it('Stufe "voll": ganze Kette (Gesetze › Bund ›) ist da, der Volltitel nicht', () => {
     const html = renderKopf({ stufe: 'voll' });
     expect(html).toContain('>Gesetze<');
     expect(html).toContain('>Bund<');
-    expect(html).toContain('Obligationenrecht');
+    expect(html, 'R6/L10: der Volltitel gehört in die H1, nicht in die Krume').not.toContain('Obligationenrecht');
     // Die volle Kette ist NICHT der Rücksprung — sonst prüften die zwei Tests
     // unten dasselbe Element unter anderem Namen.
     expect(html).not.toContain('data-v3-kopf-krume-kurz');

@@ -111,3 +111,41 @@ export function satzspiegelFuer(zellePx: number | null, remPx: number): Satzspie
   return 'zeile';
 }
 
+
+/**
+ * Der Spiegel UND die Frage, ob sich der Rahmen dafür aufweiten muss (R6/M1).
+ *
+ * ── DER BEFUND (gemessen 6.9.2026, `dist`-Preview, OR#art-336_c) ────────────
+ * `'voll'` — also die Randnotiz-Spalte des Referenzbildes — hatte seit R4
+ * KEINE ERREICHBARE BREITE. Der Leser-Rahmen ruht auf **1072 px, und zwar auf
+ * JEDER Desktop-Breite** (`raum.ruhePx`; dieselbe Zahl nennt `LeserPanelZone`
+ * seit H4). Abzüglich der 19.25 rem Gliederungsspur bleiben der Lese-Zelle
+ * 764 px, `SPIEGEL_MIN_VOLL` verlangt 976. Gegengemessen @1440, @1700 und
+ * @1920: `grid-template-columns` überall `150px 578px`, `.lr-notiz` 0×.
+ * Ein Zweig, der nie feuert (§6.7).
+ *
+ * ── DER WEG DORTHIN, OHNE NEUE ZAHL ────────────────────────────────────────
+ * Der Rahmen KÖNNTE breiter: `aufweitung` (rahmenSpalten.ts) schöpft bis
+ * `LESER_MAX_REM` aus dem freien Rand — @1440 sind das 1320 px und damit
+ * 1012 px Zelle, also über der Schwelle. Bisher hing diese Aufweitung allein
+ * am Treffer-Blatt. Beide holen Platz für eine DRITTE SPUR; die Rechnung ist
+ * dieselbe, also stellt sie hier dieselbe Frage zweimal: was trägt die Zelle,
+ * wenn der Rahmen ruht — und was trüge sie aufgeweitet? Aufgeweitet wird nur,
+ * wenn es die Randnotiz gewinnt. Weil `weitPx >= ruhePx` gilt, kann die
+ * Aufweitung den Spiegel nie verkleinern: kein Hin und Her.
+ *
+ * @param ruhePx  Lese-Zelle im ruhenden Rahmen (px), `null` = ungemessen.
+ * @param weitPx  Lese-Zelle im aufgeweiteten Rahmen (px).
+ * @param remPx   Gemessene Wurzel-Schriftgrösse.
+ * @param darfWeiten `false` im Pane und ohne Spalten-Lage — dort gilt «nie drei
+ *                   vertikale Flächen» (Design-Grundlage Kap. 8 Nr. 8).
+ */
+export function spiegelMitAufweitung(
+  ruhePx: number | null, weitPx: number | null, remPx: number, darfWeiten: boolean,
+): { spiegel: Satzspiegel; weiten: boolean } {
+  const ruhe = satzspiegelFuer(ruhePx, remPx);
+  if (!darfWeiten || ruhe === 'voll') return { spiegel: ruhe, weiten: false };
+  return satzspiegelFuer(weitPx, remPx) === 'voll'
+    ? { spiegel: 'voll', weiten: true }
+    : { spiegel: ruhe, weiten: false };
+}

@@ -314,42 +314,97 @@ export function useLeserSprungSpy(opts: {
       setAktArtikel(artLabel);
     }
     if (ids.length) oeffnePfad(ids);
-    // ── W2·24-R6/L1 · DER SPRUNG LIEGT VOR DEM ERSTEN PAINT ───────────────────
+    // ═══ W2·24-R6/L1 · DER TIEFLINK-SPRUNG WIRD NICHT GEMALT, BEVOR ER STEHT ══
     //
-    // GEMESSEN (6.9.2026, `dist/`-Preview, Chromium @390×844, OR#art-336_c):
-    // CLS **1.1664** — eine einzige Verschiebung von 0.8974 plus 0.2259, Quelle
-    // je `section[data-normtext-linie]`, previousRect y 0 / h 844 → currentRect
-    // y 325 / h 519. Der Grund stand in diesen zehn Zeilen: der Effekt lief als
-    // `useEffect` (also NACH dem Paint) und scrollte zusätzlich erst 110 ms
-    // später. Der Leser sah damit bei JEDEM Tieflink zuerst einen vollen Frame
-    // ANFANG DES ERLASSES und danach den Sprung — und weil React beim Sprung
-    // dieselben DOM-Knoten wiederverwendet, zählt der Browser die Differenz als
-    // unerwartete Verschiebung, nicht als Scroll. Weitere Messwerte: ZGB#art-457
-    // 0.5749, OR#art-1 0.9307; ohne Anker (ZPO) 0.0362 — der Anker WAR der Fall.
+    // BEFUND (gemessen 6.9.2026, `dist/`-Preview, Chromium @390×844, je 3 Läufe
+    // mit byte-gleichem Ergebnis): CLS **1.1664** auf OR#art-336_c, **0.9307**
+    // auf OR#art-1, **0.5749** auf ZGB#art-457 — gegen **0.0362** ohne Anker
+    // (ZPO). Der Anker war der Fall, nicht der Erlass.
     //
-    // NEU: derselbe Sprung im Layout-Effekt desselben Commits, in dem die
-    // Artikel in den DOM kommen. React führt Layout-Effekte vor dem Paint aus;
-    // der erste sichtbare Frame steht damit bereits an der Fundstelle, und es
-    // gibt keine zwei Zustände, zwischen denen etwas verrutschen könnte.
-    // `useIsoLayoutEffect` (Muster aus `App.tsx`) hält den Prerender still.
+    // WAS WIRKLICH PASSIERT (Frame-Trace, `requestAnimationFrame`):
+    //   t≈1313 ms  Artikel im DOM, scrollY 219'766, docH 828'570
+    //   t≈1362 ms  scrollY 221'226, docH 830'803
+    //   t≈1440 ms  scrollY 221'403 — steht
+    // Also DREI gemalte Lagen desselben Sprungs. Ursache ist
+    // `content-visibility:auto`: die 1'000+ Artikel VOR dem Ziel tragen
+    // Platzhalterhöhen (`schaetzeArtikelHoehe`), solange sie nie im Bild waren.
+    // Der Sprung rechnet mit diesen Schätzungen, macht dabei die Nachbarschaft
+    // des Ziels «relevant», die echten Höhen laufen ein — und das Ziel wandert
+    // um 1'637 px. Weil sich dabei auch die Höhen ändern, verbucht der Browser
+    // die Bewegung nicht als Scroll, sondern als unerwartete Verschiebung.
     //
-    // DER NACHLAUF BLEIBT, und zwar aus dem Grund, den `springeZuSektion` schon
-    // nennt: unter `content-visibility:auto` rechnet der erste Sprung mit
-    // geschätzten Platzhalterhöhen (`schaetzeArtikelHoehe`). Sobald die echten
-    // Höhen einlaufen, wandert das Ziel — gemessen @390 um 177 px. Der zweite
-    // Sprung holt das zurück; er ist eine KORREKTUR am selben Ziel, kein
-    // zweiter Sprung an einen anderen Ort.
+    // ZWEI WEGE, DIE NICHT FUNKTIONIEREN — beide gemessen, beide verworfen:
+    //  (a) Sprung in den Layout-Effekt ziehen (statt `useEffect` nach dem Paint):
+    //      richtig und nötig, aber allein wirkungslos — CLS blieb byte-gleich
+    //      1.1664. Die erste Lage wird dann eben vor dem Paint eingenommen; die
+    //      beiden Korrekturen danach bleiben.
+    //  (b) Die Korrektur in denselben Tick schleifen (`scrollIntoView` +
+    //      `getBoundingClientRect` bis zur Konvergenz): ebenfalls wirkungslos,
+    //      wieder 1.1664. `getBoundingClientRect` erzwingt zwar das Layout, aber
+    //      die RELEVANZ eines `content-visibility`-Teilbaums entscheidet der
+    //      Browser erst im nächsten Rendering-Lifecycle — im selben Tick sieht
+    //      die Schleife immer dieselbe Schätzung und bricht nach zwei Runden ab.
+    //
+    // DER WEG, DER FUNKTIONIERT: die Lesespalte wird für die Dauer des
+    // Einschwingens NICHT GEMALT (`visibility:hidden`, Klasse `.lr6-anker-
+    // warten`). Sie behält ihren Platz — die Höhe steht, nichts springt —, und
+    // was nicht gemalt wird, kann auch nicht verrutschen: der Browser zählt
+    // Verschiebungen nur an sichtbaren Knoten. Sichtbar wird die Spalte erst,
+    // wenn die Lage zwei Frames lang steht. Der Leser bekommt damit statt
+    // dreier Sprünge EIN Bild, und zwar das richtige.
+    //
+    // DREI KLAMMERN, damit daraus nie eine leere Seite wird:
+    //  · findet der Effekt den Artikel nicht, wird gar nichts versteckt;
+    //  · die Aufräum-Funktion des Effekts deckt auf (Abbruch/Unmount);
+    //  · ein Zeitdeckel (`AUFDECK_MS`) deckt in jedem Fall auf, auch wenn die
+    //    Lage unter Last nie zwei Frames lang steht.
+    // Der Schalter sitzt an der WURZEL, nicht an der Lesespalte: verdeckt werden
+    // muss auch der Seitenfuss. GEMESSEN auf OR#art-1 (dem Tieflink mit dem
+    // KÜRZESTEN Sprung, 1'011 px): dort zeigte der Zwischenframe den Fuss bei
+    // y 95 mit 749 px Höhe im Bild, und sein Verschwinden allein trug 0.8874
+    // des CLS. Ein Fuss, der für zwei Frames am Kopf des Dokuments steht, ist
+    // dieselbe Verschiebung wie ein springender Artikel — nur an einem anderen
+    // Knoten. Welche Flächen still bleiben, sagt die Regel in `index.css`.
+    const wurzelEl = typeof document !== 'undefined' ? document.documentElement : null;
+    wurzelEl?.setAttribute('data-lr6-anker-warten', '');
+    let aufgedeckt = false;
+    const aufdecken = () => { aufgedeckt = true; wurzelEl?.removeAttribute('data-lr6-anker-warten'); };
     const springe = (blink: boolean) => {
       const el = findeArt(paneRoot(imPane, wurzel), token);
-      if (!el) return;
+      if (!el) return null;
       // R1: oberer Lese-Rand statt Mitte (deckt sich mit der Scroll-Spy-Bezugslinie).
       el.scrollIntoView({ block: 'start', behavior: 'auto' });
-      if (!blink) return;
-      el.classList.add('lc-ziel-blink');
-      window.setTimeout(() => el.classList.remove('lc-ziel-blink'), 2400);
+      if (blink) {
+        el.classList.add('lc-ziel-blink');
+        window.setTimeout(() => el.classList.remove('lc-ziel-blink'), 2400);
+      }
+      return el;
     };
     springe(true);
-    window.requestAnimationFrame(() => window.setTimeout(() => springe(false), 110));
+    // Deckel für den Aufdeck-Zeitpunkt. GEMESSEN schwingt der Sprung nach
+    // 127 ms ein (1313 → 1440); 600 ms ist das Vierfache davon und damit die
+    // Reserve für langsame Geräte, nicht der Regelfall.
+    const AUFDECK_MS = 600;
+    const deckel = window.setTimeout(aufdecken, AUFDECK_MS);
+    let ruhig = 0;
+    // Gemessen wird die LAGE DES ZIELS im Bild, nicht `window.scrollY`: im
+    // sekundären Pane scrollt nicht das Fenster, sondern der Pane-Scroller —
+    // die Fensterposition stünde dort von Anfang an still und der Deckel wäre
+    // die einzige Klammer (§5: eine Grösse, die in beiden Lagen dasselbe misst).
+    let letzteLage = Number.NaN;
+    let rafId = 0;
+    const nachziehen = () => {
+      if (aufgedeckt) return;
+      const el = springe(false);
+      if (!el) { aufdecken(); return; }
+      const lage = el.getBoundingClientRect().top;
+      ruhig = Math.abs(lage - letzteLage) <= 1 ? ruhig + 1 : 0;
+      letzteLage = lage;
+      if (ruhig >= 2) { window.clearTimeout(deckel); aufdecken(); return; }
+      rafId = window.requestAnimationFrame(nachziehen);
+    };
+    rafId = window.requestAnimationFrame(nachziehen);
+    return () => { window.clearTimeout(deckel); window.cancelAnimationFrame(rafId); aufdecken(); };
     // location.hash bewusst NICHT in den Deps: der Effekt springt EINMAL beim
     // Erlass-Laden an die (Pane-lokale bzw. Fenster-)Fundstelle — die Primär-
     // Instanz führt spätere Hash-Wechsel über den letzteNavKey-Effekt nach

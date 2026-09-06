@@ -2625,3 +2625,12 @@
 }
 .lr6-notiz-liste > li { display: grid; }
 .lr6-notiz-art { font-size: 0.6875rem; line-height: 1.3; color: var(--ink-500); }
+
+/* W2·24-R6/L1 · Die Lesespalte wird nicht gemalt, solange der Tieflink-Sprung
+   einschwingt (Herleitung samt Messreihe am Konsumenten, `inhalt-hooks.tsx`).
+   `visibility` und NICHT `display`/`opacity`: die Spalte behält ihren Platz
+   (keine Höhenänderung, also selbst kein Sprung), wird aber nicht gemalt — und
+   was nicht gemalt wird, zählt der Browser nicht als Verschiebung. Sie ist
+   Millisekunden aktiv und hat drei Klammern gegen ein Steckenbleiben. */
+html[data-lr6-anker-warten] #lc-lesespalte,
+html[data-lr6-anker-warten] footer { visibility: hidden; }

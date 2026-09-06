@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useState, type CSSProperties } from 'react';
-import { satzspiegelFuer, type Satzspiegel } from './satzspiegel';
+import { spiegelMitAufweitung, type Satzspiegel } from './satzspiegel';
 
 // ═══ Ä60 (c) · WIE BREIT DER LESER IST UND WELCHE SPUREN ER TRÄGT ════════════
 //
@@ -271,10 +271,7 @@ export function rahmenBild(lage: RahmenLage): RahmenBild {
   const blattSpurMoeglich = ruheForm === 'rechts' && spaltenLage && passt;
   const gliederungWennOffen = spaltenLage && tocOffen && vollesLesemass;
   const seiteWennOffenRem = gliederungWennOffen ? SPUR_GLIEDERUNG : SPUR_SCHIENE;
-  // Der Rahmen selbst wüchse (`aufweitung`) auch nur bis `LESER_MAX_REM`, nie
-  // über den echten Raum hinaus — dieselbe Klammer wie dort, nachgerechnet für
-  // die Zelle statt für den Wurzel-Kasten (kein Duplikat: `aufweitung` liefert
-  // hier keinen Wert zurück, sie hängt an `blattOffen`).
+  // Klammer wie `aufweitung`: bis `LESER_MAX_REM`, nie über den echten Raum.
   const rootWennOffenPx = raum
     ? Math.max(raum.ruhePx, Math.min(LESER_MAX_REM * rem, raum.raumPx))
     : null;
@@ -283,37 +280,10 @@ export function rahmenBild(lage: RahmenLage): RahmenBild {
     : LESEMASS_MAX;
 
   const spurenPx = spaltenLage ? ((gliederungSpalte ? SPUR_GLIEDERUNG : SPUR_SCHIENE) + SPUR_ABSTAND + (blattSpur ? SPUR_BLATT + SPUR_ABSTAND : 0)) * rem : 0;
-  // ── W2·24-R6/M1 · DIE RANDNOTIZ-SPALTE RECHTFERTIGT DIESELBE AUFWEITUNG ─────
-  //
-  // GEMESSEN am gebauten Stand (6.9.2026, `dist/`-Preview, OR#art-336_c): der
-  // Rahmen ruht auf **1072 px — auf JEDER Desktop-Breite**, @1440 wie @1920
-  // (`raum.ruhePx`; dieselbe Zahl nennt `LeserPanelZone.tsx` seit H4). Mit den
-  // 19.25 rem Gliederungsspur bleibt der Lese-Zelle 764 px. `SPIEGEL_MIN_VOLL`
-  // verlangt 61 rem = 976 px. Ergebnis: `voll` — und damit die Randnotiz-Spalte
-  // des Referenzbildes — hat seit R4 KEINE ERREICHBARE BREITE. Gegengemessen
-  // @1440/@1700/@1920: `grid-template-columns` ist überall `150px 578px`,
-  // `.lr-notiz` kommt 0× vor. Ein Zweig, der nie feuert (§6.7).
-  //
-  // Der Rahmen KÖNNTE breiter: `aufweitung` schöpft bis `LESER_MAX_REM` aus dem
-  // freien Rand — @1440 sind das 1320 px, also 1012 px Zelle und damit über der
-  // Schwelle. Nur hing die Aufweitung bisher allein am Treffer-Blatt. Sie hängt
-  // jetzt zusätzlich an der Randnotiz: BEIDE holen Platz für eine dritte Spur,
-  // und es ist dieselbe Rechnung (`aufweitung`, unverändert — der Rahmen wächst
-  // zuerst in den freien Rand rechts, der gelesene Text bleibt stehen).
-  //
-  // KEINE NEUE ZAHL, KEINE ZWEITE SCHWELLE: `satzspiegelFuer` entscheidet
-  // weiterhin allein, und zwar rein aus der Zellenbreite. Gefragt wird nur
-  // zweimal — «was trägt die Zelle, wenn der Rahmen ruht» und «was trüge sie
-  // aufgeweitet»; die Aufweitung geschieht genau dann, wenn sie die Randnotiz
-  // gewinnt. Sie kann den Spiegel nie VERKLEINERN (`rootWennOffenPx ≥ ruhePx`),
-  // also gibt es kein Hin und Her.
-  const zelleRuhePx = raum == null ? null : raum.ruhePx - spurenPx;
-  const zelleWeitPx = raum == null ? null : (rootWennOffenPx ?? raum.ruhePx) - spurenPx;
-  const spiegelRuhe = satzspiegelFuer(blattSpur ? zelleWeitPx : zelleRuhePx, rem);
-  // Im Blatt-Fall ist der Rahmen ohnehin aufgeweitet — dann ist `spiegelRuhe`
-  // schon die weite Rechnung, und es gibt nichts zusätzlich zu holen.
-  const randHoltPlatz = !blattSpur && spiegelRuhe !== 'voll' && satzspiegelFuer(zelleWeitPx, rem) === 'voll';
-  const satzspiegel = randHoltPlatz ? 'voll' : spiegelRuhe;
+  // W2·24-R6/M1: auch die Randnotiz rechtfertigt die Aufweitung (Befund, Messreihe, Entscheid: `./satzspiegel.spiegelMitAufweitung`).
+  const weitPx = raum == null ? null : (rootWennOffenPx ?? raum.ruhePx) - spurenPx;
+  const { spiegel: satzspiegel, weiten: randHoltPlatz } = spiegelMitAufweitung(
+    blattSpur ? weitPx : (raum == null ? null : raum.ruhePx - spurenPx), weitPx, rem, spaltenLage && ruheForm === 'rechts' && !blattSpur);
   return {
     blattForm: blattSpur ? 'spalte' : ruheForm,
     gliederungSpalte,
