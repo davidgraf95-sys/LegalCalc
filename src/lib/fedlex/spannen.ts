@@ -301,7 +301,7 @@ export const Z1_ERLASS = Z1_BAU(TITEL_FRAGMENTE_ESC, GENITIV_NAMEN_ESC);
 // jeder Text MIT Weichtrennstrich geht unverändert durch Z1_ERLASS.
 // Nachgewiesen wird die Identität nicht bloss behauptet: `spannen-weichtrenn.
 // test.ts` fährt beide Muster über einen Bund- und einen Kanton-Snapshot und
-// vergleicht Offsets, Treffertext und Gruppen; die volle Korpus-Runde (1 569
+// vergleicht Offsets, Treffertext und Gruppen; die volle Korpus-Runde (1 566
 // Erlasse, 0 Divergenzen — und 0 Texte MIT Weichtrennstrich) steht in
 // PERF-LESER.md. Die Rot-Probe dort zeigt, dass die Fallunterscheidung trägt.
 /** @internal Nur für den Gleichheits-Nachweis exportiert (s. o.). */

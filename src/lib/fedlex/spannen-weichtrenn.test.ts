@@ -34,7 +34,7 @@ const treffer = (re: RegExp, t: string): string =>
 
 describe('Z1-Schnellpfad — hartes und weiches Muster liefern dasselbe', () => {
   // Zwei Snapshots, Bund und Kanton, ganz durchgefahren: rund 1.3 Mio Zeichen.
-  // Die volle Korpus-Runde (1 569 Erlasse, 0 Divergenzen) steht in PERF-LESER.md
+  // Die volle Korpus-Runde (1 566 Erlasse, 0 Divergenzen) steht in PERF-LESER.md
   // — hier bleibt die schnelle, dauerhaft mitlaufende Stichprobe.
   for (const datei of ['public/normtext/bund/OR.json', 'public/normtext/kanton/BS-152.110.json']) {
     it(`byte-gleiche Treffer über ${datei}`, () => {

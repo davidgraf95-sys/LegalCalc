@@ -8,13 +8,14 @@
 //
 // ANLASS (David 6.9.2026: «kann es sein, dass gesetze länger brauchen zum laden
 // als früher?»). Auf `/gesetze/bund/OR` stand der LCP unter CPU×4 bei ~14.8 s
-// gegen ~0.4 s auf main. Ursache-Kette siehe
-// `abnahme/design-identitaet/PERF-LESER.md`.
+// gegen ~0.4 s auf main — am 6.9.2026 als NICHT reproduzierbar erkannt (die
+// Vor-Messung lief neben laufenden Builds; verschränkt gemessen liegen beide
+// Stände gleichauf), s. PERF-LESER.md §2. Ursache-Kette ebenda.
 //
 // BEWUSST KEIN TOR (§6.7 andersherum: ein Tor, das nur streut, misst nichts).
-// Timing ist last- und maschinenabhängig; die SCHWELLE liegt im e2e-Wächter
-// `e2e/leser-lcp.e2e.ts`, der die eine Grösse prüft, die nicht streut (die
-// Eigenzeit des Verweis-Scans), nicht die Uhr. Dies hier ist Mess-Infrastruktur
+// Timing ist last- und maschinenabhängig; die deterministische Zusicherung
+// trägt der Unit-Wächter `src/lib/fedlex/spannen-weichtrenn.test.ts` (Muster-
+// Identität, kein Uhrwert); Lighthouse-Latten liegen in `check:perf-lighthouse`. Dies hier ist Mess-Infrastruktur
 // auf Abruf:
 //
 //   npm run build && npm run perf:leser-lcp -- --laeufe=3

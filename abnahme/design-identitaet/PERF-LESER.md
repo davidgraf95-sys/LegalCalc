@@ -235,3 +235,8 @@ LCP-Schwelle**. Gebaut ist er nicht — begründet:
   (OR-TBT-Budget 6 500 ms, normiert); der Fix arbeitet darauf hin.
 - Gegen das Zurückfallen des Fixes schützt statt einer Uhr der deterministische
   Wächter `spannen-weichtrenn.test.ts` — einmal rot gezeigt (Ziff. 4).
+
+
+## §9 · Gegenprüfung 6.9.2026 (Opus, Linsen 1–7): bestanden mit 3 Doku-Auflagen — eingebaut
+
+Auflage 1: Korpuszahl 1 566 (nicht 1 569) in spannen.ts/Test. Auflage 2: toter Verweis auf `e2e/leser-lcp.e2e.ts` in `scripts/perf/leser-lcp.ts` ersetzt. Auflage 3: Vorbefund als nicht reproduzierbar ergänzt. Drift-Beleg des Prüfers (L6): derselbe Stand mass in §2 TBT 15 183 und in §5 12 323 — 23 % Sitzungs-Drift; die −18 %-Aussage liegt in dieser Driftbreite, tragend sind BS-152.110 (1 405–1 885 → 574–753, disjunkt) und die node-Mikromessung 988 → 159 ms. Prüfer-Beweis: Muster differieren um 5 680 optionale U+00AD, gestrippt byte-gleich; 448 Gegenbeispiele + 483 Dateien/455 760 Texte ALT vs. NEU 0 Divergenzen.
