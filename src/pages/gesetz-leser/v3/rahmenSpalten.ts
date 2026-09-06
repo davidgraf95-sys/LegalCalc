@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useState, type CSSProperties } from 'react';
-import { spiegelMitAufweitung, type Satzspiegel } from './satzspiegel';
+import { satzspiegelFuer, type Satzspiegel } from './satzspiegel';
 
 // ═══ Ä60 (c) · WIE BREIT DER LESER IST UND WELCHE SPUREN ER TRÄGT ════════════
 //
@@ -244,7 +244,7 @@ export interface RahmenBild {
    * ersten Render derselbe wie nach jedem Klick auf den Panel-Zähler.
    */
   lesemassMaxRem: number;
-  satzspiegel: Satzspiegel; // Ausbaustufe (W2·24-R4) — Herleitung in `./satzspiegel`
+  satzspiegel: Satzspiegel; // Artikelform (W2·24-R6b) — Herleitung in `./satzspiegel`
 }
 
 /**
@@ -280,10 +280,10 @@ export function rahmenBild(lage: RahmenLage): RahmenBild {
     : LESEMASS_MAX;
 
   const spurenPx = spaltenLage ? ((gliederungSpalte ? SPUR_GLIEDERUNG : SPUR_SCHIENE) + SPUR_ABSTAND + (blattSpur ? SPUR_BLATT + SPUR_ABSTAND : 0)) * rem : 0;
-  // W2·24-R6/M1: auch die Randnotiz rechtfertigt die Aufweitung (Befund, Messreihe, Entscheid: `./satzspiegel.spiegelMitAufweitung`).
-  const weitPx = raum == null ? null : (rootWennOffenPx ?? raum.ruhePx) - spurenPx;
-  const { spiegel: satzspiegel, weiten: randHoltPlatz } = spiegelMitAufweitung(
-    blattSpur ? weitPx : (raum == null ? null : raum.ruhePx - spurenPx), weitPx, rem, spaltenLage && ruheForm === 'rechts' && !blattSpur);
+  // W2·24-R6b: die Lese-Zelle entscheidet die Artikelform (`./satzspiegel`); die
+  // R6-Aufweitung für die Randnotiz ist mit ihr gestrichen (`lesemassMaxRem` deckelt den Text ohnehin).
+  const zellePx = raum == null ? null : (blattSpur ? (rootWennOffenPx ?? raum.ruhePx) : raum.ruhePx) - spurenPx;
+  const satzspiegel = satzspiegelFuer(zellePx, rem, spaltenLage && ruheForm === 'rechts');
   return {
     blattForm: blattSpur ? 'spalte' : ruheForm,
     gliederungSpalte,
@@ -295,7 +295,7 @@ export function rahmenBild(lage: RahmenLage): RahmenBild {
       ? `${gliederungSpalte ? `${SPUR_GLIEDERUNG}rem` : `${SPUR_SCHIENE}rem`} minmax(0,1fr)`
         + (blattSpur ? ` ${SPUR_BLATT}rem` : '')
       : undefined,
-    breite: (blattSpur || randHoltPlatz) && raum ? aufweitung(raum, LESER_MAX_REM * rem) : undefined,
+    breite: blattSpur && raum ? aufweitung(raum, LESER_MAX_REM * rem) : undefined,
     lesemassMaxRem,
     satzspiegel,
   };

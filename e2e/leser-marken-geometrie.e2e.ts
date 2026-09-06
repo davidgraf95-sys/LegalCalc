@@ -147,8 +147,20 @@ test.describe('Ä61 · die lit.-Marke überlappt den Item-Text nicht', () => {
         // Wortlauts, der Fall bleibt dort also unverändert bestückt. Die
         // bis/ter-Pflichtprüfung darunter beweist das bei jedem Lauf: fände der
         // Anker den Wortlaut nicht, wäre der Fall rot, nicht still grün (§6.7).
+        // ── §6.3-DEKLARATION (W2·24-R6b, 6.9.2026) · DERSELBE GRUND, NEUER ORT ─
+        // Mit dem Wegfall der Randspalten steht die «Rechnen»-Liste nicht mehr
+        // neben dem Artikel, sondern in der Bezüge-Zeile UNTER dem Artikelkopf —
+        // also innerhalb von `.lr-text`. Der R6-Anker allein trennt sie damit
+        // nicht mehr ab, und der Fall meldete wieder «Kündigung & Fristen im
+        // Arbeitsverhältnis +233.52 px»: dieselbe Nicht-Marke, neuer Ort.
+        // Getrennt wird jetzt an der Eigenschaft, um die es geht, statt an einer
+        // Fläche: `data-such-meta` markiert im ganzen Leser das, was BEDIENUNG
+        // ist und kein Gesetzestext (§4.4) — genau die Menge, die diese Sonde
+        // nichts angeht. Die ABSICHT bleibt der Wortlaut; die bis/ter-
+        // Pflichtprüfung darunter hält den Fall weiter scharf (§6.7).
         const wortlaut = art.querySelector('.lr-text') ?? art
         for (const li of Array.from(wortlaut.querySelectorAll('li'))) {
+          if (li.closest('[data-such-meta]') != null) continue
           const marke = li.firstElementChild
           const text = marke?.nextElementSibling
           if (marke == null || text == null) continue
