@@ -3006,3 +3006,50 @@ Regelfläche: wer künftig ein Plan-Werkzeug ändert, öffnet eine Datei statt v
 
   - [x] **V8 pagefind-Spike** gegen `suche-eval-gold` (Messung, kein Umbau) — Spike gemessen 2.9.2026: nicht ersetzen (Notiz [bibliothek/recherche/pagefind-spike-2026-09-02.md](bibliothek/recherche/pagefind-spike-2026-09-02.md)). Beleg: Rangliste #11.
 
+# Umschichtung 6.9.2026 (2) — erledigte Zeilen aus dem Steuerungsplan
+
+*Anlass: `check:steuerdeckel` riss beim Anlegen von `W2·25-ARBEITSMAPPE` und
+`W2·24-PERF-REST` (ROADMAP 102.2 KB > Deckel 100 KB). Rotiert wurde das
+Minimum, das den Deckel hält, ausserhalb des Design-Bandes und ohne den Schritt
+`W2·24-DESIGN-IDENTITAET` zu berühren. Wortlaut unverändert (nie zusammenfassen).*
+
+## W2·5l-NORMTEXT-B2 / M15 — Fedlex-Fussnoten als Änderungsgeschichte je Artikel *(erledigt, verschoben 6.9.2026)*
+
+*Im Plan bleibt ein ✅-Einzeiler mit Pointer; der Schritt `W2·5l-NORMTEXT-B2`
+selbst ist offen und unangetastet.*
+
+  - [x] **M15 · Fedlex-Fussnoten als Änderungsgeschichte je Artikel** — AKN `<authorialNote>`-refs (OR: 2 315, davon 2 236 AS/BBl-Fundstellen) werden in `adapter-htm.ts` heute gestrippt; als Datenschicht «geändert durch AS … am …» je Artikel erhalten. Risikopfad. Quelle: Fremdquellen-Sichtung 2.9.2026 §1 #7. **Ergänzung 6.9.2026 (R1-Zensus):** inhaltlich bereits erledigt durch G-HIST (`public/normtext/historie/`, `W2·5i-HIST-ANSICHT` 26.7.2026, 26 686 Ereignisse mit AS/BBl-Links); der Strip sitzt in `scripts/normtext/extrahiere-fedlex.ts` Z. 74/126–132, nicht in `adapter-htm.ts` (Kanton-Pfad). Absorbiert in `W2·6c-ENTSTEHUNG-DATEN`.
+
+## `@blockers` / `k3-scharfschaltung-folgt` — historischer Blocker-Eintrag *(erledigt, verschoben 6.9.2026)*
+
+*Der Eintrag war seit dem 1.9.2026 selbst als «historisch» gekennzeichnet
+(QS-BASIS steht seither auf `ready`) und blockierte keinen Schritt mehr; kein
+Schritt trägt `blocker: k3-scharfschaltung-folgt`. Aus dem Register entfernt,
+Wortlaut hier:*
+
+k3-scharfschaltung-folgt: (historisch, QS-BASIS seit 1.9.2026 ready) QS-BASIS(d) Suche-Edge — Umzug gelandet (#604), der K3-Umschalter (Kanton-Volltext nur Edge, statischer Index Bund-only, −45 %) ist VORBEREITET und wartet auf die eigene Folge-Landung: Flag an + Budget-Zeile check-perf-budget:152 deklariert senken + Abdeckungszeile useUniversalSuche (Design-Fläche, TABU bis frei). David-Go liegt vor («schalte scharf sobald geprüft und verifiziert», 31.8.2026); Live-Verifikation Edge positiv. KEIN David-Gate — reiner Sequenz-Blocker.
+
+## QS-EFFIZIENZ / «Steuerdeckel-Entscheid» — sechs erledigte Nebenpunkte vom 5.9.2026 *(verschoben 6.9.2026)*
+
+*Der Punkt selbst bleibt im Plan offen («wartet auf David»); nur die sechs
+durchgestrichenen, am 5.9.2026 erledigten Nebenpunkte sind hierher gezogen:*
+
+· ~~**Projektionskette nach main-Merge**~~ erledigt 5.9.2026: `npm run projektionen` + Landungs-Skill Nachkontrolle 8/9; kein neues Tor (Drift-Tore bestehen) · ~~**`src/lib/suche/**` nicht im Risiko-Prädikat** (#681, §6.7)~~ Entscheid 5.9.2026 (§17-Gegengewicht): kein Zuwachs — Suche ist Darstellung/Ranking, kein datierter Vorfall; Wiedervorlage nur bei Vorfall an `bgeQuery.ts`/`normQuery.ts`, dann als Teilmenge. · ~~**`schlankheit:update` nur gezielt**~~ erledigt 5.9.2026 (`--update <pfad…>`, ohne Pfad nur Aufräumen + Exit 1 bei Neuzugängen; Rot-Beweis, #699) · ~~`ZhStueckFixture` auch in `-runde2/-runde3`-Fixtures dupliziert (§5, #702)~~ erledigt 5.9.2026 (Jules 13b, #715: Basistyp importiert, runde3 per `extends`). · ~~**Paritäts-Tor kennt nur die `check:seriell`-Kette**~~ erledigt 5.9.2026: Gegenrichtung ci.yml → lokal, `ALLOWLIST_NUR_CI` (3 Einträge), Rot-Beweis (#712) · ~~**Messung: Klasse «Entwurf-Antwort»**~~ erledigt 5.9.2026: Label `entwurf-antwort` (auf #707), `entwurf_antworten_7d` (Schema 5), Skill/Vorlage/Fahrplan §5 nachgezogen.
+
+## W2·20-VERWEIS-SCHAERFE — Teilbefund (b) «alte Fassung zitiert» *(erledigt, verschoben 6.9.2026)*
+
+*Teilerfolgs-Prosa aus einem offenen Schritt (Ausnahme 22.7.2026); im Plan
+bleibt ein ✅-Einzeiler:*
+
+    Anker; ~~(b) «… KAG in der Fassung vom 28. September 2012» zitiert eine ALTE Fassung~~ —
+    **erledigt** mit dem Gegenprüfungs-Nachzug zu Z5 (Guard `historischeFassung`,
+    `src/lib/fedlex/positivliste.ts`; 19 Links gemessen zurückgebaut, PR #635);
+
+## W2·13-KANTONE-DATEN / K-13 — Systematik-Baum ZH *(erledigt 31.8.2026, verschoben 6.9.2026)*
+
+*Teilerfolgs-Prosa aus einem offenen Schritt (Ausnahme 22.7.2026); im Plan
+bleibt ein ✅-Einzeiler, die offenen Kantone GE/VD/TI/SZ/NE/JU stehen dort
+unverändert weiter.*
+
+  - [ ] **K-13 · Systematik-Bäume 7 Kantone** *(F6≡F43)* — **ZH erledigt 31.8.2026** (14 amtliche Ordner aus der server-gerenderten Suchseite, `scripts/normtext/zh-systematik.ts` → Generator-Zweig; Zuordnung über das Nummernband, 20/20 gegen den amtlichen JSON-Endpunkt bestätigt). Offen: GE/VD/TI/SZ/NE/JU (+GL-Index-Ordinalzahlen, +ZH-Band-Zweig); Quell-Erhebung je Kanton empirisch und browserlos. §1-A.
+
