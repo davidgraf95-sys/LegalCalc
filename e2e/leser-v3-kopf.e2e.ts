@@ -449,9 +449,18 @@ test.describe('H4-II — ein Weg je Handlung aus der V3-Kopfzeile', () => {
     await page.locator('[data-v3-panel-zaehler]').click()
     await expect(page.locator('[data-v3-panel]')).toBeVisible({ timeout: 20_000 })
     // Und mit offenem Blatt: genau eines, und zwar das des Blatts.
+    // ── §6.3-DEKLARATION (W2·24-R6c, 6.9.2026) · OHNE DAS ✕ DER REITER ──────
+    // Seit R2/D19 trägt jeder Reiter der Arbeitsleiste sein eigenes ✕ («Reiter
+    // «Art. 429 StPO» schliessen», in `[data-reiter-streifen]`). Das schliesst
+    // nicht den Leser oder sein Blatt, sondern das Register-Blatt, das ihn
+    // zeigt — ein anderes Objekt, ausdrücklich bestellt (David 6.9.2026, D19).
+    // Die Aussage dieses Falls — «mit offenem Blatt steht GENAU EIN ✕, und es
+    // gehört dem Blatt» — bleibt Wort für Wort dieselbe und würde jedes
+    // zurückkehrende Kopf-✕ unverändert melden.
     const kreuze = await page.evaluate(() => [...document.querySelectorAll('button')]
       .filter((b) => (b.textContent ?? '').trim() === '✕'
-        && b.getBoundingClientRect().width > 0)
+        && b.getBoundingClientRect().width > 0
+        && !b.closest('[data-reiter-streifen], nav[aria-label="Offene Reiter"]'))
       .map((b) => ({ name: b.getAttribute('aria-label') ?? '?', y: Math.round(b.getBoundingClientRect().y) })))
     expect(kreuze.length, `✕ @1440 mit offenem Blatt: ${JSON.stringify(kreuze)}`).toBe(1)
     expect(kreuze[0].name).toMatch(/Rechtsprechung und Kontext schliessen/)

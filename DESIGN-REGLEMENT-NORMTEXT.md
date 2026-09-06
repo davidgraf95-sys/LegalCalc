@@ -188,7 +188,7 @@ Kante.
 **Lese-Typografie.** Lesespalte **hart auf einem benannten Token**, nie arbitrary
 `max-w-[…rem]` (R2). Seit dem 29.8.2026 sind es ZWEI Deckel, der schmalere
 gewinnt: der Pixel-Deckel `--leser-lesemass-max` (45 rem, 21.8.2026) und der
-Zeichen-Deckel `--leser-zeilenmass` (~68 Zeichen, §4b-C). Fliesstext 18px Serif (über Fedlex 14px),
+Zeichen-Deckel `--leser-zeilenmass` (~70 Zeichen, §4b-C). Fliesstext 18px Serif (über Fedlex 14px),
 gedämpft `text-ink-800`, Flatterrand (nie Blocksatz). **`hyphens: manual`** (nicht
 `auto`) auf dem Normtext-Body — die deutsche Auto-Silbentrennung an schmalen
 Spalten war der sichtbare «Ge-werbes»-Treiber; `[overflow-wrap:anywhere]` bleibt
@@ -220,20 +220,29 @@ Das Gewicht des Randtitel-Blatts bleibt die Ä7-Stufe (13 px semibold ink-800);
 kursiv und Serife kommen aus der Form, das Gewicht aus dem Entscheid. Im DRUCK
 trägt der Kopf den Randtitel, die Bezüge-Zeile ist ausgeblendet (`print:hidden`).
 
-**Zeilenhöhe des Fliesstexts: 1.62** (`leser-text` in `tailwind.config.js`, seit
-6.9.2026; davor 1.55). Massgeblich ist das freigegebene Referenzbild
+**Grösse und Zeilenhöhe des Fliesstexts: 18 px / 1.62** (`leser-text` in
+`tailwind.config.js`). Die Zeilenhöhe stammt aus dem freigegebenen Referenzbild
 `abnahme/design-identitaet/vorschlag-freigegeben.html` (`.norm { font-size:17px;
-line-height:1.62 }`); die Grösse bleibt unverändert 17 px. Die Zahl steht in der
+line-height:1.62 }`, seit 6.9.2026; davor 1.55). Die GRÖSSE steht seit W2·24-R6c
+(6.9.2026) auf 18 px — D20 (c), Auftrag David: der Satzspiegel ohne Randspuren
+gibt dem Lesetext die Breite, und der Lesekomfort (D12) verlangt die Stufe
+darüber. Sie hängt an DREI Orten zusammen und darf nirgends einzeln wandern:
+`tailwind.config.js` (`leser-text` = 1.125 rem), `src/index.css` (Block
+LESER-SCHRIFTSKALA: die Reglerstufen 1.215 / 1.3275 / 1.4625 rem, Faktoren
+1.08 / 1.18 / 1.30) und `src/pages/gesetz-leser/leserSchrift.ts` (`SCHRIFT_REM`,
+Anzeigewerte 100 · 108 · 118 · 130 %). `src/tests/leser-schriftskala.test.ts`
+hält die drei gegeneinander. Die Zahl steht in der
 Typo-STUFE und nie im Markup — `src/tests/leser-typo-tokens.test.ts` verbietet
 jedes `leading-…` am Fliesstext. WCAG 1.4.8 gemessen am gebauten Stand
 (6.9.2026, Methode `e2e/leser-lesemass.e2e.ts`): lh 1.62 ≥ 1.5, Zeilenmass
 OR 64 · StPO 64 · ZGB 64 · SchKG 63 · ZPO 62 · BS-640.100 56 Zeichen im
-Satzspiegel @1400 (Decke 80, Hausgrenze 75).
+Satzspiegel @1400 (Decke 80, Hausgrenze 75) — Messung VOR R6c, s. die Messreihe
+in §4b-C für den Stand mit 18 px.
 
 **Maschinell gegated:** R1 `check:linien-kanon` (marker-scoped, in `npm run gate`),
 R2 eslint (`no-restricted-syntax` gegen arbitrary `max-w-[…rem]` im Reader), R5
 als Playwright-e2e (`leser-lesemass.e2e.ts`: WCAG-Decke ≤ 80 ch an drei Breiten,
-Haus-Deckel ≤ 70 ch @ 1440 an sechs Erlassen [Block T-1C], Mobil-Boden ≥ 34 ch /
+Haus-Spanne 65–72 ch @ 1440 und @1280 an sechs Erlassen [Block T-1C], Mobil-Boden ≥ 31 ch /
 kein horizontaler Overflow @ 390);
 `leser-ohne-gliederungslinie.e2e.ts` hält fest, dass **keine** Guide-Linie
 zurückkommt und **kein** Tiefen-Einzug — samt der Wirkungs-Gegenprobe «genau
@@ -326,14 +335,21 @@ jeder Erlass **genau eine** Kante und eine Breite.
   ein Navigations-Baum, kein Fliesstext.
 - Der **Hänge-Einzug-Schutz** mehrzeiliger Randtitel (§4b «Lese-Typografie»).
 
-**Gebündelt entschieden (Variante 1C): Zeilenmass-Deckel ~68 Zeichen.** Mit
+**Gebündelt entschieden (Variante 1C): Zeilenmass-Deckel ~70 Zeichen** (bis
+W2·24-R6c 68).** Mit
 einer Kante läuft jeder Erlass an denselben Pixel-Deckel, das Zeilenmass stieg
 gemessen auf 69–74 Zeichen. Der Textkörper trägt darum einen zweiten, in
 ZEICHEN rechnenden Deckel (`--leser-zeilenmass`, `src/index.css`); der
 schmalere der beiden gewinnt. Die Zahl ist ch-basiert hergeleitet: 1 CSS-`ch`
 misst in der Lese-Serife 0.5078 em, das mittlere Prosa-Zeichen 0.4805 em
-(Schlechtfall der Stichprobe) — 68 Zeichen entsprechen 64 CSS-`ch`. Der Deckel
-hängt an `--lm-leser-schrift` und **skaliert darum mit jeder Schriftstufe**.
+(Schlechtfall der Stichprobe). Der Deckel hängt an `--lm-leser-schrift` und
+**skaliert darum mit jeder Schriftstufe**.
+
+**W2·24-R6c: 68 → 70.** D20 (c) gibt die Spanne **65–72 CPL** vor. Die Konstante
+RECHNET, das Tor MISST — und misst systematisch tiefer, weil
+`--leser-zeichenbreite` am Schlechtfall kalibriert ist. Mit 68 lag die gemessene
+Untergrenze nach R6b bei 63 ch, also unter der Spanne (R6-NACHZUG §4). 70 hebt
+die Rechengrösse, nicht die Messmethode.
 
 Messreihe @1440 (Methode `e2e/leser-lesemass.e2e.ts`, Zeichen je Zeile des
 längsten mehrzeiligen Absatzes):
@@ -342,15 +358,27 @@ längsten mehrzeiligen Absatzes):
 |---|---|---|---|---|---|---|
 | vorher (Staffelung) | 68 | 64 | 69 | 68 | 74 | 56 |
 | eine Kante, ohne Deckel | 73 | 70 | 73 | 69 | 74 | 61 |
-| **mit Deckel (Ist)** | **67** | **66** | **66** | **64** | **63** | **56** |
+| Deckel 68, Schrift 17 px (bis R6c) | 67 | 66 | 66 | 64 | 63 | 56 |
+| **Deckel 70, Schrift 18 px (Ist)** | **67** | **67** | **68** | **68** | **68** | **56** |
 
-Die WCAG-Decke SC 1.4.8 (≤ 80 ch) bleibt mit ≥ 13 ch Reserve gehalten. Mobil
-@390 greift der Deckel nicht (591 px > Viewport); dort steigt das Zeilenmass
-durch den Wegfall der Engstelle (OR 33 → 37 ch).
+Die WCAG-Decke SC 1.4.8 (≤ 80 ch) bleibt mit ≥ 12 ch Reserve gehalten. @1280
+misst dieselbe Reihe (Textkörper 641 statt 640 px). BS-640.100 liegt bei 56 ch,
+obwohl seine Spalte gleich breit ist: die Methode rechnet `Textlänge /
+Zeilenkästen`, und kantonale §-Absätze enden häufig mit einer halb gefüllten
+Zeile — die Zahl beschreibt dort die Absatzform, nicht den Satzspiegel, und
+trägt deshalb keine Untergrenze (§8).
 
-**Maschinell gegated:** `e2e/leser-lesemass.e2e.ts` Block **T-1C** (sechs
-Erlasse: genau eine Kante, eine Breite, ≤ 70 ch @ 1440) und der auf 34 ch
-angehobene Mobil-Boden; `e2e/leser-ohne-gliederungslinie.e2e.ts` Ziff. 3
+Mobil @390 greift der Deckel nicht (641 px > Viewport); die Spalte bleibt bei
+350 px. Mit 18 px stehen dort **ZGB 37 · OR 35 · VMWG 32 · StGB 41 · StPO 34 ·
+BS-640.100 33 ch** — je nach Erlass 0–3 ch weniger als mit 17 px. Das ist keine
+Verschlechterung, sondern der Preis der grösseren Type auf physikalisch
+unveränderter Breite; der Mobil-Boden folgt der Messung (34 → 31 ch,
+Schlechtfall VMWG 32 minus 1 ch Reserve).
+
+**Maschinell gegated:** `e2e/leser-lesemass.e2e.ts` Block **T-1C** (sechs Erlasse
+× zwei Fenster @1440 und @1280: genau eine Kante, eine Breite, **65–72 ch** —
+BS-640.100 ohne Untergrenze, s. o. — plus die erwartete Textkörperbreite) und
+der Mobil-Boden ≥ 31 ch; `e2e/leser-ohne-gliederungslinie.e2e.ts` Ziff. 3
 (keine Sektion mit `padding-left` **und** die Wirkungs-Gegenprobe). Beide
 Wächter wurden am 29.8.2026 je einmal rot gezeigt (§6.7; Rot-Beweis im Commit
 `test(leser): Wächter der einen Textkante deklariert nachgeführt`).

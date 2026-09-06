@@ -273,7 +273,8 @@ test.describe('W2·5d-SPY — Bezugslinie entscheidet, nicht das Beobachtungs-Ba
     // `title`: den trägt der Titel-Knopf (voller Etikett-Text), das Chevron
     // nicht (es hat nur `aria-label`). Die geprüfte Sache ist unverändert — ein
     // Gliederungs-Eintrag ist fokussierbar und springt per Enter.
-    const ziel = page.locator('[data-toc] li[data-sektion-id] button[title]:visible').first()
+    // §6.3-DEKLARATION (W2·24-R6c, P8): Sprung-Zeile = `<a href>`, sonst `button`.
+    const ziel = page.locator('[data-toc] li[data-sektion-id] :is(a, button)[title]:visible').first()
     await ziel.focus()
     await expect(ziel).toBeFocused()
     const vorher = await page.evaluate(() => Math.round(window.scrollY))

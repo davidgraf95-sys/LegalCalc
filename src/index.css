@@ -896,14 +896,22 @@
      der Leser eine eigene Basis, also greifen sie jetzt:
        normal 1.0625 rem (17.00 px) · mittel 1.1475 (18.36) ·
        gross 1.25375 (20.06) · sehr-gross 1.38125 (22.10)
+     — DIESE ZAHLEN GALTEN BIS W2·24-R6c (6.9.2026); seither steht die Basis auf
+     1.125 rem, s. den Nachtrag direkt über den drei Regeln (§0-2b: der Beleg
+     von S2 wird ergänzt, nicht überschrieben).
      Anzeigewerte damit 100 · 108 · 118 · 130 %. Die Werte sind in
      `pages/gesetz-leser/leserSchrift.ts` (`SCHRIFT_REM`) gespiegelt, weil dort
      der Anzeigewert entsteht; `src/tests/leser-schriftskala.test.ts` prüft beide
      Listen gegeneinander UND die Vorgabestufe gegen `tailwind.config.js`, so
      dass sie nicht auseinanderlaufen können (§5). ── */
-  html[data-leserschrift="mittel"]     { --lm-leser-schrift: 1.1475rem; }
-  html[data-leserschrift="gross"]      { --lm-leser-schrift: 1.25375rem; }
-  html[data-leserschrift="sehr-gross"] { --lm-leser-schrift: 1.38125rem; }
+  /* W2·24-R6c: die BASIS steht seit D20 (c) auf 1.125 rem (18 px), die drei
+     Stufen sind dieselben Faktoren 1.08 / 1.18 / 1.30 darüber:
+       normal 1.125 rem (18.00 px) · mittel 1.215 (19.44) ·
+       gross 1.3275 (21.24) · sehr-gross 1.4625 (23.40)
+     Anzeigewerte unverändert 100 · 108 · 118 · 130 %. */
+  html[data-leserschrift="mittel"]     { --lm-leser-schrift: 1.215rem; }
+  html[data-leserschrift="gross"]      { --lm-leser-schrift: 1.3275rem; }
+  html[data-leserschrift="sehr-gross"] { --lm-leser-schrift: 1.4625rem; }
   /* FL-4-NACHZUG (Pruefer-Befund zu PR #539, 16.8.2026): `data-leserschrift` wird
      GLOBAL am <html> gesetzt, unabhaengig davon, ob die V3-Huelle aktiv ist. Ohne
      zusaetzlichen Scope traf die Regel auch `.lc-leser` in der Ist-Huelle (V1) —
@@ -913,7 +921,7 @@
      Regel greift damit KONSTRUKTIV nur, wenn V3 aktiv ist; in V1 fehlt das
      Attribut, der Selektor kann nie treffen. */
   html[data-leserschrift]:not([data-leserschrift="normal"]) .lc-leser[data-leser-v3="rahmen"] .nt-art-cv [data-lese] {
-    font-size: var(--lm-leser-schrift, 1.0625rem);
+    font-size: var(--lm-leser-schrift, 1.125rem);
   }
 
   /* Auftrag David 21.8.2026 · LESEMASS-DECKEL STATT VOLLBREITE (Herleitung,
@@ -991,11 +999,19 @@
      indem `--leser-zeichen` hochgesetzt oder die `min()`-Klammer entfernt
      wird. */
   .lc-leser[data-leser-v3="rahmen"] {
-    --leser-zeichen: 68;
+    /* W2·24-R6c: 68 → 70 (D20 (c), Spanne 65–72 CPL). Herleitung: die Konstante
+       RECHNET mit `--leser-zeichen`, das Tor `e2e/leser-lesemass.e2e.ts` MISST
+       Zeichen je Zeile am dichtesten Absatz — und misst systematisch tiefer,
+       weil `--leser-zeichenbreite` am Schlechtfall kalibriert ist. Mit 68 lag
+       die gemessene Untergrenze bei 63 ch (R6b-Messreihe, `abnahme/design-
+       identitaet/R6-NACHZUG.md` §2.1) und damit unter der Spanne. Die
+       Nachkalibrierung hebt die Rechengrösse, nicht die Messmethode; die
+       gemessene Spanne nach R6c steht in `abnahme/design-identitaet/R6C.md`. */
+    --leser-zeichen: 70;
     --leser-zeichenbreite: 0.4805;
     --leser-rinne: 2.25rem;
     --leser-zeilenmass: calc(
-      var(--leser-zeichen) * var(--leser-zeichenbreite) * var(--lm-leser-schrift, 1.0625rem)
+      var(--leser-zeichen) * var(--leser-zeichenbreite) * var(--lm-leser-schrift, 1.125rem)
       + var(--leser-rinne));
   }
   .lc-leser[data-leser-v3="rahmen"] #lc-lesespalte,
@@ -1006,133 +1022,57 @@
     max-width: min(var(--leser-lesemass-max, 45rem), var(--leser-zeilenmass, 45rem));
   }
 
-  /* ═══ W2·24-R4 · SATZSPIEGEL: MARGINALIE · NORMTEXT · RANDNOTIZEN ═════════
-     Referenzbild `abnahme/design-identitaet/vorschlag-freigegeben.html`, Seite
-     «Gesetzesleser, Art. 336c OR». Die Ausbaustufe steht als `data-lr-spiegel`
-     am Leser-Wurzelelement; gerechnet wird sie aus der Breite der LESE-ZELLE
-     (`pages/gesetz-leser/v3/rahmenSpalten.ts`, `satzspiegel` — dort auch die
-     Herleitung der beiden Schwellen 48.625 rem / 64 rem und warum sie an der
-     Zelle hängen und nicht an `@3xl/pane`).
-
-     ── DIE EINE IDEE: DIE LESESPALTE HÄLT DIE RINNEN FREI ───────────────────
-     `#lc-lesespalte` bekommt links (und im vollen Spiegel rechts) eine
-     Polsterung von genau der Breite einer Randspur samt Rinne; ihr Deckel
-     wächst um dieselbe Zahl. Die TEXTKANTE bleibt damit exakt, wo sie war —
-     `--lr-textmass` ist zeichengleich der Deckel, den die Regel oben setzt.
-     Jeder Artikel greift dann mit einem negativen Aussenrand in diese
-     Polsterung zurück und legt seine drei Spalten hinein. Der Gewinn: alles,
-     was NICHT Artikel ist (Sektionsköpfe, Ingress, die Erlass-Navigation am
-     Fuss), fluchtet ohne eine einzige eigene Regel weiter auf der Textkante.
-
-     ── WARUM NEGATIVE RÄNDER UND NICHT `position:absolute` ──────────────────
-     `.nt-art-cv` trägt `content-visibility:auto`; das impliziert
-     `contain: paint`, und ein absolut positioniertes Kind, das aus dem Kasten
-     ragt, wäre am off-screen-Artikel weggeschnitten (1686 Artikel allein im
-     OR). Der negative Aussenrand vergrössert den KASTEN — nichts ragt hinaus.
-
-     ── SCOPE ───────────────────────────────────────────────────────────────
-     Beide Regeln hängen an `#lc-lesespalte`, also am Volltext-Fluss. Die
-     Trefferliste (`v3/LeserTrefferListe`) und die Ist-Hülle V1 rendern
-     denselben `ArtikelLeser`, aber ausserhalb dieser ID bzw. ohne
-     `[data-leser-v3="rahmen"]` — dort bleibt jeder Artikel in der Zeilenform,
-     Zeichen für Zeichen wie vor R4 (§6). */
-  .lc-leser[data-leser-v3="rahmen"] {
-    /* 150 px · 210 px · 36 px — die Masse des Referenzbildes. */
-    --lr-marg: 9.375rem;
-    --lr-notiz: 13.125rem;
-    --lr-rinne: 2.25rem;
-    /* Zeichengleich mit dem Deckel der Regel oben (§5: eine Quelle, zweimal
-       gebraucht — hier für die Rechnung, dort für die Anwendung). */
-    --lr-textmass: min(var(--leser-lesemass-max, 45rem), var(--leser-zeilenmass, 45rem));
-  }
-  .lc-leser[data-leser-v3="rahmen"] [data-lr-spiegel="marg"] #lc-lesespalte,
-  .lc-leser[data-leser-v3="rahmen"] [data-lr-spiegel="voll"] #lc-lesespalte {
-    padding-inline-start: calc(var(--lr-marg) + var(--lr-rinne));
-    max-width: calc(var(--lr-textmass) + var(--lr-marg) + var(--lr-rinne));
-  }
-  .lc-leser[data-leser-v3="rahmen"] [data-lr-spiegel="voll"] #lc-lesespalte {
-    padding-inline-end: calc(var(--lr-notiz) + var(--lr-rinne));
-    max-width: calc(var(--lr-textmass) + var(--lr-marg) + var(--lr-notiz) + 2 * var(--lr-rinne));
-  }
-  .lc-leser[data-leser-v3="rahmen"] [data-lr-spiegel="marg"] #lc-lesespalte .lr-satz,
-  .lc-leser[data-leser-v3="rahmen"] [data-lr-spiegel="voll"] #lc-lesespalte .lr-satz {
-    display: grid;
-    grid-template-columns: var(--lr-marg) minmax(0, 1fr);
-    column-gap: var(--lr-rinne);
-    align-items: start;
-    margin-inline-start: calc(-1 * (var(--lr-marg) + var(--lr-rinne)));
-  }
-  .lc-leser[data-leser-v3="rahmen"] [data-lr-spiegel="voll"] #lc-lesespalte .lr-satz[data-lr-notiz] {
-    grid-template-columns: var(--lr-marg) minmax(0, 1fr) var(--lr-notiz);
-    margin-inline-end: calc(-1 * (var(--lr-notiz) + var(--lr-rinne)));
-  }
+  /* ═══ ZEILENFORM: DIE ZWEI REGELN, DIE DEN ARTIKEL TRAGEN ════════════════
+     W2·24-R6c, RÜCKBAU (§17-Gegengewicht). Bis R6b stand hier der R4-Block
+     «SATZSPIEGEL: MARGINALIE · NORMTEXT · RANDNOTIZEN»: 118 Zeilen Regeln auf
+     `[data-lr-spiegel="marg"]` und `[data-lr-spiegel="voll"]`, dazu `.lr-notiz`,
+     `.lr-notiz-titel`, `.lr-notiz-block`, die vier Register-Varianten und die
+     Variablen `--lr-marg` / `--lr-notiz` / `--lr-rinne` / `--lr-textmass`.
+     R6b hat die beiden Randspuren gestrichen (D20 (a)/(b)); seither kennt
+     `pages/gesetz-leser/v3/satzspiegel.ts` nur noch die Werte `'zeile'` und
+     `'breit'` (`Satzspiegel`-Typ, `satzspiegelFuer`) — KEIN Selektor des Blocks
+     konnte danach je wieder greifen, und keine der vier Variablen wurde
+     ausserhalb davon gelesen. R6b durfte ihn nicht räumen (`index.css`-Bestand
+     war dort TABU) und hat den toten Bestand stattdessen im `.lr7-`-Block am
+     Dateiende vermerkt; dieser Nachzug räumt ihn ersatzlos.
+     Was BLEIBT, sind die zwei formunabhängigen Regeln, die auch die Zeilenform
+     braucht — sie standen im alten Block ohne Spiegel-Scope: */
+  /* Die Textspalte des Artikels darf schrumpfen (sonst sprengt ein langes Wort
+     das Raster; `ArtikelLeser` setzt `.lr-text`). */
   .lr-text { min-width: 0; }
-
-  /* ── Die Marginalie ──────────────────────────────────────────────────────
-     Rechtsbündig wie im Referenzbild. Der hängende Einzug der Randtitel
-     (`margStufeStil`: `text-indent:-1em` + `pl-[1em]`, gegen den Umbruch
-     «1. Im / Allgemeinen») wird hier zurückgenommen: rechtsbündig gesetzt
-     zieht er die Fortsetzungszeile in die falsche Richtung. In der Zeilenform
-     bleibt er unangetastet — dort löst er weiter das Problem, für das er
-     gebaut wurde. */
-  .lc-leser[data-leser-v3="rahmen"] [data-lr-spiegel="marg"] #lc-lesespalte .lr-rand,
-  .lc-leser[data-leser-v3="rahmen"] [data-lr-spiegel="voll"] #lc-lesespalte .lr-rand {
-    text-align: right;
-  }
-  .lc-leser[data-leser-v3="rahmen"] [data-lr-spiegel="marg"] #lc-lesespalte .lr-rand [class*="text-indent"],
-  .lc-leser[data-leser-v3="rahmen"] [data-lr-spiegel="voll"] #lc-lesespalte .lr-rand [class*="text-indent"] {
-    text-indent: 0;
-    padding-left: 0;
-  }
-  /* OFFEN (R5): die Fassungs-Zeile in der Marginalie steht LINKS, während die
-     Randtitel darüber rechts fluchten. `text-align: right` erreicht sie nicht —
-     der Chip liegt in einem Flex-Container zwei Ebenen tiefer im Slot. Zwei
-     Versuche sind hier gescheitert und wieder entfernt worden, statt als
-     wirkungslose Regeln stehen zu bleiben (§17-Gegengewicht): `justify-content`
-     am direkten Kind des Slots und `display:flex` an derselben Stelle liessen
-     die gemessene linke Kante beide Male unverändert bei 472 px (Rand-Spalte
-     472–622 px, SchKG 57a @1400). Die Ursache ist NICHT abschliessend
-     diagnostiziert — sie liegt in der Zeile selbst (`parts/ArtikelHistorie.tsx`),
-     und die gehört nicht zur R4-Fläche. Kosmetisch, kein Funktionsverlust. */
-  /* Der Randtitel des Artikels (die Sachüberschrift) in der Lese-Serife und
-     kursiv — Referenzbild `.artikel .rand .rt`. Die Vorfahren-Stufen bleiben
-     in der Grotesk: zwei Stimmen, wie bisher (Grundlage Kap. 2.1). */
-  .lc-leser[data-leser-v3="rahmen"] [data-lr-spiegel="marg"] #lc-lesespalte .lr-blatt,
-  .lc-leser[data-leser-v3="rahmen"] [data-lr-spiegel="voll"] #lc-lesespalte .lr-blatt {
-    font-family: var(--font-serif), Georgia, serif;
-    font-style: italic;
-    font-weight: 500;
-  }
-  /* Registerfarben-Strich (David 6.9.2026, «nicht zu trist»). AUSSERHALB des
-     Satzspiegels 0 px hoch und ohne Aussenrand: der Strich darf die Ist-Form
-     nicht um eine Zeile verschieben (§6). */
+  /* Der Registerstrich am Artikelkopf ist in der Zeilenform 0 px hoch und ohne
+     Aussenrand — er darf die Ist-Form nicht um eine Zeile verschieben (§6). */
   .lr-reg { display: block; height: 0; }
-  .lc-leser[data-leser-v3="rahmen"] [data-lr-spiegel="marg"] #lc-lesespalte .lr-reg,
-  .lc-leser[data-leser-v3="rahmen"] [data-lr-spiegel="voll"] #lc-lesespalte .lr-reg {
-    height: 3px;
-    margin-bottom: 0.5rem;
-    background: var(--reg-g);
-  }
 
-  /* ── Die Randnotizen ─────────────────────────────────────────────────────
-     Registerfarbe am Kopf-Strich, sonst Grotesk in der leisen Beiwerk-Stimme.
-     Kein eigener Scope nötig: die `<aside>` wird von `ArtikelLeser` nur im
-     vollen Satzspiegel überhaupt gerendert. */
-  .lr-notiz { display: grid; gap: 0.875rem; align-content: start; min-width: 0; }
-  .lr-notiz-titel {
-    margin: 0 0 0.375rem;
-    font-family: var(--font-sans), system-ui, sans-serif;
-    font-size: 0.75rem; font-weight: 500; line-height: 1.2;
-    color: var(--ink-600);
-    padding-left: 0.625rem;
-    border-left: 3px solid var(--ink-900);
+  /* ═══ P3 · TEXTLINKS IM LESER TRAGEN EINEN UNTERSTRICH ═══════════════════
+     Prüfer-Befund R6 (6.9.2026): von 6'291 Links im Gesetzesleser trugen 3'673
+     keinen Unterstrich — darunter «Amtliche Fassung ↗», «⬇ Amtliches PDF» und
+     die Links der Bezüge. Ein Link, den nur die Farbe ausweist, ist für
+     Farbfehlsichtige kein Link (WCAG 1.4.1 «Use of Color»; derselbe Befund
+     traf auf der Startseite als R3-F1 mit axe «link-in-text-block» auf).
+
+     DIE REGEL STEHT EINMAL, UND ZWAR HIER — nicht an den ~40 Aufrufstellen.
+     `:where()` hält die Spezifität auf NULL, und die Regel liegt in einer
+     Cascade-Layer: die Tailwind-Utility `no-underline` (Layer `utilities`)
+     gewinnt damit IMMER, ganz gleich, was hier steht. Das ist die Bauform, die
+     der Befund verlangt: unterstrichen ist die VORGABE, und wer ohne Unterstrich
+     stehen soll, sagt es im Markup ausdrücklich.
+
+     WER SCHON HEUTE OHNE STEHT (und deshalb unberührt bleibt): die Brotkrume
+     (`no-underline` am Link), die Artikelnummer-Anker (`num … no-underline`,
+     ArtikelLeser), die Gliederungs-Einträge (`no-underline`), sowie alles, was
+     `.lc-chip` oder `.lc-btn-mini` trägt (beide führen `no-underline` in ihrem
+     `@apply`). Navigation, Listenzeilen und Knöpfe tragen ihre Affordanz aus der
+     Form — nur der TEXTlink braucht den Strich.
+
+     WÄCHTER (§6.7): `e2e/leser-links-p3.e2e.ts` misst am gebauten Leser, dass
+     kein `a[href]` ohne Unterstrich UND ohne eine der erklärten Ausnahmen
+     dasteht. Rot zu bekommen, indem diese Regel entfernt wird. */
+  .lc-leser :where(a[href]) {
+    text-decoration-line: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 2px;
   }
-  .lr-notiz-block[data-reg="r"] .lr-notiz-titel { border-left-color: var(--reg-r); }
-  .lr-notiz-block[data-reg="m"] .lr-notiz-titel { border-left-color: var(--reg-m); }
-  .lr-notiz-block[data-reg="g"] .lr-notiz-titel { border-left-color: var(--reg-g); }
-  .lr-notiz-block[data-reg="w"] .lr-notiz-titel { border-left-color: var(--reg-w); }
-  .lr-notiz .lr-notiz-kopf { padding-left: 0.625rem; }
-  .lr-notiz [data-bezuege-form="rand"] { padding-left: 0.625rem; }
 
   /* Der DRUCK fällt in die Zeilenform zurück — die Regeln dafür stehen im
      einen `@media print`-Block dieser Datei (Suchwort «SATZSPIEGEL IM DRUCK»),
@@ -1254,30 +1194,17 @@
       overflow-wrap: anywhere;
     }
 
-    /* ── SATZSPIEGEL IM DRUCK: zurück in die Zeilenform (W2·24-R4) ────────
-       `data-lr-spiegel` folgt der BILDSCHIRM-Breite und wird beim Drucken nicht
-       neu gerechnet; ein Grid mit negativen Aussenrändern liefe auf dem Blatt
-       über den Satzspiegel hinaus. Die Zeilenform ist die Ist-Form und damit
-       die geprüfte (`e2e/druck-fundstellen-z2.e2e.ts`).
-       SPEZIFITÄT MUSS MITZIEHEN (Bug-Check 6.9.2026 am eigenen Druckbild, OR
-       418b–418d): mit dem blossen `[data-leser-v3="rahmen"]`-Scope stand hier
-       eine Attribut-Bedingung WENIGER als in der Grid-Regel — die Regel verlor,
-       und der Ausdruck zeigte den Satzspiegel samt Registerbalken weiter.
-       `:is()` hält den Selektor lesbar, ohne die Spezifität zu senken. */
-    .lc-leser[data-leser-v3="rahmen"] :is([data-lr-spiegel="marg"], [data-lr-spiegel="voll"]) #lc-lesespalte {
-      padding-inline: 0;
-      max-width: min(var(--leser-lesemass-max, 45rem), var(--leser-zeilenmass, 45rem));
-    }
-    .lc-leser[data-leser-v3="rahmen"] :is([data-lr-spiegel="marg"], [data-lr-spiegel="voll"]) #lc-lesespalte .lr-satz {
-      display: block;
-      margin-inline: 0;
-    }
-    .lc-leser[data-leser-v3="rahmen"] :is([data-lr-spiegel="marg"], [data-lr-spiegel="voll"]) #lc-lesespalte .lr-reg {
-      height: 0; margin-bottom: 0;
-    }
-    .lc-leser[data-leser-v3="rahmen"] :is([data-lr-spiegel="marg"], [data-lr-spiegel="voll"]) #lc-lesespalte .lr-rand {
-      text-align: left;
-    }
+    /* ── SATZSPIEGEL IM DRUCK — GESTRICHEN (W2·24-R6c, §17-Gegengewicht) ──
+       Hier standen vier Regeln, die den Ausdruck aus dem Satzspiegel
+       (`[data-lr-spiegel="marg"|"voll"]`) in die Zeilenform zurückholten. Mit
+       dem Fall der Randspuren (R6b, D20) gibt es diese beiden Spiegel-Werte
+       nicht mehr (`v3/satzspiegel.ts` kennt nur `'zeile'` und `'breit'`) — die
+       Regeln konnten seither nicht mehr greifen. Der Bildschirm STEHT bereits
+       in der Zeilenform, der Druck erbt sie; die Druck-Zusagen dieses Blocks
+       (Fundstellen, Link-Ausschrift, kein Zuschnitt) sind davon unberührt und
+       werden weiter von `e2e/druck-fundstellen-z2.e2e.ts` und
+       `src/tests/druck-fundstellen.test.ts` gehalten. */
+
 
     /* Nichts wird auf den sichtbaren Ausschnitt zugeschnitten: weder durch
        ausgelagertes Rendering (content-visibility) noch durch die
@@ -2961,12 +2888,11 @@ html[data-lr6-anker-warten] footer { visibility: hidden; }
    `index.css` bauen in derselben Runde mehrere Agenten, und ein `.lr7-`-Präfix am
    Dateiende kollidiert mit keinem von ihnen.
 
-   HINWEIS FÜR DEN NÄCHSTEN, DER DIESE DATEI AUFRÄUMT: der Block «W2·24-R4 ·
-   SATZSPIEGEL» weiter oben (Regeln auf `[data-lr-spiegel="marg"|"voll"]`, samt
-   den `@media print`-Regeln dazu und `.lr-notiz*`) ist seit diesem Nachzug TOT —
-   `rahmenSpalten.ts` kennt die Werte `marg`/`voll` nicht mehr, kein Selektor kann
-   je greifen. Er steht nur deshalb noch da, weil `index.css`-Bestand in diesem
-   Auftrag TABU war (Parallel-Bau). Ersatzloser Rückbau = §17-Gegengewicht.
+   ERLEDIGT IN R6c: der Hinweis, der hier stand («der R4-Block SATZSPIEGEL ist
+   tot, räume ihn»), ist eingelöst — der Block und seine vier `@media print`-
+   Regeln sind ersatzlos gestrichen (Suchwort «ZEILENFORM: DIE ZWEI REGELN»).
+   Stehen geblieben sind nur `.lr-text` und `.lr-reg`, die auch die Zeilenform
+   braucht.
 
    ── (a) DER ARTIKELKOPF: RANDTITEL LINKS, FASSUNG KLEIN DANEBEN ────────────── */
 .lr7-kopf {
@@ -3032,6 +2958,10 @@ html[data-lr6-anker-warten] footer { visibility: hidden; }
   white-space: nowrap;
 }
 .lr7-bez-marke[data-reg="r"] { border-left-color: var(--reg-r); }
+/* W2·24-R6c: die Rubrik «Materialien» hat mit der Zähl-Datei eine echte Zahl
+   bekommen und darum auch ihre Registerfarbe (dieselbe Farbe wie überall sonst;
+   die Vierer-Leiter r/m/g/w ist die eine Landkarte, §5). */
+.lr7-bez-marke[data-reg="m"] { border-left-color: var(--reg-m); }
 .lr7-bez-marke[data-reg="g"] { border-left-color: var(--reg-g); }
 .lr7-bez-marke[data-reg="w"] { border-left-color: var(--reg-w); }
 /* Der Pfeil steht direkt hinter der letzten Marke, nicht am Zeilenende: er

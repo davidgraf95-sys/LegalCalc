@@ -55,7 +55,11 @@ const chip = (page: Page) => page.getByRole('button', { name: /zurück zu/ });
 // «Auf-/Einklappen»). Gemessen: 39 Treffer in beiden Hüllen, davon 0 Chevrons.
 // `:visible` bleibt unverändert load-bearing (s. o.).
 const tocSprung = (page: Page) =>
-  page.locator('[data-toc] li[data-sektion-id] button[title]:visible');
+  // §6.3-DEKLARATION (W2·24-R6c, P8): die Sprung-Zeile ist seither ein
+  // `<a href="#art-…">`, wo sie eine Adresse hat, und nur sonst ein `<button>`
+  // (SektionBaumTOC `TocZeile`). Der Selektor trifft BEIDE; die Absicht des
+  // Falls — «die Sprung-Zeilen des Baums und nur die» — ist unverändert.
+  page.locator('[data-toc] li[data-sektion-id] :is(a, button)[title]:visible');
 
 // ── R3 · Die Kopie trägt den amtlichen Deep-Link ─────────────────────────────
 test.describe('R3 — zitierfähige Referenz', () => {
@@ -416,7 +420,8 @@ test('A11y-Wächter: kein unsichtbarer Gliederungs-Knopf liegt in der Tab-Reihen
     };
 
     const knoepfe = Array.from(
-      document.querySelectorAll<HTMLElement>('[data-toc] li[data-sektion-id] button'),
+      // R6c/P8: s. o. — Sprung-Zeile ist `a`, Chevron bleibt `button`.
+      document.querySelectorAll<HTMLElement>('[data-toc] li[data-sektion-id] :is(a, button)'),
     );
     const unsichtbarAberErreichbar: string[] = [];
     for (const el of knoepfe) {

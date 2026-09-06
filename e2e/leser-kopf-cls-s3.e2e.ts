@@ -156,3 +156,68 @@ test('CLS Tieflink @390 (OR#art-336_c — Sprung in einen 1686-Artikel-Erlass)',
   const cls = await page.evaluate(() => (window as unknown as { __cls: number }).__cls);
   expect(cls).toBeLessThan(0.1);
 });
+
+// ── D21-NEBENFUND (David 6.9.2026) · DIE GLIEDERUNG WÄCHST NICHT NACH DEM
+//    ERSTEN BILD ────────────────────────────────────────────────────────────
+//
+// BEFUND, wörtlich: die Gliederungs-Einträge («Dritte Abteilung», «Vierte
+// Abteilung», «Übergangsbestimmungen», «Schlussbestimmungen») verschieben sich
+// rund 1.8–2.0 s nach dem Laden von `/gesetze/bund/OR#art-336_c`.
+//
+// URSACHE (gemessen, W2·24-R6c): der aktive Pfad klappte erst auf, wenn der
+// Scroll-Spy den Zielartikel meldete — nach dem Anker-Einschwingen (Deckel
+// 600 ms) plus 200 ms Nachlauf-Entprellung. Der Baum wuchs dabei von 18 auf 62
+// Zeilen (Scrollhöhe 1042 → 2285 px) und schob die sichtbaren Geschwister-
+// Zeilen aus dem Sichtband. Ohne Nutzer-Eingriff zu dieser Zeit zählt das voll
+// als unerwartete Verschiebung: CLS 0.0746, davon 0.0741 in EINEM Shift bei
+// t ≈ 1.84 s (3/3 Läufe bitgleich).
+//
+// GEBAUT: `v3/leserV3Modell.ts` öffnet den Pfad zum Anker in einem LAYOUT-Effekt,
+// sobald die Sektionen da sind — also in demselben Render, in dem der Baum zum
+// ersten Mal erscheint, und synchron vor dem Paint. Nachher gemessen: CLS
+// 0.0006, Anteil im `[data-toc]` 0.0000 (3/3).
+//
+// WARUM DIESER FALL ZWEI ZAHLEN MISST: der ANTEIL IM BAUM ist die Aussage
+// (dort sass der Defekt), die SPÄTE Summe ist die Klammer dagegen, dass er
+// bloss woandershin wandert. Ein Deckel auf die Gesamtsumme allein wäre zu
+// stumpf — 0.074 verschwinden im 0.1-Budget des Falls darüber.
+//
+// ROT ZU BEKOMMEN (§6.7): im `useLayoutEffect` «D21-NEBENFUND»
+// (`v3/leserV3Modell.ts`) ein frühes `return` setzen — der Shift kommt
+// bitgleich zurück (gemessen 6.9.2026: 0.0741 statt 0.0000).
+// GEGENPROBE, DIE NICHT TRÄGT und darum hier steht: `useLayoutEffect` durch
+// `useEffect` zu ersetzen bleibt GRÜN. Der Gewinn liegt also nicht am
+// Effekt-Typ, sondern am ZEITPUNKT der Ursache: der Pfad öffnet, sobald die
+// Sektionen da sind (~600 ms), nicht erst, wenn der Spy meldet (~1.8 s).
+// `useLayoutEffect` bleibt trotzdem stehen — es ist die Zusage «vor dem Paint»
+// und kostet nichts; wer es aufweicht, verlässt sich auf React-Zeitverhalten.
+test('CLS Tieflink @1440 — die Gliederung wächst nicht nach dem ersten Bild (D21)', async ({ page }) => {
+  await page.setViewportSize({ width: 1440, height: 900 });
+  await page.addInitScript(() => {
+    (window as unknown as { __d21: { spaet: number; toc: number } }).__d21 = { spaet: 0, toc: 0 };
+    new PerformanceObserver((liste) => {
+      type Q = { node?: Element | null };
+      for (const e of liste.getEntries() as unknown as Array<{ value: number; startTime: number; hadRecentInput: boolean; sources?: Q[] }>) {
+        if (e.hadRecentInput) continue;
+        const z = (window as unknown as { __d21: { spaet: number; toc: number } }).__d21;
+        // «Spät» = nach dem ersten Bild. Die Aufdeck-Klammer des Anker-Sprungs
+        // steht bei 600 ms; alles danach ist Nachwachsen, nicht Aufbau.
+        if (e.startTime > 1000) z.spaet += e.value;
+        if ((e.sources ?? []).some((s) => s.node?.closest?.('[data-toc]'))) z.toc += e.value;
+      }
+    }).observe({ type: 'layout-shift', buffered: true });
+  });
+  await page.goto('/gesetze/bund/OR#art-336_c');
+  await expect(page.locator('#art-336_c')).toBeInViewport({ timeout: 20_000 });
+  // Der Befund liegt bei t ≈ 1.84 s — 4 s Nachlauf sehen ihn mit Reserve.
+  await page.waitForTimeout(4_000);
+  const m = await page.evaluate(() => (window as unknown as { __d21: { spaet: number; toc: number } }).__d21);
+  // Leer-Treffer-Schutz: der Baum muss überhaupt dagewesen sein, sonst wäre
+  // «kein Shift im Baum» trivial erfüllt (§6.7 lit. b).
+  expect(await page.locator('[data-toc] li[data-sektion-id]').count(),
+    'kein Gliederungsbaum gerendert — der Fall misst nichts').toBeGreaterThan(10);
+  expect(m.toc, `Verschiebung im Gliederungsbaum: ${m.toc.toFixed(4)} (Befund D21 war 0.0741)`)
+    .toBeLessThan(0.01);
+  expect(m.spaet, `Verschiebung nach dem ersten Bild: ${m.spaet.toFixed(4)} (Befund D21 war 0.0741)`)
+    .toBeLessThan(0.01);
+});

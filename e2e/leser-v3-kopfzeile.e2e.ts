@@ -77,8 +77,36 @@ async function chrome(page: Page) {
     }
     const topbar = kasten('header.sticky')
     const kopf = kasten('[data-v3-kopf]')
+    // ── §6.3-DEKLARATION (W2·24-R6c, 6.9.2026) · DER BEZUGSPUNKT WANDERT ─────
+    // Bis hierher mass dieser Fall gegen die UNTERKANTE DER TOPBAR — richtig,
+    // solange zwischen Topbar und Leser-Kopf nichts stand. Seit R2/D19 steht
+    // dort die ARBEITSLEISTE (Reiter, Auftrag David «in der tab zeile oben soll
+    // man mit plus einen neuen reiter erzeugen können») und seit R6/M10 die
+    // AUSGABE-ZEILE («Jüngster Eintrag: …», D8) — zusammen 65 px @1440.
+    // Gemessen am Bau-Stand von R6c: Topbar 0–64, Arbeitsleiste 64–98,
+    // Ausgabe-Zeile 98–129, Leser-Kopf 129–186. Der Kopf klebt also weiterhin
+    // BÜNDIG an dem, was über ihm steht (Lücke 0 px) — die Sonde verglich nur
+    // mit der falschen Kante.
+    // KEINE AUFWEICHUNG: die Zusage bleibt «keine Leerzone über dem Leser-Kopf»
+    // und «der Leser bringt nicht mehr eigenes Chrome mit als vor A-2». Neu ist
+    // nur, dass beide gegen die Unterkante des CHROME-STAPELS gemessen werden
+    // statt gegen eine einzelne, inzwischen nicht mehr benachbarte Leiste. Die
+    // Sonde wird dadurch anatomie-neutral: sie meldet auch die NÄCHSTE Leiste,
+    // die jemand dazwischenschiebt, statt beim ersten Zuwachs blind zu werden.
+    const stapel = (() => {
+      if (!topbar || !kopf) return null
+      let unten = topbar.bottom
+      for (const el of document.querySelectorAll('body *')) {
+        const b = el.getBoundingClientRect()
+        if (b.height < 4 || b.width < window.innerWidth * 0.9) continue
+        if (b.top >= topbar.bottom - 1 && b.bottom <= kopf.top + 1 && b.bottom > unten) unten = b.bottom
+      }
+      return Math.round(unten)
+    })()
     return {
       topbarUnten: topbar ? Math.round(topbar.bottom) : null,
+      /** Unterkante des klebenden Chrome-Stapels ÜBER dem Leser-Kopf. */
+      stapelUnten: stapel,
       kopfOben: kopf ? Math.round(kopf.top) : null,
       kopfUnten: kopf ? Math.round(kopf.bottom) : null,
       appLeisten: document.querySelectorAll('[data-inhalt-kopf]').length,
@@ -87,8 +115,20 @@ async function chrome(page: Page) {
       // Schliess-Griffe im Ruhezustand: ein Knopf, dessen sichtbarer Text genau
       // «✕» ist. Deckt App-✕, Pane-✕ und Leser-✕ gleichermassen, ohne sich auf
       // eine der drei Beschriftungen zu verlassen.
+      // ── §6.3-DEKLARATION (W2·24-R6c) · AUSSER DEM DER REITER ────────────
+      // Seit R2/D19 trägt jeder Reiter der Arbeitsleiste sein eigenes ✕
+      // («Reiter «StPO» schliessen», in `[data-reiter-streifen]`). Das ist der
+      // Schliess-Griff EINES REITERS, nicht der der Kopfzone — es schliesst
+      // nicht den Leser, sondern das Register-Blatt, das ihn zeigt, und es ist
+      // ausdrücklich bestellt («in der tab zeile oben soll man mit plus einen
+      // neuen reiter erzeugen können», David 6.9.2026). Die Aussage dieses
+      // Falls lautet «die KOPFZONE DES LESERS trägt keinen Schliess-Griff» und
+      // bleibt Wort für Wort so streng; sie zählt nur nicht mehr ein Kreuz mit,
+      // das einem anderen Objekt gehört. Ein zurückkehrendes App-, Pane- oder
+      // Leser-✕ meldet sie unverändert.
       kreuze: [...document.querySelectorAll('button')]
         .filter((b) => (b.textContent ?? '').trim() === '✕')
+        .filter((b) => !b.closest('[data-reiter-streifen], nav[aria-label="Offene Reiter"]'))
         .map((b) => b.getAttribute('aria-label') ?? '?'),
       ortsangabenImChrome: document.querySelectorAll('[data-ort-artikel]').length,
     }
@@ -129,6 +169,13 @@ async function standStellen(page: Page, datum: string): Promise<{ text: string; 
 const VORHER_D = 159
 const VORHER_H = 195
 const APP_LEISTE_H = 36
+/** Höhe der App-Topbar, die in `VORHER_D`/`VORHER_H` mit drinsteckt. */
+const TOPBAR_H = 64
+/** Was der LESER selbst an Chrome mitbringen darf — «vorher minus Leiste minus
+ *  Topbar». Gemessen am Bau-Stand von R6c: 57 px @1440, 93 px @390; die
+ *  Schranken (59 / 95) behalten damit ihre Bissigkeit von 2 px. */
+const EIGEN_D = VORHER_D - APP_LEISTE_H - TOPBAR_H
+const EIGEN_H = VORHER_H - APP_LEISTE_H - TOPBAR_H
 
 test.describe('A-2 — unter ?leser=v3 trägt der Leser die eine Kopfzeile', () => {
   test('(a)+(b)+(c) Einzelansicht @1440: eine Leiste, volle Krume, kein zweiter Stand', async ({ page }) => {
@@ -144,11 +191,12 @@ test.describe('A-2 — unter ?leser=v3 trägt der Leser die eine Kopfzeile', () 
     expect(m.appLeisten, 'die App-Krumen-Leiste ist noch im DOM').toBe(0)
     expect(m.appKrumen, 'zweite Brotkrümel-Navigation im DOM').toBe(0)
     expect(m.leserKrumen, 'die Kopfzeile des Lesers fehlt — die Messung prüfte nichts').toBe(1)
-    expect(m.kopfOben, `der Kopf schliesst nicht an die Topbar an (${m.topbarUnten} → ${m.kopfOben})`)
-      .toBeLessThanOrEqual((m.topbarUnten ?? 0) + 1)
-    expect(m.kopfOben).toBeGreaterThanOrEqual((m.topbarUnten ?? 0) - 2)
-    expect(m.kopfUnten, `Chrome bis zur Lesefläche ${m.kopfUnten} px — erlaubt ist ${VORHER_D} − ${APP_LEISTE_H}`)
-      .toBeLessThanOrEqual(VORHER_D - APP_LEISTE_H)
+    expect(m.kopfOben, `der Kopf schliesst nicht an den Chrome-Stapel an (${m.stapelUnten} → ${m.kopfOben})`)
+      .toBeLessThanOrEqual((m.stapelUnten ?? 0) + 1)
+    expect(m.kopfOben).toBeGreaterThanOrEqual((m.stapelUnten ?? 0) - 2)
+    expect((m.kopfUnten ?? 0) - (m.stapelUnten ?? 0),
+      `der Leser bringt ${(m.kopfUnten ?? 0) - (m.stapelUnten ?? 0)} px eigenes Chrome mit — erlaubt ${EIGEN_D}`)
+      .toBeLessThanOrEqual(EIGEN_D)
     // ── Ä87/Ä91 (H4-Nachzug 18.8.2026) · KEIN Schliess-Griff mehr ──────────
     // Hier stand «EIN Schliess-Griff, und zwar der des Gesetzes». Gemessen
     // 18.8.2026 @1440 lag genau dieses ✕ bei offenem Beiwerk-Blatt 47 px über
@@ -202,9 +250,11 @@ test.describe('A-2 — unter ?leser=v3 trägt der Leser die eine Kopfzeile', () 
     const m = await chrome(page)
     expect(m.appLeisten, 'die App-Krumen-Leiste ist noch im DOM').toBe(0)
     expect(m.leserKrumen).toBe(1)
-    expect(m.kopfOben).toBeLessThanOrEqual((m.topbarUnten ?? 0) + 1)
-    expect(m.kopfUnten, `Chrome bis zur Lesefläche @390 ${m.kopfUnten} px — erlaubt ${VORHER_H} − ${APP_LEISTE_H}`)
-      .toBeLessThanOrEqual(VORHER_H - APP_LEISTE_H)
+    // R6c: Bezug ist der Chrome-STAPEL, s. `chrome()`.
+    expect(m.kopfOben).toBeLessThanOrEqual((m.stapelUnten ?? 0) + 1)
+    expect((m.kopfUnten ?? 0) - (m.stapelUnten ?? 0),
+      `der Leser bringt @390 ${(m.kopfUnten ?? 0) - (m.stapelUnten ?? 0)} px eigenes Chrome mit — erlaubt ${EIGEN_H}`)
+      .toBeLessThanOrEqual(EIGEN_H)
     // ── Ä46/NM-2 (H4-II, 17./18.8.2026) · @390 STEHT GAR KEIN ✕ MEHR ────────
     // Hier stand `.toBe(1)`. Die Zahl war nie das Ziel, sondern «nicht zwei»
     // (A-2 hatte sie von 2 auf 1 gebracht). H4-II bringt sie auf 0, und zwar
@@ -302,7 +352,8 @@ test.describe('A-2 — unter ?leser=v3 trägt der Leser die eine Kopfzeile', () 
 
     const m = await chrome(page)
     expect(m.appLeisten).toBe(0)
-    expect(m.kopfUnten).toBeLessThanOrEqual(VORHER_D - APP_LEISTE_H)
+    // R6c: Bezug ist der Chrome-STAPEL, s. `chrome()`.
+    expect((m.kopfUnten ?? 0) - (m.stapelUnten ?? 0)).toBeLessThanOrEqual(EIGEN_D)
     const ort = page.locator('[data-v3-kopf] nav[aria-label="Ort im Gesetz"]')
     const text = (await ort.innerText()).replace(/\s+/g, ' ')
     expect(text, `Krume lautet «${text}»`).toContain('Gesetze › Kanton BS ›')
@@ -575,15 +626,34 @@ test.describe('A-2 — unter ?leser=v3 trägt der Leser die eine Kopfzeile', () 
  *  weiterhin die Pane-Titelleiste. */
 async function luecke(page: Page, obenWahl: string): Promise<number> {
   return page.evaluate((sel) => {
-    const oben = document.querySelector(sel)
     const kopf = document.querySelector('[data-v3-kopf]')
-    if (!oben || !kopf) return Number.NaN
-    return Math.round(kopf.getBoundingClientRect().top - oben.getBoundingClientRect().bottom)
+    if (!kopf) return Number.NaN
+    const kr = kopf.getBoundingClientRect()
+    // ── §6.3-DEKLARATION (W2·24-R6c) · DER ANSCHLAG IST DER CHROME-STAPEL ──
+    // `STAPEL` misst gegen die Unterkante DESSEN, was unmittelbar über dem
+    // Leser-Kopf klebt — seit R2/D19 die Arbeitsleiste, seit R6/M10 zusätzlich
+    // die Ausgabe-Zeile, davor die blosse Topbar. Herleitung und Messreihe:
+    // s. `chrome()`. Ein fester Selektor bleibt möglich (Pane-Titelleiste im
+    // Split), wo genau EIN Anschlag gemeint ist.
+    if (sel !== '#stapel') {
+      const oben = document.querySelector(sel)
+      return oben ? Math.round(kr.top - oben.getBoundingClientRect().bottom) : Number.NaN
+    }
+    const topbar = document.querySelector('header.sticky')
+    if (!topbar) return Number.NaN
+    let unten = topbar.getBoundingClientRect().bottom
+    for (const el of document.querySelectorAll('body *')) {
+      const b = el.getBoundingClientRect()
+      if (b.height < 4 || b.width < window.innerWidth * 0.9) continue
+      if (b.top >= topbar.getBoundingClientRect().bottom - 1 && b.bottom <= kr.top + 1 && b.bottom > unten) unten = b.bottom
+    }
+    return Math.round(kr.top - unten)
   }, obenWahl)
 }
 
-/** Die App-Topbar — der Anschlag, an dem der Kopf in der Einzelansicht klebt. */
-const TOPBAR = 'header.sticky'
+/** Der Chrome-Stapel über dem Leser-Kopf — der Anschlag in der Einzelansicht
+ *  (bis R6c die blosse Topbar; seither Topbar + Arbeitsleiste + Ausgabe-Zeile). */
+const TOPBAR = '#stapel'
 
 /** ── B3 (H2b-Nachzug) · ZWEISEITIG, NICHT NUR NACH OBEN ─────────────────────
  *  Die Zusicherung lautete `toBeLessThanOrEqual(0)` und war damit halb blind: sie
