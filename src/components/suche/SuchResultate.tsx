@@ -295,8 +295,37 @@ export function SuchResultate({ gruppen, allesGeladen, q, onAuswahl, onNavigate,
 }) {
   if (q === '') {
     if (!wartet) return null;
+    // ── a11y-WURZEL (Blocker `Startseite mit offener Kopf-Suche`, 6.9.2026) ──
+    //
+    // GEMESSEN (e2e/a11y.e2e.ts:115, 6/10 rot, Ausgabe `e2e-pre-landung.log`):
+    //   aria-valid-attr-value (critical) — Invalid ARIA attribute value:
+    //   aria-controls="_r_0_"  · 1 Knoten, `input`
+    // Das Feld meldet `aria-expanded` + `aria-controls={listboxId}`, sobald
+    // etwas getippt ist (`zeigtPanel = offen && !feldLeer`, HeaderSuche). In
+    // den 120 ms der Entprellung ist `q` aber noch leer — und dieser Zweig
+    // rendert das Warte-Panel OHNE `id`/`role`. Damit zeigte `aria-controls`
+    // auf ein Element, das es nicht gab: für axe eine ungültige Referenz, für
+    // eine Sprachausgabe ein Widget, dessen Popup nicht auffindbar ist.
+    // Der Fall ist ein RENNEN — der Wächter wartet auf `.lc-suchpanel`, und
+    // diese Klasse trägt das Warte-Panel ebenfalls —, daher die 6/10.
+    //
+    // (Der Prüfbefund hatte `scrollable-region-focusable` an
+    // `.lc-schwebeflaeche` vermutet; die gemessene Ausgabe nennt eine andere
+    // Regel und einen anderen Knoten. §7: abweichend umgesetzt und
+    // offengelegt. Die Scroll-Regel greift hier ohnehin nicht mehr — sie nimmt
+    // genau das per `aria-controls` referenzierte Combobox-Popup aus, und das
+    // ist dieses Element jetzt.)
+    //
+    // FIX AN DER WURZEL: das Warte-Panel IST der Popup — es bekommt Identität
+    // und Rolle der Listbox, plus `aria-busy` für «die Optionen kommen noch».
+    // Das ist zugleich das ARIA-Muster für eine ladende Listbox; ohne
+    // `aria-busy` verlangte `aria-required-children` bereits Optionen.
+    // Ohne `listboxId` (Hero, /suche) bleibt das Markup unverändert.
     return (
-      <div className={`lc-suchpanel${panelKlasse ? ` ${panelKlasse}` : ' overflow-hidden'}`}>
+      <div className={`lc-suchpanel${panelKlasse ? ` ${panelKlasse}` : ' overflow-hidden'}`}
+        role={listboxId ? 'listbox' : undefined} id={listboxId}
+        aria-label={listboxId ? 'Suchtreffer' : undefined}
+        aria-busy={listboxId ? true : undefined}>
         <p className="px-4 pt-3 pb-1 text-micro leading-snug text-ink-500">wird durchsucht …</p>
         <SkelettListe />
       </div>
