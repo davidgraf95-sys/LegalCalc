@@ -117,7 +117,28 @@ function kurzform(t: TabEintrag, m: VerlaufManifeste): { kopf: string; kern: str
     return { kopf: '', kern: art ? `${art} ${kuerzel}` : kuerzel };
   }
   const voll = verlaufLabel(t.path, m);
-  return kat === 'rechtsprechung' ? zerlege(voll) : { kopf: '', kern: voll };
+  if (kat === 'rechtsprechung') return zerlege(voll);
+  return { kopf: '', kern: ohneUntertitel(voll) };
+}
+
+/** ── V4/F5-Rest (§5a Ziff. 2) · DER REITER TRÄGT DEN NAMEN, NICHT DEN UNTERTITEL
+ *
+ *  GEMESSEN 6.9.2026 (Preview 4352, vier Reiter): der Rechner-Reiter hiess
+ *  «Fristenrechner (Tage · ZPO · SchKG)» — 34 Zeichen für eine Zeile, die
+ *  «Fristenrechner» sagen soll, und im Streifen der breiteste von allen. Die
+ *  Klammer ist der UNTERTITEL des Katalogs (was der Rechner alles kann), nicht
+ *  der Name des Dokuments; §5a Ziff. 2 verlangt die kanonische Kurzform.
+ *
+ *  Deterministisch (§2) und bewusst eng: gestrichen wird NUR eine Klammer AM
+ *  ENDE, und nur, wenn davor noch etwas steht. Ein Titel, der ganz in Klammern
+ *  steht, bleibt unangetastet — dann ist die Klammer der Name. Die vollständige
+ *  Bezeichnung geht nicht verloren: sie steht im `title` des Reiters und in der
+ *  Reiter-Liste (§8). Gesetze und Entscheide gehen diesen Weg NICHT — dort ist
+ *  eine Klammer Teil der Zitierung (§1: lieber zwei Wege als eine Abstraktion,
+ *  die zwei verschiedene Fälle gleich behandelt). */
+function ohneUntertitel(titel: string): string {
+  const gekuerzt = titel.replace(/\s*\([^()]*\)\s*$/, '').trim();
+  return gekuerzt.length > 0 ? gekuerzt : titel;
 }
 
 /** Einzeiler für Suchfeld, Accessible Names und Titel. */
