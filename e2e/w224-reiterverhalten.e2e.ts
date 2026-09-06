@@ -237,13 +237,25 @@ test.describe('Arbeitsleiste — eine Navigation, ein Reiter', () => {
   // 6.9.2026 umgedreht; die Zusage bleibt die Reproduzierbarkeit — sie hängt
   // jetzt an der Lesestellung statt an der Adresse. Herleitung im Kopf.
   test('(e) die Beschriftung folgt der Lesestellung — live beim Scrollen (D27)', async ({ page }) => {
+    // Der Fall lädt den ZGB-Leser dreimal (Kaltstart, Reload, SPA-Gegenprobe);
+    // das reisst unter Parallel-Last das 30-s-Regelmass, ohne dass etwas kaputt
+    // wäre. `test.slow()` verdreifacht es — Zusage und Messung unverändert.
+    test.slow()
     await page.goto('/gesetze/bund/ZGB')
     await leserBereit(page)
     // Erst die Stelle abwarten, die der Leser von sich aus meldet (Dokument-
     // anfang) — danach wird gescrollt, und DIESER Wechsel ist die Zusage.
     await expect.poll(() => beschriftungen(page), { timeout: 20_000 })
       .toEqual([expect.stringMatching(/^Art\. \S+ ZGB$/)])
-    const vorher = (await beschriftungen(page))[0]
+    const anfang = (await beschriftungen(page))[0]
+    const vorher = anfang
+    // GEMESSEN 6.9.2026: `page.mouse.wheel` ohne vorheriges `move` liefert sein
+    // Rad an der Zeigerposition (0,0) ab — dort steht das Titelblatt, nicht die
+    // Textspalte, und der Leser scrollt keinen Pixel (window.scrollY blieb 0).
+    // Der Zeiger geht darum zuerst in die Textspalte. (Dieselbe Falle steckt in
+    // den Fällen, die nach dem Rad «es hat sich NICHTS geändert» messen — dort
+    // fällt sie nicht auf, weil das Nichts-Ereignis auch ohne Scrollen eintritt.)
+    await page.mouse.move(720, 500)
     await page.mouse.wheel(0, 1500)
     // ZUSAGE 1: der Text WECHSELT (die Rot-Probe der alten Regel).
     await expect.poll(() => beschriftungen(page).then((b) => b[0]), { timeout: 20_000 })
@@ -254,10 +266,20 @@ test.describe('Arbeitsleiste — eine Navigation, ein Reiter', () => {
     const stelle = (await pfade(page))[0]
     expect(stelle).toMatch(/#art-/)
 
-    // ZUSAGE 2 (Determinismus, §2): gleiche Stellung ⇒ gleiche Beschriftung.
-    // RELOAD an derselben Stelle.
+    // ── ZUSAGE 2 (Determinismus, §2) · GLEICHE STELLUNG ⇒ GLEICHE BESCHRIFTUNG
+    // GEMESSEN 6.9.2026 (Preview 4373, ZGB, 1500 px gescrollt): der Reload
+    // setzt den Leser bewusst NICHT an die alte Stelle zurueck — W2·10-UI-NAV/R4
+    // hat das entschieden («beim erneuten Oeffnen KEIN Auto-Sprung, sondern ein
+    // unaufdringlicher Chip», `gesetz-leser/lesePosition.ts`). Nach dem Reload
+    // steht man also am Dokumentanfang, und der Reiter sagt genau das. Das ist
+    // die Zusage, nicht ihr Gegenteil — geprueft wird darum, dass DIESELBE
+    // STELLE dieselbe Beschriftung ergibt, ueber den Neustart hinweg.
     await page.reload()
     await leserBereit(page)
+    await expect.poll(() => beschriftungen(page).then((b) => b[0]), { timeout: 20_000 })
+      .toBe(anfang)
+    await page.mouse.move(720, 500)
+    await page.mouse.wheel(0, 1500)
     await expect.poll(() => beschriftungen(page).then((b) => b[0]), { timeout: 20_000 })
       .toBe(nachher)
 
@@ -265,21 +287,21 @@ test.describe('Arbeitsleiste — eine Navigation, ein Reiter', () => {
     // der Stellung «Dokumentanfang» — dieselbe Zeichenkette.
     await page.goto('/gesetze')
     await page.evaluate(() => localStorage.removeItem('lexmetrik-tabs'))
-    await page.goto('/gesetze/bund/ZGB')
-    await leserBereit(page)
-    await expect.poll(() => beschriftungen(page), { timeout: 20_000 })
-      .toEqual([expect.stringMatching(/^Art\. \S+ ZGB$/)])
-    const kalt = (await beschriftungen(page))[0]
-    await page.goto('/gesetze')
-    await page.evaluate(() => localStorage.removeItem('lexmetrik-tabs'))
     await page.goto('/gesetze')
     await page.locator('a[href="/gesetze/bund/ZGB"]').first().click()
     await leserBereit(page)
-    await expect.poll(() => beschriftungen(page).then((b) => b[0]), { timeout: 20_000 }).toBe(kalt)
+    // `anfang` ist der KALTSTART-Wert von ganz oben (page.goto auf den Leser);
+    // der Klick-Weg muss dieselbe Zeichenkette liefern — genau das war der
+    // F5-Befund («ZGB» kalt vs. «Art. 1 ZGB» per SPA), nur jetzt auf der
+    // anderen Seite der Regel geloest.
+    await expect.poll(() => beschriftungen(page).then((b) => b[0]), { timeout: 20_000 }).toBe(anfang)
   })
 
   // ── (g) · D27 · IM SPLIT FOLGT JEDES FENSTER SEINER EIGENEN STELLUNG ──────
   test('(g) beide Pane-Reiter tragen je ihre eigene Stellung (D27, Split)', async ({ page }) => {
+    // Zwei Leser-Instanzen desselben Erlasses in einem Fenster — Begründung für
+    // `test.slow()` wie bei (e).
+    test.slow()
     await page.goto('/gesetze/bund/OR')
     await leserBereit(page)
     await page.getByRole('button', { name: /daneben öffnen/i }).first().click()

@@ -580,7 +580,18 @@ export function Reiterleiste({ paneSchluessel = [] }: {
               über dessen Kasten und legte sich über die ⧉/✕-Griffe daneben.
               Ohne Kopf kürzt der Kern selbst — dann ist er der ganze Name
               (Gesetz, Rechner, Vorlage) und nichts daran ist geschützt. */}
+          {/* ── DIE WORTFUGE IST EIN ECHTES LEERZEICHEN, KEIN `gap` ─────────
+              GEMESSEN 6.9.2026 (`e2e/w224-plus-reiter`, nach der D27-Trennung):
+              der Knopf las sich als «Art. 257dOR» — die Lücke kam allein aus
+              `gap-1` des Flex-Kastens, und die trägt weder `textContent` noch
+              die Berechnung des Accessible Name (WCAG 4.1.2: eine Sprachaus-
+              gabe hätte «Artikel 257dOR» gesagt). `{' '}` ist ein Leerzeichen-
+              Textknoten: als Flex-Kind wird er nicht gerendert (das Bild bleibt
+              byte-gleich, die Lücke macht weiter `gap-1`), im Text steht er.
+              Gilt für BEIDE Fugen — die zum Kopf hatte den Defekt schon
+              vorher («OGer AGHOR.2024.19»). */}
           {kopf && <span className="truncate max-w-[9rem]">{kopf}</span>}
+          {kopf && ' '}
           {/* ── D27 (David 6.9.2026) · DIE LESESTELLUNG STEHT IM REITER ──────
               «diese funktion, dass es anzeigt in welchem artikel wir sind,
               soll der tab bekommen.» Die Stelle wandert beim Scrollen (aus
@@ -593,6 +604,7 @@ export function Reiterleiste({ paneSchluessel = [] }: {
               Spy-Lauf da, wo sie danach steht. Nur Gesetzes-Reiter tragen den
               Platz (`stelle === null` = keine Stellung möglich). */}
           {stelle !== null && <span className="rl-stelle num">{stelle}</span>}
+          {stelle ? ' ' : null}
           <span className={kopf ? 'shrink-0' : 'truncate max-w-[15rem]'}>{kern}</span>
           {paneWort && <span className="sr-only">{` (Fenster ${paneWort})`}</span>}
         </button>

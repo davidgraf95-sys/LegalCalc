@@ -394,6 +394,15 @@
        Bedienung, und scrollt darum weg wie Fliesstext. */
     --app-krone-h:4rem;
     --app-reiter-h:2.125rem;
+    /* --app-reiter-stelle-b · D27 (David 6.9.2026): die BREITE, die ein
+       Gesetzes-Reiter für die Lesestellung freihält («Art. 336c»). Sie steht
+       hier und nicht als Zahl in der Klasse, weil sie dieselbe Sorge trägt wie
+       `--app-reiter-h`: ein Mass, das die Arbeitsleiste RESERVIERT, damit sich
+       beim Nachführen nichts verschiebt (D2 «keine Magic-Numbers», §5).
+       4.25rem = 68 px deckt die im Korpus vorkommenden Stellen ab; längere
+       wachsen darüber hinaus (`min-width`, nie `width` — die Stelle darf nicht
+       verstümmeln, §8), dann aber EINMAL statt bei jedem Artikelwechsel. */
+    --app-reiter-stelle-b:4.25rem;
     --app-kopf-h:calc(var(--app-krone-h) + var(--app-reiter-h));
     --z-base:0; --z-sticky:10; --z-entscheid-sticky:15;
     --z-reader-scrim:16; --z-reader-kopf:17; --z-inhalt-kopf:19;
@@ -2314,16 +2323,17 @@
      Breite verschöbe JEDER Artikelwechsel alle Reiter rechts davon — «ZGB» →
      «Art. 1 ZGB» ist ein Sprung von rund 55 px, «Art. 9» → «Art. 336c» noch
      einer von rund 20 px.
-     4.25rem = 68 px deckt die Stellen ab, die im Korpus vorkommen («Art.
-     336c», «Art. 31–32»); nur die seltenen vierstelligen wachsen darüber
-     hinaus, und dann wächst der Reiter EINMAL statt bei jedem Schritt.
+     Das Mass steht als Token `--app-reiter-stelle-b` bei den übrigen
+     Arbeitsleisten-Massen (oben, D2/§5); nur die seltenen vierstelligen
+     Stellen wachsen darüber hinaus, und dann wächst der Reiter EINMAL statt
+     bei jedem Schritt.
      `min-width` statt `width`, damit nichts abgeschnitten wird (§8: die
      Stelle ist die Auskunft, sie darf nicht verstümmeln) — die Ziffern stehen
      via `.num` ohnehin auf tabellarischer Breite, also ruckt es auch
      innerhalb der Reservierung nicht. Der leere Fall (Stellung noch nicht
      gemeldet) hält denselben Platz: die Leiste steht schon vor dem ersten
      Spy-Lauf da, wo sie danach steht. */
-  .rl-stelle { display: inline-block; min-width: 4.25rem; flex-shrink: 0; }
+  .rl-stelle { display: inline-block; min-width: var(--app-reiter-stelle-b); flex-shrink: 0; }
 
   /* ─── W2·24 · AUSWAHL-KACHEL (SelectionGrid) · KANTIG, LINIE, HAEKCHEN ─────
      Prueferbefund Fixer 2 (6.9.2026): die Kacheln standen als abgerundete
