@@ -186,6 +186,19 @@ abgeschlossen/zurückgezogen), Frist aus `ConsultationPhase`; Reichweite ~2000�
 `check:vernehmlassungen-netz` + Offline-Assertion `laufend && fristEnde<heute ⇒ rot`. Maschinell
 zugeordnet (grob bei Mantelvorlagen, §8); fachliche Abnahme David offen.
 
+**Entstehung am Artikel — Recherche-Runde 6.9.2026:** [materialien/entstehung-2026-09-06/README.md](materialien/entstehung-2026-09-06/README.md) —
+sieben Sonnet-Recherchen (read-only, Live-Abrufe 6.9.2026) zu Materialien-
+Verzahnung und Gesetzgebungsprozess: Fedlex-Wissensgraph `type-projet`-Kette
+(7299 Botschaften / 4931 Beschlüsse / 1868 Referendumsfristen / 629
+Abstimmungstermine, SPARQL); BBl-Volltext mit `art_`-Ankern nur ab 2022 (44/
+58/77/80/41 Treffer je Jahrgang 2022–2026); Curia Vista OData ohne Schlüssel
+(49 Entitäten, `Objective`/`Voting`/`Resolution` als Join-Pfad, harte
+1000er-Serverpaginierung). Kantonal: BS `data.bs.ch` CC BY 4.0 reichhaltig,
+ZH nur CMI-Rohfeed ohne Materialien-Link. Bund-Wegleitungen: Top-8 BSV-Werke
+priorisiert vor den übrigen Ämtern. Vorbild buzer.de-Muster (Point-in-Time-URL
+je Paragraphenfassung, Absatz-Synopse). Maschinell recherchiert; fachliche
+Abnahme David offen.
+
 ## register/ — fortlaufend gepflegt
 
 | Dokument | Inhalt |
