@@ -149,10 +149,29 @@ test.describe('Norm-Sprung in der normalen Suchleiste (A5)', () => {
     await expect(page.getByRole('dialog', { name: /Sprung zum Artikel/ })).toHaveCount(0)
   })
 
-  test('Landeplatz-CTA auf /gesetze fokussiert die Suchleiste', async ({ page }) => {
+  // ── DEKLARIERTE ANPASSUNG (R12A/D22, 6.9.2026) · DER KASTEN IST WEG, DER
+  //    WEG IST GEBLIEBEN ────────────────────────────────────────────────────
+  // Hier stand «Landeplatz-CTA auf /gesetze fokussiert die Suchleiste»: der
+  // Kasten «Direkt zum Artikel springen» auf /gesetze tat nichts anderes, als
+  // die Kopf-Suche zu fokussieren — die dritte Suche derselben Seite (D22
+  // Ziff. 3). Er ist entfernt. Was er versprach, muss der verbliebene Weg
+  // halten, und genau das prüft dieser Test jetzt END-ZU-END statt nur den
+  // Fokus: ab /gesetze «OR 257d» in die Kopf-Suche, Enter, Artikel 257d OR.
+  // Die Zusicherung ist damit schärfer, nicht schwächer.
+  test('Norm-Sprung ab /gesetze ohne CTA-Kasten: «OR 257d» → Art. 257d OR', async ({ page }) => {
     await page.goto('/gesetze')
-    await page.getByRole('main').getByRole('button', { name: /Direkt zum Artikel springen/ }).click()
-    await expect(sucheFeld(page)).toBeFocused()
+    // Der Kasten existiert nicht mehr (Rot-Beweis-Richtung: käme er zurück,
+    // stünde die dritte Suche wieder da).
+    await expect(page.getByRole('main').getByRole('button', { name: /Direkt zum Artikel springen/ })).toHaveCount(0)
+    const feld = sucheFeld(page)
+    await expect(feld).toBeVisible({ timeout: 20000 })
+    await feld.click()
+    await feld.fill('OR 257d')
+    const box = listbox(page)
+    await expect(box.getByText('Sprung', { exact: true })).toBeVisible({ timeout: 20000 })
+    await page.keyboard.press('Enter')
+    await expect(page).toHaveURL(/\/gesetze\/bund\/OR#art-257_d$/, { timeout: 20000 })
+    await expect(page.getByRole('heading', { level: 1 })).toContainText('OR', { timeout: 20000 })
   })
 
   // A9 (Querschnitt, DoD 10.4): Tippen/Navigieren/Springen bleibt unter starker
@@ -187,8 +206,13 @@ test.describe('Norm-Sprung in der normalen Suchleiste (A5)', () => {
     // Test CLS 0 bei 10×, 20× und 30× Drossel; ohne diese Latte riss er ab 8×
     // reproduzierbar (5 von 8 Läufen, bitgleiche Werte). Reine Ready-Bedingung —
     // Budget und Prüfschritte unverändert (§6.3).
+    // DEKLARIERTE ANPASSUNG (R12A/D22): die Ready-Latte hing am CTA-Kasten, der
+    // entfallen ist. Sie greift jetzt die Kernerlass-Zeile derselben Route —
+    // ebenfalls Routen-Inhalt (nicht App-Shell), also derselbe Beweis dafür,
+    // dass die Route und nicht nur die Shell steht. Budget und Prüfschritte
+    // unverändert (§6.3).
     await expect(
-      page.getByRole('main').getByRole('button', { name: /Direkt zum Artikel springen/ }),
+      page.getByRole('main').getByRole('link', { name: 'OR', exact: true }),
     ).toBeVisible({ timeout: 20000 })
     await feld.click()
     const box = listbox(page)

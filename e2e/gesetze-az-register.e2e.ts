@@ -99,9 +99,13 @@ test.describe('IA-3 · A–Z-Register — Budget-Walk + Einsortierung', () => {
     // jetzt den gehaltvollen Default-Inhalt des Landeplatzes).
     await expect(page.getByRole('region', { name: 'Register-Liste' })).toHaveCount(0)
     await expect(page.getByText(/Einen Anfangsbuchstaben wählen/)).toBeVisible()
-    // Die Sprung-Karte (HeaderSuche-CTA) bleibt unverändert daneben bestehen
-    // (kein dritter Suchpfad, A5).
-    await expect(page.getByRole('button', { name: /Direkt zum Artikel springen/ })).toBeVisible()
+    // DEKLARIERTE ANPASSUNG (R12A/D22, 6.9.2026): die Sprung-KARTE ist entfallen
+    // — sie war die dritte Suche derselben Seite und tat nichts, als die
+    // Kopf-Suche zu fokussieren. An ihrer Stelle steht die Kernerlass-Zeile
+    // (R12 «Wege verkürzen»). Zusicherung dieses Tests unverändert: neben dem
+    // schlanken Register-Hinweis steht weiterhin ein Einstieg, keine leere
+    // Fläche. Der Norm-Sprung selbst ist in `norm-sprung.e2e.ts` bewiesen.
+    await expect(page.getByRole('link', { name: 'OR', exact: true })).toBeVisible()
   })
 
   // LM-162 (B6-N1, Sichtprüfung 29.7.2026): «Der Kasten wächst mit seinem

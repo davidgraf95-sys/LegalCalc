@@ -337,12 +337,13 @@ export function Rechtsprechung() {
 
   return (
     <div className="space-y-6">
-      {/* D11 (David 6.9.2026) — Kopf-Regel für ALLE fünf Übersichten, Herleitung
-          in `pages/Gesetze.tsx`: H1 = Bereichsname wie im Reiter, darüber EINE
-          Ausgabe-Zeile aus dem Register, kein Erklär-Absatz. */}
+      {/* D11/D22 (David 6.9.2026) — Kopf-Regel für ALLE fünf Übersichten,
+          Herleitung in `components/layout/SeitenKopf.tsx`: H1 = Bereichsname
+          wie im Reiter, DARUNTER die Ausgabe-Zeile aus dem Register — keine
+          Overline, keine halbe Haarlinie, kein Erklär-Absatz. */}
       <SeitenKopf
-        overline={`${nf(STARTSEITE_ZAEHLER.rechtsprechungVolltext)} Entscheide des Bundesgerichts und kantonaler Gerichte im Volltext`}
         titel="Rechtsprechung"
+        ausgabe={`${nf(STARTSEITE_ZAEHLER.rechtsprechungVolltext)} Entscheide des Bundesgerichts und kantonaler Gerichte im Volltext`}
       />
 
       {fehler && (
@@ -367,7 +368,8 @@ export function Rechtsprechung() {
       {alle && alle.length > 0 && (
         <div className={pk('lg:grid lg:grid-cols-[14rem_minmax(0,1fr)] lg:gap-6', '@3xl/pane:grid @3xl/pane:grid-cols-[14rem_minmax(0,1fr)] @3xl/pane:gap-6')}>
           {/* Links: Sachgebiets-Rail (Mobil oben als Chip-Band). */}
-          <div className={pk('mb-4 lg:mb-0', 'mb-4 @3xl/pane:mb-0')}>
+          {/* D22 Ziff. 4: @390 stand die Rail 49 px über der Live-Suche (Budget 48). */}
+          <div className={pk('mb-3 lg:mb-0', 'mb-3 @3xl/pane:mb-0')}>
             <SachgebietKacheln
               zaehler={railZaehler}
               gesamt={railGesamt}

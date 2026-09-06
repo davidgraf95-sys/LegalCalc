@@ -3021,3 +3021,69 @@ html[data-lr6-anker-warten] footer { visibility: hidden; }
   border-left: 3px solid var(--rule-artikel);
 }
 .lr7-bez-block[data-reg] { min-width: 0; }
+
+/* ═══ W2·24-R12A · ÜBERSICHTS-KÖPFE (Präfix `.ub-`, additiv am Dateiende) ═════
+   D22 (David 6.9.2026, Bild /gesetze @~1160): «hier hat es wieder komische
+   lücken». Drei Ursachen, alle in der Kopf-Zone der fünf Übersichten:
+   die Ausgabe-Zeile stand ÜBER dem Titel und war durch die halbe Haarlinie
+   (`scale-rule`) von ihm getrennt; das Filterfeld sass rechtsbündig in einer
+   halbleeren Zeile; darunter stand ein Kasten mit einer DRITTEN Suche.
+   Dieser Block trägt die Ersatz-Anatomie: eine Ausgabe-Zeile unter dem Titel,
+   EINE Filterzeile über die volle Inhaltsbreite (Label über Feld, wie
+   `.werk label` im Referenzbild) und Facetten als Text-Schalter mit
+   Unterstrich statt als Kästen. Kein Bestand berührt — fällt der Block weg,
+   stehen dieselben Elemente ungestylt, aber vollständig da.
+   Additiv am Dateiende, weil an `index.css` in dieser Runde mehrere Agenten
+   bauen (dieselbe Begründung wie beim `.lr6-`-Block darüber). */
+
+/* Ausgabe-Zeile unter der H1: Archivo 13 px, ink-500 (Zähler aus dem
+   Register — die Zahlen tragen `.num` am Konsumenten). */
+.ub-ausgabe {
+  font-family: var(--font-sans), system-ui, sans-serif;
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  color: var(--ink-500);
+  margin: 0;
+}
+
+/* Filterzeile: Label über Feld, volle Inhaltsbreite. Das Feld selbst bleibt
+   `.lc-input` (Unterstrich-Anatomie, R3-F3) — hier steht nur die Hülle. */
+.ub-filter { display: grid; gap: 0.25rem; width: 100%; }
+.ub-filter-fuss {
+  display: flex; flex-wrap: wrap; align-items: baseline;
+  gap: 0.25rem 1rem;
+  font-family: var(--font-sans), system-ui, sans-serif;
+  font-size: 0.75rem; line-height: 1.5; color: var(--ink-500);
+  margin: 0;
+}
+
+/* Facetten als TEXT-Schalter (D22: «keine Kästen»). Der aktive Zustand trägt
+   den 2-px-Registerstrich der Domäne, der ruhende einen unsichtbaren Platz-
+   halter derselben Stärke — die Zeile springt beim Umschalten nicht. */
+.ub-schalter {
+  appearance: none; background: none; border: 0; border-radius: 0;
+  padding: 0.25rem 0; cursor: pointer;
+  font-family: var(--font-sans), system-ui, sans-serif;
+  font-size: 0.8125rem; line-height: 1.5; font-weight: 500;
+  color: var(--ink-500);
+  border-bottom: 2px solid transparent;
+  transition: color .15s, border-color .15s;
+}
+.ub-schalter:hover { color: var(--ink-900); }
+.ub-schalter[aria-selected="true"], .ub-schalter[aria-pressed="true"] {
+  color: var(--ink-900); border-bottom-color: var(--reg-g);
+}
+.ub-schalter:focus-visible { outline: none; color: var(--ink-900); border-bottom-color: var(--focus); }
+
+/* Kernerlasse: eine Zeile Links, keine Kacheln. Der Bereich trägt den
+   Registerstrich «Gesetze» als linke Kante — dieselbe Marke, die die
+   Seitenleiste führt. */
+.ub-kern { display: flex; flex-wrap: wrap; gap: 0.25rem 1.25rem; align-items: baseline; margin: 0; padding: 0; list-style: none; }
+.ub-kern a {
+  font-family: var(--font-sans), system-ui, sans-serif;
+  font-size: 0.875rem; font-weight: 500; line-height: 1.5;
+  color: var(--ink-900);
+  /* Unterstrichen wie jeder Link (§5/R3-F1) — nur die Linie ist ruhig. */
+  text-decoration: underline; text-decoration-color: var(--rule-soft); text-underline-offset: 3px;
+}
+.ub-kern a:hover { text-decoration-color: var(--reg-g); }
