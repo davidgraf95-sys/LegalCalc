@@ -131,10 +131,6 @@ function Einstieg({ bund, bundArtikel, kantone, kantonErlasse, international, on
             extra={k.legende ? <ErfassungsgradLegende className="mt-0.5" /> : undefined} />
         ))}
       </div>
-      {/* D11: der §8-Vorbehalt gehört an den Fuss, nicht in den Einstieg. */}
-      <p className="border-t border-line/60 pt-3 text-micro text-ink-500 max-w-reading">
-        Geltende Fassung mit Stand und amtlichem Live-Link je Erlass; massgeblich bleibt stets {AMTLICHE_FASSUNG_NOMEN}.
-      </p>
     </div>
   );
 }
@@ -666,6 +662,10 @@ export function Gesetze() {
           </div>
         </>
       )}
+      {/* D11: der §8-Vorbehalt gehört an den Fuss, nicht in den Einstieg. */}
+      <p className="border-t border-line/60 pt-3 text-micro text-ink-500 max-w-reading">
+        Geltende Fassung mit Stand und amtlichem Live-Link je Erlass; massgeblich bleibt stets {AMTLICHE_FASSUNG_NOMEN}.
+      </p>
     </div>
   );
 }

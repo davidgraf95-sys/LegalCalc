@@ -148,14 +148,28 @@ test.describe('S2 · WCAG 1.4.8 am Fliesstext (≤ 80 ch, lh ≥ 1.5)', () => {
   // verspricht die V2-Stufe aber für den LESER, und die neue Hülle ist sein
   // Zielzustand — also wird sie hier ausdrücklich gemessen, statt sie aus der
   // Kern-Zugehörigkeit zu folgern. Erwartung sind DIESELBEN Werte wie in V1
-  // (17.00 px / 26.35 px = lh 1.55): V3 gated nur den Schriftregler, nicht die
+  // (17.00 px / 27.54 px = lh 1.62, s. Deklaration unten): V3 gated nur den Schriftregler, nicht die
   // Grundstufe. Genau das macht den Fall wertvoll — er würde rot, sobald die neue
   // Hülle die Stufe eigenmächtig verstellt oder ein V3-Override sie überschreibt.
   //
   // ROT ZU BEKOMMEN (§6.7): in `index.css` die Regler-Regel auf `[data-leser-v3]`
   // ohne `:not([data-leserschrift="normal"])` legen (V3 bekäme eine andere
   // Grundgrösse als V1) oder in `LeserRahmenV3` eine eigene Textstufe setzen.
-  test('StPO @1440 unter ?leser=v3: dieselbe Stufe wie in der Ist-Hülle (17.00 / 26.35 px)', async ({ page }) => {
+  // ── §6.3-DEKLARATION (Nachzug W2·24-R4, gebucht in R6 am 6.9.2026) ────────
+  // Die erwartete Zeilenhöhe ist 27.54 px (= 17 × 1.62), nicht 26.35 (1.55).
+  // Die Stufe `leser-text` steht seit R4 auf **1.62** (`tailwind.config.js`,
+  // Wert aus dem freigegebenen Referenzbild); R4 hat den Unit-Wächter
+  // `leser-typo-tokens.test.ts` deklariert nachgezogen, diesen Fall aber nicht —
+  // er ist seit dem R4-Merge rot und lag bereits auf dem R6-Basis-Commit
+  // 0834cbd7b so vor (dort gegengelesen: `tailwind.config.js:195` führt
+  // `'leser-text': ['1.0625rem', { lineHeight: '1.62' }]`). Kein R6-Bau hat ihn
+  // verursacht; er wird hier nur nachgeführt, weil ein rotes Tor, das niemand
+  // bucht, beim nächsten Lauf als Rauschen gilt (§17).
+  // Die ABSICHT bleibt unangetastet: Grösse UND Zeilenhöhe kommen aus der
+  // Typo-Stufe, nicht aus einem Override in der V3-Hülle; die SC-1.4.8-Zusage
+  // (lh-Quotient ≥ 1.5) steht unverändert darunter und wird durch 1.62 sogar
+  // komfortabler erfüllt.
+  test('StPO @1440 unter ?leser=v3: dieselbe Stufe wie in der Ist-Hülle (17.00 / 27.54 px)', async ({ page }) => {
     await page.setViewportSize({ width: 1440, height: 900 });
     await page.goto('/gesetze/bund/STPO');
     await expect(page.locator('#art-1')).toBeVisible();
@@ -174,7 +188,7 @@ test.describe('S2 · WCAG 1.4.8 am Fliesstext (≤ 80 ch, lh ≥ 1.5)', () => {
     });
     expect(typo, 'Fliesstext-Absatz im V3-Lese-Container gefunden').not.toBeNull();
     expect(typo!.fs, 'V3: Fliesstext-Grösse 17 px (F3 = V2)').toBeCloseTo(17, 1);
-    expect(typo!.lh, 'V3: Zeilenhöhe 26.35 px = lh 1.55').toBeCloseTo(26.35, 1);
+    expect(typo!.lh, 'V3: Zeilenhöhe 27.54 px = lh 1.62 (R4-Stufe)').toBeCloseTo(27.54, 1);
     expect(typo!.lh / typo!.fs, 'V3: lh-Quotient ≥ 1.5 (SC 1.4.8)').toBeGreaterThanOrEqual(1.5);
   });
 });
@@ -338,13 +352,31 @@ test.describe('S2 · Schalter-Rundlauf ist verlustfrei (A1-konform)', () => {
       await page.waitForTimeout(150);
     };
 
+    // ── §6.3-DEKLARATION (Nachzug W2·24-R4, gebucht in R6 am 6.9.2026) ──────
+    // Die WIRKUNGS-Sonde misst nicht mehr die Artikel-HÖHEN, sondern die Zahl
+    // der sichtbaren Beiwerk-Knoten. Grund: R4 hat den Fassungs-Slot im
+    // Satzspiegel in die MARGINALIE verlegt (`ArtikelLeser`, `histInRand =
+    // spiegel !== 'zeile'`), und dort bestimmt er die Artikelhöhe nicht mehr —
+    // die kommt aus der Textspalte. Der Schalter WIRKT also weiterhin, nur
+    // nicht mehr in der Grösse, die diese Sonde gelesen hat. Das lag bereits
+    // auf dem R6-Basis-Commit 0834cbd7b so vor (dort gegengelesen:
+    // `ArtikelLeser.tsx:347` und `SPIEGEL_MIN_MARG` = 45.625 rem = 730 px,
+    // während die Lese-Zelle @1280 764 px misst ⇒ Marginalie steht).
+    // Die ABSICHT ist unverändert und wird strenger erfüllt: der Schalter muss
+    // beweisbar etwas tun (§6.7) — sichtbar/unsichtbar ist die Sache selbst,
+    // eine Höhendifferenz war immer nur ihr Nebeneffekt. Die
+    // RUNDLAUF-Prüfung darunter misst weiterhin die Höhen, byte-gleich.
+    const beiwerkSichtbar = () => page.evaluate(() => [...document.querySelectorAll(
+      '[data-hist-slot] [data-historie-zeile], [data-fn-apparat], [data-fn-marker]')]
+      .filter((e) => (e as HTMLElement).checkVisibility()).length);
     // Ä116: V3 «Fassung» / V1 «Änderungsvermerke» (helpers/leserBeschriftung).
     for (const name of [/^Fussnoten/, VERMERKE_SCHALTER_NAME]) {
+      const wirkungVorher = await beiwerkSichtbar();
+      expect(wirkungVorher, `Schalter «${String(name)}»: nichts Sichtbares zum Schalten`).toBeGreaterThan(0);
       await schalten(name);          // an → aus
-      const aus = await hoehen();
       // Der Schalter muss überhaupt WIRKEN — sonst wäre der Rundlauf unten
       // trivial grün (ein Schalter ohne Wirkung besteht ihn immer, §6.7).
-      expect(aus.join(','), `Schalter «${String(name)}» ändert gar nichts`).not.toBe(vorher.join(','));
+      expect(await beiwerkSichtbar(), `Schalter «${String(name)}» ändert gar nichts`).not.toBe(wirkungVorher);
       await schalten(name);          // aus → an
       expect(await hoehen(), `Schalter «${String(name)}»: Rundlauf lässt einen Rest zurück`).toEqual(vorher);
     }

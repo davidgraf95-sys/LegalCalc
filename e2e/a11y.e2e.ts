@@ -184,7 +184,13 @@ test('Zuständigkeit mit PLZ-Auswahl-Kacheln', async ({ page }, testInfo) => {
 // (2) ein Reader (BS-640.100) — die beiden Orte der UI-Quick-Wins.
 test('Gesetze — Kanton BS (eingeklappt)', async ({ page }, testInfo) => {
   await oeffnen(page, '/gesetze?ebene=kanton&kt=BS')
-  await expect(page.getByRole('heading', { name: 'Schweizer Gesetzessammlung' })).toBeVisible()
+// ── §6.3-DEKLARATION (W2·24-R6/D11, 6.9.2026) · DIE H1 HEISST «GESETZE» ─────
+// David 6.9.2026 zum Bild /gesetze: Overline «Rechtssammlung Schweiz» + H1
+// «Schweizer Gesetzessammlung» + Erklär-Absatz sagten dreimal dasselbe. Die H1
+// trägt seither den BEREICHSNAMEN — dasselbe Wort wie Reiter und Navigation.
+// Deklarierte fachliche Änderung: die ERWARTUNG wandert mit, die ABSICHT des
+// Falls (die Seite ist da und trägt eine H1) bleibt unberührt.
+  await expect(page.getByRole('heading', { name: 'Gesetze', exact: true })).toBeVisible()
   // Kanton-Header (Wappen + Name) ist da, die Systematik gerendert.
   await expect(page.getByRole('heading', { level: 1 })).toBeVisible()
   await axePruefen(page, testInfo, 'gesetze-kanton-BS')
