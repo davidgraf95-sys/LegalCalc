@@ -208,13 +208,19 @@ describe('Startseite R3 — Inhaltsverzeichnis der Sammlung (deklarierte Anpassu
     expect(html).not.toContain('Berechnung statt KI');
     // Begrüssung + Datum «T. Monat JJJJ» (weiterhin ohne tickende Uhr).
     expect(html).toMatch(/\d{1,2}\.\s(Januar|Februar|März|April|Mai|Juni|Juli|August|September|Oktober|November|Dezember)\s\d{4}/);
-    // Die EINE Suche bleibt mit ihrer Landmark und ihrem Feldtyp.
-    expect(html).toContain('role="search"');
-    expect(html).toContain('type="search"');
-    // Beispiel-Verweise auf echte Korpus-Ziele (aus dem Chip-Streifen geworden).
-    expect(html).toContain('href="/gesetze/bund/OR#art-336_c"');
-    expect(html).toContain('href="/rechtsprechung/bge_152_V_52"');
-    expect(html).toContain('href="/vorlagen/arbeitsvertrag"');
+    // ── DEKLARIERTE ANPASSUNG (§6.3, W2·24-R5-F1C, David-Befund D18, 6.9.2026)
+    // «insgesamt braucht es auf der startseite keine suche. nur oben reicht».
+    // Hier standen drei Erwartungen an die Hero-Suche (`role="search"`,
+    // `type="search"`) und an die Beispiel-Verweise unter ihr
+    // (Art. 336c OR · BGE 152 V 52 · Arbeitsvertrag). Beides ist mit D18
+    // entfallen: die EINE Suche steht im Titelblatt (`layout/HeaderSuche`, auf
+    // JEDER Route — der `sucheHtml`-Block oben in dieser Datei prüft sie
+    // unverändert, auch für die Adresse «/»), die Beispiel-Links fielen der
+    // Sprach-Diät zum Opfer. Statt die Erwartungen zu streichen, werden sie
+    // UMGEDREHT: die Startseite trägt jetzt nachweislich KEIN eigenes Suchfeld
+    // — sonst wären es wieder zwei, und genau das war Davids Befund.
+    expect(html, 'die Startseite trägt kein eigenes Suchfeld mehr (D18)').not.toContain('role="search"');
+    expect(html).not.toContain('type="search"');
   });
 
   it('die vier Bestände stehen als Listen mit Zahlen — keine Kachel-Optik mehr', () => {

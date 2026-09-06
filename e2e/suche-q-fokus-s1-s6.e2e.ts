@@ -243,69 +243,84 @@ test.describe('Tastaturfalle in der globalen Suche (Cowork-Befund 38)', () => {
   })
 })
 
-// ═══ D10 (David-Befund 6.9.2026) · AUF «/» GIBT ES GENAU EINE SUCHE ══════════
+// ═══ D10/D18 · AUF «/» GIBT ES GENAU EINE SUCHE — UND ZWAR DIE IM KOPF ══════
 //
-// Wortlaut David: «Auf der Startseite wirft ein Klick ins Hero-Suchfeld den
-// Fokus in die Suchleiste OBEN (Titelblatt)».
-//
-// BEFUND-LAGE, ehrlich (§8): Am zusammengeführten Stand `0834cbd7b` liess sich
-// die Fokus-Umleitung NICHT reproduzieren — gemessen 6.9.2026 im Preview über
-// sechs Lagen (Kaltstart @1030/@1280/@1440/@390, SPA-Weg /gesetze → «/»,
-// Aufruf mit `?q=`, Startseite als zweites Pane): auf «/» stand jedes Mal
-// GENAU EIN `[role="search"] input` im Dokument, und nach dem Klick war er das
-// `document.activeElement`. Der Grund ist der `!aufStartseite`-Zweig in
-// `layout/Topbar.tsx` (seit W2·23 auf main). Was David sah, ist mit hoher
-// Wahrscheinlichkeit der ANDERE Teil desselben Bildes — das viewport-verankerte
-// Kopf-Panel (D9), das unterhalb 1400 px quer über den Kopf lief und mit dem
-// Feld darunter nichts mehr zu tun hatte.
-//
-// DIESER FALL IST DARUM EIN WÄCHTER, KEIN FIX: Er hält die Eigenschaft fest,
-// die David eingefordert hat, damit sie nicht unbemerkt verloren geht — sie
-// hing bisher an einem einzelnen `&&` ohne jede Sonde.
+// ── DEKLARIERTE TEST-ÄNDERUNG (§6.3, W2·24-R5-F1C, 6.9.2026) ────────────────
+// Der Fall stand hier als D10-Wächter mit UMGEKEHRTEM Vorzeichen: auf «/» sollte
+// das eine Suchfeld der HERO sein und der Kopf keines tragen. David hat die
+// Frage am 6.9.2026 anders entschieden — «insgesamt braucht es auf der
+// startseite keine suche. nur oben reicht» (D18). Die geprüfte ZUSAGE ist
+// unverändert und war immer die eigentliche: auf «/» gibt es GENAU EIN
+// Suchfeld, der Fokus bleibt dort, das Kürzel «/» zielt darauf und das
+// Trefferpanel öffnet an diesem Feld. Gedreht ist nur, WELCHES Feld das ist.
+// Umfang und Breiten (@1440/@1030/@390) bleiben; die Prüfung wird dabei nicht
+// schwächer, sondern schärfer — sie gilt jetzt für dasselbe Feld wie auf jeder
+// anderen Route (§5: ein Suchweg).
 //
 // ROT ZU BEKOMMEN (§6.7 — einmal gefahren, 6.9.2026): in `layout/Topbar.tsx`
-// `{!aufStartseite && (<HeaderSuche … />)}` durch `{(<HeaderSuche … />)}`
-// ersetzen ⇒ zwei Suchfelder auf «/», und «/» landet im Kopf statt im Hero.
-test.describe('D10 · «/» trägt EIN Suchfeld, und der Fokus bleibt dort', () => {
-  const HERO = 'section[role="search"][aria-label="Universal-Suche"] input'
+// die HeaderSuche wieder hinter `{!aufStartseite && …}` legen ⇒ «/» trägt kein
+// Feld mehr, alle vier Fälle reissen.
+test.describe('D18 · «/» trägt EIN Suchfeld, und es steht im Titelblatt', () => {
+  const KOPF = 'header [role="search"] input[type="search"]'
 
-  for (const breite of [1440, 1030, 390]) {
-    test(`@${breite}: ein Feld, Klick und «/» landen im Hero`, async ({ page }) => {
+  for (const breite of [1440, 1030]) {
+    test(`@${breite}: ein Feld, Klick und «/» landen im Kopf`, async ({ page }) => {
       await page.setViewportSize({ width: breite, height: 860 })
       await page.goto('/')
-      await expect(page.locator(HERO)).toBeVisible({ timeout: 20_000 })
-      // (1) Es gibt kein zweites Suchfeld — insbesondere keines im Kopf.
+      await expect(page.locator(KOPF)).toBeVisible({ timeout: 20_000 })
+      // (1) Es gibt kein zweites Suchfeld — insbesondere keines im Inhalt.
       await expect(page.locator('[role="search"] input')).toHaveCount(1)
-      await expect(page.locator('header [role="search"] input')).toHaveCount(0)
-      // (2) Ein Klick bleibt, wo er hingehört — auch ein paar Frames später
-      //     (die frühere Vermutung war eine verzögerte Fokus-Umleitung).
-      await page.locator(HERO).click()
+      await expect(page.locator('main [role="search"] input')).toHaveCount(0)
+      // (2) Ein Klick bleibt, wo er hingehört — auch ein paar Frames später.
+      await page.locator(KOPF).click()
       await page.waitForTimeout(900)
-      expect(await page.evaluate(() => document.activeElement?.closest('header') !== null
-        ? 'im Kopf' : (document.activeElement as HTMLInputElement)?.placeholder ?? 'nirgends'))
-        .toContain('Art. 336c OR')
-      // (3) Das Kürzel «/» zielt auf dasselbe Feld (die Umleitung in
-      //     `Topbar.useSuchKuerzelUmleitung` sucht das erste Feld AUSSERHALB
-      //     des Kopfes — auf «/» ist das der Hero).
-      await page.locator(HERO).blur()
+      expect(await page.evaluate(() => document.activeElement?.closest('header') !== null)).toBe(true)
+      // (3) Das Kürzel «/» zielt auf dasselbe Feld.
+      await page.locator(KOPF).blur()
       await page.keyboard.press('/')
-      await expect(page.locator(HERO)).toBeFocused({ timeout: 10_000 })
+      await expect(page.locator(KOPF)).toBeFocused({ timeout: 10_000 })
     })
   }
 
-  test('@1440: das Treffer-Panel öffnet UNTER dem Hero-Feld, nicht im Kopf', async ({ page }) => {
+  // @390 trägt der Streifen im Ruhezustand die Lupe statt des Feldes
+  // (C1/B10/L3) — die Zusage «genau eine Suche, und sie ist im Kopf» gilt dort
+  // über den Lupen-Weg. Gemessen wird darum der geöffnete Zustand.
+  test('@390: die Lupe im Kopf öffnet das eine Feld', async ({ page }) => {
+    await page.setViewportSize({ width: 390, height: 860 })
+    await page.goto('/')
+    await expect(page.locator('header [data-suche-lupe]')).toBeVisible({ timeout: 20_000 })
+    await expect(page.locator('main [role="search"] input')).toHaveCount(0)
+    const feld = await kopfSucheOeffnen(page)
+    await expect(feld).toBeFocused()
+    expect(await feld.evaluate((el) => el.closest('header') !== null)).toBe(true)
+  })
+
+  test('@1440: das Treffer-Panel öffnet AM Kopf-Feld, nicht im Inhalt', async ({ page }) => {
     await page.setViewportSize({ width: 1440, height: 900 })
     await page.goto('/')
-    await page.locator(HERO).click()
-    await page.locator(HERO).fill('kündigung')
+    await page.locator(KOPF).click()
+    await page.locator(KOPF).fill('kündigung')
     const panel = page.locator('[role="listbox"]').first()
     await expect(panel).toBeVisible({ timeout: 20_000 })
     const lage = await page.evaluate((sel) => {
       const f = document.querySelector(sel)!.getBoundingClientRect()
       const p = document.querySelector('[role="listbox"]')!.getBoundingClientRect()
-      return { unterFeld: p.top >= f.bottom, imKopf: !!document.querySelector('header [role="listbox"]') }
-    }, HERO)
-    expect(lage.imKopf, 'das Panel hängt im Titelblatt statt am Hero').toBe(false)
+      return { unterFeld: p.top >= f.bottom - 1, imKopf: !!document.querySelector('header [role="listbox"]') }
+    }, KOPF)
+    expect(lage.imKopf, 'das Panel hängt nicht am Kopf-Feld').toBe(true)
     expect(lage.unterFeld, 'das Panel steht nicht unter dem Feld').toBe(true)
   })
+})
+
+// ── D18 · DER `?q=`-PERMALINK GEHT NICHT VERLOREN ───────────────────────────
+// Die Hero-Suche schrieb ihren Begriff in `/?q=…`; solche Adressen sind geteilt
+// worden und müssen weiter tragen (David: «keine funktion darf verloren
+// gehen»). Die Kopf-Suche ist bewusst ein Dropdown OHNE Adress-Kopplung — der
+// Permalink zieht darum auf die Volltext-Suche, die `?q=` seit jeher liest.
+// ROT ZU BEKOMMEN: die Weiterleitung in `components/start/SuchBlock.tsx`
+// entfernen ⇒ `/?q=…` bleibt auf «/» stehen und filtert nichts.
+test('D18 · `/?q=…` führt auf die Volltext-Suche mit demselben Begriff', async ({ page }) => {
+  await page.goto('/?q=k%C3%BCndigung')
+  await expect(page).toHaveURL(/\/suche\?q=k%C3%BCndigung/, { timeout: 20_000 })
+  await expect(page.getByRole('searchbox', { name: /durchsuchen/ }).first()).toHaveValue('kündigung')
 })

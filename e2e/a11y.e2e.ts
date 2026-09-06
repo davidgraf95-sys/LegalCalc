@@ -112,20 +112,22 @@ test('Startseite', async ({ page }, testInfo) => {
   await axePruefen(page, testInfo, 'startseite')
 })
 
-test('Startseite mit offener Universal-Suche', async ({ page }, testInfo) => {
+test('Startseite mit offener Kopf-Suche', async ({ page }, testInfo) => {
   // Startseiten-Überarbeitung: der frühere Katalog-«Register-Panel»-Zustand
   // existiert auf «/» nicht mehr (Katalog lebt auf /recherche). Geprüft wird
-  // stattdessen der wichtigste neue interaktive Zustand — die offene Universal-
-  // Suche mit gruppierter Trefferliste (Katalog-Gruppe rendert synchron, ohne
-  // Lazy-Daten, daher sofort sichtbar).
+  // stattdessen der wichtigste interaktive Zustand — die offene Suche mit
+  // gruppierter Trefferliste (Katalog-Gruppe rendert synchron, ohne Lazy-Daten,
+  // daher sofort sichtbar).
   await oeffnen(page, '/')
-  await page.locator('section[role="search"] input[type="search"]').fill('kündigung')
-  // §6.3-DEKLARATION (W2·24-R5-F1, David-Befund D9, 6.9.2026): das Trefferpanel
-  // hiess `.lc-card` und trug damit die Kasten-Anatomie der Karten. Seit D9 ist es
-  // an BEIDEN Orten (Titelblatt-Suche und Hero) derselbe Baustein mit derselben,
-  // kanten-losen Anatomie `.lc-suchpanel` — geändert ist nur der Selektor, weder
-  // das ausgewählte Element noch die Prüfung dahinter.
-  await page.locator('section[role="search"] .lc-suchpanel').waitFor({ state: 'visible' })
+  await page.locator('header [role="search"] input[type="search"]').fill('kündigung')
+  // §6.3-DEKLARATION (W2·24-R5-F1C, David-Befund D18, 6.9.2026): «insgesamt
+  // braucht es auf der startseite keine suche. nur oben reicht» — die
+  // Hero-Suche auf «/» ist entfallen, die EINE Suche steht im Titelblatt.
+  // Geprüft wird unverändert derselbe Zustand (offene Suche mit gruppierter
+  // Trefferliste, dasselbe Panel `.lc-suchpanel`), nur steht das Feld jetzt
+  // im `header` statt in einer `section` der Seite. Assertion, Umfang und
+  // axe-Regeln unverändert.
+  await page.locator('header [role="search"] .lc-suchpanel').waitFor({ state: 'visible' })
   await axePruefen(page, testInfo, 'startseite-suche')
 })
 
@@ -302,15 +304,17 @@ const DUNKEL_PUNKTE: Array<{
 }> = [
   { titel: 'Startseite', punkt: 'startseite', url: '/' },
   {
-    titel: 'Startseite mit offener Universal-Suche', punkt: 'startseite-suche', url: '/',
+    titel: 'Startseite mit offener Kopf-Suche', punkt: 'startseite-suche', url: '/',
     herstellen: async (page) => {
-      await page.locator('section[role="search"] input[type="search"]').fill('kündigung')
-      // §6.3-DEKLARATION (W2·24-R5-F1, David-Befund D9, 6.9.2026): das Trefferpanel
-      // hiess `.lc-card` und trug damit die Kasten-Anatomie der Karten. Seit D9 ist es
-      // an BEIDEN Orten (Titelblatt-Suche und Hero) derselbe Baustein mit derselben,
-      // kanten-losen Anatomie `.lc-suchpanel` — geändert ist nur der Selektor, weder
-      // das ausgewählte Element noch die Prüfung dahinter.
-      await page.locator('section[role="search"] .lc-suchpanel').waitFor({ state: 'visible' })
+      await page.locator('header [role="search"] input[type="search"]').fill('kündigung')
+      // §6.3-DEKLARATION (W2·24-R5-F1C, David-Befund D18, 6.9.2026): «insgesamt
+      // braucht es auf der startseite keine suche. nur oben reicht» — die
+      // Hero-Suche auf «/» ist entfallen, die EINE Suche steht im Titelblatt.
+      // Geprüft wird unverändert derselbe Zustand (offene Suche mit gruppierter
+      // Trefferliste, dasselbe Panel `.lc-suchpanel`), nur steht das Feld jetzt
+      // im `header` statt in einer `section` der Seite. Assertion, Umfang und
+      // axe-Regeln unverändert.
+      await page.locator('header [role="search"] .lc-suchpanel').waitFor({ state: 'visible' })
     },
   },
   { titel: 'Tagerechner', punkt: 'tagerechner', url: '/rechner/tagerechner' },
