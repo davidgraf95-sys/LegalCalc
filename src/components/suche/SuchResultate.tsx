@@ -8,6 +8,7 @@ import { MEHR_TREFFER_ID } from './trefferAuswahl';
 import { StatusBadge } from '../verzahnung/StatusBadge';
 import { TrefferZeile, TREFFER_ZEILE_RAHMEN } from '../ui/TrefferZeile';
 import { Leerzustand } from '../ui/Leerzustand';
+import { RegisterMarke } from './RegisterMarke';
 
 // ─── Trefferpanel der Universal-Suche (geteilt: Header-Dropdown + Hero, §5) ──
 //
@@ -39,7 +40,19 @@ function Marke({ text, ton, redundant }: NonNullable<SuchTreffer['marke']>) {
 // in den Katalog-Registern. Hier bleibt nur der BEHÄLTER: der Streifen des
 // Panels (dichtere Polsterung, Hover-Fläche). Der Gruppen-Name kommt aus
 // `TREFFER_ZEILE_RAHMEN` (vorher `group/z`), damit der Titel-Hover greift.
-const ZEILE_CLS = `${TREFFER_ZEILE_RAHMEN} px-4 py-2 no-underline transition-colors hover:bg-brass-100/40`;
+// ── D23 (David 6.9.2026) · EINE ZEILEN-ANATOMIE FÜR BEIDE ZUSTÄNDE ──────────
+// Davids Soll für das Treffer-Panel: «dieselbe Anatomie: Trefferzeilen mit
+// Registerstrich, Kurzform, Art, keine Icons, keine ‹→›» — und die
+// Tastaturauswahl «als Fläche `--well` + Strich (kein Kastenrahmen)».
+// Darum zwei Änderungen an diesem Behälter:
+//  · Hover und Auswahl laufen über DIE PAPIER-STUFE, nicht über eine
+//    Messing-Tönung: `.lc-hover-flaeche` (= `--well`) statt `bg-brass-100/40`,
+//    die Auswahl zusätzlich mit dem 2-px-Kantenstrich (`.hs-aktiv`, index.css).
+//    Die Messing-Tönung war die einzige Farbfläche im ganzen Panel und stach
+//    gegen die Registerstriche, die die Farbe eigentlich tragen sollen.
+//  · Der Registerstrich steht am Zeilenanfang (RegisterMarke, §5) — dasselbe
+//    Zeichen wie im Leerzustand, aus derselben Tabelle (`layout/bereiche`).
+const ZEILE_CLS = `${TREFFER_ZEILE_RAHMEN} px-4 py-2 no-underline transition-colors lc-hover-flaeche`;
 
 // Query-Wörter im Snippet/Untertitel deterministisch hervorheben (S3/#56).
 // WELCHE Stellen das sind, entscheidet die Suche selbst: `hervorhebungsStellen`
@@ -79,6 +92,8 @@ function ZeileInhalt({ t, sprung, q }: { t: SuchTreffer; sprung?: boolean; q: st
     // ist ein CLS-Versprechen (§15.2); darum trägt der Baustein diesen Fall als
     // deklarierte Ausnahme, nicht der Katalog seine Kappung.
     // Norm-Sprung (A5): ↵ signalisiert die Primäraktion «Enter springt».
+    <>
+    <RegisterMarke route={t.href} />
     <TrefferZeile
       streifen
       titel={t.label}
@@ -90,6 +105,7 @@ function ZeileInhalt({ t, sprung, q }: { t: SuchTreffer; sprung?: boolean; q: st
          («Enter springt direkt»). */
       pfeil={sprung ? '↵' : false}
     />
+    </>
   );
 }
 
@@ -111,7 +127,7 @@ function Zeile({ t, onAuswahl, onNavigate, optionId, aktiv, alsOption, sprung, q
     return (
       <li role="option" id={optionId} aria-selected={!!aktiv}
         onClick={() => { onAuswahl?.(); onNavigate?.(t.href); }}
-        className={`${ZEILE_CLS} cursor-pointer${aktiv ? ' bg-brass-100/40' : ''}`}>
+        className={`${ZEILE_CLS} cursor-pointer${aktiv ? ' hs-aktiv' : ''}`}>
         <ZeileInhalt t={t} sprung={sprung} q={q} />
       </li>
     );
@@ -182,9 +198,12 @@ function Gruppe({ g, index, onAuswahl, onNavigate, listboxId, aktivId, q, sektio
               return (
                 <li role="option" id={oid} aria-selected={oid === aktivId}
                   onClick={() => { onAuswahl?.(); onNavigate?.(g.mehrHref!); }}
-                  className={`${ZEILE_CLS} cursor-pointer${oid === aktivId ? ' bg-brass-100/40' : ''}`}>
+                  className={`${ZEILE_CLS} cursor-pointer${oid === aktivId ? ' hs-aktiv' : ''}`}>
                   {/* D9: der Pfeil ist mit dem Pfeil-Muster der Treffer-Zeilen
-                      gefallen — die Zeile sagt ihr Ziel im Wortlaut. */}
+                      gefallen — die Zeile sagt ihr Ziel im Wortlaut.
+                      D23: der (leere) Marken-Platz hält den Titel in der Flucht
+                      der Trefferzeilen darüber. */}
+                  <RegisterMarke route={g.mehrHref!} />
                   <span className="min-w-0 flex-1 text-body-s font-medium text-brass-700 underline">alle {g.gesamt} Treffer anzeigen</span>
                 </li>
               );
@@ -194,7 +213,7 @@ function Gruppe({ g, index, onAuswahl, onNavigate, listboxId, aktivId, q, sektio
   );
 }
 
-export function SuchResultate({ gruppen, allesGeladen, q, onAuswahl, onNavigate, listboxId, aktivId, vorschlag, abdeckung, onVorschlag, sektionsRollen, onLeeren }: {
+export function SuchResultate({ gruppen, allesGeladen, q, onAuswahl, onNavigate, listboxId, aktivId, vorschlag, abdeckung, onVorschlag, sektionsRollen, onLeeren, panelKlasse }: {
   gruppen: SuchGruppe[];
   allesGeladen: boolean;
   q: string;
@@ -215,6 +234,19 @@ export function SuchResultate({ gruppen, allesGeladen, q, onAuswahl, onNavigate,
   sektionsRollen?: boolean;
   /** Setzt die Suche zurück (Weiterweg aus dem Null-Treffer-Leerzustand, B2). */
   onLeeren?: () => void;
+  /** Zusatzklassen an der Listbox selbst (Kopf-Dropdown: Scroll-Kappung).
+   *  WARUM AM role=listbox und nicht an der Hülle: axe `scrollable-region-focusable`
+   *  (serious) verlangt für jede scrollende Fläche einen Tastaturzugang — und
+   *  nimmt genau EINE Fläche aus: den Popup einer Combobox (`isComboboxPopup`,
+   *  d. h. das per `aria-controls` referenzierte Element mit Popup-Rolle). Ein
+   *  `tabIndex={-1}` an der Hülle genügt der Regel NICHT (ihr Check
+   *  `focusable-element` prüft `isInTabOrder`, und −1 ist gerade nicht in der
+   *  Tab-Ordnung); es sah nur deshalb grün aus, weil die Regel erst greift,
+   *  sobald der Inhalt wirklich überläuft — im Parallel-Lauf vom 6.9.2026 tat er
+   *  das und der Fall wurde rot. Scrollt die LISTBOX selbst, greift die Regel
+   *  gar nicht erst, und ein Tab-Stopp im Widget (Cowork-Befund 38) entsteht
+   *  trotzdem nicht. */
+  panelKlasse?: string;
 }) {
   if (q === '') return null;
 
@@ -265,12 +297,17 @@ export function SuchResultate({ gruppen, allesGeladen, q, onAuswahl, onNavigate,
           die Karte beim Fertig-Werden nicht mehr. `invisible` ist eine echte
           Utility (keine Magic-Number, §13); der Slot bleibt aria-hidden. */}
       {gruppen.length > 0 && (
-        <p aria-hidden className={`mb-2 px-1 text-body-s font-medium text-ink-600${nochLaedt ? ' invisible' : ''}`}>{nochLaedt ? ' ' : (kopf || ' ')}</p>
+        /* D23: `px-1` -> `px-4 pt-2.5 pb-1.5`. Die Zeile stand 4 px vom Rand
+           und damit weder in der Flucht der Gruppen-Etiketten darunter (px-4)
+           noch mit Luft zur Feldkante — im Kopf-Dropdown klebte sie seit dem
+           Wegfall der Huellen-Polsterung direkt am Unterstrich des Feldes.
+           Die Flucht gilt an allen drei Orten gleich (§5). */
+        <p aria-hidden className={`px-4 pt-2 pb-1 text-body-s font-medium text-ink-600${nochLaedt ? ' invisible' : ''}`}>{nochLaedt ? ' ' : (kopf || ' ')}</p>
       )}
       {/* «Meinten Sie …?» (S3) — deterministischer Tippfehler-Vorschlag, ausserhalb
           der Listbox (kein Options-Element), setzt bei Klick die Query. */}
       {vorschlag && (
-        <p className="mb-2 border-y border-rule-soft px-4 py-2 text-body-s text-ink-600">
+        <p className="border-y border-rule-soft px-4 py-2 text-body-s text-ink-600">
           Meinten Sie{' '}
           <button type="button" onClick={() => onVorschlag?.(vorschlag)}
             className="font-medium text-brass-700 underline decoration-dotted underline-offset-2 hover:text-brass-600">
@@ -279,7 +316,7 @@ export function SuchResultate({ gruppen, allesGeladen, q, onAuswahl, onNavigate,
           ?
         </p>
       )}
-      <div className="lc-suchpanel overflow-hidden"
+      <div className={`lc-suchpanel${panelKlasse ? ` ${panelKlasse}` : ' overflow-hidden'}`}
         role={listboxId ? 'listbox' : undefined} id={listboxId}
         aria-label={listboxId ? 'Suchtreffer' : undefined}>
         {gruppen.length === 0
@@ -320,7 +357,7 @@ export function SuchResultate({ gruppen, allesGeladen, q, onAuswahl, onNavigate,
         // bleibt hier `micro`: anders als die Hinweise im Leser trägt diese
         // Zeile keinen Fliesstext, sondern eine Zahlen-Bilanz dicht unter dem
         // Trefferzähler.
-        <p className="mt-2 px-1 max-w-kleintext text-micro leading-snug text-ink-600">
+        <p className="px-4 py-2.5 max-w-kleintext text-micro leading-snug text-ink-600">
           {/* «Erlasse (Bund + International)», nicht «Bund-Erlasse» (Cowork-Befund
               32, 18.8.2026): die Zahl zählt alle Volltext-Snapshots der Ebene
               `bund` — darunter die Staatsverträge/EU-Erlasse, die unter dieser

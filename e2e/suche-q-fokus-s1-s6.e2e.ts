@@ -206,12 +206,16 @@ test.describe('S6 · Fokusmodus im Band 480–639 px (dort trägt der Streifen d
 // dieselbe ARIA-Listbox wie die Trefferliste (role=option, Pfeiltasten + Enter
 // über das steuernde Feld) — TAB verlässt das Feld wie jedes normale Kontrollelement.
 test.describe('Tastaturfalle in der globalen Suche (Cowork-Befund 38)', () => {
-  test('Tab verlässt das leere Suchfeld (Verlauf/Einstiege-Fenster) in ≤3 Schritten', async ({ page }) => {
+  // §6.3-DEKLARATION (D23, 6.9.2026): das Panel heisst jetzt «Suche — zuletzt
+  // geöffnet» statt «Suche — Verlauf und Einstiege», weil der Einstiege-Block
+  // ersatzlos gefallen ist. Geprüft wird unverändert die TASTATURFALLE, nicht
+  // der Name; der Regex zieht nur nach.
+  test('Tab verlässt das leere Suchfeld (Verlauf-Fenster) in ≤3 Schritten', async ({ page }) => {
     await page.goto('/kontakt')
     const feld = sucheFeld(page)
     await feld.click()
     // Leerzustand offen (kein Text getippt) — genau der Befund-38-Auslöser.
-    await expect(page.getByRole('listbox', { name: /Verlauf und Einstiege/ })).toBeVisible()
+    await expect(page.getByRole('listbox', { name: /zuletzt geöffnet/i })).toBeVisible()
     await expect(feld).toBeFocused()
 
     let verlassen = false
@@ -225,11 +229,20 @@ test.describe('Tastaturfalle in der globalen Suche (Cowork-Befund 38)', () => {
     await expect(page.locator(':focus')).not.toHaveAttribute('role', 'option')
   })
 
+  // §6.3-DEKLARATION (D23, 6.9.2026): der Leerzustand führt seit D23 NUR noch
+  // den Verlauf (der «Einstiege»-Block ist gefallen, er wiederholte die
+  // Seitenleiste). Ohne Verlauf hat das leere Panel darum keine Optionen mehr,
+  // und ein Pfeiltasten-Fall ohne Optionen prüft nichts. Der Fall legt sich
+  // seinen Verlauf jetzt selbst an — geprüft wird unverändert das
+  // Combobox-Muster (aria-activedescendant folgt der Pfeiltaste, der Fokus
+  // bleibt im Feld), nicht mehr und nicht weniger.
   test('Pfeiltasten navigieren die Vorschläge weiterhin (Combobox-Muster bleibt intakt)', async ({ page }) => {
+    await page.goto('/rechner/tagerechner')
+    await expect(page.locator('h1').first()).toBeVisible()
     await page.goto('/kontakt')
     const feld = sucheFeld(page)
     await feld.click()
-    const box = page.getByRole('listbox', { name: /Verlauf und Einstiege/ })
+    const box = page.getByRole('listbox', { name: /zuletzt geöffnet/i })
     await expect(box).toBeVisible()
     await expect(feld).toHaveAttribute('aria-expanded', 'true')
     await page.keyboard.press('ArrowDown')

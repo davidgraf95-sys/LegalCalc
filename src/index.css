@@ -2540,6 +2540,40 @@
      ist das Panel an beiden Orten dasselbe Ding, wie §5 es verlangt. */
   .lc-suchpanel { background: transparent; border: 0; }
 
+  /* ── D23 (David 6.9.2026, Bild «Kopf-Suche im Leerzustand») · FELD UND PANEL
+        SIND EIN OBJEKT ─────────────────────────────────────────────────────
+     Davids Wortlaut zum Bild: «schau mal wie das aussieht mit der suche. sehr
+     unästhetisch». GEMESSEN am Stand `c0f2972ba`: das Panel hing als
+     `.lc-schwebeflaeche` (weisse Tafel, Radius, `shadow-lg`) mit 6 px Abstand
+     unter dem Feld, trug einen eigenen `min-w-[22rem]`-Boden und war damit an
+     jeder Breite unter 22 rem BREITER als das Feld — zwei Objekte, die
+     nichts miteinander zu tun haben, quer über der Reiterleiste.
+     Die Antwort ist die Anatomie des Referenzbildes (`.frage`, ein Feld mit
+     Unterstrich): das Panel ist die FORTSETZUNG des Feldes nach unten. Es
+     erbt seine Kanten (`inset-x-0` am Anker, kein eigener Mindest-/Höchstwert),
+     setzt ohne Abstand an (`top-full`, kein `mt`), und die Kante des Feldes
+     (`.lc-input`, `border-bottom: 1px solid var(--rule)`) IST seine Oberkante —
+     darum `border-top: 0`. Kein Schatten, kein Radius: was am Feld hängt,
+     schwebt nicht. Papier statt `--paper-raised` aus demselben Grund (die
+     A3-2-Regel «schwebende Fläche nie in der Grundfarbe» greift genau dort
+     nicht, wo nichts schwebt — hier trägt die 1-px-Kante die Trennung).
+     Kein `overflow-hidden`/Radius nötig: die Zeilen enden an der Kante. */
+  .lc-suchpanel-huelle {
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    border-top: 0;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  /* Tastaturauswahl im Such-Panel: eine FLÄCHE (`--well`, die eingesenkte
+     Papierstufe) plus ein Strich an der linken Kante — kein Kastenrahmen und
+     keine Messing-Tönung. `box-shadow: inset` statt `border-left`, damit die
+     Zeile beim Wandern der Auswahl nicht um 2 px einrückt (CLS 0, §15.2).
+     Der Hover läuft über `.lc-hover-flaeche` auf DERSELBEN Fläche — ein
+     Zustand, zwei Anlässe. */
+  .hs-aktiv { background-color: var(--well); box-shadow: inset 2px 0 0 0 var(--rule); }
+
   /* ═══ D5 (David 6.9.2026, Bild Leser-«Ansicht»-Menü) · MENÜ-ANATOMIE ═══════
      Davids Befund am Bild, Punkt für Punkt: «Einträge mit ‹✓ an› rechts, erster
      Eintrag mit hartem 2-px-Fokusrahmen als Kasten, letzter Eintrag zweizeilig
