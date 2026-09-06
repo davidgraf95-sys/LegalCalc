@@ -109,16 +109,29 @@ test.describe('§6.2 · Der Schriftregler steht auf /einstellungen', () => {
 
 test.describe('§6.3 · Die Seitenleiste nennt den Stand des Korpus', () => {
   // ROT ZU BEKOMMEN: den <KorpusStand>-Fuss in `Sidebar.tsx` entfernen.
-  test('Desktop-Leiste: Fuss «Register erzeugt» mit allen drei Registern', async ({ page }) => {
+  //
+  // ── DEKLARIERTE TEST-ÄNDERUNG (§6.3, W2·24-R5-F1, David-Befund D8) ─────────
+  // Der Fuss nannte drei Mal das BUILD-Datum unter der Überschrift «Register
+  // erzeugt» — David 6.9.2026: irreführend, das ist nicht das Alter der
+  // Inhalte. `ui/KorpusStand` führt seither zuerst «Jüngster Eintrag: Gesetze
+  // Stand … · Entscheide … · Materialien …» (buildseitig aus denselben
+  // Registern, `gen:zaehler`) und das Build-Datum klein als «Register erzeugt
+  // am …». Damit heisst die mittlere Sammlung in dieser Zeile «Entscheide»
+  // (das Datum ist ein Entscheiddatum, kein Stand der Rechtsprechung als
+  // Ganzes) — die Erwartung «Rechtsprechung» wird deshalb nachgeführt, und die
+  // §8-Gegenprobe wird SCHÄRFER statt schwächer: die Zeile muss beide
+  // Angaben führen und die Vermischung weiterhin ausschliessen.
+  test('Desktop-Leiste: Fuss nennt jüngsten Eintrag UND Erzeugungsdatum', async ({ page }) => {
     await page.setViewportSize({ width: 1440, height: 900 })
     await page.goto('/gesetze')
     const fuss = page.locator('aside[data-app-seitenleiste] nav p', { hasText: 'Register erzeugt' })
     await expect(fuss).toBeVisible({ timeout: 20_000 })
+    await expect(fuss).toContainText('Jüngster Eintrag')
     await expect(fuss).toContainText('Gesetze')
-    await expect(fuss).toContainText('Rechtsprechung')
+    await expect(fuss).toContainText('Entscheide')
     await expect(fuss).toContainText('Materialien')
-    // §8: «Register erzeugt», nie «Stand der Rechtsprechung» (die Felder
-    // datieren den Build-Lauf, nicht den jüngsten Inhalt).
+    // §8: das Build-Datum bleibt sichtbar, aber als das benannt, was es ist.
+    await expect(fuss).toContainText('Register erzeugt am')
     await expect(fuss).not.toContainText('Stand der Rechtsprechung')
   })
 

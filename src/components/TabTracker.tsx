@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
 import { useLocation } from 'react-router-dom';
-import { ersetzeTab, merkeTab } from '../lib/tabs';
+import { ersetzeTab, istReiterPfad, merkeTab } from '../lib/tabs';
 import { labelAusMeta } from '../lib/verlaufLabel';
 import { kanonisierePfad } from '../lib/normtext/erlassAdresse';
 
@@ -24,7 +24,15 @@ import { kanonisierePfad } from '../lib/normtext/erlassAdresse';
 //     `lmNeuerReiter`),
 //   · «zweite Instanz» desselben Erlasses (`lib/useErlassOeffnen.ts`,
 //     `gesetz-leser/v3/ReiterAktion.tsx` — beide rufen weiterhin `merkeTab`).
-const INHALT_ITEM = /^\/(rechner|vorlagen|gesetze|rechtsprechung)\/.+/;
+//
+// ── D7 (David 6.9.2026) · DIE BEREICHS-ÜBERSICHTEN ZÄHLEN MIT ───────────────
+// «achte darauf dass der reiter bei gesetz mitzählt». WELCHER Pfad einen Reiter
+// trägt, entscheidet seit diesem Nachzug `lib/tabs.ts` (`istReiterPfad`) —
+// dort steht auch die Begründung, warum die fünf Bereichs-Übersichten jetzt
+// dazugehören und die Startseite «/» weiterhin nicht. Hier bleibt nur der
+// Aufruf: das frühere Regex-Literal stand an ZWEI Stellen dieser Datei (Effekt
+// und Mittelklick-Geste) und wäre beim ersten Nachjustieren auseinander-
+// gelaufen (§5).
 
 /** Navigations-State, mit dem ein Aufrufer «diesmal ein NEUER Reiter» sagt.
  *  Bewusst über `navigate(ziel, { state })` statt über ein Modul-Flag: der
@@ -38,7 +46,7 @@ export function TabTracker() {
   // Reiter aktualisiert bzw. angehängt — die Persistenz bleibt unberührt.
   const aktiv = useRef<string | null>(null);
   useEffect(() => {
-    if (!INHALT_ITEM.test(pathname)) return;
+    if (!istReiterPfad(pathname)) return;
     // pathname + ?search: der Instanz-Diskriminator ?r=<n> (dasselbe Gesetz
     // mehrfach offen, Auftrag David) gehört zur Reiter-Identität; merkeTab/
     // tabSchluessel ignorieren übrige Query-Parameter für die Dedup-Identität.
@@ -74,8 +82,11 @@ export function TabTracker() {
  *  erreichbar, und weil die Reiter im localStorage derselben Herkunft liegen,
  *  sieht ein zweites Browser-Fenster dieselbe Liste.
  *
- *  Nur INHALTS-Items (dieselbe Regel wie oben): ein Mittelklick auf «Gesetze»
- *  hat in der App kein Reiter-Ziel und bleibt darum beim Browser. */
+ *  Nur Reiter-Ziele (dieselbe Regel wie oben, `istReiterPfad`): ein Mittelklick
+ *  auf «Über uns» hat in der App kein Reiter-Ziel und bleibt darum beim
+ *  Browser. Seit D7 gehören die fünf Bereichs-Übersichten dazu — ein
+ *  Ctrl-Klick auf «Gesetze» legt jetzt also einen Hintergrund-Reiter an,
+ *  genau wie auf einen Erlass. */
 function useNeuerReiterGeste(): void {
   useEffect(() => {
     const geste = (e: MouseEvent) => {
@@ -90,7 +101,7 @@ function useNeuerReiterGeste(): void {
       if (!href.startsWith('/')) return;
       const [vorHash, ankerTeil] = href.split('#');
       const pfad = vorHash.split('?')[0];
-      if (!INHALT_ITEM.test(pfad)) return;
+      if (!istReiterPfad(pfad)) return;
       e.preventDefault();
       e.stopPropagation();
       merkeTab(

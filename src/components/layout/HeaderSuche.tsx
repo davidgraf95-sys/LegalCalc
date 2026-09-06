@@ -435,7 +435,31 @@ export function HeaderSuche({ onFokusModus, onFokusZurueck }: {
         // anzufassen.
         // C3 (5.9.2026, R6-C): `z-30` → `z-dropdown` (Schichtungs-Skala,
         // index.css), Wert unverändert (30), nur benannt.
-        <div className="absolute left-0 right-0 top-full mt-2 z-dropdown max-h-[70vh] overflow-y-auto overscroll-contain rounded-lg bg-paper max-[1400px]:fixed max-[1400px]:inset-x-2 max-[1400px]:left-2 max-[1400px]:right-2 max-[1400px]:top-[3.75rem] max-[1400px]:mt-0">
+        // ── D9 (David 6.9.2026, Bild @~1030) · BÜNDIG UNTER DEM FELD ────────
+        // BEFUND, gemessen 6.9.2026 (Preview, gebauter Stand `0834cbd7b`,
+        // `/gesetze`): das Panel war unterhalb 1400 px viewport-verankert
+        // (`fixed inset-x-2`) und hatte mit dem Feld nichts mehr zu tun —
+        // @1024 stand das Feld bei x=871 (56 px breit!), das Panel bei x=8
+        // (1008 px breit); @1280 Feld x=927/200 px gegen Panel x=8/1264 px.
+        // Erst ab 1400 px flog es unter dem Feld (x=927, 360 px). Genau das
+        // beschreibt Davids Befund «Versatz nach rechts, Panel-Breite ≠
+        // Feldbreite».
+        // DIE ANTWORT hat zwei Hälften, und die zweite ist die wichtigere:
+        //  (a) das Panel hängt jetzt IMMER am Feld — an dessen RECHTER Kante
+        //      (`right-0`), mit der Feldbreite als Mindestmass und 22 rem als
+        //      Lesbarkeits-Boden. Rechtsbündig, weil das Feld in der rechten
+        //      Hälfte des Titelblatts steht: linksbündig liefe ein 22-rem-Panel
+        //      bei 1024 px aus dem Fenster (871 + 352 = 1223 > 1024).
+        //  (b) das FELD ist nicht mehr auf 56 px zusammendrückbar (`Topbar`,
+        //      `min-[481px]:min-w-[9rem]`) — der Grund, warum (a) allein nicht
+        //      gereicht hätte.
+        // Der viewport-verankerte Zweig bleibt für den MOBILEN Fokusmodus
+        // (< 640 px): dort nimmt das Feld ohnehin den ganzen Streifen ein.
+        // C3 (5.9.2026, R6-C): `z-dropdown` (Schichtungs-Skala, index.css).
+        // LM-018/§8 B7 bleibt gewahrt: die Trefferzahl-Zeile sitzt weiter
+        // AUSSERHALB des Panel-Inhalts; ihren Grund gibt jetzt die schwebende
+        // Hülle (`.lc-schwebeflaeche`) statt eines eigenen `bg-paper`.
+        <div className="lc-schwebeflaeche absolute right-0 top-full mt-1.5 z-dropdown w-full min-w-[22rem] max-w-[calc(100vw-1rem)] max-h-[70vh] overflow-y-auto overscroll-contain p-1 max-[639px]:fixed max-[639px]:inset-x-2 max-[639px]:top-[3.75rem] max-[639px]:mt-0 max-[639px]:w-auto max-[639px]:min-w-0 max-[639px]:max-w-none">
           {zeigtLeer
             // UI-NAV O1: Leerzustand (⌘K/Fokus ohne Eingabe) — Verlauf + Einstiege.
             // Listbox-Modus (Befund 38): Maus-Klick navigiert UND schliesst/leert

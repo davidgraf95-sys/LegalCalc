@@ -242,3 +242,70 @@ test.describe('Tastaturfalle in der globalen Suche (Cowork-Befund 38)', () => {
     await expect(feld).toBeFocused()
   })
 })
+
+// ═══ D10 (David-Befund 6.9.2026) · AUF «/» GIBT ES GENAU EINE SUCHE ══════════
+//
+// Wortlaut David: «Auf der Startseite wirft ein Klick ins Hero-Suchfeld den
+// Fokus in die Suchleiste OBEN (Titelblatt)».
+//
+// BEFUND-LAGE, ehrlich (§8): Am zusammengeführten Stand `0834cbd7b` liess sich
+// die Fokus-Umleitung NICHT reproduzieren — gemessen 6.9.2026 im Preview über
+// sechs Lagen (Kaltstart @1030/@1280/@1440/@390, SPA-Weg /gesetze → «/»,
+// Aufruf mit `?q=`, Startseite als zweites Pane): auf «/» stand jedes Mal
+// GENAU EIN `[role="search"] input` im Dokument, und nach dem Klick war er das
+// `document.activeElement`. Der Grund ist der `!aufStartseite`-Zweig in
+// `layout/Topbar.tsx` (seit W2·23 auf main). Was David sah, ist mit hoher
+// Wahrscheinlichkeit der ANDERE Teil desselben Bildes — das viewport-verankerte
+// Kopf-Panel (D9), das unterhalb 1400 px quer über den Kopf lief und mit dem
+// Feld darunter nichts mehr zu tun hatte.
+//
+// DIESER FALL IST DARUM EIN WÄCHTER, KEIN FIX: Er hält die Eigenschaft fest,
+// die David eingefordert hat, damit sie nicht unbemerkt verloren geht — sie
+// hing bisher an einem einzelnen `&&` ohne jede Sonde.
+//
+// ROT ZU BEKOMMEN (§6.7 — einmal gefahren, 6.9.2026): in `layout/Topbar.tsx`
+// `{!aufStartseite && (<HeaderSuche … />)}` durch `{(<HeaderSuche … />)}`
+// ersetzen ⇒ zwei Suchfelder auf «/», und «/» landet im Kopf statt im Hero.
+test.describe('D10 · «/» trägt EIN Suchfeld, und der Fokus bleibt dort', () => {
+  const HERO = 'section[role="search"][aria-label="Universal-Suche"] input'
+
+  for (const breite of [1440, 1030, 390]) {
+    test(`@${breite}: ein Feld, Klick und «/» landen im Hero`, async ({ page }) => {
+      await page.setViewportSize({ width: breite, height: 860 })
+      await page.goto('/')
+      await expect(page.locator(HERO)).toBeVisible({ timeout: 20_000 })
+      // (1) Es gibt kein zweites Suchfeld — insbesondere keines im Kopf.
+      await expect(page.locator('[role="search"] input')).toHaveCount(1)
+      await expect(page.locator('header [role="search"] input')).toHaveCount(0)
+      // (2) Ein Klick bleibt, wo er hingehört — auch ein paar Frames später
+      //     (die frühere Vermutung war eine verzögerte Fokus-Umleitung).
+      await page.locator(HERO).click()
+      await page.waitForTimeout(900)
+      expect(await page.evaluate(() => document.activeElement?.closest('header') !== null
+        ? 'im Kopf' : (document.activeElement as HTMLInputElement)?.placeholder ?? 'nirgends'))
+        .toContain('Art. 336c OR')
+      // (3) Das Kürzel «/» zielt auf dasselbe Feld (die Umleitung in
+      //     `Topbar.useSuchKuerzelUmleitung` sucht das erste Feld AUSSERHALB
+      //     des Kopfes — auf «/» ist das der Hero).
+      await page.locator(HERO).blur()
+      await page.keyboard.press('/')
+      await expect(page.locator(HERO)).toBeFocused({ timeout: 10_000 })
+    })
+  }
+
+  test('@1440: das Treffer-Panel öffnet UNTER dem Hero-Feld, nicht im Kopf', async ({ page }) => {
+    await page.setViewportSize({ width: 1440, height: 900 })
+    await page.goto('/')
+    await page.locator(HERO).click()
+    await page.locator(HERO).fill('kündigung')
+    const panel = page.locator('[role="listbox"]').first()
+    await expect(panel).toBeVisible({ timeout: 20_000 })
+    const lage = await page.evaluate((sel) => {
+      const f = document.querySelector(sel)!.getBoundingClientRect()
+      const p = document.querySelector('[role="listbox"]')!.getBoundingClientRect()
+      return { unterFeld: p.top >= f.bottom, imKopf: !!document.querySelector('header [role="listbox"]') }
+    }, HERO)
+    expect(lage.imKopf, 'das Panel hängt im Titelblatt statt am Hero').toBe(false)
+    expect(lage.unterFeld, 'das Panel steht nicht unter dem Feld').toBe(true)
+  })
+})

@@ -55,15 +55,94 @@ test.describe('Arbeitsleiste — eine Navigation, ein Reiter', () => {
     await page.evaluate(() => localStorage.removeItem('lexmetrik-tabs'))
   })
 
-  test('(a) drei Navigationen hinterlassen EINEN Reiter', async ({ page }) => {
+  // ── DEKLARIERTE TEST-ÄNDERUNG (§6.3, David-Befund D7, 6.9.2026) ───────────
+  // «achte darauf dass der reiter bei gesetz mitzählt». Bis zu diesem Nachzug
+  // waren die Bereichs-Übersichten für die Reiter unsichtbar; die Schleife
+  // dieses Falls kehrt nach jedem Erlass über den Kopf-Link auf `/gesetze`
+  // zurück, und diese Rückkehr liess den Reiter darum unverändert stehen.
+  // Seit `lib/tabs.istReiterPfad` ist `/gesetze` ein Reiter-Ziel wie jedes
+  // andere — die Rückkehr ERSETZT den aktiven Reiter, genau wie im Browser.
+  // Die geprüfte ZUSAGE ist unverändert die von §5a Ziff. 3 (kein Wildwuchs:
+  // sechs Navigationen, EIN Reiter); nachgeführt ist nur, welchen Inhalt
+  // dieser eine Reiter am Ende trägt — den zuletzt besuchten, und das ist
+  // nach der letzten Schleifenrunde die Übersicht.
+  test('(a) sechs Navigationen hinterlassen EINEN Reiter', async ({ page }) => {
     await page.goto('/gesetze')
     for (const key of ['ZGB', 'OR', 'ZPO']) {
       await page.locator(`a[href="/gesetze/bund/${key}"]`).first().click()
       await leserBereit(page)
+      // Zwischenstand: der Erlass hat den Reiter der Übersicht übernommen.
+      expect(await identitaeten(page)).toEqual([`/gesetze/bund/${key}`])
       await page.locator('header.sticky a[href="/gesetze"]').first().click()
       await expect(page).toHaveURL(/\/gesetze$/, { timeout: 20_000 })
     }
-    expect(await identitaeten(page)).toEqual(['/gesetze/bund/ZPO'])
+    expect(await identitaeten(page)).toEqual(['/gesetze'])
+  })
+
+  // ── D7 · DIE PFLICHTFÄLLE (a)–(e) DES DAVID-BEFUNDS ───────────────────────
+  // ROT ZU BEKOMMEN: in `lib/tabs.istReiterPfad` die `BEREICHS_UEBERSICHTEN`-
+  // Zeile streichen ⇒ (D7-e) findet 0 Reiter; `ersetzeTab` in `TabTracker`
+  // durch `merkeTab` tauschen ⇒ (D7-c) findet 2 statt 1.
+  test('(D7 a/b) Erlass ohne und mit Artikel-Anker erzeugt je EINEN zählenden Reiter', async ({ page }) => {
+    await page.goto('/gesetze/bund/OR')
+    await leserBereit(page)
+    expect(await identitaeten(page)).toEqual(['/gesetze/bund/OR'])
+    await expect(page.locator(`${REITER} [data-reiter-aktiv]`)).toHaveCount(1)
+    // (b) derselbe Erlass über einen Deep-Link auf den Artikel
+    await page.goto('/gesetze/bund/OR#art-336_c')
+    await leserBereit(page)
+    expect(await identitaeten(page)).toEqual(['/gesetze/bund/OR'])
+    expect((await beschriftungen(page))[0]).toContain('336c')
+  })
+
+  test('(D7 c) Blättern im selben Erlass erzeugt keinen zweiten Reiter', async ({ page }) => {
+    await page.goto('/gesetze/bund/ZGB')
+    await leserBereit(page)
+    const vorher = await identitaeten(page)
+    // Sprung über die Gliederung/Deep-Link INNERHALB desselben Erlasses.
+    await page.goto('/gesetze/bund/ZGB#art-3')
+    await leserBereit(page)
+    await page.mouse.wheel(0, 1500)
+    await page.waitForTimeout(600)
+    expect(await identitaeten(page)).toEqual(vorher)
+    await expect(page.locator(`${REITER} [data-reiter-aktiv]`)).toHaveCount(1)
+  })
+
+  // (D7 d) «Wechsel Bund→Kanton→International je eigener Reiter nur bei
+  // Ctrl-Klick, sonst Ersatz». Geprüft wird der ERLASS-Wechsel; die Ebene
+  // spielt für die Regel keine Rolle (`istReiterPfad` und `tabSchluessel`
+  // kennen nur den Pfad, nicht die Ebene) — und dieselbe Ebenen-Frage prüft
+  // `(f)` samt Kanonisierung der Alt-Adressen bereits am Datenmodell.
+  // WICHTIG für die Nachbau-Treue: die Schritte laufen als SPA-KLICKS. Ein
+  // `page.goto()` ist ein Kaltstart, und dort ersetzt der Tracker bewusst
+  // nichts (`aktiv.current === null`) — mit `goto` gemessen sähe man einen
+  // Defekt, wo keiner ist (so beim ersten Bau dieses Falls geschehen).
+  test('(D7 d) der Erlass-Wechsel ersetzt; Ctrl-Klick öffnet den zweiten', async ({ page }) => {
+    await page.goto('/gesetze')
+    await page.locator('a[href="/gesetze/bund/ZGB"]').first().click()
+    await leserBereit(page)
+    expect(await identitaeten(page)).toEqual(['/gesetze/bund/ZGB'])
+    await page.locator('header.sticky a[href="/gesetze"]').first().click()
+    await page.locator('a[href="/gesetze/bund/OR"]').first().click()
+    await leserBereit(page)
+    expect(await identitaeten(page), 'der Wechsel hat einen zweiten Reiter angelegt').toEqual(['/gesetze/bund/OR'])
+    await page.locator('header.sticky a[href="/gesetze"]').first().click()
+    await page.locator('a[href="/gesetze/bund/ZPO"]').first().click({ modifiers: ['ControlOrMeta'] })
+    await expect.poll(() => identitaeten(page), { timeout: 10_000 })
+      .toEqual(['/gesetze', '/gesetze/bund/ZPO'])
+  })
+
+  test('(D7 e) die Übersicht /gesetze ist ein Reiter «Gesetze» und zählt mit', async ({ page }) => {
+    await page.goto('/gesetze')
+    await expect.poll(() => identitaeten(page), { timeout: 10_000 }).toEqual(['/gesetze'])
+    await expect(page.locator(`${REITER} [data-reiter-aktiv]`)).toHaveCount(1)
+    // §5a Ziff. 2: die Beschriftung ist die Kurzform, NICHT der SEO-Titel
+    // («Schweizer Recht an einem Ort: …», Prüfbefund R3-F7).
+    expect((await beschriftungen(page))[0]).toBe('Gesetze')
+    // Die Startseite bleibt bewusst ohne Reiter (Begründung an `istReiterPfad`).
+    await page.locator('header.sticky a[aria-label^="LexMetrik"]').first().click()
+    await expect(page).toHaveURL(/\/$/, { timeout: 20_000 })
+    expect(await identitaeten(page)).toEqual(['/gesetze'])
   })
 
   test('(b) der Wechsel auf einen offenen Reiter wirft den aktiven NICHT weg', async ({ page }) => {
@@ -86,8 +165,12 @@ test.describe('Arbeitsleiste — eine Navigation, ein Reiter', () => {
     await page.locator('header.sticky a[href="/gesetze"]').first().click()
     await expect(page).toHaveURL(/\/gesetze$/, { timeout: 20_000 })
     await page.locator('a[href="/gesetze/bund/OR"]').first().click({ modifiers: ['ControlOrMeta'] })
+    // §6.3/D7: der Rückweg auf die Übersicht ersetzt den ZGB-Reiter durch den
+    // Übersichts-Reiter (siehe (a)); die geprüfte Zusage dieses Falls — der
+    // Ctrl-Klick legt einen ZWEITEN an und die Ansicht bleibt stehen — ist
+    // unverändert.
     await expect.poll(() => identitaeten(page), { timeout: 10_000 })
-      .toEqual(['/gesetze/bund/ZGB', '/gesetze/bund/OR'])
+      .toEqual(['/gesetze', '/gesetze/bund/OR'])
     // Wie im Browser: der neue Reiter geht im HINTERGRUND auf.
     await expect(page).toHaveURL(/\/gesetze$/)
   })

@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react';
 import type { ZuletztEintrag } from '../../lib/zuletztVerwendet';
-import { VerlaufIcon } from '../layout/VerlaufIcon';
+import { REG_FLAECHE, registerVonPfad } from '../layout/bereiche';
 import { suchOptionId } from './suchOptionId';
 import { EINSTIEGE } from './SucheLeerzustandKontext';
 
@@ -19,8 +19,36 @@ import { EINSTIEGE } from './SucheLeerzustandKontext';
 // Options-Liste für die Tastatur-Navigation) stehen in
 // `SucheLeerzustandKontext.ts` (react-refresh/only-export-components — Muster
 // wie `InhaltsKopfKontext.ts` neben `InhaltsKopf.tsx`).
+//
+// ── D9 (David 6.9.2026, Bild «Titelblatt + Suche-Leerzustand») · EINE ANATOMIE
+//    FÜR BEIDE SUCHEN ────────────────────────────────────────────────────────
+// Wortlaut David: «es hat noch viele inkonsistenzen». Am Bild sichtbar und hier
+// behoben:
+//  · KEINE ICON-STREUUNG mehr. Der Verlauf trug je Zeile ein `VerlaufIcon`
+//    (Blatt/Buch/Waage/…), die Einstiege gar keines — zwei Zeichen-Systeme in
+//    EINEM Panel. Jetzt trägt jede Zeile dasselbe eine Zeichen: einen 2-px-Strich
+//    in der REGISTERFARBE ihres Bereichs (`layout/bereiche`, dieselbe Quelle wie
+//    Bereichs-Reiter, Arbeitsleiste und Seitenleisten-Marke, §5). Wo ein Pfad
+//    keinem Register angehört (Meta-Seiten), bleibt der Platz leer statt eine
+//    Farbe zu raten.
+//  · KEIN «→» mehr. Der Pfeil stand an jeder Zeile beider Gruppen und war das
+//    «Pfeil-Muster», das David gerügt hat; anklickbar sind die Zeilen über die
+//    Hover-Fläche und die Listbox-Semantik.
+//  · «Einstiege» statt «Einstieg» — die Etikettzeilen des Panels heissen jetzt
+//    durchgehend im Plural wie das, was sie zählen («Zuletzt geöffnet»,
+//    «Einstiege», und in `SuchResultate` die Gruppentitel).
+// Die Zeilen-Anatomie (Etikett in `.lc-overline` = Archivo 12 px, Hover-Fläche,
+// Trennung über Linien) ist damit dieselbe wie im Treffer-Panel.
 
-const ZEILE_CLS = 'group/z flex items-center gap-2.5 px-4 py-2 text-body-s text-ink-700 transition-colors hover:bg-brass-100/40 hover:text-brass-800 cursor-pointer';
+const ZEILE_CLS = 'flex items-center gap-2.5 px-4 py-2 text-body-s text-ink-700 transition-colors hover:bg-brass-100/40 hover:text-brass-800 cursor-pointer';
+
+/** Das EINE Zeichen je Zeile: Registerfarben-Strich des Ziel-Bereichs. */
+function RegisterMarke({ route }: { route: string }) {
+  const reg = registerVonPfad(route);
+  // Kein Register (Start, Meta-Seiten) → kein geratenes Zeichen (§8). Der Platz
+  // bleibt trotzdem stehen, damit die Titel aller Zeilen fluchten.
+  return <span aria-hidden className={`h-4 w-0.5 shrink-0 rounded-none ${reg ? REG_FLAECHE[reg] : 'bg-transparent'}`} />;
+}
 
 export function SucheLeerzustand({ verlauf, listboxId, aktivId, onNavigate }: {
   /** Verlauf-Einträge (bereits auf 5 gekappt) — EIN geteilter useZuletzt()-Aufruf
@@ -44,16 +72,15 @@ export function SucheLeerzustand({ verlauf, listboxId, aktivId, onNavigate }: {
   );
 
   return (
-    <div className="lc-card overflow-hidden" role="listbox" id={listboxId} aria-label="Suche — Verlauf und Einstiege">
+    <div className="lc-suchpanel overflow-hidden" role="listbox" id={listboxId} aria-label="Suche — Verlauf und Einstiege">
       {verlauf.length > 0 && (
         <div role="group" aria-label="Zuletzt geöffnet" className="border-b border-line">
           <p className="lc-overline px-4 pt-3 pb-1">Zuletzt geöffnet</p>
           <ul role="none" className="pb-1.5">
             {verlauf.map((e) => zeile(suchOptionId(listboxId, 'verlauf', e.route), e.route, (
               <>
-                <VerlaufIcon typ={e.typ} className="shrink-0 text-ink-500" />
-                <span className="min-w-0 flex-1 truncate">{e.titel}</span>
-                <span aria-hidden className="text-ink-300 transition-all group-hover/z:translate-x-0.5 group-hover/z:text-brass-500">→</span>
+                <RegisterMarke route={e.route} />
+                <span className="min-w-0 flex-1 truncate" title={e.titel}>{e.titel}</span>
               </>
             )))}
           </ul>
@@ -62,13 +89,13 @@ export function SucheLeerzustand({ verlauf, listboxId, aktivId, onNavigate }: {
         </div>
       )}
 
-      <div role="group" aria-label="Einstieg">
-        <p className="lc-overline px-4 pt-3 pb-1">Einstieg</p>
+      <div role="group" aria-label="Einstiege">
+        <p className="lc-overline px-4 pt-3 pb-1">Einstiege</p>
         <ul role="none" className="pb-1.5">
           {EINSTIEGE.map((e) => zeile(suchOptionId(listboxId, 'einstieg', e.route), e.route, (
             <>
-              <span className="min-w-0 flex-1 truncate">{e.label}</span>
-              <span aria-hidden className="text-ink-300 transition-all group-hover/z:translate-x-0.5 group-hover/z:text-brass-500">→</span>
+              <RegisterMarke route={e.route} />
+              <span className="min-w-0 flex-1 truncate" title={e.label}>{e.label}</span>
             </>
           )))}
         </ul>

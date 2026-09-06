@@ -39,6 +39,14 @@ export interface StartseiteZaehler {
   standRechtsprechung: string;
   /** Stand der Materialien-Register-Erzeugung (ISO). */
   standMaterialien: string;
+  /** D8: jüngster Konsolidierungsstand über alle Volltext-Erlasse (ISO)
+   *  — das Alter der INHALTE, nicht des Builds. null = kein gültiges Datum. */
+  juengsterGesetzStand: string | null;
+  /** D8: jüngstes Entscheiddatum (Nicht-Verweise, ISO) oder null. */
+  juengsterEntscheid: string | null;
+  /** D8: jüngster Materialien-Stand (ISO) oder null — fehlt das Feld im
+   *  Register durchgehend, bleibt die Zeile in der Anzeige weg (§8). */
+  juengsteMaterialie: string | null;
 }
 
 export const STARTSEITE_ZAEHLER: StartseiteZaehler = {
@@ -204,5 +212,8 @@ export const STARTSEITE_ZAEHLER: StartseiteZaehler = {
   "vorlagen": 26,
   "standGesetze": "2026-09-05",
   "standRechtsprechung": "2026-09-05",
-  "standMaterialien": "2026-09-05"
+  "standMaterialien": "2026-09-05",
+  "juengsterGesetzStand": "2026-09-02",
+  "juengsterEntscheid": "2026-07-08",
+  "juengsteMaterialie": "2026-09-05"
 };

@@ -1402,7 +1402,25 @@
     background:linear-gradient(90deg, var(--brass-500), var(--brass-300));
   }
 
-  .lc-card { @apply bg-surface border border-line rounded-lg shadow-md; }
+  /* ── U2 (Prüfbefund W2·24-R5, 6.9.2026) · LINIEN STATT FLÄCHEN ────────────
+     GEMESSEN auf 9 von 14 Übersichts-Routen (hell+dunkel @1440): `.lc-card`
+     trug Rahmen auf allen VIER Seiten UND eine eigene Füllung (`--surface`
+     #FDFDFD hell) gegen ein Papier von #FBFBFB — ein Unterschied von 2/255,
+     also eine Fläche, die niemand sieht, und ein Kasten, den jeder sieht.
+     Radius und Schatten waren mit R1 schon auf 0 bzw. `none` (`--radius-lg`,
+     `--shadow-md`); geblieben war die reine Kasten-ANATOMIE, ohne dass
+     irgendwo begründet gewesen wäre, warum sie sie behalten darf.
+     Fahrplan §5 dieser Runde: «Trennung über Linien (1 px `--rule-soft`, 2 px
+     `--rule` für Kopfzeilen)». Genau das steht jetzt hier: KEIN Seitenrahmen,
+     KEINE eigene Füllung, die Abgrenzung trägt je eine Haarlinie oben und
+     unten, der Abstand trägt Weissraum.
+     WAS NICHT MITKOMMT: schwebende Ebenen (Menü, Dialog, Popover, das
+     Suchpanel) behalten ihre Umrandung — sie liegen ÜBER fremdem Inhalt und
+     brauchen eine Kante, um nicht mit ihm zu verschmelzen. Ihre Anatomie ist
+     `.lc-schwebeflaeche` (unten), nicht `.lc-card`; die betroffenen
+     Fundstellen sind dorthin gezogen, nicht hier ausgenommen. */
+  .lc-card { background: transparent; border: 0;
+    border-top: 1px solid var(--rule-soft); border-bottom: 1px solid var(--rule-soft); }
   /* EINE Karten-Hover-Grammatik (Design-Konsistenz C-3, 31.8.2026).
      GEMESSEN waren drei: (a) Farbstufe `hover:border-brass-400` (Erlass-,
      Material-, Entscheid-Karte), (b) Lift + Schlagschatten
@@ -1423,6 +1441,9 @@
      als Geschwister über dem Link liegen müssen). */
   :is(a, button, [role='button'], [data-aktiv]).lc-card { @apply transition-colors; }
   :is(a, button, [role='button'], [data-aktiv]).lc-card:hover { border-color: var(--brass-400); }
+  /* U2: die Hover-Grammatik bleibt Wort für Wort — sie färbt jetzt die beiden
+     Haarlinien statt vier Rahmenseiten. Der Zustand ist damit dezenter, aber
+     nach derselben Regel (§G-j «eine Flexoki-Stufe tiefer»). */
 
   /* ── R5-D (5.9.2026) · EINE neutrale Hover-Fläche ─────────────────────────
      Das Gegenstück zur Karten-Grammatik darüber: die anklickbare ZEILE
@@ -1454,7 +1475,12 @@
   .lc-hover-flaeche { @apply transition-colors; }
   .lc-hover-flaeche:hover { background-color: var(--well); }
   /* Ergebnis-Kachel (Hauptwerte in Ergebnisblöcken) — eine Anatomie überall */
-  .lc-tile { @apply bg-surface-raised border border-line rounded-xl p-4; }
+  /* U2: dieselbe Umstellung wie `.lc-card`. Die Ergebnis-Kachel steht in
+     Reihen nebeneinander; ihre Abgrenzung ist die Oberlinie, nicht der Kasten
+     (die Akzent-Oberkante `.lc-akzent-*` unten setzt genau dort an und wird
+     dadurch erst richtig lesbar). */
+  .lc-tile { background: transparent; border: 0;
+    border-top: 1px solid var(--rule-soft); @apply p-4; }
   /* Akzent-Oberkante (massgeblich) — EINE Quelle statt 6×
      inline border-t-[3px]; die Bedeutung trägt die Farbe, nicht die Stelle. */
   /* LM-033 (B11-Karten, 4.9.2026): die Akzent-Oberkante ist 3 px stark, der
@@ -1493,7 +1519,13 @@
      Fristablauf im Fristenkontrollbuch — Papier-Spalt + Haarlinien-Ring
      in der Farbe des Markers (currentColor der Kreisfläche via CSS-Var). */
   /* F1: Termin-Ring = Zustand «ok» → --ok-solid (wertidentisch zu sage-500). */
-  .lc-termin-ring { box-shadow: 0 0 0 2px var(--surface), 0 0 0 3px var(--ring-farbe, var(--ok-solid)); }
+  /* R-4 (Prüfbefund W2·24-R5, 6.9.2026): der Doppelring lief über einen echten
+     `box-shadow` (0/0/0 2px Papier + 0/0/0 3px Ringfarbe) — gemessen 6× auf
+     `/rechner/tagerechner` und `/rechner/kuendigung`, also ein Schatten
+     ausserhalb von Menü/Dialog/Popover, den Fahrplan §5 der Runde ausschliesst.
+     `outline` + `outline-offset` malt DIESELBE Figur (2 px Papierspalt, 1 px
+     Ring) ohne Schatten-Semantik und folgt dem `rounded-full`-Radius. */
+  .lc-termin-ring { outline: 1px solid var(--ring-farbe, var(--ok-solid)); outline-offset: 2px; }
 
   /* Sanftes Auf-/Zuklappen aller <details> (auch .lc-sektion): EIN
      @supports-Block am Dateiende — die frühere lc-sektion-Sonderregel war
@@ -2102,8 +2134,19 @@
     min-height: var(--tap-ziel); min-width: var(--tap-ziel); padding: 0 4px;
   }
   .lc-leiste-griff:hover { background: var(--well); color: var(--brass-700); }
-  .lc-leiste-griff-fest { background: var(--well); color: var(--ink-700); padding: 0 6px; }
-  .lc-leiste-griff-fest:hover { background: var(--surface); color: var(--brass-700); }
+  /* ── D5 (David 6.9.2026, Bild Leser-Kopf) · TEXTKNOPF, KEIN CHIP ──────────
+     «Knöpfe ‹⌂ 8 Entscheide› und ‹◧ Ansicht› als Chips mit Kasten» — Soll:
+     «Leser-Kopf-Knöpfe als Textknöpfe mit Unterstrich, nicht als Chips».
+     Der einzige Konsument dieser Klasse ist `KOPF_GRIFF` (v3/kopfStufen.ts),
+     also genau die drei Griffe der Leser-Kopfzeile (⚖ · ☰ · «Ansicht») —
+     die Änderung trifft sie alle drei gemeinsam und nichts sonst.
+     Die Füllung `--well` fällt weg (sie war der Kasten); an ihre Stelle tritt
+     die 1-px-Unterkante, die im Referenzbild jeden Textknopf trägt. Der
+     Ruhezustand ist damit eine Linie statt einer Fläche; der HOVER behält seine
+     eingespielte Grammatik (Fläche `--well` + wärmere Tinte, §G-j) — dort ist
+     die Fläche eine Zustandsauskunft und keine Dauer-Anatomie. */
+  .lc-leiste-griff-fest { color: var(--ink-700); padding: 0 6px; border-bottom: 1px solid var(--rule-soft); border-radius: 0; }
+  .lc-leiste-griff-fest:hover { background: var(--well); color: var(--brass-700); border-bottom-color: var(--brass-500); }
   /* KOMFORT-Stufe des Griffs (F2-6): auf dem Handy-Zuschnitt, wo der Finger das
      einzige Werkzeug ist, hebt sie die Untergrenze vom WCAG-2.5.8-Minimum
      (`--tap-ziel`, 24 px) auf das AAA-Komfortmass `--tap-ziel-komfort` (44 px).
@@ -2209,6 +2252,15 @@
   .lc-griff-glyph {
     font-family: var(--font-sans), system-ui, sans-serif;
     font-size: 1rem; line-height: 1;
+    /* NEBENFUND des R3-Prüfers (6.9.2026), bestätigt am Screenshot
+       `r5f1-hero-suche-treffer-1440-hell`: «✕» (U+2715) fiel im hellen Modus
+       auf eine FARBIGE Emoji-Schnittschrift zurück — ein blaues Zeichen mitten
+       in einer schwarz-weissen Sammlung, und zwar unabhängig von der
+       Textfarbe, weil eine Farb-Glyphe `color` ignoriert. `font-variant-emoji:
+       text` verlangt die Text-Darstellung; wo der Browser die Eigenschaft noch
+       nicht kennt (Safari < 17), tut die Angabe nichts und das Bild bleibt wie
+       bisher — ein reiner Gewinn ohne Rückfall-Risiko. */
+    font-variant-emoji: text;
   }
   .lc-schliessknopf-komfort::after {
     content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
@@ -2293,18 +2345,32 @@
 
   /* Notices: Varianten sind eigenständig (Basis-Anatomie immer gleich —
      kein Inline-Nachbau von Padding/Border mehr nötig) */
-  .lc-notice { @apply bg-surface rounded-md text-ink-600; border-left: 3px solid var(--brass-line); padding: 12px 16px; }
+  /* U2: die Füllung fällt weg (sie war `--surface`, also 2/255 gegen Papier —
+     keine Fläche, nur eine Behauptung); der 3-px-Markenstrich links BLEIBT: er
+     ist kein Kasten, sondern das Zeichen, das den Hinweis vom Fliesstext
+     abhebt. Die Status-Varianten darunter behalten ihre Füllung — dort trägt
+     die Farbe eine Bedeutung (§13/F2: Warnung/Gefahr), nicht eine Kante. */
+  .lc-notice { @apply rounded-md text-ink-600; background: transparent; border-left: 3px solid var(--brass-line); padding: 12px 16px; }
   .lc-notice-warn { @apply lc-notice bg-warn-bg text-warn-700; border-left-color: var(--warn-line); }
   .lc-notice-danger { @apply lc-notice bg-danger-bg text-danger-700; border-left-color: var(--danger-line); }
 
   /* Messing-Hervorhebungsbox (Form-Gates der Vorlagen: «damit Ihre Vorlage
      wirkt») — vorher 12× wortgleich inline nachgebaut (FAHRPLAN-DESIGN 2.1). */
-  .lc-highlight { @apply rounded-xl border-2 border-brass-500 bg-brass-100 p-5; }
+  /* U2: aus dem 2-px-Vollrahmen mit Messing-Wash werden zwei 2-px-Kanten
+     (die «Kopfzeilen-Stärke» aus Fahrplan §5) ohne Füllung. Die Hervorhebung
+     bleibt die stärkste Trennung der Seite — sie ist jetzt eine Kante, keine
+     Fläche. */
+  .lc-highlight { background: transparent; border: 0;
+    border-top: 2px solid var(--brass-500); border-bottom: 2px solid var(--brass-500);
+    @apply p-5; }
 
   /* Leichter Container (Zeilen-Editoren, Eingabe-Gruppen): Karte ohne
      Schatten — dritte Stufe neben lc-card/lc-tile (FAHRPLAN-DESIGN 2.3).
      Padding bewusst beim Verwender (p-3 dichte Zeilen, p-4 Gruppen). */
-  .lc-panel { @apply bg-surface border border-line rounded-lg; }
+  /* U2: siehe `.lc-card`. Der leichte Container trennt Zeilen-Editoren und
+     Eingabe-Gruppen jetzt über Linien statt über einen Kasten. */
+  .lc-panel { background: transparent; border: 0;
+    border-top: 1px solid var(--rule-soft); border-bottom: 1px solid var(--rule-soft); }
 
   /* ─── Schwebefläche (A3-2, R3-β 31.8.2026) ────────────────────────────────
      Die EINE Anatomie für alles, was ÜBER dem Inhalt steht und dorthin
@@ -2332,6 +2398,66 @@
      entscheidet ihr Anker, nicht ihre Anatomie (dieselbe Trennung wie beim
      `.lc-scrim`). */
   .lc-schwebeflaeche { @apply bg-paper-raised border border-line rounded-lg shadow-lg; }
+
+  /* ── D9 (David 6.9.2026) · DIE EINE ANATOMIE DES SUCH-PANELS ──────────────
+     Das Trefferpanel und der Leerzustand erscheinen an ZWEI Orten: im Titelblatt
+     (schwebend unter dem Kopf-Suchfeld) und auf der Startseite unter der
+     Hero-Zeile (im Fluss der Seite, ebenso auf `/suche`). Bis hierher trugen sie
+     dafür `.lc-card` — also im Fluss eine Kasten-Anatomie mit eigener Füllung,
+     und im Kopf denselben Kasten NOCH EINMAL innerhalb der schwebenden Hülle
+     (zwei Rahmen übereinander).
+     Jetzt trägt der Inhalt gar keine Kante mehr: die Gruppen trennen sich
+     untereinander über Haarlinien (`border-t border-line`, in `SuchResultate`
+     und `SucheLeerzustand`), und die AUSSEN-Kante gehört dem Ort — im Kopf der
+     schwebenden `.lc-schwebeflaeche`, im Fluss der Papierfläche der Seite. Damit
+     ist das Panel an beiden Orten dasselbe Ding, wie §5 es verlangt. */
+  .lc-suchpanel { background: transparent; border: 0; }
+
+  /* ═══ D5 (David 6.9.2026, Bild Leser-«Ansicht»-Menü) · MENÜ-ANATOMIE ═══════
+     Davids Befund am Bild, Punkt für Punkt: «Einträge mit ‹✓ an› rechts, erster
+     Eintrag mit hartem 2-px-Fokusrahmen als Kasten, letzter Eintrag zweizeilig
+     umgebrochen mit eingequetschtem Schriftregler, Knöpfe als Chips mit
+     Kasten.» Soll: «ruhige Liste mit Linien, Zustandswort links oder als
+     Schalter, kein ‹✓ an›-Doppel, Fokus als Unterstrich/Strich statt Kasten,
+     Regler in eigener Zeile mit Label in Archivo, keine Umbrüche in
+     Menüzeilen» — und ausdrücklich «Gilt als Muster für ALLE Menüs/Popover
+     (Verlauf, Reiter-Blatt, Sprache, Thema)».
+     Darum steht die Anatomie HIER und nicht im Leser: die Konsumenten sind
+     `components/ui/Menue.tsx` (das Gerüst) und über ihn das Ansicht-Menü, der
+     Verlauf und das Reiter-Blatt. Die schwebende HÜLLE bleibt
+     `.lc-schwebeflaeche` — wo ein Menü liegt, entscheidet sein Anker, nicht
+     seine Anatomie. */
+
+  /* Die Zeile: volle Breite, EINE Höhe, Trennung nach unten über eine
+     Haarlinie (die letzte Zeile trägt keine). Kein Radius — ein abgerundeter
+     Hover-Kasten ist genau das Kissen, das Fahrplan §5 abschafft. */
+  .lc-menu-zeile {
+    @apply flex w-full items-center gap-2.5 px-3 py-2 text-left text-body-s text-ink-700 transition-colors;
+    border-bottom: 1px solid var(--rule-soft);
+    border-radius: 0;
+    /* «keine Umbrüche in Menüzeilen»: die Beschriftung bleibt einzeilig und
+       wird notfalls mit Auslassung gekappt — die volle Aussage steht im
+       `title`, wie an jeder anderen gekappten Stelle der App (LM-067). */
+    white-space: nowrap;
+  }
+  .lc-menu-zeile:last-child { border-bottom: 0; }
+  .lc-menu-zeile:hover { background: var(--well); color: var(--ink-900); }
+  /* FOKUS ALS STRICH, NICHT ALS KASTEN. Die globale `:focus-visible`-Regel legt
+     einen 2-px-Rahmen um das Element — an einer Menüzeile, die die volle Breite
+     einnimmt, ist das der «harte Kasten» aus Davids Befund. Hier tritt an seine
+     Stelle ein 2-px-Strich an der Unterkante in derselben Rolle `--focus`
+     (dieselbe Form, die `.lc-input:focus` seit R3-F3 trägt — EIN Fokus-Bild für
+     die ganze App). `inset`, damit er die Zeilenhöhe nicht ändert. */
+  .lc-menu-zeile:focus-visible { outline: none; box-shadow: inset 0 -2px 0 0 var(--focus); }
+  /* Die Beschriftung kappt, die Zustands-Marke links tut es nie. */
+  .lc-menu-label { @apply min-w-0 flex-1 overflow-hidden text-ellipsis; }
+  /* Zustands-Marke LINKS (Häkchen/Leerstelle) — feste Breite, damit die
+     Beschriftungen aller Zeilen fluchten, ob geschaltet oder nicht. Sie ersetzt
+     das «✓ an»-Doppel rechts: EIN Zeichen für EINEN Zustand. */
+  .lc-menu-marke { @apply inline-flex w-4 shrink-0 items-center justify-center leading-none; color: var(--brass-700); }
+  /* Der Regler bekommt seine eigene Zeile mit Label — er wird nicht mehr neben
+     eine zweizeilig umbrechende Beschriftung gequetscht. */
+  .lc-menu-regler { @apply flex w-full items-center justify-between gap-2 px-3 py-2; border-top: 1px solid var(--rule-soft); }
 
   /* Referenzwerk-Liste: Messing-Gedankenstrich als Marker (FAHRPLAN-DESIGN
      5.5) — für Hinweis-Listen der Vorlagen (Preflight nimmt Browser-Bullets
@@ -2572,10 +2698,25 @@
   padding: .25rem 0 .5rem;
 }
 .st-frage-feld::placeholder { color: var(--placeholder); }
-/* Der Fokusring liegt an der globalen `:focus-visible`-Regel (Rolle --focus,
-   E-1) — hier wird KEINE eigene Farbe gesetzt, nur der Abstand zur Kante
-   zurückgenommen, damit der Ring die 2-px-Linie nicht doppelt. */
-.st-frage-feld:focus-visible { outline-offset: 1px; }
+/* ── D9/D5-NACHZUG (6.9.2026) · FOKUS ALS STRICH, NICHT ALS KASTEN ──────────
+   Hier stand nur ein `outline-offset: 1px` — der globale `:focus-visible`-Ring
+   legte also einen 2-px-KASTEN um eine Zeile, die ausdrücklich kein Kasten
+   sein soll (Fahrplan §5: «Kanten statt Kissen»). GESEHEN am Screenshot
+   `r5f1-hero-suche-treffer-1440-hell` vom 6.9.2026: die Suchzeile der
+   Startseite stand im Fokus als gerahmtes Rechteck da, während dieselbe
+   Handlung im Formularfeld (`.lc-input:focus`) und in der Menüzeile
+   (`.lc-menu-zeile:focus-visible`) einen Unterstrich bekommt — drei Fokus-
+   Bilder für eine Sache.
+   Jetzt trägt sie dasselbe Bild wie die beiden anderen und wie das
+   Referenzbild (`.frage input:focus-visible{box-shadow:0 2px 0 0 var(--ink)}`):
+   die 2-px-Kante der Zeile wechselt in die Rolle `--focus` und verdoppelt sich
+   über einen Schatten UNTER der Kante — kein Platzverbrauch, keine
+   Höhenänderung, und der Indikator bleibt 2 px stark in einer Rolle, die das
+   Farbwelt-Tor als Nicht-Text-Kontrast führt (WCAG 2.4.11).
+   Der Schatten sitzt an der HÜLLE `.st-frage` (dort liegt die Kante), gesteuert
+   über `:focus-within` — das Feld selbst hat keine eigene Linie. */
+.st-frage-feld:focus-visible { outline: none; }
+.st-frage:focus-within { border-bottom-color: var(--focus); box-shadow: 0 2px 0 -1px var(--focus); }
 
 /* ── R3-NACHZUG (David-Befund D1, 6.9.2026) · DIE ZEILE MUSS SICH ALS SUCHE ──
    ZU ERKENNEN GEBEN. Wortlaut David zum Bild vom 6.9.2026: die grosse Zeile

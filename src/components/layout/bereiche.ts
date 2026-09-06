@@ -51,6 +51,20 @@ export const BEREICHE: Bereich[] = NAVIGATION.flatMap((a) => {
   return [{ label: a.titel, ziel: a.ziel, praefix: a.ziel, register }];
 });
 
+// ─── R3-F8 (Prüfbefund 6.9.2026) · DIE SAMMLUNG IST AUCH EIN REITER ─────────
+//
+// Auf «/» trug das Titelblatt keine Aktivmarke: die fünf Bereichs-Reiter
+// beschreiben allesamt Unterbereiche, und die Startseite gehört zu keinem.
+// Das Referenzbild (`abnahme/design-identitaet/vorschlag-freigegeben.html`)
+// markiert dort «Sammlung» — der Kopf sagt also auf JEDER Route, wo man ist.
+//
+// BEWUSST NICHT IN `BEREICHE`: dessen Einträge tragen ein Pfad-PRÄFIX, und das
+// Präfix «/» würde in `bereichVonPfad` auf jeden Pfad passen und die vier
+// Registerfarben überschreiben. Die Startseite ist auch kein Register, sondern
+// das Titelblatt — sie trägt darum die Tinte (`--rule`) als Aktivmarke, keine
+// Registerfarbe.
+export const START_REITER = { label: 'Sammlung', ziel: '/' } as const;
+
 /** Bereich eines Pfades — oder null (Start, Meta-Seiten, Unbekanntes). */
 export function bereichVonPfad(pfad: string): Bereich | null {
   const p = pfad.split('?')[0].split('#')[0];

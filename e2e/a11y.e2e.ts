@@ -120,7 +120,12 @@ test('Startseite mit offener Universal-Suche', async ({ page }, testInfo) => {
   // Lazy-Daten, daher sofort sichtbar).
   await oeffnen(page, '/')
   await page.locator('section[role="search"] input[type="search"]').fill('kündigung')
-  await page.locator('section[role="search"] .lc-card').waitFor({ state: 'visible' })
+  // §6.3-DEKLARATION (W2·24-R5-F1, David-Befund D9, 6.9.2026): das Trefferpanel
+  // hiess `.lc-card` und trug damit die Kasten-Anatomie der Karten. Seit D9 ist es
+  // an BEIDEN Orten (Titelblatt-Suche und Hero) derselbe Baustein mit derselben,
+  // kanten-losen Anatomie `.lc-suchpanel` — geändert ist nur der Selektor, weder
+  // das ausgewählte Element noch die Prüfung dahinter.
+  await page.locator('section[role="search"] .lc-suchpanel').waitFor({ state: 'visible' })
   await axePruefen(page, testInfo, 'startseite-suche')
 })
 
@@ -300,7 +305,12 @@ const DUNKEL_PUNKTE: Array<{
     titel: 'Startseite mit offener Universal-Suche', punkt: 'startseite-suche', url: '/',
     herstellen: async (page) => {
       await page.locator('section[role="search"] input[type="search"]').fill('kündigung')
-      await page.locator('section[role="search"] .lc-card').waitFor({ state: 'visible' })
+      // §6.3-DEKLARATION (W2·24-R5-F1, David-Befund D9, 6.9.2026): das Trefferpanel
+      // hiess `.lc-card` und trug damit die Kasten-Anatomie der Karten. Seit D9 ist es
+      // an BEIDEN Orten (Titelblatt-Suche und Hero) derselbe Baustein mit derselben,
+      // kanten-losen Anatomie `.lc-suchpanel` — geändert ist nur der Selektor, weder
+      // das ausgewählte Element noch die Prüfung dahinter.
+      await page.locator('section[role="search"] .lc-suchpanel').waitFor({ state: 'visible' })
     },
   },
   { titel: 'Tagerechner', punkt: 'tagerechner', url: '/rechner/tagerechner' },
