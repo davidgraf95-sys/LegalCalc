@@ -560,8 +560,8 @@ zgb-a36-anhang: Die ZGB-Gliederung zeigt 74 Artikel des Anhangs «Wortlaut der f
   - [ ] **Rechenweg-Vollständigkeit als Invariante** — jede `status: 'ok'`-Antwort trägt ≥1 `Rechenschritt` mit Norm-Anker; heute leere `rechenweg: []`-Pfade in `beurkundung.ts`, `lohnfortzahlung.ts`, `grundbuchgebuehren.ts`, kein Rechenweg in `emissionsabgabe.ts`. Muster Catala `--trace`/GoRules-Trace (Regel → Artikel → Zwischenwert). Quelle: Rules-as-Code-Sichtung 5.9.2026 §5/§8.
   - [ ] **WARTET AUF DAVID (fachlich, §7):** SF-F1 (Art.-63-Verlängerung bei gehemmter Frist?) und SF-F2 (Wartefrist-Ablauf in den Betreibungsferien) — Katalog-Zeilen «fachlich vorzulegen».
 
-- [ ] **Tarif-Stammdaten: Stand maschinenlesbar + Drift-Tor** *(`W3-TARIF-STAND`, Rules-as-Code-Sichtung 5.9.2026, Entscheid David 5.9.2026)*
-  <!-- @meta id: W3-TARIF-STAND · status: ready · blocker: null · dep: [] · feld: werkzeuge -->
+- [~] **Tarif-Stammdaten: Stand maschinenlesbar + Drift-Tor** *(`W3-TARIF-STAND`, Rules-as-Code-Sichtung 5.9.2026, Entscheid David 5.9.2026)*
+  <!-- @meta id: W3-TARIF-STAND · status: wip · blocker: null · dep: [] · feld: werkzeuge -->
   Ziel: die ~950 Tarif-Einträge in `src/data/tarif/**` werden maschinell auf Fassungs-Drift prüfbar
   (§7 d für Tarifzahlen — heute nur für Normtext): `stand` als ISO-Datum plus Fassungskennung der
   Quelle je Eintrag, Tor `check:tarif-drift` mit Rot-Beweis am SG-2808-Fall, Verfallsregister aus dem
