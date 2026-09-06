@@ -16,7 +16,7 @@ import { usePaneDnd } from './usePaneDnd';
 import { PaneProvider } from './PaneKontext';
 import { InhaltsKopf } from './InhaltsKopf';
 import { InhaltsKopfMeldeProvider, istGesetzLeserPfad, istInhaltsPfad, kopfVonPfad, type KopfDaten } from './InhaltsKopfKontext';
-import { tabSchluessel } from '../../lib/tabs';
+import { tabSchluessel, merkeTab, ersetzeTab, istReiterPfad } from '../../lib/tabs';
 import { verlaufLabel, erlassVonPfad, gesetzPfad, entscheidPfad, type VerlaufManifeste } from '../../lib/verlaufLabel';
 import { useDialogFokus } from './useDialogFokus';
 
@@ -302,12 +302,45 @@ export function Shell({ children }: { children: ReactNode }) {
     const n = tabSchluessel(pfad);
     return tabSchluessel(pathname + search) === n || liveSek.some((x) => tabSchluessel(x) === n);
   };
-  // B-2: «daneben öffnen» nur ab lg + Kapazität; kein Doppel.
-  const paneSteuerung = {
-    oeffneDaneben: (pfad: string) => { if (!istOffen(pfad)) pane.oeffneDaneben(pfad); },
-    kannOeffnen: istLg && pane.sekundaer.length < MAX_SEKUNDAER,
-    istOffen,
-  };
+  // ── M1 · JEDER PFAD IN EINEM FENSTER HAT SEINEN REITER (P4) ───────────────
+  //
+  // GEMESSEN am Stand `c0f2972ba` (Prüfbefund R11 #16, Screen `pruef-r11-05`):
+  // `panes = ["/rechtsprechung/bge_146_III_1"]` neben `tabs = [OR, Rechner]`
+  // ergab eine Leiste mit ZWEI Reitern und nur EINER Marke «Fenster links:◧» —
+  // rechts stand nachweislich BGE 146 III 1, und die Leiste verschwieg ihn.
+  // Der Anwalt konnte diesen Entscheid von dort weder wechseln noch schliessen.
+  // §5a Ziff. 4 verlangt zwei Marken; die Leiste kann sie nicht zeichnen, weil
+  // sie nur zeigt, was der SPEICHER trägt (D16) — der Fix gehört also hierher,
+  // an die Stelle, die das Fenster füllt, nicht in die Leiste.
+  //
+  // WARUM `ersetzeTab` UND NICHT NUR `merkeTab`: ein Fenster navigiert weiter
+  // (Link im Entscheid, Sprung in den Erlass). Jede dieser Navigationen mit
+  // `merkeTab` hinge einen weiteren Reiter an — genau der «Reiter-Wildwuchs»,
+  // den §5a Ziff. 3 fürs Hauptfenster ausgeschlossen hat. Der Ref hält darum je
+  // Fenster den zuletzt gemerkten Pfad; die Folge-Navigation ERSETZT ihn, wie
+  // `components/TabTracker.tsx` es fürs Hauptfenster tut.
+  const paneReiter = useRef<Record<string, string>>({});
+  useEffect(() => {
+    const gesehen = new Set<string>();
+    for (const seed of pane.sekundaer) {
+      gesehen.add(seed);
+      const pfad = liveLocs[seed] ?? seed;
+      if (!istReiterPfad(pfad)) continue;
+      const vorher = paneReiter.current[seed];
+      // `merkeTab` ist idempotent (`gleich()`), aber der Vergleich hier spart
+      // schon den Speicher-Lesevorgang bei jedem Shell-Render.
+      if (vorher === pfad) continue;
+      if (vorher) ersetzeTab(vorher, pfad); else merkeTab(pfad);
+      paneReiter.current[seed] = pfad;
+    }
+    // Geschlossene Fenster aus der Buchführung nehmen — ihr REITER bleibt
+    // stehen (nichts wird still geschlossen, §5a Ziff. 5); nur die Zuordnung
+    // «dieses Fenster zeigt diesen Reiter» endet.
+    for (const seed of Object.keys(paneReiter.current)) {
+      if (!gesehen.has(seed)) delete paneReiter.current[seed];
+    }
+  }, [pane.sekundaer, liveLocs]);
+
   // liveLocs-Eintrag eines (entfernten/ersetzten) Seed-Pfads aufräumen (sonst Leak +
   // kurz veraltetes Label, wenn derselbe Seed später erneut geöffnet wird).
   const raeumeLiveLoc = (seed: string) =>
@@ -318,6 +351,19 @@ export function Shell({ children }: { children: ReactNode }) {
     pane.schliesse(i);
     raeumeLiveLoc(seed);
     requestAnimationFrame(() => document.getElementById('inhalt')?.focus());
+  };
+  // B-2: «daneben öffnen» nur ab lg + Kapazität; kein Doppel.
+  const paneSteuerung = {
+    oeffneDaneben: (pfad: string) => { if (!istOffen(pfad)) pane.oeffneDaneben(pfad); },
+    kannOeffnen: istLg && pane.sekundaer.length < MAX_SEKUNDAER,
+    istOffen,
+    // M1: das ✕ eines Reiters, der gerade in einem zweiten Fenster steht,
+    // nimmt dieses Fenster mit (Herleitung an `PaneSteuerung.schliessePane`).
+    schliessePane: (pfad: string) => {
+      const n = tabSchluessel(pfad);
+      const i = liveSek.findIndex((x) => tabSchluessel(x) === n);
+      if (i !== -1) schliesseUndFokus(i);
+    },
   };
   // Sekundär → Hauptfenster: dieses Pane wird die URL, das alte Hauptfenster rutscht an seinen Platz.
   const zumHauptfenster = (i: number) => {

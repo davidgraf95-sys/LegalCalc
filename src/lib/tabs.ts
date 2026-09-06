@@ -68,10 +68,21 @@ export const BEREICHS_UEBERSICHTEN = [
 ] as const;
 
 /** Trägt dieser Pfad einen eigenen Reiter? EIN Ort für die Regel (§5) —
- *  gelesen von `components/TabTracker.tsx`. `path` darf ?query/#hash tragen. */
+ *  gelesen von `components/TabTracker.tsx`. `path` darf ?query/#hash tragen.
+ *
+ *  ── M2 (Prüfbefund R11 #23, 6.9.2026) · MATERIALIEN GEHÖREN DAZU ───────────
+ *  GEMESSEN (Preview 4362, `/materialien/BJ-EHRA-PM-2025-01`, Titel
+ *  «Praxismitteilung EHRA 1/25»): die Leiste blieb bei ihren fünf Reitern, ein
+ *  sechster entstand nicht — die Rubrik fehlte in diesem einen Regex. Damit
+ *  waren 1'561 prerenderte Material-Detailseiten reiterlos: wer eine Botschaft
+ *  nachschlägt, verliert sie beim nächsten Klick, und die Übersicht
+ *  `/materialien` (seit D7 ein Reiter) führte zu Detailseiten, die keiner mehr
+ *  sind. Die D7-Regel sagt es bereits im Satz darüber — «die fünf
+ *  Bereichs-Übersichten sind Reiter wie jedes andere Dokument»; ihre
+ *  Detailseiten erst recht. */
 export function istReiterPfad(path: string): boolean {
   const p = path.split('#')[0].split('?')[0];
-  return /^\/(rechner|vorlagen|gesetze|rechtsprechung)\/.+/.test(p)
+  return /^\/(rechner|vorlagen|gesetze|rechtsprechung|materialien)\/.+/.test(p)
     || (BEREICHS_UEBERSICHTEN as readonly string[]).includes(p);
 }
 
@@ -217,6 +228,10 @@ export function ersetzeTab(altPath: string | null | undefined, neuPath: string, 
   const idxAlt = altPath ? bisher.findIndex((t) => tabSchluessel(t.path) === tabSchluessel(altPath)) : -1;
   if (idxAlt === -1) { merkeTab(neuPath, label); return; }
   const naechste = [...bisher];
+  // M3: der ERSETZTE Reiter ist so verloren wie ein geschlossener — er kommt
+  // darum in denselben Ring. Genau hier ist der Verlust häufiger als im
+  // Browser, weil §5a Ziff. 3 das Ersetzen zum Normalfall macht.
+  merkeGeschlossen([{ eintrag: bisher[idxAlt], index: idxAlt }]);
   // KEIN `alt`-Vorzustand: der Reiter zeigt jetzt ein ANDERES Dokument — Label,
   // Lesestellung und gewählter Anker des alten gehören nicht dorthin.
   naechste[idxAlt] = eintragAus(neuPath, label);
@@ -254,12 +269,130 @@ export function ordneTabsUm(vonPath: string, nachPath: string, davor?: boolean):
 export function schliesseTab(path: string): void {
   const teil = tabSchluessel(path);
   const bisher = ladeTabs();
-  const naechste = bisher.filter((t) => tabSchluessel(t.path) !== teil);
-  if (naechste.length !== bisher.length) schreibe(naechste);
+  const idx = bisher.findIndex((t) => tabSchluessel(t.path) === teil);
+  if (idx === -1) return;
+  merkeGeschlossen([{ eintrag: bisher[idx], index: idx }]);
+  schreibe(bisher.filter((_, i) => i !== idx));
 }
 
 export function leereTabs(): void {
+  // Reihenfolge: der ERSTE Reiter zuerst in den Ring, damit die
+  // Wiederherstellung (vom Ende her) von hinten nach vorn zurückholt und
+  // Position um Position stimmt.
+  merkeGeschlossen(ladeTabs().map((eintrag, index) => ({ eintrag, index })));
   schreibe([]);
+}
+
+/** ── M4 · «ALLE ANDEREN SCHLIESSEN» (Prüfbefund R11 #35) ────────────────────
+ *  Reiner Array-Filter, deterministisch (§2), Identität über `tabSchluessel`.
+ *  Kein Sonderfall für den leeren «+»-Reiter: er ist ein Reiter wie jeder
+ *  andere und wird mitgeschlossen, wenn er nicht der genannte ist. */
+export function schliesseAndere(path: string): void {
+  const teil = tabSchluessel(path);
+  const bisher = ladeTabs();
+  if (!bisher.some((t) => tabSchluessel(t.path) === teil)) return;
+  const weg = bisher.map((eintrag, index) => ({ eintrag, index }))
+    .filter(({ eintrag }) => tabSchluessel(eintrag.path) !== teil);
+  if (weg.length === 0) return;
+  merkeGeschlossen(weg);
+  schreibe(bisher.filter((t) => tabSchluessel(t.path) === teil));
+}
+
+/** ── M4 · «RECHTS DAVON SCHLIESSEN» ────────────────────────────────────────
+ *  Alles NACH der Position des genannten Reiters fällt weg; der genannte und
+ *  alles links davon bleibt. Die Position ist die des flachen Speichers — also
+ *  genau die, die die Arbeitsleiste zeigt (D16). */
+export function schliesseRechtsVon(path: string): void {
+  const teil = tabSchluessel(path);
+  const bisher = ladeTabs();
+  const idx = bisher.findIndex((t) => tabSchluessel(t.path) === teil);
+  if (idx === -1 || idx === bisher.length - 1) return;
+  merkeGeschlossen(bisher.slice(idx + 1).map((eintrag, i) => ({ eintrag, index: idx + 1 + i })));
+  schreibe(bisher.slice(0, idx + 1));
+}
+
+// ─── M3 (Prüfbefund R11 #37, 6.9.2026) · «ZULETZT GESCHLOSSEN» ──────────────
+//
+// GEMESSENER ANLASS: Alt+Shift+T liess die Reiterliste unverändert, und
+// `localStorage` führte keinen Schliess-Ring (G4/G4c). Im Browser ist das
+// Wiederherstellen die Rückfahrkarte für jedes versehentliche ✕ — hier ist es
+// MEHR als das: seit §5a Ziff. 3 ERSETZT schon eine gewöhnliche Navigation den
+// aktiven Reiter (`ersetzeTab`), der Verlust ist also Alltag und nicht Unfall.
+// Rechner-Eingaben liegen vollständig in der Adresse (`?e=…&k=ZH`), gehen mit
+// dem Reiter also mit — genau darum ist die Wiederherstellung der richtige
+// Ersatz für eine Schliess-Warnung und nicht deren Ergänzung.
+//
+// BERUFSGEHEIMNIS · DIESELBE GRENZE WIE `lexmetrik-tabs`, NICHT WEITER: der
+// Ring speichert AUSSCHLIESSLICH `TabEintrag`-Objekte, also Pfad + Label +
+// gewählter Anker — dieselben Felder, dieselbe Herkunft, dieselbe Lebensdauer
+// wie die offene Reiterliste selbst. Eine Rechner-Adresse trägt Falldaten
+// (`?e=2025-01-15&k=ZH`); sie tut das schon heute in `lexmetrik-tabs`, und der
+// Ring verlängert genau diese eine Grenze um höchstens ZU_MAX Einträge. NIE
+// aufgenommen werden Formularinhalte, und nie ein Zeitstempel (§2: kein
+// Date.now() in src/lib) — die Reihenfolge im Array IST die Reihenfolge.
+const ZU_KEY = 'lexmetrik-tabs-zu';
+const ZU_MAX = 10;
+
+/** Ein geschlossener Reiter mit der Position, an der er stand. Die Position ist
+ *  der ganze Unterschied zu einem Verlauf: wiederhergestellt wird DORT, wo der
+ *  Reiter war, nicht am Ende der Leiste. */
+interface GeschlossenerReiter { eintrag: TabEintrag; index: number }
+
+function ladeGeschlossene(): GeschlossenerReiter[] {
+  try {
+    const roh = localStorage.getItem(ZU_KEY);
+    const arr = roh ? JSON.parse(roh) : [];
+    if (!Array.isArray(arr)) return [];
+    return arr
+      .filter((x): x is GeschlossenerReiter =>
+        x && typeof x.index === 'number' && x.eintrag && typeof x.eintrag.path === 'string')
+      .slice(-ZU_MAX);
+  } catch {
+    return [];
+  }
+}
+
+function schreibeGeschlossene(ring: GeschlossenerReiter[]): void {
+  try { localStorage.setItem(ZU_KEY, JSON.stringify(ring.slice(-ZU_MAX))); }
+  catch { /* privater Modus — die Rückfahrkarte ist Komfort, kein Datenbestand */ }
+}
+
+/** Legt geschlossene/ersetzte Reiter hinten in den Ring (jüngster zuletzt).
+ *  Der leere «+»-Reiter kommt NICHT hinein: er trägt kein Dokument, seine
+ *  «Wiederherstellung» wäre ein Klick auf «+» (§8 — nichts versprechen, was
+ *  keinen Wert hat). */
+function merkeGeschlossen(neue: GeschlossenerReiter[]): void {
+  const echte = neue.filter(({ eintrag }) => !eintrag.leer);
+  if (echte.length === 0) return;
+  schreibeGeschlossene([...ladeGeschlossene(), ...echte]);
+}
+
+/** Der zuletzt geschlossene Reiter — für die Beschriftung der Aktion
+ *  («Zuletzt geschlossen: Art. 336c OR»). null = der Ring ist leer, dann wird
+ *  die Aktion gar nicht erst angeboten (kein toter Menüeintrag). */
+export function letzterGeschlossener(): TabEintrag | null {
+  const ring = ladeGeschlossene();
+  return ring.length ? ring[ring.length - 1].eintrag : null;
+}
+
+/** Stellt den zuletzt geschlossenen Reiter AN SEINER ALTEN POSITION wieder her
+ *  und gibt ihn zurück (der Aufrufer navigiert dorthin). null = nichts im Ring.
+ *
+ *  Ist derselbe Reiter inzwischen wieder offen, wird der Ring-Eintrag
+ *  VERBRAUCHT und der offene Reiter zurückgegeben — sonst bliebe ein Eintrag
+ *  stehen, dessen Wiederherstellung sichtbar nichts tut. */
+export function stelleLetztenWiederHer(): TabEintrag | null {
+  const ring = ladeGeschlossene();
+  const letzter = ring.pop();
+  if (!letzter) return null;
+  schreibeGeschlossene(ring);
+  const bisher = ladeTabs();
+  const teil = tabSchluessel(letzter.eintrag.path);
+  if (bisher.some((t) => tabSchluessel(t.path) === teil)) return letzter.eintrag;
+  const naechste = [...bisher];
+  naechste.splice(Math.min(letzter.index, naechste.length), 0, letzter.eintrag);
+  schreibe(naechste.slice(0, MAX));
+  return letzter.eintrag;
 }
 
 /** Pfad für eine NEUE Instanz desselben Erlasses/Items (Auftrag David: dasselbe
