@@ -389,11 +389,11 @@ export function LeserRahmenV3({ ebene, schluessel }: LeserRahmenV3Props) {
             sichtbarer Sprung von 20 px, sobald er erschien (Bug-Check «Nice»,
             16.8.2026). Derselbe `display: contents`-Träger, der das schon für
             «Weiterlesen» und die Tastatur löst, nimmt den Margin entgegen und
-            wirft ihn weg. F2-5 (31.8.2026): Geometrie und Optik kommen aus `ui/SchwebeMeldung` — der Toast war die Abweichung unter drei gleichen Rollen (`top-20` geraten statt `--nt-stick`, darum @390 über den Kopf-Griffen; Herleitung und Messung dort). Behalten: `role="status"` und der Inhalt. */}
+            wirft ihn weg. F2-5 (31.8.2026): Geometrie und Optik kommen aus `ui/SchwebeMeldung` — der Toast war die Abweichung unter drei gleichen Rollen (`top-20` geraten statt `--nt-stick`, darum @390 über den Kopf-Griffen; Herleitung und Messung dort). Behalten: `role="status"`. M8 (6.9.2026): der INHALT hiess «Im neuen Reiter geöffnet — oben unter ☰» und war zweimal überholt — das ☰-Flyout ist mit der Arbeitsleiste (W2·24) weg, und der auslösende Knopf öffnet seit M8 das zweite Fenster statt eines zweiten Reiters (Herleitung in `ReiterAktion.tsx`). */}
         {m.reiterToast && (
           <SchwebeMeldung kante="oben" ausrichtung="rechts" rolle="status" inhaltKlassen="gap-2 px-3 py-2 text-body-s text-ink-700">
             <span aria-hidden className="text-brass-700">⧉</span>
-            Im neuen Reiter geöffnet — oben unter ☰
+            Daneben geöffnet — im Fenster rechts
           </SchwebeMeldung>
         )}
         {!umgebung.istSekundaer && m.weiterlesen && (
