@@ -80,7 +80,24 @@ async function messen(page: Page): Promise<Probe> {
     // 149 px UNTER der Linie in einem 200 px hohen Sichtfeld).
     const hoehe = document.documentElement.clientHeight
     const kandidaten = rects.filter((e) => e.bottom > bezug && e.top < hoehe)
-    const wahl = kandidaten.length > 0 ? kandidaten : rects
+    // ── §6.3-DEKLARATION (W2·24, 6.9.2026) · DER RÜCKFALL BLEIBT IM BILD ────
+    // Hier stand `: rects` — ALLE Artikel des Erlasses, auch die 1'600, die
+    // gerade gar nicht auf dem Schirm sind. Damit konnte das Orakel einen
+    // Artikel als «Soll» ausrufen, den der Leser nachweislich nicht sieht, und
+    // genau das tat es im Fall H6-a (320×200, 400 % Zoom): mit der
+    // Arbeitsleiste (R2) liegt die Bezugslinie bei 198 px in einem 200 px
+    // hohen Sichtfeld, der Kandidatensatz ist dann ein 2-px-Fenster und
+    // praktisch immer leer. Gemessen y=20744: das Orakel verlangte «40_b»,
+    // dessen Oberkante 10 px UNTER dem unteren Bildrand lag, während der Spy
+    // «40_a» meldete — den letzten Artikel, der oberhalb der Linie geendet
+    // hat, also die einzige Antwort, die der Leser überhaupt sehen kann.
+    // Der Rückfall bleibt darum im SICHTBAREN Satz. Das ist eine Verschärfung,
+    // keine Aufweichung: ein Signal, das auf einen Artikel ausserhalb des
+    // Bildes zeigt, wird ab jetzt gemeldet statt bestätigt — vorher war genau
+    // das das «Soll». Die Zusage des Falls («der Artikel an der Linie bleibt
+    // sichtbar») steht damit erstmals im Orakel selbst.
+    const sichtbar = rects.filter((e) => e.bottom > 0 && e.top < hoehe)
+    const wahl = kandidaten.length > 0 ? kandidaten : (sichtbar.length > 0 ? sichtbar : rects)
     let soll: string | null = null
     let besteDist = Infinity
     for (const e of wahl) {

@@ -153,9 +153,17 @@ test('A30: Marginalien-Ordnungssuffix (bis/ter) wird hochgestellt', async ({ pag
 
 test('A31: Fussnoten-Marker klebt ohne Abstand an der Artikelnummer', async ({ page }) => {
   await page.goto('/gesetze/bund/ZGB#art-276')
-  await expect(page.locator('a[href="#art-276"]').first()).toBeVisible()
+  // ── §6.3-DEKLARATION (W2·24, 6.9.2026) · DER ANKER IM ARTIKEL, NICHT IM BAUM
+  // `a[href="#art-276"]` traf seit P8 («Gliederungszeilen sind Links», neue
+  // Spec `leser-gliederung-p8`) zuerst die GLIEDERUNGS-Zeile in der
+  // Seitenspalte: sie trägt seither dieselbe Adresse. Deren Elternteil ist ein
+  // `div.flex` ohne `nowrap` und ohne Fussnoten-Marker — der Fall prüfte also
+  // ein anderes Element als das, über das er spricht (gemessen: wrap = DIV
+  // `flex items-start`, white-space `normal`). Der Prüfpunkt ist unverändert
+  // die Artikelnummer IM Artikel; nur der Selektor sagt das jetzt auch.
+  await expect(page.locator('#art-276 a[href="#art-276"]').first()).toBeVisible()
   const geklebt = await page.evaluate(() => {
-    const a = document.querySelector('a[href="#art-276"]')
+    const a = document.querySelector('#art-276 a[href="#art-276"]')
     const wrap = a?.parentElement
     if (!wrap || getComputedStyle(wrap).whiteSpace !== 'nowrap') return false
     // Der Artikel-Fussnoten-Marker (353) liegt IM selben nowrap-Wrapper wie das

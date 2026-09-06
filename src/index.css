@@ -2340,25 +2340,33 @@
      gemeldet) hält denselben Platz: die Leiste steht schon vor dem ersten
      Spy-Lauf da, wo sie danach steht. */
   .rl-stelle { display: inline-block; min-width: var(--app-reiter-stelle-b); flex-shrink: 0; }
-  /* ── W2·24-CI · DIE HÖHE IST DER ZWILLING DER BREITE ──────────────────────
-     BEFUND 6.9.2026 (Repro `scratchpad/diag6.cjs` gegen `dist`, StPO
-     Art. 429, @1280): die Reservierung oben deckte die BREITE, nicht die
-     HÖHE. Solange die Stellung leer ist (`stelle === ''`), hat der
-     inline-block keine Zeilenbox — computed height 0 px. Mit dem ersten
-     Spy-Lauf springt sie auf 21 px, und dieser Höhenwechsel ist nach
-     css-scroll-anchoring-1 §3.2 ein SUPPRESSION TRIGGER: der Browser setzt
-     das Scroll-Anchoring des DOKUMENT-Scrollers für diesen Frame aus.
-     Genau in diesem Frame materialisieren die `content-visibility`-Artikel
-     über der Lesestelle und schrumpfen (gemessen StPO 427/428: −70 px) —
-     ohne Anker wandert die gelesene Stelle um diesen Betrag nach oben und
-     verschwindet hinter dem klebenden Kopf.
-     GEGENPROBE auf origin/main (Port 4377, gleiche Sonde): dort schrumpfen
-     dieselben Artikel sogar um 196 px, `scrollY` zieht aber mit
-     (247'536 → 247'340) und die Lesestelle bleibt — die einzige Differenz
-     der beiden Messreihen war diese `height: 0px → 21px`-Zeile.
-     `1lh` = genau eine Zeilenbox, also dasselbe Mass, das der gefüllte Fall
-     ohnehin hat: die Höhe ändert sich nie mehr, das Bild bleibt gleich. */
-  .rl-stelle { min-height: 1lh; }
+  /* ── W2·24-CI · DIE RESERVE WAR HÖHER ALS IHR INHALT ──────────────────────
+     BEFUND 6.9.2026 (Repro `scratchpad/diag17.cjs` gegen `dist`, StPO @1280):
+     die Reservierung oben deckte die BREITE, nicht die HÖHE. Solange die
+     Stellung leer ist (`stelle === ''`), hat der inline-block keine Zeilenbox;
+     in der baseline-ausgerichteten Reiter-Zeile (`items-baseline`) liegt seine
+     Baseline damit an der Unterkante und schiebt die Zeile auseinander.
+     GEMESSEN: der Reiter-Knopf ist vor dem ersten Spy-Lauf 39 px hoch, danach
+     33 px — in einer Leiste, die `--app-reiter-h` = 34 px hoch ist. Die leere
+     Reservierung war also 6 px HÖHER als der gefüllte Zustand und lief über
+     ihre eigene Leiste hinaus, bis der Spy die Stelle meldete.
+     Das nicht-brechende Leerzeichen gibt dem leeren Feld genau EINE Zeilenbox
+     mit normaler Text-Baseline — dieselbe Kur wie am Fassungs-Slot des
+     Artikelkopfs (`.lr7-fassung [data-hist-slot]:empty`, unten): reservierte
+     und gefüllte Höhe fallen zusammen (gemessen 33 px vorher wie nachher). Es
+     greift NUR im leeren Zustand, das gefüllte Bild ist unverändert (§6).
+     WAS HIER NICHT DER GRUND WAR (Beleg altert nicht, §0 Ziff. 2b): die erste
+     Fassung dieser Zeile stand als `min-height: 1lh` und war mit der Vermutung
+     begründet, dieser Höhensprung unterdrücke nach css-scroll-anchoring-1 §3.2
+     das Scroll-Anchoring des Dokuments und erkläre damit die 66–70 px, um die
+     ein roher `element.scrollIntoView()` an der StPO wegdriftet. Die Vermutung
+     ist FALSIFIZIERT: mit der Reservierung repariert (Reiter-Knopf stabil bei
+     33 px) und selbst mit KOMPLETT ausgeblendeter Arbeitsleiste
+     (`display:none`) driftet derselbe rohe Scroll unverändert von 198 px auf
+     133 px. Die Drift hat eine andere, noch offene Ursache; der PRODUKT-Weg
+     (Deep-Link `#art-429`, TOC-Sprung) landet auf beiden Ständen exakt und
+     bleibt stehen (gemessen Abstand −1 px über 4 s, PR wie origin/main). */
+  .rl-stelle:empty::before { content: "\a0"; }
 
   /* ─── W2·24 · AUSWAHL-KACHEL (SelectionGrid) · KANTIG, LINIE, HAEKCHEN ─────
      Prueferbefund Fixer 2 (6.9.2026): die Kacheln standen als abgerundete

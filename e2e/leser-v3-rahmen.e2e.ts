@@ -23,13 +23,41 @@ import { test, expect, type Page } from '@playwright/test'
 
 const ERLASS = '/gesetze/bund/STPO'
 
+// ── §6.3-DEKLARATION (W2·24-CI, 6.9.2026) · DIE LESESTELLE WIE EIN LESER ────
+// Hier stand `document.getElementById('art-429')?.scrollIntoView()` — ein roher
+// DOM-Scroll, den auf dieser Seite NIEMAND auslöst: der Leser kommt über den
+// Deep-Link, den Gliederungs-Sprung oder einen Treffer, und alle drei laufen
+// über den Sprung-Pfad des Readers (`inhalt-sprung.tsx`/`scrollAnker.ts`), der
+// die Landung nach der `content-visibility`-Neuschätzung nachkorrigiert.
+// GEMESSEN 6.9.2026 (StPO @1280, `scratchpad/diag2.cjs`/`diag19.cjs`, dist):
+//   · roher `scrollIntoView`: landet bei 198 px (korrekt) und driftet 100 ms
+//     später auf 133 px — die Artikel 427/428 über dem Ziel schrumpfen beim
+//     Materialisieren um zusammen ~66 px, `scrollY` bleibt stehen. Auf
+//     origin/main schrumpfen dieselben Artikel um 196 px und `scrollY` zieht
+//     mit; die Ursache dieser Differenz ist noch offen (die naheliegende
+//     Vermutung «Arbeitsleiste unterdrückt das Scroll-Anchoring» ist
+//     falsifiziert, s. `.rl-stelle` in `src/index.css`).
+//   · PRODUKT-Weg `#art-429`: Abstand Kopf→Artikel −1 px, über 4 s stabil,
+//     auf BEIDEN Ständen.
+// Der Fall (e2) misst das Öffnen des Blattes, nicht `scrollIntoView`. Sein
+// Vorzustand wird darum über den Weg hergestellt, den der Leser hat; die
+// Assertions bleiben Wort für Wort dieselben und sind dadurch wieder scharf:
+// vorher massen sie eine Ausgangslage, die schon vor dem Öffnen kaputt war.
 async function leserLaden(page: Page, breite: number): Promise<void> {
   await page.setViewportSize({ width: breite, height: 900 })
-  await page.goto(ERLASS)
+  await page.goto(`${ERLASS}#art-429`)
   await expect(page.locator('.lc-leser[data-leser-v3="rahmen"]')).toHaveCount(1)
-  await expect(page.locator('#art-1')).toBeVisible({ timeout: 20_000 })
+  await expect(page.locator('#art-1')).toBeAttached({ timeout: 20_000 })
   await page.evaluate(() => document.fonts?.ready)
-  await page.evaluate(() => document.getElementById('art-429')?.scrollIntoView())
+  await expect(page.locator('#art-429')).toBeVisible({ timeout: 20_000 })
+  // Der Sprung ist gelandet, wenn die Zielstelle unter dem klebenden Kopf
+  // steht — darauf warten statt auf eine feste Uhr.
+  await expect.poll(async () => page.evaluate(() => {
+    const kopf = document.querySelector('[data-v3-kopf]')
+    const art = document.getElementById('art-429')
+    if (!kopf || !art) return 9999
+    return Math.round(Math.abs(art.getBoundingClientRect().top - kopf.getBoundingClientRect().bottom))
+  }), { timeout: 20_000 }).toBeLessThanOrEqual(4)
   await page.waitForTimeout(300)
 }
 
