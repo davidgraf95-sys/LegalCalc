@@ -134,6 +134,13 @@ export function LeserLeseZeile({
           `ArtikelLeser` lesen dieselbe Quelle. */}
       <SatzspiegelKontext.Provider value={bild.satzspiegel}>
       <div className="relative min-w-0" data-lr-spiegel={bild.satzspiegel}>
+        {/* D33 (7.9.2026): die Panel-Zone steht IN der Lese-Zelle, nicht neben
+            ihr. Ihre klebende Gestalt braucht einen `relative`-Bezug und eine
+            natürliche Lage unter dem Kopf-Block — beides gibt genau diese Zelle
+            her (Herleitung in `./LeserPanelZone`). Sie nimmt keinen Platz: im
+            Ruhezustand ist sie `display: contents` ohne Kinder, offen eine
+            0-Höhen-Hülle mit absolut gesetztem Blatt. */}
+        {panelZone}
         <div aria-hidden data-v3-blur="oben" className="pointer-events-none sticky z-sticky h-0 overflow-visible print:hidden"
           style={{ top: 'var(--nt-stick)' }}>
           <div className="h-4 bg-gradient-to-b from-paper/70 to-transparent" />
@@ -144,8 +151,6 @@ export function LeserLeseZeile({
         </div>
       </div>
       </SatzspiegelKontext.Provider>
-
-      {panelZone}
     </div>
   );
 }

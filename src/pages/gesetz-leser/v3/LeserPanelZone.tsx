@@ -79,6 +79,13 @@ import { usePopoverAutoZu } from './usePopoverAutoZu';
  *  Overlay-Schicht liegt und nicht zum Fenster. */
 const BLATT_ANTEIL = 55;
 
+/** Die 0-Höhen-Hülle der klebenden Gestalt (Herleitung bei `flaeche` unten);
+ *  ohne Klassen reicht sie ihr Kind unverändert durch. */
+function Huelle({ klassen, children }: { klassen?: string; children: ReactNode }) {
+  if (!klassen) return <>{children}</>;
+  return <div className={klassen} style={{ top: 'var(--nt-stick)' }}>{children}</div>;
+}
+
 export function LeserPanelZone({
   form, panelId, paneZiel, paneRolle, zustand, bezuege, erlassKey, quelleUrl, normZitat,
   artikelLabel, erlassKuerzel, bestimmungsWort, aktArtikel, steckbrief, ebene,
@@ -147,10 +154,12 @@ export function LeserPanelZone({
 
   usePopoverAutoZu({
     offen, schliesse, wrapRef, panelRef,
-    // D33 (7.9.2026): der Modus `'spalte'` (Layout ohne Aussenklick) ist mit der
-    // eigenen Spur gefallen. Auf D ist das Blatt wieder Beiwerk — Esc, das ✕, ein
-    // zweiter Klick am Zähler und ein Klick daneben schliessen es.
-    modus: modal ? 'blatt' : 'beiwerk',
+    // Ä86/D33: das Blatt neben dem Text ist kein aufgezogenes Popover — es
+    // schliesst über ✕ · Esc · Zweitklick am Zähler · «r», NICHT bei jedem Klick
+    // in die Lesespalte (sonst wäre Textmarkieren unmöglich, Klick-Test
+    // 18.8.2026; Wächter `leser-v3-rahmen` (f)). Der Modus hiess bis 7.9.2026
+    // `'spalte'` nach der Lage, die es nicht mehr gibt — die Regel bleibt.
+    modus: modal ? 'blatt' : 'fest',
     // Die Öffner liegen ausserhalb von `wrapRef` (Kopfzeile, «Ansicht ▾»-Menü) —
     // ohne diese Ausnahme schlösse ihr `pointerdown` das Panel, das ihr `click`
     // gleich darauf wieder öffnete (Herleitung in `usePopoverAutoZu`).
@@ -238,19 +247,35 @@ export function LeserPanelZone({
   // Anschlag-Kante und Deckel je Gestalt. Alle drei Zweige sind `fixed` bzw.
   // `absolute`, brauchen also keinen Platz im Fluss (§15/2, CLS 0).
   const flaeche = form === 'rechts' && !imPaneBlatt
-    // D · rechts angeschlagen, von der Kopf-Unterkante bis zum Fensterboden.
+    // ── D33 (7.9.2026) · DAS BLATT KLEBT AN DER LESE-ZELLE, NICHT AM FENSTER ──
+    // Bis hierher war diese Gestalt `fixed … right-0` mit `top: var(--nt-stick)`.
+    // GEMESSEN am ersten Bau von D33 (@1440, OR, Seite NICHT gescrollt): der
+    // klebende Kopf steht dann noch an seiner natürlichen Stelle (y 145–201),
+    // `--nt-stick` (154 px) meint aber die Stelle, an der er KLEBT. Das Blatt
+    // begann darum 47 px zu hoch und lag über dem ⚖-Knopf, der es aufgezogen
+    // hatte: `elementFromPoint` am Klickpunkt lieferte «Rechtsprechung &
+    // Kontext» statt des Knopfes, der zweite Klick traf das Blatt. Das ist
+    // wortgleich der Ä52-Befund von 17.8.2026 — nur die Ursache war neu.
+    // JETZT: `sticky` in der Lese-Zelle. Die natürliche Lage ist die Oberkante
+    // der Zelle (also unter dem Kopf, wo immer der gerade steht), und beim
+    // Scrollen klebt es bei `--nt-stick` — «tiefer von beiden», ohne zu messen.
+    // Die 0-Höhen-Hülle darum ist derselbe Kniff, mit dem die Scroll-Blende in
+    // `./LeserLeseZeile` aus dem Fluss bleibt: kein Platz, kein CLS, Δ = 0.
     ? {
-      klassen: 'fixed bottom-0 right-0 z-modal w-[22rem] max-w-[calc(100vw-2rem)] p-2',
-      stil: { top: 'var(--nt-stick)' } as CSSProperties,
+      huelle: 'pointer-events-none sticky z-modal h-0 overflow-visible',
+      klassen: 'pointer-events-auto absolute right-0 top-0 w-[22rem] max-w-[calc(100vw-2rem)] p-2',
+      stil: { maxHeight: 'calc(100vh - var(--nt-stick) - 1.5rem)' } as CSSProperties,
     }
     : imPaneBlatt
       // Pane · unten angeschlagen in der Overlay-Schicht (die den Pane deckt).
       ? {
+        huelle: undefined,
         klassen: 'pointer-events-auto absolute inset-x-0 bottom-0 z-modal',
         stil: { maxHeight: `${BLATT_ANTEIL}%` } as CSSProperties,
       }
       // H · echtes Bottom-Sheet: unten angeschlagen, gedeckelt, Artikel bleibt oben.
       : {
+        huelle: undefined,
         klassen: 'fixed inset-x-0 bottom-0 z-modal',
         stil: { maxHeight: `${BLATT_ANTEIL}dvh` } as CSSProperties,
       };
@@ -296,6 +321,7 @@ export function LeserPanelZone({
               className={imPaneBlatt ? 'lc-scrim pointer-events-auto absolute inset-0 z-overlay' : 'lc-scrim fixed inset-0 z-overlay'}
               onClick={schliesse} aria-hidden />
           )}
+          <Huelle klassen={flaeche.huelle}>
           <div
             // `role="dialog"` nur, wo es einer IST. Das Beiwerk ist eine benannte
             // REGION: ein Dialog ohne Fokus-Falle und ohne Modalität wäre die
@@ -322,6 +348,7 @@ export function LeserPanelZone({
               // Ä89: die Steckbrief-Zeile gehört dem Panel, nicht seinen Tafeln.
               steckbrief={steckbrief} />
           </div>
+          </Huelle>
         </>
       )}
     </div>

@@ -200,10 +200,13 @@ export function LeserKopf({
             gegen die die Klapp-Sonde misst (`e2e/leser-klapp-sonde.e2e.ts`). */}
         <div data-v3-kopf-ort
           className={`flex min-w-0 items-center gap-1.5 overflow-hidden whitespace-nowrap text-xs text-ink-500 ${
-            suchInZeile ? 'shrink-0' : 'flex-1 items-baseline'}`}
+            suchInZeile ? 'h-full shrink-0' : 'flex-1 items-baseline'}`}
           // D32: im Zeilen-Bild ist die Zone der linke Streifen — sie hat die
           // Breite der Spur und gibt sie nicht her (`shrink-0`), sonst begänne
-          // das Feld daneben nicht mehr an der Textkante.
+          // das Feld daneben nicht mehr an der Textkante. `h-full`: sonst misst
+          // die Zone ihren höchsten Inhalt, und die Kennung rutschte um 3 px,
+          // sobald der Gliederungs-Griff daneben verschwindet (gemessen an der
+          // Klapp-Sonde, 7.9.2026 — «ort: Δy=3»).
           style={suchInZeile ? { width: 'var(--leser-spur-versatz)' } : undefined}>
           {/* ── A4 (H2b-Nachzug) · DIE KENNUNG WIRD NIE ELLIPSIERT ────────────
               Ä21 gab dem Kürzel `min-w-0 truncate` (statt `shrink-0`), weil es bei
