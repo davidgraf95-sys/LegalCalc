@@ -46,7 +46,10 @@ test.describe('S1 · Query-Durchreichung ?q=', () => {
     await mehr.click()
     // Kern von S1: die Query steht in der Adresse UND im Filterfeld der Zielseite.
     await expect(page).toHaveURL(/[?&]q=recht/)
-    const zielFeld = page.getByRole('searchbox', { name: /durchsuchen/ })
+    // DEKLARIERTE LOCATOR-ANPASSUNG (R12A/D22, 6.9.2026): das Filterfeld auf
+    // /gesetze heisst am Bild «Filtern» und trägt diesen Namen jetzt auch
+    // zugänglich (WCAG 2.5.3). Zusicherung unverändert: der Begriff kommt an.
+    const zielFeld = page.getByRole('searchbox', { name: 'Filtern' })
     await expect(zielFeld.first()).toHaveValue('recht')
   })
 

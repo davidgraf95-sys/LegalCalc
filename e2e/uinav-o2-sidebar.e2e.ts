@@ -123,13 +123,19 @@ test.describe('O2 · Sidebar-Konsistenz', () => {
     await page.setViewportSize({ width: 390, height: 844 })
     await page.goto('/materialien')
 
-    const feld = page.getByPlaceholder('Titel, Nummer oder Behörde suchen …')
+    // DEKLARIERTE ANPASSUNG (R12A/D22, 6.9.2026): das Feld trägt jetzt das
+    // sichtbare Label «Filtern»; der Platzhalter nennt nur noch die Felder und
+    // wiederholt das Verb nicht («… suchen …» ist entfallen). Geprüft bleibt
+    // dasselbe: Feld sichtbar, Scope-Zeile sichtbar und verknüpft.
+    const feld = page.getByPlaceholder('Titel, Nummer oder Behörde …')
     await expect(feld).toBeVisible()
     // Scope-Label sichtbar UND programmatisch verknüpft.
     const beschreibung = page.locator('#materialien-filter-scope')
     await expect(beschreibung).toBeVisible()
     await expect(feld).toHaveAttribute('aria-describedby', 'materialien-filter-scope')
-    await expect(beschreibung).toContainText('Nur Titel, Nummer, Behörde und Dokumenttyp dieser Rubrik')
+    // DEKLARIERT (R12A/D22): das führende «Nur » ist entfallen — die Zeile sitzt
+    // in der Filterhülle unter dem Feld und beschreibt dort nichts anderes.
+    await expect(beschreibung).toContainText('Titel, Nummer, Behörde und Dokumenttyp dieser Rubrik')
 
     // Beifang: iOS Safari zoomt beim Fokus jedes Felds unter 16 px. Auf 390 px
     // muss die effektive Schriftgrösse darum ≥ 16 px sein.
