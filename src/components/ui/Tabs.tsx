@@ -124,7 +124,13 @@ export function Tabs<T extends string>({
       // greifen nur unterhalb der Schranke, der Schieber daher ebenso.
       // `min-h-11` an den Knoepfen (unten) haelt das 44-px-Fingermass, das die
       // feste Container-Hoehe im umgebrochenen Zustand nicht mehr geben kann.
-      className={`print:hidden flex ${HOEHE[groesse]} items-stretch gap-4 w-fit max-w-full overflow-x-auto lc-scrollrand-x max-[400px]:flex-wrap max-[400px]:h-auto max-[400px]:overflow-x-visible`}
+      // `max-[400px]:bg-none` GEHOERT DAZU (Nachzug B-R1, Sichtbeleg 6.9.2026,
+      // `r9-1-reiter-schkg-390-h.jpg`): unter 400 px wird umgebrochen, also
+      // NICHT geschoben — die Schatten der Scroll-Affordanz standen dort als
+      // heller Balken quer ueber den umgebrochenen Zeilen. Eine Affordanz fuer
+      // eine Bewegung, die es nicht gibt, ist ein Fleck. Dieselbe Bauform wie
+      // die `lg:bg-none`-Zeile an der Seitenleisten-Schiene.
+      className={`print:hidden flex ${HOEHE[groesse]} items-stretch gap-4 w-fit max-w-full overflow-x-auto lc-scrollrand-x max-[400px]:flex-wrap max-[400px]:h-auto max-[400px]:overflow-x-visible max-[400px]:bg-none`}
     >
       {items.map((it, i) => {
         const aktiv = value === it.code;
