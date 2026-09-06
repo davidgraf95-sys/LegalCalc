@@ -2991,7 +2991,11 @@ html[data-lr6-anker-warten] footer { visibility: hidden; }
 .lr7-bez-marke[data-reg="r"] { border-left-color: var(--reg-r); }
 .lr7-bez-marke[data-reg="g"] { border-left-color: var(--reg-g); }
 .lr7-bez-marke[data-reg="w"] { border-left-color: var(--reg-w); }
-.lr7-bez-pfeil { margin-left: auto; }
+/* Der Pfeil steht direkt hinter der letzten Marke, nicht am Zeilenende: er
+   gehört zur Aufzählung («… · Rechner ›»), nicht an den rechten Rand — dort
+   löste er sich optisch von dem, was er aufklappt (gesehen am Bild r6b-1440,
+   6.9.2026). */
+.lr7-bez-pfeil { display: inline-block; transition: transform var(--dur-fast, 120ms) var(--ease, ease); }
 .lr7-bez[open] .lr7-bez-pfeil { transform: rotate(90deg); }
 .lr7-bez-inhalt {
   display: grid;
