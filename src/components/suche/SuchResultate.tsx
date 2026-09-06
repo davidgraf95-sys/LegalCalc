@@ -85,7 +85,10 @@ function ZeileInhalt({ t, sprung, q }: { t: SuchTreffer; sprung?: boolean; q: st
       /* Zweizeiliges Snippet mit Highlight (S3/#56) statt einzeiligem Abschnitt. */
       untertitel={t.untertitel ? markiere(t.untertitel, q) : undefined}
       marke={t.marke && <Marke {...t.marke} />}
-      pfeil={sprung ? '↵' : '→'}
+      /* D9: kein «→» je Zeile mehr (Pfeil-Muster). Der Norm-Sprung behält sein
+         «↵», weil es keine Wiederholung, sondern eine ANDERE Aussage ist
+         («Enter springt direkt»). */
+      pfeil={sprung ? '↵' : false}
     />
   );
 }
@@ -147,8 +150,8 @@ function Gruppe({ g, index, onAuswahl, onNavigate, listboxId, aktivId, q, sektio
             ein axe-critical aria-required-children-Verstoss. Der «alle N»-Sprung
             wird dort als echte role=option am Gruppenende gerendert (unten). */}
         {g.mehrHref && !listboxId && (
-          <Link to={g.mehrHref} onClick={onAuswahl} className="ml-auto text-body-s text-brass-700 no-underline hover:text-brass-600">
-            alle {g.gesamt} →
+          <Link to={g.mehrHref} onClick={onAuswahl} className="ml-auto text-body-s text-brass-700 underline hover:text-brass-600">
+            alle {g.gesamt}
           </Link>
         )}
       </div>
@@ -180,10 +183,9 @@ function Gruppe({ g, index, onAuswahl, onNavigate, listboxId, aktivId, q, sektio
                 <li role="option" id={oid} aria-selected={oid === aktivId}
                   onClick={() => { onAuswahl?.(); onNavigate?.(g.mehrHref!); }}
                   className={`${ZEILE_CLS} cursor-pointer${oid === aktivId ? ' bg-brass-100/40' : ''}`}>
-                  {/* C-4: derselbe Pfeil wie an jeder Treffer-Zeile (statisch
-                      brass-700) — der Hover läuft über die Streifen-Fläche. */}
-                  <span className="min-w-0 flex-1 text-body-s font-medium text-brass-700">alle {g.gesamt} Treffer anzeigen</span>
-                  <span aria-hidden className="shrink-0 leading-none text-brass-700">→</span>
+                  {/* D9: der Pfeil ist mit dem Pfeil-Muster der Treffer-Zeilen
+                      gefallen — die Zeile sagt ihr Ziel im Wortlaut. */}
+                  <span className="min-w-0 flex-1 text-body-s font-medium text-brass-700 underline">alle {g.gesamt} Treffer anzeigen</span>
                 </li>
               );
             })()}
@@ -268,7 +270,7 @@ export function SuchResultate({ gruppen, allesGeladen, q, onAuswahl, onNavigate,
       {/* «Meinten Sie …?» (S3) — deterministischer Tippfehler-Vorschlag, ausserhalb
           der Listbox (kein Options-Element), setzt bei Klick die Query. */}
       {vorschlag && (
-        <p className="lc-card mb-2 px-4 py-2 text-body-s text-ink-600">
+        <p className="mb-2 border-y border-rule-soft px-4 py-2 text-body-s text-ink-600">
           Meinten Sie{' '}
           <button type="button" onClick={() => onVorschlag?.(vorschlag)}
             className="font-medium text-brass-700 underline decoration-dotted underline-offset-2 hover:text-brass-600">
@@ -277,7 +279,7 @@ export function SuchResultate({ gruppen, allesGeladen, q, onAuswahl, onNavigate,
           ?
         </p>
       )}
-      <div className="lc-card overflow-hidden"
+      <div className="lc-suchpanel overflow-hidden"
         role={listboxId ? 'listbox' : undefined} id={listboxId}
         aria-label={listboxId ? 'Suchtreffer' : undefined}>
         {gruppen.length === 0

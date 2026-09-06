@@ -1402,7 +1402,25 @@
     background:linear-gradient(90deg, var(--brass-500), var(--brass-300));
   }
 
-  .lc-card { @apply bg-surface border border-line rounded-lg shadow-md; }
+  /* ── U2 (Prüfbefund W2·24-R5, 6.9.2026) · LINIEN STATT FLÄCHEN ────────────
+     GEMESSEN auf 9 von 14 Übersichts-Routen (hell+dunkel @1440): `.lc-card`
+     trug Rahmen auf allen VIER Seiten UND eine eigene Füllung (`--surface`
+     #FDFDFD hell) gegen ein Papier von #FBFBFB — ein Unterschied von 2/255,
+     also eine Fläche, die niemand sieht, und ein Kasten, den jeder sieht.
+     Radius und Schatten waren mit R1 schon auf 0 bzw. `none` (`--radius-lg`,
+     `--shadow-md`); geblieben war die reine Kasten-ANATOMIE, ohne dass
+     irgendwo begründet gewesen wäre, warum sie sie behalten darf.
+     Fahrplan §5 dieser Runde: «Trennung über Linien (1 px `--rule-soft`, 2 px
+     `--rule` für Kopfzeilen)». Genau das steht jetzt hier: KEIN Seitenrahmen,
+     KEINE eigene Füllung, die Abgrenzung trägt je eine Haarlinie oben und
+     unten, der Abstand trägt Weissraum.
+     WAS NICHT MITKOMMT: schwebende Ebenen (Menü, Dialog, Popover, das
+     Suchpanel) behalten ihre Umrandung — sie liegen ÜBER fremdem Inhalt und
+     brauchen eine Kante, um nicht mit ihm zu verschmelzen. Ihre Anatomie ist
+     `.lc-schwebeflaeche` (unten), nicht `.lc-card`; die betroffenen
+     Fundstellen sind dorthin gezogen, nicht hier ausgenommen. */
+  .lc-card { background: transparent; border: 0;
+    border-top: 1px solid var(--rule-soft); border-bottom: 1px solid var(--rule-soft); }
   /* EINE Karten-Hover-Grammatik (Design-Konsistenz C-3, 31.8.2026).
      GEMESSEN waren drei: (a) Farbstufe `hover:border-brass-400` (Erlass-,
      Material-, Entscheid-Karte), (b) Lift + Schlagschatten
@@ -1423,6 +1441,9 @@
      als Geschwister über dem Link liegen müssen). */
   :is(a, button, [role='button'], [data-aktiv]).lc-card { @apply transition-colors; }
   :is(a, button, [role='button'], [data-aktiv]).lc-card:hover { border-color: var(--brass-400); }
+  /* U2: die Hover-Grammatik bleibt Wort für Wort — sie färbt jetzt die beiden
+     Haarlinien statt vier Rahmenseiten. Der Zustand ist damit dezenter, aber
+     nach derselben Regel (§G-j «eine Flexoki-Stufe tiefer»). */
 
   /* ── R5-D (5.9.2026) · EINE neutrale Hover-Fläche ─────────────────────────
      Das Gegenstück zur Karten-Grammatik darüber: die anklickbare ZEILE
@@ -1454,7 +1475,12 @@
   .lc-hover-flaeche { @apply transition-colors; }
   .lc-hover-flaeche:hover { background-color: var(--well); }
   /* Ergebnis-Kachel (Hauptwerte in Ergebnisblöcken) — eine Anatomie überall */
-  .lc-tile { @apply bg-surface-raised border border-line rounded-xl p-4; }
+  /* U2: dieselbe Umstellung wie `.lc-card`. Die Ergebnis-Kachel steht in
+     Reihen nebeneinander; ihre Abgrenzung ist die Oberlinie, nicht der Kasten
+     (die Akzent-Oberkante `.lc-akzent-*` unten setzt genau dort an und wird
+     dadurch erst richtig lesbar). */
+  .lc-tile { background: transparent; border: 0;
+    border-top: 1px solid var(--rule-soft); @apply p-4; }
   /* Akzent-Oberkante (massgeblich) — EINE Quelle statt 6×
      inline border-t-[3px]; die Bedeutung trägt die Farbe, nicht die Stelle. */
   /* LM-033 (B11-Karten, 4.9.2026): die Akzent-Oberkante ist 3 px stark, der
@@ -1493,7 +1519,13 @@
      Fristablauf im Fristenkontrollbuch — Papier-Spalt + Haarlinien-Ring
      in der Farbe des Markers (currentColor der Kreisfläche via CSS-Var). */
   /* F1: Termin-Ring = Zustand «ok» → --ok-solid (wertidentisch zu sage-500). */
-  .lc-termin-ring { box-shadow: 0 0 0 2px var(--surface), 0 0 0 3px var(--ring-farbe, var(--ok-solid)); }
+  /* R-4 (Prüfbefund W2·24-R5, 6.9.2026): der Doppelring lief über einen echten
+     `box-shadow` (0/0/0 2px Papier + 0/0/0 3px Ringfarbe) — gemessen 6× auf
+     `/rechner/tagerechner` und `/rechner/kuendigung`, also ein Schatten
+     ausserhalb von Menü/Dialog/Popover, den Fahrplan §5 der Runde ausschliesst.
+     `outline` + `outline-offset` malt DIESELBE Figur (2 px Papierspalt, 1 px
+     Ring) ohne Schatten-Semantik und folgt dem `rounded-full`-Radius. */
+  .lc-termin-ring { outline: 1px solid var(--ring-farbe, var(--ok-solid)); outline-offset: 2px; }
 
   /* Sanftes Auf-/Zuklappen aller <details> (auch .lc-sektion): EIN
      @supports-Block am Dateiende — die frühere lc-sektion-Sonderregel war
@@ -2293,18 +2325,32 @@
 
   /* Notices: Varianten sind eigenständig (Basis-Anatomie immer gleich —
      kein Inline-Nachbau von Padding/Border mehr nötig) */
-  .lc-notice { @apply bg-surface rounded-md text-ink-600; border-left: 3px solid var(--brass-line); padding: 12px 16px; }
+  /* U2: die Füllung fällt weg (sie war `--surface`, also 2/255 gegen Papier —
+     keine Fläche, nur eine Behauptung); der 3-px-Markenstrich links BLEIBT: er
+     ist kein Kasten, sondern das Zeichen, das den Hinweis vom Fliesstext
+     abhebt. Die Status-Varianten darunter behalten ihre Füllung — dort trägt
+     die Farbe eine Bedeutung (§13/F2: Warnung/Gefahr), nicht eine Kante. */
+  .lc-notice { @apply rounded-md text-ink-600; background: transparent; border-left: 3px solid var(--brass-line); padding: 12px 16px; }
   .lc-notice-warn { @apply lc-notice bg-warn-bg text-warn-700; border-left-color: var(--warn-line); }
   .lc-notice-danger { @apply lc-notice bg-danger-bg text-danger-700; border-left-color: var(--danger-line); }
 
   /* Messing-Hervorhebungsbox (Form-Gates der Vorlagen: «damit Ihre Vorlage
      wirkt») — vorher 12× wortgleich inline nachgebaut (FAHRPLAN-DESIGN 2.1). */
-  .lc-highlight { @apply rounded-xl border-2 border-brass-500 bg-brass-100 p-5; }
+  /* U2: aus dem 2-px-Vollrahmen mit Messing-Wash werden zwei 2-px-Kanten
+     (die «Kopfzeilen-Stärke» aus Fahrplan §5) ohne Füllung. Die Hervorhebung
+     bleibt die stärkste Trennung der Seite — sie ist jetzt eine Kante, keine
+     Fläche. */
+  .lc-highlight { background: transparent; border: 0;
+    border-top: 2px solid var(--brass-500); border-bottom: 2px solid var(--brass-500);
+    @apply p-5; }
 
   /* Leichter Container (Zeilen-Editoren, Eingabe-Gruppen): Karte ohne
      Schatten — dritte Stufe neben lc-card/lc-tile (FAHRPLAN-DESIGN 2.3).
      Padding bewusst beim Verwender (p-3 dichte Zeilen, p-4 Gruppen). */
-  .lc-panel { @apply bg-surface border border-line rounded-lg; }
+  /* U2: siehe `.lc-card`. Der leichte Container trennt Zeilen-Editoren und
+     Eingabe-Gruppen jetzt über Linien statt über einen Kasten. */
+  .lc-panel { background: transparent; border: 0;
+    border-top: 1px solid var(--rule-soft); border-bottom: 1px solid var(--rule-soft); }
 
   /* ─── Schwebefläche (A3-2, R3-β 31.8.2026) ────────────────────────────────
      Die EINE Anatomie für alles, was ÜBER dem Inhalt steht und dorthin
@@ -2332,6 +2378,20 @@
      entscheidet ihr Anker, nicht ihre Anatomie (dieselbe Trennung wie beim
      `.lc-scrim`). */
   .lc-schwebeflaeche { @apply bg-paper-raised border border-line rounded-lg shadow-lg; }
+
+  /* ── D9 (David 6.9.2026) · DIE EINE ANATOMIE DES SUCH-PANELS ──────────────
+     Das Trefferpanel und der Leerzustand erscheinen an ZWEI Orten: im Titelblatt
+     (schwebend unter dem Kopf-Suchfeld) und auf der Startseite unter der
+     Hero-Zeile (im Fluss der Seite, ebenso auf `/suche`). Bis hierher trugen sie
+     dafür `.lc-card` — also im Fluss eine Kasten-Anatomie mit eigener Füllung,
+     und im Kopf denselben Kasten NOCH EINMAL innerhalb der schwebenden Hülle
+     (zwei Rahmen übereinander).
+     Jetzt trägt der Inhalt gar keine Kante mehr: die Gruppen trennen sich
+     untereinander über Haarlinien (`border-t border-line`, in `SuchResultate`
+     und `SucheLeerzustand`), und die AUSSEN-Kante gehört dem Ort — im Kopf der
+     schwebenden `.lc-schwebeflaeche`, im Fluss der Papierfläche der Seite. Damit
+     ist das Panel an beiden Orten dasselbe Ding, wie §5 es verlangt. */
+  .lc-suchpanel { background: transparent; border: 0; }
 
   /* Referenzwerk-Liste: Messing-Gedankenstrich als Marker (FAHRPLAN-DESIGN
      5.5) — für Hinweis-Listen der Vorlagen (Preflight nimmt Browser-Bullets

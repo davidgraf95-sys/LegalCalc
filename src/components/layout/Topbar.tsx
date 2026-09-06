@@ -183,7 +183,18 @@ export function Topbar({ onMenu, schubladeOffen, seitenleisteEingeklappt, onSeit
             Der Deckel ist seit R2 enger (`max-w-xs`, ab `xl` `max-w-sm`): die
             Bereichs-Reiter teilen sich die Zeile jetzt mit dem Feld, und ein
             576-px-Feld nähme ihnen bei 1280 px Fensterbreite den Platz. */}
-        <div className="flex-1 min-w-0 max-w-xs xl:max-w-sm">
+        {/* ── D9-NACHZUG (6.9.2026) · DAS FELD HAT EINEN BODEN ────────────────
+            GEMESSEN am Stand `0834cbd7b` (`/gesetze`, Preview): das Feld war
+            @1024 genau 56 px breit und @1280 200 px — es ist `flex-1 min-w-0`
+            und gab den Bereichs-Reitern so lange nach, bis nur noch der
+            ⌘K-Hinweis hineinpasste. Ein 56-px-Suchfeld im Titelblatt ist keine
+            kleine Suche, sondern keine (dieselbe Einsicht wie C1/B10/L3 unter
+            480 px). Der Boden von 9 rem gilt erst AB 481 px: darunter weicht
+            das Feld ohnehin der Lupe, und ein Mindestmass an der Hülle hätte
+            @320 den Streifen überlaufen lassen (`e2e/topbar-kein-ueberlauf-320`).
+            Den Platz nehmen die Bereichs-Reiter, die dafür seit R2 ihre eigene
+            Scroll-Achse haben (`overflow-x-auto lc-reiter-scroll`). */}
+        <div className="flex-1 min-w-0 min-[481px]:min-w-[9rem] max-w-xs xl:max-w-sm">
           {!aufStartseite && (
             <HeaderSuche onFokusModus={setSucheBreit} onFokusZurueck={() => { fokusWunsch.current = true; }} />
           )}
