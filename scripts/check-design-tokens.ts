@@ -69,7 +69,7 @@ const FOKUS_ARB_RE = /\bfocus(?:-visible)?:-?(?:outline|ring|ring-offset)-\[(?!v
 // nur innerhalb desselben className-Strings.
 // ERGÄNZUNG W2·24-DESIGN-IDENTITAET R1 (6.9.2026, §2b — der Befund oben bleibt
 // als datierter Beleg stehen): die Overline ist seither entversalt, 12 px und
-// selbst auf --ink-500 kalibriert (gemessen 5.34:1 auf --paper, 4.85:1 auf
+// selbst auf --ink-500 kalibriert (gemessen 5.31:1 auf --paper, 4.82:1 auf
 // --well, KONTRAST-R1.md). Der Ausdruck bleibt UNVERÄNDERT scharf: ein
 // ausdrückliches `text-ink-500` am Etikett ist heute ein No-op und morgen ein
 // stiller Vorgriff auf eine Rekalibrierung, 400/300 bleiben unter AA.

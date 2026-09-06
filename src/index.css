@@ -1109,7 +1109,8 @@
      zweites Mal (§5/F9). `.lc-ziffern` ist die Rolle ohne Familie, `.num`
      bleibt Rolle + Familie und ist Zeichen für Zeichen wirkungsgleich. */
   .num, .lc-ziffern { font-variant-numeric: lining-nums tabular-nums; }
-  .num { font-family: var(--font-mono), ui-monospace, monospace; }
+  /* W2·24-R1-Nachzug (Prüfer R1-1, 6.9.2026): `.num` trägt nur noch Tabellenziffern, keine
+     Mono-Familie mehr — Wörter in `.num`-Zeilen liefen sonst als Schreibmaschine. */
 
   /* «&» in Display-Titeln: ruhige Sans-Glyphe (Geist) statt der
      verschnörkelten Fraunces-Form; leicht reduziert für optischen Ausgleich. */
@@ -1528,8 +1529,8 @@
 
   .lc-chip {
     @apply inline-flex items-center rounded-sm bg-well text-ink-700; /* Tinte: 4.5:1 auf Well; Akzent traegt der Tick */
-    border-left: 2px solid var(--brass-500); /* Messing-Tick (gravierte Skala) */
-    font-family: var(--font-mono), ui-monospace, monospace;
+    border-left: 2px solid var(--brass-500); /* Tick (R1-7: Registerfarbe folgt in R3/R5) */
+    font-family: var(--font-sans), system-ui, sans-serif; font-variant-numeric: tabular-nums; /* R1-2: kein Mono */
     font-size: .75rem; font-weight: 500; padding: 2px 8px;
     min-height: var(--tap-ziel); /* WCAG 2.2 Target-Size (2.5.8): ≥24px Tap-Ziel (Auftrag David 26.6.2026); seit R4 aus dem EINEN Token statt roher Zahl (F9) */
   }
@@ -2021,7 +2022,7 @@
   .lc-scrim-dialog { background-color: var(--scrim-dialog); }
   .lc-scrim-voll { background-color: var(--scrim-voll); }
   .lc-badge {
-    @apply inline-flex items-center rounded-full;
+    @apply inline-flex items-center rounded-sm; /* R1-3: Kanten statt Pille (392 Badges) */
     font-size: .75rem; font-weight: 500; padding: 2px 10px;
   }
   /* F1 (§4b-B-i): Zustand «ok», nicht Materialien-sage → --ok-Rolle (wertidentisch). */
@@ -2232,7 +2233,7 @@
   /* Sprung-Hervorhebung: Ziel-Artikel kurz mit Messing-Fläche markieren
      (Hash-Sprung aus dem Popover / TOC, Rubrik V «Gesetze»). */
   @keyframes lc-ziel-blink { 0% { background: var(--brass-100); } 100% { background: transparent; } }
-  .lc-ziel-blink { animation: lc-ziel-blink 2.4s var(--ease); border-radius: .375rem; }
+  .lc-ziel-blink { animation: lc-ziel-blink 2.4s var(--ease); border-radius: 0; } /* R1-11 */
 
   /* A35 (David 16.7.2026): Treffer-Highlight der In-Gesetz-Suche («Vertrag» im OR
      gehighlighted). Reine PAINT-Schicht über die bestehenden Text-Knoten (CSS

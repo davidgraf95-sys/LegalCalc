@@ -54,7 +54,7 @@ QS-UI-WARNLINE; neu dazu kommt `karte-kante`/`karte-voll` hell mit **3.66:1**
 | Referenzbild | Umgesetzt | Grund |
 |---|---|---|
 | `--paper` hell `#FFFFFF` | `#FBFBFB` | `check-farbwelt.ts` erzwingt die Flächen-Leiter `well < paper < surface < paper-raised` (FAIL, nicht Warnung). Über dem Papier braucht es zwei hellere Flächen — `#FFFFFF` ist jetzt `--paper-raised`, die schwebende Ebene. Sichtbarer Unterschied zu Reinweiss: ΔL ≈ 0.006. |
-| `--ink-3` hell `#767676` | `--ink-500` `#696969` | `#767676` liegt auf `--well` bei 4.44:1 — unter AA. Der dunklere Ton hält 4.82:1 und bleibt tonal derselbe Tier. |
+| `--ink-3` hell `#767676` | `--ink-500` `#696969` | `#767676` liegt auf `--well` bei 3.99:1 (Prüfer R1-8 nachgerechnet, culori wcagContrast; die frühere Angabe 4.44 war falsch) — unter AA. Der dunklere Ton hält 4.82:1 und bleibt tonal derselbe Tier. |
 | Ink-Rampe warm (Referenz `#ECEAE4` dunkel) | chromafrei (`#EDEDED`) | Die Wärme WAR die halbe Creme-Signatur (Fahrplan §1). C = 0 in beiden Modi; der harte Hue-Drift-Wächter für `ink` greift bei C = 0 nicht mehr, die L-Monotonie bleibt geprüft. |
 | Archivo `wdth` 87.5 | Breite normal (`wght`-Achse) | Die `wdth`-Achse kostet im latin-Subset **90.1 KB statt 34.9 KB** (+158 % Erstlast) für eine Breitenstufe (§15). Rückkehr = Import auf `wdth.css` + `font-stretch: 87.5%`; Entscheid offen für R2/R5. |
 
