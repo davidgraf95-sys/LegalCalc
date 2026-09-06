@@ -150,11 +150,10 @@ function messen(page: Page): Promise<Masse> {
   })
 }
 
-/** Überlappung zweier Kästen in px (0 = keine). */
-function deckung(a: { x: number; r: number } | null, b: { x: number; r: number } | null): number {
-  if (!a || !b) return 0
-  return Math.max(0, Math.min(a.r, b.r) - Math.max(a.x, b.x))
-}
+// D33 (7.9.2026): `deckung()` ist gestrichen. Sie mass die WAAGRECHTE
+// Überschneidung von Text und Blatt und war die Kernfrage der eigenen Spur
+// («nichts verdeckt»). Beim überlagernden Blatt ist die Überschneidung gewollt
+// und offengelegt; gemessen wird jetzt, wie viel Lesetext frei BLEIBT (Fall (a)).
 
 test.describe('Ä60 (c) — Text und Beiwerk-Blatt stehen nebeneinander', () => {
   // ── (a) @1440: das Blatt überlagert — und bewegt nichts ───────────────────
@@ -175,9 +174,27 @@ test.describe('Ä60 (c) — Text und Beiwerk-Blatt stehen nebeneinander', () => 
       .toBe(zu.text!.b)
     expect(auf.text!.x, `@1440 wandert die Lesespalte beim Öffnen (${zu.text!.x} → ${auf.text!.x})`)
       .toBe(zu.text!.x)
-    // Ä59 gilt weiter für den TITEL — er steht oben, das Blatt beginnt unter dem
-    // klebenden Kopf: die Überlagerung darf ihn nicht erwischen.
-    expect(deckung(auf.titel, auf.blatt), 'der Erlass-Titel liegt unter dem Blatt (Ä59)').toBe(0)
+    // ── §6.3-DEKLARATION (D33) · Ä59 WIRD ANDERS GEMESSEN ────────────────────
+    // Hier stand `deckung(auf.titel, auf.blatt) === 0` — eine WAAGRECHTE
+    // Überschneidung. Für eine eigene Spur war das die richtige Frage; für ein
+    // überlagerndes Blatt ist sie unbeantwortbar: die Überlagerung IST der Preis
+    // der Variante A (offengelegt, David-Entscheid 7.9.2026). Der Kern von Ä59
+    // bleibt und wird jetzt an der Sache gemessen — es muss so viel Text frei
+    // bleiben, dass man ihn lesen kann. Gemessen @1440: Lesespalte 492…1256,
+    // Blatt 904…1256 ⇒ 412 px frei. Der Deckel ist die halbe Spaltenbreite;
+    // ein Blatt, das die Spalte überwiegend deckt, wäre rot.
+    expect(auf.blatt!.x - auf.text!.x,
+      `das Blatt lässt nur ${auf.blatt!.x - auf.text!.x} px Lesetext frei (Spalte ${auf.text!.b} px)`)
+      .toBeGreaterThanOrEqual(Math.round(auf.text!.b / 2))
+    // Und senkrecht: es beginnt UNTER dem klebenden Kopf-Block, nie darüber —
+    // das war der Ä52-Befund (das Blatt deckte die Griffe, die es aufziehen).
+    const oben = await page.evaluate(() => {
+      const kopf = document.querySelector('[data-v3-kopf]')!.getBoundingClientRect()
+      const blatt = document.querySelector('[data-v3-panel-form]')!.getBoundingClientRect()
+      return Math.round(blatt.top - kopf.bottom)
+    })
+    expect(oben, `das Blatt beginnt ${-oben} px über der Unterkante des Kopf-Blocks (Ä52)`)
+      .toBeGreaterThanOrEqual(-1)
     expect(auf.ch!, `Lesemass ${auf.ch} ch (WCAG SC 1.4.8)`).toBeLessThanOrEqual(80)
     expect(auf.overflow, 'waagrechter Überlauf des Dokuments').toBeLessThanOrEqual(1)
   })
@@ -270,15 +287,27 @@ test.describe('Ä60 (c) — Text und Beiwerk-Blatt stehen nebeneinander', () => 
     })
   }
 
-  test('(f2) Gegenprobe @1023: unter der Spalten-Grenze schliesst der Aussenklick weiterhin', async ({ page }) => {
-    await leserLaden(page, 1023)
+  // ── §6.3-DEKLARATION (D33, 7.9.2026) · DIE GEGENPROBE HAT EINEN NEUEN ORT ──
+  // Sie stand @1023 und prüfte, dass die «nicht bei jedem Klick schliessen»-Regel
+  // NICHT unter die 1024er-Grenze leckt. Diese Grenze trennte die eigene
+  // Blatt-Spur vom überlagernden Blatt; seit D33 überlagert es überall, und die
+  // Regel gilt für jedes nicht-modale Blatt — @1023 wie @1440. Eine Gegenprobe
+  // auf einen Unterschied, den es nicht mehr gibt, prüft nichts (§6.7).
+  // Die Gegenprobe steht jetzt dort, wo der Unterschied WIRKLICH ist: beim
+  // MODALEN Blatt (@390, Bottom-Sheet mit Scrim). Dort schliesst der Klick
+  // daneben weiterhin — sonst wäre (f) der Beweis, dass nirgends etwas schliesst.
+  test('(f2) Gegenprobe @390: das modale Blatt schliesst beim Klick auf den Scrim', async ({ page }) => {
+    await page.setViewportSize({ width: 390, height: 844 })
+    await page.goto(`${ERLASS}#art-429`)
+    await expect(page.locator('[data-v3-kopf]')).toBeVisible({ timeout: 20_000 })
+    await expect(page.locator('#art-1')).toBeAttached({ timeout: 20_000 })
     await panelAufziehen(page)
-    await expect(page.locator('[data-v3-panel-form="rechts"]')).toBeVisible()
-    const absatz = page.locator('#lc-lesespalte [id^="art-"] p').first()
-    await absatz.scrollIntoViewIfNeeded()
-    await absatz.click({ position: { x: 5, y: 5 } })
+    await expect(page.locator('[data-v3-panel-form="unten"]')).toBeVisible()
+    const scrim = page.locator('[data-v3-panel-scrim]')
+    await expect(scrim, '@390 fehlt der Scrim — dann ist das Blatt gar nicht modal').toBeVisible()
+    await scrim.click({ position: { x: 10, y: 10 } })
     await expect(page.locator('[data-v3-panel]'),
-      '@1023 bleibt das Blatt offen — die neue Regel leckt unter die 1024er-Grenze').toHaveCount(0)
+      '@390 bleibt das modale Blatt offen — der Weg daneben ist zu').toHaveCount(0)
   })
 
   // ── (e) der gelesene Text bleibt an seiner Leseposition ──────────────────

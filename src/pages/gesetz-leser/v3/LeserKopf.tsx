@@ -198,16 +198,22 @@ export function LeserKopf({
             Screenreader eine leere Verheissung (§8). Die Zone selbst bleibt als
             `data-v3-kopf-ort` bestehen; sie ist die linke Spur der Kopfzeile,
             gegen die die Klapp-Sonde misst (`e2e/leser-klapp-sonde.e2e.ts`). */}
-        <div data-v3-kopf-ort
-          className={`flex min-w-0 items-center gap-1.5 overflow-hidden whitespace-nowrap text-xs text-ink-500 ${
-            suchInZeile ? 'h-full shrink-0' : 'flex-1 items-baseline'}`}
-          // D32: im Zeilen-Bild ist die Zone der linke Streifen — sie hat die
-          // Breite der Spur und gibt sie nicht her (`shrink-0`), sonst begänne
-          // das Feld daneben nicht mehr an der Textkante. `h-full`: sonst misst
-          // die Zone ihren höchsten Inhalt, und die Kennung rutschte um 3 px,
-          // sobald der Gliederungs-Griff daneben verschwindet (gemessen an der
-          // Klapp-Sonde, 7.9.2026 — «ort: Δy=3»).
+        {/* ── D32 · DER LINKE STREIFEN ──────────────────────────────────────
+            Im Zeilen-Bild ist er genau so breit wie die Spur neben dem
+            Gesetzestext (`--leser-spur-versatz`) und gibt nichts davon her
+            (`shrink-0`) — sonst begänne das Feld daneben nicht an der Textkante.
+            `h-full`: sonst misst der Streifen seinen höchsten Inhalt, und die
+            Kennung rutschte um 3 px, sobald der Gliederungs-Griff daneben
+            verschwindet (gemessen an der Klapp-Sonde, 7.9.2026 — «ort: Δy=3»).
+            Der Griff steht NEBEN `data-v3-kopf-ort`, nicht darin: die Zone ist
+            die Erlass-Kennung und nichts sonst — `leser-v3-kopfzeile` (a) liest
+            ihren Text und verlangt genau das Kürzel. */}
+        <div className={suchInZeile
+          ? 'flex h-full min-w-0 shrink-0 items-center'
+          : 'flex min-w-0 flex-1 items-baseline'}
           style={suchInZeile ? { width: 'var(--leser-spur-versatz)' } : undefined}>
+        <div data-v3-kopf-ort
+          className="flex min-w-0 items-baseline gap-1.5 overflow-hidden whitespace-nowrap text-xs text-ink-500">
           {/* ── A4 (H2b-Nachzug) · DIE KENNUNG WIRD NIE ELLIPSIERT ────────────
               Ä21 gab dem Kürzel `min-w-0 truncate` (statt `shrink-0`), weil es bei
               ZH-211.11 der ganze Name ist (45 Zeichen) und die Zone sonst
@@ -230,6 +236,7 @@ export function LeserKopf({
             // Name steht zwei Zeilen tiefer im Erlass-Kopf; der `title` gibt
             // ihn am Griff selbst her, statt ihn zu verschweigen.
             title={suchInZeile ? erlass.kuerzel : undefined}>{erlass.kuerzel}</span>
+        </div>
           {/* D32: der Griff endet über der GLIEDERUNG, nicht über dem Text —
               darum die Spur-Lücke als rechtes Polster (`--leser-spur-abstand`,
               dieselbe Zahl wie das `gap-5` der Lese-Zeile). */}
