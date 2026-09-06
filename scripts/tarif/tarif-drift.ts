@@ -130,12 +130,20 @@ export function inVollzugSeit(versionDatesStr: string | undefined): string | nul
   return m ? `${m[3]}-${m[2]}-${m[1]}` : null;
 }
 
+/** Nur ein strikt ISO-formatiertes Datum (YYYY-MM-DD) gilt als belegt. */
+export function nurIso(wert: string | null | undefined): string | null {
+  return typeof wert === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(wert) ? wert : null;
+}
+
 async function holeLexWorkMeta(url: string): Promise<LexWorkAntwort> {
   await schlaf(ABSTAND_MS);
-  const res = await fetchMitWiederholung(url, {
-    headers: { 'User-Agent': UA, Accept: 'application/json' },
-    signal: AbortSignal.timeout(TIMEOUT_MS),
-  });
+  // Timeout als Option: netz-retry setzt das `signal` je Versuch selbst
+  // (Code-Lupe 6.9.2026 — ein `signal` im init wäre wirkungslos).
+  const res = await fetchMitWiederholung(
+    url,
+    { headers: { 'User-Agent': UA, Accept: 'application/json' } },
+    { timeoutMs: TIMEOUT_MS },
+  );
   if (!res.ok) throw new Error(`HTTP ${res.status} auf ${url}`);
   // Soft-404-Shell am Content-Type erkennen, nicht am Status (scraping-Skill
   // Fakt 3; dieselbe Falle, die LexWorkShellError in adapter-lexwork.ts fängt).
@@ -155,7 +163,9 @@ async function holeLexWorkMeta(url: string): Promise<LexWorkAntwort> {
   return {
     systematischeNr: tol.systematic_number ?? null,
     versionsId: cur?.id != null ? String(cur.id) : null,
-    inKraftIso: inVollzugSeit(cur?.version_dates_str) ?? (tol.enactment ?? null),
+    // `enactment` ist ein Portal-Fremddatum: nur strikt ISO übernehmen, sonst null
+    // (⇒ Verdikt «unklar» statt String-Vergleich; Code-Lupe 6.9.2026, wie inKraftSeit()).
+    inKraftIso: inVollzugSeit(cur?.version_dates_str) ?? nurIso(tol.enactment),
     aufgehoben: tol.abrogated === true,
   };
 }

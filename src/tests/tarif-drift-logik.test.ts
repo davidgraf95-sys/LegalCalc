@@ -100,4 +100,12 @@ describe('In-Kraft-Datum aus LexWork version_dates_str', () => {
     expect(inVollzugSeit(undefined)).toBeNull();
     expect(inVollzugSeit('ohne Datum')).toBeNull();
   });
+
+  it('9. nurIso: Portal-Fremddatum nur strikt ISO übernehmen, sonst null (Code-Lupe 6.9.2026)', async () => {
+    const { nurIso } = await import('../../scripts/tarif/tarif-drift');
+    expect(nurIso('2012-03-01')).toBe('2012-03-01');
+    expect(nurIso('01.03.2012')).toBeNull();
+    expect(nurIso('')).toBeNull();
+    expect(nurIso(undefined)).toBeNull();
+  });
 });
