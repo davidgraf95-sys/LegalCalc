@@ -574,11 +574,20 @@ zgb-a36-anhang: Die ZGB-Gliederung zeigt 74 Artikel des Anhangs «Wortlaut der f
   - [ ] **Folgeschritt A · Wert-Zeitreihe je Tarif** *(nicht vor dem Tor)* — `{ab, wert, quelle, stand}` je Eintrag, UI-Eingabe «massgebender Zeitpunkt», Zeitreihen-Golden (ein Sachverhalt über alle Rechtsstände, Muster OpenFisca `tests/rates_rebates/time.yaml`); Vorfrage: frühere Fassungen bei lexfind/zh.ch/belex stabil adressierbar? Typ-Muster bitemporal (`nicia-ai/typegraph`, MIT). Quelle: Rules-as-Code-Sichtung 5.9.2026 §5/§6.
   - [ ] **Folgeschritt B · Rechtsstand als Datumsbedingung neben der Regel** — `erbteilung.ts:200` und `gewaehrleistung.ts:71` von der `if datum >= …`-Weiche im Rumpf auf zwei nebeneinanderstehende, je mit Norm-Anker und Geltungsintervall versehene Regeln umstellen (verhaltensneutral, bestehende Mehr-Rechtsstand-Tests bleiben unverändert §6.3); Konvention dazu: nicht codierte Teilnormen als Kommentar mit Grund stehen lassen (Muster OpenFisca `CONTRIBUTING.md`). Risikopfad ⇒ Gegenprüfung. Quelle: Rules-as-Code-Sichtung 5.9.2026 §4/§5.
   - [ ] **Amtliche Golden-Quellen ins Tor** — Kantonsgericht VS Excel «Calcul des frais de justice» (7.2.2025), Amtsnotariate SG Gebührentabelle (Stand 27.3.2026), BGer-Tarif SR 173.110.210.1; Steuerrekursgericht-ZH-Excel (2019) nur nach Normabgleich. Negativbefund: kein Kanton betreibt einen interaktiven amtlichen Rechner, private Rechner sind keine Quelle (§7). Quelle: Fremdnutzen-Suchrunde 2 (6.9.2026) §1.
-  - [ ] **Drift-Nachverifikation der 34 Erlasse (93 Einträge)** *(Befund Tor-Erstlauf 6.9.2026)* — je Erlass amtliche aktuelle Fassung öffnen, Tarifwerte vergleichen, `stand`/`quelleUrl` nachziehen; Risikopfad, Gegenprüfung Pflicht; Werte nie ohne Quelle ändern. Erst danach `check:tarif-drift` in die Netz-Kette (`check:netz:kette`) verdrahten — sonst dauerrot. Liste: Tor-Ausgabe, Bibliothek Rules-as-Code-Sichtung §8/§9.
+  - [ ] **Drift-Nachverifikation der 34 Erlasse** → eigener Schritt `W3-TARIF-NACHVERIFIKATION` (herausgelöst 6.9.2026, Auftrag David).
   - [ ] **Adapter-Lücke 268 Einträge / 34 Quellen ohne Fassungsadressierung** (lexfind 42, silgeneve, rsn.ne, m3.ti, sz.ch-PDF, rsju, urilaw, ur.ch, prestations.vd, 4 Einträge ohne `quelleUrl`) — je Portal Fassungskennung finden (Muster `zh-quellinventar`), lexfind und die 4 URL-losen zuerst.
   - [ ] **Datenhygiene `src/data/tarif/**`** *(§5-Befund 6.9.2026)* — 72 von 122 `quelleUrl` tragen mehr als einen `stand`-String (bis 8, TI atto/181; OW 210.32 fünf Schreibweisen desselben Datums); `erlassNr` «914.5 (GB-GebV); 821.5 (GebT)» nennt zwei Erlasse in einem Feld (20 Einträge «unklar»). Vereinheitlichen ohne Wertänderung, Golden byte-gleich, Gegenprüfung.
   - [ ] **`scripts/tarif/**` in `istRisikoPfad()` aufnehmen** *(Nebenfund Nachzug 6.9.2026)* — die Drift-Logik fällt Rechtsdaten-Verdikte, liegt aber ausserhalb des Klassifikators in `scripts/gegenpruefung/kern.ts`; Rot-Beweis: Edit an `drift-logik.ts` muss `check:gegenpruefung` rot machen.
   - [ ] **WARTET AUF DAVID (fachlich, §7):** Verjährungsrevision 2020 (relative Frist 1→3 J.) als echte Weiche statt Nutzerwarnung (`verjaehrung.ts:547`).
+
+- [~] **Drift-Nachverifikation der Tarif-Stammdaten (34 Erlasse, 93 Einträge)** *(`W3-TARIF-NACHVERIFIKATION`, Auftrag David 6.9.2026, Befund Tor-Erstlauf `check:tarif-drift`)*
+  <!-- @meta id: W3-TARIF-NACHVERIFIKATION · status: wip · blocker: null · dep: [] · feld: werkzeuge -->
+  Ziel: jede DRIFT-Zeile des Tors wird an der **aktuellen amtlichen Fassung** nachverifiziert — Tarifwerte
+  der referenzierten Artikel vergleichen, bei Abweichung Wert + Norm-Anker + `quelleUrl`-Pin + `stand`
+  nachziehen (nie ohne Quelle), bei Gleichheit nur Pin/Stand; danach `check:tarif-drift` DRIFT 0 und
+  Verdrahtung in die Netz-Kette (`check:netz:kette`). **Grenzen:** `verifiziert` bleibt unverändert (§7:
+  «geprüft» setzt nur David); Golden-Änderung nur deklariert je Wert; Risikopfad ⇒ Gegenprüfung Pflicht;
+  keine Änderung an Engines. **Detail:** [rules-as-code-sichtung-2026-09-05.md](bibliothek/recherche/rules-as-code-sichtung-2026-09-05.md) §6 Ziff. 2 + Tor-Ausgabe.
 
 ---
 
