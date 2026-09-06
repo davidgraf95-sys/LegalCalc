@@ -139,7 +139,23 @@ export function SuchZone({
     // erwischt und das Eingabefeld samt Zahlen stehen lassen.
     <div data-v3-such-zone className="lr8-erlasssuche relative flex flex-col justify-start gap-1 pb-2"
       style={{ height: 'var(--leser-v3-such-h)' }}>
-      {suchFeld}
+      {/* ── D28 · DAS FELD IST EIN FELD, KEINE WAND ──────────────────────────
+          GEMESSEN 6.9.2026 @1440 (STPO, Preview 4372) nach dem Umzug: das
+          Eingabefeld lief über die volle Rahmenbreite von **1072 px**. Vorher
+          sass es in der 18-rem-Spalte und war 264 px breit; die Zone erbt
+          dagegen die Breite des Kopf-Blocks. Ein Unterstrich-Feld über einen
+          Meter Bildschirm ist keine Eingabe mehr, sondern eine Linie — und der
+          Cursor steht am linken Ende einer Fläche, die zu 90 % leer bleibt
+          (Design-Grundlage Kap. 8 Nr. 7, «nie Fensterbreite für eine Zeile»).
+          DER DECKEL IST DAS LESEMASS, nicht eine gegriffene Zahl: `max-w-reading`
+          (40 rem = 640 px, `tailwind.config.js`) ist dieselbe Token-Breite, an
+          der sich die Lesespalte orientiert — das Feld steht damit über dem Text
+          und nicht über der Fensterbreite. Ein arbitrary `max-w-[…rem]` verbietet
+          der Linien-/Typo-Kanon hier ausdrücklich (R2, `eslint.config.js`), und
+          zu Recht: die zweite Zahl wäre die, die vom Lesemass wegdriftet.
+          Darunter (Pane · Handy) greift der Deckel nie, dort bleibt `w-full` in
+          Kraft — kein Breakpoint, ein `max-width`. */}
+      <div className="w-full max-w-reading">{suchFeld}</div>
       {sucheAktiv && !blattOffen && (
         // §8: die Zahl steht dran, und der Weg zur Liste ist BENANNT statt als ☰
         // zu erraten — genau das war der zweite Teil des Ä19-Befunds («das

@@ -111,7 +111,11 @@ async function chrome(page: Page) {
       kopfUnten: kopf ? Math.round(kopf.bottom) : null,
       appLeisten: document.querySelectorAll('[data-inhalt-kopf]').length,
       appKrumen: document.querySelectorAll('nav[aria-label="Brotkrümel"]').length,
-      leserKrumen: document.querySelectorAll('nav[aria-label="Ort im Gesetz"]').length,
+      // §6.3-NACHZUG D27 (6.9.2026): die Ortsangabe ist keine `nav` mehr — die
+      // Krume ist weg, geblieben ist die Kennungs-ZONE des Kopfes. Gezählt wird
+      // ab hier sie; die Aussage «genau EINE Kopf-Ortszone je Lesefläche, und
+      // keine App-Krumenleiste daneben» bleibt unverändert prüfbar.
+      leserKrumen: document.querySelectorAll('[data-v3-kopf-ort]').length,
       // Schliess-Griffe im Ruhezustand: ein Knopf, dessen sichtbarer Text genau
       // «✕» ist. Deckt App-✕, Pane-✕ und Leser-✕ gleichermassen, ohne sich auf
       // eine der drei Beschriftungen zu verlassen.
@@ -207,19 +211,26 @@ test.describe('A-2 — unter ?leser=v3 trägt der Leser die eine Kopfzeile', () 
     expect(m.kreuze.length, `Schliess-Griffe: ${m.kreuze.join(' | ')}`).toBe(0)
     expect(m.ortsangabenImChrome, 'die App-Leiste nennt noch eine Ortsangabe').toBe(0)
 
-    // (b) Die Kopfzeile trägt die VOLLE Krume — klickbar, mit den Zielen der
-    // alten Leiste — plus Kürzel, Ortsangabe und Ansicht.
-    const ort = page.locator('[data-v3-kopf] nav[aria-label="Ort im Gesetz"]')
-    await expect(ort.getByRole('link', { name: 'Gesetze' })).toHaveAttribute('href', '/gesetze')
-    // Cowork-Befund 14 (18.8.2026, fachliche Korrektur): «Bund» zeigte vorher
-    // auf dasselbe Ziel wie «Gesetze» — jetzt auf die gefilterte Bund-Übersicht.
-    await expect(ort.getByRole('link', { name: 'Bund' })).toHaveAttribute('href', '/gesetze?ebene=bund')
+    // (b) §6.3-DEKLARATION D27/D28 (David 6.9.2026): die Kopfzeile trug bis
+    // 6.9. die VOLLE Krume «Gesetze › Bund › StPO». Sie ist weg — der Ort steht
+    // im Reiter, der Rücksprung in der Hauptnavigation. Was die Zeile ab hier
+    // trägt und was hier geprüft wird: Kennung · Ansicht · Erlass-Suche, dazu
+    // die Negativ-Zusagen (keine Kette, kein ✕, keine Lesestellung).
+    const ort = page.locator('[data-v3-kopf] [data-v3-kopf-ort]')
+    await expect(ort).toHaveCount(1)
+    await expect(ort.getByRole('link')).toHaveCount(0)
+    await expect(page.locator('[data-v3-kopf-krume-kurz]')).toHaveCount(0)
+    await expect(page.locator('[data-v3-kopf-artikel]')).toHaveCount(0)
     await expect(page.locator('[data-v3-kopf-kuerzel]')).toHaveText('StPO')
     await expect(page.locator('[data-v3-kopf] [data-v3-ansicht]')).toBeVisible()
+    // D28: die Erlass-Suche steht im Kopf-Block — @1440 MIT stehender Gliederung.
+    await expect(page.locator('[data-v3-kopf] [data-v3-such-zone] input')).toBeVisible()
     await expect(page.locator('[data-v3-kopf-schliessen]'),
-      'Ä87: das Kopf-✕ ist gestrichen — der Rücksprung steht als Krume').toHaveCount(0)
-    const krumeText = (await ort.innerText()).replace(/\s+/g, ' ')
-    expect(krumeText, `Krume lautet «${krumeText}»`).toContain('Gesetze › Bund › StPO')
+      'Ä87: das Kopf-✕ ist gestrichen — der Rücksprung steht in der Hauptnavigation').toHaveCount(0)
+    await expect(page.locator('nav[aria-label="Hauptnavigation"] a[href="/gesetze"]').first())
+      .toHaveCount(1)
+    const ortText = (await ort.innerText()).replace(/\s+/g, ' ').trim()
+    expect(ortText, `Ortszone lautet «${ortText}»`).toBe('StPO')
 
     // (c) DER STAND IST NICHT MITGEWANDERT — und trotzdem ohne Scrollen da.
     // Die Verschmelzung hätte ihn leicht in die Kopfzeile nachziehen können; das
@@ -266,24 +277,25 @@ test.describe('A-2 — unter ?leser=v3 trägt der Leser die eine Kopfzeile', () 
     // §6.3: fachliche Änderung, deklariert — die Aussage wird nicht weicher,
     // sondern schärfer (genau 0 statt «nicht mehr als 1»).
     expect(m.kreuze.length, `Schliess-Griffe @390: ${m.kreuze.join(' | ')}`).toBe(0)
-    // Auf `mini` fällt die KETTE (Kap. 4a) — nicht die Krume: seit V2 (Nachzug
-    // 17.8.2026) bleibt ihre erste Stufe als klickbarer Rücksprung «‹ Gesetze»
-    // stehen. Vorher war das ✕ hier der einzige Weg nach oben, und es springt an
-    // der Ebene vorbei. Die Ortsangabe bleibt, und das Suchfeld ist weiterhin das
-    // oberste Element des klebenden Blocks.
+    // §6.3-DEKLARATION D27 (David 6.9.2026): bis 6.9. fiel auf `mini` die KETTE,
+    // während die Krume als Rücksprung «‹ Gesetze» stehen blieb. Beides ist weg
+    // — der Ort steht im Reiter, der Rücksprung in der Hauptnavigation. Die
+    // Kopfzone trägt auf `mini` damit Kennung · Griffe · Suchfeld, und genau
+    // das wird hier geprüft. Der Weg nach oben ist unten gemessen, samt Klick;
+    // die Zusage «er ist da und er wirkt» ist unverändert, nur ihr Ort ist neu.
     await expect(page.locator('[data-v3-kopf-kuerzel]')).toHaveText('StPO')
     await expect(page.locator('[data-v3-kopf] [data-v3-suchsprung] input')).toBeVisible()
-    const kurz = page.locator('[data-v3-kopf-krume-kurz]')
-    await expect(kurz).toHaveCount(1)
-    await expect(kurz).toHaveAttribute('href', '/gesetze')
-    await expect(kurz).toBeVisible()
-    // Die volle Kette steht hier NICHT — sonst prüfte die Zeile oben nur, dass
-    // der Zuschnitt gar nicht greift.
-    const ortH = (await page.locator('[data-v3-kopf] nav[aria-label="Ort im Gesetz"]').innerText())
-      .replace(/\s+/g, ' ')
-    expect(ortH, `Ortsangabe @390: «${ortH}»`).not.toContain('Bund')
-    // Und er ist wirklich bedienbar: ein Klick führt zur Gesetzes-Übersicht.
-    await kurz.click()
+    await expect(page.locator('[data-v3-kopf-krume-kurz]')).toHaveCount(0)
+    await expect(page.locator('[data-v3-kopf-artikel]')).toHaveCount(0)
+    const ortH = (await page.locator('[data-v3-kopf] [data-v3-kopf-ort]').innerText())
+      .replace(/\s+/g, ' ').trim()
+    expect(ortH, `Ortszone @390: «${ortH}»`).toBe('StPO')
+    // Und der Weg nach oben ist wirklich bedienbar: @390 steht die
+    // Hauptnavigation in der Off-Canvas-Schublade hinter ☰.
+    await page.getByRole('button', { name: 'Navigation öffnen' }).first().click()
+    const zurueck = page.locator('nav[aria-label="Hauptnavigation"] a[href="/gesetze"]').first()
+    await expect(zurueck).toBeVisible({ timeout: 15_000 })
+    await zurueck.click()
     await expect(page).toHaveURL(/\/gesetze(\?|$)/, { timeout: 20_000 })
 
     expect(fehler, `Konsolen-/Seitenfehler: ${fehler.join(' | ')}`).toEqual([])
@@ -304,10 +316,12 @@ test.describe('A-2 — unter ?leser=v3 trägt der Leser die eine Kopfzeile', () 
       await expect(page.locator(`${wahl} [data-v3-kopf-kuerzel]`)).toBeVisible()
       // Ä46 (H4-II) / Ä87 (H4-Nachzug): der V3-Kopf trägt kein eigenes ✕ mehr —
       // im Pane war es das zweite Kreuz (44 px unter dem der Griffleiste), seit
-      // 18.8.2026 ist es auf JEDER Breite gestrichen; das Duplikat des
-      // Rücksprungs, der hier steht und dasselbe Ziel hat.
+      // 18.8.2026 ist es auf JEDER Breite gestrichen.
+      // §6.3-NACHZUG D27/D28 (6.9.2026): der Rücksprung, der hier stand, ist
+      // in die Hauptnavigation gezogen; an seiner Stelle steht die Erlass-Suche.
       await expect(page.locator(`${wahl} [data-v3-kopf-schliessen]`)).toHaveCount(0)
-      await expect(page.locator(`${wahl} [data-v3-kopf-krume-kurz]`)).toBeVisible()
+      await expect(page.locator(`${wahl} [data-v3-kopf-krume-kurz]`)).toHaveCount(0)
+      await expect(page.locator(`${wahl} [data-v3-such-zone] input`)).toBeVisible()
     }
     await expect(page.locator('[data-inhalt-kopf]')).toHaveCount(0)
     // Die Identität ist aus der Titelleiste verschwunden — geprüft am TEXT der
@@ -354,11 +368,21 @@ test.describe('A-2 — unter ?leser=v3 trägt der Leser die eine Kopfzeile', () 
     expect(m.appLeisten).toBe(0)
     // R6c: Bezug ist der Chrome-STAPEL, s. `chrome()`.
     expect((m.kopfUnten ?? 0) - (m.stapelUnten ?? 0)).toBeLessThanOrEqual(EIGEN_D)
-    const ort = page.locator('[data-v3-kopf] nav[aria-label="Ort im Gesetz"]')
-    const text = (await ort.innerText()).replace(/\s+/g, ' ')
-    expect(text, `Krume lautet «${text}»`).toContain('Gesetze › Kanton BS ›')
-    await expect(ort.getByRole('link', { name: 'Kanton BS' }))
-      .toHaveAttribute('href', '/gesetze?ebene=kanton&kt=BS')
+    // §6.3-DEKLARATION D27: hier stand die Kanton-Krume «Gesetze › Kanton BS ›»
+    // samt ihrem gefilterten Ziel. Die Krume ist weg; die ERLASS-NEUTRALITÄT,
+    // um die es dem Fall geht, wird ab hier an der Kennung gemessen — sie ist
+    // das, was von der Ortsangabe im Kopf geblieben ist, und sie muss auf einem
+    // Kantonserlass genauso stehen wie auf einem Bundeserlass (BS-640.100 ist
+    // gerade der Fall, in dem das Kürzel der ganze Name sein kann, Ä21/A4).
+    const ort = page.locator('[data-v3-kopf] [data-v3-kopf-ort]')
+    await expect(ort).toHaveCount(1)
+    const text = (await ort.innerText()).replace(/\s+/g, ' ').trim()
+    expect(text.length, `Kennung im Kopf lautet «${text}» — leer`).toBeGreaterThan(0)
+    expect(text, `Kennung enthält noch eine Krume: «${text}»`).not.toContain('›')
+    await expect(ort.getByRole('link')).toHaveCount(0)
+    // Der Weg zur gefilterten Kantons-Übersicht ist nicht verloren, er steht in
+    // der Hauptnavigation bzw. auf der Gesetzes-Übersicht — hier zählt nur, dass
+    // die Kopfzeile ihn nicht ein zweites Mal führt (§5).
 
     expect(fehler, `Konsolen-/Seitenfehler: ${fehler.join(' | ')}`).toEqual([])
   })
@@ -441,11 +465,18 @@ test.describe('A-2 — unter ?leser=v3 trägt der Leser die eine Kopfzeile', () 
       // die Zeile darunter den Desktop-Zuschnitt und wäre grundlos grün.
       const breite = (await kopf.boundingBox())!.width
       expect(breite, `${wahl} ist ${breite} px breit — über der 900-px-Schwelle`).toBeLessThan(900)
-      const kurz = kopf.locator('[data-v3-kopf-krume-kurz]')
-      await expect(kurz, `${wahl} ohne Rücksprung`).toHaveCount(1)
-      await expect(kurz).toHaveAttribute('href', '/gesetze')
-      await expect(kurz).toBeVisible()
+      // §6.3-DEKLARATION D27 (6.9.2026): der Rücksprung stand bis 6.9. in JEDEM
+      // Pane-Kopf. Er steht jetzt EINMAL in der Hauptnavigation — im Split ist
+      // das der Gewinn, nicht der Verlust: zwei Panes trugen zwei Wege zum
+      // selben Ziel (§5). Geprüft wird darum je Pane die Abwesenheit, und für
+      // die Seite als ganze das Vorhandensein (unten).
+      await expect(kopf.locator('[data-v3-kopf-krume-kurz]'),
+        `${wahl} trägt wieder eine Krume`).toHaveCount(0)
+      // D28: statt ihrer trägt jeder Pane-Kopf die Erlass-Suche.
+      await expect(kopf.locator('[data-v3-such-zone] input')).toBeVisible()
     }
+    await expect(page.locator('nav[aria-label="Hauptnavigation"] a[href="/gesetze"]').first())
+      .toHaveCount(1)
 
     expect(fehler, `Konsolen-/Seitenfehler: ${fehler.join(' | ')}`).toEqual([])
   })

@@ -111,18 +111,19 @@
    "leser-v3-kopfzeile.e2e.ts"
   ],
   "7": [
-   "schnellrechner-kalender.e2e.ts",
    "gesetze-footer-cls.e2e.ts",
    "gesetze-ia5-rechtsgebiet-kanon.e2e.ts",
    "gesetze-ia7-sidebar-badges.e2e.ts",
    "ics-export-z1.e2e.ts",
    "international-kanonik-ia6.e2e.ts",
+   "leser-klapp-sonde.e2e.ts",
+   "leser-ohne-gliederungslinie.e2e.ts",
    "leser-r1-r2.e2e.ts",
    "leser-toc-sprung.e2e.ts",
-   "leser-ohne-gliederungslinie.e2e.ts",
-   "leser-v3-suchfeld-ueberall.e2e.ts",
    "leser-v3-fokusring-suchfeld.e2e.ts",
    "leser-v3-suche-ohne-gliederung.e2e.ts",
+   "leser-v3-suchfeld-ueberall.e2e.ts",
+   "schnellrechner-kalender.e2e.ts",
    "tagerechner-rechenweg-sync.e2e.ts"
   ],
   "8": [
