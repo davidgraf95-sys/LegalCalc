@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { lazy, Suspense, useEffect, useMemo, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { useTabs } from './useTabs';
@@ -12,10 +12,28 @@ import { reiterKategorie, artikelLabelVonPfad } from '../../lib/tabGruppen';
 import { registerVonPfad, REG_FLAECHE, REG_TON, REG_HOVER_FLAECHE_REITER } from './bereiche';
 import { SchliessKnopf } from '../ui/SchliessKnopf';
 import { Leerzustand } from '../ui/Leerzustand';
-import { TabPanel } from './TabPanel';
+// ── §15 · AUCH DAS ÜBERLAUF-BLATT ERST BEIM ÖFFNEN ─────────────────────────
+// Dieselbe Überlegung wie beim Kontextmenü unten, und dieselbe Messung: das
+// Blatt rendert ausschliesslich im Portal hinter `blattOffen`, zieht aber mit
+// `TabPanel` die ganze Gruppier-Achse (`lib/tabGruppen`, `HerkunftIcon`) in
+// den Start-Chunk. Wer nie auf «+N» klickt — die Mehrheit —, lädt sie
+// umsonst. Logikverlust: keiner, dieselbe Komponente, nur später.
+const TabPanel = lazy(() => import('./TabPanel').then((m) => ({ default: m.TabPanel })));
 import { useDialogFokus } from './useDialogFokus';
 import { usePaneSteuerung } from './usePaneLayout';
-import { ReiterMenue, type ReiterMenueEintrag } from './ReiterMenue';
+// ── §15 · DAS KONTEXTMENÜ GEHÖRT NICHT IN DEN START-CHUNK ──────────────────
+// GEMESSEN 6.9.2026 (`npm run check:perf-budget`, gebautes dist/): mit einem
+// statischen Import stieg der Entry-Chunk von 59.7 KB auf 61.3 KB gzip und
+// riss das 60-KB-Budget — das Menü zieht `ui/Menue` mit, das sonst nur die
+// (lazy geladene) Leser-Fläche braucht. Es erscheint frühestens beim ersten
+// Rechtsklick; bis dahin kostet es nichts. Fallback `null`: es gibt nichts zu
+// zeigen, solange nichts geöffnet ist, und ein Platzhalter unter dem Zeiger
+// wäre schlechter als das Menü einen Wimpernschlag später.
+// LOGIKVERLUST-BEWERTUNG (§15): keiner — dieselbe Komponente, dieselben
+// Aktionen, nur später geladen. Die Reiter-Mechanik selbst (`lib/tabs`) bleibt
+// im Entry, wo sie hingehört.
+const ReiterMenue = lazy(() => import('./ReiterMenue').then((m) => ({ default: m.ReiterMenue })));
+import type { ReiterMenueEintrag } from './ReiterMenue';
 
 // ─── Arbeitsleiste: die offenen Reiter, sichtbar (W2·24 §5a, Wunsch David) ───
 //
@@ -753,8 +771,10 @@ export function Reiterleiste({ paneSchluessel = [] }: {
         const t = tabs.find((x) => tabSchluessel(x.path) === tabSchluessel(menue.path));
         if (!t) return null;
         return (
-          <ReiterMenue x={menue.x} y={menue.y} name={kurzformText(t, manifeste)}
-            eintraege={menueEintraege(t)} onSchliessen={() => setMenue(null)} />
+          <Suspense fallback={null}>
+            <ReiterMenue x={menue.x} y={menue.y} name={kurzformText(t, manifeste)}
+              eintraege={menueEintraege(t)} onSchliessen={() => setMenue(null)} />
+          </Suspense>
         );
       })()}
 
@@ -778,15 +798,17 @@ export function Reiterleiste({ paneSchluessel = [] }: {
               title="Neuer Reiter (Alt+T)" className="lc-btn-outline lc-btn-sm mb-2 w-full">
               <span aria-hidden className="lc-griff-glyph mr-1">+</span>Neuer Reiter
             </button>
-            <TabPanel
-              tabs={gefiltert}
-              manifeste={manifeste}
-              aktivSchluessel={aktivSchluessel}
-              onNavigate={(p) => { navigate(p); setBlattOffen(false); }}
-              onSchliessen={schliessen}
-              onDaneben={kannOeffnen ? (p) => { oeffneDaneben(p); setBlattOffen(false); } : undefined}
-              paneOffen={istOffen}
-            />
+            <Suspense fallback={null}>
+              <TabPanel
+                tabs={gefiltert}
+                manifeste={manifeste}
+                aktivSchluessel={aktivSchluessel}
+                onNavigate={(p) => { navigate(p); setBlattOffen(false); }}
+                onSchliessen={schliessen}
+                onDaneben={kannOeffnen ? (p) => { oeffneDaneben(p); setBlattOffen(false); } : undefined}
+                paneOffen={istOffen}
+              />
+            </Suspense>
             {gefiltert.length === 0 && (
               <div className="px-2 py-3">
                 {/* D-7: EIN Leerzustands-Baustein für «hier ist nichts» — die
