@@ -2004,6 +2004,19 @@
      --z-base). Eine Klasse, die das mitbrächte, wäre an genau
      einer der sieben Fundstellen richtig. Rollen und Herleitung der drei
      Deckungen: bei den Tokens oben. */
+  /* ── W2·24-DESIGN-IDENTITAET R2 · Reiter-/Bereichszeilen dürfen scrollen,
+     ohne eine Scrollleiste in den Kopf zu zeichnen ───────────────────────────
+     Konsumenten: die Bereichs-Reiter der Titelblatt-Zeile (`Topbar`) und die
+     Arbeitsleiste (`Reiterleiste`). Beide sind waagrecht scrollbar (§5a
+     Ziff. 8 und die Regel des Referenzbildes `.masthead nav{overflow-x:auto}`),
+     aber eine sichtbare Leiste in einer 28-px-Zeile frisst die halbe Höhe.
+     Gescrollt wird weiter — nur die Leiste ist unsichtbar; Tastatur und
+     Touch-Wisch bleiben unberührt, und der aktive Reiter wird von der
+     Komponente selbst ins Bild geholt (`scrollIntoView`), damit die
+     Unsichtbarkeit keine Unerreichbarkeit wird. */
+  .lc-reiter-scroll { scrollbar-width: none; -ms-overflow-style: none; }
+  .lc-reiter-scroll::-webkit-scrollbar { display: none; }
+
   .lc-scrim { background-color: var(--scrim); }
   .lc-scrim-dialog { background-color: var(--scrim-dialog); }
   .lc-scrim-voll { background-color: var(--scrim-voll); }

@@ -1,8 +1,9 @@
-import { Fragment, useCallback, useEffect, useRef, useState, type KeyboardEvent as ReactKeyboardEvent, type PointerEvent as ReactPointerEvent, type ReactNode } from 'react';
+import { Fragment, useCallback, useEffect, useRef, useState, type KeyboardEvent as ReactKeyboardEvent, type PointerEvent as ReactPointerEvent, type DragEvent as ReactDragEvent, type ReactNode } from 'react';
 import { useKopieren } from '../useKopieren';
 import { createPortal } from 'react-dom';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { Topbar } from './Topbar';
+import { Topbar, AusgabeZeile } from './Topbar';
+import { Reiterleiste, REITER_MIME } from './Reiterleiste';
 import { SchliessKnopf } from '../ui/SchliessKnopf';
 import { Sidebar } from './Sidebar';
 import { Footer } from './Footer';
@@ -105,6 +106,13 @@ export function Shell({ children }: { children: ReactNode }) {
   // V3-Flags — die Vorgabe gilt für beide Hüllen, der Befund ist in beiden derselbe
   // (FL-1: das Flag hat genau einen Schaltpunkt, und der ist nicht hier).
   const seitenleiste = useSeitenleiste({ vorgabeEingeklappt: istGesetzLeserPfad(pathname) });
+  // ── §6 (d) des Fahrplans W2·24 · AUF «/» ENTFÄLLT DIE PERSISTENTE LEISTE ──
+  // Die Bereiche stehen seit R2 als Reiter im Titelblatt; auf der Startseite,
+  // die selbst das Inhaltsverzeichnis der Sammlung ist, stünde die Leiste
+  // daneben und sagte dasselbe ein drittes Mal. Sie entfällt darum ab `lg`
+  // NUR dort — die mobile ☰-Schublade bleibt auf JEDER Route die
+  // Bereichs-Navigation (sonst verlöre Mobil die Navigation ganz).
+  const ohneSeitenleiste = pathname === '/';
   // R3 (Auftrag David 30.6.2026): die globale Schriftskala (A−/A+) ersetzte den
   // Inhaltsbreite-Umschalter; die zentrale Inhaltsspalte läuft seither fest auf
   // `max-w-content` (= die frühere Default-Breite «kompakt», Golden byte-gleich).
@@ -341,7 +349,15 @@ export function Shell({ children }: { children: ReactNode }) {
     else if (nach === 0) zumHauptfenster(von - 1);  // Pane auf das Hauptfenster → befördern
     else pane.verschiebe(von - 1, nach - 1);        // Sekundär ↔ Sekundär
   };
-  const dnd = usePaneDnd(verschiebePane);
+  // §5a Ziff. 4: ein Reiter, in ein Fenster gezogen, landet DORT — auf dem
+  // Hauptfenster als Navigation, auf einem sekundären Pane als dessen neuer
+  // Inhalt. Bereits offene Pfade werden nicht doppelt geöffnet (`istOffen`).
+  const reiterInPane = (pfad: string, ziel: number) => {
+    if (istOffen(pfad)) return;
+    if (ziel === 0) navigate(pfad);
+    else pane.ersetze(ziel - 1, pfad);
+  };
+  const dnd = usePaneDnd(verschiebePane, reiterInPane, REITER_MIME);
 
   // Schublade bei Routenwechsel schliessen — Render-Phasen-Abgleich statt Effect
   // (React-Muster «adjusting state when props change»).
@@ -372,7 +388,7 @@ export function Shell({ children }: { children: ReactNode }) {
       <div className="lg:flex">
         {/* Persistente Desktop-Seitenleiste: sticky, eigene Scrollachse, Breite
             per Ziehgriff verstellbar, per Topbar-Schalter einklappbar. */}
-        {!seitenleiste.eingeklappt && (
+        {!seitenleiste.eingeklappt && !ohneSeitenleiste && (
           <>
             <aside
               // A1 (H2b-Nachzug): Testanker. Der Wächter der Ä1c-Vorgabe muss die
@@ -400,7 +416,14 @@ export function Shell({ children }: { children: ReactNode }) {
             schubladeOffen={schubladeOffen}
             seitenleisteEingeklappt={seitenleiste.eingeklappt}
             onSeitenleisteUmschalten={seitenleiste.umschalten}
+            ohneSeitenleiste={ohneSeitenleiste}
           />
+          {/* Ausgabe-Zeile + Arbeitsleiste (W2·24 R2, §5a). Beide laufen im
+              normalen Fluss — nicht klebend; die Herleitung steht am Kopf von
+              `Topbar.tsx` (die Sprung-Offsets des Lesers rechnen mit einer
+              4-rem-Krone, und ihre Quelle gehört R4). */}
+          <AusgabeZeile />
+          <Reiterleiste paneSchluessel={[tabSchluessel(pathname + search), ...liveSek.map(tabSchluessel)]} />
 
           {/* Persistenter Hinweis bei Nicht-DE-Locale: Inhalte fallen auf Deutsch zurück. */}
           {locale !== 'de' && (
@@ -453,6 +476,25 @@ export function Shell({ children }: { children: ReactNode }) {
                   <PaneProvider value={multipane ? { imPane: true, rolle: 'primaer', wurzel: primaerWurzel, overlayWurzel: primaerOverlay } : KEIN_PANE}>
                     <main ref={primaerWurzel} id="inhalt" tabIndex={-1} aria-label="Hauptinhalt"
                       data-pane={multipane ? 'primaer' : undefined}
+                      // §5a Ziff. 4 im 1-Pane-Fall: es gibt noch keine zweite
+                      // Spalte, auf die man zielen könnte — also ist die RECHTE
+                      // HÄLFTE des Inhalts das Ziel («in die zweite Hälfte
+                      // ziehen»). Nur wenn ein Pane überhaupt aufgehen kann
+                      // (`kannOeffnen`: ab lg, freie Kapazität); links fallen
+                      // gelassen passiert nichts.
+                      {...(!multipane && paneSteuerung.kannOeffnen ? {
+                        onDragOver: (e: ReactDragEvent) => {
+                          if (!e.dataTransfer.types.includes(REITER_MIME)) return;
+                          const r = e.currentTarget.getBoundingClientRect();
+                          if (e.clientX > r.left + r.width * 0.6) e.preventDefault();
+                        },
+                        onDrop: (e: ReactDragEvent) => {
+                          const pfad = e.dataTransfer.getData(REITER_MIME);
+                          if (!pfad) return;
+                          e.preventDefault();
+                          paneSteuerung.oeffneDaneben(pfad);
+                        },
+                      } : {})}
                       // Ring/Farbe aus der globalen `:focus-visible`-Regel
                       // (index.css, Rolle --focus); lokal bleibt NUR der negative
                       // Offset (Scroll-Container, Herleitung in Pane.tsx).

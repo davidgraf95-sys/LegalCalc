@@ -21,7 +21,7 @@ const NAVIGATION = [
 
 export function Footer() {
   return (
-    <footer className="border-t border-line bg-paper mt-16">
+    <footer className="border-t-2 border-rule bg-paper mt-16">
       <div className="max-w-content mx-auto px-5 sm:px-6 py-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1.2fr] gap-x-12 gap-y-8">
         {/* Marke */}
         <div className="space-y-3">
@@ -56,7 +56,7 @@ export function Footer() {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6">
             {NAVIGATION.map((n) => (
               <Link key={n.label} to={n.to}
-                className="flex items-center min-h-11 text-body-s text-ink-600 hover:text-brass-700 no-underline transition-colors">
+                className="flex items-center min-h-11 text-body-s text-ink-600 hover:text-ink-900 underline underline-offset-2 decoration-rule-soft hover:decoration-ink-900 transition-colors">
                 {n.label}
               </Link>
             ))}
@@ -73,7 +73,7 @@ export function Footer() {
           <p className="text-body-s text-ink-500 leading-relaxed">
             Normverweise führen auf die amtliche Sammlung:{' '}
             <a href="https://www.fedlex.admin.ch" target="_blank" rel="noopener noreferrer"
-              className="text-brass-700 hover:text-brass-600 no-underline">fedlex.admin.ch</a>
+              className="text-ink-900 underline underline-offset-2">fedlex.admin.ch</a>
           </p>
           {/* Präzisiert (Cowork-Befund 31, 18.8.2026): der Pauschalsatz «Ihre
               Eingaben verlassen den Browser nicht» stand im Widerspruch zur
@@ -89,7 +89,7 @@ export function Footer() {
       </div>
 
       {/* Feinschriftzeile */}
-      <div className="border-t border-line">
+      <div className="border-t border-rule-soft">
         <div className="max-w-content mx-auto px-5 sm:px-6 py-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2">
           <p className="lc-fineprint">© 2026 LexMetrik</p>
           <p className="lc-fineprint sm:text-right">

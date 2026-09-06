@@ -187,7 +187,6 @@ const TYPO_UTILITY = /\b(?:text-(?:xs|sm|base|lg|xl|micro|body-s|body|h1|h2|h3)|
  */
 const GRIFF_AUSNAHMEN: Record<string, string> = {
   'components/layout/Topbar.tsx · ☰': 'ENTSCHEID DAVIDS — Topbar-Anatomie gegen Leser-Griff',
-  'components/layout/ReiterUebersicht.tsx · ☰': 'ENTSCHEID DAVIDS — dieselbe offene Frage',
   'pages/gesetz-leser/v3/LeserGliederungSchiene.tsx · ☰': 'ENTSCHEID DAVIDS — dieselbe offene Frage',
   'components/Katalog.tsx · →': 'BESCHRIFTET — Affordanz-Pfeil neben dem Karten-Titel',
   'components/normtext/ErlassKarte.tsx · ↗': 'BESCHRIFTET — Aussenlink-Pfeil neben dem Linktext',
@@ -323,7 +322,13 @@ describe('A3-1 · das Schliess-✕ kommt aus EINEM Baustein', () => {
     // Der offene Entscheid betrifft AUSSCHLIESSLICH das ☰ (Fahrplan §3, Runde-7-Liste).
     expect(davids.map(([k]) => k.split(' · ')[1]).every((g) => g === '☰'), 'nur das ☰ wartet auf David')
       .toBe(true);
-    expect(davids.length, 'drei ☰-Fundstellen: Topbar, Reiter-Übersicht, Gliederungs-Schiene').toBe(3);
+    // W2·24-DESIGN-IDENTITAET R2 (6.9.2026): die dritte ☰-Fundstelle war der
+    // Reiter-Trigger in `ReiterUebersicht.tsx`. Der Baustein ist mit R2
+    // GELÖSCHT (die offenen Reiter stehen sichtbar in der Arbeitsleiste,
+    // §5a) — die Ausnahme fällt mit ihm weg, statt auf einen anderen Fundort
+    // umgehängt zu werden. Der offene David-Entscheid selbst ist unberührt und
+    // betrifft weiter die zwei verbliebenen ☰.
+    expect(davids.length, 'zwei ☰-Fundstellen: Topbar, Gliederungs-Schiene').toBe(2);
   });
 
   it('ROT-BEWEIS: beide Vorher-Formen der freistehenden ✕ fallen auf', () => {
@@ -433,10 +438,16 @@ describe('A3-1 · das Schliess-✕ kommt aus EINEM Baustein', () => {
     // ⠿ ◂ ▸ ⇱ ⧉ ✕ stehen dort in einer 36 px hohen Leiste unmittelbar
     // nebeneinander; 44 px um das ✕ lägen über ⧉ und ▸. Der Test hat die
     // Ausnahme beim Bau selbst gefunden (rot, bevor sie deklariert war).
+    //
+    // W2·24 R2 (6.9.2026): die Arbeitsleiste ist die VIERTE solche Zeile — ein
+    // Reiter ist 28 px hoch und trägt Beschriftung, ⧉ und ✕ unmittelbar
+    // nebeneinander, daneben steht schon der nächste Reiter. 44 px um das ✕
+    // lägen über beiden. Deklariert, nicht still: derselbe Weg wie R4-A.
     const dicht = [
       'components/layout/TabPanel.tsx',
       'components/layout/InhaltsKopf.tsx',
       'components/layout/PaneKopf.tsx',
+      'components/layout/Reiterleiste.tsx',
     ];
     const funde = alleTsx()
       .filter((p) => ohneKommentare(liesRoh(p)).includes('komfort={false}'))
@@ -568,7 +579,7 @@ describe('A3-2 · schwebende Flächen teilen EINE Anatomie', () => {
       'components/SprachUmschalter.tsx',
       'components/DatumsFeld.tsx',
       'components/layout/VerlaufUebersicht.tsx',
-      'components/layout/ReiterUebersicht.tsx',
+      'components/layout/Reiterleiste.tsx',
       'pages/gesetz-leser/v3/LeserAnsichtV3.tsx',
       'pages/gesetz-leser/v3/LeserPanel.tsx',
       'pages/gesetz-leser/v3/LeserTrefferBlatt.tsx',

@@ -6,6 +6,7 @@ import { SucheLeerzustand } from '../suche/SucheLeerzustand';
 import { leerOptionen } from '../suche/SucheLeerzustandKontext';
 import { aktivePosition, flacheTreffer, naechsterKey, vorigerKey, gewaehlterHref } from '../suche/trefferAuswahl';
 import { useZuletzt } from './useZuletzt';
+import { usePaneSteuerung } from './usePaneLayout';
 import { SchliessKnopf } from '../ui/SchliessKnopf';
 import { suchKuerzelEmpfaengerAbmelden, suchKuerzelEmpfaengerAnmelden } from '../suche/fruehesSuchKuerzel';
 
@@ -33,6 +34,7 @@ export function HeaderSuche({ onFokusModus, onFokusZurueck }: {
   onFokusZurueck?: () => void;
 } = {}) {
   const navigate = useNavigate();
+  const { oeffneDaneben, kannOeffnen } = usePaneSteuerung();
   const listboxId = useId();
   const [wert, setWert] = useState('');
   const [q, setQ] = useState('');
@@ -283,6 +285,22 @@ export function HeaderSuche({ onFokusModus, onFokusZurueck }: {
     } else if (e.key === 'Enter') {
       const ziel = gewaehlterHref(aktivListe, aktivKey)
         ?? (feldLeer ? undefined : gruppen.find((g) => g.treffer.length > 0)?.treffer[0]?.href);
+      // ── W2·24 §5a Ziff. 7 · Ctrl/⌘+Enter öffnet DANEBEN, nicht «in neuem Reiter»
+      // Der Wortlaut der Ziffer verlangt «in neuem Reiter». GEMESSEN am Ist-Stand
+      // (6.9.2026, `components/TabTracker.tsx` → `lib/tabs.merkeTab`): JEDE
+      // Navigation legt ohnehin einen Reiter an — ein «in neuem Reiter» wäre
+      // heute wortgleich mit dem blossen Enter, also eine Zusage ohne Wirkung
+      // (§8). Das echte zweite Ziel, das die Leiste anbietet, ist das zweite
+      // FENSTER; darum öffnet der Zusatz-Griff dorthin, solange eines aufgehen
+      // kann (ab lg, freie Kapazität). Sobald §5a Ziff. 3 gebaut ist (Klick
+      // ERSETZT den aktiven Reiter), bekommt diese Taste ihre wörtliche
+      // Bedeutung zurück — der Punkt steht in der R2-Rückgabe.
+      if (ziel && (e.ctrlKey || e.metaKey) && kannOeffnen) {
+        e.preventDefault();
+        oeffneDaneben(ziel);
+        auswahl();
+        return;
+      }
       if (ziel) { navigate(ziel); auswahl(); }
       else if (!feldLeer && wert.trim() !== '') { setEnterQ(wert.trim()); setOffen(true); } // Puffer: öffnen, sobald geladen
     }
