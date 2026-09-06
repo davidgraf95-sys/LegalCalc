@@ -19,6 +19,14 @@ import { resolve, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { KATALOG_KARTEN, istVerfuegbar } from '../src/lib/startseiteConfig.ts';
 import { istVorlage } from '../src/lib/vorlagenKategorie.ts';
+// W2·24-R3: die Startseite zeigt die Systematik des Bundesrechts und die
+// Behörden der Materialien als Listen MIT Zahlen. Beide Ordnungen bleiben ihre
+// eigene SSoT (§5) — `SYSTEMATIK` (Anzeige-Ordnung des Bundesrechts) und
+// `BEHOERDEN` (Herausgeber der Materialien); hier werden sie NUR mit dem
+// Register verschnitten und die Zahl daraus GEZÄHLT. Beide Module wandern damit
+// nicht in den Startseiten-Chunk (§15, `check:perf-budget`).
+import { SYSTEMATIK } from '../src/lib/normtext/systematik.ts';
+import { BEHOERDEN } from '../src/lib/materialien/register.ts';
 
 const wurzel = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const GESETZE_REGISTER = resolve(wurzel, 'public/normtext/register.json');
@@ -26,9 +34,15 @@ const RSPR_REGISTER = resolve(wurzel, 'public/rechtsprechung/register.json');
 const MATERIALIEN_REGISTER = resolve(wurzel, 'public/materialien/register.json');
 const ZIEL = resolve(wurzel, 'src/data/startseiteZaehler.generated.ts');
 
-interface ErlassEintrag { ebene: 'bund' | 'kanton'; status: string; kanton?: string }
+interface ErlassEintrag {
+  key: string; ebene: 'bund' | 'kanton'; status: string; kanton?: string;
+  kuerzel: string; rechtsgebiet: string;
+}
 interface EntscheidEintrag { verweis?: unknown }
-interface MaterialEintrag { key: string }
+interface MaterialEintrag { key: string; behoerde: string }
+
+/** Wie viele Kürzel je Systematik-Zeile als Beispiel-Zeile mitlaufen. */
+const KUERZEL_PRO_ZEILE = 4;
 
 function zaehle() {
   // Gesetze: nur echter Volltext (status 'snapshot'); nach Ebene getrennt, damit
@@ -51,6 +65,32 @@ function zaehle() {
     Object.keys(proKanton).sort().map((k) => [k, proKanton[k]]),
   );
 
+  // ── Systematik des Bundesrechts (W2·24-R3) ────────────────────────────────
+  // Die Startseite listet die Ordnung, nach der `/gesetze?ebene=bund` gliedert
+  // (Anker `#sys-<id>`). Gezählt wird, was in DIESER Kategorie als Volltext
+  // vorliegt — nie eine erfundene oder aus der Schlüssel-Liste geschätzte Zahl
+  // (§8): ein in SYSTEMATIK gelisteter Key ohne Snapshot zählt nicht mit.
+  const bundVolltext = g.erlasse.filter((e) => e.ebene === 'bund' && e.status === 'snapshot');
+  const nachKey = new Map(bundVolltext.map((e) => [e.key.toUpperCase(), e]));
+  const bundSystematik = SYSTEMATIK.map((k) => {
+    const treffer: ErlassEintrag[] = [];
+    for (const gruppe of k.gruppen) {
+      for (const key of gruppe.keys) {
+        const e = nachKey.get(key.toUpperCase());
+        if (e) treffer.push(e);
+      }
+    }
+    return {
+      nr: k.nr, id: k.id, titel: k.titel,
+      kuerzel: treffer.slice(0, KUERZEL_PRO_ZEILE).map((e) => e.kuerzel),
+      anzahl: treffer.length,
+    };
+  });
+  // Die Säule «International» ist seit IA-6 KEINE Systematik-Kategorie mehr
+  // (systematik.ts, Kommentar am Listenende) — sie steht als eigene Zeile, mit
+  // ihrer eigenen Zahl aus derselben Regel.
+  const international = bundVolltext.filter((e) => e.rechtsgebiet === 'international');
+
   // Rechtsprechung: Nicht-Verweis-Entscheide = echte Volltext-Snapshots (Verweise
   // sind Redirect-Stubs auf ein anderes Urteil, s. NewsHeader/Rechtsprechung.tsx).
   const r = JSON.parse(readFileSync(RSPR_REGISTER, 'utf8')) as { erzeugt: string; entscheide: EntscheidEintrag[] };
@@ -66,14 +106,25 @@ function zaehle() {
   // Verweise (nur-live-link) — der Zähler nennt ehrlich «erfasste», nie Volltext.
   const m = JSON.parse(readFileSync(MATERIALIEN_REGISTER, 'utf8')) as { erzeugt: string; materialien: MaterialEintrag[] };
   const materialien = m.materialien.length;
+  // Je Behörde, in der Anzeige-Reihenfolge BEHOERDEN (rang = Praxisrelevanz).
+  // Behörden ohne Eintrag fallen weg — nie eine 0-Zeile behaupten (§8).
+  const proBehoerde: Record<string, number> = {};
+  for (const x of m.materialien) proBehoerde[x.behoerde] = (proBehoerde[x.behoerde] ?? 0) + 1;
+  const materialienBehoerden = BEHOERDEN
+    .filter((b) => (proBehoerde[b.id] ?? 0) > 0)
+    .map((b) => ({ id: b.id, kuerzel: b.kuerzel, name: b.name, anzahl: proBehoerde[b.id] }));
 
   return {
     gesetzeBundVolltext: bund,
     gesetzeKantonVolltext: kanton,
     gesetzeVolltext: bund + kanton,
     kantonErlassZahlen,
+    bundSystematik,
+    gesetzeInternationalVolltext: international.length,
+    internationalKuerzel: international.slice(0, KUERZEL_PRO_ZEILE).map((e) => e.kuerzel),
     rechtsprechungVolltext: entscheide,
     materialien,
+    materialienBehoerden,
     rechner,
     vorlagen,
     standGesetze: g.erzeugt,
@@ -100,10 +151,21 @@ function baue(): string {
     '  /** IA-7: erfasste Erlasse JE Kanton (alle Manifest-Einträge der Ebene kanton —\n' +
     '   *  dieselbe Zählregel wie die IA-2-Badges/`kantonAnzahl` in Gesetze.tsx). */\n' +
     '  kantonErlassZahlen: Record<string, number>;\n' +
+    '  /** W2·24-R3: Systematik des Bundesrechts (Ordnung + Titel aus\n' +
+    '   *  `lib/normtext/systematik.ts`, Anker `/gesetze?ebene=bund#sys-<id>`),\n' +
+    '   *  je Kategorie die Zahl der VOLLTEXT-Erlasse und bis zu vier Kürzel. */\n' +
+    '  bundSystematik: Array<{ nr: string; id: string; titel: string; kuerzel: string[]; anzahl: number }>;\n' +
+    '  /** Bundeserlasse der Säule «International» im Volltext (rechtsgebiet international). */\n' +
+    '  gesetzeInternationalVolltext: number;\n' +
+    '  /** Bis zu vier Kürzel der Säule «International» (Register-Reihenfolge). */\n' +
+    '  internationalKuerzel: string[];\n' +
     '  /** Gerichtsentscheide im Volltext (Nicht-Verweise). */\n' +
     '  rechtsprechungVolltext: number;\n' +
     '  /** Erfasste amtliche Materialien (Behördenpublikationen, nur-live-link). */\n' +
     '  materialien: number;\n' +
+    '  /** W2·24-R3: erfasste Materialien je Behörde, Reihenfolge BEHOERDEN (rang);\n' +
+    '   *  Behörden ohne Eintrag fehlen (nie eine 0-Zeile behaupten, §8). */\n' +
+    '  materialienBehoerden: Array<{ id: string; kuerzel: string; name: string; anzahl: number }>;\n' +
     '  /** Verfügbare Rechner (eigene Seite). */\n' +
     '  rechner: number;\n' +
     '  /** Verfügbare Vorlagen (eigene Seite). */\n' +

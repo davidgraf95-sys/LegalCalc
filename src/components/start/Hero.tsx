@@ -1,30 +1,38 @@
 import { Link } from 'react-router-dom';
-import { HERO_TITEL, HERO_SUBLINE } from '../../lib/seo';
+import { SAMMLUNG_TITEL, SAMMLUNG_BESTAND } from '../../lib/seo';
 import { UniversalSuche } from './UniversalSuche';
-import { Begruessung } from './Begruessung';
+import { useHeute } from './Begruessung';
+import { ZuletztVerwendet } from './ZuletztVerwendet';
+import { StartZeile } from './Satzspiegel';
 
-// ─── Hero der Startseite (Startseite V4, Modul #1) ──────────────────────────
+// ─── Titelblatt-Zeile der Startseite (W2·24-DESIGN-IDENTITAET R3) ───────────
 //
-// Die eine warme Fläche der Seite (Brass-Wash) trägt vier Dinge in dieser
-// Reihenfolge: Begrüssung + Datum (§4) · H1 + Subline aus seo.ts (§5) · die EINE
-// Suche · vier Beispiel-Chips als Beleg, was «verzahnt» konkret heisst.
-// Reine Darstellung (§3): keine Deko-SVG, kein Stagger-Reveal (LCP), keine
-// tickende Uhr.
+// Die erste Zeile des Satzspiegels: links Titel der Seite + Wochentag + Datum,
+// rechts Begrüssung, die EINE Suche und die Verweiszeile. Kein Kasten, kein
+// Brass-Wash, keine Fläche — die frühere `bg-brass-100 rounded-2xl`-Karte ist
+// GESTRICHEN (Fahrplan §5: Kanten statt Kissen, Registerfarben als einzige
+// Farbe). Reine Darstellung (§3).
 //
-// DOKUMENTIERTER EIN-KLASSEN-FALLBACK (aus V3 unverändert übernommen): bei
-// Kontrast-Bruch (Messprotokoll abnahme/startseite-v3/KONTRAST-PROTOKOLL.md)
-// oder Davids Veto genügt es, hier auf `bg-surface` zurückzustellen — kein
-// weiterer Umbau nötig.
-const HERO_FLAECHE = 'bg-brass-100'; // Fallback: 'bg-surface' (Ein-Klassen-Rückstellung)
+// SPRACH-DIÄT (Fahrplan §6 (h)): die Value-Proposition-H1 «Schweizer Recht an
+// einem Ort» und die Subline «… miteinander verzahnt …» sind weg. An ihrer
+// Stelle steht der Titelblatt-Begriff «Sammlung» und eine AUFZÄHLUNG dessen,
+// was drin ist — eine Bezeichnung, kein Nutzenversprechen (§8).
+//
+// A-1-AUSNAHME (R3-α, 31.8.2026), in W2·24-R3 fortgeschrieben: kein `SeitenTitel`.
+// Der Baustein trägt die Seiten-Titelgrösse (`text-h2 sm:text-h1`) und die
+// Pane-Kaskade; die Startseite hat mit dem Satzspiegel gar keine Titelzeile
+// dieser Art mehr — ihr Titel steht als kleines Titelblatt-Wort in der
+// MARGINALIE, wo im Referenzbild die Ausgabe-Angaben stehen. Eine `<h1>` bleibt
+// es trotzdem (genau eine je Seite, sichtbar — `e2e/a11y.e2e.ts` prüft
+// `h1` auf Sichtbarkeit, eine `sr-only`-H1 wäre dort rot).
 
-// Beispiel-Chips (§3 #1): FESTE Links, deterministisch — kein Zufall, keine
-// «beliebten Suchen». Je einer aus den vier Beständen, die der Hero verspricht:
-// eine Norm, ein Bundesgerichtsentscheid, ein Rechner, eine Vorlage. Alle Ziele
-// sind gegen den committeten Korpus geprüft (5.9.2026):
+// Beispiel-Verweise (§3 #1): FESTE Links, deterministisch — kein Zufall, keine
+// «beliebten Suchen». Je einer aus den vier Beständen: eine Norm, ein
+// Bundesgerichtsentscheid, ein Rechner, eine Vorlage. Alle Ziele sind gegen den
+// committeten Korpus geprüft (5.9.2026):
 //   · OR Art. 336c  → public/normtext/bund/OR.json, Eintrag `artikel: "336_c"`,
 //     Leser-Anker `#art-336_c` (ArtikelLeser.tsx: id={`art-${e.artikel}`}).
-//   · BGE 152 V 52  → public/rechtsprechung/register.json, key `bge_152_V_52`
-//     (Leitentscheid, bestand snapshot).
+//   · BGE 152 V 52  → public/rechtsprechung/register.json, key `bge_152_V_52`.
 //   · /rechner/tagerechner · /vorlagen/arbeitsvertrag → verfügbare Katalog-Karten.
 const BEISPIELE: { label: string; ziel: string }[] = [
   { label: 'Art. 336c OR', ziel: '/gesetze/bund/OR#art-336_c' },
@@ -34,42 +42,29 @@ const BEISPIELE: { label: string; ziel: string }[] = [
 ];
 
 export function Hero() {
+  const { gruss, wochentag, datum } = useHeute();
   return (
-    <div className={`${HERO_FLAECHE} rounded-2xl border border-line p-6 sm:p-8`}>
-      <Begruessung />
-      {/* A-1-AUSNAHME (R3-α, 31.8.2026): kein `SeitenTitel`.
-          Der Baustein trägt die SEITEN-Titelgrösse (`text-h2 sm:text-h1`). Der
-          Hero ist die eine Fläche, die eine Stufe DARÜBER liegt
-          (`text-h1 sm:text-display`) — das ist die Startseiten-Anmutung, nicht
-          eine zweite Titel-Anatomie. Er erscheint zudem nie in einem Pane
-          (Startseite ist immer die Vollansicht), womit die Pane-Kaskade, die
-          `SeitenTitel` mitbringt, hier keinen Fall hat. */}
-      <h1 className="mt-2 font-display font-semibold text-ink-900 text-h1 sm:text-display leading-tight">
-        {HERO_TITEL}
-      </h1>
-      <p className="mt-3 text-body-l text-ink-700 max-w-reading">
-        {HERO_SUBLINE}
-      </p>
-      <div className="mt-5">
-        <UniversalSuche />
-        {/* Such-Hinweis auf ink-600 statt ink-500 (§8-Ausweich, wie die Overline):
-            11px-Kleintext auf dem Brass-Wash misst mit ink-500 nur 4.23:1 (axe
-            serious) — ink-600 hebt es auf 6.28:1 (hell) / 6.80:1 (dunkel). */}
-        <p className="mt-2 text-micro text-ink-600">
-          Durchsucht Gesetze, Rechtsprechung, Materialien, Rechner und Vorlagen
-        </p>
-      </div>
-      {/* Chips umbrechen (kein Scroll-Streifen, §2-Mobil): auf 390 px stehen sie
-          in zwei Zeilen, es fällt keiner weg. */}
-      <div className="mt-4 flex flex-wrap items-center gap-1.5">
-        <span aria-hidden className="lc-overline text-ink-600 mr-1">Beispiele</span>
-        {BEISPIELE.map((b) => (
-          <Link key={b.ziel} to={b.ziel}
-            className="lc-chip no-underline hover:text-brass-700 hover:border-brass-400">
-            {b.label}
-          </Link>
+    <StartZeile
+      rand={(
+        <>
+          <h1 className="font-sans font-medium text-body-s text-ink-900">{SAMMLUNG_TITEL}</h1>
+          <span suppressHydrationWarning className="mt-1 block text-ink-500">{wochentag}</span>
+          <span suppressHydrationWarning className="block num">{datum}</span>
+        </>
+      )}
+    >
+      <p suppressHydrationWarning className="font-serif italic text-h3 text-ink-900">{gruss}</p>
+      <UniversalSuche />
+      <p className="mt-2.5 font-sans text-xs leading-relaxed text-ink-500">
+        {SAMMLUNG_BESTAND} Beispiele:{' '}
+        {BEISPIELE.map((b, i) => (
+          <span key={b.ziel}>
+            {i > 0 && <span aria-hidden> · </span>}
+            <Link to={b.ziel} className="hover:text-reg-g">{b.label}</Link>
+          </span>
         ))}
-      </div>
-    </div>
+        <ZuletztVerwendet />
+      </p>
+    </StartZeile>
   );
 }

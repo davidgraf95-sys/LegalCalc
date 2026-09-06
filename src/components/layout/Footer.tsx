@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { LexMetrikSiegel, LexMetrikWortmarke } from './Logo';
-import { HERO_TITEL, SITE_KURZFORM } from '../../lib/seo';
+import { SAMMLUNG_BESTAND, SITE_KURZFORM } from '../../lib/seo';
 
 // Footer (ausgebaut): dreispaltig – Marke + Kurzbeschrieb, Navigation,
 // Hinweise; darunter Mono-Feinschriftzeile. Paper-Grund, obere Hairline.
@@ -29,10 +29,13 @@ export function Footer() {
             <LexMetrikSiegel size={26} />
             <LexMetrikWortmarke />
           </Link>
-          {/* Marken-Kurzbeschrieb aus der I2-SSoT (seo.ts, §5) — Value Proposition
-              + Methodik-Kurzform statt einer zweitgepflegten Marketing-Zeile. */}
+          {/* Marken-Kurzbeschrieb aus der I2-SSoT (seo.ts, §5) — Bestands-
+              Aufzählung + Methodik-Kurzform statt einer zweitgepflegten
+              Marketing-Zeile. W2·24-R3 (Sprach-Diät, Fahrplan §6 (h)): hier stand
+              `HERO_TITEL` = «Schweizer Recht an einem Ort»; die Konstante ist
+              mit dem Slogan gestrichen, der Fuss nennt jetzt den Bestand. */}
           <p className="text-body-s text-ink-500 leading-relaxed max-w-[34ch]">
-            {HERO_TITEL}. {SITE_KURZFORM}
+            {SAMMLUNG_BESTAND} {SITE_KURZFORM}
           </p>
         </div>
 

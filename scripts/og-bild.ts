@@ -13,12 +13,14 @@
 import { chromium } from '@playwright/test';
 import { dirname, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { HERO_SUBLINE, SITE_KURZFORM } from '../src/lib/seo';
+import { SITE_DESCRIPTION, SITE_KURZFORM } from '../src/lib/seo';
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const ZIEL = join(ROOT, 'public', 'og.png');
 
-// Quelle der Texte: src/lib/seo.ts (SSoT, §6) — Tagline = HERO_SUBLINE,
+// Quelle der Texte: src/lib/seo.ts (SSoT, §6) — Tagline = SITE_DESCRIPTION
+// (W2·24-R3: `HERO_SUBLINE` ist mit der Sprach-Diät gestrichen; die Card zeigt
+// jetzt denselben Bestands-Satz wie die meta description),
 // Claim = SITE_KURZFORM. Bei Textänderung nur seo.ts pflegen und dieses Skript
 // neu laufen lassen (npm run og:bild); die Card ist reine Bild-Spiegelung.
 const HTML = `<!doctype html><html lang="de-CH"><head><meta charset="utf-8" /><style>
@@ -40,7 +42,7 @@ const HTML = `<!doctype html><html lang="de-CH"><head><meta charset="utf-8" /><s
   <div class="frame">
     <div class="overline">Schweizer Recht · regelbasiert</div>
     <div class="wordmark">Lex<span class="metrik">Metrik</span></div>
-    <div class="tagline">${HERO_SUBLINE}</div>
+    <div class="tagline">${SITE_DESCRIPTION}</div>
     <div class="rule"></div>
     <div class="foot"><div class="url">lexmetrik.vercel.app</div><div class="claim">${SITE_KURZFORM}</div></div>
   </div>

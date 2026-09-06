@@ -1,5 +1,6 @@
 import { useEffect, useId, useState } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
+import { usePaneKlasse } from '../layout/PaneKontext';
 import { useUniversalSuche } from '../suche/useUniversalSuche';
 import { SuchResultate } from '../suche/SuchResultate';
 import { aktivePosition, flacheTreffer, naechsterKey, vorigerKey, gewaehlterHref } from '../suche/trefferAuswahl';
@@ -12,18 +13,19 @@ import { aktivePosition, flacheTreffer, naechsterKey, vorigerKey, gewaehlterHref
 // Resultat-Dropdown (Auftrag David, §5). Eigenheit des Hero gegenüber dem
 // Header: der Suchwert ist über ?q= teilbar/permalinkfähig und steht prominent.
 // SSR/Prerender: kein Autofokus (Mobil-Tastatur verdeckt sonst die Treffer).
-
-function Lupe() {
-  return (
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden>
-      <circle cx="11" cy="11" r="7" stroke="currentColor" strokeWidth="1.7" />
-      <path d="M20 20l-3.6-3.6" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" />
-    </svg>
-  );
-}
+//
+// W2·24-R3 (nur Darstellung, §3 — Hook, Trefferpanel, Tastatur und ?q=-Kopplung
+// sind Zeile für Zeile unverändert): aus dem gerahmten `lc-input`-Kasten mit
+// Lupen-Icon ist die SUCHZEILE des Referenzbildes geworden — eine Zeile Literata
+// über einer 2-px-Kante (`.st-frage`, src/index.css). Die Lupe entfällt: sie war
+// die Ikone, die den Kasten als Suchfeld auswies; die Zeile weist sich über
+// `role="search"`, `type="search"` und ihren Beispiel-Platzhalter aus. Der
+// PLATZHALTER nennt jetzt konkrete Eingaben statt Gattungswörter — dieselbe
+// Aussage, an einem Beispiel statt an einer Aufzählung.
 
 export function UniversalSuche() {
   const navigate = useNavigate();
+  const pk = usePaneKlasse();
   const listboxId = useId();
   const [params, setParams] = useSearchParams();
   const initialQ = params.get('q') ?? '';
@@ -122,19 +124,21 @@ export function UniversalSuche() {
   };
 
   return (
-    <section role="search" aria-label="Universal-Suche" className="space-y-3">
-      <div className="relative">
-        <span className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-ink-500">
-          <Lupe />
-        </span>
+    <section role="search" aria-label="Universal-Suche" className="mt-2 space-y-3">
+      <div className="st-frage relative">
         <input
           type="search"
           value={wert}
           onChange={(e) => setze(e.target.value)}
           onKeyDown={aufTaste}
-          placeholder="Frist, Rechner, Vorlage, Gesetz oder Entscheid …"
+          placeholder="Art. 336c OR · BGE 152 V 52 · Kündigungsfrist"
           aria-label="Über Rechner, Vorlagen, Gesetze und Rechtsprechung suchen"
-          className="lc-input h-[3.25rem] w-full pl-12 pr-11 text-body-l"
+          /* GEMESSEN 6.9.2026 (Preview @1440 und im Pane): 32 px Literata füllen
+             die Textspalte des Satzspiegels bei ~890 px Breite nicht mehr — der
+             Platzhalter wird beschnitten. Die grosse Stufe steht darum erst,
+             wenn die Spalte sie trägt, und im PANE entscheidet die
+             Container-Breite, nicht der Viewport (A-2-Wurzel). */
+          className={`st-frage-feld w-full pr-9 ${pk('text-h3 lg:text-h2 xl:text-h1', 'text-h3 @3xl/pane:text-h2 @5xl/pane:text-h1')}`}
           enterKeyHint="search"
           role="combobox"
           aria-expanded={q !== ''}
@@ -144,7 +148,7 @@ export function UniversalSuche() {
         />
         {wert && (
           <button type="button" onClick={() => setze('')} aria-label="Suche leeren"
-            className="absolute right-3 top-1/2 -translate-y-1/2 inline-flex h-7 w-7 items-center justify-center rounded-md text-ink-500 transition-colors hover:text-brass-700">
+            className="absolute right-0 bottom-2.5 inline-flex h-7 w-7 items-center justify-center text-ink-500 transition-colors hover:text-ink-900">
             <span aria-hidden className="lc-griff-glyph">✕</span>
           </button>
         )}

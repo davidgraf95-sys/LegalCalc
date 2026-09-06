@@ -1,51 +1,43 @@
-import { useId, useState } from 'react';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { holeZuletzt } from '../../lib/zuletztVerwendet';
 
-// ─── Startseiten-Modul «Zuletzt verwendet» (V3, Modul #5) ───────────────────
+// ─── «Zuletzt geöffnet» (Startseite, Modul-Teil der Titelblatt-Zeile) ───────
 //
-// Auto-getrackte Chips der zuletzt besuchten Inhalts-Routen (Rechner/Vorlage;
-// Gesetze/Entscheide folgen als eigenes Arbeitspaket, FAHRPLAN §3 #5). Reine
+// Auto-getrackte Verweise auf die zuletzt besuchten Inhalts-Routen. Reine
 // Darstellung (§3): liest die vom ZuletztTracker (App-Shell) geschriebene Liste
 // SYNCHRON aus localStorage (kein async-Nachwachsen → kein Shift; §0/§15).
 //
-// Erstbesuch/leer: rendert NICHTS (kein leerer Kopf, §8). SSR/Prerender hat kein
-// localStorage → serverseitig leer; der Client liest beim Mount synchron nach —
-// die eine client-divergente Stelle trägt darum ehrlich suppressHydrationWarning
-// (wie Begruessung/Favoriten zuvor).
+// W2·24-R3 (DEKLARIERTE Darstellungsänderung): aus dem waagrecht scrollenden
+// Chip-Streifen unter dem Hero ist die TEXTZEILE des Referenzbildes geworden
+// («Zuletzt geöffnet: Art. 257d OR · BGE 152 V 52 · Fristenrechner», Marke
+// `.unter`). Damit entfällt die Scroll-Achse — und mit ihr die
+// Scrollstand-Affordanz `lc-scrollrand-x` (LM-061), die genau diese Achse
+// bewacht hat: eine umbrechende Textzeile verbirgt nichts, es gibt keinen
+// Scrollstand mehr, über den sie Auskunft geben könnte (§17-Gegengewicht:
+// gestrichen statt bewacht). Die Chips selbst sind nicht «verloren» — dieselben
+// Ziele stehen als unterstrichene Verweise in derselben Reihenfolge.
 //
-// Titel-INS-Modul (S4, FAHRPLAN §5 / Council «nie Titel über Leerraum»): Wie beim
-// NewsHeader verwaltet das Modul seinen Sektionstitel («Zuletzt verwendet») + die
-// Höhen-Reservierung SELBST und kollabiert bei leerem Speicher komplett — das
-// Registry mappt es darum titellos (kein externes Seclabel über Leerraum).
-
+// Erstbesuch/leer: KEIN Etikett über Leerraum (§8) — die Zeile bleibt stumm.
+// SSR/Prerender hat kein localStorage → serverseitig leer; der Client liest beim
+// Mount synchron nach. Die HÜLLE wird darum immer gerendert (auch leer) und
+// trägt `suppressHydrationWarning`: so gibt es auf beiden Seiten dasselbe
+// Element, und nur sein Inhalt darf abweichen.
 export function ZuletztVerwendet() {
   const [eintraege] = useState(holeZuletzt); // lazy, synchron — kein Effect-Nachwachsen
-  const titelId = useId();
-  if (eintraege.length === 0) return null;
   return (
-    <section aria-labelledby={titelId} className="space-y-2 min-h-modul-zuletzt" suppressHydrationWarning>
-      <h2 id={titelId} className="lc-overline">Zuletzt verwendet</h2>
-      {/* Harte 1-Zeilen-Kappung ohne Seiten-Overflow (@390 px, S3-Fix):
-           · overflow-x-auto  → der Streifen scrollt IN sich, statt die Seite zu weiten
-           · min-w-0          → Flex-/Grid-Basis-Falle: ohne dies erzwingt ein
-                                Flex-/Grid-Elternteil `min-width:auto` (= Inhaltsbreite)
-                                und der Container bläht die Seite über 390 px auf
-           · w-max (innen)    → wächst auf Inhaltsbreite, damit überhaupt gescrollt wird
-           · flex-nowrap      → eine Zeile, kein Umbruch
-           · Chips: whitespace-nowrap (kein Zeilenbruch) + shrink-0 (kein Zusammen-
-             stauchen unter die Chipbreite) → Überlauf landet im Scroll, nicht im Umbruch */}
-      {/* LM-061: dieselbe Scrollstand-Affordanz wie an der News-Reihe. */}
-      <div className="lc-scrollrand-x overflow-x-auto min-w-0">
-        <div className="flex w-max max-w-full flex-nowrap gap-1.5">
-          {eintraege.map((e) => (
-            <Link key={e.route} to={e.route}
-              className="lc-chip shrink-0 no-underline whitespace-nowrap hover:text-brass-700 hover:border-brass-400">
-              {e.titel}
-            </Link>
+    <span suppressHydrationWarning>
+      {eintraege.length > 0 && (
+        <>
+          {' '}Zuletzt geöffnet:{' '}
+          {eintraege.map((e, i) => (
+            <span key={e.route}>
+              {i > 0 && <span aria-hidden> · </span>}
+              <Link to={e.route} className="hover:text-ink-900">{e.titel}</Link>
+            </span>
           ))}
-        </div>
-      </div>
-    </section>
+        </>
+      )}
+    </span>
   );
 }

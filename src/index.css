@@ -2312,3 +2312,28 @@
    keine Links → Scope auf .lc-overline, nicht auf a. Unlayered (wie .rsp-prose),
    damit es die Utility text-brass-700 schlägt (Layer-Reihenfolge sonst Utility). */
 .lc-highlight .lc-overline { color: var(--brass-800); }
+
+/* ─── Suchzeile der Startseite (W2·24-DESIGN-IDENTITAET R3) ──────────────────
+   Das Referenzbild (`abnahme/design-identitaet/vorschlag-freigegeben.html`,
+   Marke `.frage`) setzt die Universal-Suche als EINE Zeile Literata über einer
+   2-px-Kante — nicht als gerahmten Kasten. Das ist die einzige Form dieser
+   Runde, die `lc-input` nicht abbilden kann: `lc-input` IST der Kasten (Rahmen,
+   Innenabstand, Fokus-Saum), und ihn hier zu überschreiben hiesse, jede seiner
+   Eigenschaften einzeln zurückzunehmen. Darum eine eigene, kleine Regel — sie
+   gilt ausschliesslich der Startseite (Konsument: `start/UniversalSuche.tsx`).
+   Additiv angehängt (Parallel-Bau R4 arbeitet in derselben Datei).
+   Die Schriftgrösse setzt die Utility am Feld (`text-h3 sm:text-h1`), nicht
+   diese Regel — die Typo-Skala bleibt die eine Quelle (B2). */
+.st-frage { border-bottom: 2px solid var(--rule); }
+.st-frage-feld {
+  border: 0;
+  background: transparent;
+  color: var(--ink-900);
+  font-family: var(--font-serif), Georgia, serif;
+  padding: .25rem 0 .5rem;
+}
+.st-frage-feld::placeholder { color: var(--placeholder); }
+/* Der Fokusring liegt an der globalen `:focus-visible`-Regel (Rolle --focus,
+   E-1) — hier wird KEINE eigene Farbe gesetzt, nur der Abstand zur Kante
+   zurückgenommen, damit der Ring die 2-px-Linie nicht doppelt. */
+.st-frage-feld:focus-visible { outline-offset: 1px; }

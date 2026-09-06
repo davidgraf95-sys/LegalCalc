@@ -4,11 +4,22 @@ import { MemoryRouter } from 'react-router-dom';
 import { ZuletztVerwendet } from '../components/start/ZuletztVerwendet';
 import { merkeBesuch } from '../lib/zuletztVerwendet';
 
-// «Zuletzt verwendet»-Chips (Modul #5): Overflow-Invariante @390 px (S3-Fix,
-// FAHRPLAN §3 #5 / Auflage 5). jsdom/SSR kennt kein Layout — geprüft werden
-// darum die TRAGENDEN Klassen, die den Effekt erzeugen (harte 1-Zeilen-Kappung
-// + waagrechtes Scrollen statt Umbruch/Seiten-Overflow), plus der Vollkollaps
-// bei leerem Speicher.
+// «Zuletzt geöffnet» — Overflow-Invariante @390 px.
+//
+// DEKLARIERTE ANPASSUNG (W2·24-DESIGN-IDENTITAET R3, 6.9.2026, §6.3): der
+// waagrecht scrollende Chip-Streifen unter dem Hero ist die TEXTZEILE des
+// Referenzbildes geworden («Zuletzt geöffnet: Art. 257d OR · …», Marke
+// `.unter` in `abnahme/design-identitaet/vorschlag-freigegeben.html`). Die
+// Invariante, um die es hier geht, ist DIESELBE und wird weiter geprüft: die
+// Zeile darf die Seite auf 390 px nicht aufblasen. Nur ist der Weg dorthin ein
+// anderer — nicht mehr «scrollt in sich», sondern «bricht um»; die tragenden
+// Klassen des Scroll-Streifens (overflow-x-auto/min-w-0/flex-nowrap/w-max)
+// gibt es darum nicht mehr, und ein Wächter, der sie verlangt, prüfte eine
+// Form, die die Seite nicht mehr hat (§6.7).
+//
+// jsdom/SSR kennt kein Layout — geprüft wird darum, was am Markup messbar ist:
+// der Vollkollaps bei leerem Speicher (kein Etikett über Leerraum, §8), die
+// Verweise selbst, und dass keine Scroll-Achse mehr aufgemacht wird.
 beforeEach(() => {
   const speicher = new Map<string, string>();
   globalThis.localStorage = {
@@ -28,35 +39,33 @@ const render = () =>
     </MemoryRouter>,
   );
 
-describe('ZuletztVerwendet — Chip-Overflow @390 px', () => {
-  it('leerer Speicher → rendert komplett nichts (kein leerer Kopf, §8)', () => {
-    expect(render()).toBe('');
+describe('ZuletztVerwendet — Textzeile statt Chip-Streifen', () => {
+  it('leerer Speicher → kein Etikett, kein Verweis (§8)', () => {
+    const html = render();
+    expect(html).not.toContain('Zuletzt geöffnet');
+    expect(html).not.toContain('<a ');
   });
 
-  it('gefüllt: Scroll-Container kappt auf eine Zeile und scrollt waagrecht statt Umbruch/Seiten-Overflow', () => {
-    // Mehr Chips mit langen Titeln als in 390 px passen → nur mit den korrekten
-    // Klassen bleibt es eine scrollende Zeile ohne Seiten-Overflow.
+  it('gefüllt: Etikett + je ein Verweis, ohne waagrechte Scroll-Achse', () => {
+    // Mehr Einträge mit langen Titeln als in 390 px passen — die Zeile bricht
+    // um, statt die Seite zu weiten.
     for (let i = 0; i < 6; i++) {
       merkeBesuch({ route: `/rechner/langer-titel-nummer-${i}`, titel: `Sehr langer Rechnername Nummer ${i}` });
     }
     const html = render();
 
-    // Scroll-Container: scrollt in sich (overflow-x-auto) UND kann von einem
-    // Flex-/Grid-Elternteil nicht über 390 px aufgeblasen werden (min-w-0).
-    expect(html).toContain('overflow-x-auto');
-    expect(html).toContain('min-w-0');
-    // Eine Zeile, kein Umbruch.
-    expect(html).toContain('flex-nowrap');
-    // Innerer Streifen wächst auf Inhaltsbreite (damit überhaupt gescrollt wird).
-    expect(html).toContain('w-max');
+    expect(html).toContain('Zuletzt geöffnet');
+    const verweise = html.match(/<a /g) ?? [];
+    expect(verweise.length, 'ein Verweis je Eintrag').toBe(6);
+    for (let i = 0; i < 6; i++) {
+      expect(html).toContain(`/rechner/langer-titel-nummer-${i}`);
+    }
 
-    // Jeder Chip: kein Zeilenbruch (whitespace-nowrap) UND kein Stauchen (shrink-0)
-    // → Überlauf landet im Scroll, nicht im Umbruch. Für alle 6 Chips prüfen.
-    const chips = html.match(/class="lc-chip[^"]*"/g) ?? [];
-    expect(chips.length).toBe(6);
-    for (const cls of chips) {
-      expect(cls).toContain('whitespace-nowrap');
-      expect(cls).toContain('shrink-0');
+    // Keine Scroll-Achse mehr: weder der Container-Trick (overflow-x-auto +
+    // min-w-0 + w-max) noch die 1-Zeilen-Kappung (flex-nowrap/whitespace-nowrap)
+    // stehen noch da — sonst wäre die alte Form nur umbenannt.
+    for (const klasse of ['overflow-x-auto', 'flex-nowrap', 'w-max', 'whitespace-nowrap', 'lc-scrollrand-x', 'lc-chip']) {
+      expect(html, `${klasse} gehört zum Streifen, nicht zur Zeile`).not.toContain(klasse);
     }
   });
 });

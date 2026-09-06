@@ -88,52 +88,65 @@ describe('C-4 · Treffer-Zeilen laufen über EINEN Baustein', () => {
 // ─── C-5 · EINE Rubrik-Kachel ───────────────────────────────────────────────
 
 describe('C-5 · Einstiegs-Kacheln laufen über EINEN Baustein', () => {
-  const start = lies('components/start/RubrikKacheln.tsx');
+  // DEKLARIERTE ANPASSUNG (W2·24-DESIGN-IDENTITAET R3, 6.9.2026, §6.3): die
+  // Startseite hat KEINE Kachel-Landkarte mehr — «/» ist das
+  // Inhaltsverzeichnis der Sammlung geworden (Listen im Satzspiegel,
+  // Referenzbild `abnahme/design-identitaet/vorschlag-freigegeben.html`).
+  // `components/start/RubrikKacheln.tsx` ist damit gelöscht, und C-5 hat nur
+  // noch EINE Fläche: den /gesetze-Einstieg. Der Kanon selbst — «die
+  // Kachel-Anatomie steht genau einmal» — ist unverändert scharf und wird
+  // unten weiterhin app-weit geprüft; was wegfällt, ist die zweite Fläche,
+  // nicht die Regel. Der §8-Zähler-Wortlaut ist mitgewandert und wird an
+  // seinem neuen Ort geprüft (letzter Fall).
   const gesetze = lies('pages/Gesetze.tsx');
 
-  it('beide Flächen konsumieren `ui/RubrikKachel`', () => {
-    for (const [name, q] of [['RubrikKacheln', start], ['Gesetze', gesetze]] as const) {
-      expect(q, `${name}: rendert den Baustein`).toContain('<RubrikKachel');
-    }
+  it('der /gesetze-Einstieg konsumiert `ui/RubrikKachel`', () => {
+    expect(gesetze, 'Gesetze: rendert den Baustein').toContain('<RubrikKachel');
   });
 
-  it('keine der beiden zeichnet die Kachel-Anatomie noch selbst', () => {
-    // Der Kachel-Kopf (grosse Zahl + Einheit-Overline) und die Startseiten-
-    // Fusszeile stehen nur noch im Baustein.
+  it('die Fläche zeichnet die Kachel-Anatomie nicht selbst', () => {
     const eigenerZahlKopf = /className="num font-display text-h1 leading-none text-brass-700"/;
-    const eigeneZaehlerFusszeile = /className="block text-micro num text-ink-500"/;
     expect(gesetze, 'Gesetze: eigener Zahl-Kopf').not.toMatch(eigenerZahlKopf);
-    expect(start, 'RubrikKacheln: eigene Zähler-Fusszeile').not.toMatch(eigeneZaehlerFusszeile);
-    // Die Landkarten-Kachel ist `lc-card` (und erbt damit die EINE Hover-Regel
-    // aus C-3), nicht mehr `lc-tile` mit eigener Hover-Kette.
-    expect(start, 'RubrikKacheln: keine eigene lc-tile-Kachel').not.toContain('lc-tile');
+  });
+
+  it('die Startseite trägt gar keine Kachel-Optik mehr', () => {
+    // R3: weder der Baustein noch das alte `lc-tile`-Rezept stehen auf «/».
+    for (const rel of ['pages/Startseite.tsx', 'lib/startseiteModule.tsx']) {
+      expect(lies(rel), `${rel}: keine RubrikKachel`).not.toContain('<RubrikKachel');
+    }
+    const startDateien = alleQuellen().filter((d) => d.includes('/components/start/'));
+    expect(startDateien.length, 'Startseiten-Bausteine gefunden').toBeGreaterThan(0);
+    for (const d of startDateien) {
+      const q = ohneKommentare(liesRoh(d));
+      expect(q, `${d.slice(WURZEL.length + 1)}: keine Kachel`).not.toContain('<RubrikKachel');
+      expect(q, `${d.slice(WURZEL.length + 1)}: kein lc-tile`).not.toContain('lc-tile');
+    }
   });
 
   it('NEGATIV-KONTROLLE: die Ausdrücke finden die Vorher-Formen', () => {
     expect('<span className="num font-display text-h1 leading-none text-brass-700">{k.zahl}</span>')
       .toMatch(/className="num font-display text-h1 leading-none text-brass-700"/);
-    expect('<span className="block text-micro num text-ink-500">{r.zaehler}</span>')
-      .toMatch(/className="block text-micro num text-ink-500"/);
+    // So stand die Landkarte bis R3 in `components/start/RubrikKacheln.tsx`.
+    expect('<RubrikKachel key={a.ziel} ziel={a.ziel!} titel={a.titel}').toContain('<RubrikKachel');
   });
 
   it('§8: der Zähler-Wortlaut ist gewandert, nicht abgeschwächt', () => {
     // «erfasst» für die bibliografischen Materialien, «im Volltext» für die
-    // echten Volltexte (E6a·M5) — der Umbau darf die Aussage nicht glätten.
-    expect(start).toContain('amtliche Materialien erfasst');
-    expect(start).toContain('Entscheide im Volltext');
-    // DEKLARIERTE ANPASSUNG (W2·23-STARTSEITE-V4 §3, 5.9.2026, §6.3): der
-    // Erlass-Zähler steht nicht mehr in der Landkarte — «Gesetze» hat mit V4
-    // eine eigene Schwerpunkt-Sektion. Geprüft wird darum dort, WO die Zahl
-    // heute steht; die §8-Aussage selbst ist unverändert scharf.
-    const gesetzeBund = lies('components/start/GesetzeChips.tsx');
-    const gesetzeBlock = lies('components/start/GesetzeBlock.tsx');
-    expect(start, 'Landkarte führt den Erlass-Zähler nicht mehr').not.toContain('Erlasse im Volltext');
-    expect(gesetzeBund, 'Bund-Zeile: Zähler mit Scope').toMatch(/erlasse im Volltext/i);
-    expect(gesetzeBlock, 'Kanton-Zeile: Zähler mit Scope').toMatch(/erlasse im Volltext/i);
-    // §8 am Kantons-Chip: Zustands-Wort im Accessible Name, nie «vollständig»
-    // aus eigener Kraft (erfassungsgrad.ts bleibt die eine Quelle).
-    expect(gesetzeBlock).toContain('STUFE_WORT');
-    expect(gesetzeBlock).toContain('erfasst');
+    // echten Volltexte (E6a·M5) — jeder Umbau darf die Aussage nur an einen
+    // anderen Ort tragen, nie glätten. R3-Orte:
+    const bund = lies('components/start/SystematikListe.tsx');
+    const kantone = lies('components/start/KantoneRaster.tsx');
+    const entscheide = lies('components/start/EntscheideListe.tsx');
+    const materialien = lies('components/start/MaterialienListe.tsx');
+    expect(bund, 'Bund-Zeile: Zähler mit Scope').toMatch(/Erlasse<br \/>im Volltext/);
+    expect(kantone, 'Kanton-Zeile: Zähler mit Scope').toMatch(/Erlasse<br \/>im Volltext/);
+    expect(entscheide, 'Entscheide: Zähler mit Scope').toMatch(/Entscheide<br \/>im Volltext/);
+    expect(materialien, 'Materialien: «erfasst», nie «Volltext»').toMatch(/Materialien erfasst/);
+    expect(materialien, 'Materialien behaupten keinen Volltext').not.toContain('im Volltext');
+    // §8 am Kantons-Eintrag: Zustands-Wort im Accessible Name, nie
+    // «vollständig» aus eigener Kraft (erfassungsgrad.ts bleibt die Quelle).
+    expect(kantone).toContain('STUFE_WORT');
+    expect(kantone).toContain('erfasst');
   });
 
   it('der Baustein ist genau einmal definiert', () => {

@@ -1,4 +1,4 @@
-// ─── Modul-Registry der Startseite (Startseite V4, FAHRPLAN §2/§3) ──────────
+// ─── Modul-Registry der Startseite (FAHRPLAN-STARTSEITE §2/§3) ──────────────
 //
 // Reine Darstellungs-Deklaration (§3): welche Module in welcher Reihenfolge die
 // Startseite komponiert. Katalog bleibt startseiteConfig.ts, Rubriken bleiben
@@ -6,56 +6,56 @@
 // garantierbar (Council-Auflage 3); Leerzustände gehören INS Modul (jedes Modul
 // rendert selbst nichts, wenn es nichts anzuzeigen hat).
 //
-// Bewusste FUNDAMENT-Vorleistung auf den «Startseiten-Modul-Rahmen»
-// (FAHRPLAN-FUNDAMENT-UMBAU), kein Selbstzweck — NICHT weiter abstrahieren
-// (keine Sichtbarkeits-/Layout-Logik ins Registry ziehen).
+// W2·24-DESIGN-IDENTITAET R3 (6.9.2026, DEKLARIERTE fachliche Änderung, kein
+// Refactoring): die Startseite ist das INHALTSVERZEICHNIS der Sammlung
+// geworden (Referenzbild `abnahme/design-identitaet/vorschlag-freigegeben.html`,
+// Seite «Startseite»). Drei Folgen für dieses Registry:
 //
-// V4 (W2·23-STARTSEITE-V4, 5.9.2026) ändert AUSSCHLIESSLICH diese Liste, nicht
-// den Rahmen: «Zuletzt verwendet» rückt direkt unter den Hero (Wiederkehrer
-// zuerst), «Gesetze — Bund und Kantone» kommt als eigene Schwerpunkt-Sektion
-// dazu, der Tab-Kasten «Schnellrechner» weicht der schlanken Sektion
-// «Werkzeuge», und die Landkarte heisst «Weitere Bereiche», weil Gesetze
-// eine Zeile höher stehen.
+//  1. Jedes Modul rendert seine eigene SATZSPIEGEL-ZEILE (`start/Satzspiegel`
+//     `StartZeile`): links die Marginalie (Registerfarben-Strich · Bereich ·
+//     Zahl mit Scope), rechts Titel und Inhalt. Titel und Höhen-Reservierung
+//     liegen damit vollständig IM Modul — die Seite trägt nur noch das Raster.
+//     Der frühere `titel`/`minHoeheKlasse`-Vertrag entfällt ersatzlos; er hätte
+//     die Marginalie nicht ausdrücken können und wäre neben ihr eine zweite,
+//     halbe Wahrheit gewesen (§5).
+//  2. «Zuletzt verwendet» ist kein eigenes Modul mehr, sondern die
+//     Verweiszeile der Titelblatt-Zeile (Referenzbild `.unter`) — eine eigene
+//     Zeile hätte im Satzspiegel bei leerem Speicher eine leere Marginalie
+//     hinterlassen.
+//  3. Die Landkarte aus Rubrik-Kacheln (`RubrikKacheln`) ist GESTRICHEN: die
+//     vier Bereiche stehen als Reiter in der Titelblatt-Zeile (R2), ihre
+//     Bestände als Listen hier. `GesetzeBlock`/`GesetzeChips` sind in
+//     `SystematikListe` + `KantoneRaster` aufgegangen, `NewsHeader` in
+//     `EntscheideListe`.
 
 import type React from 'react';
 import { Hero } from '../components/start/Hero';
-import { GesetzeBlock } from '../components/start/GesetzeBlock';
+import { SystematikListe } from '../components/start/SystematikListe';
+import { KantoneRaster } from '../components/start/KantoneRaster';
+import { EntscheideListe } from '../components/start/EntscheideListe';
+import { MaterialienListe } from '../components/start/MaterialienListe';
 import { Werkzeuge } from '../components/start/Werkzeuge';
-import { RubrikKacheln } from '../components/start/RubrikKacheln';
-import { ZuletztVerwendet } from '../components/start/ZuletztVerwendet';
-import { NewsHeader } from '../components/start/NewsHeader';
 import { VertrauensFuss } from '../components/start/VertrauensFuss';
 
 type StartModulId =
-  | 'hero' | 'zuletzt' | 'gesetze' | 'werkzeuge' | 'rubriken' | 'news' | 'vertrauen';
+  | 'hero' | 'bundesrecht' | 'kantone' | 'rechtsprechung' | 'materialien' | 'werkzeuge' | 'schluss';
 
 export interface StartModul {
   id: StartModulId;
-  /** Sektionstitel (Seclabel/H2); undefined = ohne Rubriktrenner (Hero) */
-  titel?: string;
   /** MUSS beim Prerender synchron rendern (prerender.ts verbietet Suspense-Reste) — KEINE Lazy-Loader im Registry */
   Komponente: React.ComponentType;
-  /** benanntes CLS-Token für async-/localStorage-Module */
-  minHoeheKlasse?: string;
 }
 
-// Reihenfolge = §2 (Hero → Zuletzt → Gesetze → Werkzeuge → Weitere Bereiche →
-// Jüngste Entscheide → Vertrauen).
+// Reihenfolge = das Inhaltsverzeichnis der Sammlung: Titelblatt → Gesetze
+// (Bund, Kantone) → Rechtsprechung → Materialien → Werkzeuge → Schluss. Sie
+// folgt der Register-Ordnung der Navigation (Nachschlagen vor Rechnen), nicht
+// einer Vermutung über Beliebtheit.
 export const START_MODULE: readonly StartModul[] = [
-  // Hero: kein Rubriktrenner (self-verwaltend, eigene H1) — trägt Begrüssung,
-  // Value Proposition, die EINE Suche und die Beispiel-Chips.
   { id: 'hero', Komponente: Hero },
-  // Zuletzt trägt bewusst KEIN `titel`/`minHoeheKlasse`: Sektionstitel («Zuletzt
-  // verwendet»), Höhen-Reservierung UND Vollkollaps bei leerem Speicher liegen INS
-  // Modul verlagert (S4, Council «nie Titel über Leerraum», wie NewsHeader in S3).
-  // V4: steht direkt unter dem Hero — wer wiederkommt, sieht sein Zeug zuerst.
-  { id: 'zuletzt', Komponente: ZuletztVerwendet },
-  // Der Schwerpunkt (Auftrag David 5.9.2026): Bund · Kantone · International.
-  { id: 'gesetze', titel: 'Gesetze — Bund und Kantone', Komponente: GesetzeBlock },
-  { id: 'werkzeuge', titel: 'Werkzeuge', Komponente: Werkzeuge },
-  { id: 'rubriken', titel: 'Weitere Bereiche', Komponente: RubrikKacheln },
-  // News ebenso selbst-verwaltend (S3-Fix Leerzustand-Doppelpfad, §3 #6) — titellos.
-  { id: 'news', Komponente: NewsHeader },
-  // Vertrauens-Fuss: kein Rubriktrenner, kein async-Zustand → titellos, statisch.
-  { id: 'vertrauen', Komponente: VertrauensFuss },
+  { id: 'bundesrecht', Komponente: SystematikListe },
+  { id: 'kantone', Komponente: KantoneRaster },
+  { id: 'rechtsprechung', Komponente: EntscheideListe },
+  { id: 'materialien', Komponente: MaterialienListe },
+  { id: 'werkzeuge', Komponente: Werkzeuge },
+  { id: 'schluss', Komponente: VertrauensFuss },
 ];

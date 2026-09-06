@@ -86,8 +86,23 @@ test.describe('C2 — die Topbar bleibt @320 im Fenster', () => {
 
       // Vorbedingung (§6.7): der Streifen ist WARM — sonst wäre der Fall grün,
       // weil zwei der vier Werkzeug-Knöpfe schlicht fehlen.
-      await expect(page.locator('header.sticky button[aria-label="Alle geöffneten Reiter"]'))
-        .toHaveCount(1, { timeout: 20_000 })
+      //
+      // DEKLARIERTE ANPASSUNG (W2·24-DESIGN-IDENTITAET R2, 6.9.2026, §6.3 —
+      // hier am 6.9.2026 im R3-Lauf nachgeholt): der Wärme-Nachweis hing am
+      // ☰-Trigger «Alle geöffneten Reiter» IN `header.sticky`. R2 hat den
+      // Trigger dort ersatzlos entfernt — die offenen Reiter stehen seither
+      // sichtbar in der ARBEITSLEISTE (`layout/Reiterleiste.tsx`, Reiter als
+      // Knöpfe in `nav[aria-label="Offene Reiter"] [data-reiter-streifen]`),
+      // die bewusst NICHT klebt
+      // (R2-RAHMEN.md §2). Der Ausdruck fand darum ab R2 nie mehr etwas und
+      // liess den Fall rot, ohne dass am gemessenen Streifen etwas fehlte.
+      // Neu wird die Wärme dort nachgewiesen, wo sie heute sichtbar ist; die
+      // MESSUNG selbst (`streifenKante` über `header.sticky`) ist unverändert.
+      // GEMESSEN 6.9.2026: `aria-current="page"` taugt hier NICHT als Sonde —
+      // Übersichts- und Startseite legen gar keinen eigenen Reiter an, der
+      // Streifen trägt dort nur den aufgewärmten OR-Reiter.
+      await expect(page.locator('nav[aria-label="Offene Reiter"] [data-reiter-streifen] button').first())
+        .toBeVisible({ timeout: 20_000 })
 
       const { ueberlauf, quellen } = await streifenKante(page)
       expect(ueberlauf, `Streifen-Überlauf @320 auf ${pfad}: ${ueberlauf} px — ${quellen.join(' | ') || 'keine Quelle'}`)
