@@ -60,7 +60,9 @@ test.describe('S1 · Query-Durchreichung ?q=', () => {
     await mehr.click()
     // Ohne den laufenden ?q=-Abgleich bliebe das Feld hier leer (Lazy-Init greift
     // nur beim Mount — /gesetze → /gesetze mountet nicht neu).
-    await expect(page.getByRole('searchbox', { name: /Gesetze durchsuchen/ })).toHaveValue('recht')
+    // DEKLARIERTE ANPASSUNG (R12A/D22, 6.9.2026): Locator folgt dem sichtbaren
+    // Label «Filtern» (WCAG 2.5.3) — geprüft wird unverändert der ?q=-Abgleich.
+    await expect(page.getByRole('searchbox', { name: 'Filtern' })).toHaveValue('recht')
   })
 
   test('Rechtsprechung: getippter Begriff landet in der Adresse und übersteht das Neuladen (rg UND q)', async ({ page }) => {

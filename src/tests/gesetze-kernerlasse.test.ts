@@ -16,7 +16,7 @@
  * «expected 10 … received 6»).
  */
 import { describe, it, expect } from 'vitest';
-import { kernerlasse } from '../pages/Gesetze';
+import { kernerlasse } from '../components/gesetze/kernerlasse';
 
 const ERWARTET = ['OR', 'ZGB', 'ZPO', 'StGB', 'StPO', 'SchKG', 'BV', 'DBG', 'VwVG', 'BGG'];
 

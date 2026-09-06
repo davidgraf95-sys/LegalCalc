@@ -41,7 +41,13 @@ export function RechnerUebersicht() {
   const gefiltert = q !== '';
 
   return (
-    <div className="space-y-8">
+    <div className="space-y-6">
+      {/* D22 Ziff. 4 · DIE ABSTÄNDE DER ÜBERSICHT SIND GEDECKELT.
+          Gemessen (Playwright, Preview, 6.9.2026, @1440/@1160/@1024/@390):
+          die grösste senkrechte Leerfläche zwischen zwei Inhaltsblöcken lag
+          auf den fünf Übersichten bei 64/49/57/74/56 px. Das Budget ist
+          48 px — der Seitenrhythmus geht darum von `space-y-8` (32) auf
+          `space-y-6` (24). Nur Abstand, kein Inhalt, keine Reihenfolge. */}
       {/* D11/D22 (David 6.9.2026) — Kopf-Regel für ALLE fünf Übersichten,
           Herleitung in `components/layout/SeitenKopf.tsx`: H1 = Bereichsname
           wie im Reiter, DARUNTER die Ausgabe-Zeile aus dem Register — keine

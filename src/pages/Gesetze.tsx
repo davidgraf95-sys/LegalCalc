@@ -55,8 +55,7 @@ import { istRechtsgebietAlias, normalisiereAnsicht } from './gesetze-teile/ansic
 // R12A (D22 Ziff. 5, R12 «Wege verkürzen»): die zehn Kernerlasse als Link-Zeile.
 // Ziel-Adresse über die EINE Ableitung (`erlassPfadVonKey`, §5), Kürzel und
 // Existenz aus dem Register — keine zweite Erlass-Liste im Code.
-import { erlassPfadVonKey } from '../lib/normtext/erlassAdresse';
-import { ERLASS_REGISTER } from '../lib/normtext/register';
+import { kernerlasse } from '../components/gesetze/kernerlasse';
 
 /** Zahlen der Ausgabe-Zeile in Schweizer Schreibweise (1'338) — dieselbe
  *  Ein-Zeilen-Form, die die Startseiten-Bausteine seit W2·23 führen. */
@@ -101,27 +100,6 @@ function EbenenSchalter({ aktiv, onWahl, onAlle }: {
       ))}
     </div>
   );
-}
-
-// ─── R12A (D22 Ziff. 5) · KERNERLASSE IN EINEM KLICK ────────────────────────
-//
-// R12 «Wege verkürzen» (David 6.9.2026: «bei startseite auf gesetze klicken
-// viele ebenen bis wir endlich im gesetz landen»). Die zehn Erlasse, die eine
-// Kanzlei täglich aufschlägt, stehen darum direkt unter dem Filter — eine
-// Zeile Links, keine Kacheln, kein Zwischenschritt.
-//
-// KEINE ZWEITE ERLASS-LISTE: geführt werden nur die SCHLÜSSEL; Kürzel und
-// Adresse kommen aus dem Register bzw. aus `erlassPfadVonKey` (§5). Ein
-// Schlüssel, den das Register nicht kennt, verschwindet still aus der Zeile
-// statt ins Leere zu verlinken — dass keiner der zehn verschwindet, hält der
-// Wächter `src/tests/gesetze-kernerlasse.test.ts` fest (§8/§6.7).
-const KERNERLASS_KEYS = ['OR', 'ZGB', 'ZPO', 'STGB', 'STPO', 'SCHKG', 'BV', 'DBG', 'VWVG', 'BGG'] as const;
-
-export function kernerlasse(): { key: string; kuerzel: string; titel: string; pfad: string }[] {
-  return KERNERLASS_KEYS.flatMap((k) => {
-    const e = ERLASS_REGISTER.find((r) => r.key === k);
-    return e ? [{ key: k, kuerzel: e.kuerzel, titel: e.titel, pfad: erlassPfadVonKey(k) }] : [];
-  });
 }
 
 function Kernerlasse() {
@@ -325,7 +303,13 @@ export function Gesetze() {
   );
 
   return (
-    <div className="space-y-8">
+    <div className="space-y-6">
+      {/* D22 Ziff. 4 · DIE ABSTÄNDE DER ÜBERSICHT SIND GEDECKELT.
+          Gemessen (Playwright, Preview, 6.9.2026, @1440/@1160/@1024/@390):
+          die grösste senkrechte Leerfläche zwischen zwei Inhaltsblöcken lag
+          auf den fünf Übersichten bei 64/49/57/74/56 px. Das Budget ist
+          48 px — der Seitenrhythmus geht darum von `space-y-8` (32) auf
+          `space-y-6` (24). Nur Abstand, kein Inhalt, keine Reihenfolge. */}
       {/* ── D11 (David 6.9.2026, Bild /gesetze) · DER KOPF NENNT DEN BEREICH ──
           Bis hierher standen drei Angaben übereinander: eine Overline
           («Rechtssammlung Schweiz»), eine H1, die dasselbe noch einmal sagte
@@ -435,7 +419,7 @@ export function Gesetze() {
               Kurz-Statistik statt stillem Bund-Default. Prominenter Sprung-/
               Such-Hinweis (Cmd/Ctrl-K, §4.2) darüber. */}
           {!suche.trim() && gewaehlt === null && (
-            <div className="space-y-4">
+            <div className="space-y-3">
               <Einstieg
                 bund={gefiltert.length}
                 bundArtikel={gefiltert.reduce((a, e) => a + e.artikelAnzahl, 0)}
