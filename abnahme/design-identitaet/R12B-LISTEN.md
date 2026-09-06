@@ -170,7 +170,19 @@ bund-systematik,rechtsprechung,materialien,vorlagen}-{1440,1280,390}-{hell,dunke
   Erlasse/).first()` löst auf eine H3 in einer zugeklappten `<details>` auf, «hidden»).
   Nicht angepasst — einen fremden roten Test grün zu locatorn hiesse, einen Befund zu
   verstecken (§6.3/§8). Gehört zum Rahmen-Fixer.
-* `e2e/rechtsprechung.e2e.ts` → V5 «im Lesemodus verschwindet der Rail» und V5 «A9:
-  Rail-Sprung + Suche flüssig, CLS 0»: siehe Nullprobe im Bau-Bericht. Betrifft
-  `EntscheidLeser`/`LesemodusOverlay`/`ErwaegungsRail` — Dateien, die dieser Bau nicht
-  berührt.
+* `e2e/rechtsprechung.e2e.ts` → V5 «im Lesemodus verschwindet der Rail — keine Zahlen
+  neben toten Sprungzielen (§8)»: **Nullprobe auf `e1dff388d`** (eigener Worktree, eigener
+  Bau, Fall einzeln gelaufen): dort ebenfalls ROT, mit derselben Meldung (der Klick auf
+  «schliessen» wird vom `role=dialog`-Lesemodus-Overlay abgefangen, 30 s Timeout).
+* `e2e/rechtsprechung.e2e.ts` → V5 «A9: Rail-Sprung + Suche flüssig unter CPU-Throttle,
+  CLS 0»: **flakig, und zwar auf der Basis stärker als auf diesem Stand.** Gemessen je
+  `--repeat-each=4 --workers=1`, warme Preview: Basis `e1dff388d` **3 von 4 rot**, dieser
+  Stand **1 von 4 rot**. Der gerissene Wert ist in JEDEM roten Lauf zeichengleich
+  derselbe — `0.000631275720164609` gegen eine Latte von exakt 0 —, also eine feste,
+  intermittierend ins Messfenster fallende Verschiebung, keine Grössenordnung, die dieser
+  Bau erzeugt hätte.
+Beide betreffen `EntscheidLeser`/`LesemodusOverlay`/`ErwaegungsRail` — Dateien, die dieser
+Bau nicht berührt. Nicht angepasst: einen fremden roten Fall grün zu locatorn hiesse,
+einen Befund zu verstecken (§6.3/§8). Zur Weitergabe an den zuständigen Fixer; die
+CLS-Latte «exakt 0» ist zudem ein Kandidat für einen Wurzel-Fix (§17): eine Schwelle, die
+in drei von vier Läufen an 0.0006 scheitert, misst die Messung, nicht die Seite.
