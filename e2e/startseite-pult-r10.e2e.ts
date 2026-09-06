@@ -189,3 +189,50 @@ test.describe('R10 · eigener Zustand', () => {
     expect(cls, `CLS ${cls}`).toBeLessThan(0.1)
   })
 })
+
+// ─── D29 · Modul-Links führen je zu ihrem eigenen Ziel ──────────────────────
+//
+// Bug David 6.9.2026, Bild «Bundesrecht, systematische Ordnung»: «jede Kachel
+// führt zu der gleichen Seite». Die Zeilen-Hrefs waren am Quelltext schon
+// distinkt (Bau-Bericht); dieser Wächter misst am LAUFENDEN Browser, was David
+// tatsächlich sieht — Klick UND Ziel, nicht nur das Attribut.
+//
+// ROT-PROBE (§6.7, 6.9.2026): am unveränderten Vorzustand (Kürzel als reiner
+// `<small>`-Text ohne `<Link>`) meldete Playwright für den ersten Fall
+// `getByRole('link', { name: 'BV' })` → 0 Treffer statt 1.
+test.describe('D29 · Systematik-Modul: eigenes Ziel je Zeile', () => {
+  test('die sechs Zeilen tragen sechs verschiedene Hrefs', async ({ page }) => {
+    await page.goto('/')
+    await pultBereit(page)
+    const modul = page.getByRole('region', { name: 'Bundesrecht, systematische Ordnung' })
+    // Fünf Bund-Kategorien + International — Zeilen-Hrefs, nicht die Kürzel darunter.
+    // Auto-Retry (`expect.poll`), weil das Hydrieren die vorgerenderte Liste
+    // kurz gegen den Ladezustand tauscht (Gotcha oben, `pultBereit` deckt nur
+    // die Modul-Anzahl ab, nicht diese spezifischen Hrefs).
+    await expect.poll(() => modul.locator('a').evaluateAll((els) =>
+      [...new Set(els.map((e) => e.getAttribute('href')).filter((h) => h?.includes('#sys-') || h?.includes('ebene=international')))].length,
+    )).toBe(6)
+  })
+
+  test('ein Kernerlass-Kürzel ist ein eigener Link auf seinen Erlass', async ({ page }) => {
+    await page.goto('/')
+    const link = page.getByRole('link', { name: 'BV', exact: true })
+    await expect(link).toBeVisible()
+    await expect(link).toHaveAttribute('href', '/gesetze/bund/BV')
+  })
+
+  test('Klick auf Zeile 03 landet auf der Zivilprozess-Kategorie (Adresse + Überschrift)', async ({ page }) => {
+    await page.goto('/')
+    await pultBereit(page)
+    await page.getByRole('link', { name: 'Zivilprozess- und Zwangsvollstreckungsrecht' }).click()
+    await expect(page).toHaveURL(/\/gesetze\?ebene=bund#sys-zivilverfahren$/)
+    // Die Kategorie ist ein natives <details id="sys-zivilverfahren">
+    // (`gesetze-teile/geteilt.tsx`, kein <h*> — die «Überschrift» ist der
+    // <summary>-Text); offen UND im sichtbaren Bereich sind die zwei
+    // messbaren Zusagen des Deeplinks.
+    const kategorie = page.locator('#sys-zivilverfahren')
+    await expect(kategorie).toHaveAttribute('open', '')
+    await expect(kategorie.getByText('Zivilprozess- und Zwangsvollstreckungsrecht')).toBeVisible()
+    await expect(kategorie).toBeInViewport()
+  })
+})

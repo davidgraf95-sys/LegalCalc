@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { STARTSEITE_ZAEHLER } from '../../data/startseiteZaehler.generated';
 import { usePaneKlasse } from '../layout/PaneKontext';
 import { ModulFuss } from './PultModul';
+import { behoerdeZiel } from './modulZiele';
 
 // ─── Amtliche Materialien nach Behörde (W2·24-R3) ───────────────────────────
 //
@@ -33,7 +34,7 @@ export function MaterialienListe() {
         'sm:grid-cols-2 lg:grid-cols-3', '@lg/pane:grid-cols-2 @3xl/pane:grid-cols-3',
       )}`}>
         {z.materialienBehoerden.map((b) => (
-          <Link key={b.id} to={`/materialien#b-${b.id}`} title={b.name}
+          <Link key={b.id} to={behoerdeZiel(b.id)} title={b.name}
             className="flex items-baseline justify-between gap-2 border-t border-rule-soft py-1 no-underline hover:text-reg-m">
             <span>{b.kuerzel}</span>
             <span aria-hidden className="num text-ink-500">{b.anzahl}</span>
