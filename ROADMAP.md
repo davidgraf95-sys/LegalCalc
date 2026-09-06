@@ -480,6 +480,28 @@ zgb-a36-anhang: Die ZGB-Gliederung zeigt 74 Artikel des Anhangs «Wortlaut der f
   Weg von Creme+Gold, Versal-Etiketten und weichen Karten (Verwechselbarkeit mit legaldeadline.ch):
   Token-Tausch, flip-reversibel; erst drei Varianten-Bilder nach Landung W2·23, David wählt.
   **Detail:** [FAHRPLAN-DESIGN-IDENTITAET.md](fahrplaene/FAHRPLAN-DESIGN-IDENTITAET.md) §1.
+  - [ ] **L6 · PaneKopf-Name vs. «keine Doppelkrume»** (17.8.2026) — primäres Pane ohne eigenen Namen, Platzhalter «(aktuelle Adresse)»; Kurzform-Vorschlag offen. **Wartet auf David.**
+  - [ ] **Leerer 34-px-Reiterstreifen auf «/»** (R11-Auflage R2) — Höhe bleibt reserviert (CLS 0); offen ist, ob der «+»-Knopf allein genügt. **Wartet auf David.**
+  - [ ] **Bezüge-Zeile am Artikel: Umfang und Form** (D20) — nach R9 prüfen, ob Entscheide/Materialien am Rand noch stimmen. **Wartet auf David.**
+  - [ ] **Budget-Entscheid Entry 99,5 %** (59.7 / 60.0 KB) — der nächste Kopf-Bau reisst das Budget: Lazy-Laden oder Budget-Hebung (§15). **Wartet auf David.**
+  - [ ] **Jules-Kandidaten** (grüne Spur/Jules, nach Landung W2·24): toter CSS-Rückbau `[data-lr-spiegel]`/`.lr-notiz*`/alte Druckregeln in `index.css` · Datei-Splits `ArtikelLeser.tsx` (> 800 Z.) und `Reiterleiste.tsx` (627 Z., gemessen 6.9.: 855) · Typ-Härtungen `lib/tabs.ts`/`tabGruppen.ts` · Allowlist-Pflege `e2e/kein-abschnitt.allow.json`.
+
+- [ ] **Reiter anheften und Arbeitsmappe** *(`W2·25-ARBEITSMAPPE`, §5a Ziff. 5/9 · R11-M5)*
+  <!-- @meta id: W2·25-ARBEITSMAPPE · status: ready · blocker: null · dep: [W2·24-DESIGN-IDENTITAET] · feld: design · fahrplan: fahrplaene/FAHRPLAN-DESIGN-IDENTITAET.md -->
+  Angeheftete Kürzel-Reiter (OR/ZGB/ZPO, links, ohne ✕, überleben «Alle schliessen») und die
+  benannte Arbeitsmappe (offene Reiter lokal speichern/öffnen, als Adresse teilbar,
+  deterministisch ohne Konto). **Risiko D16:** Anheften darf keine zweite Anzeige-Ordnung sein,
+  sondern muss den flachen Speicher umsortieren — sonst Rückfall in den behobenen Zieh-Bug.
+  **Detail:** [FAHRPLAN-DESIGN-IDENTITAET.md](fahrplaene/FAHRPLAN-DESIGN-IDENTITAET.md) §7.
+
+- [ ] **Perf-Rest Leser: `fremdRoutingFormB` / `artikelnPluralVerweise`** *(`W2·24-PERF-REST`)*
+  <!-- @meta id: W2·24-PERF-REST · status: ready · blocker: null · dep: [W2·24-DESIGN-IDENTITAET] · feld: leser · fahrplan: fahrplaene/FAHRPLAN-DESIGN-IDENTITAET.md -->
+  Zwei Fix-Vorschläge aus `abnahme/design-identitaet/PERF-LESER.md` (`fedlex/parser.ts`
+  `FREMD_FORM_B`, Aufruf `NormText.tsx`; ~2.3 s). **Die Root-Cause war zum Messzeitpunkt NICHT
+  abschliessend verifiziert** — Ziel ist erst verifizieren (misst der gelandete Fix das schon
+  weg?), dann fixen; ohne Verifikation kein Eingriff (§7). Risikopfad (`src/lib/fedlex`) ⇒
+  **Gegenprüfung Pflicht**, Merge gesperrt bis Verdikt. Messregel: nie neben laufendem Build
+  oder e2e (Skill `perf` Bauregel 7).
 
 - [ ] **UI-Befundliste extern (210 Befunde, Cowork 29.7.2026)** *(`W2·17-UI-BEFUNDE`)*
   <!-- @meta id: W2·17-UI-BEFUNDE · status: ready · blocker: null · dep: [] · feld: design · fahrplan: fahrplaene/FAHRPLAN-UI-BEFUNDE.md -->

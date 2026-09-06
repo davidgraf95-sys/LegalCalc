@@ -289,3 +289,43 @@ Farbpaletten, URLs, Abruf 5.9.2026) und `scratchpad/agy-nichtki.json` (Anti-KI-S
 Sonnet-Recherche zu Schrift/Lizenz ist **in Session erhoben, ohne Datei-Artefakt** — genau so
 ausweisen, nicht als belegte Quelle führen.
 *Routen:* Rundgang über alle sechs Bereiche.
+
+## §7 · Spec `W2·25-ARBEITSMAPPE` — Anheften und Arbeitsmappe (eigener Schritt nach W2·24)
+
+Angelegt 6.9.2026 beim Reglement-Nachzug. Anker: §5a Ziff. 5 (angeheftete Reiter) und
+Ziff. 9 (Arbeitsmappe) · `abnahme/design-identitaet/uebergabe/R11-PLAN.md` M5 und §3.
+Der Schritt hängt an der Landung von `W2·24-DESIGN-IDENTITAET` (`dep`), weil beide
+dieselbe Datei-Fläche berühren.
+
+**Ziel (zwei Teile, in dieser Reihenfolge).**
+1. **Anheften.** OR/ZGB/ZPO … lassen sich anheften: schmaler Reiter nur mit Kürzel, ganz
+   links, ohne ✕ (Schliessen nur über das Kontextmenü), überlebt «Alle schliessen» und den
+   Neustart. Dateien laut M5: `src/lib/tabs.ts` (`TabEintrag.fest?: boolean`,
+   `hefteAn`/`loeseAb`), `src/components/layout/Reiterleiste.tsx`,
+   `src/components/layout/TabPanel.tsx`.
+2. **Arbeitsmappe.** Offene Reiter als benannte Mappe lokal speichern und öffnen, als
+   Adresse teilbar — deterministisch (§2), ohne Konto, ohne Server. Aufwand L; die
+   `?p=`-Erweiterung und die Namensgebung gehören dazu.
+
+**Risiko — der D16-Konflikt (wörtlich aus `R11-PLAN.md` §3 bzw. M5, nicht umformuliert):**
+
+> **Risiko: der D16-Konflikt.** Fixer 1c hat gerade jede Anzeige-Gruppierung entfernt, weil
+> sie das Ziehen einsammelte («es geht nur wenn nur gesetze offen sind — bug»,
+> `e2e/w224-reiter-umordnen-d16`). Anheften darf deshalb **keine zweite Anzeige-Ordnung**
+> sein, sondern muss den Speicher umsortieren; das Ziehen eines freien Reiters vor einen
+> festen muss dann verhindert (nicht stillschweigend korrigiert) werden. Ohne diese Auflage
+> ist M5 ein D16-Rückfall — im Zweifel zurückstellen.
+
+**Grenzen.** Reine Darstellungs-/Zustandsschicht (§3); keine Engine, keine Rechenlogik,
+keine Korpus-Daten. Kein Konto, kein Netz-Zustand — die Mappe lebt in `localStorage` und in
+der Adresse. Die bestehende Mechanik (`useTabs`, `usePaneLayout`, `usePaneDnd`, Verlauf) wird
+weiterverwendet, nicht verdoppelt (§5/§10).
+
+**Wächter.** Unit: Anheften ⇒ Position 0 im flachen Speicher; `leereTabs` lässt feste stehen;
+Ziehen eines freien Reiters vor einen festen wird abgelehnt (sichtbar, nicht still).
+E2E: Mappe speichern → alle Reiter schliessen → Mappe öffnen ⇒ dieselbe Reiterfolge
+inkl. Lesestellung. **Rot-Probe Pflicht** (heute kein `fest`-Feld auf HEAD).
+
+**Offen, wartet auf David (nie selbst entscheiden):** ob der leere 34-px-Reiterstreifen auf
+«/» mit dem «+»-Knopf allein genügt (R11-Auflage R2) — das ist der Ort, an dem der feste
+Reiter zuerst sichtbar würde.
