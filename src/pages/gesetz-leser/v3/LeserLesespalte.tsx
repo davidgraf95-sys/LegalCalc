@@ -124,7 +124,9 @@ export function LeserLesespalte({ m, bezuege, weckeBezuege, bezuegeGeweckt = fal
       // Ein geschlossenes `<details>` rendert seinen Inhalt nicht — die 1685
       // anderen Artikel bleiben unberührt, es gibt keinen dokumentweiten
       // Layout-Sprung, und `leser-v3-kontext-cls` misst weiterhin dasselbe.
-      bezuege={bezuege?.bezuegeFuer(e.artikel)}
+      // `alleFuer`, nicht `bezuegeFuer`: die Zeile zeigt, was ihre Kopfzahl
+      // zählt — ungefiltert. Herleitung in `../bezuegeLaden` (D30).
+      bezuege={bezuege?.alleFuer(e.artikel)}
       materialien={artikelMaterialien(e.artikel)}
       onBezuegeOeffnen={weckeBezuege}
       // «lädt …» heisst: geweckt, aber der Lade-VERSUCH ist noch nicht durch.

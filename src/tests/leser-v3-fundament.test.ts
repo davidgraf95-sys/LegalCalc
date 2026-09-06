@@ -148,8 +148,8 @@ describe('H3 — Pos. 12: der Lesekörper führt keine Bezüge UNGEFRAGT', () =>
     const quelle = ohneKommentare(LIES('LeserLesespalte.tsx'));
     const setzungen = quelle.match(/\bbezuege=\{[^}]*\}/g) ?? [];
     expect(setzungen.length, 'LeserLesespalte.tsx setzt `bezuege` gar nicht mehr — dann prüft der Rest nichts').toBe(1);
-    expect(setzungen[0], 'die `bezuege`-Prop kommt nicht aus dem geteilten Panel-Apparat (`bezuege?.bezuegeFuer`) — zweiter Ladepfad')
-      .toBe('bezuege={bezuege?.bezuegeFuer(e.artikel)}');
+    expect(setzungen[0], 'die `bezuege`-Prop kommt nicht aus dem geteilten Panel-Apparat (`bezuege?.alleFuer`) — zweiter Ladepfad')
+      .toBe('bezuege={bezuege?.alleFuer(e.artikel)}');
     expect(traegt(quelle, /\buseBezuege\b/), 'LeserLesespalte.tsx ruft `useBezuege` selbst — das ist der zweite Ladepfad, den H3 abgeschafft hat').toBe(false);
   });
 

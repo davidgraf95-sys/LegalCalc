@@ -316,29 +316,32 @@ export const ArtikelLeser = memo(function ArtikelLeser({ e, erlass, basisPfad, f
   // des Shards (die Zeile springt nicht mehr um, sobald der Apparat eintrifft).
   // Ohne Datei bleibt die frühere Reihenfolge unverändert bestehen: gefilterte
   // Kanten, sonst Leitfälle.
-  // ── D30 (David 6.9.2026) · DER ZÄHLER FOLGT DER LISTE, SOBALD SIE DA IST ──
-  // Wortlaut: «Zähler in der Zeile = Listenlänge nach dem Laden.»
+  // ── D30 (David 6.9.2026) · «ZÄHLER = LISTENLÄNGE NACH DEM LADEN» ──────────
+  // Die Reihenfolge unten bleibt die von R6c (Zähl-Datei zuerst) — sie ist der
+  // Grund, aus dem die Zahl beim Eintreffen des Shards nicht umspringt.
   //
-  // R6c hatte die Reihenfolge umgekehrt (Zähl-Datei VOR den Kanten), damit die
-  // Zahl nicht umspringt, wenn der Shard eintrifft. Dieser Grund gilt weiter für
-  // die Zeit, in der die Zeile ZU ist — dort steht die Zahl allein, und sie soll
-  // ruhig stehen. Er kehrt sich um, sobald die Liste OFFEN daneben steht: eine
-  // Kopfzahl, die etwas anderes sagt als die Liste unter ihr, ist an genau dieser
-  // Stelle die falsche Auskunft (§8). Die Zähl-Datei zählt ohne UI-Filter, die
-  // Liste zeigt gefiltert — der Unterschied ist real und gehört dorthin, wo er
-  // ihn erklärt: die Gruppenköpfe der Liste sagen «5 von 11 gezeigt» und
-  // nennen die Bezugsgrösse.
+  // DAVIDS REGEL IST DAMIT NICHT UMGANGEN, SONDERN AN DER WURZEL ERFÜLLT: die
+  // Zähl-Datei zählt `gesamtProArtikel` des Shards, also OHNE UI-Filter
+  // (`scripts/gen-bezuege-zaehler.ts`), und die Liste bezieht ihre Kanten seit
+  // D30 aus `alleFuer` — ebenfalls ohne UI-Filter. Beide Wege zählen dasselbe;
+  // die Zahl kann also gar nicht mehr springen, egal welcher zuerst da ist.
+  // (Bis D30 tat sie es: gemessen OR 336c «11 Entscheide» im Kopf gegen 3
+  // gezeigte, weil `bezuegeFuer` die Panel-Facetten anwandte — Herleitung in
+  // `../bezuegeLaden`.) Dass die beiden Wege übereinstimmen, ist eine ZUSAGE
+  // und keine Hoffnung: `e2e/leser-bezuege-inhalt-d30.e2e.ts` (b) misst
+  // Kopfzahl gegen die Zahl der gerenderten Zeilen.
   const bezugsMarken: BezugsMarke[] = [
     {
       reg: 'r',
-      anzahl: bezuege ? bezuege.kanten.length : (zaehler ? zaehler.entscheide : (leitfaelle?.length ?? 0)),
+      anzahl: zaehler ? zaehler.entscheide : (bezuege ? bezuege.kanten.length : (leitfaelle?.length ?? 0)),
       wort: ['Entscheid', 'Entscheide'],
     },
     // Die Rubrik erscheint NUR mit echter Zahl (`anzahl > 0` filtert sie sonst
     // in `BezuegeKopf` heraus) — ohne Zähl-Datei steht sie also gar nicht da,
-    // statt eine Null zu behaupten (§8). Dieselbe Umkehr wie oben: liegt die
-    // Liste vor, gilt ihre Länge.
-    { reg: 'm', anzahl: materialien ? materialien.length : (zaehler?.materialien ?? 0), wort: ['Materialie', 'Materialien'] },
+    // statt eine Null zu behaupten (§8). Dieselbe Deckungsgleichheit wie oben:
+    // die Zähl-Datei entdoppelt die Material-Kanten nach Dokument, und genau so
+    // baut `projiziereMaterialien` die Liste (ein Eintrag je Dokument).
+    { reg: 'm', anzahl: zaehler?.materialien ?? (materialien?.length ?? 0), wort: ['Materialie', 'Materialien'] },
     { reg: 'g', anzahl: verweise.length, wort: ['Verweis', 'Verweise'] },
     { reg: 'w', anzahl: werkzeuge.length, wort: ['Rechner', 'Rechner'] },
   ];
