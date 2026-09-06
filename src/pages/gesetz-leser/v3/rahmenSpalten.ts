@@ -280,13 +280,8 @@ export function rahmenBild(lage: RahmenLage): RahmenBild {
     : LESEMASS_MAX;
 
   const spurenPx = spaltenLage ? ((gliederungSpalte ? SPUR_GLIEDERUNG : SPUR_SCHIENE) + SPUR_ABSTAND + (blattSpur ? SPUR_BLATT + SPUR_ABSTAND : 0)) * rem : 0;
-  // W2·24-R6b: die Lese-Zelle im RUHENDEN Rahmen entscheidet die Artikelform
-  // (`./satzspiegel`). Bis R6 stand hier zusätzlich eine Rahmen-Aufweitung für
-  // die Randnotiz-Spalte; mit dem Wegfall beider Randspuren (Auftrag David
-  // 6.9.2026) ist sie gestrichen — der Artikel braucht keine dritte Spur mehr,
-  // und eine Aufweitung, die dem Text nichts bringt (sein Deckel ist
-  // `lesemassMaxRem`), wäre Bewegung ohne Gewinn. Aufgeweitet wird seither nur
-  // noch für das Beiwerk-Blatt, wie vor R6.
+  // W2·24-R6b: die Lese-Zelle entscheidet die Artikelform (`./satzspiegel`); die
+  // R6-Aufweitung für die Randnotiz ist mit ihr gestrichen (`lesemassMaxRem` deckelt den Text ohnehin).
   const zellePx = raum == null ? null : (blattSpur ? (rootWennOffenPx ?? raum.ruhePx) : raum.ruhePx) - spurenPx;
   const satzspiegel = satzspiegelFuer(zellePx, rem, spaltenLage && ruheForm === 'rechts');
   return {
