@@ -120,37 +120,33 @@ describe('Keine Ist-Hülle: die alten Bausteine sind aus v3/ nicht erreichbar', 
 // Vier Quellensonden, die je einen Rückschritt rot machen, den ein DOM-Test
 // nicht sieht.
 
-describe('H3 — Pos. 12: der Lesekörper führt keine Bezüge UNGEFRAGT', () => {
-  // ── §6.3-DEKLARATION (W2·24-R5-F1K / D30, 6.9.2026) ────────────────────────
-  // BIS HIERHER: «die Lesespalte setzt die `bezuege`-Prop NICHT» (`/\bbezuege=/`
-  // muss fehlen). Die Zusage dahinter ist Pos. 12: der Lesekörper soll nicht an
-  // JEDEM Artikel eine Entscheid-Linie führen, die beim Eintreffen des Shards in
-  // den Text hineinwächst.
-  //
-  // WARUM DIE SONDE FALLEN MUSSTE, statt sie zu umgehen: sie band die Zusage an
-  // die ABWESENHEIT eines Prop-Namens, nicht an die Bedingung, die sie meint.
-  // Damit verbot sie auch den Fall, den David am 6.9.2026 als BUG meldet (D30):
-  // die Bezüge-Zeile am Artikelkopf zählt «11 Entscheide», und beim Aufklappen
-  // erscheint keiner — weil niemand mehr nach ihnen fragen DURFTE.
-  //
-  // DIE NEUE SONDE IST STRENGER, nicht schwächer. Sie verlangt DREI Dinge, wo
-  // die alte eines verbot; jedes einzelne macht Pos. 12 wieder rot:
-  //  (a) die Prop kommt aus dem GETEILTEN Apparat des Panels (`bezuege?.…`) und
-  //      nicht aus einer eigenen `useBezuege`-Instanz (§5, ein Ladepfad),
-  //  (b) sie ist optional gekettet — ohne Rahmen (Ist-Hülle, Tests) bleibt sie
-  //      `undefined` und der Lesekörper ist zeichengleich der alte,
-  //  (c) der Adapter lädt weiterhin NICHT beim Seitenaufruf (dritter Fall dieses
-  //      `describe`, unverändert) — die Daten kommen erst auf Klick.
-  // Was die alte Sonde NICHT geprüft hat und die neue auch nicht prüfen kann,
-  // prüft der e2e-Wächter `leser-bezuege-inhalt-d30`: dass die Linien im
-  // GESCHLOSSENEN Zustand nirgends im Lesekörper stehen.
-  it('die Lesespalte setzt `bezuege` nur aus dem geteilten Panel-Apparat und nur optional', () => {
+describe('H3 — Pos. 12: der Lesekörper führt keine Bezüge mehr', () => {
+  it('die Lesespalte setzt die `bezuege`-Prop des Kerns NICHT', () => {
     const quelle = ohneKommentare(LIES('LeserLesespalte.tsx'));
-    const setzungen = quelle.match(/\bbezuege=\{[^}]*\}/g) ?? [];
-    expect(setzungen.length, 'LeserLesespalte.tsx setzt `bezuege` gar nicht mehr — dann prüft der Rest nichts').toBe(1);
-    expect(setzungen[0], 'die `bezuege`-Prop kommt nicht aus dem geteilten Panel-Apparat (`bezuege?.alleFuer`) — zweiter Ladepfad')
-      .toBe('bezuege={bezuege?.alleFuer(e.artikel)}');
+    expect(traegt(quelle, /\bbezuege=/), 'LeserLesespalte.tsx setzt `bezuege` — die Entscheid-Linien sind zurück').toBe(false);
+  });
+
+  // ── D30 (W2·24-R5-F1K, 7.9.2026) · WARUM DANEBEN EINE ZWEITE SONDE STEHT ──
+  // Der Fall darüber ist UNVERÄNDERT (§6.3: kein Test angefasst). Er trägt
+  // weiterhin Pos. 12, und er trägt sie zu Recht: `bezuege` speist auch den
+  // Artikelfuss der schmalen Form — gemessen @390 an der StPO schob das Setzen
+  // dieser Prop beim Öffnen des Panels jeden Artikel nach unten (`leser-v3-
+  // kontext-cls` (b), Artikel-y 1385→1493→…). D30 setzt darum `bezuegeImKopf`,
+  // eine Prop, die AUSSCHLIESSLICH im `<details>` der Bezüge-Zeile landet.
+  //
+  // Diese Sonde hält die zwei Zusagen fest, die daran hängen und die der Fall
+  // darüber nicht sehen kann: die Daten kommen aus dem GETEILTEN Apparat des
+  // Panels (kein zweiter Ladepfad, §5), und zwar UNGEFILTERT (`alleFuer`) —
+  // sonst zeigte die Zeile weniger, als ihre Kopfzahl zählt (Davids D30:
+  // gemessen Kopf 11, Liste 3).
+  it('D30: die aufgeklappte Bezüge-Zeile speist sich aus dem geteilten, UNGEFILTERTEN Apparat', () => {
+    const quelle = ohneKommentare(LIES('LeserLesespalte.tsx'));
+    const setzungen = quelle.match(/\bbezuegeImKopf=\{[^}]*\}/g) ?? [];
+    expect(setzungen.length, 'LeserLesespalte.tsx setzt `bezuegeImKopf` nicht — die Zeile bleibt leer (D30)').toBe(1);
+    expect(setzungen[0], 'die Zeile liest nicht `alleFuer` des geteilten Apparats — entweder zweiter Ladepfad oder gefilterte Liste')
+      .toBe('bezuegeImKopf={bezuege?.alleFuer(e.artikel)}');
     expect(traegt(quelle, /\buseBezuege\b/), 'LeserLesespalte.tsx ruft `useBezuege` selbst — das ist der zweite Ladepfad, den H3 abgeschafft hat').toBe(false);
+    expect(traegt(quelle, /\bonBezuegeOeffnen=/), 'ohne `onBezuegeOeffnen` fragt niemand nach dem Apparat — genau Davids D30-Befund').toBe(true);
   });
 
   it('Positiv-Sonde: sie setzt `revision`/`historie` weiterhin (sonst prüfte das Verbot nur eine leere Datei)', () => {

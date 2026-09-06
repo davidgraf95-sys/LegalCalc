@@ -38,7 +38,7 @@ import type { Werkzeug } from '../../../lib/normtext/werkzeuge';
 /** Geteilte leere Liste — spart je Artikel ohne Werkzeug-Kante eine Allokation. */
 const LEERE_WERKZEUGE: readonly Werkzeug[] = [];
 
-export const ArtikelLeser = memo(function ArtikelLeser({ e, erlass, basisPfad, fussnoten, intern, marg, margBasis, imTreffer, onSpringe, leitfaelle, bezuege, materialien, onBezuegeOeffnen, bezuegeLaedt, revision, historie, zaehler, istAnhang = false }: {
+export const ArtikelLeser = memo(function ArtikelLeser({ e, erlass, basisPfad, fussnoten, intern, marg, margBasis, imTreffer, onSpringe, leitfaelle, bezuege, bezuegeImKopf, materialien, onBezuegeOeffnen, bezuegeLaedt, revision, historie, zaehler, istAnhang = false }: {
   e: NormSnapshot; erlass: BrowseErlass; basisPfad: string; fussnoten?: Fussnote[]; intern?: InternRefs;
   marg?: string[];
   /** G-HIST-UI: Fassungshistorie dieses Artikels aus dem erlass-lokalen Shard
@@ -78,6 +78,22 @@ export const ArtikelLeser = memo(function ArtikelLeser({ e, erlass, basisPfad, f
    *  der `LeitfallZeile` (der Bezugs-Shard ist deren Obermenge, §5 — nie beide
    *  nebeneinander, das wären zwei Wahrheiten am selben Artikel). */
   bezuege?: ArtikelBezuege;
+  /**
+   * D30 · der Inhalt der AUFGEKLAPPTEN Bezüge-Zeile am Artikelkopf.
+   *
+   * BEWUSST NICHT `bezuege` (Nullprobe 7.9.2026, `leser-v3-kontext-cls` (b)):
+   * `bezuege` speist AUCH den Artikelfuss der schmalen Form und der Suchsicht
+   * (`!kopfForm`, unten). Wer im V3-Leser `bezuege` setzt, bringt damit Pos. 12
+   * zurück — gemessen @390 an der StPO: das Öffnen des Panels lud den Shard, und
+   * die Fuss-Zeile wuchs an JEDEM Artikel in den Lesekörper hinein (Artikel-y
+   * 1385→1493, 1798→2013, 2461→2783). Genau das verbietet der CLS-Fall.
+   *
+   * Zwei Props also, weil es zwei ORTE sind (§5 gilt für die Daten, nicht für
+   * den Prop-Namen): dieselbe `ArtikelBezuege`-Form, aber die eine landet nur
+   * innerhalb des `<details>`, das der Leser selbst geöffnet hat, und die
+   * andere unbedingt im Fluss. Die V3-Hülle setzt ausschliesslich die erste.
+   */
+  bezuegeImKopf?: ArtikelBezuege;
   /** D30 (David 6.9.2026) · die Materialien DIESES Artikels, sobald der Leser
    *  die Bezüge-Zeile einmal aufgeklappt hat (`../artikelMaterialienLaden`).
    *  Bis dahin `undefined` — die Rubrik zeigt dann ihre gezählte Zahl aus der
@@ -330,10 +346,14 @@ export const ArtikelLeser = memo(function ArtikelLeser({ e, erlass, basisPfad, f
   // `../bezuegeLaden`.) Dass die beiden Wege übereinstimmen, ist eine ZUSAGE
   // und keine Hoffnung: `e2e/leser-bezuege-inhalt-d30.e2e.ts` (b) misst
   // Kopfzahl gegen die Zahl der gerenderten Zeilen.
+  //
+  // Der Fallback nimmt `bezuegeImKopf` VOR `bezuege`: in der Kopf-Form ist das
+  // die Quelle, die auch die Liste darunter zeigt — die Zahl beschriebe sonst
+  // eine andere Menge als das, was daneben steht.
   const bezugsMarken: BezugsMarke[] = [
     {
       reg: 'r',
-      anzahl: zaehler ? zaehler.entscheide : (bezuege ? bezuege.kanten.length : (leitfaelle?.length ?? 0)),
+      anzahl: zaehler ? zaehler.entscheide : ((bezuegeImKopf ?? bezuege) ? (bezuegeImKopf ?? bezuege)!.kanten.length : (leitfaelle?.length ?? 0)),
       wort: ['Entscheid', 'Entscheide'],
     },
     // Die Rubrik erscheint NUR mit echter Zahl (`anzahl > 0` filtert sie sonst
@@ -560,13 +580,16 @@ export const ArtikelLeser = memo(function ArtikelLeser({ e, erlass, basisPfad, f
                   Liste unter dem Artikelkopf sucht niemand eine waagrechte
                   Scrollachse. Der Klick öffnet daneben (Split-Regel M3) — das
                   bringt `KanteMitVorschau` mit, nicht diese Stelle. */}
-              {(bezuege || (leitfaelle && leitfaelle.length > 0)) && (
+              {((bezuegeImKopf ?? bezuege) || (leitfaelle && leitfaelle.length > 0)) && (
                 <div className="lr7-bez-block" data-reg="r">
-                  {bezuege
-                    ? <BezuegeZeile kanten={bezuege.kanten} gesamt={bezuege.gesamt}
-                        zeitAktiv={bezuege.zeitAktiv} kantonAktiv={bezuege.kantonAktiv}
-                        normZitat={zitat} revision={revision} form="rand" />
-                    : <LeitfallZeile refs={leitfaelle} normZitat={zitat} revision={revision} />}
+                  {(() => {
+                    const b = bezuegeImKopf ?? bezuege;
+                    return b
+                      ? <BezuegeZeile kanten={b.kanten} gesamt={b.gesamt}
+                          zeitAktiv={b.zeitAktiv} kantonAktiv={b.kantonAktiv}
+                          normZitat={zitat} revision={revision} form="rand" />
+                      : <LeitfallZeile refs={leitfaelle} normZitat={zitat} revision={revision} />;
+                  })()}
                 </div>
               )}
               {/* ── D30 · MATERIALIEN, dieselbe Anatomie wie «Rechnen» ───────

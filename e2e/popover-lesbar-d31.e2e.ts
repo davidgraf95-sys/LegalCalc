@@ -109,6 +109,13 @@ for (const thema of ['light', 'dark'] as const) {
 
     // ── (2) ENTSCHEID-VORSCHAU AM BEZUGS-CHIP (RegestePopover) ─────────────
     test('(a)+(b)+(c) Entscheid-Vorschau am Bezugs-Chip', async ({ page }) => {
+      // MESSBEDINGUNG, nicht Aussage (§0 Ziff. 3): dieser Fall braucht den vollen
+      // OR-Bezugs-Shard (2.2 MB roh) — kein anderer geprüfter Erlass führt am
+      // Artikel eine Entscheid-Kante mit Regeste (ARG 15a: null, gemessen
+      // 7.9.2026). Unter `--repeat-each=2` mit zwei Workern riss er damit das
+      // 30-s-Budget, seriell nicht. `test.slow()` verdreifacht das Budget für
+      // GENAU diesen Fall, statt das Budget der ganzen Datei zu heben.
+      test.slow();
       await page.goto('/gesetze/bund/OR#art-336_c');
       await expect(page.locator('#art-1')).toBeVisible({ timeout: 20_000 });
       const details = page.locator('#art-336_c details.lr7-bez');
@@ -118,8 +125,19 @@ for (const thema of ['light', 'dark'] as const) {
       }
       const chip = details.locator('[data-bezug-linie] a[href^="/rechtsprechung/"]').first();
       await expect(chip, 'kein Bezugs-Chip zum Hovern').toBeVisible({ timeout: 25_000 });
-      await chip.hover();
       const popover = page.locator('.lc-popover').first();
+      // ZWEI GRÜNDE FÜR DIE SCHLEIFE statt eines einzelnen `hover()` (gemessen
+      // 7.9.2026 unter `--repeat-each=2`): die Vorschau öffnet erst, wenn der
+      // Zeiger 450 ms RUHT (`HOVER_OEFFNEN_MS`), und die Liste wächst beim
+      // Eintreffen des Shards noch unter dem Zeiger weg — dann kam das
+      // `pointerenter` nie an. Die Schleife hovert erneut, statt die Zusage
+      // aufzuweichen; scheitert sie ganz, ist der Fall zu Recht rot.
+      await chip.scrollIntoViewIfNeeded();
+      for (let versuch = 0; versuch < 6 && await popover.count() === 0; versuch += 1) {
+        await page.mouse.move(0, 0);
+        await chip.hover();
+        await page.waitForTimeout(900);
+      }
       await expect(popover, 'Hover über dem Bezugs-Chip öffnet kein Popover').toBeVisible({ timeout: 15_000 });
       const m = await messe(popover);
       expect(m.hintergrund, `RegestePopover-Hintergrund «${m.hintergrund}»`).not.toBe('rgba(0, 0, 0, 0)');
