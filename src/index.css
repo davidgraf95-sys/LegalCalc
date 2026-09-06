@@ -2379,6 +2379,12 @@
      ALS INNENSCHATTEN, NICHT ALS BREITERER RAHMEN: eine 3-px-Kante links
      verschoebe den Kachelinhalt beim Waehlen um 2 px — der Zustandswechsel
      darf den Satz nicht bewegen. `inset` legt den Strich in die vorhandene Box.
+     PLATZ FUER DAS HAEKCHEN steht IMMER (`pr-6` an der Kachel, nicht erst im
+     gewaehlten Zustand): gemessen am Bild `r5f1b-arbeitsvertrag-1440-hell.jpg`
+     lief das Zeichen sonst in die Titelzeile schmaler Kacheln
+     («Einzelarbeitsvertrag»). Reservierter Platz statt Zustands-Padding —
+     sonst rueckte der Satz beim Waehlen, und genau das vermeidet auch der
+     Innenschatten oben.
      DAS HAEKCHEN ALS PSEUDO-ELEMENT, aus demselben Grund wie bei
      `.lc-chip-selected::before`: es steht im Bild, nicht im Text — der
      Accessible Name bleibt das Label, den Zustand traegt `aria-pressed`.

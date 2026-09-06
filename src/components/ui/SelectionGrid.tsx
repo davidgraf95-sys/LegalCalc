@@ -131,7 +131,7 @@ export function SelectionGrid<T extends string>({
             className={pille
               ? `lc-wahl-pille ${PILLE_HITBOX} px-3 py-1.5 text-body-s font-medium border transition-colors ${
                 aktiv ? aktivKlasse : `${ruhe} text-ink-600`}`
-              : `lc-wahl-kachel text-left p-3 min-h-11 border transition-colors ${aktiv ? aktivKlasse : ruhe}`}
+              : `lc-wahl-kachel text-left p-3 pr-6 min-h-11 border transition-colors ${aktiv ? aktivKlasse : ruhe}`}
           >
             {pille ? it.label : (
               <>
