@@ -203,12 +203,32 @@ unverändert 93 px, wo es bei zwei Reihen bleibt (Pane, @390). `--nt-stick` ist
 
 ---
 
-## 8 · Nicht gebaut, gemeldet
+## 8 · Tor-Stand
 
-- **Zwei Wächter waren schon auf der Bau-Basis rot** (Nullprobe auf
-  `a60dd7f75` gefahren, gleicher Fehlertext): `leser-v3-kontext-cls` (a)/(b)
-  und `leser-links-p3`. Beide gehören zur Bezüge-Zeile aus D30, nicht zu diesem
-  Bau.
+| Tor | Ergebnis |
+|---|---|
+| `npx tsc -b` | grün |
+| `npm run lint` | grün (0 Fehler; 1 vorbestehende Warnung in `useUniversalSuche.ts`) |
+| `npm run test` | 454 Dateien / 7405 Tests grün |
+| `npm run golden:vergleich` | IDENTISCH — 256 Fälle byte-gleich |
+| `npm run check:golden-normtext` | OK — 60257 Knoten, 0 Waisen |
+| `npm run gen:e2e-shards` + `check:e2e-shards` | grün (126 Specs, Union deckungsgleich) |
+| `npx playwright test e2e/leser-*.e2e.ts e2e/w224-leser-d32-d33.e2e.ts` | **318 passed, 3 failed** — alle drei auf der Bau-Basis schon rot (Nullprobe, s. u.) |
+| `npm run check:schlankheit` | rot an `parts/ArtikelLeser.tsx` — auf der Bau-Basis schon rot (s. u.) |
+
+---
+
+## 9 · Nicht gebaut, gemeldet
+
+- **Drei Fälle waren schon auf der Bau-Basis rot.** Nullprobe in einem eigenen
+  Worktree auf `a60dd7f75` gefahren, mit demselben Fehlertext und (bei (b))
+  denselben Zahlen:
+  `leser-v3-kontext-cls` (a) «Artikel nach OBEN gerückt» und (b) «Artikel
+  senkrecht verschoben: 1093,1385,1798,2461,2794 → 1093,1444,1915,2637,2970»,
+  sowie `leser-links-p3` «die Links der Bezüge-Zeile stehen wieder ohne
+  Unterstrich». Alle drei betreffen die Bezüge-Zeile aus D30 (das Aufklappen
+  lädt Entscheide und Materialien nach, der Artikel wächst dabei), nicht diesen
+  Bau. Der Wurzel-Fix gehört zu D30 und ist hier nur gemeldet, nicht gemacht.
 - **`check:schlankheit` ist auf der Bau-Basis rot**: `parts/ArtikelLeser.tsx`
   840 Zeilen über der 800er-Schwelle, byte-identisch zur Basis — von diesem Bau
   nicht angefasst und nicht gewachsen.
