@@ -279,6 +279,35 @@ Split-View je Pane. Golden **byte-gleich** (256 Fälle, `golden:vergleich`).
 `r6d-leser-390-hell` · `r6d-leser-390-dunkel` · `r6d-leser-390-suche-aktiv` ·
 `r6d-leser-split-1600` · `r6d-leser-druck`.
 
+## 6a · Tor-Ergebnisse (Schlusslauf 6.9.2026)
+
+| Tor | Ergebnis |
+|---|---|
+| `npm run lint` | 0 Fehler (1 vorbestehende Warnung in `useUniversalSuche.ts`) |
+| `npx tsc -b` | grün |
+| `npm run test` | **450/450 Dateien · 7359 Tests grün**, 2 skipped |
+| `npm run check:design-tokens` | grün |
+| `npm run check:golden-normtext` | 60257 Knoten vollständig, 0 Waisen |
+| `npm run golden:vergleich` | **IDENTISCH — 256 Fälle byte-gleich** |
+| `npm run check:e2e-shards` | 124 Specs, Union deckungsgleich, Datei aktuell |
+| `npm run build` | grün (1224 Module) |
+| Playwright, 15 Specs, `--workers=2` | **139 passed · 1 failed** — der eine ist der Altbefund H6-a (§4a) |
+
+**Zwei rote Tore, die nicht von hier kommen und nicht in meiner Whitelist
+liegen — gemeldet, nicht angefasst:**
+- `leser-spy-w25d` H6-a (400 % Zoom): Nullprobe-belegt bitgleich auf dem
+  Ausgangsstand rot (§4a).
+- `npm run check:steuerdeckel`: `ROADMAP.md` 107.4 KB > 100 KB Budget. Die Datei
+  ist gegenüber dem Ausgangsstand **byte-gleich** (110001 Bytes, `git show`) —
+  der Deckel war schon vorher gerissen. `ROADMAP.md` ist für diesen Auftrag TABU.
+
+**Umgebungs-Nachtrag:** der geteilte `node_modules`-Baum kannte
+`@fontsource-variable/archivo` und `…/literata` nicht (mit R6c ins
+`package.json` gekommen, in `main` nicht vorhanden) — der Build brach ab. Die
+zwei Pakete sind rein additiv nachgelegt, ohne den geteilten Baum umzubauen
+(isoliert installiert, Ordner kopiert). Jede weitere W2·24-Fläche hätte
+denselben Abbruch gehabt.
+
 ## 7 · Deklarierte Test-Änderungen (§6.3)
 
 | Datei | Was und warum |
@@ -291,3 +320,14 @@ Split-View je Pane. Golden **byte-gleich** (256 Fälle, `golden:vergleich`).
 | `e2e/leser-v3-seitenleiste-ordnung.e2e.ts` | (a) Ordnung ohne Feld + «die Gliederung trägt kein Feld» |
 | `e2e/leser-v3-suchfeld-ueberall.e2e.ts` | (c) Lage-Aussage umgedreht: Feld vorher UND nachher im Kopf-Block |
 | `e2e/leser-klapp-sonde.e2e.ts` | **neu** (D28-Regel) |
+| `e2e/leser-spy-w25d.e2e.ts` | Messpunkt Kopfzeile → Reiter-Signal (Token gegen Token, schärfer); Nullprobe-belegt verhaltensneutral |
+| `e2e/leser-v3-fokusring-suchfeld.e2e.ts` | Vorbedingung «clippender Scroller» → «Ring liegt in der Border-Box» (Ursache statt Wirkung) |
+| `e2e/shard-gruppen.json` | generiert (`npm run gen:e2e-shards`) |
+
+## 8 · Offen für David
+
+**Der Rücksprung «Gesetze» kostet jetzt einen Klick mehr** (§4). D27 verweist ihn
+auf Seitenleiste und Reiter; die Seitenleiste startet auf Leser-Seiten aber
+eingeklappt. Wenn das zu teuer ist, ist die günstigste Rückholung ein
+«Gesetze»-Reiter in der Arbeitsleiste (D7 sieht ihn ohnehin vor) — nicht die
+Rückkehr der Krume, die den Widerspruch zum Reiter erst erzeugt hat.
