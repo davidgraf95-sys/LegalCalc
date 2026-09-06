@@ -95,3 +95,188 @@ Split-View-Mechanik bleiben; es ändert sich Darstellung (§3).
 **Runden (jede Runde: Bau → Ästhetik-Prüfer (read-only, Screens aus dem Worktree-Preview, hell +
 dunkel, 1440 + 390, Split-View mit zwei Panes) → Nachbesserung; Landung EINE PR am Schluss):**
 Die konkrete Rundenliste mit Dateien steht in §6 (Inventur-Ergebnis).
+
+## §5a · Reiterleiste wie im Browser (Wunsch David 6.9.2026, gehört zu R2)
+
+David: «analog zum browser die offenen tabs oben anstatt mit dem drei linien drop down» · «überlege
+wie es maximal nützlich in der praxis ist». Zielbild (bestehende Mechanik `useTabs`/`usePaneLayout`/
+`usePaneDnd`/Verlauf weiterverwenden, nur Sichtbarkeit und Bedienung):
+1. Zwei Zeilen, zwei Bedeutungen: Titelblatt-Zeile = Bereiche (Navigation); darunter die
+   **Arbeitsleiste** = offene Dokumente. Optisch verschieden (Reiter mit Registerfarben-Strich und
+   Schliessen-×, Navigation nur unterstrichener Text).
+2. Reiter-Beschriftung = kanonische Kurzform (`Art. 336c OR`, `BGE 152 V 52`, `Frist ZH`,
+   Vorlagen-Name), voller Titel als `title`; Registerfarbe der Domäne als Strich.
+3. Kein Reiter-Wildwuchs: Klick ersetzt den Inhalt des aktiven Reiters; neu nur per Mittelklick,
+   Ctrl/⌘-Klick oder «in neuem Reiter» (bestehendes Verhalten prüfen, nicht verdoppeln).
+4. Split-View aus der Leiste: Reiter in die zweite Hälfte ziehen (usePaneDnd) oder «daneben
+   öffnen»; die Leiste zeigt, welcher Reiter links/rechts steht (zwei Aktiv-Marken).
+5. Angeheftete Reiter (OR, ZGB, ZPO …) als schmale Kürzel-Reiter links; Überlauf ab ~8 Reitern:
+   schmaler bis Kürzel, dann «+N»-Knopf mit Liste und Suche — nie stilles Schliessen.
+6. Reiter überleben Neustart (localStorage, Lesestellung); «zuletzt geschlossen» aus dem Verlauf.
+7. Tastatur: Alt+1…9 springt, Ctrl/⌘+W schliesst Reiter (nur wenn nicht der Browser es fängt —
+   sonst Alt+W), Ctrl/⌘+Enter im Suchfeld öffnet in neuem Reiter.
+8. Mobil: Leiste waagrecht scrollbar mit aktivem Reiter im Bild; ab 3 Reitern Knopf «N offen» →
+   Blatt mit Liste. Die ☰-Schublade bleibt mobil die Bereichs-Navigation.
+9. **Arbeitsmappe** (letzter Teil, nach R5, eigener Schritt falls Zeit fehlt): offene Reiter als
+   benannte Mappe lokal speichern/öffnen, als Adresse teilbar (deterministisch, ohne Konto).
+
+## §6 · Inventur und Rundenplan (Stand 6.9.2026)
+
+Gemessen im Worktree `w2-24` (`grep -rl`, Datei-Zahlen, keine Vermutungen).
+
+### (a) Konsumenten je Signatur
+
+| Signatur | `src/` | `e2e/`+`src/tests/` | zentral umstellbar? |
+|---|---|---|---|
+| `*-brass-*`-Utilities | **202** | 2+15 | **ja** — `brass.100…800` (`tailwind.config.js:68`) sind reine `var(--brass-N)`-Blätter |
+| `.lc-overline` | **141** | 5+4 | **ja** — eine Regel (`index.css:1060`: Mono, versal, `--tracking-overline`) |
+| `rounded-*` (216) | **89** | 0+5 | **teilweise** — `borderRadius` (`tailwind.config.js:171`) mappt sm…2xl auf `--radius-*`; **`rounded-full` (46) NICHT** (TW-Default 9999px) |
+| `.lc-glass` | **2** (Topbar, LesemodusOverlay) | 1+2 | **ja** — heute schon nur `background: var(--paper)` (`index.css:1917`) |
+| `shadow-*` | **18** | — | nein (Utility-Ebene) |
+| `font-display`/`text-display` | **28** | 1+3 | **ja** — `--font-display` (`index.css:443`) |
+| `font-mono`/`.num` | **161** | — | **ja** — `--font-mono` (`:445`), `.num` (`:1044`) |
+| `lc-card` 62 · `lc-chip` 70 · `lc-notice` 74 · `lc-tile` 27 · `lc-ziffern` 13 | — | — | **ja** — je eine `@layer components`-Regel |
+
+### (b) Ein Ort vs. Konsumenten-Edits
+
+Zentral (R1, ohne einen Konsumenten anzufassen): Papier/Tinte, ganze Brass-Skala, Radien
+ausser `rounded-full`, Overline-Gestalt, Schriftfamilien, alle `.lc-*`-Rezepte, Rollen-Schicht
+`--accent-*` (`tailwind.config.js:87`). Konsumenten-Edits braucht nur, was **Bedeutung** trägt:
+Registerfarbe je Domäne (der Klassenname `brass-700` lügt danach — Umbenennung ist R5-Sweep,
+keine Voraussetzung), `rounded-full`-Pillen, `shadow-*` an nicht-schwebenden Flächen,
+Layout-Wechsel.
+
+### (c) Split-View / Pane
+
+`Pane.tsx:125` setzt `@container/pane` auf den Scroll-Container (Schwelle heute `@xl/pane`,
+36 rem, `:145`); 76 Dateien lesen `/pane`. Eine Marginalienspalte (150 px + 36 px Rinne) bricht
+unter ~52 rem Pane-Breite — also in jedem geteilten 1440er-Fenster. **Bauregel:**
+`grid-template-columns: 150px minmax(0,1fr)` erst ab `@3xl/pane` (48 rem), darunter einspaltig
+mit der Marginalie als vorangestellter Zeile (wie `max-width:820px` im Referenzbild).
+`PaneKopf.tsx` bleibt Pane-Kopf; Titelblatt-Zeile = Fensterkrone (`Topbar`).
+
+### (d) Seitenleiste
+
+`Shell.tsx:375` rendert `Sidebar` auf **jeder** Route; nur `vorgabeEingeklappt` unterscheidet
+(`:107`, eingeklappt im Gesetz-Leser) — auf «/» ist sie heute also da. «Auf / entfällt sie» =
+Pfad-Bedingung in `Shell.tsx` + `useSeitenleiste`. Die mobile Schublade (`Shell.tsx:519–549`,
+Portal + `useDialogFokus`) bleibt und trägt auf «/» die Bereichsliste weiter — sonst verlöre
+Mobil die Navigation.
+
+### (e) Bezüge-Datenquelle
+
+`gesetz-leser/bezuegeLaden.ts` → `useBezuege(erlassKey)` liefert `bezuegeFuer(artikel)`,
+`gesamt`, `klassenImErlass`, `histogramm`; sechs Konsumenten (u. a. `inhalt-zustand.tsx`,
+`parts/ArtikelLeser.tsx`, `parts/BezuegeZeile.tsx`), und die Panels
+`v3/Panel{Entscheide,Materialien,Aenderungen,Anwendung}.tsx` rendern dieselben Daten schon.
+**Die Randnotiz-Spalte ist eine dritte Grid-Spalte über `bezuegeFuer(artikel)` — keine neue
+Logik, kein neuer Ladepfad.**
+
+### (f) Wächter, die rot werden (deklariert anzupassen)
+
+**R1:** `scripts/farbwelt-tabellen.ts` (13 brass-Pflichtpaare ab :41 — Werte wechseln, neu
+messen + Register-Paare) · `scripts/check-design-tokens.ts:70` `OVERLINE_DIM_RE` (Overline
+nicht mehr versal) · `design-gruppenkopf-karten-c.test.ts:120,157` (zitiert
+`border-color: var(--brass-400)` aus `index.css`) · `leser-typo-tokens.test.ts` +
+`leser-schriftskala.test.ts` (Geist→Literata; auch R4) · `check:lizenzen`, `check:perf-budget`
+(entry 30 KB) für die neuen Fonts.
+**R2:** `design-r3b-chrome.test.ts:73,132,384,533,542,562` (Overline-Rezept, `rounded-lg`+
+`shadow-lg`-Popover, brass-Hover) · `design-r2d-mobil-zustaende.test.ts:133,173,224,242`
+(`rounded-full`, `shadow-lg`, zitierte `.lc-glass`-Regel) · `druck-fundstellen.test.ts:54,58`
++ `e2e/druck-fundstellen-z2.e2e.ts` (Druckregel hängt an `header.lc-glass` → **Name behalten**,
+nur Rezept leeren) · `e2e/w223b-kopf-seitenleiste.e2e.ts`.
+**R2/R3:** `design-r2c-bausteine.test.ts:73,103,153,171` (Literalketten `brass-800/700/500`,
+`rounded-full`). **R5:** `design-r5-konsistenz.test.ts`, `design-konsistenz-chips-marken.test.tsx`.
+
+### (g) Schriften
+
+Heute: `src/main.tsx:6,7,11` lädt `@fontsource-variable/{geist,geist-mono,source-serif-4}`
+(self-hosted via npm, **kein** `public/fonts/`, kein Google-Request); Fallback-Metriken sind
+aus den echten woff2 **gemessen** (`scripts/gen-font-fallbacks.ts`, @capsizecss →
+`index.css:12–48`). Neu gleicher Weg: `@fontsource-variable/literata` + `.../archivo`, beide
+OFL. **Vor R1 per `npm view` prüfen**, ob die Variable-Pakete und Archivos `wdth`-Achse
+existieren — sonst statische 400/500 + Literata-Italic. Fallbacks neu generieren
+(Literata→Georgia/Liberation Serif, Archivo→Arial/Arimo), sonst CLS-Rückfall. Die drei alten
+Pakete deinstallieren; `--font-mono` bleibt für Rechenweg/Code, `.num` wird
+`font-variant-numeric: tabular-nums`.
+
+### (h) Sprach-Diät — sichtbare Slogan-Strings
+
+`src/lib/seo.ts`: `SITE_TITEL` («Schweizer Recht an einem Ort: …»), `SITE_DESCRIPTION`,
+`SITE_OG_DESCRIPTION`, `HERO_SUBLINE` («miteinander verzahnt»), `VERTRAUENS_SATZ`,
+`STATUS_SATZ`, `SITE_KURZFORM` + 12 `STATISCHE_SEITEN`-Beschreibungen (`:91–111`).
+`start/RubrikKacheln.tsx:40,45,51,56` (vier `nutzen`-Sätze), `Hero.tsx:47,50`,
+`VertrauensFuss.tsx`. **Grenze:** `<title>`/`description` sind SEO-Träger, an
+`check:seo-index` gebunden — dort kürzen, nicht tilgen; die Tilgung gilt dem **sichtbaren** Text.
+
+---
+
+### Rundenplan
+
+Reihenfolge wie vorgeschlagen — nach (b) kippt R1 allein 202+141+89 Dateien optisch, ohne
+sie anzufassen. Einzige Abweichung zum Zielbild: `.lc-glass` wird **nicht entfernt/umbenannt**,
+nur entkernt (Druck-Tor, (f)).
+
+**Prüf-Fokus, je Runde gleich** (§5): @1440 hell+dunkel, @390 hell, Split-View mit zwei Panes.
+Unten steht darum nur, *welche Routen* der Prüfer sieht.
+
+**R1 · Grundschicht (ein Ort)** — Papier/Tinte, Registerfarben, Radien 0, Overline
+entversalt, Literata/Archivo geladen.
+*Dateien (6):* `src/index.css` · `tailwind.config.js` · `src/main.tsx` ·
+`scripts/gen-font-fallbacks.ts` · `scripts/farbwelt-tabellen.ts` · `package.json`.
+*TABU:* jede `.tsx` ausser `main.tsx`; Grid-/Layout-Änderungen.
+*Wächter:* farbwelt-Tabellen · `OVERLINE_DIM_RE` · `leser-typo-tokens` · `leser-schriftskala` ·
+`design-gruppenkopf-karten-c` · `check:lizenzen` · `check:perf-budget`.
+*Fertig:* `check:seriell` grün, Golden byte-gleich, Kontrast-Protokoll neu erhoben (Muster
+`abnahme/startseite-v3/KONTRAST-PROTOKOLL.md`).
+*Routen:* «/» · `/gesetze/bund/OR` · `/rechner` · `/rechtsprechung` — Frage an den Prüfer:
+wirkt es ohne Layout-Arbeit schon ruhig?
+
+**R2 · Rahmen** — Titelblatt-Zeile mit Bereichs-Reitern statt Glas-Topbar, Seitenleiste
+auf «/» weg, Pane-Kopf und Ausgabe-Zeile.
+*Dateien (9, alle `src/components/layout/`):* Shell · Topbar · Sidebar · ReiterUebersicht ·
+HeaderSuche · Logo · Footer · Pane · PaneKopf.
+*TABU:* `src/pages/**`, `components/start/**`, `lc-glass` umbenennen, Schublade-Fokusfalle.
+*Wächter:* `design-r3b-chrome` · `design-r2d-mobil-zustaende` · `druck-fundstellen`(+e2e) ·
+`e2e/w223b-kopf-seitenleiste`.
+*Fertig:* Tore grün, Schublade + Fokusfalle unverändert bedienbar.
+*Routen:* «/» (ohne Seitenleiste) · `/gesetze` · Leser im Split — Frage: bricht der Kopf bei
+zwei Panes, geht die Schublade @390 auf/zu?
+
+**R3 · Startseite als Inhaltsverzeichnis + Sprach-Diät** — Marginalienspalte,
+Register-Striche, Listen statt Kacheln; sichtbare Slogans weg.
+*Dateien (~13):* `pages/Startseite.tsx` · `lib/startseiteModule.tsx` · `components/start/*`
+(11) · `lib/seo.ts` (nur sichtbare Konstanten).
+*TABU:* `startseiteConfig.ts` (Katalog = SSoT), Zähler-Generat, `check:seo-index`-Werte ohne
+`index.html`-Nachzug.
+*Wächter:* `design-r2c-bausteine` · `check:seo-index` · `check:zaehler`.
+*Fertig:* Zahlen zahlgleich (Zähler-Tor), keine Kachel-Optik mehr.
+*Routen:* «/» — auch als Inhalt eines Panes der Split-Ansicht.
+
+**R4 · Gesetzesleser** — Literata-Satzspiegel, Randtitel links, Bezüge rechts.
+*Dateien (~12):* `gesetz-leser/v3/{LeserRahmenV3,rahmenSpalten,LeserLesespalte,LeserKopf,
+LeserSeitenleiste,leserGeometrie}` · `parts/{ArtikelLeser,BezuegeZeile,ErlassLeserKopf}` ·
+`components/normtext/ArtikelBody.tsx` (nur Typo-Klassen) · `leserSchrift.ts` ·
+`DESIGN-REGLEMENT-NORMTEXT.md`.
+*TABU:* `bezuegeLaden.ts`, `bezugAuswahl.ts`, `gliederungsModell.ts`, jede Extraktions-,
+Sprung- und Suchlogik, `normalisiereTarifText()`. **Keine neue Bezüge-Logik** ((e)).
+*Wächter:* `leser-schriftskala` · `leser-typo-tokens` · `check:golden-normtext` (byte-gleich).
+*Fertig:* CPL ≤ 75 gemessen, Golden byte-gleich, Bezüge-Spalte zeigt dieselben Kanten wie
+das Panel.
+*Routen:* `/gesetze/bund/OR#art-336_c` — Frage: fällt die Marginalie unter `@3xl/pane` sauber
+in die Zeilenform?
+
+**R5 · Rest-Sweep + Nachzug** — Übersichten, Rechner-Köpfe, Entscheid-Leser, Karten/Chips/
+Notices; `rounded-full`-Pillen und `shadow-*` an nicht-schwebenden Flächen räumen;
+Brass-Restbestände benennen.
+*Dateien:* `layout/{InhaltsKopf,RechnerKopf,SeitenKopf,LeserKopfGeruest}.tsx` ·
+`components/rechtsprechung/**` · `components/ui/**` · `DESIGN-REGLEMENT.md` (Token-Abschnitt) ·
+`.claude/rules/design.md` · `STRUKTUR.md`-Karte · `bibliothek/` + `INDEX.md`.
+*TABU:* Rechenlogik, Engines, Daten. *Wächter:* `design-r5-konsistenz` ·
+`design-konsistenz-chips-marken` · `check:bibliothek` · `check:steuerdeckel`.
+*Fertig:* kein `shadow-*` ausser Menü/Dialog/Popover; `check:seriell` + e2e grün;
+Bibliothek-Eintrag steht. **Quellen:** `scratchpad/agy-design-w224.json` (Swiss-Style/
+Farbpaletten, URLs, Abruf 5.9.2026) und `scratchpad/agy-nichtki.json` (Anti-KI-Sprache); die
+Sonnet-Recherche zu Schrift/Lizenz ist **in Session erhoben, ohne Datei-Artefakt** — genau so
+ausweisen, nicht als belegte Quelle führen.
+*Routen:* Rundgang über alle sechs Bereiche.
