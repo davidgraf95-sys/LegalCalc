@@ -47,7 +47,8 @@
    "leser-v3-panel-zaehler.e2e.ts",
    "leser-marken-geometrie.e2e.ts",
    "leser-v3-rahmen.e2e.ts",
-   "gesetze-rechtsgebiet-uebersicht-j3.e2e.ts"
+   "gesetze-rechtsgebiet-uebersicht-j3.e2e.ts",
+   "startseite-pult-r10.e2e.ts"
   ],
   "4": [
    "gesetze-rechtsgebiet-g6.e2e.ts",

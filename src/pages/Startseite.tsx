@@ -79,7 +79,7 @@ export function Startseite() {
           const Komponente = modul.Komponente;
           const an = zustand.get(modul.id) ?? modul.standard;
           return (
-            <PultModul key={modul.id} titel={modul.titel} reg={modul.reg} an={an}
+            <PultModul key={modul.id} id={modul.id} titel={modul.titel} reg={modul.reg} an={an}
               position={platz.get(modul.id) ?? 0}
               aufSchalten={() => schreibe(schalte(posten, modul.id))}>
               <Komponente an={an} />

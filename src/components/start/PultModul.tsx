@@ -40,7 +40,11 @@ const STRICH: Record<Register, string> = {
   g: 'bg-reg-g', r: 'bg-reg-r', m: 'bg-reg-m', w: 'bg-reg-w',
 };
 
-export function PultModul({ titel, reg, an, position, aufSchalten, children }: {
+export function PultModul({ id, titel, reg, an, position, aufSchalten, children }: {
+  /** Modul-Kürzel — steht als `data-pult-modul` am Knoten, damit Sonden die
+   *  ANZEIGE-Reihenfolge (CSS `order`) am Modul selbst ablesen können, ohne sich
+   *  an eine Klassenkette oder einen Titel-Wortlaut zu hängen. */
+  id: string;
   titel: string;
   reg: Register;
   /** Aufgeklappt? Steuert `hidden` am Inhalt und das Wort auf dem Schalter. */
@@ -57,13 +61,19 @@ export function PultModul({ titel, reg, an, position, aufSchalten, children }: {
   return (
     <section
       aria-labelledby={titelId}
+      data-pult-modul={id}
       style={{ order: position }}
       suppressHydrationWarning
       className={`grid gap-x-7 gap-y-2 border-b border-rule-soft py-4 ${pk(
         'lg:grid-cols-[13rem_minmax(0,1fr)]', '@3xl/pane:grid-cols-[13rem_minmax(0,1fr)]',
       )}`}>
-      <div className="flex items-center gap-2.5 font-sans text-body-s">
-        <span aria-hidden className={`h-3.5 w-[3px] shrink-0 ${STRICH[reg]}`} />
+      {/* OBEN AUSGERICHTET, nicht mittig (gemessen 6.9.2026, Preview @1440):
+          «Bundesrecht, systematische Ordnung» bricht in der 13-rem-Kopfspalte
+          auf drei Zeilen; mittig gesetzt wanderten Registerstrich und Schalter
+          dann in die Mitte des Blocks und verloren den Bezug zur ersten Zeile
+          des Inhalts daneben. */}
+      <div className="flex items-start gap-2.5 font-sans text-body-s">
+        <span aria-hidden className={`mt-1 h-3.5 w-[3px] shrink-0 ${STRICH[reg]}`} />
         <h2 id={titelId} className="min-w-0 text-ink-900">{titel}</h2>
         <button
           type="button"

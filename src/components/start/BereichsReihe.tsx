@@ -75,7 +75,12 @@ const STRICH: Record<Register, string> = {
 export function BereichsReihe() {
   const pk = usePaneKlasse();
   return (
-    <nav aria-label="Bereiche" className={`grid gap-x-7 gap-y-6 ${pk(
+    // NAME «Bereiche der Sammlung», NICHT «Bereiche» (gemessen 6.9.2026, e2e):
+    // die Reiterleiste der Titelblatt-Krone (`layout/Reiterleiste`, R2) trägt
+    // bereits `nav aria-label="Bereiche"`. Zwei Landmarks gleichen Namens sind
+    // in der Screenreader-Landmark-Liste nicht auseinanderzuhalten — und der
+    // Playwright-Selektor traf im Strict Mode zwei Knoten.
+    <nav aria-label="Bereiche der Sammlung" className={`grid gap-x-7 gap-y-6 ${pk(
       'grid-cols-2 sm:grid-cols-3 lg:grid-cols-5',
       'grid-cols-2 @2xl/pane:grid-cols-3 @5xl/pane:grid-cols-5',
     )}`}>
