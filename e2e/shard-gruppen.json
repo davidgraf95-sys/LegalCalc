@@ -118,7 +118,8 @@
    "leser-v3-suchfeld-ueberall.e2e.ts",
    "leser-v3-fokusring-suchfeld.e2e.ts",
    "leser-v3-suche-ohne-gliederung.e2e.ts",
-   "tagerechner-rechenweg-sync.e2e.ts"
+   "tagerechner-rechenweg-sync.e2e.ts",
+   "d21-seitenleiste-kein-sprung.e2e.ts"
   ],
   "8": [
    "leser-spy-w25d.e2e.ts",

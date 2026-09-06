@@ -10,7 +10,6 @@
 // aufklappbare Werkzeug-Gruppen unter ihrer Kategorie (Klicktiefe 1).
 import { describe, expect, it } from 'vitest';
 import { NAVIGATION, NAVIGATION_META, alleNavLinks, type NavGruppe } from '../lib/navigation';
-import { OBERKATEGORIEN, kategorieFuer } from '../lib/oberkategorien';
 import { VORLAGE_SEKTIONEN, KATALOG_KARTEN, istVerfuegbar } from '../lib/startseiteConfig';
 import { istVorlage } from '../lib/vorlagenKategorie';
 import { SYSTEMATIK_VON_KEY } from '../lib/normtext/systematik';
@@ -21,7 +20,6 @@ import { KANTONE, KANTON_NAMEN } from '../data/tarif/typen';
 import { ROUTEN_MANIFEST } from '../routesManifest';
 
 const abschnitt = (titel: string) => NAVIGATION.find((a) => a.titel === titel)!;
-const katVon = (k: typeof KATALOG_KARTEN[number]) => kategorieFuer(k) ?? 'vorlagen';
 
 describe('Navigations-SSoT', () => {
   // ── D26 (David 6.9.2026), DEKLARIERTE FACHLICHE ÄNDERUNG (§6.3) ────────────

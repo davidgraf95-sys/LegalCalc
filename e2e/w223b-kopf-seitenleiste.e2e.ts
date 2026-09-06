@@ -18,6 +18,7 @@
 //   §6.3  Die Seitenleiste trägt den Korpus-Stand-Fuss, auf Desktop wie in der
 //         mobilen Schublade.
 import { test, expect, type Page } from '@playwright/test'
+import { seitenleisteOeffnen, seitenleistenSchalter } from './helpers/seitenleiste'
 
 const kopfFeld = (page: Page) => page.locator('header.sticky input[type="search"]')
 
@@ -55,6 +56,9 @@ test.describe('§6.1 · Der Streifen trägt die eine Suche — auf jeder Route',
   test('Auch nach dem SPA-Wechsel auf «/» steht das Feld', async ({ page }) => {
     await page.goto('/gesetze')
     await expect(kopfFeld(page)).toHaveCount(1)
+    // D25 (deklariert, §6.3): die Leiste startet eingeklappt — der SPA-Wechsel
+    // über ihren «Start»-Eintrag verlangt darum, sie zuerst einzublenden.
+    await seitenleisteOeffnen(page)
     await page.locator('aside[data-app-seitenleiste]').getByRole('link', { name: 'Start', exact: true }).click()
     await expect(page).toHaveURL(/\/$/)
     await expect(kopfFeld(page)).toHaveCount(1)
@@ -83,9 +87,19 @@ test.describe('§6.1 · Der Streifen trägt die eine Suche — auf jeder Route',
   // behalten. und das oben entfernen?» ─────────────────────────────────────
   // ROT ZU BEKOMMEN: in `Shell.tsx` `pathname === '/'` wieder von der
   // Seitenleiste ausnehmen bzw. den Bereichs-Nav in `Topbar.tsx` zurückholen.
+  // ── D25-NACHZUG (deklariert, §6.3) ───────────────────────────────────────
+  // Die Leiste steht seit D25 nicht mehr von selbst offen; sie ist ÜBERALL
+  // erreichbar — auch auf «/». Genau das prüft der Fall jetzt: erst ist sie
+  // weg (Vorgabe), nach dem Schalter steht sie. D17 verlangte «auf / gibt es
+  // sie», nicht «auf / steht sie offen»; die Zusage wird damit nicht
+  // abgeschwächt, sondern um die neue Vorgabe ergänzt.
   test('D17 · Die Seitenleiste steht auch auf «/», und das Titelblatt trägt keine Bereichs-Reiter', async ({ page }) => {
     await page.setViewportSize({ width: 1440, height: 900 })
     await page.goto('/')
+    // D25 · Vorgabe: eingeklappt, auch auf «/».
+    await expect(seitenleistenSchalter(page)).toBeVisible({ timeout: 20_000 })
+    await expect(page.locator('aside[data-app-seitenleiste]')).toHaveCount(0)
+    await seitenleisteOeffnen(page)
     await expect(page.locator('aside[data-app-seitenleiste]')).toBeVisible({ timeout: 20_000 })
     await expect(page.getByRole('banner').getByRole('navigation', { name: 'Bereiche' })).toHaveCount(0)
     // Der Bereichs-Reiter «Sammlung» ist ersatzlos weg — die Marke ist der Weg
@@ -135,6 +149,7 @@ test.describe('§6.3 · Die Seitenleiste nennt den Stand des Korpus', () => {
   test('Desktop-Leiste: Fuss nennt jüngsten Eintrag UND Erzeugungsdatum', async ({ page }) => {
     await page.setViewportSize({ width: 1440, height: 900 })
     await page.goto('/gesetze')
+    await seitenleisteOeffnen(page) // D25 (deklariert, §6.3): Vorbedingung
     const fuss = page.locator('aside[data-app-seitenleiste] nav p', { hasText: 'Register erzeugt' })
     await expect(fuss).toBeVisible({ timeout: 20_000 })
     await expect(fuss).toContainText('Jüngster Eintrag')
