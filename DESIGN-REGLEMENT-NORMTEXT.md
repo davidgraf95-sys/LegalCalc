@@ -173,12 +173,16 @@ Harte Regeln:
 2. **Innere Sektionen (ebene ≥ 2) und randtitel-promotete Knoten** («A.», «II.»)
    tragen **keine** Horizontal-Linie (die frühere feine ebene-2-Linie entfällt);
    ihre Tiefe trägt die Typo.
-3. **Marker-Scope + Chrome-Ausnahme:** die drei Rollen gelten NUR an den mit
+3. **Marker-Scope + Chrome-Ausnahme:** die zwei Rollen gelten NUR an den mit
    `data-normtext-linie` markierten strukturellen Containern. Chrome-Borders
    (Such-Boxen, Buttons, Drawer, Nav, Fussnoten-Popover, Tabellen-**Aussenbox**)
-   und die **Brass**-Sprache (Ziel-/Zitat-Kanten, Fussnoten-Links) sind eine
-   eigene, ausdrücklich ausgenommene Sprache — sie bleiben `border-line` bzw.
-   Brass, nie mit der Linien-Sprache vermischt.
+   sind eine eigene, ausdrücklich ausgenommene Sprache — sie bleiben `border-line`
+   bzw. tragen die zwei soliden Trenner des Dachs (`--rule-soft` 1 px,
+   `--rule` 2 px, `DESIGN-REGLEMENT.md` F0.6), nie mit der Normtext-Linien-Sprache
+   vermischt. *AUFGEHOBEN 6.9.2026 (W2·24-DESIGN-IDENTITAET R1):* die frühere
+   dritte Sprache «**Brass** (Ziel-/Zitat-Kanten, Fussnoten-Links)». Die
+   Messing-Skala ist neutral geworden und trägt keine eigene Kanten-Sprache mehr;
+   was dort Brass hiess, ist heute Tinte bzw. Registerfarbe (Dach F0.3).
 
 **Einzug-Skala — AUFGEHOBEN am 29.8.2026, s. §4b-C.** Hier stand die Skala
 (`einzug` 20 px/Stufe, `einzug-mobil` 12 px, gedeckelt bei 5 Stufen). Die Tokens
@@ -189,12 +193,20 @@ Kante.
 `max-w-[…rem]` (R2). Seit dem 29.8.2026 sind es ZWEI Deckel, der schmalere
 gewinnt: der Pixel-Deckel `--leser-lesemass-max` (45 rem, 21.8.2026) und der
 Zeichen-Deckel `--leser-zeilenmass` (~70 Zeichen, §4b-C). Fliesstext 18px Serif (über Fedlex 14px),
-gedämpft `text-ink-800`, Flatterrand (nie Blocksatz). **`hyphens: manual`** (nicht
+gedämpft `text-ink-800`, Flatterrand (nie Blocksatz). Die Serife ist seit dem
+6.9.2026 **Literata** mit geladener `opsz`-Achse (`font-optical-sizing: auto`) und
+dem Lesegewicht `--lese-gewicht: 450` — Bildschirm-Serifen brauchen optische Grösse
+und etwas mehr Gewicht (D12, Belege in `abnahme/design-identitaet/KONTRAST-R1.md`
+Nachtrag D12). *AUFGEHOBEN am 6.9.2026:* Source Serif 4 als Lese-Serife.
+**`hyphens: manual`** (nicht
 `auto`) auf dem Normtext-Body — die deutsche Auto-Silbentrennung an schmalen
 Spalten war der sichtbare «Ge-werbes»-Treiber; `[overflow-wrap:anywhere]` bleibt
 der Overflow-Schutz für lange Komposita. **Randtitel-Hierarchie:** Blatt/Sach-
-überschrift `font-semibold text-ink-800`, oberste Marginalie `uppercase
-tracking-wide text-ink-500`, dazwischen `text-ink-600`; mehrzeilige Randtitel mit
+überschrift `font-semibold text-ink-800`, oberste Marginalie `text-ink-500`,
+dazwischen `text-ink-600`. *AUFGEHOBEN 6.9.2026 (W2·24 R1, Dach F0.7):* `uppercase
+tracking-wide` an der obersten Marginalie — es gibt in der Sammlung keine
+Versal-Etiketten mehr; die Hierarchie trägt allein Gewicht und Tinten-Tier.
+Mehrzeilige Randtitel mit
 **Hänge-Einzug-Schutz** (`text-indent:-1em` + `pl-[1em]`) gegen den Fedlex-AVOID
 «1. Im / Allgemeinen».
 
@@ -387,10 +399,37 @@ Die Tokens `einzug` / `einzug-mobil` sind aus `tailwind.config.js` **entfernt**
 
 ### §4b-B · Farb-Wörterbuch der Referenzschicht (W2·5d V2·C-1, 10.7.2026, David «go zu allem»)
 
-Grundsatz (David 10.7.2026): **Farbe NUR auf der Referenz-/Verzahnungsschicht**
-(Chips, Badges, Kopf) — der **Normtext-Körper bleibt farbfrei** (Rangfolge §4b:
-die Typo trägt die Tiefe allein; kein Ton im Lesefluss). Das Wörterbuch ist EIN Entscheid je
-Farbe — kein Ton trägt zwei Bedeutungen:
+Grundsatz (David 10.7.2026, unverändert gültig): **Farbe NUR auf der Referenz-/
+Verzahnungsschicht** (Chips, Badges, Kopf) — der **Normtext-Körper bleibt
+farbfrei** (Rangfolge §4b: die Typo trägt die Tiefe allein; kein Ton im
+Lesefluss). Das Wörterbuch ist EIN Entscheid je Farbe — kein Ton trägt zwei
+Bedeutungen.
+
+**Nachzug 6.9.2026 (W2·24-DESIGN-IDENTITAET R1, Dach `DESIGN-REGLEMENT.md` F0.2/
+F0.3) — die Zeile «brass» ist ersetzt, die drei übrigen gelten unverändert.**
+Der Referenzschicht stehen seither **vier Registerfarben** als einzige Farbe zur
+Verfügung, je eine pro Register der Sammlung; die Messing-Skala ist neutral
+geworden und trägt keine eigene Bedeutung mehr:
+
+| Register | Token | hell | dunkel | Trägt sie |
+| --- | --- | --- | --- | --- |
+| Gesetze | `--reg-g` | `#1D4E89` | `#8FB8F0` | Norm-Kanten und -Punkte, Reiter-Strich Gesetze, Kantonskarten-Marke (`--karte-marke`) |
+| Rechtsprechung | `--reg-r` | `#7A1F2B` | `#E39AA6` | Entscheid-Kanten, Reiter-Strich Rechtsprechung, Bezugs-Marke `r` |
+| Materialien | `--reg-m` | `#2F7A3E` | `#9AD489` | Materialien-Kanten, Reiter-Strich, Bezugs-Marke `m` |
+| Werkzeuge | `--reg-w` | `#8F5E0E` | `#E6B95A` | Rechner/Vorlagen-Kanten, Wahl-Kachel-Strich, Bezugs-Marke `w` |
+
+Sie stehen als **Strich, Reiter-Unterkante und Randmarke**, nie als Fläche unter
+Fliesstext, und tragen nie allein Bedeutung (`aria-hidden`, Wortlabel daneben —
+§13/F2, WCAG 1.4.1). Alle sechzehn Paare (vier Töne × vier Flächen) halten
+≥ 4.5:1 in beiden Modi und sind sämtlich Pflichtpaare im Tor; Messreihe
+`abnahme/design-identitaet/KONTRAST-R1.md` D12.4.
+
+*AUFGEHOBEN 6.9.2026:* die Zeile **brass** («Marke / Hervorhebung /
+Wortlaut-Referenz»). Ihre Träger — Norm-KantenChip-Tick, ★-Leitentscheid-Glyph
+(seit R11/D23 als **Wort** «Leitentscheid», nicht als Glyphe), Verweis-Links,
+`lc-punkt`, NormChip-Hover, Norm-Familien-Punkt — bestehen fort, färben aber über
+die neutrale Skala bzw. über `--reg-g` um. Der Wortlaut bleibt unten stehen,
+damit Alt-Verweise auflösen; **als geltende Regel ist er ersetzt.**
 
 | Ton | Bedeutung (die EINE) | Trägt sie |
 | --- | --- | --- |
@@ -407,16 +446,34 @@ ohne Wertung** — beide Vorkommen (Entscheid-Chip UND soft-Badge) teilen genau 
 eine Semantik. Der einzige quasi-Status-Gebrauch (Revision) wandert nach **warn** und
 verlässt damit slate. brass bleibt die Marke/Hervorhebung, nie ein Rechtsstatus (R16).
 
-**Anatomie unverändert (§6/R6):** Die `kategorie`-Prop am `KantenChip` tauscht NUR
+**Anatomie unverändert (§6/R6):** *(Messwerte dieses Absatzes = Stand 10.7.2026
+bis 16.7.2026; die Ist-Zahlen stehen in der Tabelle darunter.)* Die
+`kategorie`-Prop am `KantenChip` tauscht NUR
 den Tick (`border-left-color`) und die Hover-Utilities; Form/Token/Grösse bleiben →
 **CLS 0**, keine Layout-Verschiebung. Der Default `'norm'` emittiert die unveränderte
 brass-Klassenzeile ⇒ Grundzustand **byte-gleich** (`golden:vergleich` IDENTISCH; die
 zitierten Normen im KontextPanel bleiben brass). Kontrast als Gate gemessen
-(WCAG 1.4.11 ≥ 3:1 für den Tick, 1.4.3 ≥ 4.5:1 für Glyphen): slate-500-Tick **5.03**
-hell / **3.47** dunkel; warn-700-↻ **5.48** / **9.43**; brass-700-★ **5.13** / **10.48**.
-*(D-5/A38, 16.7.: die HELL-Werte stiegen [4.81→5.03 · 5.24→5.48 · 4.91→5.13], weil
-`--well` heller/weisser wurde [#F2EFE6→#F6F4EE]; DUNKEL unverändert — s. `DESIGN-REGLEMENT.md`
-§F2b-Nachtrag D-5.)*
+(WCAG 1.4.11 ≥ 3:1 für den Tick, 1.4.3 ≥ 4.5:1 für Glyphen) — **Ist-Werte
+nachgezogen 6.9.2026 aus dem Tor-Lauf `npm run check:farbwelt`** (dokumentiert in
+`scripts/farbwelt-tabellen.ts` `REFERENZ`; das Tor meldet «Referenz-Drift …
+Zahl in DESIGN-REGLEMENT-NORMTEXT §4b-B nachziehen», wenn diese Tabelle von der
+Messung abweicht — sie ist also gegatet, nicht Prosa):
+
+| | Rolle | Tick/Glyphe auf `--well` | hell | dunkel |
+|---|---|---|---:|---:|
+| **C-1** | Rechtsprechungs-Tick `lc-chip-entscheid` | slate-500 | **4.86** | **3.38** |
+| **C-2** | Currency-Chip «nächste Fassung ab …» | warn-700 | **5.30** | **9.20** |
+| **C-3** | Akzent-Tick (**= Tinte**, früher Messing-★) | brass-700 | **13.79** | **14.19** |
+
+Herkunft der Zahlen (Belege altern nicht, sie werden ergänzt): C-1 D-5 5.03/3.47 →
+R1 4.86/3.47 → D12 4.86/3.38 · C-2 D-5 5.48/9.43 → R1 5.29/9.49 → D12 5.30/9.20 ·
+C-3 D-5 5.13/10.48 (damals Messing auf hellerem Well) → R1 16.02/16.49 → D12
+13.79/14.19. Der Sprung bei C-3 ist **kein Messfehler und keine Drift**, sondern
+der Rollenwechsel: `--brass-700` zeigt seit R1 per `var()` auf die Tinte
+`--ink-fixed-dark`.
+*(D-5/A38, 16.7.: die HELL-Werte stiegen damals [4.81→5.03 · 5.24→5.48 ·
+4.91→5.13], weil `--well` heller/weisser wurde [#F2EFE6→#F6F4EE]; DUNKEL
+unverändert — s. `DESIGN-REGLEMENT.md` §F2b-Nachtrag D-5.)*
 `--slate-500` wird in `html.dark` bewusst NICHT überschrieben (Tick-Kontrast bleibt
 gehalten). **Gegated:** `verzahnung.test` (Default byte-identisch, Entscheid-Slate,
 ↻-warn), Golden byte-gleich. **D-3-Neu-Messung (12.7.2026, color-mix srgb→oklab):
