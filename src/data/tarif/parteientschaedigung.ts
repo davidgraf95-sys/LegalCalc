@@ -191,7 +191,7 @@ export const PARTEIENTSCHAEDIGUNG: Record<KantonCode, KantonalerTarif> = {
   },
   FR: {
     kanton: 'FR', erlassName: 'Règlement sur la justice (RJ)', erlassNr: 'RSF 130.11',
-    artikel: 'Art. 64–66', stand: '1.1.2018', kriterien: ['Art des Verfahrens', 'Schwierigkeit', 'Umfang', 'notwendiger Arbeitsaufwand', 'wirtschaftliches Interesse und Lage der Parteien'],
+    artikel: 'Art. 64–66', stand: '1.12.2025', kriterien: ['Art des Verfahrens', 'Schwierigkeit', 'Umfang', 'notwendiger Arbeitsaufwand', 'wirtschaftliches Interesse und Lage der Parteien'],
     kriterienNorm: 'Art. 63 RJ',
     verifiziert: 'doppelt',
     quelleUrl: 'https://bdlf.fr.ch/app/fr/texts_of_law/130.11',
@@ -396,7 +396,7 @@ export const PARTEIENTSCHAEDIGUNG: Record<KantonCode, KantonalerTarif> = {
   },
   VS: {
     kanton: 'VS', erlassName: 'Gebührentarif (LTar)', erlassNr: 'SR 173.8',
-    artikel: 'Art. 32 (i.V.m. Art. 27/28)', stand: '1.1.2018', kriterien: ['Natur und Bedeutung der Sache', 'Schwierigkeit', 'Umfang der Arbeit', 'sinnvoll aufgewendete Zeit', 'finanzielle Lage der Partei'],
+    artikel: 'Art. 32 (i.V.m. Art. 27/28)', stand: '1.1.2025', kriterien: ['Natur und Bedeutung der Sache', 'Schwierigkeit', 'Umfang der Arbeit', 'sinnvoll aufgewendete Zeit', 'finanzielle Lage der Partei'],
     kriterienNorm: 'Art. 27 Abs. 1 LTar',
     verifiziert: 'doppelt', mwstInbegriffen: true,
     hinweis: 'Rahmen je Band; >1 Mio: 3,3 % des Streitwerts, max CHF 140 000. Inkl. MwSt. Amtliche Verteidigung 70 %.',
