@@ -114,7 +114,7 @@ export function LeserLesespalte({ m, bezuege, weckeBezuege, bezuegeGeweckt = fal
       // Mittel) statt aus dem 2.2-MB-Shard — Herleitung in `../bezuegeZaehler`.
       // Der Kern rendert wie bisher; das Öffnen der Zeile lädt weiterhin lazy.
       zaehler={bezuegeZaehler(e.artikel)}
-      // ── D30 · POS. 12 IST NICHT ZURÜCK ───────────────────────────────────
+      // ── D30 · POS. 12 IST NICHT ZURÜCK (und `bezuege` bleibt ungesetzt) ──
       // Der Block darüber begründet, warum `bezuege` an dieser Stelle FIEL: die
       // `BezuegeZeile` stand damals UNBEDINGT im Fliesstext, an jedem Artikel,
       // und wuchs beim Eintreffen des Shards in den Lesekörper hinein. Beides
@@ -124,7 +124,9 @@ export function LeserLesespalte({ m, bezuege, weckeBezuege, bezuegeGeweckt = fal
       // Ein geschlossenes `<details>` rendert seinen Inhalt nicht — die 1685
       // anderen Artikel bleiben unberührt, es gibt keinen dokumentweiten
       // Layout-Sprung, und `leser-v3-kontext-cls` misst weiterhin dasselbe.
-      bezuege={bezuege?.bezuegeFuer(e.artikel)}
+      // `alleFuer`, nicht `bezuegeFuer`: die Zeile zeigt, was ihre Kopfzahl
+      // zählt — ungefiltert. Herleitung in `../bezuegeLaden` (D30).
+      bezuegeImKopf={bezuege?.alleFuer(e.artikel)}
       materialien={artikelMaterialien(e.artikel)}
       onBezuegeOeffnen={weckeBezuege}
       // «lädt …» heisst: geweckt, aber der Lade-VERSUCH ist noch nicht durch.

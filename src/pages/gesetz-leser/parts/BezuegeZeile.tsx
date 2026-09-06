@@ -200,7 +200,7 @@ const StatusGruppe = memo(function StatusGruppe({ status, kanten, gesamtRoh, fil
           // die Entscheid-Präzision (BGE-Bandjahr-Platzhalter ⇒ Jahresvergleich).
           const revidiert = klassifiziereFassungsBezug(entscheidDatum(b.datum, b.facetten.gericht), revision) === 'revidiert'
             ? (revision ?? null) : null;
-          return (
+          const kante = (
             <KanteMitVorschau key={b.key} ziel={ziel} zitierung={b.zitierung}
               kurztext={b.regesteKurz}
               leitentscheid={b.facetten.status === 'bge'}
@@ -208,6 +208,25 @@ const StatusGruppe = memo(function StatusGruppe({ status, kanten, gesamtRoh, fil
               statusLabel={STATUS_LABEL[b.facetten.status]}
               titel={b.regesteKurz ?? `${b.zitierung} — ${STATUS_LABEL[b.facetten.status]}`}
               className="shrink-0" />
+          );
+          // ── D30 (David 6.9.2026) · «ZITIERUNG + REGESTE-ZEILE» ────────────
+          // In der ZEILEN-Form bleibt es beim blossen Chip: dort stehen die
+          // Kanten in einer 28 px hohen waagrechten Linie, ein zweizeiliger
+          // Eintrag sprengte sie (und mit ihr die CLS-0-Zusage oben).
+          // In der RAND-Form — seit R6b nur noch die aufgeklappte Bezüge-Zeile
+          // am Artikelkopf — ist die Lage umgekehrt: der Leser hat sie
+          // aufgeklappt, um zu ERKENNEN, welcher Entscheid welcher ist, und ein
+          // Zitat allein sagt das nicht. Die Regeste stand bis hierher nur im
+          // `title` und im Hover-Kasten, war also für Tastatur und Touch
+          // unsichtbar. Sie ist die amtliche Kurzregeste aus dem Shard, wörtlich
+          // übernommen (§7) — hier nur angezeigt, nicht gekürzt oder gebildet;
+          // die optische Begrenzung auf zwei Zeilen macht `.lr7-bez-regeste`.
+          if (form !== 'rand') return kante;
+          return (
+            <span key={b.key} className="lr7-bez-eintrag">
+              {kante}
+              {b.regesteKurz && <span className="lr7-bez-regeste">{b.regesteKurz}</span>}
+            </span>
           );
         })}
         {/* ── «weitere 5» — das eine Klick-Element am Linienende ──────────────

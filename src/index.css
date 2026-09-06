@@ -3170,6 +3170,44 @@ html[data-lr6-anker-warten] footer { visibility: hidden; }
 }
 .lr7-bez-block[data-reg] { min-width: 0; }
 
+/* ── D30 (David 6.9.2026) · DER AUFGEKLAPPTE APPARAT ────────────────────────
+   Befund: die Zeile zählte «11 Entscheide» und zeigte beim Aufklappen nur den
+   Rechnen-Block. Der Bau dazu steht in `parts/BezuegeKopf.tsx` und
+   `v3/panelModell.ts`; hier steht nur, wie das Aufgeklappte AUSSIEHT.
+
+   REGISTERSTRICH JE RUBRIK statt einem für alle: die Klammer links
+   (`.lr7-bez-inhalt`, `--rule-artikel`) sagt «das gehört zu diesem Artikel».
+   Welcher ART ein Block ist, sagt seither nur das Wort darüber. Der Strich am
+   Block trägt die Registerfarbe, die die Marke in der Zeile schon führt
+   (`--reg-r/m/g/w`, dieselben Token, §5) — die Rubrik in der Kopfzeile und ihr
+   Block darunter sind damit sichtbar dasselbe Ding. Kein Kasten, kein
+   Hintergrund: eine Linie, wie überall im Haus. */
+.lr7-bez-block[data-reg] { padding-left: 0.625rem; border-left: 2px solid var(--rule-soft); }
+.lr7-bez-block[data-reg="r"] { border-left-color: var(--reg-r); }
+.lr7-bez-block[data-reg="m"] { border-left-color: var(--reg-m); }
+.lr7-bez-block[data-reg="g"] { border-left-color: var(--reg-g); }
+.lr7-bez-block[data-reg="w"] { border-left-color: var(--reg-w); }
+
+/* D30 · Ein Entscheid-Eintrag der aufgeklappten Liste: Zitierung (Chip) und
+   darunter die amtliche Kurzregeste. Der Chip bleibt, was er ist — die Regeste
+   hängt an ihm, nicht neben ihm, darum `display: grid` mit `justify-items:
+   start` statt einer Flex-Zeile (sonst zöge der Chip die Regeste auf seine
+   Höhe). Zwei Zeilen sind der Deckel: die Kurzregeste des Shards läuft
+   gelegentlich über 300 Zeichen, und eine Liste, in der ein Eintrag acht Zeilen
+   hoch ist, ist keine Liste mehr. Wer mehr will, öffnet den Entscheid (Klick)
+   oder den Hover-Kasten, der sie vollständig führt. */
+.lr7-bez-eintrag { display: grid; justify-items: start; gap: 0.125rem; min-width: 0; }
+.lr7-bez-regeste {
+  font-family: var(--font-serif), Georgia, serif;
+  font-size: 0.8125rem;
+  line-height: 1.45;
+  color: var(--ink-600);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
 /* ═══ W2·24-R12A · ÜBERSICHTS-KÖPFE (Präfix `.ub-`, additiv am Dateiende) ═════
    D22 (David 6.9.2026, Bild /gesetze @~1160): «hier hat es wieder komische
    lücken». Drei Ursachen, alle in der Kopf-Zone der fünf Übersichten:
