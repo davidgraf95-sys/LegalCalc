@@ -4,6 +4,7 @@ import { erfassungsgrad, STUFE_WORT } from '../../lib/normtext/erfassungsgrad';
 import { STARTSEITE_ZAEHLER } from '../../data/startseiteZaehler.generated';
 import { usePaneKlasse } from '../layout/PaneKontext';
 import { ModulFuss } from './PultModul';
+import { kantonZiel } from './modulZiele';
 
 // ─── Kantone als Register-Raster (W2·24-R3) ─────────────────────────────────
 //
@@ -40,7 +41,7 @@ export function KantoneRaster() {
           const wort = STUFE_WORT[erfassungsgrad(kt, n).stufe];
           const mengen = n === 0 ? 'keine Erlasse' : `${n} ${n === 1 ? 'Erlass' : 'Erlasse'}`;
           return (
-            <Link key={kt} to={`/gesetze?ebene=kanton&kt=${kt}`}
+            <Link key={kt} to={kantonZiel(kt)}
               aria-label={`${KANTON_NAMEN[kt as keyof typeof KANTON_NAMEN]} — ${mengen} erfasst, ${wort}`}
               className="flex justify-between gap-2 border-b border-dotted border-rule-soft no-underline hover:border-solid hover:border-reg-g hover:text-reg-g">
               {kt}

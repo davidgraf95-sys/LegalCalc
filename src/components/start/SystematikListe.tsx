@@ -1,18 +1,24 @@
 import { Link } from 'react-router-dom';
-import { INTERNATIONAL_SAEULE } from '../../lib/navigation';
 import { STARTSEITE_ZAEHLER } from '../../data/startseiteZaehler.generated';
 import { ModulFuss } from './PultModul';
+import { systematikZeilen, kuerzelZiel, type SystematikZeile } from './modulZiele';
 
-// ─── Systematische Ordnung des Bundesrechts (W2·24-R3) ──────────────────────
+// ─── Systematische Ordnung des Bundesrechts (W2·24-R3, D29-Fix R10-Nachzug-3) ─
 //
 // Ersetzt die Chip-Wolke «Bund» (GesetzeChips) durch die ORDNUNG, nach der die
 // Gesetzes-Übersicht gliedert: dieselben Kategorien, dieselben Anker
 // (`/gesetze?ebene=bund#sys-<id>`), dieselben Titel — die eine Anzeige-Ordnung
 // bleibt `lib/normtext/systematik.ts` (§5). Sie wird hier NICHT importiert:
 // Ordnung, Titel, Beispiel-Kürzel und Zahl kommen buildseitig aus dem
-// generierten Zähler (`gen:zaehler`, Drift-Tor `check:zaehler`) — so bleibt der
-// Startseiten-Chunk ohne Register- und ohne Systematik-Import (§15,
-// `check:perf-budget`).
+// generierten Zähler (`gen:zaehler`, Drift-Tor `check:zaehler`). Die Ziel-
+// Ableitung (Zeilen- UND Kürzel-Ziel) steht in `./modulZiele` — eigene Datei,
+// weil dieses Modul (react-refresh) nur Komponenten exportieren darf.
+//
+// D29 (David 6.9.2026, «jede Kachel führt zu der gleichen Seite»): der Href
+// selbst war je Zeile schon distinkt (`#sys-<id>` bzw. die International-
+// Säule, Nachweis im Bau-Bericht) — sichtbar gleich sah es aus, weil die
+// KÜRZEL-Zeile (BV · ParlG · …) reiner Text war und nirgendwohin führte. Sie
+// sind jetzt eigene Links (`modulZiele.kuerzelZiel`), Details dort.
 //
 // §8 · DIE ZAHLEN SIND GEMESSEN, NICHT ILLUSTRIERT. Das Referenzbild
 // (`vorschlag-freigegeben.html`) trägt an dieser Stelle ausdrücklich
@@ -31,19 +37,28 @@ import { ModulFuss } from './PultModul';
 const z = STARTSEITE_ZAEHLER;
 const nf = (n: number) => n.toLocaleString('de-CH');
 
-function Zeile({ nr, titel, kuerzel, anzahl, ziel }: {
-  nr?: string; titel: string; kuerzel: string[]; anzahl: number; ziel: string;
-}) {
+function Zeile({ nr, titel, kuerzel, anzahl, ziel }: SystematikZeile) {
   return (
-    <Link to={ziel}
-      className="group grid grid-cols-[1.4rem_minmax(0,1fr)_auto] items-baseline gap-x-2.5 border-t border-rule-soft py-1.5 no-underline">
-      <span aria-hidden className="num font-sans font-medium text-xs text-ink-500">{nr ?? ''}</span>
-      <span className="font-serif text-ink-900 group-hover:text-reg-g group-hover:underline">
-        {titel}
-        <small className="mt-0.5 block font-sans text-xs leading-snug text-ink-500">{kuerzel.join(' · ')}</small>
+    <div className="grid grid-cols-[1.4rem_minmax(0,1fr)_auto] items-baseline gap-x-2.5 border-t border-rule-soft py-1.5">
+      <span aria-hidden className="num font-sans font-medium text-xs text-ink-500">{nr}</span>
+      <span className="font-serif text-ink-900">
+        <Link to={ziel} className="no-underline hover:text-reg-g hover:underline">{titel}</Link>
+        <small className="mt-0.5 block font-sans text-xs leading-snug text-ink-500">
+          {kuerzel.map((k, i) => {
+            const pfad = kuerzelZiel(k);
+            return (
+              <span key={k}>
+                {i > 0 && ' · '}
+                {pfad
+                  ? <Link to={pfad} className="text-ink-500 no-underline hover:text-reg-g hover:underline">{k}</Link>
+                  : k}
+              </span>
+            );
+          })}
+        </small>
       </span>
       <span className="num font-sans text-xs text-reg-g">{anzahl}</span>
-    </Link>
+    </div>
   );
 }
 
@@ -53,31 +68,11 @@ export function SystematikListe() {
       {/* Zwei Spalten erst, wenn beide Spalten eine Zeile tragen können — im
           schmalen Pane und auf dem Telefon bleibt es eine Liste. */}
       <div className="grid gap-x-9 sm:grid-cols-2">
-        {z.bundSystematik.map((k) => (
-          <Zeile key={k.id} nr={k.nr} titel={k.titel} kuerzel={k.kuerzel} anzahl={k.anzahl}
-            ziel={`/gesetze?ebene=bund#sys-${k.id}`} />
-        ))}
-        {/* «International» ist seit IA-6 Stufe 2 eine eigene Säule, keine
-            Systematik-Kategorie — sie führt darum die kanonische Ziel-Adresse
-            (nie den Alt-Alias /international).
-            ORDNUNGSZIFFER (Prüfbefund R3-F9, 6.9.2026): die Zeile stand als
-            einzige ohne Zahl und riss die Zahlenspalte auf. Die Zahl ist «0»,
-            EINSTELLIG und mit Bedacht: «01»…«05» sind LexMetriks eigene
-            funktionale Ordnung (`lib/normtext/systematik.ts`), zu der das
-            internationale Recht gerade nicht gehört — eine «06» würde dort eine
-            Kategorie behaupten, die es nicht gibt (§5). «0» ist dagegen die
-            AMTLICHE Gruppenziffer: die Systematische Rechtssammlung führt das
-            internationale Recht als Gruppe 0 (SR 0.1 … 0.9,
-            fedlex.admin.ch/de/cc, abgerufen 6.9.2026). Die eine Stelle weniger
-            sagt zugleich, dass sie aus einer anderen Ordnung stammt. */}
-        <Zeile nr="0" titel="Internationales Recht"
-          kuerzel={z.internationalKuerzel} anzahl={z.gesetzeInternationalVolltext}
-          ziel={INTERNATIONAL_SAEULE} />
+        {systematikZeilen().map((zl) => <Zeile key={zl.ziel} {...zl} />)}
       </div>
       <ModulFuss>
-        Die Ordnung ist die der Gesetzes-Übersicht. Die Zahl je Zeile ist der bei uns
-        erfasste Volltext ({nf(z.gesetzeBundVolltext)} Erlasse), nicht der Umfang der
-        Systematischen Rechtssammlung des Bundes.
+        Die Zahl je Zeile ist der bei uns erfasste Volltext ({nf(z.gesetzeBundVolltext)} Erlasse),
+        nicht der Umfang der Systematischen Rechtssammlung des Bundes.
       </ModulFuss>
     </>
   );
