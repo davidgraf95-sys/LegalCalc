@@ -198,6 +198,26 @@ tracking-wide text-ink-500`, dazwischen `text-ink-600`; mehrzeilige Randtitel mi
 **Hänge-Einzug-Schutz** (`text-indent:-1em` + `pl-[1em]`) gegen den Fedlex-AVOID
 «1. Im / Allgemeinen».
 
+**Satzspiegel des Lesers (W2·24-R4, 6.9.2026).** Der Gesetzesleser setzt den
+Normtext in einen dreispaltigen Satzspiegel, sobald die LESE-ZELLE ihn trägt:
+Marginalie 150 px · Rinne 36 px · Normtext · Rinne 36 px · Randnotizen 210 px.
+Drei Ausbaustufen, gerechnet in `pages/gesetz-leser/v3/satzspiegel.ts` und am
+DOM als `data-lr-spiegel` ablesbar: `zeile` (Ist-Form — Pane, schmale Fenster,
+V1, Trefferliste, Druck), `marg` ab 45.625 rem Zelle, `voll` ab 61 rem.
+Die Marginalie trägt Registerfarben-Strich (`--reg-g`, nur wenn sie Inhalt hat),
+Randtitel und Fassungs-Zeile; die Randnotizen zeigen dieselben Bezüge, die sonst
+am Artikelfuss stehen — nie beide zugleich (§5).
+
+**Zeilenhöhe des Fliesstexts: 1.62** (`leser-text` in `tailwind.config.js`, seit
+6.9.2026; davor 1.55). Massgeblich ist das freigegebene Referenzbild
+`abnahme/design-identitaet/vorschlag-freigegeben.html` (`.norm { font-size:17px;
+line-height:1.62 }`); die Grösse bleibt unverändert 17 px. Die Zahl steht in der
+Typo-STUFE und nie im Markup — `src/tests/leser-typo-tokens.test.ts` verbietet
+jedes `leading-…` am Fliesstext. WCAG 1.4.8 gemessen am gebauten Stand
+(6.9.2026, Methode `e2e/leser-lesemass.e2e.ts`): lh 1.62 ≥ 1.5, Zeilenmass
+OR 64 · StPO 64 · ZGB 64 · SchKG 63 · ZPO 62 · BS-640.100 56 Zeichen im
+Satzspiegel @1400 (Decke 80, Hausgrenze 75).
+
 **Maschinell gegated:** R1 `check:linien-kanon` (marker-scoped, in `npm run gate`),
 R2 eslint (`no-restricted-syntax` gegen arbitrary `max-w-[…rem]` im Reader), R5
 als Playwright-e2e (`leser-lesemass.e2e.ts`: WCAG-Decke ≤ 80 ch an drei Breiten,
