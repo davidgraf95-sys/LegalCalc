@@ -1096,14 +1096,26 @@
      Satzspiegel hinaus. Die Zeilenform ist die Ist-Form und damit die geprüfte
      (`e2e/druck-fundstellen-z2.e2e.ts`). */
   @media print {
-    .lc-leser[data-leser-v3="rahmen"] #lc-lesespalte {
+    /* SPEZIFITÄT MUSS MITZIEHEN (Bug-Check 6.9.2026 am Druckbild): mit dem
+       blossen `[data-leser-v3="rahmen"]`-Scope stand hier eine Regel mit EINER
+       Attribut-Bedingung weniger als die Grid-Regel oben — sie verlor, und der
+       Druck zeigte den Satzspiegel samt Registerstrich weiter. Der Selektor
+       nennt darum dieselben Attribute; `:is()` hält ihn lesbar, ohne die
+       Spezifität zu senken (sie ist die des stärksten Arms). */
+    .lc-leser[data-leser-v3="rahmen"]:is([data-lr-spiegel="marg"], [data-lr-spiegel="voll"]) #lc-lesespalte {
       padding-inline: 0;
+      max-width: min(var(--leser-lesemass-max, 45rem), var(--leser-zeilenmass, 45rem));
     }
-    .lc-leser[data-leser-v3="rahmen"] #lc-lesespalte .lr-satz {
+    .lc-leser[data-leser-v3="rahmen"]:is([data-lr-spiegel="marg"], [data-lr-spiegel="voll"]) #lc-lesespalte .lr-satz {
       display: block;
       margin-inline: 0;
     }
-    .lc-leser[data-leser-v3="rahmen"] #lc-lesespalte .lr-reg { height: 0; margin-bottom: 0; }
+    .lc-leser[data-leser-v3="rahmen"]:is([data-lr-spiegel="marg"], [data-lr-spiegel="voll"]) #lc-lesespalte .lr-reg {
+      height: 0; margin-bottom: 0;
+    }
+    .lc-leser[data-leser-v3="rahmen"]:is([data-lr-spiegel="marg"], [data-lr-spiegel="voll"]) #lc-lesespalte .lr-rand {
+      text-align: left;
+    }
   }
 
   /* W2.8: lange Erlasse (OR/ZGB ~1099 Art.) — off-screen-Artikel überspringen

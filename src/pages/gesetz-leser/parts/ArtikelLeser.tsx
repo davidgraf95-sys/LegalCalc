@@ -345,6 +345,13 @@ export const ArtikelLeser = memo(function ArtikelLeser({ e, erlass, basisPfad, f
   // weiter am selben Element. In der Marginalie kann sie sogar nicht mehr
   // schieben: die Artikelhöhe kommt aus der Textspalte.
   const histInRand = spiegel !== 'zeile' && !imTreffer;
+  /** Trägt die Marginalie überhaupt etwas? Ohne das stünde der Registerfarben-
+   *  Strich als Balken über einer leeren Spalte — Lärm statt Gliederung
+   *  (gesehen am Druckbild 6.9.2026, OR 418b–418d). In React entschieden und
+   *  nicht per `:has()`: eine `:has()`-Regel über 1686 Artikel ist genau die
+   *  Bauart, die W2·19-GLIEDERUNG/F1 als Scroll-Bremse nachgewiesen hat. */
+  const randInhalt = (marg != null && marg.length > 0) || !!e.titel
+    || (histInRand && (fussAnzeige.length > 0 || !!historie));
   const histSlot = (
     <div {...{ [SUCH_META]: '' }} data-hist-slot
       className={fussAnzeige.length > 0 || historie
@@ -419,7 +426,7 @@ export const ArtikelLeser = memo(function ArtikelLeser({ e, erlass, basisPfad, f
             Registerfarbe «Gesetze»; ausserhalb des Spiegels ist der Strich
             unsichtbar (0 px hoch, `index.css`) — er soll die Ist-Form nicht
             um eine Zeile verschieben. */}
-        <span aria-hidden className="lr-reg" />
+        {randInhalt && <span aria-hidden className="lr-reg" />}
         {/* Randtitel zuerst, Fassungsdatum darunter — die Reihenfolge des
             Referenzbildes. */}
         {/* Fedlex-Reihenfolge (Auftrag David 26.6.2026): Gliederungs-/Randtitel
