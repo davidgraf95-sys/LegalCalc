@@ -285,19 +285,27 @@ export function HeaderSuche({ onFokusModus, onFokusZurueck }: {
     } else if (e.key === 'Enter') {
       const ziel = gewaehlterHref(aktivListe, aktivKey)
         ?? (feldLeer ? undefined : gruppen.find((g) => g.treffer.length > 0)?.treffer[0]?.href);
-      // ── W2·24 §5a Ziff. 7 · Ctrl/⌘+Enter öffnet DANEBEN, nicht «in neuem Reiter»
-      // Der Wortlaut der Ziffer verlangt «in neuem Reiter». GEMESSEN am Ist-Stand
-      // (6.9.2026, `components/TabTracker.tsx` → `lib/tabs.merkeTab`): JEDE
-      // Navigation legt ohnehin einen Reiter an — ein «in neuem Reiter» wäre
-      // heute wortgleich mit dem blossen Enter, also eine Zusage ohne Wirkung
-      // (§8). Das echte zweite Ziel, das die Leiste anbietet, ist das zweite
-      // FENSTER; darum öffnet der Zusatz-Griff dorthin, solange eines aufgehen
-      // kann (ab lg, freie Kapazität). Sobald §5a Ziff. 3 gebaut ist (Klick
-      // ERSETZT den aktiven Reiter), bekommt diese Taste ihre wörtliche
-      // Bedeutung zurück — der Punkt steht in der R2-Rückgabe.
-      if (ziel && (e.ctrlKey || e.metaKey) && kannOeffnen) {
+      // ── W2·24 §5a Ziff. 7 · ZWEI ZUSATZ-TASTEN, ZWEI ZIELE ─────────────────
+      // Ctrl/⌘+Enter = «in neuem Reiter», wörtlich wie die Ziffer es verlangt.
+      // Bis zum R2-Nachzug war das eine Zusage ohne Wirkung, weil JEDE
+      // Navigation ohnehin einen Reiter anlegte (`TabTracker` → `merkeTab`);
+      // seit §5a Ziff. 3 gebaut ist (die Navigation ERSETZT den aktiven
+      // Reiter), hat sie ihre Bedeutung: der Treffer geht auf, OHNE den Reiter
+      // zu verbrauchen, aus dem man kommt. Der Navigations-State
+      // `lmNeuerReiter` sagt das dem Tracker (`components/TabTracker.tsx`).
+      // Alt+Enter = «daneben öffnen» (zweites FENSTER). Das war bis 6.9.2026
+      // die Belegung von Ctrl/⌘+Enter; sie ist nicht entfallen, sondern
+      // umgezogen — und bleibt wie bisher an `kannOeffnen` gebunden (ab lg,
+      // freie Kapazität), damit keine Taste ins Leere zusagt (§8).
+      if (ziel && e.altKey && kannOeffnen) {
         e.preventDefault();
         oeffneDaneben(ziel);
+        auswahl();
+        return;
+      }
+      if (ziel && (e.ctrlKey || e.metaKey)) {
+        e.preventDefault();
+        navigate(ziel, { state: { lmNeuerReiter: true } });
         auswahl();
         return;
       }

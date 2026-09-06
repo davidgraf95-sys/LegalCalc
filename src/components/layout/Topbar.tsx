@@ -6,7 +6,7 @@ import { SprachUmschalter } from '../SprachUmschalter';
 import { ThemaUmschalter } from './ThemaUmschalter';
 import { VerlaufUebersicht } from './VerlaufUebersicht';
 import { KorpusStand } from '../ui/KorpusStand';
-import { BEREICHE, REG_RAND, bereichVonPfad } from './bereiche';
+import { BEREICHE, REG_RAND, REG_RAND_HOVER, bereichVonPfad } from './bereiche';
 import { istSuchKuerzel, suchKuerzelEmpfaengerAbmelden, suchKuerzelEmpfaengerAnmelden } from '../suche/fruehesSuchKuerzel';
 
 // ─── Titelblatt-Zeile der Sammlung (W2·24-DESIGN-IDENTITAET R2) ─────────────
@@ -130,12 +130,18 @@ export function Topbar({ onMenu, schubladeOffen, seitenleisteEingeklappt, onSeit
         {/* Marke. Anders als vor R2 steht sie AUF JEDER BREITE im Titelblatt —
             der Kopf ist jetzt das Titelblatt der Sammlung, und ein Titelblatt
             ohne Titel gibt es nicht.
-            ── C2 (Design-Review 29.8.2026) · UNTER 480 px TRÄGT DIE SCHUBLADE
-            DIE MARKE. Gemessen @320 im warmen Zustand: der Streifen brauchte
-            332 px in einem 320-px-Fenster. Acht Bedienelemente à 44 px passen
-            dort nicht nebeneinander — die Schublade zeigt unter 480 px die
-            Marke (`Sidebar.tsx`, spiegelbildlich dieselbe Schwelle). */}
-        <Link to="/" className={`max-[480px]:hidden inline-flex items-center gap-2 no-underline shrink-0 min-h-11 px-1 ${weicht}`} aria-label="LexMetrik – Startseite">
+            ── C2 (Design-Review 29.8.2026) · UNTER 480 px WICH SIE GANZ. Gemessen
+            @320 im warmen Zustand: der Streifen brauchte 332 px in einem
+            320-px-Fenster; acht Bedienelemente à 44 px passen dort nicht
+            nebeneinander, also trug die Schublade die Marke allein.
+            ── F7 (Prüfbefund 6.9.2026) · DAS SIEGEL BLEIBT, DIE WORTMARKE GEHT.
+            Ein Titelblatt ohne Titel ist keines: @390 stand der Kopf ohne jedes
+            Zeichen der Herkunft. Zurück kommt darum NICHT die volle Marke,
+            sondern das §-Siegel allein — 28 px statt der ~130 px, an denen C2
+            gescheitert war; die Wortmarke bleibt ab `sm`. Die Schublade zeigt
+            weiterhin die volle Marke (`Sidebar.tsx`), jetzt als Ergänzung, nicht
+            als Ersatz. Bewacht von `e2e/topbar-kein-ueberlauf-320.e2e.ts`. */}
+        <Link to="/" className={`inline-flex items-center gap-2 no-underline shrink-0 min-h-11 px-1 ${weicht}`} aria-label="LexMetrik – Startseite">
           <LexMetrikSiegel size={28} />
           {/* Wortmarke ab sm — auf schmalen Schirmen trägt die Suche die Mitte. */}
           <LexMetrikWortmarke className="hidden sm:block text-h3" />
@@ -157,7 +163,12 @@ export function Topbar({ onMenu, schubladeOffen, seitenleisteEingeklappt, onSeit
                 className={`inline-flex shrink-0 items-center border-b-2 pt-0.5 text-body-s no-underline transition-colors ${
                   aktiv
                     ? `${REG_RAND[b.register]} font-medium text-ink-900`
-                    : 'border-transparent text-ink-600 hover:text-ink-900 hover:border-rule-soft'
+                    // F2 (Prüfbefund 6.9.2026): der Hover-Strich war `rule-soft`,
+                    // also grau — die Registerfarbe zeigte sich erst NACH dem
+                    // Klick. Jetzt kündigt der Hover die Farbe des Ziels an
+                    // (auf 40 %, damit «hier bin ich» und «hier käme ich hin»
+                    // unterscheidbar bleiben).
+                    : `border-transparent text-ink-600 hover:text-ink-900 ${REG_RAND_HOVER[b.register]}`
                 }`}>
                 {b.label}
               </NavLink>
