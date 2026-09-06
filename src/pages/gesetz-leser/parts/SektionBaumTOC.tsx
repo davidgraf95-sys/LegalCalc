@@ -307,7 +307,7 @@ const Zeile = memo(function Zeile({
             ≥ 3:1» (Spec §9) reisst brass-500 im HELLEN Modus um zwei
             Hundertstel — und eine Positionsmarke, die man nicht sieht, ist keine.
             Darum brass-600, also genau der Ton des zitierten Musters. */}
-        <span aria-hidden className={`mt-1 h-3.5 w-0.5 shrink-0 rounded-full ${istMarke ? 'bg-brass-600' : 'bg-transparent'}`} />
+        <span aria-hidden className={`mt-1 h-3.5 w-0.5 shrink-0 ${istMarke ? 'bg-brass-600' : 'bg-transparent'}`} />
         <button
           type="button"
           // H2 (David 16.8.2026): ein Klick auf den TITEL klappt den Ast auf UND

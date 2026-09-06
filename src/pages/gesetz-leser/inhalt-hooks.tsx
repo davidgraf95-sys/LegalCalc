@@ -1,4 +1,4 @@
-import { useEffect, useRef, type Dispatch, type MutableRefObject, type RefObject, type SetStateAction } from 'react';
+import { useEffect, useLayoutEffect, useRef, type Dispatch, type MutableRefObject, type RefObject, type SetStateAction } from 'react';
 import { flushSync } from 'react-dom';
 import type { NavigateFunction } from 'react-router-dom';
 import { aktualisiereTabArtikel, tabSchluessel } from '../../lib/tabs';
@@ -29,6 +29,15 @@ import { datenEbeneVonRoute, erlassPfad } from '../../lib/normtext/erlassAdresse
 // kein Normtext, keine Reihenfolge der Logik verändert.
 
 type MeldeKopf = ReturnType<typeof useMeldeInhaltsKopf>;
+
+/**
+ * Layout-Effekt im Browser, gewöhnlicher Effekt im Prerender (W2·24-R6/L1).
+ *
+ * Wortgleich zu `useIsoLayoutEffect` in `App.tsx` — dort steht die Herleitung.
+ * Gebraucht wird er hier für den Tieflink-Sprung: er muss VOR dem ersten Paint
+ * laufen, und `useLayoutEffect` warnt im Server-Render.
+ */
+const useIsoLayoutEffect = typeof window !== 'undefined' ? useLayoutEffect : useEffect;
 
 // Auto-Zuklappen des Gliederungsbaums (F2): Nachlauf-Fenster, Fallback-Schalter
 // und die Lage-Entscheidung leben seit W2·19-GLIEDERUNG/S5 in ./tocAutoZuklappen —
@@ -266,7 +275,7 @@ export function useLeserSprungSpy(opts: {
   // statt an der Norm. Quelle des Hashs ist im Pane die PANE-LOKALE Location
   // (`<Routes location={loc}>` → react-router `useLocation()` liefert den Pane-Pfad),
   // sonst wie bisher die echte Fenster-URL (Primär/Einzelansicht byte-gleich).
-  useEffect(() => {
+  useIsoLayoutEffect(() => {
     if (!eintraege || !sektionen.length || typeof window === 'undefined') return;
     // A34: nur der ERSTE inhaltsbereite Lauf sät den Sprung. Danach gesperrt —
     // ein `imPane`/`wurzel`-Wechsel (Split-View öffnet) re-triggert den Effekt,
@@ -304,21 +313,54 @@ export function useLeserSprungSpy(opts: {
       const artLabel = artLabelByToken.get(token) ?? `Art. ${token.replace(/_/g, '')}`;
       setAktArtikel(artLabel);
     }
-    window.requestAnimationFrame(() => {
-      if (ids.length) oeffnePfad(ids);
-      window.setTimeout(() => {
-        const el = findeArt(paneRoot(imPane, wurzel), token);
-        // R1: oberer Lese-Rand statt Mitte (deckt sich mit der Scroll-Spy-Bezugslinie).
-        el?.scrollIntoView({ block: 'start', behavior: 'auto' });
-        el?.classList.add('lc-ziel-blink');
-        window.setTimeout(() => el?.classList.remove('lc-ziel-blink'), 2400);
-      }, 110);
-    });
+    if (ids.length) oeffnePfad(ids);
+    // ── W2·24-R6/L1 · DER SPRUNG LIEGT VOR DEM ERSTEN PAINT ───────────────────
+    //
+    // GEMESSEN (6.9.2026, `dist/`-Preview, Chromium @390×844, OR#art-336_c):
+    // CLS **1.1664** — eine einzige Verschiebung von 0.8974 plus 0.2259, Quelle
+    // je `section[data-normtext-linie]`, previousRect y 0 / h 844 → currentRect
+    // y 325 / h 519. Der Grund stand in diesen zehn Zeilen: der Effekt lief als
+    // `useEffect` (also NACH dem Paint) und scrollte zusätzlich erst 110 ms
+    // später. Der Leser sah damit bei JEDEM Tieflink zuerst einen vollen Frame
+    // ANFANG DES ERLASSES und danach den Sprung — und weil React beim Sprung
+    // dieselben DOM-Knoten wiederverwendet, zählt der Browser die Differenz als
+    // unerwartete Verschiebung, nicht als Scroll. Weitere Messwerte: ZGB#art-457
+    // 0.5749, OR#art-1 0.9307; ohne Anker (ZPO) 0.0362 — der Anker WAR der Fall.
+    //
+    // NEU: derselbe Sprung im Layout-Effekt desselben Commits, in dem die
+    // Artikel in den DOM kommen. React führt Layout-Effekte vor dem Paint aus;
+    // der erste sichtbare Frame steht damit bereits an der Fundstelle, und es
+    // gibt keine zwei Zustände, zwischen denen etwas verrutschen könnte.
+    // `useIsoLayoutEffect` (Muster aus `App.tsx`) hält den Prerender still.
+    //
+    // DER NACHLAUF BLEIBT, und zwar aus dem Grund, den `springeZuSektion` schon
+    // nennt: unter `content-visibility:auto` rechnet der erste Sprung mit
+    // geschätzten Platzhalterhöhen (`schaetzeArtikelHoehe`). Sobald die echten
+    // Höhen einlaufen, wandert das Ziel — gemessen @390 um 177 px. Der zweite
+    // Sprung holt das zurück; er ist eine KORREKTUR am selben Ziel, kein
+    // zweiter Sprung an einen anderen Ort.
+    const springe = (blink: boolean) => {
+      const el = findeArt(paneRoot(imPane, wurzel), token);
+      if (!el) return;
+      // R1: oberer Lese-Rand statt Mitte (deckt sich mit der Scroll-Spy-Bezugslinie).
+      el.scrollIntoView({ block: 'start', behavior: 'auto' });
+      if (!blink) return;
+      el.classList.add('lc-ziel-blink');
+      window.setTimeout(() => el.classList.remove('lc-ziel-blink'), 2400);
+    };
+    springe(true);
+    window.requestAnimationFrame(() => window.setTimeout(() => springe(false), 110));
     // location.hash bewusst NICHT in den Deps: der Effekt springt EINMAL beim
     // Erlass-Laden an die (Pane-lokale bzw. Fenster-)Fundstelle — die Primär-
     // Instanz führt spätere Hash-Wechsel über den letzteNavKey-Effekt nach
     // (kein Doppel-Sprung/-Blink), das Pane öffnet an seiner Seed-Fundstelle.
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    // Die `eslint-disable`-Zeile für `react-hooks/exhaustive-deps` ist mit R6
+    // ERSATZLOS weg: sie stand über einem `useEffect`, das die Regel geprüft
+    // hätte — `useIsoLayoutEffect` ist ein Alias, den die Regel gar nicht
+    // ansieht, und eine Ausnahme von einer Prüfung, die nicht stattfindet, ist
+    // eine tote Zeile (eslint meldet sie selbst als «unused directive»). Die
+    // Dep-Liste bleibt byte-gleich; abgeschaltet war die Prüfung vorher wie
+    // nachher.
   }, [eintraege, sektionen, istSekundaer, imPane, wurzel]);
 
   // Geteilter «aktueller-Artikel»-Beobachter (Auftrag David 26.6.2026): EIN

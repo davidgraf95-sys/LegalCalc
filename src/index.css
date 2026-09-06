@@ -2602,3 +2602,26 @@
      Wortende liest sich wie ein Datenfehler (§8, Prüfbefund R3-F6). */
   text-overflow: ellipsis;
 }
+
+/* ═══ W2·24-R6 · ZUSATZ AM DATEIENDE (Bau-Fläche R6, Präfix `.lr6-`) ══════════
+   Additiv und ohne Berührung des Bestands: an `index.css` bauen in derselben
+   Runde drei Agenten, und ein `.lr6-`-Präfix am Dateiende kollidiert mit keinem
+   von ihnen. Fällt der Block weg, sieht der Leser dieselbe Liste ohne Feinsatz —
+   keine der Regeln trägt Bedeutung, nur Form. */
+
+/* «Rechnen» in der Randnotiz (ArtikelLeser). Die 210-px-Spalte trägt keine
+   Chips (Herleitung am Konsumenten): Textzeilen in derselben Grotesk-Feinschrift
+   wie die übrigen Rand-Rubriken, eingerückt auf die Fluchtlinie, die
+   `.lr-notiz-titel` mit seinem 3-px-Registerstrich vorgibt. */
+.lr6-notiz-liste {
+  margin: 0;
+  padding-left: 0.625rem;
+  list-style: none;
+  display: grid;
+  gap: 0.25rem;
+  font-family: var(--font-sans), system-ui, sans-serif;
+  font-size: 0.8125rem;
+  line-height: 1.35;
+}
+.lr6-notiz-liste > li { display: grid; }
+.lr6-notiz-art { font-size: 0.6875rem; line-height: 1.3; color: var(--ink-500); }

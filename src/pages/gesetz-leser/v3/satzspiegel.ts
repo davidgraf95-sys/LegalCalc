@@ -69,9 +69,9 @@ export type Satzspiegel =
   | 'voll';
 
 /** Kleinste Lese-Zelle (rem), die die Marginalie trägt. */
-export const SPIEGEL_MIN_MARG = SPUR_MARGINALIE + SPUR_RINNE + TEXT_SOLL;      // 48.625 rem = 778 px
+export const SPIEGEL_MIN_MARG = SPUR_MARGINALIE + SPUR_RINNE + TEXT_SOLL;      // 45.625 rem = 730 px
 /** Kleinste Lese-Zelle (rem), die zusätzlich die Randnotizen trägt. */
-export const SPIEGEL_MIN_VOLL = SPIEGEL_MIN_MARG + SPUR_RINNE + SPUR_RANDNOTIZ; // 64 rem = 1024 px
+export const SPIEGEL_MIN_VOLL = SPIEGEL_MIN_MARG + SPUR_RINNE + SPUR_RANDNOTIZ; // 61 rem = 976 px
 
 /**
  * Der Satzspiegel, den der Leser gerade fährt.
