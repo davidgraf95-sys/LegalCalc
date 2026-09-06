@@ -1,6 +1,6 @@
 import { useRef, useState } from 'react';
 import { SchliessKnopf } from '../ui/SchliessKnopf';
-import { ordneTabsUm, tabSchluessel, type TabEintrag } from '../../lib/tabs';
+import { ordneTabsUm, tabSchluessel, type TabEintrag, NEUER_REITER_NAME } from '../../lib/tabs';
 import { erlassVonPfad, verlaufLabel, type VerlaufManifeste } from '../../lib/verlaufLabel';
 import {
   reiterKategorie, herkunftVon, kantonVonPfad, artikelLabelVonPfad, gleicheReiterGruppe,
@@ -76,7 +76,10 @@ export function TabPanel({ tabs, manifeste, aktivSchluessel, onNavigate, onSchli
   const zeile = (t: TabEintrag, alsGesetz: boolean, kat: typeof KAT_ORDER[number], liste: TabEintrag[], idx: number) => {
     const aktiv = tabSchluessel(t.path) === aktivSchluessel;
     const e = alsGesetz ? erlassVonPfad(t.path, manifeste) : null;
-    const name = (alsGesetz && e?.kuerzel) ? e.kuerzel : verlaufLabel(t.path, manifeste);
+    // D19: der leere Reiter zeigt '/', ist aber kein «Sammlung»/Startseiten-
+    // Eintrag — derselbe Vorrang wie in `Reiterleiste.kurzform`.
+    const name = t.leer ? NEUER_REITER_NAME
+      : (alsGesetz && e?.kuerzel) ? e.kuerzel : verlaufLabel(t.path, manifeste);
     const art = alsGesetz ? artikelLabelVonPfad(t.path) : null;
     // herkunft kann null sein, wenn das Manifest noch nicht geladen ist → dann
     // KEIN (falsches) Schweizerkreuz, sondern das neutrale Kategorie-Piktogramm.

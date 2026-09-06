@@ -43,15 +43,23 @@ describe('Reiterleiste — sichtbare Reiter + client-only Überlauf-Blatt', () =
   // das war die CLS-Ursache: der Prerender kennt keinen Speicher, lieferte also
   // keine Leiste, und nach der Hydration wuchs sie um 34 px in die Seite hinein
   // (gemessen auf /rechner/tagerechner, CLS 0.025, `ics-export-z1` A9). Die
-  // Leiste reserviert ihre Höhe jetzt immer. Die geprüfte EIGENSCHAFT ist
-  // dieselbe geblieben und wird sogar schärfer: ohne Reiter gibt es keine
-  // Navigations-Landmark und keinen Reiter im Markup — nur einen stummen,
-  // `aria-hidden`-Platzhalter in genau der Höhe, die die Leiste später einnimmt.
-  it('reserviert bei 0 Reitern nur die Höhe; AB dem 1. Reiter die Leiste mit dem Reiter', () => {
+  // Leiste reserviert ihre Höhe jetzt immer.
+  //
+  // ── DEKLARIERTE ANPASSUNG 2 (§6.3, D19, 6.9.2026) ─────────────────────────
+  // Zwischenzeitlich war die geprüfte Eigenschaft noch schärfer: ohne Reiter
+  // keine Navigations-Landmark und kein Reiter im Markup — nur ein stummer,
+  // `aria-hidden`-Platzhalter. Seit dem Browser-«+» (David: «mit plus einen
+  // neuen reiter erzeugen können») gibt es aber IMMER ein Ziel, auch bei 0
+  // Reitern: den «+», mit dem man den ERSTEN Reiter überhaupt anlegt. Eine
+  // `<nav>` ohne EIN Ziel wäre ein leeres Versprechen gewesen — eine `<nav>`
+  // mit dem «+»-Knopf ist es nicht mehr, darum trägt jetzt auch der 0-Reiter-
+  // Fall die Landmark. Was UNVERÄNDERT gilt: kein Reiter im Markup, dieselbe
+  // Geometrie/Höhe wie mit Reitern (CLS bleibt 0).
+  it('reserviert bei 0 Reitern die Höhe UND den «+»; AB dem 1. Reiter zusätzlich den Reiter', () => {
     const leer = html([]);
     expect(leer).toContain('h-[var(--app-reiter-h)]');
-    expect(leer).toContain('aria-hidden');
-    expect(leer).not.toContain('aria-label="Offene Reiter"');
+    expect(leer).toContain('aria-label="Offene Reiter"');
+    expect(leer).toContain('aria-label="Neuer Reiter"');
     expect(leer).not.toContain('aria-label="Reiter «');
     const eins = html([{ path: '/rechner/tagerechner' }], '/rechner/tagerechner');
     expect(eins).toContain('aria-label="Offene Reiter"');

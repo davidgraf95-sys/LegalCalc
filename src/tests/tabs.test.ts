@@ -1,5 +1,8 @@
 import { describe, it, expect, beforeEach } from 'vitest';
-import { ladeTabs, merkeTab, ersetzeTab, schliesseTab, leereTabs, ordneTabsUm, naechsteInstanz, aktualisiereTabArtikel } from '../lib/tabs';
+import {
+  ladeTabs, merkeTab, ersetzeTab, schliesseTab, leereTabs, ordneTabsUm, naechsteInstanz,
+  aktualisiereTabArtikel, neuerLeererReiter, hatLeerenReiter,
+} from '../lib/tabs';
 
 // In-App-Reiter (lib/tabs.ts): Persistenz, stabile Reihenfolge, Dublette per
 // pathname, MAX-Kappung, korruptes localStorage. Reines Speicher-Werkzeug.
@@ -203,5 +206,50 @@ describe('tabs.ts — offene Reiter', () => {
     expect(ladeTabs()).toEqual([]);
     localStorage.setItem('lexmetrik-tabs', '42');
     expect(ladeTabs()).toEqual([]);
+  });
+
+  // ── D19 (David 6.9.2026: «mit plus einen neuen reiter erzeugen können») ───
+  describe('neuerLeererReiter — höchstens ein leerer Reiter', () => {
+    it('legt Pfad "/" mit leer:true an, hinten angehängt', () => {
+      merkeTab('/rechner/tagerechner');
+      neuerLeererReiter();
+      const t = ladeTabs();
+      expect(t.map((x) => x.path)).toEqual(['/rechner/tagerechner', '/']);
+      expect(t[1].leer).toBe(true);
+    });
+
+    it('zweiter Aufruf legt KEINEN zweiten an (höchstens einer gleichzeitig)', () => {
+      neuerLeererReiter();
+      neuerLeererReiter();
+      neuerLeererReiter();
+      expect(ladeTabs().length).toBe(1);
+      expect(ladeTabs()[0]).toEqual({ path: '/', leer: true });
+    });
+
+    it('hatLeerenReiter meldet den Zustand korrekt', () => {
+      expect(hatLeerenReiter()).toBe(false);
+      neuerLeererReiter();
+      expect(hatLeerenReiter()).toBe(true);
+      schliesseTab('/');
+      expect(hatLeerenReiter()).toBe(false);
+    });
+
+    it('ersetzeTab füllt den leeren Reiter und streicht das leer-Kennzeichen (§5a Ziff. 3 greift unverändert)', () => {
+      neuerLeererReiter();
+      ersetzeTab('/', '/gesetze/bund/OR#art-257_d', 'Art. 257d OR');
+      const t = ladeTabs();
+      expect(t.length).toBe(1);
+      expect(t[0].path).toBe('/gesetze/bund/OR#art-257_d');
+      expect(t[0].leer).toBeUndefined();
+    });
+
+    it('ein bereits offenes Ziel behält seine Position (Regel 1 aus §5a Ziff. 3): der leere Reiter bleibt dann leer stehen', () => {
+      merkeTab('/gesetze/bund/OR');
+      neuerLeererReiter();
+      ersetzeTab('/', '/gesetze/bund/OR');
+      const t = ladeTabs();
+      expect(t.map((x) => x.path)).toEqual(['/gesetze/bund/OR', '/']);
+      expect(t[1].leer).toBe(true);
+    });
   });
 });

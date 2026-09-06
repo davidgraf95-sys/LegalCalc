@@ -28,6 +28,15 @@ export interface TabEintrag {
    *  (§5a Ziff. 2 «Art. 336c OR»). Ohne Hash in der Adresse bleibt der zuletzt
    *  gewählte Anker stehen; er wird nie aus der Lesestellung nachgezogen. */
   wahl?: string;
+  /** ── D19 (David 6.9.2026: «mit plus einen neuen reiter erzeugen können») ──
+   *  Markiert den EINEN Browser-artigen «+»-Reiter: Pfad `/`, aber — anders
+   *  als die sonst reiterlose Startseite (D7-Abweichung unten) — ein
+   *  ausdrücklich angelegtes, noch UNGEFÜLLTES Dokument. `neuerLeererReiter`
+   *  legt höchstens einen gleichzeitig an; die erste Navigation/Suche
+   *  ERSETZT ihn (§5a Ziff. 3, über `ersetzeTab`) mit einem frischen Eintrag
+   *  OHNE dieses Feld — er ist dann kein leerer Reiter mehr, ganz ohne
+   *  Sonderfall an der Ersetzungsstelle. */
+  leer?: boolean;
 }
 
 // ─── D7 (David 6.9.2026: «achte darauf dass der reiter bei gesetz mitzählt») ─
@@ -119,7 +128,8 @@ export function ladeTabs(): TabEintrag[] {
       .filter((e): e is TabEintrag =>
         e && typeof e.path === 'string' &&
         (e.label === undefined || typeof e.label === 'string') &&
-        (e.wahl === undefined || typeof e.wahl === 'string'))
+        (e.wahl === undefined || typeof e.wahl === 'string') &&
+        (e.leer === undefined || typeof e.leer === 'boolean'))
       .slice(0, MAX);
   } catch {
     return [];
@@ -279,4 +289,36 @@ export function aktualisiereTabArtikel(path: string): void {
   const naechste = [...bisher];
   naechste[idx] = { ...bisher[idx], path };
   schreibe(naechste);
+}
+
+// ─── D19 (David 6.9.2026: «in der tab zeile oben soll man mit plus einen
+//     neuen reiter erzeugen können») · DER LEERE REITER ────────────────────
+//
+// Ein Browser-«+»: legt einen NEUEN, leeren Reiter an, der bis zur ersten
+// Navigation/Suche die Startseite zeigt (§5a Ziff. 3 «Navigation ersetzt den
+// aktiven Reiter» übernimmt das Füllen unverändert — `TabTracker.tsx` muss nur
+// wissen, dass der leere Reiter der AKTIVE ist, s. dort). Höchstens EIN
+// leerer Reiter gleichzeitig: ein zweiter Klick auf «+» aktiviert den
+// bestehenden, statt einen zweiten anzulegen — sonst häufen sich leere Reiter
+// an, genau der «Reiter-Wildwuchs», den §5a Ziff. 3 verhindern sollte.
+//
+// Kanonische Anzeige-Bezeichnung, EIN Ort (§5): `Reiterleiste.kurzform` und
+// `TabPanel.zeile` lesen von hier statt den String je einmal zu tragen.
+export const NEUER_REITER_NAME = 'Neuer Reiter';
+
+/** Legt den einen leeren Reiter an (Pfad `/`, `leer: true`) — oder tut nichts,
+ *  wenn schon einer existiert. Der Aufrufer navigiert danach auf `/`; das
+ *  Navigieren dorthin ist so oder so richtig, ob neu angelegt oder schon da. */
+export function neuerLeererReiter(): void {
+  const bisher = ladeTabs();
+  if (bisher.some((t) => t.leer)) return;
+  schreibe([...bisher, { path: '/', leer: true }].slice(-MAX));
+}
+
+/** true, wenn GENAU der leere Reiter (s.o.) gerade existiert. `TabTracker`
+ *  braucht das: Pfad `/` erzeugt sonst KEINEN Reiter (D7-Abweichung oben) und
+ *  würde ohne diese Ausnahme übersprungen — die nächste Navigation ersetzte
+ *  dann nicht ihn, sondern den davor aktiven Reiter (oder häufte an). */
+export function hatLeerenReiter(): boolean {
+  return ladeTabs().some((t) => t.leer === true);
 }

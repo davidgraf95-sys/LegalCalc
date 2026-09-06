@@ -2366,6 +2366,18 @@
   .lc-reiter-scroll { scrollbar-width: none; -ms-overflow-style: none; }
   .lc-reiter-scroll::-webkit-scrollbar { display: none; }
 
+  /* ── D19 (David 6.9.2026, «mit plus einen neuen reiter erzeugen») · DER
+     BROWSER-«+» AM ENDE DER ARBEITSLEISTE ─────────────────────────────────
+     Eigene, kleine Klasse statt Tailwind-Utilities allein: die 34-px-Höhe
+     kommt aus `items-stretch` des Elternflusses (`Reiterleiste.tsx`, keine
+     feste Höhe hier nötig), diese Klasse trägt nur, was sich sonst wiederholt
+     hätte (Breite, Zentrierung, Hover-Fläche). Die Glyphe selbst führt
+     `.lc-griff-glyph` (Archivo, «die Glyphe IST das ganze Bedienelement»,
+     s. oben) — hier steht nichts doppelt. */
+  .rl-plus {
+    @apply flex w-9 shrink-0 items-center justify-center border-l border-rule-soft text-ink-500 transition-colors hover:bg-well hover:text-ink-900;
+  }
+
   /* ─── W2·24 · AUSWAHL-KACHEL (SelectionGrid) · KANTIG, LINIE, HAEKCHEN ─────
      Prueferbefund Fixer 2 (6.9.2026): die Kacheln standen als abgerundete
      Kaesten mit Vollrahmen UND Fuellung, der gewaehlte Zustand als zweite

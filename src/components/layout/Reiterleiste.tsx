@@ -2,7 +2,10 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { useTabs } from './useTabs';
-import { schliesseTab, leereTabs, ordneTabsUm, tabSchluessel, type TabEintrag, reiterKurzform } from '../../lib/tabs';
+import {
+  schliesseTab, leereTabs, ordneTabsUm, tabSchluessel, type TabEintrag, reiterKurzform,
+  neuerLeererReiter, NEUER_REITER_NAME,
+} from '../../lib/tabs';
 import { erlassVonPfad, verlaufLabel, type VerlaufManifeste } from '../../lib/verlaufLabel';
 import { reiterKategorie, artikelLabelVonPfad } from '../../lib/tabGruppen';
 import { registerVonPfad, REG_FLAECHE, REG_TON, REG_HOVER_FLAECHE_REITER } from './bereiche';
@@ -101,6 +104,11 @@ function zerlege(zitierung: string): { kopf: string; kern: string } {
  *  Die Lesestellung bleibt sichtbar: im `title` des Reiters und in der
  *  Reiter-Liste (`TabPanel`), und sie überlebt den Neustart wie bisher. */
 function kurzform(t: TabEintrag, m: VerlaufManifeste): { kopf: string; kern: string } {
+  // D19: der leere Reiter zeigt '/', ist aber KEINE Startseite, sondern ein
+  // eigenes, noch ungefülltes Dokument — er bekommt NICHT `reiterKurzform('/')`
+  // («Sammlung»), sondern seinen eigenen Namen. Erste Prüfung, vor jeder
+  // Pfad-Auflösung.
+  if (t.leer) return { kopf: '', kern: NEUER_REITER_NAME };
   // R3-F7 (Prüfbefund 6.9.2026): Übersichts- und Startseiten-Routen tragen ihre
   // Kurzform aus `lib/tabs` («Gesetze», «Sammlung») statt des SEO-Titels, den
   // `labelAusMeta` liefert («Schweizer Recht an einem Ort: …»). Erst seit D7
@@ -236,6 +244,18 @@ export function Reiterleiste({ paneSchluessel = [] }: {
     } else schliesseTab(path);
   };
 
+  // ── D19 (David 6.9.2026: «mit plus einen neuen reiter erzeugen können») ───
+  // Der Browser-«+»: legt den (höchstens einen) leeren Reiter an bzw.
+  // aktiviert den bestehenden (`lib/tabs.neuerLeererReiter` trägt die
+  // Höchstens-einer-Regel), zeigt die Startseite und schickt den Fokus in die
+  // Kopf-Suche — dieselbe global lauschende Geste wie der /gesetze-Landeplatz
+  // (`lm:suche-fokus`, `HeaderSuche.tsx`); kein zweiter Fokus-Weg nötig.
+  const neuerReiter = () => {
+    neuerLeererReiter();
+    navigate('/');
+    window.dispatchEvent(new CustomEvent('lm:suche-fokus'));
+  };
+
   // ── Tastatur (§5a Ziff. 7) ────────────────────────────────────────────────
   // Alt+1…9 springt auf den n-ten Reiter der sichtbaren Ordnung. Zum SCHLIESSEN
   // ist es Alt+W und NICHT Ctrl/⌘+W: der Browser fängt Ctrl/⌘+W selbst ab und
@@ -278,6 +298,15 @@ export function Reiterleiste({ paneSchluessel = [] }: {
         if (!aktiv) return;
         e.preventDefault();
         schliessen(aktiv.path);
+        return;
+      }
+      // ── D19 · NEUER REITER OHNE MAUS: Alt+T ─────────────────────────────────
+      // Ctrl/⌘+T wäre die Browser-Erwartung, aber der Browser fängt sie selbst
+      // ab und öffnet sein EIGENES Fenster (dieselbe Lage wie beim Schliessen,
+      // Alt+W statt Ctrl/⌘+W oben) — eine Zusage, die man nicht bekommen kann.
+      if (e.key.toLowerCase() === 't') {
+        e.preventDefault();
+        neuerReiter();
       }
     };
     window.addEventListener('keydown', onKey);
@@ -327,22 +356,19 @@ export function Reiterleiste({ paneSchluessel = [] }: {
   // lieferte also KEINE Leiste; unmittelbar nach der Hydration las `useTabs`
   // den `localStorage`, die Leiste erschien, und `main#inhalt` rutschte von
   // 132 px auf 166 px — 34 px = genau `--app-reiter-h`, CLS 0.025 auf einer
-  // Seite, die sonst 0 misst (§15).
+  // Seite, die sonst 0 misst (§15). Der WURZEL-FIX bleibt: die Zeile ist immer
+  // da und immer gleich hoch (`sticky top-[--app-krone-h]`, `h-[--app-reiter-h]`),
+  // ob mit oder ohne Reiter — der Wechsel verschiebt nichts.
   //
-  // WURZEL-FIX: die Zeile ist ab jetzt IMMER da und immer gleich hoch. Ohne
-  // offene Reiter ist sie ein ruhiger, leerer Streifen — kein Text, kein
-  // Leerzustands-Satz («keine Reiter offen» wäre eine Auskunft über nichts und
-  // stünde auf jeder Kaltstart-Seite). Kein `<nav>` in diesem Fall: eine
-  // Navigations-Landmark ohne ein einziges Ziel ist für den Screenreader ein
-  // leeres Versprechen. Beides — Platzhalter und Leiste — trägt dieselbe
-  // Geometrie (`sticky top-[--app-krone-h]`, `h-[--app-reiter-h]`, dieselbe
-  // Unterlinie), darum verschiebt der Wechsel nichts.
-  if (tabs.length < 1) {
-    return (
-      <div aria-hidden
-        className="print:hidden shrink-0 sticky top-[var(--app-krone-h)] z-leiste h-[var(--app-reiter-h)] border-b border-rule-soft bg-paper" />
-    );
-  }
+  // ── D19-NACHTRAG (6.9.2026) · KEIN STUMMER PLATZHALTER MEHR ────────────────
+  // Bis hierher stand an dieser Stelle bei 0 Reitern EIN `aria-hidden`-`<div>`
+  // ohne `<nav>` — eine Navigations-Landmark ohne ein einziges Ziel wäre für
+  // den Screenreader ein leeres Versprechen gewesen. Seit dem «+»-Knopf
+  // (unten im Streifen) gibt es aber IMMER ein Ziel, auch bei 0 Reitern: den
+  // Browser-«+», mit dem man den ERSTEN Reiter überhaupt anlegt. Der frühere
+  // Sonderpfad ist darum ersatzlos gestrichen (§17-Gegengewicht) — dieselbe
+  // `<nav>` trägt jetzt beide Fälle, `sichtbar`/`ordnung` sind bei 0 Reitern
+  // schlicht leer und rendern keinen Reiter, keinen Überlauf-Knopf.
 
   const gefiltert = suche.trim()
     ? tabs.filter((t) => `${kurzformText(t, manifeste)} ${verlaufLabel(t.path, manifeste)} ${t.path}`
@@ -357,7 +383,8 @@ export function Reiterleiste({ paneSchluessel = [] }: {
     const aktiv = schluessel === aktivSchluessel;
     const { kopf, kern } = kurzform(t, manifeste);
     const name = kopf ? `${kopf} ${kern}` : kern;
-    const voll = verlaufLabel(t.path, manifeste);
+    // D19: kein SEO-Titel der Startseite als Tooltip für ein noch leeres Dokument.
+    const voll = t.leer ? NEUER_REITER_NAME : verlaufLabel(t.path, manifeste);
     // Die LESESTELLUNG steht seit dem R2-Nachzug (F5) nicht mehr in der
     // Beschriftung, sondern hier und in der Reiter-Liste — verloren ist sie
     // damit nicht, sie wackelt nur nicht mehr unter dem Zeiger.
@@ -518,6 +545,15 @@ export function Reiterleiste({ paneSchluessel = [] }: {
         <div data-reiter-streifen className="relative flex min-w-0 flex-1 items-stretch overflow-x-auto lc-reiter-scroll border-l border-rule-soft">
           {sichtbar.map(reiter)}
         </div>
+        {/* D19 · BROWSER-«+» AM ENDE DES STREIFENS — fest, nicht Teil der
+            scrollenden Reiter-Fläche (das Vorbild wandert beim Scrollen der
+            Reiter nicht mit weg). `.rl-plus` trägt nur Breite/Zentrierung/
+            Hover (index.css); die 34-px-Höhe kommt aus `items-stretch` des
+            Elternflusses, ohne eigene Höhen-Angabe. */}
+        <button type="button" onClick={neuerReiter}
+          aria-label="Neuer Reiter" title="Neuer Reiter (Alt+T)" className="rl-plus">
+          <span aria-hidden className="lc-griff-glyph">+</span>
+        </button>
         {/* «+N» bzw. «N offen» — EIN Blatt für Überlauf (Desktop) und die
             schmale Ansicht (§5a Ziff. 5 + 8). Inhalt ist die gruppierte Liste
             `TabPanel`, also genau das, was das abgelöste ☰-Flyout zeigte,
@@ -545,6 +581,16 @@ export function Reiterleiste({ paneSchluessel = [] }: {
               <input type="search" value={suche} onChange={(e) => setSuche(e.target.value)}
                 placeholder="Reiter suchen" className="lc-input h-9 w-full py-0 text-body-s" />
             </label>
+            {/* D19 · derselbe Browser-«+» zusätzlich im Blatt: die schmale
+                Ansicht (§5a Ziff. 8) wechselt bei drei und mehr Reitern auf
+                dieses durchsuchbare Blatt als Haupt-Weg zu den Reitern — der
+                «+» gehört dort dazu, ohne erst den Streifen dahinter zu
+                verlassen. Der Streifen-Knopf bleibt daneben unverändert
+                erreichbar (fixe Breite, nicht Teil der scrollenden Fläche). */}
+            <button type="button" onClick={() => { neuerReiter(); setBlattOffen(false); }}
+              title="Neuer Reiter (Alt+T)" className="lc-btn-outline lc-btn-sm mb-2 w-full">
+              <span aria-hidden className="lc-griff-glyph mr-1">+</span>Neuer Reiter
+            </button>
             <TabPanel
               tabs={gefiltert}
               manifeste={manifeste}

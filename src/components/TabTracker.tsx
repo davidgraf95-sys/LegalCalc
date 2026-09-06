@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
 import { useLocation } from 'react-router-dom';
-import { ersetzeTab, istReiterPfad, merkeTab } from '../lib/tabs';
+import { ersetzeTab, hatLeerenReiter, istReiterPfad, merkeTab } from '../lib/tabs';
 import { labelAusMeta } from '../lib/verlaufLabel';
 import { kanonisierePfad } from '../lib/normtext/erlassAdresse';
 
@@ -46,7 +46,18 @@ export function TabTracker() {
   // Reiter aktualisiert bzw. angehängt — die Persistenz bleibt unberührt.
   const aktiv = useRef<string | null>(null);
   useEffect(() => {
-    if (!istReiterPfad(pathname)) return;
+    if (!istReiterPfad(pathname)) {
+      // ── D19 (David 6.9.2026, «+») · DER LEERE REITER IST DIE EINE AUSNAHME ──
+      // Pfad '/' erzeugt sonst KEINEN Reiter (D7-Abweichung oben) und würde
+      // hier sonst einfach übersprungen. Existiert aber der eine ausdrücklich
+      // angelegte leere Reiter (`lib/tabs.neuerLeererReiter`), gilt ER als
+      // aktiver Reiter — sonst ersetzt die nächste Navigation NICHT ihn,
+      // sondern den davor aktiven (oder häuft an, §5a Ziff. 3). Nur die exakte
+      // Adresse zählt (kein ?search/#hash): genau die, unter der der leere
+      // Reiter angelegt wird.
+      if (pathname === '/' && !search && !hash && hatLeerenReiter()) aktiv.current = '/';
+      return;
+    }
     // pathname + ?search: der Instanz-Diskriminator ?r=<n> (dasselbe Gesetz
     // mehrfach offen, Auftrag David) gehört zur Reiter-Identität; merkeTab/
     // tabSchluessel ignorieren übrige Query-Parameter für die Dedup-Identität.
