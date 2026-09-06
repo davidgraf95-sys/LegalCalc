@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useState, type Dispatch, type MutableRefObject, type RefObject, type SetStateAction } from 'react';
+import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState, type Dispatch, type MutableRefObject, type RefObject, type SetStateAction } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { aktualisiereTabArtikel } from '../../../lib/tabs';
 import { baueGliederungsbaum, type CurrencyMap, type ErlassKopf, type Sektion, type StrukturMap, type KantonLueckenMap } from '../../../lib/normtext/browse';
@@ -224,6 +224,70 @@ export function useLeserV3Modell({ ebene: routenSegment, schluessel }: { ebene: 
     () => (eintraege ? baueGliederungsbaum(eintraege, struktur) : { sektionen: [], ohneGliederung: [] }),
     [eintraege, struktur],
   );
+  // ── D21-NEBENFUND (W2·24-R6c) · DER TIEFLINK ÖFFNET SEINEN ZWEIG VOR DEM
+  //    ERSTEN BILD ───────────────────────────────────────────────────────────
+  //
+  // BEFUND (David 6.9.2026 am Dev-Server 84eea666e, hier reproduziert): beim
+  // Laden von `/gesetze/bund/OR#art-336_c` verschieben sich die
+  // Gliederungs-Einträge («Dritte Abteilung», «Vierte Abteilung»,
+  // «Übergangsbestimmungen», «Schlussbestimmungen») rund 1.8–2.0 s nach dem
+  // Laden. GEMESSEN (Preview-Build, 3/3 Läufe bitgleich): CLS 0.0746, davon
+  // 0.0741 in EINEM Shift bei t ≈ 1.84 s, Quelle `li` im `[data-toc]`.
+  //
+  // URSACHE, gemessen statt vermutet (Zustand des Baums über die Zeit):
+  //   t = 600 ms · 18 Zeilen, Scrollhöhe 1042 px, aktiv «Zweite Abteilung»
+  //   t = 1400 ms · 62 Zeilen, Scrollhöhe 2285 px, aktiv «a. durch den Arbeitgeber»
+  // Der AKTIVE PFAD klappt also erst gut eine Sekunde nach dem ersten Bild auf,
+  // und das Wachstum von 1'243 px schiebt die sichtbaren Geschwister-Zeilen aus
+  // dem Sichtband. Getan hat das der Scroll-Spy: er meldet den Zielartikel erst,
+  // wenn der Anker-Sprung eingeschwungen ist (`data-lr6-anker-warten`, Deckel
+  // 600 ms) und danach die 200-ms-Nachlauf-Entprellung abgelaufen ist
+  // (`inhalt-hooks`, F3/RC2). Zu diesem Zeitpunkt liegt kein Nutzer-Eingriff
+  // vor — der Browser verbucht das Wachstum als unerwartete Verschiebung.
+  // Der Verdacht aus dem Befund («tocAutoZuklappen.ts») trifft NICHT zu: kein
+  // Ast wird geschlossen, es wird einer geöffnet.
+  //
+  // DIE ANTWORT: was ohnehin passieren wird, passiert VOR dem ersten Bild. Der
+  // Zielartikel steht in der Adresse und braucht keinen Spy; sobald die
+  // Sektionen da sind (also in genau dem Render, in dem der Baum zum ersten Mal
+  // erscheint), öffnet ein LAYOUT-Effekt den Pfad dorthin — synchron, vor dem
+  // Paint. Der Baum wird damit gar nicht erst zugeklappt gezeigt, und es gibt
+  // nichts zu verschieben. Der Spy setzt später dieselben Ids ein zweites Mal;
+  // das ist ein Re-Render ohne Layout-Änderung.
+  //
+  // VERHALTENSNEUTRAL für alles Weitere: die Ids landen im AUTO-Set mit dem
+  // laufenden Tick — genau dort, wo der Spy sie hingelegt hätte. Das
+  // Auto-Zuklappen behält damit seine Regel und seinen Takt (K, W2·19/S5); ein
+  // MANUELL-Vermerk hätte den Zweig dauerhaft offen gehalten und wäre eine
+  // stille Verhaltensänderung gewesen.
+  // `setAktivIds` bleibt bewusst AUS: die Marke ist nicht die Ursache des
+  // Shifts, und der Spy ist ihr einziger Schreiber (§5).
+  //
+  // WÄCHTER: `e2e/leser-kopf-cls-s3.e2e.ts`, Fall «Tieflink @1440 — die
+  // Gliederung wächst nicht nach dem ersten Bild».
+  const tiefLinkPfadRef = useRef<string | null>(null);
+  useLayoutEffect(() => {
+    if (!location.hash.startsWith('#art-') || sektionen.length === 0) return;
+    const token = decodeURIComponent(location.hash.slice('#art-'.length));
+    if (!token) return;
+    const marke = `${routenSegment}/${schluessel}#${token}`;
+    if (tiefLinkPfadRef.current === marke) return;
+    const ids = pfadZu(sektionen, (s) => s.artikel.some((e) => e.artikel === token)) ?? [];
+    if (ids.length === 0) return;
+    tiefLinkPfadRef.current = marke;
+    const tick = autoTickNowRef.current;
+    for (const id of ids) {
+      if (manuellOffenRef.current.has(id) || manuellZuRef.current.has(id)) continue;
+      autoOffenRef.current.add(id);
+      autoTickRef.current.set(id, tick);
+    }
+    setTocBaum((o) => {
+      if (ids.every((id) => o[id])) return o; // schon offen ⇒ kein Re-Render
+      return { ...o, ...Object.fromEntries(ids.map((id) => [id, true])) };
+    });
+  }, [location.hash, sektionen, routenSegment, schluessel,
+      autoOffenRef, autoTickRef, autoTickNowRef, manuellOffenRef, manuellZuRef, setTocBaum]);
+
   const tocSektionen = useMemo(() => kuratiereTocSektionen(sektionen), [sektionen]);
   const gliederung = useMemo(
     () => baueGliederungsModell({
