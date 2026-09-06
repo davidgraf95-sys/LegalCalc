@@ -26,6 +26,11 @@ import { FilterSheet } from '../components/rechtsprechung/FilterSheet';
 import type { BrowseEntscheid, RichterRegister } from '../lib/rechtsprechung/register';
 import type { Rechtsgebiet } from '../lib/normtext/register';
 import { useSucheAusUrl } from '../components/suche/useSucheAusUrl';
+import { STARTSEITE_ZAEHLER } from '../data/startseiteZaehler.generated';
+
+/** Zahl der Ausgabe-Zeile in Schweizer Schreibweise (1'338). */
+const nf = (n: number) => n.toLocaleString('de-CH');
+
 
 // Übersicht der Rubrik «Rechtsprechung» — kuratierter Einstieg (Sachgebiets-Rail,
 // Leitentscheide-first, Norm-Verzahnung), bessere Übersicht als eine flache
@@ -332,10 +337,12 @@ export function Rechtsprechung() {
 
   return (
     <div className="space-y-6">
+      {/* D11 (David 6.9.2026) — Kopf-Regel für ALLE fünf Übersichten, Herleitung
+          in `pages/Gesetze.tsx`: H1 = Bereichsname wie im Reiter, darüber EINE
+          Ausgabe-Zeile aus dem Register, kein Erklär-Absatz. */}
       <SeitenKopf
-        overline="Bundesgericht & Kantone"
+        overline={`${nf(STARTSEITE_ZAEHLER.rechtsprechungVolltext)} Entscheide des Bundesgerichts und kantonaler Gerichte im Volltext`}
         titel="Rechtsprechung"
-        intro="Entscheide des Bundesgerichts und kantonaler Gerichte, verzahnt mit der angewandten Norm."
       />
 
       {fehler && (

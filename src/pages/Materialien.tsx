@@ -11,6 +11,11 @@ import {
   type MaterialFilterWerte,
 } from '../lib/materialien/browse';
 import type { BrowseMaterial, BehoerdeId, DoktypId } from '../lib/materialien/typen';
+import { STARTSEITE_ZAEHLER } from '../data/startseiteZaehler.generated';
+
+/** Zahl der Ausgabe-Zeile in Schweizer Schreibweise (1'338). */
+const nf = (n: number) => n.toLocaleString('de-CH');
+
 
 // ─── Rubrik «Amtliche Ressourcen / Materialien» (Auftrag David, Auftrag 5) ──
 //
@@ -57,14 +62,12 @@ export function Materialien() {
 
   return (
     <div className="space-y-8">
+      {/* D11 (David 6.9.2026) — Kopf-Regel für ALLE fünf Übersichten, Herleitung
+          in `pages/Gesetze.tsx`: H1 = Bereichsname wie im Reiter, darüber EINE
+          Ausgabe-Zeile aus dem Register, kein Erklär-Absatz. */}
       <SeitenKopf
-        overline="Amtliche Ressourcen"
+        overline={`${nf(STARTSEITE_ZAEHLER.materialien)} Publikationen der Bundesbehörden, bibliografisch mit Live-Link`}
         titel="Materialien"
-        // B-6-Nachzug (R2-A, 31.8.2026): derselbe Absatz sagte erst «amtliche
-        // Fassung» (Link) und dann «amtliche Quelle» (Vorbehalt). Der Satz
-        // steht hier im Nachsatz nach Semikolon, also klein — darum wird er aus
-        // dem NOMEN gebaut (§5: eine Wahrheit ist das Nomen, nicht der Satz).
-        intro={`Praxisleitende Publikationen der Bundesbehörden — Kreisschreiben, Wegleitungen, Leitfäden, Rundschreiben und Praxismitteilungen. Das ist faktisches «Soft-Law», kein Gesetzesrang: jeder Eintrag führt mit Live-Link zur amtlichen Fassung. Diese Rubrik führt keine eigenen Volltexte; massgeblich ist stets ${AMTLICHE_FASSUNG_NOMEN}.`}
       />
 
       {fehler && (
@@ -176,6 +179,12 @@ export function Materialien() {
           )}
         </>
       )}
+      {/* D11: der §8-Vorbehalt steht im Fuss, nicht im Einstieg. Die Rubrik
+          führt bewusst keine eigenen Volltexte — das ist eine Aussage über die
+          Sammlung und gehört zu ihrem Fuss, nicht über ihren Titel. */}
+      <p className="border-t border-line/60 pt-3 text-micro text-ink-500 max-w-reading">
+        Faktisches «Soft-Law», kein Gesetzesrang. Diese Rubrik führt keine eigenen Volltexte; jeder Eintrag verlinkt die Publikation, massgeblich ist stets {AMTLICHE_FASSUNG_NOMEN}.
+      </p>
     </div>
   );
 }

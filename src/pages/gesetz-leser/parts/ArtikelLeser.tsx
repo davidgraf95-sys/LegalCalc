@@ -25,11 +25,17 @@ import { useSatzspiegel } from '../v3/satzspiegel';
 import type { ArtikelBezuege } from '../bezuegeLaden';
 import { urlMitHash } from '../../../lib/liveUrlSync';
 import { usePaneKontext } from '../../../components/layout/PaneKontext';
+import { Link } from 'react-router-dom';
+import { werkzeugeAmArtikel } from '../randNotizWerkzeuge';
+import type { Werkzeug } from '../../../lib/normtext/werkzeuge';
 
 // Ein Artikel im Lesefluss (Richtung A): zweispaltig wie die amtliche Druckfassung —
 // links «Art. N» als ruhiger Anker mit den Randtiteln darunter (rechtsbündig, nur die
 // gegenüber dem Vorartikel GEÄNDERTEN Stufen, `marg`), rechts der Serif-
 // Bestimmungstext. Ersetzt den früheren fliegenden Standort-Tracker. Reine Darstellung.
+/** Geteilte leere Liste — spart je Artikel ohne Werkzeug-Kante eine Allokation. */
+const LEERE_WERKZEUGE: readonly Werkzeug[] = [];
+
 export const ArtikelLeser = memo(function ArtikelLeser({ e, erlass, basisPfad, fussnoten, intern, marg, margBasis, imTreffer, onSpringe, leitfaelle, bezuege, revision, historie, istAnhang = false }: {
   e: NormSnapshot; erlass: BrowseErlass; basisPfad: string; fussnoten?: Fussnote[]; intern?: InternRefs;
   marg?: string[];
@@ -332,6 +338,10 @@ export const ArtikelLeser = memo(function ArtikelLeser({ e, erlass, basisPfad, f
   // Grid-Regel bewusst nicht gescoped ist — ein Satzspiegel dort ragte über
   // seinen Kasten hinaus.
   const randNotiz = spiegel === 'voll' && !imTreffer;
+  // «Rechnen» der Randnotiz (W2·24-R6): statische Kantentabelle, kein Ladepfad —
+  // Herleitung in `randNotizWerkzeuge.ts`. Nur im Spiegel gefragt; in der
+  // Zeilenform bleibt der Artikel byte-gleich zum Stand vor R6 (§6).
+  const werkzeuge = randNotiz ? werkzeugeAmArtikel(erlass?.key, e.artikel) : LEERE_WERKZEUGE;
   // Fassungsdatum in die Marginalie — das Referenzbild führt es dort
   // («Fassung seit / 1. Januar 1989»), und es ist die einzige Angabe, die die
   // Marginalie in Erlassen ohne eigenen Artikel-Randtitel überhaupt füllt.
@@ -831,8 +841,18 @@ export const ArtikelLeser = memo(function ArtikelLeser({ e, erlass, basisPfad, f
           leerer Kopf ohne Inhalt wäre ausserdem eine Zusage ohne Deckung (§8).
           Beide Rubriken bleiben im Beiwerk-Blatt erreichbar, wo ihre Daten
           leben; ihre Aufnahme in die Randspalte ist ein eigener, deklarierter
-          Schritt (Notiz für R5). */}
-      {randNotiz && (verweise.length > 0 || bezuege || (leitfaelle && leitfaelle.length > 0)) && (
+          Schritt (Notiz für R5).
+
+          W2·24-R6 · NACHGEZOGEN IST «RECHNEN», NICHT «MATERIALIEN». Der
+          Unterschied ist der Ladepfad, nicht die Lust: die Norm↔Werkzeug-Kanten
+          stehen als Tabelle im Bundle (`lib/normtext/werkzeuge.ts`) — kein
+          Fetch, kein Shard, keine späte Höhenänderung. «Materialien» und die
+          Entscheid-Listen kämen dagegen aus Shards, die der Leser heute NICHT
+          lädt; für das OR allein wären das 419 KB (gemessen 6.9.2026 an
+          `public/rechtsprechung/norm-index/OR.json`) auf jedem Seitenaufruf,
+          und das ist ein §15-Entscheid, kein Darstellungs-Schritt. Er steht
+          samt Messung im R6-Protokoll. */}
+      {randNotiz && (verweise.length > 0 || werkzeuge.length > 0 || bezuege || (leitfaelle && leitfaelle.length > 0)) && (
         <aside {...{ [SUCH_META]: '' }} className="lr-notiz" aria-label={`Bezüge zu ${zitat}`}>
           {(bezuege || (leitfaelle && leitfaelle.length > 0)) && (
             <div className="lr-notiz-block" data-reg="r">
@@ -850,6 +870,28 @@ export const ArtikelLeser = memo(function ArtikelLeser({ e, erlass, basisPfad, f
               <div className="flex flex-wrap items-center gap-1.5">
                 {verweise.map((v) => <NormChip key={v} artikel={v} />)}
               </div>
+            </div>
+          )}
+          {/* «Rechnen» — die vierte Rubrik des Referenzbildes. Registerfarbe
+              Werkzeuge (`data-reg="w"`, in `index.css` seit R4 definiert und bis
+              jetzt ohne Konsument). Textlinks, keine Chips: die Randspalte ist
+              210 px breit, ein Werkzeugtitel wie «Kündigung: Sperrfristen»
+              bräuchte darin ohnehin zwei Zeilen, und ein Kasten um zwei Zeilen
+              wäre die Fläche, die §5 aus dem Leser nimmt. */}
+          {werkzeuge.length > 0 && (
+            <div className="lr-notiz-block" data-reg="w">
+              <h4 className="lr-notiz-titel">Rechnen</h4>
+              <ul className="lr6-notiz-liste">
+                {werkzeuge.map((w) => (
+                  <li key={w.id}>
+                    <Link to={w.href}>{w.titel}</Link>
+                    {/* Art des Werkzeugs, wie im Referenzbild die kleine Zeile
+                        unter dem Link: ein Rechner rechnet, eine Vorlage füllt
+                        ein Dokument — für die Auswahl ist das der Unterschied. */}
+                    <span className="lr6-notiz-art">{w.modus === 'vorlage' ? 'Vorlage' : 'Rechner'}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
           )}
         </aside>

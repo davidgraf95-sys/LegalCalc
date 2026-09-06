@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import { Fragment, type ReactNode } from 'react';
 import type { BrowseErlass } from '../../../lib/normtext/browse-typen';
 import { LeserAnsichtV3 } from './LeserAnsichtV3';
-import { brotkrume, ebeneAngabe, zeigeVolltitel } from './erlassAnsicht';
+import { brotkrume, zeigeVolltitel } from './erlassAnsicht';
 import { kopfElemente, type KopfStufe } from './kopfStufen';
 
 // ─── Die EINE Kopfzeile des Lesers V3 (FAHRPLAN-LESER-V3 Kap. 4a, H1) ────────
@@ -88,9 +88,6 @@ export function LeserKopf({
   suchZone?: ReactNode;
 }) {
   const el = kopfElemente(stufe);
-  // Ebene-Beschriftung aus dem Datenmodell, nicht aus `if (bund)` — die eine
-  // Ableitung steht in `./erlassAnsicht` (Fundament-Auflage 2).
-  const ebene = ebeneAngabe(erlass);
   // A-2: dieselbe Kette, die bis 17.8. an die App-Leiste gemeldet wurde.
   const krume = brotkrume(erlass);
   // V2 (Nachzug 17.8.): der EINE Rücksprung für die engen Zuschnitte — die
@@ -221,9 +218,22 @@ export function LeserKopf({
               `title`) und wäre auch als Absicht falsch: ein Tooltip ist kein
               Ersatz für sichtbare Auskunft (§8). Bleibt der Volltitel, steht er
               sichtbar; sein `title` unten ist nur der Volltext der Ellipse. */}
-          {el.volltitel && zeigeVolltitel(erlass) && (
-            <span className="min-w-0 truncate text-ink-500" title={`${erlass.titel} · ${ebene.label}`}>{erlass.titel}</span>
-          )}
+          {/* ── W2·24-R6/L10 · DER VOLLTITEL STEHT NUR NOCH IN DER H1 ────────
+              GEMESSEN 6.9.2026 @1440: über der H1 «Bundesgesetz betreffend die
+              Ergänzung des ZGB (OR)» stand hier dieselbe Angabe ein zweites Mal
+              («Gesetze › Bund › OR *Bundesgesetz betreffend die Ergänzung des
+              ZGB (Obligationenrecht)*»), auf dem CISG zusätzlich abgeschnitten
+              («… über den internationalen Warenkauf (Wiener Kaufrec…»). Zwei
+              Fassungen desselben Namens in zwei Zentimetern, eine davon
+              verstümmelt — genau der Fall, den Ä21 eine Zeile höher für das
+              Kürzel schon entschieden hat (§5, «der Name steht einmal»).
+              Die Ortsangabe der Krume ist jetzt durchgehend die knappe:
+              Bereich › Ebene › Kürzel › laufender Artikel. Der volle Wortlaut
+              steht im Titelblatt des Erlasses, wo er hingehört — und die
+              Kopf-Stufe `volltitel` behält ihre Bedeutung für die Kürzel-Regel
+              darüber (dort ist sie bewacht: `e2e/leser-v3-kopf-buendig`).
+              ABWEICHUNG zu keiner Vorgabe: das Referenzbild führt in seiner
+              Kopfzeile ebenfalls nur die kurze Ortsangabe. */}
           {/* Der laufende Artikel fällt NIE (Kap. 4a) — darum `shrink-0`: beim
               Engerwerden gibt der Volltitel nach, nie die genauere Angabe.
               Auf der Mini-Stufe steht er als «StPO · Art. N» direkt hinter dem

@@ -78,7 +78,12 @@ export function LeserLeseZeile({
           // eine Maximalhöhe nicht auf, der Scroller wüchse auf die volle
           // Inhaltshöhe und der Überschuss würde stumm abgeschnitten
           // (reproduziert am OR @1440×900).
-          className="sticky flex min-h-0 flex-col self-start"
+          // W2·24-R6/L16: Der Ausdruck trägt kein Inhaltsverzeichnis und kein
+          // Suchfeld. GEMESSEN 6.9.2026 (`emulateMedia('print')`, ZPO): die
+          // Spalte druckte mit `display:flex`, 288×506 px, samt «Im Erlass
+          // suchen …» — Bedienung auf Papier. Titelblatt, Reiterleiste und
+          // Pane-Köpfe waren schon still; hier fehlte die Regel.
+          className="sticky flex min-h-0 flex-col self-start print:hidden"
           style={{
             top: 'var(--nt-stick)',
             maxHeight: vollflaechig

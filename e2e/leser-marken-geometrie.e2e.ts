@@ -132,7 +132,23 @@ test.describe('Ä61 · die lit.-Marke überlappt den Item-Text nicht', () => {
           return max
         }
         const out: Array<{ marke: string; ueberstand: number }> = []
-        for (const li of Array.from(art.querySelectorAll('li'))) {
+        // ── §6.3-DEKLARATION (W2·24-R6, 6.9.2026) · DER ANKER WIRD ENGER ────
+        // Die Sonde nahm JEDES `li` des Artikels. Seit R6 trägt der Artikel im
+        // vollen Satzspiegel eine dritte Spalte — die Randnotiz —, und deren
+        // «Rechnen»-Rubrik ist eine Liste: Werkzeug-Link, darunter die Art
+        // («Rechner»). Zwei GESTAPELTE Zeilen, also ragt die erste
+        // zwangsläufig über die linke Kante der zweiten hinaus; gemeldet wurde
+        // «Kündigung & Fristen im Arbeitsverhältnis +133.73 px». Das ist keine
+        // Marken-Kollision, es ist gar keine Marke.
+        // Die ABSICHT des Falls war immer der WORTLAUT: ragt die Ordnungsmarke
+        // («cbis.») in den Text ihres Aufzählungspunkts? Der Anker sagt das
+        // jetzt auch — `.lr-text` ist die Textspalte des Satzspiegels und in
+        // der Zeilenform (V1, Trefferliste, schmal) ebenfalls der Träger des
+        // Wortlauts, der Fall bleibt dort also unverändert bestückt. Die
+        // bis/ter-Pflichtprüfung darunter beweist das bei jedem Lauf: fände der
+        // Anker den Wortlaut nicht, wäre der Fall rot, nicht still grün (§6.7).
+        const wortlaut = art.querySelector('.lr-text') ?? art
+        for (const li of Array.from(wortlaut.querySelectorAll('li'))) {
           const marke = li.firstElementChild
           const text = marke?.nextElementSibling
           if (marke == null || text == null) continue

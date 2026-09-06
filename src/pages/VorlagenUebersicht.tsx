@@ -6,6 +6,7 @@ import { KatalogHinweis } from '../components/KatalogHinweis';
 import { MassgebendeGesetze } from '../components/normtext/MassgebendeGesetze';
 import { SeitenKopf } from '../components/layout/SeitenKopf';
 import { EntwurfLegende } from '../components/EntwurfLegende';
+import { STARTSEITE_ZAEHLER } from '../data/startseiteZaehler.generated';
 
 // ─── Vorlagen-Übersicht (/vorlagen) — UI-Welle, Ersatz für /recherche ───────
 //
@@ -19,10 +20,12 @@ const VORLAGEN_KATEGORIE = OBERKATEGORIEN.find((k) => k.id === 'vorlagen')!;
 export function VorlagenUebersicht() {
   return (
     <div className="space-y-8">
+      {/* D11 (David 6.9.2026) — Kopf-Regel für ALLE fünf Übersichten, Herleitung
+          in `pages/Gesetze.tsx`: H1 = Bereichsname wie im Reiter, darüber EINE
+          Ausgabe-Zeile aus dem Register, kein Erklär-Absatz. */}
       <SeitenKopf
-        overline="Vorlagen & Dokumente"
+        overline={`${STARTSEITE_ZAEHLER.vorlagen} Vorlagen, nach Rechtsgebiet filterbar`}
         titel="Vorlagen"
-        intro="Verträge, Eingaben, Erklärungen und Dokumentmappen – regelbasiert aufgesetzt, mit ehrlichen Form-Grenzen. Nach Rechtsgebiet filterbar."
       />
 
       <EntwurfLegende />

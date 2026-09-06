@@ -111,3 +111,48 @@ const BREITEN = [
     });
   }
 }
+
+// ─── W2·24-R6/L1 · DER TIEFLINK, DEN DIESER WÄCHTER NIE GESEHEN HAT ──────────
+//
+// §6.3-DEKLARATION: Dieser Fall wird HINZUGEFÜGT, keiner geändert. Die beiden
+// Kopf-Fälle darüber stehen byte-gleich; ihre Schwelle bleibt 0.05.
+//
+// WARUM ER FEHLTE: beide Fälle fahren `/gesetze/bund/STPO` — eine Adresse OHNE
+// `#art-…`. Genau der Pfad mit Anker war der teure: gemessen am Stand vom
+// 6.9.2026 (`dist`-Preview, Chromium @390×844, je 3 Läufe, byte-gleiche Werte)
+//   OR#art-336_c  1.1664 · OR#art-1  0.9307 · ZGB#art-457  0.5749
+// gegen 0.0362 auf derselben Route ohne Anker. Der Wächter war grün, während
+// jeder Tieflink das Zwanzigfache seiner Schwelle riss (§6.7: ein Tor, das den
+// schlimmsten Fall nicht sehen kann).
+//
+// NACH DEM FIX (gleiche Bedingung, je 3 Läufe): 0.0431 · 0.0432 · 0.0921.
+//
+// DIE SCHWELLE IST 0.1 UND NICHT 0.05, und das ist eine Aussage, keine
+// Bequemlichkeit: was hier gemessen wird, ist der GANZE Seitenaufbau eines
+// Tieflinks, inklusive des Chrom-Grundpegels, den die Kopf-Fälle oben schon
+// beschreiben — und inklusive der Reiterleisten-Reservierung, die beim
+// Erstbesuch ohne Reiter-Speicher allein 0.0355 beiträgt (Finder R5/L7,
+// eigener Bau). 0.1 ist der CWV-«good»-Deckel: er fängt eine Rückkehr in das
+// gemessene 0.5-bis-1.2-Regime um eine Grössenordnung sicher, ohne am
+// Grundpegel zu flackern. Wird L7 gebaut, kann er enger gezogen werden.
+test('CLS Tieflink @390 (OR#art-336_c — Sprung in einen 1686-Artikel-Erlass)', async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.addInitScript(() => {
+    (window as unknown as { __cls: number }).__cls = 0;
+    new PerformanceObserver((liste) => {
+      for (const e of liste.getEntries() as unknown as Array<{ value: number; hadRecentInput: boolean }>) {
+        if (!e.hadRecentInput) (window as unknown as { __cls: number }).__cls += e.value;
+      }
+    }).observe({ type: 'layout-shift', buffered: true });
+  });
+  await page.goto('/gesetze/bund/OR#art-336_c');
+  // Der Sprung ist erst fertig, wenn der Zielartikel im Bild steht — vorher
+  // misst man den halben Aufbau. `toBeInViewport` statt einer Wartezeit: die
+  // Bedingung ist die Sache selbst, nicht ihre Dauer.
+  await expect(page.locator('#art-336_c')).toBeInViewport({ timeout: 20_000 });
+  // Nachlauf: die Aufdeck-Klammer im Produktcode steht bei 600 ms; danach darf
+  // sich nichts mehr bewegen, und genau das soll die Messung sehen.
+  await page.waitForTimeout(2_000);
+  const cls = await page.evaluate(() => (window as unknown as { __cls: number }).__cls);
+  expect(cls).toBeLessThan(0.1);
+});

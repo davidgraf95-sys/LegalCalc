@@ -3,6 +3,7 @@ import { useSearchParams, useLocation, Link } from 'react-router-dom';
 import { useSucheAusUrl } from '../components/suche/useSucheAusUrl';
 import { dedupErlasse } from '../lib/universalSuche';
 import { SeitenKopf } from '../components/layout/SeitenKopf';
+import { STARTSEITE_ZAEHLER } from '../data/startseiteZaehler.generated';
 import { InternationalRubriken } from '../components/normtext/InternationalRubriken';
 import { RechtsgebietSicht } from '../components/normtext/RechtsgebietSicht';
 import {
@@ -52,6 +53,11 @@ import { loeseFilterScope, scopeLabel, scopeBasis } from './gesetze-teile/filter
 // kanonische Form gebracht (kein Router-Redirect, Leitplanke E.4).
 import { istRechtsgebietAlias, normalisiereAnsicht } from './gesetze-teile/ansicht-alias';
 import { Tabs } from '../components/ui/Tabs';
+
+/** Zahlen der Ausgabe-Zeile in Schweizer Schreibweise (1'338) — dieselbe
+ *  Ein-Zeilen-Form, die die Startseiten-Bausteine seit W2·23 führen. */
+const nf = (n: number) => n.toLocaleString('de-CH');
+
 
 type Ebene = 'bund' | 'kanton' | 'international';
 
@@ -269,12 +275,22 @@ export function Gesetze() {
 
   return (
     <div className="space-y-8">
+      {/* ── D11 (David 6.9.2026, Bild /gesetze) · DER KOPF NENNT DEN BEREICH ──
+          Bis hierher standen drei Angaben übereinander: eine Overline
+          («Rechtssammlung Schweiz»), eine H1, die dasselbe noch einmal sagte
+          («Schweizer Gesetzessammlung»), und ein Erklär-Absatz, der die Seite
+          beschrieb, statt sie zu zeigen. Neu trägt die H1 den BEREICHSNAMEN —
+          dasselbe Wort, das der Reiter und die Navigation führen (§5: eine
+          Sache heisst überall gleich) —, und darüber steht EINE Ausgabe-Zeile
+          mit den Zahlen aus dem Register. Der §8-Vorbehalt («massgeblich ist
+          die amtliche Fassung») steht im Seitenfuss, wo er den Einstieg nicht
+          mehr zustellt.
+          KEINE ZAHL OHNE DECKUNG: das Datum des jüngsten Inhalts (D8) hat im
+          generierten Zähler noch kein Feld — die Zeile führt darum nur, was
+          gezählt ist, und nicht «jüngster Stand …» (§8). */}
       <SeitenKopf
-        overline="Rechtssammlung Schweiz"
-        titel="Schweizer Gesetzessammlung"
-        // B-6-Nachzug (R2-A, 31.8.2026): «geltende Fassung» und «amtliche
-        // Quelle» standen in EINEM Satz — das Nomen kommt aus der Wortquelle.
-        intro={`Volltext der in LexMetrik verwendeten Bundesgesetze und kantonalen Erlasse — geltende Fassung, mit Stand und amtlichem Live-Link — sowie die für die Schweiz massgeblichen Staatsverträge und EU-Verordnungen (International). Massgeblich bleibt stets ${AMTLICHE_FASSUNG_NOMEN}.`}
+        overline={`${nf(STARTSEITE_ZAEHLER.gesetzeBundVolltext)} Bundeserlasse · ${nf(STARTSEITE_ZAEHLER.gesetzeKantonVolltext)} Kantonserlasse · ${nf(STARTSEITE_ZAEHLER.gesetzeInternationalVolltext)} Staatsverträge im Volltext`}
+        titel="Gesetze"
       />
 
       {/* B2 (Bug-Check #565): auch der Fehlerpfad reserviert die Inhaltshöhe —
@@ -646,6 +662,10 @@ export function Gesetze() {
           </div>
         </>
       )}
+      {/* D11: der §8-Vorbehalt gehört an den Fuss, nicht in den Einstieg. */}
+      <p className="border-t border-line/60 pt-3 text-micro text-ink-500 max-w-reading">
+        Geltende Fassung mit Stand und amtlichem Live-Link je Erlass; massgeblich bleibt stets {AMTLICHE_FASSUNG_NOMEN}.
+      </p>
     </div>
   );
 }

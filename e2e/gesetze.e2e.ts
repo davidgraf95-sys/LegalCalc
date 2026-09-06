@@ -16,7 +16,13 @@ test.describe('/gesetze — Übersicht', () => {
   test('Landeplatz zeigt drei Einstiegskacheln (kein stiller Bund-Default), Bund öffnet die Systematik', async ({ page }) => {
     const fehler = fehlerSammeln(page)
     await page.goto('/gesetze')
-    await expect(page.getByRole('heading', { name: 'Schweizer Gesetzessammlung' })).toBeVisible()
+// ── §6.3-DEKLARATION (W2·24-R6/D11, 6.9.2026) · DIE H1 HEISST «GESETZE» ─────
+// David 6.9.2026 zum Bild /gesetze: Overline «Rechtssammlung Schweiz» + H1
+// «Schweizer Gesetzessammlung» + Erklär-Absatz sagten dreimal dasselbe. Die H1
+// trägt seither den BEREICHSNAMEN — dasselbe Wort wie Reiter und Navigation.
+// Deklarierte fachliche Änderung: die ERWARTUNG wandert mit, die ABSICHT des
+// Falls (die Seite ist da und trägt eine H1) bleibt unberührt.
+    await expect(page.getByRole('heading', { name: 'Gesetze', exact: true })).toBeVisible()
     const inhalt = page.getByRole('main')
     // G4 · §4.1: der Landeplatz zeigt die drei gleichwertigen Kacheln — und NICHT
     // still die Bund-Systematik (kein «Alle aufklappen» vor Säulen-Wahl).
@@ -48,7 +54,7 @@ test.describe('/gesetze — Übersicht', () => {
   test('kein horizontaler Overflow bei 390px', async ({ page }) => {
     await page.setViewportSize({ width: 390, height: 844 })
     await page.goto('/gesetze')
-    await expect(page.getByRole('heading', { name: 'Schweizer Gesetzessammlung' })).toBeVisible()
+    await expect(page.getByRole('heading', { name: 'Gesetze', exact: true })).toBeVisible()
     const b = await page.evaluate(() => ({
       scroll: document.documentElement.scrollWidth,
       client: document.documentElement.clientWidth,

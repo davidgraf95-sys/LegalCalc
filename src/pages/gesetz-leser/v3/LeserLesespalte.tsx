@@ -6,6 +6,8 @@ import { ArtikelLeser, SektionKopf } from '../parts';
 import { istAnhangToken } from '../berechnungen';
 import { erlassPfad } from './erlassAnsicht';
 import type { LeserV3Modell } from './leserV3Modell';
+import { usePaneSteuerung } from '../../../components/layout/usePaneLayout';
+import { randNotizZiel } from '../randNotizOeffnen';
 
 // ─── Die Lesespalte (FAHRPLAN-LESER-V3 Kap. 1.3 «Kern-Grenze») ──────────────
 //
@@ -51,8 +53,10 @@ export function LeserLesespalte({ m }: {
   // Refs einzeln herausgezogen: die Lint-Regel `react-hooks/refs` erkennt einen
   // Ref am Namen, und `refs.leseRef` ist für sie ein Member-Zugriff im Render.
   const { leseRef, sekRef } = m.refs;
+  // Split-Regel der Randnotiz (s. `onClickCapture` unten): EIN Abo je Spalte.
+  // VOR dem Lade-Guard, weil Hooks nicht bedingt laufen dürfen.
+  const { oeffneDaneben, kannOeffnen, istOffen: paneOffen } = usePaneSteuerung();
   if (!erlass || !eintraege) return null;
-
   const fn = (tok: string) => struktur?.[tok]?.fussnoten;
   const istOffen = (id: string, defOpen: boolean) => m.offen[id] ?? defOpen;
   const toggle = (id: string, defOpen: boolean) =>
@@ -203,7 +207,25 @@ export function LeserLesespalte({ m }: {
     // A-7, V1 gegen V3) bei GLEICHER Artikelbreite mass, den Text-KERN also
     // unabhängig vom Satzspiegel bewies. Mit H5 (21.8.2026) gelöscht — V1, das
     // Vergleichsziel, gibt es nicht mehr.
-    <div ref={leseRef} id="lc-lesespalte" className="mx-auto w-full max-w-reading">
+    <div ref={leseRef} id="lc-lesespalte" className="mx-auto w-full max-w-reading"
+      // ── W2·24-R6 · SPLIT-REGEL DER RANDNOTIZ (Auftrag David 6.9.2026) ──────
+      // Ein Bezug am Rand öffnet in der ANDEREN Hälfte; der Artikel bleibt
+      // stehen. Die Regel selbst (Modifikatoren, externe Ziele, Dedup) ist rein
+      // und liegt in `../randNotizOeffnen` — hier steht nur die Verdrahtung.
+      //
+      // WARUM DELEGIERT UND NICHT AM LINK: `usePaneSteuerung` liefert bei jedem
+      // Shell-Render ein neues Objekt (`Shell.tsx`, Objektliteral). Ein Abo je
+      // Artikel hiesse auf dem OR 1'686 Abonnenten, die bei jedem
+      // Scroll-Spy-Takt neu rendern — genau die Bauart, die §15.4 an dieser
+      // Spalte verbietet. EIN Abo an der Spalte, ein Handler, kein Prop durch
+      // die memoisierte Artikelkette.
+      onClickCapture={(ev) => {
+        const ziel = (ev.target as HTMLElement | null)?.closest?.('a');
+        if (!ziel || !ziel.closest('.lr-notiz')) return;
+        if (randNotizZiel(ev, ziel.getAttribute('href'), kannOeffnen, paneOffen) !== 'daneben') return;
+        ev.preventDefault();
+        oeffneDaneben(ziel.getAttribute('href') as string);
+      }}>
       <div className="space-y-2">
         {dokumentLinear()}
       </div>
@@ -237,7 +259,7 @@ export function LeserLesespalte({ m }: {
           Überlauf aus derselben Ursache (§5).
           Wächter: `e2e/leser-kein-seitenueberlauf.e2e.ts`, beide Hüllen. */}
       <nav className="mt-12 border-t border-line pt-5 flex justify-between gap-4 text-body-s" aria-label="Weitere Erlasse">
-        {vorher ? <Link to={erlassPfad(vorher)} className="min-w-0 text-brass-700 hover:underline [overflow-wrap:anywhere]">‹ {vorher.kuerzel}</Link> : <span />}
+        {vorher ? <Link to={erlassPfad(vorher)} className="min-w-0 text-brass-700 [overflow-wrap:anywhere]">‹ {vorher.kuerzel}</Link> : <span />}
         {/* ── Ä119 (Live-Ästhetik-Prüfung 18.8.2026) · «ÜBERSICHT» WAR DOPPELT
             BELEGT ───────────────────────────────────────────────────────────
             GEMESSEN am Live-Stand @1440: das Wort «Übersicht» bezeichnete auf
@@ -254,7 +276,7 @@ export function LeserLesespalte({ m }: {
             gibt in der Zeile nicht nach — nachgeben sollen die Erlass-Namen
             links und rechts, deren Länge aus den Daten kommt. */}
         <Link to="/gesetze" className="shrink-0 text-ink-500 hover:text-brass-700">Alle Gesetze</Link>
-        {nachher ? <Link to={erlassPfad(nachher)} className="min-w-0 text-right text-brass-700 hover:underline [overflow-wrap:anywhere]">{nachher.kuerzel} ›</Link> : <span />}
+        {nachher ? <Link to={erlassPfad(nachher)} className="min-w-0 text-right text-brass-700 [overflow-wrap:anywhere]">{nachher.kuerzel} ›</Link> : <span />}
       </nav>
     </div>
   );

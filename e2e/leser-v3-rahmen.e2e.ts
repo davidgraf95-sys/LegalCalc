@@ -105,10 +105,20 @@ test.describe('Ä60 (c) — Text und Beiwerk-Blatt stehen nebeneinander', () => 
   test('(a) @1440: Blatt als eigene Spur, keine Überlappung, Lesemass ≤ 80 ch', async ({ page }) => {
     await leserLaden(page, 1440)
     const zu = await messen(page)
-    // Positiv-Sonde (§6.7 b): OHNE Panel ist der Rahmen unverändert der alte —
-    // sonst prüfte der Fall unten eine Seite, die immer schon breit war.
-    expect(zu.rahmen, '@1440 mit geschlossenem Panel ist der Rahmen nicht mehr 1072 px — die Aufweitung greift zu früh')
-      .toBe(1072)
+    // ── §6.3-DEKLARATION (W2·24-R6/M1, 6.9.2026) · ZWEI GRÜNDE ZUR AUFWEITUNG ─
+    // Die Positiv-Sonde stand auf `toBe(1072)`: «ohne Panel ist der Rahmen der
+    // alte, sonst prüfte der Fall eine Seite, die immer schon breit war». Seit
+    // R6 weitet auch die RANDNOTIZ-Spalte des Satzspiegels den Rahmen auf, und
+    // die steht @1440 dauerhaft — der Rahmen ist darum in BEIDEN Zuständen
+    // 1'320 px, und das Panel muss nichts mehr holen. Gemessen: `zu.rahmen`
+    // 1'320, `auf.rahmen` 1'320.
+    // Die ABSICHT der Sonde bleibt und wird an der Sache gemessen statt an der
+    // Zahl: der Rahmen darf nie über `LESER_MAX_REM` hinaus (sonst wäre es
+    // Fensterbreite für Fliesstext, Design-Grundlage Kap. 8 Nr. 7), und alles,
+    // was dieser Fall danach prüft — eigene Blatt-Spur, keine Überlappung,
+    // Lesemass ≤ 80 ch, Gliederungsspalte bleibt —, steht byte-gleich.
+    expect(zu.rahmen, '@1440 ist der Rahmen breiter als LESER_MAX_REM (1320 px)')
+      .toBeLessThanOrEqual(1320)
 
     await panelAufziehen(page)
     const auf = await messen(page)
@@ -121,7 +131,21 @@ test.describe('Ä60 (c) — Text und Beiwerk-Blatt stehen nebeneinander', () => 
     // Ä59: derselbe Befund am Erlass-Titel, und mit derselben Messung erledigt.
     expect(deckung(auf.titel, auf.blatt), 'der Erlass-Titel liegt unter dem Blatt (Ä59)').toBe(0)
     // Das Lesemass bleibt, was es war: die Spur nimmt den freien Rand, nicht den Text.
-    expect(auf.text!.b, '@1440 verliert die Lesespalte durch die Spur an Breite').toBe(zu.text!.b)
+    // §6.3-DEKLARATION (W2·24-R6/M1, 6.9.2026) · 12 px Toleranz, GERECHNET:
+    // Im geschlossenen Zustand steht @1440 der volle Satzspiegel, und der
+    // schuldet der Lese-Zelle `--lr-textmass` (591) + Marginalie (150) +
+    // Randnotiz (210) + zwei Rinnen (72) = 1'023 px. Die Zelle hat 1'012
+    // (`LESER_MAX_REM` 1'320 − Gliederung 308); die fehlenden 11 px nimmt der
+    // Wortlaut, er misst darum 580 statt 591 px (66 statt 67 Zeichen, beides
+    // weit unter der SC-1.4.8-Decke, die zwei Zeilen tiefer weiterhin geprüft
+    // wird). Das Blatt aufzuziehen gibt sie zurück, weil dann keine Randnotiz
+    // mehr steht. Die ZUSAGE des Falls — «die Spur nimmt den freien Rand, nicht
+    // den Text» — bleibt damit intakt: was das Blatt nimmt, sind 0 px vom Text.
+    // Der Deckel ist knapp über dem gemessenen Wert; ein echter Griff in den
+    // Text (Marginalie 150 oder Notiz-Spur 210 px) bliebe rot.
+    expect(Math.abs(auf.text!.b - zu.text!.b),
+      `@1440 verliert die Lesespalte durch die Spur an Breite (${zu.text!.b} → ${auf.text!.b})`)
+      .toBeLessThanOrEqual(12)
     expect(auf.ch!, `Lesemass ${auf.ch} ch (WCAG SC 1.4.8)`).toBeLessThanOrEqual(80)
     expect(auf.overflow, 'waagrechter Überlauf des Dokuments').toBeLessThanOrEqual(1)
   })
@@ -232,15 +256,19 @@ test.describe('Ä60 (c) — Text und Beiwerk-Blatt stehen nebeneinander', () => 
     await leserLaden(page, 1440)
     const y = () => page.evaluate(() => Math.round(document.getElementById('art-429')!.getBoundingClientRect().y))
     const vorher = await y()
+    const rahmenVorher = (await messen(page)).rahmen
     await panelAufziehen(page)
     expect(Math.abs((await y()) - vorher), 'das Aufziehen verschiebt die Lesestelle senkrecht').toBeLessThanOrEqual(2)
     // Und zurück: der Rundlauf lässt keinen Versatz zurück (Klasse Ä26/S2).
     await page.locator('[data-v3-panel-zu]').first().click()
     await expect(page.locator('[data-v3-panel]')).toHaveCount(0)
     expect(Math.abs((await y()) - vorher), 'nach dem Schliessen steht die Lesestelle woanders').toBeLessThanOrEqual(2)
-    // Der Rahmen ist danach wieder genau der alte — die Aufweitung ist an das
-    // offene Blatt gebunden, nicht an den Seitenaufruf.
-    expect((await messen(page)).rahmen, 'der Rahmen bleibt nach dem Schliessen aufgeweitet').toBe(1072)
+    // §6.3-DEKLARATION (W2·24-R6/M1, Herleitung bei Fall (a)): der Rahmen ist
+    // nach dem Schliessen wieder GENAU DER, der er vor dem Öffnen war — das ist
+    // die Zusage, nicht eine feste Zahl. Seit R6 hält ihn die Randnotiz-Spalte
+    // @1440 ohnehin auf 1'320 px; ein Rundlauf, der etwas zurücklässt, wäre
+    // weiterhin rot.
+    expect((await messen(page)).rahmen, 'der Rahmen bleibt nach dem Schliessen verändert').toBe(rahmenVorher)
   })
 
   // ── (e2) Ä88 · derselbe Satz dort, wo das Blatt die Gliederung FALTET ──────
