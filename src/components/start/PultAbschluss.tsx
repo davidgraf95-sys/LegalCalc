@@ -3,7 +3,7 @@ import { KorpusStand } from '../ui/KorpusStand';
 import { SheetRahmen } from '../ui/SheetRahmen';
 import { useDialogFokus } from '../layout/useDialogFokus';
 import { usePaneKontext } from '../layout/PaneKontext';
-import type { StartModul } from '../../lib/startseiteModule';
+import type { StartModul } from '../../lib/startseiteModulTypen';
 import type { StartPosten } from '../../lib/startseiteEinstellung';
 
 // ─── Fuss des Pults + Blatt «Startseite anpassen» (W2·24-R10) ───────────────

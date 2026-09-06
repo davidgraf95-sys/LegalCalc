@@ -4,7 +4,7 @@ import type { BrowseEntscheid } from '../../lib/rechtsprechung/register';
 import { STARTSEITE_ZAEHLER } from '../../data/startseiteZaehler.generated';
 import { usePaneKlasse } from '../layout/PaneKontext';
 import { ModulFuss } from './PultModul';
-import type { StartModulProps } from '../../lib/startseiteModule';
+import type { StartModulProps } from '../../lib/startseiteModulTypen';
 import { ohneDatumsSuffix } from './entscheidZitierung';
 
 // ─── Jüngste Entscheide im Korpus (W2·24-R3, vormals NewsHeader) ────────────

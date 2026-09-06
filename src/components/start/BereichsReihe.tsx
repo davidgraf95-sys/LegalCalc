@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import { NAVIGATION } from '../../lib/navigation';
 import { STARTSEITE_ZAEHLER } from '../../data/startseiteZaehler.generated';
 import { usePaneKlasse } from '../layout/PaneKontext';
-import type { Register } from '../../lib/startseiteModule';
+import type { Register } from '../../lib/startseiteModulTypen';
 
 // ─── Die fünf Bereiche in EINER Reihe (W2·24-R10) ───────────────────────────
 //

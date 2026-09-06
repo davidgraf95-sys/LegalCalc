@@ -31,46 +31,19 @@
 // `lib/startseiteEinstellung.ts` (localStorage), und der Prerender liefert immer
 // die Werkseinstellung aus.
 
-import type React from 'react';
 import { SystematikListe } from '../components/start/SystematikListe';
 import { KantoneRaster } from '../components/start/KantoneRaster';
 import { EntscheideListe } from '../components/start/EntscheideListe';
 import { MaterialienListe } from '../components/start/MaterialienListe';
 import { Werkzeuge } from '../components/start/Werkzeuge';
 
-/** Die vier Register der Sammlung (index.css `--reg-*`, R1) — hier definiert,
- *  weil das Registry die Zuordnung Modul → Register trägt und die Komponenten
- *  sie nur konsumieren (§5; vormals in `start/Satzspiegel`, R3). */
-export type Register = 'g' | 'r' | 'm' | 'w';
-
-export type StartModulId = 'systematik' | 'kantone' | 'frist' | 'entscheide' | 'behoerden';
-
-/** Was jedes Modul von seinem Rahmen erfährt. */
-export interface StartModulProps {
-  /**
-   * Ist das Modul aufgeklappt?
-   *
-   * Ein zugeklapptes Modul wird WEITER GERENDERT (der Rahmen versteckt seinen
-   * Inhalt mit `hidden`), damit Server- und Client-Baum dieselbe Gestalt haben —
-   * React 19 wirft bei einem Struktur-Unterschied die Hydration weg und rendert
-   * neu, was auf «/» die ganze Seite umbauen würde. Module mit NACHLADENDEM
-   * Inhalt (Entscheide) lesen diese Angabe trotzdem und laden nichts, solange
-   * sie zu sind — verstecktes Nachladen wäre Verkehr ohne Nutzen (§15).
-   */
-  an: boolean;
-}
-
-export interface StartModul {
-  id: StartModulId;
-  /** Beschriftung der Modulzeile UND des Eintrags im Blatt «Startseite anpassen». */
-  titel: string;
-  /** Registerfarbe des 3-px-Strichs (die einzige Farbfläche der Startseite). */
-  reg: Register;
-  /** Werkseinstellung: offen ohne eigene Wahl des Nutzers? */
-  standard: boolean;
-  /** MUSS beim Prerender synchron rendern (prerender.ts verbietet Suspense-Reste). */
-  Komponente: React.ComponentType<StartModulProps>;
-}
+// Die Typen stehen in `startseiteModulTypen.ts` — ohne diese Trennung liefe der
+// Typ-Import der Modul-Komponenten (`Register`, `StartModulProps`) zurueck in
+// die Datei, die dieselben Komponenten als Werte laedt: ein echter Import-
+// Zyklus (check:zyklen). Diese Datei bleibt die Fassade (§6.6) — wer die Typen
+// hier importiert, bekommt sie unveraendert.
+export type { Register, StartModulId, StartModulProps, StartModul } from './startseiteModulTypen';
+import type { StartModul } from './startseiteModulTypen';
 
 // Reihenfolge = die des Referenzbildes: Bundesrecht → Kantone → Frist →
 // Entscheide → Materialien. Nachschlagen vor Rechnen bleibt die Grundordnung

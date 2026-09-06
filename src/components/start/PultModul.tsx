@@ -1,6 +1,6 @@
 import { useId, type ReactNode } from 'react';
 import { usePaneKlasse } from '../layout/PaneKontext';
-import type { Register } from '../../lib/startseiteModule';
+import type { Register } from '../../lib/startseiteModulTypen';
 
 // ─── Der EINE Rahmen einer Modulzeile des Pults (W2·24-R10) ─────────────────
 //
