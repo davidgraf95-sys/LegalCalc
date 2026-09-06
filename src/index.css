@@ -2252,6 +2252,15 @@
   .lc-griff-glyph {
     font-family: var(--font-sans), system-ui, sans-serif;
     font-size: 1rem; line-height: 1;
+    /* NEBENFUND des R3-Prüfers (6.9.2026), bestätigt am Screenshot
+       `r5f1-hero-suche-treffer-1440-hell`: «✕» (U+2715) fiel im hellen Modus
+       auf eine FARBIGE Emoji-Schnittschrift zurück — ein blaues Zeichen mitten
+       in einer schwarz-weissen Sammlung, und zwar unabhängig von der
+       Textfarbe, weil eine Farb-Glyphe `color` ignoriert. `font-variant-emoji:
+       text` verlangt die Text-Darstellung; wo der Browser die Eigenschaft noch
+       nicht kennt (Safari < 17), tut die Angabe nichts und das Bild bleibt wie
+       bisher — ein reiner Gewinn ohne Rückfall-Risiko. */
+    font-variant-emoji: text;
   }
   .lc-schliessknopf-komfort::after {
     content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
@@ -2448,7 +2457,7 @@
   .lc-menu-marke { @apply inline-flex w-4 shrink-0 items-center justify-center leading-none; color: var(--brass-700); }
   /* Der Regler bekommt seine eigene Zeile mit Label — er wird nicht mehr neben
      eine zweizeilig umbrechende Beschriftung gequetscht. */
-  .lc-menu-regler { @apply flex w-full items-center justify-between gap-3 px-3 py-2; border-top: 1px solid var(--rule-soft); }
+  .lc-menu-regler { @apply flex w-full items-center justify-between gap-2 px-3 py-2; border-top: 1px solid var(--rule-soft); }
 
   /* Referenzwerk-Liste: Messing-Gedankenstrich als Marker (FAHRPLAN-DESIGN
      5.5) — für Hinweis-Listen der Vorlagen (Preflight nimmt Browser-Bullets
@@ -2689,10 +2698,25 @@
   padding: .25rem 0 .5rem;
 }
 .st-frage-feld::placeholder { color: var(--placeholder); }
-/* Der Fokusring liegt an der globalen `:focus-visible`-Regel (Rolle --focus,
-   E-1) — hier wird KEINE eigene Farbe gesetzt, nur der Abstand zur Kante
-   zurückgenommen, damit der Ring die 2-px-Linie nicht doppelt. */
-.st-frage-feld:focus-visible { outline-offset: 1px; }
+/* ── D9/D5-NACHZUG (6.9.2026) · FOKUS ALS STRICH, NICHT ALS KASTEN ──────────
+   Hier stand nur ein `outline-offset: 1px` — der globale `:focus-visible`-Ring
+   legte also einen 2-px-KASTEN um eine Zeile, die ausdrücklich kein Kasten
+   sein soll (Fahrplan §5: «Kanten statt Kissen»). GESEHEN am Screenshot
+   `r5f1-hero-suche-treffer-1440-hell` vom 6.9.2026: die Suchzeile der
+   Startseite stand im Fokus als gerahmtes Rechteck da, während dieselbe
+   Handlung im Formularfeld (`.lc-input:focus`) und in der Menüzeile
+   (`.lc-menu-zeile:focus-visible`) einen Unterstrich bekommt — drei Fokus-
+   Bilder für eine Sache.
+   Jetzt trägt sie dasselbe Bild wie die beiden anderen und wie das
+   Referenzbild (`.frage input:focus-visible{box-shadow:0 2px 0 0 var(--ink)}`):
+   die 2-px-Kante der Zeile wechselt in die Rolle `--focus` und verdoppelt sich
+   über einen Schatten UNTER der Kante — kein Platzverbrauch, keine
+   Höhenänderung, und der Indikator bleibt 2 px stark in einer Rolle, die das
+   Farbwelt-Tor als Nicht-Text-Kontrast führt (WCAG 2.4.11).
+   Der Schatten sitzt an der HÜLLE `.st-frage` (dort liegt die Kante), gesteuert
+   über `:focus-within` — das Feld selbst hat keine eigene Linie. */
+.st-frage-feld:focus-visible { outline: none; }
+.st-frage:focus-within { border-bottom-color: var(--focus); box-shadow: 0 2px 0 -1px var(--focus); }
 
 /* ── R3-NACHZUG (David-Befund D1, 6.9.2026) · DIE ZEILE MUSS SICH ALS SUCHE ──
    ZU ERKENNEN GEBEN. Wortlaut David zum Bild vom 6.9.2026: die grosse Zeile

@@ -200,7 +200,7 @@ export function LeserAnsichtV3({ kompakt, fussnotenAnzahl, hatAenderungsvermerke
              notfalls mit Auslassung (`.lc-menu-zeile`), sie brechen nicht.
              `gap`/`p` fallen weg: die Trennung tragen jetzt die Haarlinien der
              Zeilen, nicht Zwischenräume. */
-          className="lc-schwebeflaeche absolute right-0 top-full z-overlay mt-1.5 flex w-[17rem] max-w-[calc(100vw-2rem)] flex-col py-1"
+          className="lc-schwebeflaeche absolute right-0 top-full z-overlay mt-1.5 flex w-[19rem] max-w-[calc(100vw-2rem)] flex-col py-1"
         >
           {/* Ä114: dasselbe Wort wie am Öffner und im `aria-label` — der
               Glossar-Eintrag «Menü der Darstellungsschalter → Ansicht». */}
