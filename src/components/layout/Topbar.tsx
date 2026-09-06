@@ -78,29 +78,27 @@ export function Topbar({ onMenu, schubladeOffen, seitenleisteEingeklappt, onSeit
     fokusWunsch.current = false;
     menuKnopf.current?.focus();
   }, [sucheBreit]);
+  // ── D23-NACHZUG (David 6.9.2026) · DAS TITELBLATT TRÄGT DAS SUCH-PANEL ──
+  // GEMESSEN am Stand vor diesem Fix (Preview @1440, `/gesetze`, offener
+  // Leerzustand): das Etikett «Zuletzt geöffnet» war UNSICHTBAR — die
+  // Reiterleiste malte über die obersten ~45 px des Panels. Ursache ist
+  // kein Fehler am Panel: die Kopfzeile und `nav[aria-label="Offene Reiter"]`
+  // tragen BEIDE `z-leiste` (20) und sind Geschwister; bei gleichem
+  // z-index gewinnt das spätere DOM-Element, und weil der Header mit
+  // seinem z-index einen eigenen Stapelkontext aufmacht, kommt sein Kind
+  // (`z-dropdown` = 30) daran nicht vorbei — 30 gilt nur INNERHALB des
+  // Headers.
+  // `z-dropdown` am Header hebt den ganzen Kontext eine Stufe an. Das ist
+  // geometrisch folgenlos: der Header überlappt in Ruhe NICHTS (die
+  // Reiterleiste klebt bei `top: var(--app-krone-h)`, also exakt unter
+  // ihm, Inhaltskopf und Leser-Sticky liegen bei 19 und darunter). Die
+  // EINZIGE Änderung ist die gewollte: was aus dem Header herausragt —
+  // das Such-Panel, das Sprach- und das Thema-Menü — liegt jetzt über der
+  // Reiterleiste statt darunter. Die Reiterleiste selbst bleibt
+  // unangetastet (sie gehört R11).
+  // Schichtungs-Skala und Werte: `index.css`, Block `--z-*`.
   return (
-    <header
-      /* ── D23-NACHZUG (David 6.9.2026) · DAS TITELBLATT TRÄGT DAS SUCH-PANEL ──
-         GEMESSEN am Stand vor diesem Fix (Preview @1440, `/gesetze`, offener
-         Leerzustand): das Etikett «Zuletzt geöffnet» war UNSICHTBAR — die
-         Reiterleiste malte über die obersten ~45 px des Panels. Ursache ist
-         kein Fehler am Panel: `<header>` und `nav[aria-label="Offene Reiter"]`
-         tragen BEIDE `z-leiste` (20) und sind Geschwister; bei gleichem
-         z-index gewinnt das spätere DOM-Element, und weil der Header mit
-         seinem z-index einen eigenen Stapelkontext aufmacht, kommt sein Kind
-         (`z-dropdown` = 30) daran nicht vorbei — 30 gilt nur INNERHALB des
-         Headers.
-         `z-dropdown` am Header hebt den ganzen Kontext eine Stufe an. Das ist
-         geometrisch folgenlos: der Header überlappt in Ruhe NICHTS (die
-         Reiterleiste klebt bei `top: var(--app-krone-h)`, also exakt unter
-         ihm, Inhaltskopf und Leser-Sticky liegen bei 19 und darunter). Die
-         EINZIGE Änderung ist die gewollte: was aus dem Header herausragt —
-         das Such-Panel, das Sprach- und das Thema-Menü — liegt jetzt über der
-         Reiterleiste statt darunter. Die Reiterleiste selbst bleibt
-         unangetastet (sie gehört R11).
-         Schichtungs-Skala und Werte: `index.css`, Block `--z-*`. */
-      className="sticky top-0 z-dropdown lc-glass"
-    >
+    <header className="sticky top-0 z-dropdown lc-glass">
       {/* Die 2-px-Kante sitzt AM INNEREN Träger, nicht am <header>: mit
           `box-sizing: border-box` liegt sie damit INNERHALB der `h-16` und die
           klebende Krone misst exakt 4 rem = 64 px. Gemessen 6.9.2026 im
