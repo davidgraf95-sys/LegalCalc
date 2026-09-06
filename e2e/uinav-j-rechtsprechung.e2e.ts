@@ -164,7 +164,7 @@ test.describe('W2·10-UI-NAV-J · Rechtsprechungs-Seiten', () => {
     await expect(ausloeser).toBeVisible()
     await expect(ausloeser).toHaveAttribute('aria-expanded', 'false')
     // Der Filterblock ist mobil NICHT vorab sichtbar (das ist der ganze Zweck).
-    await expect(page.getByRole('searchbox', { name: 'Rechtsprechung durchsuchen' })).toHaveCount(0)
+    await expect(page.getByRole('searchbox', { name: 'Filtern' })).toHaveCount(0)
 
     await ausloeser.click()
     const sheet = page.getByRole('dialog', { name: 'Filter' })
@@ -178,7 +178,7 @@ test.describe('W2·10-UI-NAV-J · Rechtsprechungs-Seiten', () => {
       { message: 'Fokus liegt im Sheet' },
     ).toBe(true)
     // Der Filterblock ist jetzt erreichbar.
-    await expect(page.getByRole('searchbox', { name: 'Rechtsprechung durchsuchen' })).toBeVisible()
+    await expect(page.getByRole('searchbox', { name: 'Filtern' })).toBeVisible()
 
     // Escape schliesst und gibt den Fokus an den Auslöser zurück.
     await page.keyboard.press('Escape')

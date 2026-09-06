@@ -70,13 +70,13 @@ test.describe('S1 · Query-Durchreichung ?q=', () => {
 
   test('Rechtsprechung: getippter Begriff landet in der Adresse und übersteht das Neuladen (rg UND q)', async ({ page }) => {
     await page.goto('/rechtsprechung?rg=zpo')
-    const feld = page.getByRole('searchbox', { name: 'Rechtsprechung durchsuchen' })
+    const feld = page.getByRole('searchbox', { name: 'Filtern' })
     await feld.fill('Kündigung')
     // Entprellt (300 ms) — die Adresse zieht kurz danach nach.
     await expect(page).toHaveURL(/[?&]q=K%C3%BCndigung/)
     await expect(page).toHaveURL(/[?&]rg=zpo/)
     await page.reload()
-    await expect(page.getByRole('searchbox', { name: 'Rechtsprechung durchsuchen' })).toHaveValue('Kündigung')
+    await expect(page.getByRole('searchbox', { name: 'Filtern' })).toHaveValue('Kündigung')
     await expect(page).toHaveURL(/[?&]rg=zpo/)
   })
 
@@ -87,7 +87,7 @@ test.describe('S1 · Query-Durchreichung ?q=', () => {
   // src/tests/useSucheAusUrl.test.ts einzeln festgenagelt.
   test('Zurück-Taste stellt den früheren Begriff wieder her und bleibt stehen', async ({ page }) => {
     await page.goto('/rechtsprechung')
-    const feld = page.getByRole('searchbox', { name: 'Rechtsprechung durchsuchen' })
+    const feld = page.getByRole('searchbox', { name: 'Filtern' })
     await feld.fill('miete')
     await expect(page).toHaveURL(/[?&]q=miete/)
     // Fremde Adressänderung auf denselben Achsen (Header-Sprung-Äquivalent).
