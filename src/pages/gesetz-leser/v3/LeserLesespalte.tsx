@@ -9,6 +9,8 @@ import type { LeserV3Modell } from './leserV3Modell';
 import { usePaneSteuerung } from '../../../components/layout/usePaneLayout';
 import { randNotizZiel } from '../randNotizOeffnen';
 import { useBezuegeZaehler } from '../bezuegeZaehler';
+import { useArtikelMaterialien } from '../artikelMaterialienLaden';
+import type { PanelBezuege } from './panelModell';
 
 // ─── Die Lesespalte (FAHRPLAN-LESER-V3 Kap. 1.3 «Kern-Grenze») ──────────────
 //
@@ -47,8 +49,17 @@ import { useBezuegeZaehler } from '../bezuegeZaehler';
 //  · Der angekündigte Fall ist unerreichbar. «Keine Leiste» heisst
 //    `eintraege.length === 0`, also kein Artikel — dann gibt es weder Treffer noch
 //    Lesetext. §17: gestrichen statt verengt.
-export function LeserLesespalte({ m }: {
+export function LeserLesespalte({ m, bezuege, weckeBezuege, bezuegeGeweckt = false }: {
   m: LeserV3Modell;
+  /** D30 · der Apparat des Panels — DIESELBE `useBezuege`-Instanz, kein zweiter
+   *  Lader (§5). `undefined` in der Ist-Hülle und in Tests, die die Spalte ohne
+   *  Rahmen mounten; dann verhält sich die Zeile wie vor D30. */
+  bezuege?: PanelBezuege;
+  /** D30 · Aufklappen der Bezüge-Zeile ⇒ Nachladen armieren (`weckeDaten`). */
+  weckeBezuege?: () => void;
+  /** D30 · ist bereits jemand nach den Daten gefragt worden? Steuert die
+   *  Skelett-Zeile «lädt …» UND das Laden der Materialien. */
+  bezuegeGeweckt?: boolean;
 }) {
   const { erlass, eintraege, struktur, sektionen, ohneGliederung, basisPfad, vorher, nachher } = m;
   // Refs einzeln herausgezogen: die Lint-Regel `react-hooks/refs` erkennt einen
@@ -59,6 +70,10 @@ export function LeserLesespalte({ m }: {
   // steht HIER und nicht im Modell: die Lesespalte ist sein einziger Konsument,
   // und das Modell hält damit seine §6.6-Schwelle (`leser-v3-fundament`).
   const bezuegeZaehler = useBezuegeZaehler(erlass?.key);
+  // D30 · die Materialien-LISTE zur bereits gezählten Materialien-ZAHL. Wie der
+  // Zähler: EIN Fetch je Erlass, im Leerlauf, hier und nicht im Modell (die
+  // Lesespalte ist der einzige Konsument, §6.6-Schwelle des Modells).
+  const artikelMaterialien = useArtikelMaterialien(erlass?.key, bezuegeGeweckt);
   // Split-Regel der Randnotiz (s. `onClickCapture` unten): EIN Abo je Spalte.
   // VOR dem Lade-Guard, weil Hooks nicht bedingt laufen dürfen.
   const { oeffneDaneben, kannOeffnen, istOffen: paneOffen } = usePaneSteuerung();
@@ -99,6 +114,23 @@ export function LeserLesespalte({ m }: {
       // Mittel) statt aus dem 2.2-MB-Shard — Herleitung in `../bezuegeZaehler`.
       // Der Kern rendert wie bisher; das Öffnen der Zeile lädt weiterhin lazy.
       zaehler={bezuegeZaehler(e.artikel)}
+      // ── D30 · POS. 12 IST NICHT ZURÜCK ───────────────────────────────────
+      // Der Block darüber begründet, warum `bezuege` an dieser Stelle FIEL: die
+      // `BezuegeZeile` stand damals UNBEDINGT im Fliesstext, an jedem Artikel,
+      // und wuchs beim Eintreffen des Shards in den Lesekörper hinein. Beides
+      // ist hier nicht der Fall. Die Prop kommt nur, NACHDEM der Leser eine
+      // Bezüge-Zeile aufgeklappt hat (`bezuegeGeweckt`), und sie landet
+      // ausschliesslich INNERHALB des `<details>`, das er dafür geöffnet hat.
+      // Ein geschlossenes `<details>` rendert seinen Inhalt nicht — die 1685
+      // anderen Artikel bleiben unberührt, es gibt keinen dokumentweiten
+      // Layout-Sprung, und `leser-v3-kontext-cls` misst weiterhin dasselbe.
+      bezuege={bezuege?.bezuegeFuer(e.artikel)}
+      materialien={artikelMaterialien(e.artikel)}
+      onBezuegeOeffnen={weckeBezuege}
+      // «lädt …» heisst: geweckt, aber der Lade-VERSUCH ist noch nicht durch.
+      // `geladen` (nicht die Kanten) unterscheidet «unterwegs» von «leer» — die
+      // A1-Lehre aus `panelModell.ts`, hier dieselbe Quelle (§5).
+      bezuegeLaedt={bezuegeGeweckt && bezuege != null && !bezuege.geladen}
       istAnhang={istAnhangToken(e.artikel)} />
   );
 
