@@ -30,6 +30,67 @@ export interface TabEintrag {
   wahl?: string;
 }
 
+// ─── D7 (David 6.9.2026: «achte darauf dass der reiter bei gesetz mitzählt») ─
+//
+// PFLICHTFALL (e) aus dem Befund: «Übersicht /gesetze: Reiter? — Regel
+// festlegen». Die bis hierher geltende Regel war «Übersichten erzeugen KEINEN
+// Reiter» (`components/TabTracker.tsx`, Kommentar seit der Einführung). Sie
+// hatte einen guten Grund — ein Seitenleisten-Klick sollte nicht jedes Mal
+// einen Reiter anlegen —, aber dieser Grund ist mit §5a Ziff. 3 entfallen: seit
+// dem R2-Nachzug ERSETZT eine Navigation den aktiven Reiter, sie häuft nicht
+// mehr an. Was damals Wildwuchs erzeugt hätte, erzeugt heute genau einen
+// Reiter, der weiterwandert.
+//
+// NEUE REGEL, in einem Satz: Die fünf BEREICHS-Übersichten sind Reiter wie
+// jedes andere Dokument — «Gesetze», «Rechtsprechung», «Materialien»,
+// «Rechner», «Vorlagen»; sie zählen in «N offen» und in Alt+Ziffer mit.
+//
+// ABWEICHUNG, ausdrücklich offengelegt (§7): Die STARTSEITE «/» erzeugt
+// weiterhin KEINEN Reiter. Sie ist kein Bestandteil der Sammlung, sondern ihr
+// Titelblatt: über die Marke von jeder Route aus einen Klick entfernt, ohne
+// eigenen Zustand, und ein Reiter «Sammlung» neben den fünf Bereichen wäre der
+// einzige, den man nie schliessen wollte. Eine Kurzform trägt sie trotzdem
+// (unten) — sie kann als Reiter EXISTIEREN, wenn jemand sie ausdrücklich
+// daneben öffnet (Pane, Ctrl-Klick, Prüfbefund R3-F7); nur angelegt wird sie
+// nicht von selbst. Ebenso unverändert ohne Reiter: Meta- und Infoseiten
+// (/ueber, /methodik, /einstellungen …).
+export const BEREICHS_UEBERSICHTEN = [
+  '/gesetze', '/rechtsprechung', '/materialien', '/rechner', '/vorlagen',
+] as const;
+
+/** Trägt dieser Pfad einen eigenen Reiter? EIN Ort für die Regel (§5) —
+ *  gelesen von `components/TabTracker.tsx`. `path` darf ?query/#hash tragen. */
+export function istReiterPfad(path: string): boolean {
+  const p = path.split('#')[0].split('?')[0];
+  return /^\/(rechner|vorlagen|gesetze|rechtsprechung)\/.+/.test(p)
+    || (BEREICHS_UEBERSICHTEN as readonly string[]).includes(p);
+}
+
+// ─── R3-F7 (Prüfbefund 6.9.2026) · KURZFORM STATT SEO-TITEL ─────────────────
+//
+// GEMESSEN: der Reiter für «/» trug `SITE_TITEL` («Schweizer Recht an einem
+// Ort: …»), weil `labelAusMeta` die SEO-Metadaten der Route zurückgibt — für
+// ein Browser-artiges Reiterband die falsche Zeichenkette (§5a Ziff. 2 verlangt
+// die kanonische KURZFORM, «Art. 336c OR», «BGE 152 V 52»). Dieselbe Falle
+// trifft jede Übersichts-Route, die mit D7 jetzt ein Reiter werden kann.
+// Darum eine kleine, geschlossene Tabelle genau für die Routen OHNE eigenes
+// Inhalts-Objekt; alles andere holt seine Kurzform weiterhin aus dem Manifest
+// (`Reiterleiste.kurzform`). Der volle Titel bleibt im `title` des Reiters.
+const KURZFORM: Record<string, string> = {
+  '/': 'Sammlung',
+  '/gesetze': 'Gesetze',
+  '/rechtsprechung': 'Rechtsprechung',
+  '/materialien': 'Materialien',
+  '/rechner': 'Rechner',
+  '/vorlagen': 'Vorlagen',
+};
+
+/** Kanonische Kurzform einer Übersichts-/Startseiten-Route — oder null, wenn
+ *  die Beschriftung aus dem Inhalt selbst kommt (Erlass, Entscheid, Vorlage). */
+export function reiterKurzform(path: string): string | null {
+  return KURZFORM[path.split('#')[0].split('?')[0]] ?? null;
+}
+
 const KEY = 'lexmetrik-tabs';
 const MAX = 50;
 

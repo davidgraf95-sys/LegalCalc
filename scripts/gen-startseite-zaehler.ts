@@ -37,9 +37,44 @@ const ZIEL = resolve(wurzel, 'src/data/startseiteZaehler.generated.ts');
 interface ErlassEintrag {
   key: string; ebene: 'bund' | 'kanton'; status: string; kanton?: string;
   kuerzel: string; rechtsgebiet: string;
+  /** Konsolidierungsstand des Snapshots (ISO) — D8: Quelle des Inhaltsalters. */
+  stand?: string | null;
 }
-interface EntscheidEintrag { verweis?: unknown }
-interface MaterialEintrag { key: string; behoerde: string }
+interface EntscheidEintrag {
+  verweis?: unknown;
+  /** Entscheiddatum (ISO) — D8. */
+  datum?: string | null;
+}
+interface MaterialEintrag {
+  key: string; behoerde: string;
+  /** Publikations-/Fassungsstand der Materialie (ISO) — D8. */
+  stand?: string | null;
+}
+
+// ─── D8 (David 6.9.2026) · JÜNGSTER EINTRAG STATT BUILD-DATUM ────────────────
+//
+// «Register erzeugt: Gesetze 05.09.2026 · …» nannte das Datum des BUILD-LAUFS
+// und las sich wie das Alter der Inhalte — David: irreführend. Die drei Register
+// tragen das echte Alter selbst mit (`stand` am Erlass, `datum` am Entscheid,
+// `stand` an der Materialie); hier wird je Sammlung das JÜNGSTE davon gezogen.
+//
+// ZWEI REGELN, beide §8:
+//  · Nur ISO-Datumswerte `JJJJ-MM-TT` zählen; alles andere (null, leer, ein
+//    Freitext-Stand) fällt weg, statt still als «1970» oder als Zeichenkette
+//    mitsortiert zu werden. Lexikografischer Vergleich ist bei diesem Format
+//    identisch mit dem chronologischen — kein Date-Objekt, kein Zeitzonen-Risiko
+//    (§2, das Artefakt muss deterministisch sein).
+//  · Gibt es keinen einzigen gültigen Wert, ist das Feld `null` und die Zeile
+//    entfällt in der Anzeige — nie ein erfundenes Datum.
+const ISO_TAG = /^\d{4}-\d{2}-\d{2}$/;
+function juengstes(werte: Array<string | null | undefined>): string | null {
+  let max: string | null = null;
+  for (const w of werte) {
+    if (typeof w !== 'string' || !ISO_TAG.test(w)) continue;
+    if (max === null || w > max) max = w;
+  }
+  return max;
+}
 
 /** Wie viele Kürzel je Systematik-Zeile als Beispiel-Zeile mitlaufen. */
 const KUERZEL_PRO_ZEILE = 4;
@@ -114,6 +149,20 @@ function zaehle() {
     .filter((b) => (proBehoerde[b.id] ?? 0) > 0)
     .map((b) => ({ id: b.id, kuerzel: b.kuerzel, name: b.name, anzahl: proBehoerde[b.id] }));
 
+  // D8: das Alter der INHALTE je Sammlung (nicht des Builds).
+  //  · Gesetze — jüngster Konsolidierungsstand über die Volltext-Snapshots.
+  //    `status !== 'snapshot'`-Einträge tragen keinen eigenen Stand und blieben
+  //    sonst als Fremdwert in der Zahl (dieselbe Zählmenge wie `gesetzeVolltext`).
+  //  · Rechtsprechung — jüngstes Entscheiddatum über die NICHT-Verweise
+  //    (ein Verweis ist ein Redirect-Stub, kein eigener Entscheid).
+  //  · Materialien — jüngster `stand`; existiert das Feld nirgends, bleibt es
+  //    null und die Zeile fehlt in der Anzeige, statt etwas zu behaupten.
+  const juengsterGesetzStand = juengstes(
+    g.erlasse.filter((e) => e.status === 'snapshot').map((e) => e.stand));
+  const juengsterEntscheid = juengstes(
+    r.entscheide.filter((e) => !e.verweis).map((e) => e.datum));
+  const juengsteMaterialie = juengstes(m.materialien.map((x) => x.stand));
+
   return {
     gesetzeBundVolltext: bund,
     gesetzeKantonVolltext: kanton,
@@ -130,6 +179,9 @@ function zaehle() {
     standGesetze: g.erzeugt,
     standRechtsprechung: r.erzeugt,
     standMaterialien: m.erzeugt,
+    juengsterGesetzStand,
+    juengsterEntscheid,
+    juengsteMaterialie,
   };
 }
 
@@ -176,6 +228,14 @@ function baue(): string {
     '  standRechtsprechung: string;\n' +
     '  /** Stand der Materialien-Register-Erzeugung (ISO). */\n' +
     '  standMaterialien: string;\n' +
+    '  /** D8: jüngster Konsolidierungsstand über alle Volltext-Erlasse (ISO)\n' +
+    '   *  — das Alter der INHALTE, nicht des Builds. null = kein gültiges Datum. */\n' +
+    '  juengsterGesetzStand: string | null;\n' +
+    '  /** D8: jüngstes Entscheiddatum (Nicht-Verweise, ISO) oder null. */\n' +
+    '  juengsterEntscheid: string | null;\n' +
+    '  /** D8: jüngster Materialien-Stand (ISO) oder null — fehlt das Feld im\n' +
+    '   *  Register durchgehend, bleibt die Zeile in der Anzeige weg (§8). */\n' +
+    '  juengsteMaterialie: string | null;\n' +
     '}\n\n' +
     'export const STARTSEITE_ZAEHLER: StartseiteZaehler = ' + JSON.stringify(z, null, 2) + ';\n'
   );
@@ -200,5 +260,6 @@ if (istCheck) {
 } else {
   writeFileSync(ZIEL, neu, 'utf8');
   const z = zaehle();
-  console.log(`gen:zaehler: Gesetze ${z.gesetzeVolltext} (Bund ${z.gesetzeBundVolltext}/Kanton ${z.gesetzeKantonVolltext}) · Entscheide ${z.rechtsprechungVolltext} · Materialien ${z.materialien} · Rechner ${z.rechner} · Vorlagen ${z.vorlagen} → src/data/startseiteZaehler.generated.ts`);
+  console.log(`gen:zaehler: Gesetze ${z.gesetzeVolltext} (Bund ${z.gesetzeBundVolltext}/Kanton ${z.gesetzeKantonVolltext}) · Entscheide ${z.rechtsprechungVolltext} · Materialien ${z.materialien} · Rechner ${z.rechner} · Vorlagen ${z.vorlagen} → src/data/startseiteZaehler.generated.ts` +
+    `\n           jüngster Eintrag: Gesetze ${z.juengsterGesetzStand ?? '—'} · Entscheide ${z.juengsterEntscheid ?? '—'} · Materialien ${z.juengsteMaterialie ?? '—'}`);
 }

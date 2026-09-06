@@ -2,7 +2,7 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { useTabs } from './useTabs';
-import { schliesseTab, leereTabs, ordneTabsUm, tabSchluessel, type TabEintrag } from '../../lib/tabs';
+import { schliesseTab, leereTabs, ordneTabsUm, tabSchluessel, type TabEintrag, reiterKurzform } from '../../lib/tabs';
 import { erlassVonPfad, verlaufLabel, type VerlaufManifeste } from '../../lib/verlaufLabel';
 import { reiterKategorie, herkunftVon, artikelLabelVonPfad, KAT_ORDER, HERKUNFT_ORDER } from '../../lib/tabGruppen';
 import { registerVonPfad, REG_FLAECHE, REG_TON, REG_HOVER_FLAECHE_REITER } from './bereiche';
@@ -101,6 +101,13 @@ function zerlege(zitierung: string): { kopf: string; kern: string } {
  *  Die Lesestellung bleibt sichtbar: im `title` des Reiters und in der
  *  Reiter-Liste (`TabPanel`), und sie überlebt den Neustart wie bisher. */
 function kurzform(t: TabEintrag, m: VerlaufManifeste): { kopf: string; kern: string } {
+  // R3-F7 (Prüfbefund 6.9.2026): Übersichts- und Startseiten-Routen tragen ihre
+  // Kurzform aus `lib/tabs` («Gesetze», «Sammlung») statt des SEO-Titels, den
+  // `labelAusMeta` liefert («Schweizer Recht an einem Ort: …»). Erst seit D7
+  // können solche Routen überhaupt Reiter sein — die Kurzform ist die
+  // Voraussetzung dafür, nicht eine Verzierung.
+  const fest = reiterKurzform(t.path);
+  if (fest) return { kopf: '', kern: fest };
   const kat = reiterKategorie(t.path);
   const kuerzel = kat === 'gesetze' ? erlassVonPfad(t.path, m)?.kuerzel : null;
   if (kuerzel) {
