@@ -211,6 +211,58 @@ Kraft — sein zweiter Auslöser (Beiwerk-Blatt, `rohPanel.offen`) ist unberühr
 
 ---
 
+## 4a · Zwei Wächter, die ihren Messpunkt verloren haben — und was daraus wurde
+
+**`e2e/leser-spy-w25d.e2e.ts`** (der Scroll-Spy-Wächter) las sein «Ist» aus
+`nav .num`, also aus der Kopf-Ortsangabe. Der Spy selbst ist unverändert; nur
+sein Abnehmer ist ein anderer. Gemessen wird ab jetzt das **Reiter-Signal**
+(Token gegen Token statt Token gegen Anzeige-Label — schärfer, weil
+Schlusstitel-Token wie `disp_u1_art_3` als Label gar nicht rückrechenbar waren,
+M13). Drei der vier Fälle sind danach grün.
+
+**Der vierte Fall ist rot — und war es vorher auch.** §0 Nr. 3, Nullprobe
+gefahren: `src/` und die Spec auf den Ausgangsstand `0fda3ea9c` zurückgesetzt,
+neu gebaut, derselbe Fall gelaufen — **bitgleich dieselbe Abweichung**:
+
+```
+mein Stand : y=20744: Signal meldet «40_a», an der Bezugslinie (198px) liegt «40_b» (Oberkante -10px)
+Basis      : y=20744: Kopf zeigt  «40a»,  an der Bezugslinie (198px) liegt «40_b» (Oberkante -10px)
+```
+
+3/3 Läufe reproduzierbar. Es ist ein **Defekt auf dem Integrationszweig**
+(H6-a, 400 % Zoom 320×200, OR): der Spy und die Soll-Rechnung der Sonde gehen an
+genau einer Position um 10 px auseinander. Nicht meiner, nicht in meiner
+Whitelist — **offen, für den Orchestrator**. Zugleich ist die Bit-Gleichheit der
+Beleg, dass meine Umstellung des Messpunkts verhaltensneutral ist.
+
+**`e2e/leser-v3-fokusring-suchfeld.e2e.ts`** verlangte als Vorbedingung, dass das
+Feld «in einem clippenden Scroller» liegt — der Ort des David-Befunds vom
+17.8.2026. Genau dieser Ort existiert für das Feld nicht mehr. Die Vorbedingung
+ist ersetzt durch die **Ursache statt der Wirkung an einer Stelle**: der Ring
+wird innerhalb der Border-Box gezeichnet (`outline-offset <= -outline-width`,
+gemessen an den Computed-Werten). Das ist prüfbar, gilt in jedem Behälter, und
+fällt bei derselben Rot-Probe, die im Datei-Kopf schon steht
+(`outline-offset: 0`). Die Kanten-Messung gegen einen clippenden Vorfahren
+bleibt daneben stehen und greift, sobald das Feld je wieder in einen Scroller
+gerät.
+
+## 4b · Zwei CLS-Fehlschläge, die keine waren (§0 Nr. 3, Messbedingung)
+
+Im ersten Gesamtlauf meldeten `leser-kopf-cls-s3` (D21-Tieflink, 0.0436 gegen
+Schranke 0.01) und `leser-r1-r2` (A9-DoD, 0.0191 gegen 0) Layout-Shifts. Beide
+liefen in einem Block von **85 Specs**, darunter die a11y-Suite im Projekt
+`[schwer]`, parallel.
+
+Nicht zugeschrieben, sondern gemessen. **Direktmessung** am gebauten Stand
+(Preview 4372, Shift-Quellen protokolliert): späte Summe **0.0000**.
+**Gegenprobe unter gleicher Bedingung**: dieselben drei Specs (plus Fokusring),
+`--workers=2`, erst auf dem Ausgangsstand `0fda3ea9c`, dann auf meinem —
+**19/19 grün in beiden Fällen**.
+
+Die Zahlen sind also eine Aussage über die Maschinenlast, nicht über die
+Änderung. Festgehalten, weil eine Rate ohne Messbedingung keine Zahl ist: **CLS
+misst man nicht neben einer parallel laufenden a11y-Suite.**
+
 ## 5 · Nichts verloren — geprüfte Liste
 
 Sprung (Artikel + Fundstelle) · Fussnoten · Fassungen · Bezüge-Zeile ·
