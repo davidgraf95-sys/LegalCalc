@@ -1044,6 +1044,36 @@
      Aussenrand — er darf die Ist-Form nicht um eine Zeile verschieben (§6). */
   .lr-reg { display: block; height: 0; }
 
+  /* ═══ P3 · TEXTLINKS IM LESER TRAGEN EINEN UNTERSTRICH ═══════════════════
+     Prüfer-Befund R6 (6.9.2026): von 6'291 Links im Gesetzesleser trugen 3'673
+     keinen Unterstrich — darunter «Amtliche Fassung ↗», «⬇ Amtliches PDF» und
+     die Links der Bezüge. Ein Link, den nur die Farbe ausweist, ist für
+     Farbfehlsichtige kein Link (WCAG 1.4.1 «Use of Color»; derselbe Befund
+     traf auf der Startseite als R3-F1 mit axe «link-in-text-block» auf).
+
+     DIE REGEL STEHT EINMAL, UND ZWAR HIER — nicht an den ~40 Aufrufstellen.
+     `:where()` hält die Spezifität auf NULL, und die Regel liegt in einer
+     Cascade-Layer: die Tailwind-Utility `no-underline` (Layer `utilities`)
+     gewinnt damit IMMER, ganz gleich, was hier steht. Das ist die Bauform, die
+     der Befund verlangt: unterstrichen ist die VORGABE, und wer ohne Unterstrich
+     stehen soll, sagt es im Markup ausdrücklich.
+
+     WER SCHON HEUTE OHNE STEHT (und deshalb unberührt bleibt): die Brotkrume
+     (`no-underline` am Link), die Artikelnummer-Anker (`num … no-underline`,
+     ArtikelLeser), die Gliederungs-Einträge (`no-underline`), sowie alles, was
+     `.lc-chip` oder `.lc-btn-mini` trägt (beide führen `no-underline` in ihrem
+     `@apply`). Navigation, Listenzeilen und Knöpfe tragen ihre Affordanz aus der
+     Form — nur der TEXTlink braucht den Strich.
+
+     WÄCHTER (§6.7): `e2e/leser-links-p3.e2e.ts` misst am gebauten Leser, dass
+     kein `a[href]` ohne Unterstrich UND ohne eine der erklärten Ausnahmen
+     dasteht. Rot zu bekommen, indem diese Regel entfernt wird. */
+  .lc-leser :where(a[href]) {
+    text-decoration-line: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 2px;
+  }
+
   /* Der DRUCK fällt in die Zeilenform zurück — die Regeln dafür stehen im
      einen `@media print`-Block dieser Datei (Suchwort «SATZSPIEGEL IM DRUCK»),
      nicht hier: `src/tests/druck-fundstellen.test.ts` liest den ERSTEN
