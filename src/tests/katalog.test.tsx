@@ -148,10 +148,16 @@ describe('Vorlagen-Übersicht /vorlagen (UI-Welle)', () => {
     expect(html).not.toContain('aria-label="Oberkategorien"');
   });
 
-  it('eine verfügbare Vorlage ist direkt verlinkt; Filter-Reset «Alle» vorhanden', () => {
+  it('eine verfügbare Vorlage ist direkt verlinkt; Filter-Reset «Alle Rechtsgebiete» vorhanden', () => {
     const html = vorlagenHtml();
     expect(html).toContain('href="/vorlagen/mahnung"');
-    expect(html).toContain('>Alle<');
+    // Deklarierte Anpassung (D22-Nachzug D24, 6.9.2026): die Filterzeile trägt
+    // jetzt das sichtbare Label «Filtern» (D22-Anatomie, wie /gesetze und
+    // /materialien). Damit stünde die Achse nirgends mehr im Bedienelement —
+    // die Reset-Option benennt sie darum selbst: «Alle Rechtsgebiete» statt
+    // «Alle». Die ZUSICHERUNG des Falls ist unverändert: die Reset-Option
+    // existiert im gerenderten Markup.
+    expect(html).toContain('>Alle Rechtsgebiete<');
   });
 });
 
