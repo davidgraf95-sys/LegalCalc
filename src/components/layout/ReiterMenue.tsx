@@ -92,7 +92,12 @@ export function ReiterMenue({ x, y, name, eintraege, onSchliessen }: {
   return createPortal(
     <div ref={ref} tabIndex={-1} role="menu" aria-label={`Reiter «${name}»`} onKeyDown={onKey}
       style={{ left: pos.x, top: pos.y }}
-      className="lc-schwebeflaeche fixed z-overlay w-56 max-w-[calc(100vw-1rem)] p-1 focus:outline-none">
+      // GEMESSEN 6.9.2026 (Screen `r11-kontextmenue-1440-hell`, erster Lauf): bei
+      // `w-56` (14 rem) brach «Rechts davon schliessen» auf «Rechts davon
+      // schlies…» ab — die längste Zeile plus Marken-Spalte plus Zähler passt
+      // nicht in 224 px. `w-64` (16 rem) trägt sie ganz; die Fläche bleibt
+      // schmaler als das Überlauf-Blatt (22 rem), das eine Liste führt.
+      className="lc-schwebeflaeche fixed z-overlay w-64 max-w-[calc(100vw-1rem)] p-1 focus:outline-none">
       <MenueTitel>{name}</MenueTitel>
       {eintraege.map((e) => (
         <MenueZeile key={e.id} label={e.label} marke={e.marke} rechts={e.rechts}

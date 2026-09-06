@@ -501,7 +501,13 @@ export function Reiterleiste({ paneSchluessel = [] }: {
     // zeichnet, wäre die zweite Stelle (Wächter `design-r3b-chrome`).
     e.push({ id: 'schliessen', label: 'Schliessen', rechts: 'Alt+W', onKlick: () => schliessen(t.path) });
     if (wieder) {
-      e.push({ id: 'wieder', label: `Zuletzt geschlossen: ${kurzformText(wieder, manifeste)}`,
+      // EIN WORT FÜR EINE SACHE (Ä118-Lehre): dieselbe Zeile steht auch im
+      // Überlauf-Blatt, darum derselbe Wortlaut. GEMESSEN 6.9.2026 (Screen
+      // `r11-kontextmenue-1440-hell`, zweiter Lauf): «Zuletzt geschlossen:
+      // ZGB» brach im Menü hinter dem Doppelpunkt ab — der Name, also gerade
+      // das Nützliche, fiel weg. «Wieder öffnen: ZGB» stellt die Tätigkeit
+      // nach vorn und trägt den Namen ganz.
+      e.push({ id: 'wieder', label: `Wieder öffnen: ${kurzformText(wieder, manifeste)}`,
         marke: '↩', rechts: 'Alt+⇧+T', onKlick: stelleWiederHer });
     }
     return e;
@@ -804,7 +810,7 @@ export function Reiterleiste({ paneSchluessel = [] }: {
                     title="Zuletzt geschlossenen Reiter wiederherstellen (Alt+Shift+T)"
                     className="lc-btn-outline lc-btn-sm w-full">
                     <span aria-hidden className="lc-griff-glyph mr-1">↩</span>
-                    Zuletzt geschlossen: {kurzformText(wieder, manifeste)}
+                    Wieder öffnen: {kurzformText(wieder, manifeste)}
                   </button>
                 </div>
               );

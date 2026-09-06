@@ -168,7 +168,7 @@ test.describe('M3 — zuletzt geschlossen', () => {
       .getByRole('button', { name: /schliessen/ }).click()
     await page.locator(REITER).getByRole('button', { name: /Alle \d+ offenen Reiter/ }).click()
     const blatt = page.getByRole('dialog', { name: 'Alle geöffneten Reiter' })
-    const knopf = blatt.getByRole('button', { name: /Zuletzt geschlossen/ })
+    const knopf = blatt.getByRole('button', { name: /Wieder öffnen/ })
     await expect(knopf).toBeVisible()
     await knopf.click()
     await expect(page.locator(`${STREIFEN} [data-reiter-schluessel="${RECHNER}"]`)).toBeVisible()
