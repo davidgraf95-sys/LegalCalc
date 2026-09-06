@@ -55,8 +55,9 @@ describe('beurteile — Verdikt je Tarif-Eintrag', () => {
 
   it('5. jahrgenauer Stand: im selben Jahr wird nicht geraten → unklar', () => {
     expect(beurteile(hinterlegt('2026 (konsolidiert)'), quelle(null, '2026-01-01'), null).verdikt).toBe('unklar');
-    expect(beurteile(hinterlegt('2012/2013'), quelle(null, '2026-07-01'), null).verdikt).toBe('DRIFT');
-    expect(beurteile(hinterlegt('2019/2025'), quelle(null, '2011-01-01'), null).verdikt).toBe('aktuell');
+    // Mehrjahres-Strings sind seit M1 (6.9.2026) mehrdeutig → unbekannt → unklar, nie aktuell.
+    expect(beurteile(hinterlegt('2012/2013'), quelle(null, '2026-07-01'), null).verdikt).toBe('unklar');
+    expect(beurteile(hinterlegt('2019/2025'), quelle(null, '2011-01-01'), null).verdikt).toBe('unklar');
   });
 
   it('6. Stand ohne Datum → unklar, nie aktuell', () => {

@@ -20,22 +20,22 @@ describe('standDatum — Schreibweisen aus den Tarif-Daten', () => {
     expect(standDatum('28.9.2010 (geltende Fassung)')).toMatchObject({ iso: '2010-09-28', genauigkeit: 'tag' });
   });
 
-  it('3. Spätestes belegtes Datum gewinnt (mehrere Daten im String)', () => {
-    expect(standDatum('1.1.2024 (Punktwert 1.1.2025)').iso).toBe('2025-01-01');
-    expect(standDatum('1.3.2012 (Folgefassung 1.7.2026 wortgleich)').iso).toBe('2026-07-01');
-    expect(standDatum('25.3.2014/17.3.2015').iso).toBe('2015-03-17');
+  it('3. Mehrere Daten verschiedener Jahre im String sind mehrdeutig — kein Raten (korrigiert nach Gegenprüfung M1, 6.9.2026; vorher «spätestes gewinnt» = latentes falsches Grün)', () => {
+    expect(standDatum('1.1.2024 (Punktwert 1.1.2025)')).toMatchObject({ iso: null, genauigkeit: 'unbekannt' });
+    expect(standDatum('1.3.2012 (Folgefassung 1.7.2026 wortgleich)')).toMatchObject({ iso: null, genauigkeit: 'unbekannt' });
+    expect(standDatum('25.3.2014/17.3.2015')).toMatchObject({ iso: null, genauigkeit: 'unbekannt' });
   });
 
   it('4. Blosse Jahresangaben ergeben Jahres-Granularität, nicht 1. Januar', () => {
-    expect(standDatum('2012/2013')).toMatchObject({ iso: '2013', genauigkeit: 'jahr' });
-    expect(standDatum('2005/2017/2024')).toMatchObject({ iso: '2024', genauigkeit: 'jahr' });
+    expect(standDatum('2012/2013')).toMatchObject({ iso: null, genauigkeit: 'unbekannt' }); // zwei Jahre → mehrdeutig (M1)
+    expect(standDatum('2005/2017/2024')).toMatchObject({ iso: null, genauigkeit: 'unbekannt' }); // drei Jahre → mehrdeutig (M1)
     expect(standDatum('konsolidierte Fassung 2026')).toMatchObject({ iso: '2026', genauigkeit: 'jahr' });
     expect(standDatum('2026 (konsolidiert)')).toMatchObject({ iso: '2026', genauigkeit: 'jahr' });
   });
 
-  it('5. Jahr schlägt ein älteres Tagesdatum, Tagesdatum schlägt dasselbe Jahr', () => {
-    // «Etat au 2015» ist jünger als «13 juin 2012» → Jahr 2015 gewinnt.
-    expect(standDatum('Etat au 2015 (Arrete du 13 juin 2012)')).toMatchObject({ iso: '2015', genauigkeit: 'jahr' });
+  it('5. Verschiedene Jahre sind mehrdeutig; Tagesdatum schlägt dasselbe Jahr', () => {
+    // «Etat au 2015» und «13 juin 2012» sind zwei Jahre → mehrdeutig, kein Raten (M1).
+    expect(standDatum('Etat au 2015 (Arrete du 13 juin 2012)')).toMatchObject({ iso: null, genauigkeit: 'unbekannt' });
     // Umgekehrt: taggenau im selben Jahr ist die präzisere (und spätere) Lesart.
     expect(standDatum('2026, in Kraft 1.3.2026')).toMatchObject({ iso: '2026-03-01', genauigkeit: 'tag' });
   });
