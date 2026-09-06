@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { Link, useLocation, type Location } from 'react-router-dom';
 import {
-  NAVIGATION, NAVIGATION_META, alleNavLinks, type NavKnoten, type NavGruppe, type NavLink as NavLinkT,
+  NAVIGATION, alleNavLinks, type NavKnoten, type NavGruppe, type NavLink as NavLinkT,
 } from '../../lib/navigation';
 import { STUFE_WORT } from '../../lib/normtext/erfassungsgrad';
 import { LexMetrikSiegel, LexMetrikWortmarke } from './Logo';
@@ -32,6 +32,14 @@ function istAktiv(ziel: string, loc: Location): boolean {
 
   const pfadOk = pfad === '/gesetze' ? loc.pathname.startsWith('/gesetze') : loc.pathname === pfad;
   if (!pfadOk) return false;
+  // D26 · DER SPEZIFISCHERE EINTRAG GEWINNT. Seit die Kernerlasse als eigene
+  // Ziele in der Leiste stehen (`/gesetze/bund/or`), trafen auf einer Leser-Route
+  // ZWEI Einträge zu: der Erlass selbst (exakter Pfad) und «Alle Bundeserlasse»
+  // bzw. der Kantonslink über die `startsWith`-Regel oben — zwei Aktiv-Marken
+  // sagen nicht mehr, wo man ist. Trägt der aktuelle Pfad selbst einen Eintrag,
+  // gehört ihm die Marke allein; die `startsWith`-Regel bleibt für alles übrige
+  // (Leser ohne eigenen Eintrag ⇒ die Rubrik leuchtet weiter).
+  if (pfad === '/gesetze' && loc.pathname !== '/gesetze' && NAV_ZIELE.has(loc.pathname)) return false;
   // Trägt das Ziel einen Anker, muss er stimmen (Vorlagen-Gruppe / Bund-Gebiet).
   if (hash && loc.hash !== `#${hash}`) return false;
   // Hash-LOSES Ziel auf exaktem Pfad (z.B. «Zivilprozess» /rechner/zustaendigkeit)
@@ -299,11 +307,16 @@ export function Sidebar({ onNavigate, markeZeigen = false }: { onNavigate?: () =
         <Abschnitt key={i} a={abschnitt} loc={loc} onNavigate={onNavigate} />
       ))}
 
-      {/* Utility/Meta unten — abgesetzt durch Hairline. */}
+      {/* Fuss der Leiste — abgesetzt durch Hairline.
+          ── D26 (David 6.9.2026) · DIE META-ZIELE STEHEN IM SEITENFUSS ────────
+          Einstellungen · Methodik · Über · Kontakt · Datenschutz standen hier als
+          fünf gleichrangige Zeilen unter den Inhalts-Rubriken und beanspruchten
+          in einer Leiste, die «zeigen soll, was man aufschlägt», ein Fünftel der
+          Höhe für Dinge, die man einmal im Jahr braucht. Sie sind NICHT weg —
+          `Footer.tsx` führt dieselbe SSoT-Liste (`NAVIGATION_META`), und der
+          Seitenfuss steht auf jeder Route. `NAVIGATION_META` bleibt darum
+          unverändert exportiert; nur die Leiste rendert es nicht mehr. */}
       <div className="mt-auto pt-3 border-t border-rule-soft flex flex-col gap-0.5">
-        {NAVIGATION_META.map((k, i) => (
-          <Blatt key={i} k={k} loc={loc} onNavigate={onNavigate} klein />
-        ))}
         {/* W2·23-STARTSEITE-V4 §6.3 · Fuss «Stand des Korpus». Dieselbe Wahrheit
             wie die Korpus-Stand-Zeile auf «/» — EIN Baustein, zwei Konsumenten
             (§5), kein zweiter Datumssatz in der Leiste. Auf Mobil trägt die

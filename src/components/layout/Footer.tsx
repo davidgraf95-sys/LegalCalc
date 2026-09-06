@@ -1,22 +1,41 @@
 import { Link } from 'react-router-dom';
 import { LexMetrikSiegel, LexMetrikWortmarke } from './Logo';
 import { SAMMLUNG_BESTAND, SITE_KURZFORM } from '../../lib/seo';
+import { NAVIGATION_META } from '../../lib/navigation';
 
 // Footer (ausgebaut): dreispaltig – Marke + Kurzbeschrieb, Navigation,
 // Hinweise; darunter Mono-Feinschriftzeile. Paper-Grund, obere Hairline.
 
+// ── D26 (David 6.9.2026) · DER FUSS TRÄGT DIE META-ZIELE, UND ZWAR DIE EINE LISTE ──
+// Die Seitenleiste zeigt seit D26 nur noch Inhalt; Einstellungen · Methodik ·
+// Über · Kontakt · Datenschutz sind hierher gewandert. Sie werden dabei NICHT
+// abgeschrieben, sondern aus derselben SSoT gelesen, die sie vorher in der
+// Leiste zeichnete (`NAVIGATION_META`, lib/navigation.ts) — sonst gäbe es nach
+// dem Umzug zwei Meta-Listen, die auseinanderlaufen können (§5). Vorher fehlte
+// im Fuss ausgerechnet «Einstellungen»; mit der Ableitung kann das nicht mehr
+// passieren.
+//
+// Die beiden Übersichts-Ziele (Rechner · Vorlagen) sind KEINE Meta-Ziele und
+// stehen darum weiter literal davor:
+//   Free/Pro-Zweiteilung aufgehoben (FAHRPLAN-EINE-HAUPTSEITE; Bug-Check
+//   7.6.2026 M-2: die alten zwei Einträge zeigten auf dieselbe Seite).
+//   W2·10-UI-NAV/N0a: der eine «Rechner & Vorlagen»-Eintrag zeigte auf «/»
+//   (Startseite), nicht auf die Übersichten, die das Label verspricht — die tote
+//   Verbindung ist zu zwei ehrlichen Zielen aufgelöst (/rechner · /vorlagen).
+//
+// Zwei Beschriftungen bleiben im Fuss länger als in der Leiste («Über
+// LexMetrik», «Datenschutzerklärung»): der Fuss ist der Ort, an dem eine
+// Pflichtseite mit ihrem vollen Namen stehen muss. Die Abweichung ist darum
+// deklariert und nicht abgeleitet — sie betrifft nur den Text, nie das Ziel.
+const FUSS_TEXT: Record<string, string> = {
+  '/ueber': 'Über LexMetrik',
+  '/datenschutz': 'Datenschutzerklärung',
+};
+
 const NAVIGATION = [
-  // Free/Pro-Zweiteilung aufgehoben (FAHRPLAN-EINE-HAUPTSEITE; Bug-Check
-  // 7.6.2026 M-2: die alten zwei Einträge zeigten auf dieselbe Seite).
-  // W2·10-UI-NAV/N0a: der eine «Rechner & Vorlagen»-Eintrag zeigte auf «/»
-  // (Startseite), nicht auf die Übersichten, die das Label verspricht — die tote
-  // Verbindung ist zu zwei ehrlichen Zielen aufgelöst (/rechner · /vorlagen).
   { to: '/rechner', label: 'Rechner' },
   { to: '/vorlagen', label: 'Vorlagen' },
-  { to: '/methodik', label: 'Methodik' },
-  { to: '/ueber', label: 'Über LexMetrik' },
-  { to: '/kontakt', label: 'Kontakt' },
-  { to: '/datenschutz', label: 'Datenschutzerklärung' },
+  ...NAVIGATION_META.map((l) => ({ to: l.ziel, label: FUSS_TEXT[l.ziel] ?? l.label })),
 ];
 
 export function Footer() {
